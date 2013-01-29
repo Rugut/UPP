@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPP", "UPP\UPP.csproj", "{AA205FC7-874F-4FFC-AC19-DC0D74EAE4E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meta", "Meta\Meta.csproj", "{AE976F36-3E2D-4BDF-AA2B-8EDAA5543315}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest", "Rest\Rest.csproj", "{6E03C317-ABAD-441F-9ED4-B893F74DC987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajax", "Ajax\Ajax.csproj", "{07A22D36-D52B-4E5F-9070-352C352EF460}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://rugut.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Ajax\\Ajax.csproj
+		SccProjectName1 = Ajax
+		SccLocalPath1 = Ajax
+		SccProjectUniqueName2 = Meta\\Meta.csproj
+		SccProjectName2 = Meta
+		SccLocalPath2 = Meta
+		SccProjectUniqueName3 = Rest\\Rest.csproj
+		SccProjectName3 = Rest
+		SccLocalPath3 = Rest
+		SccProjectUniqueName4 = UPP\\UPP.csproj
+		SccProjectName4 = UPP
+		SccLocalPath4 = UPP
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA205FC7-874F-4FFC-AC19-DC0D74EAE4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA205FC7-874F-4FFC-AC19-DC0D74EAE4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA205FC7-874F-4FFC-AC19-DC0D74EAE4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA205FC7-874F-4FFC-AC19-DC0D74EAE4E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE976F36-3E2D-4BDF-AA2B-8EDAA5543315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE976F36-3E2D-4BDF-AA2B-8EDAA5543315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE976F36-3E2D-4BDF-AA2B-8EDAA5543315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE976F36-3E2D-4BDF-AA2B-8EDAA5543315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E03C317-ABAD-441F-9ED4-B893F74DC987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E03C317-ABAD-441F-9ED4-B893F74DC987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E03C317-ABAD-441F-9ED4-B893F74DC987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E03C317-ABAD-441F-9ED4-B893F74DC987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A22D36-D52B-4E5F-9070-352C352EF460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A22D36-D52B-4E5F-9070-352C352EF460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A22D36-D52B-4E5F-9070-352C352EF460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A22D36-D52B-4E5F-9070-352C352EF460}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

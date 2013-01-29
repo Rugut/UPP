@@ -1,0 +1,18 @@
+
+using System;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+using V82;
+using V82.—правочники—сылка;
+using V82.—правочники;//ћенеджер;
+using V82.ƒокументы—сылка;
+using V82.ѕеречислени€;//—сылка;
+namespace V82.—правочники¬ыборка
+{
+	///<summary>
+	/// онтактные лица контрагентов
+	///</summary>
+	public partial class  онтактныеЋица онтрагентов: List<—правочники—сылка. онтактныеЋица онтрагентов>
+	{
+	}
+}

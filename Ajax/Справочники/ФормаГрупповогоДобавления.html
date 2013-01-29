@@ -1,0 +1,59 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Групповое добавление элементов справочника ""Основные средства""</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		<!-- "jquery-1.8.3.js" -->
+		<script type="text/javascript" src="jquery-ui-1.9.2.custom.js"></script>
+		<!-- "jquery-ui-1.9.2.custom.js" -->
+		<link rel="stylesheet" href="ФормаГрупповогоДобавления.css"/>
+		<script type="text/javascript" src="ФормаГрупповогоДобавления.js"></script>
+	</head>
+	<body style="background-color:#D7D3BD">
+			<div class="КоробкаФормы" id="Form1">
+			<div class="Форма" id="Form2" style="position:absolute;width:414px;height:417px;">
+				<div class="КоманднаяПанель" id="ОсновныеДействияФормы" style="position:absolute;left:0px;top:392px;width:414px;height:25px;"align="right">
+					<button  class="КнопкаКоманднойПанели">Добавить</button>
+					<button  class="КнопкаКоманднойПанели">Закрыть</button>
+					<button  class="КнопкаКоманднойПанели">Справка</button>
+				</div>
+				<label style="position:absolute;left:14px;top:125px;width:138px;height:19px;">Наименование:</label>
+				<input type="text" id="Наименование" style="position:absolute;left:160px;top:125px;width:246px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:149px;width:138px;height:19px;">Полное наименование:</label>
+				<input type="text" id="НаименованиеПолное" style="position:absolute;left:160px;top:149px;width:246px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:173px;width:138px;height:19px;">Изготовитель:</label>
+				<input type="text" id="Изготовитель" style="position:absolute;left:161px;top:173px;width:245px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:245px;width:138px;height:19px;">Дата выпуска (постройки):</label>
+				<input type="text" id="ДатаВыпуска" style="position:absolute;left:160px;top:245px;width:76px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:293px;width:138px;height:19px;">ОКОФ:</label>
+				<input type="text" id="КодПоОКОФ" style="position:absolute;left:161px;top:293px;width:245px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:341px;width:138px;height:19px;">Амортизационная группа:</label>
+				<input type="text" id="АмортизационнаяГруппа" style="position:absolute;left:160px;top:341px;width:246px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:317px;width:138px;height:19px;">Группа учета ОС:</label>
+				<input type="text" id="ГруппаОС" style="position:absolute;left:160px;top:317px;width:246px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:197px;width:138px;height:19px;">Заводской номер:</label>
+				<input type="text" id="ЗаводскойНомер" style="position:absolute;left:160px;top:197px;width:246px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:221px;width:138px;height:19px;">Номер паспорта:</label>
+				<input type="text" id="НомерПаспорта" style="position:absolute;left:160px;top:221px;width:246px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:53px;width:138px;height:19px;">Присваивать коды с:</label>
+				<input type="text" id="НачальныйКод" style="position:absolute;left:160px;top:53px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:77px;width:138px;height:19px;">Количество элементов:</label>
+				<input type="text" id="Количество" style="position:absolute;left:160px;top:77px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:14px;top:29px;width:138px;height:19px;">Добавлять в группу:</label>
+				<input type="text" id="Группа" style="position:absolute;left:160px;top:29px;width:246px;height:19px;"/>
+				<input type="text" id="КонечныйКод" style="position:absolute;left:272px;top:53px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:249px;top:53px;width:16px;height:19px;">по:</label>
+
+
+
+				<label id="Время" style="position:absolute;left:8px;top:400px;width:126px;height:19px;"></label>
+				<button style="position: absolute; left: 140px; top:400px; width: 126px; height: 19px; " onclick="ОбновитьФорму()">КнопкаДляТестов</button>
+
+
+
+			</div>
+		</div>
+	</body>
+</html>

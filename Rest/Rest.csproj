@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E03C317-ABAD-441F-9ED4-B893F74DC987}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rest</RootNamespace>
+    <AssemblyName>Rest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>..\packages\ServiceStack.3.9.35\lib\net35\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.3.9.35\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.FluentValidation.Mvc3">
+      <HintPath>..\packages\ServiceStack.Mvc.3.9.35\lib\net40\ServiceStack.FluentValidation.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Common.3.9.35\lib\net35\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.35\lib\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.35\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\packages\ServiceStack.Redis.3.9.35\lib\net35\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>..\packages\ServiceStack.3.9.35\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.35\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AppHost.cs" />
+    <Compile Include="App_Start\WebServiceExamples.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Справочники\АдресныеСокращения.cs" />
+    <Compile Include="Справочники\Банки.cs" />
+    <Compile Include="Справочники\БанковскиеСчета.cs" />
+    <Compile Include="Справочники\БланкиСтрогойОтчетности.cs" />
+    <Compile Include="Справочники\Бюджеты.cs" />
+    <Compile Include="Справочники\Вакансии.cs" />
+    <Compile Include="Справочники\Валюты.cs" />
+    <Compile Include="Справочники\ВариантыCхемМотивации.cs" />
+    <Compile Include="Справочники\ВариантыНастроекФинАнализа.cs" />
+    <Compile Include="Справочники\ВариантыОтветовОпросов.cs" />
+    <Compile Include="Справочники\ВерсииФайлов.cs" />
+    <Compile Include="Справочники\ВидыАлкогольнойПродукции.cs" />
+    <Compile Include="Справочники\ВидыАнализовНоменклатуры.cs" />
+    <Compile Include="Справочники\ВидыВзаиморасчетов.cs" />
+    <Compile Include="Справочники\ВидыДеятельностиКонтрагентов.cs" />
+    <Compile Include="Справочники\ВидыДисконтныхКарт.cs" />
+    <Compile Include="Справочники\ВидыЕжегодныхОтпусков.cs" />
+    <Compile Include="Справочники\ВидыЗадачПользователей.cs" />
+    <Compile Include="Справочники\ВидыЗаметок.cs" />
+    <Compile Include="Справочники\ВидыКонтактнойИнформации.cs" />
+    <Compile Include="Справочники\ВидыНалоговыхОрганов.cs" />
+    <Compile Include="Справочники\ВидыНоменклатуры.cs" />
+    <Compile Include="Справочники\ВидыОбразованияФизЛиц.cs" />
+    <Compile Include="Справочники\ВидыОбслуживанияОсновныхСредств.cs" />
+    <Compile Include="Справочники\ВидыОбщественноПолезнойДеятельности.cs" />
+    <Compile Include="Справочники\ВидыОплатЧекаККМ.cs" />
+    <Compile Include="Справочники\ВидыОтправляемыхДокументов.cs" />
+    <Compile Include="Справочники\ВидыПараметровВыпускаПродукции.cs" />
+    <Compile Include="Справочники\ВидыРаспределенияПоПроектам.cs" />
+    <Compile Include="Справочники\ВидыСтажа.cs" />
+    <Compile Include="Справочники\ВидыСчетчиковДляЗначенийРазрядов.cs" />
+    <Compile Include="Справочники\ВидыФинРезервов.cs" />
+    <Compile Include="Справочники\ВидыЦФО.cs" />
+    <Compile Include="Справочники\ВложенияЭлектронныхПисем.cs" />
+    <Compile Include="Справочники\ВнешниеОбработки.cs" />
+    <Compile Include="Справочники\Военкоматы.cs" />
+    <Compile Include="Справочники\ВычетыНДФЛ.cs" />
+    <Compile Include="Справочники\ГодовыеГрафикиАмортизацииОС.cs" />
+    <Compile Include="Справочники\ГрафикиРаботы.cs" />
+    <Compile Include="Справочники\ГруппыДоступаКонтрагентов.cs" />
+    <Compile Include="Справочники\ГруппыДоступаФизическихЛиц.cs" />
+    <Compile Include="Справочники\ГруппыДоступностиСкладов.cs" />
+    <Compile Include="Справочники\ГруппыЗаменяемостиРабочихЦентров.cs" />
+    <Compile Include="Справочники\ГруппыЗаявокКандидатов.cs" />
+    <Compile Include="Справочники\ГруппыПисемЭлектроннойПочты.cs" />
+    <Compile Include="Справочники\ГруппыПользователей.cs" />
+    <Compile Include="Справочники\ГруппыПочтовойРассылки.cs" />
+    <Compile Include="Справочники\ГруппыСобытий.cs" />
+    <Compile Include="Справочники\ДенежныеДокументы.cs" />
+    <Compile Include="Справочники\ДетализацияАналитическогоБаланса.cs" />
+    <Compile Include="Справочники\ДетализацияОтчетаОПрибыляхИУбытках.cs" />
+    <Compile Include="Справочники\ДоверенностиНалогоплательщика.cs" />
+    <Compile Include="Справочники\ДоговорыКонтрагентов.cs" />
+    <Compile Include="Справочники\ДоговорыЭквайринга.cs" />
+    <Compile Include="Справочники\ДокументыОбОбразовании.cs" />
+    <Compile Include="Справочники\ДокументыРеализацииПолномочийНалоговыхОрганов.cs" />
+    <Compile Include="Справочники\ДокументыУдостоверяющиеЛичность.cs" />
+    <Compile Include="Справочники\Должности.cs" />
+    <Compile Include="Справочники\ДолжностиОрганизаций.cs" />
+    <Compile Include="Справочники\ДоходыБудущихПериодов.cs" />
+    <Compile Include="Справочники\ДоходыЕСН.cs" />
+    <Compile Include="Справочники\ДоходыНДФЛ.cs" />
+    <Compile Include="Справочники\ДоходыПоСтраховымВзносам.cs" />
+    <Compile Include="Справочники\ЕдиницыИзмерения.cs" />
+    <Compile Include="Справочники\ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.cs" />
+    <Compile Include="Справочники\ЗанятияКурсовОбучения.cs" />
+    <Compile Include="Справочники\ЗаявкиКандидатов.cs" />
+    <Compile Include="Справочники\ЗваниеГражданскогоВоинскогоУчета.cs" />
+    <Compile Include="Справочники\ЗначенияПоказателейАнализовНоменклатуры.cs" />
+    <Compile Include="Справочники\ЗначенияСвойствОбъектов.cs" />
+    <Compile Include="Справочники\ИндивидуальныеГрафикиАмортизации.cs" />
+    <Compile Include="Справочники\ИнформационныеКарты.cs" />
+    <Compile Include="Справочники\ИсточникиДанныхДляРасчетовБюджетирования.cs" />
+    <Compile Include="Справочники\ИсточникиИнформации.cs" />
+    <Compile Include="Справочники\ИсточникиИнформацииПриОбращенииПокупателей.cs" />
+    <Compile Include="Справочники\Кассы.cs" />
+    <Compile Include="Справочники\КассыККМ.cs" />
+    <Compile Include="Справочники\КатегорииОбъектов.cs" />
+    <Compile Include="Справочники\КатегорииРасчетов.cs" />
+    <Compile Include="Справочники\Качество.cs" />
+    <Compile Include="Справочники\КлассификаторЕдиницИзмерения.cs" />
+    <Compile Include="Справочники\КлассификаторИспользованияРабочегоВремени.cs" />
+    <Compile Include="Справочники\КлассификаторОКОПФ.cs" />
+    <Compile Include="Справочники\КлассификаторСпециальностейПоОбразованию.cs" />
+    <Compile Include="Справочники\КлассификаторСтранМира.cs" />
+    <Compile Include="Справочники\КлючевыеРесурсыПредприятия.cs" />
+    <Compile Include="Справочники\КлючиАналитикиВидаУчета.cs" />
+    <Compile Include="Справочники\КлючиАналитикиРаспределенияЗатрат.cs" />
+    <Compile Include="Справочники\КлючиАналитикиУчетаЗатрат.cs" />
+    <Compile Include="Справочники\КлючиАналитикиУчетаПартий.cs" />
+    <Compile Include="Справочники\КлючиАналитикиУчетаПрочихЗатрат.cs" />
+    <Compile Include="Справочники\КодыОКПД.cs" />
+    <Compile Include="Справочники\КомпетенцииРаботников.cs" />
+    <Compile Include="Справочники\КонвертацииИзИнформационныхБаз1СПредприятия77.cs" />
+    <Compile Include="Справочники\КонтактныеЛица.cs" />
+    <Compile Include="Справочники\КонтактныеЛицаКонтрагентов.cs" />
+    <Compile Include="Справочники\Контрагенты.cs" />
+    <Compile Include="Справочники\КоэффициентыСтажа.cs" />
+    <Compile Include="Справочники\КурсыОбучения.cs" />
+    <Compile Include="Справочники\ЛичныеКонтакты.cs" />
+    <Compile Include="Справочники\МаршрутыСогласования.cs" />
+    <Compile Include="Справочники\МедицинскиеОрганизации.cs" />
+    <Compile Include="Справочники\МедицинскиеСтраховыеПолисы.cs" />
+    <Compile Include="Справочники\Мероприятия.cs" />
+    <Compile Include="Справочники\МестаХранения.cs" />
+    <Compile Include="Справочники\Награды.cs" />
+    <Compile Include="Справочники\НазначениеЦелевыхСредств.cs" />
+    <Compile Include="Справочники\НазначенияИспользования.cs" />
+    <Compile Include="Справочники\НазначенияИспользованияСпецификаций.cs" />
+    <Compile Include="Справочники\НазначенияСертификатовЭЦП.cs" />
+    <Compile Include="Справочники\НалоговыеОрганы.cs" />
+    <Compile Include="Справочники\НаправленияИспользованияПрибыли.cs" />
+    <Compile Include="Справочники\НаправленияСписанияВыпущеннойПродукции.cs" />
+    <Compile Include="Справочники\НастройкаИнтервалов.cs" />
+    <Compile Include="Справочники\НастройкиАналитикиУчета.cs" />
+    <Compile Include="Справочники\НастройкиВыполненияОбмена.cs" />
+    <Compile Include="Справочники\НастройкиДопроведенияДокументов.cs" />
+    <Compile Include="Справочники\НастройкиЗакрытияМесяца.cs" />
+    <Compile Include="Справочники\НастройкиЗаполненияФорм.cs" />
+    <Compile Include="Справочники\НастройкиОбменаДанными.cs" />
+    <Compile Include="Справочники\НастройкиОбменаССайтом.cs" />
+    <Compile Include="Справочники\НастройкиРасчетаСебестоимости.cs" />
+    <Compile Include="Справочники\НастройкиРасчетаЦеныНоменклатуры.cs" />
+    <Compile Include="Справочники\НастройкиРегламентногоФормированияДокументовПоНДС.cs" />
+    <Compile Include="Справочники\НастройкиФормированияДокументовВыпускаПродукции.cs" />
+    <Compile Include="Справочники\НастройкиФормированияДокументовОтработанногоВремени.cs" />
+    <Compile Include="Справочники\НастройкиФормированияДокументовПоОрдерам.cs" />
+    <Compile Include="Справочники\НематериальныеАктивы.cs" />
+    <Compile Include="Справочники\Номенклатура.cs" />
+    <Compile Include="Справочники\НоменклатурныеГруппы.cs" />
+    <Compile Include="Справочники\НоменклатурныеУзлы.cs" />
+    <Compile Include="Справочники\НомераГТД.cs" />
+    <Compile Include="Справочники\НормативныеДокументыСертификацииНоменклатуры.cs" />
+    <Compile Include="Справочники\НормативыОбслуживанияОС.cs" />
+    <Compile Include="Справочники\ОбработкиОбслуживанияТО.cs" />
+    <Compile Include="Справочники\ОбщероссийскийКлассификаторОсновныхФондов.cs" />
+    <Compile Include="Справочники\ОбщероссийскийКлассификаторПродукции.cs" />
+    <Compile Include="Справочники\ОбъектыСтроительства.cs" />
+    <Compile Include="Справочники\Организации.cs" />
+    <Compile Include="Справочники\ОрганыПФР.cs" />
+    <Compile Include="Справочники\ОрганыФСГС.cs" />
+    <Compile Include="Справочники\ОснованияВыслугиЛет.cs" />
+    <Compile Include="Справочники\ОснованияИсчисляемогоТрудовогоСтажа.cs" />
+    <Compile Include="Справочники\ОснованияУвольнения.cs" />
+    <Compile Include="Справочники\ОснованияУвольненияИзОрганизации.cs" />
+    <Compile Include="Справочники\ОсновноеСырье.cs" />
+    <Compile Include="Справочники\ОсновныеСредства.cs" />
+    <Compile Include="Справочники\ОсобыеУсловияТруда.cs" />
+    <Compile Include="Справочники\ОстаткиОтпусков.cs" />
+    <Compile Include="Справочники\ОстаткиОтпусковОрганизаций.cs" />
+    <Compile Include="Справочники\ОтправкиФСС.cs" />
+    <Compile Include="Справочники\ОтраслевыеСегментыПоМСФО.cs" />
+    <Compile Include="Справочники\ОформленияСтрокПисем.cs" />
+    <Compile Include="Справочники\ПараметрыВыпускаПродукции.cs" />
+    <Compile Include="Справочники\ПараметрыВыработкиОС.cs" />
+    <Compile Include="Справочники\ПерепискаСКонтролирующимиОрганами.cs" />
+    <Compile Include="Справочники\ПодключаемоеОборудование.cs" />
+    <Compile Include="Справочники\Подразделения.cs" />
+    <Compile Include="Справочники\ПодразделенияОрганизаций.cs" />
+    <Compile Include="Справочники\ПоказателиАнализовНоменклатуры.cs" />
+    <Compile Include="Справочники\ПоказателиСхемМотивации.cs" />
+    <Compile Include="Справочники\Пользователи.cs" />
+    <Compile Include="Справочники\Помещения.cs" />
+    <Compile Include="Справочники\ПорядокПрисвоенияСерийныхНомеров.cs" />
+    <Compile Include="Справочники\ПричиныЗакрытияЗаказов.cs" />
+    <Compile Include="Справочники\ПричиныОбслуживанияОС.cs" />
+    <Compile Include="Справочники\ПричиныОтсутствияНаРаботе.cs" />
+    <Compile Include="Справочники\ПричиныСписания.cs" />
+    <Compile Include="Справочники\ПрограммыМедицинскогоСтрахования.cs" />
+    <Compile Include="Справочники\Проекты.cs" />
+    <Compile Include="Справочники\ПрожиточныеМинимумы.cs" />
+    <Compile Include="Справочники\ПроизвольныеОтчеты.cs" />
+    <Compile Include="Справочники\ПрофессииРабочих.cs" />
+    <Compile Include="Справочники\ПрофилиИзмененияПлановПоИзмерениям.cs" />
+    <Compile Include="Справочники\ПрофилиИзмененияПлановПоПериодам.cs" />
+    <Compile Include="Справочники\ПрофилиПолномочийПользователей.cs" />
+    <Compile Include="Справочники\ПрофилиРаспределенияПоПериодам.cs" />
+    <Compile Include="Справочники\ПрочиеДоходыИРасходы.cs" />
+    <Compile Include="Справочники\Работодатели.cs" />
+    <Compile Include="Справочники\РабочиеМеста.cs" />
+    <Compile Include="Справочники\РабочиеЦентры.cs" />
+    <Compile Include="Справочники\РазделыАнкеты.cs" />
+    <Compile Include="Справочники\РасходыБудущихПериодов.cs" />
+    <Compile Include="Справочники\РегиональныеСегментыПоМСФО.cs" />
+    <Compile Include="Справочники\Регионы.cs" />
+    <Compile Include="Справочники\РегистрацияВИФНС.cs" />
+    <Compile Include="Справочники\РегламентированныеОтчеты.cs" />
+    <Compile Include="Справочники\Резервы.cs" />
+    <Compile Include="Справочники\РолиИсполнителей.cs" />
+    <Compile Include="Справочники\РолиКонтактныхЛиц.cs" />
+    <Compile Include="Справочники\СемейноеПоложениеФизЛиц.cs" />
+    <Compile Include="Справочники\СерверыДокументооборота.cs" />
+    <Compile Include="Справочники\СерииНоменклатуры.cs" />
+    <Compile Include="Справочники\СерийныеНомера.cs" />
+    <Compile Include="Справочники\СертификатыЭЦП.cs" />
+    <Compile Include="Справочники\Склады.cs" />
+    <Compile Include="Справочники\Смены.cs" />
+    <Compile Include="Справочники\СобытияОС.cs" />
+    <Compile Include="Справочники\СоглашенияОбИспользованииЭД.cs" />
+    <Compile Include="Справочники\СоставМероприятия.cs" />
+    <Compile Include="Справочники\СоставОценочныхШкалКомпетенций.cs" />
+    <Compile Include="Справочники\СоставыВоеннослужащих.cs" />
+    <Compile Include="Справочники\СостоянияЗаявокКандидатов.cs" />
+    <Compile Include="Справочники\СотрудникиОрганизаций.cs" />
+    <Compile Include="Справочники\СохраненныеНастройки.cs" />
+    <Compile Include="Справочники\СпецификацииНоменклатуры.cs" />
+    <Compile Include="Справочники\СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения.cs" />
+    <Compile Include="Справочники\СпособыОтраженияЗарплатыВРеглУчете.cs" />
+    <Compile Include="Справочники\СпособыОтраженияЗарплатыВУпрУчете.cs" />
+    <Compile Include="Справочники\СпособыОтраженияРасходовПоАмортизации.cs" />
+    <Compile Include="Справочники\СпособыРаспределенияЗатратНаВыпуск.cs" />
+    <Compile Include="Справочники\СтатьиАналитическогоБаланса.cs" />
+    <Compile Include="Справочники\СтатьиБюджета.cs" />
+    <Compile Include="Справочники\СтатьиДвиженияДенежныхСредств.cs" />
+    <Compile Include="Справочники\СтатьиЗатрат.cs" />
+    <Compile Include="Справочники\СтатьиОборотовПоБюджетам.cs" />
+    <Compile Include="Справочники\СтатьиОтчетаОПрибыляхИУбытках.cs" />
+    <Compile Include="Справочники\СтепениЗнанияЯзыка.cs" />
+    <Compile Include="Справочники\СтепениРодстваФизЛиц.cs" />
+    <Compile Include="Справочники\СтрокиФинансовогоРасчета.cs" />
+    <Compile Include="Справочники\Субконто.cs" />
+    <Compile Include="Справочники\СценарииПланирования.cs" />
+    <Compile Include="Справочники\СчетаБюджета.cs" />
+    <Compile Include="Справочники\СчетчикДляФормированияСерийныхНомеров.cs" />
+    <Compile Include="Справочники\ТарифныеРазряды.cs" />
+    <Compile Include="Справочники\ТарифыБанковНаДенежныеПереводы.cs" />
+    <Compile Include="Справочники\ТарифыПочтовогоСбора.cs" />
+    <Compile Include="Справочники\ТерриториальныеУсловия.cs" />
+    <Compile Include="Справочники\Территории.cs" />
+    <Compile Include="Справочники\ТехнологическиеКартыПроизводства.cs" />
+    <Compile Include="Справочники\ТехнологическиеОперации.cs" />
+    <Compile Include="Справочники\ТиповыеАнализыНоменклатуры.cs" />
+    <Compile Include="Справочники\ТиповыеАнкеты.cs" />
+    <Compile Include="Справочники\ТипыЗаписейЗаметок.cs" />
+    <Compile Include="Справочники\ТипыСкидокНаценок.cs" />
+    <Compile Include="Справочники\ТипыЦенНоменклатуры.cs" />
+    <Compile Include="Справочники\ТипыЦенНоменклатурыКонтрагентов.cs" />
+    <Compile Include="Справочники\ТомаХраненияФайлов.cs" />
+    <Compile Include="Справочники\ТорговоеОборудование.cs" />
+    <Compile Include="Справочники\ТочкиМаршрута.cs" />
+    <Compile Include="Справочники\ТранспортныеУпаковки.cs" />
+    <Compile Include="Справочники\ТСДФорматыДанных.cs" />
+    <Compile Include="Справочники\УдалитьОценочныеОбязательства.cs" />
+    <Compile Include="Справочники\УсловияПродаж.cs" />
+    <Compile Include="Справочники\УчебныеЗаведения.cs" />
+    <Compile Include="Справочники\УченыеЗвания.cs" />
+    <Compile Include="Справочники\УченыеСтепени.cs" />
+    <Compile Include="Справочники\УчетныеЗаписиДокументооборота.cs" />
+    <Compile Include="Справочники\УчетныеЗаписиЭлектроннойПочты.cs" />
+    <Compile Include="Справочники\ФизическиеЛица.cs" />
+    <Compile Include="Справочники\ФильтрыДляЭлектронныхПисем.cs" />
+    <Compile Include="Справочники\ФинансовыеРасчеты.cs" />
+    <Compile Include="Справочники\ФормыОбучения.cs" />
+    <Compile Include="Справочники\ХарактеристикиНоменклатуры.cs" />
+    <Compile Include="Справочники\ХранилищеДополнительнойИнформации.cs" />
+    <Compile Include="Справочники\ЦенныеБумаги.cs" />
+    <Compile Include="Справочники\ЦеновыеГруппы.cs" />
+    <Compile Include="Справочники\ЦиклыОбмена.cs" />
+    <Compile Include="Справочники\ШаблоныФормулРасчета.cs" />
+    <Compile Include="Справочники\ШкалыОценокКомпетенций.cs" />
+    <Compile Include="Справочники\ЭДПрисоединенныеФайлы.cs" />
+    <Compile Include="Справочники\ЭлектронныеПредставленияРегламентированныхОтчетов.cs" />
+    <Compile Include="Справочники\ЯзыкиНародовМира.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\ss-validation.js" />
+    <Content Include="default.htm" />
+    <Content Include="jqunback-1.51.min.js" />
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

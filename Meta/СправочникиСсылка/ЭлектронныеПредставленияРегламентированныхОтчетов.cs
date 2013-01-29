@@ -1,0 +1,111 @@
+
+using System;
+using System.IO;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
+using V82;
+using V82.ОбщиеОбъекты;
+using V82.СправочникиСсылка;
+using V82.ДокументыСсылка;
+using V82.Перечисления;//Ссылка;
+namespace V82.СправочникиСсылка
+{
+	[ProtoContract]
+	[DataContract]
+	public partial class ЭлектронныеПредставленияРегламентированныхОтчетов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
+	{
+		public static readonly Guid ГуидКласса = new Guid("231b77a9-a435-4ca7-a47e-331a839d6faa");
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191534.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly long КонтрольнаяСуммаКласса = 123;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		/*static хэш сумма состава и порядка реквизитов*/
+		/*версия класса восстановленного из пакета*/
+		[DataMember]
+		[ProtoMember(3)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(4)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public string/*8*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public string/*150*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public V82.СправочникиСсылка.Организации Организация {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public object Получатель {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public object ВидОтчета {get;set;}//Вид отчета
+		[DataMember]
+		[ProtoMember(10)]
+		public DateTime ДатаНачала {get;set;}//Дата начала
+		[DataMember]
+		[ProtoMember(11)]
+		public DateTime ДатаОкончания {get;set;}//Дата окончания
+		[DataMember]
+		[ProtoMember(12)]
+		public decimal/*(3)*/ Версия {get;set;}
+		[DataMember]
+		[ProtoMember(13)]
+		public string/*(0)*/ Комментарий {get;set;}
+		[DataMember]
+		[ProtoMember(14)]
+		public V82.Перечисления/*Ссылка*/.Периодичность Периодичность {get;set;}
+		[DataMember]
+		[ProtoMember(15)]
+		public DateTime ДатаИмпорта {get;set;}//Дата импорта
+		[DataMember]
+		[ProtoMember(16)]
+		public V82.Перечисления/*Ссылка*/.ТипыКонтролирующихОрганов ТипПолучателя {get;set;}//Тип получателя
+
+		public V82.СправочникиОбъект.ЭлектронныеПредставленияРегламентированныхОтчетов  ПолучитьОбъект()
+		{
+			var Объект = new V82.СправочникиОбъект.ЭлектронныеПредставленияРегламентированныхОтчетов();
+			Объект._ЭтоНовый = false;
+			Объект.Ссылка = Ссылка;
+			Объект.Версия = Версия;
+			Объект.ПометкаУдаления = ПометкаУдаления;
+			Объект.Предопределенный = Предопределенный;
+			Объект.Код = Код;
+			Объект.Наименование = Наименование;
+			Объект.Организация = Организация;
+			Объект.Получатель = Получатель;
+			Объект.ВидОтчета = ВидОтчета;
+			Объект.ДатаНачала = ДатаНачала;
+			Объект.ДатаОкончания = ДатаОкончания;
+			Объект.Версия = Версия;
+			Объект.Комментарий = Комментарий;
+			Объект.Периодичность = Периодичность;
+			Объект.ДатаИмпорта = ДатаИмпорта;
+			Объект.ТипПолучателя = ТипПолучателя;
+			return Объект;
+		}
+
+		public void СериализацияProtoBuf(Stream Поток)
+		{
+			Serializer.Serialize(Поток,this);
+		}
+		
+		public string СериализацияJson()
+		{
+			return this.ToJson();
+		}
+		
+		public string СериализацияXml()
+		{
+			return this.ToXml();
+		}
+	}
+}

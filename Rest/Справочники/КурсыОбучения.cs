@@ -1,0 +1,85 @@
+
+using System.Globalization;
+using System.Collections.Generic;
+using ServiceStack.ServiceHost;
+using ServiceStack.ServiceInterface;
+
+namespace V82.Справочники
+{
+	[Route("/Catalogs/KursyObucheniya")]
+	[Route("/Catalogs/KursyObucheniya/{Code}")]
+	public class KursyObucheniyaRequest/*КурсыОбученияЗапрос*/: V82.СправочникиСсылка.КурсыОбучения,IReturn<KursyObucheniyaRequest>
+	{
+		public string Code {get;set;}
+		public string Descr {get;set;}
+	}
+
+	public class KursyObucheniyaResponse//КурсыОбученияОтвет
+	{
+		public string Result {get;set;}
+	}
+
+
+	[Route("/Catalogs/KursyObucheniyas")]
+	[Route("/Catalogs/KursyObucheniyas/{Codes}")]
+	public class KursyObucheniyasRequest/*КурсыОбученияЗапрос*/: IReturn<List<KursyObucheniyaRequest>>
+	{
+		public string[] Codes {get;set;}
+		public string[] Descrs {get;set;}
+		public KursyObucheniyasRequest(params string[] Codes)
+		{
+			this.Codes = Codes;
+		}
+	}
+
+	public class KursyObucheniyasResponse//КурсыОбученияОтвет
+	{
+		public string Result {get;set;}
+	}
+
+
+	public class KursyObucheniyaService /*КурсыОбученияСервис*/ : Service
+	{
+		public object Any(KursyObucheniyaRequest request)
+		{
+			return new KursyObucheniyaResponse {Result = "Tovar, " + request.Code};
+		}
+
+		public object Get(KursyObucheniyaRequest request)
+		{
+			decimal СтрокаКод = 0;
+			if (decimal.TryParse(request.Code, out СтрокаКод))
+			{
+				var Ссылка = V82.Справочники.КурсыОбучения.НайтиПоКоду(СтрокаКод);
+				if (Ссылка == null)
+				{
+					return new KursyObucheniyaResponse() {Result = "КурсыОбучения c кодом '" + request.Code+"' не найдено."};
+				}
+				return Ссылка;
+			}
+			else
+			{
+				return V82.Справочники.КурсыОбучения.НайтиПоКоду(1);
+			}
+		}
+
+		public object Get(KursyObucheniyasRequest request)
+		{
+			var Коллекция = new List<V82.СправочникиСсылка.КурсыОбучения>();
+			foreach (var Code in request.Codes)
+			{
+				decimal СтрокаКод = 0;
+				if (decimal.TryParse(Code, out СтрокаКод))
+				{
+					var Ссылка = V82.Справочники.КурсыОбучения.НайтиПоКоду(СтрокаКод);
+					if (Ссылка != null)
+					{
+						Коллекция.Add(Ссылка);
+					}
+				}
+			}
+			return Коллекция;
+		}
+
+	}
+}

@@ -1,0 +1,3 @@
+C:\v82\UPP\UPP\bin\Debug\UPP.exe.config
+C:\v82\UPP\UPP\obj\Debug\UPP.exe
+C:\v82\UPP\UPP\obj\Debug\UPP.pdb
