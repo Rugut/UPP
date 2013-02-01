@@ -47,20 +47,7 @@ namespace V82.Справочники
 
 		public object Get(SoglasheniyaObIspolzovaniiEHDRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
-			{
-				var Ссылка = V82.Справочники.СоглашенияОбИспользованииЭД.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new SoglasheniyaObIspolzovaniiEHDResponse() {Result = "СоглашенияОбИспользованииЭД c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
-			}
-			else
-			{
-				return V82.Справочники.СоглашенияОбИспользованииЭД.НайтиПоКоду(1);
-			}
+			return null;
 		}
 
 		public object Get(SoglasheniyaObIspolzovaniiEHDsRequest request)
@@ -71,11 +58,7 @@ namespace V82.Справочники
 				decimal СтрокаКод = 0;
 				if (decimal.TryParse(Code, out СтрокаКод))
 				{
-					var Ссылка = V82.Справочники.СоглашенияОбИспользованииЭД.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+					Коллекция.Add(null);
 				}
 			}
 			return Коллекция;

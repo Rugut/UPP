@@ -55,7 +55,6 @@ namespace V82.СправочникиОбъект
 						,_Code
 						,_Description
 						,_Fld2351
-						,_Fld2352RRef
 						,_Fld2353RRef
 						,_Fld2354RRef
 						,_Fld2355RRef
@@ -70,7 +69,6 @@ namespace V82.СправочникиОбъект
 						,@Код
 						,@Наименование
 						,@КодКарты
-						,@ВладелецКарты
 						,@ВидКарты
 						,@ТипКарты
 						,@ТипШтрихКода
@@ -90,7 +88,6 @@ namespace V82.СправочникиОбъект
 						,_Code	= @Код
 						,_Description	= @Наименование
 						,_Fld2351	= @КодКарты
-						,_Fld2352RRef	= @ВладелецКарты
 						,_Fld2353RRef	= @ВидКарты
 						,_Fld2354RRef	= @ТипКарты
 						,_Fld2355RRef	= @ТипШтрихКода
@@ -106,7 +103,6 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("КодКарты", КодКарты);
-					Команда.Parameters.AddWithValue("ВладелецКарты", ВладелецКарты.Ссылка);
 					Команда.Parameters.AddWithValue("ВидКарты", ВидКарты.Ключ());
 					Команда.Parameters.AddWithValue("ТипКарты", ТипКарты.Ключ());
 					Команда.Parameters.AddWithValue("ВидДисконтнойКарты", ВидДисконтнойКарты.Ссылка);

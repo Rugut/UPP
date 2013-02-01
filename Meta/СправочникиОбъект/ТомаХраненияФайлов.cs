@@ -216,6 +216,7 @@ namespace V82.СправочникиОбъект
 				{
 				}
 			}
+			return null;
 		}
 	}
 }

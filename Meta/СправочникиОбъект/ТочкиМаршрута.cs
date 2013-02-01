@@ -47,8 +47,7 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3996RRef
-						,_Fld3997RRef)
+						,_Fld3996RRef)
 						Values (
 						@Ссылка
 						/*,@Версия*/
@@ -58,8 +57,7 @@ namespace V82.СправочникиОбъект
 						,@ЭтоГруппа
 						,@Код
 						,@Наименование
-						,@Подразделение
-						,@РабочийЦентр)";
+						,@Подразделение)";
 					}
 					else
 					{
@@ -75,7 +73,6 @@ namespace V82.СправочникиОбъект
 						,_Code	= @Код
 						,_Description	= @Наименование
 						,_Fld3996RRef	= @Подразделение
-						,_Fld3997RRef	= @РабочийЦентр
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -87,7 +84,6 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("Подразделение", Подразделение.Ссылка);
-					Команда.Parameters.AddWithValue("РабочийЦентр", РабочийЦентр.Ссылка);
 					Команда.ExecuteNonQuery();
 				}
 			}

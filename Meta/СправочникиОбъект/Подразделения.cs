@@ -54,7 +54,6 @@ namespace V82.СправочникиОбъект
 						,_Description
 						,_Fld3195RRef
 						,_Fld3196RRef
-						,_Fld3197RRef
 						,_Fld3198)
 						Values (
 						@Ссылка
@@ -67,7 +66,6 @@ namespace V82.СправочникиОбъект
 						,@Наименование
 						,@ВидПодразделения
 						,@ВидЦФО
-						,@ОсновнойПроект
 						,@Порядок)";
 					}
 					else
@@ -85,7 +83,6 @@ namespace V82.СправочникиОбъект
 						,_Description	= @Наименование
 						,_Fld3195RRef	= @ВидПодразделения
 						,_Fld3196RRef	= @ВидЦФО
-						,_Fld3197RRef	= @ОсновнойПроект
 						,_Fld3198	= @Порядок
 						Where _IDRRef = @Ссылка";
 					}
@@ -99,7 +96,6 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ВидПодразделения", ВидПодразделения.Ключ());
 					Команда.Parameters.AddWithValue("ВидЦФО", ВидЦФО.Ссылка);
-					Команда.Parameters.AddWithValue("ОсновнойПроект", ОсновнойПроект.Ссылка);
 					Команда.Parameters.AddWithValue("Порядок", Порядок);
 					Команда.ExecuteNonQuery();
 				}

@@ -50,7 +50,6 @@ namespace V82.СправочникиОбъект
 						,_Code
 						,_Description
 						,_Fld3852RRef
-						,_Fld3853RRef
 						,_Fld3854)
 						Values (
 						@Ссылка
@@ -60,7 +59,6 @@ namespace V82.СправочникиОбъект
 						,@Код
 						,@Наименование
 						,@ВидСтроки
-						,@Измерение
 						,@Формула)";
 					}
 					else
@@ -75,7 +73,6 @@ namespace V82.СправочникиОбъект
 						,_Code	= @Код
 						,_Description	= @Наименование
 						,_Fld3852RRef	= @ВидСтроки
-						,_Fld3853RRef	= @Измерение
 						,_Fld3854	= @Формула
 						Where _IDRRef = @Ссылка";
 					}
@@ -86,7 +83,6 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ВидСтроки", ВидСтроки.Ключ());
-					Команда.Parameters.AddWithValue("Измерение", Измерение.Ссылка);
 					Команда.Parameters.AddWithValue("Формула", Формула);
 					Команда.ExecuteNonQuery();
 				}

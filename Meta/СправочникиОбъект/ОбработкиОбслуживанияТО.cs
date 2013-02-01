@@ -46,10 +46,6 @@ namespace V82.СправочникиОбъект
 		///</summary>
 		public ХранилищеЗначения Обработка;//Обработка обслуживания
 		///<summary>
-		///Версия обработки обслуживания.
-		///</summary>
-		public decimal/*(10.2)*/ Версия;
-		///<summary>
 		///Уникальный идентификатор обработки обслуживания.
 		///</summary>
 		public string/*(36)*/ Идентификатор;
@@ -78,7 +74,6 @@ namespace V82.СправочникиОбъект
 						,_Fld2991RRef
 						,_Fld2992
 						,_Fld2993
-						,_Fld2994
 						,_Fld2995
 						,_Fld2996)
 						Values (
@@ -92,7 +87,6 @@ namespace V82.СправочникиОбъект
 						,@Вид
 						,@ИмяФайла
 						,@Обработка
-						,@Версия
 						,@Идентификатор
 						,@ВерсияAPI)";
 					}
@@ -111,7 +105,6 @@ namespace V82.СправочникиОбъект
 						,_Fld2991RRef	= @Вид
 						,_Fld2992	= @ИмяФайла
 						,_Fld2993	= @Обработка
-						,_Fld2994	= @Версия
 						,_Fld2995	= @Идентификатор
 						,_Fld2996	= @ВерсияAPI
 						Where _IDRRef = @Ссылка";
@@ -125,7 +118,6 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Описание", Описание);
 					Команда.Parameters.AddWithValue("Вид", Вид.Ключ());
 					Команда.Parameters.AddWithValue("ИмяФайла", ИмяФайла);
-					Команда.Parameters.AddWithValue("Версия", Версия);
 					Команда.Parameters.AddWithValue("Идентификатор", Идентификатор);
 					Команда.Parameters.AddWithValue("ВерсияAPI", ВерсияAPI);
 					Команда.ExecuteNonQuery();

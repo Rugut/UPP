@@ -47,20 +47,7 @@ namespace V82.Справочники
 
 		public object Get(KlyuchiAnalitikiUchetaPartijjRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
-			{
-				var Ссылка = V82.Справочники.КлючиАналитикиУчетаПартий.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new KlyuchiAnalitikiUchetaPartijjResponse() {Result = "КлючиАналитикиУчетаПартий c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
-			}
-			else
-			{
-				return V82.Справочники.КлючиАналитикиУчетаПартий.НайтиПоКоду(1);
-			}
+			return null;
 		}
 
 		public object Get(KlyuchiAnalitikiUchetaPartijjsRequest request)
@@ -71,11 +58,7 @@ namespace V82.Справочники
 				decimal СтрокаКод = 0;
 				if (decimal.TryParse(Code, out СтрокаКод))
 				{
-					var Ссылка = V82.Справочники.КлючиАналитикиУчетаПартий.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+					Коллекция.Add(null);
 				}
 			}
 			return Коллекция;

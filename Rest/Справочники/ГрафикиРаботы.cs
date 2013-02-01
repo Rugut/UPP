@@ -47,20 +47,7 @@ namespace V82.Справочники
 
 		public object Get(GrafikiRabotyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
-			{
-				var Ссылка = V82.Справочники.ГрафикиРаботы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new GrafikiRabotyResponse() {Result = "ГрафикиРаботы c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
-			}
-			else
-			{
-				return V82.Справочники.ГрафикиРаботы.НайтиПоКоду(1);
-			}
+			return null;
 		}
 
 		public object Get(GrafikiRabotysRequest request)
@@ -71,11 +58,7 @@ namespace V82.Справочники
 				decimal СтрокаКод = 0;
 				if (decimal.TryParse(Code, out СтрокаКод))
 				{
-					var Ссылка = V82.Справочники.ГрафикиРаботы.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+					Коллекция.Add(null);
 				}
 			}
 			return Коллекция;

@@ -47,20 +47,7 @@ namespace V82.Справочники
 
 		public object Get(NaznacheniyaIspolzovaniyaSpecifikacijjRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
-			{
-				var Ссылка = V82.Справочники.НазначенияИспользованияСпецификаций.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new NaznacheniyaIspolzovaniyaSpecifikacijjResponse() {Result = "НазначенияИспользованияСпецификаций c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
-			}
-			else
-			{
-				return V82.Справочники.НазначенияИспользованияСпецификаций.НайтиПоКоду(1);
-			}
+			return null;
 		}
 
 		public object Get(NaznacheniyaIspolzovaniyaSpecifikacijjsRequest request)
@@ -71,11 +58,7 @@ namespace V82.Справочники
 				decimal СтрокаКод = 0;
 				if (decimal.TryParse(Code, out СтрокаКод))
 				{
-					var Ссылка = V82.Справочники.НазначенияИспользованияСпецификаций.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+					Коллекция.Add(null);
 				}
 			}
 			return Коллекция;

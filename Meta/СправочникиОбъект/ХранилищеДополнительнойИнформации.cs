@@ -63,7 +63,6 @@ namespace V82.СправочникиОбъект
 						,_Description
 						,_Fld4215RRef
 						,_Fld4216
-						,_Fld4217RRef
 						,_Fld4218
 						,_Fld4219)
 						Values (
@@ -74,7 +73,6 @@ namespace V82.СправочникиОбъект
 						,@Наименование
 						,@ВидДанных
 						,@ИмяФайла
-						,@Объект
 						,@Хранилище
 						,@ТекстФайла)";
 					}
@@ -90,7 +88,6 @@ namespace V82.СправочникиОбъект
 						,_Description	= @Наименование
 						,_Fld4215RRef	= @ВидДанных
 						,_Fld4216	= @ИмяФайла
-						,_Fld4217RRef	= @Объект
 						,_Fld4218	= @Хранилище
 						,_Fld4219	= @ТекстФайла
 						Where _IDRRef = @Ссылка";
@@ -102,7 +99,6 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ВидДанных", ВидДанных.Ключ());
 					Команда.Parameters.AddWithValue("ИмяФайла", ИмяФайла);
-					Команда.Parameters.AddWithValue("Объект", Объект.Ссылка);
 					Команда.ExecuteNonQuery();
 				}
 			}

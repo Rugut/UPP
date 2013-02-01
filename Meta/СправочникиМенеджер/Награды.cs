@@ -12,6 +12,41 @@ namespace V82.Справочники//Менеджер
 	{
 
 
+		public static СправочникиВыборка.Награды Выбрать()
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+		 From _Reference139(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.Награды();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.Награды();
+		
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Наименование = Читалка.GetString(4);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
 
 		public static V82.СправочникиОбъект.Награды СоздатьЭлемент()
 		{
