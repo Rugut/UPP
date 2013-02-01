@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/RoliKontaktnykhLic")]
 	[Route("/Catalogs/RoliKontaktnykhLic/{Code}")]
-	public class RoliKontaktnykhLicRequest/*РолиКонтактныхЛицЗапрос*/: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<RoliKontaktnykhLicRequest>
+	public class RoliKontaktnykhLicRequest/*Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†,IReturn<RoliKontaktnykhLicRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class RoliKontaktnykhLicResponse//РолиКонтактныхЛицОтвет
+	public class RoliKontaktnykhLicResponse//Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/RoliKontaktnykhLics")]
 	[Route("/Catalogs/RoliKontaktnykhLics/{Codes}")]
-	public class RoliKontaktnykhLicsRequest/*РолиКонтактныхЛицЗапрос*/: IReturn<List<RoliKontaktnykhLicRequest>>
+	public class RoliKontaktnykhLicsRequest/*Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†Р—Р°РїСЂРѕСЃ*/: IReturn<List<RoliKontaktnykhLicRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class RoliKontaktnykhLicsResponse//РолиКонтактныхЛицОтвет
+	public class RoliKontaktnykhLicsResponse//Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class RoliKontaktnykhLicService /*РолиКонтактныхЛицСервис*/ : Service
+	public class RoliKontaktnykhLicService /*Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(RoliKontaktnykhLicRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(RoliKontaktnykhLicRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.РолиКонтактныхЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new RoliKontaktnykhLicResponse() {Result = "РолиКонтактныхЛиц c кодом '" + request.Code+"' не найдено."};
+					return new RoliKontaktnykhLicResponse() {Result = "Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС† c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.РолиКонтактныхЛиц.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(RoliKontaktnykhLicsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РолиКонтактныхЛиц>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.РолиКонтактныхЛиц.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РѕР»РёРљРѕРЅС‚Р°РєС‚РЅС‹С…Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

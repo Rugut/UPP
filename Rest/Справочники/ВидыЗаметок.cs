@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/VidyZametok")]
 	[Route("/Catalogs/VidyZametok/{Code}")]
-	public class VidyZametokRequest/*ВидыЗаметокЗапрос*/: V82.СправочникиСсылка.ВидыЗаметок,IReturn<VidyZametokRequest>
+	public class VidyZametokRequest/*Р’РёРґС‹Р—Р°РјРµС‚РѕРєР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹Р—Р°РјРµС‚РѕРє,IReturn<VidyZametokRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VidyZametokResponse//ВидыЗаметокОтвет
+	public class VidyZametokResponse//Р’РёРґС‹Р—Р°РјРµС‚РѕРєРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/VidyZametoks")]
 	[Route("/Catalogs/VidyZametoks/{Codes}")]
-	public class VidyZametoksRequest/*ВидыЗаметокЗапрос*/: IReturn<List<VidyZametokRequest>>
+	public class VidyZametoksRequest/*Р’РёРґС‹Р—Р°РјРµС‚РѕРєР—Р°РїСЂРѕСЃ*/: IReturn<List<VidyZametokRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VidyZametoksResponse//ВидыЗаметокОтвет
+	public class VidyZametoksResponse//Р’РёРґС‹Р—Р°РјРµС‚РѕРєРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VidyZametokService /*ВидыЗаметокСервис*/ : Service
+	public class VidyZametokService /*Р’РёРґС‹Р—Р°РјРµС‚РѕРєРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VidyZametokRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VidyZametokRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ВидыЗаметок.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹Р—Р°РјРµС‚РѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VidyZametokResponse() {Result = "ВидыЗаметок c кодом '" + request.Code+"' не найдено."};
+					return new VidyZametokResponse() {Result = "Р’РёРґС‹Р—Р°РјРµС‚РѕРє c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ВидыЗаметок.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹Р—Р°РјРµС‚РѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VidyZametoksRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыЗаметок>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹Р—Р°РјРµС‚РѕРє>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ВидыЗаметок.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹Р—Р°РјРµС‚РѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

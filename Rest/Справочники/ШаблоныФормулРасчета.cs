@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SHablonyFormulRascheta")]
 	[Route("/Catalogs/SHablonyFormulRascheta/{Code}")]
-	public class SHablonyFormulRaschetaRequest/*ШаблоныФормулРасчетаЗапрос*/: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<SHablonyFormulRaschetaRequest>
+	public class SHablonyFormulRaschetaRequest/*РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°,IReturn<SHablonyFormulRaschetaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SHablonyFormulRaschetaResponse//ШаблоныФормулРасчетаОтвет
+	public class SHablonyFormulRaschetaResponse//РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SHablonyFormulRaschetas")]
 	[Route("/Catalogs/SHablonyFormulRaschetas/{Codes}")]
-	public class SHablonyFormulRaschetasRequest/*ШаблоныФормулРасчетаЗапрос*/: IReturn<List<SHablonyFormulRaschetaRequest>>
+	public class SHablonyFormulRaschetasRequest/*РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°Р—Р°РїСЂРѕСЃ*/: IReturn<List<SHablonyFormulRaschetaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SHablonyFormulRaschetasResponse//ШаблоныФормулРасчетаОтвет
+	public class SHablonyFormulRaschetasResponse//РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SHablonyFormulRaschetaService /*ШаблоныФормулРасчетаСервис*/ : Service
+	public class SHablonyFormulRaschetaService /*РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SHablonyFormulRaschetaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SHablonyFormulRaschetaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ШаблоныФормулРасчета.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SHablonyFormulRaschetaResponse() {Result = "ШаблоныФормулРасчета c кодом '" + request.Code+"' не найдено."};
+					return new SHablonyFormulRaschetaResponse() {Result = "РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ШаблоныФормулРасчета.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SHablonyFormulRaschetasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ШаблоныФормулРасчета>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ШаблоныФормулРасчета.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЁР°Р±Р»РѕРЅС‹Р¤РѕСЂРјСѓР»Р Р°СЃС‡РµС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/UchebnyeZavedeniya")]
 	[Route("/Catalogs/UchebnyeZavedeniya/{Code}")]
-	public class UchebnyeZavedeniyaRequest/*УчебныеЗаведенияЗапрос*/: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<UchebnyeZavedeniyaRequest>
+	public class UchebnyeZavedeniyaRequest/*РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏ,IReturn<UchebnyeZavedeniyaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class UchebnyeZavedeniyaResponse//УчебныеЗаведенияОтвет
+	public class UchebnyeZavedeniyaResponse//РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/UchebnyeZavedeniyas")]
 	[Route("/Catalogs/UchebnyeZavedeniyas/{Codes}")]
-	public class UchebnyeZavedeniyasRequest/*УчебныеЗаведенияЗапрос*/: IReturn<List<UchebnyeZavedeniyaRequest>>
+	public class UchebnyeZavedeniyasRequest/*РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏР—Р°РїСЂРѕСЃ*/: IReturn<List<UchebnyeZavedeniyaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class UchebnyeZavedeniyasResponse//УчебныеЗаведенияОтвет
+	public class UchebnyeZavedeniyasResponse//РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class UchebnyeZavedeniyaService /*УчебныеЗаведенияСервис*/ : Service
+	public class UchebnyeZavedeniyaService /*РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(UchebnyeZavedeniyaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(UchebnyeZavedeniyaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.УчебныеЗаведения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new UchebnyeZavedeniyaResponse() {Result = "УчебныеЗаведения c кодом '" + request.Code+"' не найдено."};
+					return new UchebnyeZavedeniyaResponse() {Result = "РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.УчебныеЗаведения.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(UchebnyeZavedeniyasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УчебныеЗаведения>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.УчебныеЗаведения.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈС‡РµР±РЅС‹РµР—Р°РІРµРґРµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

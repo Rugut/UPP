@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Byudzhety")]
 	[Route("/Catalogs/Byudzhety/{Code}")]
-	public class ByudzhetyRequest/*БюджетыЗапрос*/: V82.СправочникиСсылка.Бюджеты,IReturn<ByudzhetyRequest>
+	public class ByudzhetyRequest/*Р‘СЋРґР¶РµС‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р‘СЋРґР¶РµС‚С‹,IReturn<ByudzhetyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class ByudzhetyResponse//БюджетыОтвет
+	public class ByudzhetyResponse//Р‘СЋРґР¶РµС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Byudzhetys")]
 	[Route("/Catalogs/Byudzhetys/{Codes}")]
-	public class ByudzhetysRequest/*БюджетыЗапрос*/: IReturn<List<ByudzhetyRequest>>
+	public class ByudzhetysRequest/*Р‘СЋРґР¶РµС‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<ByudzhetyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class ByudzhetysResponse//БюджетыОтвет
+	public class ByudzhetysResponse//Р‘СЋРґР¶РµС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class ByudzhetyService /*БюджетыСервис*/ : Service
+	public class ByudzhetyService /*Р‘СЋРґР¶РµС‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(ByudzhetyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(ByudzhetyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Бюджеты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р‘СЋРґР¶РµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new ByudzhetyResponse() {Result = "Бюджеты c кодом '" + request.Code+"' не найдено."};
+					return new ByudzhetyResponse() {Result = "Р‘СЋРґР¶РµС‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Бюджеты.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р‘СЋРґР¶РµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(ByudzhetysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Бюджеты>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р‘СЋРґР¶РµС‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Бюджеты.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р‘СЋРґР¶РµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

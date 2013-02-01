@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/NastrojjkaIntervalov")]
 	[Route("/Catalogs/NastrojjkaIntervalov/{Code}")]
-	public class NastrojjkaIntervalovRequest/*НастройкаИнтерваловЗапрос*/: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<NastrojjkaIntervalovRequest>
+	public class NastrojjkaIntervalovRequest/*РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІ,IReturn<NastrojjkaIntervalovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class NastrojjkaIntervalovResponse//НастройкаИнтерваловОтвет
+	public class NastrojjkaIntervalovResponse//РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/NastrojjkaIntervalovs")]
 	[Route("/Catalogs/NastrojjkaIntervalovs/{Codes}")]
-	public class NastrojjkaIntervalovsRequest/*НастройкаИнтерваловЗапрос*/: IReturn<List<NastrojjkaIntervalovRequest>>
+	public class NastrojjkaIntervalovsRequest/*РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<NastrojjkaIntervalovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class NastrojjkaIntervalovsResponse//НастройкаИнтерваловОтвет
+	public class NastrojjkaIntervalovsResponse//РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class NastrojjkaIntervalovService /*НастройкаИнтерваловСервис*/ : Service
+	public class NastrojjkaIntervalovService /*РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(NastrojjkaIntervalovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(NastrojjkaIntervalovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.НастройкаИнтервалов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new NastrojjkaIntervalovResponse() {Result = "НастройкаИнтервалов c кодом '" + request.Code+"' не найдено."};
+					return new NastrojjkaIntervalovResponse() {Result = "РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.НастройкаИнтервалов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(NastrojjkaIntervalovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкаИнтервалов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.НастройкаИнтервалов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєР°РРЅС‚РµСЂРІР°Р»РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

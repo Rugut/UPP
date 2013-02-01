@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TochkiMarshruta")]
 	[Route("/Catalogs/TochkiMarshruta/{Code}")]
-	public class TochkiMarshrutaRequest/*ТочкиМаршрутаЗапрос*/: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<TochkiMarshrutaRequest>
+	public class TochkiMarshrutaRequest/*РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°,IReturn<TochkiMarshrutaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TochkiMarshrutaResponse//ТочкиМаршрутаОтвет
+	public class TochkiMarshrutaResponse//РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TochkiMarshrutas")]
 	[Route("/Catalogs/TochkiMarshrutas/{Codes}")]
-	public class TochkiMarshrutasRequest/*ТочкиМаршрутаЗапрос*/: IReturn<List<TochkiMarshrutaRequest>>
+	public class TochkiMarshrutasRequest/*РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°Р—Р°РїСЂРѕСЃ*/: IReturn<List<TochkiMarshrutaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TochkiMarshrutasResponse//ТочкиМаршрутаОтвет
+	public class TochkiMarshrutasResponse//РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TochkiMarshrutaService /*ТочкиМаршрутаСервис*/ : Service
+	public class TochkiMarshrutaService /*РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TochkiMarshrutaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TochkiMarshrutaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТочкиМаршрута.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TochkiMarshrutaResponse() {Result = "ТочкиМаршрута c кодом '" + request.Code+"' не найдено."};
+					return new TochkiMarshrutaResponse() {Result = "РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТочкиМаршрута.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TochkiMarshrutasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТочкиМаршрута>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТочкиМаршрута.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРѕС‡РєРёРњР°СЂС€СЂСѓС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,11 +1,11 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace V82.ОбщиеМодули
+namespace V82.РћР±С‰РёРµРњРѕРґСѓР»Рё
 {
-	public partial class СтандартныеПодсистемыКлиентПовтИсп
+	public partial class РЎС‚Р°РЅРґР°СЂС‚РЅС‹РµРџРѕРґСЃРёСЃС‚РµРјС‹РљР»РёРµРЅС‚РџРѕРІС‚РСЃРї
 	{
 	}
 }

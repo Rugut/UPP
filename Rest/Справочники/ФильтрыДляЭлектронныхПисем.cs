@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem")]
 	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/{Code}")]
-	public class FiltryDlyaEHlektronnykhPisemRequest/*ФильтрыДляЭлектронныхПисемЗапрос*/: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<FiltryDlyaEHlektronnykhPisemRequest>
+	public class FiltryDlyaEHlektronnykhPisemRequest/*Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРјР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРј,IReturn<FiltryDlyaEHlektronnykhPisemRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class FiltryDlyaEHlektronnykhPisemResponse//ФильтрыДляЭлектронныхПисемОтвет
+	public class FiltryDlyaEHlektronnykhPisemResponse//Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРјРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisems")]
 	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisems/{Codes}")]
-	public class FiltryDlyaEHlektronnykhPisemsRequest/*ФильтрыДляЭлектронныхПисемЗапрос*/: IReturn<List<FiltryDlyaEHlektronnykhPisemRequest>>
+	public class FiltryDlyaEHlektronnykhPisemsRequest/*Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРјР—Р°РїСЂРѕСЃ*/: IReturn<List<FiltryDlyaEHlektronnykhPisemRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class FiltryDlyaEHlektronnykhPisemsResponse//ФильтрыДляЭлектронныхПисемОтвет
+	public class FiltryDlyaEHlektronnykhPisemsResponse//Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРјРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class FiltryDlyaEHlektronnykhPisemService /*ФильтрыДляЭлектронныхПисемСервис*/ : Service
+	public class FiltryDlyaEHlektronnykhPisemService /*Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРјРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(FiltryDlyaEHlektronnykhPisemRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(FiltryDlyaEHlektronnykhPisemRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ФильтрыДляЭлектронныхПисем.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new FiltryDlyaEHlektronnykhPisemResponse() {Result = "ФильтрыДляЭлектронныхПисем c кодом '" + request.Code+"' не найдено."};
+					return new FiltryDlyaEHlektronnykhPisemResponse() {Result = "Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРј c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ФильтрыДляЭлектронныхПисем.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(FiltryDlyaEHlektronnykhPisemsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРј>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ФильтрыДляЭлектронныхПисем.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¤РёР»СЊС‚СЂС‹Р”Р»СЏР­Р»РµРєС‚СЂРѕРЅРЅС‹С…РџРёСЃРµРј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

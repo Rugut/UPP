@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/EHDPrisoedinennyeFajjly")]
 	[Route("/Catalogs/EHDPrisoedinennyeFajjly/{Code}")]
-	public class EHDPrisoedinennyeFajjlyRequest/*ЭДПрисоединенныеФайлыЗапрос*/: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<EHDPrisoedinennyeFajjlyRequest>
+	public class EHDPrisoedinennyeFajjlyRequest/*Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹,IReturn<EHDPrisoedinennyeFajjlyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class EHDPrisoedinennyeFajjlyResponse//ЭДПрисоединенныеФайлыОтвет
+	public class EHDPrisoedinennyeFajjlyResponse//Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/EHDPrisoedinennyeFajjlys")]
 	[Route("/Catalogs/EHDPrisoedinennyeFajjlys/{Codes}")]
-	public class EHDPrisoedinennyeFajjlysRequest/*ЭДПрисоединенныеФайлыЗапрос*/: IReturn<List<EHDPrisoedinennyeFajjlyRequest>>
+	public class EHDPrisoedinennyeFajjlysRequest/*Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<EHDPrisoedinennyeFajjlyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class EHDPrisoedinennyeFajjlysResponse//ЭДПрисоединенныеФайлыОтвет
+	public class EHDPrisoedinennyeFajjlysResponse//Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class EHDPrisoedinennyeFajjlyService /*ЭДПрисоединенныеФайлыСервис*/ : Service
+	public class EHDPrisoedinennyeFajjlyService /*Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(EHDPrisoedinennyeFajjlyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(EHDPrisoedinennyeFajjlyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ЭДПрисоединенныеФайлы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new EHDPrisoedinennyeFajjlyResponse() {Result = "ЭДПрисоединенныеФайлы c кодом '" + request.Code+"' не найдено."};
+					return new EHDPrisoedinennyeFajjlyResponse() {Result = "Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ЭДПрисоединенныеФайлы.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(EHDPrisoedinennyeFajjlysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЭДПрисоединенныеФайлы>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ЭДПрисоединенныеФайлы.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р­Р”РџСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹РµР¤Р°Р№Р»С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

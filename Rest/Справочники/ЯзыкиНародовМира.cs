@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/YAzykiNarodovMira")]
 	[Route("/Catalogs/YAzykiNarodovMira/{Code}")]
-	public class YAzykiNarodovMiraRequest/*ЯзыкиНародовМираЗапрос*/: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<YAzykiNarodovMiraRequest>
+	public class YAzykiNarodovMiraRequest/*РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°,IReturn<YAzykiNarodovMiraRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class YAzykiNarodovMiraResponse//ЯзыкиНародовМираОтвет
+	public class YAzykiNarodovMiraResponse//РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/YAzykiNarodovMiras")]
 	[Route("/Catalogs/YAzykiNarodovMiras/{Codes}")]
-	public class YAzykiNarodovMirasRequest/*ЯзыкиНародовМираЗапрос*/: IReturn<List<YAzykiNarodovMiraRequest>>
+	public class YAzykiNarodovMirasRequest/*РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°Р—Р°РїСЂРѕСЃ*/: IReturn<List<YAzykiNarodovMiraRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class YAzykiNarodovMirasResponse//ЯзыкиНародовМираОтвет
+	public class YAzykiNarodovMirasResponse//РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class YAzykiNarodovMiraService /*ЯзыкиНародовМираСервис*/ : Service
+	public class YAzykiNarodovMiraService /*РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(YAzykiNarodovMiraRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(YAzykiNarodovMiraRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ЯзыкиНародовМира.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new YAzykiNarodovMiraResponse() {Result = "ЯзыкиНародовМира c кодом '" + request.Code+"' не найдено."};
+					return new YAzykiNarodovMiraResponse() {Result = "РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ЯзыкиНародовМира.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(YAzykiNarodovMirasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЯзыкиНародовМира>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ЯзыкиНародовМира.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЇР·С‹РєРёРќР°СЂРѕРґРѕРІРњРёСЂР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

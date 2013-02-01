@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/GrafikiRaboty")]
 	[Route("/Catalogs/GrafikiRaboty/{Code}")]
-	public class GrafikiRabotyRequest/*ГрафикиРаботыЗапрос*/: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<GrafikiRabotyRequest>
+	public class GrafikiRabotyRequest/*Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹,IReturn<GrafikiRabotyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class GrafikiRabotyResponse//ГрафикиРаботыОтвет
+	public class GrafikiRabotyResponse//Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/GrafikiRabotys")]
 	[Route("/Catalogs/GrafikiRabotys/{Codes}")]
-	public class GrafikiRabotysRequest/*ГрафикиРаботыЗапрос*/: IReturn<List<GrafikiRabotyRequest>>
+	public class GrafikiRabotysRequest/*Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<GrafikiRabotyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class GrafikiRabotysResponse//ГрафикиРаботыОтвет
+	public class GrafikiRabotysResponse//Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class GrafikiRabotyService /*ГрафикиРаботыСервис*/ : Service
+	public class GrafikiRabotyService /*Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(GrafikiRabotyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(GrafikiRabotyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ГрафикиРаботы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new GrafikiRabotyResponse() {Result = "ГрафикиРаботы c кодом '" + request.Code+"' не найдено."};
+					return new GrafikiRabotyResponse() {Result = "Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ГрафикиРаботы.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(GrafikiRabotysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГрафикиРаботы>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ГрафикиРаботы.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂР°С„РёРєРёР Р°Р±РѕС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

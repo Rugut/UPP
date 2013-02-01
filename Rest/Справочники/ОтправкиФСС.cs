@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/OtpravkiFSS")]
 	[Route("/Catalogs/OtpravkiFSS/{Code}")]
-	public class OtpravkiFSSRequest/*ОтправкиФССЗапрос*/: V82.СправочникиСсылка.ОтправкиФСС,IReturn<OtpravkiFSSRequest>
+	public class OtpravkiFSSRequest/*РћС‚РїСЂР°РІРєРёР¤РЎРЎР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћС‚РїСЂР°РІРєРёР¤РЎРЎ,IReturn<OtpravkiFSSRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class OtpravkiFSSResponse//ОтправкиФССОтвет
+	public class OtpravkiFSSResponse//РћС‚РїСЂР°РІРєРёР¤РЎРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/OtpravkiFSSs")]
 	[Route("/Catalogs/OtpravkiFSSs/{Codes}")]
-	public class OtpravkiFSSsRequest/*ОтправкиФССЗапрос*/: IReturn<List<OtpravkiFSSRequest>>
+	public class OtpravkiFSSsRequest/*РћС‚РїСЂР°РІРєРёР¤РЎРЎР—Р°РїСЂРѕСЃ*/: IReturn<List<OtpravkiFSSRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class OtpravkiFSSsResponse//ОтправкиФССОтвет
+	public class OtpravkiFSSsResponse//РћС‚РїСЂР°РІРєРёР¤РЎРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class OtpravkiFSSService /*ОтправкиФСССервис*/ : Service
+	public class OtpravkiFSSService /*РћС‚РїСЂР°РІРєРёР¤РЎРЎРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(OtpravkiFSSRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(OtpravkiFSSRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ОтправкиФСС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћС‚РїСЂР°РІРєРёР¤РЎРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new OtpravkiFSSResponse() {Result = "ОтправкиФСС c кодом '" + request.Code+"' не найдено."};
+					return new OtpravkiFSSResponse() {Result = "РћС‚РїСЂР°РІРєРёР¤РЎРЎ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ОтправкиФСС.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћС‚РїСЂР°РІРєРёР¤РЎРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(OtpravkiFSSsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОтправкиФСС>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћС‚РїСЂР°РІРєРёР¤РЎРЎ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ОтправкиФСС.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћС‚РїСЂР°РІРєРёР¤РЎРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

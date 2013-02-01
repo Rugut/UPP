@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77")]
 	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/{Code}")]
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request/*КонвертацииИзИнформационныхБаз1СПредприятия77Запрос*/: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request>
+	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request/*РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77,IReturn<KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Response//КонвертацииИзИнформационныхБаз1СПредприятия77Ответ
+	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Response//РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77s")]
 	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77s/{Codes}")]
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sRequest/*КонвертацииИзИнформационныхБаз1СПредприятия77Запрос*/: IReturn<List<KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request>>
+	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sRequest/*РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77Р—Р°РїСЂРѕСЃ*/: IReturn<List<KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sResponse//КонвертацииИзИнформационныхБаз1СПредприятия77Ответ
+	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sResponse//РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Service /*КонвертацииИзИнформационныхБаз1СПредприятия77Сервис*/ : Service
+	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Service /*РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КонвертацииИзИнформационныхБаз1СПредприятия77.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Response() {Result = "КонвертацииИзИнформационныхБаз1СПредприятия77 c кодом '" + request.Code+"' не найдено."};
+					return new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Response() {Result = "РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77 c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КонвертацииИзИнформационныхБаз1СПредприятия77.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КонвертацииИзИнформационныхБаз1СПредприятия77.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅРІРµСЂС‚Р°С†РёРёРР·РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С…Р‘Р°Р·1РЎРџСЂРµРґРїСЂРёСЏС‚РёСЏ77.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KontaktnyeLicaKontragentov")]
 	[Route("/Catalogs/KontaktnyeLicaKontragentov/{Code}")]
-	public class KontaktnyeLicaKontragentovRequest/*КонтактныеЛицаКонтрагентовЗапрос*/: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<KontaktnyeLicaKontragentovRequest>
+	public class KontaktnyeLicaKontragentovRequest/*РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ,IReturn<KontaktnyeLicaKontragentovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KontaktnyeLicaKontragentovResponse//КонтактныеЛицаКонтрагентовОтвет
+	public class KontaktnyeLicaKontragentovResponse//РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KontaktnyeLicaKontragentovs")]
 	[Route("/Catalogs/KontaktnyeLicaKontragentovs/{Codes}")]
-	public class KontaktnyeLicaKontragentovsRequest/*КонтактныеЛицаКонтрагентовЗапрос*/: IReturn<List<KontaktnyeLicaKontragentovRequest>>
+	public class KontaktnyeLicaKontragentovsRequest/*РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<KontaktnyeLicaKontragentovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KontaktnyeLicaKontragentovsResponse//КонтактныеЛицаКонтрагентовОтвет
+	public class KontaktnyeLicaKontragentovsResponse//РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KontaktnyeLicaKontragentovService /*КонтактныеЛицаКонтрагентовСервис*/ : Service
+	public class KontaktnyeLicaKontragentovService /*РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KontaktnyeLicaKontragentovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KontaktnyeLicaKontragentovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КонтактныеЛицаКонтрагентов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KontaktnyeLicaKontragentovResponse() {Result = "КонтактныеЛицаКонтрагентов c кодом '" + request.Code+"' не найдено."};
+					return new KontaktnyeLicaKontragentovResponse() {Result = "РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КонтактныеЛицаКонтрагентов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KontaktnyeLicaKontragentovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КонтактныеЛицаКонтрагентов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Kontragenty")]
 	[Route("/Catalogs/Kontragenty/{Code}")]
-	public class KontragentyRequest/*КонтрагентыЗапрос*/: V82.СправочникиСсылка.Контрагенты,IReturn<KontragentyRequest>
+	public class KontragentyRequest/*РљРѕРЅС‚СЂР°РіРµРЅС‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРЅС‚СЂР°РіРµРЅС‚С‹,IReturn<KontragentyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KontragentyResponse//КонтрагентыОтвет
+	public class KontragentyResponse//РљРѕРЅС‚СЂР°РіРµРЅС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Kontragentys")]
 	[Route("/Catalogs/Kontragentys/{Codes}")]
-	public class KontragentysRequest/*КонтрагентыЗапрос*/: IReturn<List<KontragentyRequest>>
+	public class KontragentysRequest/*РљРѕРЅС‚СЂР°РіРµРЅС‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<KontragentyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KontragentysResponse//КонтрагентыОтвет
+	public class KontragentysResponse//РљРѕРЅС‚СЂР°РіРµРЅС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KontragentyService /*КонтрагентыСервис*/ : Service
+	public class KontragentyService /*РљРѕРЅС‚СЂР°РіРµРЅС‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KontragentyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KontragentyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Контрагенты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅС‚СЂР°РіРµРЅС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KontragentyResponse() {Result = "Контрагенты c кодом '" + request.Code+"' не найдено."};
+					return new KontragentyResponse() {Result = "РљРѕРЅС‚СЂР°РіРµРЅС‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Контрагенты.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅС‚СЂР°РіРµРЅС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KontragentysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Контрагенты>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРЅС‚СЂР°РіРµРЅС‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Контрагенты.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРЅС‚СЂР°РіРµРЅС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

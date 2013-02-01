@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/VidyObrazovaniyaFizLic")]
 	[Route("/Catalogs/VidyObrazovaniyaFizLic/{Code}")]
-	public class VidyObrazovaniyaFizLicRequest/*ВидыОбразованияФизЛицЗапрос*/: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<VidyObrazovaniyaFizLicRequest>
+	public class VidyObrazovaniyaFizLicRequest/*Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†,IReturn<VidyObrazovaniyaFizLicRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VidyObrazovaniyaFizLicResponse//ВидыОбразованияФизЛицОтвет
+	public class VidyObrazovaniyaFizLicResponse//Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/VidyObrazovaniyaFizLics")]
 	[Route("/Catalogs/VidyObrazovaniyaFizLics/{Codes}")]
-	public class VidyObrazovaniyaFizLicsRequest/*ВидыОбразованияФизЛицЗапрос*/: IReturn<List<VidyObrazovaniyaFizLicRequest>>
+	public class VidyObrazovaniyaFizLicsRequest/*Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†Р—Р°РїСЂРѕСЃ*/: IReturn<List<VidyObrazovaniyaFizLicRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VidyObrazovaniyaFizLicsResponse//ВидыОбразованияФизЛицОтвет
+	public class VidyObrazovaniyaFizLicsResponse//Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VidyObrazovaniyaFizLicService /*ВидыОбразованияФизЛицСервис*/ : Service
+	public class VidyObrazovaniyaFizLicService /*Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VidyObrazovaniyaFizLicRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VidyObrazovaniyaFizLicRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ВидыОбразованияФизЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VidyObrazovaniyaFizLicResponse() {Result = "ВидыОбразованияФизЛиц c кодом '" + request.Code+"' не найдено."};
+					return new VidyObrazovaniyaFizLicResponse() {Result = "Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС† c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ВидыОбразованияФизЛиц.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VidyObrazovaniyaFizLicsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыОбразованияФизЛиц>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ВидыОбразованияФизЛиц.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РћР±СЂР°Р·РѕРІР°РЅРёСЏР¤РёР·Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

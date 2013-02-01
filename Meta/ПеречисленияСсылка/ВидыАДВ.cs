@@ -1,45 +1,45 @@
-
+п»ї
 using System;
 using V82;
-using V82.Перечисления;//Ссылка;
-namespace V82.Перечисления//Ссылка
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ//РЎСЃС‹Р»РєР°
 {
-	public enum ВидыАДВ
+	public enum Р’РёРґС‹РђР”Р’
 	{
-		ПустаяСсылка = - 1,
-		АДВ2 = 0,//АДВ-2
-		АДВ3 = 1,//АДВ-3
+		РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР° = - 1,
+		РђР”Р’2 = 0,//РђР”Р’-2
+		РђР”Р’3 = 1,//РђР”Р’-3
 	}
-	public static partial class ВидыАДВ_Значения//:ПеречислениеСсылка
+	public static partial class Р’РёРґС‹РђР”Р’_Р—РЅР°С‡РµРЅРёСЏ//:РџРµСЂРµС‡РёСЃР»РµРЅРёРµРЎСЃС‹Р»РєР°
 	{
-		public static readonly Guid АДВ2 = new Guid("30756aad-fd27-0203-40ad-c7ec15adacfe");//АДВ-2
-		public static readonly Guid АДВ3 = new Guid("f003fd8e-28c6-2cb4-4626-32ac2ac44ea9");//АДВ-3
-		public static ВидыАДВ Получить(this ВидыАДВ Значение, byte[] Ссылка)
+		public static readonly Guid РђР”Р’2 = new Guid("30756aad-fd27-0203-40ad-c7ec15adacfe");//РђР”Р’-2
+		public static readonly Guid РђР”Р’3 = new Guid("f003fd8e-28c6-2cb4-4626-32ac2ac44ea9");//РђР”Р’-3
+		public static Р’РёРґС‹РђР”Р’ РџРѕР»СѓС‡РёС‚СЊ(this Р’РёРґС‹РђР”Р’ Р—РЅР°С‡РµРЅРёРµ, byte[] РЎСЃС‹Р»РєР°)
 		{
-			return Получить(Значение, new Guid(Ссылка));
+			return РџРѕР»СѓС‡РёС‚СЊ(Р—РЅР°С‡РµРЅРёРµ, new Guid(РЎСЃС‹Р»РєР°));
 		}
-		public static ВидыАДВ Получить(this ВидыАДВ Значение, Guid Ссылка)
+		public static Р’РёРґС‹РђР”Р’ РџРѕР»СѓС‡РёС‚СЊ(this Р’РёРґС‹РђР”Р’ Р—РЅР°С‡РµРЅРёРµ, Guid РЎСЃС‹Р»РєР°)
 		{
-			if(Ссылка == АДВ2)
+			if(РЎСЃС‹Р»РєР° == РђР”Р’2)
 			{
-				return ВидыАДВ.АДВ2;
+				return Р’РёРґС‹РђР”Р’.РђР”Р’2;
 			}
-			else if(Ссылка == АДВ3)
+			else if(РЎСЃС‹Р»РєР° == РђР”Р’3)
 			{
-				return ВидыАДВ.АДВ3;
+				return Р’РёРґС‹РђР”Р’.РђР”Р’3;
 			}
-			return ВидыАДВ.ПустаяСсылка;
+			return Р’РёРґС‹РђР”Р’.РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР°;
 		}
-		public static byte[] Ключ(this ВидыАДВ Значение)
+		public static byte[] РљР»СЋС‡(this Р’РёРґС‹РђР”Р’ Р—РЅР°С‡РµРЅРёРµ)
 		{
-			return Ссылка(Значение).ToByteArray();
+			return РЎСЃС‹Р»РєР°(Р—РЅР°С‡РµРЅРёРµ).ToByteArray();
 		}
-		public static Guid Ссылка(this ВидыАДВ Значение)
+		public static Guid РЎСЃС‹Р»РєР°(this Р’РёРґС‹РђР”Р’ Р—РЅР°С‡РµРЅРёРµ)
 		{
-			switch (Значение)
+			switch (Р—РЅР°С‡РµРЅРёРµ)
 			{
-				case ВидыАДВ.АДВ2: return АДВ2;
-				case ВидыАДВ.АДВ3: return АДВ3;
+				case Р’РёРґС‹РђР”Р’.РђР”Р’2: return РђР”Р’2;
+				case Р’РёРґС‹РђР”Р’.РђР”Р’3: return РђР”Р’3;
 			}
 			return Guid.Empty;
 		}

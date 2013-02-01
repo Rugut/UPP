@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/NormativyObsluzhivaniyaOS")]
 	[Route("/Catalogs/NormativyObsluzhivaniyaOS/{Code}")]
-	public class NormativyObsluzhivaniyaOSRequest/*НормативыОбслуживанияОСЗапрос*/: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<NormativyObsluzhivaniyaOSRequest>
+	public class NormativyObsluzhivaniyaOSRequest/*РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ,IReturn<NormativyObsluzhivaniyaOSRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class NormativyObsluzhivaniyaOSResponse//НормативыОбслуживанияОСОтвет
+	public class NormativyObsluzhivaniyaOSResponse//РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/NormativyObsluzhivaniyaOSs")]
 	[Route("/Catalogs/NormativyObsluzhivaniyaOSs/{Codes}")]
-	public class NormativyObsluzhivaniyaOSsRequest/*НормативыОбслуживанияОСЗапрос*/: IReturn<List<NormativyObsluzhivaniyaOSRequest>>
+	public class NormativyObsluzhivaniyaOSsRequest/*РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎР—Р°РїСЂРѕСЃ*/: IReturn<List<NormativyObsluzhivaniyaOSRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class NormativyObsluzhivaniyaOSsResponse//НормативыОбслуживанияОСОтвет
+	public class NormativyObsluzhivaniyaOSsResponse//РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class NormativyObsluzhivaniyaOSService /*НормативыОбслуживанияОССервис*/ : Service
+	public class NormativyObsluzhivaniyaOSService /*РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(NormativyObsluzhivaniyaOSRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(NormativyObsluzhivaniyaOSRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.НормативыОбслуживанияОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new NormativyObsluzhivaniyaOSResponse() {Result = "НормативыОбслуживанияОС c кодом '" + request.Code+"' не найдено."};
+					return new NormativyObsluzhivaniyaOSResponse() {Result = "РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.НормативыОбслуживанияОС.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(NormativyObsluzhivaniyaOSsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НормативыОбслуживанияОС>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.НормативыОбслуживанияОС.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕСЂРјР°С‚РёРІС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

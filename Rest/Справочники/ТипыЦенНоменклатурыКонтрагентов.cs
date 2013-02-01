@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TipyCenNomenklaturyKontragentov")]
 	[Route("/Catalogs/TipyCenNomenklaturyKontragentov/{Code}")]
-	public class TipyCenNomenklaturyKontragentovRequest/*ТипыЦенНоменклатурыКонтрагентовЗапрос*/: V82.СправочникиСсылка.ТипыЦенНоменклатурыКонтрагентов,IReturn<TipyCenNomenklaturyKontragentovRequest>
+	public class TipyCenNomenklaturyKontragentovRequest/*РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ,IReturn<TipyCenNomenklaturyKontragentovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TipyCenNomenklaturyKontragentovResponse//ТипыЦенНоменклатурыКонтрагентовОтвет
+	public class TipyCenNomenklaturyKontragentovResponse//РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TipyCenNomenklaturyKontragentovs")]
 	[Route("/Catalogs/TipyCenNomenklaturyKontragentovs/{Codes}")]
-	public class TipyCenNomenklaturyKontragentovsRequest/*ТипыЦенНоменклатурыКонтрагентовЗапрос*/: IReturn<List<TipyCenNomenklaturyKontragentovRequest>>
+	public class TipyCenNomenklaturyKontragentovsRequest/*РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<TipyCenNomenklaturyKontragentovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TipyCenNomenklaturyKontragentovsResponse//ТипыЦенНоменклатурыКонтрагентовОтвет
+	public class TipyCenNomenklaturyKontragentovsResponse//РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TipyCenNomenklaturyKontragentovService /*ТипыЦенНоменклатурыКонтрагентовСервис*/ : Service
+	public class TipyCenNomenklaturyKontragentovService /*РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TipyCenNomenklaturyKontragentovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TipyCenNomenklaturyKontragentovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТипыЦенНоменклатурыКонтрагентов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TipyCenNomenklaturyKontragentovResponse() {Result = "ТипыЦенНоменклатурыКонтрагентов c кодом '" + request.Code+"' не найдено."};
+					return new TipyCenNomenklaturyKontragentovResponse() {Result = "РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТипыЦенНоменклатурыКонтрагентов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TipyCenNomenklaturyKontragentovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТипыЦенНоменклатурыКонтрагентов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТипыЦенНоменклатурыКонтрагентов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹Р¦РµРЅРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

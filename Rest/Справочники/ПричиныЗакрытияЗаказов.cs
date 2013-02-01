@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/PrichinyZakrytiyaZakazov")]
 	[Route("/Catalogs/PrichinyZakrytiyaZakazov/{Code}")]
-	public class PrichinyZakrytiyaZakazovRequest/*ПричиныЗакрытияЗаказовЗапрос*/: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<PrichinyZakrytiyaZakazovRequest>
+	public class PrichinyZakrytiyaZakazovRequest/*РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІ,IReturn<PrichinyZakrytiyaZakazovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class PrichinyZakrytiyaZakazovResponse//ПричиныЗакрытияЗаказовОтвет
+	public class PrichinyZakrytiyaZakazovResponse//РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/PrichinyZakrytiyaZakazovs")]
 	[Route("/Catalogs/PrichinyZakrytiyaZakazovs/{Codes}")]
-	public class PrichinyZakrytiyaZakazovsRequest/*ПричиныЗакрытияЗаказовЗапрос*/: IReturn<List<PrichinyZakrytiyaZakazovRequest>>
+	public class PrichinyZakrytiyaZakazovsRequest/*РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<PrichinyZakrytiyaZakazovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class PrichinyZakrytiyaZakazovsResponse//ПричиныЗакрытияЗаказовОтвет
+	public class PrichinyZakrytiyaZakazovsResponse//РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class PrichinyZakrytiyaZakazovService /*ПричиныЗакрытияЗаказовСервис*/ : Service
+	public class PrichinyZakrytiyaZakazovService /*РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(PrichinyZakrytiyaZakazovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(PrichinyZakrytiyaZakazovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ПричиныЗакрытияЗаказов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new PrichinyZakrytiyaZakazovResponse() {Result = "ПричиныЗакрытияЗаказов c кодом '" + request.Code+"' не найдено."};
+					return new PrichinyZakrytiyaZakazovResponse() {Result = "РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ПричиныЗакрытияЗаказов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(PrichinyZakrytiyaZakazovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПричиныЗакрытияЗаказов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ПричиныЗакрытияЗаказов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРёС‡РёРЅС‹Р—Р°РєСЂС‹С‚РёСЏР—Р°РєР°Р·РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

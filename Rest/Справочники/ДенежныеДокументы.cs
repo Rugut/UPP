@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/DenezhnyeDokumenty")]
 	[Route("/Catalogs/DenezhnyeDokumenty/{Code}")]
-	public class DenezhnyeDokumentyRequest/*ДенежныеДокументыЗапрос*/: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<DenezhnyeDokumentyRequest>
+	public class DenezhnyeDokumentyRequest/*Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹,IReturn<DenezhnyeDokumentyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class DenezhnyeDokumentyResponse//ДенежныеДокументыОтвет
+	public class DenezhnyeDokumentyResponse//Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/DenezhnyeDokumentys")]
 	[Route("/Catalogs/DenezhnyeDokumentys/{Codes}")]
-	public class DenezhnyeDokumentysRequest/*ДенежныеДокументыЗапрос*/: IReturn<List<DenezhnyeDokumentyRequest>>
+	public class DenezhnyeDokumentysRequest/*Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<DenezhnyeDokumentyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class DenezhnyeDokumentysResponse//ДенежныеДокументыОтвет
+	public class DenezhnyeDokumentysResponse//Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class DenezhnyeDokumentyService /*ДенежныеДокументыСервис*/ : Service
+	public class DenezhnyeDokumentyService /*Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(DenezhnyeDokumentyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(DenezhnyeDokumentyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ДенежныеДокументы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new DenezhnyeDokumentyResponse() {Result = "ДенежныеДокументы c кодом '" + request.Code+"' не найдено."};
+					return new DenezhnyeDokumentyResponse() {Result = "Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ДенежныеДокументы.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(DenezhnyeDokumentysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДенежныеДокументы>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ДенежныеДокументы.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РµРЅРµР¶РЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

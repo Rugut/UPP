@@ -1,41 +1,41 @@
-
+п»ї
 using System;
 using System.Data.SqlClient;
 using V82;
-using V82.СправочникиСсылка;
-using V82.СправочникиОбъект;
-using V82.ДокументыСсылка;
-using V82.Перечисления;//Ссылка;
-namespace V82.СправочникиОбъект
+using V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°;
+using V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚;
+using V82.Р”РѕРєСѓРјРµРЅС‚С‹РЎСЃС‹Р»РєР°;
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚
 {
-	public partial class ПричиныОтсутствияНаРаботе:СправочникОбъект
+	public partial class РџСЂРёС‡РёРЅС‹РћС‚СЃСѓС‚СЃС‚РІРёСЏРќР°Р Р°Р±РѕС‚Рµ:РЎРїСЂР°РІРѕС‡РЅРёРєРћР±СЉРµРєС‚
 	{
-		public bool _ЭтоНовый;
-		public bool ЭтоНовый()
+		public bool _Р­С‚РѕРќРѕРІС‹Р№;
+		public bool Р­С‚РѕРќРѕРІС‹Р№()
 		{
-			return _ЭтоНовый;
+			return _Р­С‚РѕРќРѕРІС‹Р№;
 		}
-		public Guid Ссылка;
-		public long Версия;
-		/*static хэш сумма состава и порядка реквизитов*/
-		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*9*/ Код;
-		public string/*100*/ Наименование;
-		public void Записать()
+		public Guid РЎСЃС‹Р»РєР°;
+		public long Р’РµСЂСЃРёСЏ;
+		/*static С…СЌС€ СЃСѓРјРјР° СЃРѕСЃС‚Р°РІР° Рё РїРѕСЂСЏРґРєР° СЂРµРєРІРёР·РёС‚РѕРІ*/
+		/*РІРµСЂСЃРёСЏ РєР»Р°СЃСЃР° РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РёР· РїР°РєРµС‚Р°*/
+		public bool РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ;
+		public bool РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№;
+		public Guid Р’Р»Р°РґРµР»РµС†;
+		public bool Р­С‚РѕР“СЂСѓРїРїР°;
+		public Guid Р РѕРґРёС‚РµР»СЊ;
+		public string/*9*/ РљРѕРґ;
+		public string/*100*/ РќР°РёРјРµРЅРѕРІР°РЅРёРµ;
+		public void Р—Р°РїРёСЃР°С‚СЊ()
 		{
-			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			using (var РџРѕРґРєР»СЋС‡РµРЅРёРµ = new SqlConnection(РЎС‚СЂРѕРєР°РЎРѕРµРґРёРЅРµРЅРёСЏ))
 			{
-				Подключение.Open();
-				using (var Команда = Подключение.CreateCommand())
+				РџРѕРґРєР»СЋС‡РµРЅРёРµ.Open();
+				using (var РљРѕРјР°РЅРґР° = РџРѕРґРєР»СЋС‡РµРЅРёРµ.CreateCommand())
 				{
-					if(_ЭтоНовый)
+					if(_Р­С‚РѕРќРѕРІС‹Р№)
 					{
-						Команда.CommandText = @"
+						РљРѕРјР°РЅРґР°.CommandText = @"
 						Insert Into _Reference200(
 						_IDRRef
 						/*,_Version*/
@@ -44,47 +44,47 @@ namespace V82.СправочникиОбъект
 						,_Code
 						,_Description)
 						Values (
-						@Ссылка
-						/*,@Версия*/
-						,@ПометкаУдаления
-						,@Предопределенный
-						,@Код
-						,@Наименование)";
+						@РЎСЃС‹Р»РєР°
+						/*,@Р’РµСЂСЃРёСЏ*/
+						,@РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ
+						,@РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№
+						,@РљРѕРґ
+						,@РќР°РёРјРµРЅРѕРІР°РЅРёРµ)";
 					}
 					else
 					{
-						Команда.CommandText = @"
+						РљРѕРјР°РЅРґР°.CommandText = @"
 						Update _Reference200
 						Set
-						/*_IDRRef	= @Ссылка*/
-						/*,_Version	= @Версия*/
-						_Marked	= @ПометкаУдаления
-						,_IsMetadata	= @Предопределенный
-						,_Code	= @Код
-						,_Description	= @Наименование
-						Where _IDRRef = @Ссылка";
+						/*_IDRRef	= @РЎСЃС‹Р»РєР°*/
+						/*,_Version	= @Р’РµСЂСЃРёСЏ*/
+						_Marked	= @РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ
+						,_IsMetadata	= @РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№
+						,_Code	= @РљРѕРґ
+						,_Description	= @РќР°РёРјРµРЅРѕРІР°РЅРёРµ
+						Where _IDRRef = @РЎСЃС‹Р»РєР°";
 					}
-					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
-					/*Команда.Parameters.AddWithValue("Версия", Версия);*/
-					Команда.Parameters.AddWithValue("ПометкаУдаления", ПометкаУдаления);
-					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
-					Команда.Parameters.AddWithValue("Код", Код);
-					Команда.Parameters.AddWithValue("Наименование", Наименование);
-					Команда.ExecuteNonQuery();
+					РљРѕРјР°РЅРґР°.Parameters.AddWithValue("РЎСЃС‹Р»РєР°", РЎСЃС‹Р»РєР°.ToByteArray());
+					/*РљРѕРјР°РЅРґР°.Parameters.AddWithValue("Р’РµСЂСЃРёСЏ", Р’РµСЂСЃРёСЏ);*/
+					РљРѕРјР°РЅРґР°.Parameters.AddWithValue("РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ", РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ);
+					РљРѕРјР°РЅРґР°.Parameters.AddWithValue("РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№", РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№);
+					РљРѕРјР°РЅРґР°.Parameters.AddWithValue("РљРѕРґ", РљРѕРґ);
+					РљРѕРјР°РЅРґР°.Parameters.AddWithValue("РќР°РёРјРµРЅРѕРІР°РЅРёРµ", РќР°РёРјРµРЅРѕРІР°РЅРёРµ);
+					РљРѕРјР°РЅРґР°.ExecuteNonQuery();
 				}
 			}
 		}
-		public void Удалить()
+		public void РЈРґР°Р»РёС‚СЊ()
 		{
-			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			using (var РџРѕРґРєР»СЋС‡РµРЅРёРµ = new SqlConnection(РЎС‚СЂРѕРєР°РЎРѕРµРґРёРЅРµРЅРёСЏ))
 			{
-				Подключение.Open();
-				using (var Команда = Подключение.CreateCommand())
+				РџРѕРґРєР»СЋС‡РµРЅРёРµ.Open();
+				using (var РљРѕРјР°РЅРґР° = РџРѕРґРєР»СЋС‡РµРЅРёРµ.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference200
-					Where _IDRRef=@Ссылка";
-					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
-					Команда.ExecuteNonQuery();
+					РљРѕРјР°РЅРґР°.CommandText = @"Delete _Reference200
+					Where _IDRRef=@РЎСЃС‹Р»РєР°";
+					РљРѕРјР°РЅРґР°.Parameters.AddWithValue("РЎСЃС‹Р»РєР°", РЎСЃС‹Р»РєР°.ToByteArray());
+					РљРѕРјР°РЅРґР°.ExecuteNonQuery();
 				}
 			}
 		}

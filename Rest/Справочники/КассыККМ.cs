@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KassyKKM")]
 	[Route("/Catalogs/KassyKKM/{Code}")]
-	public class KassyKKMRequest/*КассыККМЗапрос*/: V82.СправочникиСсылка.КассыККМ,IReturn<KassyKKMRequest>
+	public class KassyKKMRequest/*РљР°СЃСЃС‹РљРљРњР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР°СЃСЃС‹РљРљРњ,IReturn<KassyKKMRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KassyKKMResponse//КассыККМОтвет
+	public class KassyKKMResponse//РљР°СЃСЃС‹РљРљРњРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KassyKKMs")]
 	[Route("/Catalogs/KassyKKMs/{Codes}")]
-	public class KassyKKMsRequest/*КассыККМЗапрос*/: IReturn<List<KassyKKMRequest>>
+	public class KassyKKMsRequest/*РљР°СЃСЃС‹РљРљРњР—Р°РїСЂРѕСЃ*/: IReturn<List<KassyKKMRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KassyKKMsResponse//КассыККМОтвет
+	public class KassyKKMsResponse//РљР°СЃСЃС‹РљРљРњРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KassyKKMService /*КассыККМСервис*/ : Service
+	public class KassyKKMService /*РљР°СЃСЃС‹РљРљРњРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KassyKKMRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KassyKKMRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КассыККМ.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР°СЃСЃС‹РљРљРњ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KassyKKMResponse() {Result = "КассыККМ c кодом '" + request.Code+"' не найдено."};
+					return new KassyKKMResponse() {Result = "РљР°СЃСЃС‹РљРљРњ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КассыККМ.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР°СЃСЃС‹РљРљРњ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KassyKKMsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КассыККМ>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР°СЃСЃС‹РљРљРњ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КассыККМ.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР°СЃСЃС‹РљРљРњ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

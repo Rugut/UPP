@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/NomeraGTD")]
 	[Route("/Catalogs/NomeraGTD/{Code}")]
-	public class NomeraGTDRequest/*НомераГТДЗапрос*/: V82.СправочникиСсылка.НомераГТД,IReturn<NomeraGTDRequest>
+	public class NomeraGTDRequest/*РќРѕРјРµСЂР°Р“РўР”Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќРѕРјРµСЂР°Р“РўР”,IReturn<NomeraGTDRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class NomeraGTDResponse//НомераГТДОтвет
+	public class NomeraGTDResponse//РќРѕРјРµСЂР°Р“РўР”РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/NomeraGTDs")]
 	[Route("/Catalogs/NomeraGTDs/{Codes}")]
-	public class NomeraGTDsRequest/*НомераГТДЗапрос*/: IReturn<List<NomeraGTDRequest>>
+	public class NomeraGTDsRequest/*РќРѕРјРµСЂР°Р“РўР”Р—Р°РїСЂРѕСЃ*/: IReturn<List<NomeraGTDRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class NomeraGTDsResponse//НомераГТДОтвет
+	public class NomeraGTDsResponse//РќРѕРјРµСЂР°Р“РўР”РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class NomeraGTDService /*НомераГТДСервис*/ : Service
+	public class NomeraGTDService /*РќРѕРјРµСЂР°Р“РўР”РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(NomeraGTDRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(NomeraGTDRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.НомераГТД.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕРјРµСЂР°Р“РўР”.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new NomeraGTDResponse() {Result = "НомераГТД c кодом '" + request.Code+"' не найдено."};
+					return new NomeraGTDResponse() {Result = "РќРѕРјРµСЂР°Р“РўР” c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.НомераГТД.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕРјРµСЂР°Р“РўР”.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(NomeraGTDsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НомераГТД>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќРѕРјРµСЂР°Р“РўР”>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.НомераГТД.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕРјРµСЂР°Р“РўР”.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

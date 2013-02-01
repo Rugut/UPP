@@ -1,12 +1,12 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
 
-namespace V82.СправочникиТест
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРўРµСЃС‚
 {
-	public partial class СправочникТест
+	public partial class РЎРїСЂР°РІРѕС‡РЅРёРєРўРµСЃС‚
 	{
 	}
 }

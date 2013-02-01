@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD")]
 	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/{Code}")]
-	public class SoglasheniyaObIspolzovaniiEHDRequest/*СоглашенияОбИспользованииЭДЗапрос*/: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<SoglasheniyaObIspolzovaniiEHDRequest>
+	public class SoglasheniyaObIspolzovaniiEHDRequest/*РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”,IReturn<SoglasheniyaObIspolzovaniiEHDRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SoglasheniyaObIspolzovaniiEHDResponse//СоглашенияОбИспользованииЭДОтвет
+	public class SoglasheniyaObIspolzovaniiEHDResponse//РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHDs")]
 	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHDs/{Codes}")]
-	public class SoglasheniyaObIspolzovaniiEHDsRequest/*СоглашенияОбИспользованииЭДЗапрос*/: IReturn<List<SoglasheniyaObIspolzovaniiEHDRequest>>
+	public class SoglasheniyaObIspolzovaniiEHDsRequest/*РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”Р—Р°РїСЂРѕСЃ*/: IReturn<List<SoglasheniyaObIspolzovaniiEHDRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SoglasheniyaObIspolzovaniiEHDsResponse//СоглашенияОбИспользованииЭДОтвет
+	public class SoglasheniyaObIspolzovaniiEHDsResponse//РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SoglasheniyaObIspolzovaniiEHDService /*СоглашенияОбИспользованииЭДСервис*/ : Service
+	public class SoglasheniyaObIspolzovaniiEHDService /*РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SoglasheniyaObIspolzovaniiEHDRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SoglasheniyaObIspolzovaniiEHDRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СоглашенияОбИспользованииЭД.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SoglasheniyaObIspolzovaniiEHDResponse() {Result = "СоглашенияОбИспользованииЭД c кодом '" + request.Code+"' не найдено."};
+					return new SoglasheniyaObIspolzovaniiEHDResponse() {Result = "РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р” c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СоглашенияОбИспользованииЭД.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SoglasheniyaObIspolzovaniiEHDsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СоглашенияОбИспользованииЭД>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СоглашенияОбИспользованииЭД.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕРіР»Р°С€РµРЅРёСЏРћР±РСЃРїРѕР»СЊР·РѕРІР°РЅРёРёР­Р”.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KursyObucheniya")]
 	[Route("/Catalogs/KursyObucheniya/{Code}")]
-	public class KursyObucheniyaRequest/*КурсыОбученияЗапрос*/: V82.СправочникиСсылка.КурсыОбучения,IReturn<KursyObucheniyaRequest>
+	public class KursyObucheniyaRequest/*РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏ,IReturn<KursyObucheniyaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KursyObucheniyaResponse//КурсыОбученияОтвет
+	public class KursyObucheniyaResponse//РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KursyObucheniyas")]
 	[Route("/Catalogs/KursyObucheniyas/{Codes}")]
-	public class KursyObucheniyasRequest/*КурсыОбученияЗапрос*/: IReturn<List<KursyObucheniyaRequest>>
+	public class KursyObucheniyasRequest/*РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏР—Р°РїСЂРѕСЃ*/: IReturn<List<KursyObucheniyaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KursyObucheniyasResponse//КурсыОбученияОтвет
+	public class KursyObucheniyasResponse//РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KursyObucheniyaService /*КурсыОбученияСервис*/ : Service
+	public class KursyObucheniyaService /*РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KursyObucheniyaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KursyObucheniyaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КурсыОбучения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KursyObucheniyaResponse() {Result = "КурсыОбучения c кодом '" + request.Code+"' не найдено."};
+					return new KursyObucheniyaResponse() {Result = "РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КурсыОбучения.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KursyObucheniyasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КурсыОбучения>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КурсыОбучения.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљСѓСЂСЃС‹РћР±СѓС‡РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

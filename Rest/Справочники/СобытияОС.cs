@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SobytiyaOS")]
 	[Route("/Catalogs/SobytiyaOS/{Code}")]
-	public class SobytiyaOSRequest/*СобытияОСЗапрос*/: V82.СправочникиСсылка.СобытияОС,IReturn<SobytiyaOSRequest>
+	public class SobytiyaOSRequest/*РЎРѕР±С‹С‚РёСЏРћРЎР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕР±С‹С‚РёСЏРћРЎ,IReturn<SobytiyaOSRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SobytiyaOSResponse//СобытияОСОтвет
+	public class SobytiyaOSResponse//РЎРѕР±С‹С‚РёСЏРћРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SobytiyaOSs")]
 	[Route("/Catalogs/SobytiyaOSs/{Codes}")]
-	public class SobytiyaOSsRequest/*СобытияОСЗапрос*/: IReturn<List<SobytiyaOSRequest>>
+	public class SobytiyaOSsRequest/*РЎРѕР±С‹С‚РёСЏРћРЎР—Р°РїСЂРѕСЃ*/: IReturn<List<SobytiyaOSRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SobytiyaOSsResponse//СобытияОСОтвет
+	public class SobytiyaOSsResponse//РЎРѕР±С‹С‚РёСЏРћРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SobytiyaOSService /*СобытияОССервис*/ : Service
+	public class SobytiyaOSService /*РЎРѕР±С‹С‚РёСЏРћРЎРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SobytiyaOSRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SobytiyaOSRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СобытияОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕР±С‹С‚РёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SobytiyaOSResponse() {Result = "СобытияОС c кодом '" + request.Code+"' не найдено."};
+					return new SobytiyaOSResponse() {Result = "РЎРѕР±С‹С‚РёСЏРћРЎ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СобытияОС.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕР±С‹С‚РёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SobytiyaOSsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СобытияОС>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕР±С‹С‚РёСЏРћРЎ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СобытияОС.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕР±С‹С‚РёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

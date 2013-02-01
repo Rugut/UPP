@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Rabotodateli")]
 	[Route("/Catalogs/Rabotodateli/{Code}")]
-	public class RabotodateliRequest/*РаботодателиЗапрос*/: V82.СправочникиСсылка.Работодатели,IReturn<RabotodateliRequest>
+	public class RabotodateliRequest/*Р Р°Р±РѕС‚РѕРґР°С‚РµР»РёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р±РѕС‚РѕРґР°С‚РµР»Рё,IReturn<RabotodateliRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class RabotodateliResponse//РаботодателиОтвет
+	public class RabotodateliResponse//Р Р°Р±РѕС‚РѕРґР°С‚РµР»РёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Rabotodatelis")]
 	[Route("/Catalogs/Rabotodatelis/{Codes}")]
-	public class RabotodatelisRequest/*РаботодателиЗапрос*/: IReturn<List<RabotodateliRequest>>
+	public class RabotodatelisRequest/*Р Р°Р±РѕС‚РѕРґР°С‚РµР»РёР—Р°РїСЂРѕСЃ*/: IReturn<List<RabotodateliRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class RabotodatelisResponse//РаботодателиОтвет
+	public class RabotodatelisResponse//Р Р°Р±РѕС‚РѕРґР°С‚РµР»РёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class RabotodateliService /*РаботодателиСервис*/ : Service
+	public class RabotodateliService /*Р Р°Р±РѕС‚РѕРґР°С‚РµР»РёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(RabotodateliRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(RabotodateliRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Работодатели.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‚РѕРґР°С‚РµР»Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new RabotodateliResponse() {Result = "Работодатели c кодом '" + request.Code+"' не найдено."};
+					return new RabotodateliResponse() {Result = "Р Р°Р±РѕС‚РѕРґР°С‚РµР»Рё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Работодатели.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‚РѕРґР°С‚РµР»Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(RabotodatelisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Работодатели>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р±РѕС‚РѕРґР°С‚РµР»Рё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Работодатели.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‚РѕРґР°С‚РµР»Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

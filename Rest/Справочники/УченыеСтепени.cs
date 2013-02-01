@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/UchenyeStepeni")]
 	[Route("/Catalogs/UchenyeStepeni/{Code}")]
-	public class UchenyeStepeniRequest/*УченыеСтепениЗапрос*/: V82.СправочникиСсылка.УченыеСтепени,IReturn<UchenyeStepeniRequest>
+	public class UchenyeStepeniRequest/*РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРё,IReturn<UchenyeStepeniRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class UchenyeStepeniResponse//УченыеСтепениОтвет
+	public class UchenyeStepeniResponse//РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/UchenyeStepenis")]
 	[Route("/Catalogs/UchenyeStepenis/{Codes}")]
-	public class UchenyeStepenisRequest/*УченыеСтепениЗапрос*/: IReturn<List<UchenyeStepeniRequest>>
+	public class UchenyeStepenisRequest/*РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРёР—Р°РїСЂРѕСЃ*/: IReturn<List<UchenyeStepeniRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class UchenyeStepenisResponse//УченыеСтепениОтвет
+	public class UchenyeStepenisResponse//РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class UchenyeStepeniService /*УченыеСтепениСервис*/ : Service
+	public class UchenyeStepeniService /*РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(UchenyeStepeniRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(UchenyeStepeniRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.УченыеСтепени.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new UchenyeStepeniResponse() {Result = "УченыеСтепени c кодом '" + request.Code+"' не найдено."};
+					return new UchenyeStepeniResponse() {Result = "РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.УченыеСтепени.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(UchenyeStepenisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УченыеСтепени>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.УченыеСтепени.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈС‡РµРЅС‹РµРЎС‚РµРїРµРЅРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

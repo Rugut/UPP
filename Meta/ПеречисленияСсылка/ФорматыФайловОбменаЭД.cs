@@ -1,87 +1,87 @@
-
+п»ї
 using System;
 using V82;
-using V82.Перечисления;//Ссылка;
-namespace V82.Перечисления//Ссылка
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ//РЎСЃС‹Р»РєР°
 {
-	public enum ФорматыФайловОбменаЭД
+	public enum Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”
 	{
-		ПустаяСсылка = - 1,
+		РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР° = - 1,
 		XML = 0,//CommerceML (*.xml)
-		PDF = 1,//Документ PDF (*.pdf)
-		HTML = 2,//Документ HTML (*.html)
-		DOCX = 3,//Документ Word 2007 (*.docx)
-		XLS = 4,//Лист Excel (*.xls)
-		MXL = 5,//Табличный документ (*.mxl)
-		ODS = 6,//Электронная таблица ODF (*.ods)
-		СоставнойФормат = 7,//Составной формат (*.zip)
+		PDF = 1,//Р”РѕРєСѓРјРµРЅС‚ PDF (*.pdf)
+		HTML = 2,//Р”РѕРєСѓРјРµРЅС‚ HTML (*.html)
+		DOCX = 3,//Р”РѕРєСѓРјРµРЅС‚ Word 2007 (*.docx)
+		XLS = 4,//Р›РёСЃС‚ Excel (*.xls)
+		MXL = 5,//РўР°Р±Р»РёС‡РЅС‹Р№ РґРѕРєСѓРјРµРЅС‚ (*.mxl)
+		ODS = 6,//Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ С‚Р°Р±Р»РёС†Р° ODF (*.ods)
+		РЎРѕСЃС‚Р°РІРЅРѕР№Р¤РѕСЂРјР°С‚ = 7,//РЎРѕСЃС‚Р°РІРЅРѕР№ С„РѕСЂРјР°С‚ (*.zip)
 	}
-	public static partial class ФорматыФайловОбменаЭД_Значения//:ПеречислениеСсылка
+	public static partial class Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”_Р—РЅР°С‡РµРЅРёСЏ//:РџРµСЂРµС‡РёСЃР»РµРЅРёРµРЎСЃС‹Р»РєР°
 	{
 		public static readonly Guid XML = new Guid("158a9c8b-2830-3802-4ced-1992ed01e9ad");//CommerceML (*.xml)
-		public static readonly Guid PDF = new Guid("b9506fb7-2ec4-a1eb-45d3-a38206f29af8");//Документ PDF (*.pdf)
-		public static readonly Guid HTML = new Guid("e1a358ad-f8b4-bdb6-423c-a6a4838076fe");//Документ HTML (*.html)
-		public static readonly Guid DOCX = new Guid("1ee453a7-afe0-57db-4cd1-94039009a50f");//Документ Word 2007 (*.docx)
-		public static readonly Guid XLS = new Guid("f58f408a-9927-91c4-49b1-925532d7e45c");//Лист Excel (*.xls)
-		public static readonly Guid MXL = new Guid("715ffa85-82c1-c392-416b-d75a4064fee8");//Табличный документ (*.mxl)
-		public static readonly Guid ODS = new Guid("32b52d87-4a8c-b173-4691-f1bfd7cb9c3f");//Электронная таблица ODF (*.ods)
-		public static readonly Guid СоставнойФормат = new Guid("4b0a54b2-ac71-2917-4019-6bafa148b163");//Составной формат (*.zip)
-		public static ФорматыФайловОбменаЭД Получить(this ФорматыФайловОбменаЭД Значение, byte[] Ссылка)
+		public static readonly Guid PDF = new Guid("b9506fb7-2ec4-a1eb-45d3-a38206f29af8");//Р”РѕРєСѓРјРµРЅС‚ PDF (*.pdf)
+		public static readonly Guid HTML = new Guid("e1a358ad-f8b4-bdb6-423c-a6a4838076fe");//Р”РѕРєСѓРјРµРЅС‚ HTML (*.html)
+		public static readonly Guid DOCX = new Guid("1ee453a7-afe0-57db-4cd1-94039009a50f");//Р”РѕРєСѓРјРµРЅС‚ Word 2007 (*.docx)
+		public static readonly Guid XLS = new Guid("f58f408a-9927-91c4-49b1-925532d7e45c");//Р›РёСЃС‚ Excel (*.xls)
+		public static readonly Guid MXL = new Guid("715ffa85-82c1-c392-416b-d75a4064fee8");//РўР°Р±Р»РёС‡РЅС‹Р№ РґРѕРєСѓРјРµРЅС‚ (*.mxl)
+		public static readonly Guid ODS = new Guid("32b52d87-4a8c-b173-4691-f1bfd7cb9c3f");//Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ С‚Р°Р±Р»РёС†Р° ODF (*.ods)
+		public static readonly Guid РЎРѕСЃС‚Р°РІРЅРѕР№Р¤РѕСЂРјР°С‚ = new Guid("4b0a54b2-ac71-2917-4019-6bafa148b163");//РЎРѕСЃС‚Р°РІРЅРѕР№ С„РѕСЂРјР°С‚ (*.zip)
+		public static Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р” РџРѕР»СѓС‡РёС‚СЊ(this Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р” Р—РЅР°С‡РµРЅРёРµ, byte[] РЎСЃС‹Р»РєР°)
 		{
-			return Получить(Значение, new Guid(Ссылка));
+			return РџРѕР»СѓС‡РёС‚СЊ(Р—РЅР°С‡РµРЅРёРµ, new Guid(РЎСЃС‹Р»РєР°));
 		}
-		public static ФорматыФайловОбменаЭД Получить(this ФорматыФайловОбменаЭД Значение, Guid Ссылка)
+		public static Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р” РџРѕР»СѓС‡РёС‚СЊ(this Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р” Р—РЅР°С‡РµРЅРёРµ, Guid РЎСЃС‹Р»РєР°)
 		{
-			if(Ссылка == XML)
+			if(РЎСЃС‹Р»РєР° == XML)
 			{
-				return ФорматыФайловОбменаЭД.XML;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.XML;
 			}
-			else if(Ссылка == PDF)
+			else if(РЎСЃС‹Р»РєР° == PDF)
 			{
-				return ФорматыФайловОбменаЭД.PDF;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.PDF;
 			}
-			else if(Ссылка == HTML)
+			else if(РЎСЃС‹Р»РєР° == HTML)
 			{
-				return ФорматыФайловОбменаЭД.HTML;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.HTML;
 			}
-			else if(Ссылка == DOCX)
+			else if(РЎСЃС‹Р»РєР° == DOCX)
 			{
-				return ФорматыФайловОбменаЭД.DOCX;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.DOCX;
 			}
-			else if(Ссылка == XLS)
+			else if(РЎСЃС‹Р»РєР° == XLS)
 			{
-				return ФорматыФайловОбменаЭД.XLS;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.XLS;
 			}
-			else if(Ссылка == MXL)
+			else if(РЎСЃС‹Р»РєР° == MXL)
 			{
-				return ФорматыФайловОбменаЭД.MXL;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.MXL;
 			}
-			else if(Ссылка == ODS)
+			else if(РЎСЃС‹Р»РєР° == ODS)
 			{
-				return ФорматыФайловОбменаЭД.ODS;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.ODS;
 			}
-			else if(Ссылка == СоставнойФормат)
+			else if(РЎСЃС‹Р»РєР° == РЎРѕСЃС‚Р°РІРЅРѕР№Р¤РѕСЂРјР°С‚)
 			{
-				return ФорматыФайловОбменаЭД.СоставнойФормат;
+				return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.РЎРѕСЃС‚Р°РІРЅРѕР№Р¤РѕСЂРјР°С‚;
 			}
-			return ФорматыФайловОбменаЭД.ПустаяСсылка;
+			return Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР°;
 		}
-		public static byte[] Ключ(this ФорматыФайловОбменаЭД Значение)
+		public static byte[] РљР»СЋС‡(this Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р” Р—РЅР°С‡РµРЅРёРµ)
 		{
-			return Ссылка(Значение).ToByteArray();
+			return РЎСЃС‹Р»РєР°(Р—РЅР°С‡РµРЅРёРµ).ToByteArray();
 		}
-		public static Guid Ссылка(this ФорматыФайловОбменаЭД Значение)
+		public static Guid РЎСЃС‹Р»РєР°(this Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р” Р—РЅР°С‡РµРЅРёРµ)
 		{
-			switch (Значение)
+			switch (Р—РЅР°С‡РµРЅРёРµ)
 			{
-				case ФорматыФайловОбменаЭД.XML: return XML;
-				case ФорматыФайловОбменаЭД.PDF: return PDF;
-				case ФорматыФайловОбменаЭД.HTML: return HTML;
-				case ФорматыФайловОбменаЭД.DOCX: return DOCX;
-				case ФорматыФайловОбменаЭД.XLS: return XLS;
-				case ФорматыФайловОбменаЭД.MXL: return MXL;
-				case ФорматыФайловОбменаЭД.ODS: return ODS;
-				case ФорматыФайловОбменаЭД.СоставнойФормат: return СоставнойФормат;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.XML: return XML;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.PDF: return PDF;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.HTML: return HTML;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.DOCX: return DOCX;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.XLS: return XLS;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.MXL: return MXL;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.ODS: return ODS;
+				case Р¤РѕСЂРјР°С‚С‹Р¤Р°Р№Р»РѕРІРћР±РјРµРЅР°Р­Р”.РЎРѕСЃС‚Р°РІРЅРѕР№Р¤РѕСЂРјР°С‚: return РЎРѕСЃС‚Р°РІРЅРѕР№Р¤РѕСЂРјР°С‚;
 			}
 			return Guid.Empty;
 		}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Subkonto")]
 	[Route("/Catalogs/Subkonto/{Code}")]
-	public class SubkontoRequest/*СубконтоЗапрос*/: V82.СправочникиСсылка.Субконто,IReturn<SubkontoRequest>
+	public class SubkontoRequest/*РЎСѓР±РєРѕРЅС‚РѕР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎСѓР±РєРѕРЅС‚Рѕ,IReturn<SubkontoRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SubkontoResponse//СубконтоОтвет
+	public class SubkontoResponse//РЎСѓР±РєРѕРЅС‚РѕРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Subkontos")]
 	[Route("/Catalogs/Subkontos/{Codes}")]
-	public class SubkontosRequest/*СубконтоЗапрос*/: IReturn<List<SubkontoRequest>>
+	public class SubkontosRequest/*РЎСѓР±РєРѕРЅС‚РѕР—Р°РїСЂРѕСЃ*/: IReturn<List<SubkontoRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SubkontosResponse//СубконтоОтвет
+	public class SubkontosResponse//РЎСѓР±РєРѕРЅС‚РѕРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SubkontoService /*СубконтоСервис*/ : Service
+	public class SubkontoService /*РЎСѓР±РєРѕРЅС‚РѕРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SubkontoRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SubkontoRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Субконто.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎСѓР±РєРѕРЅС‚Рѕ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SubkontoResponse() {Result = "Субконто c кодом '" + request.Code+"' не найдено."};
+					return new SubkontoResponse() {Result = "РЎСѓР±РєРѕРЅС‚Рѕ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Субконто.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎСѓР±РєРѕРЅС‚Рѕ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SubkontosRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Субконто>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎСѓР±РєРѕРЅС‚Рѕ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Субконто.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎСѓР±РєРѕРЅС‚Рѕ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

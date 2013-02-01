@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Podrazdeleniya")]
 	[Route("/Catalogs/Podrazdeleniya/{Code}")]
-	public class PodrazdeleniyaRequest/*ПодразделенияЗапрос*/: V82.СправочникиСсылка.Подразделения,IReturn<PodrazdeleniyaRequest>
+	public class PodrazdeleniyaRequest/*РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ,IReturn<PodrazdeleniyaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class PodrazdeleniyaResponse//ПодразделенияОтвет
+	public class PodrazdeleniyaResponse//РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Podrazdeleniyas")]
 	[Route("/Catalogs/Podrazdeleniyas/{Codes}")]
-	public class PodrazdeleniyasRequest/*ПодразделенияЗапрос*/: IReturn<List<PodrazdeleniyaRequest>>
+	public class PodrazdeleniyasRequest/*РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏР—Р°РїСЂРѕСЃ*/: IReturn<List<PodrazdeleniyaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class PodrazdeleniyasResponse//ПодразделенияОтвет
+	public class PodrazdeleniyasResponse//РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class PodrazdeleniyaService /*ПодразделенияСервис*/ : Service
+	public class PodrazdeleniyaService /*РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(PodrazdeleniyaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(PodrazdeleniyaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Подразделения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new PodrazdeleniyaResponse() {Result = "Подразделения c кодом '" + request.Code+"' не найдено."};
+					return new PodrazdeleniyaResponse() {Result = "РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Подразделения.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(PodrazdeleniyasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Подразделения>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Подразделения.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

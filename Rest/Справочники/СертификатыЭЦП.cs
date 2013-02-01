@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SertifikatyEHCP")]
 	[Route("/Catalogs/SertifikatyEHCP/{Code}")]
-	public class SertifikatyEHCPRequest/*СертификатыЭЦПЗапрос*/: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<SertifikatyEHCPRequest>
+	public class SertifikatyEHCPRequest/*РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦РџР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦Рџ,IReturn<SertifikatyEHCPRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SertifikatyEHCPResponse//СертификатыЭЦПОтвет
+	public class SertifikatyEHCPResponse//РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦РџРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SertifikatyEHCPs")]
 	[Route("/Catalogs/SertifikatyEHCPs/{Codes}")]
-	public class SertifikatyEHCPsRequest/*СертификатыЭЦПЗапрос*/: IReturn<List<SertifikatyEHCPRequest>>
+	public class SertifikatyEHCPsRequest/*РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦РџР—Р°РїСЂРѕСЃ*/: IReturn<List<SertifikatyEHCPRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SertifikatyEHCPsResponse//СертификатыЭЦПОтвет
+	public class SertifikatyEHCPsResponse//РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦РџРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SertifikatyEHCPService /*СертификатыЭЦПСервис*/ : Service
+	public class SertifikatyEHCPService /*РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦РџРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SertifikatyEHCPRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SertifikatyEHCPRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СертификатыЭЦП.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦Рџ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SertifikatyEHCPResponse() {Result = "СертификатыЭЦП c кодом '" + request.Code+"' не найдено."};
+					return new SertifikatyEHCPResponse() {Result = "РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦Рџ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СертификатыЭЦП.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦Рџ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SertifikatyEHCPsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СертификатыЭЦП>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦Рџ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СертификатыЭЦП.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРµСЂС‚РёС„РёРєР°С‚С‹Р­Р¦Рџ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

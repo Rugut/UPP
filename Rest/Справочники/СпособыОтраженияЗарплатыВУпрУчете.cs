@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVUprUchete")]
 	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVUprUchete/{Code}")]
-	public class SposobyOtrazheniyaZarplatyVUprUcheteRequest/*СпособыОтраженияЗарплатыВУпрУчетеЗапрос*/: V82.СправочникиСсылка.СпособыОтраженияЗарплатыВУпрУчете,IReturn<SposobyOtrazheniyaZarplatyVUprUcheteRequest>
+	public class SposobyOtrazheniyaZarplatyVUprUcheteRequest/*РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚РµР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚Рµ,IReturn<SposobyOtrazheniyaZarplatyVUprUcheteRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SposobyOtrazheniyaZarplatyVUprUcheteResponse//СпособыОтраженияЗарплатыВУпрУчетеОтвет
+	public class SposobyOtrazheniyaZarplatyVUprUcheteResponse//РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚РµРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVUprUchetes")]
 	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVUprUchetes/{Codes}")]
-	public class SposobyOtrazheniyaZarplatyVUprUchetesRequest/*СпособыОтраженияЗарплатыВУпрУчетеЗапрос*/: IReturn<List<SposobyOtrazheniyaZarplatyVUprUcheteRequest>>
+	public class SposobyOtrazheniyaZarplatyVUprUchetesRequest/*РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚РµР—Р°РїСЂРѕСЃ*/: IReturn<List<SposobyOtrazheniyaZarplatyVUprUcheteRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SposobyOtrazheniyaZarplatyVUprUchetesResponse//СпособыОтраженияЗарплатыВУпрУчетеОтвет
+	public class SposobyOtrazheniyaZarplatyVUprUchetesResponse//РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚РµРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SposobyOtrazheniyaZarplatyVUprUcheteService /*СпособыОтраженияЗарплатыВУпрУчетеСервис*/ : Service
+	public class SposobyOtrazheniyaZarplatyVUprUcheteService /*РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚РµРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SposobyOtrazheniyaZarplatyVUprUcheteRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SposobyOtrazheniyaZarplatyVUprUcheteRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СпособыОтраженияЗарплатыВУпрУчете.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚Рµ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SposobyOtrazheniyaZarplatyVUprUcheteResponse() {Result = "СпособыОтраженияЗарплатыВУпрУчете c кодом '" + request.Code+"' не найдено."};
+					return new SposobyOtrazheniyaZarplatyVUprUcheteResponse() {Result = "РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚Рµ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СпособыОтраженияЗарплатыВУпрУчете.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚Рµ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SposobyOtrazheniyaZarplatyVUprUchetesRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СпособыОтраженияЗарплатыВУпрУчете>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚Рµ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СпособыОтраженияЗарплатыВУпрУчете.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРїРѕСЃРѕР±С‹РћС‚СЂР°Р¶РµРЅРёСЏР—Р°СЂРїР»Р°С‚С‹Р’РЈРїСЂРЈС‡РµС‚Рµ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

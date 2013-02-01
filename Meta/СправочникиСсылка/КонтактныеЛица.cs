@@ -1,4 +1,4 @@
-
+п»ї
 using System;
 using System.IO;
 using System.Globalization;
@@ -6,99 +6,99 @@ using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
 using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
-using V82.ОбщиеОбъекты;
-using V82.СправочникиСсылка;
-using V82.ДокументыСсылка;
-using V82.Перечисления;//Ссылка;
-namespace V82.СправочникиСсылка
+using V82.РћР±С‰РёРµРћР±СЉРµРєС‚С‹;
+using V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°;
+using V82.Р”РѕРєСѓРјРµРЅС‚С‹РЎСЃС‹Р»РєР°;
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°
 {
 	[ProtoContract]
 	[DataContract]
-	public partial class КонтактныеЛица:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
+	public partial class РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°:РЎРїСЂР°РІРѕС‡РЅРёРєРЎСЃС‹Р»РєР°,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂProtoBuf,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂJson
 	{
-		public static readonly Guid ГуидКласса = new Guid("3789a6e5-800c-4b85-9e16-379a617595c6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191737.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
-		public static readonly long КонтрольнаяСуммаКласса = 123;
+		public static readonly Guid Р“СѓРёРґРљР»Р°СЃСЃР° = new Guid("3789a6e5-800c-4b85-9e16-379a617595c6");
+		public static readonly DateTime Р’РµСЂСЃРёСЏРљР»Р°СЃСЃР° = DateTime.ParseExact("20121221191737.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly long РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏРЎСѓРјРјР°РљР»Р°СЃСЃР° = 123;
 		[DataMember]
 		[ProtoMember(1)]
-		public Guid Ссылка {get;set;}
+		public Guid РЎСЃС‹Р»РєР° {get;set;}
 		[DataMember]
 		[ProtoMember(2)]
-		public long Версия {get;set;}
-		/*static хэш сумма состава и порядка реквизитов*/
-		/*версия класса восстановленного из пакета*/
+		public long Р’РµСЂСЃРёСЏ {get;set;}
+		/*static С…СЌС€ СЃСѓРјРјР° СЃРѕСЃС‚Р°РІР° Рё РїРѕСЂСЏРґРєР° СЂРµРєРІРёР·РёС‚РѕРІ*/
+		/*РІРµСЂСЃРёСЏ РєР»Р°СЃСЃР° РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РёР· РїР°РєРµС‚Р°*/
 		[DataMember]
 		[ProtoMember(3)]
-		public bool ПометкаУдаления {get;set;}
+		public bool РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ {get;set;}
 		[DataMember]
 		[ProtoMember(4)]
-		public bool Предопределенный {get;set;}
+		public bool РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ {get;set;}
 		[DataMember]
 		[ProtoMember(5)]
-		public string/*9*/ Код {get;set;}
+		public string/*9*/ РљРѕРґ {get;set;}
 		[DataMember]
 		[ProtoMember(6)]
-		public string/*100*/ Наименование {get;set;}
+		public string/*100*/ РќР°РёРјРµРЅРѕРІР°РЅРёРµ {get;set;}
 		[DataMember]
 		[ProtoMember(7)]
-		public string/*(50)*/ Фамилия {get;set;}
+		public string/*(50)*/ Р¤Р°РјРёР»РёСЏ {get;set;}
 		[DataMember]
 		[ProtoMember(8)]
-		public string/*(50)*/ Имя {get;set;}
+		public string/*(50)*/ РРјСЏ {get;set;}
 		[DataMember]
 		[ProtoMember(9)]
-		public decimal/*(2)*/ КоличествоДнейДоНапоминания {get;set;}//Количество дней до напоминания
+		public decimal/*(2)*/ РљРѕР»РёС‡РµСЃС‚РІРѕР”РЅРµР№Р”РѕРќР°РїРѕРјРёРЅР°РЅРёСЏ {get;set;}//РљРѕР»РёС‡РµСЃС‚РІРѕ РґРЅРµР№ РґРѕ РЅР°РїРѕРјРёРЅР°РЅРёСЏ
 		[DataMember]
 		[ProtoMember(10)]
-		public bool НапоминатьОДнеРождения {get;set;}//Напоминать о дне рождения
+		public bool РќР°РїРѕРјРёРЅР°С‚СЊРћР”РЅРµР РѕР¶РґРµРЅРёСЏ {get;set;}//РќР°РїРѕРјРёРЅР°С‚СЊ Рѕ РґРЅРµ СЂРѕР¶РґРµРЅРёСЏ
 		[DataMember]
 		[ProtoMember(11)]
-		public string/*(50)*/ Отчество {get;set;}
+		public string/*(50)*/ РћС‚С‡РµСЃС‚РІРѕ {get;set;}
 		[DataMember]
 		[ProtoMember(12)]
-		public DateTime ДатаРождения {get;set;}//Дата рождения
+		public DateTime Р”Р°С‚Р°Р РѕР¶РґРµРЅРёСЏ {get;set;}//Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ
 		[DataMember]
 		[ProtoMember(13)]
-		public string/*(0)*/ Описание {get;set;}
+		public string/*(0)*/ РћРїРёСЃР°РЅРёРµ {get;set;}
 		///<summary>
-		///(Общ)
+		///(РћР±С‰)
 		///</summary>
 		[DataMember]
 		[ProtoMember(14)]
-		public V82.Перечисления/*Ссылка*/.ПолФизическихЛиц Пол {get;set;}
+		public V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ/*РЎСЃС‹Р»РєР°*/.РџРѕР»Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС† РџРѕР» {get;set;}
 
-		public V82.СправочникиОбъект.КонтактныеЛица  ПолучитьОбъект()
+		public V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°  РџРѕР»СѓС‡РёС‚СЊРћР±СЉРµРєС‚()
 		{
-			var Объект = new V82.СправочникиОбъект.КонтактныеЛица();
-			Объект._ЭтоНовый = false;
-			Объект.Ссылка = Ссылка;
-			Объект.Версия = Версия;
-			Объект.ПометкаУдаления = ПометкаУдаления;
-			Объект.Предопределенный = Предопределенный;
-			Объект.Код = Код;
-			Объект.Наименование = Наименование;
-			Объект.Фамилия = Фамилия;
-			Объект.Имя = Имя;
-			Объект.КоличествоДнейДоНапоминания = КоличествоДнейДоНапоминания;
-			Объект.НапоминатьОДнеРождения = НапоминатьОДнеРождения;
-			Объект.Отчество = Отчество;
-			Объект.ДатаРождения = ДатаРождения;
-			Объект.Описание = Описание;
-			Объект.Пол = Пол;
-			return Объект;
+			var РћР±СЉРµРєС‚ = new V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.РљРѕРЅС‚Р°РєС‚РЅС‹РµР›РёС†Р°();
+			РћР±СЉРµРєС‚._Р­С‚РѕРќРѕРІС‹Р№ = false;
+			РћР±СЉРµРєС‚.РЎСЃС‹Р»РєР° = РЎСЃС‹Р»РєР°;
+			РћР±СЉРµРєС‚.Р’РµСЂСЃРёСЏ = Р’РµСЂСЃРёСЏ;
+			РћР±СЉРµРєС‚.РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ = РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ;
+			РћР±СЉРµРєС‚.РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ = РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№;
+			РћР±СЉРµРєС‚.РљРѕРґ = РљРѕРґ;
+			РћР±СЉРµРєС‚.РќР°РёРјРµРЅРѕРІР°РЅРёРµ = РќР°РёРјРµРЅРѕРІР°РЅРёРµ;
+			РћР±СЉРµРєС‚.Р¤Р°РјРёР»РёСЏ = Р¤Р°РјРёР»РёСЏ;
+			РћР±СЉРµРєС‚.РРјСЏ = РРјСЏ;
+			РћР±СЉРµРєС‚.РљРѕР»РёС‡РµСЃС‚РІРѕР”РЅРµР№Р”РѕРќР°РїРѕРјРёРЅР°РЅРёСЏ = РљРѕР»РёС‡РµСЃС‚РІРѕР”РЅРµР№Р”РѕРќР°РїРѕРјРёРЅР°РЅРёСЏ;
+			РћР±СЉРµРєС‚.РќР°РїРѕРјРёРЅР°С‚СЊРћР”РЅРµР РѕР¶РґРµРЅРёСЏ = РќР°РїРѕРјРёРЅР°С‚СЊРћР”РЅРµР РѕР¶РґРµРЅРёСЏ;
+			РћР±СЉРµРєС‚.РћС‚С‡РµСЃС‚РІРѕ = РћС‚С‡РµСЃС‚РІРѕ;
+			РћР±СЉРµРєС‚.Р”Р°С‚Р°Р РѕР¶РґРµРЅРёСЏ = Р”Р°С‚Р°Р РѕР¶РґРµРЅРёСЏ;
+			РћР±СЉРµРєС‚.РћРїРёСЃР°РЅРёРµ = РћРїРёСЃР°РЅРёРµ;
+			РћР±СЉРµРєС‚.РџРѕР» = РџРѕР»;
+			return РћР±СЉРµРєС‚;
 		}
 
-		public void СериализацияProtoBuf(Stream Поток)
+		public void РЎРµСЂРёР°Р»РёР·Р°С†РёСЏProtoBuf(Stream РџРѕС‚РѕРє)
 		{
-			Serializer.Serialize(Поток,this);
+			Serializer.Serialize(РџРѕС‚РѕРє,this);
 		}
 		
-		public string СериализацияJson()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏJson()
 		{
 			return this.ToJson();
 		}
 		
-		public string СериализацияXml()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏXml()
 		{
 			return this.ToXml();
 		}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/RazdelyAnkety")]
 	[Route("/Catalogs/RazdelyAnkety/{Code}")]
-	public class RazdelyAnketyRequest/*РазделыАнкетыЗапрос*/: V82.СправочникиСсылка.РазделыАнкеты,IReturn<RazdelyAnketyRequest>
+	public class RazdelyAnketyRequest/*Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹,IReturn<RazdelyAnketyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class RazdelyAnketyResponse//РазделыАнкетыОтвет
+	public class RazdelyAnketyResponse//Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/RazdelyAnketys")]
 	[Route("/Catalogs/RazdelyAnketys/{Codes}")]
-	public class RazdelyAnketysRequest/*РазделыАнкетыЗапрос*/: IReturn<List<RazdelyAnketyRequest>>
+	public class RazdelyAnketysRequest/*Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<RazdelyAnketyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class RazdelyAnketysResponse//РазделыАнкетыОтвет
+	public class RazdelyAnketysResponse//Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class RazdelyAnketyService /*РазделыАнкетыСервис*/ : Service
+	public class RazdelyAnketyService /*Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(RazdelyAnketyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(RazdelyAnketyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.РазделыАнкеты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new RazdelyAnketyResponse() {Result = "РазделыАнкеты c кодом '" + request.Code+"' не найдено."};
+					return new RazdelyAnketyResponse() {Result = "Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.РазделыАнкеты.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(RazdelyAnketysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РазделыАнкеты>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.РазделыАнкеты.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р·РґРµР»С‹РђРЅРєРµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

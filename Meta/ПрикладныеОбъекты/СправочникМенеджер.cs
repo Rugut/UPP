@@ -1,14 +1,14 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
 
-namespace V82.Справочники//Менеджер
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё//РњРµРЅРµРґР¶РµСЂ
 {
-	public partial class СправочникМенеджер
+	public partial class РЎРїСЂР°РІРѕС‡РЅРёРєРњРµРЅРµРґР¶РµСЂ
 	{
-		public static string СтрокаСоединения = "server=10.2.66.29,59635;Database=UPP;Trusted_Connection=True;";
+		public static string РЎС‚СЂРѕРєР°РЎРѕРµРґРёРЅРµРЅРёСЏ = "server=10.2.66.29,59635;Database=UPP;Trusted_Connection=True;";
 	}
 }
 

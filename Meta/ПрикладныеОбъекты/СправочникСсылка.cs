@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,20 +7,20 @@ using System.IO;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
 using System.Runtime.Serialization;
 
-namespace V82.СправочникиСсылка
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°
 {
 	[DataContract]
 	[Serializable]
-	public partial class СправочникСсылка
+	public partial class РЎРїСЂР°РІРѕС‡РЅРёРєРЎСЃС‹Р»РєР°
 	{
 	}
-	public interface IСериализаторProtoBuf
+	public interface IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂProtoBuf
 	{
-		void СериализацияProtoBuf(Stream Поток);
+		void РЎРµСЂРёР°Р»РёР·Р°С†РёСЏProtoBuf(Stream РџРѕС‚РѕРє);
 	}
-	public interface IСериализаторJson
+	public interface IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂJson
 	{
-		string СериализацияJson();
+		string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏJson();
 	}
 }
 

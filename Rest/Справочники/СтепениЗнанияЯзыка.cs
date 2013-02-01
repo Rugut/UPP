@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/StepeniZnaniyaYAzyka")]
 	[Route("/Catalogs/StepeniZnaniyaYAzyka/{Code}")]
-	public class StepeniZnaniyaYAzykaRequest/*СтепениЗнанияЯзыкаЗапрос*/: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<StepeniZnaniyaYAzykaRequest>
+	public class StepeniZnaniyaYAzykaRequest/*РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°,IReturn<StepeniZnaniyaYAzykaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class StepeniZnaniyaYAzykaResponse//СтепениЗнанияЯзыкаОтвет
+	public class StepeniZnaniyaYAzykaResponse//РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/StepeniZnaniyaYAzykas")]
 	[Route("/Catalogs/StepeniZnaniyaYAzykas/{Codes}")]
-	public class StepeniZnaniyaYAzykasRequest/*СтепениЗнанияЯзыкаЗапрос*/: IReturn<List<StepeniZnaniyaYAzykaRequest>>
+	public class StepeniZnaniyaYAzykasRequest/*РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°Р—Р°РїСЂРѕСЃ*/: IReturn<List<StepeniZnaniyaYAzykaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class StepeniZnaniyaYAzykasResponse//СтепениЗнанияЯзыкаОтвет
+	public class StepeniZnaniyaYAzykasResponse//РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class StepeniZnaniyaYAzykaService /*СтепениЗнанияЯзыкаСервис*/ : Service
+	public class StepeniZnaniyaYAzykaService /*РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(StepeniZnaniyaYAzykaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(StepeniZnaniyaYAzykaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СтепениЗнанияЯзыка.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new StepeniZnaniyaYAzykaResponse() {Result = "СтепениЗнанияЯзыка c кодом '" + request.Code+"' не найдено."};
+					return new StepeniZnaniyaYAzykaResponse() {Result = "РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СтепениЗнанияЯзыка.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(StepeniZnaniyaYAzykasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтепениЗнанияЯзыка>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СтепениЗнанияЯзыка.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‚РµРїРµРЅРёР—РЅР°РЅРёСЏРЇР·С‹РєР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

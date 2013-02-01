@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov")]
 	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/{Code}")]
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest/*ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос*/: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest>
+	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest/*Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІ,IReturn<EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovResponse//ЭлектронныеПредставленияРегламентированныхОтчетовОтвет
+	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovResponse//Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetovs")]
 	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetovs/{Codes}")]
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsRequest/*ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос*/: IReturn<List<EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest>>
+	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsRequest/*Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsResponse//ЭлектронныеПредставленияРегламентированныхОтчетовОтвет
+	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsResponse//Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovService /*ЭлектронныеПредставленияРегламентированныхОтчетовСервис*/ : Service
+	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovService /*Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ЭлектронныеПредставленияРегламентированныхОтчетов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovResponse() {Result = "ЭлектронныеПредставленияРегламентированныхОтчетов c кодом '" + request.Code+"' не найдено."};
+					return new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovResponse() {Result = "Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ЭлектронныеПредставленияРегламентированныхОтчетов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ЭлектронныеПредставленияРегламентированныхОтчетов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р­Р»РµРєС‚СЂРѕРЅРЅС‹РµРџСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏР РµРіР»Р°РјРµРЅС‚РёСЂРѕРІР°РЅРЅС‹С…РћС‚С‡РµС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/FizicheskieLica")]
 	[Route("/Catalogs/FizicheskieLica/{Code}")]
-	public class FizicheskieLicaRequest/*ФизическиеЛицаЗапрос*/: V82.СправочникиСсылка.ФизическиеЛица,IReturn<FizicheskieLicaRequest>
+	public class FizicheskieLicaRequest/*Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°,IReturn<FizicheskieLicaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class FizicheskieLicaResponse//ФизическиеЛицаОтвет
+	public class FizicheskieLicaResponse//Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/FizicheskieLicas")]
 	[Route("/Catalogs/FizicheskieLicas/{Codes}")]
-	public class FizicheskieLicasRequest/*ФизическиеЛицаЗапрос*/: IReturn<List<FizicheskieLicaRequest>>
+	public class FizicheskieLicasRequest/*Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°Р—Р°РїСЂРѕСЃ*/: IReturn<List<FizicheskieLicaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class FizicheskieLicasResponse//ФизическиеЛицаОтвет
+	public class FizicheskieLicasResponse//Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class FizicheskieLicaService /*ФизическиеЛицаСервис*/ : Service
+	public class FizicheskieLicaService /*Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(FizicheskieLicaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(FizicheskieLicaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ФизическиеЛица.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new FizicheskieLicaResponse() {Result = "ФизическиеЛица c кодом '" + request.Code+"' не найдено."};
+					return new FizicheskieLicaResponse() {Result = "Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ФизическиеЛица.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(FizicheskieLicasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ФизическиеЛица>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ФизическиеЛица.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¤РёР·РёС‡РµСЃРєРёРµР›РёС†Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

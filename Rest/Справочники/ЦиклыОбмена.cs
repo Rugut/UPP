@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/CiklyObmena")]
 	[Route("/Catalogs/CiklyObmena/{Code}")]
-	public class CiklyObmenaRequest/*ЦиклыОбменаЗапрос*/: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<CiklyObmenaRequest>
+	public class CiklyObmenaRequest/*Р¦РёРєР»С‹РћР±РјРµРЅР°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¦РёРєР»С‹РћР±РјРµРЅР°,IReturn<CiklyObmenaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class CiklyObmenaResponse//ЦиклыОбменаОтвет
+	public class CiklyObmenaResponse//Р¦РёРєР»С‹РћР±РјРµРЅР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/CiklyObmenas")]
 	[Route("/Catalogs/CiklyObmenas/{Codes}")]
-	public class CiklyObmenasRequest/*ЦиклыОбменаЗапрос*/: IReturn<List<CiklyObmenaRequest>>
+	public class CiklyObmenasRequest/*Р¦РёРєР»С‹РћР±РјРµРЅР°Р—Р°РїСЂРѕСЃ*/: IReturn<List<CiklyObmenaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class CiklyObmenasResponse//ЦиклыОбменаОтвет
+	public class CiklyObmenasResponse//Р¦РёРєР»С‹РћР±РјРµРЅР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class CiklyObmenaService /*ЦиклыОбменаСервис*/ : Service
+	public class CiklyObmenaService /*Р¦РёРєР»С‹РћР±РјРµРЅР°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(CiklyObmenaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(CiklyObmenaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ЦиклыОбмена.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¦РёРєР»С‹РћР±РјРµРЅР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new CiklyObmenaResponse() {Result = "ЦиклыОбмена c кодом '" + request.Code+"' не найдено."};
+					return new CiklyObmenaResponse() {Result = "Р¦РёРєР»С‹РћР±РјРµРЅР° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ЦиклыОбмена.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¦РёРєР»С‹РћР±РјРµРЅР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(CiklyObmenasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЦиклыОбмена>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¦РёРєР»С‹РћР±РјРµРЅР°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ЦиклыОбмена.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¦РёРєР»С‹РћР±РјРµРЅР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

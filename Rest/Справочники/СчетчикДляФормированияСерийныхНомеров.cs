@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov")]
 	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/{Code}")]
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest/*СчетчикДляФормированияСерийныхНомеровЗапрос*/: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest>
+	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest/*РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ,IReturn<SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse//СчетчикДляФормированияСерийныхНомеровОтвет
+	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse//РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerovs")]
 	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerovs/{Codes}")]
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovsRequest/*СчетчикДляФормированияСерийныхНомеровЗапрос*/: IReturn<List<SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest>>
+	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovsRequest/*РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovsResponse//СчетчикДляФормированияСерийныхНомеровОтвет
+	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovsResponse//РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovService /*СчетчикДляФормированияСерийныхНомеровСервис*/ : Service
+	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovService /*РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse() {Result = "СчетчикДляФормированияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
+					return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse() {Result = "РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SchetchikDlyaFormirovaniyaSerijjnykhNomerovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‡РµС‚С‡РёРєР”Р»СЏР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii")]
 	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/{Code}")]
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest/*НастройкиФормированияДокументовВыпускаПродукцииЗапрос*/: V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции,IReturn<NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest>
+	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest/*РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРё,IReturn<NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiResponse//НастройкиФормированияДокументовВыпускаПродукцииОтвет
+	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiResponse//РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukciis")]
 	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukciis/{Codes}")]
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisRequest/*НастройкиФормированияДокументовВыпускаПродукцииЗапрос*/: IReturn<List<NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest>>
+	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisRequest/*РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРёР—Р°РїСЂРѕСЃ*/: IReturn<List<NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisResponse//НастройкиФормированияДокументовВыпускаПродукцииОтвет
+	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisResponse//РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiService /*НастройкиФормированияДокументовВыпускаПродукцииСервис*/ : Service
+	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiService /*РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.НастройкиФормированияДокументовВыпускаПродукции.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiResponse() {Result = "НастройкиФормированияДокументовВыпускаПродукции c кодом '" + request.Code+"' не найдено."};
+					return new NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiResponse() {Result = "РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.НастройкиФормированияДокументовВыпускаПродукции.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.НастройкиФормированияДокументовВыпускаПродукции.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєРёР¤РѕСЂРјРёСЂРѕРІР°РЅРёСЏР”РѕРєСѓРјРµРЅС‚РѕРІР’С‹РїСѓСЃРєР°РџСЂРѕРґСѓРєС†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

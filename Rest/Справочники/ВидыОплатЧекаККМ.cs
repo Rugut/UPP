@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/VidyOplatCHekaKKM")]
 	[Route("/Catalogs/VidyOplatCHekaKKM/{Code}")]
-	public class VidyOplatCHekaKKMRequest/*ВидыОплатЧекаККМЗапрос*/: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<VidyOplatCHekaKKMRequest>
+	public class VidyOplatCHekaKKMRequest/*Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњ,IReturn<VidyOplatCHekaKKMRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VidyOplatCHekaKKMResponse//ВидыОплатЧекаККМОтвет
+	public class VidyOplatCHekaKKMResponse//Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/VidyOplatCHekaKKMs")]
 	[Route("/Catalogs/VidyOplatCHekaKKMs/{Codes}")]
-	public class VidyOplatCHekaKKMsRequest/*ВидыОплатЧекаККМЗапрос*/: IReturn<List<VidyOplatCHekaKKMRequest>>
+	public class VidyOplatCHekaKKMsRequest/*Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњР—Р°РїСЂРѕСЃ*/: IReturn<List<VidyOplatCHekaKKMRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VidyOplatCHekaKKMsResponse//ВидыОплатЧекаККМОтвет
+	public class VidyOplatCHekaKKMsResponse//Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VidyOplatCHekaKKMService /*ВидыОплатЧекаККМСервис*/ : Service
+	public class VidyOplatCHekaKKMService /*Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VidyOplatCHekaKKMRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VidyOplatCHekaKKMRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ВидыОплатЧекаККМ.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VidyOplatCHekaKKMResponse() {Result = "ВидыОплатЧекаККМ c кодом '" + request.Code+"' не найдено."};
+					return new VidyOplatCHekaKKMResponse() {Result = "Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ВидыОплатЧекаККМ.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VidyOplatCHekaKKMsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыОплатЧекаККМ>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ВидыОплатЧекаККМ.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РћРїР»Р°С‚Р§РµРєР°РљРљРњ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

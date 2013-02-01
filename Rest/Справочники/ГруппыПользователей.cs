@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/GruppyPolzovatelejj")]
 	[Route("/Catalogs/GruppyPolzovatelejj/{Code}")]
-	public class GruppyPolzovatelejjRequest/*ГруппыПользователейЗапрос*/: V82.СправочникиСсылка.ГруппыПользователей,IReturn<GruppyPolzovatelejjRequest>
+	public class GruppyPolzovatelejjRequest/*Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№,IReturn<GruppyPolzovatelejjRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class GruppyPolzovatelejjResponse//ГруппыПользователейОтвет
+	public class GruppyPolzovatelejjResponse//Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/GruppyPolzovatelejjs")]
 	[Route("/Catalogs/GruppyPolzovatelejjs/{Codes}")]
-	public class GruppyPolzovatelejjsRequest/*ГруппыПользователейЗапрос*/: IReturn<List<GruppyPolzovatelejjRequest>>
+	public class GruppyPolzovatelejjsRequest/*Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№Р—Р°РїСЂРѕСЃ*/: IReturn<List<GruppyPolzovatelejjRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class GruppyPolzovatelejjsResponse//ГруппыПользователейОтвет
+	public class GruppyPolzovatelejjsResponse//Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class GruppyPolzovatelejjService /*ГруппыПользователейСервис*/ : Service
+	public class GruppyPolzovatelejjService /*Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(GruppyPolzovatelejjRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(GruppyPolzovatelejjRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ГруппыПользователей.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new GruppyPolzovatelejjResponse() {Result = "ГруппыПользователей c кодом '" + request.Code+"' не найдено."};
+					return new GruppyPolzovatelejjResponse() {Result = "Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ГруппыПользователей.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(GruppyPolzovatelejjsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыПользователей>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ГруппыПользователей.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂСѓРїРїС‹РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

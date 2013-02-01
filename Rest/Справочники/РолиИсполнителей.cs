@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/RoliIspolnitelejj")]
 	[Route("/Catalogs/RoliIspolnitelejj/{Code}")]
-	public class RoliIspolnitelejjRequest/*РолиИсполнителейЗапрос*/: V82.СправочникиСсылка.РолиИсполнителей,IReturn<RoliIspolnitelejjRequest>
+	public class RoliIspolnitelejjRequest/*Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№,IReturn<RoliIspolnitelejjRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class RoliIspolnitelejjResponse//РолиИсполнителейОтвет
+	public class RoliIspolnitelejjResponse//Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/RoliIspolnitelejjs")]
 	[Route("/Catalogs/RoliIspolnitelejjs/{Codes}")]
-	public class RoliIspolnitelejjsRequest/*РолиИсполнителейЗапрос*/: IReturn<List<RoliIspolnitelejjRequest>>
+	public class RoliIspolnitelejjsRequest/*Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№Р—Р°РїСЂРѕСЃ*/: IReturn<List<RoliIspolnitelejjRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class RoliIspolnitelejjsResponse//РолиИсполнителейОтвет
+	public class RoliIspolnitelejjsResponse//Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class RoliIspolnitelejjService /*РолиИсполнителейСервис*/ : Service
+	public class RoliIspolnitelejjService /*Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(RoliIspolnitelejjRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(RoliIspolnitelejjRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.РолиИсполнителей.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new RoliIspolnitelejjResponse() {Result = "РолиИсполнителей c кодом '" + request.Code+"' не найдено."};
+					return new RoliIspolnitelejjResponse() {Result = "Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.РолиИсполнителей.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(RoliIspolnitelejjsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РолиИсполнителей>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.РолиИсполнителей.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РѕР»РёРСЃРїРѕР»РЅРёС‚РµР»РµР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

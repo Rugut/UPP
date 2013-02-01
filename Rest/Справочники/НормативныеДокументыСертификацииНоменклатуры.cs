@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury")]
 	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/{Code}")]
-	public class NormativnyeDokumentySertifikaciiNomenklaturyRequest/*НормативныеДокументыСертификацииНоменклатурыЗапрос*/: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<NormativnyeDokumentySertifikaciiNomenklaturyRequest>
+	public class NormativnyeDokumentySertifikaciiNomenklaturyRequest/*РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹,IReturn<NormativnyeDokumentySertifikaciiNomenklaturyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class NormativnyeDokumentySertifikaciiNomenklaturyResponse//НормативныеДокументыСертификацииНоменклатурыОтвет
+	public class NormativnyeDokumentySertifikaciiNomenklaturyResponse//РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklaturys")]
 	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklaturys/{Codes}")]
-	public class NormativnyeDokumentySertifikaciiNomenklaturysRequest/*НормативныеДокументыСертификацииНоменклатурыЗапрос*/: IReturn<List<NormativnyeDokumentySertifikaciiNomenklaturyRequest>>
+	public class NormativnyeDokumentySertifikaciiNomenklaturysRequest/*РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<NormativnyeDokumentySertifikaciiNomenklaturyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class NormativnyeDokumentySertifikaciiNomenklaturysResponse//НормативныеДокументыСертификацииНоменклатурыОтвет
+	public class NormativnyeDokumentySertifikaciiNomenklaturysResponse//РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class NormativnyeDokumentySertifikaciiNomenklaturyService /*НормативныеДокументыСертификацииНоменклатурыСервис*/ : Service
+	public class NormativnyeDokumentySertifikaciiNomenklaturyService /*РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(NormativnyeDokumentySertifikaciiNomenklaturyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(NormativnyeDokumentySertifikaciiNomenklaturyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.НормативныеДокументыСертификацииНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new NormativnyeDokumentySertifikaciiNomenklaturyResponse() {Result = "НормативныеДокументыСертификацииНоменклатуры c кодом '" + request.Code+"' не найдено."};
+					return new NormativnyeDokumentySertifikaciiNomenklaturyResponse() {Result = "РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.НормативныеДокументыСертификацииНоменклатуры.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(NormativnyeDokumentySertifikaciiNomenklaturysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.НормативныеДокументыСертификацииНоменклатуры.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќРѕСЂРјР°С‚РёРІРЅС‹РµР”РѕРєСѓРјРµРЅС‚С‹РЎРµСЂС‚РёС„РёРєР°С†РёРёРќРѕРјРµРЅРєР»Р°С‚СѓСЂС‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

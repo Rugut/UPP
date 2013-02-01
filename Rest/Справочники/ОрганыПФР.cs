@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/OrganyPFR")]
 	[Route("/Catalogs/OrganyPFR/{Code}")]
-	public class OrganyPFRRequest/*ОрганыПФРЗапрос*/: V82.СправочникиСсылка.ОрганыПФР,IReturn<OrganyPFRRequest>
+	public class OrganyPFRRequest/*РћСЂРіР°РЅС‹РџР¤Р Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћСЂРіР°РЅС‹РџР¤Р ,IReturn<OrganyPFRRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class OrganyPFRResponse//ОрганыПФРОтвет
+	public class OrganyPFRResponse//РћСЂРіР°РЅС‹РџР¤Р РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/OrganyPFRs")]
 	[Route("/Catalogs/OrganyPFRs/{Codes}")]
-	public class OrganyPFRsRequest/*ОрганыПФРЗапрос*/: IReturn<List<OrganyPFRRequest>>
+	public class OrganyPFRsRequest/*РћСЂРіР°РЅС‹РџР¤Р Р—Р°РїСЂРѕСЃ*/: IReturn<List<OrganyPFRRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class OrganyPFRsResponse//ОрганыПФРОтвет
+	public class OrganyPFRsResponse//РћСЂРіР°РЅС‹РџР¤Р РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class OrganyPFRService /*ОрганыПФРСервис*/ : Service
+	public class OrganyPFRService /*РћСЂРіР°РЅС‹РџР¤Р РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(OrganyPFRRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(OrganyPFRRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ОрганыПФР.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЂРіР°РЅС‹РџР¤Р .РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new OrganyPFRResponse() {Result = "ОрганыПФР c кодом '" + request.Code+"' не найдено."};
+					return new OrganyPFRResponse() {Result = "РћСЂРіР°РЅС‹РџР¤Р  c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ОрганыПФР.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЂРіР°РЅС‹РџР¤Р .РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(OrganyPFRsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОрганыПФР>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћСЂРіР°РЅС‹РџР¤Р >();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ОрганыПФР.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЂРіР°РЅС‹РџР¤Р .РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

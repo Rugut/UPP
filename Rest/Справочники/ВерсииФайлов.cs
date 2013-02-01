@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/VersiiFajjlov")]
 	[Route("/Catalogs/VersiiFajjlov/{Code}")]
-	public class VersiiFajjlovRequest/*ВерсииФайловЗапрос*/: V82.СправочникиСсылка.ВерсииФайлов,IReturn<VersiiFajjlovRequest>
+	public class VersiiFajjlovRequest/*Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІ,IReturn<VersiiFajjlovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VersiiFajjlovResponse//ВерсииФайловОтвет
+	public class VersiiFajjlovResponse//Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/VersiiFajjlovs")]
 	[Route("/Catalogs/VersiiFajjlovs/{Codes}")]
-	public class VersiiFajjlovsRequest/*ВерсииФайловЗапрос*/: IReturn<List<VersiiFajjlovRequest>>
+	public class VersiiFajjlovsRequest/*Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<VersiiFajjlovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VersiiFajjlovsResponse//ВерсииФайловОтвет
+	public class VersiiFajjlovsResponse//Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VersiiFajjlovService /*ВерсииФайловСервис*/ : Service
+	public class VersiiFajjlovService /*Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VersiiFajjlovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VersiiFajjlovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ВерсииФайлов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VersiiFajjlovResponse() {Result = "ВерсииФайлов c кодом '" + request.Code+"' не найдено."};
+					return new VersiiFajjlovResponse() {Result = "Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ВерсииФайлов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VersiiFajjlovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВерсииФайлов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ВерсииФайлов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РµСЂСЃРёРёР¤Р°Р№Р»РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

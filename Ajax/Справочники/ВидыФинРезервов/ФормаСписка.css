@@ -1,4 +1,4 @@
-
+п»ї
 html, body
 {
 	font-size: 8pt;
@@ -45,18 +45,18 @@ input
 	border-style:solid;
 	border-width:thin;
 }
-div.Форма
+div.Р¤РѕСЂРјР°
 {
 	background-color:#FCFAEB;
 }
-div.КоманднаяПанель
+div.РљРѕРјР°РЅРґРЅР°СЏРџР°РЅРµР»СЊ
 {
 	background-color:#F5F2DD;
 	border-color:#B3AC86;
 	border-style:solid;
 	border-width:thin;
 }
-button.КнопкаКоманднойПанели
+button.РљРЅРѕРїРєР°РљРѕРјР°РЅРґРЅРѕР№РџР°РЅРµР»Рё
 {
 	background-color:#F5F2DD;
 	border-color:#F5F2DD;
@@ -64,7 +64,7 @@ button.КнопкаКоманднойПанели
 	border-style:solid;
 	border-width:thin;
 }
-button.КнопкаКоманднойПанели:hover
+button.РљРЅРѕРїРєР°РљРѕРјР°РЅРґРЅРѕР№РџР°РЅРµР»Рё:hover
 {
 	background-color:#CCE2FD;
 	border-color:#9CB5E8;
@@ -79,19 +79,19 @@ table
 	border-style:solid;
 	border-width:thin;
 }
-table.ТабличноеПоле
+table.РўР°Р±Р»РёС‡РЅРѕРµРџРѕР»Рµ
 {
 }
-table.ТабличноеПоле thead
+table.РўР°Р±Р»РёС‡РЅРѕРµРџРѕР»Рµ thead
 {
 	height: 22px;
 	overflow:auto;
 	display:block;
 }
-table.ТабличноеПоле thead tr th
+table.РўР°Р±Р»РёС‡РЅРѕРµРџРѕР»Рµ thead tr th
 {
 }
-table.ТабличноеПоле tbody
+table.РўР°Р±Р»РёС‡РЅРѕРµРџРѕР»Рµ tbody
 {
 	display: block;
 	overflow: auto;
@@ -103,14 +103,14 @@ table.ТабличноеПоле tbody
 	scrollbar-face-color:#B3AC86;
 	border-spacing: 0px 0px;
 }
-table.ТабличноеПоле tbody tr td
+table.РўР°Р±Р»РёС‡РЅРѕРµРџРѕР»Рµ tbody tr td
 {
 	border-right-width:thin;
 	border-right-style:solid;
 	border-bottom-width:thin;
 	border-bottom-style:solid;
 }
-#ТабличноеПоле_Редактор
+#РўР°Р±Р»РёС‡РЅРѕРµРџРѕР»Рµ_Р РµРґР°РєС‚РѕСЂ
 {
 	display: none;
 	position: absolute;

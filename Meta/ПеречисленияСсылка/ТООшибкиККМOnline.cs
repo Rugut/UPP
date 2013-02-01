@@ -1,30 +1,30 @@
-
+п»ї
 using System;
 using V82;
-using V82.Перечисления;//Ссылка;
-namespace V82.Перечисления//Ссылка
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ//РЎСЃС‹Р»РєР°
 {
-	public enum ТООшибкиККМOnline
+	public enum РўРћРћС€РёР±РєРёРљРљРњOnline
 	{
-		ПустаяСсылка = - 1,
+		РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР° = - 1,
 	}
-	public static partial class ТООшибкиККМOnline_Значения//:ПеречислениеСсылка
+	public static partial class РўРћРћС€РёР±РєРёРљРљРњOnline_Р—РЅР°С‡РµРЅРёСЏ//:РџРµСЂРµС‡РёСЃР»РµРЅРёРµРЎСЃС‹Р»РєР°
 	{
-		public static ТООшибкиККМOnline Получить(this ТООшибкиККМOnline Значение, byte[] Ссылка)
+		public static РўРћРћС€РёР±РєРёРљРљРњOnline РџРѕР»СѓС‡РёС‚СЊ(this РўРћРћС€РёР±РєРёРљРљРњOnline Р—РЅР°С‡РµРЅРёРµ, byte[] РЎСЃС‹Р»РєР°)
 		{
-			return Получить(Значение, new Guid(Ссылка));
+			return РџРѕР»СѓС‡РёС‚СЊ(Р—РЅР°С‡РµРЅРёРµ, new Guid(РЎСЃС‹Р»РєР°));
 		}
-		public static ТООшибкиККМOnline Получить(this ТООшибкиККМOnline Значение, Guid Ссылка)
+		public static РўРћРћС€РёР±РєРёРљРљРњOnline РџРѕР»СѓС‡РёС‚СЊ(this РўРћРћС€РёР±РєРёРљРљРњOnline Р—РЅР°С‡РµРЅРёРµ, Guid РЎСЃС‹Р»РєР°)
 		{
-			return ТООшибкиККМOnline.ПустаяСсылка;
+			return РўРћРћС€РёР±РєРёРљРљРњOnline.РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР°;
 		}
-		public static byte[] Ключ(this ТООшибкиККМOnline Значение)
+		public static byte[] РљР»СЋС‡(this РўРћРћС€РёР±РєРёРљРљРњOnline Р—РЅР°С‡РµРЅРёРµ)
 		{
-			return Ссылка(Значение).ToByteArray();
+			return РЎСЃС‹Р»РєР°(Р—РЅР°С‡РµРЅРёРµ).ToByteArray();
 		}
-		public static Guid Ссылка(this ТООшибкиККМOnline Значение)
+		public static Guid РЎСЃС‹Р»РєР°(this РўРћРћС€РёР±РєРёРљРљРњOnline Р—РЅР°С‡РµРЅРёРµ)
 		{
-			switch (Значение)
+			switch (Р—РЅР°С‡РµРЅРёРµ)
 			{
 			}
 			return Guid.Empty;

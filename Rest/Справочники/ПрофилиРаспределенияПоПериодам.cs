@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam")]
 	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/{Code}")]
-	public class ProfiliRaspredeleniyaPoPeriodamRequest/*ПрофилиРаспределенияПоПериодамЗапрос*/: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ProfiliRaspredeleniyaPoPeriodamRequest>
+	public class ProfiliRaspredeleniyaPoPeriodamRequest/*РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°РјР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°Рј,IReturn<ProfiliRaspredeleniyaPoPeriodamRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class ProfiliRaspredeleniyaPoPeriodamResponse//ПрофилиРаспределенияПоПериодамОтвет
+	public class ProfiliRaspredeleniyaPoPeriodamResponse//РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°РјРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodams")]
 	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodams/{Codes}")]
-	public class ProfiliRaspredeleniyaPoPeriodamsRequest/*ПрофилиРаспределенияПоПериодамЗапрос*/: IReturn<List<ProfiliRaspredeleniyaPoPeriodamRequest>>
+	public class ProfiliRaspredeleniyaPoPeriodamsRequest/*РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°РјР—Р°РїСЂРѕСЃ*/: IReturn<List<ProfiliRaspredeleniyaPoPeriodamRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class ProfiliRaspredeleniyaPoPeriodamsResponse//ПрофилиРаспределенияПоПериодамОтвет
+	public class ProfiliRaspredeleniyaPoPeriodamsResponse//РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°РјРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class ProfiliRaspredeleniyaPoPeriodamService /*ПрофилиРаспределенияПоПериодамСервис*/ : Service
+	public class ProfiliRaspredeleniyaPoPeriodamService /*РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°РјРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(ProfiliRaspredeleniyaPoPeriodamRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(ProfiliRaspredeleniyaPoPeriodamRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ПрофилиРаспределенияПоПериодам.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°Рј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new ProfiliRaspredeleniyaPoPeriodamResponse() {Result = "ПрофилиРаспределенияПоПериодам c кодом '" + request.Code+"' не найдено."};
+					return new ProfiliRaspredeleniyaPoPeriodamResponse() {Result = "РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°Рј c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ПрофилиРаспределенияПоПериодам.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°Рј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(ProfiliRaspredeleniyaPoPeriodamsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°Рј>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ПрофилиРаспределенияПоПериодам.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРѕС„РёР»РёР Р°СЃРїСЂРµРґРµР»РµРЅРёСЏРџРѕРџРµСЂРёРѕРґР°Рј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

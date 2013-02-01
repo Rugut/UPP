@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/UsloviyaProdazh")]
 	[Route("/Catalogs/UsloviyaProdazh/{Code}")]
-	public class UsloviyaProdazhRequest/*УсловияПродажЗапрос*/: V82.СправочникиСсылка.УсловияПродаж,IReturn<UsloviyaProdazhRequest>
+	public class UsloviyaProdazhRequest/*РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶,IReturn<UsloviyaProdazhRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class UsloviyaProdazhResponse//УсловияПродажОтвет
+	public class UsloviyaProdazhResponse//РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/UsloviyaProdazhs")]
 	[Route("/Catalogs/UsloviyaProdazhs/{Codes}")]
-	public class UsloviyaProdazhsRequest/*УсловияПродажЗапрос*/: IReturn<List<UsloviyaProdazhRequest>>
+	public class UsloviyaProdazhsRequest/*РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶Р—Р°РїСЂРѕСЃ*/: IReturn<List<UsloviyaProdazhRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class UsloviyaProdazhsResponse//УсловияПродажОтвет
+	public class UsloviyaProdazhsResponse//РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class UsloviyaProdazhService /*УсловияПродажСервис*/ : Service
+	public class UsloviyaProdazhService /*РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(UsloviyaProdazhRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(UsloviyaProdazhRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.УсловияПродаж.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new UsloviyaProdazhResponse() {Result = "УсловияПродаж c кодом '" + request.Code+"' не найдено."};
+					return new UsloviyaProdazhResponse() {Result = "РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.УсловияПродаж.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(UsloviyaProdazhsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УсловияПродаж>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.УсловияПродаж.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈСЃР»РѕРІРёСЏРџСЂРѕРґР°Р¶.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

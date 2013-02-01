@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/VidyNalogovykhOrganov")]
 	[Route("/Catalogs/VidyNalogovykhOrganov/{Code}")]
-	public class VidyNalogovykhOrganovRequest/*ВидыНалоговыхОргановЗапрос*/: V82.СправочникиСсылка.ВидыНалоговыхОрганов,IReturn<VidyNalogovykhOrganovRequest>
+	public class VidyNalogovykhOrganovRequest/*Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ,IReturn<VidyNalogovykhOrganovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VidyNalogovykhOrganovResponse//ВидыНалоговыхОргановОтвет
+	public class VidyNalogovykhOrganovResponse//Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/VidyNalogovykhOrganovs")]
 	[Route("/Catalogs/VidyNalogovykhOrganovs/{Codes}")]
-	public class VidyNalogovykhOrganovsRequest/*ВидыНалоговыхОргановЗапрос*/: IReturn<List<VidyNalogovykhOrganovRequest>>
+	public class VidyNalogovykhOrganovsRequest/*Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<VidyNalogovykhOrganovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VidyNalogovykhOrganovsResponse//ВидыНалоговыхОргановОтвет
+	public class VidyNalogovykhOrganovsResponse//Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VidyNalogovykhOrganovService /*ВидыНалоговыхОргановСервис*/ : Service
+	public class VidyNalogovykhOrganovService /*Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VidyNalogovykhOrganovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VidyNalogovykhOrganovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ВидыНалоговыхОрганов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VidyNalogovykhOrganovResponse() {Result = "ВидыНалоговыхОрганов c кодом '" + request.Code+"' не найдено."};
+					return new VidyNalogovykhOrganovResponse() {Result = "Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ВидыНалоговыхОрганов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VidyNalogovykhOrganovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыНалоговыхОрганов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ВидыНалоговыхОрганов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

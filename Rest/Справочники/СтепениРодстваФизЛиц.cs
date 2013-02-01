@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/StepeniRodstvaFizLic")]
 	[Route("/Catalogs/StepeniRodstvaFizLic/{Code}")]
-	public class StepeniRodstvaFizLicRequest/*СтепениРодстваФизЛицЗапрос*/: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<StepeniRodstvaFizLicRequest>
+	public class StepeniRodstvaFizLicRequest/*РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†,IReturn<StepeniRodstvaFizLicRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class StepeniRodstvaFizLicResponse//СтепениРодстваФизЛицОтвет
+	public class StepeniRodstvaFizLicResponse//РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/StepeniRodstvaFizLics")]
 	[Route("/Catalogs/StepeniRodstvaFizLics/{Codes}")]
-	public class StepeniRodstvaFizLicsRequest/*СтепениРодстваФизЛицЗапрос*/: IReturn<List<StepeniRodstvaFizLicRequest>>
+	public class StepeniRodstvaFizLicsRequest/*РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†Р—Р°РїСЂРѕСЃ*/: IReturn<List<StepeniRodstvaFizLicRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class StepeniRodstvaFizLicsResponse//СтепениРодстваФизЛицОтвет
+	public class StepeniRodstvaFizLicsResponse//РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class StepeniRodstvaFizLicService /*СтепениРодстваФизЛицСервис*/ : Service
+	public class StepeniRodstvaFizLicService /*РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(StepeniRodstvaFizLicRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(StepeniRodstvaFizLicRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СтепениРодстваФизЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new StepeniRodstvaFizLicResponse() {Result = "СтепениРодстваФизЛиц c кодом '" + request.Code+"' не найдено."};
+					return new StepeniRodstvaFizLicResponse() {Result = "РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС† c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СтепениРодстваФизЛиц.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(StepeniRodstvaFizLicsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтепениРодстваФизЛиц>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СтепениРодстваФизЛиц.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎС‚РµРїРµРЅРёР РѕРґСЃС‚РІР°Р¤РёР·Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

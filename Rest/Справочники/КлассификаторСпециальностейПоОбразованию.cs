@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyu")]
 	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyu/{Code}")]
-	public class KlassifikatorSpecialnostejjPoObrazovaniyuRequest/*КлассификаторСпециальностейПоОбразованиюЗапрос*/: V82.СправочникиСсылка.КлассификаторСпециальностейПоОбразованию,IReturn<KlassifikatorSpecialnostejjPoObrazovaniyuRequest>
+	public class KlassifikatorSpecialnostejjPoObrazovaniyuRequest/*РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋ,IReturn<KlassifikatorSpecialnostejjPoObrazovaniyuRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KlassifikatorSpecialnostejjPoObrazovaniyuResponse//КлассификаторСпециальностейПоОбразованиюОтвет
+	public class KlassifikatorSpecialnostejjPoObrazovaniyuResponse//РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyus")]
 	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyus/{Codes}")]
-	public class KlassifikatorSpecialnostejjPoObrazovaniyusRequest/*КлассификаторСпециальностейПоОбразованиюЗапрос*/: IReturn<List<KlassifikatorSpecialnostejjPoObrazovaniyuRequest>>
+	public class KlassifikatorSpecialnostejjPoObrazovaniyusRequest/*РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋР—Р°РїСЂРѕСЃ*/: IReturn<List<KlassifikatorSpecialnostejjPoObrazovaniyuRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KlassifikatorSpecialnostejjPoObrazovaniyusResponse//КлассификаторСпециальностейПоОбразованиюОтвет
+	public class KlassifikatorSpecialnostejjPoObrazovaniyusResponse//РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KlassifikatorSpecialnostejjPoObrazovaniyuService /*КлассификаторСпециальностейПоОбразованиюСервис*/ : Service
+	public class KlassifikatorSpecialnostejjPoObrazovaniyuService /*РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KlassifikatorSpecialnostejjPoObrazovaniyuRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KlassifikatorSpecialnostejjPoObrazovaniyuRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КлассификаторСпециальностейПоОбразованию.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KlassifikatorSpecialnostejjPoObrazovaniyuResponse() {Result = "КлассификаторСпециальностейПоОбразованию c кодом '" + request.Code+"' не найдено."};
+					return new KlassifikatorSpecialnostejjPoObrazovaniyuResponse() {Result = "РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КлассификаторСпециальностейПоОбразованию.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KlassifikatorSpecialnostejjPoObrazovaniyusRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлассификаторСпециальностейПоОбразованию>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КлассификаторСпециальностейПоОбразованию.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚РµР№РџРѕРћР±СЂР°Р·РѕРІР°РЅРёСЋ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

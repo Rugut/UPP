@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti")]
 	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/{Code}")]
-	public class NastrojjkiRaschetaSebestoimostiRequest/*НастройкиРасчетаСебестоимостиЗапрос*/: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<NastrojjkiRaschetaSebestoimostiRequest>
+	public class NastrojjkiRaschetaSebestoimostiRequest/*РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚РёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё,IReturn<NastrojjkiRaschetaSebestoimostiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class NastrojjkiRaschetaSebestoimostiResponse//НастройкиРасчетаСебестоимостиОтвет
+	public class NastrojjkiRaschetaSebestoimostiResponse//РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚РёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/NastrojjkiRaschetaSebestoimostis")]
 	[Route("/Catalogs/NastrojjkiRaschetaSebestoimostis/{Codes}")]
-	public class NastrojjkiRaschetaSebestoimostisRequest/*НастройкиРасчетаСебестоимостиЗапрос*/: IReturn<List<NastrojjkiRaschetaSebestoimostiRequest>>
+	public class NastrojjkiRaschetaSebestoimostisRequest/*РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚РёР—Р°РїСЂРѕСЃ*/: IReturn<List<NastrojjkiRaschetaSebestoimostiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class NastrojjkiRaschetaSebestoimostisResponse//НастройкиРасчетаСебестоимостиОтвет
+	public class NastrojjkiRaschetaSebestoimostisResponse//РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚РёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class NastrojjkiRaschetaSebestoimostiService /*НастройкиРасчетаСебестоимостиСервис*/ : Service
+	public class NastrojjkiRaschetaSebestoimostiService /*РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚РёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(NastrojjkiRaschetaSebestoimostiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(NastrojjkiRaschetaSebestoimostiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.НастройкиРасчетаСебестоимости.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new NastrojjkiRaschetaSebestoimostiResponse() {Result = "НастройкиРасчетаСебестоимости c кодом '" + request.Code+"' не найдено."};
+					return new NastrojjkiRaschetaSebestoimostiResponse() {Result = "РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.НастройкиРасчетаСебестоимости.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(NastrojjkiRaschetaSebestoimostisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиРасчетаСебестоимости>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.НастройкиРасчетаСебестоимости.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РќР°СЃС‚СЂРѕР№РєРёР Р°СЃС‡РµС‚Р°РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

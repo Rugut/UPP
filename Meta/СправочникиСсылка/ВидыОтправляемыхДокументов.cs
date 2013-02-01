@@ -1,4 +1,4 @@
-
+п»ї
 using System;
 using System.IO;
 using System.Globalization;
@@ -6,91 +6,91 @@ using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
 using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
-using V82.ОбщиеОбъекты;
-using V82.СправочникиСсылка;
-using V82.ДокументыСсылка;
-using V82.Перечисления;//Ссылка;
-namespace V82.СправочникиСсылка
+using V82.РћР±С‰РёРµРћР±СЉРµРєС‚С‹;
+using V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°;
+using V82.Р”РѕРєСѓРјРµРЅС‚С‹РЎСЃС‹Р»РєР°;
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°
 {
 	[ProtoContract]
 	[DataContract]
-	public partial class ВидыОтправляемыхДокументов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
+	public partial class Р’РёРґС‹РћС‚РїСЂР°РІР»СЏРµРјС‹С…Р”РѕРєСѓРјРµРЅС‚РѕРІ:РЎРїСЂР°РІРѕС‡РЅРёРєРЎСЃС‹Р»РєР°,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂProtoBuf,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂJson
 	{
-		public static readonly Guid ГуидКласса = new Guid("8963f840-583b-4aeb-a197-b72844d9b262");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190757.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
-		public static readonly long КонтрольнаяСуммаКласса = 123;
+		public static readonly Guid Р“СѓРёРґРљР»Р°СЃСЃР° = new Guid("8963f840-583b-4aeb-a197-b72844d9b262");
+		public static readonly DateTime Р’РµСЂСЃРёСЏРљР»Р°СЃСЃР° = DateTime.ParseExact("20121221190757.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly long РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏРЎСѓРјРјР°РљР»Р°СЃСЃР° = 123;
 		[DataMember]
 		[ProtoMember(1)]
-		public Guid Ссылка {get;set;}
+		public Guid РЎСЃС‹Р»РєР° {get;set;}
 		[DataMember]
 		[ProtoMember(2)]
-		public long Версия {get;set;}
-		/*static хэш сумма состава и порядка реквизитов*/
-		/*версия класса восстановленного из пакета*/
+		public long Р’РµСЂСЃРёСЏ {get;set;}
+		/*static С…СЌС€ СЃСѓРјРјР° СЃРѕСЃС‚Р°РІР° Рё РїРѕСЂСЏРґРєР° СЂРµРєРІРёР·РёС‚РѕРІ*/
+		/*РІРµСЂСЃРёСЏ РєР»Р°СЃСЃР° РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РёР· РїР°РєРµС‚Р°*/
 		[DataMember]
 		[ProtoMember(3)]
-		public bool ПометкаУдаления {get;set;}
+		public bool РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ {get;set;}
 		[DataMember]
 		[ProtoMember(4)]
-		public bool Предопределенный {get;set;}
+		public bool РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ {get;set;}
 		[DataMember]
 		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
+		public bool Р­С‚РѕР“СЂСѓРїРїР° {get;set;}
 		[DataMember]
 		[ProtoMember(6)]
-		public Guid Родитель {get;set;}
+		public Guid Р РѕРґРёС‚РµР»СЊ {get;set;}
 		[DataMember]
 		[ProtoMember(7)]
-		public string/*9*/ Код {get;set;}
+		public string/*9*/ РљРѕРґ {get;set;}
 		[DataMember]
 		[ProtoMember(8)]
-		public string/*100*/ Наименование {get;set;}
+		public string/*100*/ РќР°РёРјРµРЅРѕРІР°РЅРёРµ {get;set;}
 		///<summary>
-		///Любая дополнительная информация
+		///Р›СЋР±Р°СЏ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ
 		///</summary>
 		[DataMember]
 		[ProtoMember(9)]
-		public string/*(0)*/ Описание {get;set;}
+		public string/*(0)*/ РћРїРёСЃР°РЅРёРµ {get;set;}
 		[DataMember]
 		[ProtoMember(10)]
-		public string/*(255)*/ Источник {get;set;}
+		public string/*(255)*/ РСЃС‚РѕС‡РЅРёРє {get;set;}
 		[DataMember]
 		[ProtoMember(11)]
-		public V82.Перечисления/*Ссылка*/.ТипыКонтролирующихОрганов ТипПолучателя {get;set;}//Тип получателя
+		public V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ/*РЎСЃС‹Р»РєР°*/.РўРёРїС‹РљРѕРЅС‚СЂРѕР»РёСЂСѓСЋС‰РёС…РћСЂРіР°РЅРѕРІ РўРёРїРџРѕР»СѓС‡Р°С‚РµР»СЏ {get;set;}//РўРёРї РїРѕР»СѓС‡Р°С‚РµР»СЏ
 		[DataMember]
 		[ProtoMember(12)]
-		public V82.Перечисления/*Ссылка*/.ТипыОтправляемыхДокументов ТипДокумента {get;set;}//Тип документа
+		public V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ/*РЎСЃС‹Р»РєР°*/.РўРёРїС‹РћС‚РїСЂР°РІР»СЏРµРјС‹С…Р”РѕРєСѓРјРµРЅС‚РѕРІ РўРёРїР”РѕРєСѓРјРµРЅС‚Р° {get;set;}//РўРёРї РґРѕРєСѓРјРµРЅС‚Р°
 
-		public V82.СправочникиОбъект.ВидыОтправляемыхДокументов  ПолучитьОбъект()
+		public V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.Р’РёРґС‹РћС‚РїСЂР°РІР»СЏРµРјС‹С…Р”РѕРєСѓРјРµРЅС‚РѕРІ  РџРѕР»СѓС‡РёС‚СЊРћР±СЉРµРєС‚()
 		{
-			var Объект = new V82.СправочникиОбъект.ВидыОтправляемыхДокументов();
-			Объект._ЭтоНовый = false;
-			Объект.Ссылка = Ссылка;
-			Объект.Версия = Версия;
-			Объект.ПометкаУдаления = ПометкаУдаления;
-			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
-			Объект.Родитель = Родитель;
-			Объект.Код = Код;
-			Объект.Наименование = Наименование;
-			Объект.Описание = Описание;
-			Объект.Источник = Источник;
-			Объект.ТипПолучателя = ТипПолучателя;
-			Объект.ТипДокумента = ТипДокумента;
-			return Объект;
+			var РћР±СЉРµРєС‚ = new V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.Р’РёРґС‹РћС‚РїСЂР°РІР»СЏРµРјС‹С…Р”РѕРєСѓРјРµРЅС‚РѕРІ();
+			РћР±СЉРµРєС‚._Р­С‚РѕРќРѕРІС‹Р№ = false;
+			РћР±СЉРµРєС‚.РЎСЃС‹Р»РєР° = РЎСЃС‹Р»РєР°;
+			РћР±СЉРµРєС‚.Р’РµСЂСЃРёСЏ = Р’РµСЂСЃРёСЏ;
+			РћР±СЉРµРєС‚.РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ = РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ;
+			РћР±СЉРµРєС‚.РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ = РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№;
+			РћР±СЉРµРєС‚.Р­С‚РѕР“СЂСѓРїРїР° = Р­С‚РѕР“СЂСѓРїРїР°;
+			РћР±СЉРµРєС‚.Р РѕРґРёС‚РµР»СЊ = Р РѕРґРёС‚РµР»СЊ;
+			РћР±СЉРµРєС‚.РљРѕРґ = РљРѕРґ;
+			РћР±СЉРµРєС‚.РќР°РёРјРµРЅРѕРІР°РЅРёРµ = РќР°РёРјРµРЅРѕРІР°РЅРёРµ;
+			РћР±СЉРµРєС‚.РћРїРёСЃР°РЅРёРµ = РћРїРёСЃР°РЅРёРµ;
+			РћР±СЉРµРєС‚.РСЃС‚РѕС‡РЅРёРє = РСЃС‚РѕС‡РЅРёРє;
+			РћР±СЉРµРєС‚.РўРёРїРџРѕР»СѓС‡Р°С‚РµР»СЏ = РўРёРїРџРѕР»СѓС‡Р°С‚РµР»СЏ;
+			РћР±СЉРµРєС‚.РўРёРїР”РѕРєСѓРјРµРЅС‚Р° = РўРёРїР”РѕРєСѓРјРµРЅС‚Р°;
+			return РћР±СЉРµРєС‚;
 		}
 
-		public void СериализацияProtoBuf(Stream Поток)
+		public void РЎРµСЂРёР°Р»РёР·Р°С†РёСЏProtoBuf(Stream РџРѕС‚РѕРє)
 		{
-			Serializer.Serialize(Поток,this);
+			Serializer.Serialize(РџРѕС‚РѕРє,this);
 		}
 		
-		public string СериализацияJson()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏJson()
 		{
 			return this.ToJson();
 		}
 		
-		public string СериализацияXml()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏXml()
 		{
 			return this.ToXml();
 		}

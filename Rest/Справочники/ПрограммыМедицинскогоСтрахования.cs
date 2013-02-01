@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniya")]
 	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniya/{Code}")]
-	public class ProgrammyMedicinskogoStrakhovaniyaRequest/*ПрограммыМедицинскогоСтрахованияЗапрос*/: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ProgrammyMedicinskogoStrakhovaniyaRequest>
+	public class ProgrammyMedicinskogoStrakhovaniyaRequest/*РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏ,IReturn<ProgrammyMedicinskogoStrakhovaniyaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class ProgrammyMedicinskogoStrakhovaniyaResponse//ПрограммыМедицинскогоСтрахованияОтвет
+	public class ProgrammyMedicinskogoStrakhovaniyaResponse//РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniyas")]
 	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniyas/{Codes}")]
-	public class ProgrammyMedicinskogoStrakhovaniyasRequest/*ПрограммыМедицинскогоСтрахованияЗапрос*/: IReturn<List<ProgrammyMedicinskogoStrakhovaniyaRequest>>
+	public class ProgrammyMedicinskogoStrakhovaniyasRequest/*РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏР—Р°РїСЂРѕСЃ*/: IReturn<List<ProgrammyMedicinskogoStrakhovaniyaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class ProgrammyMedicinskogoStrakhovaniyasResponse//ПрограммыМедицинскогоСтрахованияОтвет
+	public class ProgrammyMedicinskogoStrakhovaniyasResponse//РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class ProgrammyMedicinskogoStrakhovaniyaService /*ПрограммыМедицинскогоСтрахованияСервис*/ : Service
+	public class ProgrammyMedicinskogoStrakhovaniyaService /*РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(ProgrammyMedicinskogoStrakhovaniyaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(ProgrammyMedicinskogoStrakhovaniyaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ПрограммыМедицинскогоСтрахования.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new ProgrammyMedicinskogoStrakhovaniyaResponse() {Result = "ПрограммыМедицинскогоСтрахования c кодом '" + request.Code+"' не найдено."};
+					return new ProgrammyMedicinskogoStrakhovaniyaResponse() {Result = "РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ПрограммыМедицинскогоСтрахования.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(ProgrammyMedicinskogoStrakhovaniyasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ПрограммыМедицинскогоСтрахования.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРѕРіСЂР°РјРјС‹РњРµРґРёС†РёРЅСЃРєРѕРіРѕРЎС‚СЂР°С…РѕРІР°РЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

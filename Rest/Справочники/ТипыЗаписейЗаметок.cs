@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TipyZapisejjZametok")]
 	[Route("/Catalogs/TipyZapisejjZametok/{Code}")]
-	public class TipyZapisejjZametokRequest/*ТипыЗаписейЗаметокЗапрос*/: V82.СправочникиСсылка.ТипыЗаписейЗаметок,IReturn<TipyZapisejjZametokRequest>
+	public class TipyZapisejjZametokRequest/*РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРєР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРє,IReturn<TipyZapisejjZametokRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TipyZapisejjZametokResponse//ТипыЗаписейЗаметокОтвет
+	public class TipyZapisejjZametokResponse//РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРєРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TipyZapisejjZametoks")]
 	[Route("/Catalogs/TipyZapisejjZametoks/{Codes}")]
-	public class TipyZapisejjZametoksRequest/*ТипыЗаписейЗаметокЗапрос*/: IReturn<List<TipyZapisejjZametokRequest>>
+	public class TipyZapisejjZametoksRequest/*РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРєР—Р°РїСЂРѕСЃ*/: IReturn<List<TipyZapisejjZametokRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TipyZapisejjZametoksResponse//ТипыЗаписейЗаметокОтвет
+	public class TipyZapisejjZametoksResponse//РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРєРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TipyZapisejjZametokService /*ТипыЗаписейЗаметокСервис*/ : Service
+	public class TipyZapisejjZametokService /*РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРєРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TipyZapisejjZametokRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TipyZapisejjZametokRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТипыЗаписейЗаметок.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TipyZapisejjZametokResponse() {Result = "ТипыЗаписейЗаметок c кодом '" + request.Code+"' не найдено."};
+					return new TipyZapisejjZametokResponse() {Result = "РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРє c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТипыЗаписейЗаметок.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TipyZapisejjZametoksRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТипыЗаписейЗаметок>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРє>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТипыЗаписейЗаметок.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹Р—Р°РїРёСЃРµР№Р—Р°РјРµС‚РѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

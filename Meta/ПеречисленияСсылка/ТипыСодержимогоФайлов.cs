@@ -1,136 +1,136 @@
-
+п»ї
 using System;
 using V82;
-using V82.Перечисления;//Ссылка;
-namespace V82.Перечисления//Ссылка
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ//РЎСЃС‹Р»РєР°
 {
-	public enum ТипыСодержимогоФайлов
+	public enum РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ
 	{
-		ПустаяСсылка = - 1,
-		Текст866 = 0,//Текст в кодировке DOS
-		Текст1251 = 1,
+		РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР° = - 1,
+		РўРµРєСЃС‚866 = 0,//РўРµРєСЃС‚ РІ РєРѕРґРёСЂРѕРІРєРµ DOS
+		РўРµРєСЃС‚1251 = 1,
 		xml = 2,
 		html = 3,
-		pdf = 4,//Документ в формате PDF
-		rtf = 5,//Документ в формате RTF
-		tiff = 6,//Документ в формате TIFF
-		jpeg = 7,//Документ в формате JPEG
-		ms_word = 8,//Документ в формате Microsoft Word
-		ms_excel = 9,//Документ в формате Microsoft Excel
-		odf_text = 10,//Документ в формате Open Document Text
-		odf_spreadsheet = 11,//Документ в формате Open Document Spreadsheet
-		oxml_word = 12,//Документ в формате Open XML Word
-		oxml_spreadsheet = 13,//Документ в формате Open XML Spreadsheet
-		Неизвестный = 14,
+		pdf = 4,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ PDF
+		rtf = 5,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ RTF
+		tiff = 6,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ TIFF
+		jpeg = 7,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ JPEG
+		ms_word = 8,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Microsoft Word
+		ms_excel = 9,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Microsoft Excel
+		odf_text = 10,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open Document Text
+		odf_spreadsheet = 11,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open Document Spreadsheet
+		oxml_word = 12,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open XML Word
+		oxml_spreadsheet = 13,//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open XML Spreadsheet
+		РќРµРёР·РІРµСЃС‚РЅС‹Р№ = 14,
 	}
-	public static partial class ТипыСодержимогоФайлов_Значения//:ПеречислениеСсылка
+	public static partial class РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ_Р—РЅР°С‡РµРЅРёСЏ//:РџРµСЂРµС‡РёСЃР»РµРЅРёРµРЎСЃС‹Р»РєР°
 	{
-		public static readonly Guid Текст866 = new Guid("34427ea5-e702-a335-46be-42b098da877b");//Текст в кодировке DOS
-		public static readonly Guid Текст1251 = new Guid("15844b98-f49a-3116-4fa1-8f4d87c2b717");
+		public static readonly Guid РўРµРєСЃС‚866 = new Guid("34427ea5-e702-a335-46be-42b098da877b");//РўРµРєСЃС‚ РІ РєРѕРґРёСЂРѕРІРєРµ DOS
+		public static readonly Guid РўРµРєСЃС‚1251 = new Guid("15844b98-f49a-3116-4fa1-8f4d87c2b717");
 		public static readonly Guid xml = new Guid("7145d88b-73a2-74e7-488e-5314cad2ab82");
 		public static readonly Guid html = new Guid("f6be9991-c775-bc8f-4105-5a32d46d1d6c");
-		public static readonly Guid pdf = new Guid("153e2f98-22d7-451c-46af-de9cdea310f5");//Документ в формате PDF
-		public static readonly Guid rtf = new Guid("8b6c2fa9-2a14-ed2d-4d7c-f2ecc0e6083c");//Документ в формате RTF
-		public static readonly Guid tiff = new Guid("831a17a5-cd5b-0f2d-440a-809ad8e33a14");//Документ в формате TIFF
-		public static readonly Guid jpeg = new Guid("77cfa59c-19a3-fcca-4b59-f46436701a44");//Документ в формате JPEG
-		public static readonly Guid ms_word = new Guid("0bee1da5-6915-709d-4fb5-48312c240515");//Документ в формате Microsoft Word
-		public static readonly Guid ms_excel = new Guid("6c406c84-8efa-faba-47cd-bb8477fce2ae");//Документ в формате Microsoft Excel
-		public static readonly Guid odf_text = new Guid("3ba82395-a794-48cd-4f99-c6bd8ffe72ec");//Документ в формате Open Document Text
-		public static readonly Guid odf_spreadsheet = new Guid("681867b0-e6ae-7ad2-45b4-c95f37943491");//Документ в формате Open Document Spreadsheet
-		public static readonly Guid oxml_word = new Guid("24ce678c-5ba1-3e81-45cf-b1c4332da8bc");//Документ в формате Open XML Word
-		public static readonly Guid oxml_spreadsheet = new Guid("cd412ab6-dd37-be6e-4121-4ce7b5cdb6f9");//Документ в формате Open XML Spreadsheet
-		public static readonly Guid Неизвестный = new Guid("9edcf298-72c5-1003-4d7d-00e8acf5175c");
-		public static ТипыСодержимогоФайлов Получить(this ТипыСодержимогоФайлов Значение, byte[] Ссылка)
+		public static readonly Guid pdf = new Guid("153e2f98-22d7-451c-46af-de9cdea310f5");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ PDF
+		public static readonly Guid rtf = new Guid("8b6c2fa9-2a14-ed2d-4d7c-f2ecc0e6083c");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ RTF
+		public static readonly Guid tiff = new Guid("831a17a5-cd5b-0f2d-440a-809ad8e33a14");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ TIFF
+		public static readonly Guid jpeg = new Guid("77cfa59c-19a3-fcca-4b59-f46436701a44");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ JPEG
+		public static readonly Guid ms_word = new Guid("0bee1da5-6915-709d-4fb5-48312c240515");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Microsoft Word
+		public static readonly Guid ms_excel = new Guid("6c406c84-8efa-faba-47cd-bb8477fce2ae");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Microsoft Excel
+		public static readonly Guid odf_text = new Guid("3ba82395-a794-48cd-4f99-c6bd8ffe72ec");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open Document Text
+		public static readonly Guid odf_spreadsheet = new Guid("681867b0-e6ae-7ad2-45b4-c95f37943491");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open Document Spreadsheet
+		public static readonly Guid oxml_word = new Guid("24ce678c-5ba1-3e81-45cf-b1c4332da8bc");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open XML Word
+		public static readonly Guid oxml_spreadsheet = new Guid("cd412ab6-dd37-be6e-4121-4ce7b5cdb6f9");//Р”РѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ Open XML Spreadsheet
+		public static readonly Guid РќРµРёР·РІРµСЃС‚РЅС‹Р№ = new Guid("9edcf298-72c5-1003-4d7d-00e8acf5175c");
+		public static РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ РџРѕР»СѓС‡РёС‚СЊ(this РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ Р—РЅР°С‡РµРЅРёРµ, byte[] РЎСЃС‹Р»РєР°)
 		{
-			return Получить(Значение, new Guid(Ссылка));
+			return РџРѕР»СѓС‡РёС‚СЊ(Р—РЅР°С‡РµРЅРёРµ, new Guid(РЎСЃС‹Р»РєР°));
 		}
-		public static ТипыСодержимогоФайлов Получить(this ТипыСодержимогоФайлов Значение, Guid Ссылка)
+		public static РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ РџРѕР»СѓС‡РёС‚СЊ(this РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ Р—РЅР°С‡РµРЅРёРµ, Guid РЎСЃС‹Р»РєР°)
 		{
-			if(Ссылка == Текст866)
+			if(РЎСЃС‹Р»РєР° == РўРµРєСЃС‚866)
 			{
-				return ТипыСодержимогоФайлов.Текст866;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.РўРµРєСЃС‚866;
 			}
-			else if(Ссылка == Текст1251)
+			else if(РЎСЃС‹Р»РєР° == РўРµРєСЃС‚1251)
 			{
-				return ТипыСодержимогоФайлов.Текст1251;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.РўРµРєСЃС‚1251;
 			}
-			else if(Ссылка == xml)
+			else if(РЎСЃС‹Р»РєР° == xml)
 			{
-				return ТипыСодержимогоФайлов.xml;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.xml;
 			}
-			else if(Ссылка == html)
+			else if(РЎСЃС‹Р»РєР° == html)
 			{
-				return ТипыСодержимогоФайлов.html;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.html;
 			}
-			else if(Ссылка == pdf)
+			else if(РЎСЃС‹Р»РєР° == pdf)
 			{
-				return ТипыСодержимогоФайлов.pdf;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.pdf;
 			}
-			else if(Ссылка == rtf)
+			else if(РЎСЃС‹Р»РєР° == rtf)
 			{
-				return ТипыСодержимогоФайлов.rtf;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.rtf;
 			}
-			else if(Ссылка == tiff)
+			else if(РЎСЃС‹Р»РєР° == tiff)
 			{
-				return ТипыСодержимогоФайлов.tiff;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.tiff;
 			}
-			else if(Ссылка == jpeg)
+			else if(РЎСЃС‹Р»РєР° == jpeg)
 			{
-				return ТипыСодержимогоФайлов.jpeg;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.jpeg;
 			}
-			else if(Ссылка == ms_word)
+			else if(РЎСЃС‹Р»РєР° == ms_word)
 			{
-				return ТипыСодержимогоФайлов.ms_word;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.ms_word;
 			}
-			else if(Ссылка == ms_excel)
+			else if(РЎСЃС‹Р»РєР° == ms_excel)
 			{
-				return ТипыСодержимогоФайлов.ms_excel;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.ms_excel;
 			}
-			else if(Ссылка == odf_text)
+			else if(РЎСЃС‹Р»РєР° == odf_text)
 			{
-				return ТипыСодержимогоФайлов.odf_text;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.odf_text;
 			}
-			else if(Ссылка == odf_spreadsheet)
+			else if(РЎСЃС‹Р»РєР° == odf_spreadsheet)
 			{
-				return ТипыСодержимогоФайлов.odf_spreadsheet;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.odf_spreadsheet;
 			}
-			else if(Ссылка == oxml_word)
+			else if(РЎСЃС‹Р»РєР° == oxml_word)
 			{
-				return ТипыСодержимогоФайлов.oxml_word;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.oxml_word;
 			}
-			else if(Ссылка == oxml_spreadsheet)
+			else if(РЎСЃС‹Р»РєР° == oxml_spreadsheet)
 			{
-				return ТипыСодержимогоФайлов.oxml_spreadsheet;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.oxml_spreadsheet;
 			}
-			else if(Ссылка == Неизвестный)
+			else if(РЎСЃС‹Р»РєР° == РќРµРёР·РІРµСЃС‚РЅС‹Р№)
 			{
-				return ТипыСодержимогоФайлов.Неизвестный;
+				return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.РќРµРёР·РІРµСЃС‚РЅС‹Р№;
 			}
-			return ТипыСодержимогоФайлов.ПустаяСсылка;
+			return РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.РџСѓСЃС‚Р°СЏРЎСЃС‹Р»РєР°;
 		}
-		public static byte[] Ключ(this ТипыСодержимогоФайлов Значение)
+		public static byte[] РљР»СЋС‡(this РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ Р—РЅР°С‡РµРЅРёРµ)
 		{
-			return Ссылка(Значение).ToByteArray();
+			return РЎСЃС‹Р»РєР°(Р—РЅР°С‡РµРЅРёРµ).ToByteArray();
 		}
-		public static Guid Ссылка(this ТипыСодержимогоФайлов Значение)
+		public static Guid РЎСЃС‹Р»РєР°(this РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ Р—РЅР°С‡РµРЅРёРµ)
 		{
-			switch (Значение)
+			switch (Р—РЅР°С‡РµРЅРёРµ)
 			{
-				case ТипыСодержимогоФайлов.Текст866: return Текст866;
-				case ТипыСодержимогоФайлов.Текст1251: return Текст1251;
-				case ТипыСодержимогоФайлов.xml: return xml;
-				case ТипыСодержимогоФайлов.html: return html;
-				case ТипыСодержимогоФайлов.pdf: return pdf;
-				case ТипыСодержимогоФайлов.rtf: return rtf;
-				case ТипыСодержимогоФайлов.tiff: return tiff;
-				case ТипыСодержимогоФайлов.jpeg: return jpeg;
-				case ТипыСодержимогоФайлов.ms_word: return ms_word;
-				case ТипыСодержимогоФайлов.ms_excel: return ms_excel;
-				case ТипыСодержимогоФайлов.odf_text: return odf_text;
-				case ТипыСодержимогоФайлов.odf_spreadsheet: return odf_spreadsheet;
-				case ТипыСодержимогоФайлов.oxml_word: return oxml_word;
-				case ТипыСодержимогоФайлов.oxml_spreadsheet: return oxml_spreadsheet;
-				case ТипыСодержимогоФайлов.Неизвестный: return Неизвестный;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.РўРµРєСЃС‚866: return РўРµРєСЃС‚866;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.РўРµРєСЃС‚1251: return РўРµРєСЃС‚1251;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.xml: return xml;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.html: return html;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.pdf: return pdf;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.rtf: return rtf;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.tiff: return tiff;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.jpeg: return jpeg;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.ms_word: return ms_word;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.ms_excel: return ms_excel;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.odf_text: return odf_text;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.odf_spreadsheet: return odf_spreadsheet;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.oxml_word: return oxml_word;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.oxml_spreadsheet: return oxml_spreadsheet;
+				case РўРёРїС‹РЎРѕРґРµСЂР¶РёРјРѕРіРѕР¤Р°Р№Р»РѕРІ.РќРµРёР·РІРµСЃС‚РЅС‹Р№: return РќРµРёР·РІРµСЃС‚РЅС‹Р№;
 			}
 			return Guid.Empty;
 		}

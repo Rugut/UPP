@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TerritorialnyeUsloviya")]
 	[Route("/Catalogs/TerritorialnyeUsloviya/{Code}")]
-	public class TerritorialnyeUsloviyaRequest/*ТерриториальныеУсловияЗапрос*/: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<TerritorialnyeUsloviyaRequest>
+	public class TerritorialnyeUsloviyaRequest/*РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏ,IReturn<TerritorialnyeUsloviyaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TerritorialnyeUsloviyaResponse//ТерриториальныеУсловияОтвет
+	public class TerritorialnyeUsloviyaResponse//РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TerritorialnyeUsloviyas")]
 	[Route("/Catalogs/TerritorialnyeUsloviyas/{Codes}")]
-	public class TerritorialnyeUsloviyasRequest/*ТерриториальныеУсловияЗапрос*/: IReturn<List<TerritorialnyeUsloviyaRequest>>
+	public class TerritorialnyeUsloviyasRequest/*РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏР—Р°РїСЂРѕСЃ*/: IReturn<List<TerritorialnyeUsloviyaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TerritorialnyeUsloviyasResponse//ТерриториальныеУсловияОтвет
+	public class TerritorialnyeUsloviyasResponse//РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TerritorialnyeUsloviyaService /*ТерриториальныеУсловияСервис*/ : Service
+	public class TerritorialnyeUsloviyaService /*РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TerritorialnyeUsloviyaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TerritorialnyeUsloviyaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТерриториальныеУсловия.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TerritorialnyeUsloviyaResponse() {Result = "ТерриториальныеУсловия c кодом '" + request.Code+"' не найдено."};
+					return new TerritorialnyeUsloviyaResponse() {Result = "РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТерриториальныеУсловия.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TerritorialnyeUsloviyasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТерриториальныеУсловия>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТерриториальныеУсловия.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµСЂСЂРёС‚РѕСЂРёР°Р»СЊРЅС‹РµРЈСЃР»РѕРІРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

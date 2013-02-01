@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii")]
 	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/{Code}")]
-	public class IndividualnyeGrafikiAmortizaciiRequest/*ИндивидуальныеГрафикиАмортизацииЗапрос*/: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<IndividualnyeGrafikiAmortizaciiRequest>
+	public class IndividualnyeGrafikiAmortizaciiRequest/*РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРё,IReturn<IndividualnyeGrafikiAmortizaciiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class IndividualnyeGrafikiAmortizaciiResponse//ИндивидуальныеГрафикиАмортизацииОтвет
+	public class IndividualnyeGrafikiAmortizaciiResponse//РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/IndividualnyeGrafikiAmortizaciis")]
 	[Route("/Catalogs/IndividualnyeGrafikiAmortizaciis/{Codes}")]
-	public class IndividualnyeGrafikiAmortizaciisRequest/*ИндивидуальныеГрафикиАмортизацииЗапрос*/: IReturn<List<IndividualnyeGrafikiAmortizaciiRequest>>
+	public class IndividualnyeGrafikiAmortizaciisRequest/*РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРёР—Р°РїСЂРѕСЃ*/: IReturn<List<IndividualnyeGrafikiAmortizaciiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class IndividualnyeGrafikiAmortizaciisResponse//ИндивидуальныеГрафикиАмортизацииОтвет
+	public class IndividualnyeGrafikiAmortizaciisResponse//РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class IndividualnyeGrafikiAmortizaciiService /*ИндивидуальныеГрафикиАмортизацииСервис*/ : Service
+	public class IndividualnyeGrafikiAmortizaciiService /*РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(IndividualnyeGrafikiAmortizaciiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(IndividualnyeGrafikiAmortizaciiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ИндивидуальныеГрафикиАмортизации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new IndividualnyeGrafikiAmortizaciiResponse() {Result = "ИндивидуальныеГрафикиАмортизации c кодом '" + request.Code+"' не найдено."};
+					return new IndividualnyeGrafikiAmortizaciiResponse() {Result = "РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ИндивидуальныеГрафикиАмортизации.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(IndividualnyeGrafikiAmortizaciisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ИндивидуальныеГрафикиАмортизации.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹РµР“СЂР°С„РёРєРёРђРјРѕСЂС‚РёР·Р°С†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

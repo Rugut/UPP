@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TipovyeAnkety")]
 	[Route("/Catalogs/TipovyeAnkety/{Code}")]
-	public class TipovyeAnketyRequest/*ТиповыеАнкетыЗапрос*/: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<TipovyeAnketyRequest>
+	public class TipovyeAnketyRequest/*РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹,IReturn<TipovyeAnketyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TipovyeAnketyResponse//ТиповыеАнкетыОтвет
+	public class TipovyeAnketyResponse//РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TipovyeAnketys")]
 	[Route("/Catalogs/TipovyeAnketys/{Codes}")]
-	public class TipovyeAnketysRequest/*ТиповыеАнкетыЗапрос*/: IReturn<List<TipovyeAnketyRequest>>
+	public class TipovyeAnketysRequest/*РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<TipovyeAnketyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TipovyeAnketysResponse//ТиповыеАнкетыОтвет
+	public class TipovyeAnketysResponse//РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TipovyeAnketyService /*ТиповыеАнкетыСервис*/ : Service
+	public class TipovyeAnketyService /*РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TipovyeAnketyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TipovyeAnketyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТиповыеАнкеты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TipovyeAnketyResponse() {Result = "ТиповыеАнкеты c кодом '" + request.Code+"' не найдено."};
+					return new TipovyeAnketyResponse() {Result = "РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТиповыеАнкеты.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TipovyeAnketysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТиповыеАнкеты>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТиповыеАнкеты.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїРѕРІС‹РµРђРЅРєРµС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva")]
 	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/{Code}")]
-	public class TekhnologicheskieKartyProizvodstvaRequest/*ТехнологическиеКартыПроизводстваЗапрос*/: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<TekhnologicheskieKartyProizvodstvaRequest>
+	public class TekhnologicheskieKartyProizvodstvaRequest/*РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°,IReturn<TekhnologicheskieKartyProizvodstvaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TekhnologicheskieKartyProizvodstvaResponse//ТехнологическиеКартыПроизводстваОтвет
+	public class TekhnologicheskieKartyProizvodstvaResponse//РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TekhnologicheskieKartyProizvodstvas")]
 	[Route("/Catalogs/TekhnologicheskieKartyProizvodstvas/{Codes}")]
-	public class TekhnologicheskieKartyProizvodstvasRequest/*ТехнологическиеКартыПроизводстваЗапрос*/: IReturn<List<TekhnologicheskieKartyProizvodstvaRequest>>
+	public class TekhnologicheskieKartyProizvodstvasRequest/*РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°Р—Р°РїСЂРѕСЃ*/: IReturn<List<TekhnologicheskieKartyProizvodstvaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TekhnologicheskieKartyProizvodstvasResponse//ТехнологическиеКартыПроизводстваОтвет
+	public class TekhnologicheskieKartyProizvodstvasResponse//РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TekhnologicheskieKartyProizvodstvaService /*ТехнологическиеКартыПроизводстваСервис*/ : Service
+	public class TekhnologicheskieKartyProizvodstvaService /*РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TekhnologicheskieKartyProizvodstvaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TekhnologicheskieKartyProizvodstvaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТехнологическиеКартыПроизводства.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TekhnologicheskieKartyProizvodstvaResponse() {Result = "ТехнологическиеКартыПроизводства c кодом '" + request.Code+"' не найдено."};
+					return new TekhnologicheskieKartyProizvodstvaResponse() {Result = "РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТехнологическиеКартыПроизводства.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TekhnologicheskieKartyProizvodstvasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТехнологическиеКартыПроизводства>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТехнологическиеКартыПроизводства.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёРµРљР°СЂС‚С‹РџСЂРѕРёР·РІРѕРґСЃС‚РІР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

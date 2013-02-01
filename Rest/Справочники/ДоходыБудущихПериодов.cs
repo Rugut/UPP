@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/DokhodyBudushhikhPeriodov")]
 	[Route("/Catalogs/DokhodyBudushhikhPeriodov/{Code}")]
-	public class DokhodyBudushhikhPeriodovRequest/*ДоходыБудущихПериодовЗапрос*/: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<DokhodyBudushhikhPeriodovRequest>
+	public class DokhodyBudushhikhPeriodovRequest/*Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІ,IReturn<DokhodyBudushhikhPeriodovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class DokhodyBudushhikhPeriodovResponse//ДоходыБудущихПериодовОтвет
+	public class DokhodyBudushhikhPeriodovResponse//Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/DokhodyBudushhikhPeriodovs")]
 	[Route("/Catalogs/DokhodyBudushhikhPeriodovs/{Codes}")]
-	public class DokhodyBudushhikhPeriodovsRequest/*ДоходыБудущихПериодовЗапрос*/: IReturn<List<DokhodyBudushhikhPeriodovRequest>>
+	public class DokhodyBudushhikhPeriodovsRequest/*Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<DokhodyBudushhikhPeriodovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class DokhodyBudushhikhPeriodovsResponse//ДоходыБудущихПериодовОтвет
+	public class DokhodyBudushhikhPeriodovsResponse//Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class DokhodyBudushhikhPeriodovService /*ДоходыБудущихПериодовСервис*/ : Service
+	public class DokhodyBudushhikhPeriodovService /*Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(DokhodyBudushhikhPeriodovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(DokhodyBudushhikhPeriodovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ДоходыБудущихПериодов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new DokhodyBudushhikhPeriodovResponse() {Result = "ДоходыБудущихПериодов c кодом '" + request.Code+"' не найдено."};
+					return new DokhodyBudushhikhPeriodovResponse() {Result = "Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ДоходыБудущихПериодов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(DokhodyBudushhikhPeriodovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоходыБудущихПериодов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ДоходыБудущихПериодов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕС…РѕРґС‹Р‘СѓРґСѓС‰РёС…РџРµСЂРёРѕРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

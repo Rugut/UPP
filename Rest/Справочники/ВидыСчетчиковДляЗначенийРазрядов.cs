@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov")]
 	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/{Code}")]
-	public class VidySchetchikovDlyaZnachenijjRazryadovRequest/*ВидыСчетчиковДляЗначенийРазрядовЗапрос*/: V82.СправочникиСсылка.ВидыСчетчиковДляЗначенийРазрядов,IReturn<VidySchetchikovDlyaZnachenijjRazryadovRequest>
+	public class VidySchetchikovDlyaZnachenijjRazryadovRequest/*Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІ,IReturn<VidySchetchikovDlyaZnachenijjRazryadovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VidySchetchikovDlyaZnachenijjRazryadovResponse//ВидыСчетчиковДляЗначенийРазрядовОтвет
+	public class VidySchetchikovDlyaZnachenijjRazryadovResponse//Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadovs")]
 	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadovs/{Codes}")]
-	public class VidySchetchikovDlyaZnachenijjRazryadovsRequest/*ВидыСчетчиковДляЗначенийРазрядовЗапрос*/: IReturn<List<VidySchetchikovDlyaZnachenijjRazryadovRequest>>
+	public class VidySchetchikovDlyaZnachenijjRazryadovsRequest/*Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<VidySchetchikovDlyaZnachenijjRazryadovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VidySchetchikovDlyaZnachenijjRazryadovsResponse//ВидыСчетчиковДляЗначенийРазрядовОтвет
+	public class VidySchetchikovDlyaZnachenijjRazryadovsResponse//Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VidySchetchikovDlyaZnachenijjRazryadovService /*ВидыСчетчиковДляЗначенийРазрядовСервис*/ : Service
+	public class VidySchetchikovDlyaZnachenijjRazryadovService /*Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VidySchetchikovDlyaZnachenijjRazryadovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VidySchetchikovDlyaZnachenijjRazryadovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ВидыСчетчиковДляЗначенийРазрядов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VidySchetchikovDlyaZnachenijjRazryadovResponse() {Result = "ВидыСчетчиковДляЗначенийРазрядов c кодом '" + request.Code+"' не найдено."};
+					return new VidySchetchikovDlyaZnachenijjRazryadovResponse() {Result = "Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ВидыСчетчиковДляЗначенийРазрядов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VidySchetchikovDlyaZnachenijjRazryadovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыСчетчиковДляЗначенийРазрядов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ВидыСчетчиковДляЗначенийРазрядов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹РЎС‡РµС‚С‡РёРєРѕРІР”Р»СЏР—РЅР°С‡РµРЅРёР№Р Р°Р·СЂСЏРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TipySkidokNacenok")]
 	[Route("/Catalogs/TipySkidokNacenok/{Code}")]
-	public class TipySkidokNacenokRequest/*ТипыСкидокНаценокЗапрос*/: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<TipySkidokNacenokRequest>
+	public class TipySkidokNacenokRequest/*РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРєР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРє,IReturn<TipySkidokNacenokRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TipySkidokNacenokResponse//ТипыСкидокНаценокОтвет
+	public class TipySkidokNacenokResponse//РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРєРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TipySkidokNacenoks")]
 	[Route("/Catalogs/TipySkidokNacenoks/{Codes}")]
-	public class TipySkidokNacenoksRequest/*ТипыСкидокНаценокЗапрос*/: IReturn<List<TipySkidokNacenokRequest>>
+	public class TipySkidokNacenoksRequest/*РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРєР—Р°РїСЂРѕСЃ*/: IReturn<List<TipySkidokNacenokRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TipySkidokNacenoksResponse//ТипыСкидокНаценокОтвет
+	public class TipySkidokNacenoksResponse//РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРєРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TipySkidokNacenokService /*ТипыСкидокНаценокСервис*/ : Service
+	public class TipySkidokNacenokService /*РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРєРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TipySkidokNacenokRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TipySkidokNacenokRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТипыСкидокНаценок.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TipySkidokNacenokResponse() {Result = "ТипыСкидокНаценок c кодом '" + request.Code+"' не найдено."};
+					return new TipySkidokNacenokResponse() {Result = "РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРє c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТипыСкидокНаценок.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TipySkidokNacenoksRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТипыСкидокНаценок>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРє>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТипыСкидокНаценок.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРёРїС‹РЎРєРёРґРѕРєРќР°С†РµРЅРѕРє.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

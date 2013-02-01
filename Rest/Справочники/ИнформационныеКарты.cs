@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/InformacionnyeKarty")]
 	[Route("/Catalogs/InformacionnyeKarty/{Code}")]
-	public class InformacionnyeKartyRequest/*ИнформационныеКартыЗапрос*/: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<InformacionnyeKartyRequest>
+	public class InformacionnyeKartyRequest/*РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹,IReturn<InformacionnyeKartyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class InformacionnyeKartyResponse//ИнформационныеКартыОтвет
+	public class InformacionnyeKartyResponse//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/InformacionnyeKartys")]
 	[Route("/Catalogs/InformacionnyeKartys/{Codes}")]
-	public class InformacionnyeKartysRequest/*ИнформационныеКартыЗапрос*/: IReturn<List<InformacionnyeKartyRequest>>
+	public class InformacionnyeKartysRequest/*РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<InformacionnyeKartyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class InformacionnyeKartysResponse//ИнформационныеКартыОтвет
+	public class InformacionnyeKartysResponse//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class InformacionnyeKartyService /*ИнформационныеКартыСервис*/ : Service
+	public class InformacionnyeKartyService /*РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(InformacionnyeKartyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(InformacionnyeKartyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ИнформационныеКарты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new InformacionnyeKartyResponse() {Result = "ИнформационныеКарты c кодом '" + request.Code+"' не найдено."};
+					return new InformacionnyeKartyResponse() {Result = "РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ИнформационныеКарты.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(InformacionnyeKartysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ИнформационныеКарты>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ИнформационныеКарты.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹РµРљР°СЂС‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

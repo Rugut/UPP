@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Voenkomaty")]
 	[Route("/Catalogs/Voenkomaty/{Code}")]
-	public class VoenkomatyRequest/*ВоенкоматыЗапрос*/: V82.СправочникиСсылка.Военкоматы,IReturn<VoenkomatyRequest>
+	public class VoenkomatyRequest/*Р’РѕРµРЅРєРѕРјР°С‚С‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РѕРµРЅРєРѕРјР°С‚С‹,IReturn<VoenkomatyRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VoenkomatyResponse//ВоенкоматыОтвет
+	public class VoenkomatyResponse//Р’РѕРµРЅРєРѕРјР°С‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Voenkomatys")]
 	[Route("/Catalogs/Voenkomatys/{Codes}")]
-	public class VoenkomatysRequest/*ВоенкоматыЗапрос*/: IReturn<List<VoenkomatyRequest>>
+	public class VoenkomatysRequest/*Р’РѕРµРЅРєРѕРјР°С‚С‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<VoenkomatyRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VoenkomatysResponse//ВоенкоматыОтвет
+	public class VoenkomatysResponse//Р’РѕРµРЅРєРѕРјР°С‚С‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VoenkomatyService /*ВоенкоматыСервис*/ : Service
+	public class VoenkomatyService /*Р’РѕРµРЅРєРѕРјР°С‚С‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VoenkomatyRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VoenkomatyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Военкоматы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РѕРµРЅРєРѕРјР°С‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VoenkomatyResponse() {Result = "Военкоматы c кодом '" + request.Code+"' не найдено."};
+					return new VoenkomatyResponse() {Result = "Р’РѕРµРЅРєРѕРјР°С‚С‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Военкоматы.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РѕРµРЅРєРѕРјР°С‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VoenkomatysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Военкоматы>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РѕРµРЅРєРѕРјР°С‚С‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Военкоматы.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РѕРµРЅРєРѕРјР°С‚С‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

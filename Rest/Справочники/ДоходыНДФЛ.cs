@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/DokhodyNDFL")]
 	[Route("/Catalogs/DokhodyNDFL/{Code}")]
-	public class DokhodyNDFLRequest/*ДоходыНДФЛЗапрос*/: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<DokhodyNDFLRequest>
+	public class DokhodyNDFLRequest/*Р”РѕС…РѕРґС‹РќР”Р¤Р›Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕС…РѕРґС‹РќР”Р¤Р›,IReturn<DokhodyNDFLRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class DokhodyNDFLResponse//ДоходыНДФЛОтвет
+	public class DokhodyNDFLResponse//Р”РѕС…РѕРґС‹РќР”Р¤Р›РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/DokhodyNDFLs")]
 	[Route("/Catalogs/DokhodyNDFLs/{Codes}")]
-	public class DokhodyNDFLsRequest/*ДоходыНДФЛЗапрос*/: IReturn<List<DokhodyNDFLRequest>>
+	public class DokhodyNDFLsRequest/*Р”РѕС…РѕРґС‹РќР”Р¤Р›Р—Р°РїСЂРѕСЃ*/: IReturn<List<DokhodyNDFLRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class DokhodyNDFLsResponse//ДоходыНДФЛОтвет
+	public class DokhodyNDFLsResponse//Р”РѕС…РѕРґС‹РќР”Р¤Р›РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class DokhodyNDFLService /*ДоходыНДФЛСервис*/ : Service
+	public class DokhodyNDFLService /*Р”РѕС…РѕРґС‹РќР”Р¤Р›РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(DokhodyNDFLRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(DokhodyNDFLRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ДоходыНДФЛ.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕС…РѕРґС‹РќР”Р¤Р›.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new DokhodyNDFLResponse() {Result = "ДоходыНДФЛ c кодом '" + request.Code+"' не найдено."};
+					return new DokhodyNDFLResponse() {Result = "Р”РѕС…РѕРґС‹РќР”Р¤Р› c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ДоходыНДФЛ.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕС…РѕРґС‹РќР”Р¤Р›.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(DokhodyNDFLsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоходыНДФЛ>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕС…РѕРґС‹РќР”Р¤Р›>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ДоходыНДФЛ.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕС…РѕРґС‹РќР”Р¤Р›.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

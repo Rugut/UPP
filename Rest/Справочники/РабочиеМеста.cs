@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/RabochieMesta")]
 	[Route("/Catalogs/RabochieMesta/{Code}")]
-	public class RabochieMestaRequest/*РабочиеМестаЗапрос*/: V82.СправочникиСсылка.РабочиеМеста,IReturn<RabochieMestaRequest>
+	public class RabochieMestaRequest/*Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°,IReturn<RabochieMestaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class RabochieMestaResponse//РабочиеМестаОтвет
+	public class RabochieMestaResponse//Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/RabochieMestas")]
 	[Route("/Catalogs/RabochieMestas/{Codes}")]
-	public class RabochieMestasRequest/*РабочиеМестаЗапрос*/: IReturn<List<RabochieMestaRequest>>
+	public class RabochieMestasRequest/*Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°Р—Р°РїСЂРѕСЃ*/: IReturn<List<RabochieMestaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class RabochieMestasResponse//РабочиеМестаОтвет
+	public class RabochieMestasResponse//Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class RabochieMestaService /*РабочиеМестаСервис*/ : Service
+	public class RabochieMestaService /*Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(RabochieMestaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(RabochieMestaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.РабочиеМеста.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new RabochieMestaResponse() {Result = "РабочиеМеста c кодом '" + request.Code+"' не найдено."};
+					return new RabochieMestaResponse() {Result = "Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.РабочиеМеста.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(RabochieMestasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РабочиеМеста>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.РабочиеМеста.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‡РёРµРњРµСЃС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

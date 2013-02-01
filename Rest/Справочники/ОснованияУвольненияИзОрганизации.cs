@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/OsnovaniyaUvolneniyaIzOrganizacii")]
 	[Route("/Catalogs/OsnovaniyaUvolneniyaIzOrganizacii/{Code}")]
-	public class OsnovaniyaUvolneniyaIzOrganizaciiRequest/*ОснованияУвольненияИзОрганизацииЗапрос*/: V82.СправочникиСсылка.ОснованияУвольненияИзОрганизации,IReturn<OsnovaniyaUvolneniyaIzOrganizaciiRequest>
+	public class OsnovaniyaUvolneniyaIzOrganizaciiRequest/*РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРё,IReturn<OsnovaniyaUvolneniyaIzOrganizaciiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class OsnovaniyaUvolneniyaIzOrganizaciiResponse//ОснованияУвольненияИзОрганизацииОтвет
+	public class OsnovaniyaUvolneniyaIzOrganizaciiResponse//РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/OsnovaniyaUvolneniyaIzOrganizaciis")]
 	[Route("/Catalogs/OsnovaniyaUvolneniyaIzOrganizaciis/{Codes}")]
-	public class OsnovaniyaUvolneniyaIzOrganizaciisRequest/*ОснованияУвольненияИзОрганизацииЗапрос*/: IReturn<List<OsnovaniyaUvolneniyaIzOrganizaciiRequest>>
+	public class OsnovaniyaUvolneniyaIzOrganizaciisRequest/*РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРёР—Р°РїСЂРѕСЃ*/: IReturn<List<OsnovaniyaUvolneniyaIzOrganizaciiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class OsnovaniyaUvolneniyaIzOrganizaciisResponse//ОснованияУвольненияИзОрганизацииОтвет
+	public class OsnovaniyaUvolneniyaIzOrganizaciisResponse//РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class OsnovaniyaUvolneniyaIzOrganizaciiService /*ОснованияУвольненияИзОрганизацииСервис*/ : Service
+	public class OsnovaniyaUvolneniyaIzOrganizaciiService /*РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(OsnovaniyaUvolneniyaIzOrganizaciiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(OsnovaniyaUvolneniyaIzOrganizaciiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ОснованияУвольненияИзОрганизации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new OsnovaniyaUvolneniyaIzOrganizaciiResponse() {Result = "ОснованияУвольненияИзОрганизации c кодом '" + request.Code+"' не найдено."};
+					return new OsnovaniyaUvolneniyaIzOrganizaciiResponse() {Result = "РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ОснованияУвольненияИзОрганизации.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(OsnovaniyaUvolneniyaIzOrganizaciisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОснованияУвольненияИзОрганизации>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ОснованияУвольненияИзОрганизации.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЃРЅРѕРІР°РЅРёСЏРЈРІРѕР»СЊРЅРµРЅРёСЏРР·РћСЂРіР°РЅРёР·Р°С†РёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

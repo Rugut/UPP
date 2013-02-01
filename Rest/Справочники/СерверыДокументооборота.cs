@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/ServeryDokumentooborota")]
 	[Route("/Catalogs/ServeryDokumentooborota/{Code}")]
-	public class ServeryDokumentooborotaRequest/*СерверыДокументооборотаЗапрос*/: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<ServeryDokumentooborotaRequest>
+	public class ServeryDokumentooborotaRequest/*РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°,IReturn<ServeryDokumentooborotaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class ServeryDokumentooborotaResponse//СерверыДокументооборотаОтвет
+	public class ServeryDokumentooborotaResponse//РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/ServeryDokumentooborotas")]
 	[Route("/Catalogs/ServeryDokumentooborotas/{Codes}")]
-	public class ServeryDokumentooborotasRequest/*СерверыДокументооборотаЗапрос*/: IReturn<List<ServeryDokumentooborotaRequest>>
+	public class ServeryDokumentooborotasRequest/*РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°Р—Р°РїСЂРѕСЃ*/: IReturn<List<ServeryDokumentooborotaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class ServeryDokumentooborotasResponse//СерверыДокументооборотаОтвет
+	public class ServeryDokumentooborotasResponse//РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class ServeryDokumentooborotaService /*СерверыДокументооборотаСервис*/ : Service
+	public class ServeryDokumentooborotaService /*РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(ServeryDokumentooborotaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(ServeryDokumentooborotaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СерверыДокументооборота.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new ServeryDokumentooborotaResponse() {Result = "СерверыДокументооборота c кодом '" + request.Code+"' не найдено."};
+					return new ServeryDokumentooborotaResponse() {Result = "РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СерверыДокументооборота.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(ServeryDokumentooborotasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СерверыДокументооборота>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СерверыДокументооборота.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРµСЂРІРµСЂС‹Р”РѕРєСѓРјРµРЅС‚РѕРѕР±РѕСЂРѕС‚Р°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

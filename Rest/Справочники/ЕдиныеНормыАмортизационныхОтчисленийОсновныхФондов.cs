@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov")]
 	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/{Code}")]
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest/*ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос*/: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest>
+	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest/*Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ,IReturn<EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse//ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет
+	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse//Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovs")]
 	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovs/{Codes}")]
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsRequest/*ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос*/: IReturn<List<EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest>>
+	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsRequest/*Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsResponse//ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет
+	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsResponse//Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovService /*ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовСервис*/ : Service
+	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovService /*Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse() {Result = "ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов c кодом '" + request.Code+"' не найдено."};
+					return new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse() {Result = "Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р•РґРёРЅС‹РµРќРѕСЂРјС‹РђРјРѕСЂС‚РёР·Р°С†РёРѕРЅРЅС‹С…РћС‚С‡РёСЃР»РµРЅРёР№РћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

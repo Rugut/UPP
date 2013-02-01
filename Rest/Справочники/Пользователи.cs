@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Polzovateli")]
 	[Route("/Catalogs/Polzovateli/{Code}")]
-	public class PolzovateliRequest/*ПользователиЗапрос*/: V82.СправочникиСсылка.Пользователи,IReturn<PolzovateliRequest>
+	public class PolzovateliRequest/*РџРѕР»СЊР·РѕРІР°С‚РµР»РёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџРѕР»СЊР·РѕРІР°С‚РµР»Рё,IReturn<PolzovateliRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class PolzovateliResponse//ПользователиОтвет
+	public class PolzovateliResponse//РџРѕР»СЊР·РѕРІР°С‚РµР»РёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Polzovatelis")]
 	[Route("/Catalogs/Polzovatelis/{Codes}")]
-	public class PolzovatelisRequest/*ПользователиЗапрос*/: IReturn<List<PolzovateliRequest>>
+	public class PolzovatelisRequest/*РџРѕР»СЊР·РѕРІР°С‚РµР»РёР—Р°РїСЂРѕСЃ*/: IReturn<List<PolzovateliRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class PolzovatelisResponse//ПользователиОтвет
+	public class PolzovatelisResponse//РџРѕР»СЊР·РѕРІР°С‚РµР»РёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class PolzovateliService /*ПользователиСервис*/ : Service
+	public class PolzovateliService /*РџРѕР»СЊР·РѕРІР°С‚РµР»РёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(PolzovateliRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(PolzovateliRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Пользователи.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕР»СЊР·РѕРІР°С‚РµР»Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new PolzovateliResponse() {Result = "Пользователи c кодом '" + request.Code+"' не найдено."};
+					return new PolzovateliResponse() {Result = "РџРѕР»СЊР·РѕРІР°С‚РµР»Рё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Пользователи.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕР»СЊР·РѕРІР°С‚РµР»Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(PolzovatelisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Пользователи>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџРѕР»СЊР·РѕРІР°С‚РµР»Рё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Пользователи.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕР»СЊР·РѕРІР°С‚РµР»Рё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SostavMeropriyatiya")]
 	[Route("/Catalogs/SostavMeropriyatiya/{Code}")]
-	public class SostavMeropriyatiyaRequest/*СоставМероприятияЗапрос*/: V82.СправочникиСсылка.СоставМероприятия,IReturn<SostavMeropriyatiyaRequest>
+	public class SostavMeropriyatiyaRequest/*РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏ,IReturn<SostavMeropriyatiyaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SostavMeropriyatiyaResponse//СоставМероприятияОтвет
+	public class SostavMeropriyatiyaResponse//РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SostavMeropriyatiyas")]
 	[Route("/Catalogs/SostavMeropriyatiyas/{Codes}")]
-	public class SostavMeropriyatiyasRequest/*СоставМероприятияЗапрос*/: IReturn<List<SostavMeropriyatiyaRequest>>
+	public class SostavMeropriyatiyasRequest/*РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏР—Р°РїСЂРѕСЃ*/: IReturn<List<SostavMeropriyatiyaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SostavMeropriyatiyasResponse//СоставМероприятияОтвет
+	public class SostavMeropriyatiyasResponse//РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SostavMeropriyatiyaService /*СоставМероприятияСервис*/ : Service
+	public class SostavMeropriyatiyaService /*РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SostavMeropriyatiyaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SostavMeropriyatiyaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СоставМероприятия.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SostavMeropriyatiyaResponse() {Result = "СоставМероприятия c кодом '" + request.Code+"' не найдено."};
+					return new SostavMeropriyatiyaResponse() {Result = "РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СоставМероприятия.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SostavMeropriyatiyasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СоставМероприятия>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СоставМероприятия.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕСЃС‚Р°РІРњРµСЂРѕРїСЂРёСЏС‚РёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

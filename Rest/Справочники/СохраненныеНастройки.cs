@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/SokhranennyeNastrojjki")]
 	[Route("/Catalogs/SokhranennyeNastrojjki/{Code}")]
-	public class SokhranennyeNastrojjkiRequest/*СохраненныеНастройкиЗапрос*/: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<SokhranennyeNastrojjkiRequest>
+	public class SokhranennyeNastrojjkiRequest/*РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРё,IReturn<SokhranennyeNastrojjkiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class SokhranennyeNastrojjkiResponse//СохраненныеНастройкиОтвет
+	public class SokhranennyeNastrojjkiResponse//РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/SokhranennyeNastrojjkis")]
 	[Route("/Catalogs/SokhranennyeNastrojjkis/{Codes}")]
-	public class SokhranennyeNastrojjkisRequest/*СохраненныеНастройкиЗапрос*/: IReturn<List<SokhranennyeNastrojjkiRequest>>
+	public class SokhranennyeNastrojjkisRequest/*РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРёР—Р°РїСЂРѕСЃ*/: IReturn<List<SokhranennyeNastrojjkiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class SokhranennyeNastrojjkisResponse//СохраненныеНастройкиОтвет
+	public class SokhranennyeNastrojjkisResponse//РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class SokhranennyeNastrojjkiService /*СохраненныеНастройкиСервис*/ : Service
+	public class SokhranennyeNastrojjkiService /*РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(SokhranennyeNastrojjkiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(SokhranennyeNastrojjkiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.СохраненныеНастройки.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new SokhranennyeNastrojjkiResponse() {Result = "СохраненныеНастройки c кодом '" + request.Code+"' не найдено."};
+					return new SokhranennyeNastrojjkiResponse() {Result = "РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.СохраненныеНастройки.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(SokhranennyeNastrojjkisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СохраненныеНастройки>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.СохраненныеНастройки.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЎРѕС…СЂР°РЅРµРЅРЅС‹РµРќР°СЃС‚СЂРѕР№РєРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

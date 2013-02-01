@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/OformleniyaStrokPisem")]
 	[Route("/Catalogs/OformleniyaStrokPisem/{Code}")]
-	public class OformleniyaStrokPisemRequest/*ОформленияСтрокПисемЗапрос*/: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<OformleniyaStrokPisemRequest>
+	public class OformleniyaStrokPisemRequest/*РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРјР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРј,IReturn<OformleniyaStrokPisemRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class OformleniyaStrokPisemResponse//ОформленияСтрокПисемОтвет
+	public class OformleniyaStrokPisemResponse//РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРјРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/OformleniyaStrokPisems")]
 	[Route("/Catalogs/OformleniyaStrokPisems/{Codes}")]
-	public class OformleniyaStrokPisemsRequest/*ОформленияСтрокПисемЗапрос*/: IReturn<List<OformleniyaStrokPisemRequest>>
+	public class OformleniyaStrokPisemsRequest/*РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРјР—Р°РїСЂРѕСЃ*/: IReturn<List<OformleniyaStrokPisemRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class OformleniyaStrokPisemsResponse//ОформленияСтрокПисемОтвет
+	public class OformleniyaStrokPisemsResponse//РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРјРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class OformleniyaStrokPisemService /*ОформленияСтрокПисемСервис*/ : Service
+	public class OformleniyaStrokPisemService /*РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРјРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(OformleniyaStrokPisemRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(OformleniyaStrokPisemRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ОформленияСтрокПисем.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new OformleniyaStrokPisemResponse() {Result = "ОформленияСтрокПисем c кодом '" + request.Code+"' не найдено."};
+					return new OformleniyaStrokPisemResponse() {Result = "РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРј c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ОформленияСтрокПисем.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(OformleniyaStrokPisemsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОформленияСтрокПисем>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРј>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ОформленияСтрокПисем.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћС„РѕСЂРјР»РµРЅРёСЏРЎС‚СЂРѕРєРџРёСЃРµРј.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

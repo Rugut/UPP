@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TSDFormatyDannykh")]
 	[Route("/Catalogs/TSDFormatyDannykh/{Code}")]
-	public class TSDFormatyDannykhRequest/*ТСДФорматыДанныхЗапрос*/: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<TSDFormatyDannykhRequest>
+	public class TSDFormatyDannykhRequest/*РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С…Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С…,IReturn<TSDFormatyDannykhRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TSDFormatyDannykhResponse//ТСДФорматыДанныхОтвет
+	public class TSDFormatyDannykhResponse//РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С…РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TSDFormatyDannykhs")]
 	[Route("/Catalogs/TSDFormatyDannykhs/{Codes}")]
-	public class TSDFormatyDannykhsRequest/*ТСДФорматыДанныхЗапрос*/: IReturn<List<TSDFormatyDannykhRequest>>
+	public class TSDFormatyDannykhsRequest/*РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С…Р—Р°РїСЂРѕСЃ*/: IReturn<List<TSDFormatyDannykhRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TSDFormatyDannykhsResponse//ТСДФорматыДанныхОтвет
+	public class TSDFormatyDannykhsResponse//РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С…РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TSDFormatyDannykhService /*ТСДФорматыДанныхСервис*/ : Service
+	public class TSDFormatyDannykhService /*РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С…РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TSDFormatyDannykhRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TSDFormatyDannykhRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТСДФорматыДанных.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С….РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TSDFormatyDannykhResponse() {Result = "ТСДФорматыДанных c кодом '" + request.Code+"' не найдено."};
+					return new TSDFormatyDannykhResponse() {Result = "РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С… c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТСДФорматыДанных.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С….РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TSDFormatyDannykhsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТСДФорматыДанных>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С…>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТСДФорматыДанных.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРЎР”Р¤РѕСЂРјР°С‚С‹Р”Р°РЅРЅС‹С….РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

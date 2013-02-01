@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov")]
 	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/{Code}")]
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovRequest/*ПорядокПрисвоенияСерийныхНомеровЗапрос*/: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<PoryadokPrisvoeniyaSerijjnykhNomerovRequest>
+	public class PoryadokPrisvoeniyaSerijjnykhNomerovRequest/*РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ,IReturn<PoryadokPrisvoeniyaSerijjnykhNomerovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovResponse//ПорядокПрисвоенияСерийныхНомеровОтвет
+	public class PoryadokPrisvoeniyaSerijjnykhNomerovResponse//РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerovs")]
 	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerovs/{Codes}")]
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovsRequest/*ПорядокПрисвоенияСерийныхНомеровЗапрос*/: IReturn<List<PoryadokPrisvoeniyaSerijjnykhNomerovRequest>>
+	public class PoryadokPrisvoeniyaSerijjnykhNomerovsRequest/*РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<PoryadokPrisvoeniyaSerijjnykhNomerovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovsResponse//ПорядокПрисвоенияСерийныхНомеровОтвет
+	public class PoryadokPrisvoeniyaSerijjnykhNomerovsResponse//РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovService /*ПорядокПрисвоенияСерийныхНомеровСервис*/ : Service
+	public class PoryadokPrisvoeniyaSerijjnykhNomerovService /*РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(PoryadokPrisvoeniyaSerijjnykhNomerovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(PoryadokPrisvoeniyaSerijjnykhNomerovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ПорядокПрисвоенияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new PoryadokPrisvoeniyaSerijjnykhNomerovResponse() {Result = "ПорядокПрисвоенияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
+					return new PoryadokPrisvoeniyaSerijjnykhNomerovResponse() {Result = "РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ПорядокПрисвоенияСерийныхНомеров.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(PoryadokPrisvoeniyaSerijjnykhNomerovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ПорядокПрисвоенияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџРѕСЂСЏРґРѕРєРџСЂРёСЃРІРѕРµРЅРёСЏРЎРµСЂРёР№РЅС‹С…РќРѕРјРµСЂРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

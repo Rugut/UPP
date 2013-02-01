@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/PrichinyObsluzhivaniyaOS")]
 	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/{Code}")]
-	public class PrichinyObsluzhivaniyaOSRequest/*ПричиныОбслуживанияОСЗапрос*/: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<PrichinyObsluzhivaniyaOSRequest>
+	public class PrichinyObsluzhivaniyaOSRequest/*РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ,IReturn<PrichinyObsluzhivaniyaOSRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class PrichinyObsluzhivaniyaOSResponse//ПричиныОбслуживанияОСОтвет
+	public class PrichinyObsluzhivaniyaOSResponse//РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/PrichinyObsluzhivaniyaOSs")]
 	[Route("/Catalogs/PrichinyObsluzhivaniyaOSs/{Codes}")]
-	public class PrichinyObsluzhivaniyaOSsRequest/*ПричиныОбслуживанияОСЗапрос*/: IReturn<List<PrichinyObsluzhivaniyaOSRequest>>
+	public class PrichinyObsluzhivaniyaOSsRequest/*РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎР—Р°РїСЂРѕСЃ*/: IReturn<List<PrichinyObsluzhivaniyaOSRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class PrichinyObsluzhivaniyaOSsResponse//ПричиныОбслуживанияОСОтвет
+	public class PrichinyObsluzhivaniyaOSsResponse//РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class PrichinyObsluzhivaniyaOSService /*ПричиныОбслуживанияОССервис*/ : Service
+	public class PrichinyObsluzhivaniyaOSService /*РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(PrichinyObsluzhivaniyaOSRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(PrichinyObsluzhivaniyaOSRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ПричиныОбслуживанияОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new PrichinyObsluzhivaniyaOSResponse() {Result = "ПричиныОбслуживанияОС c кодом '" + request.Code+"' не найдено."};
+					return new PrichinyObsluzhivaniyaOSResponse() {Result = "РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ПричиныОбслуживанияОС.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(PrichinyObsluzhivaniyaOSsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПричиныОбслуживанияОС>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ПричиныОбслуживанияОС.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РџСЂРёС‡РёРЅС‹РћР±СЃР»СѓР¶РёРІР°РЅРёСЏРћРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

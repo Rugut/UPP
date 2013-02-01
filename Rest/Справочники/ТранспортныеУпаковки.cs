@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/TransportnyeUpakovki")]
 	[Route("/Catalogs/TransportnyeUpakovki/{Code}")]
-	public class TransportnyeUpakovkiRequest/*ТранспортныеУпаковкиЗапрос*/: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<TransportnyeUpakovkiRequest>
+	public class TransportnyeUpakovkiRequest/*РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРё,IReturn<TransportnyeUpakovkiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TransportnyeUpakovkiResponse//ТранспортныеУпаковкиОтвет
+	public class TransportnyeUpakovkiResponse//РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/TransportnyeUpakovkis")]
 	[Route("/Catalogs/TransportnyeUpakovkis/{Codes}")]
-	public class TransportnyeUpakovkisRequest/*ТранспортныеУпаковкиЗапрос*/: IReturn<List<TransportnyeUpakovkiRequest>>
+	public class TransportnyeUpakovkisRequest/*РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРёР—Р°РїСЂРѕСЃ*/: IReturn<List<TransportnyeUpakovkiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TransportnyeUpakovkisResponse//ТранспортныеУпаковкиОтвет
+	public class TransportnyeUpakovkisResponse//РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TransportnyeUpakovkiService /*ТранспортныеУпаковкиСервис*/ : Service
+	public class TransportnyeUpakovkiService /*РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TransportnyeUpakovkiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TransportnyeUpakovkiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ТранспортныеУпаковки.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TransportnyeUpakovkiResponse() {Result = "ТранспортныеУпаковки c кодом '" + request.Code+"' не найдено."};
+					return new TransportnyeUpakovkiResponse() {Result = "РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ТранспортныеУпаковки.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TransportnyeUpakovkisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТранспортныеУпаковки>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ТранспортныеУпаковки.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўСЂР°РЅСЃРїРѕСЂС‚РЅС‹РµРЈРїР°РєРѕРІРєРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

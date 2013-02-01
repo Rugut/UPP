@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/DogovoryKontragentov")]
 	[Route("/Catalogs/DogovoryKontragentov/{Code}")]
-	public class DogovoryKontragentovRequest/*ДоговорыКонтрагентовЗапрос*/: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<DogovoryKontragentovRequest>
+	public class DogovoryKontragentovRequest/*Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ,IReturn<DogovoryKontragentovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class DogovoryKontragentovResponse//ДоговорыКонтрагентовОтвет
+	public class DogovoryKontragentovResponse//Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/DogovoryKontragentovs")]
 	[Route("/Catalogs/DogovoryKontragentovs/{Codes}")]
-	public class DogovoryKontragentovsRequest/*ДоговорыКонтрагентовЗапрос*/: IReturn<List<DogovoryKontragentovRequest>>
+	public class DogovoryKontragentovsRequest/*Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<DogovoryKontragentovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class DogovoryKontragentovsResponse//ДоговорыКонтрагентовОтвет
+	public class DogovoryKontragentovsResponse//Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class DogovoryKontragentovService /*ДоговорыКонтрагентовСервис*/ : Service
+	public class DogovoryKontragentovService /*Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(DogovoryKontragentovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(DogovoryKontragentovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ДоговорыКонтрагентов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new DogovoryKontragentovResponse() {Result = "ДоговорыКонтрагентов c кодом '" + request.Code+"' не найдено."};
+					return new DogovoryKontragentovResponse() {Result = "Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ДоговорыКонтрагентов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(DogovoryKontragentovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоговорыКонтрагентов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ДоговорыКонтрагентов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕРіРѕРІРѕСЂС‹РљРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

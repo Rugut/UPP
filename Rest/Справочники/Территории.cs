@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Territorii")]
 	[Route("/Catalogs/Territorii/{Code}")]
-	public class TerritoriiRequest/*ТерриторииЗапрос*/: V82.СправочникиСсылка.Территории,IReturn<TerritoriiRequest>
+	public class TerritoriiRequest/*РўРµСЂСЂРёС‚РѕСЂРёРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРµСЂСЂРёС‚РѕСЂРёРё,IReturn<TerritoriiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class TerritoriiResponse//ТерриторииОтвет
+	public class TerritoriiResponse//РўРµСЂСЂРёС‚РѕСЂРёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Territoriis")]
 	[Route("/Catalogs/Territoriis/{Codes}")]
-	public class TerritoriisRequest/*ТерриторииЗапрос*/: IReturn<List<TerritoriiRequest>>
+	public class TerritoriisRequest/*РўРµСЂСЂРёС‚РѕСЂРёРёР—Р°РїСЂРѕСЃ*/: IReturn<List<TerritoriiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class TerritoriisResponse//ТерриторииОтвет
+	public class TerritoriisResponse//РўРµСЂСЂРёС‚РѕСЂРёРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class TerritoriiService /*ТерриторииСервис*/ : Service
+	public class TerritoriiService /*РўРµСЂСЂРёС‚РѕСЂРёРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(TerritoriiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(TerritoriiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Территории.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµСЂСЂРёС‚РѕСЂРёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new TerritoriiResponse() {Result = "Территории c кодом '" + request.Code+"' не найдено."};
+					return new TerritoriiResponse() {Result = "РўРµСЂСЂРёС‚РѕСЂРёРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Территории.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµСЂСЂРёС‚РѕСЂРёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(TerritoriisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Территории>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РўРµСЂСЂРёС‚РѕСЂРёРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Территории.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РўРµСЂСЂРёС‚РѕСЂРёРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

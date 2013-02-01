@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/GruppyDostupaFizicheskikhLic")]
 	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/{Code}")]
-	public class GruppyDostupaFizicheskikhLicRequest/*ГруппыДоступаФизическихЛицЗапрос*/: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<GruppyDostupaFizicheskikhLicRequest>
+	public class GruppyDostupaFizicheskikhLicRequest/*Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†,IReturn<GruppyDostupaFizicheskikhLicRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class GruppyDostupaFizicheskikhLicResponse//ГруппыДоступаФизическихЛицОтвет
+	public class GruppyDostupaFizicheskikhLicResponse//Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/GruppyDostupaFizicheskikhLics")]
 	[Route("/Catalogs/GruppyDostupaFizicheskikhLics/{Codes}")]
-	public class GruppyDostupaFizicheskikhLicsRequest/*ГруппыДоступаФизическихЛицЗапрос*/: IReturn<List<GruppyDostupaFizicheskikhLicRequest>>
+	public class GruppyDostupaFizicheskikhLicsRequest/*Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†Р—Р°РїСЂРѕСЃ*/: IReturn<List<GruppyDostupaFizicheskikhLicRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class GruppyDostupaFizicheskikhLicsResponse//ГруппыДоступаФизическихЛицОтвет
+	public class GruppyDostupaFizicheskikhLicsResponse//Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class GruppyDostupaFizicheskikhLicService /*ГруппыДоступаФизическихЛицСервис*/ : Service
+	public class GruppyDostupaFizicheskikhLicService /*Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(GruppyDostupaFizicheskikhLicRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(GruppyDostupaFizicheskikhLicRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ГруппыДоступаФизическихЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new GruppyDostupaFizicheskikhLicResponse() {Result = "ГруппыДоступаФизическихЛиц c кодом '" + request.Code+"' не найдено."};
+					return new GruppyDostupaFizicheskikhLicResponse() {Result = "Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС† c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ГруппыДоступаФизическихЛиц.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(GruppyDostupaFizicheskikhLicsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ГруппыДоступаФизическихЛиц.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р“СЂСѓРїРїС‹Р”РѕСЃС‚СѓРїР°Р¤РёР·РёС‡РµСЃРєРёС…Р›РёС†.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

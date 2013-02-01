@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov")]
 	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/{Code}")]
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest/*ДокументыРеализацииПолномочийНалоговыхОргановЗапрос*/: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest>
+	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest/*Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ,IReturn<DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovResponse//ДокументыРеализацииПолномочийНалоговыхОргановОтвет
+	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovResponse//Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganovs")]
 	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganovs/{Codes}")]
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovsRequest/*ДокументыРеализацииПолномочийНалоговыхОргановЗапрос*/: IReturn<List<DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest>>
+	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovsRequest/*Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovsResponse//ДокументыРеализацииПолномочийНалоговыхОргановОтвет
+	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovsResponse//Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovService /*ДокументыРеализацииПолномочийНалоговыхОргановСервис*/ : Service
+	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovService /*Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ДокументыРеализацииПолномочийНалоговыхОрганов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new DokumentyRealizaciiPolnomochijjNalogovykhOrganovResponse() {Result = "ДокументыРеализацииПолномочийНалоговыхОрганов c кодом '" + request.Code+"' не найдено."};
+					return new DokumentyRealizaciiPolnomochijjNalogovykhOrganovResponse() {Result = "Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ДокументыРеализацииПолномочийНалоговыхОрганов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(DokumentyRealizaciiPolnomochijjNalogovykhOrganovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ДокументыРеализацииПолномочийНалоговыхОрганов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РѕРєСѓРјРµРЅС‚С‹Р РµР°Р»РёР·Р°С†РёРёРџРѕР»РЅРѕРјРѕС‡РёР№РќР°Р»РѕРіРѕРІС‹С…РћСЂРіР°РЅРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

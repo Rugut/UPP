@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/RegistraciyaVIFNS")]
 	[Route("/Catalogs/RegistraciyaVIFNS/{Code}")]
-	public class RegistraciyaVIFNSRequest/*РегистрацияВИФНСЗапрос*/: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<RegistraciyaVIFNSRequest>
+	public class RegistraciyaVIFNSRequest/*Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎ,IReturn<RegistraciyaVIFNSRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class RegistraciyaVIFNSResponse//РегистрацияВИФНСОтвет
+	public class RegistraciyaVIFNSResponse//Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/RegistraciyaVIFNSs")]
 	[Route("/Catalogs/RegistraciyaVIFNSs/{Codes}")]
-	public class RegistraciyaVIFNSsRequest/*РегистрацияВИФНСЗапрос*/: IReturn<List<RegistraciyaVIFNSRequest>>
+	public class RegistraciyaVIFNSsRequest/*Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎР—Р°РїСЂРѕСЃ*/: IReturn<List<RegistraciyaVIFNSRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class RegistraciyaVIFNSsResponse//РегистрацияВИФНСОтвет
+	public class RegistraciyaVIFNSsResponse//Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class RegistraciyaVIFNSService /*РегистрацияВИФНССервис*/ : Service
+	public class RegistraciyaVIFNSService /*Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(RegistraciyaVIFNSRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(RegistraciyaVIFNSRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.РегистрацияВИФНС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new RegistraciyaVIFNSResponse() {Result = "РегистрацияВИФНС c кодом '" + request.Code+"' не найдено."};
+					return new RegistraciyaVIFNSResponse() {Result = "Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.РегистрацияВИФНС.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(RegistraciyaVIFNSsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РегистрацияВИФНС>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.РегистрацияВИФНС.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р РµРіРёСЃС‚СЂР°С†РёСЏР’РР¤РќРЎ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

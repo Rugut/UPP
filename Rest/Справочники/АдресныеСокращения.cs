@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/AdresnyeSokrashheniya")]
 	[Route("/Catalogs/AdresnyeSokrashheniya/{Code}")]
-	public class AdresnyeSokrashheniyaRequest/*АдресныеСокращенияЗапрос*/: V82.СправочникиСсылка.АдресныеСокращения,IReturn<AdresnyeSokrashheniyaRequest>
+	public class AdresnyeSokrashheniyaRequest/*РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏ,IReturn<AdresnyeSokrashheniyaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class AdresnyeSokrashheniyaResponse//АдресныеСокращенияОтвет
+	public class AdresnyeSokrashheniyaResponse//РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/AdresnyeSokrashheniyas")]
 	[Route("/Catalogs/AdresnyeSokrashheniyas/{Codes}")]
-	public class AdresnyeSokrashheniyasRequest/*АдресныеСокращенияЗапрос*/: IReturn<List<AdresnyeSokrashheniyaRequest>>
+	public class AdresnyeSokrashheniyasRequest/*РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏР—Р°РїСЂРѕСЃ*/: IReturn<List<AdresnyeSokrashheniyaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class AdresnyeSokrashheniyasResponse//АдресныеСокращенияОтвет
+	public class AdresnyeSokrashheniyasResponse//РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class AdresnyeSokrashheniyaService /*АдресныеСокращенияСервис*/ : Service
+	public class AdresnyeSokrashheniyaService /*РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(AdresnyeSokrashheniyaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(AdresnyeSokrashheniyaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.АдресныеСокращения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new AdresnyeSokrashheniyaResponse() {Result = "АдресныеСокращения c кодом '" + request.Code+"' не найдено."};
+					return new AdresnyeSokrashheniyaResponse() {Result = "РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.АдресныеСокращения.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(AdresnyeSokrashheniyasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.АдресныеСокращения>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.АдресныеСокращения.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РђРґСЂРµСЃРЅС‹РµРЎРѕРєСЂР°С‰РµРЅРёСЏ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

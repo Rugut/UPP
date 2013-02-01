@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov")]
 	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/{Code}")]
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest/*ОбщероссийскийКлассификаторОсновныхФондовЗапрос*/: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest>
+	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest/*РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ,IReturn<ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovResponse//ОбщероссийскийКлассификаторОсновныхФондовОтвет
+	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovResponse//РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondovs")]
 	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondovs/{Codes}")]
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovsRequest/*ОбщероссийскийКлассификаторОсновныхФондовЗапрос*/: IReturn<List<ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest>>
+	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovsRequest/*РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovsResponse//ОбщероссийскийКлассификаторОсновныхФондовОтвет
+	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovsResponse//РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovService /*ОбщероссийскийКлассификаторОсновныхФондовСервис*/ : Service
+	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovService /*РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ОбщероссийскийКлассификаторОсновныхФондов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new ObshherossijjskijjKlassifikatorOsnovnykhFondovResponse() {Result = "ОбщероссийскийКлассификаторОсновныхФондов c кодом '" + request.Code+"' не найдено."};
+					return new ObshherossijjskijjKlassifikatorOsnovnykhFondovResponse() {Result = "РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ОбщероссийскийКлассификаторОсновныхФондов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(ObshherossijjskijjKlassifikatorOsnovnykhFondovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ОбщероссийскийКлассификаторОсновныхФондов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћР±С‰РµСЂРѕСЃСЃРёР№СЃРєРёР№РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћСЃРЅРѕРІРЅС‹С…Р¤РѕРЅРґРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

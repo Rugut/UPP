@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh")]
 	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/{Code}")]
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest/*ДетализацияОтчетаОПрибыляхИУбыткахЗапрос*/: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest>
+	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest/*Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С…Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С…,IReturn<DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhResponse//ДетализацияОтчетаОПрибыляхИУбыткахОтвет
+	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhResponse//Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С…РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakhs")]
 	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakhs/{Codes}")]
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhsRequest/*ДетализацияОтчетаОПрибыляхИУбыткахЗапрос*/: IReturn<List<DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest>>
+	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhsRequest/*Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С…Р—Р°РїСЂРѕСЃ*/: IReturn<List<DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhsResponse//ДетализацияОтчетаОПрибыляхИУбыткахОтвет
+	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhsResponse//Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С…РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhService /*ДетализацияОтчетаОПрибыляхИУбыткахСервис*/ : Service
+	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhService /*Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С…РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ДетализацияОтчетаОПрибыляхИУбытках.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С….РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new DetalizaciyaOtchetaOPribylyakhIUbytkakhResponse() {Result = "ДетализацияОтчетаОПрибыляхИУбытках c кодом '" + request.Code+"' не найдено."};
+					return new DetalizaciyaOtchetaOPribylyakhIUbytkakhResponse() {Result = "Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С… c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ДетализацияОтчетаОПрибыляхИУбытках.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С….РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(DetalizaciyaOtchetaOPribylyakhIUbytkakhsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С…>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ДетализацияОтчетаОПрибыляхИУбытках.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р”РµС‚Р°Р»РёР·Р°С†РёСЏРћС‚С‡РµС‚Р°РћРџСЂРёР±С‹Р»СЏС…РРЈР±С‹С‚РєР°С….РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

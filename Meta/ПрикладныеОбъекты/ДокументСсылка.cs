@@ -1,12 +1,12 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
 
-namespace V82.ДокументыСсылка
+namespace V82.Р”РѕРєСѓРјРµРЅС‚С‹РЎСЃС‹Р»РєР°
 {
-	public partial class ДокументСсылка
+	public partial class Р”РѕРєСѓРјРµРЅС‚РЎСЃС‹Р»РєР°
 	{
 	}
 }

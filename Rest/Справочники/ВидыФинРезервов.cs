@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/VidyFinRezervov")]
 	[Route("/Catalogs/VidyFinRezervov/{Code}")]
-	public class VidyFinRezervovRequest/*ВидыФинРезервовЗапрос*/: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<VidyFinRezervovRequest>
+	public class VidyFinRezervovRequest/*Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІ,IReturn<VidyFinRezervovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class VidyFinRezervovResponse//ВидыФинРезервовОтвет
+	public class VidyFinRezervovResponse//Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/VidyFinRezervovs")]
 	[Route("/Catalogs/VidyFinRezervovs/{Codes}")]
-	public class VidyFinRezervovsRequest/*ВидыФинРезервовЗапрос*/: IReturn<List<VidyFinRezervovRequest>>
+	public class VidyFinRezervovsRequest/*Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<VidyFinRezervovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class VidyFinRezervovsResponse//ВидыФинРезервовОтвет
+	public class VidyFinRezervovsResponse//Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class VidyFinRezervovService /*ВидыФинРезервовСервис*/ : Service
+	public class VidyFinRezervovService /*Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(VidyFinRezervovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(VidyFinRezervovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ВидыФинРезервов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new VidyFinRezervovResponse() {Result = "ВидыФинРезервов c кодом '" + request.Code+"' не найдено."};
+					return new VidyFinRezervovResponse() {Result = "Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ВидыФинРезервов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(VidyFinRezervovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыФинРезервов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ВидыФинРезервов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р’РёРґС‹Р¤РёРЅР РµР·РµСЂРІРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

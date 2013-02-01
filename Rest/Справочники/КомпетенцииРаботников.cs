@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KompetenciiRabotnikov")]
 	[Route("/Catalogs/KompetenciiRabotnikov/{Code}")]
-	public class KompetenciiRabotnikovRequest/*КомпетенцииРаботниковЗапрос*/: V82.СправочникиСсылка.КомпетенцииРаботников,IReturn<KompetenciiRabotnikovRequest>
+	public class KompetenciiRabotnikovRequest/*РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІ,IReturn<KompetenciiRabotnikovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KompetenciiRabotnikovResponse//КомпетенцииРаботниковОтвет
+	public class KompetenciiRabotnikovResponse//РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KompetenciiRabotnikovs")]
 	[Route("/Catalogs/KompetenciiRabotnikovs/{Codes}")]
-	public class KompetenciiRabotnikovsRequest/*КомпетенцииРаботниковЗапрос*/: IReturn<List<KompetenciiRabotnikovRequest>>
+	public class KompetenciiRabotnikovsRequest/*РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<KompetenciiRabotnikovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KompetenciiRabotnikovsResponse//КомпетенцииРаботниковОтвет
+	public class KompetenciiRabotnikovsResponse//РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KompetenciiRabotnikovService /*КомпетенцииРаботниковСервис*/ : Service
+	public class KompetenciiRabotnikovService /*РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KompetenciiRabotnikovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KompetenciiRabotnikovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КомпетенцииРаботников.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KompetenciiRabotnikovResponse() {Result = "КомпетенцииРаботников c кодом '" + request.Code+"' не найдено."};
+					return new KompetenciiRabotnikovResponse() {Result = "РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КомпетенцииРаботников.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KompetenciiRabotnikovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КомпетенцииРаботников>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КомпетенцииРаботников.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљРѕРјРїРµС‚РµРЅС†РёРёР Р°Р±РѕС‚РЅРёРєРѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

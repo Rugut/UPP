@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/CennyeBumagi")]
 	[Route("/Catalogs/CennyeBumagi/{Code}")]
-	public class CennyeBumagiRequest/*ЦенныеБумагиЗапрос*/: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<CennyeBumagiRequest>
+	public class CennyeBumagiRequest/*Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРёР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРё,IReturn<CennyeBumagiRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class CennyeBumagiResponse//ЦенныеБумагиОтвет
+	public class CennyeBumagiResponse//Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/CennyeBumagis")]
 	[Route("/Catalogs/CennyeBumagis/{Codes}")]
-	public class CennyeBumagisRequest/*ЦенныеБумагиЗапрос*/: IReturn<List<CennyeBumagiRequest>>
+	public class CennyeBumagisRequest/*Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРёР—Р°РїСЂРѕСЃ*/: IReturn<List<CennyeBumagiRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class CennyeBumagisResponse//ЦенныеБумагиОтвет
+	public class CennyeBumagisResponse//Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРёРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class CennyeBumagiService /*ЦенныеБумагиСервис*/ : Service
+	public class CennyeBumagiService /*Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРёРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(CennyeBumagiRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(CennyeBumagiRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ЦенныеБумаги.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new CennyeBumagiResponse() {Result = "ЦенныеБумаги c кодом '" + request.Code+"' не найдено."};
+					return new CennyeBumagiResponse() {Result = "Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРё c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ЦенныеБумаги.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(CennyeBumagisRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЦенныеБумаги>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРё>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ЦенныеБумаги.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р¦РµРЅРЅС‹РµР‘СѓРјР°РіРё.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

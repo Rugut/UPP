@@ -1,4 +1,4 @@
-
+п»ї
 using System;
 using System.IO;
 using System.Globalization;
@@ -6,75 +6,75 @@ using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
 using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
-using V82.ОбщиеОбъекты;
-using V82.СправочникиСсылка;
-using V82.ДокументыСсылка;
-using V82.Перечисления;//Ссылка;
-namespace V82.СправочникиСсылка
+using V82.РћР±С‰РёРµРћР±СЉРµРєС‚С‹;
+using V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°;
+using V82.Р”РѕРєСѓРјРµРЅС‚С‹РЎСЃС‹Р»РєР°;
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°
 {
 	///<summary>
-	///(Регл)
+	///(Р РµРіР»)
 	///</summary>
 	[ProtoContract]
 	[DataContract]
-	public partial class ДоходыПоСтраховымВзносам:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
+	public partial class Р”РѕС…РѕРґС‹РџРѕРЎС‚СЂР°С…РѕРІС‹РјР’Р·РЅРѕСЃР°Рј:РЎРїСЂР°РІРѕС‡РЅРёРєРЎСЃС‹Р»РєР°,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂProtoBuf,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂJson
 	{
-		public static readonly Guid ГуидКласса = new Guid("c28c2132-b2ac-472d-9277-70654e91e5c5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190714.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
-		public static readonly long КонтрольнаяСуммаКласса = 123;
+		public static readonly Guid Р“СѓРёРґРљР»Р°СЃСЃР° = new Guid("c28c2132-b2ac-472d-9277-70654e91e5c5");
+		public static readonly DateTime Р’РµСЂСЃРёСЏРљР»Р°СЃСЃР° = DateTime.ParseExact("20121221190714.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly long РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏРЎСѓРјРјР°РљР»Р°СЃСЃР° = 123;
 		[DataMember]
 		[ProtoMember(1)]
-		public Guid Ссылка {get;set;}
+		public Guid РЎСЃС‹Р»РєР° {get;set;}
 		[DataMember]
 		[ProtoMember(2)]
-		public long Версия {get;set;}
-		/*static хэш сумма состава и порядка реквизитов*/
-		/*версия класса восстановленного из пакета*/
+		public long Р’РµСЂСЃРёСЏ {get;set;}
+		/*static С…СЌС€ СЃСѓРјРјР° СЃРѕСЃС‚Р°РІР° Рё РїРѕСЂСЏРґРєР° СЂРµРєРІРёР·РёС‚РѕРІ*/
+		/*РІРµСЂСЃРёСЏ РєР»Р°СЃСЃР° РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РёР· РїР°РєРµС‚Р°*/
 		[DataMember]
 		[ProtoMember(3)]
-		public bool ПометкаУдаления {get;set;}
+		public bool РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ {get;set;}
 		[DataMember]
 		[ProtoMember(4)]
-		public bool Предопределенный {get;set;}
+		public bool РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ {get;set;}
 		[DataMember]
 		[ProtoMember(5)]
-		public string/*150*/ Наименование {get;set;}
+		public string/*150*/ РќР°РёРјРµРЅРѕРІР°РЅРёРµ {get;set;}
 		[DataMember]
 		[ProtoMember(6)]
-		public bool ВходитВБазуФОМС {get;set;}//Входит в базу ФОМС
+		public bool Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓР¤РћРњРЎ {get;set;}//Р’С…РѕРґРёС‚ РІ Р±Р°Р·Сѓ Р¤РћРњРЎ
 		[DataMember]
 		[ProtoMember(7)]
-		public bool ВходитВБазуФСС {get;set;}//Входит в базу ФСС
+		public bool Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓР¤РЎРЎ {get;set;}//Р’С…РѕРґРёС‚ РІ Р±Р°Р·Сѓ Р¤РЎРЎ
 		[DataMember]
 		[ProtoMember(8)]
-		public bool ВходитВБазуПФР {get;set;}//Входит в базу ПФР
+		public bool Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓРџР¤Р  {get;set;}//Р’С…РѕРґРёС‚ РІ Р±Р°Р·Сѓ РџР¤Р 
 
-		public V82.СправочникиОбъект.ДоходыПоСтраховымВзносам  ПолучитьОбъект()
+		public V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.Р”РѕС…РѕРґС‹РџРѕРЎС‚СЂР°С…РѕРІС‹РјР’Р·РЅРѕСЃР°Рј  РџРѕР»СѓС‡РёС‚СЊРћР±СЉРµРєС‚()
 		{
-			var Объект = new V82.СправочникиОбъект.ДоходыПоСтраховымВзносам();
-			Объект._ЭтоНовый = false;
-			Объект.Ссылка = Ссылка;
-			Объект.Версия = Версия;
-			Объект.ПометкаУдаления = ПометкаУдаления;
-			Объект.Предопределенный = Предопределенный;
-			Объект.Наименование = Наименование;
-			Объект.ВходитВБазуФОМС = ВходитВБазуФОМС;
-			Объект.ВходитВБазуФСС = ВходитВБазуФСС;
-			Объект.ВходитВБазуПФР = ВходитВБазуПФР;
-			return Объект;
+			var РћР±СЉРµРєС‚ = new V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.Р”РѕС…РѕРґС‹РџРѕРЎС‚СЂР°С…РѕРІС‹РјР’Р·РЅРѕСЃР°Рј();
+			РћР±СЉРµРєС‚._Р­С‚РѕРќРѕРІС‹Р№ = false;
+			РћР±СЉРµРєС‚.РЎСЃС‹Р»РєР° = РЎСЃС‹Р»РєР°;
+			РћР±СЉРµРєС‚.Р’РµСЂСЃРёСЏ = Р’РµСЂСЃРёСЏ;
+			РћР±СЉРµРєС‚.РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ = РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ;
+			РћР±СЉРµРєС‚.РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ = РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№;
+			РћР±СЉРµРєС‚.РќР°РёРјРµРЅРѕРІР°РЅРёРµ = РќР°РёРјРµРЅРѕРІР°РЅРёРµ;
+			РћР±СЉРµРєС‚.Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓР¤РћРњРЎ = Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓР¤РћРњРЎ;
+			РћР±СЉРµРєС‚.Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓР¤РЎРЎ = Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓР¤РЎРЎ;
+			РћР±СЉРµРєС‚.Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓРџР¤Р  = Р’С…РѕРґРёС‚Р’Р‘Р°Р·СѓРџР¤Р ;
+			return РћР±СЉРµРєС‚;
 		}
 
-		public void СериализацияProtoBuf(Stream Поток)
+		public void РЎРµСЂРёР°Р»РёР·Р°С†РёСЏProtoBuf(Stream РџРѕС‚РѕРє)
 		{
-			Serializer.Serialize(Поток,this);
+			Serializer.Serialize(РџРѕС‚РѕРє,this);
 		}
 		
-		public string СериализацияJson()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏJson()
 		{
 			return this.ToJson();
 		}
 		
-		public string СериализацияXml()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏXml()
 		{
 			return this.ToXml();
 		}

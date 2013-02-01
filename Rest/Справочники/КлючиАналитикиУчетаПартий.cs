@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijj")]
 	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijj/{Code}")]
-	public class KlyuchiAnalitikiUchetaPartijjRequest/*КлючиАналитикиУчетаПартийЗапрос*/: V82.СправочникиСсылка.КлючиАналитикиУчетаПартий,IReturn<KlyuchiAnalitikiUchetaPartijjRequest>
+	public class KlyuchiAnalitikiUchetaPartijjRequest/*РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№,IReturn<KlyuchiAnalitikiUchetaPartijjRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KlyuchiAnalitikiUchetaPartijjResponse//КлючиАналитикиУчетаПартийОтвет
+	public class KlyuchiAnalitikiUchetaPartijjResponse//РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijjs")]
 	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijjs/{Codes}")]
-	public class KlyuchiAnalitikiUchetaPartijjsRequest/*КлючиАналитикиУчетаПартийЗапрос*/: IReturn<List<KlyuchiAnalitikiUchetaPartijjRequest>>
+	public class KlyuchiAnalitikiUchetaPartijjsRequest/*РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№Р—Р°РїСЂРѕСЃ*/: IReturn<List<KlyuchiAnalitikiUchetaPartijjRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KlyuchiAnalitikiUchetaPartijjsResponse//КлючиАналитикиУчетаПартийОтвет
+	public class KlyuchiAnalitikiUchetaPartijjsResponse//РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KlyuchiAnalitikiUchetaPartijjService /*КлючиАналитикиУчетаПартийСервис*/ : Service
+	public class KlyuchiAnalitikiUchetaPartijjService /*РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KlyuchiAnalitikiUchetaPartijjRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KlyuchiAnalitikiUchetaPartijjRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КлючиАналитикиУчетаПартий.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KlyuchiAnalitikiUchetaPartijjResponse() {Result = "КлючиАналитикиУчетаПартий c кодом '" + request.Code+"' не найдено."};
+					return new KlyuchiAnalitikiUchetaPartijjResponse() {Result = "РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КлючиАналитикиУчетаПартий.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KlyuchiAnalitikiUchetaPartijjsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлючиАналитикиУчетаПартий>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КлючиАналитикиУчетаПартий.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»СЋС‡РёРђРЅР°Р»РёС‚РёРєРёРЈС‡РµС‚Р°РџР°СЂС‚РёР№.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

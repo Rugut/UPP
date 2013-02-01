@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/RabochieCentry")]
 	[Route("/Catalogs/RabochieCentry/{Code}")]
-	public class RabochieCentryRequest/*РабочиеЦентрыЗапрос*/: V82.СправочникиСсылка.РабочиеЦентры,IReturn<RabochieCentryRequest>
+	public class RabochieCentryRequest/*Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹,IReturn<RabochieCentryRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class RabochieCentryResponse//РабочиеЦентрыОтвет
+	public class RabochieCentryResponse//Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/RabochieCentrys")]
 	[Route("/Catalogs/RabochieCentrys/{Codes}")]
-	public class RabochieCentrysRequest/*РабочиеЦентрыЗапрос*/: IReturn<List<RabochieCentryRequest>>
+	public class RabochieCentrysRequest/*Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹Р—Р°РїСЂРѕСЃ*/: IReturn<List<RabochieCentryRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class RabochieCentrysResponse//РабочиеЦентрыОтвет
+	public class RabochieCentrysResponse//Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class RabochieCentryService /*РабочиеЦентрыСервис*/ : Service
+	public class RabochieCentryService /*Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(RabochieCentryRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(RabochieCentryRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.РабочиеЦентры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new RabochieCentryResponse() {Result = "РабочиеЦентры c кодом '" + request.Code+"' не найдено."};
+					return new RabochieCentryResponse() {Result = "Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.РабочиеЦентры.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(RabochieCentrysRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РабочиеЦентры>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.РабочиеЦентры.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р Р°Р±РѕС‡РёРµР¦РµРЅС‚СЂС‹.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

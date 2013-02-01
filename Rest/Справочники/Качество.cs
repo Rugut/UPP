@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/Kachestvo")]
 	[Route("/Catalogs/Kachestvo/{Code}")]
-	public class KachestvoRequest/*КачествоЗапрос*/: V82.СправочникиСсылка.Качество,IReturn<KachestvoRequest>
+	public class KachestvoRequest/*РљР°С‡РµСЃС‚РІРѕР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР°С‡РµСЃС‚РІРѕ,IReturn<KachestvoRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KachestvoResponse//КачествоОтвет
+	public class KachestvoResponse//РљР°С‡РµСЃС‚РІРѕРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/Kachestvos")]
 	[Route("/Catalogs/Kachestvos/{Codes}")]
-	public class KachestvosRequest/*КачествоЗапрос*/: IReturn<List<KachestvoRequest>>
+	public class KachestvosRequest/*РљР°С‡РµСЃС‚РІРѕР—Р°РїСЂРѕСЃ*/: IReturn<List<KachestvoRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KachestvosResponse//КачествоОтвет
+	public class KachestvosResponse//РљР°С‡РµСЃС‚РІРѕРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KachestvoService /*КачествоСервис*/ : Service
+	public class KachestvoService /*РљР°С‡РµСЃС‚РІРѕРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KachestvoRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KachestvoRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.Качество.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР°С‡РµСЃС‚РІРѕ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KachestvoResponse() {Result = "Качество c кодом '" + request.Code+"' не найдено."};
+					return new KachestvoResponse() {Result = "РљР°С‡РµСЃС‚РІРѕ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.Качество.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР°С‡РµСЃС‚РІРѕ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KachestvosRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Качество>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР°С‡РµСЃС‚РІРѕ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.Качество.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР°С‡РµСЃС‚РІРѕ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva")]
 	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/{Code}")]
-	public class UdalitOcenochnyeObyazatelstvaRequest/*УдалитьОценочныеОбязательстваЗапрос*/: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<UdalitOcenochnyeObyazatelstvaRequest>
+	public class UdalitOcenochnyeObyazatelstvaRequest/*РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°,IReturn<UdalitOcenochnyeObyazatelstvaRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class UdalitOcenochnyeObyazatelstvaResponse//УдалитьОценочныеОбязательстваОтвет
+	public class UdalitOcenochnyeObyazatelstvaResponse//РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/UdalitOcenochnyeObyazatelstvas")]
 	[Route("/Catalogs/UdalitOcenochnyeObyazatelstvas/{Codes}")]
-	public class UdalitOcenochnyeObyazatelstvasRequest/*УдалитьОценочныеОбязательстваЗапрос*/: IReturn<List<UdalitOcenochnyeObyazatelstvaRequest>>
+	public class UdalitOcenochnyeObyazatelstvasRequest/*РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°Р—Р°РїСЂРѕСЃ*/: IReturn<List<UdalitOcenochnyeObyazatelstvaRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class UdalitOcenochnyeObyazatelstvasResponse//УдалитьОценочныеОбязательстваОтвет
+	public class UdalitOcenochnyeObyazatelstvasResponse//РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class UdalitOcenochnyeObyazatelstvaService /*УдалитьОценочныеОбязательстваСервис*/ : Service
+	public class UdalitOcenochnyeObyazatelstvaService /*РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(UdalitOcenochnyeObyazatelstvaRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(UdalitOcenochnyeObyazatelstvaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.УдалитьОценочныеОбязательства.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new UdalitOcenochnyeObyazatelstvaResponse() {Result = "УдалитьОценочныеОбязательства c кодом '" + request.Code+"' не найдено."};
+					return new UdalitOcenochnyeObyazatelstvaResponse() {Result = "РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР° c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.УдалитьОценочныеОбязательства.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(UdalitOcenochnyeObyazatelstvasRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УдалитьОценочныеОбязательства>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.УдалитьОценочныеОбязательства.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РЈРґР°Р»РёС‚СЊРћС†РµРЅРѕС‡РЅС‹РµРћР±СЏР·Р°С‚РµР»СЊСЃС‚РІР°.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

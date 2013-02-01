@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/KlassifikatorOKOPF")]
 	[Route("/Catalogs/KlassifikatorOKOPF/{Code}")]
-	public class KlassifikatorOKOPFRequest/*КлассификаторОКОПФЗапрос*/: V82.СправочникиСсылка.КлассификаторОКОПФ,IReturn<KlassifikatorOKOPFRequest>
+	public class KlassifikatorOKOPFRequest/*РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤Р—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤,IReturn<KlassifikatorOKOPFRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class KlassifikatorOKOPFResponse//КлассификаторОКОПФОтвет
+	public class KlassifikatorOKOPFResponse//РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/KlassifikatorOKOPFs")]
 	[Route("/Catalogs/KlassifikatorOKOPFs/{Codes}")]
-	public class KlassifikatorOKOPFsRequest/*КлассификаторОКОПФЗапрос*/: IReturn<List<KlassifikatorOKOPFRequest>>
+	public class KlassifikatorOKOPFsRequest/*РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤Р—Р°РїСЂРѕСЃ*/: IReturn<List<KlassifikatorOKOPFRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class KlassifikatorOKOPFsResponse//КлассификаторОКОПФОтвет
+	public class KlassifikatorOKOPFsResponse//РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤РћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class KlassifikatorOKOPFService /*КлассификаторОКОПФСервис*/ : Service
+	public class KlassifikatorOKOPFService /*РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤РЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(KlassifikatorOKOPFRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(KlassifikatorOKOPFRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.КлассификаторОКОПФ.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new KlassifikatorOKOPFResponse() {Result = "КлассификаторОКОПФ c кодом '" + request.Code+"' не найдено."};
+					return new KlassifikatorOKOPFResponse() {Result = "РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.КлассификаторОКОПФ.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(KlassifikatorOKOPFsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлассификаторОКОПФ>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.КлассификаторОКОПФ.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РљР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРћРљРћРџР¤.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

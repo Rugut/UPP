@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/ZayavkiKandidatov")]
 	[Route("/Catalogs/ZayavkiKandidatov/{Code}")]
-	public class ZayavkiKandidatovRequest/*ЗаявкиКандидатовЗапрос*/: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ZayavkiKandidatovRequest>
+	public class ZayavkiKandidatovRequest/*Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІ,IReturn<ZayavkiKandidatovRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class ZayavkiKandidatovResponse//ЗаявкиКандидатовОтвет
+	public class ZayavkiKandidatovResponse//Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/ZayavkiKandidatovs")]
 	[Route("/Catalogs/ZayavkiKandidatovs/{Codes}")]
-	public class ZayavkiKandidatovsRequest/*ЗаявкиКандидатовЗапрос*/: IReturn<List<ZayavkiKandidatovRequest>>
+	public class ZayavkiKandidatovsRequest/*Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІР—Р°РїСЂРѕСЃ*/: IReturn<List<ZayavkiKandidatovRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class ZayavkiKandidatovsResponse//ЗаявкиКандидатовОтвет
+	public class ZayavkiKandidatovsResponse//Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class ZayavkiKandidatovService /*ЗаявкиКандидатовСервис*/ : Service
+	public class ZayavkiKandidatovService /*Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(ZayavkiKandidatovRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(ZayavkiKandidatovRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ЗаявкиКандидатов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new ZayavkiKandidatovResponse() {Result = "ЗаявкиКандидатов c кодом '" + request.Code+"' не найдено."};
+					return new ZayavkiKandidatovResponse() {Result = "Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ЗаявкиКандидатов.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(ZayavkiKandidatovsRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЗаявкиКандидатов>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ЗаявкиКандидатов.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.Р—Р°СЏРІРєРёРљР°РЅРґРёРґР°С‚РѕРІ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}

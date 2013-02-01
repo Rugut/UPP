@@ -1,11 +1,11 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace V82.ОбщиеМодули
+namespace V82.РћР±С‰РёРµРњРѕРґСѓР»Рё
 {
-	public partial class УправлениеПечатью
+	public partial class РЈРїСЂР°РІР»РµРЅРёРµРџРµС‡Р°С‚СЊСЋ
 	{
 	}
 }

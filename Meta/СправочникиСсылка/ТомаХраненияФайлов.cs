@@ -1,4 +1,4 @@
-
+п»ї
 using System;
 using System.IO;
 using System.Globalization;
@@ -6,102 +6,102 @@ using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
 using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
-using V82.ОбщиеОбъекты;
-using V82.СправочникиСсылка;
-using V82.ДокументыСсылка;
-using V82.Перечисления;//Ссылка;
-namespace V82.СправочникиСсылка
+using V82.РћР±С‰РёРµРћР±СЉРµРєС‚С‹;
+using V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°;
+using V82.Р”РѕРєСѓРјРµРЅС‚С‹РЎСЃС‹Р»РєР°;
+using V82.РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ;//РЎСЃС‹Р»РєР°;
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°
 {
 	///<summary>
-	///Каталоги на диске для хранения файлов
+	///РљР°С‚Р°Р»РѕРіРё РЅР° РґРёСЃРєРµ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ С„Р°Р№Р»РѕРІ
 	///</summary>
 	[ProtoContract]
 	[DataContract]
-	public partial class ТомаХраненияФайлов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
+	public partial class РўРѕРјР°РҐСЂР°РЅРµРЅРёСЏР¤Р°Р№Р»РѕРІ:РЎРїСЂР°РІРѕС‡РЅРёРєРЎСЃС‹Р»РєР°,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂProtoBuf,IРЎРµСЂРёР°Р»РёР·Р°С‚РѕСЂJson
 	{
-		public static readonly Guid ГуидКласса = new Guid("b9857000-21cf-4445-bd07-3fbcb0816986");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191412.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
-		public static readonly long КонтрольнаяСуммаКласса = 123;
+		public static readonly Guid Р“СѓРёРґРљР»Р°СЃСЃР° = new Guid("b9857000-21cf-4445-bd07-3fbcb0816986");
+		public static readonly DateTime Р’РµСЂСЃРёСЏРљР»Р°СЃСЃР° = DateTime.ParseExact("20121221191412.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly long РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏРЎСѓРјРјР°РљР»Р°СЃСЃР° = 123;
 		[DataMember]
 		[ProtoMember(1)]
-		public Guid Ссылка {get;set;}
+		public Guid РЎСЃС‹Р»РєР° {get;set;}
 		[DataMember]
 		[ProtoMember(2)]
-		public long Версия {get;set;}
-		/*static хэш сумма состава и порядка реквизитов*/
-		/*версия класса восстановленного из пакета*/
+		public long Р’РµСЂСЃРёСЏ {get;set;}
+		/*static С…СЌС€ СЃСѓРјРјР° СЃРѕСЃС‚Р°РІР° Рё РїРѕСЂСЏРґРєР° СЂРµРєРІРёР·РёС‚РѕРІ*/
+		/*РІРµСЂСЃРёСЏ РєР»Р°СЃСЃР° РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РёР· РїР°РєРµС‚Р°*/
 		[DataMember]
 		[ProtoMember(3)]
-		public bool ПометкаУдаления {get;set;}
+		public bool РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ {get;set;}
 		[DataMember]
 		[ProtoMember(4)]
-		public bool Предопределенный {get;set;}
+		public bool РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ {get;set;}
 		[DataMember]
 		[ProtoMember(5)]
-		public string/*9*/ Код {get;set;}
+		public string/*9*/ РљРѕРґ {get;set;}
 		[DataMember]
 		[ProtoMember(6)]
-		public string/*150*/ Наименование {get;set;}
+		public string/*150*/ РќР°РёРјРµРЅРѕРІР°РЅРёРµ {get;set;}
 		///<summary>
-		///Описание тома
+		///РћРїРёСЃР°РЅРёРµ С‚РѕРјР°
 		///</summary>
 		[DataMember]
 		[ProtoMember(7)]
-		public string/*(0)*/ Комментарий {get;set;}
+		public string/*(0)*/ РљРѕРјРјРµРЅС‚Р°СЂРёР№ {get;set;}
 		///<summary>
-		///Максимальный размер файлов на томе, в Мб
+		///РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ С„Р°Р№Р»РѕРІ РЅР° С‚РѕРјРµ, РІ РњР±
 		///</summary>
 		[DataMember]
 		[ProtoMember(8)]
-		public decimal/*(10)*/ МаксимальныйРазмер {get;set;}//Максимальный размер
+		public decimal/*(10)*/ РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№Р Р°Р·РјРµСЂ {get;set;}//РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ
 		///<summary>
-		///Полный путь в Linux
+		///РџРѕР»РЅС‹Р№ РїСѓС‚СЊ РІ Linux
 		///</summary>
 		[DataMember]
 		[ProtoMember(9)]
-		public string/*(0)*/ ПолныйПутьLinux {get;set;}//Полный путь linux
+		public string/*(0)*/ РџРѕР»РЅС‹Р№РџСѓС‚СЊLinux {get;set;}//РџРѕР»РЅС‹Р№ РїСѓС‚СЊ linux
 		///<summary>
-		///Полный путь в UNC формате
+		///РџРѕР»РЅС‹Р№ РїСѓС‚СЊ РІ UNC С„РѕСЂРјР°С‚Рµ
 		///</summary>
 		[DataMember]
 		[ProtoMember(10)]
-		public string/*(0)*/ ПолныйПутьWindows {get;set;}//Полный путь windows
+		public string/*(0)*/ РџРѕР»РЅС‹Р№РџСѓС‚СЊWindows {get;set;}//РџРѕР»РЅС‹Р№ РїСѓС‚СЊ windows
 		///<summary>
-		///Определяет порядок заполнения томов - начинаем с наименьшего
+		///РћРїСЂРµРґРµР»СЏРµС‚ РїРѕСЂСЏРґРѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ С‚РѕРјРѕРІ - РЅР°С‡РёРЅР°РµРј СЃ РЅР°РёРјРµРЅСЊС€РµРіРѕ
 		///</summary>
 		[DataMember]
 		[ProtoMember(11)]
-		public decimal/*(3)*/ ПорядокЗаполнения {get;set;}//Порядок заполнения
+		public decimal/*(3)*/ РџРѕСЂСЏРґРѕРєР—Р°РїРѕР»РЅРµРЅРёСЏ {get;set;}//РџРѕСЂСЏРґРѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ
 
-		public V82.СправочникиОбъект.ТомаХраненияФайлов  ПолучитьОбъект()
+		public V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.РўРѕРјР°РҐСЂР°РЅРµРЅРёСЏР¤Р°Р№Р»РѕРІ  РџРѕР»СѓС‡РёС‚СЊРћР±СЉРµРєС‚()
 		{
-			var Объект = new V82.СправочникиОбъект.ТомаХраненияФайлов();
-			Объект._ЭтоНовый = false;
-			Объект.Ссылка = Ссылка;
-			Объект.Версия = Версия;
-			Объект.ПометкаУдаления = ПометкаУдаления;
-			Объект.Предопределенный = Предопределенный;
-			Объект.Код = Код;
-			Объект.Наименование = Наименование;
-			Объект.Комментарий = Комментарий;
-			Объект.МаксимальныйРазмер = МаксимальныйРазмер;
-			Объект.ПолныйПутьLinux = ПолныйПутьLinux;
-			Объект.ПолныйПутьWindows = ПолныйПутьWindows;
-			Объект.ПорядокЗаполнения = ПорядокЗаполнения;
-			return Объект;
+			var РћР±СЉРµРєС‚ = new V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРћР±СЉРµРєС‚.РўРѕРјР°РҐСЂР°РЅРµРЅРёСЏР¤Р°Р№Р»РѕРІ();
+			РћР±СЉРµРєС‚._Р­С‚РѕРќРѕРІС‹Р№ = false;
+			РћР±СЉРµРєС‚.РЎСЃС‹Р»РєР° = РЎСЃС‹Р»РєР°;
+			РћР±СЉРµРєС‚.Р’РµСЂСЃРёСЏ = Р’РµСЂСЃРёСЏ;
+			РћР±СЉРµРєС‚.РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ = РџРѕРјРµС‚РєР°РЈРґР°Р»РµРЅРёСЏ;
+			РћР±СЉРµРєС‚.РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ = РџСЂРµРґРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№;
+			РћР±СЉРµРєС‚.РљРѕРґ = РљРѕРґ;
+			РћР±СЉРµРєС‚.РќР°РёРјРµРЅРѕРІР°РЅРёРµ = РќР°РёРјРµРЅРѕРІР°РЅРёРµ;
+			РћР±СЉРµРєС‚.РљРѕРјРјРµРЅС‚Р°СЂРёР№ = РљРѕРјРјРµРЅС‚Р°СЂРёР№;
+			РћР±СЉРµРєС‚.РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№Р Р°Р·РјРµСЂ = РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№Р Р°Р·РјРµСЂ;
+			РћР±СЉРµРєС‚.РџРѕР»РЅС‹Р№РџСѓС‚СЊLinux = РџРѕР»РЅС‹Р№РџСѓС‚СЊLinux;
+			РћР±СЉРµРєС‚.РџРѕР»РЅС‹Р№РџСѓС‚СЊWindows = РџРѕР»РЅС‹Р№РџСѓС‚СЊWindows;
+			РћР±СЉРµРєС‚.РџРѕСЂСЏРґРѕРєР—Р°РїРѕР»РЅРµРЅРёСЏ = РџРѕСЂСЏРґРѕРєР—Р°РїРѕР»РЅРµРЅРёСЏ;
+			return РћР±СЉРµРєС‚;
 		}
 
-		public void СериализацияProtoBuf(Stream Поток)
+		public void РЎРµСЂРёР°Р»РёР·Р°С†РёСЏProtoBuf(Stream РџРѕС‚РѕРє)
 		{
-			Serializer.Serialize(Поток,this);
+			Serializer.Serialize(РџРѕС‚РѕРє,this);
 		}
 		
-		public string СериализацияJson()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏJson()
 		{
 			return this.ToJson();
 		}
 		
-		public string СериализацияXml()
+		public string РЎРµСЂРёР°Р»РёР·Р°С†РёСЏXml()
 		{
 			return this.ToXml();
 		}

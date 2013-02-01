@@ -1,20 +1,20 @@
-
+п»ї
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
-namespace V82.Справочники
+namespace V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё
 {
 	[Route("/Catalogs/OsnovnoeSyre")]
 	[Route("/Catalogs/OsnovnoeSyre/{Code}")]
-	public class OsnovnoeSyreRequest/*ОсновноеСырьеЗапрос*/: V82.СправочникиСсылка.ОсновноеСырье,IReturn<OsnovnoeSyreRequest>
+	public class OsnovnoeSyreRequest/*РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµР—Р°РїСЂРѕСЃ*/: V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµ,IReturn<OsnovnoeSyreRequest>
 	{
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
 
-	public class OsnovnoeSyreResponse//ОсновноеСырьеОтвет
+	public class OsnovnoeSyreResponse//РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
@@ -22,7 +22,7 @@ namespace V82.Справочники
 
 	[Route("/Catalogs/OsnovnoeSyres")]
 	[Route("/Catalogs/OsnovnoeSyres/{Codes}")]
-	public class OsnovnoeSyresRequest/*ОсновноеСырьеЗапрос*/: IReturn<List<OsnovnoeSyreRequest>>
+	public class OsnovnoeSyresRequest/*РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµР—Р°РїСЂРѕСЃ*/: IReturn<List<OsnovnoeSyreRequest>>
 	{
 		public string[] Codes {get;set;}
 		public string[] Descrs {get;set;}
@@ -32,13 +32,13 @@ namespace V82.Справочники
 		}
 	}
 
-	public class OsnovnoeSyresResponse//ОсновноеСырьеОтвет
+	public class OsnovnoeSyresResponse//РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµРћС‚РІРµС‚
 	{
 		public string Result {get;set;}
 	}
 
 
-	public class OsnovnoeSyreService /*ОсновноеСырьеСервис*/ : Service
+	public class OsnovnoeSyreService /*РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµРЎРµСЂРІРёСЃ*/ : Service
 	{
 		public object Any(OsnovnoeSyreRequest request)
 		{
@@ -47,38 +47,38 @@ namespace V82.Справочники
 
 		public object Get(OsnovnoeSyreRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+			if (decimal.TryParse(request.Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 			{
-				var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
+				var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+				if (РЎСЃС‹Р»РєР° == null)
 				{
-					return new OsnovnoeSyreResponse() {Result = "ОсновноеСырье c кодом '" + request.Code+"' не найдено."};
+					return new OsnovnoeSyreResponse() {Result = "РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµ c РєРѕРґРѕРј '" + request.Code+"' РЅРµ РЅР°Р№РґРµРЅРѕ."};
 				}
-				return Ссылка;
+				return РЎСЃС‹Р»РєР°;
 			}
 			else
 			{
-				return V82.Справочники.ОсновноеСырье.НайтиПоКоду(1);
+				return V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(1);
 			}
 		}
 
 		public object Get(OsnovnoeSyresRequest request)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОсновноеСырье>();
+			var РљРѕР»Р»РµРєС†РёСЏ = new List<V82.РЎРїСЂР°РІРѕС‡РЅРёРєРёРЎСЃС‹Р»РєР°.РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµ>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				decimal РЎС‚СЂРѕРєР°РљРѕРґ = 0;
+				if (decimal.TryParse(Code, out РЎС‚СЂРѕРєР°РљРѕРґ))
 				{
-					var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
+					var РЎСЃС‹Р»РєР° = V82.РЎРїСЂР°РІРѕС‡РЅРёРєРё.РћСЃРЅРѕРІРЅРѕРµРЎС‹СЂСЊРµ.РќР°Р№С‚РёРџРѕРљРѕРґСѓ(РЎС‚СЂРѕРєР°РљРѕРґ);
+					if (РЎСЃС‹Р»РєР° != null)
 					{
-						Коллекция.Add(Ссылка);
+						РљРѕР»Р»РµРєС†РёСЏ.Add(РЎСЃС‹Р»РєР°);
 					}
 				}
 			}
-			return Коллекция;
+			return РљРѕР»Р»РµРєС†РёСЏ;
 		}
 
 	}
