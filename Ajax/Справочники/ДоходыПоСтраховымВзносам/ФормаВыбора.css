@@ -1,0 +1,138 @@
+
+html, body
+{
+	font-size: 8pt;
+	font-family: "MS Shell Dlg";
+}
+div
+{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+label
+{
+	font-size: 8pt;
+	font-family: "MS Shell Dlg";
+	color:#413003;
+	background-color:#FCFAEB;
+	display:inline-block;
+	vertical-align:middle;
+	padding-top:4px;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+button
+{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+input
+{
+	font-size: 8pt;
+	font-family: "MS Shell Dlg";
+	padding-left:2px;
+	border-color:#B3AC86;
+	border-radius:3px;
+	border-style:solid;
+	border-width:thin;
+}
+div.Форма
+{
+	background-color:#FCFAEB;
+}
+div.КоманднаяПанель
+{
+	background-color:#F5F2DD;
+	border-color:#B3AC86;
+	border-style:solid;
+	border-width:thin;
+}
+button.КнопкаКоманднойПанели
+{
+	background-color:#F5F2DD;
+	border-color:#F5F2DD;
+	border-radius:3px;
+	border-style:solid;
+	border-width:thin;
+}
+button.КнопкаКоманднойПанели:hover
+{
+	background-color:#CCE2FD;
+	border-color:#9CB5E8;
+	border-radius:3px;
+	border-style:solid;
+	border-width:thin;
+}
+table
+{
+	background-color:#F5F2DD;
+	border-color:#B3AC86;
+	border-style:solid;
+	border-width:thin;
+}
+table.ТабличноеПоле
+{
+}
+table.ТабличноеПоле thead
+{
+	height: 22px;
+	overflow:auto;
+	display:block;
+}
+table.ТабличноеПоле thead tr th
+{
+}
+table.ТабличноеПоле tbody
+{
+	display: block;
+	overflow: auto;
+	background-color:#FFFFFF;
+	border-color:#B3AC86;
+	border-style:solid;
+	border-width:thin;
+	scrollbar-track-color:#B3AC86;
+	scrollbar-face-color:#B3AC86;
+	border-spacing: 0px 0px;
+}
+table.ТабличноеПоле tbody tr td
+{
+	border-right-width:thin;
+	border-right-style:solid;
+	border-bottom-width:thin;
+	border-bottom-style:solid;
+}
+#ТабличноеПоле_Редактор
+{
+	display: none;
+	position: absolute;
+	z-index:999999;
+	outline: none;
+	border:none;
+}
+ul
+{
+	width: 180px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+li ul
+{
+	position: absolute;
+	display: none;
+	margin-left: 80px;
+	margin-top: -2em;
+}
+li:hover ul
+{
+	display: block;
+}

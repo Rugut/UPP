@@ -1,0 +1,72 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Организации</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		<!-- "jquery-1.8.3.js" -->
+		<script type="text/javascript" src="jquery-ui-1.9.2.custom.js"></script>
+		<!-- "jquery-ui-1.9.2.custom.js" -->
+		<link rel="stylesheet" href="ФормаЭлемента.css"/>
+		<script type="text/javascript" src="ФормаЭлемента.js"></script>
+	</head>
+	<body style="background-color:#D7D3BD">
+			<div class="КоробкаФормы" id="Form1">
+			<div class="Форма" id="Form2" style="position:absolute;width:579px;height:669px;">
+				<label style="position:absolute;left:470px;top:33px;width:36px;height:19px;">Код:</label>
+				<input type="text" id="Код" style="position:absolute;left:507px;top:33px;width:64px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:33px;width:124px;height:19px;">Наименование:</label>
+				<input type="text" id="Наименование" style="position:absolute;left:134px;top:33px;width:332px;height:19px;"/>
+				<label style="position:absolute;left:222px;top:57px;width:56px;height:19px;">Префикс:</label>
+				<input type="text" id="Префикс" style="position:absolute;left:279px;top:57px;width:40px;height:19px;"/>
+				<div class="КоманднаяПанель" id="ДействияФормы" style="position:absolute;left:0px;top:0px;width:579px;height:25px;"align="left">
+					<button  class="КнопкаКоманднойПанели">Перечитать</button>
+					<button  class="КнопкаКоманднойПанели">Закрыть</button>
+					<button  class="КнопкаКоманднойПанели"></button>
+					<button  class="КнопкаКоманднойПанели"></button>
+					<button  class="КнопкаКоманднойПанели">Скопировать</button>
+					<button  class="КнопкаКоманднойПанели"></button>
+					<button  class="КнопкаКоманднойПанели">Файлы</button>
+					<button  class="КнопкаКоманднойПанели"></button>
+					<button  class="КнопкаКоманднойПанели">Найти в списке</button>
+					<button  class="КнопкаКоманднойПанели">Найти в списке</button>
+					<button  class="КнопкаКоманднойПанели">Скопировать</button>
+					<button  class="КнопкаКоманднойПанели">Настройка доступа</button>
+					<button  class="КнопкаКоманднойПанели">Записать и закрыть</button>
+					<button  class="КнопкаКоманднойПанели">Файлы</button>
+					<button  class="КнопкаКоманднойПанели">Записать</button>
+					<button  class="КнопкаКоманднойПанели">Перечитать</button>
+					<button  class="КнопкаКоманднойПанели">Справка</button>
+				</div>
+				<div class="КоманднаяПанель" id="ОсновныеДействияФормы" style="position:absolute;left:0px;top:644px;width:579px;height:25px;"align="right">
+					<button  class="КнопкаКоманднойПанели">Записать</button>
+					<button  class="КнопкаКоманднойПанели">Закрыть</button>
+					<button  class="КнопкаКоманднойПанели">OK</button>
+				</div>
+				<label style="position:absolute;left:8px;top:280px;width:124px;height:19px;">Головная организация:</label>
+				<input type="text" id="ГоловнаяОрганизация" style="position:absolute;left:134px;top:280px;width:437px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:81px;width:124px;height:66px;">Полное наименование:</label>
+				<input type="text" id="НаименованиеПолное" style="position:absolute;left:134px;top:81px;width:437px;height:66px;"/>
+				<label style="position:absolute;left:8px;top:304px;width:124px;height:19px;">Осн. банковский счет:</label>
+				<input type="text" id="ОсновнойБанковскийСчет" style="position:absolute;left:134px;top:304px;width:437px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:209px;width:124px;height:66px;">Наименование плательщика в платежных поручениях на перечисление в бюджет:</label>
+				<input type="text" id="НаименованиеПлательщикаПриПеречисленииНалогов" style="position:absolute;left:134px;top:209px;width:437px;height:66px;"/>
+				<label style="position:absolute;left:8px;top:57px;width:120px;height:19px;">Юр. / физ. лицо:</label>
+				<input type="text" id="ЮрФизЛицо" style="position:absolute;left:134px;top:57px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:280px;width:124px;height:19px;">Физическое лицо:</label>
+				<input type="text" id="ИндивидуальныйПредприниматель" style="position:absolute;left:134px;top:280px;width:437px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:152px;width:120px;height:34px;">Наименование сокращенное:</label>
+				<input type="text" id="НаименованиеСокращенное" style="position:absolute;left:134px;top:152px;width:437px;height:34px;"/>
+
+
+
+				<label id="Время" style="position:absolute;left:8px;top:400px;width:126px;height:19px;"></label>
+				<button style="position: absolute; left: 140px; top:400px; width: 126px; height: 19px; " onclick="ОбновитьФорму()">КнопкаДляТестов</button>
+
+
+
+			</div>
+		</div>
+	</body>
+</html>

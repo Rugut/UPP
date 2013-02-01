@@ -1,0 +1,88 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Годовые графики амортизации ОС</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		<!-- "jquery-1.8.3.js" -->
+		<script type="text/javascript" src="jquery-ui-1.9.2.custom.js"></script>
+		<!-- "jquery-ui-1.9.2.custom.js" -->
+		<link rel="stylesheet" href="ФормаЭлемента.css"/>
+		<script type="text/javascript" src="ФормаЭлемента.js"></script>
+	</head>
+	<body style="background-color:#D7D3BD">
+			<div class="КоробкаФормы" id="Form1">
+			<div class="Форма" id="Form2" style="position:absolute;width:418px;height:277px;">
+				<label style="position:absolute;left:328px;top:33px;width:40px;height:19px;">Код:</label>
+				<input type="text" id="Код" style="position:absolute;left:370px;top:33px;width:40px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:33px;width:96px;height:19px;">Наименование:</label>
+				<input type="text" id="Наименование" style="position:absolute;left:106px;top:33px;width:220px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:57px;width:96px;height:19px;">Прочие сведения:</label>
+				<input type="text" id="Комментарий" style="position:absolute;left:106px;top:57px;width:304px;height:19px;"/>
+				<div class="КоманднаяПанель" id="ДействияФормы" style="position:absolute;left:0px;top:0px;width:417px;height:25px;"align="left">
+					<ul class="Меню">
+					<li>Подменню 1
+					<ul class="Меню">
+					<li>Подменю 1.1</li>
+					<li>Подменю 1.2</li>
+					<li>Подменю 1.3</li>
+					</ul>
+					</li>
+					<li>Подменню 2
+					<ul class="Меню">
+					<li>Подменю 2.1</li>
+					<li>Подменю 2.2</li>
+					<li>Подменю 2.3</li>
+					</ul>
+					</li>
+					<li>Подменню 3
+					<ul class="Меню">
+					<li>Подменю 3.1</li>
+					<li>Подменю 3.2</li>
+					<li>Подменю 3.3</li>
+					</ul>
+					</li>
+					</ul>
+				</div>
+				<div class="КоманднаяПанель" id="ОсновныеДействияФормы" style="position:absolute;left:0px;top:252px;width:417px;height:25px;"align="right">
+					<button  class="КнопкаКоманднойПанели">Закрыть</button>
+					<button  class="КнопкаКоманднойПанели">OK</button>
+					<button  class="КнопкаКоманднойПанели">Записать</button>
+				</div>
+				<label style="position:absolute;left:20px;top:105px;width:60px;height:19px;">Январь:</label>
+				<input type="text" id="Коэффициент1" style="position:absolute;left:82px;top:105px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:20px;top:129px;width:60px;height:19px;">Февраль:</label>
+				<input type="text" id="Коэффициент2" style="position:absolute;left:82px;top:129px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:20px;top:153px;width:60px;height:19px;">Март:</label>
+				<input type="text" id="Коэффициент3" style="position:absolute;left:82px;top:153px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:20px;top:177px;width:60px;height:19px;">Апрель:</label>
+				<input type="text" id="Коэффициент4" style="position:absolute;left:82px;top:177px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:20px;top:201px;width:60px;height:19px;">Май:</label>
+				<input type="text" id="Коэффициент5" style="position:absolute;left:82px;top:201px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:20px;top:225px;width:60px;height:19px;">Июнь:</label>
+				<input type="text" id="Коэффициент6" style="position:absolute;left:82px;top:225px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:202px;top:105px;width:60px;height:19px;">Июль:</label>
+				<input type="text" id="Коэффициент7" style="position:absolute;left:264px;top:105px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:202px;top:129px;width:60px;height:19px;">Август:</label>
+				<input type="text" id="Коэффициент8" style="position:absolute;left:264px;top:129px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:202px;top:153px;width:60px;height:19px;">Сентябрь:</label>
+				<input type="text" id="Коэффициент9" style="position:absolute;left:264px;top:153px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:202px;top:177px;width:60px;height:19px;">Октябрь:</label>
+				<input type="text" id="Коэффициент10" style="position:absolute;left:264px;top:177px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:202px;top:201px;width:60px;height:19px;">Ноябрь:</label>
+				<input type="text" id="Коэффициент11" style="position:absolute;left:264px;top:201px;width:80px;height:19px;"/>
+				<label style="position:absolute;left:202px;top:225px;width:60px;height:19px;">Декабрь:</label>
+				<input type="text" id="Коэффициент12" style="position:absolute;left:264px;top:225px;width:80px;height:19px;"/>
+
+
+
+				<label id="Время" style="position:absolute;left:8px;top:400px;width:126px;height:19px;"></label>
+				<button style="position: absolute; left: 140px; top:400px; width: 126px; height: 19px; " onclick="ОбновитьФорму()">КнопкаДляТестов</button>
+
+
+
+			</div>
+		</div>
+	</body>
+</html>

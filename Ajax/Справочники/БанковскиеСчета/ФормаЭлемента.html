@@ -1,0 +1,73 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Элемент Банковские счета</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		<!-- "jquery-1.8.3.js" -->
+		<script type="text/javascript" src="jquery-ui-1.9.2.custom.js"></script>
+		<!-- "jquery-ui-1.9.2.custom.js" -->
+		<link rel="stylesheet" href="ФормаЭлемента.css"/>
+		<script type="text/javascript" src="ФормаЭлемента.js"></script>
+	</head>
+	<body style="background-color:#D7D3BD">
+			<div class="КоробкаФормы" id="Form1">
+			<div class="Форма" id="Form2" style="position:absolute;width:568px;height:521px;">
+				<div class="КоманднаяПанель" id="ДействияФормы" style="position:absolute;left:0px;top:0px;width:568px;height:25px;"align="left">
+					<ul class="Меню">
+					<li>Подменню 1
+					<ul class="Меню">
+					<li>Подменю 1.1</li>
+					<li>Подменю 1.2</li>
+					<li>Подменю 1.3</li>
+					</ul>
+					</li>
+					<li>Подменню 2
+					<ul class="Меню">
+					<li>Подменю 2.1</li>
+					<li>Подменю 2.2</li>
+					<li>Подменю 2.3</li>
+					</ul>
+					</li>
+					<li>Подменню 3
+					<ul class="Меню">
+					<li>Подменю 3.1</li>
+					<li>Подменю 3.2</li>
+					<li>Подменю 3.3</li>
+					</ul>
+					</li>
+					</ul>
+				</div>
+				<div class="КоманднаяПанель" id="ОсновныеДействияФормы" style="position:absolute;left:0px;top:496px;width:568px;height:25px;"align="right">
+					<button  class="КнопкаКоманднойПанели">Записать</button>
+					<button  class="КнопкаКоманднойПанели">ОК</button>
+					<button  class="КнопкаКоманднойПанели">Закрыть</button>
+				</div>
+				<label style="position:absolute;left:8px;top:35px;width:92px;height:15px;">Номер счета:</label>
+				<label style="position:absolute;left:273px;top:35px;width:57px;height:15px;">Вид счета:</label>
+				<label style="position:absolute;left:447px;top:35px;width:45px;height:15px;">Валюта:</label>
+				<input type="text" id="ВалютаДенежныхСредств" style="position:absolute;left:492px;top:33px;width:68px;height:19px;"/>
+				<input type="text" id="ВидСчета" style="position:absolute;left:336px;top:33px;width:101px;height:19px;"/>
+				<input type="text" id="НомерСчета" style="position:absolute;left:102px;top:33px;width:155px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:471px;width:92px;height:15px;">Представление:</label>
+				<input type="text" id="Наименование" style="position:absolute;left:102px;top:469px;width:374px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:84px;width:46px;height:15px;">БИК:</label>
+				<label style="position:absolute;left:273px;top:84px;width:57px;height:15px;">Корр. счет:</label>
+				<input type="text" id="БИКБанка" style="position:absolute;left:102px;top:82px;width:155px;height:19px;"/>
+				<input type="text" id="КоррсчетБанка" style="position:absolute;left:336px;top:82px;width:224px;height:19px;"/>
+				<label style="position:absolute;left:102px;top:111px;width:458px;height:15px;">Наименование и город банка</label>
+				<input type="text" id="Код" style="position:absolute;left:520px;top:469px;width:40px;height:19px;"/>
+				<label style="position:absolute;left:482px;top:471px;width:37px;height:15px;">Код:</label>
+
+
+
+				<label id="Время" style="position:absolute;left:8px;top:400px;width:126px;height:19px;"></label>
+				<button style="position: absolute; left: 140px; top:400px; width: 126px; height: 19px; " onclick="ОбновитьФорму()">КнопкаДляТестов</button>
+
+
+
+			</div>
+		</div>
+	</body>
+</html>

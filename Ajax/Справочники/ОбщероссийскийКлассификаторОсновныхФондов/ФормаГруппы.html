@@ -1,0 +1,68 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Группа Общероссийский классификатор основных фондов</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		<!-- "jquery-1.8.3.js" -->
+		<script type="text/javascript" src="jquery-ui-1.9.2.custom.js"></script>
+		<!-- "jquery-ui-1.9.2.custom.js" -->
+		<link rel="stylesheet" href="ФормаГруппы.css"/>
+		<script type="text/javascript" src="ФормаГруппы.js"></script>
+	</head>
+	<body style="background-color:#D7D3BD">
+			<div class="КоробкаФормы" id="Form1">
+			<div class="Форма" id="Form2" style="position:absolute;width:427px;height:219px;">
+				<label style="position:absolute;left:8px;top:33px;width:33px;height:19px;">Код:</label>
+				<input type="text" id="Код" style="position:absolute;left:48px;top:33px;width:199px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:58px;width:83px;height:19px;">Наименование:</label>
+				<input type="text" id="Наименование" style="position:absolute;left:141px;top:58px;width:278px;height:46px;"/>
+				<label style="position:absolute;left:254px;top:33px;width:107px;height:19px;">Контрольное число:</label>
+				<input type="text" id="КонтрольноеЧисло" style="position:absolute;left:365px;top:33px;width:54px;height:19px;"/>
+				<label style="position:absolute;left:8px;top:108px;width:123px;height:19px;">Наименование полное:</label>
+				<input type="text" id="НаименованиеГруппировки" style="position:absolute;left:141px;top:108px;width:278px;height:46px;"/>
+				<label style="position:absolute;left:8px;top:167px;width:133px;height:19px;">Амортизационная группа:</label>
+				<input type="text" id="АмортизационнаяГруппа" style="position:absolute;left:141px;top:167px;width:278px;height:19px;"/>
+				<div class="КоманднаяПанель" id="ДействияФормы" style="position:absolute;left:0px;top:0px;width:427px;height:25px;"align="left">
+					<ul class="Меню">
+					<li>Подменню 1
+					<ul class="Меню">
+					<li>Подменю 1.1</li>
+					<li>Подменю 1.2</li>
+					<li>Подменю 1.3</li>
+					</ul>
+					</li>
+					<li>Подменню 2
+					<ul class="Меню">
+					<li>Подменю 2.1</li>
+					<li>Подменю 2.2</li>
+					<li>Подменю 2.3</li>
+					</ul>
+					</li>
+					<li>Подменню 3
+					<ul class="Меню">
+					<li>Подменю 3.1</li>
+					<li>Подменю 3.2</li>
+					<li>Подменю 3.3</li>
+					</ul>
+					</li>
+					</ul>
+				</div>
+				<div class="КоманднаяПанель" id="ОсновныеДействияФормы" style="position:absolute;left:0px;top:194px;width:427px;height:25px;"align="right">
+					<button  class="КнопкаКоманднойПанели">Записать</button>
+					<button  class="КнопкаКоманднойПанели">OK</button>
+					<button  class="КнопкаКоманднойПанели">Закрыть</button>
+				</div>
+
+
+
+				<label id="Время" style="position:absolute;left:8px;top:400px;width:126px;height:19px;"></label>
+				<button style="position: absolute; left: 140px; top:400px; width: 126px; height: 19px; " onclick="ОбновитьФорму()">КнопкаДляТестов</button>
+
+
+
+			</div>
+		</div>
+	</body>
+</html>
