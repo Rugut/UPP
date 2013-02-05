@@ -28,14 +28,14 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-		 From _Reference147(NOLOCK)";
+							From _Reference147(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НастройкаИнтервалов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.НастройкаИнтервалов();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

@@ -47,20 +47,13 @@ namespace V82.Справочники
 
 		public object Get(OsnovnoeSyreRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			string СтрокаКод = request.Code;
+			var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
+			if (Ссылка == null)
 			{
-				var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new OsnovnoeSyreResponse() {Result = "ОсновноеСырье c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
+				return new OsnovnoeSyreResponse() {Result = "ОсновноеСырье c кодом '" + request.Code+"' не найдено."};
 			}
-			else
-			{
-				return V82.Справочники.ОсновноеСырье.НайтиПоКоду(1);
-			}
+			return Ссылка;
 		}
 
 		public object Get(OsnovnoeSyresRequest request)
@@ -68,14 +61,11 @@ namespace V82.Справочники
 			var Коллекция = new List<V82.СправочникиСсылка.ОсновноеСырье>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				string СтрокаКод = Code;
+				var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
+				if (Ссылка != null)
 				{
-					var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+					Коллекция.Add(Ссылка);
 				}
 			}
 			return Коллекция;

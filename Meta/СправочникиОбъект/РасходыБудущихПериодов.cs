@@ -141,7 +141,7 @@ namespace V82.СправочникиОбъект
 						,_Fld3354RRef
 						,_Fld3355RRef
 						,_Fld3356RRef)
-						Values (
+						Values(
 						@Ссылка
 						/*,@Версия*/
 						,@ПометкаУдаления

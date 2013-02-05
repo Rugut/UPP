@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class СтепениРодстваФизЛиц:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.СтепениРодстваФизЛиц НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.СтепениРодстваФизЛиц НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -36,7 +36,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.СтепениРодстваФизЛиц();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -70,14 +70,14 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-		 From _Reference252(NOLOCK)";
+							From _Reference252(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СтепениРодстваФизЛиц();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.СтепениРодстваФизЛиц();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

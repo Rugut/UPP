@@ -47,20 +47,13 @@ namespace V82.Справочники
 
 		public object Get(StatiByudzhetaRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			string СтрокаКод = request.Code;
+			var Ссылка = V82.Справочники.СтатьиБюджета.НайтиПоКоду(СтрокаКод);
+			if (Ссылка == null)
 			{
-				var Ссылка = V82.Справочники.СтатьиБюджета.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new StatiByudzhetaResponse() {Result = "СтатьиБюджета c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
+				return new StatiByudzhetaResponse() {Result = "СтатьиБюджета c кодом '" + request.Code+"' не найдено."};
 			}
-			else
-			{
-				return V82.Справочники.СтатьиБюджета.НайтиПоКоду(1);
-			}
+			return Ссылка;
 		}
 
 		public object Get(StatiByudzhetasRequest request)
@@ -68,14 +61,11 @@ namespace V82.Справочники
 			var Коллекция = new List<V82.СправочникиСсылка.СтатьиБюджета>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				string СтрокаКод = Code;
+				var Ссылка = V82.Справочники.СтатьиБюджета.НайтиПоКоду(СтрокаКод);
+				if (Ссылка != null)
 				{
-					var Ссылка = V82.Справочники.СтатьиБюджета.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+					Коллекция.Add(Ссылка);
 				}
 			}
 			return Коллекция;

@@ -24,15 +24,18 @@ namespace V82.Справочники//Менеджер
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
-					,_Description [Наименование],_Fld2426 [ОписаниеКомпетенции],_Fld2427RRef [ШкалаОценок],_Fld2428RRef [ТиповаяАнкета]
-		 From _Reference126(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld2426 [ОписаниеКомпетенции]
+					,_Fld2427RRef [ШкалаОценок]
+					,_Fld2428RRef [ТиповаяАнкета]
+							From _Reference126(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КомпетенцииРаботников();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.КомпетенцииРаботников();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

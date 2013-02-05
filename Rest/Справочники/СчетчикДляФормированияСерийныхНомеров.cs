@@ -50,17 +50,14 @@ namespace V82.Справочники
 			decimal СтрокаКод = 0;
 			if (decimal.TryParse(request.Code, out СтрокаКод))
 			{
-				var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse() {Result = "СчетчикДляФормированияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
+				return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse() {Result = "СчетчикДляФормированияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
 			}
-			else
+			var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
+			if (Ссылка == null)
 			{
-				return V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(1);
+				return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse() {Result = "СчетчикДляФормированияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
 			}
+			return Ссылка;
 		}
 
 		public object Get(SchetchikDlyaFormirovaniyaSerijjnykhNomerovsRequest request)
@@ -71,11 +68,12 @@ namespace V82.Справочники
 				decimal СтрокаКод = 0;
 				if (decimal.TryParse(Code, out СтрокаКод))
 				{
-					var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+				continue;//ToDo: Регестрация ошибки.
+				}
+				var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
+				if (Ссылка != null)
+				{
+					Коллекция.Add(Ссылка);
 				}
 			}
 			return Коллекция;

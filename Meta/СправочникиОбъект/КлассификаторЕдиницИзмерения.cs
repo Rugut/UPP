@@ -53,7 +53,7 @@ namespace V82.СправочникиОбъект
 						,_Description
 						,_Fld2397
 						,_Fld2398)
-						Values (
+						Values(
 						@Ссылка
 						/*,@Версия*/
 						,@ПометкаУдаления

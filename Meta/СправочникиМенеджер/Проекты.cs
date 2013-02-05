@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class Проекты:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.Проекты НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.Проекты НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -40,7 +40,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.Проекты();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -77,15 +77,19 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld3257 [ДатаНачала],_Fld3258 [ДатаОкончания],_Fld3259RRef [Ответственный],_Fld3260 [Описание]
-		 From _Reference203(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld3257 [ДатаНачала]
+					,_Fld3258 [ДатаОкончания]
+					,_Fld3259RRef [Ответственный]
+					,_Fld3260 [Описание]
+							From _Reference203(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Проекты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.Проекты();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

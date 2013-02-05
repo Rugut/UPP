@@ -11,7 +11,7 @@ namespace V82.Справочники//Менеджер
 	public partial class ТиповыеАнализыНоменклатуры:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.ТиповыеАнализыНоменклатуры НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.ТиповыеАнализыНоменклатуры НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -33,7 +33,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ТиповыеАнализыНоменклатуры();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -67,14 +67,14 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-		 From _Reference265(NOLOCK)";
+							From _Reference265(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТиповыеАнализыНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ТиповыеАнализыНоменклатуры();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

@@ -24,15 +24,17 @@ namespace V82.Справочники//Менеджер
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
-					,_Description [Наименование],_Fld2708 [Объект],_Fld2709 [Данные]
-		 From _Reference152(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld2708 [Объект]
+					,_Fld2709 [Данные]
+							From _Reference152(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НастройкиЗаполненияФорм();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.НастройкиЗаполненияФорм();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

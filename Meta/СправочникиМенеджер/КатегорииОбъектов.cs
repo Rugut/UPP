@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class КатегорииОбъектов:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.КатегорииОбъектов НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.КатегорииОбъектов НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -37,7 +37,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.КатегорииОбъектов();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -70,15 +70,16 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld2392RRef [НазначениеКатегории]
-		 From _Reference111(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld2392RRef [НазначениеКатегории]
+							From _Reference111(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КатегорииОбъектов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.КатегорииОбъектов();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

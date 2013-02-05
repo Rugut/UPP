@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class ДоговорыЭквайринга:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.ДоговорыЭквайринга НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.ДоговорыЭквайринга НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -38,7 +38,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ДоговорыЭквайринга();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -73,15 +73,17 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld2241RRef [Эквайрер],_Fld2242RRef [ДоговорВзаиморасчетов]
-		 From _Reference87(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld2241RRef [Эквайрер]
+					,_Fld2242RRef [ДоговорВзаиморасчетов]
+							From _Reference87(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ДоговорыЭквайринга();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ДоговорыЭквайринга();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

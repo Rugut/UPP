@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class Банки:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.Банки НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.Банки НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -40,7 +40,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.Банки();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -77,15 +77,19 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld1847 [КоррСчет],_Fld1848 [Город],_Fld1849 [Адрес],_Fld1850 [Телефоны]
-		 From _Reference35(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld1847 [КоррСчет]
+					,_Fld1848 [Город]
+					,_Fld1849 [Адрес]
+					,_Fld1850 [Телефоны]
+							From _Reference35(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Банки();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.Банки();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

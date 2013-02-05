@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class Помещения:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.Помещения НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.Помещения НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -37,7 +37,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.Помещения();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -71,15 +71,16 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld3241 [ДляВстреч]
-		 From _Reference196(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld3241 [ДляВстреч]
+							From _Reference196(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Помещения();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.Помещения();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

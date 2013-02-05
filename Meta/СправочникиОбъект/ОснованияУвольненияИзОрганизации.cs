@@ -46,7 +46,7 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata
 						,_Description
 						,_Fld3086)
-						Values (
+						Values(
 						@Ссылка
 						/*,@Версия*/
 						,@ПометкаУдаления

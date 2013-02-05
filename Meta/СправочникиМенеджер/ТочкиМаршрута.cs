@@ -11,7 +11,7 @@ namespace V82.Справочники//Менеджер
 	public partial class ТочкиМаршрута:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.ТочкиМаршрута НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.ТочкиМаршрута НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -26,7 +26,7 @@ namespace V82.Справочники//Менеджер
 					,_Code [Код]
 					,_Description [Наименование]
 					,_Fld3996RRef [Подразделение]
-					,_Fld3997RRef [РабочийЦентр]
+					,_Fld3997_TYPE [РабочийЦентр_Тип],_Fld3997_RRRef [РабочийЦентр],_Fld3997_RTRef [РабочийЦентр_Вид]
 					From _Reference273(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
@@ -35,7 +35,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ТочкиМаршрута();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -69,15 +69,17 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld3996RRef [Подразделение],_Fld3997RRef [РабочийЦентр]
-		 From _Reference273(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld3996RRef [Подразделение]
+					,_Fld3997_TYPE [РабочийЦентр_Тип],_Fld3997_RRRef [РабочийЦентр],_Fld3997_RTRef [РабочийЦентр_Вид]
+							From _Reference273(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТочкиМаршрута();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ТочкиМаршрута();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

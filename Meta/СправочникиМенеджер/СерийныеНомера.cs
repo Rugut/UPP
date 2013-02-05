@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class СерийныеНомера:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.СерийныеНомера НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.СерийныеНомера НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -35,7 +35,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.СерийныеНомера();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -67,14 +67,14 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-		 From _Reference227(NOLOCK)";
+							From _Reference227(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СерийныеНомера();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.СерийныеНомера();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

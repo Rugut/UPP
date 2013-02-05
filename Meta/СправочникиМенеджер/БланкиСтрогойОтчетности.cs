@@ -11,7 +11,7 @@ namespace V82.Справочники//Менеджер
 	public partial class БланкиСтрогойОтчетности:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.БланкиСтрогойОтчетности НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.БланкиСтрогойОтчетности НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -33,7 +33,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.БланкиСтрогойОтчетности();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -67,14 +67,14 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-		 From _Reference37(NOLOCK)";
+							From _Reference37(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.БланкиСтрогойОтчетности();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.БланкиСтрогойОтчетности();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

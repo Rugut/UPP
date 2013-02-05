@@ -50,7 +50,7 @@ namespace V82.СправочникиОбъект
 						,_Description
 						,_Fld2959RRef
 						,_Fld2960)
-						Values (
+						Values(
 						@Ссылка
 						/*,@Версия*/
 						,@ПометкаУдаления

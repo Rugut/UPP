@@ -11,7 +11,7 @@ namespace V82.Справочники//Менеджер
 	public partial class КодыОКПД:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.КодыОКПД НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.КодыОКПД НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -33,7 +33,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.КодыОКПД();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -65,15 +65,16 @@ namespace V82.Справочники//Менеджер
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
-					,_Code [Код],_Fld2422 [Имя]
-		 From _Reference125(NOLOCK)";
+					,_Code [Код]
+					,_Fld2422 [Имя]
+							From _Reference125(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КодыОКПД();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.КодыОКПД();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

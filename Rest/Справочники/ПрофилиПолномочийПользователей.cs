@@ -55,11 +55,7 @@ namespace V82.Справочники
 			var Коллекция = new List<V82.СправочникиСсылка.ПрофилиПолномочийПользователей>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
-				{
 					Коллекция.Add(null);
-				}
 			}
 			return Коллекция;
 		}

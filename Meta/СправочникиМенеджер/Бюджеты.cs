@@ -27,15 +27,18 @@ namespace V82.Справочники//Менеджер
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
-					,_Description [Наименование],_Fld1868 [НаименованиеПолное],_Fld1869RRef [ВидБюджета],_Fld1870 [Комментарий]
-		 From _Reference38(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld1868 [НаименованиеПолное]
+					,_Fld1869RRef [ВидБюджета]
+					,_Fld1870 [Комментарий]
+							From _Reference38(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Бюджеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.Бюджеты();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

@@ -47,20 +47,13 @@ namespace V82.Справочники
 
 		public object Get(ProzhitochnyeMinimumyRequest request)
 		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			string СтрокаКод = request.Code;
+			var Ссылка = V82.Справочники.ПрожиточныеМинимумы.НайтиПоКоду(СтрокаКод);
+			if (Ссылка == null)
 			{
-				var Ссылка = V82.Справочники.ПрожиточныеМинимумы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка == null)
-				{
-					return new ProzhitochnyeMinimumyResponse() {Result = "ПрожиточныеМинимумы c кодом '" + request.Code+"' не найдено."};
-				}
-				return Ссылка;
+				return new ProzhitochnyeMinimumyResponse() {Result = "ПрожиточныеМинимумы c кодом '" + request.Code+"' не найдено."};
 			}
-			else
-			{
-				return V82.Справочники.ПрожиточныеМинимумы.НайтиПоКоду(1);
-			}
+			return Ссылка;
 		}
 
 		public object Get(ProzhitochnyeMinimumysRequest request)
@@ -68,14 +61,11 @@ namespace V82.Справочники
 			var Коллекция = new List<V82.СправочникиСсылка.ПрожиточныеМинимумы>();
 			foreach (var Code in request.Codes)
 			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
+				string СтрокаКод = Code;
+				var Ссылка = V82.Справочники.ПрожиточныеМинимумы.НайтиПоКоду(СтрокаКод);
+				if (Ссылка != null)
 				{
-					var Ссылка = V82.Справочники.ПрожиточныеМинимумы.НайтиПоКоду(СтрокаКод);
-					if (Ссылка != null)
-					{
-						Коллекция.Add(Ссылка);
-					}
+					Коллекция.Add(Ссылка);
 				}
 			}
 			return Коллекция;

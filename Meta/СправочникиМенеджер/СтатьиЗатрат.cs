@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class СтатьиЗатрат:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.СтатьиЗатрат НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.СтатьиЗатрат НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -40,7 +40,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.СтатьиЗатрат();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -77,15 +77,19 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld3811RRef [ВидЗатрат],_Fld3812RRef [СтатусМатериальныхЗатрат],_Fld3813RRef [ХарактерЗатрат],_Fld3814RRef [ВидРасходовНУ]
-		 From _Reference248(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld3811RRef [ВидЗатрат]
+					,_Fld3812RRef [СтатусМатериальныхЗатрат]
+					,_Fld3813RRef [ХарактерЗатрат]
+					,_Fld3814RRef [ВидРасходовНУ]
+							From _Reference248(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СтатьиЗатрат();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.СтатьиЗатрат();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

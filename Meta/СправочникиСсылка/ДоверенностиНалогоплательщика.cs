@@ -204,12 +204,12 @@ namespace V82.СправочникиСсылка
 		{
 			Serializer.Serialize(Поток,this);
 		}
-		
+
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-		
+
 		public string СериализацияXml()
 		{
 			return this.ToXml();

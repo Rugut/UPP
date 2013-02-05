@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class ЦеновыеГруппы:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.ЦеновыеГруппы НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.ЦеновыеГруппы НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -37,7 +37,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ЦеновыеГруппы();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -71,15 +71,16 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld4224 [Порядок]
-		 From _Reference290(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld4224 [Порядок]
+							From _Reference290(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ЦеновыеГруппы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ЦеновыеГруппы();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

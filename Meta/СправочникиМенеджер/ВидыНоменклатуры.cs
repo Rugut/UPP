@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class ВидыНоменклатуры:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.ВидыНоменклатуры НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.ВидыНоменклатуры НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -37,7 +37,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ВидыНоменклатуры();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -71,15 +71,16 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
-					,_Description [Наименование],_Fld1948RRef [ТипНоменклатуры]
-		 From _Reference55(NOLOCK)";
+					,_Description [Наименование]
+					,_Fld1948RRef [ТипНоменклатуры]
+							From _Reference55(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ВидыНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.ВидыНоменклатуры();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

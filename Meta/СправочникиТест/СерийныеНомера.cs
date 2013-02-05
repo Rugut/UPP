@@ -29,7 +29,7 @@ namespace V82.СправочникиТест
 
 
 				Объект.Записать();
-				Console.Write("Выполнено: " + НомерЭлемента.ToString() + "%.");
+				Console.Write("Выполнено: " + НомерЭлемента + "%.");
 				Console.CursorLeft = 0;
 			}
 			var Финиш = DateTime.Now;
@@ -58,7 +58,7 @@ namespace V82.СправочникиТест
 				{
 					НомерЭлемента++;
 					Ссылка.СериализацияProtoBuf(Поток);
-					Console.Write("Выполнено: " + НомерЭлемента.ToString() + "%.");
+					Console.Write("Выполнено: " + НомерЭлемента + "%.");
 					Console.CursorLeft = 0;
 				}
 			}
@@ -77,7 +77,7 @@ namespace V82.СправочникиТест
 			{
 				НомерЭлемента++;
 				Ссылка.СериализацияJson();
-				Console.Write("Выполнено: " + НомерЭлемента.ToString() + "%.");
+				Console.Write("Выполнено: " + НомерЭлемента + "%.");
 				Console.CursorLeft = 0;
 			}
 			var Финиш = DateTime.Now;

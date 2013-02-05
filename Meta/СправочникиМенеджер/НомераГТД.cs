@@ -14,7 +14,7 @@ namespace V82.Справочники//Менеджер
 	public partial class НомераГТД:СправочникМенеджер
 	{
 
-		public static СправочникиСсылка.НомераГТД НайтиПоКоду(decimal Код)
+		public static СправочникиСсылка.НомераГТД НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
@@ -36,7 +36,7 @@ namespace V82.Справочники//Менеджер
 						if (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.НомераГТД();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);
@@ -68,15 +68,16 @@ namespace V82.Справочники//Менеджер
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
-					,_Code [Код],_Fld2972 [Комментарий]
-		 From _Reference165(NOLOCK)";
+					,_Code [Код]
+					,_Fld2972 [Комментарий]
+							From _Reference165(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НомераГТД();
 					using (var Читалка = Команда.ExecuteReader())
 					{
 						while (Читалка.Read())
 						{
 							var Ссылка = new СправочникиСсылка.НомераГТД();
-		
+							//ToDo: Читать нужно через GetValues()
 							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
 							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
 							Array.Reverse(ПотокВерсии);

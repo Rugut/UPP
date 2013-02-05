@@ -46,7 +46,7 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef
 						,_Folder
 						,_Description)
-						Values (
+						Values(
 						@Ссылка
 						/*,@Версия*/
 						,@ПометкаУдаления
