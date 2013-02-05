@@ -112,6 +112,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("УстройствоОтключено", УстройствоОтключено);
 					Команда.Parameters.AddWithValue("УстройствоИспользуется", УстройствоИспользуется);
 					Команда.Parameters.AddWithValue("ОбработчикДрайвера", ОбработчикДрайвера.Ключ());
+					Команда.Parameters.AddWithValue("Параметры",new byte[0]);
 					Команда.Parameters.AddWithValue("РабочееМесто", РабочееМесто.Ссылка);
 					Команда.Parameters.AddWithValue("ТипОборудования", ТипОборудования.Ключ());
 					Команда.Parameters.AddWithValue("ТребуетсяПереустановка", ТребуетсяПереустановка);

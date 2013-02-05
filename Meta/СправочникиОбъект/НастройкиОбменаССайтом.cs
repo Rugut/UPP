@@ -192,6 +192,8 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ОбменТоварами", ОбменТоварами);
 					Команда.Parameters.AddWithValue("ОбменЗаказами", ОбменЗаказами);
+					Команда.Parameters.AddWithValue("УзелОбменаТоварами", Guid.Empty);
+					Команда.Parameters.AddWithValue("УзелОбменаЗаказами", Guid.Empty);
 					Команда.Parameters.AddWithValue("ВыгружатьТолькоИзменения", ВыгружатьТолькоИзменения);
 					Команда.Parameters.AddWithValue("ВыгружатьНаСайт", ВыгружатьНаСайт);
 					Команда.Parameters.AddWithValue("КаталогВыгрузки", КаталогВыгрузки);
@@ -213,6 +215,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ПроводитьДокументыОперативно", ПроводитьДокументыОперативно);
 					Команда.Parameters.AddWithValue("СпособИдентификацииКонтрагентов", СпособИдентификацииКонтрагентов);
 					Команда.Parameters.AddWithValue("ЕдиницаИзмеренияНовойНоменклатуры", ЕдиницаИзмеренияНовойНоменклатуры.Ссылка);
+					Команда.Parameters.AddWithValue("СохраненныеНастройкиПостроителя",new byte[0]);
 					Команда.Parameters.AddWithValue("ВыгружатьКартинки", ВыгружатьКартинки);
 					Команда.Parameters.AddWithValue("Комментарий", Комментарий);
 					Команда.Parameters.AddWithValue("РегламентноеЗадание", РегламентноеЗадание);

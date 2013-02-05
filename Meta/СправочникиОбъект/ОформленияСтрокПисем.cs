@@ -98,6 +98,8 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Зачеркнутый", Зачеркнутый);
 					Команда.Parameters.AddWithValue("Наклонный", Наклонный);
 					Команда.Parameters.AddWithValue("Подчеркнутый", Подчеркнутый);
+					Команда.Parameters.AddWithValue("ЦветТекста",new byte[0]);
+					Команда.Parameters.AddWithValue("ЦветФона",new byte[0]);
 					Команда.ExecuteNonQuery();
 				}
 			}

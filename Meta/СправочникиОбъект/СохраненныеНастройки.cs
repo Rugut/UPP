@@ -103,6 +103,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ИспользоватьПриОткрытии", ИспользоватьПриОткрытии);
 					Команда.Parameters.AddWithValue("СохранятьПериод", СохранятьПериод);
 					Команда.Parameters.AddWithValue("ОткрыватьПриЗапуске", ОткрыватьПриЗапуске);
+					Команда.Parameters.AddWithValue("ХранилищеНастроек",new byte[0]);
 					Команда.Parameters.AddWithValue("Описание", Описание);
 					Команда.Parameters.AddWithValue("КраткийСоставНастройки", КраткийСоставНастройки);
 					Команда.ExecuteNonQuery();

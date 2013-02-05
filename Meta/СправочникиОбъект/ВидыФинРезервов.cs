@@ -77,6 +77,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
+					Команда.Parameters.AddWithValue("СчетРезерва", Guid.Empty);
 					Команда.ExecuteNonQuery();
 				}
 			}

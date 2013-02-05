@@ -113,6 +113,8 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("НеПоказыватьВСписке", НеПоказыватьВСписке);
 					Команда.Parameters.AddWithValue("Описание", Описание);
 					Команда.Parameters.AddWithValue("ВнешнийОтчетИспользовать", ВнешнийОтчетИспользовать);
+					Команда.Parameters.AddWithValue("ВнешнийОтчетХранилище",new byte[0]);
+					Команда.Parameters.AddWithValue("Периоды",new byte[0]);
 					Команда.Parameters.AddWithValue("ВнешнийОтчетВерсия", ВнешнийОтчетВерсия);
 					Команда.ExecuteNonQuery();
 				}

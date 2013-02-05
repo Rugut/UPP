@@ -74,6 +74,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("Объект", Объект);
+					Команда.Parameters.AddWithValue("Данные",new byte[0]);
 					Команда.ExecuteNonQuery();
 				}
 			}

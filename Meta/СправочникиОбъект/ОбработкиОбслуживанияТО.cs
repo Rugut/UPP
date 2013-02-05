@@ -118,6 +118,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Описание", Описание);
 					Команда.Parameters.AddWithValue("Вид", Вид.Ключ());
 					Команда.Parameters.AddWithValue("ИмяФайла", ИмяФайла);
+					Команда.Parameters.AddWithValue("Обработка",new byte[0]);
 					Команда.Parameters.AddWithValue("Идентификатор", Идентификатор);
 					Команда.Parameters.AddWithValue("ВерсияAPI", ВерсияAPI);
 					Команда.ExecuteNonQuery();

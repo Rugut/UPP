@@ -232,6 +232,14 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Продукция", Продукция.Ссылка);
 					Команда.Parameters.AddWithValue("СерияПродукции", СерияПродукции.Ссылка);
 					Команда.Parameters.AddWithValue("СтатьяЗатрат", СтатьяЗатрат.Ссылка);
+					Команда.Parameters.AddWithValue("СчетБУ", Guid.Empty);
+					Команда.Parameters.AddWithValue("СубконтоБУ1", Guid.Empty);
+					Команда.Parameters.AddWithValue("СубконтоБУ2", Guid.Empty);
+					Команда.Parameters.AddWithValue("СубконтоБУ3", Guid.Empty);
+					Команда.Parameters.AddWithValue("СчетНУ", Guid.Empty);
+					Команда.Parameters.AddWithValue("СубконтоНУ1", Guid.Empty);
+					Команда.Parameters.AddWithValue("СубконтоНУ2", Guid.Empty);
+					Команда.Parameters.AddWithValue("СубконтоНУ3", Guid.Empty);
 					Команда.Parameters.AddWithValue("Сумма", Сумма);
 					Команда.Parameters.AddWithValue("ХарактеристикаПродукции", ХарактеристикаПродукции.Ссылка);
 					Команда.Parameters.AddWithValue("СпособПризнанияРасходов", СпособПризнанияРасходов.Ключ());

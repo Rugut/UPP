@@ -286,10 +286,12 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("СоглашениеЭД", СоглашениеЭД.Ссылка);
 					Команда.Parameters.AddWithValue("СтатусИзвлеченияТекста", СтатусИзвлеченияТекста.Ключ());
 					Команда.Parameters.AddWithValue("СтатусЭД", СтатусЭД.Ключ());
+					Команда.Parameters.AddWithValue("ТекстХранилище",new byte[0]);
 					Команда.Parameters.AddWithValue("ТипХраненияФайла", ТипХраненияФайла.Ключ());
 					Команда.Parameters.AddWithValue("ТипЭлементаВерсииЭД", ТипЭлементаВерсииЭД.Ключ());
 					Команда.Parameters.AddWithValue("Том", Том.Ссылка);
 					Команда.Parameters.AddWithValue("УникальныйИД", УникальныйИД);
+					Команда.Parameters.AddWithValue("ФайлХранилище",new byte[0]);
 					Команда.Parameters.AddWithValue("ЭлектронныйДокументВладелец", ЭлектронныйДокументВладелец.Ссылка);
 					Команда.ExecuteNonQuery();
 				}

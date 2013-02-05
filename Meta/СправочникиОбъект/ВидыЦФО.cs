@@ -45,7 +45,6 @@ namespace V82.СправочникиОбъект
 						,_Marked
 						,_IsMetadata
 						,_ParentIDRRef
-						,_Folder
 						,_Code
 						,_Description)
 						Values(
@@ -54,7 +53,6 @@ namespace V82.СправочникиОбъект
 						,@ПометкаУдаления
 						,@Предопределенный
 						,@Родитель
-						,@ЭтоГруппа
 						,@Код
 						,@Наименование)";
 					}
@@ -68,7 +66,6 @@ namespace V82.СправочникиОбъект
 						_Marked	= @ПометкаУдаления
 						,_IsMetadata	= @Предопределенный
 						,_ParentIDRRef	= @Родитель
-						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
 						Where _IDRRef = @Ссылка";
@@ -78,7 +75,6 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ПометкаУдаления", ПометкаУдаления);
 					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
 					Команда.Parameters.AddWithValue("Родитель", Родитель);
-					Команда.Parameters.AddWithValue("ЭтоГруппа", ЭтоГруппа?new byte[]{0}:new byte[]{1});
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.ExecuteNonQuery();

@@ -92,6 +92,7 @@ namespace V82.СправочникиОбъект
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
+						,_OwnerID_TYPE,_OwnerID_RTRef,_OwnerID_RRRef
 						,_Code
 						,_Description
 						,_Fld1854
@@ -111,6 +112,7 @@ namespace V82.СправочникиОбъект
 						/*,@Версия*/
 						,@ПометкаУдаления
 						,@Предопределенный
+						,@ВладелецТип,@ВладелецВид,@Владелец
 						,@Код
 						,@Наименование
 						,@НомерСчета
@@ -135,6 +137,7 @@ namespace V82.СправочникиОбъект
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_IsMetadata	= @Предопределенный
+						,_OwnerID_TYPE	= @ВладелецТип,_OwnerID_RTRef	= @ВладелецВид,_OwnerID_RRRef	= @Владелец
 						,_Code	= @Код
 						,_Description	= @Наименование
 						,_Fld1854	= @НомерСчета
@@ -155,6 +158,9 @@ namespace V82.СправочникиОбъект
 					/*Команда.Parameters.AddWithValue("Версия", Версия);*/
 					Команда.Parameters.AddWithValue("ПометкаУдаления", ПометкаУдаления);
 					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
+					Команда.Parameters.AddWithValue("ВладелецТип", 0);
+					Команда.Parameters.AddWithValue("ВладелецВид", 0);
+					Команда.Parameters.AddWithValue("Владелец", Владелец);
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("НомерСчета", НомерСчета);

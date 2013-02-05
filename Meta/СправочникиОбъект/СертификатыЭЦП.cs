@@ -125,6 +125,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ПарольПользователя", ПарольПользователя);
 					Команда.Parameters.AddWithValue("Пользователь", Пользователь.Ссылка);
 					Команда.Parameters.AddWithValue("ПроверятьСоставИсполнителей", ПроверятьСоставИсполнителей);
+					Команда.Parameters.AddWithValue("ФайлСертификата",new byte[0]);
 					Команда.ExecuteNonQuery();
 				}
 			}

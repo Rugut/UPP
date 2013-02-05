@@ -216,6 +216,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ДатаНачала", ДатаНачала);
 					Команда.Parameters.AddWithValue("ДатаОкончания", ДатаОкончания);
 					Команда.Parameters.AddWithValue("ИспытательныйСрок", ИспытательныйСрок);
+					Команда.Parameters.AddWithValue("ВидРасчета", Guid.Empty);
 					Команда.Parameters.AddWithValue("ТарифнаяСтавка", ТарифнаяСтавка);
 					Команда.Parameters.AddWithValue("ВалютаТарифнойСтавки", ВалютаТарифнойСтавки.Ссылка);
 					Команда.Parameters.AddWithValue("ПостфиксНаименования", ПостфиксНаименования);

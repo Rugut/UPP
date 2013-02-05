@@ -100,7 +100,9 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("Объект", Объект.Ссылка);
 					Команда.Parameters.AddWithValue("ИмяФайла", ИмяФайла);
+					Команда.Parameters.AddWithValue("Хранилище",new byte[0]);
 					Команда.Parameters.AddWithValue("ИДФайлаПочтовогоПисьма", ИДФайлаПочтовогоПисьма);
+					Команда.Parameters.AddWithValue("ТекстФайла",new byte[0]);
 					Команда.ExecuteNonQuery();
 				}
 			}

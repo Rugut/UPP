@@ -95,6 +95,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ПрофильПолномочийПользователя", ПрофильПолномочийПользователя.Ссылка);
 					Команда.Parameters.AddWithValue("ФизЛицо", ФизЛицо.Ссылка);
+					Команда.Parameters.AddWithValue("ИдентификаторПользователяИБ",Guid.Empty);
 					Команда.ExecuteNonQuery();
 				}
 			}

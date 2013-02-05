@@ -80,6 +80,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
+					Команда.Parameters.AddWithValue("НазначениеКатегории", Guid.Empty);
 					Команда.ExecuteNonQuery();
 				}
 			}

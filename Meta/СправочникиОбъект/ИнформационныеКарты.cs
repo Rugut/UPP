@@ -105,6 +105,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("КодКарты", КодКарты);
 					Команда.Parameters.AddWithValue("ВидКарты", ВидКарты.Ключ());
 					Команда.Parameters.AddWithValue("ТипКарты", ТипКарты.Ключ());
+					Команда.Parameters.AddWithValue("ТипШтрихКода", Guid.Empty);
 					Команда.Parameters.AddWithValue("ВидДисконтнойКарты", ВидДисконтнойКарты.Ссылка);
 					Команда.ExecuteNonQuery();
 				}

@@ -123,6 +123,10 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("КонвертацияПомощник", КонвертацияПомощник);
 					Команда.Parameters.AddWithValue("КонвертацияОбработка", КонвертацияОбработка);
 					Команда.Parameters.AddWithValue("КонвертацияПравила", КонвертацияПравила);
+					Команда.Parameters.AddWithValue("ХранилищеПомощник",new byte[0]);
+					Команда.Parameters.AddWithValue("ХранилищеОписаниеПомощника",new byte[0]);
+					Команда.Parameters.AddWithValue("ХранилищеОбработка",new byte[0]);
+					Команда.Parameters.AddWithValue("ХранилищеПравила",new byte[0]);
 					Команда.Parameters.AddWithValue("ИдентификаторЭлемента", ИдентификаторЭлемента);
 					Команда.ExecuteNonQuery();
 				}

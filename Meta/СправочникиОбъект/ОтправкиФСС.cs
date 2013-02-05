@@ -121,12 +121,15 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ИдентификаторОтправкиНаСервере", ИдентификаторОтправкиНаСервере);
+					Команда.Parameters.AddWithValue("ЗашифрованныйПакет",new byte[0]);
 					Команда.Parameters.AddWithValue("ИмяФайлаПакета", ИмяФайлаПакета);
 					Команда.Parameters.AddWithValue("СтатусОтправки", СтатусОтправки.Ключ());
+					Команда.Parameters.AddWithValue("Протокол",new byte[0]);
 					Команда.Parameters.AddWithValue("ДатаОтправки", ДатаОтправки);
 					Команда.Parameters.AddWithValue("ДатаПолученияРезультата", ДатаПолученияРезультата);
 					Команда.Parameters.AddWithValue("Организация", Организация.Ссылка);
 					Команда.Parameters.AddWithValue("КодОрганаФСС", КодОрганаФСС);
+					Команда.Parameters.AddWithValue("Квитанция",new byte[0]);
 					Команда.ExecuteNonQuery();
 				}
 			}

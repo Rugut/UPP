@@ -118,6 +118,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ЗагружатьОбъекты", ЗагружатьОбъекты);
+					Команда.Parameters.AddWithValue("МакетАнкеты",new byte[0]);
 					Команда.Parameters.AddWithValue("ВидСправочникаДляЗагрузки", ВидСправочникаДляЗагрузки.Ключ());
 					Команда.Parameters.AddWithValue("Адресная", Адресная);
 					Команда.Parameters.AddWithValue("НаименованиеАнкеты", НаименованиеАнкеты);

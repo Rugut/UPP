@@ -85,6 +85,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Родитель", Родитель);
 					Команда.Parameters.AddWithValue("ЭтоГруппа", ЭтоГруппа?new byte[]{0}:new byte[]{1});
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
+					Команда.Parameters.AddWithValue("СхемаКомпоновкиДанных",new byte[0]);
 					Команда.Parameters.AddWithValue("Описание", Описание);
 					Команда.Parameters.AddWithValue("ВидПроизвольногоОтчета", ВидПроизвольногоОтчета.Ключ());
 					Команда.ExecuteNonQuery();

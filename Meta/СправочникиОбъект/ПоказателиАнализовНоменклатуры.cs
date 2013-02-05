@@ -94,6 +94,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ЭтоГруппа", ЭтоГруппа?new byte[]{0}:new byte[]{1});
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
+					Команда.Parameters.AddWithValue("ВидРезультатаАнализа", Guid.Empty);
 					Команда.Parameters.AddWithValue("МинЗначение", МинЗначение);
 					Команда.Parameters.AddWithValue("МаксЗначение", МаксЗначение);
 					Команда.Parameters.AddWithValue("ЕдиницаИзмерения", ЕдиницаИзмерения.Ссылка);

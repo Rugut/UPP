@@ -42,6 +42,7 @@ namespace V82.СправочникиОбъект
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
+						,_OwnerIDRRef
 						,_Description
 						,_Fld4212RRef
 						,_Fld4213)
@@ -50,6 +51,7 @@ namespace V82.СправочникиОбъект
 						/*,@Версия*/
 						,@ПометкаУдаления
 						,@Предопределенный
+						,@Владелец
 						,@Наименование
 						,@ОКП
 						,@Активная)";
@@ -63,6 +65,7 @@ namespace V82.СправочникиОбъект
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_IsMetadata	= @Предопределенный
+						,_OwnerIDRRef	= @Владелец
 						,_Description	= @Наименование
 						,_Fld4212RRef	= @ОКП
 						,_Fld4213	= @Активная
@@ -72,6 +75,7 @@ namespace V82.СправочникиОбъект
 					/*Команда.Parameters.AddWithValue("Версия", Версия);*/
 					Команда.Parameters.AddWithValue("ПометкаУдаления", ПометкаУдаления);
 					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
+					Команда.Parameters.AddWithValue("Владелец", Владелец);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
 					Команда.Parameters.AddWithValue("ОКП", ОКП.Ссылка);
 					Команда.Parameters.AddWithValue("Активная", Активная);

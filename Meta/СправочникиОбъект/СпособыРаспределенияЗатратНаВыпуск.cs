@@ -208,9 +208,11 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Процент", Процент);
 					Команда.Parameters.AddWithValue("Коэффициент", Коэффициент);
 					Команда.Parameters.AddWithValue("ПорядокОкругления", ПорядокОкругления.Ключ());
+					Команда.Parameters.AddWithValue("НастройкиПостроителя",new byte[0]);
 					Команда.Parameters.AddWithValue("ИзменитьНаПроцент", ИзменитьНаПроцент);
 					Команда.Parameters.AddWithValue("ИзменитьНаКоэффициент", ИзменитьНаКоэффициент);
 					Команда.Parameters.AddWithValue("ОкруглитьДо", ОкруглитьДо);
+					Команда.Parameters.AddWithValue("СхемаКомпоновкиДанных",new byte[0]);
 					Команда.Parameters.AddWithValue("Применимость", Применимость.Ключ());
 					Команда.Parameters.AddWithValue("ИспользоватьПростоеРаспределение", ИспользоватьПростоеРаспределение);
 					Команда.Parameters.AddWithValue("НаправлениеРаспределения", НаправлениеРаспределения.Ключ());

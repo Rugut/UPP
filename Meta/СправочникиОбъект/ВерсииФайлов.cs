@@ -210,8 +210,10 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("Расширение", Расширение);
 					Команда.Parameters.AddWithValue("РодительскаяВерсия", РодительскаяВерсия.Ссылка);
 					Команда.Parameters.AddWithValue("СтатусИзвлеченияТекста", СтатусИзвлеченияТекста.Ключ());
+					Команда.Parameters.AddWithValue("ТекстХранилище",new byte[0]);
 					Команда.Parameters.AddWithValue("ТипХраненияФайла", ТипХраненияФайла.Ключ());
 					Команда.Parameters.AddWithValue("Том", Том.Ссылка);
+					Команда.Parameters.AddWithValue("ФайлХранилище",new byte[0]);
 					Команда.ExecuteNonQuery();
 				}
 			}

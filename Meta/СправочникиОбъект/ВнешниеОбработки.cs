@@ -100,6 +100,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ЭтоГруппа", ЭтоГруппа?new byte[]{0}:new byte[]{1});
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.Parameters.AddWithValue("Наименование", Наименование);
+					Команда.Parameters.AddWithValue("ХранилищеВнешнейОбработки",new byte[0]);
 					Команда.Parameters.AddWithValue("ВидОбработки", ВидОбработки.Ключ());
 					Команда.Parameters.AddWithValue("Комментарий", Комментарий);
 					Команда.Parameters.AddWithValue("КомментарийКФайлуИсточнику", КомментарийКФайлуИсточнику);

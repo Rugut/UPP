@@ -43,12 +43,14 @@ namespace V82.СправочникиОбъект
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
+						,_OwnerIDRRef
 						,_Code)
 						Values(
 						@Ссылка
 						/*,@Версия*/
 						,@ПометкаУдаления
 						,@Предопределенный
+						,@Владелец
 						,@Код)";
 					}
 					else
@@ -60,6 +62,7 @@ namespace V82.СправочникиОбъект
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_IsMetadata	= @Предопределенный
+						,_OwnerIDRRef	= @Владелец
 						,_Code	= @Код
 						Where _IDRRef = @Ссылка";
 					}
@@ -67,6 +70,7 @@ namespace V82.СправочникиОбъект
 					/*Команда.Parameters.AddWithValue("Версия", Версия);*/
 					Команда.Parameters.AddWithValue("ПометкаУдаления", ПометкаУдаления);
 					Команда.Parameters.AddWithValue("Предопределенный", Предопределенный);
+					Команда.Parameters.AddWithValue("Владелец", Владелец);
 					Команда.Parameters.AddWithValue("Код", Код);
 					Команда.ExecuteNonQuery();
 				}

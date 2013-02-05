@@ -104,6 +104,7 @@ namespace V82.СправочникиОбъект
 					Команда.Parameters.AddWithValue("ИмяРегистра", ИмяРегистра);
 					Команда.Parameters.AddWithValue("ПредставлениеРегистра", ПредставлениеРегистра);
 					Команда.Parameters.AddWithValue("ТекстЗапроса", ТекстЗапроса);
+					Команда.Parameters.AddWithValue("НастройкиПостроителя",new byte[0]);
 					Команда.Parameters.AddWithValue("ПроизвольныйЗапрос", ПроизвольныйЗапрос);
 					Команда.ExecuteNonQuery();
 				}
