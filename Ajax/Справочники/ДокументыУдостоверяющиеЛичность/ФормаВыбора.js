@@ -4,6 +4,25 @@ $(document).ready
 (
 	function ()
 	{
+		$.extend(
+		{
+			getUrlVars: function () 
+			{
+				var vars = [], hash;
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for (var i = 0; i < hashes.length; i++)
+				{
+					hash = hashes[i].split('=');
+					vars.push(hash[0]);
+					vars[hash[0]] = hash[1];
+				}
+				return vars;
+			},
+			getUrlVar: function (name) 
+			{
+				return $.getUrlVars()[name];
+			}
+		});
 		$(".Форма").draggable({cursor: 'move', handle: 'div'});
 		$(".Форма").resizable();
 
@@ -39,11 +58,17 @@ function ЗагрузитьДанные()
 	Вызов = true;
 	Время.innerText = СлучайноеЦелоеЧисло(1000000000000000);
 	Старт = new Date();
+	var Параметры = $.getUrlVars();
+	var Код = Параметры["Code"];
+	if (Код == undefined)
+	{
+		Код=СлучайноеЦелоеЧисло(100);
+	}
 	$.ajaxSetup({ scriptCharset: "utf-8", contentType: "application/json; charset=utf-8" });
 	$.ajax({
-		url: 'http://127.0.0.1:1337/Catalogs/Nomenklatura?callback=?',
+		url: 'http://127.0.0.1:1337/Catalogs/DokumentyUdostoveryayushhieLichnost?callback=?',
 		dataType: 'json',
-		data: { Code: СлучайноеЦелоеЧисло(100) },
+		data: { Code: Код },
 		jsonpCallback: 'ЗаполнитьПоля',
 	});
 }

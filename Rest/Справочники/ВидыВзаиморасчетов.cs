@@ -47,7 +47,7 @@ namespace V82.Справочники
 
 		public object Get(VidyVzaimoraschetovRequest request)
 		{
-			string СтрокаКод = request.Code;
+			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
 			var Ссылка = V82.Справочники.ВидыВзаиморасчетов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
@@ -61,7 +61,7 @@ namespace V82.Справочники
 			var Коллекция = new List<V82.СправочникиСсылка.ВидыВзаиморасчетов>();
 			foreach (var Code in request.Codes)
 			{
-				string СтрокаКод = Code;
+				string СтрокаКод = System.Uri.UnescapeDataString(Code);
 				var Ссылка = V82.Справочники.ВидыВзаиморасчетов.НайтиПоКоду(СтрокаКод);
 				if (Ссылка != null)
 				{

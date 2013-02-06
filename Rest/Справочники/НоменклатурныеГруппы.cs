@@ -47,7 +47,7 @@ namespace V82.Справочники
 
 		public object Get(NomenklaturnyeGruppyRequest request)
 		{
-			string СтрокаКод = request.Code;
+			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
 			var Ссылка = V82.Справочники.НоменклатурныеГруппы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
@@ -61,7 +61,7 @@ namespace V82.Справочники
 			var Коллекция = new List<V82.СправочникиСсылка.НоменклатурныеГруппы>();
 			foreach (var Code in request.Codes)
 			{
-				string СтрокаКод = Code;
+				string СтрокаКод = System.Uri.UnescapeDataString(Code);
 				var Ссылка = V82.Справочники.НоменклатурныеГруппы.НайтиПоКоду(СтрокаКод);
 				if (Ссылка != null)
 				{

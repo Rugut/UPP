@@ -47,7 +47,7 @@ namespace V82.Справочники
 
 		public object Get(TomaKHraneniyaFajjlovRequest request)
 		{
-			string СтрокаКод = request.Code;
+			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
 			var Ссылка = V82.Справочники.ТомаХраненияФайлов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
@@ -61,7 +61,7 @@ namespace V82.Справочники
 			var Коллекция = new List<V82.СправочникиСсылка.ТомаХраненияФайлов>();
 			foreach (var Code in request.Codes)
 			{
-				string СтрокаКод = Code;
+				string СтрокаКод = System.Uri.UnescapeDataString(Code);
 				var Ссылка = V82.Справочники.ТомаХраненияФайлов.НайтиПоКоду(СтрокаКод);
 				if (Ссылка != null)
 				{
