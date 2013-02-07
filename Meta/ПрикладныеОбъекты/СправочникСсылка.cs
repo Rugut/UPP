@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,4 +24,3 @@ namespace V82.СправочникиСсылка
 		string СериализацияJson();
 	}
 }
-
