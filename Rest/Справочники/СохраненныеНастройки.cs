@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SokhranennyeNastrojjki")]
-	[Route("/Catalogs/SokhranennyeNastrojjki/{Code}")]
+	[Route("/Catalogs/SokhranennyeNastrojjki/FindById/{Id}")]
+	[Route("/Catalogs/SokhranennyeNastrojjki/FindByCode/{Code}")]
+	[Route("/Catalogs/SokhranennyeNastrojjki/FindByDescr/{Descr}")]
 	public class SokhranennyeNastrojjkiRequest/*СохраненныеНастройкиЗапрос*/: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<SokhranennyeNastrojjkiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

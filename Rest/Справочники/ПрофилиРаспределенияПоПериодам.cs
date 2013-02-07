@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam")]
-	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/{Code}")]
+	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/FindById/{Id}")]
+	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/FindByCode/{Code}")]
+	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/FindByDescr/{Descr}")]
 	public class ProfiliRaspredeleniyaPoPeriodamRequest/*ПрофилиРаспределенияПоПериодамЗапрос*/: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ProfiliRaspredeleniyaPoPeriodamRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

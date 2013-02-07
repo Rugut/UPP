@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KlassifikatorOKOPF")]
-	[Route("/Catalogs/KlassifikatorOKOPF/{Code}")]
+	[Route("/Catalogs/KlassifikatorOKOPF/FindById/{Id}")]
+	[Route("/Catalogs/KlassifikatorOKOPF/FindByCode/{Code}")]
+	[Route("/Catalogs/KlassifikatorOKOPF/FindByDescr/{Descr}")]
 	public class KlassifikatorOKOPFRequest/*КлассификаторОКОПФЗапрос*/: V82.СправочникиСсылка.КлассификаторОКОПФ,IReturn<KlassifikatorOKOPFRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

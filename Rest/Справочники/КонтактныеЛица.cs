@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KontaktnyeLica")]
-	[Route("/Catalogs/KontaktnyeLica/{Code}")]
+	[Route("/Catalogs/KontaktnyeLica/FindById/{Id}")]
+	[Route("/Catalogs/KontaktnyeLica/FindByCode/{Code}")]
+	[Route("/Catalogs/KontaktnyeLica/FindByDescr/{Descr}")]
 	public class KontaktnyeLicaRequest/*КонтактныеЛицаЗапрос*/: V82.СправочникиСсылка.КонтактныеЛица,IReturn<KontaktnyeLicaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

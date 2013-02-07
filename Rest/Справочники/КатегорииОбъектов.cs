@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KategoriiObektov")]
-	[Route("/Catalogs/KategoriiObektov/{Code}")]
+	[Route("/Catalogs/KategoriiObektov/FindById/{Id}")]
+	[Route("/Catalogs/KategoriiObektov/FindByCode/{Code}")]
+	[Route("/Catalogs/KategoriiObektov/FindByDescr/{Descr}")]
 	public class KategoriiObektovRequest/*КатегорииОбъектовЗапрос*/: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<KategoriiObektovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

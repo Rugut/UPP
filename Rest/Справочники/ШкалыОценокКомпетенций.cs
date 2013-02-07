@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SHkalyOcenokKompetencijj")]
-	[Route("/Catalogs/SHkalyOcenokKompetencijj/{Code}")]
+	[Route("/Catalogs/SHkalyOcenokKompetencijj/FindById/{Id}")]
+	[Route("/Catalogs/SHkalyOcenokKompetencijj/FindByCode/{Code}")]
+	[Route("/Catalogs/SHkalyOcenokKompetencijj/FindByDescr/{Descr}")]
 	public class SHkalyOcenokKompetencijjRequest/*ШкалыОценокКомпетенцийЗапрос*/: V82.СправочникиСсылка.ШкалыОценокКомпетенций,IReturn<SHkalyOcenokKompetencijjRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

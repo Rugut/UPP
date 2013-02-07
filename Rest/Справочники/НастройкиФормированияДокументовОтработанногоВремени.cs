@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/{Code}")]
+	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/FindByDescr/{Descr}")]
 	public class NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest/*НастройкиФормированияДокументовОтработанногоВремениЗапрос*/: V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени,IReturn<NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov")]
-	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/{Code}")]
+	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/FindById/{Id}")]
+	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/FindByCode/{Code}")]
+	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/FindByDescr/{Descr}")]
 	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest/*ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос*/: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

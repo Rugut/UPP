@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GrafikiRaboty")]
-	[Route("/Catalogs/GrafikiRaboty/{Code}")]
+	[Route("/Catalogs/GrafikiRaboty/FindById/{Id}")]
+	[Route("/Catalogs/GrafikiRaboty/FindByCode/{Code}")]
+	[Route("/Catalogs/GrafikiRaboty/FindByDescr/{Descr}")]
 	public class GrafikiRabotyRequest/*ГрафикиРаботыЗапрос*/: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<GrafikiRabotyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/RegistraciyaVIFNS")]
-	[Route("/Catalogs/RegistraciyaVIFNS/{Code}")]
+	[Route("/Catalogs/RegistraciyaVIFNS/FindById/{Id}")]
+	[Route("/Catalogs/RegistraciyaVIFNS/FindByCode/{Code}")]
+	[Route("/Catalogs/RegistraciyaVIFNS/FindByDescr/{Descr}")]
 	public class RegistraciyaVIFNSRequest/*РегистрацияВИФНСЗапрос*/: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<RegistraciyaVIFNSRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

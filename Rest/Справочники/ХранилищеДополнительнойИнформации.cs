@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii")]
-	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii/{Code}")]
+	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii/FindById/{Id}")]
+	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii/FindByCode/{Code}")]
+	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii/FindByDescr/{Descr}")]
 	public class KHranilishheDopolnitelnojjInformaciiRequest/*ХранилищеДополнительнойИнформацииЗапрос*/: V82.СправочникиСсылка.ХранилищеДополнительнойИнформации,IReturn<KHranilishheDopolnitelnojjInformaciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

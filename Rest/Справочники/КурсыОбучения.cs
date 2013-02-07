@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KursyObucheniya")]
-	[Route("/Catalogs/KursyObucheniya/{Code}")]
+	[Route("/Catalogs/KursyObucheniya/FindById/{Id}")]
+	[Route("/Catalogs/KursyObucheniya/FindByCode/{Code}")]
+	[Route("/Catalogs/KursyObucheniya/FindByDescr/{Descr}")]
 	public class KursyObucheniyaRequest/*КурсыОбученияЗапрос*/: V82.СправочникиСсылка.КурсыОбучения,IReturn<KursyObucheniyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

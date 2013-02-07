@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/CenovyeGruppy")]
-	[Route("/Catalogs/CenovyeGruppy/{Code}")]
+	[Route("/Catalogs/CenovyeGruppy/FindById/{Id}")]
+	[Route("/Catalogs/CenovyeGruppy/FindByCode/{Code}")]
+	[Route("/Catalogs/CenovyeGruppy/FindByDescr/{Descr}")]
 	public class CenovyeGruppyRequest/*ЦеновыеГруппыЗапрос*/: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<CenovyeGruppyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

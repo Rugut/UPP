@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyParametrovVypuskaProdukcii")]
-	[Route("/Catalogs/VidyParametrovVypuskaProdukcii/{Code}")]
+	[Route("/Catalogs/VidyParametrovVypuskaProdukcii/FindById/{Id}")]
+	[Route("/Catalogs/VidyParametrovVypuskaProdukcii/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyParametrovVypuskaProdukcii/FindByDescr/{Descr}")]
 	public class VidyParametrovVypuskaProdukciiRequest/*ВидыПараметровВыпускаПродукцииЗапрос*/: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<VidyParametrovVypuskaProdukciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

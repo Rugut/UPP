@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ProzhitochnyeMinimumy")]
-	[Route("/Catalogs/ProzhitochnyeMinimumy/{Code}")]
+	[Route("/Catalogs/ProzhitochnyeMinimumy/FindById/{Id}")]
+	[Route("/Catalogs/ProzhitochnyeMinimumy/FindByCode/{Code}")]
+	[Route("/Catalogs/ProzhitochnyeMinimumy/FindByDescr/{Descr}")]
 	public class ProzhitochnyeMinimumyRequest/*ПрожиточныеМинимумыЗапрос*/: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ProzhitochnyeMinimumyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody")]
-	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody/{Code}")]
+	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody/FindById/{Id}")]
+	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody/FindByCode/{Code}")]
+	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody/FindByDescr/{Descr}")]
 	public class TarifyBankovNaDenezhnyePerevodyRequest/*ТарифыБанковНаДенежныеПереводыЗапрос*/: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<TarifyBankovNaDenezhnyePerevodyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

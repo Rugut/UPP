@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TerritorialnyeUsloviya")]
-	[Route("/Catalogs/TerritorialnyeUsloviya/{Code}")]
+	[Route("/Catalogs/TerritorialnyeUsloviya/FindById/{Id}")]
+	[Route("/Catalogs/TerritorialnyeUsloviya/FindByCode/{Code}")]
+	[Route("/Catalogs/TerritorialnyeUsloviya/FindByDescr/{Descr}")]
 	public class TerritorialnyeUsloviyaRequest/*ТерриториальныеУсловияЗапрос*/: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<TerritorialnyeUsloviyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

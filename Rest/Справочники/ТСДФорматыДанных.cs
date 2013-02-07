@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TSDFormatyDannykh")]
-	[Route("/Catalogs/TSDFormatyDannykh/{Code}")]
+	[Route("/Catalogs/TSDFormatyDannykh/FindById/{Id}")]
+	[Route("/Catalogs/TSDFormatyDannykh/FindByCode/{Code}")]
+	[Route("/Catalogs/TSDFormatyDannykh/FindByDescr/{Descr}")]
 	public class TSDFormatyDannykhRequest/*ТСДФорматыДанныхЗапрос*/: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<TSDFormatyDannykhRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

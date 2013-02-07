@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/UsloviyaProdazh")]
-	[Route("/Catalogs/UsloviyaProdazh/{Code}")]
+	[Route("/Catalogs/UsloviyaProdazh/FindById/{Id}")]
+	[Route("/Catalogs/UsloviyaProdazh/FindByCode/{Code}")]
+	[Route("/Catalogs/UsloviyaProdazh/FindByDescr/{Descr}")]
 	public class UsloviyaProdazhRequest/*УсловияПродажЗапрос*/: V82.СправочникиСсылка.УсловияПродаж,IReturn<UsloviyaProdazhRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

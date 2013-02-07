@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyRaspredeleniyaPoProektam")]
-	[Route("/Catalogs/VidyRaspredeleniyaPoProektam/{Code}")]
+	[Route("/Catalogs/VidyRaspredeleniyaPoProektam/FindById/{Id}")]
+	[Route("/Catalogs/VidyRaspredeleniyaPoProektam/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyRaspredeleniyaPoProektam/FindByDescr/{Descr}")]
 	public class VidyRaspredeleniyaPoProektamRequest/*ВидыРаспределенияПоПроектамЗапрос*/: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<VidyRaspredeleniyaPoProektamRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

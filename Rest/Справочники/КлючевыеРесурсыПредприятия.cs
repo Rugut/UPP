@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya")]
-	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya/{Code}")]
+	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya/FindById/{Id}")]
+	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya/FindByCode/{Code}")]
+	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya/FindByDescr/{Descr}")]
 	public class KlyuchevyeResursyPredpriyatiyaRequest/*КлючевыеРесурсыПредприятияЗапрос*/: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<KlyuchevyeResursyPredpriyatiyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

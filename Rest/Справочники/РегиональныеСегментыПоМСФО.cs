@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO")]
-	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO/{Code}")]
+	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO/FindById/{Id}")]
+	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO/FindByCode/{Code}")]
+	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO/FindByDescr/{Descr}")]
 	public class RegionalnyeSegmentyPoMSFORequest/*РегиональныеСегментыПоМСФОЗапрос*/: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<RegionalnyeSegmentyPoMSFORequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

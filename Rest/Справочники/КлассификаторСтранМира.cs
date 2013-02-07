@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KlassifikatorStranMira")]
-	[Route("/Catalogs/KlassifikatorStranMira/{Code}")]
+	[Route("/Catalogs/KlassifikatorStranMira/FindById/{Id}")]
+	[Route("/Catalogs/KlassifikatorStranMira/FindByCode/{Code}")]
+	[Route("/Catalogs/KlassifikatorStranMira/FindByDescr/{Descr}")]
 	public class KlassifikatorStranMiraRequest/*КлассификаторСтранМираЗапрос*/: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<KlassifikatorStranMiraRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

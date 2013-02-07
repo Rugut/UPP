@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv")]
-	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv/{Code}")]
+	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv/FindById/{Id}")]
+	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv/FindByCode/{Code}")]
+	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv/FindByDescr/{Descr}")]
 	public class StatiDvizheniyaDenezhnykhSredstvRequest/*СтатьиДвиженияДенежныхСредствЗапрос*/: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<StatiDvizheniyaDenezhnykhSredstvRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

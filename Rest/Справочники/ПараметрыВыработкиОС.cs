@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ParametryVyrabotkiOS")]
-	[Route("/Catalogs/ParametryVyrabotkiOS/{Code}")]
+	[Route("/Catalogs/ParametryVyrabotkiOS/FindById/{Id}")]
+	[Route("/Catalogs/ParametryVyrabotkiOS/FindByCode/{Code}")]
+	[Route("/Catalogs/ParametryVyrabotkiOS/FindByDescr/{Descr}")]
 	public class ParametryVyrabotkiOSRequest/*ПараметрыВыработкиОСЗапрос*/: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ParametryVyrabotkiOSRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

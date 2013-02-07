@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyKontaktnojjInformacii")]
-	[Route("/Catalogs/VidyKontaktnojjInformacii/{Code}")]
+	[Route("/Catalogs/VidyKontaktnojjInformacii/FindById/{Id}")]
+	[Route("/Catalogs/VidyKontaktnojjInformacii/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyKontaktnojjInformacii/FindByDescr/{Descr}")]
 	public class VidyKontaktnojjInformaciiRequest/*ВидыКонтактнойИнформацииЗапрос*/: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<VidyKontaktnojjInformaciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

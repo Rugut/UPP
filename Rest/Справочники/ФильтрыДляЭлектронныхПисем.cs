@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem")]
-	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/{Code}")]
+	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/FindById/{Id}")]
+	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/FindByCode/{Code}")]
+	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/FindByDescr/{Descr}")]
 	public class FiltryDlyaEHlektronnykhPisemRequest/*ФильтрыДляЭлектронныхПисемЗапрос*/: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<FiltryDlyaEHlektronnykhPisemRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

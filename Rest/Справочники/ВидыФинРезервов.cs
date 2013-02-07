@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyFinRezervov")]
-	[Route("/Catalogs/VidyFinRezervov/{Code}")]
+	[Route("/Catalogs/VidyFinRezervov/FindById/{Id}")]
+	[Route("/Catalogs/VidyFinRezervov/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyFinRezervov/FindByDescr/{Descr}")]
 	public class VidyFinRezervovRequest/*ВидыФинРезервовЗапрос*/: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<VidyFinRezervovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

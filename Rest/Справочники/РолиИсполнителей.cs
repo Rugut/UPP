@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/RoliIspolnitelejj")]
-	[Route("/Catalogs/RoliIspolnitelejj/{Code}")]
+	[Route("/Catalogs/RoliIspolnitelejj/FindById/{Id}")]
+	[Route("/Catalogs/RoliIspolnitelejj/FindByCode/{Code}")]
+	[Route("/Catalogs/RoliIspolnitelejj/FindByDescr/{Descr}")]
 	public class RoliIspolnitelejjRequest/*РолиИсполнителейЗапрос*/: V82.СправочникиСсылка.РолиИсполнителей,IReturn<RoliIspolnitelejjRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

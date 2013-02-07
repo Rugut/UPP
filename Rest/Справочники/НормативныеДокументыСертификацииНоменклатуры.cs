@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury")]
-	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/{Code}")]
+	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/FindById/{Id}")]
+	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/FindByCode/{Code}")]
+	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/FindByDescr/{Descr}")]
 	public class NormativnyeDokumentySertifikaciiNomenklaturyRequest/*НормативныеДокументыСертификацииНоменклатурыЗапрос*/: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<NormativnyeDokumentySertifikaciiNomenklaturyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KodyOKPD")]
-	[Route("/Catalogs/KodyOKPD/{Code}")]
+	[Route("/Catalogs/KodyOKPD/FindById/{Id}")]
+	[Route("/Catalogs/KodyOKPD/FindByCode/{Code}")]
+	[Route("/Catalogs/KodyOKPD/FindByDescr/{Descr}")]
 	public class KodyOKPDRequest/*КодыОКПДЗапрос*/: V82.СправочникиСсылка.КодыОКПД,IReturn<KodyOKPDRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

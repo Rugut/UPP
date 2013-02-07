@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj")]
-	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj/{Code}")]
+	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj/FindById/{Id}")]
+	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj/FindByCode/{Code}")]
+	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj/FindByDescr/{Descr}")]
 	public class OstatkiOtpuskovOrganizacijjRequest/*ОстаткиОтпусковОрганизацийЗапрос*/: V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций,IReturn<OstatkiOtpuskovOrganizacijjRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

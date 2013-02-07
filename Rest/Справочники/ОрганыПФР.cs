@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/OrganyPFR")]
-	[Route("/Catalogs/OrganyPFR/{Code}")]
+	[Route("/Catalogs/OrganyPFR/FindById/{Id}")]
+	[Route("/Catalogs/OrganyPFR/FindByCode/{Code}")]
+	[Route("/Catalogs/OrganyPFR/FindByDescr/{Descr}")]
 	public class OrganyPFRRequest/*ОрганыПФРЗапрос*/: V82.СправочникиСсылка.ОрганыПФР,IReturn<OrganyPFRRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

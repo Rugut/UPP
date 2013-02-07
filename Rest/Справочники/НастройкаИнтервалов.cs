@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkaIntervalov")]
-	[Route("/Catalogs/NastrojjkaIntervalov/{Code}")]
+	[Route("/Catalogs/NastrojjkaIntervalov/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkaIntervalov/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkaIntervalov/FindByDescr/{Descr}")]
 	public class NastrojjkaIntervalovRequest/*НастройкаИнтерваловЗапрос*/: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<NastrojjkaIntervalovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

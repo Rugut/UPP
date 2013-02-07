@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov")]
-	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/{Code}")]
+	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/FindById/{Id}")]
+	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/FindByCode/{Code}")]
+	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/FindByDescr/{Descr}")]
 	public class PoryadokPrisvoeniyaSerijjnykhNomerovRequest/*ПорядокПрисвоенияСерийныхНомеровЗапрос*/: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<PoryadokPrisvoeniyaSerijjnykhNomerovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

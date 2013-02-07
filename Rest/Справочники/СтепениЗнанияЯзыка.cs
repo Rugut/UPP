@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/StepeniZnaniyaYAzyka")]
-	[Route("/Catalogs/StepeniZnaniyaYAzyka/{Code}")]
+	[Route("/Catalogs/StepeniZnaniyaYAzyka/FindById/{Id}")]
+	[Route("/Catalogs/StepeniZnaniyaYAzyka/FindByCode/{Code}")]
+	[Route("/Catalogs/StepeniZnaniyaYAzyka/FindByDescr/{Descr}")]
 	public class StepeniZnaniyaYAzykaRequest/*СтепениЗнанияЯзыкаЗапрос*/: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<StepeniZnaniyaYAzykaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta")]
-	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/{Code}")]
+	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/FindById/{Id}")]
+	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/FindByCode/{Code}")]
+	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/FindByDescr/{Descr}")]
 	public class ZvanieGrazhdanskogoVoinskogoUchetaRequest/*ЗваниеГражданскогоВоинскогоУчетаЗапрос*/: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ZvanieGrazhdanskogoVoinskogoUchetaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/EHDPrisoedinennyeFajjly")]
-	[Route("/Catalogs/EHDPrisoedinennyeFajjly/{Code}")]
+	[Route("/Catalogs/EHDPrisoedinennyeFajjly/FindById/{Id}")]
+	[Route("/Catalogs/EHDPrisoedinennyeFajjly/FindByCode/{Code}")]
+	[Route("/Catalogs/EHDPrisoedinennyeFajjly/FindByDescr/{Descr}")]
 	public class EHDPrisoedinennyeFajjlyRequest/*ЭДПрисоединенныеФайлыЗапрос*/: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<EHDPrisoedinennyeFajjlyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

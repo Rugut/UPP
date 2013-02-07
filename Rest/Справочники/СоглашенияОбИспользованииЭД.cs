@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD")]
-	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/{Code}")]
+	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/FindById/{Id}")]
+	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/FindByCode/{Code}")]
+	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/FindByDescr/{Descr}")]
 	public class SoglasheniyaObIspolzovaniiEHDRequest/*СоглашенияОбИспользованииЭДЗапрос*/: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<SoglasheniyaObIspolzovaniiEHDRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

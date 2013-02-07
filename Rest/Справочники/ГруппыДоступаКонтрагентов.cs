@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GruppyDostupaKontragentov")]
-	[Route("/Catalogs/GruppyDostupaKontragentov/{Code}")]
+	[Route("/Catalogs/GruppyDostupaKontragentov/FindById/{Id}")]
+	[Route("/Catalogs/GruppyDostupaKontragentov/FindByCode/{Code}")]
+	[Route("/Catalogs/GruppyDostupaKontragentov/FindByDescr/{Descr}")]
 	public class GruppyDostupaKontragentovRequest/*ГруппыДоступаКонтрагентовЗапрос*/: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<GruppyDostupaKontragentovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

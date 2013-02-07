@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GruppyPochtovojjRassylki")]
-	[Route("/Catalogs/GruppyPochtovojjRassylki/{Code}")]
+	[Route("/Catalogs/GruppyPochtovojjRassylki/FindById/{Id}")]
+	[Route("/Catalogs/GruppyPochtovojjRassylki/FindByCode/{Code}")]
+	[Route("/Catalogs/GruppyPochtovojjRassylki/FindByDescr/{Descr}")]
 	public class GruppyPochtovojjRassylkiRequest/*ГруппыПочтовойРассылкиЗапрос*/: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<GruppyPochtovojjRassylkiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/MestaKHraneniya")]
-	[Route("/Catalogs/MestaKHraneniya/{Code}")]
+	[Route("/Catalogs/MestaKHraneniya/FindById/{Id}")]
+	[Route("/Catalogs/MestaKHraneniya/FindByCode/{Code}")]
+	[Route("/Catalogs/MestaKHraneniya/FindByDescr/{Descr}")]
 	public class MestaKHraneniyaRequest/*МестаХраненияЗапрос*/: V82.СправочникиСсылка.МестаХранения,IReturn<MestaKHraneniyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

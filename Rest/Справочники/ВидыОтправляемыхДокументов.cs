@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov")]
-	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov/{Code}")]
+	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov/FindById/{Id}")]
+	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov/FindByDescr/{Descr}")]
 	public class VidyOtpravlyaemykhDokumentovRequest/*ВидыОтправляемыхДокументовЗапрос*/: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<VidyOtpravlyaemykhDokumentovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

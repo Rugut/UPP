@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/{Code}")]
+	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/FindByDescr/{Descr}")]
 	public class NastrojjkiFormirovaniyaDokumentovPoOrderamRequest/*НастройкиФормированияДокументовПоОрдерамЗапрос*/: V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам,IReturn<NastrojjkiFormirovaniyaDokumentovPoOrderamRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni")]
-	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/{Code}")]
+	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/FindById/{Id}")]
+	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/FindByCode/{Code}")]
+	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/FindByDescr/{Descr}")]
 	public class KlassifikatorIspolzovaniyaRabochegoVremeniRequest/*КлассификаторИспользованияРабочегоВремениЗапрос*/: V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени,IReturn<KlassifikatorIspolzovaniyaRabochegoVremeniRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

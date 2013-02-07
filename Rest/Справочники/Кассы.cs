@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Kassy")]
-	[Route("/Catalogs/Kassy/{Code}")]
+	[Route("/Catalogs/Kassy/FindById/{Id}")]
+	[Route("/Catalogs/Kassy/FindByCode/{Code}")]
+	[Route("/Catalogs/Kassy/FindByDescr/{Descr}")]
 	public class KassyRequest/*КассыЗапрос*/: V82.СправочникиСсылка.Кассы,IReturn<KassyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

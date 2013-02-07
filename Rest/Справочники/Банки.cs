@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Banki")]
-	[Route("/Catalogs/Banki/{Code}")]
+	[Route("/Catalogs/Banki/FindById/{Id}")]
+	[Route("/Catalogs/Banki/FindByCode/{Code}")]
+	[Route("/Catalogs/Banki/FindByDescr/{Descr}")]
 	public class BankiRequest/*БанкиЗапрос*/: V82.СправочникиСсылка.Банки,IReturn<BankiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

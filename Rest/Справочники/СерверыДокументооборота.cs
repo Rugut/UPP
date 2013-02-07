@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ServeryDokumentooborota")]
-	[Route("/Catalogs/ServeryDokumentooborota/{Code}")]
+	[Route("/Catalogs/ServeryDokumentooborota/FindById/{Id}")]
+	[Route("/Catalogs/ServeryDokumentooborota/FindByCode/{Code}")]
+	[Route("/Catalogs/ServeryDokumentooborota/FindByDescr/{Descr}")]
 	public class ServeryDokumentooborotaRequest/*СерверыДокументооборотаЗапрос*/: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<ServeryDokumentooborotaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

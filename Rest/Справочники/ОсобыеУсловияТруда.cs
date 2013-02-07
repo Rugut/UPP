@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/OsobyeUsloviyaTruda")]
-	[Route("/Catalogs/OsobyeUsloviyaTruda/{Code}")]
+	[Route("/Catalogs/OsobyeUsloviyaTruda/FindById/{Id}")]
+	[Route("/Catalogs/OsobyeUsloviyaTruda/FindByCode/{Code}")]
+	[Route("/Catalogs/OsobyeUsloviyaTruda/FindByDescr/{Descr}")]
 	public class OsobyeUsloviyaTrudaRequest/*ОсобыеУсловияТрудаЗапрос*/: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<OsobyeUsloviyaTrudaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

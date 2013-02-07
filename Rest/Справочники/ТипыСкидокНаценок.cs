@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TipySkidokNacenok")]
-	[Route("/Catalogs/TipySkidokNacenok/{Code}")]
+	[Route("/Catalogs/TipySkidokNacenok/FindById/{Id}")]
+	[Route("/Catalogs/TipySkidokNacenok/FindByCode/{Code}")]
+	[Route("/Catalogs/TipySkidokNacenok/FindByDescr/{Descr}")]
 	public class TipySkidokNacenokRequest/*ТипыСкидокНаценокЗапрос*/: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<TipySkidokNacenokRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

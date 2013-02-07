@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TipovyeAnkety")]
-	[Route("/Catalogs/TipovyeAnkety/{Code}")]
+	[Route("/Catalogs/TipovyeAnkety/FindById/{Id}")]
+	[Route("/Catalogs/TipovyeAnkety/FindByCode/{Code}")]
+	[Route("/Catalogs/TipovyeAnkety/FindByDescr/{Descr}")]
 	public class TipovyeAnketyRequest/*ТиповыеАнкетыЗапрос*/: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<TipovyeAnketyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VneshnieObrabotki")]
-	[Route("/Catalogs/VneshnieObrabotki/{Code}")]
+	[Route("/Catalogs/VneshnieObrabotki/FindById/{Id}")]
+	[Route("/Catalogs/VneshnieObrabotki/FindByCode/{Code}")]
+	[Route("/Catalogs/VneshnieObrabotki/FindByDescr/{Descr}")]
 	public class VneshnieObrabotkiRequest/*ВнешниеОбработкиЗапрос*/: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<VneshnieObrabotkiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

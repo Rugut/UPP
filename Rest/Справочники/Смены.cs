@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Smeny")]
-	[Route("/Catalogs/Smeny/{Code}")]
+	[Route("/Catalogs/Smeny/FindById/{Id}")]
+	[Route("/Catalogs/Smeny/FindByCode/{Code}")]
+	[Route("/Catalogs/Smeny/FindByDescr/{Descr}")]
 	public class SmenyRequest/*СменыЗапрос*/: V82.СправочникиСсылка.Смены,IReturn<SmenyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

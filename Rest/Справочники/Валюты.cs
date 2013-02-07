@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Valyuty")]
-	[Route("/Catalogs/Valyuty/{Code}")]
+	[Route("/Catalogs/Valyuty/FindById/{Id}")]
+	[Route("/Catalogs/Valyuty/FindByCode/{Code}")]
+	[Route("/Catalogs/Valyuty/FindByDescr/{Descr}")]
 	public class ValyutyRequest/*ВалютыЗапрос*/: V82.СправочникиСсылка.Валюты,IReturn<ValyutyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

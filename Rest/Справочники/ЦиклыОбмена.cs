@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/CiklyObmena")]
-	[Route("/Catalogs/CiklyObmena/{Code}")]
+	[Route("/Catalogs/CiklyObmena/FindById/{Id}")]
+	[Route("/Catalogs/CiklyObmena/FindByCode/{Code}")]
+	[Route("/Catalogs/CiklyObmena/FindByDescr/{Descr}")]
 	public class CiklyObmenaRequest/*ЦиклыОбменаЗапрос*/: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<CiklyObmenaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

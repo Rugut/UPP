@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov")]
-	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov/{Code}")]
+	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov/FindById/{Id}")]
+	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov/FindByCode/{Code}")]
+	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov/FindByDescr/{Descr}")]
 	public class GruppyZamenyaemostiRabochikhCentrovRequest/*ГруппыЗаменяемостиРабочихЦентровЗапрос*/: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<GruppyZamenyaemostiRabochikhCentrovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

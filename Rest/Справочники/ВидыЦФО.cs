@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyCFO")]
-	[Route("/Catalogs/VidyCFO/{Code}")]
+	[Route("/Catalogs/VidyCFO/FindById/{Id}")]
+	[Route("/Catalogs/VidyCFO/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyCFO/FindByDescr/{Descr}")]
 	public class VidyCFORequest/*ВидыЦФОЗапрос*/: V82.СправочникиСсылка.ВидыЦФО,IReturn<VidyCFORequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

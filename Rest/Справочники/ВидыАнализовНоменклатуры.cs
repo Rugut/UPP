@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyAnalizovNomenklatury")]
-	[Route("/Catalogs/VidyAnalizovNomenklatury/{Code}")]
+	[Route("/Catalogs/VidyAnalizovNomenklatury/FindById/{Id}")]
+	[Route("/Catalogs/VidyAnalizovNomenklatury/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyAnalizovNomenklatury/FindByDescr/{Descr}")]
 	public class VidyAnalizovNomenklaturyRequest/*ВидыАнализовНоменклатурыЗапрос*/: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<VidyAnalizovNomenklaturyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

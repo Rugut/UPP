@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VariantyCkhemMotivacii")]
-	[Route("/Catalogs/VariantyCkhemMotivacii/{Code}")]
+	[Route("/Catalogs/VariantyCkhemMotivacii/FindById/{Id}")]
+	[Route("/Catalogs/VariantyCkhemMotivacii/FindByCode/{Code}")]
+	[Route("/Catalogs/VariantyCkhemMotivacii/FindByDescr/{Descr}")]
 	public class VariantyCkhemMotivaciiRequest/*ВариантыCхемМотивацииЗапрос*/: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<VariantyCkhemMotivaciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

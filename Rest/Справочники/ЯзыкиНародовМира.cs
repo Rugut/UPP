@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/YAzykiNarodovMira")]
-	[Route("/Catalogs/YAzykiNarodovMira/{Code}")]
+	[Route("/Catalogs/YAzykiNarodovMira/FindById/{Id}")]
+	[Route("/Catalogs/YAzykiNarodovMira/FindByCode/{Code}")]
+	[Route("/Catalogs/YAzykiNarodovMira/FindByDescr/{Descr}")]
 	public class YAzykiNarodovMiraRequest/*ЯзыкиНародовМираЗапрос*/: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<YAzykiNarodovMiraRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

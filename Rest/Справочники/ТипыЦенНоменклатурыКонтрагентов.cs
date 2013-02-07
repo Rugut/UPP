@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TipyCenNomenklaturyKontragentov")]
-	[Route("/Catalogs/TipyCenNomenklaturyKontragentov/{Code}")]
+	[Route("/Catalogs/TipyCenNomenklaturyKontragentov/FindById/{Id}")]
+	[Route("/Catalogs/TipyCenNomenklaturyKontragentov/FindByCode/{Code}")]
+	[Route("/Catalogs/TipyCenNomenklaturyKontragentov/FindByDescr/{Descr}")]
 	public class TipyCenNomenklaturyKontragentovRequest/*ТипыЦенНоменклатурыКонтрагентовЗапрос*/: V82.СправочникиСсылка.ТипыЦенНоменклатурыКонтрагентов,IReturn<TipyCenNomenklaturyKontragentovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

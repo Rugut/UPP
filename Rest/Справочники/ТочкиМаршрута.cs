@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TochkiMarshruta")]
-	[Route("/Catalogs/TochkiMarshruta/{Code}")]
+	[Route("/Catalogs/TochkiMarshruta/FindById/{Id}")]
+	[Route("/Catalogs/TochkiMarshruta/FindByCode/{Code}")]
+	[Route("/Catalogs/TochkiMarshruta/FindByDescr/{Descr}")]
 	public class TochkiMarshrutaRequest/*ТочкиМаршрутаЗапрос*/: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<TochkiMarshrutaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

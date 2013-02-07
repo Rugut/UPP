@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/FizicheskieLica")]
-	[Route("/Catalogs/FizicheskieLica/{Code}")]
+	[Route("/Catalogs/FizicheskieLica/FindById/{Id}")]
+	[Route("/Catalogs/FizicheskieLica/FindByCode/{Code}")]
+	[Route("/Catalogs/FizicheskieLica/FindByDescr/{Descr}")]
 	public class FizicheskieLicaRequest/*ФизическиеЛицаЗапрос*/: V82.СправочникиСсылка.ФизическиеЛица,IReturn<FizicheskieLicaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

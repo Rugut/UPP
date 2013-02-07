@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SemejjnoePolozhenieFizLic")]
-	[Route("/Catalogs/SemejjnoePolozhenieFizLic/{Code}")]
+	[Route("/Catalogs/SemejjnoePolozhenieFizLic/FindById/{Id}")]
+	[Route("/Catalogs/SemejjnoePolozhenieFizLic/FindByCode/{Code}")]
+	[Route("/Catalogs/SemejjnoePolozhenieFizLic/FindByDescr/{Descr}")]
 	public class SemejjnoePolozhenieFizLicRequest/*СемейноеПоложениеФизЛицЗапрос*/: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<SemejjnoePolozhenieFizLicRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/OformleniyaStrokPisem")]
-	[Route("/Catalogs/OformleniyaStrokPisem/{Code}")]
+	[Route("/Catalogs/OformleniyaStrokPisem/FindById/{Id}")]
+	[Route("/Catalogs/OformleniyaStrokPisem/FindByCode/{Code}")]
+	[Route("/Catalogs/OformleniyaStrokPisem/FindByDescr/{Descr}")]
 	public class OformleniyaStrokPisemRequest/*ОформленияСтрокПисемЗапрос*/: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<OformleniyaStrokPisemRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

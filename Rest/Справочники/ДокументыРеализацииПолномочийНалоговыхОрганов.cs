@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov")]
-	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/{Code}")]
+	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/FindById/{Id}")]
+	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/FindByCode/{Code}")]
+	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/FindByDescr/{Descr}")]
 	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest/*ДокументыРеализацииПолномочийНалоговыхОргановЗапрос*/: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

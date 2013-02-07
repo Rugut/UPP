@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov")]
-	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/{Code}")]
+	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/FindById/{Id}")]
+	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/FindByCode/{Code}")]
+	[Route("/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/FindByDescr/{Descr}")]
 	public class VidySchetchikovDlyaZnachenijjRazryadovRequest/*ВидыСчетчиковДляЗначенийРазрядовЗапрос*/: V82.СправочникиСсылка.ВидыСчетчиковДляЗначенийРазрядов,IReturn<VidySchetchikovDlyaZnachenijjRazryadovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

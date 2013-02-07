@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov")]
-	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov/{Code}")]
+	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov/FindByDescr/{Descr}")]
 	public class NastrojjkiDoprovedeniyaDokumentovRequest/*НастройкиДопроведенияДокументовЗапрос*/: V82.СправочникиСсылка.НастройкиДопроведенияДокументов,IReturn<NastrojjkiDoprovedeniyaDokumentovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

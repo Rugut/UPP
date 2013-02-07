@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyStazha")]
-	[Route("/Catalogs/VidyStazha/{Code}")]
+	[Route("/Catalogs/VidyStazha/FindById/{Id}")]
+	[Route("/Catalogs/VidyStazha/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyStazha/FindByDescr/{Descr}")]
 	public class VidyStazhaRequest/*ВидыСтажаЗапрос*/: V82.СправочникиСсылка.ВидыСтажа,IReturn<VidyStazhaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyObrazovaniyaFizLic")]
-	[Route("/Catalogs/VidyObrazovaniyaFizLic/{Code}")]
+	[Route("/Catalogs/VidyObrazovaniyaFizLic/FindById/{Id}")]
+	[Route("/Catalogs/VidyObrazovaniyaFizLic/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyObrazovaniyaFizLic/FindByDescr/{Descr}")]
 	public class VidyObrazovaniyaFizLicRequest/*ВидыОбразованияФизЛицЗапрос*/: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<VidyObrazovaniyaFizLicRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

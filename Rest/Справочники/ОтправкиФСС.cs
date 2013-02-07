@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/OtpravkiFSS")]
-	[Route("/Catalogs/OtpravkiFSS/{Code}")]
+	[Route("/Catalogs/OtpravkiFSS/FindById/{Id}")]
+	[Route("/Catalogs/OtpravkiFSS/FindByCode/{Code}")]
+	[Route("/Catalogs/OtpravkiFSS/FindByDescr/{Descr}")]
 	public class OtpravkiFSSRequest/*ОтправкиФССЗапрос*/: V82.СправочникиСсылка.ОтправкиФСС,IReturn<OtpravkiFSSRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

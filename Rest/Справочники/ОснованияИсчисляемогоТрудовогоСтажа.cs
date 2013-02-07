@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha")]
-	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha/{Code}")]
+	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha/FindById/{Id}")]
+	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha/FindByCode/{Code}")]
+	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha/FindByDescr/{Descr}")]
 	public class OsnovaniyaIschislyaemogoTrudovogoStazhaRequest/*ОснованияИсчисляемогоТрудовогоСтажаЗапрос*/: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<OsnovaniyaIschislyaemogoTrudovogoStazhaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

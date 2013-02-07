@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyNalogovykhOrganov")]
-	[Route("/Catalogs/VidyNalogovykhOrganov/{Code}")]
+	[Route("/Catalogs/VidyNalogovykhOrganov/FindById/{Id}")]
+	[Route("/Catalogs/VidyNalogovykhOrganov/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyNalogovykhOrganov/FindByDescr/{Descr}")]
 	public class VidyNalogovykhOrganovRequest/*ВидыНалоговыхОргановЗапрос*/: V82.СправочникиСсылка.ВидыНалоговыхОрганов,IReturn<VidyNalogovykhOrganovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

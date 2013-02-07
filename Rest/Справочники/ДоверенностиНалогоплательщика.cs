@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/DoverennostiNalogoplatelshhika")]
-	[Route("/Catalogs/DoverennostiNalogoplatelshhika/{Code}")]
+	[Route("/Catalogs/DoverennostiNalogoplatelshhika/FindById/{Id}")]
+	[Route("/Catalogs/DoverennostiNalogoplatelshhika/FindByCode/{Code}")]
+	[Route("/Catalogs/DoverennostiNalogoplatelshhika/FindByDescr/{Descr}")]
 	public class DoverennostiNalogoplatelshhikaRequest/*ДоверенностиНалогоплательщикаЗапрос*/: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<DoverennostiNalogoplatelshhikaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

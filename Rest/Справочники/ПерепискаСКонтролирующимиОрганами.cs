@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami")]
-	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami/{Code}")]
+	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami/FindById/{Id}")]
+	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami/FindByCode/{Code}")]
+	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami/FindByDescr/{Descr}")]
 	public class PerepiskaSKontroliruyushhimiOrganamiRequest/*ПерепискаСКонтролирующимиОрганамиЗапрос*/: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<PerepiskaSKontroliruyushhimiOrganamiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

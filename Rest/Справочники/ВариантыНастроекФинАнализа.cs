@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VariantyNastroekFinAnaliza")]
-	[Route("/Catalogs/VariantyNastroekFinAnaliza/{Code}")]
+	[Route("/Catalogs/VariantyNastroekFinAnaliza/FindById/{Id}")]
+	[Route("/Catalogs/VariantyNastroekFinAnaliza/FindByCode/{Code}")]
+	[Route("/Catalogs/VariantyNastroekFinAnaliza/FindByDescr/{Descr}")]
 	public class VariantyNastroekFinAnalizaRequest/*ВариантыНастроекФинАнализаЗапрос*/: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<VariantyNastroekFinAnalizaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

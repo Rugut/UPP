@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/DokhodyBudushhikhPeriodov")]
-	[Route("/Catalogs/DokhodyBudushhikhPeriodov/{Code}")]
+	[Route("/Catalogs/DokhodyBudushhikhPeriodov/FindById/{Id}")]
+	[Route("/Catalogs/DokhodyBudushhikhPeriodov/FindByCode/{Code}")]
+	[Route("/Catalogs/DokhodyBudushhikhPeriodov/FindByDescr/{Descr}")]
 	public class DokhodyBudushhikhPeriodovRequest/*ДоходыБудущихПериодовЗапрос*/: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<DokhodyBudushhikhPeriodovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

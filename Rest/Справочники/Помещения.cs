@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Pomeshheniya")]
-	[Route("/Catalogs/Pomeshheniya/{Code}")]
+	[Route("/Catalogs/Pomeshheniya/FindById/{Id}")]
+	[Route("/Catalogs/Pomeshheniya/FindByCode/{Code}")]
+	[Route("/Catalogs/Pomeshheniya/FindByDescr/{Descr}")]
 	public class PomeshheniyaRequest/*ПомещенияЗапрос*/: V82.СправочникиСсылка.Помещения,IReturn<PomeshheniyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

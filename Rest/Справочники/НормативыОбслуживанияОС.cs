@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NormativyObsluzhivaniyaOS")]
-	[Route("/Catalogs/NormativyObsluzhivaniyaOS/{Code}")]
+	[Route("/Catalogs/NormativyObsluzhivaniyaOS/FindById/{Id}")]
+	[Route("/Catalogs/NormativyObsluzhivaniyaOS/FindByCode/{Code}")]
+	[Route("/Catalogs/NormativyObsluzhivaniyaOS/FindByDescr/{Descr}")]
 	public class NormativyObsluzhivaniyaOSRequest/*НормативыОбслуживанияОСЗапрос*/: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<NormativyObsluzhivaniyaOSRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam")]
-	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/{Code}")]
+	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/FindById/{Id}")]
+	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/FindByCode/{Code}")]
+	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/FindByDescr/{Descr}")]
 	public class ProfiliIzmeneniyaPlanovPoIzmereniyamRequest/*ПрофилиИзмененияПлановПоИзмерениямЗапрос*/: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоИзмерениям,IReturn<ProfiliIzmeneniyaPlanovPoIzmereniyamRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ReglamentirovannyeOtchety")]
-	[Route("/Catalogs/ReglamentirovannyeOtchety/{Code}")]
+	[Route("/Catalogs/ReglamentirovannyeOtchety/FindById/{Id}")]
+	[Route("/Catalogs/ReglamentirovannyeOtchety/FindByCode/{Code}")]
+	[Route("/Catalogs/ReglamentirovannyeOtchety/FindByDescr/{Descr}")]
 	public class ReglamentirovannyeOtchetyRequest/*РегламентированныеОтчетыЗапрос*/: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<ReglamentirovannyeOtchetyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

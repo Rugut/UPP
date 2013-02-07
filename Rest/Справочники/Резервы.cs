@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Rezervy")]
-	[Route("/Catalogs/Rezervy/{Code}")]
+	[Route("/Catalogs/Rezervy/FindById/{Id}")]
+	[Route("/Catalogs/Rezervy/FindByCode/{Code}")]
+	[Route("/Catalogs/Rezervy/FindByDescr/{Descr}")]
 	public class RezervyRequest/*РезервыЗапрос*/: V82.СправочникиСсылка.Резервы,IReturn<RezervyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

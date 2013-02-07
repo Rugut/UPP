@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Kachestvo")]
-	[Route("/Catalogs/Kachestvo/{Code}")]
+	[Route("/Catalogs/Kachestvo/FindById/{Id}")]
+	[Route("/Catalogs/Kachestvo/FindByCode/{Code}")]
+	[Route("/Catalogs/Kachestvo/FindByDescr/{Descr}")]
 	public class KachestvoRequest/*КачествоЗапрос*/: V82.СправочникиСсылка.Качество,IReturn<KachestvoRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

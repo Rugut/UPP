@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/InformacionnyeKarty")]
-	[Route("/Catalogs/InformacionnyeKarty/{Code}")]
+	[Route("/Catalogs/InformacionnyeKarty/FindById/{Id}")]
+	[Route("/Catalogs/InformacionnyeKarty/FindByCode/{Code}")]
+	[Route("/Catalogs/InformacionnyeKarty/FindByDescr/{Descr}")]
 	public class InformacionnyeKartyRequest/*ИнформационныеКартыЗапрос*/: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<InformacionnyeKartyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

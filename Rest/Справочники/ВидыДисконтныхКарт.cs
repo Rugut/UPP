@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyDiskontnykhKart")]
-	[Route("/Catalogs/VidyDiskontnykhKart/{Code}")]
+	[Route("/Catalogs/VidyDiskontnykhKart/FindById/{Id}")]
+	[Route("/Catalogs/VidyDiskontnykhKart/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyDiskontnykhKart/FindByDescr/{Descr}")]
 	public class VidyDiskontnykhKartRequest/*ВидыДисконтныхКартЗапрос*/: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<VidyDiskontnykhKartRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

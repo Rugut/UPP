@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti")]
-	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/{Code}")]
+	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/FindByDescr/{Descr}")]
 	public class NastrojjkiRaschetaSebestoimostiRequest/*НастройкиРасчетаСебестоимостиЗапрос*/: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<NastrojjkiRaschetaSebestoimostiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

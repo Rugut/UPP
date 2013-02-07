@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii")]
-	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/{Code}")]
+	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/FindById/{Id}")]
+	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/FindByCode/{Code}")]
+	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/FindByDescr/{Descr}")]
 	public class SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest/*СпособыОтраженияРасходовПоАмортизацииЗапрос*/: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

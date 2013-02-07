@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem")]
-	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem/{Code}")]
+	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem/FindById/{Id}")]
+	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem/FindByCode/{Code}")]
+	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem/FindByDescr/{Descr}")]
 	public class VlozheniyaEHlektronnykhPisemRequest/*ВложенияЭлектронныхПисемЗапрос*/: V82.СправочникиСсылка.ВложенияЭлектронныхПисем,IReturn<VlozheniyaEHlektronnykhPisemRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KlassifikatorEdinicIzmereniya")]
-	[Route("/Catalogs/KlassifikatorEdinicIzmereniya/{Code}")]
+	[Route("/Catalogs/KlassifikatorEdinicIzmereniya/FindById/{Id}")]
+	[Route("/Catalogs/KlassifikatorEdinicIzmereniya/FindByCode/{Code}")]
+	[Route("/Catalogs/KlassifikatorEdinicIzmereniya/FindByDescr/{Descr}")]
 	public class KlassifikatorEdinicIzmereniyaRequest/*КлассификаторЕдиницИзмеренияЗапрос*/: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<KlassifikatorEdinicIzmereniyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

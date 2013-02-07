@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/{Code}")]
+	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/FindById/{Id}")]
+	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/FindByCode/{Code}")]
+	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/FindByDescr/{Descr}")]
 	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest/*ОбщероссийскийКлассификаторОсновныхФондовЗапрос*/: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

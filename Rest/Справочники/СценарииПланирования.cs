@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ScenariiPlanirovaniya")]
-	[Route("/Catalogs/ScenariiPlanirovaniya/{Code}")]
+	[Route("/Catalogs/ScenariiPlanirovaniya/FindById/{Id}")]
+	[Route("/Catalogs/ScenariiPlanirovaniya/FindByCode/{Code}")]
+	[Route("/Catalogs/ScenariiPlanirovaniya/FindByDescr/{Descr}")]
 	public class ScenariiPlanirovaniyaRequest/*СценарииПланированияЗапрос*/: V82.СправочникиСсылка.СценарииПланирования,IReturn<ScenariiPlanirovaniyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

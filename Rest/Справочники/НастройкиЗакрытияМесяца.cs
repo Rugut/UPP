@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca")]
-	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca/{Code}")]
+	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca/FindByDescr/{Descr}")]
 	public class NastrojjkiZakrytiyaMesyacaRequest/*НастройкиЗакрытияМесяцаЗапрос*/: V82.СправочникиСсылка.НастройкиЗакрытияМесяца,IReturn<NastrojjkiZakrytiyaMesyacaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

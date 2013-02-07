@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Podrazdeleniya")]
-	[Route("/Catalogs/Podrazdeleniya/{Code}")]
+	[Route("/Catalogs/Podrazdeleniya/FindById/{Id}")]
+	[Route("/Catalogs/Podrazdeleniya/FindByCode/{Code}")]
+	[Route("/Catalogs/Podrazdeleniya/FindByDescr/{Descr}")]
 	public class PodrazdeleniyaRequest/*ПодразделенияЗапрос*/: V82.СправочникиСсылка.Подразделения,IReturn<PodrazdeleniyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

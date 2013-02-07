@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyAlkogolnojjProdukcii")]
-	[Route("/Catalogs/VidyAlkogolnojjProdukcii/{Code}")]
+	[Route("/Catalogs/VidyAlkogolnojjProdukcii/FindById/{Id}")]
+	[Route("/Catalogs/VidyAlkogolnojjProdukcii/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyAlkogolnojjProdukcii/FindByDescr/{Descr}")]
 	public class VidyAlkogolnojjProdukciiRequest/*ВидыАлкогольнойПродукцииЗапрос*/: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<VidyAlkogolnojjProdukciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

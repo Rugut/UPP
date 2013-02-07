@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TarifyPochtovogoSbora")]
-	[Route("/Catalogs/TarifyPochtovogoSbora/{Code}")]
+	[Route("/Catalogs/TarifyPochtovogoSbora/FindById/{Id}")]
+	[Route("/Catalogs/TarifyPochtovogoSbora/FindByCode/{Code}")]
+	[Route("/Catalogs/TarifyPochtovogoSbora/FindByDescr/{Descr}")]
 	public class TarifyPochtovogoSboraRequest/*ТарифыПочтовогоСбораЗапрос*/: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<TarifyPochtovogoSboraRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

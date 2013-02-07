@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov")]
-	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/{Code}")]
+	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/FindById/{Id}")]
+	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/FindByCode/{Code}")]
+	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/FindByDescr/{Descr}")]
 	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest/*СчетчикДляФормированияСерийныхНомеровЗапрос*/: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GruppyDostupaFizicheskikhLic")]
-	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/{Code}")]
+	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/FindById/{Id}")]
+	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/FindByCode/{Code}")]
+	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/FindByDescr/{Descr}")]
 	public class GruppyDostupaFizicheskikhLicRequest/*ГруппыДоступаФизическихЛицЗапрос*/: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<GruppyDostupaFizicheskikhLicRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ProchieDokhodyIRaskhody")]
-	[Route("/Catalogs/ProchieDokhodyIRaskhody/{Code}")]
+	[Route("/Catalogs/ProchieDokhodyIRaskhody/FindById/{Id}")]
+	[Route("/Catalogs/ProchieDokhodyIRaskhody/FindByCode/{Code}")]
+	[Route("/Catalogs/ProchieDokhodyIRaskhody/FindByDescr/{Descr}")]
 	public class ProchieDokhodyIRaskhodyRequest/*ПрочиеДоходыИРасходыЗапрос*/: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ProchieDokhodyIRaskhodyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

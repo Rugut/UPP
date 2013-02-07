@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS")]
-	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS/{Code}")]
+	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS/FindById/{Id}")]
+	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS/FindByCode/{Code}")]
+	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS/FindByDescr/{Descr}")]
 	public class GodovyeGrafikiAmortizaciiOSRequest/*ГодовыеГрафикиАмортизацииОСЗапрос*/: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<GodovyeGrafikiAmortizaciiOSRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GruppySobytijj")]
-	[Route("/Catalogs/GruppySobytijj/{Code}")]
+	[Route("/Catalogs/GruppySobytijj/FindById/{Id}")]
+	[Route("/Catalogs/GruppySobytijj/FindByCode/{Code}")]
+	[Route("/Catalogs/GruppySobytijj/FindByDescr/{Descr}")]
 	public class GruppySobytijjRequest/*ГруппыСобытийЗапрос*/: V82.СправочникиСсылка.ГруппыСобытий,IReturn<GruppySobytijjRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

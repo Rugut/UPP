@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Kontragenty")]
-	[Route("/Catalogs/Kontragenty/{Code}")]
+	[Route("/Catalogs/Kontragenty/FindById/{Id}")]
+	[Route("/Catalogs/Kontragenty/FindByCode/{Code}")]
+	[Route("/Catalogs/Kontragenty/FindByDescr/{Descr}")]
 	public class KontragentyRequest/*КонтрагентыЗапрос*/: V82.СправочникиСсылка.Контрагенты,IReturn<KontragentyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

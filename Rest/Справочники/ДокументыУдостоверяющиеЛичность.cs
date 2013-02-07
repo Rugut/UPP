@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost")]
-	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost/{Code}")]
+	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost/FindById/{Id}")]
+	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost/FindByCode/{Code}")]
+	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost/FindByDescr/{Descr}")]
 	public class DokumentyUdostoveryayushhieLichnostRequest/*ДокументыУдостоверяющиеЛичностьЗапрос*/: V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность,IReturn<DokumentyUdostoveryayushhieLichnostRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

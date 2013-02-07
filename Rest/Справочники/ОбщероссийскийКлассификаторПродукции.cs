@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/{Code}")]
+	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/FindById/{Id}")]
+	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/FindByCode/{Code}")]
+	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/FindByDescr/{Descr}")]
 	public class ObshherossijjskijjKlassifikatorProdukciiRequest/*ОбщероссийскийКлассификаторПродукцииЗапрос*/: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ObshherossijjskijjKlassifikatorProdukciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

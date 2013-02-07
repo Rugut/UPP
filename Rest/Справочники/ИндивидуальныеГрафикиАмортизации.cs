@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii")]
-	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/{Code}")]
+	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/FindById/{Id}")]
+	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/FindByCode/{Code}")]
+	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/FindByDescr/{Descr}")]
 	public class IndividualnyeGrafikiAmortizaciiRequest/*ИндивидуальныеГрафикиАмортизацииЗапрос*/: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<IndividualnyeGrafikiAmortizaciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

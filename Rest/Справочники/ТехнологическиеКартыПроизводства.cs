@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva")]
-	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/{Code}")]
+	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/FindById/{Id}")]
+	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/FindByCode/{Code}")]
+	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/FindByDescr/{Descr}")]
 	public class TekhnologicheskieKartyProizvodstvaRequest/*ТехнологическиеКартыПроизводстваЗапрос*/: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<TekhnologicheskieKartyProizvodstvaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

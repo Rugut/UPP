@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SostavMeropriyatiya")]
-	[Route("/Catalogs/SostavMeropriyatiya/{Code}")]
+	[Route("/Catalogs/SostavMeropriyatiya/FindById/{Id}")]
+	[Route("/Catalogs/SostavMeropriyatiya/FindByCode/{Code}")]
+	[Route("/Catalogs/SostavMeropriyatiya/FindByDescr/{Descr}")]
 	public class SostavMeropriyatiyaRequest/*СоставМероприятияЗапрос*/: V82.СправочникиСсылка.СоставМероприятия,IReturn<SostavMeropriyatiyaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

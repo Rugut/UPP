@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/CennyeBumagi")]
-	[Route("/Catalogs/CennyeBumagi/{Code}")]
+	[Route("/Catalogs/CennyeBumagi/FindById/{Id}")]
+	[Route("/Catalogs/CennyeBumagi/FindByCode/{Code}")]
+	[Route("/Catalogs/CennyeBumagi/FindByDescr/{Descr}")]
 	public class CennyeBumagiRequest/*ЦенныеБумагиЗапрос*/: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<CennyeBumagiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

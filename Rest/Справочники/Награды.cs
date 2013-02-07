@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Nagrady")]
-	[Route("/Catalogs/Nagrady/{Code}")]
+	[Route("/Catalogs/Nagrady/FindById/{Id}")]
+	[Route("/Catalogs/Nagrady/FindByCode/{Code}")]
+	[Route("/Catalogs/Nagrady/FindByDescr/{Descr}")]
 	public class NagradyRequest/*НаградыЗапрос*/: V82.СправочникиСсылка.Награды,IReturn<NagradyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

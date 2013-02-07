@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/OsnovnoeSyre")]
-	[Route("/Catalogs/OsnovnoeSyre/{Code}")]
+	[Route("/Catalogs/OsnovnoeSyre/FindById/{Id}")]
+	[Route("/Catalogs/OsnovnoeSyre/FindByCode/{Code}")]
+	[Route("/Catalogs/OsnovnoeSyre/FindByDescr/{Descr}")]
 	public class OsnovnoeSyreRequest/*ОсновноеСырьеЗапрос*/: V82.СправочникиСсылка.ОсновноеСырье,IReturn<OsnovnoeSyreRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

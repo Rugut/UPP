@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SertifikatyEHCP")]
-	[Route("/Catalogs/SertifikatyEHCP/{Code}")]
+	[Route("/Catalogs/SertifikatyEHCP/FindById/{Id}")]
+	[Route("/Catalogs/SertifikatyEHCP/FindByCode/{Code}")]
+	[Route("/Catalogs/SertifikatyEHCP/FindByDescr/{Descr}")]
 	public class SertifikatyEHCPRequest/*СертификатыЭЦПЗапрос*/: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<SertifikatyEHCPRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

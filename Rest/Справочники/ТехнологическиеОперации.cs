@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TekhnologicheskieOperacii")]
-	[Route("/Catalogs/TekhnologicheskieOperacii/{Code}")]
+	[Route("/Catalogs/TekhnologicheskieOperacii/FindById/{Id}")]
+	[Route("/Catalogs/TekhnologicheskieOperacii/FindByCode/{Code}")]
+	[Route("/Catalogs/TekhnologicheskieOperacii/FindByDescr/{Descr}")]
 	public class TekhnologicheskieOperaciiRequest/*ТехнологическиеОперацииЗапрос*/: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<TekhnologicheskieOperaciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

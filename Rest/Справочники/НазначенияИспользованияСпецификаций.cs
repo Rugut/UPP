@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/{Code}")]
+	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/FindById/{Id}")]
+	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/FindByCode/{Code}")]
+	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/FindByDescr/{Descr}")]
 	public class NaznacheniyaIspolzovaniyaSpecifikacijjRequest/*НазначенияИспользованияСпецификацийЗапрос*/: V82.СправочникиСсылка.НазначенияИспользованияСпецификаций,IReturn<NaznacheniyaIspolzovaniyaSpecifikacijjRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

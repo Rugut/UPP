@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TransportnyeUpakovki")]
-	[Route("/Catalogs/TransportnyeUpakovki/{Code}")]
+	[Route("/Catalogs/TransportnyeUpakovki/FindById/{Id}")]
+	[Route("/Catalogs/TransportnyeUpakovki/FindByCode/{Code}")]
+	[Route("/Catalogs/TransportnyeUpakovki/FindByDescr/{Descr}")]
 	public class TransportnyeUpakovkiRequest/*ТранспортныеУпаковкиЗапрос*/: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<TransportnyeUpakovkiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

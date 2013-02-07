@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/GruppyZayavokKandidatov")]
-	[Route("/Catalogs/GruppyZayavokKandidatov/{Code}")]
+	[Route("/Catalogs/GruppyZayavokKandidatov/FindById/{Id}")]
+	[Route("/Catalogs/GruppyZayavokKandidatov/FindByCode/{Code}")]
+	[Route("/Catalogs/GruppyZayavokKandidatov/FindByDescr/{Descr}")]
 	public class GruppyZayavokKandidatovRequest/*ГруппыЗаявокКандидатовЗапрос*/: V82.СправочникиСсылка.ГруппыЗаявокКандидатов,IReturn<GruppyZayavokKandidatovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

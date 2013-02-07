@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/ProizvolnyeOtchety")]
-	[Route("/Catalogs/ProizvolnyeOtchety/{Code}")]
+	[Route("/Catalogs/ProizvolnyeOtchety/FindById/{Id}")]
+	[Route("/Catalogs/ProizvolnyeOtchety/FindByCode/{Code}")]
+	[Route("/Catalogs/ProizvolnyeOtchety/FindByDescr/{Descr}")]
 	public class ProizvolnyeOtchetyRequest/*ПроизвольныеОтчетыЗапрос*/: V82.СправочникиСсылка.ПроизвольныеОтчеты,IReturn<ProizvolnyeOtchetyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

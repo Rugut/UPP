@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/LichnyeKontakty")]
-	[Route("/Catalogs/LichnyeKontakty/{Code}")]
+	[Route("/Catalogs/LichnyeKontakty/FindById/{Id}")]
+	[Route("/Catalogs/LichnyeKontakty/FindByCode/{Code}")]
+	[Route("/Catalogs/LichnyeKontakty/FindByDescr/{Descr}")]
 	public class LichnyeKontaktyRequest/*ЛичныеКонтактыЗапрос*/: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<LichnyeKontaktyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

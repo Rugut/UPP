@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury")]
-	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury/{Code}")]
+	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury/FindByDescr/{Descr}")]
 	public class NastrojjkiRaschetaCenyNomenklaturyRequest/*НастройкиРасчетаЦеныНоменклатурыЗапрос*/: V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры,IReturn<NastrojjkiRaschetaCenyNomenklaturyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

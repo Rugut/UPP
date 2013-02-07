@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/IstochnikiInformacii")]
-	[Route("/Catalogs/IstochnikiInformacii/{Code}")]
+	[Route("/Catalogs/IstochnikiInformacii/FindById/{Id}")]
+	[Route("/Catalogs/IstochnikiInformacii/FindByCode/{Code}")]
+	[Route("/Catalogs/IstochnikiInformacii/FindByDescr/{Descr}")]
 	public class IstochnikiInformaciiRequest/*ИсточникиИнформацииЗапрос*/: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<IstochnikiInformaciiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

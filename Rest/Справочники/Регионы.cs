@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/Regiony")]
-	[Route("/Catalogs/Regiony/{Code}")]
+	[Route("/Catalogs/Regiony/FindById/{Id}")]
+	[Route("/Catalogs/Regiony/FindByCode/{Code}")]
+	[Route("/Catalogs/Regiony/FindByDescr/{Descr}")]
 	public class RegionyRequest/*РегионыЗапрос*/: V82.СправочникиСсылка.Регионы,IReturn<RegionyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

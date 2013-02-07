@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/DetalizaciyaAnaliticheskogoBalansa")]
-	[Route("/Catalogs/DetalizaciyaAnaliticheskogoBalansa/{Code}")]
+	[Route("/Catalogs/DetalizaciyaAnaliticheskogoBalansa/FindById/{Id}")]
+	[Route("/Catalogs/DetalizaciyaAnaliticheskogoBalansa/FindByCode/{Code}")]
+	[Route("/Catalogs/DetalizaciyaAnaliticheskogoBalansa/FindByDescr/{Descr}")]
 	public class DetalizaciyaAnaliticheskogoBalansaRequest/*ДетализацияАналитическогоБалансаЗапрос*/: V82.СправочникиСсылка.ДетализацияАналитическогоБаланса,IReturn<DetalizaciyaAnaliticheskogoBalansaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

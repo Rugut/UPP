@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/PodklyuchaemoeOborudovanie")]
-	[Route("/Catalogs/PodklyuchaemoeOborudovanie/{Code}")]
+	[Route("/Catalogs/PodklyuchaemoeOborudovanie/FindById/{Id}")]
+	[Route("/Catalogs/PodklyuchaemoeOborudovanie/FindByCode/{Code}")]
+	[Route("/Catalogs/PodklyuchaemoeOborudovanie/FindByDescr/{Descr}")]
 	public class PodklyuchaemoeOborudovanieRequest/*ПодключаемоеОборудованиеЗапрос*/: V82.СправочникиСсылка.ПодключаемоеОборудование,IReturn<PodklyuchaemoeOborudovanieRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NomenklaturnyeGruppy")]
-	[Route("/Catalogs/NomenklaturnyeGruppy/{Code}")]
+	[Route("/Catalogs/NomenklaturnyeGruppy/FindById/{Id}")]
+	[Route("/Catalogs/NomenklaturnyeGruppy/FindByCode/{Code}")]
+	[Route("/Catalogs/NomenklaturnyeGruppy/FindByDescr/{Descr}")]
 	public class NomenklaturnyeGruppyRequest/*НоменклатурныеГруппыЗапрос*/: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<NomenklaturnyeGruppyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

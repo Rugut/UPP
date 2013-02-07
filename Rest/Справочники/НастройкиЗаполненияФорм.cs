@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiZapolneniyaForm")]
-	[Route("/Catalogs/NastrojjkiZapolneniyaForm/{Code}")]
+	[Route("/Catalogs/NastrojjkiZapolneniyaForm/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiZapolneniyaForm/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiZapolneniyaForm/FindByDescr/{Descr}")]
 	public class NastrojjkiZapolneniyaFormRequest/*НастройкиЗаполненияФормЗапрос*/: V82.СправочникиСсылка.НастройкиЗаполненияФорм,IReturn<NastrojjkiZapolneniyaFormRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SeriiNomenklatury")]
-	[Route("/Catalogs/SeriiNomenklatury/{Code}")]
+	[Route("/Catalogs/SeriiNomenklatury/FindById/{Id}")]
+	[Route("/Catalogs/SeriiNomenklatury/FindByCode/{Code}")]
+	[Route("/Catalogs/SeriiNomenklatury/FindByDescr/{Descr}")]
 	public class SeriiNomenklaturyRequest/*СерииНоменклатурыЗапрос*/: V82.СправочникиСсылка.СерииНоменклатуры,IReturn<SeriiNomenklaturyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

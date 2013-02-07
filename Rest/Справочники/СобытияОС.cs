@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SobytiyaOS")]
-	[Route("/Catalogs/SobytiyaOS/{Code}")]
+	[Route("/Catalogs/SobytiyaOS/FindById/{Id}")]
+	[Route("/Catalogs/SobytiyaOS/FindByCode/{Code}")]
+	[Route("/Catalogs/SobytiyaOS/FindByDescr/{Descr}")]
 	public class SobytiyaOSRequest/*СобытияОСЗапрос*/: V82.СправочникиСсылка.СобытияОС,IReturn<SobytiyaOSRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

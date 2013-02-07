@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/MedicinskieStrakhovyePolisy")]
-	[Route("/Catalogs/MedicinskieStrakhovyePolisy/{Code}")]
+	[Route("/Catalogs/MedicinskieStrakhovyePolisy/FindById/{Id}")]
+	[Route("/Catalogs/MedicinskieStrakhovyePolisy/FindByCode/{Code}")]
+	[Route("/Catalogs/MedicinskieStrakhovyePolisy/FindByDescr/{Descr}")]
 	public class MedicinskieStrakhovyePolisyRequest/*МедицинскиеСтраховыеПолисыЗапрос*/: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<MedicinskieStrakhovyePolisyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

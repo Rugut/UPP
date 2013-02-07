@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NematerialnyeAktivy")]
-	[Route("/Catalogs/NematerialnyeAktivy/{Code}")]
+	[Route("/Catalogs/NematerialnyeAktivy/FindById/{Id}")]
+	[Route("/Catalogs/NematerialnyeAktivy/FindByCode/{Code}")]
+	[Route("/Catalogs/NematerialnyeAktivy/FindByDescr/{Descr}")]
 	public class NematerialnyeAktivyRequest/*НематериальныеАктивыЗапрос*/: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<NematerialnyeAktivyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

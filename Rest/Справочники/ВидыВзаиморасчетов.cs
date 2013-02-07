@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyVzaimoraschetov")]
-	[Route("/Catalogs/VidyVzaimoraschetov/{Code}")]
+	[Route("/Catalogs/VidyVzaimoraschetov/FindById/{Id}")]
+	[Route("/Catalogs/VidyVzaimoraschetov/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyVzaimoraschetov/FindByDescr/{Descr}")]
 	public class VidyVzaimoraschetovRequest/*ВидыВзаиморасчетовЗапрос*/: V82.СправочникиСсылка.ВидыВзаиморасчетов,IReturn<VidyVzaimoraschetovRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

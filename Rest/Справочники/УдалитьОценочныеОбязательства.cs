@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva")]
-	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/{Code}")]
+	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/FindById/{Id}")]
+	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/FindByCode/{Code}")]
+	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/FindByDescr/{Descr}")]
 	public class UdalitOcenochnyeObyazatelstvaRequest/*УдалитьОценочныеОбязательстваЗапрос*/: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<UdalitOcenochnyeObyazatelstvaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

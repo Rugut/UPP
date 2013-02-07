@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/NastrojjkiObmenaDannymi")]
-	[Route("/Catalogs/NastrojjkiObmenaDannymi/{Code}")]
+	[Route("/Catalogs/NastrojjkiObmenaDannymi/FindById/{Id}")]
+	[Route("/Catalogs/NastrojjkiObmenaDannymi/FindByCode/{Code}")]
+	[Route("/Catalogs/NastrojjkiObmenaDannymi/FindByDescr/{Descr}")]
 	public class NastrojjkiObmenaDannymiRequest/*НастройкиОбменаДаннымиЗапрос*/: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<NastrojjkiObmenaDannymiRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

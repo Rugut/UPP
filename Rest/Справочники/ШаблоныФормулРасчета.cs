@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/SHablonyFormulRascheta")]
-	[Route("/Catalogs/SHablonyFormulRascheta/{Code}")]
+	[Route("/Catalogs/SHablonyFormulRascheta/FindById/{Id}")]
+	[Route("/Catalogs/SHablonyFormulRascheta/FindByCode/{Code}")]
+	[Route("/Catalogs/SHablonyFormulRascheta/FindByDescr/{Descr}")]
 	public class SHablonyFormulRaschetaRequest/*ШаблоныФормулРасчетаЗапрос*/: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<SHablonyFormulRaschetaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

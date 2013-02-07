@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/DokhodyESN")]
-	[Route("/Catalogs/DokhodyESN/{Code}")]
+	[Route("/Catalogs/DokhodyESN/FindById/{Id}")]
+	[Route("/Catalogs/DokhodyESN/FindByCode/{Code}")]
+	[Route("/Catalogs/DokhodyESN/FindByDescr/{Descr}")]
 	public class DokhodyESNRequest/*ДоходыЕСНЗапрос*/: V82.СправочникиСсылка.ДоходыЕСН,IReturn<DokhodyESNRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

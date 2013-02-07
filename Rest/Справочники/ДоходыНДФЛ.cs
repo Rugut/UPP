@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/DokhodyNDFL")]
-	[Route("/Catalogs/DokhodyNDFL/{Code}")]
+	[Route("/Catalogs/DokhodyNDFL/FindById/{Id}")]
+	[Route("/Catalogs/DokhodyNDFL/FindByCode/{Code}")]
+	[Route("/Catalogs/DokhodyNDFL/FindByDescr/{Descr}")]
 	public class DokhodyNDFLRequest/*ДоходыНДФЛЗапрос*/: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<DokhodyNDFLRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

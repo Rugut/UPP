@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/TarifnyeRazryady")]
-	[Route("/Catalogs/TarifnyeRazryady/{Code}")]
+	[Route("/Catalogs/TarifnyeRazryady/FindById/{Id}")]
+	[Route("/Catalogs/TarifnyeRazryady/FindByCode/{Code}")]
+	[Route("/Catalogs/TarifnyeRazryady/FindByDescr/{Descr}")]
 	public class TarifnyeRazryadyRequest/*ТарифныеРазрядыЗапрос*/: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<TarifnyeRazryadyRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

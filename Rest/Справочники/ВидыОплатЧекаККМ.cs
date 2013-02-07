@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/VidyOplatCHekaKKM")]
-	[Route("/Catalogs/VidyOplatCHekaKKM/{Code}")]
+	[Route("/Catalogs/VidyOplatCHekaKKM/FindById/{Id}")]
+	[Route("/Catalogs/VidyOplatCHekaKKM/FindByCode/{Code}")]
+	[Route("/Catalogs/VidyOplatCHekaKKM/FindByDescr/{Descr}")]
 	public class VidyOplatCHekaKKMRequest/*ВидыОплатЧекаККМЗапрос*/: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<VidyOplatCHekaKKMRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/RabochieMesta")]
-	[Route("/Catalogs/RabochieMesta/{Code}")]
+	[Route("/Catalogs/RabochieMesta/FindById/{Id}")]
+	[Route("/Catalogs/RabochieMesta/FindByCode/{Code}")]
+	[Route("/Catalogs/RabochieMesta/FindByDescr/{Descr}")]
 	public class RabochieMestaRequest/*РабочиеМестаЗапрос*/: V82.СправочникиСсылка.РабочиеМеста,IReturn<RabochieMestaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

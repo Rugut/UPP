@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/StatiByudzheta")]
-	[Route("/Catalogs/StatiByudzheta/{Code}")]
+	[Route("/Catalogs/StatiByudzheta/FindById/{Id}")]
+	[Route("/Catalogs/StatiByudzheta/FindByCode/{Code}")]
+	[Route("/Catalogs/StatiByudzheta/FindByDescr/{Descr}")]
 	public class StatiByudzhetaRequest/*СтатьиБюджетаЗапрос*/: V82.СправочникиСсылка.СтатьиБюджета,IReturn<StatiByudzhetaRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/PrichinyObsluzhivaniyaOS")]
-	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/{Code}")]
+	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/FindById/{Id}")]
+	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/FindByCode/{Code}")]
+	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/FindByDescr/{Descr}")]
 	public class PrichinyObsluzhivaniyaOSRequest/*ПричиныОбслуживанияОСЗапрос*/: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<PrichinyObsluzhivaniyaOSRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}

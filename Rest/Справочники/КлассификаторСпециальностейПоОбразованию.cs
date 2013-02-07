@@ -1,4 +1,4 @@
-﻿
+
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -7,9 +7,12 @@ using ServiceStack.ServiceInterface;
 namespace V82.Справочники
 {
 	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyu")]
-	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyu/{Code}")]
+	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyu/FindById/{Id}")]
+	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyu/FindByCode/{Code}")]
+	[Route("/Catalogs/KlassifikatorSpecialnostejjPoObrazovaniyu/FindByDescr/{Descr}")]
 	public class KlassifikatorSpecialnostejjPoObrazovaniyuRequest/*КлассификаторСпециальностейПоОбразованиюЗапрос*/: V82.СправочникиСсылка.КлассификаторСпециальностейПоОбразованию,IReturn<KlassifikatorSpecialnostejjPoObrazovaniyuRequest>
 	{
+		public string Id { get; set; }
 		public string Code {get;set;}
 		public string Descr {get;set;}
 	}
