@@ -1,0 +1,10 @@
+C:\v82\UPP\Meta\obj\Release\Meta.csprojResolveAssemblyReference.cache
+C:\v82\UPP\Meta\bin\Release\Meta.dll
+C:\v82\UPP\Meta\bin\Release\Meta.pdb
+C:\v82\UPP\Meta\bin\Release\protobuf-net.dll
+C:\v82\UPP\Meta\bin\Release\ServiceStack.Text.dll
+C:\v82\UPP\Meta\bin\Release\protobuf-net.pdb
+C:\v82\UPP\Meta\bin\Release\protobuf-net.xml
+C:\v82\UPP\Meta\bin\Release\ServiceStack.Text.xml
+C:\v82\UPP\Meta\obj\Release\Meta.dll
+C:\v82\UPP\Meta\obj\Release\Meta.pdb
