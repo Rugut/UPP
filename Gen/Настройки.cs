@@ -36,13 +36,5 @@ namespace Gen
         {
             return ЧитатьНастройки("Токен");
         }
-
-        public string КаталогМетаданные = ConfigurationManager.AppSettings["КаталогМетаданные"];
-        public string КаталогRest = ConfigurationManager.AppSettings["КаталогRest"];
-        public string КаталогAjax = ConfigurationManager.AppSettings["КаталогAjax"];
-
-        public string АдресБазыSQL = ConfigurationManager.AppSettings["АдресБазыSQL"];
-        public string ПутьjQery = ConfigurationManager.AppSettings["ПутьjQery"];
-        public string ПутьjQeryUI = ConfigurationManager.AppSettings["ПутьjQeryUI"];
     }
 }
