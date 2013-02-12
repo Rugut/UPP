@@ -37,7 +37,6 @@ namespace Gen
                     Содержание = Содержание.Replace(Токен.Key, Токен.Value);
                 }
             }
-
             return Содержание;
         }
 
@@ -71,7 +70,7 @@ namespace Gen
             var Сигнатура = Кодировка.GetPreamble();
             Содержание = ЗаменитьТокены(Содержание);
 
-            var НовыйПоток =СложитьДваПотока(Сигнатура,Кодировка.GetBytes(Содержание));
+            var НовыйПоток = СложитьДваПотока(Сигнатура,Кодировка.GetBytes(Содержание));
 
             var СтарыйПоток = new byte[0];
             if (File.Exists(ИмяФайла))
@@ -83,6 +82,7 @@ namespace Gen
             {
                 ЗаписыватьФайл = !CRC.ПотокиИдентичны(НовыйПоток, СтарыйПоток);
             }
+            //ЗаписыватьФайл = true;
             if (ЗаписыватьФайл)
             {
                 Interlocked.Increment(ref КоличествоФайловКЗаписи);
@@ -90,7 +90,7 @@ namespace Gen
                 //Interlocked.Increment(ref КоличествоФайловЗаписано);
                 using (var ПотокФайла = new FileStream(ИмяФайла, FileMode.Create, FileAccess.ReadWrite, FileShare.None, 4096, true))
                 {
-                    var МаркерВызова = ПотокФайла.BeginWrite(НовыйПоток, 0, НовыйПоток.Length, ОбратныйВызовСохраненияФайла, null);
+                    var МаркерВызова = ПотокФайла.BeginWrite(НовыйПоток, 0, НовыйПоток.Length, ОбратныйВызовСохраненияФайла, ИмяФайла);
                     Ожидания.Add(МаркерВызова.AsyncWaitHandle);
                 }
 
@@ -100,6 +100,11 @@ namespace Gen
         private void ОбратныйВызовСохраненияФайла(IAsyncResult МаркерВызова)
         {
             Interlocked.Increment(ref КоличествоФайловЗаписано);
+            var ИмяФайла = (string) МаркерВызова.AsyncState;
+            var Атрибуты = File.GetAttributes(ИмяФайла);
+            Атрибуты = Атрибуты | FileAttributes.ReadOnly;
+            File.SetAttributes(ИмяФайла, Атрибуты);
+
         }
     }
 }
