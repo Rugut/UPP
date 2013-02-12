@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static НоменклатураЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Номенклатура/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Номенклатура/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			НоменклатураЗапрос НоменклатураЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static НоменклатураЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Номенклатура/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Номенклатура/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			НоменклатураЗапрос НоменклатураЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static НоменклатураЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Номенклатура/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Номенклатура/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			НоменклатураЗапрос НоменклатураЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(НоменклатураЗапрос НоменклатураЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Номенклатура?format=json";
+			var Урл = "http://localhost:1337/Справочники/Номенклатура?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var НоменклатураОтвет = Клиент.Post(НоменклатураЗапрос);
 		}
 		public static void Записать(НоменклатураЗапрос НоменклатураЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Номенклатура?format=json";
+			var Урл = "http://localhost:1337/Справочники/Номенклатура?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var НоменклатураОтвет = Клиент.Put(НоменклатураЗапрос);
 		}
 		public static void Удалить(НоменклатураЗапрос НоменклатураЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Номенклатура?format=json";
+			var Урл = "http://localhost:1337/Справочники/Номенклатура?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var НоменклатураОтвет = Клиент.Delete(НоменклатураЗапрос);
 		}

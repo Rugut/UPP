@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ВидыЦФОЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыЦФО/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыЦФО/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыЦФОЗапрос ВидыЦФОЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВидыЦФОЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыЦФО/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыЦФО/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыЦФОЗапрос ВидыЦФОЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВидыЦФОЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыЦФО/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыЦФО/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыЦФОЗапрос ВидыЦФОЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ВидыЦФОЗапрос ВидыЦФОЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыЦФО?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыЦФО?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыЦФООтвет = Клиент.Post(ВидыЦФОЗапрос);
 		}
 		public static void Записать(ВидыЦФОЗапрос ВидыЦФОЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыЦФО?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыЦФО?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыЦФООтвет = Клиент.Put(ВидыЦФОЗапрос);
 		}
 		public static void Удалить(ВидыЦФОЗапрос ВидыЦФОЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыЦФО?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыЦФО?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыЦФООтвет = Клиент.Delete(ВидыЦФОЗапрос);
 		}

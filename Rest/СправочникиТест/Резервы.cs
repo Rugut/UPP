@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static РезервыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Резервы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Резервы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РезервыЗапрос РезервыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static РезервыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Резервы/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Резервы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РезервыЗапрос РезервыЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static РезервыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Резервы/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Резервы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РезервыЗапрос РезервыЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(РезервыЗапрос РезервыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Резервы?format=json";
+			var Урл = "http://localhost:1337/Справочники/Резервы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РезервыОтвет = Клиент.Post(РезервыЗапрос);
 		}
 		public static void Записать(РезервыЗапрос РезервыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Резервы?format=json";
+			var Урл = "http://localhost:1337/Справочники/Резервы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РезервыОтвет = Клиент.Put(РезервыЗапрос);
 		}
 		public static void Удалить(РезервыЗапрос РезервыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Резервы?format=json";
+			var Урл = "http://localhost:1337/Справочники/Резервы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РезервыОтвет = Клиент.Delete(РезервыЗапрос);
 		}

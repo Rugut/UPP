@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ОрганизацииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Организации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Организации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ОрганизацииЗапрос ОрганизацииЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ОрганизацииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Организации/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Организации/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ОрганизацииЗапрос ОрганизацииЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ОрганизацииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Организации/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Организации/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ОрганизацииЗапрос ОрганизацииЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ОрганизацииЗапрос ОрганизацииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Организации?format=json";
+			var Урл = "http://localhost:1337/Справочники/Организации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ОрганизацииОтвет = Клиент.Post(ОрганизацииЗапрос);
 		}
 		public static void Записать(ОрганизацииЗапрос ОрганизацииЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Организации?format=json";
+			var Урл = "http://localhost:1337/Справочники/Организации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ОрганизацииОтвет = Клиент.Put(ОрганизацииЗапрос);
 		}
 		public static void Удалить(ОрганизацииЗапрос ОрганизацииЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Организации?format=json";
+			var Урл = "http://localhost:1337/Справочники/Организации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ОрганизацииОтвет = Клиент.Delete(ОрганизацииЗапрос);
 		}

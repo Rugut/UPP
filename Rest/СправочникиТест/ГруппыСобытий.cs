@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ГруппыСобытийЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГруппыСобытий/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГруппыСобытий/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ГруппыСобытийЗапрос ГруппыСобытийЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ГруппыСобытийЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГруппыСобытий/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГруппыСобытий/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ГруппыСобытийЗапрос ГруппыСобытийЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ГруппыСобытийЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГруппыСобытий/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГруппыСобытий/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ГруппыСобытийЗапрос ГруппыСобытийЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ГруппыСобытийЗапрос ГруппыСобытийЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГруппыСобытий?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГруппыСобытий?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ГруппыСобытийОтвет = Клиент.Post(ГруппыСобытийЗапрос);
 		}
 		public static void Записать(ГруппыСобытийЗапрос ГруппыСобытийЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГруппыСобытий?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГруппыСобытий?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ГруппыСобытийОтвет = Клиент.Put(ГруппыСобытийЗапрос);
 		}
 		public static void Удалить(ГруппыСобытийЗапрос ГруппыСобытийЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГруппыСобытий?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГруппыСобытий?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ГруппыСобытийОтвет = Клиент.Delete(ГруппыСобытийЗапрос);
 		}

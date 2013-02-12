@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static МестаХраненияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/МестаХранения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/МестаХранения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			МестаХраненияЗапрос МестаХраненияЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static МестаХраненияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/МестаХранения/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/МестаХранения/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			МестаХраненияЗапрос МестаХраненияЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static МестаХраненияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/МестаХранения/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/МестаХранения/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			МестаХраненияЗапрос МестаХраненияЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(МестаХраненияЗапрос МестаХраненияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/МестаХранения?format=json";
+			var Урл = "http://localhost:1337/Справочники/МестаХранения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var МестаХраненияОтвет = Клиент.Post(МестаХраненияЗапрос);
 		}
 		public static void Записать(МестаХраненияЗапрос МестаХраненияЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/МестаХранения?format=json";
+			var Урл = "http://localhost:1337/Справочники/МестаХранения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var МестаХраненияОтвет = Клиент.Put(МестаХраненияЗапрос);
 		}
 		public static void Удалить(МестаХраненияЗапрос МестаХраненияЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/МестаХранения?format=json";
+			var Урл = "http://localhost:1337/Справочники/МестаХранения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var МестаХраненияОтвет = Клиент.Delete(МестаХраненияЗапрос);
 		}

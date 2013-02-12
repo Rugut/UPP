@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ВерсииФайловЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВерсииФайлов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВерсииФайловЗапрос ВерсииФайловЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВерсииФайловЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВерсииФайлов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВерсииФайловЗапрос ВерсииФайловЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВерсииФайловЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВерсииФайлов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВерсииФайловЗапрос ВерсииФайловЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ВерсииФайловЗапрос ВерсииФайловЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВерсииФайлов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВерсииФайловОтвет = Клиент.Post(ВерсииФайловЗапрос);
 		}
 		public static void Записать(ВерсииФайловЗапрос ВерсииФайловЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВерсииФайлов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВерсииФайловОтвет = Клиент.Put(ВерсииФайловЗапрос);
 		}
 		public static void Удалить(ВерсииФайловЗапрос ВерсииФайловЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВерсииФайлов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВерсииФайловОтвет = Клиент.Delete(ВерсииФайловЗапрос);
 		}

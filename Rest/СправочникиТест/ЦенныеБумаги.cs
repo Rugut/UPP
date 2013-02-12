@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ЦенныеБумагиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦенныеБумаги/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦенныеБумаги/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЦенныеБумагиЗапрос ЦенныеБумагиЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ЦенныеБумагиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦенныеБумаги/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦенныеБумаги/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЦенныеБумагиЗапрос ЦенныеБумагиЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ЦенныеБумагиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦенныеБумаги/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦенныеБумаги/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЦенныеБумагиЗапрос ЦенныеБумагиЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ЦенныеБумагиЗапрос ЦенныеБумагиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦенныеБумаги?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦенныеБумаги?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЦенныеБумагиОтвет = Клиент.Post(ЦенныеБумагиЗапрос);
 		}
 		public static void Записать(ЦенныеБумагиЗапрос ЦенныеБумагиЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦенныеБумаги?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦенныеБумаги?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЦенныеБумагиОтвет = Клиент.Put(ЦенныеБумагиЗапрос);
 		}
 		public static void Удалить(ЦенныеБумагиЗапрос ЦенныеБумагиЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦенныеБумаги?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦенныеБумаги?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЦенныеБумагиОтвет = Клиент.Delete(ЦенныеБумагиЗапрос);
 		}

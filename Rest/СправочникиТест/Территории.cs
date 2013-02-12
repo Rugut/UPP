@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ТерриторииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Территории/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Территории/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТерриторииЗапрос ТерриторииЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ТерриторииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Территории/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Территории/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТерриторииЗапрос ТерриторииЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ТерриторииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Территории/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Территории/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТерриторииЗапрос ТерриторииЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ТерриторииЗапрос ТерриторииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Территории?format=json";
+			var Урл = "http://localhost:1337/Справочники/Территории?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТерриторииОтвет = Клиент.Post(ТерриторииЗапрос);
 		}
 		public static void Записать(ТерриторииЗапрос ТерриторииЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Территории?format=json";
+			var Урл = "http://localhost:1337/Справочники/Территории?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТерриторииОтвет = Клиент.Put(ТерриторииЗапрос);
 		}
 		public static void Удалить(ТерриторииЗапрос ТерриторииЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Территории?format=json";
+			var Урл = "http://localhost:1337/Справочники/Территории?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТерриторииОтвет = Клиент.Delete(ТерриторииЗапрос);
 		}

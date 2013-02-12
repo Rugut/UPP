@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ПользователиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Пользователи/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Пользователи/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ПользователиЗапрос ПользователиЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ПользователиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Пользователи/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Пользователи/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ПользователиЗапрос ПользователиЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ПользователиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Пользователи/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Пользователи/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ПользователиЗапрос ПользователиЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ПользователиЗапрос ПользователиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Пользователи?format=json";
+			var Урл = "http://localhost:1337/Справочники/Пользователи?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ПользователиОтвет = Клиент.Post(ПользователиЗапрос);
 		}
 		public static void Записать(ПользователиЗапрос ПользователиЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Пользователи?format=json";
+			var Урл = "http://localhost:1337/Справочники/Пользователи?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ПользователиОтвет = Клиент.Put(ПользователиЗапрос);
 		}
 		public static void Удалить(ПользователиЗапрос ПользователиЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Пользователи?format=json";
+			var Урл = "http://localhost:1337/Справочники/Пользователи?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ПользователиОтвет = Клиент.Delete(ПользователиЗапрос);
 		}

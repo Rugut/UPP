@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ДоходыНДФЛЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ДоходыНДФЛ/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ДоходыНДФЛ/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ДоходыНДФЛЗапрос ДоходыНДФЛЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ДоходыНДФЛЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ДоходыНДФЛ/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ДоходыНДФЛ/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ДоходыНДФЛЗапрос ДоходыНДФЛЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ДоходыНДФЛЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ДоходыНДФЛ/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ДоходыНДФЛ/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ДоходыНДФЛЗапрос ДоходыНДФЛЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ДоходыНДФЛЗапрос ДоходыНДФЛЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ДоходыНДФЛ?format=json";
+			var Урл = "http://localhost:1337/Справочники/ДоходыНДФЛ?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ДоходыНДФЛОтвет = Клиент.Post(ДоходыНДФЛЗапрос);
 		}
 		public static void Записать(ДоходыНДФЛЗапрос ДоходыНДФЛЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ДоходыНДФЛ?format=json";
+			var Урл = "http://localhost:1337/Справочники/ДоходыНДФЛ?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ДоходыНДФЛОтвет = Клиент.Put(ДоходыНДФЛЗапрос);
 		}
 		public static void Удалить(ДоходыНДФЛЗапрос ДоходыНДФЛЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ДоходыНДФЛ?format=json";
+			var Урл = "http://localhost:1337/Справочники/ДоходыНДФЛ?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ДоходыНДФЛОтвет = Клиент.Delete(ДоходыНДФЛЗапрос);
 		}

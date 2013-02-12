@@ -9,7 +9,7 @@ $(document).ready
 			getUrlVars: function () 
 			{
 				var vars = [], hash;
-				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				var hashes = decodeURI(window.location.href.slice(window.location.href.indexOf('?') + 1)).split('&');
 				for (var i = 0; i < hashes.length; i++)
 				{
 					hash = hashes[i].split('=');
@@ -59,16 +59,15 @@ function ЗагрузитьДанные()
 	Время.innerText = СлучайноеЦелоеЧисло(1000000000000000);
 	Старт = new Date();
 	var Параметры = $.getUrlVars();
-	var Код = Параметры["Code"];
+	var Код = Параметры["Код"];
 	if (Код == undefined)
 	{
 		Код=СлучайноеЦелоеЧисло(100);
 	}
 	$.ajaxSetup({ scriptCharset: "utf-8", contentType: "application/json; charset=utf-8" });
 	$.ajax({
-		url: 'http://127.0.0.1:1337/Catalogs/YAzykiNarodovMira?callback=?',
+		url: 'http://127.0.0.1:1337/Справочники/ЯзыкиНародовМира/НайтиПоКоду/'+Код+'?callback=?',
 		dataType: 'json',
-		data: { Code: Код },
 		jsonpCallback: 'ЗаполнитьПоля',
 	});
 }

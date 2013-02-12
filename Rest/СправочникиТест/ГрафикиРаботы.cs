@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ГрафикиРаботыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГрафикиРаботы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ГрафикиРаботыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГрафикиРаботы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос = null;
 			try
@@ -43,19 +43,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГрафикиРаботы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ГрафикиРаботыОтвет = Клиент.Post(ГрафикиРаботыЗапрос);
 		}
 		public static void Записать(ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГрафикиРаботы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ГрафикиРаботыОтвет = Клиент.Put(ГрафикиРаботыЗапрос);
 		}
 		public static void Удалить(ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы?format=json";
+			var Урл = "http://localhost:1337/Справочники/ГрафикиРаботы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ГрафикиРаботыОтвет = Клиент.Delete(ГрафикиРаботыЗапрос);
 		}

@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ВоенкоматыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Военкоматы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Военкоматы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВоенкоматыЗапрос ВоенкоматыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВоенкоматыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Военкоматы/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Военкоматы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВоенкоматыЗапрос ВоенкоматыЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВоенкоматыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Военкоматы/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Военкоматы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВоенкоматыЗапрос ВоенкоматыЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ВоенкоматыЗапрос ВоенкоматыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Военкоматы?format=json";
+			var Урл = "http://localhost:1337/Справочники/Военкоматы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВоенкоматыОтвет = Клиент.Post(ВоенкоматыЗапрос);
 		}
 		public static void Записать(ВоенкоматыЗапрос ВоенкоматыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Военкоматы?format=json";
+			var Урл = "http://localhost:1337/Справочники/Военкоматы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВоенкоматыОтвет = Клиент.Put(ВоенкоматыЗапрос);
 		}
 		public static void Удалить(ВоенкоматыЗапрос ВоенкоматыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Военкоматы?format=json";
+			var Урл = "http://localhost:1337/Справочники/Военкоматы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВоенкоматыОтвет = Клиент.Delete(ВоенкоматыЗапрос);
 		}

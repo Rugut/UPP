@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static СобытияОСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/СобытияОС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/СобытияОС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СобытияОСЗапрос СобытияОСЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static СобытияОСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/СобытияОС/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/СобытияОС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СобытияОСЗапрос СобытияОСЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static СобытияОСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/СобытияОС/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/СобытияОС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СобытияОСЗапрос СобытияОСЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(СобытияОСЗапрос СобытияОСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/СобытияОС?format=json";
+			var Урл = "http://localhost:1337/Справочники/СобытияОС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СобытияОСОтвет = Клиент.Post(СобытияОСЗапрос);
 		}
 		public static void Записать(СобытияОСЗапрос СобытияОСЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/СобытияОС?format=json";
+			var Урл = "http://localhost:1337/Справочники/СобытияОС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СобытияОСОтвет = Клиент.Put(СобытияОСЗапрос);
 		}
 		public static void Удалить(СобытияОСЗапрос СобытияОСЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/СобытияОС?format=json";
+			var Урл = "http://localhost:1337/Справочники/СобытияОС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СобытияОСОтвет = Клиент.Delete(СобытияОСЗапрос);
 		}

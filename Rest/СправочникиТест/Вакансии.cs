@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ВакансииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Вакансии/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Вакансии/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВакансииЗапрос ВакансииЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВакансииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Вакансии/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Вакансии/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВакансииЗапрос ВакансииЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВакансииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Вакансии/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Вакансии/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВакансииЗапрос ВакансииЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ВакансииЗапрос ВакансииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Вакансии?format=json";
+			var Урл = "http://localhost:1337/Справочники/Вакансии?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВакансииОтвет = Клиент.Post(ВакансииЗапрос);
 		}
 		public static void Записать(ВакансииЗапрос ВакансииЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Вакансии?format=json";
+			var Урл = "http://localhost:1337/Справочники/Вакансии?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВакансииОтвет = Клиент.Put(ВакансииЗапрос);
 		}
 		public static void Удалить(ВакансииЗапрос ВакансииЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Вакансии?format=json";
+			var Урл = "http://localhost:1337/Справочники/Вакансии?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВакансииОтвет = Клиент.Delete(ВакансииЗапрос);
 		}

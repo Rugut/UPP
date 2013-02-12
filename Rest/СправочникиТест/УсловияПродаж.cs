@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static УсловияПродажЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/УсловияПродаж/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/УсловияПродаж/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			УсловияПродажЗапрос УсловияПродажЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static УсловияПродажЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/УсловияПродаж/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/УсловияПродаж/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			УсловияПродажЗапрос УсловияПродажЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static УсловияПродажЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/УсловияПродаж/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/УсловияПродаж/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			УсловияПродажЗапрос УсловияПродажЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(УсловияПродажЗапрос УсловияПродажЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/УсловияПродаж?format=json";
+			var Урл = "http://localhost:1337/Справочники/УсловияПродаж?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var УсловияПродажОтвет = Клиент.Post(УсловияПродажЗапрос);
 		}
 		public static void Записать(УсловияПродажЗапрос УсловияПродажЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/УсловияПродаж?format=json";
+			var Урл = "http://localhost:1337/Справочники/УсловияПродаж?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var УсловияПродажОтвет = Клиент.Put(УсловияПродажЗапрос);
 		}
 		public static void Удалить(УсловияПродажЗапрос УсловияПродажЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/УсловияПродаж?format=json";
+			var Урл = "http://localhost:1337/Справочники/УсловияПродаж?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var УсловияПродажОтвет = Клиент.Delete(УсловияПродажЗапрос);
 		}

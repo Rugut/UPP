@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ОрганыПФРЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ОрганыПФР/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ОрганыПФР/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ОрганыПФРЗапрос ОрганыПФРЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ОрганыПФРЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ОрганыПФР/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ОрганыПФР/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ОрганыПФРЗапрос ОрганыПФРЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ОрганыПФРЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ОрганыПФР/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ОрганыПФР/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ОрганыПФРЗапрос ОрганыПФРЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ОрганыПФРЗапрос ОрганыПФРЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ОрганыПФР?format=json";
+			var Урл = "http://localhost:1337/Справочники/ОрганыПФР?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ОрганыПФРОтвет = Клиент.Post(ОрганыПФРЗапрос);
 		}
 		public static void Записать(ОрганыПФРЗапрос ОрганыПФРЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ОрганыПФР?format=json";
+			var Урл = "http://localhost:1337/Справочники/ОрганыПФР?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ОрганыПФРОтвет = Клиент.Put(ОрганыПФРЗапрос);
 		}
 		public static void Удалить(ОрганыПФРЗапрос ОрганыПФРЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ОрганыПФР?format=json";
+			var Урл = "http://localhost:1337/Справочники/ОрганыПФР?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ОрганыПФРОтвет = Клиент.Delete(ОрганыПФРЗапрос);
 		}

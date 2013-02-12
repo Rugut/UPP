@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ЦеновыеГруппыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦеновыеГруппы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ЦеновыеГруппыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦеновыеГруппы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ЦеновыеГруппыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦеновыеГруппы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦеновыеГруппы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЦеновыеГруппыОтвет = Клиент.Post(ЦеновыеГруппыЗапрос);
 		}
 		public static void Записать(ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦеновыеГруппы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЦеновыеГруппыОтвет = Клиент.Put(ЦеновыеГруппыЗапрос);
 		}
 		public static void Удалить(ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЦеновыеГруппы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЦеновыеГруппыОтвет = Клиент.Delete(ЦеновыеГруппыЗапрос);
 		}

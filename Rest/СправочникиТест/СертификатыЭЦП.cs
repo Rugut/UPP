@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static СертификатыЭЦПЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/СертификатыЭЦП/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static СертификатыЭЦПЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/СертификатыЭЦП/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос = null;
 			try
@@ -43,19 +43,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП?format=json";
+			var Урл = "http://localhost:1337/Справочники/СертификатыЭЦП?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СертификатыЭЦПОтвет = Клиент.Post(СертификатыЭЦПЗапрос);
 		}
 		public static void Записать(СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП?format=json";
+			var Урл = "http://localhost:1337/Справочники/СертификатыЭЦП?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СертификатыЭЦПОтвет = Клиент.Put(СертификатыЭЦПЗапрос);
 		}
 		public static void Удалить(СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП?format=json";
+			var Урл = "http://localhost:1337/Справочники/СертификатыЭЦП?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СертификатыЭЦПОтвет = Клиент.Delete(СертификатыЭЦПЗапрос);
 		}

@@ -88,7 +88,8 @@ namespace Gen
                 Interlocked.Increment(ref КоличествоФайловКЗаписи);
                 //File.WriteAllBytes(ИмяФайла, НовыйПоток);
                 //Interlocked.Increment(ref КоличествоФайловЗаписано);
-                using (var ПотокФайла = new FileStream(ИмяФайла, FileMode.Create, FileAccess.ReadWrite, FileShare.None, 4096, true))
+                ИзменитьАтрибутЧтенияФайла(ИмяФайла, false);
+                using (var ПотокФайла = new FileStream(ИмяФайла, FileMode.Create, FileAccess.Write, FileShare.Write, 4096, true))
                 {
                     var МаркерВызова = ПотокФайла.BeginWrite(НовыйПоток, 0, НовыйПоток.Length, ОбратныйВызовСохраненияФайла, ИмяФайла);
                     Ожидания.Add(МаркерВызова.AsyncWaitHandle);
@@ -97,13 +98,25 @@ namespace Gen
             }
         }
 
+        private void ИзменитьАтрибутЧтенияФайла(string ИмяФайла,bool Установить)
+        {
+            var Атрибуты = File.GetAttributes(ИмяФайла);
+            if (Установить)
+            {
+                Атрибуты = Атрибуты | FileAttributes.ReadOnly;
+            }
+            else
+            {
+                Атрибуты = Атрибуты & ~FileAttributes.ReadOnly;
+            }
+            File.SetAttributes(ИмяФайла, Атрибуты);
+        }
+
         private void ОбратныйВызовСохраненияФайла(IAsyncResult МаркерВызова)
         {
             Interlocked.Increment(ref КоличествоФайловЗаписано);
             var ИмяФайла = (string) МаркерВызова.AsyncState;
-            var Атрибуты = File.GetAttributes(ИмяФайла);
-            Атрибуты = Атрибуты | FileAttributes.ReadOnly;
-            File.SetAttributes(ИмяФайла, Атрибуты);
+            ИзменитьАтрибутЧтенияФайла(ИмяФайла, true);
 
         }
     }

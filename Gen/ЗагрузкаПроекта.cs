@@ -21,10 +21,10 @@ namespace Gen
                 Подключение.Open();
                 using (var Команда = Подключение.CreateCommand())
                 {
-                    Команда.CommandText = "Select Проект, Каталог, Вид, Код from dbo.V82КлассыNet('UPP1')"; //('wpc')";
+                    Команда.CommandText = "Select Проект, Каталог, Вид, Код from dbo.V82КлассыNet(@ИдентификаторБазы)"; 
+                    Команда.Parameters.Add("ИдентификаторБазы",Настройки.ИдентификаторБазы);
                     using (var РезультатЗапроса = Команда.ExecuteReader())
                     {
-
                         while (РезультатЗапроса.Read())
                         {
                             var Строка = new object[РезультатЗапроса.FieldCount];

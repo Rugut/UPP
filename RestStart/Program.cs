@@ -22,8 +22,17 @@ namespace RestStart
 
         static void Main(string[] args)
         {
-            ЗапуститьRest();
-            Console.ReadLine();
+            try
+            {
+                ЗапуститьRest();
+            }
+            catch (Exception Исключение)
+            {
+                Console.WriteLine("\r\n");
+                var Сообщение = (Исключение.InnerException == null) ? Исключение.Message : Исключение.InnerException.Message;
+                Console.WriteLine("Ошибка запуска Rest: " + Сообщение);
+            }
+            Console.ReadLine();   
         }
     }
 }

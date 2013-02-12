@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static КачествоЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Качество/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Качество/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			КачествоЗапрос КачествоЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static КачествоЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Качество/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Качество/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			КачествоЗапрос КачествоЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static КачествоЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Качество/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Качество/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			КачествоЗапрос КачествоЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(КачествоЗапрос КачествоЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Качество?format=json";
+			var Урл = "http://localhost:1337/Справочники/Качество?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var КачествоОтвет = Клиент.Post(КачествоЗапрос);
 		}
 		public static void Записать(КачествоЗапрос КачествоЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Качество?format=json";
+			var Урл = "http://localhost:1337/Справочники/Качество?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var КачествоОтвет = Клиент.Put(КачествоЗапрос);
 		}
 		public static void Удалить(КачествоЗапрос КачествоЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Качество?format=json";
+			var Урл = "http://localhost:1337/Справочники/Качество?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var КачествоОтвет = Клиент.Delete(КачествоЗапрос);
 		}

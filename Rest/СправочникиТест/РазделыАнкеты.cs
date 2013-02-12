@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static РазделыАнкетыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/РазделыАнкеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/РазделыАнкеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РазделыАнкетыЗапрос РазделыАнкетыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static РазделыАнкетыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/РазделыАнкеты/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/РазделыАнкеты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РазделыАнкетыЗапрос РазделыАнкетыЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static РазделыАнкетыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/РазделыАнкеты/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/РазделыАнкеты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РазделыАнкетыЗапрос РазделыАнкетыЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(РазделыАнкетыЗапрос РазделыАнкетыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/РазделыАнкеты?format=json";
+			var Урл = "http://localhost:1337/Справочники/РазделыАнкеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РазделыАнкетыОтвет = Клиент.Post(РазделыАнкетыЗапрос);
 		}
 		public static void Записать(РазделыАнкетыЗапрос РазделыАнкетыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/РазделыАнкеты?format=json";
+			var Урл = "http://localhost:1337/Справочники/РазделыАнкеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РазделыАнкетыОтвет = Клиент.Put(РазделыАнкетыЗапрос);
 		}
 		public static void Удалить(РазделыАнкетыЗапрос РазделыАнкетыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/РазделыАнкеты?format=json";
+			var Урл = "http://localhost:1337/Справочники/РазделыАнкеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РазделыАнкетыОтвет = Клиент.Delete(РазделыАнкетыЗапрос);
 		}

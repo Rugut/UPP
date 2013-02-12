@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ЛичныеКонтактыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЛичныеКонтакты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ЛичныеКонтактыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЛичныеКонтакты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ЛичныеКонтактыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЛичныеКонтакты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЛичныеКонтакты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЛичныеКонтактыОтвет = Клиент.Post(ЛичныеКонтактыЗапрос);
 		}
 		public static void Записать(ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЛичныеКонтакты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЛичныеКонтактыОтвет = Клиент.Put(ЛичныеКонтактыЗапрос);
 		}
 		public static void Удалить(ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты?format=json";
+			var Урл = "http://localhost:1337/Справочники/ЛичныеКонтакты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ЛичныеКонтактыОтвет = Клиент.Delete(ЛичныеКонтактыЗапрос);
 		}

@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ПричиныСписанияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ПричиныСписания/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ПричиныСписания/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ПричиныСписанияЗапрос ПричиныСписанияЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ПричиныСписанияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ПричиныСписания/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ПричиныСписания/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ПричиныСписанияЗапрос ПричиныСписанияЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ПричиныСписанияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ПричиныСписания/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ПричиныСписания/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ПричиныСписанияЗапрос ПричиныСписанияЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ПричиныСписанияЗапрос ПричиныСписанияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ПричиныСписания?format=json";
+			var Урл = "http://localhost:1337/Справочники/ПричиныСписания?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ПричиныСписанияОтвет = Клиент.Post(ПричиныСписанияЗапрос);
 		}
 		public static void Записать(ПричиныСписанияЗапрос ПричиныСписанияЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ПричиныСписания?format=json";
+			var Урл = "http://localhost:1337/Справочники/ПричиныСписания?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ПричиныСписанияОтвет = Клиент.Put(ПричиныСписанияЗапрос);
 		}
 		public static void Удалить(ПричиныСписанияЗапрос ПричиныСписанияЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ПричиныСписания?format=json";
+			var Урл = "http://localhost:1337/Справочники/ПричиныСписания?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ПричиныСписанияОтвет = Клиент.Delete(ПричиныСписанияЗапрос);
 		}

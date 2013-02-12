@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ВидыФинРезервовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыФинРезервов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыФинРезервов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыФинРезервовЗапрос ВидыФинРезервовЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВидыФинРезервовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыФинРезервов/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыФинРезервов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыФинРезервовЗапрос ВидыФинРезервовЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВидыФинРезервовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыФинРезервов/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыФинРезервов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыФинРезервовЗапрос ВидыФинРезервовЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ВидыФинРезервовЗапрос ВидыФинРезервовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыФинРезервов?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыФинРезервов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыФинРезервовОтвет = Клиент.Post(ВидыФинРезервовЗапрос);
 		}
 		public static void Записать(ВидыФинРезервовЗапрос ВидыФинРезервовЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыФинРезервов?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыФинРезервов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыФинРезервовОтвет = Клиент.Put(ВидыФинРезервовЗапрос);
 		}
 		public static void Удалить(ВидыФинРезервовЗапрос ВидыФинРезервовЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыФинРезервов?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыФинРезервов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыФинРезервовОтвет = Клиент.Delete(ВидыФинРезервовЗапрос);
 		}

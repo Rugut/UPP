@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ВидыСтажаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыСтажа/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыСтажа/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыСтажаЗапрос ВидыСтажаЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВидыСтажаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыСтажа/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыСтажа/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыСтажаЗапрос ВидыСтажаЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ВидыСтажаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыСтажа/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыСтажа/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ВидыСтажаЗапрос ВидыСтажаЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ВидыСтажаЗапрос ВидыСтажаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыСтажа?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыСтажа?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыСтажаОтвет = Клиент.Post(ВидыСтажаЗапрос);
 		}
 		public static void Записать(ВидыСтажаЗапрос ВидыСтажаЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыСтажа?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыСтажа?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыСтажаОтвет = Клиент.Put(ВидыСтажаЗапрос);
 		}
 		public static void Удалить(ВидыСтажаЗапрос ВидыСтажаЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ВидыСтажа?format=json";
+			var Урл = "http://localhost:1337/Справочники/ВидыСтажа?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ВидыСтажаОтвет = Клиент.Delete(ВидыСтажаЗапрос);
 		}

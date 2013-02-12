@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ТочкиМаршрутаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТочкиМаршрута/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТочкиМаршрута/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТочкиМаршрутаЗапрос ТочкиМаршрутаЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ТочкиМаршрутаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТочкиМаршрута/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТочкиМаршрута/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТочкиМаршрутаЗапрос ТочкиМаршрутаЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ТочкиМаршрутаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТочкиМаршрута/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТочкиМаршрута/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТочкиМаршрутаЗапрос ТочкиМаршрутаЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ТочкиМаршрутаЗапрос ТочкиМаршрутаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТочкиМаршрута?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТочкиМаршрута?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТочкиМаршрутаОтвет = Клиент.Post(ТочкиМаршрутаЗапрос);
 		}
 		public static void Записать(ТочкиМаршрутаЗапрос ТочкиМаршрутаЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТочкиМаршрута?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТочкиМаршрута?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТочкиМаршрутаОтвет = Клиент.Put(ТочкиМаршрутаЗапрос);
 		}
 		public static void Удалить(ТочкиМаршрутаЗапрос ТочкиМаршрутаЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТочкиМаршрута?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТочкиМаршрута?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТочкиМаршрутаОтвет = Клиент.Delete(ТочкиМаршрутаЗапрос);
 		}

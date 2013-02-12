@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static РабочиеМестаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/РабочиеМеста/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РабочиеМестаЗапрос РабочиеМестаЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static РабочиеМестаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/РабочиеМеста/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РабочиеМестаЗапрос РабочиеМестаЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static РабочиеМестаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/РабочиеМеста/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			РабочиеМестаЗапрос РабочиеМестаЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(РабочиеМестаЗапрос РабочиеМестаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста?format=json";
+			var Урл = "http://localhost:1337/Справочники/РабочиеМеста?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РабочиеМестаОтвет = Клиент.Post(РабочиеМестаЗапрос);
 		}
 		public static void Записать(РабочиеМестаЗапрос РабочиеМестаЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста?format=json";
+			var Урл = "http://localhost:1337/Справочники/РабочиеМеста?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РабочиеМестаОтвет = Клиент.Put(РабочиеМестаЗапрос);
 		}
 		public static void Удалить(РабочиеМестаЗапрос РабочиеМестаЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста?format=json";
+			var Урл = "http://localhost:1337/Справочники/РабочиеМеста?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var РабочиеМестаОтвет = Клиент.Delete(РабочиеМестаЗапрос);
 		}

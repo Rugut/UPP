@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static ТиповыеАнкетыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТиповыеАнкеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ТиповыеАнкетыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТиповыеАнкеты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static ТиповыеАнкетыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТиповыеАнкеты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТиповыеАнкеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТиповыеАнкетыОтвет = Клиент.Post(ТиповыеАнкетыЗапрос);
 		}
 		public static void Записать(ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТиповыеАнкеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТиповыеАнкетыОтвет = Клиент.Put(ТиповыеАнкетыЗапрос);
 		}
 		public static void Удалить(ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты?format=json";
+			var Урл = "http://localhost:1337/Справочники/ТиповыеАнкеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var ТиповыеАнкетыОтвет = Клиент.Delete(ТиповыеАнкетыЗапрос);
 		}

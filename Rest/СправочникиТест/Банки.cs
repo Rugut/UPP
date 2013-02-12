@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static БанкиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Банки/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Банки/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			БанкиЗапрос БанкиЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static БанкиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Банки/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Банки/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			БанкиЗапрос БанкиЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static БанкиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Банки/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Банки/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			БанкиЗапрос БанкиЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(БанкиЗапрос БанкиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Банки?format=json";
+			var Урл = "http://localhost:1337/Справочники/Банки?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var БанкиОтвет = Клиент.Post(БанкиЗапрос);
 		}
 		public static void Записать(БанкиЗапрос БанкиЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Банки?format=json";
+			var Урл = "http://localhost:1337/Справочники/Банки?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var БанкиОтвет = Клиент.Put(БанкиЗапрос);
 		}
 		public static void Удалить(БанкиЗапрос БанкиЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Банки?format=json";
+			var Урл = "http://localhost:1337/Справочники/Банки?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var БанкиОтвет = Клиент.Delete(БанкиЗапрос);
 		}

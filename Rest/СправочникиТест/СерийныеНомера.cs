@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static СерийныеНомераЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/СерийныеНомера/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/СерийныеНомера/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СерийныеНомераЗапрос СерийныеНомераЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static СерийныеНомераЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/СерийныеНомера/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/СерийныеНомера/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СерийныеНомераЗапрос СерийныеНомераЗапрос = null;
 			try
@@ -43,19 +43,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(СерийныеНомераЗапрос СерийныеНомераЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/СерийныеНомера?format=json";
+			var Урл = "http://localhost:1337/Справочники/СерийныеНомера?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СерийныеНомераОтвет = Клиент.Post(СерийныеНомераЗапрос);
 		}
 		public static void Записать(СерийныеНомераЗапрос СерийныеНомераЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/СерийныеНомера?format=json";
+			var Урл = "http://localhost:1337/Справочники/СерийныеНомера?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СерийныеНомераОтвет = Клиент.Put(СерийныеНомераЗапрос);
 		}
 		public static void Удалить(СерийныеНомераЗапрос СерийныеНомераЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/СерийныеНомера?format=json";
+			var Урл = "http://localhost:1337/Справочники/СерийныеНомера?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СерийныеНомераОтвет = Клиент.Delete(СерийныеНомераЗапрос);
 		}

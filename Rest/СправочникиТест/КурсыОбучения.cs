@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static КурсыОбученияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/КурсыОбучения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/КурсыОбучения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			КурсыОбученияЗапрос КурсыОбученияЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static КурсыОбученияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/КурсыОбучения/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/КурсыОбучения/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			КурсыОбученияЗапрос КурсыОбученияЗапрос = null;
 			try
@@ -43,19 +43,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(КурсыОбученияЗапрос КурсыОбученияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/КурсыОбучения?format=json";
+			var Урл = "http://localhost:1337/Справочники/КурсыОбучения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var КурсыОбученияОтвет = Клиент.Post(КурсыОбученияЗапрос);
 		}
 		public static void Записать(КурсыОбученияЗапрос КурсыОбученияЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/КурсыОбучения?format=json";
+			var Урл = "http://localhost:1337/Справочники/КурсыОбучения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var КурсыОбученияОтвет = Клиент.Put(КурсыОбученияЗапрос);
 		}
 		public static void Удалить(КурсыОбученияЗапрос КурсыОбученияЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/КурсыОбучения?format=json";
+			var Урл = "http://localhost:1337/Справочники/КурсыОбучения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var КурсыОбученияОтвет = Клиент.Delete(КурсыОбученияЗапрос);
 		}

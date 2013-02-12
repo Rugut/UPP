@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static СкладыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Склады/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Склады/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СкладыЗапрос СкладыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static СкладыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Склады/НайтиПоКоду/"+Код+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Склады/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СкладыЗапрос СкладыЗапрос = null;
 			try
@@ -43,7 +43,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static СкладыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Склады/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Склады/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			СкладыЗапрос СкладыЗапрос = null;
 			try
@@ -58,19 +58,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(СкладыЗапрос СкладыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Склады?format=json";
+			var Урл = "http://localhost:1337/Справочники/Склады?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СкладыОтвет = Клиент.Post(СкладыЗапрос);
 		}
 		public static void Записать(СкладыЗапрос СкладыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Склады?format=json";
+			var Урл = "http://localhost:1337/Справочники/Склады?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СкладыОтвет = Клиент.Put(СкладыЗапрос);
 		}
 		public static void Удалить(СкладыЗапрос СкладыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Склады?format=json";
+			var Урл = "http://localhost:1337/Справочники/Склады?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var СкладыОтвет = Клиент.Delete(СкладыЗапрос);
 		}

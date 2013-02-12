@@ -13,7 +13,7 @@ namespace V82.Rest.СправочникиТест
 	{
 		public static НаградыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Награды/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Награды/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			НаградыЗапрос НаградыЗапрос = null;
 			try
@@ -28,7 +28,7 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static НаградыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Награды/НайтиПоНаименованию/"+Наименование+"?format=json";
+			var Урл = "http://localhost:1337/Справочники/Награды/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			НаградыЗапрос НаградыЗапрос = null;
 			try
@@ -43,19 +43,19 @@ namespace V82.Rest.СправочникиТест
 		}
 		public static void ЗаписатьНовый(НаградыЗапрос НаградыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Награды?format=json";
+			var Урл = "http://localhost:1337/Справочники/Награды?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var НаградыОтвет = Клиент.Post(НаградыЗапрос);
 		}
 		public static void Записать(НаградыЗапрос НаградыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Награды?format=json";
+			var Урл = "http://localhost:1337/Справочники/Награды?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var НаградыОтвет = Клиент.Put(НаградыЗапрос);
 		}
 		public static void Удалить(НаградыЗапрос НаградыЗапрос)//
 		{
-			var Урл = "http://localhost:1337/Catalogs/Награды?format=json";
+			var Урл = "http://localhost:1337/Справочники/Награды?format=json";
 			var Клиент = new JsonServiceClient(Урл);
 			var НаградыОтвет = Клиент.Delete(НаградыЗапрос);
 		}

@@ -11,7 +11,7 @@ namespace Gen
     {
         public static readonly Dictionary<string,string> Проекты = ПолучитьКаталоги(); 
         public static readonly Dictionary<string,string> Токены = ПолучитьТокены();
-
+        public static readonly string ИдентификаторБазы = ConfigurationManager.AppSettings["ИдентификаторБазы"];
         private static Dictionary<string, string> ЧитатьНастройки(string Имя)
         {
             var Настройки = new Dictionary<string, string>();
