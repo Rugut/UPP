@@ -22,6 +22,7 @@ namespace Gen
                 {
                     Directory.CreateDirectory(Директория);
                 }
+                Директории.Add(Директория);
             }
             return Директория;
         }
@@ -36,12 +37,13 @@ namespace Gen
                     Содержание = Содержание.Replace(Токен.Key, Токен.Value);
                 }
             }
+
             return Содержание;
         }
 
         private static Encoding ВыборКодировки(string ИмяФайла)
         {
-            if (string.Compare(ИмяФайла, ИмяФайла.Length - 5, ".html", 0, 5, true) == 0)
+            if (ИмяФайла.Length>5 && string.Compare(ИмяФайла, ИмяФайла.Length - 5, ".html", 0, 5, true) == 0)
             {
                 return Encoding.GetEncoding(1251);
             }
