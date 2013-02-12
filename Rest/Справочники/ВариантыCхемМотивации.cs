@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VariantyCkhemMotivacii")]
-	[Route("/Catalogs/VariantyCkhemMotivacii/FindById/{Id}")]
-	[Route("/Catalogs/VariantyCkhemMotivacii/FindByCode/{Code}")]
-	[Route("/Catalogs/VariantyCkhemMotivacii/FindByDescr/{Descr}")]
-	public class VariantyCkhemMotivaciiRequest/*ВариантыCхемМотивацииЗапрос*/: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<VariantyCkhemMotivaciiRequest>
+	//VariantyCkhemMotivacii
+	[Маршрут("Справочники/ВариантыCхемМотивации","")]
+	public class ВариантыCхемМотивацииЗапрос: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<ВариантыCхемМотивацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВариантыCхемМотивации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВариантыCхемМотивации/ПоСсылке","{Ссылка}")]
+	public class ВариантыCхемМотивацииНайтиПоСсылке: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<ВариантыCхемМотивацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВариантыCхемМотивации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВариантыCхемМотивации/ПоКоду","{Код}")]
+	public class ВариантыCхемМотивацииНайтиПоКоду: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<ВариантыCхемМотивацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВариантыCхемМотивации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВариантыCхемМотивации/ПоНаименованию","{Наименование}")]
+	public class ВариантыCхемМотивацииНайтиПоНаименованию: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<ВариантыCхемМотивацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВариантыCхемМотивации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыCхемМотивацииВыбратьПоСсылке: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<ВариантыCхемМотивацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВариантыCхемМотивации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыCхемМотивацииВыбратьПоКоду: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<ВариантыCхемМотивацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВариантыCхемМотивации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыCхемМотивацииВыбратьПоНаименованию: V82.СправочникиСсылка.ВариантыCхемМотивации,IReturn<ВариантыCхемМотивацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VariantyCkhemMotivaciiResponse//ВариантыCхемМотивацииОтвет
+	public class ВариантыCхемМотивацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VariantyCkhemMotivaciis")]
-	[Route("/Catalogs/VariantyCkhemMotivaciis/{Codes}")]
-	public class VariantyCkhemMotivaciisRequest/*ВариантыCхемМотивацииЗапрос*/: IReturn<List<VariantyCkhemMotivaciiRequest>>
+	public class ВариантыCхемМотивацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VariantyCkhemMotivaciisRequest(params string[] Codes)
+		
+		public object Get(ВариантыCхемМотивацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VariantyCkhemMotivaciisResponse//ВариантыCхемМотивацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VariantyCkhemMotivaciiService /*ВариантыCхемМотивацииСервис*/ : Service
-	{
-		public object Any(VariantyCkhemMotivaciiRequest request)
+		
+		public object Get(ВариантыCхемМотивацииНайтиПоКоду Запрос)
 		{
-			return new VariantyCkhemMotivaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VariantyCkhemMotivaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВариантыCхемМотивации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VariantyCkhemMotivaciiResponse() {Result = "ВариантыCхемМотивации c кодом '" + request.Code+"' не найдено."};
+				return new ВариантыCхемМотивацииОтвет() {Ответ = "ВариантыCхемМотивации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VariantyCkhemMotivaciisRequest request)
+		
+		public object Get(ВариантыCхемМотивацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВариантыCхемМотивации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВариантыCхемМотивации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВариантыCхемМотивацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВариантыCхемМотивацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВариантыCхемМотивацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВариантыCхемМотивацииЗапрос Запрос)
+		{
+			return new ВариантыCхемМотивацииОтвет {Ответ = "ВариантыCхемМотивации, "};
+		}
+
+		public object Post(ВариантыCхемМотивацииЗапрос ЗапросВариантыCхемМотивации)
+		{
+			var Ссылка = (СправочникиСсылка.ВариантыCхемМотивации)ЗапросВариантыCхемМотивации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

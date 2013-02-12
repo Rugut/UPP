@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SostavMeropriyatiya")]
-	[Route("/Catalogs/SostavMeropriyatiya/FindById/{Id}")]
-	[Route("/Catalogs/SostavMeropriyatiya/FindByCode/{Code}")]
-	[Route("/Catalogs/SostavMeropriyatiya/FindByDescr/{Descr}")]
-	public class SostavMeropriyatiyaRequest/*СоставМероприятияЗапрос*/: V82.СправочникиСсылка.СоставМероприятия,IReturn<SostavMeropriyatiyaRequest>
+	//SostavMeropriyatiya
+	[Маршрут("Справочники/СоставМероприятия","")]
+	public class СоставМероприятияЗапрос: V82.СправочникиСсылка.СоставМероприятия,IReturn<СоставМероприятияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СоставМероприятия/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СоставМероприятия/ПоСсылке","{Ссылка}")]
+	public class СоставМероприятияНайтиПоСсылке: V82.СправочникиСсылка.СоставМероприятия,IReturn<СоставМероприятияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СоставМероприятия/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СоставМероприятия/ПоКоду","{Код}")]
+	public class СоставМероприятияНайтиПоКоду: V82.СправочникиСсылка.СоставМероприятия,IReturn<СоставМероприятияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СоставМероприятия/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СоставМероприятия/ПоНаименованию","{Наименование}")]
+	public class СоставМероприятияНайтиПоНаименованию: V82.СправочникиСсылка.СоставМероприятия,IReturn<СоставМероприятияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СоставМероприятия/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставМероприятияВыбратьПоСсылке: V82.СправочникиСсылка.СоставМероприятия,IReturn<СоставМероприятияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СоставМероприятия/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставМероприятияВыбратьПоКоду: V82.СправочникиСсылка.СоставМероприятия,IReturn<СоставМероприятияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СоставМероприятия/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставМероприятияВыбратьПоНаименованию: V82.СправочникиСсылка.СоставМероприятия,IReturn<СоставМероприятияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SostavMeropriyatiyaResponse//СоставМероприятияОтвет
+	public class СоставМероприятияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SostavMeropriyatiyas")]
-	[Route("/Catalogs/SostavMeropriyatiyas/{Codes}")]
-	public class SostavMeropriyatiyasRequest/*СоставМероприятияЗапрос*/: IReturn<List<SostavMeropriyatiyaRequest>>
+	public class СоставМероприятияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SostavMeropriyatiyasRequest(params string[] Codes)
+		
+		public object Get(СоставМероприятияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SostavMeropriyatiyasResponse//СоставМероприятияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SostavMeropriyatiyaService /*СоставМероприятияСервис*/ : Service
-	{
-		public object Any(SostavMeropriyatiyaRequest request)
+		
+		public object Get(СоставМероприятияНайтиПоКоду Запрос)
 		{
-			return new SostavMeropriyatiyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SostavMeropriyatiyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СоставМероприятия.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SostavMeropriyatiyaResponse() {Result = "СоставМероприятия c кодом '" + request.Code+"' не найдено."};
+				return new СоставМероприятияОтвет() {Ответ = "СоставМероприятия c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SostavMeropriyatiyasRequest request)
+		
+		public object Get(СоставМероприятияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СоставМероприятия>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СоставМероприятия.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СоставМероприятияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СоставМероприятияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СоставМероприятияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СоставМероприятияЗапрос Запрос)
+		{
+			return new СоставМероприятияОтвет {Ответ = "СоставМероприятия, "};
+		}
+
+		public object Post(СоставМероприятияЗапрос ЗапросСоставМероприятия)
+		{
+			var Ссылка = (СправочникиСсылка.СоставМероприятия)ЗапросСоставМероприятия;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

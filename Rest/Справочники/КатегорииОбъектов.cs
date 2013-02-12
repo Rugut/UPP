@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KategoriiObektov")]
-	[Route("/Catalogs/KategoriiObektov/FindById/{Id}")]
-	[Route("/Catalogs/KategoriiObektov/FindByCode/{Code}")]
-	[Route("/Catalogs/KategoriiObektov/FindByDescr/{Descr}")]
-	public class KategoriiObektovRequest/*КатегорииОбъектовЗапрос*/: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<KategoriiObektovRequest>
+	//KategoriiObektov
+	[Маршрут("Справочники/КатегорииОбъектов","")]
+	public class КатегорииОбъектовЗапрос: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<КатегорииОбъектовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КатегорииОбъектов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КатегорииОбъектов/ПоСсылке","{Ссылка}")]
+	public class КатегорииОбъектовНайтиПоСсылке: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<КатегорииОбъектовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КатегорииОбъектов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КатегорииОбъектов/ПоКоду","{Код}")]
+	public class КатегорииОбъектовНайтиПоКоду: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<КатегорииОбъектовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КатегорииОбъектов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КатегорииОбъектов/ПоНаименованию","{Наименование}")]
+	public class КатегорииОбъектовНайтиПоНаименованию: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<КатегорииОбъектовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КатегорииОбъектов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КатегорииОбъектовВыбратьПоСсылке: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<КатегорииОбъектовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КатегорииОбъектов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КатегорииОбъектовВыбратьПоКоду: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<КатегорииОбъектовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КатегорииОбъектов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КатегорииОбъектовВыбратьПоНаименованию: V82.СправочникиСсылка.КатегорииОбъектов,IReturn<КатегорииОбъектовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KategoriiObektovResponse//КатегорииОбъектовОтвет
+	public class КатегорииОбъектовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KategoriiObektovs")]
-	[Route("/Catalogs/KategoriiObektovs/{Codes}")]
-	public class KategoriiObektovsRequest/*КатегорииОбъектовЗапрос*/: IReturn<List<KategoriiObektovRequest>>
+	public class КатегорииОбъектовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KategoriiObektovsRequest(params string[] Codes)
+		
+		public object Get(КатегорииОбъектовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KategoriiObektovsResponse//КатегорииОбъектовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KategoriiObektovService /*КатегорииОбъектовСервис*/ : Service
-	{
-		public object Any(KategoriiObektovRequest request)
+		
+		public object Get(КатегорииОбъектовНайтиПоКоду Запрос)
 		{
-			return new KategoriiObektovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KategoriiObektovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КатегорииОбъектов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KategoriiObektovResponse() {Result = "КатегорииОбъектов c кодом '" + request.Code+"' не найдено."};
+				return new КатегорииОбъектовОтвет() {Ответ = "КатегорииОбъектов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KategoriiObektovsRequest request)
+		
+		public object Get(КатегорииОбъектовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КатегорииОбъектов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КатегорииОбъектов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КатегорииОбъектовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КатегорииОбъектовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КатегорииОбъектовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КатегорииОбъектовЗапрос Запрос)
+		{
+			return new КатегорииОбъектовОтвет {Ответ = "КатегорииОбъектов, "};
+		}
+
+		public object Post(КатегорииОбъектовЗапрос ЗапросКатегорииОбъектов)
+		{
+			var Ссылка = (СправочникиСсылка.КатегорииОбъектов)ЗапросКатегорииОбъектов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

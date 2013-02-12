@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/LichnyeKontakty")]
-	[Route("/Catalogs/LichnyeKontakty/FindById/{Id}")]
-	[Route("/Catalogs/LichnyeKontakty/FindByCode/{Code}")]
-	[Route("/Catalogs/LichnyeKontakty/FindByDescr/{Descr}")]
-	public class LichnyeKontaktyRequest/*ЛичныеКонтактыЗапрос*/: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<LichnyeKontaktyRequest>
+	//LichnyeKontakty
+	[Маршрут("Справочники/ЛичныеКонтакты","")]
+	public class ЛичныеКонтактыЗапрос: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<ЛичныеКонтактыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЛичныеКонтакты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЛичныеКонтакты/ПоСсылке","{Ссылка}")]
+	public class ЛичныеКонтактыНайтиПоСсылке: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<ЛичныеКонтактыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЛичныеКонтакты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЛичныеКонтакты/ПоКоду","{Код}")]
+	public class ЛичныеКонтактыНайтиПоКоду: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<ЛичныеКонтактыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЛичныеКонтакты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЛичныеКонтакты/ПоНаименованию","{Наименование}")]
+	public class ЛичныеКонтактыНайтиПоНаименованию: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<ЛичныеКонтактыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЛичныеКонтакты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЛичныеКонтактыВыбратьПоСсылке: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<ЛичныеКонтактыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЛичныеКонтакты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЛичныеКонтактыВыбратьПоКоду: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<ЛичныеКонтактыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЛичныеКонтакты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЛичныеКонтактыВыбратьПоНаименованию: V82.СправочникиСсылка.ЛичныеКонтакты,IReturn<ЛичныеКонтактыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class LichnyeKontaktyResponse//ЛичныеКонтактыОтвет
+	public class ЛичныеКонтактыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/LichnyeKontaktys")]
-	[Route("/Catalogs/LichnyeKontaktys/{Codes}")]
-	public class LichnyeKontaktysRequest/*ЛичныеКонтактыЗапрос*/: IReturn<List<LichnyeKontaktyRequest>>
+	public class ЛичныеКонтактыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public LichnyeKontaktysRequest(params string[] Codes)
+		
+		public object Get(ЛичныеКонтактыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class LichnyeKontaktysResponse//ЛичныеКонтактыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class LichnyeKontaktyService /*ЛичныеКонтактыСервис*/ : Service
-	{
-		public object Any(LichnyeKontaktyRequest request)
+		
+		public object Get(ЛичныеКонтактыНайтиПоКоду Запрос)
 		{
-			return new LichnyeKontaktyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(LichnyeKontaktyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЛичныеКонтакты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new LichnyeKontaktyResponse() {Result = "ЛичныеКонтакты c кодом '" + request.Code+"' не найдено."};
+				return new ЛичныеКонтактыОтвет() {Ответ = "ЛичныеКонтакты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(LichnyeKontaktysRequest request)
+		
+		public object Get(ЛичныеКонтактыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЛичныеКонтакты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЛичныеКонтакты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЛичныеКонтактыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЛичныеКонтактыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЛичныеКонтактыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЛичныеКонтактыЗапрос Запрос)
+		{
+			return new ЛичныеКонтактыОтвет {Ответ = "ЛичныеКонтакты, "};
+		}
+
+		public object Post(ЛичныеКонтактыЗапрос ЗапросЛичныеКонтакты)
+		{
+			var Ссылка = (СправочникиСсылка.ЛичныеКонтакты)ЗапросЛичныеКонтакты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КоэффициентыСтажа:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КоэффициентыСтажаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KoehfficientyStazha/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КоэффициентыСтажа/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KoehfficientyStazhaRequest());
+			КоэффициентыСтажаЗапрос КоэффициентыСтажаЗапрос = null;
+			try
+			{
+				КоэффициентыСтажаЗапрос = Клиент.Get(new КоэффициентыСтажаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КоэффициентыСтажаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КоэффициентыСтажаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KoehfficientyStazha/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КоэффициентыСтажа/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KoehfficientyStazhaRequest());
+			КоэффициентыСтажаЗапрос КоэффициентыСтажаЗапрос = null;
+			try
+			{
+				КоэффициентыСтажаЗапрос = Клиент.Get(new КоэффициентыСтажаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КоэффициентыСтажаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КоэффициентыСтажаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KoehfficientyStazha/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КоэффициентыСтажа/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KoehfficientyStazhaRequest());
+			КоэффициентыСтажаЗапрос КоэффициентыСтажаЗапрос = null;
+			try
+			{
+				КоэффициентыСтажаЗапрос = Клиент.Get(new КоэффициентыСтажаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КоэффициентыСтажаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КоэффициентыСтажаЗапрос КоэффициентыСтажаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KoehfficientyStazha/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КоэффициентыСтажа?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KoehfficientyStazhaRequest());
+			var КоэффициентыСтажаОтвет = Клиент.Post(КоэффициентыСтажаЗапрос);
+		}
+		public static void Записать(КоэффициентыСтажаЗапрос КоэффициентыСтажаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/КоэффициентыСтажа?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КоэффициентыСтажаОтвет = Клиент.Put(КоэффициентыСтажаЗапрос);
+		}
+		public static void Удалить(КоэффициентыСтажаЗапрос КоэффициентыСтажаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КоэффициентыСтажа?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КоэффициентыСтажаОтвет = Клиент.Delete(КоэффициентыСтажаЗапрос);
 		}
 	}
 }

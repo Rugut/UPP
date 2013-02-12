@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class МестаХранения:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static МестаХраненияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/MestaKHraneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МестаХранения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new MestaKHraneniyaRequest());
+			МестаХраненияЗапрос МестаХраненияЗапрос = null;
+			try
+			{
+				МестаХраненияЗапрос = Клиент.Get(new МестаХраненияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МестаХраненияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static МестаХраненияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/MestaKHraneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МестаХранения/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new MestaKHraneniyaRequest());
+			МестаХраненияЗапрос МестаХраненияЗапрос = null;
+			try
+			{
+				МестаХраненияЗапрос = Клиент.Get(new МестаХраненияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МестаХраненияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static МестаХраненияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/MestaKHraneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МестаХранения/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new MestaKHraneniyaRequest());
+			МестаХраненияЗапрос МестаХраненияЗапрос = null;
+			try
+			{
+				МестаХраненияЗапрос = Клиент.Get(new МестаХраненияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МестаХраненияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(МестаХраненияЗапрос МестаХраненияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/MestaKHraneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МестаХранения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new MestaKHraneniyaRequest());
+			var МестаХраненияОтвет = Клиент.Post(МестаХраненияЗапрос);
+		}
+		public static void Записать(МестаХраненияЗапрос МестаХраненияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/МестаХранения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var МестаХраненияОтвет = Клиент.Put(МестаХраненияЗапрос);
+		}
+		public static void Удалить(МестаХраненияЗапрос МестаХраненияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/МестаХранения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var МестаХраненияОтвет = Клиент.Delete(МестаХраненияЗапрос);
 		}
 	}
 }

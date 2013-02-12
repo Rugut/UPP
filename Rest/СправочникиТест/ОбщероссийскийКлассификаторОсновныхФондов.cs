@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОбщероссийскийКлассификаторОсновныхФондов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОбщероссийскийКлассификаторОсновныхФондовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторОсновныхФондов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest());
+			ОбщероссийскийКлассификаторОсновныхФондовЗапрос ОбщероссийскийКлассификаторОсновныхФондовЗапрос = null;
+			try
+			{
+				ОбщероссийскийКлассификаторОсновныхФондовЗапрос = Клиент.Get(new ОбщероссийскийКлассификаторОсновныхФондовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбщероссийскийКлассификаторОсновныхФондовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОбщероссийскийКлассификаторОсновныхФондовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторОсновныхФондов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest());
+			ОбщероссийскийКлассификаторОсновныхФондовЗапрос ОбщероссийскийКлассификаторОсновныхФондовЗапрос = null;
+			try
+			{
+				ОбщероссийскийКлассификаторОсновныхФондовЗапрос = Клиент.Get(new ОбщероссийскийКлассификаторОсновныхФондовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбщероссийскийКлассификаторОсновныхФондовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОбщероссийскийКлассификаторОсновныхФондовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторОсновныхФондов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest());
+			ОбщероссийскийКлассификаторОсновныхФондовЗапрос ОбщероссийскийКлассификаторОсновныхФондовЗапрос = null;
+			try
+			{
+				ОбщероссийскийКлассификаторОсновныхФондовЗапрос = Клиент.Get(new ОбщероссийскийКлассификаторОсновныхФондовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбщероссийскийКлассификаторОсновныхФондовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОбщероссийскийКлассификаторОсновныхФондовЗапрос ОбщероссийскийКлассификаторОсновныхФондовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторОсновныхФондов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest());
+			var ОбщероссийскийКлассификаторОсновныхФондовОтвет = Клиент.Post(ОбщероссийскийКлассификаторОсновныхФондовЗапрос);
+		}
+		public static void Записать(ОбщероссийскийКлассификаторОсновныхФондовЗапрос ОбщероссийскийКлассификаторОсновныхФондовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторОсновныхФондов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбщероссийскийКлассификаторОсновныхФондовОтвет = Клиент.Put(ОбщероссийскийКлассификаторОсновныхФондовЗапрос);
+		}
+		public static void Удалить(ОбщероссийскийКлассификаторОсновныхФондовЗапрос ОбщероссийскийКлассификаторОсновныхФондовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторОсновныхФондов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбщероссийскийКлассификаторОсновныхФондовОтвет = Клиент.Delete(ОбщероссийскийКлассификаторОсновныхФондовЗапрос);
 		}
 	}
 }

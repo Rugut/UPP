@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДетализацияОтчетаОПрибыляхИУбытках:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДетализацияОтчетаОПрибыляхИУбыткахЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияОтчетаОПрибыляхИУбытках/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest());
+			ДетализацияОтчетаОПрибыляхИУбыткахЗапрос ДетализацияОтчетаОПрибыляхИУбыткахЗапрос = null;
+			try
+			{
+				ДетализацияОтчетаОПрибыляхИУбыткахЗапрос = Клиент.Get(new ДетализацияОтчетаОПрибыляхИУбыткахЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДетализацияОтчетаОПрибыляхИУбыткахЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДетализацияОтчетаОПрибыляхИУбыткахЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияОтчетаОПрибыляхИУбытках/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest());
+			ДетализацияОтчетаОПрибыляхИУбыткахЗапрос ДетализацияОтчетаОПрибыляхИУбыткахЗапрос = null;
+			try
+			{
+				ДетализацияОтчетаОПрибыляхИУбыткахЗапрос = Клиент.Get(new ДетализацияОтчетаОПрибыляхИУбыткахЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДетализацияОтчетаОПрибыляхИУбыткахЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДетализацияОтчетаОПрибыляхИУбыткахЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияОтчетаОПрибыляхИУбытках/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest());
+			ДетализацияОтчетаОПрибыляхИУбыткахЗапрос ДетализацияОтчетаОПрибыляхИУбыткахЗапрос = null;
+			try
+			{
+				ДетализацияОтчетаОПрибыляхИУбыткахЗапрос = Клиент.Get(new ДетализацияОтчетаОПрибыляхИУбыткахЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДетализацияОтчетаОПрибыляхИУбыткахЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос ДетализацияОтчетаОПрибыляхИУбыткахЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияОтчетаОПрибыляхИУбытках?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest());
+			var ДетализацияОтчетаОПрибыляхИУбыткахОтвет = Клиент.Post(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос);
+		}
+		public static void Записать(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос ДетализацияОтчетаОПрибыляхИУбыткахЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияОтчетаОПрибыляхИУбытках?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДетализацияОтчетаОПрибыляхИУбыткахОтвет = Клиент.Put(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос);
+		}
+		public static void Удалить(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос ДетализацияОтчетаОПрибыляхИУбыткахЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияОтчетаОПрибыляхИУбытках?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДетализацияОтчетаОПрибыляхИУбыткахОтвет = Клиент.Delete(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос);
 		}
 	}
 }

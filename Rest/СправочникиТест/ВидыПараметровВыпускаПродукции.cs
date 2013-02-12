@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыПараметровВыпускаПродукции:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыПараметровВыпускаПродукцииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyParametrovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыПараметровВыпускаПродукции/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidyParametrovVypuskaProdukciiRequest());
+			ВидыПараметровВыпускаПродукцииЗапрос ВидыПараметровВыпускаПродукцииЗапрос = null;
+			try
+			{
+				ВидыПараметровВыпускаПродукцииЗапрос = Клиент.Get(new ВидыПараметровВыпускаПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыПараметровВыпускаПродукцииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыПараметровВыпускаПродукцииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyParametrovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыПараметровВыпускаПродукции/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidyParametrovVypuskaProdukciiRequest());
+			ВидыПараметровВыпускаПродукцииЗапрос ВидыПараметровВыпускаПродукцииЗапрос = null;
+			try
+			{
+				ВидыПараметровВыпускаПродукцииЗапрос = Клиент.Get(new ВидыПараметровВыпускаПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыПараметровВыпускаПродукцииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыПараметровВыпускаПродукцииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyParametrovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыПараметровВыпускаПродукции/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidyParametrovVypuskaProdukciiRequest());
+			ВидыПараметровВыпускаПродукцииЗапрос ВидыПараметровВыпускаПродукцииЗапрос = null;
+			try
+			{
+				ВидыПараметровВыпускаПродукцииЗапрос = Клиент.Get(new ВидыПараметровВыпускаПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыПараметровВыпускаПродукцииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыПараметровВыпускаПродукцииЗапрос ВидыПараметровВыпускаПродукцииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyParametrovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыПараметровВыпускаПродукции?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidyParametrovVypuskaProdukciiRequest());
+			var ВидыПараметровВыпускаПродукцииОтвет = Клиент.Post(ВидыПараметровВыпускаПродукцииЗапрос);
+		}
+		public static void Записать(ВидыПараметровВыпускаПродукцииЗапрос ВидыПараметровВыпускаПродукцииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыПараметровВыпускаПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыПараметровВыпускаПродукцииОтвет = Клиент.Put(ВидыПараметровВыпускаПродукцииЗапрос);
+		}
+		public static void Удалить(ВидыПараметровВыпускаПродукцииЗапрос ВидыПараметровВыпускаПродукцииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыПараметровВыпускаПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыПараметровВыпускаПродукцииОтвет = Клиент.Delete(ВидыПараметровВыпускаПродукцииЗапрос);
 		}
 	}
 }

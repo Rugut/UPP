@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/RabochieMesta")]
-	[Route("/Catalogs/RabochieMesta/FindById/{Id}")]
-	[Route("/Catalogs/RabochieMesta/FindByCode/{Code}")]
-	[Route("/Catalogs/RabochieMesta/FindByDescr/{Descr}")]
-	public class RabochieMestaRequest/*РабочиеМестаЗапрос*/: V82.СправочникиСсылка.РабочиеМеста,IReturn<RabochieMestaRequest>
+	//RabochieMesta
+	[Маршрут("Справочники/РабочиеМеста","")]
+	public class РабочиеМестаЗапрос: V82.СправочникиСсылка.РабочиеМеста,IReturn<РабочиеМестаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/РабочиеМеста/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/РабочиеМеста/ПоСсылке","{Ссылка}")]
+	public class РабочиеМестаНайтиПоСсылке: V82.СправочникиСсылка.РабочиеМеста,IReturn<РабочиеМестаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/РабочиеМеста/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/РабочиеМеста/ПоКоду","{Код}")]
+	public class РабочиеМестаНайтиПоКоду: V82.СправочникиСсылка.РабочиеМеста,IReturn<РабочиеМестаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/РабочиеМеста/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/РабочиеМеста/ПоНаименованию","{Наименование}")]
+	public class РабочиеМестаНайтиПоНаименованию: V82.СправочникиСсылка.РабочиеМеста,IReturn<РабочиеМестаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/РабочиеМеста/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РабочиеМестаВыбратьПоСсылке: V82.СправочникиСсылка.РабочиеМеста,IReturn<РабочиеМестаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РабочиеМеста/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РабочиеМестаВыбратьПоКоду: V82.СправочникиСсылка.РабочиеМеста,IReturn<РабочиеМестаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РабочиеМеста/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РабочиеМестаВыбратьПоНаименованию: V82.СправочникиСсылка.РабочиеМеста,IReturn<РабочиеМестаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RabochieMestaResponse//РабочиеМестаОтвет
+	public class РабочиеМестаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/RabochieMestas")]
-	[Route("/Catalogs/RabochieMestas/{Codes}")]
-	public class RabochieMestasRequest/*РабочиеМестаЗапрос*/: IReturn<List<RabochieMestaRequest>>
+	public class РабочиеМестаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RabochieMestasRequest(params string[] Codes)
+		
+		public object Get(РабочиеМестаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RabochieMestasResponse//РабочиеМестаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RabochieMestaService /*РабочиеМестаСервис*/ : Service
-	{
-		public object Any(RabochieMestaRequest request)
+		
+		public object Get(РабочиеМестаНайтиПоКоду Запрос)
 		{
-			return new RabochieMestaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RabochieMestaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.РабочиеМеста.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RabochieMestaResponse() {Result = "РабочиеМеста c кодом '" + request.Code+"' не найдено."};
+				return new РабочиеМестаОтвет() {Ответ = "РабочиеМеста c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RabochieMestasRequest request)
+		
+		public object Get(РабочиеМестаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РабочиеМеста>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.РабочиеМеста.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РабочиеМестаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РабочиеМестаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РабочиеМестаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РабочиеМестаЗапрос Запрос)
+		{
+			return new РабочиеМестаОтвет {Ответ = "РабочиеМеста, "};
+		}
+
+		public object Post(РабочиеМестаЗапрос ЗапросРабочиеМеста)
+		{
+			var Ссылка = (СправочникиСсылка.РабочиеМеста)ЗапросРабочиеМеста;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

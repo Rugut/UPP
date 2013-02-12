@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam")]
-	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam/FindById/{Id}")]
-	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam/FindByCode/{Code}")]
-	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam/FindByDescr/{Descr}")]
-	public class ProfiliIzmeneniyaPlanovPoPeriodamRequest/*ПрофилиИзмененияПлановПоПериодамЗапрос*/: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ProfiliIzmeneniyaPlanovPoPeriodamRequest>
+	//ProfiliIzmeneniyaPlanovPoPeriodam
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам","")]
+	public class ПрофилиИзмененияПлановПоПериодамЗапрос: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ПрофилиИзмененияПлановПоПериодамЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/ПоСсылке","{Ссылка}")]
+	public class ПрофилиИзмененияПлановПоПериодамНайтиПоСсылке: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ПрофилиИзмененияПлановПоПериодамНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/ПоКоду","{Код}")]
+	public class ПрофилиИзмененияПлановПоПериодамНайтиПоКоду: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ПрофилиИзмененияПлановПоПериодамНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/ПоНаименованию","{Наименование}")]
+	public class ПрофилиИзмененияПлановПоПериодамНайтиПоНаименованию: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ПрофилиИзмененияПлановПоПериодамНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиИзмененияПлановПоПериодамВыбратьПоСсылке: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ПрофилиИзмененияПлановПоПериодамВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиИзмененияПлановПоПериодамВыбратьПоКоду: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ПрофилиИзмененияПлановПоПериодамВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрофилиИзмененияПлановПоПериодам/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиИзмененияПлановПоПериодамВыбратьПоНаименованию: V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам,IReturn<ПрофилиИзмененияПлановПоПериодамВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProfiliIzmeneniyaPlanovPoPeriodamResponse//ПрофилиИзмененияПлановПоПериодамОтвет
+	public class ПрофилиИзмененияПлановПоПериодамОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodams")]
-	[Route("/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodams/{Codes}")]
-	public class ProfiliIzmeneniyaPlanovPoPeriodamsRequest/*ПрофилиИзмененияПлановПоПериодамЗапрос*/: IReturn<List<ProfiliIzmeneniyaPlanovPoPeriodamRequest>>
+	public class ПрофилиИзмененияПлановПоПериодамСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProfiliIzmeneniyaPlanovPoPeriodamsRequest(params string[] Codes)
+		
+		public object Get(ПрофилиИзмененияПлановПоПериодамНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProfiliIzmeneniyaPlanovPoPeriodamsResponse//ПрофилиИзмененияПлановПоПериодамОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProfiliIzmeneniyaPlanovPoPeriodamService /*ПрофилиИзмененияПлановПоПериодамСервис*/ : Service
-	{
-		public object Any(ProfiliIzmeneniyaPlanovPoPeriodamRequest request)
+		
+		public object Get(ПрофилиИзмененияПлановПоПериодамНайтиПоКоду Запрос)
 		{
-			return new ProfiliIzmeneniyaPlanovPoPeriodamResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ProfiliIzmeneniyaPlanovPoPeriodamRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПрофилиИзмененияПлановПоПериодам.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ProfiliIzmeneniyaPlanovPoPeriodamResponse() {Result = "ПрофилиИзмененияПлановПоПериодам c кодом '" + request.Code+"' не найдено."};
+				return new ПрофилиИзмененияПлановПоПериодамОтвет() {Ответ = "ПрофилиИзмененияПлановПоПериодам c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ProfiliIzmeneniyaPlanovPoPeriodamsRequest request)
+		
+		public object Get(ПрофилиИзмененияПлановПоПериодамНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПрофилиИзмененияПлановПоПериодам.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПрофилиИзмененияПлановПоПериодамВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрофилиИзмененияПлановПоПериодамВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрофилиИзмененияПлановПоПериодамВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПрофилиИзмененияПлановПоПериодамЗапрос Запрос)
+		{
+			return new ПрофилиИзмененияПлановПоПериодамОтвет {Ответ = "ПрофилиИзмененияПлановПоПериодам, "};
+		}
+
+		public object Post(ПрофилиИзмененияПлановПоПериодамЗапрос ЗапросПрофилиИзмененияПлановПоПериодам)
+		{
+			var Ссылка = (СправочникиСсылка.ПрофилиИзмененияПлановПоПериодам)ЗапросПрофилиИзмененияПлановПоПериодам;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

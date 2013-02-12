@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиФормированияДокументовОтработанногоВремени:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиФормированияДокументовОтработанногоВремениЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовОтработанногоВремени/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest());
+			НастройкиФормированияДокументовОтработанногоВремениЗапрос НастройкиФормированияДокументовОтработанногоВремениЗапрос = null;
+			try
+			{
+				НастройкиФормированияДокументовОтработанногоВремениЗапрос = Клиент.Get(new НастройкиФормированияДокументовОтработанногоВремениЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиФормированияДокументовОтработанногоВремениЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиФормированияДокументовОтработанногоВремениЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовОтработанногоВремени/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest());
+			НастройкиФормированияДокументовОтработанногоВремениЗапрос НастройкиФормированияДокументовОтработанногоВремениЗапрос = null;
+			try
+			{
+				НастройкиФормированияДокументовОтработанногоВремениЗапрос = Клиент.Get(new НастройкиФормированияДокументовОтработанногоВремениЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиФормированияДокументовОтработанногоВремениЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкиФормированияДокументовОтработанногоВремениЗапрос НастройкиФормированияДокументовОтработанногоВремениЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовОтработанногоВремени?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest());
+			var НастройкиФормированияДокументовОтработанногоВремениОтвет = Клиент.Post(НастройкиФормированияДокументовОтработанногоВремениЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкиФормированияДокументовОтработанногоВремениЗапрос НастройкиФормированияДокументовОтработанногоВремениЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовОтработанногоВремени?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest());
+			var НастройкиФормированияДокументовОтработанногоВремениОтвет = Клиент.Put(НастройкиФормированияДокументовОтработанногоВремениЗапрос);
+		}
+		public static void Удалить(НастройкиФормированияДокументовОтработанногоВремениЗапрос НастройкиФормированияДокументовОтработанногоВремениЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовОтработанногоВремени?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиФормированияДокументовОтработанногоВремениОтвет = Клиент.Delete(НастройкиФормированияДокументовОтработанногоВремениЗапрос);
 		}
 	}
 }

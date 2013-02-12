@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov")]
-	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov/FindById/{Id}")]
-	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrov/FindByDescr/{Descr}")]
-	public class GruppyZamenyaemostiRabochikhCentrovRequest/*ГруппыЗаменяемостиРабочихЦентровЗапрос*/: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<GruppyZamenyaemostiRabochikhCentrovRequest>
+	//GruppyZamenyaemostiRabochikhCentrov
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров","")]
+	public class ГруппыЗаменяемостиРабочихЦентровЗапрос: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<ГруппыЗаменяемостиРабочихЦентровЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/ПоСсылке","{Ссылка}")]
+	public class ГруппыЗаменяемостиРабочихЦентровНайтиПоСсылке: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<ГруппыЗаменяемостиРабочихЦентровНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/ПоКоду","{Код}")]
+	public class ГруппыЗаменяемостиРабочихЦентровНайтиПоКоду: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<ГруппыЗаменяемостиРабочихЦентровНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/ПоНаименованию","{Наименование}")]
+	public class ГруппыЗаменяемостиРабочихЦентровНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<ГруппыЗаменяемостиРабочихЦентровНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыЗаменяемостиРабочихЦентровВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<ГруппыЗаменяемостиРабочихЦентровВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыЗаменяемостиРабочихЦентровВыбратьПоКоду: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<ГруппыЗаменяемостиРабочихЦентровВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыЗаменяемостиРабочихЦентровВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров,IReturn<ГруппыЗаменяемостиРабочихЦентровВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppyZamenyaemostiRabochikhCentrovResponse//ГруппыЗаменяемостиРабочихЦентровОтвет
+	public class ГруппыЗаменяемостиРабочихЦентровОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrovs")]
-	[Route("/Catalogs/GruppyZamenyaemostiRabochikhCentrovs/{Codes}")]
-	public class GruppyZamenyaemostiRabochikhCentrovsRequest/*ГруппыЗаменяемостиРабочихЦентровЗапрос*/: IReturn<List<GruppyZamenyaemostiRabochikhCentrovRequest>>
+	public class ГруппыЗаменяемостиРабочихЦентровСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppyZamenyaemostiRabochikhCentrovsRequest(params string[] Codes)
+		
+		public object Get(ГруппыЗаменяемостиРабочихЦентровНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppyZamenyaemostiRabochikhCentrovsResponse//ГруппыЗаменяемостиРабочихЦентровОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppyZamenyaemostiRabochikhCentrovService /*ГруппыЗаменяемостиРабочихЦентровСервис*/ : Service
-	{
-		public object Any(GruppyZamenyaemostiRabochikhCentrovRequest request)
+		
+		public object Get(ГруппыЗаменяемостиРабочихЦентровНайтиПоКоду Запрос)
 		{
-			return new GruppyZamenyaemostiRabochikhCentrovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppyZamenyaemostiRabochikhCentrovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыЗаменяемостиРабочихЦентров.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppyZamenyaemostiRabochikhCentrovResponse() {Result = "ГруппыЗаменяемостиРабочихЦентров c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыЗаменяемостиРабочихЦентровОтвет() {Ответ = "ГруппыЗаменяемостиРабочихЦентров c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppyZamenyaemostiRabochikhCentrovsRequest request)
+		
+		public object Get(ГруппыЗаменяемостиРабочихЦентровНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыЗаменяемостиРабочихЦентров.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыЗаменяемостиРабочихЦентровВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыЗаменяемостиРабочихЦентровВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыЗаменяемостиРабочихЦентровВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыЗаменяемостиРабочихЦентровЗапрос Запрос)
+		{
+			return new ГруппыЗаменяемостиРабочихЦентровОтвет {Ответ = "ГруппыЗаменяемостиРабочихЦентров, "};
+		}
+
+		public object Post(ГруппыЗаменяемостиРабочихЦентровЗапрос ЗапросГруппыЗаменяемостиРабочихЦентров)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыЗаменяемостиРабочихЦентров)ЗапросГруппыЗаменяемостиРабочихЦентров;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

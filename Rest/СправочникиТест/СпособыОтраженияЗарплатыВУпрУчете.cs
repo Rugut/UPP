@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СпособыОтраженияЗарплатыВУпрУчете:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СпособыОтраженияЗарплатыВУпрУчетеЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaZarplatyVUprUchete/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияЗарплатыВУпрУчете/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SposobyOtrazheniyaZarplatyVUprUcheteRequest());
+			СпособыОтраженияЗарплатыВУпрУчетеЗапрос СпособыОтраженияЗарплатыВУпрУчетеЗапрос = null;
+			try
+			{
+				СпособыОтраженияЗарплатыВУпрУчетеЗапрос = Клиент.Get(new СпособыОтраженияЗарплатыВУпрУчетеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыОтраженияЗарплатыВУпрУчетеЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СпособыОтраженияЗарплатыВУпрУчетеЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaZarplatyVUprUchete/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияЗарплатыВУпрУчете/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SposobyOtrazheniyaZarplatyVUprUcheteRequest());
+			СпособыОтраженияЗарплатыВУпрУчетеЗапрос СпособыОтраженияЗарплатыВУпрУчетеЗапрос = null;
+			try
+			{
+				СпособыОтраженияЗарплатыВУпрУчетеЗапрос = Клиент.Get(new СпособыОтраженияЗарплатыВУпрУчетеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыОтраженияЗарплатыВУпрУчетеЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(СпособыОтраженияЗарплатыВУпрУчетеЗапрос СпособыОтраженияЗарплатыВУпрУчетеЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaZarplatyVUprUchete/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияЗарплатыВУпрУчете?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SposobyOtrazheniyaZarplatyVUprUcheteRequest());
+			var СпособыОтраженияЗарплатыВУпрУчетеОтвет = Клиент.Post(СпособыОтраженияЗарплатыВУпрУчетеЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(СпособыОтраженияЗарплатыВУпрУчетеЗапрос СпособыОтраженияЗарплатыВУпрУчетеЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaZarplatyVUprUchete/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияЗарплатыВУпрУчете?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SposobyOtrazheniyaZarplatyVUprUcheteRequest());
+			var СпособыОтраженияЗарплатыВУпрУчетеОтвет = Клиент.Put(СпособыОтраженияЗарплатыВУпрУчетеЗапрос);
+		}
+		public static void Удалить(СпособыОтраженияЗарплатыВУпрУчетеЗапрос СпособыОтраженияЗарплатыВУпрУчетеЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияЗарплатыВУпрУчете?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СпособыОтраженияЗарплатыВУпрУчетеОтвет = Клиент.Delete(СпособыОтраженияЗарплатыВУпрУчетеЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ObrabotkiObsluzhivaniyaTO")]
-	[Route("/Catalogs/ObrabotkiObsluzhivaniyaTO/FindById/{Id}")]
-	[Route("/Catalogs/ObrabotkiObsluzhivaniyaTO/FindByCode/{Code}")]
-	[Route("/Catalogs/ObrabotkiObsluzhivaniyaTO/FindByDescr/{Descr}")]
-	public class ObrabotkiObsluzhivaniyaTORequest/*ОбработкиОбслуживанияТОЗапрос*/: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ObrabotkiObsluzhivaniyaTORequest>
+	//ObrabotkiObsluzhivaniyaTO
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО","")]
+	public class ОбработкиОбслуживанияТОЗапрос: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ОбработкиОбслуживанияТОЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/ПоСсылке","{Ссылка}")]
+	public class ОбработкиОбслуживанияТОНайтиПоСсылке: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ОбработкиОбслуживанияТОНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/ПоКоду","{Код}")]
+	public class ОбработкиОбслуживанияТОНайтиПоКоду: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ОбработкиОбслуживанияТОНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/ПоНаименованию","{Наименование}")]
+	public class ОбработкиОбслуживанияТОНайтиПоНаименованию: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ОбработкиОбслуживанияТОНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбработкиОбслуживанияТОВыбратьПоСсылке: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ОбработкиОбслуживанияТОВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбработкиОбслуживанияТОВыбратьПоКоду: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ОбработкиОбслуживанияТОВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбработкиОбслуживанияТО/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбработкиОбслуживанияТОВыбратьПоНаименованию: V82.СправочникиСсылка.ОбработкиОбслуживанияТО,IReturn<ОбработкиОбслуживанияТОВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ObrabotkiObsluzhivaniyaTOResponse//ОбработкиОбслуживанияТООтвет
+	public class ОбработкиОбслуживанияТООтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ObrabotkiObsluzhivaniyaTOs")]
-	[Route("/Catalogs/ObrabotkiObsluzhivaniyaTOs/{Codes}")]
-	public class ObrabotkiObsluzhivaniyaTOsRequest/*ОбработкиОбслуживанияТОЗапрос*/: IReturn<List<ObrabotkiObsluzhivaniyaTORequest>>
+	public class ОбработкиОбслуживанияТОСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ObrabotkiObsluzhivaniyaTOsRequest(params string[] Codes)
+		
+		public object Get(ОбработкиОбслуживанияТОНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ObrabotkiObsluzhivaniyaTOsResponse//ОбработкиОбслуживанияТООтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ObrabotkiObsluzhivaniyaTOService /*ОбработкиОбслуживанияТОСервис*/ : Service
-	{
-		public object Any(ObrabotkiObsluzhivaniyaTORequest request)
+		
+		public object Get(ОбработкиОбслуживанияТОНайтиПоКоду Запрос)
 		{
-			return new ObrabotkiObsluzhivaniyaTOResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ObrabotkiObsluzhivaniyaTORequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОбработкиОбслуживанияТО.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ObrabotkiObsluzhivaniyaTOResponse() {Result = "ОбработкиОбслуживанияТО c кодом '" + request.Code+"' не найдено."};
+				return new ОбработкиОбслуживанияТООтвет() {Ответ = "ОбработкиОбслуживанияТО c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ObrabotkiObsluzhivaniyaTOsRequest request)
+		
+		public object Get(ОбработкиОбслуживанияТОНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОбработкиОбслуживанияТО>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОбработкиОбслуживанияТО.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОбработкиОбслуживанияТОВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбработкиОбслуживанияТОВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбработкиОбслуживанияТОВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОбработкиОбслуживанияТОЗапрос Запрос)
+		{
+			return new ОбработкиОбслуживанияТООтвет {Ответ = "ОбработкиОбслуживанияТО, "};
+		}
+
+		public object Post(ОбработкиОбслуживанияТОЗапрос ЗапросОбработкиОбслуживанияТО)
+		{
+			var Ссылка = (СправочникиСсылка.ОбработкиОбслуживанияТО)ЗапросОбработкиОбслуживанияТО;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

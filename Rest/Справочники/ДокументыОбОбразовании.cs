@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DokumentyObObrazovanii")]
-	[Route("/Catalogs/DokumentyObObrazovanii/FindById/{Id}")]
-	[Route("/Catalogs/DokumentyObObrazovanii/FindByCode/{Code}")]
-	[Route("/Catalogs/DokumentyObObrazovanii/FindByDescr/{Descr}")]
-	public class DokumentyObObrazovaniiRequest/*ДокументыОбОбразованииЗапрос*/: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<DokumentyObObrazovaniiRequest>
+	//DokumentyObObrazovanii
+	[Маршрут("Справочники/ДокументыОбОбразовании","")]
+	public class ДокументыОбОбразованииЗапрос: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<ДокументыОбОбразованииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДокументыОбОбразовании/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДокументыОбОбразовании/ПоСсылке","{Ссылка}")]
+	public class ДокументыОбОбразованииНайтиПоСсылке: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<ДокументыОбОбразованииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДокументыОбОбразовании/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДокументыОбОбразовании/ПоКоду","{Код}")]
+	public class ДокументыОбОбразованииНайтиПоКоду: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<ДокументыОбОбразованииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДокументыОбОбразовании/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДокументыОбОбразовании/ПоНаименованию","{Наименование}")]
+	public class ДокументыОбОбразованииНайтиПоНаименованию: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<ДокументыОбОбразованииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДокументыОбОбразовании/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыОбОбразованииВыбратьПоСсылке: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<ДокументыОбОбразованииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДокументыОбОбразовании/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыОбОбразованииВыбратьПоКоду: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<ДокументыОбОбразованииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДокументыОбОбразовании/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыОбОбразованииВыбратьПоНаименованию: V82.СправочникиСсылка.ДокументыОбОбразовании,IReturn<ДокументыОбОбразованииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DokumentyObObrazovaniiResponse//ДокументыОбОбразованииОтвет
+	public class ДокументыОбОбразованииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DokumentyObObrazovaniis")]
-	[Route("/Catalogs/DokumentyObObrazovaniis/{Codes}")]
-	public class DokumentyObObrazovaniisRequest/*ДокументыОбОбразованииЗапрос*/: IReturn<List<DokumentyObObrazovaniiRequest>>
+	public class ДокументыОбОбразованииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DokumentyObObrazovaniisRequest(params string[] Codes)
+		
+		public object Get(ДокументыОбОбразованииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DokumentyObObrazovaniisResponse//ДокументыОбОбразованииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DokumentyObObrazovaniiService /*ДокументыОбОбразованииСервис*/ : Service
-	{
-		public object Any(DokumentyObObrazovaniiRequest request)
+		
+		public object Get(ДокументыОбОбразованииНайтиПоКоду Запрос)
 		{
-			return new DokumentyObObrazovaniiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DokumentyObObrazovaniiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДокументыОбОбразовании.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DokumentyObObrazovaniiResponse() {Result = "ДокументыОбОбразовании c кодом '" + request.Code+"' не найдено."};
+				return new ДокументыОбОбразованииОтвет() {Ответ = "ДокументыОбОбразовании c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DokumentyObObrazovaniisRequest request)
+		
+		public object Get(ДокументыОбОбразованииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДокументыОбОбразовании>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДокументыОбОбразовании.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДокументыОбОбразованииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДокументыОбОбразованииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДокументыОбОбразованииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДокументыОбОбразованииЗапрос Запрос)
+		{
+			return new ДокументыОбОбразованииОтвет {Ответ = "ДокументыОбОбразовании, "};
+		}
+
+		public object Post(ДокументыОбОбразованииЗапрос ЗапросДокументыОбОбразовании)
+		{
+			var Ссылка = (СправочникиСсылка.ДокументыОбОбразовании)ЗапросДокументыОбОбразовании;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

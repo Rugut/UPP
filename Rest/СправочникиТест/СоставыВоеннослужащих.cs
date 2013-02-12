@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СоставыВоеннослужащих:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СоставыВоеннослужащихЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavyVoennosluzhashhikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставыВоеннослужащих/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SostavyVoennosluzhashhikhRequest());
+			СоставыВоеннослужащихЗапрос СоставыВоеннослужащихЗапрос = null;
+			try
+			{
+				СоставыВоеннослужащихЗапрос = Клиент.Get(new СоставыВоеннослужащихЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СоставыВоеннослужащихЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СоставыВоеннослужащихЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavyVoennosluzhashhikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставыВоеннослужащих/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SostavyVoennosluzhashhikhRequest());
+			СоставыВоеннослужащихЗапрос СоставыВоеннослужащихЗапрос = null;
+			try
+			{
+				СоставыВоеннослужащихЗапрос = Клиент.Get(new СоставыВоеннослужащихЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СоставыВоеннослужащихЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(СоставыВоеннослужащихЗапрос СоставыВоеннослужащихЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavyVoennosluzhashhikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставыВоеннослужащих?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SostavyVoennosluzhashhikhRequest());
+			var СоставыВоеннослужащихОтвет = Клиент.Post(СоставыВоеннослужащихЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(СоставыВоеннослужащихЗапрос СоставыВоеннослужащихЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavyVoennosluzhashhikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставыВоеннослужащих?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SostavyVoennosluzhashhikhRequest());
+			var СоставыВоеннослужащихОтвет = Клиент.Put(СоставыВоеннослужащихЗапрос);
+		}
+		public static void Удалить(СоставыВоеннослужащихЗапрос СоставыВоеннослужащихЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СоставыВоеннослужащих?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СоставыВоеннослужащихОтвет = Клиент.Delete(СоставыВоеннослужащихЗапрос);
 		}
 	}
 }

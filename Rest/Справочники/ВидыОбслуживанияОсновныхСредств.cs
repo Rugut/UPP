@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv")]
-	[Route("/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv/FindById/{Id}")]
-	[Route("/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv/FindByDescr/{Descr}")]
-	public class VidyObsluzhivaniyaOsnovnykhSredstvRequest/*ВидыОбслуживанияОсновныхСредствЗапрос*/: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<VidyObsluzhivaniyaOsnovnykhSredstvRequest>
+	//VidyObsluzhivaniyaOsnovnykhSredstv
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств","")]
+	public class ВидыОбслуживанияОсновныхСредствЗапрос: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<ВидыОбслуживанияОсновныхСредствЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/ПоСсылке","{Ссылка}")]
+	public class ВидыОбслуживанияОсновныхСредствНайтиПоСсылке: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<ВидыОбслуживанияОсновныхСредствНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/ПоКоду","{Код}")]
+	public class ВидыОбслуживанияОсновныхСредствНайтиПоКоду: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<ВидыОбслуживанияОсновныхСредствНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/ПоНаименованию","{Наименование}")]
+	public class ВидыОбслуживанияОсновныхСредствНайтиПоНаименованию: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<ВидыОбслуживанияОсновныхСредствНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбслуживанияОсновныхСредствВыбратьПоСсылке: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<ВидыОбслуживанияОсновныхСредствВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбслуживанияОсновныхСредствВыбратьПоКоду: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<ВидыОбслуживанияОсновныхСредствВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОбслуживанияОсновныхСредств/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбслуживанияОсновныхСредствВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств,IReturn<ВидыОбслуживанияОсновныхСредствВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyObsluzhivaniyaOsnovnykhSredstvResponse//ВидыОбслуживанияОсновныхСредствОтвет
+	public class ВидыОбслуживанияОсновныхСредствОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstvs")]
-	[Route("/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstvs/{Codes}")]
-	public class VidyObsluzhivaniyaOsnovnykhSredstvsRequest/*ВидыОбслуживанияОсновныхСредствЗапрос*/: IReturn<List<VidyObsluzhivaniyaOsnovnykhSredstvRequest>>
+	public class ВидыОбслуживанияОсновныхСредствСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyObsluzhivaniyaOsnovnykhSredstvsRequest(params string[] Codes)
+		
+		public object Get(ВидыОбслуживанияОсновныхСредствНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyObsluzhivaniyaOsnovnykhSredstvsResponse//ВидыОбслуживанияОсновныхСредствОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyObsluzhivaniyaOsnovnykhSredstvService /*ВидыОбслуживанияОсновныхСредствСервис*/ : Service
-	{
-		public object Any(VidyObsluzhivaniyaOsnovnykhSredstvRequest request)
+		
+		public object Get(ВидыОбслуживанияОсновныхСредствНайтиПоКоду Запрос)
 		{
-			return new VidyObsluzhivaniyaOsnovnykhSredstvResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyObsluzhivaniyaOsnovnykhSredstvRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыОбслуживанияОсновныхСредств.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyObsluzhivaniyaOsnovnykhSredstvResponse() {Result = "ВидыОбслуживанияОсновныхСредств c кодом '" + request.Code+"' не найдено."};
+				return new ВидыОбслуживанияОсновныхСредствОтвет() {Ответ = "ВидыОбслуживанияОсновныхСредств c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyObsluzhivaniyaOsnovnykhSredstvsRequest request)
+		
+		public object Get(ВидыОбслуживанияОсновныхСредствНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыОбслуживанияОсновныхСредств>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыОбслуживанияОсновныхСредств.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыОбслуживанияОсновныхСредствВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОбслуживанияОсновныхСредствВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОбслуживанияОсновныхСредствВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыОбслуживанияОсновныхСредствЗапрос Запрос)
+		{
+			return new ВидыОбслуживанияОсновныхСредствОтвет {Ответ = "ВидыОбслуживанияОсновныхСредств, "};
+		}
+
+		public object Post(ВидыОбслуживанияОсновныхСредствЗапрос ЗапросВидыОбслуживанияОсновныхСредств)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыОбслуживанияОсновныхСредств)ЗапросВидыОбслуживанияОсновныхСредств;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

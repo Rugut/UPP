@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyNomenklatury")]
-	[Route("/Catalogs/VidyNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/VidyNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyNomenklatury/FindByDescr/{Descr}")]
-	public class VidyNomenklaturyRequest/*ВидыНоменклатурыЗапрос*/: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<VidyNomenklaturyRequest>
+	//VidyNomenklatury
+	[Маршрут("Справочники/ВидыНоменклатуры","")]
+	public class ВидыНоменклатурыЗапрос: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<ВидыНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class ВидыНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<ВидыНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыНоменклатуры/ПоКоду","{Код}")]
+	public class ВидыНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<ВидыНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class ВидыНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<ВидыНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<ВидыНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<ВидыНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыНоменклатуры,IReturn<ВидыНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyNomenklaturyResponse//ВидыНоменклатурыОтвет
+	public class ВидыНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyNomenklaturys")]
-	[Route("/Catalogs/VidyNomenklaturys/{Codes}")]
-	public class VidyNomenklaturysRequest/*ВидыНоменклатурыЗапрос*/: IReturn<List<VidyNomenklaturyRequest>>
+	public class ВидыНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(ВидыНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyNomenklaturysResponse//ВидыНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyNomenklaturyService /*ВидыНоменклатурыСервис*/ : Service
-	{
-		public object Any(VidyNomenklaturyRequest request)
+		
+		public object Get(ВидыНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new VidyNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyNomenklaturyResponse() {Result = "ВидыНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new ВидыНоменклатурыОтвет() {Ответ = "ВидыНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyNomenklaturysRequest request)
+		
+		public object Get(ВидыНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыНоменклатурыЗапрос Запрос)
+		{
+			return new ВидыНоменклатурыОтвет {Ответ = "ВидыНоменклатуры, "};
+		}
+
+		public object Post(ВидыНоменклатурыЗапрос ЗапросВидыНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыНоменклатуры)ЗапросВидыНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

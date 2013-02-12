@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NormativyObsluzhivaniyaOS")]
-	[Route("/Catalogs/NormativyObsluzhivaniyaOS/FindById/{Id}")]
-	[Route("/Catalogs/NormativyObsluzhivaniyaOS/FindByCode/{Code}")]
-	[Route("/Catalogs/NormativyObsluzhivaniyaOS/FindByDescr/{Descr}")]
-	public class NormativyObsluzhivaniyaOSRequest/*НормативыОбслуживанияОСЗапрос*/: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<NormativyObsluzhivaniyaOSRequest>
+	//NormativyObsluzhivaniyaOS
+	[Маршрут("Справочники/НормативыОбслуживанияОС","")]
+	public class НормативыОбслуживанияОСЗапрос: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<НормативыОбслуживанияОСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НормативыОбслуживанияОС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НормативыОбслуживанияОС/ПоСсылке","{Ссылка}")]
+	public class НормативыОбслуживанияОСНайтиПоСсылке: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<НормативыОбслуживанияОСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НормативыОбслуживанияОС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НормативыОбслуживанияОС/ПоКоду","{Код}")]
+	public class НормативыОбслуживанияОСНайтиПоКоду: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<НормативыОбслуживанияОСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НормативыОбслуживанияОС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НормативыОбслуживанияОС/ПоНаименованию","{Наименование}")]
+	public class НормативыОбслуживанияОСНайтиПоНаименованию: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<НормативыОбслуживанияОСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НормативыОбслуживанияОС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НормативыОбслуживанияОСВыбратьПоСсылке: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<НормативыОбслуживанияОСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НормативыОбслуживанияОС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НормативыОбслуживанияОСВыбратьПоКоду: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<НормативыОбслуживанияОСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НормативыОбслуживанияОС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НормативыОбслуживанияОСВыбратьПоНаименованию: V82.СправочникиСсылка.НормативыОбслуживанияОС,IReturn<НормативыОбслуживанияОСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NormativyObsluzhivaniyaOSResponse//НормативыОбслуживанияОСОтвет
+	public class НормативыОбслуживанияОСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NormativyObsluzhivaniyaOSs")]
-	[Route("/Catalogs/NormativyObsluzhivaniyaOSs/{Codes}")]
-	public class NormativyObsluzhivaniyaOSsRequest/*НормативыОбслуживанияОСЗапрос*/: IReturn<List<NormativyObsluzhivaniyaOSRequest>>
+	public class НормативыОбслуживанияОССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NormativyObsluzhivaniyaOSsRequest(params string[] Codes)
+		
+		public object Get(НормативыОбслуживанияОСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NormativyObsluzhivaniyaOSsResponse//НормативыОбслуживанияОСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NormativyObsluzhivaniyaOSService /*НормативыОбслуживанияОССервис*/ : Service
-	{
-		public object Any(NormativyObsluzhivaniyaOSRequest request)
+		
+		public object Get(НормативыОбслуживанияОСНайтиПоКоду Запрос)
 		{
-			return new NormativyObsluzhivaniyaOSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NormativyObsluzhivaniyaOSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НормативыОбслуживанияОС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NormativyObsluzhivaniyaOSResponse() {Result = "НормативыОбслуживанияОС c кодом '" + request.Code+"' не найдено."};
+				return new НормативыОбслуживанияОСОтвет() {Ответ = "НормативыОбслуживанияОС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NormativyObsluzhivaniyaOSsRequest request)
+		
+		public object Get(НормативыОбслуживанияОСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НормативыОбслуживанияОС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НормативыОбслуживанияОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НормативыОбслуживанияОСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НормативыОбслуживанияОСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НормативыОбслуживанияОСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НормативыОбслуживанияОСЗапрос Запрос)
+		{
+			return new НормативыОбслуживанияОСОтвет {Ответ = "НормативыОбслуживанияОС, "};
+		}
+
+		public object Post(НормативыОбслуживанияОСЗапрос ЗапросНормативыОбслуживанияОС)
+		{
+			var Ссылка = (СправочникиСсылка.НормативыОбслуживанияОС)ЗапросНормативыОбслуживанияОС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/FindById/{Id}")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/FindByCode/{Code}")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/FindByDescr/{Descr}")]
-	public class ObshherossijjskijjKlassifikatorProdukciiRequest/*ОбщероссийскийКлассификаторПродукцииЗапрос*/: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ObshherossijjskijjKlassifikatorProdukciiRequest>
+	//ObshherossijjskijjKlassifikatorProdukcii
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции","")]
+	public class ОбщероссийскийКлассификаторПродукцииЗапрос: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ОбщероссийскийКлассификаторПродукцииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/ПоСсылке","{Ссылка}")]
+	public class ОбщероссийскийКлассификаторПродукцииНайтиПоСсылке: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ОбщероссийскийКлассификаторПродукцииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/ПоКоду","{Код}")]
+	public class ОбщероссийскийКлассификаторПродукцииНайтиПоКоду: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ОбщероссийскийКлассификаторПродукцииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/ПоНаименованию","{Наименование}")]
+	public class ОбщероссийскийКлассификаторПродукцииНайтиПоНаименованию: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ОбщероссийскийКлассификаторПродукцииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбщероссийскийКлассификаторПродукцииВыбратьПоСсылке: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ОбщероссийскийКлассификаторПродукцииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбщероссийскийКлассификаторПродукцииВыбратьПоКоду: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ОбщероссийскийКлассификаторПродукцииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторПродукции/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбщероссийскийКлассификаторПродукцииВыбратьПоНаименованию: V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции,IReturn<ОбщероссийскийКлассификаторПродукцииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ObshherossijjskijjKlassifikatorProdukciiResponse//ОбщероссийскийКлассификаторПродукцииОтвет
+	public class ОбщероссийскийКлассификаторПродукцииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukciis")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorProdukciis/{Codes}")]
-	public class ObshherossijjskijjKlassifikatorProdukciisRequest/*ОбщероссийскийКлассификаторПродукцииЗапрос*/: IReturn<List<ObshherossijjskijjKlassifikatorProdukciiRequest>>
+	public class ОбщероссийскийКлассификаторПродукцииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ObshherossijjskijjKlassifikatorProdukciisRequest(params string[] Codes)
+		
+		public object Get(ОбщероссийскийКлассификаторПродукцииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ObshherossijjskijjKlassifikatorProdukciisResponse//ОбщероссийскийКлассификаторПродукцииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ObshherossijjskijjKlassifikatorProdukciiService /*ОбщероссийскийКлассификаторПродукцииСервис*/ : Service
-	{
-		public object Any(ObshherossijjskijjKlassifikatorProdukciiRequest request)
+		
+		public object Get(ОбщероссийскийКлассификаторПродукцииНайтиПоКоду Запрос)
 		{
-			return new ObshherossijjskijjKlassifikatorProdukciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ObshherossijjskijjKlassifikatorProdukciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОбщероссийскийКлассификаторПродукции.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ObshherossijjskijjKlassifikatorProdukciiResponse() {Result = "ОбщероссийскийКлассификаторПродукции c кодом '" + request.Code+"' не найдено."};
+				return new ОбщероссийскийКлассификаторПродукцииОтвет() {Ответ = "ОбщероссийскийКлассификаторПродукции c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ObshherossijjskijjKlassifikatorProdukciisRequest request)
+		
+		public object Get(ОбщероссийскийКлассификаторПродукцииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОбщероссийскийКлассификаторПродукции.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОбщероссийскийКлассификаторПродукцииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбщероссийскийКлассификаторПродукцииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбщероссийскийКлассификаторПродукцииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОбщероссийскийКлассификаторПродукцииЗапрос Запрос)
+		{
+			return new ОбщероссийскийКлассификаторПродукцииОтвет {Ответ = "ОбщероссийскийКлассификаторПродукции, "};
+		}
+
+		public object Post(ОбщероссийскийКлассификаторПродукцииЗапрос ЗапросОбщероссийскийКлассификаторПродукции)
+		{
+			var Ссылка = (СправочникиСсылка.ОбщероссийскийКлассификаторПродукции)ЗапросОбщероссийскийКлассификаторПродукции;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

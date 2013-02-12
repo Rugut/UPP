@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Kassy")]
-	[Route("/Catalogs/Kassy/FindById/{Id}")]
-	[Route("/Catalogs/Kassy/FindByCode/{Code}")]
-	[Route("/Catalogs/Kassy/FindByDescr/{Descr}")]
-	public class KassyRequest/*КассыЗапрос*/: V82.СправочникиСсылка.Кассы,IReturn<KassyRequest>
+	//Kassy
+	[Маршрут("Справочники/Кассы","")]
+	public class КассыЗапрос: V82.СправочникиСсылка.Кассы,IReturn<КассыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Кассы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Кассы/ПоСсылке","{Ссылка}")]
+	public class КассыНайтиПоСсылке: V82.СправочникиСсылка.Кассы,IReturn<КассыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Кассы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Кассы/ПоКоду","{Код}")]
+	public class КассыНайтиПоКоду: V82.СправочникиСсылка.Кассы,IReturn<КассыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Кассы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Кассы/ПоНаименованию","{Наименование}")]
+	public class КассыНайтиПоНаименованию: V82.СправочникиСсылка.Кассы,IReturn<КассыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Кассы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КассыВыбратьПоСсылке: V82.СправочникиСсылка.Кассы,IReturn<КассыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Кассы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КассыВыбратьПоКоду: V82.СправочникиСсылка.Кассы,IReturn<КассыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Кассы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КассыВыбратьПоНаименованию: V82.СправочникиСсылка.Кассы,IReturn<КассыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KassyResponse//КассыОтвет
+	public class КассыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Kassys")]
-	[Route("/Catalogs/Kassys/{Codes}")]
-	public class KassysRequest/*КассыЗапрос*/: IReturn<List<KassyRequest>>
+	public class КассыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KassysRequest(params string[] Codes)
+		
+		public object Get(КассыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KassysResponse//КассыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KassyService /*КассыСервис*/ : Service
-	{
-		public object Any(KassyRequest request)
+		
+		public object Get(КассыНайтиПоКоду Запрос)
 		{
-			return new KassyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KassyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Кассы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KassyResponse() {Result = "Кассы c кодом '" + request.Code+"' не найдено."};
+				return new КассыОтвет() {Ответ = "Кассы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KassysRequest request)
+		
+		public object Get(КассыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Кассы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Кассы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КассыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КассыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КассыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КассыЗапрос Запрос)
+		{
+			return new КассыОтвет {Ответ = "Кассы, "};
+		}
+
+		public object Post(КассыЗапрос ЗапросКассы)
+		{
+			var Ссылка = (СправочникиСсылка.Кассы)ЗапросКассы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

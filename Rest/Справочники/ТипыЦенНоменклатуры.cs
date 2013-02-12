@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TipyCenNomenklatury")]
-	[Route("/Catalogs/TipyCenNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/TipyCenNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/TipyCenNomenklatury/FindByDescr/{Descr}")]
-	public class TipyCenNomenklaturyRequest/*ТипыЦенНоменклатурыЗапрос*/: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<TipyCenNomenklaturyRequest>
+	//TipyCenNomenklatury
+	[Маршрут("Справочники/ТипыЦенНоменклатуры","")]
+	public class ТипыЦенНоменклатурыЗапрос: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<ТипыЦенНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class ТипыЦенНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<ТипыЦенНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/ПоКоду","{Код}")]
+	public class ТипыЦенНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<ТипыЦенНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class ТипыЦенНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<ТипыЦенНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыЦенНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<ТипыЦенНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыЦенНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<ТипыЦенНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТипыЦенНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыЦенНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.ТипыЦенНоменклатуры,IReturn<ТипыЦенНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TipyCenNomenklaturyResponse//ТипыЦенНоменклатурыОтвет
+	public class ТипыЦенНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TipyCenNomenklaturys")]
-	[Route("/Catalogs/TipyCenNomenklaturys/{Codes}")]
-	public class TipyCenNomenklaturysRequest/*ТипыЦенНоменклатурыЗапрос*/: IReturn<List<TipyCenNomenklaturyRequest>>
+	public class ТипыЦенНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TipyCenNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(ТипыЦенНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TipyCenNomenklaturysResponse//ТипыЦенНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TipyCenNomenklaturyService /*ТипыЦенНоменклатурыСервис*/ : Service
-	{
-		public object Any(TipyCenNomenklaturyRequest request)
+		
+		public object Get(ТипыЦенНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new TipyCenNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TipyCenNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТипыЦенНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TipyCenNomenklaturyResponse() {Result = "ТипыЦенНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new ТипыЦенНоменклатурыОтвет() {Ответ = "ТипыЦенНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TipyCenNomenklaturysRequest request)
+		
+		public object Get(ТипыЦенНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТипыЦенНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТипыЦенНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТипыЦенНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТипыЦенНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТипыЦенНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТипыЦенНоменклатурыЗапрос Запрос)
+		{
+			return new ТипыЦенНоменклатурыОтвет {Ответ = "ТипыЦенНоменклатуры, "};
+		}
+
+		public object Post(ТипыЦенНоменклатурыЗапрос ЗапросТипыЦенНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.ТипыЦенНоменклатуры)ЗапросТипыЦенНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

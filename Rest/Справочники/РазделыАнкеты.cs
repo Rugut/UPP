@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/RazdelyAnkety")]
-	[Route("/Catalogs/RazdelyAnkety/FindById/{Id}")]
-	[Route("/Catalogs/RazdelyAnkety/FindByCode/{Code}")]
-	[Route("/Catalogs/RazdelyAnkety/FindByDescr/{Descr}")]
-	public class RazdelyAnketyRequest/*РазделыАнкетыЗапрос*/: V82.СправочникиСсылка.РазделыАнкеты,IReturn<RazdelyAnketyRequest>
+	//RazdelyAnkety
+	[Маршрут("Справочники/РазделыАнкеты","")]
+	public class РазделыАнкетыЗапрос: V82.СправочникиСсылка.РазделыАнкеты,IReturn<РазделыАнкетыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/РазделыАнкеты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/РазделыАнкеты/ПоСсылке","{Ссылка}")]
+	public class РазделыАнкетыНайтиПоСсылке: V82.СправочникиСсылка.РазделыАнкеты,IReturn<РазделыАнкетыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/РазделыАнкеты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/РазделыАнкеты/ПоКоду","{Код}")]
+	public class РазделыАнкетыНайтиПоКоду: V82.СправочникиСсылка.РазделыАнкеты,IReturn<РазделыАнкетыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/РазделыАнкеты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/РазделыАнкеты/ПоНаименованию","{Наименование}")]
+	public class РазделыАнкетыНайтиПоНаименованию: V82.СправочникиСсылка.РазделыАнкеты,IReturn<РазделыАнкетыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/РазделыАнкеты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РазделыАнкетыВыбратьПоСсылке: V82.СправочникиСсылка.РазделыАнкеты,IReturn<РазделыАнкетыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РазделыАнкеты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РазделыАнкетыВыбратьПоКоду: V82.СправочникиСсылка.РазделыАнкеты,IReturn<РазделыАнкетыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РазделыАнкеты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РазделыАнкетыВыбратьПоНаименованию: V82.СправочникиСсылка.РазделыАнкеты,IReturn<РазделыАнкетыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RazdelyAnketyResponse//РазделыАнкетыОтвет
+	public class РазделыАнкетыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/RazdelyAnketys")]
-	[Route("/Catalogs/RazdelyAnketys/{Codes}")]
-	public class RazdelyAnketysRequest/*РазделыАнкетыЗапрос*/: IReturn<List<RazdelyAnketyRequest>>
+	public class РазделыАнкетыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RazdelyAnketysRequest(params string[] Codes)
+		
+		public object Get(РазделыАнкетыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RazdelyAnketysResponse//РазделыАнкетыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RazdelyAnketyService /*РазделыАнкетыСервис*/ : Service
-	{
-		public object Any(RazdelyAnketyRequest request)
+		
+		public object Get(РазделыАнкетыНайтиПоКоду Запрос)
 		{
-			return new RazdelyAnketyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RazdelyAnketyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.РазделыАнкеты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RazdelyAnketyResponse() {Result = "РазделыАнкеты c кодом '" + request.Code+"' не найдено."};
+				return new РазделыАнкетыОтвет() {Ответ = "РазделыАнкеты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RazdelyAnketysRequest request)
+		
+		public object Get(РазделыАнкетыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РазделыАнкеты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.РазделыАнкеты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РазделыАнкетыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РазделыАнкетыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РазделыАнкетыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РазделыАнкетыЗапрос Запрос)
+		{
+			return new РазделыАнкетыОтвет {Ответ = "РазделыАнкеты, "};
+		}
+
+		public object Post(РазделыАнкетыЗапрос ЗапросРазделыАнкеты)
+		{
+			var Ссылка = (СправочникиСсылка.РазделыАнкеты)ЗапросРазделыАнкеты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

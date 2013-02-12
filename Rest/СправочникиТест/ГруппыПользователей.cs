@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГруппыПользователей:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГруппыПользователейЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПользователей/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GruppyPolzovatelejjRequest());
+			ГруппыПользователейЗапрос ГруппыПользователейЗапрос = null;
+			try
+			{
+				ГруппыПользователейЗапрос = Клиент.Get(new ГруппыПользователейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПользователейЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГруппыПользователейЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПользователей/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GruppyPolzovatelejjRequest());
+			ГруппыПользователейЗапрос ГруппыПользователейЗапрос = null;
+			try
+			{
+				ГруппыПользователейЗапрос = Клиент.Get(new ГруппыПользователейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПользователейЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ГруппыПользователейЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПользователей/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GruppyPolzovatelejjRequest());
+			ГруппыПользователейЗапрос ГруппыПользователейЗапрос = null;
+			try
+			{
+				ГруппыПользователейЗапрос = Клиент.Get(new ГруппыПользователейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПользователейЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ГруппыПользователейЗапрос ГруппыПользователейЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПользователей?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GruppyPolzovatelejjRequest());
+			var ГруппыПользователейОтвет = Клиент.Post(ГруппыПользователейЗапрос);
+		}
+		public static void Записать(ГруппыПользователейЗапрос ГруппыПользователейЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПользователей?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыПользователейОтвет = Клиент.Put(ГруппыПользователейЗапрос);
+		}
+		public static void Удалить(ГруппыПользователейЗапрос ГруппыПользователейЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПользователей?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыПользователейОтвет = Клиент.Delete(ГруппыПользователейЗапрос);
 		}
 	}
 }

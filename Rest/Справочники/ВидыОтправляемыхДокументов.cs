@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov")]
-	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov/FindById/{Id}")]
-	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyOtpravlyaemykhDokumentov/FindByDescr/{Descr}")]
-	public class VidyOtpravlyaemykhDokumentovRequest/*ВидыОтправляемыхДокументовЗапрос*/: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<VidyOtpravlyaemykhDokumentovRequest>
+	//VidyOtpravlyaemykhDokumentov
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов","")]
+	public class ВидыОтправляемыхДокументовЗапрос: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<ВидыОтправляемыхДокументовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/ПоСсылке","{Ссылка}")]
+	public class ВидыОтправляемыхДокументовНайтиПоСсылке: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<ВидыОтправляемыхДокументовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/ПоКоду","{Код}")]
+	public class ВидыОтправляемыхДокументовНайтиПоКоду: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<ВидыОтправляемыхДокументовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/ПоНаименованию","{Наименование}")]
+	public class ВидыОтправляемыхДокументовНайтиПоНаименованию: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<ВидыОтправляемыхДокументовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОтправляемыхДокументовВыбратьПоСсылке: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<ВидыОтправляемыхДокументовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОтправляемыхДокументовВыбратьПоКоду: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<ВидыОтправляемыхДокументовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОтправляемыхДокументов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОтправляемыхДокументовВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыОтправляемыхДокументов,IReturn<ВидыОтправляемыхДокументовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyOtpravlyaemykhDokumentovResponse//ВидыОтправляемыхДокументовОтвет
+	public class ВидыОтправляемыхДокументовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyOtpravlyaemykhDokumentovs")]
-	[Route("/Catalogs/VidyOtpravlyaemykhDokumentovs/{Codes}")]
-	public class VidyOtpravlyaemykhDokumentovsRequest/*ВидыОтправляемыхДокументовЗапрос*/: IReturn<List<VidyOtpravlyaemykhDokumentovRequest>>
+	public class ВидыОтправляемыхДокументовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyOtpravlyaemykhDokumentovsRequest(params string[] Codes)
+		
+		public object Get(ВидыОтправляемыхДокументовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyOtpravlyaemykhDokumentovsResponse//ВидыОтправляемыхДокументовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyOtpravlyaemykhDokumentovService /*ВидыОтправляемыхДокументовСервис*/ : Service
-	{
-		public object Any(VidyOtpravlyaemykhDokumentovRequest request)
+		
+		public object Get(ВидыОтправляемыхДокументовНайтиПоКоду Запрос)
 		{
-			return new VidyOtpravlyaemykhDokumentovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyOtpravlyaemykhDokumentovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыОтправляемыхДокументов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyOtpravlyaemykhDokumentovResponse() {Result = "ВидыОтправляемыхДокументов c кодом '" + request.Code+"' не найдено."};
+				return new ВидыОтправляемыхДокументовОтвет() {Ответ = "ВидыОтправляемыхДокументов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyOtpravlyaemykhDokumentovsRequest request)
+		
+		public object Get(ВидыОтправляемыхДокументовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыОтправляемыхДокументов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыОтправляемыхДокументов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыОтправляемыхДокументовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОтправляемыхДокументовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОтправляемыхДокументовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыОтправляемыхДокументовЗапрос Запрос)
+		{
+			return new ВидыОтправляемыхДокументовОтвет {Ответ = "ВидыОтправляемыхДокументов, "};
+		}
+
+		public object Post(ВидыОтправляемыхДокументовЗапрос ЗапросВидыОтправляемыхДокументов)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыОтправляемыхДокументов)ЗапросВидыОтправляемыхДокументов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

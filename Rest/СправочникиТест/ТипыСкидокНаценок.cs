@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТипыСкидокНаценок:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТипыСкидокНаценокЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipySkidokNacenok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыСкидокНаценок/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TipySkidokNacenokRequest());
+			ТипыСкидокНаценокЗапрос ТипыСкидокНаценокЗапрос = null;
+			try
+			{
+				ТипыСкидокНаценокЗапрос = Клиент.Get(new ТипыСкидокНаценокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыСкидокНаценокЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТипыСкидокНаценокЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipySkidokNacenok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыСкидокНаценок/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TipySkidokNacenokRequest());
+			ТипыСкидокНаценокЗапрос ТипыСкидокНаценокЗапрос = null;
+			try
+			{
+				ТипыСкидокНаценокЗапрос = Клиент.Get(new ТипыСкидокНаценокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыСкидокНаценокЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТипыСкидокНаценокЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipySkidokNacenok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыСкидокНаценок/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TipySkidokNacenokRequest());
+			ТипыСкидокНаценокЗапрос ТипыСкидокНаценокЗапрос = null;
+			try
+			{
+				ТипыСкидокНаценокЗапрос = Клиент.Get(new ТипыСкидокНаценокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыСкидокНаценокЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТипыСкидокНаценокЗапрос ТипыСкидокНаценокЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipySkidokNacenok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыСкидокНаценок?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TipySkidokNacenokRequest());
+			var ТипыСкидокНаценокОтвет = Клиент.Post(ТипыСкидокНаценокЗапрос);
+		}
+		public static void Записать(ТипыСкидокНаценокЗапрос ТипыСкидокНаценокЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТипыСкидокНаценок?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТипыСкидокНаценокОтвет = Клиент.Put(ТипыСкидокНаценокЗапрос);
+		}
+		public static void Удалить(ТипыСкидокНаценокЗапрос ТипыСкидокНаценокЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТипыСкидокНаценок?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТипыСкидокНаценокОтвет = Клиент.Delete(ТипыСкидокНаценокЗапрос);
 		}
 	}
 }

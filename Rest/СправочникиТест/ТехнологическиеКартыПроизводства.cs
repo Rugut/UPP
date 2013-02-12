@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТехнологическиеКартыПроизводства:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТехнологическиеКартыПроизводстваЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieKartyProizvodstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеКартыПроизводства/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TekhnologicheskieKartyProizvodstvaRequest());
+			ТехнологическиеКартыПроизводстваЗапрос ТехнологическиеКартыПроизводстваЗапрос = null;
+			try
+			{
+				ТехнологическиеКартыПроизводстваЗапрос = Клиент.Get(new ТехнологическиеКартыПроизводстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТехнологическиеКартыПроизводстваЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТехнологическиеКартыПроизводстваЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieKartyProizvodstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеКартыПроизводства/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TekhnologicheskieKartyProizvodstvaRequest());
+			ТехнологическиеКартыПроизводстваЗапрос ТехнологическиеКартыПроизводстваЗапрос = null;
+			try
+			{
+				ТехнологическиеКартыПроизводстваЗапрос = Клиент.Get(new ТехнологическиеКартыПроизводстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТехнологическиеКартыПроизводстваЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТехнологическиеКартыПроизводстваЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieKartyProizvodstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеКартыПроизводства/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TekhnologicheskieKartyProizvodstvaRequest());
+			ТехнологическиеКартыПроизводстваЗапрос ТехнологическиеКартыПроизводстваЗапрос = null;
+			try
+			{
+				ТехнологическиеКартыПроизводстваЗапрос = Клиент.Get(new ТехнологическиеКартыПроизводстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТехнологическиеКартыПроизводстваЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТехнологическиеКартыПроизводстваЗапрос ТехнологическиеКартыПроизводстваЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieKartyProizvodstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеКартыПроизводства?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TekhnologicheskieKartyProizvodstvaRequest());
+			var ТехнологическиеКартыПроизводстваОтвет = Клиент.Post(ТехнологическиеКартыПроизводстваЗапрос);
+		}
+		public static void Записать(ТехнологическиеКартыПроизводстваЗапрос ТехнологическиеКартыПроизводстваЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеКартыПроизводства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТехнологическиеКартыПроизводстваОтвет = Клиент.Put(ТехнологическиеКартыПроизводстваЗапрос);
+		}
+		public static void Удалить(ТехнологическиеКартыПроизводстваЗапрос ТехнологическиеКартыПроизводстваЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеКартыПроизводства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТехнологическиеКартыПроизводстваОтвет = Клиент.Delete(ТехнологическиеКартыПроизводстваЗапрос);
 		}
 	}
 }

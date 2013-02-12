@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD")]
-	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/FindById/{Id}")]
-	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/FindByCode/{Code}")]
-	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHD/FindByDescr/{Descr}")]
-	public class SoglasheniyaObIspolzovaniiEHDRequest/*СоглашенияОбИспользованииЭДЗапрос*/: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<SoglasheniyaObIspolzovaniiEHDRequest>
+	//SoglasheniyaObIspolzovaniiEHD
+	[Маршрут("Справочники/СоглашенияОбИспользованииЭД","")]
+	public class СоглашенияОбИспользованииЭДЗапрос: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<СоглашенияОбИспользованииЭДЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СоглашенияОбИспользованииЭД/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СоглашенияОбИспользованииЭД/ПоСсылке","{Ссылка}")]
+	public class СоглашенияОбИспользованииЭДНайтиПоСсылке: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<СоглашенияОбИспользованииЭДНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СоглашенияОбИспользованииЭД/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СоглашенияОбИспользованииЭД/ПоНаименованию","{Наименование}")]
+	public class СоглашенияОбИспользованииЭДНайтиПоНаименованию: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<СоглашенияОбИспользованииЭДНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СоглашенияОбИспользованииЭД/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоглашенияОбИспользованииЭДВыбратьПоСсылке: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<СоглашенияОбИспользованииЭДВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СоглашенияОбИспользованииЭД/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоглашенияОбИспользованииЭДВыбратьПоНаименованию: V82.СправочникиСсылка.СоглашенияОбИспользованииЭД,IReturn<СоглашенияОбИспользованииЭДВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SoglasheniyaObIspolzovaniiEHDResponse//СоглашенияОбИспользованииЭДОтвет
+	public class СоглашенияОбИспользованииЭДОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHDs")]
-	[Route("/Catalogs/SoglasheniyaObIspolzovaniiEHDs/{Codes}")]
-	public class SoglasheniyaObIspolzovaniiEHDsRequest/*СоглашенияОбИспользованииЭДЗапрос*/: IReturn<List<SoglasheniyaObIspolzovaniiEHDRequest>>
+	public class СоглашенияОбИспользованииЭДСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SoglasheniyaObIspolzovaniiEHDsRequest(params string[] Codes)
+		
+		public object Get(СоглашенияОбИспользованииЭДНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SoglasheniyaObIspolzovaniiEHDsResponse//СоглашенияОбИспользованииЭДОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SoglasheniyaObIspolzovaniiEHDService /*СоглашенияОбИспользованииЭДСервис*/ : Service
-	{
-		public object Any(SoglasheniyaObIspolzovaniiEHDRequest request)
+		
+		public object Get(СоглашенияОбИспользованииЭДНайтиПоНаименованию Запрос)
 		{
-			return new SoglasheniyaObIspolzovaniiEHDResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(SoglasheniyaObIspolzovaniiEHDRequest request)
+		
+		public object Get(СоглашенияОбИспользованииЭДВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СоглашенияОбИспользованииЭДВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(SoglasheniyaObIspolzovaniiEHDsRequest request)
+		public object Any(СоглашенияОбИспользованииЭДЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СоглашенияОбИспользованииЭД>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new СоглашенияОбИспользованииЭДОтвет {Ответ = "СоглашенияОбИспользованииЭД, "};
 		}
+
+		public object Post(СоглашенияОбИспользованииЭДЗапрос ЗапросСоглашенияОбИспользованииЭД)
+		{
+			var Ссылка = (СправочникиСсылка.СоглашенияОбИспользованииЭД)ЗапросСоглашенияОбИспользованииЭД;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

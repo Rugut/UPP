@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОсновноеСырье:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОсновноеСырьеЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnoeSyre/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновноеСырье/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OsnovnoeSyreRequest());
+			ОсновноеСырьеЗапрос ОсновноеСырьеЗапрос = null;
+			try
+			{
+				ОсновноеСырьеЗапрос = Клиент.Get(new ОсновноеСырьеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсновноеСырьеЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОсновноеСырьеЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnoeSyre/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновноеСырье/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OsnovnoeSyreRequest());
+			ОсновноеСырьеЗапрос ОсновноеСырьеЗапрос = null;
+			try
+			{
+				ОсновноеСырьеЗапрос = Клиент.Get(new ОсновноеСырьеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсновноеСырьеЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОсновноеСырьеЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnoeSyre/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновноеСырье/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OsnovnoeSyreRequest());
+			ОсновноеСырьеЗапрос ОсновноеСырьеЗапрос = null;
+			try
+			{
+				ОсновноеСырьеЗапрос = Клиент.Get(new ОсновноеСырьеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсновноеСырьеЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОсновноеСырьеЗапрос ОсновноеСырьеЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnoeSyre/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновноеСырье?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OsnovnoeSyreRequest());
+			var ОсновноеСырьеОтвет = Клиент.Post(ОсновноеСырьеЗапрос);
+		}
+		public static void Записать(ОсновноеСырьеЗапрос ОсновноеСырьеЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОсновноеСырье?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОсновноеСырьеОтвет = Клиент.Put(ОсновноеСырьеЗапрос);
+		}
+		public static void Удалить(ОсновноеСырьеЗапрос ОсновноеСырьеЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОсновноеСырье?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОсновноеСырьеОтвет = Клиент.Delete(ОсновноеСырьеЗапрос);
 		}
 	}
 }

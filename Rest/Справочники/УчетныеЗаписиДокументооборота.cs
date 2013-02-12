@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/UchetnyeZapisiDokumentooborota")]
-	[Route("/Catalogs/UchetnyeZapisiDokumentooborota/FindById/{Id}")]
-	[Route("/Catalogs/UchetnyeZapisiDokumentooborota/FindByCode/{Code}")]
-	[Route("/Catalogs/UchetnyeZapisiDokumentooborota/FindByDescr/{Descr}")]
-	public class UchetnyeZapisiDokumentooborotaRequest/*УчетныеЗаписиДокументооборотаЗапрос*/: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<UchetnyeZapisiDokumentooborotaRequest>
+	//UchetnyeZapisiDokumentooborota
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота","")]
+	public class УчетныеЗаписиДокументооборотаЗапрос: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<УчетныеЗаписиДокументооборотаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/ПоСсылке","{Ссылка}")]
+	public class УчетныеЗаписиДокументооборотаНайтиПоСсылке: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<УчетныеЗаписиДокументооборотаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/ПоКоду","{Код}")]
+	public class УчетныеЗаписиДокументооборотаНайтиПоКоду: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<УчетныеЗаписиДокументооборотаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/ПоНаименованию","{Наименование}")]
+	public class УчетныеЗаписиДокументооборотаНайтиПоНаименованию: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<УчетныеЗаписиДокументооборотаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчетныеЗаписиДокументооборотаВыбратьПоСсылке: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<УчетныеЗаписиДокументооборотаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчетныеЗаписиДокументооборотаВыбратьПоКоду: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<УчетныеЗаписиДокументооборотаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УчетныеЗаписиДокументооборота/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчетныеЗаписиДокументооборотаВыбратьПоНаименованию: V82.СправочникиСсылка.УчетныеЗаписиДокументооборота,IReturn<УчетныеЗаписиДокументооборотаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class UchetnyeZapisiDokumentooborotaResponse//УчетныеЗаписиДокументооборотаОтвет
+	public class УчетныеЗаписиДокументооборотаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/UchetnyeZapisiDokumentooborotas")]
-	[Route("/Catalogs/UchetnyeZapisiDokumentooborotas/{Codes}")]
-	public class UchetnyeZapisiDokumentooborotasRequest/*УчетныеЗаписиДокументооборотаЗапрос*/: IReturn<List<UchetnyeZapisiDokumentooborotaRequest>>
+	public class УчетныеЗаписиДокументооборотаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public UchetnyeZapisiDokumentooborotasRequest(params string[] Codes)
+		
+		public object Get(УчетныеЗаписиДокументооборотаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class UchetnyeZapisiDokumentooborotasResponse//УчетныеЗаписиДокументооборотаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class UchetnyeZapisiDokumentooborotaService /*УчетныеЗаписиДокументооборотаСервис*/ : Service
-	{
-		public object Any(UchetnyeZapisiDokumentooborotaRequest request)
+		
+		public object Get(УчетныеЗаписиДокументооборотаНайтиПоКоду Запрос)
 		{
-			return new UchetnyeZapisiDokumentooborotaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(UchetnyeZapisiDokumentooborotaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.УчетныеЗаписиДокументооборота.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new UchetnyeZapisiDokumentooborotaResponse() {Result = "УчетныеЗаписиДокументооборота c кодом '" + request.Code+"' не найдено."};
+				return new УчетныеЗаписиДокументооборотаОтвет() {Ответ = "УчетныеЗаписиДокументооборота c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(UchetnyeZapisiDokumentooborotasRequest request)
+		
+		public object Get(УчетныеЗаписиДокументооборотаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УчетныеЗаписиДокументооборота>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.УчетныеЗаписиДокументооборота.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(УчетныеЗаписиДокументооборотаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УчетныеЗаписиДокументооборотаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УчетныеЗаписиДокументооборотаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(УчетныеЗаписиДокументооборотаЗапрос Запрос)
+		{
+			return new УчетныеЗаписиДокументооборотаОтвет {Ответ = "УчетныеЗаписиДокументооборота, "};
+		}
+
+		public object Post(УчетныеЗаписиДокументооборотаЗапрос ЗапросУчетныеЗаписиДокументооборота)
+		{
+			var Ссылка = (СправочникиСсылка.УчетныеЗаписиДокументооборота)ЗапросУчетныеЗаписиДокументооборота;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

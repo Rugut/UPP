@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVReglUchete")]
-	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVReglUchete/FindById/{Id}")]
-	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVReglUchete/FindByCode/{Code}")]
-	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVReglUchete/FindByDescr/{Descr}")]
-	public class SposobyOtrazheniyaZarplatyVReglUcheteRequest/*СпособыОтраженияЗарплатыВРеглУчетеЗапрос*/: V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете,IReturn<SposobyOtrazheniyaZarplatyVReglUcheteRequest>
+	//SposobyOtrazheniyaZarplatyVReglUchete
+	[Маршрут("Справочники/СпособыОтраженияЗарплатыВРеглУчете","")]
+	public class СпособыОтраженияЗарплатыВРеглУчетеЗапрос: V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете,IReturn<СпособыОтраженияЗарплатыВРеглУчетеЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СпособыОтраженияЗарплатыВРеглУчете/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СпособыОтраженияЗарплатыВРеглУчете/ПоСсылке","{Ссылка}")]
+	public class СпособыОтраженияЗарплатыВРеглУчетеНайтиПоСсылке: V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете,IReturn<СпособыОтраженияЗарплатыВРеглУчетеНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СпособыОтраженияЗарплатыВРеглУчете/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СпособыОтраженияЗарплатыВРеглУчете/ПоНаименованию","{Наименование}")]
+	public class СпособыОтраженияЗарплатыВРеглУчетеНайтиПоНаименованию: V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете,IReturn<СпособыОтраженияЗарплатыВРеглУчетеНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СпособыОтраженияЗарплатыВРеглУчете/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыОтраженияЗарплатыВРеглУчетеВыбратьПоСсылке: V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете,IReturn<СпособыОтраженияЗарплатыВРеглУчетеВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпособыОтраженияЗарплатыВРеглУчете/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыОтраженияЗарплатыВРеглУчетеВыбратьПоНаименованию: V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете,IReturn<СпособыОтраженияЗарплатыВРеглУчетеВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SposobyOtrazheniyaZarplatyVReglUcheteResponse//СпособыОтраженияЗарплатыВРеглУчетеОтвет
+	public class СпособыОтраженияЗарплатыВРеглУчетеОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVReglUchetes")]
-	[Route("/Catalogs/SposobyOtrazheniyaZarplatyVReglUchetes/{Codes}")]
-	public class SposobyOtrazheniyaZarplatyVReglUchetesRequest/*СпособыОтраженияЗарплатыВРеглУчетеЗапрос*/: IReturn<List<SposobyOtrazheniyaZarplatyVReglUcheteRequest>>
+	public class СпособыОтраженияЗарплатыВРеглУчетеСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SposobyOtrazheniyaZarplatyVReglUchetesRequest(params string[] Codes)
+		
+		public object Get(СпособыОтраженияЗарплатыВРеглУчетеНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SposobyOtrazheniyaZarplatyVReglUchetesResponse//СпособыОтраженияЗарплатыВРеглУчетеОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SposobyOtrazheniyaZarplatyVReglUcheteService /*СпособыОтраженияЗарплатыВРеглУчетеСервис*/ : Service
-	{
-		public object Any(SposobyOtrazheniyaZarplatyVReglUcheteRequest request)
+		
+		public object Get(СпособыОтраженияЗарплатыВРеглУчетеНайтиПоНаименованию Запрос)
 		{
-			return new SposobyOtrazheniyaZarplatyVReglUcheteResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(SposobyOtrazheniyaZarplatyVReglUcheteRequest request)
+		
+		public object Get(СпособыОтраженияЗарплатыВРеглУчетеВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпособыОтраженияЗарплатыВРеглУчетеВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(SposobyOtrazheniyaZarplatyVReglUchetesRequest request)
+		public object Any(СпособыОтраженияЗарплатыВРеглУчетеЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new СпособыОтраженияЗарплатыВРеглУчетеОтвет {Ответ = "СпособыОтраженияЗарплатыВРеглУчете, "};
 		}
+
+		public object Post(СпособыОтраженияЗарплатыВРеглУчетеЗапрос ЗапросСпособыОтраженияЗарплатыВРеглУчете)
+		{
+			var Ссылка = (СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете)ЗапросСпособыОтраженияЗарплатыВРеглУчете;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

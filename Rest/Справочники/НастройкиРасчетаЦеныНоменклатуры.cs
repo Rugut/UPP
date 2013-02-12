@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury")]
-	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklatury/FindByDescr/{Descr}")]
-	public class NastrojjkiRaschetaCenyNomenklaturyRequest/*НастройкиРасчетаЦеныНоменклатурыЗапрос*/: V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры,IReturn<NastrojjkiRaschetaCenyNomenklaturyRequest>
+	//NastrojjkiRaschetaCenyNomenklatury
+	[Маршрут("Справочники/НастройкиРасчетаЦеныНоменклатуры","")]
+	public class НастройкиРасчетаЦеныНоменклатурыЗапрос: V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры,IReturn<НастройкиРасчетаЦеныНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиРасчетаЦеныНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиРасчетаЦеныНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class НастройкиРасчетаЦеныНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры,IReturn<НастройкиРасчетаЦеныНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиРасчетаЦеныНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиРасчетаЦеныНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class НастройкиРасчетаЦеныНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры,IReturn<НастройкиРасчетаЦеныНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиРасчетаЦеныНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиРасчетаЦеныНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры,IReturn<НастройкиРасчетаЦеныНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиРасчетаЦеныНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиРасчетаЦеныНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры,IReturn<НастройкиРасчетаЦеныНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiRaschetaCenyNomenklaturyResponse//НастройкиРасчетаЦеныНоменклатурыОтвет
+	public class НастройкиРасчетаЦеныНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklaturys")]
-	[Route("/Catalogs/NastrojjkiRaschetaCenyNomenklaturys/{Codes}")]
-	public class NastrojjkiRaschetaCenyNomenklaturysRequest/*НастройкиРасчетаЦеныНоменклатурыЗапрос*/: IReturn<List<NastrojjkiRaschetaCenyNomenklaturyRequest>>
+	public class НастройкиРасчетаЦеныНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiRaschetaCenyNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(НастройкиРасчетаЦеныНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiRaschetaCenyNomenklaturysResponse//НастройкиРасчетаЦеныНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiRaschetaCenyNomenklaturyService /*НастройкиРасчетаЦеныНоменклатурыСервис*/ : Service
-	{
-		public object Any(NastrojjkiRaschetaCenyNomenklaturyRequest request)
+		
+		public object Get(НастройкиРасчетаЦеныНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiRaschetaCenyNomenklaturyResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiRaschetaCenyNomenklaturyRequest request)
+		
+		public object Get(НастройкиРасчетаЦеныНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиРасчетаЦеныНоменклатурыВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiRaschetaCenyNomenklaturysRequest request)
+		public object Any(НастройкиРасчетаЦеныНоменклатурыЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиРасчетаЦеныНоменклатурыОтвет {Ответ = "НастройкиРасчетаЦеныНоменклатуры, "};
 		}
+
+		public object Post(НастройкиРасчетаЦеныНоменклатурыЗапрос ЗапросНастройкиРасчетаЦеныНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиРасчетаЦеныНоменклатуры)ЗапросНастройкиРасчетаЦеныНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

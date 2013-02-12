@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыДеятельностиКонтрагентов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыДеятельностиКонтрагентовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyDeyatelnostiKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыДеятельностиКонтрагентов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidyDeyatelnostiKontragentovRequest());
+			ВидыДеятельностиКонтрагентовЗапрос ВидыДеятельностиКонтрагентовЗапрос = null;
+			try
+			{
+				ВидыДеятельностиКонтрагентовЗапрос = Клиент.Get(new ВидыДеятельностиКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыДеятельностиКонтрагентовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыДеятельностиКонтрагентовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyDeyatelnostiKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыДеятельностиКонтрагентов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidyDeyatelnostiKontragentovRequest());
+			ВидыДеятельностиКонтрагентовЗапрос ВидыДеятельностиКонтрагентовЗапрос = null;
+			try
+			{
+				ВидыДеятельностиКонтрагентовЗапрос = Клиент.Get(new ВидыДеятельностиКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыДеятельностиКонтрагентовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыДеятельностиКонтрагентовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyDeyatelnostiKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыДеятельностиКонтрагентов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidyDeyatelnostiKontragentovRequest());
+			ВидыДеятельностиКонтрагентовЗапрос ВидыДеятельностиКонтрагентовЗапрос = null;
+			try
+			{
+				ВидыДеятельностиКонтрагентовЗапрос = Клиент.Get(new ВидыДеятельностиКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыДеятельностиКонтрагентовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыДеятельностиКонтрагентовЗапрос ВидыДеятельностиКонтрагентовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyDeyatelnostiKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыДеятельностиКонтрагентов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidyDeyatelnostiKontragentovRequest());
+			var ВидыДеятельностиКонтрагентовОтвет = Клиент.Post(ВидыДеятельностиКонтрагентовЗапрос);
+		}
+		public static void Записать(ВидыДеятельностиКонтрагентовЗапрос ВидыДеятельностиКонтрагентовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыДеятельностиКонтрагентов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыДеятельностиКонтрагентовОтвет = Клиент.Put(ВидыДеятельностиКонтрагентовЗапрос);
+		}
+		public static void Удалить(ВидыДеятельностиКонтрагентовЗапрос ВидыДеятельностиКонтрагентовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыДеятельностиКонтрагентов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыДеятельностиКонтрагентовОтвет = Клиент.Delete(ВидыДеятельностиКонтрагентовЗапрос);
 		}
 	}
 }

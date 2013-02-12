@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/RegistraciyaVIFNS")]
-	[Route("/Catalogs/RegistraciyaVIFNS/FindById/{Id}")]
-	[Route("/Catalogs/RegistraciyaVIFNS/FindByCode/{Code}")]
-	[Route("/Catalogs/RegistraciyaVIFNS/FindByDescr/{Descr}")]
-	public class RegistraciyaVIFNSRequest/*РегистрацияВИФНСЗапрос*/: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<RegistraciyaVIFNSRequest>
+	//RegistraciyaVIFNS
+	[Маршрут("Справочники/РегистрацияВИФНС","")]
+	public class РегистрацияВИФНСЗапрос: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<РегистрацияВИФНСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/РегистрацияВИФНС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/РегистрацияВИФНС/ПоСсылке","{Ссылка}")]
+	public class РегистрацияВИФНСНайтиПоСсылке: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<РегистрацияВИФНСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/РегистрацияВИФНС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/РегистрацияВИФНС/ПоКоду","{Код}")]
+	public class РегистрацияВИФНСНайтиПоКоду: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<РегистрацияВИФНСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/РегистрацияВИФНС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/РегистрацияВИФНС/ПоНаименованию","{Наименование}")]
+	public class РегистрацияВИФНСНайтиПоНаименованию: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<РегистрацияВИФНСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/РегистрацияВИФНС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегистрацияВИФНСВыбратьПоСсылке: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<РегистрацияВИФНСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РегистрацияВИФНС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегистрацияВИФНСВыбратьПоКоду: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<РегистрацияВИФНСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РегистрацияВИФНС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегистрацияВИФНСВыбратьПоНаименованию: V82.СправочникиСсылка.РегистрацияВИФНС,IReturn<РегистрацияВИФНСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RegistraciyaVIFNSResponse//РегистрацияВИФНСОтвет
+	public class РегистрацияВИФНСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/RegistraciyaVIFNSs")]
-	[Route("/Catalogs/RegistraciyaVIFNSs/{Codes}")]
-	public class RegistraciyaVIFNSsRequest/*РегистрацияВИФНСЗапрос*/: IReturn<List<RegistraciyaVIFNSRequest>>
+	public class РегистрацияВИФНССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RegistraciyaVIFNSsRequest(params string[] Codes)
+		
+		public object Get(РегистрацияВИФНСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RegistraciyaVIFNSsResponse//РегистрацияВИФНСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RegistraciyaVIFNSService /*РегистрацияВИФНССервис*/ : Service
-	{
-		public object Any(RegistraciyaVIFNSRequest request)
+		
+		public object Get(РегистрацияВИФНСНайтиПоКоду Запрос)
 		{
-			return new RegistraciyaVIFNSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RegistraciyaVIFNSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.РегистрацияВИФНС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RegistraciyaVIFNSResponse() {Result = "РегистрацияВИФНС c кодом '" + request.Code+"' не найдено."};
+				return new РегистрацияВИФНСОтвет() {Ответ = "РегистрацияВИФНС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RegistraciyaVIFNSsRequest request)
+		
+		public object Get(РегистрацияВИФНСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РегистрацияВИФНС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.РегистрацияВИФНС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РегистрацияВИФНСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегистрацияВИФНСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегистрацияВИФНСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РегистрацияВИФНСЗапрос Запрос)
+		{
+			return new РегистрацияВИФНСОтвет {Ответ = "РегистрацияВИФНС, "};
+		}
+
+		public object Post(РегистрацияВИФНСЗапрос ЗапросРегистрацияВИФНС)
+		{
+			var Ссылка = (СправочникиСсылка.РегистрацияВИФНС)ЗапросРегистрацияВИФНС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

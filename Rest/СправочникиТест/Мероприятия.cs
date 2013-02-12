@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Мероприятия:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static МероприятияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Meropriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Мероприятия/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new MeropriyatiyaRequest());
+			МероприятияЗапрос МероприятияЗапрос = null;
+			try
+			{
+				МероприятияЗапрос = Клиент.Get(new МероприятияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МероприятияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static МероприятияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Meropriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Мероприятия/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new MeropriyatiyaRequest());
+			МероприятияЗапрос МероприятияЗапрос = null;
+			try
+			{
+				МероприятияЗапрос = Клиент.Get(new МероприятияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МероприятияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static МероприятияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Meropriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Мероприятия/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new MeropriyatiyaRequest());
+			МероприятияЗапрос МероприятияЗапрос = null;
+			try
+			{
+				МероприятияЗапрос = Клиент.Get(new МероприятияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МероприятияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(МероприятияЗапрос МероприятияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Meropriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Мероприятия?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new MeropriyatiyaRequest());
+			var МероприятияОтвет = Клиент.Post(МероприятияЗапрос);
+		}
+		public static void Записать(МероприятияЗапрос МероприятияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Мероприятия?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var МероприятияОтвет = Клиент.Put(МероприятияЗапрос);
+		}
+		public static void Удалить(МероприятияЗапрос МероприятияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Мероприятия?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var МероприятияОтвет = Клиент.Delete(МероприятияЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StatiZatrat")]
-	[Route("/Catalogs/StatiZatrat/FindById/{Id}")]
-	[Route("/Catalogs/StatiZatrat/FindByCode/{Code}")]
-	[Route("/Catalogs/StatiZatrat/FindByDescr/{Descr}")]
-	public class StatiZatratRequest/*СтатьиЗатратЗапрос*/: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<StatiZatratRequest>
+	//StatiZatrat
+	[Маршрут("Справочники/СтатьиЗатрат","")]
+	public class СтатьиЗатратЗапрос: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<СтатьиЗатратЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтатьиЗатрат/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтатьиЗатрат/ПоСсылке","{Ссылка}")]
+	public class СтатьиЗатратНайтиПоСсылке: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<СтатьиЗатратНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтатьиЗатрат/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтатьиЗатрат/ПоКоду","{Код}")]
+	public class СтатьиЗатратНайтиПоКоду: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<СтатьиЗатратНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтатьиЗатрат/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтатьиЗатрат/ПоНаименованию","{Наименование}")]
+	public class СтатьиЗатратНайтиПоНаименованию: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<СтатьиЗатратНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтатьиЗатрат/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиЗатратВыбратьПоСсылке: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<СтатьиЗатратВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиЗатрат/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиЗатратВыбратьПоКоду: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<СтатьиЗатратВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиЗатрат/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиЗатратВыбратьПоНаименованию: V82.СправочникиСсылка.СтатьиЗатрат,IReturn<СтатьиЗатратВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StatiZatratResponse//СтатьиЗатратОтвет
+	public class СтатьиЗатратОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StatiZatrats")]
-	[Route("/Catalogs/StatiZatrats/{Codes}")]
-	public class StatiZatratsRequest/*СтатьиЗатратЗапрос*/: IReturn<List<StatiZatratRequest>>
+	public class СтатьиЗатратСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StatiZatratsRequest(params string[] Codes)
+		
+		public object Get(СтатьиЗатратНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StatiZatratsResponse//СтатьиЗатратОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StatiZatratService /*СтатьиЗатратСервис*/ : Service
-	{
-		public object Any(StatiZatratRequest request)
+		
+		public object Get(СтатьиЗатратНайтиПоКоду Запрос)
 		{
-			return new StatiZatratResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StatiZatratRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтатьиЗатрат.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StatiZatratResponse() {Result = "СтатьиЗатрат c кодом '" + request.Code+"' не найдено."};
+				return new СтатьиЗатратОтвет() {Ответ = "СтатьиЗатрат c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StatiZatratsRequest request)
+		
+		public object Get(СтатьиЗатратНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтатьиЗатрат>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтатьиЗатрат.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтатьиЗатратВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиЗатратВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиЗатратВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтатьиЗатратЗапрос Запрос)
+		{
+			return new СтатьиЗатратОтвет {Ответ = "СтатьиЗатрат, "};
+		}
+
+		public object Post(СтатьиЗатратЗапрос ЗапросСтатьиЗатрат)
+		{
+			var Ссылка = (СправочникиСсылка.СтатьиЗатрат)ЗапросСтатьиЗатрат;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OtraslevyeSegmentyPoMSFO")]
-	[Route("/Catalogs/OtraslevyeSegmentyPoMSFO/FindById/{Id}")]
-	[Route("/Catalogs/OtraslevyeSegmentyPoMSFO/FindByCode/{Code}")]
-	[Route("/Catalogs/OtraslevyeSegmentyPoMSFO/FindByDescr/{Descr}")]
-	public class OtraslevyeSegmentyPoMSFORequest/*ОтраслевыеСегментыПоМСФОЗапрос*/: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<OtraslevyeSegmentyPoMSFORequest>
+	//OtraslevyeSegmentyPoMSFO
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО","")]
+	public class ОтраслевыеСегментыПоМСФОЗапрос: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<ОтраслевыеСегментыПоМСФОЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/ПоСсылке","{Ссылка}")]
+	public class ОтраслевыеСегментыПоМСФОНайтиПоСсылке: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<ОтраслевыеСегментыПоМСФОНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/ПоКоду","{Код}")]
+	public class ОтраслевыеСегментыПоМСФОНайтиПоКоду: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<ОтраслевыеСегментыПоМСФОНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/ПоНаименованию","{Наименование}")]
+	public class ОтраслевыеСегментыПоМСФОНайтиПоНаименованию: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<ОтраслевыеСегментыПоМСФОНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОтраслевыеСегментыПоМСФОВыбратьПоСсылке: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<ОтраслевыеСегментыПоМСФОВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОтраслевыеСегментыПоМСФОВыбратьПоКоду: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<ОтраслевыеСегментыПоМСФОВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОтраслевыеСегментыПоМСФО/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОтраслевыеСегментыПоМСФОВыбратьПоНаименованию: V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО,IReturn<ОтраслевыеСегментыПоМСФОВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OtraslevyeSegmentyPoMSFOResponse//ОтраслевыеСегментыПоМСФООтвет
+	public class ОтраслевыеСегментыПоМСФООтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OtraslevyeSegmentyPoMSFOs")]
-	[Route("/Catalogs/OtraslevyeSegmentyPoMSFOs/{Codes}")]
-	public class OtraslevyeSegmentyPoMSFOsRequest/*ОтраслевыеСегментыПоМСФОЗапрос*/: IReturn<List<OtraslevyeSegmentyPoMSFORequest>>
+	public class ОтраслевыеСегментыПоМСФОСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OtraslevyeSegmentyPoMSFOsRequest(params string[] Codes)
+		
+		public object Get(ОтраслевыеСегментыПоМСФОНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OtraslevyeSegmentyPoMSFOsResponse//ОтраслевыеСегментыПоМСФООтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OtraslevyeSegmentyPoMSFOService /*ОтраслевыеСегментыПоМСФОСервис*/ : Service
-	{
-		public object Any(OtraslevyeSegmentyPoMSFORequest request)
+		
+		public object Get(ОтраслевыеСегментыПоМСФОНайтиПоКоду Запрос)
 		{
-			return new OtraslevyeSegmentyPoMSFOResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OtraslevyeSegmentyPoMSFORequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОтраслевыеСегментыПоМСФО.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OtraslevyeSegmentyPoMSFOResponse() {Result = "ОтраслевыеСегментыПоМСФО c кодом '" + request.Code+"' не найдено."};
+				return new ОтраслевыеСегментыПоМСФООтвет() {Ответ = "ОтраслевыеСегментыПоМСФО c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OtraslevyeSegmentyPoMSFOsRequest request)
+		
+		public object Get(ОтраслевыеСегментыПоМСФОНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОтраслевыеСегментыПоМСФО>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОтраслевыеСегментыПоМСФО.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОтраслевыеСегментыПоМСФОВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОтраслевыеСегментыПоМСФОВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОтраслевыеСегментыПоМСФОВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОтраслевыеСегментыПоМСФОЗапрос Запрос)
+		{
+			return new ОтраслевыеСегментыПоМСФООтвет {Ответ = "ОтраслевыеСегментыПоМСФО, "};
+		}
+
+		public object Post(ОтраслевыеСегментыПоМСФОЗапрос ЗапросОтраслевыеСегментыПоМСФО)
+		{
+			var Ссылка = (СправочникиСсылка.ОтраслевыеСегментыПоМСФО)ЗапросОтраслевыеСегментыПоМСФО;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

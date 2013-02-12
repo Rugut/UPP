@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТарифныеРазряды:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТарифныеРазрядыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifnyeRazryady/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифныеРазряды/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TarifnyeRazryadyRequest());
+			ТарифныеРазрядыЗапрос ТарифныеРазрядыЗапрос = null;
+			try
+			{
+				ТарифныеРазрядыЗапрос = Клиент.Get(new ТарифныеРазрядыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТарифныеРазрядыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТарифныеРазрядыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifnyeRazryady/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифныеРазряды/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TarifnyeRazryadyRequest());
+			ТарифныеРазрядыЗапрос ТарифныеРазрядыЗапрос = null;
+			try
+			{
+				ТарифныеРазрядыЗапрос = Клиент.Get(new ТарифныеРазрядыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТарифныеРазрядыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТарифныеРазрядыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifnyeRazryady/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифныеРазряды/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TarifnyeRazryadyRequest());
+			ТарифныеРазрядыЗапрос ТарифныеРазрядыЗапрос = null;
+			try
+			{
+				ТарифныеРазрядыЗапрос = Клиент.Get(new ТарифныеРазрядыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТарифныеРазрядыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТарифныеРазрядыЗапрос ТарифныеРазрядыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifnyeRazryady/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифныеРазряды?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TarifnyeRazryadyRequest());
+			var ТарифныеРазрядыОтвет = Клиент.Post(ТарифныеРазрядыЗапрос);
+		}
+		public static void Записать(ТарифныеРазрядыЗапрос ТарифныеРазрядыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТарифныеРазряды?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТарифныеРазрядыОтвет = Клиент.Put(ТарифныеРазрядыЗапрос);
+		}
+		public static void Удалить(ТарифныеРазрядыЗапрос ТарифныеРазрядыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТарифныеРазряды?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТарифныеРазрядыОтвет = Клиент.Delete(ТарифныеРазрядыЗапрос);
 		}
 	}
 }

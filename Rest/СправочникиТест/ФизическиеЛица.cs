@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ФизическиеЛица:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ФизическиеЛицаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/FizicheskieLica/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФизическиеЛица/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new FizicheskieLicaRequest());
+			ФизическиеЛицаЗапрос ФизическиеЛицаЗапрос = null;
+			try
+			{
+				ФизическиеЛицаЗапрос = Клиент.Get(new ФизическиеЛицаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФизическиеЛицаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ФизическиеЛицаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/FizicheskieLica/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФизическиеЛица/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new FizicheskieLicaRequest());
+			ФизическиеЛицаЗапрос ФизическиеЛицаЗапрос = null;
+			try
+			{
+				ФизическиеЛицаЗапрос = Клиент.Get(new ФизическиеЛицаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФизическиеЛицаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ФизическиеЛицаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/FizicheskieLica/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФизическиеЛица/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new FizicheskieLicaRequest());
+			ФизическиеЛицаЗапрос ФизическиеЛицаЗапрос = null;
+			try
+			{
+				ФизическиеЛицаЗапрос = Клиент.Get(new ФизическиеЛицаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФизическиеЛицаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ФизическиеЛицаЗапрос ФизическиеЛицаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/FizicheskieLica/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФизическиеЛица?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new FizicheskieLicaRequest());
+			var ФизическиеЛицаОтвет = Клиент.Post(ФизическиеЛицаЗапрос);
+		}
+		public static void Записать(ФизическиеЛицаЗапрос ФизическиеЛицаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ФизическиеЛица?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ФизическиеЛицаОтвет = Клиент.Put(ФизическиеЛицаЗапрос);
+		}
+		public static void Удалить(ФизическиеЛицаЗапрос ФизическиеЛицаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ФизическиеЛица?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ФизическиеЛицаОтвет = Клиент.Delete(ФизическиеЛицаЗапрос);
 		}
 	}
 }

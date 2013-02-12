@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Бюджеты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static БюджетыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Byudzhety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Бюджеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ByudzhetyRequest());
+			БюджетыЗапрос БюджетыЗапрос = null;
+			try
+			{
+				БюджетыЗапрос = Клиент.Get(new БюджетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return БюджетыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static БюджетыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Byudzhety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Бюджеты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ByudzhetyRequest());
+			БюджетыЗапрос БюджетыЗапрос = null;
+			try
+			{
+				БюджетыЗапрос = Клиент.Get(new БюджетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return БюджетыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(БюджетыЗапрос БюджетыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Byudzhety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Бюджеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ByudzhetyRequest());
+			var БюджетыОтвет = Клиент.Post(БюджетыЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(БюджетыЗапрос БюджетыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Byudzhety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Бюджеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ByudzhetyRequest());
+			var БюджетыОтвет = Клиент.Put(БюджетыЗапрос);
+		}
+		public static void Удалить(БюджетыЗапрос БюджетыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Бюджеты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var БюджетыОтвет = Клиент.Delete(БюджетыЗапрос);
 		}
 	}
 }

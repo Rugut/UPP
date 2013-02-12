@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov")]
-	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/FindById/{Id}")]
-	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/FindByCode/{Code}")]
-	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/FindByDescr/{Descr}")]
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest/*ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос*/: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest>
+	//EHlektronnyePredstavleniyaReglamentirovannykhOtchetov
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов","")]
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/ПоСсылке","{Ссылка}")]
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоСсылке: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/ПоКоду","{Код}")]
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоКоду: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/ПоНаименованию","{Наименование}")]
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоНаименованию: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоСсылке: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоКоду: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЭлектронныеПредставленияРегламентированныхОтчетов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоНаименованию: V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов,IReturn<ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovResponse//ЭлектронныеПредставленияРегламентированныхОтчетовОтвет
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetovs")]
-	[Route("/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetovs/{Codes}")]
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsRequest/*ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос*/: IReturn<List<EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest>>
+	public class ЭлектронныеПредставленияРегламентированныхОтчетовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsRequest(params string[] Codes)
+		
+		public object Get(ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsResponse//ЭлектронныеПредставленияРегламентированныхОтчетовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class EHlektronnyePredstavleniyaReglamentirovannykhOtchetovService /*ЭлектронныеПредставленияРегламентированныхОтчетовСервис*/ : Service
-	{
-		public object Any(EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest request)
+		
+		public object Get(ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоКоду Запрос)
 		{
-			return new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЭлектронныеПредставленияРегламентированныхОтчетов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovResponse() {Result = "ЭлектронныеПредставленияРегламентированныхОтчетов c кодом '" + request.Code+"' не найдено."};
+				return new ЭлектронныеПредставленияРегламентированныхОтчетовОтвет() {Ответ = "ЭлектронныеПредставленияРегламентированныхОтчетов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(EHlektronnyePredstavleniyaReglamentirovannykhOtchetovsRequest request)
+		
+		public object Get(ЭлектронныеПредставленияРегламентированныхОтчетовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЭлектронныеПредставленияРегламентированныхОтчетов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЭлектронныеПредставленияРегламентированныхОтчетовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос Запрос)
+		{
+			return new ЭлектронныеПредставленияРегламентированныхОтчетовОтвет {Ответ = "ЭлектронныеПредставленияРегламентированныхОтчетов, "};
+		}
+
+		public object Post(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос ЗапросЭлектронныеПредставленияРегламентированныхОтчетов)
+		{
+			var Ссылка = (СправочникиСсылка.ЭлектронныеПредставленияРегламентированныхОтчетов)ЗапросЭлектронныеПредставленияРегламентированныхОтчетов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/FindByDescr/{Descr}")]
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest/*НастройкиФормированияДокументовВыпускаПродукцииЗапрос*/: V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции,IReturn<NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest>
+	//NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii
+	[Маршрут("Справочники/НастройкиФормированияДокументовВыпускаПродукции","")]
+	public class НастройкиФормированияДокументовВыпускаПродукцииЗапрос: V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции,IReturn<НастройкиФормированияДокументовВыпускаПродукцииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовВыпускаПродукции/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиФормированияДокументовВыпускаПродукции/ПоСсылке","{Ссылка}")]
+	public class НастройкиФормированияДокументовВыпускаПродукцииНайтиПоСсылке: V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции,IReturn<НастройкиФормированияДокументовВыпускаПродукцииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовВыпускаПродукции/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиФормированияДокументовВыпускаПродукции/ПоНаименованию","{Наименование}")]
+	public class НастройкиФормированияДокументовВыпускаПродукцииНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции,IReturn<НастройкиФормированияДокументовВыпускаПродукцииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиФормированияДокументовВыпускаПродукцииВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции,IReturn<НастройкиФормированияДокументовВыпускаПродукцииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиФормированияДокументовВыпускаПродукцииВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции,IReturn<НастройкиФормированияДокументовВыпускаПродукцииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiResponse//НастройкиФормированияДокументовВыпускаПродукцииОтвет
+	public class НастройкиФормированияДокументовВыпускаПродукцииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukciis")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukciis/{Codes}")]
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisRequest/*НастройкиФормированияДокументовВыпускаПродукцииЗапрос*/: IReturn<List<NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest>>
+	public class НастройкиФормированияДокументовВыпускаПродукцииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisRequest(params string[] Codes)
+		
+		public object Get(НастройкиФормированияДокументовВыпускаПродукцииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisResponse//НастройкиФормированияДокументовВыпускаПродукцииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiService /*НастройкиФормированияДокументовВыпускаПродукцииСервис*/ : Service
-	{
-		public object Any(NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest request)
+		
+		public object Get(НастройкиФормированияДокументовВыпускаПродукцииНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest request)
+		
+		public object Get(НастройкиФормированияДокументовВыпускаПродукцииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиФормированияДокументовВыпускаПродукцииВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiFormirovaniyaDokumentovVypuskaProdukciisRequest request)
+		public object Any(НастройкиФормированияДокументовВыпускаПродукцииЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиФормированияДокументовВыпускаПродукцииОтвет {Ответ = "НастройкиФормированияДокументовВыпускаПродукции, "};
 		}
+
+		public object Post(НастройкиФормированияДокументовВыпускаПродукцииЗапрос ЗапросНастройкиФормированияДокументовВыпускаПродукции)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиФормированияДокументовВыпускаПродукции)ЗапросНастройкиФормированияДокументовВыпускаПродукции;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

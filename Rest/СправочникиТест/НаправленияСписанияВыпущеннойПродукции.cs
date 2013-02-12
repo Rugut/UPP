@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НаправленияСписанияВыпущеннойПродукции:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НаправленияСписанияВыпущеннойПродукцииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияСписанияВыпущеннойПродукции/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NapravleniyaSpisaniyaVypushhennojjProdukciiRequest());
+			НаправленияСписанияВыпущеннойПродукцииЗапрос НаправленияСписанияВыпущеннойПродукцииЗапрос = null;
+			try
+			{
+				НаправленияСписанияВыпущеннойПродукцииЗапрос = Клиент.Get(new НаправленияСписанияВыпущеннойПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НаправленияСписанияВыпущеннойПродукцииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НаправленияСписанияВыпущеннойПродукцииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияСписанияВыпущеннойПродукции/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NapravleniyaSpisaniyaVypushhennojjProdukciiRequest());
+			НаправленияСписанияВыпущеннойПродукцииЗапрос НаправленияСписанияВыпущеннойПродукцииЗапрос = null;
+			try
+			{
+				НаправленияСписанияВыпущеннойПродукцииЗапрос = Клиент.Get(new НаправленияСписанияВыпущеннойПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НаправленияСписанияВыпущеннойПродукцииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НаправленияСписанияВыпущеннойПродукцииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияСписанияВыпущеннойПродукции/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NapravleniyaSpisaniyaVypushhennojjProdukciiRequest());
+			НаправленияСписанияВыпущеннойПродукцииЗапрос НаправленияСписанияВыпущеннойПродукцииЗапрос = null;
+			try
+			{
+				НаправленияСписанияВыпущеннойПродукцииЗапрос = Клиент.Get(new НаправленияСписанияВыпущеннойПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НаправленияСписанияВыпущеннойПродукцииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НаправленияСписанияВыпущеннойПродукцииЗапрос НаправленияСписанияВыпущеннойПродукцииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияСписанияВыпущеннойПродукции?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NapravleniyaSpisaniyaVypushhennojjProdukciiRequest());
+			var НаправленияСписанияВыпущеннойПродукцииОтвет = Клиент.Post(НаправленияСписанияВыпущеннойПродукцииЗапрос);
+		}
+		public static void Записать(НаправленияСписанияВыпущеннойПродукцииЗапрос НаправленияСписанияВыпущеннойПродукцииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НаправленияСписанияВыпущеннойПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НаправленияСписанияВыпущеннойПродукцииОтвет = Клиент.Put(НаправленияСписанияВыпущеннойПродукцииЗапрос);
+		}
+		public static void Удалить(НаправленияСписанияВыпущеннойПродукцииЗапрос НаправленияСписанияВыпущеннойПродукцииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НаправленияСписанияВыпущеннойПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НаправленияСписанияВыпущеннойПродукцииОтвет = Клиент.Delete(НаправленияСписанияВыпущеннойПродукцииЗапрос);
 		}
 	}
 }

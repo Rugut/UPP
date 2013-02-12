@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DokhodyNDFL")]
-	[Route("/Catalogs/DokhodyNDFL/FindById/{Id}")]
-	[Route("/Catalogs/DokhodyNDFL/FindByCode/{Code}")]
-	[Route("/Catalogs/DokhodyNDFL/FindByDescr/{Descr}")]
-	public class DokhodyNDFLRequest/*ДоходыНДФЛЗапрос*/: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<DokhodyNDFLRequest>
+	//DokhodyNDFL
+	[Маршрут("Справочники/ДоходыНДФЛ","")]
+	public class ДоходыНДФЛЗапрос: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<ДоходыНДФЛЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДоходыНДФЛ/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДоходыНДФЛ/ПоСсылке","{Ссылка}")]
+	public class ДоходыНДФЛНайтиПоСсылке: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<ДоходыНДФЛНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДоходыНДФЛ/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДоходыНДФЛ/ПоКоду","{Код}")]
+	public class ДоходыНДФЛНайтиПоКоду: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<ДоходыНДФЛНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДоходыНДФЛ/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДоходыНДФЛ/ПоНаименованию","{Наименование}")]
+	public class ДоходыНДФЛНайтиПоНаименованию: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<ДоходыНДФЛНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДоходыНДФЛ/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыНДФЛВыбратьПоСсылке: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<ДоходыНДФЛВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоходыНДФЛ/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыНДФЛВыбратьПоКоду: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<ДоходыНДФЛВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоходыНДФЛ/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыНДФЛВыбратьПоНаименованию: V82.СправочникиСсылка.ДоходыНДФЛ,IReturn<ДоходыНДФЛВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DokhodyNDFLResponse//ДоходыНДФЛОтвет
+	public class ДоходыНДФЛОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DokhodyNDFLs")]
-	[Route("/Catalogs/DokhodyNDFLs/{Codes}")]
-	public class DokhodyNDFLsRequest/*ДоходыНДФЛЗапрос*/: IReturn<List<DokhodyNDFLRequest>>
+	public class ДоходыНДФЛСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DokhodyNDFLsRequest(params string[] Codes)
+		
+		public object Get(ДоходыНДФЛНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DokhodyNDFLsResponse//ДоходыНДФЛОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DokhodyNDFLService /*ДоходыНДФЛСервис*/ : Service
-	{
-		public object Any(DokhodyNDFLRequest request)
+		
+		public object Get(ДоходыНДФЛНайтиПоКоду Запрос)
 		{
-			return new DokhodyNDFLResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DokhodyNDFLRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДоходыНДФЛ.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DokhodyNDFLResponse() {Result = "ДоходыНДФЛ c кодом '" + request.Code+"' не найдено."};
+				return new ДоходыНДФЛОтвет() {Ответ = "ДоходыНДФЛ c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DokhodyNDFLsRequest request)
+		
+		public object Get(ДоходыНДФЛНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоходыНДФЛ>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДоходыНДФЛ.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДоходыНДФЛВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоходыНДФЛВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоходыНДФЛВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДоходыНДФЛЗапрос Запрос)
+		{
+			return new ДоходыНДФЛОтвет {Ответ = "ДоходыНДФЛ, "};
+		}
+
+		public object Post(ДоходыНДФЛЗапрос ЗапросДоходыНДФЛ)
+		{
+			var Ссылка = (СправочникиСсылка.ДоходыНДФЛ)ЗапросДоходыНДФЛ;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

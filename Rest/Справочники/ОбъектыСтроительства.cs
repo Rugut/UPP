@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ObektyStroitelstva")]
-	[Route("/Catalogs/ObektyStroitelstva/FindById/{Id}")]
-	[Route("/Catalogs/ObektyStroitelstva/FindByCode/{Code}")]
-	[Route("/Catalogs/ObektyStroitelstva/FindByDescr/{Descr}")]
-	public class ObektyStroitelstvaRequest/*ОбъектыСтроительстваЗапрос*/: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ObektyStroitelstvaRequest>
+	//ObektyStroitelstva
+	[Маршрут("Справочники/ОбъектыСтроительства","")]
+	public class ОбъектыСтроительстваЗапрос: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ОбъектыСтроительстваЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОбъектыСтроительства/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОбъектыСтроительства/ПоСсылке","{Ссылка}")]
+	public class ОбъектыСтроительстваНайтиПоСсылке: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ОбъектыСтроительстваНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОбъектыСтроительства/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОбъектыСтроительства/ПоКоду","{Код}")]
+	public class ОбъектыСтроительстваНайтиПоКоду: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ОбъектыСтроительстваНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОбъектыСтроительства/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОбъектыСтроительства/ПоНаименованию","{Наименование}")]
+	public class ОбъектыСтроительстваНайтиПоНаименованию: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ОбъектыСтроительстваНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОбъектыСтроительства/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбъектыСтроительстваВыбратьПоСсылке: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ОбъектыСтроительстваВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбъектыСтроительства/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбъектыСтроительстваВыбратьПоКоду: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ОбъектыСтроительстваВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбъектыСтроительства/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбъектыСтроительстваВыбратьПоНаименованию: V82.СправочникиСсылка.ОбъектыСтроительства,IReturn<ОбъектыСтроительстваВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ObektyStroitelstvaResponse//ОбъектыСтроительстваОтвет
+	public class ОбъектыСтроительстваОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ObektyStroitelstvas")]
-	[Route("/Catalogs/ObektyStroitelstvas/{Codes}")]
-	public class ObektyStroitelstvasRequest/*ОбъектыСтроительстваЗапрос*/: IReturn<List<ObektyStroitelstvaRequest>>
+	public class ОбъектыСтроительстваСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ObektyStroitelstvasRequest(params string[] Codes)
+		
+		public object Get(ОбъектыСтроительстваНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ObektyStroitelstvasResponse//ОбъектыСтроительстваОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ObektyStroitelstvaService /*ОбъектыСтроительстваСервис*/ : Service
-	{
-		public object Any(ObektyStroitelstvaRequest request)
+		
+		public object Get(ОбъектыСтроительстваНайтиПоКоду Запрос)
 		{
-			return new ObektyStroitelstvaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ObektyStroitelstvaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОбъектыСтроительства.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ObektyStroitelstvaResponse() {Result = "ОбъектыСтроительства c кодом '" + request.Code+"' не найдено."};
+				return new ОбъектыСтроительстваОтвет() {Ответ = "ОбъектыСтроительства c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ObektyStroitelstvasRequest request)
+		
+		public object Get(ОбъектыСтроительстваНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОбъектыСтроительства>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОбъектыСтроительства.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОбъектыСтроительстваВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбъектыСтроительстваВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбъектыСтроительстваВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОбъектыСтроительстваЗапрос Запрос)
+		{
+			return new ОбъектыСтроительстваОтвет {Ответ = "ОбъектыСтроительства, "};
+		}
+
+		public object Post(ОбъектыСтроительстваЗапрос ЗапросОбъектыСтроительства)
+		{
+			var Ссылка = (СправочникиСсылка.ОбъектыСтроительства)ЗапросОбъектыСтроительства;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

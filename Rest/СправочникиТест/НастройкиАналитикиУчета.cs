@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиАналитикиУчета:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиАналитикиУчетаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiAnalitikiUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиАналитикиУчета/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiAnalitikiUchetaRequest());
+			НастройкиАналитикиУчетаЗапрос НастройкиАналитикиУчетаЗапрос = null;
+			try
+			{
+				НастройкиАналитикиУчетаЗапрос = Клиент.Get(new НастройкиАналитикиУчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиАналитикиУчетаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиАналитикиУчетаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiAnalitikiUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиАналитикиУчета/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiAnalitikiUchetaRequest());
+			НастройкиАналитикиУчетаЗапрос НастройкиАналитикиУчетаЗапрос = null;
+			try
+			{
+				НастройкиАналитикиУчетаЗапрос = Клиент.Get(new НастройкиАналитикиУчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиАналитикиУчетаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НастройкиАналитикиУчетаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiAnalitikiUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиАналитикиУчета/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiAnalitikiUchetaRequest());
+			НастройкиАналитикиУчетаЗапрос НастройкиАналитикиУчетаЗапрос = null;
+			try
+			{
+				НастройкиАналитикиУчетаЗапрос = Клиент.Get(new НастройкиАналитикиУчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиАналитикиУчетаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НастройкиАналитикиУчетаЗапрос НастройкиАналитикиУчетаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiAnalitikiUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиАналитикиУчета?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiAnalitikiUchetaRequest());
+			var НастройкиАналитикиУчетаОтвет = Клиент.Post(НастройкиАналитикиУчетаЗапрос);
+		}
+		public static void Записать(НастройкиАналитикиУчетаЗапрос НастройкиАналитикиУчетаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиАналитикиУчета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиАналитикиУчетаОтвет = Клиент.Put(НастройкиАналитикиУчетаЗапрос);
+		}
+		public static void Удалить(НастройкиАналитикиУчетаЗапрос НастройкиАналитикиУчетаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиАналитикиУчета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиАналитикиУчетаОтвет = Клиент.Delete(НастройкиАналитикиУчетаЗапрос);
 		}
 	}
 }

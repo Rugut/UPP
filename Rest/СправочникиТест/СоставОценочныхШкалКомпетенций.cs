@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СоставОценочныхШкалКомпетенций:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СоставОценочныхШкалКомпетенцийЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavOcenochnykhSHkalKompetencijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставОценочныхШкалКомпетенций/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SostavOcenochnykhSHkalKompetencijjRequest());
+			СоставОценочныхШкалКомпетенцийЗапрос СоставОценочныхШкалКомпетенцийЗапрос = null;
+			try
+			{
+				СоставОценочныхШкалКомпетенцийЗапрос = Клиент.Get(new СоставОценочныхШкалКомпетенцийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СоставОценочныхШкалКомпетенцийЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СоставОценочныхШкалКомпетенцийЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavOcenochnykhSHkalKompetencijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставОценочныхШкалКомпетенций/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SostavOcenochnykhSHkalKompetencijjRequest());
+			СоставОценочныхШкалКомпетенцийЗапрос СоставОценочныхШкалКомпетенцийЗапрос = null;
+			try
+			{
+				СоставОценочныхШкалКомпетенцийЗапрос = Клиент.Get(new СоставОценочныхШкалКомпетенцийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СоставОценочныхШкалКомпетенцийЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СоставОценочныхШкалКомпетенцийЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavOcenochnykhSHkalKompetencijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставОценочныхШкалКомпетенций/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SostavOcenochnykhSHkalKompetencijjRequest());
+			СоставОценочныхШкалКомпетенцийЗапрос СоставОценочныхШкалКомпетенцийЗапрос = null;
+			try
+			{
+				СоставОценочныхШкалКомпетенцийЗапрос = Клиент.Get(new СоставОценочныхШкалКомпетенцийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СоставОценочныхШкалКомпетенцийЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СоставОценочныхШкалКомпетенцийЗапрос СоставОценочныхШкалКомпетенцийЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SostavOcenochnykhSHkalKompetencijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоставОценочныхШкалКомпетенций?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SostavOcenochnykhSHkalKompetencijjRequest());
+			var СоставОценочныхШкалКомпетенцийОтвет = Клиент.Post(СоставОценочныхШкалКомпетенцийЗапрос);
+		}
+		public static void Записать(СоставОценочныхШкалКомпетенцийЗапрос СоставОценочныхШкалКомпетенцийЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СоставОценочныхШкалКомпетенций?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СоставОценочныхШкалКомпетенцийОтвет = Клиент.Put(СоставОценочныхШкалКомпетенцийЗапрос);
+		}
+		public static void Удалить(СоставОценочныхШкалКомпетенцийЗапрос СоставОценочныхШкалКомпетенцийЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СоставОценочныхШкалКомпетенций?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СоставОценочныхШкалКомпетенцийОтвет = Клиент.Delete(СоставОценочныхШкалКомпетенцийЗапрос);
 		}
 	}
 }

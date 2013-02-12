@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/MedicinskieStrakhovyePolisy")]
-	[Route("/Catalogs/MedicinskieStrakhovyePolisy/FindById/{Id}")]
-	[Route("/Catalogs/MedicinskieStrakhovyePolisy/FindByCode/{Code}")]
-	[Route("/Catalogs/MedicinskieStrakhovyePolisy/FindByDescr/{Descr}")]
-	public class MedicinskieStrakhovyePolisyRequest/*МедицинскиеСтраховыеПолисыЗапрос*/: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<MedicinskieStrakhovyePolisyRequest>
+	//MedicinskieStrakhovyePolisy
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы","")]
+	public class МедицинскиеСтраховыеПолисыЗапрос: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<МедицинскиеСтраховыеПолисыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/ПоСсылке","{Ссылка}")]
+	public class МедицинскиеСтраховыеПолисыНайтиПоСсылке: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<МедицинскиеСтраховыеПолисыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/ПоКоду","{Код}")]
+	public class МедицинскиеСтраховыеПолисыНайтиПоКоду: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<МедицинскиеСтраховыеПолисыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/ПоНаименованию","{Наименование}")]
+	public class МедицинскиеСтраховыеПолисыНайтиПоНаименованию: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<МедицинскиеСтраховыеПолисыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class МедицинскиеСтраховыеПолисыВыбратьПоСсылке: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<МедицинскиеСтраховыеПолисыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class МедицинскиеСтраховыеПолисыВыбратьПоКоду: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<МедицинскиеСтраховыеПолисыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/МедицинскиеСтраховыеПолисы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class МедицинскиеСтраховыеПолисыВыбратьПоНаименованию: V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы,IReturn<МедицинскиеСтраховыеПолисыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class MedicinskieStrakhovyePolisyResponse//МедицинскиеСтраховыеПолисыОтвет
+	public class МедицинскиеСтраховыеПолисыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/MedicinskieStrakhovyePolisys")]
-	[Route("/Catalogs/MedicinskieStrakhovyePolisys/{Codes}")]
-	public class MedicinskieStrakhovyePolisysRequest/*МедицинскиеСтраховыеПолисыЗапрос*/: IReturn<List<MedicinskieStrakhovyePolisyRequest>>
+	public class МедицинскиеСтраховыеПолисыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public MedicinskieStrakhovyePolisysRequest(params string[] Codes)
+		
+		public object Get(МедицинскиеСтраховыеПолисыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class MedicinskieStrakhovyePolisysResponse//МедицинскиеСтраховыеПолисыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class MedicinskieStrakhovyePolisyService /*МедицинскиеСтраховыеПолисыСервис*/ : Service
-	{
-		public object Any(MedicinskieStrakhovyePolisyRequest request)
+		
+		public object Get(МедицинскиеСтраховыеПолисыНайтиПоКоду Запрос)
 		{
-			return new MedicinskieStrakhovyePolisyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(MedicinskieStrakhovyePolisyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.МедицинскиеСтраховыеПолисы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new MedicinskieStrakhovyePolisyResponse() {Result = "МедицинскиеСтраховыеПолисы c кодом '" + request.Code+"' не найдено."};
+				return new МедицинскиеСтраховыеПолисыОтвет() {Ответ = "МедицинскиеСтраховыеПолисы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(MedicinskieStrakhovyePolisysRequest request)
+		
+		public object Get(МедицинскиеСтраховыеПолисыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.МедицинскиеСтраховыеПолисы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.МедицинскиеСтраховыеПолисы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(МедицинскиеСтраховыеПолисыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МедицинскиеСтраховыеПолисыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МедицинскиеСтраховыеПолисыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(МедицинскиеСтраховыеПолисыЗапрос Запрос)
+		{
+			return new МедицинскиеСтраховыеПолисыОтвет {Ответ = "МедицинскиеСтраховыеПолисы, "};
+		}
+
+		public object Post(МедицинскиеСтраховыеПолисыЗапрос ЗапросМедицинскиеСтраховыеПолисы)
+		{
+			var Ссылка = (СправочникиСсылка.МедицинскиеСтраховыеПолисы)ЗапросМедицинскиеСтраховыеПолисы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

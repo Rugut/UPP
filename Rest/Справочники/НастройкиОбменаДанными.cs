@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiObmenaDannymi")]
-	[Route("/Catalogs/NastrojjkiObmenaDannymi/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiObmenaDannymi/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiObmenaDannymi/FindByDescr/{Descr}")]
-	public class NastrojjkiObmenaDannymiRequest/*НастройкиОбменаДаннымиЗапрос*/: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<NastrojjkiObmenaDannymiRequest>
+	//NastrojjkiObmenaDannymi
+	[Маршрут("Справочники/НастройкиОбменаДанными","")]
+	public class НастройкиОбменаДаннымиЗапрос: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<НастройкиОбменаДаннымиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиОбменаДанными/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиОбменаДанными/ПоСсылке","{Ссылка}")]
+	public class НастройкиОбменаДаннымиНайтиПоСсылке: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<НастройкиОбменаДаннымиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиОбменаДанными/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НастройкиОбменаДанными/ПоКоду","{Код}")]
+	public class НастройкиОбменаДаннымиНайтиПоКоду: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<НастройкиОбменаДаннымиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НастройкиОбменаДанными/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиОбменаДанными/ПоНаименованию","{Наименование}")]
+	public class НастройкиОбменаДаннымиНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<НастройкиОбменаДаннымиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиОбменаДаннымиВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<НастройкиОбменаДаннымиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиОбменаДанными/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиОбменаДаннымиВыбратьПоКоду: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<НастройкиОбменаДаннымиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиОбменаДанными/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиОбменаДаннымиВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиОбменаДанными,IReturn<НастройкиОбменаДаннымиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiObmenaDannymiResponse//НастройкиОбменаДаннымиОтвет
+	public class НастройкиОбменаДаннымиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiObmenaDannymis")]
-	[Route("/Catalogs/NastrojjkiObmenaDannymis/{Codes}")]
-	public class NastrojjkiObmenaDannymisRequest/*НастройкиОбменаДаннымиЗапрос*/: IReturn<List<NastrojjkiObmenaDannymiRequest>>
+	public class НастройкиОбменаДаннымиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiObmenaDannymisRequest(params string[] Codes)
+		
+		public object Get(НастройкиОбменаДаннымиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiObmenaDannymisResponse//НастройкиОбменаДаннымиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiObmenaDannymiService /*НастройкиОбменаДаннымиСервис*/ : Service
-	{
-		public object Any(NastrojjkiObmenaDannymiRequest request)
+		
+		public object Get(НастройкиОбменаДаннымиНайтиПоКоду Запрос)
 		{
-			return new NastrojjkiObmenaDannymiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NastrojjkiObmenaDannymiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НастройкиОбменаДанными.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NastrojjkiObmenaDannymiResponse() {Result = "НастройкиОбменаДанными c кодом '" + request.Code+"' не найдено."};
+				return new НастройкиОбменаДаннымиОтвет() {Ответ = "НастройкиОбменаДанными c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NastrojjkiObmenaDannymisRequest request)
+		
+		public object Get(НастройкиОбменаДаннымиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиОбменаДанными>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НастройкиОбменаДанными.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НастройкиОбменаДаннымиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиОбменаДаннымиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиОбменаДаннымиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НастройкиОбменаДаннымиЗапрос Запрос)
+		{
+			return new НастройкиОбменаДаннымиОтвет {Ответ = "НастройкиОбменаДанными, "};
+		}
+
+		public object Post(НастройкиОбменаДаннымиЗапрос ЗапросНастройкиОбменаДанными)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиОбменаДанными)ЗапросНастройкиОбменаДанными;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

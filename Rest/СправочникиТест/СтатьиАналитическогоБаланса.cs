@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СтатьиАналитическогоБаланса:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СтатьиАналитическогоБалансаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиАналитическогоБаланса/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new StatiAnaliticheskogoBalansaRequest());
+			СтатьиАналитическогоБалансаЗапрос СтатьиАналитическогоБалансаЗапрос = null;
+			try
+			{
+				СтатьиАналитическогоБалансаЗапрос = Клиент.Get(new СтатьиАналитическогоБалансаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиАналитическогоБалансаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СтатьиАналитическогоБалансаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиАналитическогоБаланса/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new StatiAnaliticheskogoBalansaRequest());
+			СтатьиАналитическогоБалансаЗапрос СтатьиАналитическогоБалансаЗапрос = null;
+			try
+			{
+				СтатьиАналитическогоБалансаЗапрос = Клиент.Get(new СтатьиАналитическогоБалансаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиАналитическогоБалансаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СтатьиАналитическогоБалансаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиАналитическогоБаланса/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new StatiAnaliticheskogoBalansaRequest());
+			СтатьиАналитическогоБалансаЗапрос СтатьиАналитическогоБалансаЗапрос = null;
+			try
+			{
+				СтатьиАналитическогоБалансаЗапрос = Клиент.Get(new СтатьиАналитическогоБалансаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиАналитическогоБалансаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СтатьиАналитическогоБалансаЗапрос СтатьиАналитическогоБалансаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиАналитическогоБаланса?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new StatiAnaliticheskogoBalansaRequest());
+			var СтатьиАналитическогоБалансаОтвет = Клиент.Post(СтатьиАналитическогоБалансаЗапрос);
+		}
+		public static void Записать(СтатьиАналитическогоБалансаЗапрос СтатьиАналитическогоБалансаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиАналитическогоБаланса?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиАналитическогоБалансаОтвет = Клиент.Put(СтатьиАналитическогоБалансаЗапрос);
+		}
+		public static void Удалить(СтатьиАналитическогоБалансаЗапрос СтатьиАналитическогоБалансаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиАналитическогоБаланса?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиАналитическогоБалансаОтвет = Клиент.Delete(СтатьиАналитическогоБалансаЗапрос);
 		}
 	}
 }

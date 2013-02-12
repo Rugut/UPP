@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class УчетныеЗаписиДокументооборота:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static УчетныеЗаписиДокументооборотаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиДокументооборота/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new UchetnyeZapisiDokumentooborotaRequest());
+			УчетныеЗаписиДокументооборотаЗапрос УчетныеЗаписиДокументооборотаЗапрос = null;
+			try
+			{
+				УчетныеЗаписиДокументооборотаЗапрос = Клиент.Get(new УчетныеЗаписиДокументооборотаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УчетныеЗаписиДокументооборотаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static УчетныеЗаписиДокументооборотаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиДокументооборота/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new UchetnyeZapisiDokumentooborotaRequest());
+			УчетныеЗаписиДокументооборотаЗапрос УчетныеЗаписиДокументооборотаЗапрос = null;
+			try
+			{
+				УчетныеЗаписиДокументооборотаЗапрос = Клиент.Get(new УчетныеЗаписиДокументооборотаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УчетныеЗаписиДокументооборотаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static УчетныеЗаписиДокументооборотаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиДокументооборота/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new UchetnyeZapisiDokumentooborotaRequest());
+			УчетныеЗаписиДокументооборотаЗапрос УчетныеЗаписиДокументооборотаЗапрос = null;
+			try
+			{
+				УчетныеЗаписиДокументооборотаЗапрос = Клиент.Get(new УчетныеЗаписиДокументооборотаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УчетныеЗаписиДокументооборотаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(УчетныеЗаписиДокументооборотаЗапрос УчетныеЗаписиДокументооборотаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиДокументооборота?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new UchetnyeZapisiDokumentooborotaRequest());
+			var УчетныеЗаписиДокументооборотаОтвет = Клиент.Post(УчетныеЗаписиДокументооборотаЗапрос);
+		}
+		public static void Записать(УчетныеЗаписиДокументооборотаЗапрос УчетныеЗаписиДокументооборотаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиДокументооборота?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УчетныеЗаписиДокументооборотаОтвет = Клиент.Put(УчетныеЗаписиДокументооборотаЗапрос);
+		}
+		public static void Удалить(УчетныеЗаписиДокументооборотаЗапрос УчетныеЗаписиДокументооборотаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиДокументооборота?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УчетныеЗаписиДокументооборотаОтвет = Клиент.Delete(УчетныеЗаписиДокументооборотаЗапрос);
 		}
 	}
 }

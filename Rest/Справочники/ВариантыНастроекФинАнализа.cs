@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VariantyNastroekFinAnaliza")]
-	[Route("/Catalogs/VariantyNastroekFinAnaliza/FindById/{Id}")]
-	[Route("/Catalogs/VariantyNastroekFinAnaliza/FindByCode/{Code}")]
-	[Route("/Catalogs/VariantyNastroekFinAnaliza/FindByDescr/{Descr}")]
-	public class VariantyNastroekFinAnalizaRequest/*ВариантыНастроекФинАнализаЗапрос*/: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<VariantyNastroekFinAnalizaRequest>
+	//VariantyNastroekFinAnaliza
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа","")]
+	public class ВариантыНастроекФинАнализаЗапрос: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<ВариантыНастроекФинАнализаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/ПоСсылке","{Ссылка}")]
+	public class ВариантыНастроекФинАнализаНайтиПоСсылке: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<ВариантыНастроекФинАнализаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/ПоКоду","{Код}")]
+	public class ВариантыНастроекФинАнализаНайтиПоКоду: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<ВариантыНастроекФинАнализаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/ПоНаименованию","{Наименование}")]
+	public class ВариантыНастроекФинАнализаНайтиПоНаименованию: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<ВариантыНастроекФинАнализаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыНастроекФинАнализаВыбратьПоСсылке: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<ВариантыНастроекФинАнализаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыНастроекФинАнализаВыбратьПоКоду: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<ВариантыНастроекФинАнализаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВариантыНастроекФинАнализа/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыНастроекФинАнализаВыбратьПоНаименованию: V82.СправочникиСсылка.ВариантыНастроекФинАнализа,IReturn<ВариантыНастроекФинАнализаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VariantyNastroekFinAnalizaResponse//ВариантыНастроекФинАнализаОтвет
+	public class ВариантыНастроекФинАнализаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VariantyNastroekFinAnalizas")]
-	[Route("/Catalogs/VariantyNastroekFinAnalizas/{Codes}")]
-	public class VariantyNastroekFinAnalizasRequest/*ВариантыНастроекФинАнализаЗапрос*/: IReturn<List<VariantyNastroekFinAnalizaRequest>>
+	public class ВариантыНастроекФинАнализаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VariantyNastroekFinAnalizasRequest(params string[] Codes)
+		
+		public object Get(ВариантыНастроекФинАнализаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VariantyNastroekFinAnalizasResponse//ВариантыНастроекФинАнализаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VariantyNastroekFinAnalizaService /*ВариантыНастроекФинАнализаСервис*/ : Service
-	{
-		public object Any(VariantyNastroekFinAnalizaRequest request)
+		
+		public object Get(ВариантыНастроекФинАнализаНайтиПоКоду Запрос)
 		{
-			return new VariantyNastroekFinAnalizaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VariantyNastroekFinAnalizaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВариантыНастроекФинАнализа.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VariantyNastroekFinAnalizaResponse() {Result = "ВариантыНастроекФинАнализа c кодом '" + request.Code+"' не найдено."};
+				return new ВариантыНастроекФинАнализаОтвет() {Ответ = "ВариантыНастроекФинАнализа c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VariantyNastroekFinAnalizasRequest request)
+		
+		public object Get(ВариантыНастроекФинАнализаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВариантыНастроекФинАнализа>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВариантыНастроекФинАнализа.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВариантыНастроекФинАнализаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВариантыНастроекФинАнализаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВариантыНастроекФинАнализаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВариантыНастроекФинАнализаЗапрос Запрос)
+		{
+			return new ВариантыНастроекФинАнализаОтвет {Ответ = "ВариантыНастроекФинАнализа, "};
+		}
+
+		public object Post(ВариантыНастроекФинАнализаЗапрос ЗапросВариантыНастроекФинАнализа)
+		{
+			var Ссылка = (СправочникиСсылка.ВариантыНастроекФинАнализа)ЗапросВариантыНастроекФинАнализа;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

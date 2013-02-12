@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Voenkomaty")]
-	[Route("/Catalogs/Voenkomaty/FindById/{Id}")]
-	[Route("/Catalogs/Voenkomaty/FindByCode/{Code}")]
-	[Route("/Catalogs/Voenkomaty/FindByDescr/{Descr}")]
-	public class VoenkomatyRequest/*ВоенкоматыЗапрос*/: V82.СправочникиСсылка.Военкоматы,IReturn<VoenkomatyRequest>
+	//Voenkomaty
+	[Маршрут("Справочники/Военкоматы","")]
+	public class ВоенкоматыЗапрос: V82.СправочникиСсылка.Военкоматы,IReturn<ВоенкоматыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Военкоматы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Военкоматы/ПоСсылке","{Ссылка}")]
+	public class ВоенкоматыНайтиПоСсылке: V82.СправочникиСсылка.Военкоматы,IReturn<ВоенкоматыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Военкоматы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Военкоматы/ПоКоду","{Код}")]
+	public class ВоенкоматыНайтиПоКоду: V82.СправочникиСсылка.Военкоматы,IReturn<ВоенкоматыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Военкоматы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Военкоматы/ПоНаименованию","{Наименование}")]
+	public class ВоенкоматыНайтиПоНаименованию: V82.СправочникиСсылка.Военкоматы,IReturn<ВоенкоматыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Военкоматы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВоенкоматыВыбратьПоСсылке: V82.СправочникиСсылка.Военкоматы,IReturn<ВоенкоматыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Военкоматы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВоенкоматыВыбратьПоКоду: V82.СправочникиСсылка.Военкоматы,IReturn<ВоенкоматыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Военкоматы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВоенкоматыВыбратьПоНаименованию: V82.СправочникиСсылка.Военкоматы,IReturn<ВоенкоматыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VoenkomatyResponse//ВоенкоматыОтвет
+	public class ВоенкоматыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Voenkomatys")]
-	[Route("/Catalogs/Voenkomatys/{Codes}")]
-	public class VoenkomatysRequest/*ВоенкоматыЗапрос*/: IReturn<List<VoenkomatyRequest>>
+	public class ВоенкоматыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VoenkomatysRequest(params string[] Codes)
+		
+		public object Get(ВоенкоматыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VoenkomatysResponse//ВоенкоматыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VoenkomatyService /*ВоенкоматыСервис*/ : Service
-	{
-		public object Any(VoenkomatyRequest request)
+		
+		public object Get(ВоенкоматыНайтиПоКоду Запрос)
 		{
-			return new VoenkomatyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VoenkomatyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Военкоматы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VoenkomatyResponse() {Result = "Военкоматы c кодом '" + request.Code+"' не найдено."};
+				return new ВоенкоматыОтвет() {Ответ = "Военкоматы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VoenkomatysRequest request)
+		
+		public object Get(ВоенкоматыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Военкоматы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Военкоматы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВоенкоматыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВоенкоматыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВоенкоматыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВоенкоматыЗапрос Запрос)
+		{
+			return new ВоенкоматыОтвет {Ответ = "Военкоматы, "};
+		}
+
+		public object Post(ВоенкоматыЗапрос ЗапросВоенкоматы)
+		{
+			var Ссылка = (СправочникиСсылка.Военкоматы)ЗапросВоенкоматы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

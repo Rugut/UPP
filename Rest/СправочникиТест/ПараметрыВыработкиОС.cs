@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПараметрыВыработкиОС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПараметрыВыработкиОСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ParametryVyrabotkiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПараметрыВыработкиОС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ParametryVyrabotkiOSRequest());
+			ПараметрыВыработкиОСЗапрос ПараметрыВыработкиОСЗапрос = null;
+			try
+			{
+				ПараметрыВыработкиОСЗапрос = Клиент.Get(new ПараметрыВыработкиОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПараметрыВыработкиОСЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПараметрыВыработкиОСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ParametryVyrabotkiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПараметрыВыработкиОС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ParametryVyrabotkiOSRequest());
+			ПараметрыВыработкиОСЗапрос ПараметрыВыработкиОСЗапрос = null;
+			try
+			{
+				ПараметрыВыработкиОСЗапрос = Клиент.Get(new ПараметрыВыработкиОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПараметрыВыработкиОСЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПараметрыВыработкиОСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ParametryVyrabotkiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПараметрыВыработкиОС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ParametryVyrabotkiOSRequest());
+			ПараметрыВыработкиОСЗапрос ПараметрыВыработкиОСЗапрос = null;
+			try
+			{
+				ПараметрыВыработкиОСЗапрос = Клиент.Get(new ПараметрыВыработкиОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПараметрыВыработкиОСЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПараметрыВыработкиОСЗапрос ПараметрыВыработкиОСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ParametryVyrabotkiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПараметрыВыработкиОС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ParametryVyrabotkiOSRequest());
+			var ПараметрыВыработкиОСОтвет = Клиент.Post(ПараметрыВыработкиОСЗапрос);
+		}
+		public static void Записать(ПараметрыВыработкиОСЗапрос ПараметрыВыработкиОСЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПараметрыВыработкиОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПараметрыВыработкиОСОтвет = Клиент.Put(ПараметрыВыработкиОСЗапрос);
+		}
+		public static void Удалить(ПараметрыВыработкиОСЗапрос ПараметрыВыработкиОСЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПараметрыВыработкиОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПараметрыВыработкиОСОтвет = Клиент.Delete(ПараметрыВыработкиОСЗапрос);
 		}
 	}
 }

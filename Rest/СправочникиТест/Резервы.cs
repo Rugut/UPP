@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Резервы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static РезервыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Rezervy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Резервы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new RezervyRequest());
+			РезервыЗапрос РезервыЗапрос = null;
+			try
+			{
+				РезервыЗапрос = Клиент.Get(new РезервыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РезервыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static РезервыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Rezervy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Резервы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new RezervyRequest());
+			РезервыЗапрос РезервыЗапрос = null;
+			try
+			{
+				РезервыЗапрос = Клиент.Get(new РезервыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РезервыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static РезервыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Rezervy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Резервы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new RezervyRequest());
+			РезервыЗапрос РезервыЗапрос = null;
+			try
+			{
+				РезервыЗапрос = Клиент.Get(new РезервыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РезервыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(РезервыЗапрос РезервыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Rezervy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Резервы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new RezervyRequest());
+			var РезервыОтвет = Клиент.Post(РезервыЗапрос);
+		}
+		public static void Записать(РезервыЗапрос РезервыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Резервы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РезервыОтвет = Клиент.Put(РезервыЗапрос);
+		}
+		public static void Удалить(РезервыЗапрос РезервыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Резервы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РезервыОтвет = Клиент.Delete(РезервыЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,81 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyZametok")]
-	[Route("/Catalogs/VidyZametok/FindById/{Id}")]
-	[Route("/Catalogs/VidyZametok/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyZametok/FindByDescr/{Descr}")]
-	public class VidyZametokRequest/*ВидыЗаметокЗапрос*/: V82.СправочникиСсылка.ВидыЗаметок,IReturn<VidyZametokRequest>
+	//VidyZametok
+	[Маршрут("Справочники/ВидыЗаметок","")]
+	public class ВидыЗаметокЗапрос: V82.СправочникиСсылка.ВидыЗаметок,IReturn<ВидыЗаметокЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыЗаметок/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыЗаметок/ПоСсылке","{Ссылка}")]
+	public class ВидыЗаметокНайтиПоСсылке: V82.СправочникиСсылка.ВидыЗаметок,IReturn<ВидыЗаметокНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыЗаметок/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыЗаметок/ПоКоду","{Код}")]
+	public class ВидыЗаметокНайтиПоКоду: V82.СправочникиСсылка.ВидыЗаметок,IReturn<ВидыЗаметокНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыЗаметок/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыЗаметок/ПоНаименованию","{Наименование}")]
+	public class ВидыЗаметокНайтиПоНаименованию: V82.СправочникиСсылка.ВидыЗаметок,IReturn<ВидыЗаметокНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыЗаметок/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЗаметокВыбратьПоСсылке: V82.СправочникиСсылка.ВидыЗаметок,IReturn<ВидыЗаметокВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЗаметок/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЗаметокВыбратьПоКоду: V82.СправочникиСсылка.ВидыЗаметок,IReturn<ВидыЗаметокВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public decimal ___Мин {get; set;}
+		public decimal ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЗаметок/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЗаметокВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыЗаметок,IReturn<ВидыЗаметокВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyZametokResponse//ВидыЗаметокОтвет
+	public class ВидыЗаметокОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyZametoks")]
-	[Route("/Catalogs/VidyZametoks/{Codes}")]
-	public class VidyZametoksRequest/*ВидыЗаметокЗапрос*/: IReturn<List<VidyZametokRequest>>
+	public class ВидыЗаметокСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyZametoksRequest(params string[] Codes)
+		
+		public object Get(ВидыЗаметокНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyZametoksResponse//ВидыЗаметокОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyZametokService /*ВидыЗаметокСервис*/ : Service
-	{
-		public object Any(VidyZametokRequest request)
+		
+		public object Get(ВидыЗаметокНайтиПоКоду Запрос)
 		{
-			return new VidyZametokResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyZametokRequest request)
-		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			if(Запрос.Код == null)
 			{
-				return new VidyZametokResponse() {Result = "ВидыЗаметок c кодом '" + request.Code+"' не найдено."};
+				return null;
 			}
+			decimal СтрокаКод = Запрос.Код;
 			var Ссылка = V82.Справочники.ВидыЗаметок.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyZametokResponse() {Result = "ВидыЗаметок c кодом '" + request.Code+"' не найдено."};
+				return new ВидыЗаметокОтвет() {Ответ = "ВидыЗаметок c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyZametoksRequest request)
+		
+		public object Get(ВидыЗаметокНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыЗаметок>();
-			foreach (var Code in request.Codes)
-			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
-				{
-				continue;//ToDo: Регестрация ошибки.
-				}
-				var Ссылка = V82.Справочники.ВидыЗаметок.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыЗаметокВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЗаметокВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЗаметокВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыЗаметокЗапрос Запрос)
+		{
+			return new ВидыЗаметокОтвет {Ответ = "ВидыЗаметок, "};
+		}
+
+		public object Post(ВидыЗаметокЗапрос ЗапросВидыЗаметок)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыЗаметок)ЗапросВидыЗаметок;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

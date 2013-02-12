@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/EHDPrisoedinennyeFajjly")]
-	[Route("/Catalogs/EHDPrisoedinennyeFajjly/FindById/{Id}")]
-	[Route("/Catalogs/EHDPrisoedinennyeFajjly/FindByCode/{Code}")]
-	[Route("/Catalogs/EHDPrisoedinennyeFajjly/FindByDescr/{Descr}")]
-	public class EHDPrisoedinennyeFajjlyRequest/*ЭДПрисоединенныеФайлыЗапрос*/: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<EHDPrisoedinennyeFajjlyRequest>
+	//EHDPrisoedinennyeFajjly
+	[Маршрут("Справочники/ЭДПрисоединенныеФайлы","")]
+	public class ЭДПрисоединенныеФайлыЗапрос: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<ЭДПрисоединенныеФайлыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЭДПрисоединенныеФайлы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЭДПрисоединенныеФайлы/ПоСсылке","{Ссылка}")]
+	public class ЭДПрисоединенныеФайлыНайтиПоСсылке: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<ЭДПрисоединенныеФайлыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЭДПрисоединенныеФайлы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЭДПрисоединенныеФайлы/ПоНаименованию","{Наименование}")]
+	public class ЭДПрисоединенныеФайлыНайтиПоНаименованию: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<ЭДПрисоединенныеФайлыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЭДПрисоединенныеФайлы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЭДПрисоединенныеФайлыВыбратьПоСсылке: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<ЭДПрисоединенныеФайлыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЭДПрисоединенныеФайлы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЭДПрисоединенныеФайлыВыбратьПоНаименованию: V82.СправочникиСсылка.ЭДПрисоединенныеФайлы,IReturn<ЭДПрисоединенныеФайлыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class EHDPrisoedinennyeFajjlyResponse//ЭДПрисоединенныеФайлыОтвет
+	public class ЭДПрисоединенныеФайлыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/EHDPrisoedinennyeFajjlys")]
-	[Route("/Catalogs/EHDPrisoedinennyeFajjlys/{Codes}")]
-	public class EHDPrisoedinennyeFajjlysRequest/*ЭДПрисоединенныеФайлыЗапрос*/: IReturn<List<EHDPrisoedinennyeFajjlyRequest>>
+	public class ЭДПрисоединенныеФайлыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public EHDPrisoedinennyeFajjlysRequest(params string[] Codes)
+		
+		public object Get(ЭДПрисоединенныеФайлыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class EHDPrisoedinennyeFajjlysResponse//ЭДПрисоединенныеФайлыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class EHDPrisoedinennyeFajjlyService /*ЭДПрисоединенныеФайлыСервис*/ : Service
-	{
-		public object Any(EHDPrisoedinennyeFajjlyRequest request)
+		
+		public object Get(ЭДПрисоединенныеФайлыНайтиПоНаименованию Запрос)
 		{
-			return new EHDPrisoedinennyeFajjlyResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(EHDPrisoedinennyeFajjlyRequest request)
+		
+		public object Get(ЭДПрисоединенныеФайлыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЭДПрисоединенныеФайлыВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(EHDPrisoedinennyeFajjlysRequest request)
+		public object Any(ЭДПрисоединенныеФайлыЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЭДПрисоединенныеФайлы>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ЭДПрисоединенныеФайлыОтвет {Ответ = "ЭДПрисоединенныеФайлы, "};
 		}
+
+		public object Post(ЭДПрисоединенныеФайлыЗапрос ЗапросЭДПрисоединенныеФайлы)
+		{
+			var Ссылка = (СправочникиСсылка.ЭДПрисоединенныеФайлы)ЗапросЭДПрисоединенныеФайлы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

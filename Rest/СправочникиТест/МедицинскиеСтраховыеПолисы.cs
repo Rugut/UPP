@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class МедицинскиеСтраховыеПолисы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static МедицинскиеСтраховыеПолисыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/MedicinskieStrakhovyePolisy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МедицинскиеСтраховыеПолисы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new MedicinskieStrakhovyePolisyRequest());
+			МедицинскиеСтраховыеПолисыЗапрос МедицинскиеСтраховыеПолисыЗапрос = null;
+			try
+			{
+				МедицинскиеСтраховыеПолисыЗапрос = Клиент.Get(new МедицинскиеСтраховыеПолисыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МедицинскиеСтраховыеПолисыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static МедицинскиеСтраховыеПолисыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/MedicinskieStrakhovyePolisy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МедицинскиеСтраховыеПолисы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new MedicinskieStrakhovyePolisyRequest());
+			МедицинскиеСтраховыеПолисыЗапрос МедицинскиеСтраховыеПолисыЗапрос = null;
+			try
+			{
+				МедицинскиеСтраховыеПолисыЗапрос = Клиент.Get(new МедицинскиеСтраховыеПолисыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МедицинскиеСтраховыеПолисыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static МедицинскиеСтраховыеПолисыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/MedicinskieStrakhovyePolisy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МедицинскиеСтраховыеПолисы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new MedicinskieStrakhovyePolisyRequest());
+			МедицинскиеСтраховыеПолисыЗапрос МедицинскиеСтраховыеПолисыЗапрос = null;
+			try
+			{
+				МедицинскиеСтраховыеПолисыЗапрос = Клиент.Get(new МедицинскиеСтраховыеПолисыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return МедицинскиеСтраховыеПолисыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(МедицинскиеСтраховыеПолисыЗапрос МедицинскиеСтраховыеПолисыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/MedicinskieStrakhovyePolisy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/МедицинскиеСтраховыеПолисы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new MedicinskieStrakhovyePolisyRequest());
+			var МедицинскиеСтраховыеПолисыОтвет = Клиент.Post(МедицинскиеСтраховыеПолисыЗапрос);
+		}
+		public static void Записать(МедицинскиеСтраховыеПолисыЗапрос МедицинскиеСтраховыеПолисыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/МедицинскиеСтраховыеПолисы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var МедицинскиеСтраховыеПолисыОтвет = Клиент.Put(МедицинскиеСтраховыеПолисыЗапрос);
+		}
+		public static void Удалить(МедицинскиеСтраховыеПолисыЗапрос МедицинскиеСтраховыеПолисыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/МедицинскиеСтраховыеПолисы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var МедицинскиеСтраховыеПолисыОтвет = Клиент.Delete(МедицинскиеСтраховыеПолисыЗапрос);
 		}
 	}
 }

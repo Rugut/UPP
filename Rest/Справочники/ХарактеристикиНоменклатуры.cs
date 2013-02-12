@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KHarakteristikiNomenklatury")]
-	[Route("/Catalogs/KHarakteristikiNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/KHarakteristikiNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/KHarakteristikiNomenklatury/FindByDescr/{Descr}")]
-	public class KHarakteristikiNomenklaturyRequest/*ХарактеристикиНоменклатурыЗапрос*/: V82.СправочникиСсылка.ХарактеристикиНоменклатуры,IReturn<KHarakteristikiNomenklaturyRequest>
+	//KHarakteristikiNomenklatury
+	[Маршрут("Справочники/ХарактеристикиНоменклатуры","")]
+	public class ХарактеристикиНоменклатурыЗапрос: V82.СправочникиСсылка.ХарактеристикиНоменклатуры,IReturn<ХарактеристикиНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ХарактеристикиНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ХарактеристикиНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class ХарактеристикиНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.ХарактеристикиНоменклатуры,IReturn<ХарактеристикиНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ХарактеристикиНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ХарактеристикиНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class ХарактеристикиНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.ХарактеристикиНоменклатуры,IReturn<ХарактеристикиНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ХарактеристикиНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.ХарактеристикиНоменклатуры,IReturn<ХарактеристикиНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ХарактеристикиНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ХарактеристикиНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.ХарактеристикиНоменклатуры,IReturn<ХарактеристикиНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KHarakteristikiNomenklaturyResponse//ХарактеристикиНоменклатурыОтвет
+	public class ХарактеристикиНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KHarakteristikiNomenklaturys")]
-	[Route("/Catalogs/KHarakteristikiNomenklaturys/{Codes}")]
-	public class KHarakteristikiNomenklaturysRequest/*ХарактеристикиНоменклатурыЗапрос*/: IReturn<List<KHarakteristikiNomenklaturyRequest>>
+	public class ХарактеристикиНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KHarakteristikiNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(ХарактеристикиНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KHarakteristikiNomenklaturysResponse//ХарактеристикиНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KHarakteristikiNomenklaturyService /*ХарактеристикиНоменклатурыСервис*/ : Service
-	{
-		public object Any(KHarakteristikiNomenklaturyRequest request)
+		
+		public object Get(ХарактеристикиНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			return new KHarakteristikiNomenklaturyResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(KHarakteristikiNomenklaturyRequest request)
+		
+		public object Get(ХарактеристикиНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ХарактеристикиНоменклатурыВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(KHarakteristikiNomenklaturysRequest request)
+		public object Any(ХарактеристикиНоменклатурыЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ХарактеристикиНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ХарактеристикиНоменклатурыОтвет {Ответ = "ХарактеристикиНоменклатуры, "};
 		}
+
+		public object Post(ХарактеристикиНоменклатурыЗапрос ЗапросХарактеристикиНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.ХарактеристикиНоменклатуры)ЗапросХарактеристикиНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

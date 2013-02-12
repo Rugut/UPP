@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГруппыДоступаФизическихЛиц:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГруппыДоступаФизическихЛицЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupaFizicheskikhLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступаФизическихЛиц/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GruppyDostupaFizicheskikhLicRequest());
+			ГруппыДоступаФизическихЛицЗапрос ГруппыДоступаФизическихЛицЗапрос = null;
+			try
+			{
+				ГруппыДоступаФизическихЛицЗапрос = Клиент.Get(new ГруппыДоступаФизическихЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыДоступаФизическихЛицЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГруппыДоступаФизическихЛицЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupaFizicheskikhLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступаФизическихЛиц/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GruppyDostupaFizicheskikhLicRequest());
+			ГруппыДоступаФизическихЛицЗапрос ГруппыДоступаФизическихЛицЗапрос = null;
+			try
+			{
+				ГруппыДоступаФизическихЛицЗапрос = Клиент.Get(new ГруппыДоступаФизическихЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыДоступаФизическихЛицЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ГруппыДоступаФизическихЛицЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupaFizicheskikhLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступаФизическихЛиц/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GruppyDostupaFizicheskikhLicRequest());
+			ГруппыДоступаФизическихЛицЗапрос ГруппыДоступаФизическихЛицЗапрос = null;
+			try
+			{
+				ГруппыДоступаФизическихЛицЗапрос = Клиент.Get(new ГруппыДоступаФизическихЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыДоступаФизическихЛицЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ГруппыДоступаФизическихЛицЗапрос ГруппыДоступаФизическихЛицЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupaFizicheskikhLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступаФизическихЛиц?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GruppyDostupaFizicheskikhLicRequest());
+			var ГруппыДоступаФизическихЛицОтвет = Клиент.Post(ГруппыДоступаФизическихЛицЗапрос);
+		}
+		public static void Записать(ГруппыДоступаФизическихЛицЗапрос ГруппыДоступаФизическихЛицЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступаФизическихЛиц?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыДоступаФизическихЛицОтвет = Клиент.Put(ГруппыДоступаФизическихЛицЗапрос);
+		}
+		public static void Удалить(ГруппыДоступаФизическихЛицЗапрос ГруппыДоступаФизическихЛицЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступаФизическихЛиц?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыДоступаФизическихЛицОтвет = Клиент.Delete(ГруппыДоступаФизическихЛицЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyStazha")]
-	[Route("/Catalogs/VidyStazha/FindById/{Id}")]
-	[Route("/Catalogs/VidyStazha/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyStazha/FindByDescr/{Descr}")]
-	public class VidyStazhaRequest/*ВидыСтажаЗапрос*/: V82.СправочникиСсылка.ВидыСтажа,IReturn<VidyStazhaRequest>
+	//VidyStazha
+	[Маршрут("Справочники/ВидыСтажа","")]
+	public class ВидыСтажаЗапрос: V82.СправочникиСсылка.ВидыСтажа,IReturn<ВидыСтажаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыСтажа/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыСтажа/ПоСсылке","{Ссылка}")]
+	public class ВидыСтажаНайтиПоСсылке: V82.СправочникиСсылка.ВидыСтажа,IReturn<ВидыСтажаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыСтажа/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыСтажа/ПоКоду","{Код}")]
+	public class ВидыСтажаНайтиПоКоду: V82.СправочникиСсылка.ВидыСтажа,IReturn<ВидыСтажаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыСтажа/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыСтажа/ПоНаименованию","{Наименование}")]
+	public class ВидыСтажаНайтиПоНаименованию: V82.СправочникиСсылка.ВидыСтажа,IReturn<ВидыСтажаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыСтажа/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыСтажаВыбратьПоСсылке: V82.СправочникиСсылка.ВидыСтажа,IReturn<ВидыСтажаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыСтажа/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыСтажаВыбратьПоКоду: V82.СправочникиСсылка.ВидыСтажа,IReturn<ВидыСтажаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыСтажа/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыСтажаВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыСтажа,IReturn<ВидыСтажаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyStazhaResponse//ВидыСтажаОтвет
+	public class ВидыСтажаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyStazhas")]
-	[Route("/Catalogs/VidyStazhas/{Codes}")]
-	public class VidyStazhasRequest/*ВидыСтажаЗапрос*/: IReturn<List<VidyStazhaRequest>>
+	public class ВидыСтажаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyStazhasRequest(params string[] Codes)
+		
+		public object Get(ВидыСтажаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyStazhasResponse//ВидыСтажаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyStazhaService /*ВидыСтажаСервис*/ : Service
-	{
-		public object Any(VidyStazhaRequest request)
+		
+		public object Get(ВидыСтажаНайтиПоКоду Запрос)
 		{
-			return new VidyStazhaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyStazhaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыСтажа.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyStazhaResponse() {Result = "ВидыСтажа c кодом '" + request.Code+"' не найдено."};
+				return new ВидыСтажаОтвет() {Ответ = "ВидыСтажа c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyStazhasRequest request)
+		
+		public object Get(ВидыСтажаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыСтажа>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыСтажа.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыСтажаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыСтажаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыСтажаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыСтажаЗапрос Запрос)
+		{
+			return new ВидыСтажаОтвет {Ответ = "ВидыСтажа, "};
+		}
+
+		public object Post(ВидыСтажаЗапрос ЗапросВидыСтажа)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыСтажа)ЗапросВидыСтажа;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

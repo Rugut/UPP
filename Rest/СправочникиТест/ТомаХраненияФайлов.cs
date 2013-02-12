@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТомаХраненияФайлов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТомаХраненияФайловЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TomaKHraneniyaFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТомаХраненияФайлов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TomaKHraneniyaFajjlovRequest());
+			ТомаХраненияФайловЗапрос ТомаХраненияФайловЗапрос = null;
+			try
+			{
+				ТомаХраненияФайловЗапрос = Клиент.Get(new ТомаХраненияФайловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТомаХраненияФайловЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТомаХраненияФайловЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TomaKHraneniyaFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТомаХраненияФайлов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TomaKHraneniyaFajjlovRequest());
+			ТомаХраненияФайловЗапрос ТомаХраненияФайловЗапрос = null;
+			try
+			{
+				ТомаХраненияФайловЗапрос = Клиент.Get(new ТомаХраненияФайловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТомаХраненияФайловЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТомаХраненияФайловЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TomaKHraneniyaFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТомаХраненияФайлов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TomaKHraneniyaFajjlovRequest());
+			ТомаХраненияФайловЗапрос ТомаХраненияФайловЗапрос = null;
+			try
+			{
+				ТомаХраненияФайловЗапрос = Клиент.Get(new ТомаХраненияФайловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТомаХраненияФайловЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТомаХраненияФайловЗапрос ТомаХраненияФайловЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TomaKHraneniyaFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТомаХраненияФайлов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TomaKHraneniyaFajjlovRequest());
+			var ТомаХраненияФайловОтвет = Клиент.Post(ТомаХраненияФайловЗапрос);
+		}
+		public static void Записать(ТомаХраненияФайловЗапрос ТомаХраненияФайловЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТомаХраненияФайлов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТомаХраненияФайловОтвет = Клиент.Put(ТомаХраненияФайловЗапрос);
+		}
+		public static void Удалить(ТомаХраненияФайловЗапрос ТомаХраненияФайловЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТомаХраненияФайлов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТомаХраненияФайловОтвет = Клиент.Delete(ТомаХраненияФайловЗапрос);
 		}
 	}
 }

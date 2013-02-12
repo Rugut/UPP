@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiZapolneniyaForm")]
-	[Route("/Catalogs/NastrojjkiZapolneniyaForm/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiZapolneniyaForm/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiZapolneniyaForm/FindByDescr/{Descr}")]
-	public class NastrojjkiZapolneniyaFormRequest/*НастройкиЗаполненияФормЗапрос*/: V82.СправочникиСсылка.НастройкиЗаполненияФорм,IReturn<NastrojjkiZapolneniyaFormRequest>
+	//NastrojjkiZapolneniyaForm
+	[Маршрут("Справочники/НастройкиЗаполненияФорм","")]
+	public class НастройкиЗаполненияФормЗапрос: V82.СправочникиСсылка.НастройкиЗаполненияФорм,IReturn<НастройкиЗаполненияФормЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиЗаполненияФорм/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиЗаполненияФорм/ПоСсылке","{Ссылка}")]
+	public class НастройкиЗаполненияФормНайтиПоСсылке: V82.СправочникиСсылка.НастройкиЗаполненияФорм,IReturn<НастройкиЗаполненияФормНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиЗаполненияФорм/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиЗаполненияФорм/ПоНаименованию","{Наименование}")]
+	public class НастройкиЗаполненияФормНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиЗаполненияФорм,IReturn<НастройкиЗаполненияФормНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиЗаполненияФорм/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиЗаполненияФормВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиЗаполненияФорм,IReturn<НастройкиЗаполненияФормВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиЗаполненияФорм/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиЗаполненияФормВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиЗаполненияФорм,IReturn<НастройкиЗаполненияФормВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiZapolneniyaFormResponse//НастройкиЗаполненияФормОтвет
+	public class НастройкиЗаполненияФормОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiZapolneniyaForms")]
-	[Route("/Catalogs/NastrojjkiZapolneniyaForms/{Codes}")]
-	public class NastrojjkiZapolneniyaFormsRequest/*НастройкиЗаполненияФормЗапрос*/: IReturn<List<NastrojjkiZapolneniyaFormRequest>>
+	public class НастройкиЗаполненияФормСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiZapolneniyaFormsRequest(params string[] Codes)
+		
+		public object Get(НастройкиЗаполненияФормНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiZapolneniyaFormsResponse//НастройкиЗаполненияФормОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiZapolneniyaFormService /*НастройкиЗаполненияФормСервис*/ : Service
-	{
-		public object Any(NastrojjkiZapolneniyaFormRequest request)
+		
+		public object Get(НастройкиЗаполненияФормНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiZapolneniyaFormResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiZapolneniyaFormRequest request)
+		
+		public object Get(НастройкиЗаполненияФормВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиЗаполненияФормВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiZapolneniyaFormsRequest request)
+		public object Any(НастройкиЗаполненияФормЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиЗаполненияФорм>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиЗаполненияФормОтвет {Ответ = "НастройкиЗаполненияФорм, "};
 		}
+
+		public object Post(НастройкиЗаполненияФормЗапрос ЗапросНастройкиЗаполненияФорм)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиЗаполненияФорм)ЗапросНастройкиЗаполненияФорм;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

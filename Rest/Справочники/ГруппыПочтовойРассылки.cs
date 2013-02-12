@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppyPochtovojjRassylki")]
-	[Route("/Catalogs/GruppyPochtovojjRassylki/FindById/{Id}")]
-	[Route("/Catalogs/GruppyPochtovojjRassylki/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppyPochtovojjRassylki/FindByDescr/{Descr}")]
-	public class GruppyPochtovojjRassylkiRequest/*ГруппыПочтовойРассылкиЗапрос*/: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<GruppyPochtovojjRassylkiRequest>
+	//GruppyPochtovojjRassylki
+	[Маршрут("Справочники/ГруппыПочтовойРассылки","")]
+	public class ГруппыПочтовойРассылкиЗапрос: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<ГруппыПочтовойРассылкиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/ПоСсылке","{Ссылка}")]
+	public class ГруппыПочтовойРассылкиНайтиПоСсылке: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<ГруппыПочтовойРассылкиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/ПоКоду","{Код}")]
+	public class ГруппыПочтовойРассылкиНайтиПоКоду: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<ГруппыПочтовойРассылкиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/ПоНаименованию","{Наименование}")]
+	public class ГруппыПочтовойРассылкиНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<ГруппыПочтовойРассылкиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПочтовойРассылкиВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<ГруппыПочтовойРассылкиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПочтовойРассылкиВыбратьПоКоду: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<ГруппыПочтовойРассылкиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыПочтовойРассылки/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПочтовойРассылкиВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыПочтовойРассылки,IReturn<ГруппыПочтовойРассылкиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppyPochtovojjRassylkiResponse//ГруппыПочтовойРассылкиОтвет
+	public class ГруппыПочтовойРассылкиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppyPochtovojjRassylkis")]
-	[Route("/Catalogs/GruppyPochtovojjRassylkis/{Codes}")]
-	public class GruppyPochtovojjRassylkisRequest/*ГруппыПочтовойРассылкиЗапрос*/: IReturn<List<GruppyPochtovojjRassylkiRequest>>
+	public class ГруппыПочтовойРассылкиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppyPochtovojjRassylkisRequest(params string[] Codes)
+		
+		public object Get(ГруппыПочтовойРассылкиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppyPochtovojjRassylkisResponse//ГруппыПочтовойРассылкиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppyPochtovojjRassylkiService /*ГруппыПочтовойРассылкиСервис*/ : Service
-	{
-		public object Any(GruppyPochtovojjRassylkiRequest request)
+		
+		public object Get(ГруппыПочтовойРассылкиНайтиПоКоду Запрос)
 		{
-			return new GruppyPochtovojjRassylkiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppyPochtovojjRassylkiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыПочтовойРассылки.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppyPochtovojjRassylkiResponse() {Result = "ГруппыПочтовойРассылки c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыПочтовойРассылкиОтвет() {Ответ = "ГруппыПочтовойРассылки c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppyPochtovojjRassylkisRequest request)
+		
+		public object Get(ГруппыПочтовойРассылкиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыПочтовойРассылки>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыПочтовойРассылки.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыПочтовойРассылкиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыПочтовойРассылкиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыПочтовойРассылкиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыПочтовойРассылкиЗапрос Запрос)
+		{
+			return new ГруппыПочтовойРассылкиОтвет {Ответ = "ГруппыПочтовойРассылки, "};
+		}
+
+		public object Post(ГруппыПочтовойРассылкиЗапрос ЗапросГруппыПочтовойРассылки)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыПочтовойРассылки)ЗапросГруппыПочтовойРассылки;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

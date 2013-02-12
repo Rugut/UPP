@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/UchenyeZvaniya")]
-	[Route("/Catalogs/UchenyeZvaniya/FindById/{Id}")]
-	[Route("/Catalogs/UchenyeZvaniya/FindByCode/{Code}")]
-	[Route("/Catalogs/UchenyeZvaniya/FindByDescr/{Descr}")]
-	public class UchenyeZvaniyaRequest/*УченыеЗванияЗапрос*/: V82.СправочникиСсылка.УченыеЗвания,IReturn<UchenyeZvaniyaRequest>
+	//UchenyeZvaniya
+	[Маршрут("Справочники/УченыеЗвания","")]
+	public class УченыеЗванияЗапрос: V82.СправочникиСсылка.УченыеЗвания,IReturn<УченыеЗванияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/УченыеЗвания/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/УченыеЗвания/ПоСсылке","{Ссылка}")]
+	public class УченыеЗванияНайтиПоСсылке: V82.СправочникиСсылка.УченыеЗвания,IReturn<УченыеЗванияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/УченыеЗвания/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/УченыеЗвания/ПоКоду","{Код}")]
+	public class УченыеЗванияНайтиПоКоду: V82.СправочникиСсылка.УченыеЗвания,IReturn<УченыеЗванияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/УченыеЗвания/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/УченыеЗвания/ПоНаименованию","{Наименование}")]
+	public class УченыеЗванияНайтиПоНаименованию: V82.СправочникиСсылка.УченыеЗвания,IReturn<УченыеЗванияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/УченыеЗвания/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class УченыеЗванияВыбратьПоСсылке: V82.СправочникиСсылка.УченыеЗвания,IReturn<УченыеЗванияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УченыеЗвания/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class УченыеЗванияВыбратьПоКоду: V82.СправочникиСсылка.УченыеЗвания,IReturn<УченыеЗванияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УченыеЗвания/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class УченыеЗванияВыбратьПоНаименованию: V82.СправочникиСсылка.УченыеЗвания,IReturn<УченыеЗванияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class UchenyeZvaniyaResponse//УченыеЗванияОтвет
+	public class УченыеЗванияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/UchenyeZvaniyas")]
-	[Route("/Catalogs/UchenyeZvaniyas/{Codes}")]
-	public class UchenyeZvaniyasRequest/*УченыеЗванияЗапрос*/: IReturn<List<UchenyeZvaniyaRequest>>
+	public class УченыеЗванияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public UchenyeZvaniyasRequest(params string[] Codes)
+		
+		public object Get(УченыеЗванияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class UchenyeZvaniyasResponse//УченыеЗванияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class UchenyeZvaniyaService /*УченыеЗванияСервис*/ : Service
-	{
-		public object Any(UchenyeZvaniyaRequest request)
+		
+		public object Get(УченыеЗванияНайтиПоКоду Запрос)
 		{
-			return new UchenyeZvaniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(UchenyeZvaniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.УченыеЗвания.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new UchenyeZvaniyaResponse() {Result = "УченыеЗвания c кодом '" + request.Code+"' не найдено."};
+				return new УченыеЗванияОтвет() {Ответ = "УченыеЗвания c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(UchenyeZvaniyasRequest request)
+		
+		public object Get(УченыеЗванияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УченыеЗвания>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.УченыеЗвания.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(УченыеЗванияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УченыеЗванияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УченыеЗванияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(УченыеЗванияЗапрос Запрос)
+		{
+			return new УченыеЗванияОтвет {Ответ = "УченыеЗвания, "};
+		}
+
+		public object Post(УченыеЗванияЗапрос ЗапросУченыеЗвания)
+		{
+			var Ссылка = (СправочникиСсылка.УченыеЗвания)ЗапросУченыеЗвания;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДокументыРеализацииПолномочийНалоговыхОрганов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДокументыРеализацииПолномочийНалоговыхОргановЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыРеализацииПолномочийНалоговыхОрганов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest());
+			ДокументыРеализацииПолномочийНалоговыхОргановЗапрос ДокументыРеализацииПолномочийНалоговыхОргановЗапрос = null;
+			try
+			{
+				ДокументыРеализацииПолномочийНалоговыхОргановЗапрос = Клиент.Get(new ДокументыРеализацииПолномочийНалоговыхОргановЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыРеализацииПолномочийНалоговыхОргановЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДокументыРеализацииПолномочийНалоговыхОргановЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыРеализацииПолномочийНалоговыхОрганов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest());
+			ДокументыРеализацииПолномочийНалоговыхОргановЗапрос ДокументыРеализацииПолномочийНалоговыхОргановЗапрос = null;
+			try
+			{
+				ДокументыРеализацииПолномочийНалоговыхОргановЗапрос = Клиент.Get(new ДокументыРеализацииПолномочийНалоговыхОргановЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыРеализацииПолномочийНалоговыхОргановЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДокументыРеализацииПолномочийНалоговыхОргановЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыРеализацииПолномочийНалоговыхОрганов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest());
+			ДокументыРеализацииПолномочийНалоговыхОргановЗапрос ДокументыРеализацииПолномочийНалоговыхОргановЗапрос = null;
+			try
+			{
+				ДокументыРеализацииПолномочийНалоговыхОргановЗапрос = Клиент.Get(new ДокументыРеализацииПолномочийНалоговыхОргановЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыРеализацииПолномочийНалоговыхОргановЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос ДокументыРеализацииПолномочийНалоговыхОргановЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыРеализацииПолномочийНалоговыхОрганов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest());
+			var ДокументыРеализацииПолномочийНалоговыхОргановОтвет = Клиент.Post(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос);
+		}
+		public static void Записать(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос ДокументыРеализацииПолномочийНалоговыхОргановЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДокументыРеализацииПолномочийНалоговыхОрганов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДокументыРеализацииПолномочийНалоговыхОргановОтвет = Клиент.Put(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос);
+		}
+		public static void Удалить(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос ДокументыРеализацииПолномочийНалоговыхОргановЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДокументыРеализацииПолномочийНалоговыхОрганов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДокументыРеализацииПолномочийНалоговыхОргановОтвет = Клиент.Delete(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос);
 		}
 	}
 }

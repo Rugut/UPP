@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Polzovateli")]
-	[Route("/Catalogs/Polzovateli/FindById/{Id}")]
-	[Route("/Catalogs/Polzovateli/FindByCode/{Code}")]
-	[Route("/Catalogs/Polzovateli/FindByDescr/{Descr}")]
-	public class PolzovateliRequest/*ПользователиЗапрос*/: V82.СправочникиСсылка.Пользователи,IReturn<PolzovateliRequest>
+	//Polzovateli
+	[Маршрут("Справочники/Пользователи","")]
+	public class ПользователиЗапрос: V82.СправочникиСсылка.Пользователи,IReturn<ПользователиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Пользователи/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Пользователи/ПоСсылке","{Ссылка}")]
+	public class ПользователиНайтиПоСсылке: V82.СправочникиСсылка.Пользователи,IReturn<ПользователиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Пользователи/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Пользователи/ПоКоду","{Код}")]
+	public class ПользователиНайтиПоКоду: V82.СправочникиСсылка.Пользователи,IReturn<ПользователиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Пользователи/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Пользователи/ПоНаименованию","{Наименование}")]
+	public class ПользователиНайтиПоНаименованию: V82.СправочникиСсылка.Пользователи,IReturn<ПользователиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Пользователи/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПользователиВыбратьПоСсылке: V82.СправочникиСсылка.Пользователи,IReturn<ПользователиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Пользователи/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПользователиВыбратьПоКоду: V82.СправочникиСсылка.Пользователи,IReturn<ПользователиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Пользователи/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПользователиВыбратьПоНаименованию: V82.СправочникиСсылка.Пользователи,IReturn<ПользователиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PolzovateliResponse//ПользователиОтвет
+	public class ПользователиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Polzovatelis")]
-	[Route("/Catalogs/Polzovatelis/{Codes}")]
-	public class PolzovatelisRequest/*ПользователиЗапрос*/: IReturn<List<PolzovateliRequest>>
+	public class ПользователиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PolzovatelisRequest(params string[] Codes)
+		
+		public object Get(ПользователиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PolzovatelisResponse//ПользователиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PolzovateliService /*ПользователиСервис*/ : Service
-	{
-		public object Any(PolzovateliRequest request)
+		
+		public object Get(ПользователиНайтиПоКоду Запрос)
 		{
-			return new PolzovateliResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PolzovateliRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Пользователи.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PolzovateliResponse() {Result = "Пользователи c кодом '" + request.Code+"' не найдено."};
+				return new ПользователиОтвет() {Ответ = "Пользователи c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PolzovatelisRequest request)
+		
+		public object Get(ПользователиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Пользователи>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Пользователи.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПользователиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПользователиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПользователиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПользователиЗапрос Запрос)
+		{
+			return new ПользователиОтвет {Ответ = "Пользователи, "};
+		}
+
+		public object Post(ПользователиЗапрос ЗапросПользователи)
+		{
+			var Ссылка = (СправочникиСсылка.Пользователи)ЗапросПользователи;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

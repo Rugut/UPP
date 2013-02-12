@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OrganyFSGS")]
-	[Route("/Catalogs/OrganyFSGS/FindById/{Id}")]
-	[Route("/Catalogs/OrganyFSGS/FindByCode/{Code}")]
-	[Route("/Catalogs/OrganyFSGS/FindByDescr/{Descr}")]
-	public class OrganyFSGSRequest/*ОрганыФСГСЗапрос*/: V82.СправочникиСсылка.ОрганыФСГС,IReturn<OrganyFSGSRequest>
+	//OrganyFSGS
+	[Маршрут("Справочники/ОрганыФСГС","")]
+	public class ОрганыФСГСЗапрос: V82.СправочникиСсылка.ОрганыФСГС,IReturn<ОрганыФСГСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОрганыФСГС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОрганыФСГС/ПоСсылке","{Ссылка}")]
+	public class ОрганыФСГСНайтиПоСсылке: V82.СправочникиСсылка.ОрганыФСГС,IReturn<ОрганыФСГСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОрганыФСГС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОрганыФСГС/ПоКоду","{Код}")]
+	public class ОрганыФСГСНайтиПоКоду: V82.СправочникиСсылка.ОрганыФСГС,IReturn<ОрганыФСГСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОрганыФСГС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОрганыФСГС/ПоНаименованию","{Наименование}")]
+	public class ОрганыФСГСНайтиПоНаименованию: V82.СправочникиСсылка.ОрганыФСГС,IReturn<ОрганыФСГСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОрганыФСГС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганыФСГСВыбратьПоСсылке: V82.СправочникиСсылка.ОрганыФСГС,IReturn<ОрганыФСГСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОрганыФСГС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганыФСГСВыбратьПоКоду: V82.СправочникиСсылка.ОрганыФСГС,IReturn<ОрганыФСГСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОрганыФСГС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганыФСГСВыбратьПоНаименованию: V82.СправочникиСсылка.ОрганыФСГС,IReturn<ОрганыФСГСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OrganyFSGSResponse//ОрганыФСГСОтвет
+	public class ОрганыФСГСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OrganyFSGSs")]
-	[Route("/Catalogs/OrganyFSGSs/{Codes}")]
-	public class OrganyFSGSsRequest/*ОрганыФСГСЗапрос*/: IReturn<List<OrganyFSGSRequest>>
+	public class ОрганыФСГССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OrganyFSGSsRequest(params string[] Codes)
+		
+		public object Get(ОрганыФСГСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OrganyFSGSsResponse//ОрганыФСГСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OrganyFSGSService /*ОрганыФСГССервис*/ : Service
-	{
-		public object Any(OrganyFSGSRequest request)
+		
+		public object Get(ОрганыФСГСНайтиПоКоду Запрос)
 		{
-			return new OrganyFSGSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OrganyFSGSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОрганыФСГС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OrganyFSGSResponse() {Result = "ОрганыФСГС c кодом '" + request.Code+"' не найдено."};
+				return new ОрганыФСГСОтвет() {Ответ = "ОрганыФСГС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OrganyFSGSsRequest request)
+		
+		public object Get(ОрганыФСГСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОрганыФСГС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОрганыФСГС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОрганыФСГСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОрганыФСГСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОрганыФСГСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОрганыФСГСЗапрос Запрос)
+		{
+			return new ОрганыФСГСОтвет {Ответ = "ОрганыФСГС, "};
+		}
+
+		public object Post(ОрганыФСГСЗапрос ЗапросОрганыФСГС)
+		{
+			var Ссылка = (СправочникиСсылка.ОрганыФСГС)ЗапросОрганыФСГС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КонвертацииИзИнформационныхБаз1СПредприятия77:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КонвертацииИзИнформационныхБаз1СПредприятия77Запрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонвертацииИзИнформационныхБаз1СПредприятия77/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request());
+			КонвертацииИзИнформационныхБаз1СПредприятия77Запрос КонвертацииИзИнформационныхБаз1СПредприятия77Запрос = null;
+			try
+			{
+				КонвертацииИзИнформационныхБаз1СПредприятия77Запрос = Клиент.Get(new КонвертацииИзИнформационныхБаз1СПредприятия77Запрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КонвертацииИзИнформационныхБаз1СПредприятия77Запрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КонвертацииИзИнформационныхБаз1СПредприятия77Запрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонвертацииИзИнформационныхБаз1СПредприятия77/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request());
+			КонвертацииИзИнформационныхБаз1СПредприятия77Запрос КонвертацииИзИнформационныхБаз1СПредприятия77Запрос = null;
+			try
+			{
+				КонвертацииИзИнформационныхБаз1СПредприятия77Запрос = Клиент.Get(new КонвертацииИзИнформационныхБаз1СПредприятия77Запрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КонвертацииИзИнформационныхБаз1СПредприятия77Запрос;
 		}
-		public static void Записать()//Обновить
+		public static КонвертацииИзИнформационныхБаз1СПредприятия77Запрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонвертацииИзИнформационныхБаз1СПредприятия77/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request());
+			КонвертацииИзИнформационныхБаз1СПредприятия77Запрос КонвертацииИзИнформационныхБаз1СПредприятия77Запрос = null;
+			try
+			{
+				КонвертацииИзИнформационныхБаз1СПредприятия77Запрос = Клиент.Get(new КонвертацииИзИнформационныхБаз1СПредприятия77Запрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КонвертацииИзИнформационныхБаз1СПредприятия77Запрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос КонвертацииИзИнформационныхБаз1СПредприятия77Запрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонвертацииИзИнформационныхБаз1СПредприятия77?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request());
+			var КонвертацииИзИнформационныхБаз1СПредприятия77Ответ = Клиент.Post(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос);
+		}
+		public static void Записать(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос КонвертацииИзИнформационныхБаз1СПредприятия77Запрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/КонвертацииИзИнформационныхБаз1СПредприятия77?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КонвертацииИзИнформационныхБаз1СПредприятия77Ответ = Клиент.Put(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос);
+		}
+		public static void Удалить(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос КонвертацииИзИнформационныхБаз1СПредприятия77Запрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КонвертацииИзИнформационныхБаз1СПредприятия77?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КонвертацииИзИнформационныхБаз1СПредприятия77Ответ = Клиент.Delete(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос);
 		}
 	}
 }

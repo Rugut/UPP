@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Пользователи:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПользователиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Polzovateli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Пользователи/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PolzovateliRequest());
+			ПользователиЗапрос ПользователиЗапрос = null;
+			try
+			{
+				ПользователиЗапрос = Клиент.Get(new ПользователиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПользователиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПользователиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Polzovateli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Пользователи/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PolzovateliRequest());
+			ПользователиЗапрос ПользователиЗапрос = null;
+			try
+			{
+				ПользователиЗапрос = Клиент.Get(new ПользователиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПользователиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПользователиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Polzovateli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Пользователи/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PolzovateliRequest());
+			ПользователиЗапрос ПользователиЗапрос = null;
+			try
+			{
+				ПользователиЗапрос = Клиент.Get(new ПользователиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПользователиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПользователиЗапрос ПользователиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Polzovateli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Пользователи?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PolzovateliRequest());
+			var ПользователиОтвет = Клиент.Post(ПользователиЗапрос);
+		}
+		public static void Записать(ПользователиЗапрос ПользователиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Пользователи?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПользователиОтвет = Клиент.Put(ПользователиЗапрос);
+		}
+		public static void Удалить(ПользователиЗапрос ПользователиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Пользователи?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПользователиОтвет = Клиент.Delete(ПользователиЗапрос);
 		}
 	}
 }

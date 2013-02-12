@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкаИнтервалов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкаИнтерваловЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkaIntervalov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкаИнтервалов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkaIntervalovRequest());
+			НастройкаИнтерваловЗапрос НастройкаИнтерваловЗапрос = null;
+			try
+			{
+				НастройкаИнтерваловЗапрос = Клиент.Get(new НастройкаИнтерваловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкаИнтерваловЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкаИнтерваловЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkaIntervalov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкаИнтервалов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkaIntervalovRequest());
+			НастройкаИнтерваловЗапрос НастройкаИнтерваловЗапрос = null;
+			try
+			{
+				НастройкаИнтерваловЗапрос = Клиент.Get(new НастройкаИнтерваловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкаИнтерваловЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкаИнтерваловЗапрос НастройкаИнтерваловЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkaIntervalov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкаИнтервалов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkaIntervalovRequest());
+			var НастройкаИнтерваловОтвет = Клиент.Post(НастройкаИнтерваловЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкаИнтерваловЗапрос НастройкаИнтерваловЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkaIntervalov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкаИнтервалов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkaIntervalovRequest());
+			var НастройкаИнтерваловОтвет = Клиент.Put(НастройкаИнтерваловЗапрос);
+		}
+		public static void Удалить(НастройкаИнтерваловЗапрос НастройкаИнтерваловЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкаИнтервалов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкаИнтерваловОтвет = Клиент.Delete(НастройкаИнтерваловЗапрос);
 		}
 	}
 }

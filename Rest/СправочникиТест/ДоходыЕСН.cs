@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДоходыЕСН:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДоходыЕСНЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokhodyESN/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоходыЕСН/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DokhodyESNRequest());
+			ДоходыЕСНЗапрос ДоходыЕСНЗапрос = null;
+			try
+			{
+				ДоходыЕСНЗапрос = Клиент.Get(new ДоходыЕСНЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоходыЕСНЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДоходыЕСНЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokhodyESN/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоходыЕСН/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DokhodyESNRequest());
+			ДоходыЕСНЗапрос ДоходыЕСНЗапрос = null;
+			try
+			{
+				ДоходыЕСНЗапрос = Клиент.Get(new ДоходыЕСНЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоходыЕСНЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ДоходыЕСНЗапрос ДоходыЕСНЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokhodyESN/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоходыЕСН?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DokhodyESNRequest());
+			var ДоходыЕСНОтвет = Клиент.Post(ДоходыЕСНЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ДоходыЕСНЗапрос ДоходыЕСНЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokhodyESN/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоходыЕСН?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DokhodyESNRequest());
+			var ДоходыЕСНОтвет = Клиент.Put(ДоходыЕСНЗапрос);
+		}
+		public static void Удалить(ДоходыЕСНЗапрос ДоходыЕСНЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДоходыЕСН?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДоходыЕСНОтвет = Клиент.Delete(ДоходыЕСНЗапрос);
 		}
 	}
 }

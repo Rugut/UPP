@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiVypolneniyaObmena")]
-	[Route("/Catalogs/NastrojjkiVypolneniyaObmena/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiVypolneniyaObmena/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiVypolneniyaObmena/FindByDescr/{Descr}")]
-	public class NastrojjkiVypolneniyaObmenaRequest/*НастройкиВыполненияОбменаЗапрос*/: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<NastrojjkiVypolneniyaObmenaRequest>
+	//NastrojjkiVypolneniyaObmena
+	[Маршрут("Справочники/НастройкиВыполненияОбмена","")]
+	public class НастройкиВыполненияОбменаЗапрос: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<НастройкиВыполненияОбменаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/ПоСсылке","{Ссылка}")]
+	public class НастройкиВыполненияОбменаНайтиПоСсылке: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<НастройкиВыполненияОбменаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/ПоКоду","{Код}")]
+	public class НастройкиВыполненияОбменаНайтиПоКоду: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<НастройкиВыполненияОбменаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/ПоНаименованию","{Наименование}")]
+	public class НастройкиВыполненияОбменаНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<НастройкиВыполненияОбменаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиВыполненияОбменаВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<НастройкиВыполненияОбменаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиВыполненияОбменаВыбратьПоКоду: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<НастройкиВыполненияОбменаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиВыполненияОбмена/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиВыполненияОбменаВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиВыполненияОбмена,IReturn<НастройкиВыполненияОбменаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiVypolneniyaObmenaResponse//НастройкиВыполненияОбменаОтвет
+	public class НастройкиВыполненияОбменаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiVypolneniyaObmenas")]
-	[Route("/Catalogs/NastrojjkiVypolneniyaObmenas/{Codes}")]
-	public class NastrojjkiVypolneniyaObmenasRequest/*НастройкиВыполненияОбменаЗапрос*/: IReturn<List<NastrojjkiVypolneniyaObmenaRequest>>
+	public class НастройкиВыполненияОбменаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiVypolneniyaObmenasRequest(params string[] Codes)
+		
+		public object Get(НастройкиВыполненияОбменаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiVypolneniyaObmenasResponse//НастройкиВыполненияОбменаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiVypolneniyaObmenaService /*НастройкиВыполненияОбменаСервис*/ : Service
-	{
-		public object Any(NastrojjkiVypolneniyaObmenaRequest request)
+		
+		public object Get(НастройкиВыполненияОбменаНайтиПоКоду Запрос)
 		{
-			return new NastrojjkiVypolneniyaObmenaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NastrojjkiVypolneniyaObmenaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НастройкиВыполненияОбмена.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NastrojjkiVypolneniyaObmenaResponse() {Result = "НастройкиВыполненияОбмена c кодом '" + request.Code+"' не найдено."};
+				return new НастройкиВыполненияОбменаОтвет() {Ответ = "НастройкиВыполненияОбмена c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NastrojjkiVypolneniyaObmenasRequest request)
+		
+		public object Get(НастройкиВыполненияОбменаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиВыполненияОбмена>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НастройкиВыполненияОбмена.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НастройкиВыполненияОбменаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиВыполненияОбменаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиВыполненияОбменаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НастройкиВыполненияОбменаЗапрос Запрос)
+		{
+			return new НастройкиВыполненияОбменаОтвет {Ответ = "НастройкиВыполненияОбмена, "};
+		}
+
+		public object Post(НастройкиВыполненияОбменаЗапрос ЗапросНастройкиВыполненияОбмена)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиВыполненияОбмена)ЗапросНастройкиВыполненияОбмена;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

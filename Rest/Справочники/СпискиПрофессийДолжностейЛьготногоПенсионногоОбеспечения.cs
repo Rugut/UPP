@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniya")]
-	[Route("/Catalogs/SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniya/FindById/{Id}")]
-	[Route("/Catalogs/SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniya/FindByCode/{Code}")]
-	[Route("/Catalogs/SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniya/FindByDescr/{Descr}")]
-	public class SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaRequest/*СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияЗапрос*/: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaRequest>
+	//SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniya
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения","")]
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияЗапрос: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/ПоСсылке","{Ссылка}")]
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоСсылке: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/ПоКоду","{Код}")]
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоКоду: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/ПоНаименованию","{Наименование}")]
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоНаименованию: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоСсылке: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоКоду: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоНаименованию: V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения,IReturn<СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaResponse//СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияОтвет
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyas")]
-	[Route("/Catalogs/SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyas/{Codes}")]
-	public class SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyasRequest/*СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияЗапрос*/: IReturn<List<SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaRequest>>
+	public class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyasRequest(params string[] Codes)
+		
+		public object Get(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyasResponse//СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaService /*СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияСервис*/ : Service
-	{
-		public object Any(SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaRequest request)
+		
+		public object Get(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоКоду Запрос)
 		{
-			return new SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyaResponse() {Result = "СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения c кодом '" + request.Code+"' не найдено."};
+				return new СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияОтвет() {Ответ = "СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SpiskiProfessijjDolzhnostejjLgotnogoPensionnogoObespecheniyasRequest request)
+		
+		public object Get(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияЗапрос Запрос)
+		{
+			return new СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияОтвет {Ответ = "СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения, "};
+		}
+
+		public object Post(СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспеченияЗапрос ЗапросСпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения)
+		{
+			var Ссылка = (СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения)ЗапросСпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

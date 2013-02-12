@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ScenariiPlanirovaniya")]
-	[Route("/Catalogs/ScenariiPlanirovaniya/FindById/{Id}")]
-	[Route("/Catalogs/ScenariiPlanirovaniya/FindByCode/{Code}")]
-	[Route("/Catalogs/ScenariiPlanirovaniya/FindByDescr/{Descr}")]
-	public class ScenariiPlanirovaniyaRequest/*СценарииПланированияЗапрос*/: V82.СправочникиСсылка.СценарииПланирования,IReturn<ScenariiPlanirovaniyaRequest>
+	//ScenariiPlanirovaniya
+	[Маршрут("Справочники/СценарииПланирования","")]
+	public class СценарииПланированияЗапрос: V82.СправочникиСсылка.СценарииПланирования,IReturn<СценарииПланированияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СценарииПланирования/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СценарииПланирования/ПоСсылке","{Ссылка}")]
+	public class СценарииПланированияНайтиПоСсылке: V82.СправочникиСсылка.СценарииПланирования,IReturn<СценарииПланированияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СценарииПланирования/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СценарииПланирования/ПоКоду","{Код}")]
+	public class СценарииПланированияНайтиПоКоду: V82.СправочникиСсылка.СценарииПланирования,IReturn<СценарииПланированияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СценарииПланирования/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СценарииПланирования/ПоНаименованию","{Наименование}")]
+	public class СценарииПланированияНайтиПоНаименованию: V82.СправочникиСсылка.СценарииПланирования,IReturn<СценарииПланированияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СценарииПланирования/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СценарииПланированияВыбратьПоСсылке: V82.СправочникиСсылка.СценарииПланирования,IReturn<СценарииПланированияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СценарииПланирования/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СценарииПланированияВыбратьПоКоду: V82.СправочникиСсылка.СценарииПланирования,IReturn<СценарииПланированияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СценарииПланирования/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СценарииПланированияВыбратьПоНаименованию: V82.СправочникиСсылка.СценарииПланирования,IReturn<СценарииПланированияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ScenariiPlanirovaniyaResponse//СценарииПланированияОтвет
+	public class СценарииПланированияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ScenariiPlanirovaniyas")]
-	[Route("/Catalogs/ScenariiPlanirovaniyas/{Codes}")]
-	public class ScenariiPlanirovaniyasRequest/*СценарииПланированияЗапрос*/: IReturn<List<ScenariiPlanirovaniyaRequest>>
+	public class СценарииПланированияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ScenariiPlanirovaniyasRequest(params string[] Codes)
+		
+		public object Get(СценарииПланированияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ScenariiPlanirovaniyasResponse//СценарииПланированияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ScenariiPlanirovaniyaService /*СценарииПланированияСервис*/ : Service
-	{
-		public object Any(ScenariiPlanirovaniyaRequest request)
+		
+		public object Get(СценарииПланированияНайтиПоКоду Запрос)
 		{
-			return new ScenariiPlanirovaniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ScenariiPlanirovaniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СценарииПланирования.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ScenariiPlanirovaniyaResponse() {Result = "СценарииПланирования c кодом '" + request.Code+"' не найдено."};
+				return new СценарииПланированияОтвет() {Ответ = "СценарииПланирования c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ScenariiPlanirovaniyasRequest request)
+		
+		public object Get(СценарииПланированияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СценарииПланирования>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СценарииПланирования.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СценарииПланированияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СценарииПланированияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СценарииПланированияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СценарииПланированияЗапрос Запрос)
+		{
+			return new СценарииПланированияОтвет {Ответ = "СценарииПланирования, "};
+		}
+
+		public object Post(СценарииПланированияЗапрос ЗапросСценарииПланирования)
+		{
+			var Ссылка = (СправочникиСсылка.СценарииПланирования)ЗапросСценарииПланирования;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

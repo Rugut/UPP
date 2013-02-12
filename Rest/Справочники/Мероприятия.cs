@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Meropriyatiya")]
-	[Route("/Catalogs/Meropriyatiya/FindById/{Id}")]
-	[Route("/Catalogs/Meropriyatiya/FindByCode/{Code}")]
-	[Route("/Catalogs/Meropriyatiya/FindByDescr/{Descr}")]
-	public class MeropriyatiyaRequest/*МероприятияЗапрос*/: V82.СправочникиСсылка.Мероприятия,IReturn<MeropriyatiyaRequest>
+	//Meropriyatiya
+	[Маршрут("Справочники/Мероприятия","")]
+	public class МероприятияЗапрос: V82.СправочникиСсылка.Мероприятия,IReturn<МероприятияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Мероприятия/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Мероприятия/ПоСсылке","{Ссылка}")]
+	public class МероприятияНайтиПоСсылке: V82.СправочникиСсылка.Мероприятия,IReturn<МероприятияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Мероприятия/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Мероприятия/ПоКоду","{Код}")]
+	public class МероприятияНайтиПоКоду: V82.СправочникиСсылка.Мероприятия,IReturn<МероприятияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Мероприятия/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Мероприятия/ПоНаименованию","{Наименование}")]
+	public class МероприятияНайтиПоНаименованию: V82.СправочникиСсылка.Мероприятия,IReturn<МероприятияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Мероприятия/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class МероприятияВыбратьПоСсылке: V82.СправочникиСсылка.Мероприятия,IReturn<МероприятияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Мероприятия/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class МероприятияВыбратьПоКоду: V82.СправочникиСсылка.Мероприятия,IReturn<МероприятияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Мероприятия/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class МероприятияВыбратьПоНаименованию: V82.СправочникиСсылка.Мероприятия,IReturn<МероприятияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class MeropriyatiyaResponse//МероприятияОтвет
+	public class МероприятияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Meropriyatiyas")]
-	[Route("/Catalogs/Meropriyatiyas/{Codes}")]
-	public class MeropriyatiyasRequest/*МероприятияЗапрос*/: IReturn<List<MeropriyatiyaRequest>>
+	public class МероприятияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public MeropriyatiyasRequest(params string[] Codes)
+		
+		public object Get(МероприятияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class MeropriyatiyasResponse//МероприятияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class MeropriyatiyaService /*МероприятияСервис*/ : Service
-	{
-		public object Any(MeropriyatiyaRequest request)
+		
+		public object Get(МероприятияНайтиПоКоду Запрос)
 		{
-			return new MeropriyatiyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(MeropriyatiyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Мероприятия.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new MeropriyatiyaResponse() {Result = "Мероприятия c кодом '" + request.Code+"' не найдено."};
+				return new МероприятияОтвет() {Ответ = "Мероприятия c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(MeropriyatiyasRequest request)
+		
+		public object Get(МероприятияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Мероприятия>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Мероприятия.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(МероприятияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МероприятияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МероприятияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(МероприятияЗапрос Запрос)
+		{
+			return new МероприятияОтвет {Ответ = "Мероприятия, "};
+		}
+
+		public object Post(МероприятияЗапрос ЗапросМероприятия)
+		{
+			var Ссылка = (СправочникиСсылка.Мероприятия)ЗапросМероприятия;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

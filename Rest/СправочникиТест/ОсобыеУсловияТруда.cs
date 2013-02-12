@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОсобыеУсловияТруда:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОсобыеУсловияТрудаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsobyeUsloviyaTruda/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсобыеУсловияТруда/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OsobyeUsloviyaTrudaRequest());
+			ОсобыеУсловияТрудаЗапрос ОсобыеУсловияТрудаЗапрос = null;
+			try
+			{
+				ОсобыеУсловияТрудаЗапрос = Клиент.Get(new ОсобыеУсловияТрудаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсобыеУсловияТрудаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОсобыеУсловияТрудаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsobyeUsloviyaTruda/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсобыеУсловияТруда/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OsobyeUsloviyaTrudaRequest());
+			ОсобыеУсловияТрудаЗапрос ОсобыеУсловияТрудаЗапрос = null;
+			try
+			{
+				ОсобыеУсловияТрудаЗапрос = Клиент.Get(new ОсобыеУсловияТрудаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсобыеУсловияТрудаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОсобыеУсловияТрудаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsobyeUsloviyaTruda/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсобыеУсловияТруда/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OsobyeUsloviyaTrudaRequest());
+			ОсобыеУсловияТрудаЗапрос ОсобыеУсловияТрудаЗапрос = null;
+			try
+			{
+				ОсобыеУсловияТрудаЗапрос = Клиент.Get(new ОсобыеУсловияТрудаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсобыеУсловияТрудаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОсобыеУсловияТрудаЗапрос ОсобыеУсловияТрудаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsobyeUsloviyaTruda/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсобыеУсловияТруда?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OsobyeUsloviyaTrudaRequest());
+			var ОсобыеУсловияТрудаОтвет = Клиент.Post(ОсобыеУсловияТрудаЗапрос);
+		}
+		public static void Записать(ОсобыеУсловияТрудаЗапрос ОсобыеУсловияТрудаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОсобыеУсловияТруда?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОсобыеУсловияТрудаОтвет = Клиент.Put(ОсобыеУсловияТрудаЗапрос);
+		}
+		public static void Удалить(ОсобыеУсловияТрудаЗапрос ОсобыеУсловияТрудаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОсобыеУсловияТруда?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОсобыеУсловияТрудаОтвет = Клиент.Delete(ОсобыеУсловияТрудаЗапрос);
 		}
 	}
 }

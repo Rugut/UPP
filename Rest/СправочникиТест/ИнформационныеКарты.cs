@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ИнформационныеКарты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ИнформационныеКартыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/InformacionnyeKarty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИнформационныеКарты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new InformacionnyeKartyRequest());
+			ИнформационныеКартыЗапрос ИнформационныеКартыЗапрос = null;
+			try
+			{
+				ИнформационныеКартыЗапрос = Клиент.Get(new ИнформационныеКартыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИнформационныеКартыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ИнформационныеКартыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/InformacionnyeKarty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИнформационныеКарты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new InformacionnyeKartyRequest());
+			ИнформационныеКартыЗапрос ИнформационныеКартыЗапрос = null;
+			try
+			{
+				ИнформационныеКартыЗапрос = Клиент.Get(new ИнформационныеКартыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИнформационныеКартыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ИнформационныеКартыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/InformacionnyeKarty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИнформационныеКарты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new InformacionnyeKartyRequest());
+			ИнформационныеКартыЗапрос ИнформационныеКартыЗапрос = null;
+			try
+			{
+				ИнформационныеКартыЗапрос = Клиент.Get(new ИнформационныеКартыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИнформационныеКартыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ИнформационныеКартыЗапрос ИнформационныеКартыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/InformacionnyeKarty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИнформационныеКарты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new InformacionnyeKartyRequest());
+			var ИнформационныеКартыОтвет = Клиент.Post(ИнформационныеКартыЗапрос);
+		}
+		public static void Записать(ИнформационныеКартыЗапрос ИнформационныеКартыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИнформационныеКарты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИнформационныеКартыОтвет = Клиент.Put(ИнформационныеКартыЗапрос);
+		}
+		public static void Удалить(ИнформационныеКартыЗапрос ИнформационныеКартыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИнформационныеКарты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИнформационныеКартыОтвет = Клиент.Delete(ИнформационныеКартыЗапрос);
 		}
 	}
 }

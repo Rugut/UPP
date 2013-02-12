@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class УдалитьОценочныеОбязательства:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static УдалитьОценочныеОбязательстваЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UdalitOcenochnyeObyazatelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УдалитьОценочныеОбязательства/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new UdalitOcenochnyeObyazatelstvaRequest());
+			УдалитьОценочныеОбязательстваЗапрос УдалитьОценочныеОбязательстваЗапрос = null;
+			try
+			{
+				УдалитьОценочныеОбязательстваЗапрос = Клиент.Get(new УдалитьОценочныеОбязательстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УдалитьОценочныеОбязательстваЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static УдалитьОценочныеОбязательстваЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/UdalitOcenochnyeObyazatelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УдалитьОценочныеОбязательства/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new UdalitOcenochnyeObyazatelstvaRequest());
+			УдалитьОценочныеОбязательстваЗапрос УдалитьОценочныеОбязательстваЗапрос = null;
+			try
+			{
+				УдалитьОценочныеОбязательстваЗапрос = Клиент.Get(new УдалитьОценочныеОбязательстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УдалитьОценочныеОбязательстваЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static УдалитьОценочныеОбязательстваЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UdalitOcenochnyeObyazatelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УдалитьОценочныеОбязательства/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new UdalitOcenochnyeObyazatelstvaRequest());
+			УдалитьОценочныеОбязательстваЗапрос УдалитьОценочныеОбязательстваЗапрос = null;
+			try
+			{
+				УдалитьОценочныеОбязательстваЗапрос = Клиент.Get(new УдалитьОценочныеОбязательстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УдалитьОценочныеОбязательстваЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(УдалитьОценочныеОбязательстваЗапрос УдалитьОценочныеОбязательстваЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/UdalitOcenochnyeObyazatelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УдалитьОценочныеОбязательства?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new UdalitOcenochnyeObyazatelstvaRequest());
+			var УдалитьОценочныеОбязательстваОтвет = Клиент.Post(УдалитьОценочныеОбязательстваЗапрос);
+		}
+		public static void Записать(УдалитьОценочныеОбязательстваЗапрос УдалитьОценочныеОбязательстваЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/УдалитьОценочныеОбязательства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УдалитьОценочныеОбязательстваОтвет = Клиент.Put(УдалитьОценочныеОбязательстваЗапрос);
+		}
+		public static void Удалить(УдалитьОценочныеОбязательстваЗапрос УдалитьОценочныеОбязательстваЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/УдалитьОценочныеОбязательства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УдалитьОценочныеОбязательстваОтвет = Клиент.Delete(УдалитьОценочныеОбязательстваЗапрос);
 		}
 	}
 }

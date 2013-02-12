@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class БланкиСтрогойОтчетности:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static БланкиСтрогойОтчетностиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/BlankiStrogojjOtchetnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/БланкиСтрогойОтчетности/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new BlankiStrogojjOtchetnostiRequest());
+			БланкиСтрогойОтчетностиЗапрос БланкиСтрогойОтчетностиЗапрос = null;
+			try
+			{
+				БланкиСтрогойОтчетностиЗапрос = Клиент.Get(new БланкиСтрогойОтчетностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return БланкиСтрогойОтчетностиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static БланкиСтрогойОтчетностиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/BlankiStrogojjOtchetnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/БланкиСтрогойОтчетности/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new BlankiStrogojjOtchetnostiRequest());
+			БланкиСтрогойОтчетностиЗапрос БланкиСтрогойОтчетностиЗапрос = null;
+			try
+			{
+				БланкиСтрогойОтчетностиЗапрос = Клиент.Get(new БланкиСтрогойОтчетностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return БланкиСтрогойОтчетностиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static БланкиСтрогойОтчетностиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/BlankiStrogojjOtchetnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/БланкиСтрогойОтчетности/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new BlankiStrogojjOtchetnostiRequest());
+			БланкиСтрогойОтчетностиЗапрос БланкиСтрогойОтчетностиЗапрос = null;
+			try
+			{
+				БланкиСтрогойОтчетностиЗапрос = Клиент.Get(new БланкиСтрогойОтчетностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return БланкиСтрогойОтчетностиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(БланкиСтрогойОтчетностиЗапрос БланкиСтрогойОтчетностиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/BlankiStrogojjOtchetnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/БланкиСтрогойОтчетности?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new BlankiStrogojjOtchetnostiRequest());
+			var БланкиСтрогойОтчетностиОтвет = Клиент.Post(БланкиСтрогойОтчетностиЗапрос);
+		}
+		public static void Записать(БланкиСтрогойОтчетностиЗапрос БланкиСтрогойОтчетностиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/БланкиСтрогойОтчетности?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var БланкиСтрогойОтчетностиОтвет = Клиент.Put(БланкиСтрогойОтчетностиЗапрос);
+		}
+		public static void Удалить(БланкиСтрогойОтчетностиЗапрос БланкиСтрогойОтчетностиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/БланкиСтрогойОтчетности?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var БланкиСтрогойОтчетностиОтвет = Клиент.Delete(БланкиСтрогойОтчетностиЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva")]
-	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/FindById/{Id}")]
-	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/FindByCode/{Code}")]
-	[Route("/Catalogs/TekhnologicheskieKartyProizvodstva/FindByDescr/{Descr}")]
-	public class TekhnologicheskieKartyProizvodstvaRequest/*ТехнологическиеКартыПроизводстваЗапрос*/: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<TekhnologicheskieKartyProizvodstvaRequest>
+	//TekhnologicheskieKartyProizvodstva
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства","")]
+	public class ТехнологическиеКартыПроизводстваЗапрос: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<ТехнологическиеКартыПроизводстваЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/ПоСсылке","{Ссылка}")]
+	public class ТехнологическиеКартыПроизводстваНайтиПоСсылке: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<ТехнологическиеКартыПроизводстваНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/ПоКоду","{Код}")]
+	public class ТехнологическиеКартыПроизводстваНайтиПоКоду: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<ТехнологическиеКартыПроизводстваНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/ПоНаименованию","{Наименование}")]
+	public class ТехнологическиеКартыПроизводстваНайтиПоНаименованию: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<ТехнологическиеКартыПроизводстваНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТехнологическиеКартыПроизводстваВыбратьПоСсылке: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<ТехнологическиеКартыПроизводстваВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТехнологическиеКартыПроизводстваВыбратьПоКоду: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<ТехнологическиеКартыПроизводстваВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТехнологическиеКартыПроизводства/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТехнологическиеКартыПроизводстваВыбратьПоНаименованию: V82.СправочникиСсылка.ТехнологическиеКартыПроизводства,IReturn<ТехнологическиеКартыПроизводстваВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TekhnologicheskieKartyProizvodstvaResponse//ТехнологическиеКартыПроизводстваОтвет
+	public class ТехнологическиеКартыПроизводстваОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TekhnologicheskieKartyProizvodstvas")]
-	[Route("/Catalogs/TekhnologicheskieKartyProizvodstvas/{Codes}")]
-	public class TekhnologicheskieKartyProizvodstvasRequest/*ТехнологическиеКартыПроизводстваЗапрос*/: IReturn<List<TekhnologicheskieKartyProizvodstvaRequest>>
+	public class ТехнологическиеКартыПроизводстваСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TekhnologicheskieKartyProizvodstvasRequest(params string[] Codes)
+		
+		public object Get(ТехнологическиеКартыПроизводстваНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TekhnologicheskieKartyProizvodstvasResponse//ТехнологическиеКартыПроизводстваОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TekhnologicheskieKartyProizvodstvaService /*ТехнологическиеКартыПроизводстваСервис*/ : Service
-	{
-		public object Any(TekhnologicheskieKartyProizvodstvaRequest request)
+		
+		public object Get(ТехнологическиеКартыПроизводстваНайтиПоКоду Запрос)
 		{
-			return new TekhnologicheskieKartyProizvodstvaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TekhnologicheskieKartyProizvodstvaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТехнологическиеКартыПроизводства.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TekhnologicheskieKartyProizvodstvaResponse() {Result = "ТехнологическиеКартыПроизводства c кодом '" + request.Code+"' не найдено."};
+				return new ТехнологическиеКартыПроизводстваОтвет() {Ответ = "ТехнологическиеКартыПроизводства c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TekhnologicheskieKartyProizvodstvasRequest request)
+		
+		public object Get(ТехнологическиеКартыПроизводстваНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТехнологическиеКартыПроизводства>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТехнологическиеКартыПроизводства.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТехнологическиеКартыПроизводстваВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТехнологическиеКартыПроизводстваВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТехнологическиеКартыПроизводстваВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТехнологическиеКартыПроизводстваЗапрос Запрос)
+		{
+			return new ТехнологическиеКартыПроизводстваОтвет {Ответ = "ТехнологическиеКартыПроизводства, "};
+		}
+
+		public object Post(ТехнологическиеКартыПроизводстваЗапрос ЗапросТехнологическиеКартыПроизводства)
+		{
+			var Ссылка = (СправочникиСсылка.ТехнологическиеКартыПроизводства)ЗапросТехнологическиеКартыПроизводства;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

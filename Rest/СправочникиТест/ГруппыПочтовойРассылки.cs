@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГруппыПочтовойРассылки:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГруппыПочтовойРассылкиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPochtovojjRassylki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПочтовойРассылки/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GruppyPochtovojjRassylkiRequest());
+			ГруппыПочтовойРассылкиЗапрос ГруппыПочтовойРассылкиЗапрос = null;
+			try
+			{
+				ГруппыПочтовойРассылкиЗапрос = Клиент.Get(new ГруппыПочтовойРассылкиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПочтовойРассылкиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГруппыПочтовойРассылкиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPochtovojjRassylki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПочтовойРассылки/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GruppyPochtovojjRassylkiRequest());
+			ГруппыПочтовойРассылкиЗапрос ГруппыПочтовойРассылкиЗапрос = null;
+			try
+			{
+				ГруппыПочтовойРассылкиЗапрос = Клиент.Get(new ГруппыПочтовойРассылкиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПочтовойРассылкиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ГруппыПочтовойРассылкиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPochtovojjRassylki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПочтовойРассылки/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GruppyPochtovojjRassylkiRequest());
+			ГруппыПочтовойРассылкиЗапрос ГруппыПочтовойРассылкиЗапрос = null;
+			try
+			{
+				ГруппыПочтовойРассылкиЗапрос = Клиент.Get(new ГруппыПочтовойРассылкиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПочтовойРассылкиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ГруппыПочтовойРассылкиЗапрос ГруппыПочтовойРассылкиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPochtovojjRassylki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПочтовойРассылки?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GruppyPochtovojjRassylkiRequest());
+			var ГруппыПочтовойРассылкиОтвет = Клиент.Post(ГруппыПочтовойРассылкиЗапрос);
+		}
+		public static void Записать(ГруппыПочтовойРассылкиЗапрос ГруппыПочтовойРассылкиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПочтовойРассылки?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыПочтовойРассылкиОтвет = Клиент.Put(ГруппыПочтовойРассылкиЗапрос);
+		}
+		public static void Удалить(ГруппыПочтовойРассылкиЗапрос ГруппыПочтовойРассылкиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПочтовойРассылки?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыПочтовойРассылкиОтвет = Клиент.Delete(ГруппыПочтовойРассылкиЗапрос);
 		}
 	}
 }

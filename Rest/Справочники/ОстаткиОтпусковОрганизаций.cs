@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj")]
-	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj/FindById/{Id}")]
-	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj/FindByCode/{Code}")]
-	[Route("/Catalogs/OstatkiOtpuskovOrganizacijj/FindByDescr/{Descr}")]
-	public class OstatkiOtpuskovOrganizacijjRequest/*ОстаткиОтпусковОрганизацийЗапрос*/: V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций,IReturn<OstatkiOtpuskovOrganizacijjRequest>
+	//OstatkiOtpuskovOrganizacijj
+	[Маршрут("Справочники/ОстаткиОтпусковОрганизаций","")]
+	public class ОстаткиОтпусковОрганизацийЗапрос: V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций,IReturn<ОстаткиОтпусковОрганизацийЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОстаткиОтпусковОрганизаций/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОстаткиОтпусковОрганизаций/ПоСсылке","{Ссылка}")]
+	public class ОстаткиОтпусковОрганизацийНайтиПоСсылке: V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций,IReturn<ОстаткиОтпусковОрганизацийНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОстаткиОтпусковОрганизаций/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОстаткиОтпусковОрганизаций/ПоНаименованию","{Наименование}")]
+	public class ОстаткиОтпусковОрганизацийНайтиПоНаименованию: V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций,IReturn<ОстаткиОтпусковОрганизацийНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОстаткиОтпусковОрганизацийВыбратьПоСсылке: V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций,IReturn<ОстаткиОтпусковОрганизацийВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОстаткиОтпусковОрганизацийВыбратьПоНаименованию: V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций,IReturn<ОстаткиОтпусковОрганизацийВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OstatkiOtpuskovOrganizacijjResponse//ОстаткиОтпусковОрганизацийОтвет
+	public class ОстаткиОтпусковОрганизацийОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OstatkiOtpuskovOrganizacijjs")]
-	[Route("/Catalogs/OstatkiOtpuskovOrganizacijjs/{Codes}")]
-	public class OstatkiOtpuskovOrganizacijjsRequest/*ОстаткиОтпусковОрганизацийЗапрос*/: IReturn<List<OstatkiOtpuskovOrganizacijjRequest>>
+	public class ОстаткиОтпусковОрганизацийСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OstatkiOtpuskovOrganizacijjsRequest(params string[] Codes)
+		
+		public object Get(ОстаткиОтпусковОрганизацийНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OstatkiOtpuskovOrganizacijjsResponse//ОстаткиОтпусковОрганизацийОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OstatkiOtpuskovOrganizacijjService /*ОстаткиОтпусковОрганизацийСервис*/ : Service
-	{
-		public object Any(OstatkiOtpuskovOrganizacijjRequest request)
+		
+		public object Get(ОстаткиОтпусковОрганизацийНайтиПоНаименованию Запрос)
 		{
-			return new OstatkiOtpuskovOrganizacijjResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(OstatkiOtpuskovOrganizacijjRequest request)
+		
+		public object Get(ОстаткиОтпусковОрганизацийВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОстаткиОтпусковОрганизацийВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(OstatkiOtpuskovOrganizacijjsRequest request)
+		public object Any(ОстаткиОтпусковОрганизацийЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОстаткиОтпусковОрганизаций>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ОстаткиОтпусковОрганизацийОтвет {Ответ = "ОстаткиОтпусковОрганизаций, "};
 		}
+
+		public object Post(ОстаткиОтпусковОрганизацийЗапрос ЗапросОстаткиОтпусковОрганизаций)
+		{
+			var Ссылка = (СправочникиСсылка.ОстаткиОтпусковОрганизаций)ЗапросОстаткиОтпусковОрганизаций;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

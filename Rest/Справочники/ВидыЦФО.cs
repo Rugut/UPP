@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyCFO")]
-	[Route("/Catalogs/VidyCFO/FindById/{Id}")]
-	[Route("/Catalogs/VidyCFO/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyCFO/FindByDescr/{Descr}")]
-	public class VidyCFORequest/*ВидыЦФОЗапрос*/: V82.СправочникиСсылка.ВидыЦФО,IReturn<VidyCFORequest>
+	//VidyCFO
+	[Маршрут("Справочники/ВидыЦФО","")]
+	public class ВидыЦФОЗапрос: V82.СправочникиСсылка.ВидыЦФО,IReturn<ВидыЦФОЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыЦФО/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыЦФО/ПоСсылке","{Ссылка}")]
+	public class ВидыЦФОНайтиПоСсылке: V82.СправочникиСсылка.ВидыЦФО,IReturn<ВидыЦФОНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыЦФО/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыЦФО/ПоКоду","{Код}")]
+	public class ВидыЦФОНайтиПоКоду: V82.СправочникиСсылка.ВидыЦФО,IReturn<ВидыЦФОНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыЦФО/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыЦФО/ПоНаименованию","{Наименование}")]
+	public class ВидыЦФОНайтиПоНаименованию: V82.СправочникиСсылка.ВидыЦФО,IReturn<ВидыЦФОНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыЦФО/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЦФОВыбратьПоСсылке: V82.СправочникиСсылка.ВидыЦФО,IReturn<ВидыЦФОВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЦФО/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЦФОВыбратьПоКоду: V82.СправочникиСсылка.ВидыЦФО,IReturn<ВидыЦФОВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЦФО/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЦФОВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыЦФО,IReturn<ВидыЦФОВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyCFOResponse//ВидыЦФООтвет
+	public class ВидыЦФООтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyCFOs")]
-	[Route("/Catalogs/VidyCFOs/{Codes}")]
-	public class VidyCFOsRequest/*ВидыЦФОЗапрос*/: IReturn<List<VidyCFORequest>>
+	public class ВидыЦФОСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyCFOsRequest(params string[] Codes)
+		
+		public object Get(ВидыЦФОНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyCFOsResponse//ВидыЦФООтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyCFOService /*ВидыЦФОСервис*/ : Service
-	{
-		public object Any(VidyCFORequest request)
+		
+		public object Get(ВидыЦФОНайтиПоКоду Запрос)
 		{
-			return new VidyCFOResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyCFORequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыЦФО.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyCFOResponse() {Result = "ВидыЦФО c кодом '" + request.Code+"' не найдено."};
+				return new ВидыЦФООтвет() {Ответ = "ВидыЦФО c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyCFOsRequest request)
+		
+		public object Get(ВидыЦФОНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыЦФО>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыЦФО.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыЦФОВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЦФОВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЦФОВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыЦФОЗапрос Запрос)
+		{
+			return new ВидыЦФООтвет {Ответ = "ВидыЦФО, "};
+		}
+
+		public object Post(ВидыЦФОЗапрос ЗапросВидыЦФО)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыЦФО)ЗапросВидыЦФО;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

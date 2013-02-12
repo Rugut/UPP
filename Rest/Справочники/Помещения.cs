@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Pomeshheniya")]
-	[Route("/Catalogs/Pomeshheniya/FindById/{Id}")]
-	[Route("/Catalogs/Pomeshheniya/FindByCode/{Code}")]
-	[Route("/Catalogs/Pomeshheniya/FindByDescr/{Descr}")]
-	public class PomeshheniyaRequest/*ПомещенияЗапрос*/: V82.СправочникиСсылка.Помещения,IReturn<PomeshheniyaRequest>
+	//Pomeshheniya
+	[Маршрут("Справочники/Помещения","")]
+	public class ПомещенияЗапрос: V82.СправочникиСсылка.Помещения,IReturn<ПомещенияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Помещения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Помещения/ПоСсылке","{Ссылка}")]
+	public class ПомещенияНайтиПоСсылке: V82.СправочникиСсылка.Помещения,IReturn<ПомещенияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Помещения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Помещения/ПоКоду","{Код}")]
+	public class ПомещенияНайтиПоКоду: V82.СправочникиСсылка.Помещения,IReturn<ПомещенияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Помещения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Помещения/ПоНаименованию","{Наименование}")]
+	public class ПомещенияНайтиПоНаименованию: V82.СправочникиСсылка.Помещения,IReturn<ПомещенияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Помещения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПомещенияВыбратьПоСсылке: V82.СправочникиСсылка.Помещения,IReturn<ПомещенияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Помещения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПомещенияВыбратьПоКоду: V82.СправочникиСсылка.Помещения,IReturn<ПомещенияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Помещения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПомещенияВыбратьПоНаименованию: V82.СправочникиСсылка.Помещения,IReturn<ПомещенияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PomeshheniyaResponse//ПомещенияОтвет
+	public class ПомещенияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Pomeshheniyas")]
-	[Route("/Catalogs/Pomeshheniyas/{Codes}")]
-	public class PomeshheniyasRequest/*ПомещенияЗапрос*/: IReturn<List<PomeshheniyaRequest>>
+	public class ПомещенияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PomeshheniyasRequest(params string[] Codes)
+		
+		public object Get(ПомещенияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PomeshheniyasResponse//ПомещенияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PomeshheniyaService /*ПомещенияСервис*/ : Service
-	{
-		public object Any(PomeshheniyaRequest request)
+		
+		public object Get(ПомещенияНайтиПоКоду Запрос)
 		{
-			return new PomeshheniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PomeshheniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Помещения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PomeshheniyaResponse() {Result = "Помещения c кодом '" + request.Code+"' не найдено."};
+				return new ПомещенияОтвет() {Ответ = "Помещения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PomeshheniyasRequest request)
+		
+		public object Get(ПомещенияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Помещения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Помещения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПомещенияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПомещенияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПомещенияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПомещенияЗапрос Запрос)
+		{
+			return new ПомещенияОтвет {Ответ = "Помещения, "};
+		}
+
+		public object Post(ПомещенияЗапрос ЗапросПомещения)
+		{
+			var Ссылка = (СправочникиСсылка.Помещения)ЗапросПомещения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

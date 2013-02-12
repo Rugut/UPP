@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Военкоматы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВоенкоматыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Voenkomaty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Военкоматы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VoenkomatyRequest());
+			ВоенкоматыЗапрос ВоенкоматыЗапрос = null;
+			try
+			{
+				ВоенкоматыЗапрос = Клиент.Get(new ВоенкоматыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВоенкоматыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВоенкоматыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Voenkomaty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Военкоматы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VoenkomatyRequest());
+			ВоенкоматыЗапрос ВоенкоматыЗапрос = null;
+			try
+			{
+				ВоенкоматыЗапрос = Клиент.Get(new ВоенкоматыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВоенкоматыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВоенкоматыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Voenkomaty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Военкоматы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VoenkomatyRequest());
+			ВоенкоматыЗапрос ВоенкоматыЗапрос = null;
+			try
+			{
+				ВоенкоматыЗапрос = Клиент.Get(new ВоенкоматыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВоенкоматыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВоенкоматыЗапрос ВоенкоматыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Voenkomaty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Военкоматы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VoenkomatyRequest());
+			var ВоенкоматыОтвет = Клиент.Post(ВоенкоматыЗапрос);
+		}
+		public static void Записать(ВоенкоматыЗапрос ВоенкоматыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Военкоматы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВоенкоматыОтвет = Клиент.Put(ВоенкоматыЗапрос);
+		}
+		public static void Удалить(ВоенкоматыЗапрос ВоенкоматыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Военкоматы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВоенкоматыОтвет = Клиент.Delete(ВоенкоматыЗапрос);
 		}
 	}
 }

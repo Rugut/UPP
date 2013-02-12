@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПоказателиАнализовНоменклатуры:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПоказателиАнализовНоменклатурыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PokazateliAnalizovNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПоказателиАнализовНоменклатуры/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PokazateliAnalizovNomenklaturyRequest());
+			ПоказателиАнализовНоменклатурыЗапрос ПоказателиАнализовНоменклатурыЗапрос = null;
+			try
+			{
+				ПоказателиАнализовНоменклатурыЗапрос = Клиент.Get(new ПоказателиАнализовНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПоказателиАнализовНоменклатурыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПоказателиАнализовНоменклатурыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/PokazateliAnalizovNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПоказателиАнализовНоменклатуры/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PokazateliAnalizovNomenklaturyRequest());
+			ПоказателиАнализовНоменклатурыЗапрос ПоказателиАнализовНоменклатурыЗапрос = null;
+			try
+			{
+				ПоказателиАнализовНоменклатурыЗапрос = Клиент.Get(new ПоказателиАнализовНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПоказателиАнализовНоменклатурыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПоказателиАнализовНоменклатурыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PokazateliAnalizovNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПоказателиАнализовНоменклатуры/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PokazateliAnalizovNomenklaturyRequest());
+			ПоказателиАнализовНоменклатурыЗапрос ПоказателиАнализовНоменклатурыЗапрос = null;
+			try
+			{
+				ПоказателиАнализовНоменклатурыЗапрос = Клиент.Get(new ПоказателиАнализовНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПоказателиАнализовНоменклатурыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПоказателиАнализовНоменклатурыЗапрос ПоказателиАнализовНоменклатурыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PokazateliAnalizovNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПоказателиАнализовНоменклатуры?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PokazateliAnalizovNomenklaturyRequest());
+			var ПоказателиАнализовНоменклатурыОтвет = Клиент.Post(ПоказателиАнализовНоменклатурыЗапрос);
+		}
+		public static void Записать(ПоказателиАнализовНоменклатурыЗапрос ПоказателиАнализовНоменклатурыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПоказателиАнализовНоменклатуры?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПоказателиАнализовНоменклатурыОтвет = Клиент.Put(ПоказателиАнализовНоменклатурыЗапрос);
+		}
+		public static void Удалить(ПоказателиАнализовНоменклатурыЗапрос ПоказателиАнализовНоменклатурыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПоказателиАнализовНоменклатуры?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПоказателиАнализовНоменклатурыОтвет = Клиент.Delete(ПоказателиАнализовНоменклатурыЗапрос);
 		}
 	}
 }

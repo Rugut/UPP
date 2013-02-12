@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЭДПрисоединенныеФайлы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЭДПрисоединенныеФайлыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHDPrisoedinennyeFajjly/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭДПрисоединенныеФайлы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new EHDPrisoedinennyeFajjlyRequest());
+			ЭДПрисоединенныеФайлыЗапрос ЭДПрисоединенныеФайлыЗапрос = null;
+			try
+			{
+				ЭДПрисоединенныеФайлыЗапрос = Клиент.Get(new ЭДПрисоединенныеФайлыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЭДПрисоединенныеФайлыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЭДПрисоединенныеФайлыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHDPrisoedinennyeFajjly/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭДПрисоединенныеФайлы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new EHDPrisoedinennyeFajjlyRequest());
+			ЭДПрисоединенныеФайлыЗапрос ЭДПрисоединенныеФайлыЗапрос = null;
+			try
+			{
+				ЭДПрисоединенныеФайлыЗапрос = Клиент.Get(new ЭДПрисоединенныеФайлыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЭДПрисоединенныеФайлыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ЭДПрисоединенныеФайлыЗапрос ЭДПрисоединенныеФайлыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHDPrisoedinennyeFajjly/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭДПрисоединенныеФайлы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new EHDPrisoedinennyeFajjlyRequest());
+			var ЭДПрисоединенныеФайлыОтвет = Клиент.Post(ЭДПрисоединенныеФайлыЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ЭДПрисоединенныеФайлыЗапрос ЭДПрисоединенныеФайлыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHDPrisoedinennyeFajjly/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭДПрисоединенныеФайлы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new EHDPrisoedinennyeFajjlyRequest());
+			var ЭДПрисоединенныеФайлыОтвет = Клиент.Put(ЭДПрисоединенныеФайлыЗапрос);
+		}
+		public static void Удалить(ЭДПрисоединенныеФайлыЗапрос ЭДПрисоединенныеФайлыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЭДПрисоединенныеФайлы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЭДПрисоединенныеФайлыОтвет = Клиент.Delete(ЭДПрисоединенныеФайлыЗапрос);
 		}
 	}
 }

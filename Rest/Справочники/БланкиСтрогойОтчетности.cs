@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/BlankiStrogojjOtchetnosti")]
-	[Route("/Catalogs/BlankiStrogojjOtchetnosti/FindById/{Id}")]
-	[Route("/Catalogs/BlankiStrogojjOtchetnosti/FindByCode/{Code}")]
-	[Route("/Catalogs/BlankiStrogojjOtchetnosti/FindByDescr/{Descr}")]
-	public class BlankiStrogojjOtchetnostiRequest/*БланкиСтрогойОтчетностиЗапрос*/: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<BlankiStrogojjOtchetnostiRequest>
+	//BlankiStrogojjOtchetnosti
+	[Маршрут("Справочники/БланкиСтрогойОтчетности","")]
+	public class БланкиСтрогойОтчетностиЗапрос: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<БланкиСтрогойОтчетностиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/ПоСсылке","{Ссылка}")]
+	public class БланкиСтрогойОтчетностиНайтиПоСсылке: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<БланкиСтрогойОтчетностиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/ПоКоду","{Код}")]
+	public class БланкиСтрогойОтчетностиНайтиПоКоду: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<БланкиСтрогойОтчетностиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/ПоНаименованию","{Наименование}")]
+	public class БланкиСтрогойОтчетностиНайтиПоНаименованию: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<БланкиСтрогойОтчетностиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class БланкиСтрогойОтчетностиВыбратьПоСсылке: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<БланкиСтрогойОтчетностиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class БланкиСтрогойОтчетностиВыбратьПоКоду: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<БланкиСтрогойОтчетностиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/БланкиСтрогойОтчетности/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class БланкиСтрогойОтчетностиВыбратьПоНаименованию: V82.СправочникиСсылка.БланкиСтрогойОтчетности,IReturn<БланкиСтрогойОтчетностиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class BlankiStrogojjOtchetnostiResponse//БланкиСтрогойОтчетностиОтвет
+	public class БланкиСтрогойОтчетностиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/BlankiStrogojjOtchetnostis")]
-	[Route("/Catalogs/BlankiStrogojjOtchetnostis/{Codes}")]
-	public class BlankiStrogojjOtchetnostisRequest/*БланкиСтрогойОтчетностиЗапрос*/: IReturn<List<BlankiStrogojjOtchetnostiRequest>>
+	public class БланкиСтрогойОтчетностиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public BlankiStrogojjOtchetnostisRequest(params string[] Codes)
+		
+		public object Get(БланкиСтрогойОтчетностиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class BlankiStrogojjOtchetnostisResponse//БланкиСтрогойОтчетностиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class BlankiStrogojjOtchetnostiService /*БланкиСтрогойОтчетностиСервис*/ : Service
-	{
-		public object Any(BlankiStrogojjOtchetnostiRequest request)
+		
+		public object Get(БланкиСтрогойОтчетностиНайтиПоКоду Запрос)
 		{
-			return new BlankiStrogojjOtchetnostiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(BlankiStrogojjOtchetnostiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.БланкиСтрогойОтчетности.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new BlankiStrogojjOtchetnostiResponse() {Result = "БланкиСтрогойОтчетности c кодом '" + request.Code+"' не найдено."};
+				return new БланкиСтрогойОтчетностиОтвет() {Ответ = "БланкиСтрогойОтчетности c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(BlankiStrogojjOtchetnostisRequest request)
+		
+		public object Get(БланкиСтрогойОтчетностиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.БланкиСтрогойОтчетности>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.БланкиСтрогойОтчетности.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(БланкиСтрогойОтчетностиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(БланкиСтрогойОтчетностиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(БланкиСтрогойОтчетностиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(БланкиСтрогойОтчетностиЗапрос Запрос)
+		{
+			return new БланкиСтрогойОтчетностиОтвет {Ответ = "БланкиСтрогойОтчетности, "};
+		}
+
+		public object Post(БланкиСтрогойОтчетностиЗапрос ЗапросБланкиСтрогойОтчетности)
+		{
+			var Ссылка = (СправочникиСсылка.БланкиСтрогойОтчетности)ЗапросБланкиСтрогойОтчетности;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

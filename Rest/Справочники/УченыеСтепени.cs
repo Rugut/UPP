@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/UchenyeStepeni")]
-	[Route("/Catalogs/UchenyeStepeni/FindById/{Id}")]
-	[Route("/Catalogs/UchenyeStepeni/FindByCode/{Code}")]
-	[Route("/Catalogs/UchenyeStepeni/FindByDescr/{Descr}")]
-	public class UchenyeStepeniRequest/*УченыеСтепениЗапрос*/: V82.СправочникиСсылка.УченыеСтепени,IReturn<UchenyeStepeniRequest>
+	//UchenyeStepeni
+	[Маршрут("Справочники/УченыеСтепени","")]
+	public class УченыеСтепениЗапрос: V82.СправочникиСсылка.УченыеСтепени,IReturn<УченыеСтепениЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/УченыеСтепени/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/УченыеСтепени/ПоСсылке","{Ссылка}")]
+	public class УченыеСтепениНайтиПоСсылке: V82.СправочникиСсылка.УченыеСтепени,IReturn<УченыеСтепениНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/УченыеСтепени/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/УченыеСтепени/ПоКоду","{Код}")]
+	public class УченыеСтепениНайтиПоКоду: V82.СправочникиСсылка.УченыеСтепени,IReturn<УченыеСтепениНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/УченыеСтепени/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/УченыеСтепени/ПоНаименованию","{Наименование}")]
+	public class УченыеСтепениНайтиПоНаименованию: V82.СправочникиСсылка.УченыеСтепени,IReturn<УченыеСтепениНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/УченыеСтепени/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class УченыеСтепениВыбратьПоСсылке: V82.СправочникиСсылка.УченыеСтепени,IReturn<УченыеСтепениВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УченыеСтепени/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class УченыеСтепениВыбратьПоКоду: V82.СправочникиСсылка.УченыеСтепени,IReturn<УченыеСтепениВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УченыеСтепени/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class УченыеСтепениВыбратьПоНаименованию: V82.СправочникиСсылка.УченыеСтепени,IReturn<УченыеСтепениВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class UchenyeStepeniResponse//УченыеСтепениОтвет
+	public class УченыеСтепениОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/UchenyeStepenis")]
-	[Route("/Catalogs/UchenyeStepenis/{Codes}")]
-	public class UchenyeStepenisRequest/*УченыеСтепениЗапрос*/: IReturn<List<UchenyeStepeniRequest>>
+	public class УченыеСтепениСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public UchenyeStepenisRequest(params string[] Codes)
+		
+		public object Get(УченыеСтепениНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class UchenyeStepenisResponse//УченыеСтепениОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class UchenyeStepeniService /*УченыеСтепениСервис*/ : Service
-	{
-		public object Any(UchenyeStepeniRequest request)
+		
+		public object Get(УченыеСтепениНайтиПоКоду Запрос)
 		{
-			return new UchenyeStepeniResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(UchenyeStepeniRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.УченыеСтепени.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new UchenyeStepeniResponse() {Result = "УченыеСтепени c кодом '" + request.Code+"' не найдено."};
+				return new УченыеСтепениОтвет() {Ответ = "УченыеСтепени c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(UchenyeStepenisRequest request)
+		
+		public object Get(УченыеСтепениНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УченыеСтепени>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.УченыеСтепени.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(УченыеСтепениВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УченыеСтепениВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УченыеСтепениВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(УченыеСтепениЗапрос Запрос)
+		{
+			return new УченыеСтепениОтвет {Ответ = "УченыеСтепени, "};
+		}
+
+		public object Post(УченыеСтепениЗапрос ЗапросУченыеСтепени)
+		{
+			var Ссылка = (СправочникиСсылка.УченыеСтепени)ЗапросУченыеСтепени;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

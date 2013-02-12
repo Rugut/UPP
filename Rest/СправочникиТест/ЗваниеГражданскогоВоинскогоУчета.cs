@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЗваниеГражданскогоВоинскогоУчета:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЗваниеГражданскогоВоинскогоУчетаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗваниеГражданскогоВоинскогоУчета/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ZvanieGrazhdanskogoVoinskogoUchetaRequest());
+			ЗваниеГражданскогоВоинскогоУчетаЗапрос ЗваниеГражданскогоВоинскогоУчетаЗапрос = null;
+			try
+			{
+				ЗваниеГражданскогоВоинскогоУчетаЗапрос = Клиент.Get(new ЗваниеГражданскогоВоинскогоУчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЗваниеГражданскогоВоинскогоУчетаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЗваниеГражданскогоВоинскогоУчетаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗваниеГражданскогоВоинскогоУчета/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ZvanieGrazhdanskogoVoinskogoUchetaRequest());
+			ЗваниеГражданскогоВоинскогоУчетаЗапрос ЗваниеГражданскогоВоинскогоУчетаЗапрос = null;
+			try
+			{
+				ЗваниеГражданскогоВоинскогоУчетаЗапрос = Клиент.Get(new ЗваниеГражданскогоВоинскогоУчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЗваниеГражданскогоВоинскогоУчетаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ЗваниеГражданскогоВоинскогоУчетаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗваниеГражданскогоВоинскогоУчета/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ZvanieGrazhdanskogoVoinskogoUchetaRequest());
+			ЗваниеГражданскогоВоинскогоУчетаЗапрос ЗваниеГражданскогоВоинскогоУчетаЗапрос = null;
+			try
+			{
+				ЗваниеГражданскогоВоинскогоУчетаЗапрос = Клиент.Get(new ЗваниеГражданскогоВоинскогоУчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЗваниеГражданскогоВоинскогоУчетаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ЗваниеГражданскогоВоинскогоУчетаЗапрос ЗваниеГражданскогоВоинскогоУчетаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗваниеГражданскогоВоинскогоУчета?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ZvanieGrazhdanskogoVoinskogoUchetaRequest());
+			var ЗваниеГражданскогоВоинскогоУчетаОтвет = Клиент.Post(ЗваниеГражданскогоВоинскогоУчетаЗапрос);
+		}
+		public static void Записать(ЗваниеГражданскогоВоинскогоУчетаЗапрос ЗваниеГражданскогоВоинскогоУчетаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЗваниеГражданскогоВоинскогоУчета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЗваниеГражданскогоВоинскогоУчетаОтвет = Клиент.Put(ЗваниеГражданскогоВоинскогоУчетаЗапрос);
+		}
+		public static void Удалить(ЗваниеГражданскогоВоинскогоУчетаЗапрос ЗваниеГражданскогоВоинскогоУчетаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЗваниеГражданскогоВоинскогоУчета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЗваниеГражданскогоВоинскогоУчетаОтвет = Клиент.Delete(ЗваниеГражданскогоВоинскогоУчетаЗапрос);
 		}
 	}
 }

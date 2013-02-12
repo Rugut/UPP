@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SemejjnoePolozhenieFizLic")]
-	[Route("/Catalogs/SemejjnoePolozhenieFizLic/FindById/{Id}")]
-	[Route("/Catalogs/SemejjnoePolozhenieFizLic/FindByCode/{Code}")]
-	[Route("/Catalogs/SemejjnoePolozhenieFizLic/FindByDescr/{Descr}")]
-	public class SemejjnoePolozhenieFizLicRequest/*СемейноеПоложениеФизЛицЗапрос*/: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<SemejjnoePolozhenieFizLicRequest>
+	//SemejjnoePolozhenieFizLic
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц","")]
+	public class СемейноеПоложениеФизЛицЗапрос: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<СемейноеПоложениеФизЛицЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/ПоСсылке","{Ссылка}")]
+	public class СемейноеПоложениеФизЛицНайтиПоСсылке: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<СемейноеПоложениеФизЛицНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/ПоКоду","{Код}")]
+	public class СемейноеПоложениеФизЛицНайтиПоКоду: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<СемейноеПоложениеФизЛицНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/ПоНаименованию","{Наименование}")]
+	public class СемейноеПоложениеФизЛицНайтиПоНаименованию: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<СемейноеПоложениеФизЛицНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СемейноеПоложениеФизЛицВыбратьПоСсылке: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<СемейноеПоложениеФизЛицВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СемейноеПоложениеФизЛицВыбратьПоКоду: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<СемейноеПоложениеФизЛицВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СемейноеПоложениеФизЛиц/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СемейноеПоложениеФизЛицВыбратьПоНаименованию: V82.СправочникиСсылка.СемейноеПоложениеФизЛиц,IReturn<СемейноеПоложениеФизЛицВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SemejjnoePolozhenieFizLicResponse//СемейноеПоложениеФизЛицОтвет
+	public class СемейноеПоложениеФизЛицОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SemejjnoePolozhenieFizLics")]
-	[Route("/Catalogs/SemejjnoePolozhenieFizLics/{Codes}")]
-	public class SemejjnoePolozhenieFizLicsRequest/*СемейноеПоложениеФизЛицЗапрос*/: IReturn<List<SemejjnoePolozhenieFizLicRequest>>
+	public class СемейноеПоложениеФизЛицСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SemejjnoePolozhenieFizLicsRequest(params string[] Codes)
+		
+		public object Get(СемейноеПоложениеФизЛицНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SemejjnoePolozhenieFizLicsResponse//СемейноеПоложениеФизЛицОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SemejjnoePolozhenieFizLicService /*СемейноеПоложениеФизЛицСервис*/ : Service
-	{
-		public object Any(SemejjnoePolozhenieFizLicRequest request)
+		
+		public object Get(СемейноеПоложениеФизЛицНайтиПоКоду Запрос)
 		{
-			return new SemejjnoePolozhenieFizLicResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SemejjnoePolozhenieFizLicRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СемейноеПоложениеФизЛиц.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SemejjnoePolozhenieFizLicResponse() {Result = "СемейноеПоложениеФизЛиц c кодом '" + request.Code+"' не найдено."};
+				return new СемейноеПоложениеФизЛицОтвет() {Ответ = "СемейноеПоложениеФизЛиц c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SemejjnoePolozhenieFizLicsRequest request)
+		
+		public object Get(СемейноеПоложениеФизЛицНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СемейноеПоложениеФизЛиц>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СемейноеПоложениеФизЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СемейноеПоложениеФизЛицВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СемейноеПоложениеФизЛицВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СемейноеПоложениеФизЛицВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СемейноеПоложениеФизЛицЗапрос Запрос)
+		{
+			return new СемейноеПоложениеФизЛицОтвет {Ответ = "СемейноеПоложениеФизЛиц, "};
+		}
+
+		public object Post(СемейноеПоложениеФизЛицЗапрос ЗапросСемейноеПоложениеФизЛиц)
+		{
+			var Ссылка = (СправочникиСсылка.СемейноеПоложениеФизЛиц)ЗапросСемейноеПоложениеФизЛиц;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

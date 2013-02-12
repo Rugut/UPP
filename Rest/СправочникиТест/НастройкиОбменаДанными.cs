@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиОбменаДанными:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиОбменаДаннымиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiObmenaDannymi/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиОбменаДанными/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiObmenaDannymiRequest());
+			НастройкиОбменаДаннымиЗапрос НастройкиОбменаДаннымиЗапрос = null;
+			try
+			{
+				НастройкиОбменаДаннымиЗапрос = Клиент.Get(new НастройкиОбменаДаннымиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиОбменаДаннымиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиОбменаДаннымиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiObmenaDannymi/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиОбменаДанными/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiObmenaDannymiRequest());
+			НастройкиОбменаДаннымиЗапрос НастройкиОбменаДаннымиЗапрос = null;
+			try
+			{
+				НастройкиОбменаДаннымиЗапрос = Клиент.Get(new НастройкиОбменаДаннымиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиОбменаДаннымиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НастройкиОбменаДаннымиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiObmenaDannymi/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиОбменаДанными/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiObmenaDannymiRequest());
+			НастройкиОбменаДаннымиЗапрос НастройкиОбменаДаннымиЗапрос = null;
+			try
+			{
+				НастройкиОбменаДаннымиЗапрос = Клиент.Get(new НастройкиОбменаДаннымиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиОбменаДаннымиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НастройкиОбменаДаннымиЗапрос НастройкиОбменаДаннымиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiObmenaDannymi/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиОбменаДанными?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiObmenaDannymiRequest());
+			var НастройкиОбменаДаннымиОтвет = Клиент.Post(НастройкиОбменаДаннымиЗапрос);
+		}
+		public static void Записать(НастройкиОбменаДаннымиЗапрос НастройкиОбменаДаннымиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиОбменаДанными?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиОбменаДаннымиОтвет = Клиент.Put(НастройкиОбменаДаннымиЗапрос);
+		}
+		public static void Удалить(НастройкиОбменаДаннымиЗапрос НастройкиОбменаДаннымиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиОбменаДанными?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиОбменаДаннымиОтвет = Клиент.Delete(НастройкиОбменаДаннымиЗапрос);
 		}
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class УченыеЗвания:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static УченыеЗванияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchenyeZvaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УченыеЗвания/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new UchenyeZvaniyaRequest());
+			УченыеЗванияЗапрос УченыеЗванияЗапрос = null;
+			try
+			{
+				УченыеЗванияЗапрос = Клиент.Get(new УченыеЗванияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УченыеЗванияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static УченыеЗванияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchenyeZvaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УченыеЗвания/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new UchenyeZvaniyaRequest());
+			УченыеЗванияЗапрос УченыеЗванияЗапрос = null;
+			try
+			{
+				УченыеЗванияЗапрос = Клиент.Get(new УченыеЗванияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УченыеЗванияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static УченыеЗванияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchenyeZvaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УченыеЗвания/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new UchenyeZvaniyaRequest());
+			УченыеЗванияЗапрос УченыеЗванияЗапрос = null;
+			try
+			{
+				УченыеЗванияЗапрос = Клиент.Get(new УченыеЗванияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УченыеЗванияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(УченыеЗванияЗапрос УченыеЗванияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchenyeZvaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УченыеЗвания?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new UchenyeZvaniyaRequest());
+			var УченыеЗванияОтвет = Клиент.Post(УченыеЗванияЗапрос);
+		}
+		public static void Записать(УченыеЗванияЗапрос УченыеЗванияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/УченыеЗвания?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УченыеЗванияОтвет = Клиент.Put(УченыеЗванияЗапрос);
+		}
+		public static void Удалить(УченыеЗванияЗапрос УченыеЗванияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/УченыеЗвания?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УченыеЗванияОтвет = Клиент.Delete(УченыеЗванияЗапрос);
 		}
 	}
 }

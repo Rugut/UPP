@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВерсииФайлов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВерсииФайловЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VersiiFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VersiiFajjlovRequest());
+			ВерсииФайловЗапрос ВерсииФайловЗапрос = null;
+			try
+			{
+				ВерсииФайловЗапрос = Клиент.Get(new ВерсииФайловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВерсииФайловЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВерсииФайловЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VersiiFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VersiiFajjlovRequest());
+			ВерсииФайловЗапрос ВерсииФайловЗапрос = null;
+			try
+			{
+				ВерсииФайловЗапрос = Клиент.Get(new ВерсииФайловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВерсииФайловЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВерсииФайловЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VersiiFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VersiiFajjlovRequest());
+			ВерсииФайловЗапрос ВерсииФайловЗапрос = null;
+			try
+			{
+				ВерсииФайловЗапрос = Клиент.Get(new ВерсииФайловЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВерсииФайловЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВерсииФайловЗапрос ВерсииФайловЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VersiiFajjlov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VersiiFajjlovRequest());
+			var ВерсииФайловОтвет = Клиент.Post(ВерсииФайловЗапрос);
+		}
+		public static void Записать(ВерсииФайловЗапрос ВерсииФайловЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВерсииФайловОтвет = Клиент.Put(ВерсииФайловЗапрос);
+		}
+		public static void Удалить(ВерсииФайловЗапрос ВерсииФайловЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВерсииФайлов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВерсииФайловОтвет = Клиент.Delete(ВерсииФайловЗапрос);
 		}
 	}
 }

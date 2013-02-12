@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ИсточникиИнформацииПриОбращенииПокупателей:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ИсточникиИнформацииПриОбращенииПокупателейЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформацииПриОбращенииПокупателей/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new IstochnikiInformaciiPriObrashheniiPokupatelejjRequest());
+			ИсточникиИнформацииПриОбращенииПокупателейЗапрос ИсточникиИнформацииПриОбращенииПокупателейЗапрос = null;
+			try
+			{
+				ИсточникиИнформацииПриОбращенииПокупателейЗапрос = Клиент.Get(new ИсточникиИнформацииПриОбращенииПокупателейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиИнформацииПриОбращенииПокупателейЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ИсточникиИнформацииПриОбращенииПокупателейЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформацииПриОбращенииПокупателей/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new IstochnikiInformaciiPriObrashheniiPokupatelejjRequest());
+			ИсточникиИнформацииПриОбращенииПокупателейЗапрос ИсточникиИнформацииПриОбращенииПокупателейЗапрос = null;
+			try
+			{
+				ИсточникиИнформацииПриОбращенииПокупателейЗапрос = Клиент.Get(new ИсточникиИнформацииПриОбращенииПокупателейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиИнформацииПриОбращенииПокупателейЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ИсточникиИнформацииПриОбращенииПокупателейЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформацииПриОбращенииПокупателей/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new IstochnikiInformaciiPriObrashheniiPokupatelejjRequest());
+			ИсточникиИнформацииПриОбращенииПокупателейЗапрос ИсточникиИнформацииПриОбращенииПокупателейЗапрос = null;
+			try
+			{
+				ИсточникиИнформацииПриОбращенииПокупателейЗапрос = Клиент.Get(new ИсточникиИнформацииПриОбращенииПокупателейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиИнформацииПриОбращенииПокупателейЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ИсточникиИнформацииПриОбращенииПокупателейЗапрос ИсточникиИнформацииПриОбращенииПокупателейЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформацииПриОбращенииПокупателей?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new IstochnikiInformaciiPriObrashheniiPokupatelejjRequest());
+			var ИсточникиИнформацииПриОбращенииПокупателейОтвет = Клиент.Post(ИсточникиИнформацииПриОбращенииПокупателейЗапрос);
+		}
+		public static void Записать(ИсточникиИнформацииПриОбращенииПокупателейЗапрос ИсточникиИнформацииПриОбращенииПокупателейЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформацииПриОбращенииПокупателей?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИсточникиИнформацииПриОбращенииПокупателейОтвет = Клиент.Put(ИсточникиИнформацииПриОбращенииПокупателейЗапрос);
+		}
+		public static void Удалить(ИсточникиИнформацииПриОбращенииПокупателейЗапрос ИсточникиИнформацииПриОбращенииПокупателейЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформацииПриОбращенииПокупателей?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИсточникиИнформацииПриОбращенииПокупателейОтвет = Клиент.Delete(ИсточникиИнформацииПриОбращенииПокупателейЗапрос);
 		}
 	}
 }

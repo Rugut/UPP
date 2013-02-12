@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НормативыОбслуживанияОС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НормативыОбслуживанияОСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативыОбслуживанияОС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NormativyObsluzhivaniyaOSRequest());
+			НормативыОбслуживанияОСЗапрос НормативыОбслуживанияОСЗапрос = null;
+			try
+			{
+				НормативыОбслуживанияОСЗапрос = Клиент.Get(new НормативыОбслуживанияОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НормативыОбслуживанияОСЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НормативыОбслуживанияОСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативыОбслуживанияОС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NormativyObsluzhivaniyaOSRequest());
+			НормативыОбслуживанияОСЗапрос НормативыОбслуживанияОСЗапрос = null;
+			try
+			{
+				НормативыОбслуживанияОСЗапрос = Клиент.Get(new НормативыОбслуживанияОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НормативыОбслуживанияОСЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НормативыОбслуживанияОСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативыОбслуживанияОС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NormativyObsluzhivaniyaOSRequest());
+			НормативыОбслуживанияОСЗапрос НормативыОбслуживанияОСЗапрос = null;
+			try
+			{
+				НормативыОбслуживанияОСЗапрос = Клиент.Get(new НормативыОбслуживанияОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НормативыОбслуживанияОСЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НормативыОбслуживанияОСЗапрос НормативыОбслуживанияОСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативыОбслуживанияОС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NormativyObsluzhivaniyaOSRequest());
+			var НормативыОбслуживанияОСОтвет = Клиент.Post(НормативыОбслуживанияОСЗапрос);
+		}
+		public static void Записать(НормативыОбслуживанияОСЗапрос НормативыОбслуживанияОСЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НормативыОбслуживанияОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НормативыОбслуживанияОСОтвет = Клиент.Put(НормативыОбслуживанияОСЗапрос);
+		}
+		public static void Удалить(НормативыОбслуживанияОСЗапрос НормативыОбслуживанияОСЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НормативыОбслуживанияОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НормативыОбслуживанияОСОтвет = Клиент.Delete(НормативыОбслуживанияОСЗапрос);
 		}
 	}
 }

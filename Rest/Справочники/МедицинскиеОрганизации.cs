@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/MedicinskieOrganizacii")]
-	[Route("/Catalogs/MedicinskieOrganizacii/FindById/{Id}")]
-	[Route("/Catalogs/MedicinskieOrganizacii/FindByCode/{Code}")]
-	[Route("/Catalogs/MedicinskieOrganizacii/FindByDescr/{Descr}")]
-	public class MedicinskieOrganizaciiRequest/*МедицинскиеОрганизацииЗапрос*/: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<MedicinskieOrganizaciiRequest>
+	//MedicinskieOrganizacii
+	[Маршрут("Справочники/МедицинскиеОрганизации","")]
+	public class МедицинскиеОрганизацииЗапрос: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<МедицинскиеОрганизацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/МедицинскиеОрганизации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/МедицинскиеОрганизации/ПоСсылке","{Ссылка}")]
+	public class МедицинскиеОрганизацииНайтиПоСсылке: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<МедицинскиеОрганизацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/МедицинскиеОрганизации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/МедицинскиеОрганизации/ПоКоду","{Код}")]
+	public class МедицинскиеОрганизацииНайтиПоКоду: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<МедицинскиеОрганизацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/МедицинскиеОрганизации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/МедицинскиеОрганизации/ПоНаименованию","{Наименование}")]
+	public class МедицинскиеОрганизацииНайтиПоНаименованию: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<МедицинскиеОрганизацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/МедицинскиеОрганизации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class МедицинскиеОрганизацииВыбратьПоСсылке: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<МедицинскиеОрганизацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/МедицинскиеОрганизации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class МедицинскиеОрганизацииВыбратьПоКоду: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<МедицинскиеОрганизацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/МедицинскиеОрганизации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class МедицинскиеОрганизацииВыбратьПоНаименованию: V82.СправочникиСсылка.МедицинскиеОрганизации,IReturn<МедицинскиеОрганизацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class MedicinskieOrganizaciiResponse//МедицинскиеОрганизацииОтвет
+	public class МедицинскиеОрганизацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/MedicinskieOrganizaciis")]
-	[Route("/Catalogs/MedicinskieOrganizaciis/{Codes}")]
-	public class MedicinskieOrganizaciisRequest/*МедицинскиеОрганизацииЗапрос*/: IReturn<List<MedicinskieOrganizaciiRequest>>
+	public class МедицинскиеОрганизацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public MedicinskieOrganizaciisRequest(params string[] Codes)
+		
+		public object Get(МедицинскиеОрганизацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class MedicinskieOrganizaciisResponse//МедицинскиеОрганизацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class MedicinskieOrganizaciiService /*МедицинскиеОрганизацииСервис*/ : Service
-	{
-		public object Any(MedicinskieOrganizaciiRequest request)
+		
+		public object Get(МедицинскиеОрганизацииНайтиПоКоду Запрос)
 		{
-			return new MedicinskieOrganizaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(MedicinskieOrganizaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.МедицинскиеОрганизации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new MedicinskieOrganizaciiResponse() {Result = "МедицинскиеОрганизации c кодом '" + request.Code+"' не найдено."};
+				return new МедицинскиеОрганизацииОтвет() {Ответ = "МедицинскиеОрганизации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(MedicinskieOrganizaciisRequest request)
+		
+		public object Get(МедицинскиеОрганизацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.МедицинскиеОрганизации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.МедицинскиеОрганизации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(МедицинскиеОрганизацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МедицинскиеОрганизацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МедицинскиеОрганизацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(МедицинскиеОрганизацииЗапрос Запрос)
+		{
+			return new МедицинскиеОрганизацииОтвет {Ответ = "МедицинскиеОрганизации, "};
+		}
+
+		public object Post(МедицинскиеОрганизацииЗапрос ЗапросМедицинскиеОрганизации)
+		{
+			var Ссылка = (СправочникиСсылка.МедицинскиеОрганизации)ЗапросМедицинскиеОрганизации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

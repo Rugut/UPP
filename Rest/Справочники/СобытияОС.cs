@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SobytiyaOS")]
-	[Route("/Catalogs/SobytiyaOS/FindById/{Id}")]
-	[Route("/Catalogs/SobytiyaOS/FindByCode/{Code}")]
-	[Route("/Catalogs/SobytiyaOS/FindByDescr/{Descr}")]
-	public class SobytiyaOSRequest/*СобытияОСЗапрос*/: V82.СправочникиСсылка.СобытияОС,IReturn<SobytiyaOSRequest>
+	//SobytiyaOS
+	[Маршрут("Справочники/СобытияОС","")]
+	public class СобытияОСЗапрос: V82.СправочникиСсылка.СобытияОС,IReturn<СобытияОСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СобытияОС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СобытияОС/ПоСсылке","{Ссылка}")]
+	public class СобытияОСНайтиПоСсылке: V82.СправочникиСсылка.СобытияОС,IReturn<СобытияОСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СобытияОС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СобытияОС/ПоКоду","{Код}")]
+	public class СобытияОСНайтиПоКоду: V82.СправочникиСсылка.СобытияОС,IReturn<СобытияОСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СобытияОС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СобытияОС/ПоНаименованию","{Наименование}")]
+	public class СобытияОСНайтиПоНаименованию: V82.СправочникиСсылка.СобытияОС,IReturn<СобытияОСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СобытияОС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СобытияОСВыбратьПоСсылке: V82.СправочникиСсылка.СобытияОС,IReturn<СобытияОСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СобытияОС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СобытияОСВыбратьПоКоду: V82.СправочникиСсылка.СобытияОС,IReturn<СобытияОСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СобытияОС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СобытияОСВыбратьПоНаименованию: V82.СправочникиСсылка.СобытияОС,IReturn<СобытияОСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SobytiyaOSResponse//СобытияОСОтвет
+	public class СобытияОСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SobytiyaOSs")]
-	[Route("/Catalogs/SobytiyaOSs/{Codes}")]
-	public class SobytiyaOSsRequest/*СобытияОСЗапрос*/: IReturn<List<SobytiyaOSRequest>>
+	public class СобытияОССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SobytiyaOSsRequest(params string[] Codes)
+		
+		public object Get(СобытияОСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SobytiyaOSsResponse//СобытияОСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SobytiyaOSService /*СобытияОССервис*/ : Service
-	{
-		public object Any(SobytiyaOSRequest request)
+		
+		public object Get(СобытияОСНайтиПоКоду Запрос)
 		{
-			return new SobytiyaOSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SobytiyaOSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СобытияОС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SobytiyaOSResponse() {Result = "СобытияОС c кодом '" + request.Code+"' не найдено."};
+				return new СобытияОСОтвет() {Ответ = "СобытияОС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SobytiyaOSsRequest request)
+		
+		public object Get(СобытияОСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СобытияОС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СобытияОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СобытияОСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СобытияОСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СобытияОСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СобытияОСЗапрос Запрос)
+		{
+			return new СобытияОСОтвет {Ответ = "СобытияОС, "};
+		}
+
+		public object Post(СобытияОСЗапрос ЗапросСобытияОС)
+		{
+			var Ссылка = (СправочникиСсылка.СобытияОС)ЗапросСобытияОС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

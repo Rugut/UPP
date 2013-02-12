@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КлассификаторОКОПФ:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КлассификаторОКОПФЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorOKOPF/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторОКОПФ/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KlassifikatorOKOPFRequest());
+			КлассификаторОКОПФЗапрос КлассификаторОКОПФЗапрос = null;
+			try
+			{
+				КлассификаторОКОПФЗапрос = Клиент.Get(new КлассификаторОКОПФЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторОКОПФЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КлассификаторОКОПФЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorOKOPF/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторОКОПФ/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KlassifikatorOKOPFRequest());
+			КлассификаторОКОПФЗапрос КлассификаторОКОПФЗапрос = null;
+			try
+			{
+				КлассификаторОКОПФЗапрос = Клиент.Get(new КлассификаторОКОПФЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторОКОПФЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КлассификаторОКОПФЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorOKOPF/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторОКОПФ/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KlassifikatorOKOPFRequest());
+			КлассификаторОКОПФЗапрос КлассификаторОКОПФЗапрос = null;
+			try
+			{
+				КлассификаторОКОПФЗапрос = Клиент.Get(new КлассификаторОКОПФЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторОКОПФЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КлассификаторОКОПФЗапрос КлассификаторОКОПФЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorOKOPF/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторОКОПФ?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KlassifikatorOKOPFRequest());
+			var КлассификаторОКОПФОтвет = Клиент.Post(КлассификаторОКОПФЗапрос);
+		}
+		public static void Записать(КлассификаторОКОПФЗапрос КлассификаторОКОПФЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторОКОПФ?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлассификаторОКОПФОтвет = Клиент.Put(КлассификаторОКОПФЗапрос);
+		}
+		public static void Удалить(КлассификаторОКОПФЗапрос КлассификаторОКОПФЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторОКОПФ?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлассификаторОКОПФОтвет = Клиент.Delete(КлассификаторОКОПФЗапрос);
 		}
 	}
 }

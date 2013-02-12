@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Banki")]
-	[Route("/Catalogs/Banki/FindById/{Id}")]
-	[Route("/Catalogs/Banki/FindByCode/{Code}")]
-	[Route("/Catalogs/Banki/FindByDescr/{Descr}")]
-	public class BankiRequest/*БанкиЗапрос*/: V82.СправочникиСсылка.Банки,IReturn<BankiRequest>
+	//Banki
+	[Маршрут("Справочники/Банки","")]
+	public class БанкиЗапрос: V82.СправочникиСсылка.Банки,IReturn<БанкиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Банки/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Банки/ПоСсылке","{Ссылка}")]
+	public class БанкиНайтиПоСсылке: V82.СправочникиСсылка.Банки,IReturn<БанкиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Банки/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Банки/ПоКоду","{Код}")]
+	public class БанкиНайтиПоКоду: V82.СправочникиСсылка.Банки,IReturn<БанкиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Банки/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Банки/ПоНаименованию","{Наименование}")]
+	public class БанкиНайтиПоНаименованию: V82.СправочникиСсылка.Банки,IReturn<БанкиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Банки/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class БанкиВыбратьПоСсылке: V82.СправочникиСсылка.Банки,IReturn<БанкиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Банки/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class БанкиВыбратьПоКоду: V82.СправочникиСсылка.Банки,IReturn<БанкиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Банки/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class БанкиВыбратьПоНаименованию: V82.СправочникиСсылка.Банки,IReturn<БанкиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class BankiResponse//БанкиОтвет
+	public class БанкиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Bankis")]
-	[Route("/Catalogs/Bankis/{Codes}")]
-	public class BankisRequest/*БанкиЗапрос*/: IReturn<List<BankiRequest>>
+	public class БанкиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public BankisRequest(params string[] Codes)
+		
+		public object Get(БанкиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class BankisResponse//БанкиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class BankiService /*БанкиСервис*/ : Service
-	{
-		public object Any(BankiRequest request)
+		
+		public object Get(БанкиНайтиПоКоду Запрос)
 		{
-			return new BankiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(BankiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Банки.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new BankiResponse() {Result = "Банки c кодом '" + request.Code+"' не найдено."};
+				return new БанкиОтвет() {Ответ = "Банки c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(BankisRequest request)
+		
+		public object Get(БанкиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Банки>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Банки.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(БанкиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(БанкиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(БанкиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(БанкиЗапрос Запрос)
+		{
+			return new БанкиОтвет {Ответ = "Банки, "};
+		}
+
+		public object Post(БанкиЗапрос ЗапросБанки)
+		{
+			var Ссылка = (СправочникиСсылка.Банки)ЗапросБанки;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

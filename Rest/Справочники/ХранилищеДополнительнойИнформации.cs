@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii")]
-	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii/FindById/{Id}")]
-	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii/FindByCode/{Code}")]
-	[Route("/Catalogs/KHranilishheDopolnitelnojjInformacii/FindByDescr/{Descr}")]
-	public class KHranilishheDopolnitelnojjInformaciiRequest/*ХранилищеДополнительнойИнформацииЗапрос*/: V82.СправочникиСсылка.ХранилищеДополнительнойИнформации,IReturn<KHranilishheDopolnitelnojjInformaciiRequest>
+	//KHranilishheDopolnitelnojjInformacii
+	[Маршрут("Справочники/ХранилищеДополнительнойИнформации","")]
+	public class ХранилищеДополнительнойИнформацииЗапрос: V82.СправочникиСсылка.ХранилищеДополнительнойИнформации,IReturn<ХранилищеДополнительнойИнформацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ХранилищеДополнительнойИнформации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ХранилищеДополнительнойИнформации/ПоСсылке","{Ссылка}")]
+	public class ХранилищеДополнительнойИнформацииНайтиПоСсылке: V82.СправочникиСсылка.ХранилищеДополнительнойИнформации,IReturn<ХранилищеДополнительнойИнформацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ХранилищеДополнительнойИнформации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ХранилищеДополнительнойИнформации/ПоНаименованию","{Наименование}")]
+	public class ХранилищеДополнительнойИнформацииНайтиПоНаименованию: V82.СправочникиСсылка.ХранилищеДополнительнойИнформации,IReturn<ХранилищеДополнительнойИнформацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ХранилищеДополнительнойИнформации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ХранилищеДополнительнойИнформацииВыбратьПоСсылке: V82.СправочникиСсылка.ХранилищеДополнительнойИнформации,IReturn<ХранилищеДополнительнойИнформацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ХранилищеДополнительнойИнформации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ХранилищеДополнительнойИнформацииВыбратьПоНаименованию: V82.СправочникиСсылка.ХранилищеДополнительнойИнформации,IReturn<ХранилищеДополнительнойИнформацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KHranilishheDopolnitelnojjInformaciiResponse//ХранилищеДополнительнойИнформацииОтвет
+	public class ХранилищеДополнительнойИнформацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KHranilishheDopolnitelnojjInformaciis")]
-	[Route("/Catalogs/KHranilishheDopolnitelnojjInformaciis/{Codes}")]
-	public class KHranilishheDopolnitelnojjInformaciisRequest/*ХранилищеДополнительнойИнформацииЗапрос*/: IReturn<List<KHranilishheDopolnitelnojjInformaciiRequest>>
+	public class ХранилищеДополнительнойИнформацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KHranilishheDopolnitelnojjInformaciisRequest(params string[] Codes)
+		
+		public object Get(ХранилищеДополнительнойИнформацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KHranilishheDopolnitelnojjInformaciisResponse//ХранилищеДополнительнойИнформацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KHranilishheDopolnitelnojjInformaciiService /*ХранилищеДополнительнойИнформацииСервис*/ : Service
-	{
-		public object Any(KHranilishheDopolnitelnojjInformaciiRequest request)
+		
+		public object Get(ХранилищеДополнительнойИнформацииНайтиПоНаименованию Запрос)
 		{
-			return new KHranilishheDopolnitelnojjInformaciiResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(KHranilishheDopolnitelnojjInformaciiRequest request)
+		
+		public object Get(ХранилищеДополнительнойИнформацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ХранилищеДополнительнойИнформацииВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(KHranilishheDopolnitelnojjInformaciisRequest request)
+		public object Any(ХранилищеДополнительнойИнформацииЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ХранилищеДополнительнойИнформации>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ХранилищеДополнительнойИнформацииОтвет {Ответ = "ХранилищеДополнительнойИнформации, "};
 		}
+
+		public object Post(ХранилищеДополнительнойИнформацииЗапрос ЗапросХранилищеДополнительнойИнформации)
+		{
+			var Ссылка = (СправочникиСсылка.ХранилищеДополнительнойИнформации)ЗапросХранилищеДополнительнойИнформации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

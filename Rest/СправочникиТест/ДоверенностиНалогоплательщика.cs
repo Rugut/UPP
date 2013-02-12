@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДоверенностиНалогоплательщика:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДоверенностиНалогоплательщикаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DoverennostiNalogoplatelshhika/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоверенностиНалогоплательщика/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DoverennostiNalogoplatelshhikaRequest());
+			ДоверенностиНалогоплательщикаЗапрос ДоверенностиНалогоплательщикаЗапрос = null;
+			try
+			{
+				ДоверенностиНалогоплательщикаЗапрос = Клиент.Get(new ДоверенностиНалогоплательщикаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоверенностиНалогоплательщикаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДоверенностиНалогоплательщикаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DoverennostiNalogoplatelshhika/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоверенностиНалогоплательщика/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DoverennostiNalogoplatelshhikaRequest());
+			ДоверенностиНалогоплательщикаЗапрос ДоверенностиНалогоплательщикаЗапрос = null;
+			try
+			{
+				ДоверенностиНалогоплательщикаЗапрос = Клиент.Get(new ДоверенностиНалогоплательщикаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоверенностиНалогоплательщикаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДоверенностиНалогоплательщикаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DoverennostiNalogoplatelshhika/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоверенностиНалогоплательщика/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DoverennostiNalogoplatelshhikaRequest());
+			ДоверенностиНалогоплательщикаЗапрос ДоверенностиНалогоплательщикаЗапрос = null;
+			try
+			{
+				ДоверенностиНалогоплательщикаЗапрос = Клиент.Get(new ДоверенностиНалогоплательщикаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоверенностиНалогоплательщикаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДоверенностиНалогоплательщикаЗапрос ДоверенностиНалогоплательщикаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DoverennostiNalogoplatelshhika/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоверенностиНалогоплательщика?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DoverennostiNalogoplatelshhikaRequest());
+			var ДоверенностиНалогоплательщикаОтвет = Клиент.Post(ДоверенностиНалогоплательщикаЗапрос);
+		}
+		public static void Записать(ДоверенностиНалогоплательщикаЗапрос ДоверенностиНалогоплательщикаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДоверенностиНалогоплательщика?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДоверенностиНалогоплательщикаОтвет = Клиент.Put(ДоверенностиНалогоплательщикаЗапрос);
+		}
+		public static void Удалить(ДоверенностиНалогоплательщикаЗапрос ДоверенностиНалогоплательщикаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДоверенностиНалогоплательщика?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДоверенностиНалогоплательщикаОтвет = Клиент.Delete(ДоверенностиНалогоплательщикаЗапрос);
 		}
 	}
 }

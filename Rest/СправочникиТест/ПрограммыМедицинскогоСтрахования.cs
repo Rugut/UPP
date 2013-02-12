@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрограммыМедицинскогоСтрахования:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрограммыМедицинскогоСтрахованияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProgrammyMedicinskogoStrakhovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрограммыМедицинскогоСтрахования/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProgrammyMedicinskogoStrakhovaniyaRequest());
+			ПрограммыМедицинскогоСтрахованияЗапрос ПрограммыМедицинскогоСтрахованияЗапрос = null;
+			try
+			{
+				ПрограммыМедицинскогоСтрахованияЗапрос = Клиент.Get(new ПрограммыМедицинскогоСтрахованияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрограммыМедицинскогоСтрахованияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрограммыМедицинскогоСтрахованияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProgrammyMedicinskogoStrakhovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрограммыМедицинскогоСтрахования/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProgrammyMedicinskogoStrakhovaniyaRequest());
+			ПрограммыМедицинскогоСтрахованияЗапрос ПрограммыМедицинскогоСтрахованияЗапрос = null;
+			try
+			{
+				ПрограммыМедицинскогоСтрахованияЗапрос = Клиент.Get(new ПрограммыМедицинскогоСтрахованияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрограммыМедицинскогоСтрахованияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПрограммыМедицинскогоСтрахованияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProgrammyMedicinskogoStrakhovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрограммыМедицинскогоСтрахования/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProgrammyMedicinskogoStrakhovaniyaRequest());
+			ПрограммыМедицинскогоСтрахованияЗапрос ПрограммыМедицинскогоСтрахованияЗапрос = null;
+			try
+			{
+				ПрограммыМедицинскогоСтрахованияЗапрос = Клиент.Get(new ПрограммыМедицинскогоСтрахованияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрограммыМедицинскогоСтрахованияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПрограммыМедицинскогоСтрахованияЗапрос ПрограммыМедицинскогоСтрахованияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProgrammyMedicinskogoStrakhovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрограммыМедицинскогоСтрахования?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProgrammyMedicinskogoStrakhovaniyaRequest());
+			var ПрограммыМедицинскогоСтрахованияОтвет = Клиент.Post(ПрограммыМедицинскогоСтрахованияЗапрос);
+		}
+		public static void Записать(ПрограммыМедицинскогоСтрахованияЗапрос ПрограммыМедицинскогоСтрахованияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрограммыМедицинскогоСтрахования?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрограммыМедицинскогоСтрахованияОтвет = Клиент.Put(ПрограммыМедицинскогоСтрахованияЗапрос);
+		}
+		public static void Удалить(ПрограммыМедицинскогоСтрахованияЗапрос ПрограммыМедицинскогоСтрахованияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрограммыМедицинскогоСтрахования?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрограммыМедицинскогоСтрахованияОтвет = Клиент.Delete(ПрограммыМедицинскогоСтрахованияЗапрос);
 		}
 	}
 }

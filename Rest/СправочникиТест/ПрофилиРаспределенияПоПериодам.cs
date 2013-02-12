@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрофилиРаспределенияПоПериодам:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрофилиРаспределенияПоПериодамЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliRaspredeleniyaPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиРаспределенияПоПериодам/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProfiliRaspredeleniyaPoPeriodamRequest());
+			ПрофилиРаспределенияПоПериодамЗапрос ПрофилиРаспределенияПоПериодамЗапрос = null;
+			try
+			{
+				ПрофилиРаспределенияПоПериодамЗапрос = Клиент.Get(new ПрофилиРаспределенияПоПериодамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиРаспределенияПоПериодамЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрофилиРаспределенияПоПериодамЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliRaspredeleniyaPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиРаспределенияПоПериодам/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProfiliRaspredeleniyaPoPeriodamRequest());
+			ПрофилиРаспределенияПоПериодамЗапрос ПрофилиРаспределенияПоПериодамЗапрос = null;
+			try
+			{
+				ПрофилиРаспределенияПоПериодамЗапрос = Клиент.Get(new ПрофилиРаспределенияПоПериодамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиРаспределенияПоПериодамЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПрофилиРаспределенияПоПериодамЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliRaspredeleniyaPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиРаспределенияПоПериодам/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProfiliRaspredeleniyaPoPeriodamRequest());
+			ПрофилиРаспределенияПоПериодамЗапрос ПрофилиРаспределенияПоПериодамЗапрос = null;
+			try
+			{
+				ПрофилиРаспределенияПоПериодамЗапрос = Клиент.Get(new ПрофилиРаспределенияПоПериодамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиРаспределенияПоПериодамЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПрофилиРаспределенияПоПериодамЗапрос ПрофилиРаспределенияПоПериодамЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliRaspredeleniyaPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиРаспределенияПоПериодам?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProfiliRaspredeleniyaPoPeriodamRequest());
+			var ПрофилиРаспределенияПоПериодамОтвет = Клиент.Post(ПрофилиРаспределенияПоПериодамЗапрос);
+		}
+		public static void Записать(ПрофилиРаспределенияПоПериодамЗапрос ПрофилиРаспределенияПоПериодамЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиРаспределенияПоПериодам?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофилиРаспределенияПоПериодамОтвет = Клиент.Put(ПрофилиРаспределенияПоПериодамЗапрос);
+		}
+		public static void Удалить(ПрофилиРаспределенияПоПериодамЗапрос ПрофилиРаспределенияПоПериодамЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиРаспределенияПоПериодам?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофилиРаспределенияПоПериодамОтвет = Клиент.Delete(ПрофилиРаспределенияПоПериодамЗапрос);
 		}
 	}
 }

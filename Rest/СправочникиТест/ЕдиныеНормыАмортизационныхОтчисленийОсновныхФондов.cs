@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest());
+			ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос = null;
+			try
+			{
+				ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос = Клиент.Get(new ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос НайтиПоКоду(decimal Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest());
+			ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос = null;
+			try
+			{
+				ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос = Клиент.Get(new ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest());
+			ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос = null;
+			try
+			{
+				ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос = Клиент.Get(new ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest());
+			var ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет = Клиент.Post(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос);
+		}
+		public static void Записать(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет = Клиент.Put(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос);
+		}
+		public static void Удалить(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет = Клиент.Delete(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос);
 		}
 	}
 }

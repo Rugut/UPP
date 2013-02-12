@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyOplatCHekaKKM")]
-	[Route("/Catalogs/VidyOplatCHekaKKM/FindById/{Id}")]
-	[Route("/Catalogs/VidyOplatCHekaKKM/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyOplatCHekaKKM/FindByDescr/{Descr}")]
-	public class VidyOplatCHekaKKMRequest/*ВидыОплатЧекаККМЗапрос*/: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<VidyOplatCHekaKKMRequest>
+	//VidyOplatCHekaKKM
+	[Маршрут("Справочники/ВидыОплатЧекаККМ","")]
+	public class ВидыОплатЧекаККМЗапрос: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<ВидыОплатЧекаККМЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/ПоСсылке","{Ссылка}")]
+	public class ВидыОплатЧекаККМНайтиПоСсылке: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<ВидыОплатЧекаККМНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/ПоКоду","{Код}")]
+	public class ВидыОплатЧекаККМНайтиПоКоду: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<ВидыОплатЧекаККМНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/ПоНаименованию","{Наименование}")]
+	public class ВидыОплатЧекаККМНайтиПоНаименованию: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<ВидыОплатЧекаККМНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОплатЧекаККМВыбратьПоСсылке: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<ВидыОплатЧекаККМВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОплатЧекаККМВыбратьПоКоду: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<ВидыОплатЧекаККМВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОплатЧекаККМ/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОплатЧекаККМВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыОплатЧекаККМ,IReturn<ВидыОплатЧекаККМВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyOplatCHekaKKMResponse//ВидыОплатЧекаККМОтвет
+	public class ВидыОплатЧекаККМОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyOplatCHekaKKMs")]
-	[Route("/Catalogs/VidyOplatCHekaKKMs/{Codes}")]
-	public class VidyOplatCHekaKKMsRequest/*ВидыОплатЧекаККМЗапрос*/: IReturn<List<VidyOplatCHekaKKMRequest>>
+	public class ВидыОплатЧекаККМСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyOplatCHekaKKMsRequest(params string[] Codes)
+		
+		public object Get(ВидыОплатЧекаККМНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyOplatCHekaKKMsResponse//ВидыОплатЧекаККМОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyOplatCHekaKKMService /*ВидыОплатЧекаККМСервис*/ : Service
-	{
-		public object Any(VidyOplatCHekaKKMRequest request)
+		
+		public object Get(ВидыОплатЧекаККМНайтиПоКоду Запрос)
 		{
-			return new VidyOplatCHekaKKMResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyOplatCHekaKKMRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыОплатЧекаККМ.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyOplatCHekaKKMResponse() {Result = "ВидыОплатЧекаККМ c кодом '" + request.Code+"' не найдено."};
+				return new ВидыОплатЧекаККМОтвет() {Ответ = "ВидыОплатЧекаККМ c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyOplatCHekaKKMsRequest request)
+		
+		public object Get(ВидыОплатЧекаККМНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыОплатЧекаККМ>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыОплатЧекаККМ.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыОплатЧекаККМВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОплатЧекаККМВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОплатЧекаККМВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыОплатЧекаККМЗапрос Запрос)
+		{
+			return new ВидыОплатЧекаККМОтвет {Ответ = "ВидыОплатЧекаККМ, "};
+		}
+
+		public object Post(ВидыОплатЧекаККМЗапрос ЗапросВидыОплатЧекаККМ)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыОплатЧекаККМ)ЗапросВидыОплатЧекаККМ;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

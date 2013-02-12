@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiAnalitikiUcheta")]
-	[Route("/Catalogs/NastrojjkiAnalitikiUcheta/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiAnalitikiUcheta/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiAnalitikiUcheta/FindByDescr/{Descr}")]
-	public class NastrojjkiAnalitikiUchetaRequest/*НастройкиАналитикиУчетаЗапрос*/: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<NastrojjkiAnalitikiUchetaRequest>
+	//NastrojjkiAnalitikiUcheta
+	[Маршрут("Справочники/НастройкиАналитикиУчета","")]
+	public class НастройкиАналитикиУчетаЗапрос: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<НастройкиАналитикиУчетаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиАналитикиУчета/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиАналитикиУчета/ПоСсылке","{Ссылка}")]
+	public class НастройкиАналитикиУчетаНайтиПоСсылке: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<НастройкиАналитикиУчетаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиАналитикиУчета/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НастройкиАналитикиУчета/ПоКоду","{Код}")]
+	public class НастройкиАналитикиУчетаНайтиПоКоду: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<НастройкиАналитикиУчетаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НастройкиАналитикиУчета/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиАналитикиУчета/ПоНаименованию","{Наименование}")]
+	public class НастройкиАналитикиУчетаНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<НастройкиАналитикиУчетаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиАналитикиУчета/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиАналитикиУчетаВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<НастройкиАналитикиУчетаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиАналитикиУчета/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиАналитикиУчетаВыбратьПоКоду: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<НастройкиАналитикиУчетаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиАналитикиУчета/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиАналитикиУчетаВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиАналитикиУчета,IReturn<НастройкиАналитикиУчетаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiAnalitikiUchetaResponse//НастройкиАналитикиУчетаОтвет
+	public class НастройкиАналитикиУчетаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiAnalitikiUchetas")]
-	[Route("/Catalogs/NastrojjkiAnalitikiUchetas/{Codes}")]
-	public class NastrojjkiAnalitikiUchetasRequest/*НастройкиАналитикиУчетаЗапрос*/: IReturn<List<NastrojjkiAnalitikiUchetaRequest>>
+	public class НастройкиАналитикиУчетаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiAnalitikiUchetasRequest(params string[] Codes)
+		
+		public object Get(НастройкиАналитикиУчетаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiAnalitikiUchetasResponse//НастройкиАналитикиУчетаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiAnalitikiUchetaService /*НастройкиАналитикиУчетаСервис*/ : Service
-	{
-		public object Any(NastrojjkiAnalitikiUchetaRequest request)
+		
+		public object Get(НастройкиАналитикиУчетаНайтиПоКоду Запрос)
 		{
-			return new NastrojjkiAnalitikiUchetaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NastrojjkiAnalitikiUchetaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НастройкиАналитикиУчета.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NastrojjkiAnalitikiUchetaResponse() {Result = "НастройкиАналитикиУчета c кодом '" + request.Code+"' не найдено."};
+				return new НастройкиАналитикиУчетаОтвет() {Ответ = "НастройкиАналитикиУчета c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NastrojjkiAnalitikiUchetasRequest request)
+		
+		public object Get(НастройкиАналитикиУчетаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиАналитикиУчета>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НастройкиАналитикиУчета.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НастройкиАналитикиУчетаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиАналитикиУчетаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиАналитикиУчетаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НастройкиАналитикиУчетаЗапрос Запрос)
+		{
+			return new НастройкиАналитикиУчетаОтвет {Ответ = "НастройкиАналитикиУчета, "};
+		}
+
+		public object Post(НастройкиАналитикиУчетаЗапрос ЗапросНастройкиАналитикиУчета)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиАналитикиУчета)ЗапросНастройкиАналитикиУчета;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

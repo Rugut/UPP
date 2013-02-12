@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NaznachenieCelevykhSredstv")]
-	[Route("/Catalogs/NaznachenieCelevykhSredstv/FindById/{Id}")]
-	[Route("/Catalogs/NaznachenieCelevykhSredstv/FindByCode/{Code}")]
-	[Route("/Catalogs/NaznachenieCelevykhSredstv/FindByDescr/{Descr}")]
-	public class NaznachenieCelevykhSredstvRequest/*НазначениеЦелевыхСредствЗапрос*/: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<NaznachenieCelevykhSredstvRequest>
+	//NaznachenieCelevykhSredstv
+	[Маршрут("Справочники/НазначениеЦелевыхСредств","")]
+	public class НазначениеЦелевыхСредствЗапрос: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<НазначениеЦелевыхСредствЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/ПоСсылке","{Ссылка}")]
+	public class НазначениеЦелевыхСредствНайтиПоСсылке: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<НазначениеЦелевыхСредствНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/ПоКоду","{Код}")]
+	public class НазначениеЦелевыхСредствНайтиПоКоду: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<НазначениеЦелевыхСредствНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/ПоНаименованию","{Наименование}")]
+	public class НазначениеЦелевыхСредствНайтиПоНаименованию: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<НазначениеЦелевыхСредствНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначениеЦелевыхСредствВыбратьПоСсылке: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<НазначениеЦелевыхСредствВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначениеЦелевыхСредствВыбратьПоКоду: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<НазначениеЦелевыхСредствВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НазначениеЦелевыхСредств/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначениеЦелевыхСредствВыбратьПоНаименованию: V82.СправочникиСсылка.НазначениеЦелевыхСредств,IReturn<НазначениеЦелевыхСредствВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NaznachenieCelevykhSredstvResponse//НазначениеЦелевыхСредствОтвет
+	public class НазначениеЦелевыхСредствОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NaznachenieCelevykhSredstvs")]
-	[Route("/Catalogs/NaznachenieCelevykhSredstvs/{Codes}")]
-	public class NaznachenieCelevykhSredstvsRequest/*НазначениеЦелевыхСредствЗапрос*/: IReturn<List<NaznachenieCelevykhSredstvRequest>>
+	public class НазначениеЦелевыхСредствСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NaznachenieCelevykhSredstvsRequest(params string[] Codes)
+		
+		public object Get(НазначениеЦелевыхСредствНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NaznachenieCelevykhSredstvsResponse//НазначениеЦелевыхСредствОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NaznachenieCelevykhSredstvService /*НазначениеЦелевыхСредствСервис*/ : Service
-	{
-		public object Any(NaznachenieCelevykhSredstvRequest request)
+		
+		public object Get(НазначениеЦелевыхСредствНайтиПоКоду Запрос)
 		{
-			return new NaznachenieCelevykhSredstvResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NaznachenieCelevykhSredstvRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НазначениеЦелевыхСредств.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NaznachenieCelevykhSredstvResponse() {Result = "НазначениеЦелевыхСредств c кодом '" + request.Code+"' не найдено."};
+				return new НазначениеЦелевыхСредствОтвет() {Ответ = "НазначениеЦелевыхСредств c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NaznachenieCelevykhSredstvsRequest request)
+		
+		public object Get(НазначениеЦелевыхСредствНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НазначениеЦелевыхСредств>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НазначениеЦелевыхСредств.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НазначениеЦелевыхСредствВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НазначениеЦелевыхСредствВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НазначениеЦелевыхСредствВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НазначениеЦелевыхСредствЗапрос Запрос)
+		{
+			return new НазначениеЦелевыхСредствОтвет {Ответ = "НазначениеЦелевыхСредств, "};
+		}
+
+		public object Post(НазначениеЦелевыхСредствЗапрос ЗапросНазначениеЦелевыхСредств)
+		{
+			var Ссылка = (СправочникиСсылка.НазначениеЦелевыхСредств)ЗапросНазначениеЦелевыхСредств;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

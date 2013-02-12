@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PrichinySpisaniya")]
-	[Route("/Catalogs/PrichinySpisaniya/FindById/{Id}")]
-	[Route("/Catalogs/PrichinySpisaniya/FindByCode/{Code}")]
-	[Route("/Catalogs/PrichinySpisaniya/FindByDescr/{Descr}")]
-	public class PrichinySpisaniyaRequest/*ПричиныСписанияЗапрос*/: V82.СправочникиСсылка.ПричиныСписания,IReturn<PrichinySpisaniyaRequest>
+	//PrichinySpisaniya
+	[Маршрут("Справочники/ПричиныСписания","")]
+	public class ПричиныСписанияЗапрос: V82.СправочникиСсылка.ПричиныСписания,IReturn<ПричиныСписанияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПричиныСписания/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПричиныСписания/ПоСсылке","{Ссылка}")]
+	public class ПричиныСписанияНайтиПоСсылке: V82.СправочникиСсылка.ПричиныСписания,IReturn<ПричиныСписанияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПричиныСписания/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПричиныСписания/ПоКоду","{Код}")]
+	public class ПричиныСписанияНайтиПоКоду: V82.СправочникиСсылка.ПричиныСписания,IReturn<ПричиныСписанияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПричиныСписания/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПричиныСписания/ПоНаименованию","{Наименование}")]
+	public class ПричиныСписанияНайтиПоНаименованию: V82.СправочникиСсылка.ПричиныСписания,IReturn<ПричиныСписанияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПричиныСписания/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныСписанияВыбратьПоСсылке: V82.СправочникиСсылка.ПричиныСписания,IReturn<ПричиныСписанияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныСписания/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныСписанияВыбратьПоКоду: V82.СправочникиСсылка.ПричиныСписания,IReturn<ПричиныСписанияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныСписания/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныСписанияВыбратьПоНаименованию: V82.СправочникиСсылка.ПричиныСписания,IReturn<ПричиныСписанияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PrichinySpisaniyaResponse//ПричиныСписанияОтвет
+	public class ПричиныСписанияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PrichinySpisaniyas")]
-	[Route("/Catalogs/PrichinySpisaniyas/{Codes}")]
-	public class PrichinySpisaniyasRequest/*ПричиныСписанияЗапрос*/: IReturn<List<PrichinySpisaniyaRequest>>
+	public class ПричиныСписанияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PrichinySpisaniyasRequest(params string[] Codes)
+		
+		public object Get(ПричиныСписанияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PrichinySpisaniyasResponse//ПричиныСписанияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PrichinySpisaniyaService /*ПричиныСписанияСервис*/ : Service
-	{
-		public object Any(PrichinySpisaniyaRequest request)
+		
+		public object Get(ПричиныСписанияНайтиПоКоду Запрос)
 		{
-			return new PrichinySpisaniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PrichinySpisaniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПричиныСписания.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PrichinySpisaniyaResponse() {Result = "ПричиныСписания c кодом '" + request.Code+"' не найдено."};
+				return new ПричиныСписанияОтвет() {Ответ = "ПричиныСписания c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PrichinySpisaniyasRequest request)
+		
+		public object Get(ПричиныСписанияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПричиныСписания>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПричиныСписания.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПричиныСписанияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныСписанияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныСписанияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПричиныСписанияЗапрос Запрос)
+		{
+			return new ПричиныСписанияОтвет {Ответ = "ПричиныСписания, "};
+		}
+
+		public object Post(ПричиныСписанияЗапрос ЗапросПричиныСписания)
+		{
+			var Ссылка = (СправочникиСсылка.ПричиныСписания)ЗапросПричиныСписания;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

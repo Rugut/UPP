@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ZnacheniyaSvojjstvObektov")]
-	[Route("/Catalogs/ZnacheniyaSvojjstvObektov/FindById/{Id}")]
-	[Route("/Catalogs/ZnacheniyaSvojjstvObektov/FindByCode/{Code}")]
-	[Route("/Catalogs/ZnacheniyaSvojjstvObektov/FindByDescr/{Descr}")]
-	public class ZnacheniyaSvojjstvObektovRequest/*ЗначенияСвойствОбъектовЗапрос*/: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ZnacheniyaSvojjstvObektovRequest>
+	//ZnacheniyaSvojjstvObektov
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов","")]
+	public class ЗначенияСвойствОбъектовЗапрос: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ЗначенияСвойствОбъектовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/ПоСсылке","{Ссылка}")]
+	public class ЗначенияСвойствОбъектовНайтиПоСсылке: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ЗначенияСвойствОбъектовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/ПоКоду","{Код}")]
+	public class ЗначенияСвойствОбъектовНайтиПоКоду: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ЗначенияСвойствОбъектовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/ПоНаименованию","{Наименование}")]
+	public class ЗначенияСвойствОбъектовНайтиПоНаименованию: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ЗначенияСвойствОбъектовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗначенияСвойствОбъектовВыбратьПоСсылке: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ЗначенияСвойствОбъектовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗначенияСвойствОбъектовВыбратьПоКоду: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ЗначенияСвойствОбъектовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗначенияСвойствОбъектов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗначенияСвойствОбъектовВыбратьПоНаименованию: V82.СправочникиСсылка.ЗначенияСвойствОбъектов,IReturn<ЗначенияСвойствОбъектовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ZnacheniyaSvojjstvObektovResponse//ЗначенияСвойствОбъектовОтвет
+	public class ЗначенияСвойствОбъектовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ZnacheniyaSvojjstvObektovs")]
-	[Route("/Catalogs/ZnacheniyaSvojjstvObektovs/{Codes}")]
-	public class ZnacheniyaSvojjstvObektovsRequest/*ЗначенияСвойствОбъектовЗапрос*/: IReturn<List<ZnacheniyaSvojjstvObektovRequest>>
+	public class ЗначенияСвойствОбъектовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ZnacheniyaSvojjstvObektovsRequest(params string[] Codes)
+		
+		public object Get(ЗначенияСвойствОбъектовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ZnacheniyaSvojjstvObektovsResponse//ЗначенияСвойствОбъектовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ZnacheniyaSvojjstvObektovService /*ЗначенияСвойствОбъектовСервис*/ : Service
-	{
-		public object Any(ZnacheniyaSvojjstvObektovRequest request)
+		
+		public object Get(ЗначенияСвойствОбъектовНайтиПоКоду Запрос)
 		{
-			return new ZnacheniyaSvojjstvObektovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ZnacheniyaSvojjstvObektovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЗначенияСвойствОбъектов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ZnacheniyaSvojjstvObektovResponse() {Result = "ЗначенияСвойствОбъектов c кодом '" + request.Code+"' не найдено."};
+				return new ЗначенияСвойствОбъектовОтвет() {Ответ = "ЗначенияСвойствОбъектов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ZnacheniyaSvojjstvObektovsRequest request)
+		
+		public object Get(ЗначенияСвойствОбъектовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЗначенияСвойствОбъектов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЗначенияСвойствОбъектов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЗначенияСвойствОбъектовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗначенияСвойствОбъектовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗначенияСвойствОбъектовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЗначенияСвойствОбъектовЗапрос Запрос)
+		{
+			return new ЗначенияСвойствОбъектовОтвет {Ответ = "ЗначенияСвойствОбъектов, "};
+		}
+
+		public object Post(ЗначенияСвойствОбъектовЗапрос ЗапросЗначенияСвойствОбъектов)
+		{
+			var Ссылка = (СправочникиСсылка.ЗначенияСвойствОбъектов)ЗапросЗначенияСвойствОбъектов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

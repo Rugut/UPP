@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NaznacheniyaIspolzovaniya")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniya/FindById/{Id}")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniya/FindByCode/{Code}")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniya/FindByDescr/{Descr}")]
-	public class NaznacheniyaIspolzovaniyaRequest/*НазначенияИспользованияЗапрос*/: V82.СправочникиСсылка.НазначенияИспользования,IReturn<NaznacheniyaIspolzovaniyaRequest>
+	//NaznacheniyaIspolzovaniya
+	[Маршрут("Справочники/НазначенияИспользования","")]
+	public class НазначенияИспользованияЗапрос: V82.СправочникиСсылка.НазначенияИспользования,IReturn<НазначенияИспользованияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НазначенияИспользования/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НазначенияИспользования/ПоСсылке","{Ссылка}")]
+	public class НазначенияИспользованияНайтиПоСсылке: V82.СправочникиСсылка.НазначенияИспользования,IReturn<НазначенияИспользованияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НазначенияИспользования/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НазначенияИспользования/ПоКоду","{Код}")]
+	public class НазначенияИспользованияНайтиПоКоду: V82.СправочникиСсылка.НазначенияИспользования,IReturn<НазначенияИспользованияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НазначенияИспользования/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НазначенияИспользования/ПоНаименованию","{Наименование}")]
+	public class НазначенияИспользованияНайтиПоНаименованию: V82.СправочникиСсылка.НазначенияИспользования,IReturn<НазначенияИспользованияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НазначенияИспользования/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияИспользованияВыбратьПоСсылке: V82.СправочникиСсылка.НазначенияИспользования,IReturn<НазначенияИспользованияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НазначенияИспользования/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияИспользованияВыбратьПоКоду: V82.СправочникиСсылка.НазначенияИспользования,IReturn<НазначенияИспользованияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НазначенияИспользования/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияИспользованияВыбратьПоНаименованию: V82.СправочникиСсылка.НазначенияИспользования,IReturn<НазначенияИспользованияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NaznacheniyaIspolzovaniyaResponse//НазначенияИспользованияОтвет
+	public class НазначенияИспользованияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyas")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyas/{Codes}")]
-	public class NaznacheniyaIspolzovaniyasRequest/*НазначенияИспользованияЗапрос*/: IReturn<List<NaznacheniyaIspolzovaniyaRequest>>
+	public class НазначенияИспользованияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NaznacheniyaIspolzovaniyasRequest(params string[] Codes)
+		
+		public object Get(НазначенияИспользованияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NaznacheniyaIspolzovaniyasResponse//НазначенияИспользованияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NaznacheniyaIspolzovaniyaService /*НазначенияИспользованияСервис*/ : Service
-	{
-		public object Any(NaznacheniyaIspolzovaniyaRequest request)
+		
+		public object Get(НазначенияИспользованияНайтиПоКоду Запрос)
 		{
-			return new NaznacheniyaIspolzovaniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NaznacheniyaIspolzovaniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НазначенияИспользования.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NaznacheniyaIspolzovaniyaResponse() {Result = "НазначенияИспользования c кодом '" + request.Code+"' не найдено."};
+				return new НазначенияИспользованияОтвет() {Ответ = "НазначенияИспользования c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NaznacheniyaIspolzovaniyasRequest request)
+		
+		public object Get(НазначенияИспользованияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НазначенияИспользования>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НазначенияИспользования.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НазначенияИспользованияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НазначенияИспользованияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НазначенияИспользованияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НазначенияИспользованияЗапрос Запрос)
+		{
+			return new НазначенияИспользованияОтвет {Ответ = "НазначенияИспользования, "};
+		}
+
+		public object Post(НазначенияИспользованияЗапрос ЗапросНазначенияИспользования)
+		{
+			var Ссылка = (СправочникиСсылка.НазначенияИспользования)ЗапросНазначенияИспользования;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЭлектронныеПредставленияРегламентированныхОтчетов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭлектронныеПредставленияРегламентированныхОтчетов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest());
+			ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос = null;
+			try
+			{
+				ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос = Клиент.Get(new ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭлектронныеПредставленияРегламентированныхОтчетов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest());
+			ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос = null;
+			try
+			{
+				ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос = Клиент.Get(new ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭлектронныеПредставленияРегламентированныхОтчетов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest());
+			ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос = null;
+			try
+			{
+				ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос = Клиент.Get(new ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/EHlektronnyePredstavleniyaReglamentirovannykhOtchetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЭлектронныеПредставленияРегламентированныхОтчетов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new EHlektronnyePredstavleniyaReglamentirovannykhOtchetovRequest());
+			var ЭлектронныеПредставленияРегламентированныхОтчетовОтвет = Клиент.Post(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос);
+		}
+		public static void Записать(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЭлектронныеПредставленияРегламентированныхОтчетов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЭлектронныеПредставленияРегламентированныхОтчетовОтвет = Клиент.Put(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос);
+		}
+		public static void Удалить(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЭлектронныеПредставленияРегламентированныхОтчетов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЭлектронныеПредставленияРегламентированныхОтчетовОтвет = Клиент.Delete(ЭлектронныеПредставленияРегламентированныхОтчетовЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProizvolnyeOtchety")]
-	[Route("/Catalogs/ProizvolnyeOtchety/FindById/{Id}")]
-	[Route("/Catalogs/ProizvolnyeOtchety/FindByCode/{Code}")]
-	[Route("/Catalogs/ProizvolnyeOtchety/FindByDescr/{Descr}")]
-	public class ProizvolnyeOtchetyRequest/*ПроизвольныеОтчетыЗапрос*/: V82.СправочникиСсылка.ПроизвольныеОтчеты,IReturn<ProizvolnyeOtchetyRequest>
+	//ProizvolnyeOtchety
+	[Маршрут("Справочники/ПроизвольныеОтчеты","")]
+	public class ПроизвольныеОтчетыЗапрос: V82.СправочникиСсылка.ПроизвольныеОтчеты,IReturn<ПроизвольныеОтчетыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПроизвольныеОтчеты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПроизвольныеОтчеты/ПоСсылке","{Ссылка}")]
+	public class ПроизвольныеОтчетыНайтиПоСсылке: V82.СправочникиСсылка.ПроизвольныеОтчеты,IReturn<ПроизвольныеОтчетыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПроизвольныеОтчеты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПроизвольныеОтчеты/ПоНаименованию","{Наименование}")]
+	public class ПроизвольныеОтчетыНайтиПоНаименованию: V82.СправочникиСсылка.ПроизвольныеОтчеты,IReturn<ПроизвольныеОтчетыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПроизвольныеОтчетыВыбратьПоСсылке: V82.СправочникиСсылка.ПроизвольныеОтчеты,IReturn<ПроизвольныеОтчетыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПроизвольныеОтчеты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПроизвольныеОтчетыВыбратьПоНаименованию: V82.СправочникиСсылка.ПроизвольныеОтчеты,IReturn<ПроизвольныеОтчетыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProizvolnyeOtchetyResponse//ПроизвольныеОтчетыОтвет
+	public class ПроизвольныеОтчетыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProizvolnyeOtchetys")]
-	[Route("/Catalogs/ProizvolnyeOtchetys/{Codes}")]
-	public class ProizvolnyeOtchetysRequest/*ПроизвольныеОтчетыЗапрос*/: IReturn<List<ProizvolnyeOtchetyRequest>>
+	public class ПроизвольныеОтчетыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProizvolnyeOtchetysRequest(params string[] Codes)
+		
+		public object Get(ПроизвольныеОтчетыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProizvolnyeOtchetysResponse//ПроизвольныеОтчетыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProizvolnyeOtchetyService /*ПроизвольныеОтчетыСервис*/ : Service
-	{
-		public object Any(ProizvolnyeOtchetyRequest request)
+		
+		public object Get(ПроизвольныеОтчетыНайтиПоНаименованию Запрос)
 		{
-			return new ProizvolnyeOtchetyResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(ProizvolnyeOtchetyRequest request)
+		
+		public object Get(ПроизвольныеОтчетыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПроизвольныеОтчетыВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(ProizvolnyeOtchetysRequest request)
+		public object Any(ПроизвольныеОтчетыЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПроизвольныеОтчеты>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ПроизвольныеОтчетыОтвет {Ответ = "ПроизвольныеОтчеты, "};
 		}
+
+		public object Post(ПроизвольныеОтчетыЗапрос ЗапросПроизвольныеОтчеты)
+		{
+			var Ссылка = (СправочникиСсылка.ПроизвольныеОтчеты)ЗапросПроизвольныеОтчеты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ФильтрыДляЭлектронныхПисем:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ФильтрыДляЭлектронныхПисемЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/FiltryDlyaEHlektronnykhPisem/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФильтрыДляЭлектронныхПисем/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new FiltryDlyaEHlektronnykhPisemRequest());
+			ФильтрыДляЭлектронныхПисемЗапрос ФильтрыДляЭлектронныхПисемЗапрос = null;
+			try
+			{
+				ФильтрыДляЭлектронныхПисемЗапрос = Клиент.Get(new ФильтрыДляЭлектронныхПисемЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФильтрыДляЭлектронныхПисемЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ФильтрыДляЭлектронныхПисемЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/FiltryDlyaEHlektronnykhPisem/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФильтрыДляЭлектронныхПисем/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new FiltryDlyaEHlektronnykhPisemRequest());
+			ФильтрыДляЭлектронныхПисемЗапрос ФильтрыДляЭлектронныхПисемЗапрос = null;
+			try
+			{
+				ФильтрыДляЭлектронныхПисемЗапрос = Клиент.Get(new ФильтрыДляЭлектронныхПисемЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФильтрыДляЭлектронныхПисемЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ФильтрыДляЭлектронныхПисемЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/FiltryDlyaEHlektronnykhPisem/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФильтрыДляЭлектронныхПисем/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new FiltryDlyaEHlektronnykhPisemRequest());
+			ФильтрыДляЭлектронныхПисемЗапрос ФильтрыДляЭлектронныхПисемЗапрос = null;
+			try
+			{
+				ФильтрыДляЭлектронныхПисемЗапрос = Клиент.Get(new ФильтрыДляЭлектронныхПисемЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФильтрыДляЭлектронныхПисемЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ФильтрыДляЭлектронныхПисемЗапрос ФильтрыДляЭлектронныхПисемЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/FiltryDlyaEHlektronnykhPisem/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФильтрыДляЭлектронныхПисем?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new FiltryDlyaEHlektronnykhPisemRequest());
+			var ФильтрыДляЭлектронныхПисемОтвет = Клиент.Post(ФильтрыДляЭлектронныхПисемЗапрос);
+		}
+		public static void Записать(ФильтрыДляЭлектронныхПисемЗапрос ФильтрыДляЭлектронныхПисемЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ФильтрыДляЭлектронныхПисем?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ФильтрыДляЭлектронныхПисемОтвет = Клиент.Put(ФильтрыДляЭлектронныхПисемЗапрос);
+		}
+		public static void Удалить(ФильтрыДляЭлектронныхПисемЗапрос ФильтрыДляЭлектронныхПисемЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ФильтрыДляЭлектронныхПисем?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ФильтрыДляЭлектронныхПисемОтвет = Клиент.Delete(ФильтрыДляЭлектронныхПисемЗапрос);
 		}
 	}
 }

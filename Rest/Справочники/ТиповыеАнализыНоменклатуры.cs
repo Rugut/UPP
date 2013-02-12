@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TipovyeAnalizyNomenklatury")]
-	[Route("/Catalogs/TipovyeAnalizyNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/TipovyeAnalizyNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/TipovyeAnalizyNomenklatury/FindByDescr/{Descr}")]
-	public class TipovyeAnalizyNomenklaturyRequest/*ТиповыеАнализыНоменклатурыЗапрос*/: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<TipovyeAnalizyNomenklaturyRequest>
+	//TipovyeAnalizyNomenklatury
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры","")]
+	public class ТиповыеАнализыНоменклатурыЗапрос: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<ТиповыеАнализыНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class ТиповыеАнализыНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<ТиповыеАнализыНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/ПоКоду","{Код}")]
+	public class ТиповыеАнализыНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<ТиповыеАнализыНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class ТиповыеАнализыНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<ТиповыеАнализыНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТиповыеАнализыНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<ТиповыеАнализыНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТиповыеАнализыНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<ТиповыеАнализыНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТиповыеАнализыНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТиповыеАнализыНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры,IReturn<ТиповыеАнализыНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TipovyeAnalizyNomenklaturyResponse//ТиповыеАнализыНоменклатурыОтвет
+	public class ТиповыеАнализыНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TipovyeAnalizyNomenklaturys")]
-	[Route("/Catalogs/TipovyeAnalizyNomenklaturys/{Codes}")]
-	public class TipovyeAnalizyNomenklaturysRequest/*ТиповыеАнализыНоменклатурыЗапрос*/: IReturn<List<TipovyeAnalizyNomenklaturyRequest>>
+	public class ТиповыеАнализыНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TipovyeAnalizyNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(ТиповыеАнализыНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TipovyeAnalizyNomenklaturysResponse//ТиповыеАнализыНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TipovyeAnalizyNomenklaturyService /*ТиповыеАнализыНоменклатурыСервис*/ : Service
-	{
-		public object Any(TipovyeAnalizyNomenklaturyRequest request)
+		
+		public object Get(ТиповыеАнализыНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new TipovyeAnalizyNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TipovyeAnalizyNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТиповыеАнализыНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TipovyeAnalizyNomenklaturyResponse() {Result = "ТиповыеАнализыНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new ТиповыеАнализыНоменклатурыОтвет() {Ответ = "ТиповыеАнализыНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TipovyeAnalizyNomenklaturysRequest request)
+		
+		public object Get(ТиповыеАнализыНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТиповыеАнализыНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТиповыеАнализыНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТиповыеАнализыНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТиповыеАнализыНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТиповыеАнализыНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТиповыеАнализыНоменклатурыЗапрос Запрос)
+		{
+			return new ТиповыеАнализыНоменклатурыОтвет {Ответ = "ТиповыеАнализыНоменклатуры, "};
+		}
+
+		public object Post(ТиповыеАнализыНоменклатурыЗапрос ЗапросТиповыеАнализыНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.ТиповыеАнализыНоменклатуры)ЗапросТиповыеАнализыНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VneshnieObrabotki")]
-	[Route("/Catalogs/VneshnieObrabotki/FindById/{Id}")]
-	[Route("/Catalogs/VneshnieObrabotki/FindByCode/{Code}")]
-	[Route("/Catalogs/VneshnieObrabotki/FindByDescr/{Descr}")]
-	public class VneshnieObrabotkiRequest/*ВнешниеОбработкиЗапрос*/: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<VneshnieObrabotkiRequest>
+	//VneshnieObrabotki
+	[Маршрут("Справочники/ВнешниеОбработки","")]
+	public class ВнешниеОбработкиЗапрос: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<ВнешниеОбработкиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВнешниеОбработки/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВнешниеОбработки/ПоСсылке","{Ссылка}")]
+	public class ВнешниеОбработкиНайтиПоСсылке: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<ВнешниеОбработкиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВнешниеОбработки/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВнешниеОбработки/ПоКоду","{Код}")]
+	public class ВнешниеОбработкиНайтиПоКоду: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<ВнешниеОбработкиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВнешниеОбработки/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВнешниеОбработки/ПоНаименованию","{Наименование}")]
+	public class ВнешниеОбработкиНайтиПоНаименованию: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<ВнешниеОбработкиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВнешниеОбработки/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВнешниеОбработкиВыбратьПоСсылке: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<ВнешниеОбработкиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВнешниеОбработки/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВнешниеОбработкиВыбратьПоКоду: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<ВнешниеОбработкиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВнешниеОбработки/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВнешниеОбработкиВыбратьПоНаименованию: V82.СправочникиСсылка.ВнешниеОбработки,IReturn<ВнешниеОбработкиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VneshnieObrabotkiResponse//ВнешниеОбработкиОтвет
+	public class ВнешниеОбработкиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VneshnieObrabotkis")]
-	[Route("/Catalogs/VneshnieObrabotkis/{Codes}")]
-	public class VneshnieObrabotkisRequest/*ВнешниеОбработкиЗапрос*/: IReturn<List<VneshnieObrabotkiRequest>>
+	public class ВнешниеОбработкиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VneshnieObrabotkisRequest(params string[] Codes)
+		
+		public object Get(ВнешниеОбработкиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VneshnieObrabotkisResponse//ВнешниеОбработкиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VneshnieObrabotkiService /*ВнешниеОбработкиСервис*/ : Service
-	{
-		public object Any(VneshnieObrabotkiRequest request)
+		
+		public object Get(ВнешниеОбработкиНайтиПоКоду Запрос)
 		{
-			return new VneshnieObrabotkiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VneshnieObrabotkiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВнешниеОбработки.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VneshnieObrabotkiResponse() {Result = "ВнешниеОбработки c кодом '" + request.Code+"' не найдено."};
+				return new ВнешниеОбработкиОтвет() {Ответ = "ВнешниеОбработки c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VneshnieObrabotkisRequest request)
+		
+		public object Get(ВнешниеОбработкиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВнешниеОбработки>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВнешниеОбработки.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВнешниеОбработкиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВнешниеОбработкиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВнешниеОбработкиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВнешниеОбработкиЗапрос Запрос)
+		{
+			return new ВнешниеОбработкиОтвет {Ответ = "ВнешниеОбработки, "};
+		}
+
+		public object Post(ВнешниеОбработкиЗапрос ЗапросВнешниеОбработки)
+		{
+			var Ссылка = (СправочникиСсылка.ВнешниеОбработки)ЗапросВнешниеОбработки;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

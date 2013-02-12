@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГрафикиРаботы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГрафикиРаботыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GrafikiRaboty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GrafikiRabotyRequest());
+			ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос = null;
+			try
+			{
+				ГрафикиРаботыЗапрос = Клиент.Get(new ГрафикиРаботыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГрафикиРаботыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГрафикиРаботыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GrafikiRaboty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GrafikiRabotyRequest());
+			ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос = null;
+			try
+			{
+				ГрафикиРаботыЗапрос = Клиент.Get(new ГрафикиРаботыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГрафикиРаботыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GrafikiRaboty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GrafikiRabotyRequest());
+			var ГрафикиРаботыОтвет = Клиент.Post(ГрафикиРаботыЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GrafikiRaboty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GrafikiRabotyRequest());
+			var ГрафикиРаботыОтвет = Клиент.Put(ГрафикиРаботыЗапрос);
+		}
+		public static void Удалить(ГрафикиРаботыЗапрос ГрафикиРаботыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГрафикиРаботы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГрафикиРаботыОтвет = Клиент.Delete(ГрафикиРаботыЗапрос);
 		}
 	}
 }

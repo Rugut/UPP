@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class УчетныеЗаписиЭлектроннойПочты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static УчетныеЗаписиЭлектроннойПочтыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиЭлектроннойПочты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new UchetnyeZapisiEHlektronnojjPochtyRequest());
+			УчетныеЗаписиЭлектроннойПочтыЗапрос УчетныеЗаписиЭлектроннойПочтыЗапрос = null;
+			try
+			{
+				УчетныеЗаписиЭлектроннойПочтыЗапрос = Клиент.Get(new УчетныеЗаписиЭлектроннойПочтыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УчетныеЗаписиЭлектроннойПочтыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static УчетныеЗаписиЭлектроннойПочтыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиЭлектроннойПочты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new UchetnyeZapisiEHlektronnojjPochtyRequest());
+			УчетныеЗаписиЭлектроннойПочтыЗапрос УчетныеЗаписиЭлектроннойПочтыЗапрос = null;
+			try
+			{
+				УчетныеЗаписиЭлектроннойПочтыЗапрос = Клиент.Get(new УчетныеЗаписиЭлектроннойПочтыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УчетныеЗаписиЭлектроннойПочтыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static УчетныеЗаписиЭлектроннойПочтыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиЭлектроннойПочты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new UchetnyeZapisiEHlektronnojjPochtyRequest());
+			УчетныеЗаписиЭлектроннойПочтыЗапрос УчетныеЗаписиЭлектроннойПочтыЗапрос = null;
+			try
+			{
+				УчетныеЗаписиЭлектроннойПочтыЗапрос = Клиент.Get(new УчетныеЗаписиЭлектроннойПочтыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return УчетныеЗаписиЭлектроннойПочтыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(УчетныеЗаписиЭлектроннойПочтыЗапрос УчетныеЗаписиЭлектроннойПочтыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/UchetnyeZapisiEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиЭлектроннойПочты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new UchetnyeZapisiEHlektronnojjPochtyRequest());
+			var УчетныеЗаписиЭлектроннойПочтыОтвет = Клиент.Post(УчетныеЗаписиЭлектроннойПочтыЗапрос);
+		}
+		public static void Записать(УчетныеЗаписиЭлектроннойПочтыЗапрос УчетныеЗаписиЭлектроннойПочтыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиЭлектроннойПочты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УчетныеЗаписиЭлектроннойПочтыОтвет = Клиент.Put(УчетныеЗаписиЭлектроннойПочтыЗапрос);
+		}
+		public static void Удалить(УчетныеЗаписиЭлектроннойПочтыЗапрос УчетныеЗаписиЭлектроннойПочтыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/УчетныеЗаписиЭлектроннойПочты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var УчетныеЗаписиЭлектроннойПочтыОтвет = Клиент.Delete(УчетныеЗаписиЭлектроннойПочтыЗапрос);
 		}
 	}
 }

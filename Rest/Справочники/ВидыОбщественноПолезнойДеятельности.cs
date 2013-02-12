@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti")]
-	[Route("/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti/FindById/{Id}")]
-	[Route("/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti/FindByDescr/{Descr}")]
-	public class VidyObshhestvennoPoleznojjDeyatelnostiRequest/*ВидыОбщественноПолезнойДеятельностиЗапрос*/: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<VidyObshhestvennoPoleznojjDeyatelnostiRequest>
+	//VidyObshhestvennoPoleznojjDeyatelnosti
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности","")]
+	public class ВидыОбщественноПолезнойДеятельностиЗапрос: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<ВидыОбщественноПолезнойДеятельностиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/ПоСсылке","{Ссылка}")]
+	public class ВидыОбщественноПолезнойДеятельностиНайтиПоСсылке: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<ВидыОбщественноПолезнойДеятельностиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/ПоКоду","{Код}")]
+	public class ВидыОбщественноПолезнойДеятельностиНайтиПоКоду: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<ВидыОбщественноПолезнойДеятельностиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/ПоНаименованию","{Наименование}")]
+	public class ВидыОбщественноПолезнойДеятельностиНайтиПоНаименованию: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<ВидыОбщественноПолезнойДеятельностиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбщественноПолезнойДеятельностиВыбратьПоСсылке: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<ВидыОбщественноПолезнойДеятельностиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбщественноПолезнойДеятельностиВыбратьПоКоду: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<ВидыОбщественноПолезнойДеятельностиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОбщественноПолезнойДеятельности/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбщественноПолезнойДеятельностиВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности,IReturn<ВидыОбщественноПолезнойДеятельностиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyObshhestvennoPoleznojjDeyatelnostiResponse//ВидыОбщественноПолезнойДеятельностиОтвет
+	public class ВидыОбщественноПолезнойДеятельностиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyObshhestvennoPoleznojjDeyatelnostis")]
-	[Route("/Catalogs/VidyObshhestvennoPoleznojjDeyatelnostis/{Codes}")]
-	public class VidyObshhestvennoPoleznojjDeyatelnostisRequest/*ВидыОбщественноПолезнойДеятельностиЗапрос*/: IReturn<List<VidyObshhestvennoPoleznojjDeyatelnostiRequest>>
+	public class ВидыОбщественноПолезнойДеятельностиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyObshhestvennoPoleznojjDeyatelnostisRequest(params string[] Codes)
+		
+		public object Get(ВидыОбщественноПолезнойДеятельностиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyObshhestvennoPoleznojjDeyatelnostisResponse//ВидыОбщественноПолезнойДеятельностиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyObshhestvennoPoleznojjDeyatelnostiService /*ВидыОбщественноПолезнойДеятельностиСервис*/ : Service
-	{
-		public object Any(VidyObshhestvennoPoleznojjDeyatelnostiRequest request)
+		
+		public object Get(ВидыОбщественноПолезнойДеятельностиНайтиПоКоду Запрос)
 		{
-			return new VidyObshhestvennoPoleznojjDeyatelnostiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyObshhestvennoPoleznojjDeyatelnostiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыОбщественноПолезнойДеятельности.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyObshhestvennoPoleznojjDeyatelnostiResponse() {Result = "ВидыОбщественноПолезнойДеятельности c кодом '" + request.Code+"' не найдено."};
+				return new ВидыОбщественноПолезнойДеятельностиОтвет() {Ответ = "ВидыОбщественноПолезнойДеятельности c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyObshhestvennoPoleznojjDeyatelnostisRequest request)
+		
+		public object Get(ВидыОбщественноПолезнойДеятельностиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыОбщественноПолезнойДеятельности>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыОбщественноПолезнойДеятельности.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыОбщественноПолезнойДеятельностиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОбщественноПолезнойДеятельностиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОбщественноПолезнойДеятельностиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыОбщественноПолезнойДеятельностиЗапрос Запрос)
+		{
+			return new ВидыОбщественноПолезнойДеятельностиОтвет {Ответ = "ВидыОбщественноПолезнойДеятельности, "};
+		}
+
+		public object Post(ВидыОбщественноПолезнойДеятельностиЗапрос ЗапросВидыОбщественноПолезнойДеятельности)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыОбщественноПолезнойДеятельности)ЗапросВидыОбщественноПолезнойДеятельности;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЦиклыОбмена:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЦиклыОбменаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/CiklyObmena/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦиклыОбмена/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new CiklyObmenaRequest());
+			ЦиклыОбменаЗапрос ЦиклыОбменаЗапрос = null;
+			try
+			{
+				ЦиклыОбменаЗапрос = Клиент.Get(new ЦиклыОбменаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЦиклыОбменаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЦиклыОбменаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/CiklyObmena/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦиклыОбмена/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new CiklyObmenaRequest());
+			ЦиклыОбменаЗапрос ЦиклыОбменаЗапрос = null;
+			try
+			{
+				ЦиклыОбменаЗапрос = Клиент.Get(new ЦиклыОбменаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЦиклыОбменаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ЦиклыОбменаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/CiklyObmena/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦиклыОбмена/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new CiklyObmenaRequest());
+			ЦиклыОбменаЗапрос ЦиклыОбменаЗапрос = null;
+			try
+			{
+				ЦиклыОбменаЗапрос = Клиент.Get(new ЦиклыОбменаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЦиклыОбменаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ЦиклыОбменаЗапрос ЦиклыОбменаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/CiklyObmena/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦиклыОбмена?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new CiklyObmenaRequest());
+			var ЦиклыОбменаОтвет = Клиент.Post(ЦиклыОбменаЗапрос);
+		}
+		public static void Записать(ЦиклыОбменаЗапрос ЦиклыОбменаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЦиклыОбмена?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЦиклыОбменаОтвет = Клиент.Put(ЦиклыОбменаЗапрос);
+		}
+		public static void Удалить(ЦиклыОбменаЗапрос ЦиклыОбменаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЦиклыОбмена?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЦиклыОбменаОтвет = Клиент.Delete(ЦиклыОбменаЗапрос);
 		}
 	}
 }

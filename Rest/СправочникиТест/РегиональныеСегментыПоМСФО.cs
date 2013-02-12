@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class РегиональныеСегментыПоМСФО:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static РегиональныеСегментыПоМСФОЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegionalnyeSegmentyPoMSFO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегиональныеСегментыПоМСФО/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new RegionalnyeSegmentyPoMSFORequest());
+			РегиональныеСегментыПоМСФОЗапрос РегиональныеСегментыПоМСФОЗапрос = null;
+			try
+			{
+				РегиональныеСегментыПоМСФОЗапрос = Клиент.Get(new РегиональныеСегментыПоМСФОЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегиональныеСегментыПоМСФОЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static РегиональныеСегментыПоМСФОЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegionalnyeSegmentyPoMSFO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегиональныеСегментыПоМСФО/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new RegionalnyeSegmentyPoMSFORequest());
+			РегиональныеСегментыПоМСФОЗапрос РегиональныеСегментыПоМСФОЗапрос = null;
+			try
+			{
+				РегиональныеСегментыПоМСФОЗапрос = Клиент.Get(new РегиональныеСегментыПоМСФОЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегиональныеСегментыПоМСФОЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static РегиональныеСегментыПоМСФОЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegionalnyeSegmentyPoMSFO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегиональныеСегментыПоМСФО/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new RegionalnyeSegmentyPoMSFORequest());
+			РегиональныеСегментыПоМСФОЗапрос РегиональныеСегментыПоМСФОЗапрос = null;
+			try
+			{
+				РегиональныеСегментыПоМСФОЗапрос = Клиент.Get(new РегиональныеСегментыПоМСФОЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегиональныеСегментыПоМСФОЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(РегиональныеСегментыПоМСФОЗапрос РегиональныеСегментыПоМСФОЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegionalnyeSegmentyPoMSFO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегиональныеСегментыПоМСФО?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new RegionalnyeSegmentyPoMSFORequest());
+			var РегиональныеСегментыПоМСФООтвет = Клиент.Post(РегиональныеСегментыПоМСФОЗапрос);
+		}
+		public static void Записать(РегиональныеСегментыПоМСФОЗапрос РегиональныеСегментыПоМСФОЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/РегиональныеСегментыПоМСФО?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РегиональныеСегментыПоМСФООтвет = Клиент.Put(РегиональныеСегментыПоМСФОЗапрос);
+		}
+		public static void Удалить(РегиональныеСегментыПоМСФОЗапрос РегиональныеСегментыПоМСФОЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/РегиональныеСегментыПоМСФО?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РегиональныеСегментыПоМСФООтвет = Клиент.Delete(РегиональныеСегментыПоМСФОЗапрос);
 		}
 	}
 }

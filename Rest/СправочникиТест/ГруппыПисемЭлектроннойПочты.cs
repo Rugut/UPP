@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГруппыПисемЭлектроннойПочты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГруппыПисемЭлектроннойПочтыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPisemEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПисемЭлектроннойПочты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GruppyPisemEHlektronnojjPochtyRequest());
+			ГруппыПисемЭлектроннойПочтыЗапрос ГруппыПисемЭлектроннойПочтыЗапрос = null;
+			try
+			{
+				ГруппыПисемЭлектроннойПочтыЗапрос = Клиент.Get(new ГруппыПисемЭлектроннойПочтыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПисемЭлектроннойПочтыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГруппыПисемЭлектроннойПочтыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPisemEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПисемЭлектроннойПочты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GruppyPisemEHlektronnojjPochtyRequest());
+			ГруппыПисемЭлектроннойПочтыЗапрос ГруппыПисемЭлектроннойПочтыЗапрос = null;
+			try
+			{
+				ГруппыПисемЭлектроннойПочтыЗапрос = Клиент.Get(new ГруппыПисемЭлектроннойПочтыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПисемЭлектроннойПочтыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ГруппыПисемЭлектроннойПочтыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPisemEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПисемЭлектроннойПочты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GruppyPisemEHlektronnojjPochtyRequest());
+			ГруппыПисемЭлектроннойПочтыЗапрос ГруппыПисемЭлектроннойПочтыЗапрос = null;
+			try
+			{
+				ГруппыПисемЭлектроннойПочтыЗапрос = Клиент.Get(new ГруппыПисемЭлектроннойПочтыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыПисемЭлектроннойПочтыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ГруппыПисемЭлектроннойПочтыЗапрос ГруппыПисемЭлектроннойПочтыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyPisemEHlektronnojjPochty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПисемЭлектроннойПочты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GruppyPisemEHlektronnojjPochtyRequest());
+			var ГруппыПисемЭлектроннойПочтыОтвет = Клиент.Post(ГруппыПисемЭлектроннойПочтыЗапрос);
+		}
+		public static void Записать(ГруппыПисемЭлектроннойПочтыЗапрос ГруппыПисемЭлектроннойПочтыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПисемЭлектроннойПочты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыПисемЭлектроннойПочтыОтвет = Клиент.Put(ГруппыПисемЭлектроннойПочтыЗапрос);
+		}
+		public static void Удалить(ГруппыПисемЭлектроннойПочтыЗапрос ГруппыПисемЭлектроннойПочтыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыПисемЭлектроннойПочты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыПисемЭлектроннойПочтыОтвет = Клиент.Delete(ГруппыПисемЭлектроннойПочтыЗапрос);
 		}
 	}
 }

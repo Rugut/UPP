@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Organizacii")]
-	[Route("/Catalogs/Organizacii/FindById/{Id}")]
-	[Route("/Catalogs/Organizacii/FindByCode/{Code}")]
-	[Route("/Catalogs/Organizacii/FindByDescr/{Descr}")]
-	public class OrganizaciiRequest/*ОрганизацииЗапрос*/: V82.СправочникиСсылка.Организации,IReturn<OrganizaciiRequest>
+	//Organizacii
+	[Маршрут("Справочники/Организации","")]
+	public class ОрганизацииЗапрос: V82.СправочникиСсылка.Организации,IReturn<ОрганизацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Организации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Организации/ПоСсылке","{Ссылка}")]
+	public class ОрганизацииНайтиПоСсылке: V82.СправочникиСсылка.Организации,IReturn<ОрганизацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Организации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Организации/ПоКоду","{Код}")]
+	public class ОрганизацииНайтиПоКоду: V82.СправочникиСсылка.Организации,IReturn<ОрганизацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Организации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Организации/ПоНаименованию","{Наименование}")]
+	public class ОрганизацииНайтиПоНаименованию: V82.СправочникиСсылка.Организации,IReturn<ОрганизацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Организации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганизацииВыбратьПоСсылке: V82.СправочникиСсылка.Организации,IReturn<ОрганизацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Организации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганизацииВыбратьПоКоду: V82.СправочникиСсылка.Организации,IReturn<ОрганизацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Организации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганизацииВыбратьПоНаименованию: V82.СправочникиСсылка.Организации,IReturn<ОрганизацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OrganizaciiResponse//ОрганизацииОтвет
+	public class ОрганизацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Organizaciis")]
-	[Route("/Catalogs/Organizaciis/{Codes}")]
-	public class OrganizaciisRequest/*ОрганизацииЗапрос*/: IReturn<List<OrganizaciiRequest>>
+	public class ОрганизацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OrganizaciisRequest(params string[] Codes)
+		
+		public object Get(ОрганизацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OrganizaciisResponse//ОрганизацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OrganizaciiService /*ОрганизацииСервис*/ : Service
-	{
-		public object Any(OrganizaciiRequest request)
+		
+		public object Get(ОрганизацииНайтиПоКоду Запрос)
 		{
-			return new OrganizaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OrganizaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Организации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OrganizaciiResponse() {Result = "Организации c кодом '" + request.Code+"' не найдено."};
+				return new ОрганизацииОтвет() {Ответ = "Организации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OrganizaciisRequest request)
+		
+		public object Get(ОрганизацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Организации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Организации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОрганизацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОрганизацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОрганизацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОрганизацииЗапрос Запрос)
+		{
+			return new ОрганизацииОтвет {Ответ = "Организации, "};
+		}
+
+		public object Post(ОрганизацииЗапрос ЗапросОрганизации)
+		{
+			var Ссылка = (СправочникиСсылка.Организации)ЗапросОрганизации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

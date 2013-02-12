@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Смены:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СменыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Smeny/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Смены/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SmenyRequest());
+			СменыЗапрос СменыЗапрос = null;
+			try
+			{
+				СменыЗапрос = Клиент.Get(new СменыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СменыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СменыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Smeny/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Смены/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SmenyRequest());
+			СменыЗапрос СменыЗапрос = null;
+			try
+			{
+				СменыЗапрос = Клиент.Get(new СменыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СменыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СменыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Smeny/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Смены/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SmenyRequest());
+			СменыЗапрос СменыЗапрос = null;
+			try
+			{
+				СменыЗапрос = Клиент.Get(new СменыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СменыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СменыЗапрос СменыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Smeny/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Смены?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SmenyRequest());
+			var СменыОтвет = Клиент.Post(СменыЗапрос);
+		}
+		public static void Записать(СменыЗапрос СменыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Смены?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СменыОтвет = Клиент.Put(СменыЗапрос);
+		}
+		public static void Удалить(СменыЗапрос СменыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Смены?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СменыОтвет = Клиент.Delete(СменыЗапрос);
 		}
 	}
 }

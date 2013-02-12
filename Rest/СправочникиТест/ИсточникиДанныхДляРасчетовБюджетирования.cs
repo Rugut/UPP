@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ИсточникиДанныхДляРасчетовБюджетирования:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ИсточникиДанныхДляРасчетовБюджетированияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиДанныхДляРасчетовБюджетирования/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest());
+			ИсточникиДанныхДляРасчетовБюджетированияЗапрос ИсточникиДанныхДляРасчетовБюджетированияЗапрос = null;
+			try
+			{
+				ИсточникиДанныхДляРасчетовБюджетированияЗапрос = Клиент.Get(new ИсточникиДанныхДляРасчетовБюджетированияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиДанныхДляРасчетовБюджетированияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ИсточникиДанныхДляРасчетовБюджетированияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиДанныхДляРасчетовБюджетирования/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest());
+			ИсточникиДанныхДляРасчетовБюджетированияЗапрос ИсточникиДанныхДляРасчетовБюджетированияЗапрос = null;
+			try
+			{
+				ИсточникиДанныхДляРасчетовБюджетированияЗапрос = Клиент.Get(new ИсточникиДанныхДляРасчетовБюджетированияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиДанныхДляРасчетовБюджетированияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ИсточникиДанныхДляРасчетовБюджетированияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиДанныхДляРасчетовБюджетирования/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest());
+			ИсточникиДанныхДляРасчетовБюджетированияЗапрос ИсточникиДанныхДляРасчетовБюджетированияЗапрос = null;
+			try
+			{
+				ИсточникиДанныхДляРасчетовБюджетированияЗапрос = Клиент.Get(new ИсточникиДанныхДляРасчетовБюджетированияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиДанныхДляРасчетовБюджетированияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ИсточникиДанныхДляРасчетовБюджетированияЗапрос ИсточникиДанныхДляРасчетовБюджетированияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиДанныхДляРасчетовБюджетирования?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest());
+			var ИсточникиДанныхДляРасчетовБюджетированияОтвет = Клиент.Post(ИсточникиДанныхДляРасчетовБюджетированияЗапрос);
+		}
+		public static void Записать(ИсточникиДанныхДляРасчетовБюджетированияЗапрос ИсточникиДанныхДляРасчетовБюджетированияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиДанныхДляРасчетовБюджетирования?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИсточникиДанныхДляРасчетовБюджетированияОтвет = Клиент.Put(ИсточникиДанныхДляРасчетовБюджетированияЗапрос);
+		}
+		public static void Удалить(ИсточникиДанныхДляРасчетовБюджетированияЗапрос ИсточникиДанныхДляРасчетовБюджетированияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиДанныхДляРасчетовБюджетирования?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИсточникиДанныхДляРасчетовБюджетированияОтвет = Клиент.Delete(ИсточникиДанныхДляРасчетовБюджетированияЗапрос);
 		}
 	}
 }

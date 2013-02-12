@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Kontragenty")]
-	[Route("/Catalogs/Kontragenty/FindById/{Id}")]
-	[Route("/Catalogs/Kontragenty/FindByCode/{Code}")]
-	[Route("/Catalogs/Kontragenty/FindByDescr/{Descr}")]
-	public class KontragentyRequest/*КонтрагентыЗапрос*/: V82.СправочникиСсылка.Контрагенты,IReturn<KontragentyRequest>
+	//Kontragenty
+	[Маршрут("Справочники/Контрагенты","")]
+	public class КонтрагентыЗапрос: V82.СправочникиСсылка.Контрагенты,IReturn<КонтрагентыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Контрагенты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Контрагенты/ПоСсылке","{Ссылка}")]
+	public class КонтрагентыНайтиПоСсылке: V82.СправочникиСсылка.Контрагенты,IReturn<КонтрагентыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Контрагенты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Контрагенты/ПоКоду","{Код}")]
+	public class КонтрагентыНайтиПоКоду: V82.СправочникиСсылка.Контрагенты,IReturn<КонтрагентыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Контрагенты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Контрагенты/ПоНаименованию","{Наименование}")]
+	public class КонтрагентыНайтиПоНаименованию: V82.СправочникиСсылка.Контрагенты,IReturn<КонтрагентыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Контрагенты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтрагентыВыбратьПоСсылке: V82.СправочникиСсылка.Контрагенты,IReturn<КонтрагентыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Контрагенты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтрагентыВыбратьПоКоду: V82.СправочникиСсылка.Контрагенты,IReturn<КонтрагентыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Контрагенты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтрагентыВыбратьПоНаименованию: V82.СправочникиСсылка.Контрагенты,IReturn<КонтрагентыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KontragentyResponse//КонтрагентыОтвет
+	public class КонтрагентыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Kontragentys")]
-	[Route("/Catalogs/Kontragentys/{Codes}")]
-	public class KontragentysRequest/*КонтрагентыЗапрос*/: IReturn<List<KontragentyRequest>>
+	public class КонтрагентыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KontragentysRequest(params string[] Codes)
+		
+		public object Get(КонтрагентыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KontragentysResponse//КонтрагентыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KontragentyService /*КонтрагентыСервис*/ : Service
-	{
-		public object Any(KontragentyRequest request)
+		
+		public object Get(КонтрагентыНайтиПоКоду Запрос)
 		{
-			return new KontragentyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KontragentyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Контрагенты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KontragentyResponse() {Result = "Контрагенты c кодом '" + request.Code+"' не найдено."};
+				return new КонтрагентыОтвет() {Ответ = "Контрагенты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KontragentysRequest request)
+		
+		public object Get(КонтрагентыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Контрагенты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Контрагенты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КонтрагентыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонтрагентыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонтрагентыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КонтрагентыЗапрос Запрос)
+		{
+			return new КонтрагентыОтвет {Ответ = "Контрагенты, "};
+		}
+
+		public object Post(КонтрагентыЗапрос ЗапросКонтрагенты)
+		{
+			var Ссылка = (СправочникиСсылка.Контрагенты)ЗапросКонтрагенты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

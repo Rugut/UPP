@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Организации:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОрганизацииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Organizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Организации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OrganizaciiRequest());
+			ОрганизацииЗапрос ОрганизацииЗапрос = null;
+			try
+			{
+				ОрганизацииЗапрос = Клиент.Get(new ОрганизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОрганизацииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОрганизацииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Organizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Организации/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OrganizaciiRequest());
+			ОрганизацииЗапрос ОрганизацииЗапрос = null;
+			try
+			{
+				ОрганизацииЗапрос = Клиент.Get(new ОрганизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОрганизацииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОрганизацииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Organizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Организации/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OrganizaciiRequest());
+			ОрганизацииЗапрос ОрганизацииЗапрос = null;
+			try
+			{
+				ОрганизацииЗапрос = Клиент.Get(new ОрганизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОрганизацииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОрганизацииЗапрос ОрганизацииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Organizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Организации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OrganizaciiRequest());
+			var ОрганизацииОтвет = Клиент.Post(ОрганизацииЗапрос);
+		}
+		public static void Записать(ОрганизацииЗапрос ОрганизацииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Организации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОрганизацииОтвет = Клиент.Put(ОрганизацииЗапрос);
+		}
+		public static void Удалить(ОрганизацииЗапрос ОрганизацииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Организации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОрганизацииОтвет = Клиент.Delete(ОрганизацииЗапрос);
 		}
 	}
 }

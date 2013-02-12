@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StepeniRodstvaFizLic")]
-	[Route("/Catalogs/StepeniRodstvaFizLic/FindById/{Id}")]
-	[Route("/Catalogs/StepeniRodstvaFizLic/FindByCode/{Code}")]
-	[Route("/Catalogs/StepeniRodstvaFizLic/FindByDescr/{Descr}")]
-	public class StepeniRodstvaFizLicRequest/*СтепениРодстваФизЛицЗапрос*/: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<StepeniRodstvaFizLicRequest>
+	//StepeniRodstvaFizLic
+	[Маршрут("Справочники/СтепениРодстваФизЛиц","")]
+	public class СтепениРодстваФизЛицЗапрос: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<СтепениРодстваФизЛицЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/ПоСсылке","{Ссылка}")]
+	public class СтепениРодстваФизЛицНайтиПоСсылке: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<СтепениРодстваФизЛицНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/ПоКоду","{Код}")]
+	public class СтепениРодстваФизЛицНайтиПоКоду: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<СтепениРодстваФизЛицНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/ПоНаименованию","{Наименование}")]
+	public class СтепениРодстваФизЛицНайтиПоНаименованию: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<СтепениРодстваФизЛицНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтепениРодстваФизЛицВыбратьПоСсылке: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<СтепениРодстваФизЛицВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтепениРодстваФизЛицВыбратьПоКоду: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<СтепениРодстваФизЛицВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтепениРодстваФизЛиц/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтепениРодстваФизЛицВыбратьПоНаименованию: V82.СправочникиСсылка.СтепениРодстваФизЛиц,IReturn<СтепениРодстваФизЛицВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StepeniRodstvaFizLicResponse//СтепениРодстваФизЛицОтвет
+	public class СтепениРодстваФизЛицОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StepeniRodstvaFizLics")]
-	[Route("/Catalogs/StepeniRodstvaFizLics/{Codes}")]
-	public class StepeniRodstvaFizLicsRequest/*СтепениРодстваФизЛицЗапрос*/: IReturn<List<StepeniRodstvaFizLicRequest>>
+	public class СтепениРодстваФизЛицСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StepeniRodstvaFizLicsRequest(params string[] Codes)
+		
+		public object Get(СтепениРодстваФизЛицНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StepeniRodstvaFizLicsResponse//СтепениРодстваФизЛицОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StepeniRodstvaFizLicService /*СтепениРодстваФизЛицСервис*/ : Service
-	{
-		public object Any(StepeniRodstvaFizLicRequest request)
+		
+		public object Get(СтепениРодстваФизЛицНайтиПоКоду Запрос)
 		{
-			return new StepeniRodstvaFizLicResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StepeniRodstvaFizLicRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтепениРодстваФизЛиц.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StepeniRodstvaFizLicResponse() {Result = "СтепениРодстваФизЛиц c кодом '" + request.Code+"' не найдено."};
+				return new СтепениРодстваФизЛицОтвет() {Ответ = "СтепениРодстваФизЛиц c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StepeniRodstvaFizLicsRequest request)
+		
+		public object Get(СтепениРодстваФизЛицНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтепениРодстваФизЛиц>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтепениРодстваФизЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтепениРодстваФизЛицВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтепениРодстваФизЛицВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтепениРодстваФизЛицВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтепениРодстваФизЛицЗапрос Запрос)
+		{
+			return new СтепениРодстваФизЛицОтвет {Ответ = "СтепениРодстваФизЛиц, "};
+		}
+
+		public object Post(СтепениРодстваФизЛицЗапрос ЗапросСтепениРодстваФизЛиц)
+		{
+			var Ссылка = (СправочникиСсылка.СтепениРодстваФизЛиц)ЗапросСтепениРодстваФизЛиц;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

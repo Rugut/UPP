@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ReglamentirovannyeOtchety")]
-	[Route("/Catalogs/ReglamentirovannyeOtchety/FindById/{Id}")]
-	[Route("/Catalogs/ReglamentirovannyeOtchety/FindByCode/{Code}")]
-	[Route("/Catalogs/ReglamentirovannyeOtchety/FindByDescr/{Descr}")]
-	public class ReglamentirovannyeOtchetyRequest/*РегламентированныеОтчетыЗапрос*/: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<ReglamentirovannyeOtchetyRequest>
+	//ReglamentirovannyeOtchety
+	[Маршрут("Справочники/РегламентированныеОтчеты","")]
+	public class РегламентированныеОтчетыЗапрос: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<РегламентированныеОтчетыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/РегламентированныеОтчеты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/РегламентированныеОтчеты/ПоСсылке","{Ссылка}")]
+	public class РегламентированныеОтчетыНайтиПоСсылке: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<РегламентированныеОтчетыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/РегламентированныеОтчеты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/РегламентированныеОтчеты/ПоКоду","{Код}")]
+	public class РегламентированныеОтчетыНайтиПоКоду: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<РегламентированныеОтчетыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/РегламентированныеОтчеты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/РегламентированныеОтчеты/ПоНаименованию","{Наименование}")]
+	public class РегламентированныеОтчетыНайтиПоНаименованию: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<РегламентированныеОтчетыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегламентированныеОтчетыВыбратьПоСсылке: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<РегламентированныеОтчетыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РегламентированныеОтчеты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегламентированныеОтчетыВыбратьПоКоду: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<РегламентированныеОтчетыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РегламентированныеОтчеты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегламентированныеОтчетыВыбратьПоНаименованию: V82.СправочникиСсылка.РегламентированныеОтчеты,IReturn<РегламентированныеОтчетыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ReglamentirovannyeOtchetyResponse//РегламентированныеОтчетыОтвет
+	public class РегламентированныеОтчетыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ReglamentirovannyeOtchetys")]
-	[Route("/Catalogs/ReglamentirovannyeOtchetys/{Codes}")]
-	public class ReglamentirovannyeOtchetysRequest/*РегламентированныеОтчетыЗапрос*/: IReturn<List<ReglamentirovannyeOtchetyRequest>>
+	public class РегламентированныеОтчетыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ReglamentirovannyeOtchetysRequest(params string[] Codes)
+		
+		public object Get(РегламентированныеОтчетыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ReglamentirovannyeOtchetysResponse//РегламентированныеОтчетыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ReglamentirovannyeOtchetyService /*РегламентированныеОтчетыСервис*/ : Service
-	{
-		public object Any(ReglamentirovannyeOtchetyRequest request)
+		
+		public object Get(РегламентированныеОтчетыНайтиПоКоду Запрос)
 		{
-			return new ReglamentirovannyeOtchetyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ReglamentirovannyeOtchetyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.РегламентированныеОтчеты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ReglamentirovannyeOtchetyResponse() {Result = "РегламентированныеОтчеты c кодом '" + request.Code+"' не найдено."};
+				return new РегламентированныеОтчетыОтвет() {Ответ = "РегламентированныеОтчеты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ReglamentirovannyeOtchetysRequest request)
+		
+		public object Get(РегламентированныеОтчетыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РегламентированныеОтчеты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.РегламентированныеОтчеты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РегламентированныеОтчетыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегламентированныеОтчетыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегламентированныеОтчетыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РегламентированныеОтчетыЗапрос Запрос)
+		{
+			return new РегламентированныеОтчетыОтвет {Ответ = "РегламентированныеОтчеты, "};
+		}
+
+		public object Post(РегламентированныеОтчетыЗапрос ЗапросРегламентированныеОтчеты)
+		{
+			var Ссылка = (СправочникиСсылка.РегламентированныеОтчеты)ЗапросРегламентированныеОтчеты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

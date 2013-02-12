@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PrichinyZakrytiyaZakazov")]
-	[Route("/Catalogs/PrichinyZakrytiyaZakazov/FindById/{Id}")]
-	[Route("/Catalogs/PrichinyZakrytiyaZakazov/FindByCode/{Code}")]
-	[Route("/Catalogs/PrichinyZakrytiyaZakazov/FindByDescr/{Descr}")]
-	public class PrichinyZakrytiyaZakazovRequest/*ПричиныЗакрытияЗаказовЗапрос*/: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<PrichinyZakrytiyaZakazovRequest>
+	//PrichinyZakrytiyaZakazov
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов","")]
+	public class ПричиныЗакрытияЗаказовЗапрос: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<ПричиныЗакрытияЗаказовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/ПоСсылке","{Ссылка}")]
+	public class ПричиныЗакрытияЗаказовНайтиПоСсылке: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<ПричиныЗакрытияЗаказовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/ПоКоду","{Код}")]
+	public class ПричиныЗакрытияЗаказовНайтиПоКоду: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<ПричиныЗакрытияЗаказовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/ПоНаименованию","{Наименование}")]
+	public class ПричиныЗакрытияЗаказовНайтиПоНаименованию: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<ПричиныЗакрытияЗаказовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныЗакрытияЗаказовВыбратьПоСсылке: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<ПричиныЗакрытияЗаказовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныЗакрытияЗаказовВыбратьПоКоду: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<ПричиныЗакрытияЗаказовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныЗакрытияЗаказов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныЗакрытияЗаказовВыбратьПоНаименованию: V82.СправочникиСсылка.ПричиныЗакрытияЗаказов,IReturn<ПричиныЗакрытияЗаказовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PrichinyZakrytiyaZakazovResponse//ПричиныЗакрытияЗаказовОтвет
+	public class ПричиныЗакрытияЗаказовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PrichinyZakrytiyaZakazovs")]
-	[Route("/Catalogs/PrichinyZakrytiyaZakazovs/{Codes}")]
-	public class PrichinyZakrytiyaZakazovsRequest/*ПричиныЗакрытияЗаказовЗапрос*/: IReturn<List<PrichinyZakrytiyaZakazovRequest>>
+	public class ПричиныЗакрытияЗаказовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PrichinyZakrytiyaZakazovsRequest(params string[] Codes)
+		
+		public object Get(ПричиныЗакрытияЗаказовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PrichinyZakrytiyaZakazovsResponse//ПричиныЗакрытияЗаказовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PrichinyZakrytiyaZakazovService /*ПричиныЗакрытияЗаказовСервис*/ : Service
-	{
-		public object Any(PrichinyZakrytiyaZakazovRequest request)
+		
+		public object Get(ПричиныЗакрытияЗаказовНайтиПоКоду Запрос)
 		{
-			return new PrichinyZakrytiyaZakazovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PrichinyZakrytiyaZakazovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПричиныЗакрытияЗаказов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PrichinyZakrytiyaZakazovResponse() {Result = "ПричиныЗакрытияЗаказов c кодом '" + request.Code+"' не найдено."};
+				return new ПричиныЗакрытияЗаказовОтвет() {Ответ = "ПричиныЗакрытияЗаказов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PrichinyZakrytiyaZakazovsRequest request)
+		
+		public object Get(ПричиныЗакрытияЗаказовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПричиныЗакрытияЗаказов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПричиныЗакрытияЗаказов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПричиныЗакрытияЗаказовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныЗакрытияЗаказовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныЗакрытияЗаказовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПричиныЗакрытияЗаказовЗапрос Запрос)
+		{
+			return new ПричиныЗакрытияЗаказовОтвет {Ответ = "ПричиныЗакрытияЗаказов, "};
+		}
+
+		public object Post(ПричиныЗакрытияЗаказовЗапрос ЗапросПричиныЗакрытияЗаказов)
+		{
+			var Ссылка = (СправочникиСсылка.ПричиныЗакрытияЗаказов)ЗапросПричиныЗакрытияЗаказов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

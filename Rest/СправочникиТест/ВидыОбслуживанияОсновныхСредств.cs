@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыОбслуживанияОсновныхСредств:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыОбслуживанияОсновныхСредствЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбслуживанияОсновныхСредств/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidyObsluzhivaniyaOsnovnykhSredstvRequest());
+			ВидыОбслуживанияОсновныхСредствЗапрос ВидыОбслуживанияОсновныхСредствЗапрос = null;
+			try
+			{
+				ВидыОбслуживанияОсновныхСредствЗапрос = Клиент.Get(new ВидыОбслуживанияОсновныхСредствЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыОбслуживанияОсновныхСредствЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыОбслуживанияОсновныхСредствЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбслуживанияОсновныхСредств/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidyObsluzhivaniyaOsnovnykhSredstvRequest());
+			ВидыОбслуживанияОсновныхСредствЗапрос ВидыОбслуживанияОсновныхСредствЗапрос = null;
+			try
+			{
+				ВидыОбслуживанияОсновныхСредствЗапрос = Клиент.Get(new ВидыОбслуживанияОсновныхСредствЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыОбслуживанияОсновныхСредствЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыОбслуживанияОсновныхСредствЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбслуживанияОсновныхСредств/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidyObsluzhivaniyaOsnovnykhSredstvRequest());
+			ВидыОбслуживанияОсновныхСредствЗапрос ВидыОбслуживанияОсновныхСредствЗапрос = null;
+			try
+			{
+				ВидыОбслуживанияОсновныхСредствЗапрос = Клиент.Get(new ВидыОбслуживанияОсновныхСредствЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыОбслуживанияОсновныхСредствЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыОбслуживанияОсновныхСредствЗапрос ВидыОбслуживанияОсновныхСредствЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObsluzhivaniyaOsnovnykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбслуживанияОсновныхСредств?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidyObsluzhivaniyaOsnovnykhSredstvRequest());
+			var ВидыОбслуживанияОсновныхСредствОтвет = Клиент.Post(ВидыОбслуживанияОсновныхСредствЗапрос);
+		}
+		public static void Записать(ВидыОбслуживанияОсновныхСредствЗапрос ВидыОбслуживанияОсновныхСредствЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбслуживанияОсновныхСредств?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыОбслуживанияОсновныхСредствОтвет = Клиент.Put(ВидыОбслуживанияОсновныхСредствЗапрос);
+		}
+		public static void Удалить(ВидыОбслуживанияОсновныхСредствЗапрос ВидыОбслуживанияОсновныхСредствЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбслуживанияОсновныхСредств?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыОбслуживанияОсновныхСредствОтвет = Клиент.Delete(ВидыОбслуживанияОсновныхСредствЗапрос);
 		}
 	}
 }

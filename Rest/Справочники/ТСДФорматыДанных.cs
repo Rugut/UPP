@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TSDFormatyDannykh")]
-	[Route("/Catalogs/TSDFormatyDannykh/FindById/{Id}")]
-	[Route("/Catalogs/TSDFormatyDannykh/FindByCode/{Code}")]
-	[Route("/Catalogs/TSDFormatyDannykh/FindByDescr/{Descr}")]
-	public class TSDFormatyDannykhRequest/*ТСДФорматыДанныхЗапрос*/: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<TSDFormatyDannykhRequest>
+	//TSDFormatyDannykh
+	[Маршрут("Справочники/ТСДФорматыДанных","")]
+	public class ТСДФорматыДанныхЗапрос: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<ТСДФорматыДанныхЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТСДФорматыДанных/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТСДФорматыДанных/ПоСсылке","{Ссылка}")]
+	public class ТСДФорматыДанныхНайтиПоСсылке: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<ТСДФорматыДанныхНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТСДФорматыДанных/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТСДФорматыДанных/ПоКоду","{Код}")]
+	public class ТСДФорматыДанныхНайтиПоКоду: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<ТСДФорматыДанныхНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТСДФорматыДанных/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТСДФорматыДанных/ПоНаименованию","{Наименование}")]
+	public class ТСДФорматыДанныхНайтиПоНаименованию: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<ТСДФорматыДанныхНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТСДФорматыДанных/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТСДФорматыДанныхВыбратьПоСсылке: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<ТСДФорматыДанныхВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТСДФорматыДанных/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТСДФорматыДанныхВыбратьПоКоду: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<ТСДФорматыДанныхВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТСДФорматыДанных/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТСДФорматыДанныхВыбратьПоНаименованию: V82.СправочникиСсылка.ТСДФорматыДанных,IReturn<ТСДФорматыДанныхВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TSDFormatyDannykhResponse//ТСДФорматыДанныхОтвет
+	public class ТСДФорматыДанныхОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TSDFormatyDannykhs")]
-	[Route("/Catalogs/TSDFormatyDannykhs/{Codes}")]
-	public class TSDFormatyDannykhsRequest/*ТСДФорматыДанныхЗапрос*/: IReturn<List<TSDFormatyDannykhRequest>>
+	public class ТСДФорматыДанныхСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TSDFormatyDannykhsRequest(params string[] Codes)
+		
+		public object Get(ТСДФорматыДанныхНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TSDFormatyDannykhsResponse//ТСДФорматыДанныхОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TSDFormatyDannykhService /*ТСДФорматыДанныхСервис*/ : Service
-	{
-		public object Any(TSDFormatyDannykhRequest request)
+		
+		public object Get(ТСДФорматыДанныхНайтиПоКоду Запрос)
 		{
-			return new TSDFormatyDannykhResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TSDFormatyDannykhRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТСДФорматыДанных.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TSDFormatyDannykhResponse() {Result = "ТСДФорматыДанных c кодом '" + request.Code+"' не найдено."};
+				return new ТСДФорматыДанныхОтвет() {Ответ = "ТСДФорматыДанных c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TSDFormatyDannykhsRequest request)
+		
+		public object Get(ТСДФорматыДанныхНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТСДФорматыДанных>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТСДФорматыДанных.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТСДФорматыДанныхВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТСДФорматыДанныхВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТСДФорматыДанныхВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТСДФорматыДанныхЗапрос Запрос)
+		{
+			return new ТСДФорматыДанныхОтвет {Ответ = "ТСДФорматыДанных, "};
+		}
+
+		public object Post(ТСДФорматыДанныхЗапрос ЗапросТСДФорматыДанных)
+		{
+			var Ссылка = (СправочникиСсылка.ТСДФорматыДанных)ЗапросТСДФорматыДанных;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

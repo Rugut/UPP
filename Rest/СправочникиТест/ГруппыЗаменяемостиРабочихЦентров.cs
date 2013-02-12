@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГруппыЗаменяемостиРабочихЦентров:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГруппыЗаменяемостиРабочихЦентровЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyZamenyaemostiRabochikhCentrov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыЗаменяемостиРабочихЦентров/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GruppyZamenyaemostiRabochikhCentrovRequest());
+			ГруппыЗаменяемостиРабочихЦентровЗапрос ГруппыЗаменяемостиРабочихЦентровЗапрос = null;
+			try
+			{
+				ГруппыЗаменяемостиРабочихЦентровЗапрос = Клиент.Get(new ГруппыЗаменяемостиРабочихЦентровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыЗаменяемостиРабочихЦентровЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГруппыЗаменяемостиРабочихЦентровЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyZamenyaemostiRabochikhCentrov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыЗаменяемостиРабочихЦентров/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GruppyZamenyaemostiRabochikhCentrovRequest());
+			ГруппыЗаменяемостиРабочихЦентровЗапрос ГруппыЗаменяемостиРабочихЦентровЗапрос = null;
+			try
+			{
+				ГруппыЗаменяемостиРабочихЦентровЗапрос = Клиент.Get(new ГруппыЗаменяемостиРабочихЦентровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыЗаменяемостиРабочихЦентровЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ГруппыЗаменяемостиРабочихЦентровЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyZamenyaemostiRabochikhCentrov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыЗаменяемостиРабочихЦентров/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GruppyZamenyaemostiRabochikhCentrovRequest());
+			ГруппыЗаменяемостиРабочихЦентровЗапрос ГруппыЗаменяемостиРабочихЦентровЗапрос = null;
+			try
+			{
+				ГруппыЗаменяемостиРабочихЦентровЗапрос = Клиент.Get(new ГруппыЗаменяемостиРабочихЦентровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыЗаменяемостиРабочихЦентровЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ГруппыЗаменяемостиРабочихЦентровЗапрос ГруппыЗаменяемостиРабочихЦентровЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyZamenyaemostiRabochikhCentrov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыЗаменяемостиРабочихЦентров?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GruppyZamenyaemostiRabochikhCentrovRequest());
+			var ГруппыЗаменяемостиРабочихЦентровОтвет = Клиент.Post(ГруппыЗаменяемостиРабочихЦентровЗапрос);
+		}
+		public static void Записать(ГруппыЗаменяемостиРабочихЦентровЗапрос ГруппыЗаменяемостиРабочихЦентровЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыЗаменяемостиРабочихЦентров?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыЗаменяемостиРабочихЦентровОтвет = Клиент.Put(ГруппыЗаменяемостиРабочихЦентровЗапрос);
+		}
+		public static void Удалить(ГруппыЗаменяемостиРабочихЦентровЗапрос ГруппыЗаменяемостиРабочихЦентровЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыЗаменяемостиРабочихЦентров?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыЗаменяемостиРабочихЦентровОтвет = Клиент.Delete(ГруппыЗаменяемостиРабочихЦентровЗапрос);
 		}
 	}
 }

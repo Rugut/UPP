@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppyPisemEHlektronnojjPochty")]
-	[Route("/Catalogs/GruppyPisemEHlektronnojjPochty/FindById/{Id}")]
-	[Route("/Catalogs/GruppyPisemEHlektronnojjPochty/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppyPisemEHlektronnojjPochty/FindByDescr/{Descr}")]
-	public class GruppyPisemEHlektronnojjPochtyRequest/*ГруппыПисемЭлектроннойПочтыЗапрос*/: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<GruppyPisemEHlektronnojjPochtyRequest>
+	//GruppyPisemEHlektronnojjPochty
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты","")]
+	public class ГруппыПисемЭлектроннойПочтыЗапрос: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<ГруппыПисемЭлектроннойПочтыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/ПоСсылке","{Ссылка}")]
+	public class ГруппыПисемЭлектроннойПочтыНайтиПоСсылке: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<ГруппыПисемЭлектроннойПочтыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/ПоКоду","{Код}")]
+	public class ГруппыПисемЭлектроннойПочтыНайтиПоКоду: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<ГруппыПисемЭлектроннойПочтыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/ПоНаименованию","{Наименование}")]
+	public class ГруппыПисемЭлектроннойПочтыНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<ГруппыПисемЭлектроннойПочтыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПисемЭлектроннойПочтыВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<ГруппыПисемЭлектроннойПочтыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПисемЭлектроннойПочтыВыбратьПоКоду: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<ГруппыПисемЭлектроннойПочтыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыПисемЭлектроннойПочты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПисемЭлектроннойПочтыВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты,IReturn<ГруппыПисемЭлектроннойПочтыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppyPisemEHlektronnojjPochtyResponse//ГруппыПисемЭлектроннойПочтыОтвет
+	public class ГруппыПисемЭлектроннойПочтыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppyPisemEHlektronnojjPochtys")]
-	[Route("/Catalogs/GruppyPisemEHlektronnojjPochtys/{Codes}")]
-	public class GruppyPisemEHlektronnojjPochtysRequest/*ГруппыПисемЭлектроннойПочтыЗапрос*/: IReturn<List<GruppyPisemEHlektronnojjPochtyRequest>>
+	public class ГруппыПисемЭлектроннойПочтыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppyPisemEHlektronnojjPochtysRequest(params string[] Codes)
+		
+		public object Get(ГруппыПисемЭлектроннойПочтыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppyPisemEHlektronnojjPochtysResponse//ГруппыПисемЭлектроннойПочтыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppyPisemEHlektronnojjPochtyService /*ГруппыПисемЭлектроннойПочтыСервис*/ : Service
-	{
-		public object Any(GruppyPisemEHlektronnojjPochtyRequest request)
+		
+		public object Get(ГруппыПисемЭлектроннойПочтыНайтиПоКоду Запрос)
 		{
-			return new GruppyPisemEHlektronnojjPochtyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppyPisemEHlektronnojjPochtyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыПисемЭлектроннойПочты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppyPisemEHlektronnojjPochtyResponse() {Result = "ГруппыПисемЭлектроннойПочты c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыПисемЭлектроннойПочтыОтвет() {Ответ = "ГруппыПисемЭлектроннойПочты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppyPisemEHlektronnojjPochtysRequest request)
+		
+		public object Get(ГруппыПисемЭлектроннойПочтыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыПисемЭлектроннойПочты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыПисемЭлектроннойПочтыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыПисемЭлектроннойПочтыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыПисемЭлектроннойПочтыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыПисемЭлектроннойПочтыЗапрос Запрос)
+		{
+			return new ГруппыПисемЭлектроннойПочтыОтвет {Ответ = "ГруппыПисемЭлектроннойПочты, "};
+		}
+
+		public object Post(ГруппыПисемЭлектроннойПочтыЗапрос ЗапросГруппыПисемЭлектроннойПочты)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыПисемЭлектроннойПочты)ЗапросГруппыПисемЭлектроннойПочты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

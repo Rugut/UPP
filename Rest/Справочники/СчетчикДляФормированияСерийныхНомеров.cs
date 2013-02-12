@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,81 +8,87 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov")]
-	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/FindById/{Id}")]
-	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/FindByCode/{Code}")]
-	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/FindByDescr/{Descr}")]
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest/*СчетчикДляФормированияСерийныхНомеровЗапрос*/: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest>
+	//SchetchikDlyaFormirovaniyaSerijjnykhNomerov
+	[Маршрут("Справочники/СчетчикДляФормированияСерийныхНомеров","")]
+	public class СчетчикДляФормированияСерийныхНомеровЗапрос: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<СчетчикДляФормированияСерийныхНомеровЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СчетчикДляФормированияСерийныхНомеров/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СчетчикДляФормированияСерийныхНомеров/ПоСсылке","{Ссылка}")]
+	public class СчетчикДляФормированияСерийныхНомеровНайтиПоСсылке: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<СчетчикДляФормированияСерийныхНомеровНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СчетчикДляФормированияСерийныхНомеров/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СчетчикДляФормированияСерийныхНомеров/ПоКоду","{Код}")]
+	public class СчетчикДляФормированияСерийныхНомеровНайтиПоКоду: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<СчетчикДляФормированияСерийныхНомеровНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СчетчикДляФормированияСерийныхНомеров/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СчетчикДляФормированияСерийныхНомеровВыбратьПоСсылке: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<СчетчикДляФормированияСерийныхНомеровВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СчетчикДляФормированияСерийныхНомеров/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СчетчикДляФормированияСерийныхНомеровВыбратьПоКоду: V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров,IReturn<СчетчикДляФормированияСерийныхНомеровВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public decimal ___Мин {get; set;}
+		public decimal ___Макс {get; set;}
 	}
 
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse//СчетчикДляФормированияСерийныхНомеровОтвет
+	public class СчетчикДляФормированияСерийныхНомеровОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerovs")]
-	[Route("/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerovs/{Codes}")]
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovsRequest/*СчетчикДляФормированияСерийныхНомеровЗапрос*/: IReturn<List<SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest>>
+	public class СчетчикДляФормированияСерийныхНомеровСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SchetchikDlyaFormirovaniyaSerijjnykhNomerovsRequest(params string[] Codes)
+		
+		public object Get(СчетчикДляФормированияСерийныхНомеровНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovsResponse//СчетчикДляФормированияСерийныхНомеровОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SchetchikDlyaFormirovaniyaSerijjnykhNomerovService /*СчетчикДляФормированияСерийныхНомеровСервис*/ : Service
-	{
-		public object Any(SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest request)
+		
+		public object Get(СчетчикДляФормированияСерийныхНомеровНайтиПоКоду Запрос)
 		{
-			return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest request)
-		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			if(Запрос.Код == null)
 			{
-				return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse() {Result = "СчетчикДляФормированияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
+				return null;
 			}
+			decimal СтрокаКод = Запрос.Код;
 			var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SchetchikDlyaFormirovaniyaSerijjnykhNomerovResponse() {Result = "СчетчикДляФормированияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
+				return new СчетчикДляФормированияСерийныхНомеровОтвет() {Ответ = "СчетчикДляФормированияСерийныхНомеров c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SchetchikDlyaFormirovaniyaSerijjnykhNomerovsRequest request)
+		
+		public object Get(СчетчикДляФормированияСерийныхНомеровВыбратьПоСсылке Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров>();
-			foreach (var Code in request.Codes)
-			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
-				{
-				continue;//ToDo: Регестрация ошибки.
-				}
-				var Ссылка = V82.Справочники.СчетчикДляФормированияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СчетчикДляФормированияСерийныхНомеровВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СчетчикДляФормированияСерийныхНомеровЗапрос Запрос)
+		{
+			return new СчетчикДляФормированияСерийныхНомеровОтвет {Ответ = "СчетчикДляФормированияСерийныхНомеров, "};
+		}
+
+		public object Post(СчетчикДляФормированияСерийныхНомеровЗапрос ЗапросСчетчикДляФормированияСерийныхНомеров)
+		{
+			var Ссылка = (СправочникиСсылка.СчетчикДляФормированияСерийныхНомеров)ЗапросСчетчикДляФормированияСерийныхНомеров;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

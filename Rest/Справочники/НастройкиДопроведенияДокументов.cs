@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov")]
-	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentov/FindByDescr/{Descr}")]
-	public class NastrojjkiDoprovedeniyaDokumentovRequest/*НастройкиДопроведенияДокументовЗапрос*/: V82.СправочникиСсылка.НастройкиДопроведенияДокументов,IReturn<NastrojjkiDoprovedeniyaDokumentovRequest>
+	//NastrojjkiDoprovedeniyaDokumentov
+	[Маршрут("Справочники/НастройкиДопроведенияДокументов","")]
+	public class НастройкиДопроведенияДокументовЗапрос: V82.СправочникиСсылка.НастройкиДопроведенияДокументов,IReturn<НастройкиДопроведенияДокументовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиДопроведенияДокументов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиДопроведенияДокументов/ПоСсылке","{Ссылка}")]
+	public class НастройкиДопроведенияДокументовНайтиПоСсылке: V82.СправочникиСсылка.НастройкиДопроведенияДокументов,IReturn<НастройкиДопроведенияДокументовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиДопроведенияДокументов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиДопроведенияДокументов/ПоНаименованию","{Наименование}")]
+	public class НастройкиДопроведенияДокументовНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиДопроведенияДокументов,IReturn<НастройкиДопроведенияДокументовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиДопроведенияДокументов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиДопроведенияДокументовВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиДопроведенияДокументов,IReturn<НастройкиДопроведенияДокументовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиДопроведенияДокументов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиДопроведенияДокументовВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиДопроведенияДокументов,IReturn<НастройкиДопроведенияДокументовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiDoprovedeniyaDokumentovResponse//НастройкиДопроведенияДокументовОтвет
+	public class НастройкиДопроведенияДокументовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentovs")]
-	[Route("/Catalogs/NastrojjkiDoprovedeniyaDokumentovs/{Codes}")]
-	public class NastrojjkiDoprovedeniyaDokumentovsRequest/*НастройкиДопроведенияДокументовЗапрос*/: IReturn<List<NastrojjkiDoprovedeniyaDokumentovRequest>>
+	public class НастройкиДопроведенияДокументовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiDoprovedeniyaDokumentovsRequest(params string[] Codes)
+		
+		public object Get(НастройкиДопроведенияДокументовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiDoprovedeniyaDokumentovsResponse//НастройкиДопроведенияДокументовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiDoprovedeniyaDokumentovService /*НастройкиДопроведенияДокументовСервис*/ : Service
-	{
-		public object Any(NastrojjkiDoprovedeniyaDokumentovRequest request)
+		
+		public object Get(НастройкиДопроведенияДокументовНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiDoprovedeniyaDokumentovResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiDoprovedeniyaDokumentovRequest request)
+		
+		public object Get(НастройкиДопроведенияДокументовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиДопроведенияДокументовВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiDoprovedeniyaDokumentovsRequest request)
+		public object Any(НастройкиДопроведенияДокументовЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиДопроведенияДокументов>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиДопроведенияДокументовОтвет {Ответ = "НастройкиДопроведенияДокументов, "};
 		}
+
+		public object Post(НастройкиДопроведенияДокументовЗапрос ЗапросНастройкиДопроведенияДокументов)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиДопроведенияДокументов)ЗапросНастройкиДопроведенияДокументов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

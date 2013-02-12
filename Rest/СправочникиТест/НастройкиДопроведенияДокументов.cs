@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиДопроведенияДокументов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиДопроведенияДокументовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiDoprovedeniyaDokumentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиДопроведенияДокументов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiDoprovedeniyaDokumentovRequest());
+			НастройкиДопроведенияДокументовЗапрос НастройкиДопроведенияДокументовЗапрос = null;
+			try
+			{
+				НастройкиДопроведенияДокументовЗапрос = Клиент.Get(new НастройкиДопроведенияДокументовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиДопроведенияДокументовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиДопроведенияДокументовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiDoprovedeniyaDokumentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиДопроведенияДокументов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiDoprovedeniyaDokumentovRequest());
+			НастройкиДопроведенияДокументовЗапрос НастройкиДопроведенияДокументовЗапрос = null;
+			try
+			{
+				НастройкиДопроведенияДокументовЗапрос = Клиент.Get(new НастройкиДопроведенияДокументовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиДопроведенияДокументовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкиДопроведенияДокументовЗапрос НастройкиДопроведенияДокументовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiDoprovedeniyaDokumentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиДопроведенияДокументов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiDoprovedeniyaDokumentovRequest());
+			var НастройкиДопроведенияДокументовОтвет = Клиент.Post(НастройкиДопроведенияДокументовЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкиДопроведенияДокументовЗапрос НастройкиДопроведенияДокументовЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiDoprovedeniyaDokumentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиДопроведенияДокументов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiDoprovedeniyaDokumentovRequest());
+			var НастройкиДопроведенияДокументовОтвет = Клиент.Put(НастройкиДопроведенияДокументовЗапрос);
+		}
+		public static void Удалить(НастройкиДопроведенияДокументовЗапрос НастройкиДопроведенияДокументовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиДопроведенияДокументов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиДопроведенияДокументовОтвет = Клиент.Delete(НастройкиДопроведенияДокументовЗапрос);
 		}
 	}
 }

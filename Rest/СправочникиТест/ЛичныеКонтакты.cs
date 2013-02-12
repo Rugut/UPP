@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЛичныеКонтакты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЛичныеКонтактыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/LichnyeKontakty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new LichnyeKontaktyRequest());
+			ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос = null;
+			try
+			{
+				ЛичныеКонтактыЗапрос = Клиент.Get(new ЛичныеКонтактыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЛичныеКонтактыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЛичныеКонтактыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/LichnyeKontakty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new LichnyeKontaktyRequest());
+			ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос = null;
+			try
+			{
+				ЛичныеКонтактыЗапрос = Клиент.Get(new ЛичныеКонтактыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЛичныеКонтактыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ЛичныеКонтактыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/LichnyeKontakty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new LichnyeKontaktyRequest());
+			ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос = null;
+			try
+			{
+				ЛичныеКонтактыЗапрос = Клиент.Get(new ЛичныеКонтактыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЛичныеКонтактыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/LichnyeKontakty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new LichnyeKontaktyRequest());
+			var ЛичныеКонтактыОтвет = Клиент.Post(ЛичныеКонтактыЗапрос);
+		}
+		public static void Записать(ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЛичныеКонтактыОтвет = Клиент.Put(ЛичныеКонтактыЗапрос);
+		}
+		public static void Удалить(ЛичныеКонтактыЗапрос ЛичныеКонтактыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЛичныеКонтакты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЛичныеКонтактыОтвет = Клиент.Delete(ЛичныеКонтактыЗапрос);
 		}
 	}
 }

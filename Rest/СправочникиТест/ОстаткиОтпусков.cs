@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОстаткиОтпусков:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОстаткиОтпусковЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OstatkiOtpuskov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОстаткиОтпусков/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OstatkiOtpuskovRequest());
+			ОстаткиОтпусковЗапрос ОстаткиОтпусковЗапрос = null;
+			try
+			{
+				ОстаткиОтпусковЗапрос = Клиент.Get(new ОстаткиОтпусковЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОстаткиОтпусковЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОстаткиОтпусковЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OstatkiOtpuskov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОстаткиОтпусков/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OstatkiOtpuskovRequest());
+			ОстаткиОтпусковЗапрос ОстаткиОтпусковЗапрос = null;
+			try
+			{
+				ОстаткиОтпусковЗапрос = Клиент.Get(new ОстаткиОтпусковЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОстаткиОтпусковЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ОстаткиОтпусковЗапрос ОстаткиОтпусковЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OstatkiOtpuskov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОстаткиОтпусков?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OstatkiOtpuskovRequest());
+			var ОстаткиОтпусковОтвет = Клиент.Post(ОстаткиОтпусковЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ОстаткиОтпусковЗапрос ОстаткиОтпусковЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OstatkiOtpuskov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОстаткиОтпусков?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OstatkiOtpuskovRequest());
+			var ОстаткиОтпусковОтвет = Клиент.Put(ОстаткиОтпусковЗапрос);
+		}
+		public static void Удалить(ОстаткиОтпусковЗапрос ОстаткиОтпусковЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОстаткиОтпусков?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОстаткиОтпусковОтвет = Клиент.Delete(ОстаткиОтпусковЗапрос);
 		}
 	}
 }

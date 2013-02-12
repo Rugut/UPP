@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЗанятияКурсовОбучения:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЗанятияКурсовОбученияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZanyatiyaKursovObucheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗанятияКурсовОбучения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ZanyatiyaKursovObucheniyaRequest());
+			ЗанятияКурсовОбученияЗапрос ЗанятияКурсовОбученияЗапрос = null;
+			try
+			{
+				ЗанятияКурсовОбученияЗапрос = Клиент.Get(new ЗанятияКурсовОбученияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЗанятияКурсовОбученияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЗанятияКурсовОбученияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZanyatiyaKursovObucheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗанятияКурсовОбучения/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ZanyatiyaKursovObucheniyaRequest());
+			ЗанятияКурсовОбученияЗапрос ЗанятияКурсовОбученияЗапрос = null;
+			try
+			{
+				ЗанятияКурсовОбученияЗапрос = Клиент.Get(new ЗанятияКурсовОбученияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЗанятияКурсовОбученияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ЗанятияКурсовОбученияЗапрос ЗанятияКурсовОбученияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZanyatiyaKursovObucheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗанятияКурсовОбучения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ZanyatiyaKursovObucheniyaRequest());
+			var ЗанятияКурсовОбученияОтвет = Клиент.Post(ЗанятияКурсовОбученияЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ЗанятияКурсовОбученияЗапрос ЗанятияКурсовОбученияЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ZanyatiyaKursovObucheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЗанятияКурсовОбучения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ZanyatiyaKursovObucheniyaRequest());
+			var ЗанятияКурсовОбученияОтвет = Клиент.Put(ЗанятияКурсовОбученияЗапрос);
+		}
+		public static void Удалить(ЗанятияКурсовОбученияЗапрос ЗанятияКурсовОбученияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЗанятияКурсовОбучения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЗанятияКурсовОбученияОтвет = Клиент.Delete(ЗанятияКурсовОбученияЗапрос);
 		}
 	}
 }

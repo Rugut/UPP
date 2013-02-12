@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НазначениеЦелевыхСредств:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НазначениеЦелевыхСредствЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznachenieCelevykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначениеЦелевыхСредств/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NaznachenieCelevykhSredstvRequest());
+			НазначениеЦелевыхСредствЗапрос НазначениеЦелевыхСредствЗапрос = null;
+			try
+			{
+				НазначениеЦелевыхСредствЗапрос = Клиент.Get(new НазначениеЦелевыхСредствЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НазначениеЦелевыхСредствЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НазначениеЦелевыхСредствЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznachenieCelevykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначениеЦелевыхСредств/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NaznachenieCelevykhSredstvRequest());
+			НазначениеЦелевыхСредствЗапрос НазначениеЦелевыхСредствЗапрос = null;
+			try
+			{
+				НазначениеЦелевыхСредствЗапрос = Клиент.Get(new НазначениеЦелевыхСредствЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НазначениеЦелевыхСредствЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НазначениеЦелевыхСредствЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznachenieCelevykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначениеЦелевыхСредств/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NaznachenieCelevykhSredstvRequest());
+			НазначениеЦелевыхСредствЗапрос НазначениеЦелевыхСредствЗапрос = null;
+			try
+			{
+				НазначениеЦелевыхСредствЗапрос = Клиент.Get(new НазначениеЦелевыхСредствЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НазначениеЦелевыхСредствЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НазначениеЦелевыхСредствЗапрос НазначениеЦелевыхСредствЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznachenieCelevykhSredstv/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначениеЦелевыхСредств?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NaznachenieCelevykhSredstvRequest());
+			var НазначениеЦелевыхСредствОтвет = Клиент.Post(НазначениеЦелевыхСредствЗапрос);
+		}
+		public static void Записать(НазначениеЦелевыхСредствЗапрос НазначениеЦелевыхСредствЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НазначениеЦелевыхСредств?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НазначениеЦелевыхСредствОтвет = Клиент.Put(НазначениеЦелевыхСредствЗапрос);
+		}
+		public static void Удалить(НазначениеЦелевыхСредствЗапрос НазначениеЦелевыхСредствЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НазначениеЦелевыхСредств?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НазначениеЦелевыхСредствОтвет = Клиент.Delete(НазначениеЦелевыхСредствЗапрос);
 		}
 	}
 }

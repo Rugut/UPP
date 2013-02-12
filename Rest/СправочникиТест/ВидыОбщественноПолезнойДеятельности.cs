@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыОбщественноПолезнойДеятельности:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыОбщественноПолезнойДеятельностиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбщественноПолезнойДеятельности/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidyObshhestvennoPoleznojjDeyatelnostiRequest());
+			ВидыОбщественноПолезнойДеятельностиЗапрос ВидыОбщественноПолезнойДеятельностиЗапрос = null;
+			try
+			{
+				ВидыОбщественноПолезнойДеятельностиЗапрос = Клиент.Get(new ВидыОбщественноПолезнойДеятельностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыОбщественноПолезнойДеятельностиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыОбщественноПолезнойДеятельностиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбщественноПолезнойДеятельности/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidyObshhestvennoPoleznojjDeyatelnostiRequest());
+			ВидыОбщественноПолезнойДеятельностиЗапрос ВидыОбщественноПолезнойДеятельностиЗапрос = null;
+			try
+			{
+				ВидыОбщественноПолезнойДеятельностиЗапрос = Клиент.Get(new ВидыОбщественноПолезнойДеятельностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыОбщественноПолезнойДеятельностиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыОбщественноПолезнойДеятельностиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбщественноПолезнойДеятельности/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidyObshhestvennoPoleznojjDeyatelnostiRequest());
+			ВидыОбщественноПолезнойДеятельностиЗапрос ВидыОбщественноПолезнойДеятельностиЗапрос = null;
+			try
+			{
+				ВидыОбщественноПолезнойДеятельностиЗапрос = Клиент.Get(new ВидыОбщественноПолезнойДеятельностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыОбщественноПолезнойДеятельностиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыОбщественноПолезнойДеятельностиЗапрос ВидыОбщественноПолезнойДеятельностиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyObshhestvennoPoleznojjDeyatelnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбщественноПолезнойДеятельности?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidyObshhestvennoPoleznojjDeyatelnostiRequest());
+			var ВидыОбщественноПолезнойДеятельностиОтвет = Клиент.Post(ВидыОбщественноПолезнойДеятельностиЗапрос);
+		}
+		public static void Записать(ВидыОбщественноПолезнойДеятельностиЗапрос ВидыОбщественноПолезнойДеятельностиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбщественноПолезнойДеятельности?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыОбщественноПолезнойДеятельностиОтвет = Клиент.Put(ВидыОбщественноПолезнойДеятельностиЗапрос);
+		}
+		public static void Удалить(ВидыОбщественноПолезнойДеятельностиЗапрос ВидыОбщественноПолезнойДеятельностиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыОбщественноПолезнойДеятельности?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыОбщественноПолезнойДеятельностиОтвет = Клиент.Delete(ВидыОбщественноПолезнойДеятельностиЗапрос);
 		}
 	}
 }

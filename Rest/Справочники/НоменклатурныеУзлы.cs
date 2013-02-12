@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NomenklaturnyeUzly")]
-	[Route("/Catalogs/NomenklaturnyeUzly/FindById/{Id}")]
-	[Route("/Catalogs/NomenklaturnyeUzly/FindByCode/{Code}")]
-	[Route("/Catalogs/NomenklaturnyeUzly/FindByDescr/{Descr}")]
-	public class NomenklaturnyeUzlyRequest/*НоменклатурныеУзлыЗапрос*/: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<NomenklaturnyeUzlyRequest>
+	//NomenklaturnyeUzly
+	[Маршрут("Справочники/НоменклатурныеУзлы","")]
+	public class НоменклатурныеУзлыЗапрос: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<НоменклатурныеУзлыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НоменклатурныеУзлы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НоменклатурныеУзлы/ПоСсылке","{Ссылка}")]
+	public class НоменклатурныеУзлыНайтиПоСсылке: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<НоменклатурныеУзлыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НоменклатурныеУзлы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НоменклатурныеУзлы/ПоКоду","{Код}")]
+	public class НоменклатурныеУзлыНайтиПоКоду: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<НоменклатурныеУзлыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НоменклатурныеУзлы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НоменклатурныеУзлы/ПоНаименованию","{Наименование}")]
+	public class НоменклатурныеУзлыНайтиПоНаименованию: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<НоменклатурныеУзлыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НоменклатурныеУзлы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НоменклатурныеУзлыВыбратьПоСсылке: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<НоменклатурныеУзлыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НоменклатурныеУзлы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НоменклатурныеУзлыВыбратьПоКоду: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<НоменклатурныеУзлыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НоменклатурныеУзлы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НоменклатурныеУзлыВыбратьПоНаименованию: V82.СправочникиСсылка.НоменклатурныеУзлы,IReturn<НоменклатурныеУзлыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NomenklaturnyeUzlyResponse//НоменклатурныеУзлыОтвет
+	public class НоменклатурныеУзлыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NomenklaturnyeUzlys")]
-	[Route("/Catalogs/NomenklaturnyeUzlys/{Codes}")]
-	public class NomenklaturnyeUzlysRequest/*НоменклатурныеУзлыЗапрос*/: IReturn<List<NomenklaturnyeUzlyRequest>>
+	public class НоменклатурныеУзлыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NomenklaturnyeUzlysRequest(params string[] Codes)
+		
+		public object Get(НоменклатурныеУзлыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NomenklaturnyeUzlysResponse//НоменклатурныеУзлыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NomenklaturnyeUzlyService /*НоменклатурныеУзлыСервис*/ : Service
-	{
-		public object Any(NomenklaturnyeUzlyRequest request)
+		
+		public object Get(НоменклатурныеУзлыНайтиПоКоду Запрос)
 		{
-			return new NomenklaturnyeUzlyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NomenklaturnyeUzlyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НоменклатурныеУзлы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NomenklaturnyeUzlyResponse() {Result = "НоменклатурныеУзлы c кодом '" + request.Code+"' не найдено."};
+				return new НоменклатурныеУзлыОтвет() {Ответ = "НоменклатурныеУзлы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NomenklaturnyeUzlysRequest request)
+		
+		public object Get(НоменклатурныеУзлыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НоменклатурныеУзлы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НоменклатурныеУзлы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НоменклатурныеУзлыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НоменклатурныеУзлыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НоменклатурныеУзлыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НоменклатурныеУзлыЗапрос Запрос)
+		{
+			return new НоменклатурныеУзлыОтвет {Ответ = "НоменклатурныеУзлы, "};
+		}
+
+		public object Post(НоменклатурныеУзлыЗапрос ЗапросНоменклатурныеУзлы)
+		{
+			var Ссылка = (СправочникиСсылка.НоменклатурныеУзлы)ЗапросНоменклатурныеУзлы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

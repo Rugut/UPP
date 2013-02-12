@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Вакансии:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВакансииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Vakansii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Вакансии/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VakansiiRequest());
+			ВакансииЗапрос ВакансииЗапрос = null;
+			try
+			{
+				ВакансииЗапрос = Клиент.Get(new ВакансииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВакансииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВакансииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Vakansii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Вакансии/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VakansiiRequest());
+			ВакансииЗапрос ВакансииЗапрос = null;
+			try
+			{
+				ВакансииЗапрос = Клиент.Get(new ВакансииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВакансииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВакансииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Vakansii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Вакансии/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VakansiiRequest());
+			ВакансииЗапрос ВакансииЗапрос = null;
+			try
+			{
+				ВакансииЗапрос = Клиент.Get(new ВакансииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВакансииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВакансииЗапрос ВакансииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Vakansii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Вакансии?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VakansiiRequest());
+			var ВакансииОтвет = Клиент.Post(ВакансииЗапрос);
+		}
+		public static void Записать(ВакансииЗапрос ВакансииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Вакансии?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВакансииОтвет = Клиент.Put(ВакансииЗапрос);
+		}
+		public static void Удалить(ВакансииЗапрос ВакансииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Вакансии?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВакансииОтвет = Клиент.Delete(ВакансииЗапрос);
 		}
 	}
 }

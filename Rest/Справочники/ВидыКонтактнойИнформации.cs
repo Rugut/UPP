@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyKontaktnojjInformacii")]
-	[Route("/Catalogs/VidyKontaktnojjInformacii/FindById/{Id}")]
-	[Route("/Catalogs/VidyKontaktnojjInformacii/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyKontaktnojjInformacii/FindByDescr/{Descr}")]
-	public class VidyKontaktnojjInformaciiRequest/*ВидыКонтактнойИнформацииЗапрос*/: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<VidyKontaktnojjInformaciiRequest>
+	//VidyKontaktnojjInformacii
+	[Маршрут("Справочники/ВидыКонтактнойИнформации","")]
+	public class ВидыКонтактнойИнформацииЗапрос: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<ВидыКонтактнойИнформацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/ПоСсылке","{Ссылка}")]
+	public class ВидыКонтактнойИнформацииНайтиПоСсылке: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<ВидыКонтактнойИнформацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/ПоКоду","{Код}")]
+	public class ВидыКонтактнойИнформацииНайтиПоКоду: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<ВидыКонтактнойИнформацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/ПоНаименованию","{Наименование}")]
+	public class ВидыКонтактнойИнформацииНайтиПоНаименованию: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<ВидыКонтактнойИнформацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыКонтактнойИнформацииВыбратьПоСсылке: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<ВидыКонтактнойИнформацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыКонтактнойИнформацииВыбратьПоКоду: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<ВидыКонтактнойИнформацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыКонтактнойИнформации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыКонтактнойИнформацииВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыКонтактнойИнформации,IReturn<ВидыКонтактнойИнформацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyKontaktnojjInformaciiResponse//ВидыКонтактнойИнформацииОтвет
+	public class ВидыКонтактнойИнформацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyKontaktnojjInformaciis")]
-	[Route("/Catalogs/VidyKontaktnojjInformaciis/{Codes}")]
-	public class VidyKontaktnojjInformaciisRequest/*ВидыКонтактнойИнформацииЗапрос*/: IReturn<List<VidyKontaktnojjInformaciiRequest>>
+	public class ВидыКонтактнойИнформацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyKontaktnojjInformaciisRequest(params string[] Codes)
+		
+		public object Get(ВидыКонтактнойИнформацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyKontaktnojjInformaciisResponse//ВидыКонтактнойИнформацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyKontaktnojjInformaciiService /*ВидыКонтактнойИнформацииСервис*/ : Service
-	{
-		public object Any(VidyKontaktnojjInformaciiRequest request)
+		
+		public object Get(ВидыКонтактнойИнформацииНайтиПоКоду Запрос)
 		{
-			return new VidyKontaktnojjInformaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyKontaktnojjInformaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыКонтактнойИнформации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyKontaktnojjInformaciiResponse() {Result = "ВидыКонтактнойИнформации c кодом '" + request.Code+"' не найдено."};
+				return new ВидыКонтактнойИнформацииОтвет() {Ответ = "ВидыКонтактнойИнформации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyKontaktnojjInformaciisRequest request)
+		
+		public object Get(ВидыКонтактнойИнформацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыКонтактнойИнформации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыКонтактнойИнформации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыКонтактнойИнформацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыКонтактнойИнформацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыКонтактнойИнформацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыКонтактнойИнформацииЗапрос Запрос)
+		{
+			return new ВидыКонтактнойИнформацииОтвет {Ответ = "ВидыКонтактнойИнформации, "};
+		}
+
+		public object Post(ВидыКонтактнойИнформацииЗапрос ЗапросВидыКонтактнойИнформации)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыКонтактнойИнформации)ЗапросВидыКонтактнойИнформации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрочиеДоходыИРасходы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрочиеДоходыИРасходыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProchieDokhodyIRaskhody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрочиеДоходыИРасходы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProchieDokhodyIRaskhodyRequest());
+			ПрочиеДоходыИРасходыЗапрос ПрочиеДоходыИРасходыЗапрос = null;
+			try
+			{
+				ПрочиеДоходыИРасходыЗапрос = Клиент.Get(new ПрочиеДоходыИРасходыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрочиеДоходыИРасходыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрочиеДоходыИРасходыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProchieDokhodyIRaskhody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрочиеДоходыИРасходы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProchieDokhodyIRaskhodyRequest());
+			ПрочиеДоходыИРасходыЗапрос ПрочиеДоходыИРасходыЗапрос = null;
+			try
+			{
+				ПрочиеДоходыИРасходыЗапрос = Клиент.Get(new ПрочиеДоходыИРасходыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрочиеДоходыИРасходыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПрочиеДоходыИРасходыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProchieDokhodyIRaskhody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрочиеДоходыИРасходы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProchieDokhodyIRaskhodyRequest());
+			ПрочиеДоходыИРасходыЗапрос ПрочиеДоходыИРасходыЗапрос = null;
+			try
+			{
+				ПрочиеДоходыИРасходыЗапрос = Клиент.Get(new ПрочиеДоходыИРасходыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрочиеДоходыИРасходыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПрочиеДоходыИРасходыЗапрос ПрочиеДоходыИРасходыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProchieDokhodyIRaskhody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрочиеДоходыИРасходы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProchieDokhodyIRaskhodyRequest());
+			var ПрочиеДоходыИРасходыОтвет = Клиент.Post(ПрочиеДоходыИРасходыЗапрос);
+		}
+		public static void Записать(ПрочиеДоходыИРасходыЗапрос ПрочиеДоходыИРасходыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрочиеДоходыИРасходы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрочиеДоходыИРасходыОтвет = Клиент.Put(ПрочиеДоходыИРасходыЗапрос);
+		}
+		public static void Удалить(ПрочиеДоходыИРасходыЗапрос ПрочиеДоходыИРасходыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрочиеДоходыИРасходы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрочиеДоходыИРасходыОтвет = Клиент.Delete(ПрочиеДоходыИРасходыЗапрос);
 		}
 	}
 }

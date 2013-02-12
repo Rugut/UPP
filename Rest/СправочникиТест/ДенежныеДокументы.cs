@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДенежныеДокументы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДенежныеДокументыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DenezhnyeDokumenty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДенежныеДокументы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DenezhnyeDokumentyRequest());
+			ДенежныеДокументыЗапрос ДенежныеДокументыЗапрос = null;
+			try
+			{
+				ДенежныеДокументыЗапрос = Клиент.Get(new ДенежныеДокументыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДенежныеДокументыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДенежныеДокументыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DenezhnyeDokumenty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДенежныеДокументы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DenezhnyeDokumentyRequest());
+			ДенежныеДокументыЗапрос ДенежныеДокументыЗапрос = null;
+			try
+			{
+				ДенежныеДокументыЗапрос = Клиент.Get(new ДенежныеДокументыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДенежныеДокументыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДенежныеДокументыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DenezhnyeDokumenty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДенежныеДокументы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DenezhnyeDokumentyRequest());
+			ДенежныеДокументыЗапрос ДенежныеДокументыЗапрос = null;
+			try
+			{
+				ДенежныеДокументыЗапрос = Клиент.Get(new ДенежныеДокументыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДенежныеДокументыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДенежныеДокументыЗапрос ДенежныеДокументыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DenezhnyeDokumenty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДенежныеДокументы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DenezhnyeDokumentyRequest());
+			var ДенежныеДокументыОтвет = Клиент.Post(ДенежныеДокументыЗапрос);
+		}
+		public static void Записать(ДенежныеДокументыЗапрос ДенежныеДокументыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДенежныеДокументы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДенежныеДокументыОтвет = Клиент.Put(ДенежныеДокументыЗапрос);
+		}
+		public static void Удалить(ДенежныеДокументыЗапрос ДенежныеДокументыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДенежныеДокументы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДенежныеДокументыОтвет = Клиент.Delete(ДенежныеДокументыЗапрос);
 		}
 	}
 }

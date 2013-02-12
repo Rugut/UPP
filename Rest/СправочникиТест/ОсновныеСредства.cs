@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОсновныеСредства:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОсновныеСредстваЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnyeSredstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновныеСредства/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OsnovnyeSredstvaRequest());
+			ОсновныеСредстваЗапрос ОсновныеСредстваЗапрос = null;
+			try
+			{
+				ОсновныеСредстваЗапрос = Клиент.Get(new ОсновныеСредстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсновныеСредстваЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОсновныеСредстваЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnyeSredstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновныеСредства/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OsnovnyeSredstvaRequest());
+			ОсновныеСредстваЗапрос ОсновныеСредстваЗапрос = null;
+			try
+			{
+				ОсновныеСредстваЗапрос = Клиент.Get(new ОсновныеСредстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсновныеСредстваЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОсновныеСредстваЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnyeSredstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновныеСредства/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OsnovnyeSredstvaRequest());
+			ОсновныеСредстваЗапрос ОсновныеСредстваЗапрос = null;
+			try
+			{
+				ОсновныеСредстваЗапрос = Клиент.Get(new ОсновныеСредстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОсновныеСредстваЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОсновныеСредстваЗапрос ОсновныеСредстваЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovnyeSredstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОсновныеСредства?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OsnovnyeSredstvaRequest());
+			var ОсновныеСредстваОтвет = Клиент.Post(ОсновныеСредстваЗапрос);
+		}
+		public static void Записать(ОсновныеСредстваЗапрос ОсновныеСредстваЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОсновныеСредства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОсновныеСредстваОтвет = Клиент.Put(ОсновныеСредстваЗапрос);
+		}
+		public static void Удалить(ОсновныеСредстваЗапрос ОсновныеСредстваЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОсновныеСредства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОсновныеСредстваОтвет = Клиент.Delete(ОсновныеСредстваЗапрос);
 		}
 	}
 }

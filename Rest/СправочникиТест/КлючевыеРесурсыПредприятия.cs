@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КлючевыеРесурсыПредприятия:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КлючевыеРесурсыПредприятияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchevyeResursyPredpriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючевыеРесурсыПредприятия/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KlyuchevyeResursyPredpriyatiyaRequest());
+			КлючевыеРесурсыПредприятияЗапрос КлючевыеРесурсыПредприятияЗапрос = null;
+			try
+			{
+				КлючевыеРесурсыПредприятияЗапрос = Клиент.Get(new КлючевыеРесурсыПредприятияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлючевыеРесурсыПредприятияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КлючевыеРесурсыПредприятияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchevyeResursyPredpriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючевыеРесурсыПредприятия/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KlyuchevyeResursyPredpriyatiyaRequest());
+			КлючевыеРесурсыПредприятияЗапрос КлючевыеРесурсыПредприятияЗапрос = null;
+			try
+			{
+				КлючевыеРесурсыПредприятияЗапрос = Клиент.Get(new КлючевыеРесурсыПредприятияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлючевыеРесурсыПредприятияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КлючевыеРесурсыПредприятияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchevyeResursyPredpriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючевыеРесурсыПредприятия/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KlyuchevyeResursyPredpriyatiyaRequest());
+			КлючевыеРесурсыПредприятияЗапрос КлючевыеРесурсыПредприятияЗапрос = null;
+			try
+			{
+				КлючевыеРесурсыПредприятияЗапрос = Клиент.Get(new КлючевыеРесурсыПредприятияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлючевыеРесурсыПредприятияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КлючевыеРесурсыПредприятияЗапрос КлючевыеРесурсыПредприятияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchevyeResursyPredpriyatiya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючевыеРесурсыПредприятия?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KlyuchevyeResursyPredpriyatiyaRequest());
+			var КлючевыеРесурсыПредприятияОтвет = Клиент.Post(КлючевыеРесурсыПредприятияЗапрос);
+		}
+		public static void Записать(КлючевыеРесурсыПредприятияЗапрос КлючевыеРесурсыПредприятияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлючевыеРесурсыПредприятия?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлючевыеРесурсыПредприятияОтвет = Клиент.Put(КлючевыеРесурсыПредприятияЗапрос);
+		}
+		public static void Удалить(КлючевыеРесурсыПредприятияЗапрос КлючевыеРесурсыПредприятияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлючевыеРесурсыПредприятия?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлючевыеРесурсыПредприятияОтвет = Клиент.Delete(КлючевыеРесурсыПредприятияЗапрос);
 		}
 	}
 }

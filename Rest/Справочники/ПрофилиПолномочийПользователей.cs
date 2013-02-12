@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProfiliPolnomochijjPolzovatelejj")]
-	[Route("/Catalogs/ProfiliPolnomochijjPolzovatelejj/FindById/{Id}")]
-	[Route("/Catalogs/ProfiliPolnomochijjPolzovatelejj/FindByCode/{Code}")]
-	[Route("/Catalogs/ProfiliPolnomochijjPolzovatelejj/FindByDescr/{Descr}")]
-	public class ProfiliPolnomochijjPolzovatelejjRequest/*ПрофилиПолномочийПользователейЗапрос*/: V82.СправочникиСсылка.ПрофилиПолномочийПользователей,IReturn<ProfiliPolnomochijjPolzovatelejjRequest>
+	//ProfiliPolnomochijjPolzovatelejj
+	[Маршрут("Справочники/ПрофилиПолномочийПользователей","")]
+	public class ПрофилиПолномочийПользователейЗапрос: V82.СправочникиСсылка.ПрофилиПолномочийПользователей,IReturn<ПрофилиПолномочийПользователейЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПрофилиПолномочийПользователей/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПрофилиПолномочийПользователей/ПоСсылке","{Ссылка}")]
+	public class ПрофилиПолномочийПользователейНайтиПоСсылке: V82.СправочникиСсылка.ПрофилиПолномочийПользователей,IReturn<ПрофилиПолномочийПользователейНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиПолномочийПользователей/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПрофилиПолномочийПользователей/ПоНаименованию","{Наименование}")]
+	public class ПрофилиПолномочийПользователейНайтиПоНаименованию: V82.СправочникиСсылка.ПрофилиПолномочийПользователей,IReturn<ПрофилиПолномочийПользователейНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиПолномочийПользователейВыбратьПоСсылке: V82.СправочникиСсылка.ПрофилиПолномочийПользователей,IReturn<ПрофилиПолномочийПользователейВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрофилиПолномочийПользователей/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиПолномочийПользователейВыбратьПоНаименованию: V82.СправочникиСсылка.ПрофилиПолномочийПользователей,IReturn<ПрофилиПолномочийПользователейВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProfiliPolnomochijjPolzovatelejjResponse//ПрофилиПолномочийПользователейОтвет
+	public class ПрофилиПолномочийПользователейОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProfiliPolnomochijjPolzovatelejjs")]
-	[Route("/Catalogs/ProfiliPolnomochijjPolzovatelejjs/{Codes}")]
-	public class ProfiliPolnomochijjPolzovatelejjsRequest/*ПрофилиПолномочийПользователейЗапрос*/: IReturn<List<ProfiliPolnomochijjPolzovatelejjRequest>>
+	public class ПрофилиПолномочийПользователейСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProfiliPolnomochijjPolzovatelejjsRequest(params string[] Codes)
+		
+		public object Get(ПрофилиПолномочийПользователейНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProfiliPolnomochijjPolzovatelejjsResponse//ПрофилиПолномочийПользователейОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProfiliPolnomochijjPolzovatelejjService /*ПрофилиПолномочийПользователейСервис*/ : Service
-	{
-		public object Any(ProfiliPolnomochijjPolzovatelejjRequest request)
+		
+		public object Get(ПрофилиПолномочийПользователейНайтиПоНаименованию Запрос)
 		{
-			return new ProfiliPolnomochijjPolzovatelejjResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(ProfiliPolnomochijjPolzovatelejjRequest request)
+		
+		public object Get(ПрофилиПолномочийПользователейВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрофилиПолномочийПользователейВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(ProfiliPolnomochijjPolzovatelejjsRequest request)
+		public object Any(ПрофилиПолномочийПользователейЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрофилиПолномочийПользователей>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ПрофилиПолномочийПользователейОтвет {Ответ = "ПрофилиПолномочийПользователей, "};
 		}
+
+		public object Post(ПрофилиПолномочийПользователейЗапрос ЗапросПрофилиПолномочийПользователей)
+		{
+			var Ссылка = (СправочникиСсылка.ПрофилиПолномочийПользователей)ЗапросПрофилиПолномочийПользователей;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

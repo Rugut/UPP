@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СтепениРодстваФизЛиц:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СтепениРодстваФизЛицЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StepeniRodstvaFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтепениРодстваФизЛиц/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new StepeniRodstvaFizLicRequest());
+			СтепениРодстваФизЛицЗапрос СтепениРодстваФизЛицЗапрос = null;
+			try
+			{
+				СтепениРодстваФизЛицЗапрос = Клиент.Get(new СтепениРодстваФизЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтепениРодстваФизЛицЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СтепениРодстваФизЛицЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/StepeniRodstvaFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтепениРодстваФизЛиц/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new StepeniRodstvaFizLicRequest());
+			СтепениРодстваФизЛицЗапрос СтепениРодстваФизЛицЗапрос = null;
+			try
+			{
+				СтепениРодстваФизЛицЗапрос = Клиент.Get(new СтепениРодстваФизЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтепениРодстваФизЛицЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СтепениРодстваФизЛицЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StepeniRodstvaFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтепениРодстваФизЛиц/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new StepeniRodstvaFizLicRequest());
+			СтепениРодстваФизЛицЗапрос СтепениРодстваФизЛицЗапрос = null;
+			try
+			{
+				СтепениРодстваФизЛицЗапрос = Клиент.Get(new СтепениРодстваФизЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтепениРодстваФизЛицЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СтепениРодстваФизЛицЗапрос СтепениРодстваФизЛицЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/StepeniRodstvaFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтепениРодстваФизЛиц?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new StepeniRodstvaFizLicRequest());
+			var СтепениРодстваФизЛицОтвет = Клиент.Post(СтепениРодстваФизЛицЗапрос);
+		}
+		public static void Записать(СтепениРодстваФизЛицЗапрос СтепениРодстваФизЛицЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтепениРодстваФизЛиц?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтепениРодстваФизЛицОтвет = Клиент.Put(СтепениРодстваФизЛицЗапрос);
+		}
+		public static void Удалить(СтепениРодстваФизЛицЗапрос СтепениРодстваФизЛицЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтепениРодстваФизЛиц?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтепениРодстваФизЛицОтвет = Клиент.Delete(СтепениРодстваФизЛицЗапрос);
 		}
 	}
 }

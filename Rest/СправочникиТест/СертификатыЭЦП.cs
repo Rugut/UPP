@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СертификатыЭЦП:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СертификатыЭЦПЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SertifikatyEHCP/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SertifikatyEHCPRequest());
+			СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос = null;
+			try
+			{
+				СертификатыЭЦПЗапрос = Клиент.Get(new СертификатыЭЦПЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СертификатыЭЦПЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СертификатыЭЦПЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SertifikatyEHCP/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SertifikatyEHCPRequest());
+			СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос = null;
+			try
+			{
+				СертификатыЭЦПЗапрос = Клиент.Get(new СертификатыЭЦПЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СертификатыЭЦПЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SertifikatyEHCP/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SertifikatyEHCPRequest());
+			var СертификатыЭЦПОтвет = Клиент.Post(СертификатыЭЦПЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SertifikatyEHCP/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SertifikatyEHCPRequest());
+			var СертификатыЭЦПОтвет = Клиент.Put(СертификатыЭЦПЗапрос);
+		}
+		public static void Удалить(СертификатыЭЦПЗапрос СертификатыЭЦПЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СертификатыЭЦП?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СертификатыЭЦПОтвет = Клиент.Delete(СертификатыЭЦПЗапрос);
 		}
 	}
 }

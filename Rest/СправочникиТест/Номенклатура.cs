@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Номенклатура:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НоменклатураЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Nomenklatura/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Номенклатура/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NomenklaturaRequest());
+			НоменклатураЗапрос НоменклатураЗапрос = null;
+			try
+			{
+				НоменклатураЗапрос = Клиент.Get(new НоменклатураЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НоменклатураЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НоменклатураЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Nomenklatura/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Номенклатура/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NomenklaturaRequest());
+			НоменклатураЗапрос НоменклатураЗапрос = null;
+			try
+			{
+				НоменклатураЗапрос = Клиент.Get(new НоменклатураЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НоменклатураЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НоменклатураЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Nomenklatura/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Номенклатура/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NomenklaturaRequest());
+			НоменклатураЗапрос НоменклатураЗапрос = null;
+			try
+			{
+				НоменклатураЗапрос = Клиент.Get(new НоменклатураЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НоменклатураЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НоменклатураЗапрос НоменклатураЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Nomenklatura/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Номенклатура?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NomenklaturaRequest());
+			var НоменклатураОтвет = Клиент.Post(НоменклатураЗапрос);
+		}
+		public static void Записать(НоменклатураЗапрос НоменклатураЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Номенклатура?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НоменклатураОтвет = Клиент.Put(НоменклатураЗапрос);
+		}
+		public static void Удалить(НоменклатураЗапрос НоменклатураЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Номенклатура?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НоменклатураОтвет = Клиент.Delete(НоменклатураЗапрос);
 		}
 	}
 }

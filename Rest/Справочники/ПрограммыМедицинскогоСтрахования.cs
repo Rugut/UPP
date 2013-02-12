@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniya")]
-	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniya/FindById/{Id}")]
-	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniya/FindByCode/{Code}")]
-	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniya/FindByDescr/{Descr}")]
-	public class ProgrammyMedicinskogoStrakhovaniyaRequest/*ПрограммыМедицинскогоСтрахованияЗапрос*/: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ProgrammyMedicinskogoStrakhovaniyaRequest>
+	//ProgrammyMedicinskogoStrakhovaniya
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования","")]
+	public class ПрограммыМедицинскогоСтрахованияЗапрос: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ПрограммыМедицинскогоСтрахованияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/ПоСсылке","{Ссылка}")]
+	public class ПрограммыМедицинскогоСтрахованияНайтиПоСсылке: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ПрограммыМедицинскогоСтрахованияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/ПоКоду","{Код}")]
+	public class ПрограммыМедицинскогоСтрахованияНайтиПоКоду: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ПрограммыМедицинскогоСтрахованияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/ПоНаименованию","{Наименование}")]
+	public class ПрограммыМедицинскогоСтрахованияНайтиПоНаименованию: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ПрограммыМедицинскогоСтрахованияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрограммыМедицинскогоСтрахованияВыбратьПоСсылке: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ПрограммыМедицинскогоСтрахованияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрограммыМедицинскогоСтрахованияВыбратьПоКоду: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ПрограммыМедицинскогоСтрахованияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрограммыМедицинскогоСтрахования/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрограммыМедицинскогоСтрахованияВыбратьПоНаименованию: V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования,IReturn<ПрограммыМедицинскогоСтрахованияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProgrammyMedicinskogoStrakhovaniyaResponse//ПрограммыМедицинскогоСтрахованияОтвет
+	public class ПрограммыМедицинскогоСтрахованияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniyas")]
-	[Route("/Catalogs/ProgrammyMedicinskogoStrakhovaniyas/{Codes}")]
-	public class ProgrammyMedicinskogoStrakhovaniyasRequest/*ПрограммыМедицинскогоСтрахованияЗапрос*/: IReturn<List<ProgrammyMedicinskogoStrakhovaniyaRequest>>
+	public class ПрограммыМедицинскогоСтрахованияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProgrammyMedicinskogoStrakhovaniyasRequest(params string[] Codes)
+		
+		public object Get(ПрограммыМедицинскогоСтрахованияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProgrammyMedicinskogoStrakhovaniyasResponse//ПрограммыМедицинскогоСтрахованияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProgrammyMedicinskogoStrakhovaniyaService /*ПрограммыМедицинскогоСтрахованияСервис*/ : Service
-	{
-		public object Any(ProgrammyMedicinskogoStrakhovaniyaRequest request)
+		
+		public object Get(ПрограммыМедицинскогоСтрахованияНайтиПоКоду Запрос)
 		{
-			return new ProgrammyMedicinskogoStrakhovaniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ProgrammyMedicinskogoStrakhovaniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПрограммыМедицинскогоСтрахования.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ProgrammyMedicinskogoStrakhovaniyaResponse() {Result = "ПрограммыМедицинскогоСтрахования c кодом '" + request.Code+"' не найдено."};
+				return new ПрограммыМедицинскогоСтрахованияОтвет() {Ответ = "ПрограммыМедицинскогоСтрахования c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ProgrammyMedicinskogoStrakhovaniyasRequest request)
+		
+		public object Get(ПрограммыМедицинскогоСтрахованияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПрограммыМедицинскогоСтрахования.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПрограммыМедицинскогоСтрахованияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрограммыМедицинскогоСтрахованияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрограммыМедицинскогоСтрахованияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПрограммыМедицинскогоСтрахованияЗапрос Запрос)
+		{
+			return new ПрограммыМедицинскогоСтрахованияОтвет {Ответ = "ПрограммыМедицинскогоСтрахования, "};
+		}
+
+		public object Post(ПрограммыМедицинскогоСтрахованияЗапрос ЗапросПрограммыМедицинскогоСтрахования)
+		{
+			var Ссылка = (СправочникиСсылка.ПрограммыМедицинскогоСтрахования)ЗапросПрограммыМедицинскогоСтрахования;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

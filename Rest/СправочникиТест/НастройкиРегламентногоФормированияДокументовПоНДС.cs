@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиРегламентногоФормированияДокументовПоНДС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРегламентногоФормированияДокументовПоНДС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest());
+			НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НастройкиРегламентногоФормированияДокументовПоНДСЗапрос = null;
+			try
+			{
+				НастройкиРегламентногоФормированияДокументовПоНДСЗапрос = Клиент.Get(new НастройкиРегламентногоФормированияДокументовПоНДСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиРегламентногоФормированияДокументовПоНДСЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРегламентногоФормированияДокументовПоНДС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest());
+			НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НастройкиРегламентногоФормированияДокументовПоНДСЗапрос = null;
+			try
+			{
+				НастройкиРегламентногоФормированияДокументовПоНДСЗапрос = Клиент.Get(new НастройкиРегламентногоФормированияДокументовПоНДСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиРегламентногоФормированияДокументовПоНДСЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРегламентногоФормированияДокументовПоНДС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest());
+			НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НастройкиРегламентногоФормированияДокументовПоНДСЗапрос = null;
+			try
+			{
+				НастройкиРегламентногоФормированияДокументовПоНДСЗапрос = Клиент.Get(new НастройкиРегламентногоФормированияДокументовПоНДСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиРегламентногоФормированияДокументовПоНДСЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НастройкиРегламентногоФормированияДокументовПоНДСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРегламентногоФормированияДокументовПоНДС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest());
+			var НастройкиРегламентногоФормированияДокументовПоНДСОтвет = Клиент.Post(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос);
+		}
+		public static void Записать(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НастройкиРегламентногоФормированияДокументовПоНДСЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРегламентногоФормированияДокументовПоНДС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиРегламентногоФормированияДокументовПоНДСОтвет = Клиент.Put(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос);
+		}
+		public static void Удалить(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос НастройкиРегламентногоФормированияДокументовПоНДСЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРегламентногоФормированияДокументовПоНДС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиРегламентногоФормированияДокументовПоНДСОтвет = Клиент.Delete(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос);
 		}
 	}
 }

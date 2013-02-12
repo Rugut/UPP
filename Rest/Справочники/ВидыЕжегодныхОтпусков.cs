@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyEzhegodnykhOtpuskov")]
-	[Route("/Catalogs/VidyEzhegodnykhOtpuskov/FindById/{Id}")]
-	[Route("/Catalogs/VidyEzhegodnykhOtpuskov/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyEzhegodnykhOtpuskov/FindByDescr/{Descr}")]
-	public class VidyEzhegodnykhOtpuskovRequest/*ВидыЕжегодныхОтпусковЗапрос*/: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<VidyEzhegodnykhOtpuskovRequest>
+	//VidyEzhegodnykhOtpuskov
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков","")]
+	public class ВидыЕжегодныхОтпусковЗапрос: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<ВидыЕжегодныхОтпусковЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/ПоСсылке","{Ссылка}")]
+	public class ВидыЕжегодныхОтпусковНайтиПоСсылке: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<ВидыЕжегодныхОтпусковНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/ПоКоду","{Код}")]
+	public class ВидыЕжегодныхОтпусковНайтиПоКоду: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<ВидыЕжегодныхОтпусковНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/ПоНаименованию","{Наименование}")]
+	public class ВидыЕжегодныхОтпусковНайтиПоНаименованию: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<ВидыЕжегодныхОтпусковНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЕжегодныхОтпусковВыбратьПоСсылке: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<ВидыЕжегодныхОтпусковВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЕжегодныхОтпусковВыбратьПоКоду: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<ВидыЕжегодныхОтпусковВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЕжегодныхОтпусков/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЕжегодныхОтпусковВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыЕжегодныхОтпусков,IReturn<ВидыЕжегодныхОтпусковВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyEzhegodnykhOtpuskovResponse//ВидыЕжегодныхОтпусковОтвет
+	public class ВидыЕжегодныхОтпусковОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyEzhegodnykhOtpuskovs")]
-	[Route("/Catalogs/VidyEzhegodnykhOtpuskovs/{Codes}")]
-	public class VidyEzhegodnykhOtpuskovsRequest/*ВидыЕжегодныхОтпусковЗапрос*/: IReturn<List<VidyEzhegodnykhOtpuskovRequest>>
+	public class ВидыЕжегодныхОтпусковСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyEzhegodnykhOtpuskovsRequest(params string[] Codes)
+		
+		public object Get(ВидыЕжегодныхОтпусковНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyEzhegodnykhOtpuskovsResponse//ВидыЕжегодныхОтпусковОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyEzhegodnykhOtpuskovService /*ВидыЕжегодныхОтпусковСервис*/ : Service
-	{
-		public object Any(VidyEzhegodnykhOtpuskovRequest request)
+		
+		public object Get(ВидыЕжегодныхОтпусковНайтиПоКоду Запрос)
 		{
-			return new VidyEzhegodnykhOtpuskovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyEzhegodnykhOtpuskovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыЕжегодныхОтпусков.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyEzhegodnykhOtpuskovResponse() {Result = "ВидыЕжегодныхОтпусков c кодом '" + request.Code+"' не найдено."};
+				return new ВидыЕжегодныхОтпусковОтвет() {Ответ = "ВидыЕжегодныхОтпусков c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyEzhegodnykhOtpuskovsRequest request)
+		
+		public object Get(ВидыЕжегодныхОтпусковНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыЕжегодныхОтпусков>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыЕжегодныхОтпусков.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыЕжегодныхОтпусковВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЕжегодныхОтпусковВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЕжегодныхОтпусковВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыЕжегодныхОтпусковЗапрос Запрос)
+		{
+			return new ВидыЕжегодныхОтпусковОтвет {Ответ = "ВидыЕжегодныхОтпусков, "};
+		}
+
+		public object Post(ВидыЕжегодныхОтпусковЗапрос ЗапросВидыЕжегодныхОтпусков)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыЕжегодныхОтпусков)ЗапросВидыЕжегодныхОтпусков;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppyDostupnostiSkladov")]
-	[Route("/Catalogs/GruppyDostupnostiSkladov/FindById/{Id}")]
-	[Route("/Catalogs/GruppyDostupnostiSkladov/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppyDostupnostiSkladov/FindByDescr/{Descr}")]
-	public class GruppyDostupnostiSkladovRequest/*ГруппыДоступностиСкладовЗапрос*/: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<GruppyDostupnostiSkladovRequest>
+	//GruppyDostupnostiSkladov
+	[Маршрут("Справочники/ГруппыДоступностиСкладов","")]
+	public class ГруппыДоступностиСкладовЗапрос: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<ГруппыДоступностиСкладовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/ПоСсылке","{Ссылка}")]
+	public class ГруппыДоступностиСкладовНайтиПоСсылке: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<ГруппыДоступностиСкладовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/ПоКоду","{Код}")]
+	public class ГруппыДоступностиСкладовНайтиПоКоду: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<ГруппыДоступностиСкладовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/ПоНаименованию","{Наименование}")]
+	public class ГруппыДоступностиСкладовНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<ГруппыДоступностиСкладовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступностиСкладовВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<ГруппыДоступностиСкладовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступностиСкладовВыбратьПоКоду: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<ГруппыДоступностиСкладовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступностиСкладов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступностиСкладовВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыДоступностиСкладов,IReturn<ГруппыДоступностиСкладовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppyDostupnostiSkladovResponse//ГруппыДоступностиСкладовОтвет
+	public class ГруппыДоступностиСкладовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppyDostupnostiSkladovs")]
-	[Route("/Catalogs/GruppyDostupnostiSkladovs/{Codes}")]
-	public class GruppyDostupnostiSkladovsRequest/*ГруппыДоступностиСкладовЗапрос*/: IReturn<List<GruppyDostupnostiSkladovRequest>>
+	public class ГруппыДоступностиСкладовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppyDostupnostiSkladovsRequest(params string[] Codes)
+		
+		public object Get(ГруппыДоступностиСкладовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppyDostupnostiSkladovsResponse//ГруппыДоступностиСкладовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppyDostupnostiSkladovService /*ГруппыДоступностиСкладовСервис*/ : Service
-	{
-		public object Any(GruppyDostupnostiSkladovRequest request)
+		
+		public object Get(ГруппыДоступностиСкладовНайтиПоКоду Запрос)
 		{
-			return new GruppyDostupnostiSkladovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppyDostupnostiSkladovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыДоступностиСкладов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppyDostupnostiSkladovResponse() {Result = "ГруппыДоступностиСкладов c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыДоступностиСкладовОтвет() {Ответ = "ГруппыДоступностиСкладов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppyDostupnostiSkladovsRequest request)
+		
+		public object Get(ГруппыДоступностиСкладовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыДоступностиСкладов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыДоступностиСкладов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыДоступностиСкладовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыДоступностиСкладовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыДоступностиСкладовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыДоступностиСкладовЗапрос Запрос)
+		{
+			return new ГруппыДоступностиСкладовОтвет {Ответ = "ГруппыДоступностиСкладов, "};
+		}
+
+		public object Post(ГруппыДоступностиСкладовЗапрос ЗапросГруппыДоступностиСкладов)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыДоступностиСкладов)ЗапросГруппыДоступностиСкладов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

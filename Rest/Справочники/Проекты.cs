@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Proekty")]
-	[Route("/Catalogs/Proekty/FindById/{Id}")]
-	[Route("/Catalogs/Proekty/FindByCode/{Code}")]
-	[Route("/Catalogs/Proekty/FindByDescr/{Descr}")]
-	public class ProektyRequest/*ПроектыЗапрос*/: V82.СправочникиСсылка.Проекты,IReturn<ProektyRequest>
+	//Proekty
+	[Маршрут("Справочники/Проекты","")]
+	public class ПроектыЗапрос: V82.СправочникиСсылка.Проекты,IReturn<ПроектыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Проекты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Проекты/ПоСсылке","{Ссылка}")]
+	public class ПроектыНайтиПоСсылке: V82.СправочникиСсылка.Проекты,IReturn<ПроектыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Проекты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Проекты/ПоКоду","{Код}")]
+	public class ПроектыНайтиПоКоду: V82.СправочникиСсылка.Проекты,IReturn<ПроектыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Проекты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Проекты/ПоНаименованию","{Наименование}")]
+	public class ПроектыНайтиПоНаименованию: V82.СправочникиСсылка.Проекты,IReturn<ПроектыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Проекты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПроектыВыбратьПоСсылке: V82.СправочникиСсылка.Проекты,IReturn<ПроектыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Проекты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПроектыВыбратьПоКоду: V82.СправочникиСсылка.Проекты,IReturn<ПроектыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Проекты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПроектыВыбратьПоНаименованию: V82.СправочникиСсылка.Проекты,IReturn<ПроектыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProektyResponse//ПроектыОтвет
+	public class ПроектыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Proektys")]
-	[Route("/Catalogs/Proektys/{Codes}")]
-	public class ProektysRequest/*ПроектыЗапрос*/: IReturn<List<ProektyRequest>>
+	public class ПроектыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProektysRequest(params string[] Codes)
+		
+		public object Get(ПроектыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProektysResponse//ПроектыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProektyService /*ПроектыСервис*/ : Service
-	{
-		public object Any(ProektyRequest request)
+		
+		public object Get(ПроектыНайтиПоКоду Запрос)
 		{
-			return new ProektyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ProektyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Проекты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ProektyResponse() {Result = "Проекты c кодом '" + request.Code+"' не найдено."};
+				return new ПроектыОтвет() {Ответ = "Проекты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ProektysRequest request)
+		
+		public object Get(ПроектыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Проекты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Проекты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПроектыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПроектыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПроектыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПроектыЗапрос Запрос)
+		{
+			return new ПроектыОтвет {Ответ = "Проекты, "};
+		}
+
+		public object Post(ПроектыЗапрос ЗапросПроекты)
+		{
+			var Ссылка = (СправочникиСсылка.Проекты)ЗапросПроекты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

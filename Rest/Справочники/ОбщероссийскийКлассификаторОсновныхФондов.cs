@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/FindById/{Id}")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/FindByCode/{Code}")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondov/FindByDescr/{Descr}")]
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest/*ОбщероссийскийКлассификаторОсновныхФондовЗапрос*/: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest>
+	//ObshherossijjskijjKlassifikatorOsnovnykhFondov
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов","")]
+	public class ОбщероссийскийКлассификаторОсновныхФондовЗапрос: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ОбщероссийскийКлассификаторОсновныхФондовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ПоСсылке","{Ссылка}")]
+	public class ОбщероссийскийКлассификаторОсновныхФондовНайтиПоСсылке: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ОбщероссийскийКлассификаторОсновныхФондовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ПоКоду","{Код}")]
+	public class ОбщероссийскийКлассификаторОсновныхФондовНайтиПоКоду: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ОбщероссийскийКлассификаторОсновныхФондовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ПоНаименованию","{Наименование}")]
+	public class ОбщероссийскийКлассификаторОсновныхФондовНайтиПоНаименованию: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ОбщероссийскийКлассификаторОсновныхФондовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоСсылке: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоКоду: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоНаименованию: V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов,IReturn<ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovResponse//ОбщероссийскийКлассификаторОсновныхФондовОтвет
+	public class ОбщероссийскийКлассификаторОсновныхФондовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondovs")]
-	[Route("/Catalogs/ObshherossijjskijjKlassifikatorOsnovnykhFondovs/{Codes}")]
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovsRequest/*ОбщероссийскийКлассификаторОсновныхФондовЗапрос*/: IReturn<List<ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest>>
+	public class ОбщероссийскийКлассификаторОсновныхФондовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ObshherossijjskijjKlassifikatorOsnovnykhFondovsRequest(params string[] Codes)
+		
+		public object Get(ОбщероссийскийКлассификаторОсновныхФондовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovsResponse//ОбщероссийскийКлассификаторОсновныхФондовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ObshherossijjskijjKlassifikatorOsnovnykhFondovService /*ОбщероссийскийКлассификаторОсновныхФондовСервис*/ : Service
-	{
-		public object Any(ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest request)
+		
+		public object Get(ОбщероссийскийКлассификаторОсновныхФондовНайтиПоКоду Запрос)
 		{
-			return new ObshherossijjskijjKlassifikatorOsnovnykhFondovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ObshherossijjskijjKlassifikatorOsnovnykhFondovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОбщероссийскийКлассификаторОсновныхФондов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ObshherossijjskijjKlassifikatorOsnovnykhFondovResponse() {Result = "ОбщероссийскийКлассификаторОсновныхФондов c кодом '" + request.Code+"' не найдено."};
+				return new ОбщероссийскийКлассификаторОсновныхФондовОтвет() {Ответ = "ОбщероссийскийКлассификаторОсновныхФондов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ObshherossijjskijjKlassifikatorOsnovnykhFondovsRequest request)
+		
+		public object Get(ОбщероссийскийКлассификаторОсновныхФондовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОбщероссийскийКлассификаторОсновныхФондов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОбщероссийскийКлассификаторОсновныхФондовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОбщероссийскийКлассификаторОсновныхФондовЗапрос Запрос)
+		{
+			return new ОбщероссийскийКлассификаторОсновныхФондовОтвет {Ответ = "ОбщероссийскийКлассификаторОсновныхФондов, "};
+		}
+
+		public object Post(ОбщероссийскийКлассификаторОсновныхФондовЗапрос ЗапросОбщероссийскийКлассификаторОсновныхФондов)
+		{
+			var Ссылка = (СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов)ЗапросОбщероссийскийКлассификаторОсновныхФондов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

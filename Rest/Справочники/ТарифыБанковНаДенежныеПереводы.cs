@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody")]
-	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody/FindById/{Id}")]
-	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody/FindByCode/{Code}")]
-	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevody/FindByDescr/{Descr}")]
-	public class TarifyBankovNaDenezhnyePerevodyRequest/*ТарифыБанковНаДенежныеПереводыЗапрос*/: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<TarifyBankovNaDenezhnyePerevodyRequest>
+	//TarifyBankovNaDenezhnyePerevody
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы","")]
+	public class ТарифыБанковНаДенежныеПереводыЗапрос: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<ТарифыБанковНаДенежныеПереводыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/ПоСсылке","{Ссылка}")]
+	public class ТарифыБанковНаДенежныеПереводыНайтиПоСсылке: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<ТарифыБанковНаДенежныеПереводыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/ПоКоду","{Код}")]
+	public class ТарифыБанковНаДенежныеПереводыНайтиПоКоду: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<ТарифыБанковНаДенежныеПереводыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/ПоНаименованию","{Наименование}")]
+	public class ТарифыБанковНаДенежныеПереводыНайтиПоНаименованию: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<ТарифыБанковНаДенежныеПереводыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифыБанковНаДенежныеПереводыВыбратьПоСсылке: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<ТарифыБанковНаДенежныеПереводыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифыБанковНаДенежныеПереводыВыбратьПоКоду: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<ТарифыБанковНаДенежныеПереводыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТарифыБанковНаДенежныеПереводы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифыБанковНаДенежныеПереводыВыбратьПоНаименованию: V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы,IReturn<ТарифыБанковНаДенежныеПереводыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TarifyBankovNaDenezhnyePerevodyResponse//ТарифыБанковНаДенежныеПереводыОтвет
+	public class ТарифыБанковНаДенежныеПереводыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevodys")]
-	[Route("/Catalogs/TarifyBankovNaDenezhnyePerevodys/{Codes}")]
-	public class TarifyBankovNaDenezhnyePerevodysRequest/*ТарифыБанковНаДенежныеПереводыЗапрос*/: IReturn<List<TarifyBankovNaDenezhnyePerevodyRequest>>
+	public class ТарифыБанковНаДенежныеПереводыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TarifyBankovNaDenezhnyePerevodysRequest(params string[] Codes)
+		
+		public object Get(ТарифыБанковНаДенежныеПереводыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TarifyBankovNaDenezhnyePerevodysResponse//ТарифыБанковНаДенежныеПереводыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TarifyBankovNaDenezhnyePerevodyService /*ТарифыБанковНаДенежныеПереводыСервис*/ : Service
-	{
-		public object Any(TarifyBankovNaDenezhnyePerevodyRequest request)
+		
+		public object Get(ТарифыБанковНаДенежныеПереводыНайтиПоКоду Запрос)
 		{
-			return new TarifyBankovNaDenezhnyePerevodyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TarifyBankovNaDenezhnyePerevodyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТарифыБанковНаДенежныеПереводы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TarifyBankovNaDenezhnyePerevodyResponse() {Result = "ТарифыБанковНаДенежныеПереводы c кодом '" + request.Code+"' не найдено."};
+				return new ТарифыБанковНаДенежныеПереводыОтвет() {Ответ = "ТарифыБанковНаДенежныеПереводы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TarifyBankovNaDenezhnyePerevodysRequest request)
+		
+		public object Get(ТарифыБанковНаДенежныеПереводыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТарифыБанковНаДенежныеПереводы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТарифыБанковНаДенежныеПереводы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТарифыБанковНаДенежныеПереводыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТарифыБанковНаДенежныеПереводыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТарифыБанковНаДенежныеПереводыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТарифыБанковНаДенежныеПереводыЗапрос Запрос)
+		{
+			return new ТарифыБанковНаДенежныеПереводыОтвет {Ответ = "ТарифыБанковНаДенежныеПереводы, "};
+		}
+
+		public object Post(ТарифыБанковНаДенежныеПереводыЗапрос ЗапросТарифыБанковНаДенежныеПереводы)
+		{
+			var Ссылка = (СправочникиСсылка.ТарифыБанковНаДенежныеПереводы)ЗапросТарифыБанковНаДенежныеПереводы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

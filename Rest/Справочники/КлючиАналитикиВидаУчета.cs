@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KlyuchiAnalitikiVidaUcheta")]
-	[Route("/Catalogs/KlyuchiAnalitikiVidaUcheta/FindById/{Id}")]
-	[Route("/Catalogs/KlyuchiAnalitikiVidaUcheta/FindByCode/{Code}")]
-	[Route("/Catalogs/KlyuchiAnalitikiVidaUcheta/FindByDescr/{Descr}")]
-	public class KlyuchiAnalitikiVidaUchetaRequest/*КлючиАналитикиВидаУчетаЗапрос*/: V82.СправочникиСсылка.КлючиАналитикиВидаУчета,IReturn<KlyuchiAnalitikiVidaUchetaRequest>
+	//KlyuchiAnalitikiVidaUcheta
+	[Маршрут("Справочники/КлючиАналитикиВидаУчета","")]
+	public class КлючиАналитикиВидаУчетаЗапрос: V82.СправочникиСсылка.КлючиАналитикиВидаУчета,IReturn<КлючиАналитикиВидаУчетаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КлючиАналитикиВидаУчета/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КлючиАналитикиВидаУчета/ПоСсылке","{Ссылка}")]
+	public class КлючиАналитикиВидаУчетаНайтиПоСсылке: V82.СправочникиСсылка.КлючиАналитикиВидаУчета,IReturn<КлючиАналитикиВидаУчетаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КлючиАналитикиВидаУчета/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КлючиАналитикиВидаУчета/ПоНаименованию","{Наименование}")]
+	public class КлючиАналитикиВидаУчетаНайтиПоНаименованию: V82.СправочникиСсылка.КлючиАналитикиВидаУчета,IReturn<КлючиАналитикиВидаУчетаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КлючиАналитикиВидаУчета/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлючиАналитикиВидаУчетаВыбратьПоСсылке: V82.СправочникиСсылка.КлючиАналитикиВидаУчета,IReturn<КлючиАналитикиВидаУчетаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлючиАналитикиВидаУчета/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлючиАналитикиВидаУчетаВыбратьПоНаименованию: V82.СправочникиСсылка.КлючиАналитикиВидаУчета,IReturn<КлючиАналитикиВидаУчетаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KlyuchiAnalitikiVidaUchetaResponse//КлючиАналитикиВидаУчетаОтвет
+	public class КлючиАналитикиВидаУчетаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KlyuchiAnalitikiVidaUchetas")]
-	[Route("/Catalogs/KlyuchiAnalitikiVidaUchetas/{Codes}")]
-	public class KlyuchiAnalitikiVidaUchetasRequest/*КлючиАналитикиВидаУчетаЗапрос*/: IReturn<List<KlyuchiAnalitikiVidaUchetaRequest>>
+	public class КлючиАналитикиВидаУчетаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KlyuchiAnalitikiVidaUchetasRequest(params string[] Codes)
+		
+		public object Get(КлючиАналитикиВидаУчетаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KlyuchiAnalitikiVidaUchetasResponse//КлючиАналитикиВидаУчетаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KlyuchiAnalitikiVidaUchetaService /*КлючиАналитикиВидаУчетаСервис*/ : Service
-	{
-		public object Any(KlyuchiAnalitikiVidaUchetaRequest request)
+		
+		public object Get(КлючиАналитикиВидаУчетаНайтиПоНаименованию Запрос)
 		{
-			return new KlyuchiAnalitikiVidaUchetaResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(KlyuchiAnalitikiVidaUchetaRequest request)
+		
+		public object Get(КлючиАналитикиВидаУчетаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлючиАналитикиВидаУчетаВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(KlyuchiAnalitikiVidaUchetasRequest request)
+		public object Any(КлючиАналитикиВидаУчетаЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлючиАналитикиВидаУчета>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new КлючиАналитикиВидаУчетаОтвет {Ответ = "КлючиАналитикиВидаУчета, "};
 		}
+
+		public object Post(КлючиАналитикиВидаУчетаЗапрос ЗапросКлючиАналитикиВидаУчета)
+		{
+			var Ссылка = (СправочникиСсылка.КлючиАналитикиВидаУчета)ЗапросКлючиАналитикиВидаУчета;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

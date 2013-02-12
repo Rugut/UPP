@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/IstochnikiInformacii")]
-	[Route("/Catalogs/IstochnikiInformacii/FindById/{Id}")]
-	[Route("/Catalogs/IstochnikiInformacii/FindByCode/{Code}")]
-	[Route("/Catalogs/IstochnikiInformacii/FindByDescr/{Descr}")]
-	public class IstochnikiInformaciiRequest/*ИсточникиИнформацииЗапрос*/: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<IstochnikiInformaciiRequest>
+	//IstochnikiInformacii
+	[Маршрут("Справочники/ИсточникиИнформации","")]
+	public class ИсточникиИнформацииЗапрос: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<ИсточникиИнформацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ИсточникиИнформации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ИсточникиИнформации/ПоСсылке","{Ссылка}")]
+	public class ИсточникиИнформацииНайтиПоСсылке: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<ИсточникиИнформацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиИнформации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ИсточникиИнформации/ПоКоду","{Код}")]
+	public class ИсточникиИнформацииНайтиПоКоду: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<ИсточникиИнформацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиИнформации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ИсточникиИнформации/ПоНаименованию","{Наименование}")]
+	public class ИсточникиИнформацииНайтиПоНаименованию: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<ИсточникиИнформацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиИнформации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиИнформацииВыбратьПоСсылке: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<ИсточникиИнформацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИсточникиИнформации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиИнформацииВыбратьПоКоду: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<ИсточникиИнформацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИсточникиИнформации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиИнформацииВыбратьПоНаименованию: V82.СправочникиСсылка.ИсточникиИнформации,IReturn<ИсточникиИнформацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class IstochnikiInformaciiResponse//ИсточникиИнформацииОтвет
+	public class ИсточникиИнформацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/IstochnikiInformaciis")]
-	[Route("/Catalogs/IstochnikiInformaciis/{Codes}")]
-	public class IstochnikiInformaciisRequest/*ИсточникиИнформацииЗапрос*/: IReturn<List<IstochnikiInformaciiRequest>>
+	public class ИсточникиИнформацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public IstochnikiInformaciisRequest(params string[] Codes)
+		
+		public object Get(ИсточникиИнформацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class IstochnikiInformaciisResponse//ИсточникиИнформацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class IstochnikiInformaciiService /*ИсточникиИнформацииСервис*/ : Service
-	{
-		public object Any(IstochnikiInformaciiRequest request)
+		
+		public object Get(ИсточникиИнформацииНайтиПоКоду Запрос)
 		{
-			return new IstochnikiInformaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(IstochnikiInformaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ИсточникиИнформации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new IstochnikiInformaciiResponse() {Result = "ИсточникиИнформации c кодом '" + request.Code+"' не найдено."};
+				return new ИсточникиИнформацииОтвет() {Ответ = "ИсточникиИнформации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(IstochnikiInformaciisRequest request)
+		
+		public object Get(ИсточникиИнформацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ИсточникиИнформации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ИсточникиИнформации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ИсточникиИнформацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИсточникиИнформацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИсточникиИнформацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ИсточникиИнформацииЗапрос Запрос)
+		{
+			return new ИсточникиИнформацииОтвет {Ответ = "ИсточникиИнформации, "};
+		}
+
+		public object Post(ИсточникиИнформацииЗапрос ЗапросИсточникиИнформации)
+		{
+			var Ссылка = (СправочникиСсылка.ИсточникиИнформации)ЗапросИсточникиИнформации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

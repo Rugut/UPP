@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OsobyeUsloviyaTruda")]
-	[Route("/Catalogs/OsobyeUsloviyaTruda/FindById/{Id}")]
-	[Route("/Catalogs/OsobyeUsloviyaTruda/FindByCode/{Code}")]
-	[Route("/Catalogs/OsobyeUsloviyaTruda/FindByDescr/{Descr}")]
-	public class OsobyeUsloviyaTrudaRequest/*ОсобыеУсловияТрудаЗапрос*/: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<OsobyeUsloviyaTrudaRequest>
+	//OsobyeUsloviyaTruda
+	[Маршрут("Справочники/ОсобыеУсловияТруда","")]
+	public class ОсобыеУсловияТрудаЗапрос: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<ОсобыеУсловияТрудаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОсобыеУсловияТруда/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОсобыеУсловияТруда/ПоСсылке","{Ссылка}")]
+	public class ОсобыеУсловияТрудаНайтиПоСсылке: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<ОсобыеУсловияТрудаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОсобыеУсловияТруда/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОсобыеУсловияТруда/ПоКоду","{Код}")]
+	public class ОсобыеУсловияТрудаНайтиПоКоду: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<ОсобыеУсловияТрудаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОсобыеУсловияТруда/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОсобыеУсловияТруда/ПоНаименованию","{Наименование}")]
+	public class ОсобыеУсловияТрудаНайтиПоНаименованию: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<ОсобыеУсловияТрудаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОсобыеУсловияТруда/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсобыеУсловияТрудаВыбратьПоСсылке: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<ОсобыеУсловияТрудаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОсобыеУсловияТруда/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсобыеУсловияТрудаВыбратьПоКоду: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<ОсобыеУсловияТрудаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОсобыеУсловияТруда/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсобыеУсловияТрудаВыбратьПоНаименованию: V82.СправочникиСсылка.ОсобыеУсловияТруда,IReturn<ОсобыеУсловияТрудаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OsobyeUsloviyaTrudaResponse//ОсобыеУсловияТрудаОтвет
+	public class ОсобыеУсловияТрудаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OsobyeUsloviyaTrudas")]
-	[Route("/Catalogs/OsobyeUsloviyaTrudas/{Codes}")]
-	public class OsobyeUsloviyaTrudasRequest/*ОсобыеУсловияТрудаЗапрос*/: IReturn<List<OsobyeUsloviyaTrudaRequest>>
+	public class ОсобыеУсловияТрудаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OsobyeUsloviyaTrudasRequest(params string[] Codes)
+		
+		public object Get(ОсобыеУсловияТрудаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OsobyeUsloviyaTrudasResponse//ОсобыеУсловияТрудаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OsobyeUsloviyaTrudaService /*ОсобыеУсловияТрудаСервис*/ : Service
-	{
-		public object Any(OsobyeUsloviyaTrudaRequest request)
+		
+		public object Get(ОсобыеУсловияТрудаНайтиПоКоду Запрос)
 		{
-			return new OsobyeUsloviyaTrudaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OsobyeUsloviyaTrudaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОсобыеУсловияТруда.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OsobyeUsloviyaTrudaResponse() {Result = "ОсобыеУсловияТруда c кодом '" + request.Code+"' не найдено."};
+				return new ОсобыеУсловияТрудаОтвет() {Ответ = "ОсобыеУсловияТруда c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OsobyeUsloviyaTrudasRequest request)
+		
+		public object Get(ОсобыеУсловияТрудаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОсобыеУсловияТруда>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОсобыеУсловияТруда.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОсобыеУсловияТрудаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОсобыеУсловияТрудаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОсобыеУсловияТрудаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОсобыеУсловияТрудаЗапрос Запрос)
+		{
+			return new ОсобыеУсловияТрудаОтвет {Ответ = "ОсобыеУсловияТруда, "};
+		}
+
+		public object Post(ОсобыеУсловияТрудаЗапрос ЗапросОсобыеУсловияТруда)
+		{
+			var Ссылка = (СправочникиСсылка.ОсобыеУсловияТруда)ЗапросОсобыеУсловияТруда;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

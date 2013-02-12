@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиФормированияДокументовПоОрдерам:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиФормированияДокументовПоОрдерамЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовПоОрдерам/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiFormirovaniyaDokumentovPoOrderamRequest());
+			НастройкиФормированияДокументовПоОрдерамЗапрос НастройкиФормированияДокументовПоОрдерамЗапрос = null;
+			try
+			{
+				НастройкиФормированияДокументовПоОрдерамЗапрос = Клиент.Get(new НастройкиФормированияДокументовПоОрдерамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиФормированияДокументовПоОрдерамЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиФормированияДокументовПоОрдерамЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовПоОрдерам/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiFormirovaniyaDokumentovPoOrderamRequest());
+			НастройкиФормированияДокументовПоОрдерамЗапрос НастройкиФормированияДокументовПоОрдерамЗапрос = null;
+			try
+			{
+				НастройкиФормированияДокументовПоОрдерамЗапрос = Клиент.Get(new НастройкиФормированияДокументовПоОрдерамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиФормированияДокументовПоОрдерамЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкиФормированияДокументовПоОрдерамЗапрос НастройкиФормированияДокументовПоОрдерамЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовПоОрдерам?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiFormirovaniyaDokumentovPoOrderamRequest());
+			var НастройкиФормированияДокументовПоОрдерамОтвет = Клиент.Post(НастройкиФормированияДокументовПоОрдерамЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкиФормированияДокументовПоОрдерамЗапрос НастройкиФормированияДокументовПоОрдерамЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовПоОрдерам?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiFormirovaniyaDokumentovPoOrderamRequest());
+			var НастройкиФормированияДокументовПоОрдерамОтвет = Клиент.Put(НастройкиФормированияДокументовПоОрдерамЗапрос);
+		}
+		public static void Удалить(НастройкиФормированияДокументовПоОрдерамЗапрос НастройкиФормированияДокументовПоОрдерамЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовПоОрдерам?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиФормированияДокументовПоОрдерамОтвет = Клиент.Delete(НастройкиФормированияДокументовПоОрдерамЗапрос);
 		}
 	}
 }

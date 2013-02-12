@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СохраненныеНастройки:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СохраненныеНастройкиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SokhranennyeNastrojjki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СохраненныеНастройки/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SokhranennyeNastrojjkiRequest());
+			СохраненныеНастройкиЗапрос СохраненныеНастройкиЗапрос = null;
+			try
+			{
+				СохраненныеНастройкиЗапрос = Клиент.Get(new СохраненныеНастройкиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СохраненныеНастройкиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СохраненныеНастройкиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SokhranennyeNastrojjki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СохраненныеНастройки/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SokhranennyeNastrojjkiRequest());
+			СохраненныеНастройкиЗапрос СохраненныеНастройкиЗапрос = null;
+			try
+			{
+				СохраненныеНастройкиЗапрос = Клиент.Get(new СохраненныеНастройкиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СохраненныеНастройкиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(СохраненныеНастройкиЗапрос СохраненныеНастройкиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SokhranennyeNastrojjki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СохраненныеНастройки?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SokhranennyeNastrojjkiRequest());
+			var СохраненныеНастройкиОтвет = Клиент.Post(СохраненныеНастройкиЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(СохраненныеНастройкиЗапрос СохраненныеНастройкиЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SokhranennyeNastrojjki/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СохраненныеНастройки?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SokhranennyeNastrojjkiRequest());
+			var СохраненныеНастройкиОтвет = Клиент.Put(СохраненныеНастройкиЗапрос);
+		}
+		public static void Удалить(СохраненныеНастройкиЗапрос СохраненныеНастройкиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СохраненныеНастройки?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СохраненныеНастройкиОтвет = Клиент.Delete(СохраненныеНастройкиЗапрос);
 		}
 	}
 }

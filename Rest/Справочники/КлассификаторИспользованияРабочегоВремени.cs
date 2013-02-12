@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni")]
-	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/FindById/{Id}")]
-	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/FindByCode/{Code}")]
-	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/FindByDescr/{Descr}")]
-	public class KlassifikatorIspolzovaniyaRabochegoVremeniRequest/*КлассификаторИспользованияРабочегоВремениЗапрос*/: V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени,IReturn<KlassifikatorIspolzovaniyaRabochegoVremeniRequest>
+	//KlassifikatorIspolzovaniyaRabochegoVremeni
+	[Маршрут("Справочники/КлассификаторИспользованияРабочегоВремени","")]
+	public class КлассификаторИспользованияРабочегоВремениЗапрос: V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени,IReturn<КлассификаторИспользованияРабочегоВремениЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КлассификаторИспользованияРабочегоВремени/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КлассификаторИспользованияРабочегоВремени/ПоСсылке","{Ссылка}")]
+	public class КлассификаторИспользованияРабочегоВремениНайтиПоСсылке: V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени,IReturn<КлассификаторИспользованияРабочегоВремениНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторИспользованияРабочегоВремени/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КлассификаторИспользованияРабочегоВремени/ПоНаименованию","{Наименование}")]
+	public class КлассификаторИспользованияРабочегоВремениНайтиПоНаименованию: V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени,IReturn<КлассификаторИспользованияРабочегоВремениНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторИспользованияРабочегоВремени/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторИспользованияРабочегоВремениВыбратьПоСсылке: V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени,IReturn<КлассификаторИспользованияРабочегоВремениВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлассификаторИспользованияРабочегоВремени/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторИспользованияРабочегоВремениВыбратьПоНаименованию: V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени,IReturn<КлассификаторИспользованияРабочегоВремениВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KlassifikatorIspolzovaniyaRabochegoVremeniResponse//КлассификаторИспользованияРабочегоВремениОтвет
+	public class КлассификаторИспользованияРабочегоВремениОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremenis")]
-	[Route("/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremenis/{Codes}")]
-	public class KlassifikatorIspolzovaniyaRabochegoVremenisRequest/*КлассификаторИспользованияРабочегоВремениЗапрос*/: IReturn<List<KlassifikatorIspolzovaniyaRabochegoVremeniRequest>>
+	public class КлассификаторИспользованияРабочегоВремениСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KlassifikatorIspolzovaniyaRabochegoVremenisRequest(params string[] Codes)
+		
+		public object Get(КлассификаторИспользованияРабочегоВремениНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KlassifikatorIspolzovaniyaRabochegoVremenisResponse//КлассификаторИспользованияРабочегоВремениОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KlassifikatorIspolzovaniyaRabochegoVremeniService /*КлассификаторИспользованияРабочегоВремениСервис*/ : Service
-	{
-		public object Any(KlassifikatorIspolzovaniyaRabochegoVremeniRequest request)
+		
+		public object Get(КлассификаторИспользованияРабочегоВремениНайтиПоНаименованию Запрос)
 		{
-			return new KlassifikatorIspolzovaniyaRabochegoVremeniResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(KlassifikatorIspolzovaniyaRabochegoVremeniRequest request)
+		
+		public object Get(КлассификаторИспользованияРабочегоВремениВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлассификаторИспользованияРабочегоВремениВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(KlassifikatorIspolzovaniyaRabochegoVremenisRequest request)
+		public object Any(КлассификаторИспользованияРабочегоВремениЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлассификаторИспользованияРабочегоВремени>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new КлассификаторИспользованияРабочегоВремениОтвет {Ответ = "КлассификаторИспользованияРабочегоВремени, "};
 		}
+
+		public object Post(КлассификаторИспользованияРабочегоВремениЗапрос ЗапросКлассификаторИспользованияРабочегоВремени)
+		{
+			var Ссылка = (СправочникиСсылка.КлассификаторИспользованияРабочегоВремени)ЗапросКлассификаторИспользованияРабочегоВремени;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

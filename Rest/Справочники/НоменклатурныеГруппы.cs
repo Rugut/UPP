@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NomenklaturnyeGruppy")]
-	[Route("/Catalogs/NomenklaturnyeGruppy/FindById/{Id}")]
-	[Route("/Catalogs/NomenklaturnyeGruppy/FindByCode/{Code}")]
-	[Route("/Catalogs/NomenklaturnyeGruppy/FindByDescr/{Descr}")]
-	public class NomenklaturnyeGruppyRequest/*НоменклатурныеГруппыЗапрос*/: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<NomenklaturnyeGruppyRequest>
+	//NomenklaturnyeGruppy
+	[Маршрут("Справочники/НоменклатурныеГруппы","")]
+	public class НоменклатурныеГруппыЗапрос: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<НоменклатурныеГруппыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НоменклатурныеГруппы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НоменклатурныеГруппы/ПоСсылке","{Ссылка}")]
+	public class НоменклатурныеГруппыНайтиПоСсылке: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<НоменклатурныеГруппыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НоменклатурныеГруппы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НоменклатурныеГруппы/ПоКоду","{Код}")]
+	public class НоменклатурныеГруппыНайтиПоКоду: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<НоменклатурныеГруппыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НоменклатурныеГруппы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НоменклатурныеГруппы/ПоНаименованию","{Наименование}")]
+	public class НоменклатурныеГруппыНайтиПоНаименованию: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<НоменклатурныеГруппыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НоменклатурныеГруппыВыбратьПоСсылке: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<НоменклатурныеГруппыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НоменклатурныеГруппы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НоменклатурныеГруппыВыбратьПоКоду: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<НоменклатурныеГруппыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НоменклатурныеГруппы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НоменклатурныеГруппыВыбратьПоНаименованию: V82.СправочникиСсылка.НоменклатурныеГруппы,IReturn<НоменклатурныеГруппыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NomenklaturnyeGruppyResponse//НоменклатурныеГруппыОтвет
+	public class НоменклатурныеГруппыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NomenklaturnyeGruppys")]
-	[Route("/Catalogs/NomenklaturnyeGruppys/{Codes}")]
-	public class NomenklaturnyeGruppysRequest/*НоменклатурныеГруппыЗапрос*/: IReturn<List<NomenklaturnyeGruppyRequest>>
+	public class НоменклатурныеГруппыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NomenklaturnyeGruppysRequest(params string[] Codes)
+		
+		public object Get(НоменклатурныеГруппыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NomenklaturnyeGruppysResponse//НоменклатурныеГруппыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NomenklaturnyeGruppyService /*НоменклатурныеГруппыСервис*/ : Service
-	{
-		public object Any(NomenklaturnyeGruppyRequest request)
+		
+		public object Get(НоменклатурныеГруппыНайтиПоКоду Запрос)
 		{
-			return new NomenklaturnyeGruppyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NomenklaturnyeGruppyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НоменклатурныеГруппы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NomenklaturnyeGruppyResponse() {Result = "НоменклатурныеГруппы c кодом '" + request.Code+"' не найдено."};
+				return new НоменклатурныеГруппыОтвет() {Ответ = "НоменклатурныеГруппы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NomenklaturnyeGruppysRequest request)
+		
+		public object Get(НоменклатурныеГруппыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НоменклатурныеГруппы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НоменклатурныеГруппы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НоменклатурныеГруппыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НоменклатурныеГруппыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НоменклатурныеГруппыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НоменклатурныеГруппыЗапрос Запрос)
+		{
+			return new НоменклатурныеГруппыОтвет {Ответ = "НоменклатурныеГруппы, "};
+		}
+
+		public object Post(НоменклатурныеГруппыЗапрос ЗапросНоменклатурныеГруппы)
+		{
+			var Ссылка = (СправочникиСсылка.НоменклатурныеГруппы)ЗапросНоменклатурныеГруппы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

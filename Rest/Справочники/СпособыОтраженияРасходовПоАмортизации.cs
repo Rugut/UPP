@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii")]
-	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/FindById/{Id}")]
-	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/FindByCode/{Code}")]
-	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/FindByDescr/{Descr}")]
-	public class SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest/*СпособыОтраженияРасходовПоАмортизацииЗапрос*/: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest>
+	//SposobyOtrazheniyaRaskhodovPoAmortizacii
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации","")]
+	public class СпособыОтраженияРасходовПоАмортизацииЗапрос: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<СпособыОтраженияРасходовПоАмортизацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/ПоСсылке","{Ссылка}")]
+	public class СпособыОтраженияРасходовПоАмортизацииНайтиПоСсылке: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<СпособыОтраженияРасходовПоАмортизацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/ПоКоду","{Код}")]
+	public class СпособыОтраженияРасходовПоАмортизацииНайтиПоКоду: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<СпособыОтраженияРасходовПоАмортизацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/ПоНаименованию","{Наименование}")]
+	public class СпособыОтраженияРасходовПоАмортизацииНайтиПоНаименованию: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<СпособыОтраженияРасходовПоАмортизацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыОтраженияРасходовПоАмортизацииВыбратьПоСсылке: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<СпособыОтраженияРасходовПоАмортизацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыОтраженияРасходовПоАмортизацииВыбратьПоКоду: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<СпособыОтраженияРасходовПоАмортизацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпособыОтраженияРасходовПоАмортизации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыОтраженияРасходовПоАмортизацииВыбратьПоНаименованию: V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации,IReturn<СпособыОтраженияРасходовПоАмортизацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SposobyOtrazheniyaRaskhodovPoAmortizaciiResponse//СпособыОтраженияРасходовПоАмортизацииОтвет
+	public class СпособыОтраженияРасходовПоАмортизацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizaciis")]
-	[Route("/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizaciis/{Codes}")]
-	public class SposobyOtrazheniyaRaskhodovPoAmortizaciisRequest/*СпособыОтраженияРасходовПоАмортизацииЗапрос*/: IReturn<List<SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest>>
+	public class СпособыОтраженияРасходовПоАмортизацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SposobyOtrazheniyaRaskhodovPoAmortizaciisRequest(params string[] Codes)
+		
+		public object Get(СпособыОтраженияРасходовПоАмортизацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SposobyOtrazheniyaRaskhodovPoAmortizaciisResponse//СпособыОтраженияРасходовПоАмортизацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SposobyOtrazheniyaRaskhodovPoAmortizaciiService /*СпособыОтраженияРасходовПоАмортизацииСервис*/ : Service
-	{
-		public object Any(SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest request)
+		
+		public object Get(СпособыОтраженияРасходовПоАмортизацииНайтиПоКоду Запрос)
 		{
-			return new SposobyOtrazheniyaRaskhodovPoAmortizaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СпособыОтраженияРасходовПоАмортизации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SposobyOtrazheniyaRaskhodovPoAmortizaciiResponse() {Result = "СпособыОтраженияРасходовПоАмортизации c кодом '" + request.Code+"' не найдено."};
+				return new СпособыОтраженияРасходовПоАмортизацииОтвет() {Ответ = "СпособыОтраженияРасходовПоАмортизации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SposobyOtrazheniyaRaskhodovPoAmortizaciisRequest request)
+		
+		public object Get(СпособыОтраженияРасходовПоАмортизацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СпособыОтраженияРасходовПоАмортизации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СпособыОтраженияРасходовПоАмортизацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпособыОтраженияРасходовПоАмортизацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпособыОтраженияРасходовПоАмортизацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СпособыОтраженияРасходовПоАмортизацииЗапрос Запрос)
+		{
+			return new СпособыОтраженияРасходовПоАмортизацииОтвет {Ответ = "СпособыОтраженияРасходовПоАмортизации, "};
+		}
+
+		public object Post(СпособыОтраженияРасходовПоАмортизацииЗапрос ЗапросСпособыОтраженияРасходовПоАмортизации)
+		{
+			var Ссылка = (СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации)ЗапросСпособыОтраженияРасходовПоАмортизации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

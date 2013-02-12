@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДоговорыЭквайринга:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДоговорыЭквайрингаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryEHkvajjringa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыЭквайринга/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DogovoryEHkvajjringaRequest());
+			ДоговорыЭквайрингаЗапрос ДоговорыЭквайрингаЗапрос = null;
+			try
+			{
+				ДоговорыЭквайрингаЗапрос = Клиент.Get(new ДоговорыЭквайрингаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоговорыЭквайрингаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДоговорыЭквайрингаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryEHkvajjringa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыЭквайринга/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DogovoryEHkvajjringaRequest());
+			ДоговорыЭквайрингаЗапрос ДоговорыЭквайрингаЗапрос = null;
+			try
+			{
+				ДоговорыЭквайрингаЗапрос = Клиент.Get(new ДоговорыЭквайрингаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоговорыЭквайрингаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДоговорыЭквайрингаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryEHkvajjringa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыЭквайринга/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DogovoryEHkvajjringaRequest());
+			ДоговорыЭквайрингаЗапрос ДоговорыЭквайрингаЗапрос = null;
+			try
+			{
+				ДоговорыЭквайрингаЗапрос = Клиент.Get(new ДоговорыЭквайрингаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоговорыЭквайрингаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДоговорыЭквайрингаЗапрос ДоговорыЭквайрингаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryEHkvajjringa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыЭквайринга?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DogovoryEHkvajjringaRequest());
+			var ДоговорыЭквайрингаОтвет = Клиент.Post(ДоговорыЭквайрингаЗапрос);
+		}
+		public static void Записать(ДоговорыЭквайрингаЗапрос ДоговорыЭквайрингаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыЭквайринга?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДоговорыЭквайрингаОтвет = Клиент.Put(ДоговорыЭквайрингаЗапрос);
+		}
+		public static void Удалить(ДоговорыЭквайрингаЗапрос ДоговорыЭквайрингаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыЭквайринга?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДоговорыЭквайрингаОтвет = Клиент.Delete(ДоговорыЭквайрингаЗапрос);
 		}
 	}
 }

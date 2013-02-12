@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StatiAnaliticheskogoBalansa")]
-	[Route("/Catalogs/StatiAnaliticheskogoBalansa/FindById/{Id}")]
-	[Route("/Catalogs/StatiAnaliticheskogoBalansa/FindByCode/{Code}")]
-	[Route("/Catalogs/StatiAnaliticheskogoBalansa/FindByDescr/{Descr}")]
-	public class StatiAnaliticheskogoBalansaRequest/*СтатьиАналитическогоБалансаЗапрос*/: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<StatiAnaliticheskogoBalansaRequest>
+	//StatiAnaliticheskogoBalansa
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса","")]
+	public class СтатьиАналитическогоБалансаЗапрос: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<СтатьиАналитическогоБалансаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/ПоСсылке","{Ссылка}")]
+	public class СтатьиАналитическогоБалансаНайтиПоСсылке: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<СтатьиАналитическогоБалансаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/ПоКоду","{Код}")]
+	public class СтатьиАналитическогоБалансаНайтиПоКоду: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<СтатьиАналитическогоБалансаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/ПоНаименованию","{Наименование}")]
+	public class СтатьиАналитическогоБалансаНайтиПоНаименованию: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<СтатьиАналитическогоБалансаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиАналитическогоБалансаВыбратьПоСсылке: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<СтатьиАналитическогоБалансаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиАналитическогоБалансаВыбратьПоКоду: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<СтатьиАналитическогоБалансаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиАналитическогоБаланса/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиАналитическогоБалансаВыбратьПоНаименованию: V82.СправочникиСсылка.СтатьиАналитическогоБаланса,IReturn<СтатьиАналитическогоБалансаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StatiAnaliticheskogoBalansaResponse//СтатьиАналитическогоБалансаОтвет
+	public class СтатьиАналитическогоБалансаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StatiAnaliticheskogoBalansas")]
-	[Route("/Catalogs/StatiAnaliticheskogoBalansas/{Codes}")]
-	public class StatiAnaliticheskogoBalansasRequest/*СтатьиАналитическогоБалансаЗапрос*/: IReturn<List<StatiAnaliticheskogoBalansaRequest>>
+	public class СтатьиАналитическогоБалансаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StatiAnaliticheskogoBalansasRequest(params string[] Codes)
+		
+		public object Get(СтатьиАналитическогоБалансаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StatiAnaliticheskogoBalansasResponse//СтатьиАналитическогоБалансаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StatiAnaliticheskogoBalansaService /*СтатьиАналитическогоБалансаСервис*/ : Service
-	{
-		public object Any(StatiAnaliticheskogoBalansaRequest request)
+		
+		public object Get(СтатьиАналитическогоБалансаНайтиПоКоду Запрос)
 		{
-			return new StatiAnaliticheskogoBalansaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StatiAnaliticheskogoBalansaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтатьиАналитическогоБаланса.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StatiAnaliticheskogoBalansaResponse() {Result = "СтатьиАналитическогоБаланса c кодом '" + request.Code+"' не найдено."};
+				return new СтатьиАналитическогоБалансаОтвет() {Ответ = "СтатьиАналитическогоБаланса c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StatiAnaliticheskogoBalansasRequest request)
+		
+		public object Get(СтатьиАналитическогоБалансаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтатьиАналитическогоБаланса>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтатьиАналитическогоБаланса.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтатьиАналитическогоБалансаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиАналитическогоБалансаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиАналитическогоБалансаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтатьиАналитическогоБалансаЗапрос Запрос)
+		{
+			return new СтатьиАналитическогоБалансаОтвет {Ответ = "СтатьиАналитическогоБаланса, "};
+		}
+
+		public object Post(СтатьиАналитическогоБалансаЗапрос ЗапросСтатьиАналитическогоБаланса)
+		{
+			var Ссылка = (СправочникиСсылка.СтатьиАналитическогоБаланса)ЗапросСтатьиАналитическогоБаланса;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

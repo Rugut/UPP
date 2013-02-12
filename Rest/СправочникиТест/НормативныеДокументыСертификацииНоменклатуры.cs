@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НормативныеДокументыСертификацииНоменклатуры:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НормативныеДокументыСертификацииНоменклатурыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативныеДокументыСертификацииНоменклатуры/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NormativnyeDokumentySertifikaciiNomenklaturyRequest());
+			НормативныеДокументыСертификацииНоменклатурыЗапрос НормативныеДокументыСертификацииНоменклатурыЗапрос = null;
+			try
+			{
+				НормативныеДокументыСертификацииНоменклатурыЗапрос = Клиент.Get(new НормативныеДокументыСертификацииНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НормативныеДокументыСертификацииНоменклатурыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НормативныеДокументыСертификацииНоменклатурыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативныеДокументыСертификацииНоменклатуры/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NormativnyeDokumentySertifikaciiNomenklaturyRequest());
+			НормативныеДокументыСертификацииНоменклатурыЗапрос НормативныеДокументыСертификацииНоменклатурыЗапрос = null;
+			try
+			{
+				НормативныеДокументыСертификацииНоменклатурыЗапрос = Клиент.Get(new НормативныеДокументыСертификацииНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НормативныеДокументыСертификацииНоменклатурыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НормативныеДокументыСертификацииНоменклатурыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативныеДокументыСертификацииНоменклатуры/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NormativnyeDokumentySertifikaciiNomenklaturyRequest());
+			НормативныеДокументыСертификацииНоменклатурыЗапрос НормативныеДокументыСертификацииНоменклатурыЗапрос = null;
+			try
+			{
+				НормативныеДокументыСертификацииНоменклатурыЗапрос = Клиент.Get(new НормативныеДокументыСертификацииНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НормативныеДокументыСертификацииНоменклатурыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НормативныеДокументыСертификацииНоменклатурыЗапрос НормативныеДокументыСертификацииНоменклатурыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НормативныеДокументыСертификацииНоменклатуры?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NormativnyeDokumentySertifikaciiNomenklaturyRequest());
+			var НормативныеДокументыСертификацииНоменклатурыОтвет = Клиент.Post(НормативныеДокументыСертификацииНоменклатурыЗапрос);
+		}
+		public static void Записать(НормативныеДокументыСертификацииНоменклатурыЗапрос НормативныеДокументыСертификацииНоменклатурыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НормативныеДокументыСертификацииНоменклатуры?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НормативныеДокументыСертификацииНоменклатурыОтвет = Клиент.Put(НормативныеДокументыСертификацииНоменклатурыЗапрос);
+		}
+		public static void Удалить(НормативныеДокументыСертификацииНоменклатурыЗапрос НормативныеДокументыСертификацииНоменклатурыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НормативныеДокументыСертификацииНоменклатуры?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НормативныеДокументыСертификацииНоменклатурыОтвет = Клиент.Delete(НормативныеДокументыСертификацииНоменклатурыЗапрос);
 		}
 	}
 }

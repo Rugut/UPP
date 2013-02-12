@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem")]
-	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/FindById/{Id}")]
-	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/FindByCode/{Code}")]
-	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisem/FindByDescr/{Descr}")]
-	public class FiltryDlyaEHlektronnykhPisemRequest/*ФильтрыДляЭлектронныхПисемЗапрос*/: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<FiltryDlyaEHlektronnykhPisemRequest>
+	//FiltryDlyaEHlektronnykhPisem
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем","")]
+	public class ФильтрыДляЭлектронныхПисемЗапрос: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<ФильтрыДляЭлектронныхПисемЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/ПоСсылке","{Ссылка}")]
+	public class ФильтрыДляЭлектронныхПисемНайтиПоСсылке: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<ФильтрыДляЭлектронныхПисемНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/ПоКоду","{Код}")]
+	public class ФильтрыДляЭлектронныхПисемНайтиПоКоду: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<ФильтрыДляЭлектронныхПисемНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/ПоНаименованию","{Наименование}")]
+	public class ФильтрыДляЭлектронныхПисемНайтиПоНаименованию: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<ФильтрыДляЭлектронныхПисемНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФильтрыДляЭлектронныхПисемВыбратьПоСсылке: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<ФильтрыДляЭлектронныхПисемВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФильтрыДляЭлектронныхПисемВыбратьПоКоду: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<ФильтрыДляЭлектронныхПисемВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФильтрыДляЭлектронныхПисемВыбратьПоНаименованию: V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем,IReturn<ФильтрыДляЭлектронныхПисемВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class FiltryDlyaEHlektronnykhPisemResponse//ФильтрыДляЭлектронныхПисемОтвет
+	public class ФильтрыДляЭлектронныхПисемОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisems")]
-	[Route("/Catalogs/FiltryDlyaEHlektronnykhPisems/{Codes}")]
-	public class FiltryDlyaEHlektronnykhPisemsRequest/*ФильтрыДляЭлектронныхПисемЗапрос*/: IReturn<List<FiltryDlyaEHlektronnykhPisemRequest>>
+	public class ФильтрыДляЭлектронныхПисемСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public FiltryDlyaEHlektronnykhPisemsRequest(params string[] Codes)
+		
+		public object Get(ФильтрыДляЭлектронныхПисемНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class FiltryDlyaEHlektronnykhPisemsResponse//ФильтрыДляЭлектронныхПисемОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class FiltryDlyaEHlektronnykhPisemService /*ФильтрыДляЭлектронныхПисемСервис*/ : Service
-	{
-		public object Any(FiltryDlyaEHlektronnykhPisemRequest request)
+		
+		public object Get(ФильтрыДляЭлектронныхПисемНайтиПоКоду Запрос)
 		{
-			return new FiltryDlyaEHlektronnykhPisemResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(FiltryDlyaEHlektronnykhPisemRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ФильтрыДляЭлектронныхПисем.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new FiltryDlyaEHlektronnykhPisemResponse() {Result = "ФильтрыДляЭлектронныхПисем c кодом '" + request.Code+"' не найдено."};
+				return new ФильтрыДляЭлектронныхПисемОтвет() {Ответ = "ФильтрыДляЭлектронныхПисем c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(FiltryDlyaEHlektronnykhPisemsRequest request)
+		
+		public object Get(ФильтрыДляЭлектронныхПисемНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ФильтрыДляЭлектронныхПисем>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ФильтрыДляЭлектронныхПисем.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ФильтрыДляЭлектронныхПисемВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФильтрыДляЭлектронныхПисемВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФильтрыДляЭлектронныхПисемВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ФильтрыДляЭлектронныхПисемЗапрос Запрос)
+		{
+			return new ФильтрыДляЭлектронныхПисемОтвет {Ответ = "ФильтрыДляЭлектронныхПисем, "};
+		}
+
+		public object Post(ФильтрыДляЭлектронныхПисемЗапрос ЗапросФильтрыДляЭлектронныхПисем)
+		{
+			var Ссылка = (СправочникиСсылка.ФильтрыДляЭлектронныхПисем)ЗапросФильтрыДляЭлектронныхПисем;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

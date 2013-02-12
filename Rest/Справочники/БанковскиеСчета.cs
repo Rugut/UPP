@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/BankovskieScheta")]
-	[Route("/Catalogs/BankovskieScheta/FindById/{Id}")]
-	[Route("/Catalogs/BankovskieScheta/FindByCode/{Code}")]
-	[Route("/Catalogs/BankovskieScheta/FindByDescr/{Descr}")]
-	public class BankovskieSchetaRequest/*БанковскиеСчетаЗапрос*/: V82.СправочникиСсылка.БанковскиеСчета,IReturn<BankovskieSchetaRequest>
+	//BankovskieScheta
+	[Маршрут("Справочники/БанковскиеСчета","")]
+	public class БанковскиеСчетаЗапрос: V82.СправочникиСсылка.БанковскиеСчета,IReturn<БанковскиеСчетаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/БанковскиеСчета/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/БанковскиеСчета/ПоСсылке","{Ссылка}")]
+	public class БанковскиеСчетаНайтиПоСсылке: V82.СправочникиСсылка.БанковскиеСчета,IReturn<БанковскиеСчетаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/БанковскиеСчета/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/БанковскиеСчета/ПоКоду","{Код}")]
+	public class БанковскиеСчетаНайтиПоКоду: V82.СправочникиСсылка.БанковскиеСчета,IReturn<БанковскиеСчетаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/БанковскиеСчета/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/БанковскиеСчета/ПоНаименованию","{Наименование}")]
+	public class БанковскиеСчетаНайтиПоНаименованию: V82.СправочникиСсылка.БанковскиеСчета,IReturn<БанковскиеСчетаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/БанковскиеСчета/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class БанковскиеСчетаВыбратьПоСсылке: V82.СправочникиСсылка.БанковскиеСчета,IReturn<БанковскиеСчетаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/БанковскиеСчета/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class БанковскиеСчетаВыбратьПоКоду: V82.СправочникиСсылка.БанковскиеСчета,IReturn<БанковскиеСчетаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/БанковскиеСчета/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class БанковскиеСчетаВыбратьПоНаименованию: V82.СправочникиСсылка.БанковскиеСчета,IReturn<БанковскиеСчетаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class BankovskieSchetaResponse//БанковскиеСчетаОтвет
+	public class БанковскиеСчетаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/BankovskieSchetas")]
-	[Route("/Catalogs/BankovskieSchetas/{Codes}")]
-	public class BankovskieSchetasRequest/*БанковскиеСчетаЗапрос*/: IReturn<List<BankovskieSchetaRequest>>
+	public class БанковскиеСчетаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public BankovskieSchetasRequest(params string[] Codes)
+		
+		public object Get(БанковскиеСчетаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class BankovskieSchetasResponse//БанковскиеСчетаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class BankovskieSchetaService /*БанковскиеСчетаСервис*/ : Service
-	{
-		public object Any(BankovskieSchetaRequest request)
+		
+		public object Get(БанковскиеСчетаНайтиПоКоду Запрос)
 		{
-			return new BankovskieSchetaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(BankovskieSchetaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.БанковскиеСчета.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new BankovskieSchetaResponse() {Result = "БанковскиеСчета c кодом '" + request.Code+"' не найдено."};
+				return new БанковскиеСчетаОтвет() {Ответ = "БанковскиеСчета c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(BankovskieSchetasRequest request)
+		
+		public object Get(БанковскиеСчетаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.БанковскиеСчета>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.БанковскиеСчета.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(БанковскиеСчетаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(БанковскиеСчетаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(БанковскиеСчетаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(БанковскиеСчетаЗапрос Запрос)
+		{
+			return new БанковскиеСчетаОтвет {Ответ = "БанковскиеСчета, "};
+		}
+
+		public object Post(БанковскиеСчетаЗапрос ЗапросБанковскиеСчета)
+		{
+			var Ссылка = (СправочникиСсылка.БанковскиеСчета)ЗапросБанковскиеСчета;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

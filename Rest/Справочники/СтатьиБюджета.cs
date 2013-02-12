@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StatiByudzheta")]
-	[Route("/Catalogs/StatiByudzheta/FindById/{Id}")]
-	[Route("/Catalogs/StatiByudzheta/FindByCode/{Code}")]
-	[Route("/Catalogs/StatiByudzheta/FindByDescr/{Descr}")]
-	public class StatiByudzhetaRequest/*СтатьиБюджетаЗапрос*/: V82.СправочникиСсылка.СтатьиБюджета,IReturn<StatiByudzhetaRequest>
+	//StatiByudzheta
+	[Маршрут("Справочники/СтатьиБюджета","")]
+	public class СтатьиБюджетаЗапрос: V82.СправочникиСсылка.СтатьиБюджета,IReturn<СтатьиБюджетаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтатьиБюджета/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтатьиБюджета/ПоСсылке","{Ссылка}")]
+	public class СтатьиБюджетаНайтиПоСсылке: V82.СправочникиСсылка.СтатьиБюджета,IReturn<СтатьиБюджетаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтатьиБюджета/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтатьиБюджета/ПоКоду","{Код}")]
+	public class СтатьиБюджетаНайтиПоКоду: V82.СправочникиСсылка.СтатьиБюджета,IReturn<СтатьиБюджетаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтатьиБюджета/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтатьиБюджета/ПоНаименованию","{Наименование}")]
+	public class СтатьиБюджетаНайтиПоНаименованию: V82.СправочникиСсылка.СтатьиБюджета,IReturn<СтатьиБюджетаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтатьиБюджета/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиБюджетаВыбратьПоСсылке: V82.СправочникиСсылка.СтатьиБюджета,IReturn<СтатьиБюджетаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиБюджета/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиБюджетаВыбратьПоКоду: V82.СправочникиСсылка.СтатьиБюджета,IReturn<СтатьиБюджетаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиБюджета/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиБюджетаВыбратьПоНаименованию: V82.СправочникиСсылка.СтатьиБюджета,IReturn<СтатьиБюджетаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StatiByudzhetaResponse//СтатьиБюджетаОтвет
+	public class СтатьиБюджетаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StatiByudzhetas")]
-	[Route("/Catalogs/StatiByudzhetas/{Codes}")]
-	public class StatiByudzhetasRequest/*СтатьиБюджетаЗапрос*/: IReturn<List<StatiByudzhetaRequest>>
+	public class СтатьиБюджетаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StatiByudzhetasRequest(params string[] Codes)
+		
+		public object Get(СтатьиБюджетаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StatiByudzhetasResponse//СтатьиБюджетаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StatiByudzhetaService /*СтатьиБюджетаСервис*/ : Service
-	{
-		public object Any(StatiByudzhetaRequest request)
+		
+		public object Get(СтатьиБюджетаНайтиПоКоду Запрос)
 		{
-			return new StatiByudzhetaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StatiByudzhetaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтатьиБюджета.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StatiByudzhetaResponse() {Result = "СтатьиБюджета c кодом '" + request.Code+"' не найдено."};
+				return new СтатьиБюджетаОтвет() {Ответ = "СтатьиБюджета c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StatiByudzhetasRequest request)
+		
+		public object Get(СтатьиБюджетаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтатьиБюджета>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтатьиБюджета.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтатьиБюджетаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиБюджетаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиБюджетаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтатьиБюджетаЗапрос Запрос)
+		{
+			return new СтатьиБюджетаОтвет {Ответ = "СтатьиБюджета, "};
+		}
+
+		public object Post(СтатьиБюджетаЗапрос ЗапросСтатьиБюджета)
+		{
+			var Ссылка = (СправочникиСсылка.СтатьиБюджета)ЗапросСтатьиБюджета;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

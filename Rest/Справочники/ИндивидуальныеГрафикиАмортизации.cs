@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii")]
-	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/FindById/{Id}")]
-	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/FindByCode/{Code}")]
-	[Route("/Catalogs/IndividualnyeGrafikiAmortizacii/FindByDescr/{Descr}")]
-	public class IndividualnyeGrafikiAmortizaciiRequest/*ИндивидуальныеГрафикиАмортизацииЗапрос*/: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<IndividualnyeGrafikiAmortizaciiRequest>
+	//IndividualnyeGrafikiAmortizacii
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации","")]
+	public class ИндивидуальныеГрафикиАмортизацииЗапрос: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<ИндивидуальныеГрафикиАмортизацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/ПоСсылке","{Ссылка}")]
+	public class ИндивидуальныеГрафикиАмортизацииНайтиПоСсылке: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<ИндивидуальныеГрафикиАмортизацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/ПоКоду","{Код}")]
+	public class ИндивидуальныеГрафикиАмортизацииНайтиПоКоду: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<ИндивидуальныеГрафикиАмортизацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/ПоНаименованию","{Наименование}")]
+	public class ИндивидуальныеГрафикиАмортизацииНайтиПоНаименованию: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<ИндивидуальныеГрафикиАмортизацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИндивидуальныеГрафикиАмортизацииВыбратьПоСсылке: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<ИндивидуальныеГрафикиАмортизацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИндивидуальныеГрафикиАмортизацииВыбратьПоКоду: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<ИндивидуальныеГрафикиАмортизацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИндивидуальныеГрафикиАмортизации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИндивидуальныеГрафикиАмортизацииВыбратьПоНаименованию: V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации,IReturn<ИндивидуальныеГрафикиАмортизацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class IndividualnyeGrafikiAmortizaciiResponse//ИндивидуальныеГрафикиАмортизацииОтвет
+	public class ИндивидуальныеГрафикиАмортизацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/IndividualnyeGrafikiAmortizaciis")]
-	[Route("/Catalogs/IndividualnyeGrafikiAmortizaciis/{Codes}")]
-	public class IndividualnyeGrafikiAmortizaciisRequest/*ИндивидуальныеГрафикиАмортизацииЗапрос*/: IReturn<List<IndividualnyeGrafikiAmortizaciiRequest>>
+	public class ИндивидуальныеГрафикиАмортизацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public IndividualnyeGrafikiAmortizaciisRequest(params string[] Codes)
+		
+		public object Get(ИндивидуальныеГрафикиАмортизацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class IndividualnyeGrafikiAmortizaciisResponse//ИндивидуальныеГрафикиАмортизацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class IndividualnyeGrafikiAmortizaciiService /*ИндивидуальныеГрафикиАмортизацииСервис*/ : Service
-	{
-		public object Any(IndividualnyeGrafikiAmortizaciiRequest request)
+		
+		public object Get(ИндивидуальныеГрафикиАмортизацииНайтиПоКоду Запрос)
 		{
-			return new IndividualnyeGrafikiAmortizaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(IndividualnyeGrafikiAmortizaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ИндивидуальныеГрафикиАмортизации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new IndividualnyeGrafikiAmortizaciiResponse() {Result = "ИндивидуальныеГрафикиАмортизации c кодом '" + request.Code+"' не найдено."};
+				return new ИндивидуальныеГрафикиАмортизацииОтвет() {Ответ = "ИндивидуальныеГрафикиАмортизации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(IndividualnyeGrafikiAmortizaciisRequest request)
+		
+		public object Get(ИндивидуальныеГрафикиАмортизацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ИндивидуальныеГрафикиАмортизации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ИндивидуальныеГрафикиАмортизации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ИндивидуальныеГрафикиАмортизацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИндивидуальныеГрафикиАмортизацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИндивидуальныеГрафикиАмортизацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ИндивидуальныеГрафикиАмортизацииЗапрос Запрос)
+		{
+			return new ИндивидуальныеГрафикиАмортизацииОтвет {Ответ = "ИндивидуальныеГрафикиАмортизации, "};
+		}
+
+		public object Post(ИндивидуальныеГрафикиАмортизацииЗапрос ЗапросИндивидуальныеГрафикиАмортизации)
+		{
+			var Ссылка = (СправочникиСсылка.ИндивидуальныеГрафикиАмортизации)ЗапросИндивидуальныеГрафикиАмортизации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NematerialnyeAktivy")]
-	[Route("/Catalogs/NematerialnyeAktivy/FindById/{Id}")]
-	[Route("/Catalogs/NematerialnyeAktivy/FindByCode/{Code}")]
-	[Route("/Catalogs/NematerialnyeAktivy/FindByDescr/{Descr}")]
-	public class NematerialnyeAktivyRequest/*НематериальныеАктивыЗапрос*/: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<NematerialnyeAktivyRequest>
+	//NematerialnyeAktivy
+	[Маршрут("Справочники/НематериальныеАктивы","")]
+	public class НематериальныеАктивыЗапрос: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<НематериальныеАктивыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НематериальныеАктивы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НематериальныеАктивы/ПоСсылке","{Ссылка}")]
+	public class НематериальныеАктивыНайтиПоСсылке: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<НематериальныеАктивыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НематериальныеАктивы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НематериальныеАктивы/ПоКоду","{Код}")]
+	public class НематериальныеАктивыНайтиПоКоду: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<НематериальныеАктивыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НематериальныеАктивы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НематериальныеАктивы/ПоНаименованию","{Наименование}")]
+	public class НематериальныеАктивыНайтиПоНаименованию: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<НематериальныеАктивыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НематериальныеАктивы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НематериальныеАктивыВыбратьПоСсылке: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<НематериальныеАктивыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НематериальныеАктивы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НематериальныеАктивыВыбратьПоКоду: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<НематериальныеАктивыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НематериальныеАктивы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НематериальныеАктивыВыбратьПоНаименованию: V82.СправочникиСсылка.НематериальныеАктивы,IReturn<НематериальныеАктивыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NematerialnyeAktivyResponse//НематериальныеАктивыОтвет
+	public class НематериальныеАктивыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NematerialnyeAktivys")]
-	[Route("/Catalogs/NematerialnyeAktivys/{Codes}")]
-	public class NematerialnyeAktivysRequest/*НематериальныеАктивыЗапрос*/: IReturn<List<NematerialnyeAktivyRequest>>
+	public class НематериальныеАктивыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NematerialnyeAktivysRequest(params string[] Codes)
+		
+		public object Get(НематериальныеАктивыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NematerialnyeAktivysResponse//НематериальныеАктивыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NematerialnyeAktivyService /*НематериальныеАктивыСервис*/ : Service
-	{
-		public object Any(NematerialnyeAktivyRequest request)
+		
+		public object Get(НематериальныеАктивыНайтиПоКоду Запрос)
 		{
-			return new NematerialnyeAktivyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NematerialnyeAktivyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НематериальныеАктивы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NematerialnyeAktivyResponse() {Result = "НематериальныеАктивы c кодом '" + request.Code+"' не найдено."};
+				return new НематериальныеАктивыОтвет() {Ответ = "НематериальныеАктивы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NematerialnyeAktivysRequest request)
+		
+		public object Get(НематериальныеАктивыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НематериальныеАктивы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НематериальныеАктивы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НематериальныеАктивыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НематериальныеАктивыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НематериальныеАктивыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НематериальныеАктивыЗапрос Запрос)
+		{
+			return new НематериальныеАктивыОтвет {Ответ = "НематериальныеАктивы, "};
+		}
+
+		public object Post(НематериальныеАктивыЗапрос ЗапросНематериальныеАктивы)
+		{
+			var Ссылка = (СправочникиСсылка.НематериальныеАктивы)ЗапросНематериальныеАктивы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

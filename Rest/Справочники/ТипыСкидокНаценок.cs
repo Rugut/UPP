@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TipySkidokNacenok")]
-	[Route("/Catalogs/TipySkidokNacenok/FindById/{Id}")]
-	[Route("/Catalogs/TipySkidokNacenok/FindByCode/{Code}")]
-	[Route("/Catalogs/TipySkidokNacenok/FindByDescr/{Descr}")]
-	public class TipySkidokNacenokRequest/*ТипыСкидокНаценокЗапрос*/: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<TipySkidokNacenokRequest>
+	//TipySkidokNacenok
+	[Маршрут("Справочники/ТипыСкидокНаценок","")]
+	public class ТипыСкидокНаценокЗапрос: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<ТипыСкидокНаценокЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТипыСкидокНаценок/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТипыСкидокНаценок/ПоСсылке","{Ссылка}")]
+	public class ТипыСкидокНаценокНайтиПоСсылке: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<ТипыСкидокНаценокНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТипыСкидокНаценок/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТипыСкидокНаценок/ПоКоду","{Код}")]
+	public class ТипыСкидокНаценокНайтиПоКоду: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<ТипыСкидокНаценокНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТипыСкидокНаценок/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТипыСкидокНаценок/ПоНаименованию","{Наименование}")]
+	public class ТипыСкидокНаценокНайтиПоНаименованию: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<ТипыСкидокНаценокНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТипыСкидокНаценок/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыСкидокНаценокВыбратьПоСсылке: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<ТипыСкидокНаценокВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТипыСкидокНаценок/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыСкидокНаценокВыбратьПоКоду: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<ТипыСкидокНаценокВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТипыСкидокНаценок/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыСкидокНаценокВыбратьПоНаименованию: V82.СправочникиСсылка.ТипыСкидокНаценок,IReturn<ТипыСкидокНаценокВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TipySkidokNacenokResponse//ТипыСкидокНаценокОтвет
+	public class ТипыСкидокНаценокОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TipySkidokNacenoks")]
-	[Route("/Catalogs/TipySkidokNacenoks/{Codes}")]
-	public class TipySkidokNacenoksRequest/*ТипыСкидокНаценокЗапрос*/: IReturn<List<TipySkidokNacenokRequest>>
+	public class ТипыСкидокНаценокСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TipySkidokNacenoksRequest(params string[] Codes)
+		
+		public object Get(ТипыСкидокНаценокНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TipySkidokNacenoksResponse//ТипыСкидокНаценокОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TipySkidokNacenokService /*ТипыСкидокНаценокСервис*/ : Service
-	{
-		public object Any(TipySkidokNacenokRequest request)
+		
+		public object Get(ТипыСкидокНаценокНайтиПоКоду Запрос)
 		{
-			return new TipySkidokNacenokResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TipySkidokNacenokRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТипыСкидокНаценок.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TipySkidokNacenokResponse() {Result = "ТипыСкидокНаценок c кодом '" + request.Code+"' не найдено."};
+				return new ТипыСкидокНаценокОтвет() {Ответ = "ТипыСкидокНаценок c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TipySkidokNacenoksRequest request)
+		
+		public object Get(ТипыСкидокНаценокНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТипыСкидокНаценок>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТипыСкидокНаценок.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТипыСкидокНаценокВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТипыСкидокНаценокВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТипыСкидокНаценокВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТипыСкидокНаценокЗапрос Запрос)
+		{
+			return new ТипыСкидокНаценокОтвет {Ответ = "ТипыСкидокНаценок, "};
+		}
+
+		public object Post(ТипыСкидокНаценокЗапрос ЗапросТипыСкидокНаценок)
+		{
+			var Ссылка = (СправочникиСсылка.ТипыСкидокНаценок)ЗапросТипыСкидокНаценок;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

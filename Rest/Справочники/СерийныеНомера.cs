@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,87 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SerijjnyeNomera")]
-	[Route("/Catalogs/SerijjnyeNomera/FindById/{Id}")]
-	[Route("/Catalogs/SerijjnyeNomera/FindByCode/{Code}")]
-	[Route("/Catalogs/SerijjnyeNomera/FindByDescr/{Descr}")]
-	public class SerijjnyeNomeraRequest/*СерийныеНомераЗапрос*/: V82.СправочникиСсылка.СерийныеНомера,IReturn<SerijjnyeNomeraRequest>
+	//SerijjnyeNomera
+	[Маршрут("Справочники/СерийныеНомера","")]
+	public class СерийныеНомераЗапрос: V82.СправочникиСсылка.СерийныеНомера,IReturn<СерийныеНомераЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СерийныеНомера/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СерийныеНомера/ПоСсылке","{Ссылка}")]
+	public class СерийныеНомераНайтиПоСсылке: V82.СправочникиСсылка.СерийныеНомера,IReturn<СерийныеНомераНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СерийныеНомера/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СерийныеНомера/ПоКоду","{Код}")]
+	public class СерийныеНомераНайтиПоКоду: V82.СправочникиСсылка.СерийныеНомера,IReturn<СерийныеНомераНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СерийныеНомера/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СерийныеНомераВыбратьПоСсылке: V82.СправочникиСсылка.СерийныеНомера,IReturn<СерийныеНомераВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СерийныеНомера/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СерийныеНомераВыбратьПоКоду: V82.СправочникиСсылка.СерийныеНомера,IReturn<СерийныеНомераВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SerijjnyeNomeraResponse//СерийныеНомераОтвет
+	public class СерийныеНомераОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SerijjnyeNomeras")]
-	[Route("/Catalogs/SerijjnyeNomeras/{Codes}")]
-	public class SerijjnyeNomerasRequest/*СерийныеНомераЗапрос*/: IReturn<List<SerijjnyeNomeraRequest>>
+	public class СерийныеНомераСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SerijjnyeNomerasRequest(params string[] Codes)
+		
+		public object Get(СерийныеНомераНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SerijjnyeNomerasResponse//СерийныеНомераОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SerijjnyeNomeraService /*СерийныеНомераСервис*/ : Service
-	{
-		public object Any(SerijjnyeNomeraRequest request)
+		
+		public object Get(СерийныеНомераНайтиПоКоду Запрос)
 		{
-			return new SerijjnyeNomeraResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SerijjnyeNomeraRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СерийныеНомера.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SerijjnyeNomeraResponse() {Result = "СерийныеНомера c кодом '" + request.Code+"' не найдено."};
+				return new СерийныеНомераОтвет() {Ответ = "СерийныеНомера c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SerijjnyeNomerasRequest request)
+		
+		public object Get(СерийныеНомераВыбратьПоСсылке Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СерийныеНомера>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СерийныеНомера.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СерийныеНомераВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СерийныеНомераЗапрос Запрос)
+		{
+			return new СерийныеНомераОтвет {Ответ = "СерийныеНомера, "};
+		}
+
+		public object Post(СерийныеНомераЗапрос ЗапросСерийныеНомера)
+		{
+			var Ссылка = (СправочникиСсылка.СерийныеНомера)ЗапросСерийныеНомера;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

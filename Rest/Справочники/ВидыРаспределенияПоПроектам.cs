@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyRaspredeleniyaPoProektam")]
-	[Route("/Catalogs/VidyRaspredeleniyaPoProektam/FindById/{Id}")]
-	[Route("/Catalogs/VidyRaspredeleniyaPoProektam/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyRaspredeleniyaPoProektam/FindByDescr/{Descr}")]
-	public class VidyRaspredeleniyaPoProektamRequest/*ВидыРаспределенияПоПроектамЗапрос*/: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<VidyRaspredeleniyaPoProektamRequest>
+	//VidyRaspredeleniyaPoProektam
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам","")]
+	public class ВидыРаспределенияПоПроектамЗапрос: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<ВидыРаспределенияПоПроектамЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/ПоСсылке","{Ссылка}")]
+	public class ВидыРаспределенияПоПроектамНайтиПоСсылке: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<ВидыРаспределенияПоПроектамНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/ПоКоду","{Код}")]
+	public class ВидыРаспределенияПоПроектамНайтиПоКоду: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<ВидыРаспределенияПоПроектамНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/ПоНаименованию","{Наименование}")]
+	public class ВидыРаспределенияПоПроектамНайтиПоНаименованию: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<ВидыРаспределенияПоПроектамНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыРаспределенияПоПроектамВыбратьПоСсылке: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<ВидыРаспределенияПоПроектамВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыРаспределенияПоПроектамВыбратьПоКоду: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<ВидыРаспределенияПоПроектамВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыРаспределенияПоПроектам/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыРаспределенияПоПроектамВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыРаспределенияПоПроектам,IReturn<ВидыРаспределенияПоПроектамВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyRaspredeleniyaPoProektamResponse//ВидыРаспределенияПоПроектамОтвет
+	public class ВидыРаспределенияПоПроектамОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyRaspredeleniyaPoProektams")]
-	[Route("/Catalogs/VidyRaspredeleniyaPoProektams/{Codes}")]
-	public class VidyRaspredeleniyaPoProektamsRequest/*ВидыРаспределенияПоПроектамЗапрос*/: IReturn<List<VidyRaspredeleniyaPoProektamRequest>>
+	public class ВидыРаспределенияПоПроектамСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyRaspredeleniyaPoProektamsRequest(params string[] Codes)
+		
+		public object Get(ВидыРаспределенияПоПроектамНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyRaspredeleniyaPoProektamsResponse//ВидыРаспределенияПоПроектамОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyRaspredeleniyaPoProektamService /*ВидыРаспределенияПоПроектамСервис*/ : Service
-	{
-		public object Any(VidyRaspredeleniyaPoProektamRequest request)
+		
+		public object Get(ВидыРаспределенияПоПроектамНайтиПоКоду Запрос)
 		{
-			return new VidyRaspredeleniyaPoProektamResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyRaspredeleniyaPoProektamRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыРаспределенияПоПроектам.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyRaspredeleniyaPoProektamResponse() {Result = "ВидыРаспределенияПоПроектам c кодом '" + request.Code+"' не найдено."};
+				return new ВидыРаспределенияПоПроектамОтвет() {Ответ = "ВидыРаспределенияПоПроектам c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyRaspredeleniyaPoProektamsRequest request)
+		
+		public object Get(ВидыРаспределенияПоПроектамНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыРаспределенияПоПроектам>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыРаспределенияПоПроектам.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыРаспределенияПоПроектамВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыРаспределенияПоПроектамВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыРаспределенияПоПроектамВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыРаспределенияПоПроектамЗапрос Запрос)
+		{
+			return new ВидыРаспределенияПоПроектамОтвет {Ответ = "ВидыРаспределенияПоПроектам, "};
+		}
+
+		public object Post(ВидыРаспределенияПоПроектамЗапрос ЗапросВидыРаспределенияПоПроектам)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыРаспределенияПоПроектам)ЗапросВидыРаспределенияПоПроектам;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

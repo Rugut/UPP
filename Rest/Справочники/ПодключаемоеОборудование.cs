@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PodklyuchaemoeOborudovanie")]
-	[Route("/Catalogs/PodklyuchaemoeOborudovanie/FindById/{Id}")]
-	[Route("/Catalogs/PodklyuchaemoeOborudovanie/FindByCode/{Code}")]
-	[Route("/Catalogs/PodklyuchaemoeOborudovanie/FindByDescr/{Descr}")]
-	public class PodklyuchaemoeOborudovanieRequest/*ПодключаемоеОборудованиеЗапрос*/: V82.СправочникиСсылка.ПодключаемоеОборудование,IReturn<PodklyuchaemoeOborudovanieRequest>
+	//PodklyuchaemoeOborudovanie
+	[Маршрут("Справочники/ПодключаемоеОборудование","")]
+	public class ПодключаемоеОборудованиеЗапрос: V82.СправочникиСсылка.ПодключаемоеОборудование,IReturn<ПодключаемоеОборудованиеЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПодключаемоеОборудование/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПодключаемоеОборудование/ПоСсылке","{Ссылка}")]
+	public class ПодключаемоеОборудованиеНайтиПоСсылке: V82.СправочникиСсылка.ПодключаемоеОборудование,IReturn<ПодключаемоеОборудованиеНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПодключаемоеОборудование/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПодключаемоеОборудование/ПоНаименованию","{Наименование}")]
+	public class ПодключаемоеОборудованиеНайтиПоНаименованию: V82.СправочникиСсылка.ПодключаемоеОборудование,IReturn<ПодключаемоеОборудованиеНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПодключаемоеОборудование/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПодключаемоеОборудованиеВыбратьПоСсылке: V82.СправочникиСсылка.ПодключаемоеОборудование,IReturn<ПодключаемоеОборудованиеВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПодключаемоеОборудование/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПодключаемоеОборудованиеВыбратьПоНаименованию: V82.СправочникиСсылка.ПодключаемоеОборудование,IReturn<ПодключаемоеОборудованиеВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PodklyuchaemoeOborudovanieResponse//ПодключаемоеОборудованиеОтвет
+	public class ПодключаемоеОборудованиеОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PodklyuchaemoeOborudovanies")]
-	[Route("/Catalogs/PodklyuchaemoeOborudovanies/{Codes}")]
-	public class PodklyuchaemoeOborudovaniesRequest/*ПодключаемоеОборудованиеЗапрос*/: IReturn<List<PodklyuchaemoeOborudovanieRequest>>
+	public class ПодключаемоеОборудованиеСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PodklyuchaemoeOborudovaniesRequest(params string[] Codes)
+		
+		public object Get(ПодключаемоеОборудованиеНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PodklyuchaemoeOborudovaniesResponse//ПодключаемоеОборудованиеОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PodklyuchaemoeOborudovanieService /*ПодключаемоеОборудованиеСервис*/ : Service
-	{
-		public object Any(PodklyuchaemoeOborudovanieRequest request)
+		
+		public object Get(ПодключаемоеОборудованиеНайтиПоНаименованию Запрос)
 		{
-			return new PodklyuchaemoeOborudovanieResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(PodklyuchaemoeOborudovanieRequest request)
+		
+		public object Get(ПодключаемоеОборудованиеВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПодключаемоеОборудованиеВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(PodklyuchaemoeOborudovaniesRequest request)
+		public object Any(ПодключаемоеОборудованиеЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПодключаемоеОборудование>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ПодключаемоеОборудованиеОтвет {Ответ = "ПодключаемоеОборудование, "};
 		}
+
+		public object Post(ПодключаемоеОборудованиеЗапрос ЗапросПодключаемоеОборудование)
+		{
+			var Ссылка = (СправочникиСсылка.ПодключаемоеОборудование)ЗапросПодключаемоеОборудование;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/FinansovyeRaschety")]
-	[Route("/Catalogs/FinansovyeRaschety/FindById/{Id}")]
-	[Route("/Catalogs/FinansovyeRaschety/FindByCode/{Code}")]
-	[Route("/Catalogs/FinansovyeRaschety/FindByDescr/{Descr}")]
-	public class FinansovyeRaschetyRequest/*ФинансовыеРасчетыЗапрос*/: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<FinansovyeRaschetyRequest>
+	//FinansovyeRaschety
+	[Маршрут("Справочники/ФинансовыеРасчеты","")]
+	public class ФинансовыеРасчетыЗапрос: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<ФинансовыеРасчетыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ФинансовыеРасчеты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ФинансовыеРасчеты/ПоСсылке","{Ссылка}")]
+	public class ФинансовыеРасчетыНайтиПоСсылке: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<ФинансовыеРасчетыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ФинансовыеРасчеты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ФинансовыеРасчеты/ПоКоду","{Код}")]
+	public class ФинансовыеРасчетыНайтиПоКоду: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<ФинансовыеРасчетыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ФинансовыеРасчеты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ФинансовыеРасчеты/ПоНаименованию","{Наименование}")]
+	public class ФинансовыеРасчетыНайтиПоНаименованию: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<ФинансовыеРасчетыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ФинансовыеРасчеты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФинансовыеРасчетыВыбратьПоСсылке: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<ФинансовыеРасчетыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФинансовыеРасчеты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФинансовыеРасчетыВыбратьПоКоду: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<ФинансовыеРасчетыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФинансовыеРасчеты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФинансовыеРасчетыВыбратьПоНаименованию: V82.СправочникиСсылка.ФинансовыеРасчеты,IReturn<ФинансовыеРасчетыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class FinansovyeRaschetyResponse//ФинансовыеРасчетыОтвет
+	public class ФинансовыеРасчетыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/FinansovyeRaschetys")]
-	[Route("/Catalogs/FinansovyeRaschetys/{Codes}")]
-	public class FinansovyeRaschetysRequest/*ФинансовыеРасчетыЗапрос*/: IReturn<List<FinansovyeRaschetyRequest>>
+	public class ФинансовыеРасчетыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public FinansovyeRaschetysRequest(params string[] Codes)
+		
+		public object Get(ФинансовыеРасчетыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class FinansovyeRaschetysResponse//ФинансовыеРасчетыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class FinansovyeRaschetyService /*ФинансовыеРасчетыСервис*/ : Service
-	{
-		public object Any(FinansovyeRaschetyRequest request)
+		
+		public object Get(ФинансовыеРасчетыНайтиПоКоду Запрос)
 		{
-			return new FinansovyeRaschetyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(FinansovyeRaschetyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ФинансовыеРасчеты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new FinansovyeRaschetyResponse() {Result = "ФинансовыеРасчеты c кодом '" + request.Code+"' не найдено."};
+				return new ФинансовыеРасчетыОтвет() {Ответ = "ФинансовыеРасчеты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(FinansovyeRaschetysRequest request)
+		
+		public object Get(ФинансовыеРасчетыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ФинансовыеРасчеты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ФинансовыеРасчеты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ФинансовыеРасчетыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФинансовыеРасчетыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФинансовыеРасчетыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ФинансовыеРасчетыЗапрос Запрос)
+		{
+			return new ФинансовыеРасчетыОтвет {Ответ = "ФинансовыеРасчеты, "};
+		}
+
+		public object Post(ФинансовыеРасчетыЗапрос ЗапросФинансовыеРасчеты)
+		{
+			var Ссылка = (СправочникиСсылка.ФинансовыеРасчеты)ЗапросФинансовыеРасчеты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,87 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NomeraGTD")]
-	[Route("/Catalogs/NomeraGTD/FindById/{Id}")]
-	[Route("/Catalogs/NomeraGTD/FindByCode/{Code}")]
-	[Route("/Catalogs/NomeraGTD/FindByDescr/{Descr}")]
-	public class NomeraGTDRequest/*НомераГТДЗапрос*/: V82.СправочникиСсылка.НомераГТД,IReturn<NomeraGTDRequest>
+	//NomeraGTD
+	[Маршрут("Справочники/НомераГТД","")]
+	public class НомераГТДЗапрос: V82.СправочникиСсылка.НомераГТД,IReturn<НомераГТДЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НомераГТД/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НомераГТД/ПоСсылке","{Ссылка}")]
+	public class НомераГТДНайтиПоСсылке: V82.СправочникиСсылка.НомераГТД,IReturn<НомераГТДНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НомераГТД/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НомераГТД/ПоКоду","{Код}")]
+	public class НомераГТДНайтиПоКоду: V82.СправочникиСсылка.НомераГТД,IReturn<НомераГТДНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НомераГТД/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НомераГТДВыбратьПоСсылке: V82.СправочникиСсылка.НомераГТД,IReturn<НомераГТДВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НомераГТД/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НомераГТДВыбратьПоКоду: V82.СправочникиСсылка.НомераГТД,IReturn<НомераГТДВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NomeraGTDResponse//НомераГТДОтвет
+	public class НомераГТДОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NomeraGTDs")]
-	[Route("/Catalogs/NomeraGTDs/{Codes}")]
-	public class NomeraGTDsRequest/*НомераГТДЗапрос*/: IReturn<List<NomeraGTDRequest>>
+	public class НомераГТДСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NomeraGTDsRequest(params string[] Codes)
+		
+		public object Get(НомераГТДНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NomeraGTDsResponse//НомераГТДОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NomeraGTDService /*НомераГТДСервис*/ : Service
-	{
-		public object Any(NomeraGTDRequest request)
+		
+		public object Get(НомераГТДНайтиПоКоду Запрос)
 		{
-			return new NomeraGTDResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NomeraGTDRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НомераГТД.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NomeraGTDResponse() {Result = "НомераГТД c кодом '" + request.Code+"' не найдено."};
+				return new НомераГТДОтвет() {Ответ = "НомераГТД c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NomeraGTDsRequest request)
+		
+		public object Get(НомераГТДВыбратьПоСсылке Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НомераГТД>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НомераГТД.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НомераГТДВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НомераГТДЗапрос Запрос)
+		{
+			return new НомераГТДОтвет {Ответ = "НомераГТД, "};
+		}
+
+		public object Post(НомераГТДЗапрос ЗапросНомераГТД)
+		{
+			var Ссылка = (СправочникиСсылка.НомераГТД)ЗапросНомераГТД;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

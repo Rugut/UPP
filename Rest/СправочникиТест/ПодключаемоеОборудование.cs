@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПодключаемоеОборудование:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПодключаемоеОборудованиеЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PodklyuchaemoeOborudovanie/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПодключаемоеОборудование/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PodklyuchaemoeOborudovanieRequest());
+			ПодключаемоеОборудованиеЗапрос ПодключаемоеОборудованиеЗапрос = null;
+			try
+			{
+				ПодключаемоеОборудованиеЗапрос = Клиент.Get(new ПодключаемоеОборудованиеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПодключаемоеОборудованиеЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПодключаемоеОборудованиеЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PodklyuchaemoeOborudovanie/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПодключаемоеОборудование/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PodklyuchaemoeOborudovanieRequest());
+			ПодключаемоеОборудованиеЗапрос ПодключаемоеОборудованиеЗапрос = null;
+			try
+			{
+				ПодключаемоеОборудованиеЗапрос = Клиент.Get(new ПодключаемоеОборудованиеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПодключаемоеОборудованиеЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ПодключаемоеОборудованиеЗапрос ПодключаемоеОборудованиеЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PodklyuchaemoeOborudovanie/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПодключаемоеОборудование?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PodklyuchaemoeOborudovanieRequest());
+			var ПодключаемоеОборудованиеОтвет = Клиент.Post(ПодключаемоеОборудованиеЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ПодключаемоеОборудованиеЗапрос ПодключаемоеОборудованиеЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PodklyuchaemoeOborudovanie/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПодключаемоеОборудование?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PodklyuchaemoeOborudovanieRequest());
+			var ПодключаемоеОборудованиеОтвет = Клиент.Put(ПодключаемоеОборудованиеЗапрос);
+		}
+		public static void Удалить(ПодключаемоеОборудованиеЗапрос ПодключаемоеОборудованиеЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПодключаемоеОборудование?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПодключаемоеОборудованиеОтвет = Клиент.Delete(ПодключаемоеОборудованиеЗапрос);
 		}
 	}
 }

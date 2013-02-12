@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТерриториальныеУсловия:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТерриториальныеУсловияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TerritorialnyeUsloviya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТерриториальныеУсловия/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TerritorialnyeUsloviyaRequest());
+			ТерриториальныеУсловияЗапрос ТерриториальныеУсловияЗапрос = null;
+			try
+			{
+				ТерриториальныеУсловияЗапрос = Клиент.Get(new ТерриториальныеУсловияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТерриториальныеУсловияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТерриториальныеУсловияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TerritorialnyeUsloviya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТерриториальныеУсловия/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TerritorialnyeUsloviyaRequest());
+			ТерриториальныеУсловияЗапрос ТерриториальныеУсловияЗапрос = null;
+			try
+			{
+				ТерриториальныеУсловияЗапрос = Клиент.Get(new ТерриториальныеУсловияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТерриториальныеУсловияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТерриториальныеУсловияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TerritorialnyeUsloviya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТерриториальныеУсловия/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TerritorialnyeUsloviyaRequest());
+			ТерриториальныеУсловияЗапрос ТерриториальныеУсловияЗапрос = null;
+			try
+			{
+				ТерриториальныеУсловияЗапрос = Клиент.Get(new ТерриториальныеУсловияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТерриториальныеУсловияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТерриториальныеУсловияЗапрос ТерриториальныеУсловияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TerritorialnyeUsloviya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТерриториальныеУсловия?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TerritorialnyeUsloviyaRequest());
+			var ТерриториальныеУсловияОтвет = Клиент.Post(ТерриториальныеУсловияЗапрос);
+		}
+		public static void Записать(ТерриториальныеУсловияЗапрос ТерриториальныеУсловияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТерриториальныеУсловия?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТерриториальныеУсловияОтвет = Клиент.Put(ТерриториальныеУсловияЗапрос);
+		}
+		public static void Удалить(ТерриториальныеУсловияЗапрос ТерриториальныеУсловияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТерриториальныеУсловия?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТерриториальныеУсловияОтвет = Клиент.Delete(ТерриториальныеУсловияЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkaIntervalov")]
-	[Route("/Catalogs/NastrojjkaIntervalov/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkaIntervalov/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkaIntervalov/FindByDescr/{Descr}")]
-	public class NastrojjkaIntervalovRequest/*НастройкаИнтерваловЗапрос*/: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<NastrojjkaIntervalovRequest>
+	//NastrojjkaIntervalov
+	[Маршрут("Справочники/НастройкаИнтервалов","")]
+	public class НастройкаИнтерваловЗапрос: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<НастройкаИнтерваловЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкаИнтервалов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкаИнтервалов/ПоСсылке","{Ссылка}")]
+	public class НастройкаИнтерваловНайтиПоСсылке: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<НастройкаИнтерваловНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкаИнтервалов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкаИнтервалов/ПоНаименованию","{Наименование}")]
+	public class НастройкаИнтерваловНайтиПоНаименованию: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<НастройкаИнтерваловНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкаИнтервалов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкаИнтерваловВыбратьПоСсылке: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<НастройкаИнтерваловВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкаИнтервалов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкаИнтерваловВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкаИнтервалов,IReturn<НастройкаИнтерваловВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkaIntervalovResponse//НастройкаИнтерваловОтвет
+	public class НастройкаИнтерваловОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkaIntervalovs")]
-	[Route("/Catalogs/NastrojjkaIntervalovs/{Codes}")]
-	public class NastrojjkaIntervalovsRequest/*НастройкаИнтерваловЗапрос*/: IReturn<List<NastrojjkaIntervalovRequest>>
+	public class НастройкаИнтерваловСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkaIntervalovsRequest(params string[] Codes)
+		
+		public object Get(НастройкаИнтерваловНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkaIntervalovsResponse//НастройкаИнтерваловОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkaIntervalovService /*НастройкаИнтерваловСервис*/ : Service
-	{
-		public object Any(NastrojjkaIntervalovRequest request)
+		
+		public object Get(НастройкаИнтерваловНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkaIntervalovResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkaIntervalovRequest request)
+		
+		public object Get(НастройкаИнтерваловВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкаИнтерваловВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkaIntervalovsRequest request)
+		public object Any(НастройкаИнтерваловЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкаИнтервалов>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкаИнтерваловОтвет {Ответ = "НастройкаИнтервалов, "};
 		}
+
+		public object Post(НастройкаИнтерваловЗапрос ЗапросНастройкаИнтервалов)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкаИнтервалов)ЗапросНастройкаИнтервалов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

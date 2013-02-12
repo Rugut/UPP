@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/InformacionnyeKarty")]
-	[Route("/Catalogs/InformacionnyeKarty/FindById/{Id}")]
-	[Route("/Catalogs/InformacionnyeKarty/FindByCode/{Code}")]
-	[Route("/Catalogs/InformacionnyeKarty/FindByDescr/{Descr}")]
-	public class InformacionnyeKartyRequest/*ИнформационныеКартыЗапрос*/: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<InformacionnyeKartyRequest>
+	//InformacionnyeKarty
+	[Маршрут("Справочники/ИнформационныеКарты","")]
+	public class ИнформационныеКартыЗапрос: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<ИнформационныеКартыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ИнформационныеКарты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ИнформационныеКарты/ПоСсылке","{Ссылка}")]
+	public class ИнформационныеКартыНайтиПоСсылке: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<ИнформационныеКартыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ИнформационныеКарты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ИнформационныеКарты/ПоКоду","{Код}")]
+	public class ИнформационныеКартыНайтиПоКоду: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<ИнформационныеКартыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ИнформационныеКарты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ИнформационныеКарты/ПоНаименованию","{Наименование}")]
+	public class ИнформационныеКартыНайтиПоНаименованию: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<ИнформационныеКартыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ИнформационныеКарты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИнформационныеКартыВыбратьПоСсылке: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<ИнформационныеКартыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИнформационныеКарты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИнформационныеКартыВыбратьПоКоду: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<ИнформационныеКартыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИнформационныеКарты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИнформационныеКартыВыбратьПоНаименованию: V82.СправочникиСсылка.ИнформационныеКарты,IReturn<ИнформационныеКартыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class InformacionnyeKartyResponse//ИнформационныеКартыОтвет
+	public class ИнформационныеКартыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/InformacionnyeKartys")]
-	[Route("/Catalogs/InformacionnyeKartys/{Codes}")]
-	public class InformacionnyeKartysRequest/*ИнформационныеКартыЗапрос*/: IReturn<List<InformacionnyeKartyRequest>>
+	public class ИнформационныеКартыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public InformacionnyeKartysRequest(params string[] Codes)
+		
+		public object Get(ИнформационныеКартыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class InformacionnyeKartysResponse//ИнформационныеКартыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class InformacionnyeKartyService /*ИнформационныеКартыСервис*/ : Service
-	{
-		public object Any(InformacionnyeKartyRequest request)
+		
+		public object Get(ИнформационныеКартыНайтиПоКоду Запрос)
 		{
-			return new InformacionnyeKartyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(InformacionnyeKartyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ИнформационныеКарты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new InformacionnyeKartyResponse() {Result = "ИнформационныеКарты c кодом '" + request.Code+"' не найдено."};
+				return new ИнформационныеКартыОтвет() {Ответ = "ИнформационныеКарты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(InformacionnyeKartysRequest request)
+		
+		public object Get(ИнформационныеКартыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ИнформационныеКарты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ИнформационныеКарты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ИнформационныеКартыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИнформационныеКартыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИнформационныеКартыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ИнформационныеКартыЗапрос Запрос)
+		{
+			return new ИнформационныеКартыОтвет {Ответ = "ИнформационныеКарты, "};
+		}
+
+		public object Post(ИнформационныеКартыЗапрос ЗапросИнформационныеКарты)
+		{
+			var Ссылка = (СправочникиСсылка.ИнформационныеКарты)ЗапросИнформационныеКарты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

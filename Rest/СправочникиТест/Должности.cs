@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Должности:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДолжностиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Dolzhnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Должности/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DolzhnostiRequest());
+			ДолжностиЗапрос ДолжностиЗапрос = null;
+			try
+			{
+				ДолжностиЗапрос = Клиент.Get(new ДолжностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДолжностиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДолжностиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Dolzhnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Должности/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DolzhnostiRequest());
+			ДолжностиЗапрос ДолжностиЗапрос = null;
+			try
+			{
+				ДолжностиЗапрос = Клиент.Get(new ДолжностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДолжностиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДолжностиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Dolzhnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Должности/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DolzhnostiRequest());
+			ДолжностиЗапрос ДолжностиЗапрос = null;
+			try
+			{
+				ДолжностиЗапрос = Клиент.Get(new ДолжностиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДолжностиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДолжностиЗапрос ДолжностиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Dolzhnosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Должности?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DolzhnostiRequest());
+			var ДолжностиОтвет = Клиент.Post(ДолжностиЗапрос);
+		}
+		public static void Записать(ДолжностиЗапрос ДолжностиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Должности?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДолжностиОтвет = Клиент.Put(ДолжностиЗапрос);
+		}
+		public static void Удалить(ДолжностиЗапрос ДолжностиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Должности?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДолжностиОтвет = Клиент.Delete(ДолжностиЗапрос);
 		}
 	}
 }

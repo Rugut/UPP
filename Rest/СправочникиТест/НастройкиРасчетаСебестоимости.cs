@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиРасчетаСебестоимости:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиРасчетаСебестоимостиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaSebestoimosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаСебестоимости/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiRaschetaSebestoimostiRequest());
+			НастройкиРасчетаСебестоимостиЗапрос НастройкиРасчетаСебестоимостиЗапрос = null;
+			try
+			{
+				НастройкиРасчетаСебестоимостиЗапрос = Клиент.Get(new НастройкиРасчетаСебестоимостиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиРасчетаСебестоимостиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиРасчетаСебестоимостиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaSebestoimosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаСебестоимости/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiRaschetaSebestoimostiRequest());
+			НастройкиРасчетаСебестоимостиЗапрос НастройкиРасчетаСебестоимостиЗапрос = null;
+			try
+			{
+				НастройкиРасчетаСебестоимостиЗапрос = Клиент.Get(new НастройкиРасчетаСебестоимостиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиРасчетаСебестоимостиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкиРасчетаСебестоимостиЗапрос НастройкиРасчетаСебестоимостиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaSebestoimosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаСебестоимости?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiRaschetaSebestoimostiRequest());
+			var НастройкиРасчетаСебестоимостиОтвет = Клиент.Post(НастройкиРасчетаСебестоимостиЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкиРасчетаСебестоимостиЗапрос НастройкиРасчетаСебестоимостиЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaSebestoimosti/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаСебестоимости?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiRaschetaSebestoimostiRequest());
+			var НастройкиРасчетаСебестоимостиОтвет = Клиент.Put(НастройкиРасчетаСебестоимостиЗапрос);
+		}
+		public static void Удалить(НастройкиРасчетаСебестоимостиЗапрос НастройкиРасчетаСебестоимостиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаСебестоимости?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиРасчетаСебестоимостиОтвет = Клиент.Delete(НастройкиРасчетаСебестоимостиЗапрос);
 		}
 	}
 }

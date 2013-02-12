@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DolzhnostiOrganizacijj")]
-	[Route("/Catalogs/DolzhnostiOrganizacijj/FindById/{Id}")]
-	[Route("/Catalogs/DolzhnostiOrganizacijj/FindByCode/{Code}")]
-	[Route("/Catalogs/DolzhnostiOrganizacijj/FindByDescr/{Descr}")]
-	public class DolzhnostiOrganizacijjRequest/*ДолжностиОрганизацийЗапрос*/: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<DolzhnostiOrganizacijjRequest>
+	//DolzhnostiOrganizacijj
+	[Маршрут("Справочники/ДолжностиОрганизаций","")]
+	public class ДолжностиОрганизацийЗапрос: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<ДолжностиОрганизацийЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДолжностиОрганизаций/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДолжностиОрганизаций/ПоСсылке","{Ссылка}")]
+	public class ДолжностиОрганизацийНайтиПоСсылке: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<ДолжностиОрганизацийНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДолжностиОрганизаций/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДолжностиОрганизаций/ПоКоду","{Код}")]
+	public class ДолжностиОрганизацийНайтиПоКоду: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<ДолжностиОрганизацийНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДолжностиОрганизаций/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДолжностиОрганизаций/ПоНаименованию","{Наименование}")]
+	public class ДолжностиОрганизацийНайтиПоНаименованию: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<ДолжностиОрганизацийНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДолжностиОрганизацийВыбратьПоСсылке: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<ДолжностиОрганизацийВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДолжностиОрганизаций/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДолжностиОрганизацийВыбратьПоКоду: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<ДолжностиОрганизацийВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДолжностиОрганизаций/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДолжностиОрганизацийВыбратьПоНаименованию: V82.СправочникиСсылка.ДолжностиОрганизаций,IReturn<ДолжностиОрганизацийВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DolzhnostiOrganizacijjResponse//ДолжностиОрганизацийОтвет
+	public class ДолжностиОрганизацийОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DolzhnostiOrganizacijjs")]
-	[Route("/Catalogs/DolzhnostiOrganizacijjs/{Codes}")]
-	public class DolzhnostiOrganizacijjsRequest/*ДолжностиОрганизацийЗапрос*/: IReturn<List<DolzhnostiOrganizacijjRequest>>
+	public class ДолжностиОрганизацийСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DolzhnostiOrganizacijjsRequest(params string[] Codes)
+		
+		public object Get(ДолжностиОрганизацийНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DolzhnostiOrganizacijjsResponse//ДолжностиОрганизацийОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DolzhnostiOrganizacijjService /*ДолжностиОрганизацийСервис*/ : Service
-	{
-		public object Any(DolzhnostiOrganizacijjRequest request)
+		
+		public object Get(ДолжностиОрганизацийНайтиПоКоду Запрос)
 		{
-			return new DolzhnostiOrganizacijjResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DolzhnostiOrganizacijjRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДолжностиОрганизаций.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DolzhnostiOrganizacijjResponse() {Result = "ДолжностиОрганизаций c кодом '" + request.Code+"' не найдено."};
+				return new ДолжностиОрганизацийОтвет() {Ответ = "ДолжностиОрганизаций c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DolzhnostiOrganizacijjsRequest request)
+		
+		public object Get(ДолжностиОрганизацийНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДолжностиОрганизаций>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДолжностиОрганизаций.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДолжностиОрганизацийВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДолжностиОрганизацийВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДолжностиОрганизацийВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДолжностиОрганизацийЗапрос Запрос)
+		{
+			return new ДолжностиОрганизацийОтвет {Ответ = "ДолжностиОрганизаций, "};
+		}
+
+		public object Post(ДолжностиОрганизацийЗапрос ЗапросДолжностиОрганизаций)
+		{
+			var Ссылка = (СправочникиСсылка.ДолжностиОрганизаций)ЗапросДолжностиОрганизаций;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

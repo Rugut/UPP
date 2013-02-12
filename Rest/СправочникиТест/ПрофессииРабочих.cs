@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрофессииРабочих:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрофессииРабочихЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfessiiRabochikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофессииРабочих/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProfessiiRabochikhRequest());
+			ПрофессииРабочихЗапрос ПрофессииРабочихЗапрос = null;
+			try
+			{
+				ПрофессииРабочихЗапрос = Клиент.Get(new ПрофессииРабочихЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофессииРабочихЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрофессииРабочихЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfessiiRabochikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофессииРабочих/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProfessiiRabochikhRequest());
+			ПрофессииРабочихЗапрос ПрофессииРабочихЗапрос = null;
+			try
+			{
+				ПрофессииРабочихЗапрос = Клиент.Get(new ПрофессииРабочихЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофессииРабочихЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПрофессииРабочихЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfessiiRabochikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофессииРабочих/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProfessiiRabochikhRequest());
+			ПрофессииРабочихЗапрос ПрофессииРабочихЗапрос = null;
+			try
+			{
+				ПрофессииРабочихЗапрос = Клиент.Get(new ПрофессииРабочихЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофессииРабочихЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПрофессииРабочихЗапрос ПрофессииРабочихЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfessiiRabochikh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофессииРабочих?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProfessiiRabochikhRequest());
+			var ПрофессииРабочихОтвет = Клиент.Post(ПрофессииРабочихЗапрос);
+		}
+		public static void Записать(ПрофессииРабочихЗапрос ПрофессииРабочихЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофессииРабочих?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофессииРабочихОтвет = Клиент.Put(ПрофессииРабочихЗапрос);
+		}
+		public static void Удалить(ПрофессииРабочихЗапрос ПрофессииРабочихЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофессииРабочих?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофессииРабочихОтвет = Клиент.Delete(ПрофессииРабочихЗапрос);
 		}
 	}
 }

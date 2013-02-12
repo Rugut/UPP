@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КлассификаторЕдиницИзмерения:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КлассификаторЕдиницИзмеренияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorEdinicIzmereniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторЕдиницИзмерения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KlassifikatorEdinicIzmereniyaRequest());
+			КлассификаторЕдиницИзмеренияЗапрос КлассификаторЕдиницИзмеренияЗапрос = null;
+			try
+			{
+				КлассификаторЕдиницИзмеренияЗапрос = Клиент.Get(new КлассификаторЕдиницИзмеренияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторЕдиницИзмеренияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КлассификаторЕдиницИзмеренияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorEdinicIzmereniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторЕдиницИзмерения/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KlassifikatorEdinicIzmereniyaRequest());
+			КлассификаторЕдиницИзмеренияЗапрос КлассификаторЕдиницИзмеренияЗапрос = null;
+			try
+			{
+				КлассификаторЕдиницИзмеренияЗапрос = Клиент.Get(new КлассификаторЕдиницИзмеренияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторЕдиницИзмеренияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КлассификаторЕдиницИзмеренияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorEdinicIzmereniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторЕдиницИзмерения/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KlassifikatorEdinicIzmereniyaRequest());
+			КлассификаторЕдиницИзмеренияЗапрос КлассификаторЕдиницИзмеренияЗапрос = null;
+			try
+			{
+				КлассификаторЕдиницИзмеренияЗапрос = Клиент.Get(new КлассификаторЕдиницИзмеренияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторЕдиницИзмеренияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КлассификаторЕдиницИзмеренияЗапрос КлассификаторЕдиницИзмеренияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorEdinicIzmereniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторЕдиницИзмерения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KlassifikatorEdinicIzmereniyaRequest());
+			var КлассификаторЕдиницИзмеренияОтвет = Клиент.Post(КлассификаторЕдиницИзмеренияЗапрос);
+		}
+		public static void Записать(КлассификаторЕдиницИзмеренияЗапрос КлассификаторЕдиницИзмеренияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторЕдиницИзмерения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлассификаторЕдиницИзмеренияОтвет = Клиент.Put(КлассификаторЕдиницИзмеренияЗапрос);
+		}
+		public static void Удалить(КлассификаторЕдиницИзмеренияЗапрос КлассификаторЕдиницИзмеренияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторЕдиницИзмерения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлассификаторЕдиницИзмеренияОтвет = Клиент.Delete(КлассификаторЕдиницИзмеренияЗапрос);
 		}
 	}
 }

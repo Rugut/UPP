@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СценарииПланирования:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СценарииПланированияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ScenariiPlanirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СценарииПланирования/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ScenariiPlanirovaniyaRequest());
+			СценарииПланированияЗапрос СценарииПланированияЗапрос = null;
+			try
+			{
+				СценарииПланированияЗапрос = Клиент.Get(new СценарииПланированияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СценарииПланированияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СценарииПланированияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ScenariiPlanirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СценарииПланирования/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ScenariiPlanirovaniyaRequest());
+			СценарииПланированияЗапрос СценарииПланированияЗапрос = null;
+			try
+			{
+				СценарииПланированияЗапрос = Клиент.Get(new СценарииПланированияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СценарииПланированияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СценарииПланированияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ScenariiPlanirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СценарииПланирования/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ScenariiPlanirovaniyaRequest());
+			СценарииПланированияЗапрос СценарииПланированияЗапрос = null;
+			try
+			{
+				СценарииПланированияЗапрос = Клиент.Get(new СценарииПланированияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СценарииПланированияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СценарииПланированияЗапрос СценарииПланированияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ScenariiPlanirovaniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СценарииПланирования?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ScenariiPlanirovaniyaRequest());
+			var СценарииПланированияОтвет = Клиент.Post(СценарииПланированияЗапрос);
+		}
+		public static void Записать(СценарииПланированияЗапрос СценарииПланированияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СценарииПланирования?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СценарииПланированияОтвет = Клиент.Put(СценарииПланированияЗапрос);
+		}
+		public static void Удалить(СценарииПланированияЗапрос СценарииПланированияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СценарииПланирования?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СценарииПланированияОтвет = Клиент.Delete(СценарииПланированияЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NaznacheniyaSertifikatovEHCP")]
-	[Route("/Catalogs/NaznacheniyaSertifikatovEHCP/FindById/{Id}")]
-	[Route("/Catalogs/NaznacheniyaSertifikatovEHCP/FindByCode/{Code}")]
-	[Route("/Catalogs/NaznacheniyaSertifikatovEHCP/FindByDescr/{Descr}")]
-	public class NaznacheniyaSertifikatovEHCPRequest/*НазначенияСертификатовЭЦПЗапрос*/: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<NaznacheniyaSertifikatovEHCPRequest>
+	//NaznacheniyaSertifikatovEHCP
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП","")]
+	public class НазначенияСертификатовЭЦПЗапрос: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<НазначенияСертификатовЭЦПЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/ПоСсылке","{Ссылка}")]
+	public class НазначенияСертификатовЭЦПНайтиПоСсылке: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<НазначенияСертификатовЭЦПНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/ПоКоду","{Код}")]
+	public class НазначенияСертификатовЭЦПНайтиПоКоду: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<НазначенияСертификатовЭЦПНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/ПоНаименованию","{Наименование}")]
+	public class НазначенияСертификатовЭЦПНайтиПоНаименованию: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<НазначенияСертификатовЭЦПНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияСертификатовЭЦПВыбратьПоСсылке: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<НазначенияСертификатовЭЦПВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияСертификатовЭЦПВыбратьПоКоду: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<НазначенияСертификатовЭЦПВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НазначенияСертификатовЭЦП/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияСертификатовЭЦПВыбратьПоНаименованию: V82.СправочникиСсылка.НазначенияСертификатовЭЦП,IReturn<НазначенияСертификатовЭЦПВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NaznacheniyaSertifikatovEHCPResponse//НазначенияСертификатовЭЦПОтвет
+	public class НазначенияСертификатовЭЦПОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NaznacheniyaSertifikatovEHCPs")]
-	[Route("/Catalogs/NaznacheniyaSertifikatovEHCPs/{Codes}")]
-	public class NaznacheniyaSertifikatovEHCPsRequest/*НазначенияСертификатовЭЦПЗапрос*/: IReturn<List<NaznacheniyaSertifikatovEHCPRequest>>
+	public class НазначенияСертификатовЭЦПСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NaznacheniyaSertifikatovEHCPsRequest(params string[] Codes)
+		
+		public object Get(НазначенияСертификатовЭЦПНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NaznacheniyaSertifikatovEHCPsResponse//НазначенияСертификатовЭЦПОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NaznacheniyaSertifikatovEHCPService /*НазначенияСертификатовЭЦПСервис*/ : Service
-	{
-		public object Any(NaznacheniyaSertifikatovEHCPRequest request)
+		
+		public object Get(НазначенияСертификатовЭЦПНайтиПоКоду Запрос)
 		{
-			return new NaznacheniyaSertifikatovEHCPResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NaznacheniyaSertifikatovEHCPRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НазначенияСертификатовЭЦП.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NaznacheniyaSertifikatovEHCPResponse() {Result = "НазначенияСертификатовЭЦП c кодом '" + request.Code+"' не найдено."};
+				return new НазначенияСертификатовЭЦПОтвет() {Ответ = "НазначенияСертификатовЭЦП c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NaznacheniyaSertifikatovEHCPsRequest request)
+		
+		public object Get(НазначенияСертификатовЭЦПНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НазначенияСертификатовЭЦП>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НазначенияСертификатовЭЦП.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НазначенияСертификатовЭЦПВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НазначенияСертификатовЭЦПВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НазначенияСертификатовЭЦПВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НазначенияСертификатовЭЦПЗапрос Запрос)
+		{
+			return new НазначенияСертификатовЭЦПОтвет {Ответ = "НазначенияСертификатовЭЦП, "};
+		}
+
+		public object Post(НазначенияСертификатовЭЦПЗапрос ЗапросНазначенияСертификатовЭЦП)
+		{
+			var Ссылка = (СправочникиСсылка.НазначенияСертификатовЭЦП)ЗапросНазначенияСертификатовЭЦП;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

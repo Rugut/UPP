@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Качество:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КачествоЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kachestvo/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Качество/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KachestvoRequest());
+			КачествоЗапрос КачествоЗапрос = null;
+			try
+			{
+				КачествоЗапрос = Клиент.Get(new КачествоЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КачествоЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КачествоЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kachestvo/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Качество/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KachestvoRequest());
+			КачествоЗапрос КачествоЗапрос = null;
+			try
+			{
+				КачествоЗапрос = Клиент.Get(new КачествоЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КачествоЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КачествоЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kachestvo/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Качество/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KachestvoRequest());
+			КачествоЗапрос КачествоЗапрос = null;
+			try
+			{
+				КачествоЗапрос = Клиент.Get(new КачествоЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КачествоЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КачествоЗапрос КачествоЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kachestvo/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Качество?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KachestvoRequest());
+			var КачествоОтвет = Клиент.Post(КачествоЗапрос);
+		}
+		public static void Записать(КачествоЗапрос КачествоЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Качество?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КачествоОтвет = Клиент.Put(КачествоЗапрос);
+		}
+		public static void Удалить(КачествоЗапрос КачествоЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Качество?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КачествоОтвет = Клиент.Delete(КачествоЗапрос);
 		}
 	}
 }

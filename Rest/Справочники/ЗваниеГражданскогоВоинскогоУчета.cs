@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta")]
-	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/FindById/{Id}")]
-	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/FindByCode/{Code}")]
-	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUcheta/FindByDescr/{Descr}")]
-	public class ZvanieGrazhdanskogoVoinskogoUchetaRequest/*ЗваниеГражданскогоВоинскогоУчетаЗапрос*/: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ZvanieGrazhdanskogoVoinskogoUchetaRequest>
+	//ZvanieGrazhdanskogoVoinskogoUcheta
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета","")]
+	public class ЗваниеГражданскогоВоинскогоУчетаЗапрос: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ЗваниеГражданскогоВоинскогоУчетаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/ПоСсылке","{Ссылка}")]
+	public class ЗваниеГражданскогоВоинскогоУчетаНайтиПоСсылке: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ЗваниеГражданскогоВоинскогоУчетаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/ПоКоду","{Код}")]
+	public class ЗваниеГражданскогоВоинскогоУчетаНайтиПоКоду: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ЗваниеГражданскогоВоинскогоУчетаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/ПоНаименованию","{Наименование}")]
+	public class ЗваниеГражданскогоВоинскогоУчетаНайтиПоНаименованию: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ЗваниеГражданскогоВоинскогоУчетаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗваниеГражданскогоВоинскогоУчетаВыбратьПоСсылке: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ЗваниеГражданскогоВоинскогоУчетаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗваниеГражданскогоВоинскогоУчетаВыбратьПоКоду: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ЗваниеГражданскогоВоинскогоУчетаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗваниеГражданскогоВоинскогоУчета/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗваниеГражданскогоВоинскогоУчетаВыбратьПоНаименованию: V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета,IReturn<ЗваниеГражданскогоВоинскогоУчетаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ZvanieGrazhdanskogoVoinskogoUchetaResponse//ЗваниеГражданскогоВоинскогоУчетаОтвет
+	public class ЗваниеГражданскогоВоинскогоУчетаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUchetas")]
-	[Route("/Catalogs/ZvanieGrazhdanskogoVoinskogoUchetas/{Codes}")]
-	public class ZvanieGrazhdanskogoVoinskogoUchetasRequest/*ЗваниеГражданскогоВоинскогоУчетаЗапрос*/: IReturn<List<ZvanieGrazhdanskogoVoinskogoUchetaRequest>>
+	public class ЗваниеГражданскогоВоинскогоУчетаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ZvanieGrazhdanskogoVoinskogoUchetasRequest(params string[] Codes)
+		
+		public object Get(ЗваниеГражданскогоВоинскогоУчетаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ZvanieGrazhdanskogoVoinskogoUchetasResponse//ЗваниеГражданскогоВоинскогоУчетаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ZvanieGrazhdanskogoVoinskogoUchetaService /*ЗваниеГражданскогоВоинскогоУчетаСервис*/ : Service
-	{
-		public object Any(ZvanieGrazhdanskogoVoinskogoUchetaRequest request)
+		
+		public object Get(ЗваниеГражданскогоВоинскогоУчетаНайтиПоКоду Запрос)
 		{
-			return new ZvanieGrazhdanskogoVoinskogoUchetaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ZvanieGrazhdanskogoVoinskogoUchetaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЗваниеГражданскогоВоинскогоУчета.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ZvanieGrazhdanskogoVoinskogoUchetaResponse() {Result = "ЗваниеГражданскогоВоинскогоУчета c кодом '" + request.Code+"' не найдено."};
+				return new ЗваниеГражданскогоВоинскогоУчетаОтвет() {Ответ = "ЗваниеГражданскогоВоинскогоУчета c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ZvanieGrazhdanskogoVoinskogoUchetasRequest request)
+		
+		public object Get(ЗваниеГражданскогоВоинскогоУчетаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЗваниеГражданскогоВоинскогоУчета.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЗваниеГражданскогоВоинскогоУчетаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗваниеГражданскогоВоинскогоУчетаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗваниеГражданскогоВоинскогоУчетаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЗваниеГражданскогоВоинскогоУчетаЗапрос Запрос)
+		{
+			return new ЗваниеГражданскогоВоинскогоУчетаОтвет {Ответ = "ЗваниеГражданскогоВоинскогоУчета, "};
+		}
+
+		public object Post(ЗваниеГражданскогоВоинскогоУчетаЗапрос ЗапросЗваниеГражданскогоВоинскогоУчета)
+		{
+			var Ссылка = (СправочникиСсылка.ЗваниеГражданскогоВоинскогоУчета)ЗапросЗваниеГражданскогоВоинскогоУчета;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

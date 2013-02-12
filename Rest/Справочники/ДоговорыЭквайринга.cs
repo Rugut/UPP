@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DogovoryEHkvajjringa")]
-	[Route("/Catalogs/DogovoryEHkvajjringa/FindById/{Id}")]
-	[Route("/Catalogs/DogovoryEHkvajjringa/FindByCode/{Code}")]
-	[Route("/Catalogs/DogovoryEHkvajjringa/FindByDescr/{Descr}")]
-	public class DogovoryEHkvajjringaRequest/*ДоговорыЭквайрингаЗапрос*/: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<DogovoryEHkvajjringaRequest>
+	//DogovoryEHkvajjringa
+	[Маршрут("Справочники/ДоговорыЭквайринга","")]
+	public class ДоговорыЭквайрингаЗапрос: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<ДоговорыЭквайрингаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДоговорыЭквайринга/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДоговорыЭквайринга/ПоСсылке","{Ссылка}")]
+	public class ДоговорыЭквайрингаНайтиПоСсылке: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<ДоговорыЭквайрингаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДоговорыЭквайринга/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДоговорыЭквайринга/ПоКоду","{Код}")]
+	public class ДоговорыЭквайрингаНайтиПоКоду: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<ДоговорыЭквайрингаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДоговорыЭквайринга/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДоговорыЭквайринга/ПоНаименованию","{Наименование}")]
+	public class ДоговорыЭквайрингаНайтиПоНаименованию: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<ДоговорыЭквайрингаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДоговорыЭквайринга/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоговорыЭквайрингаВыбратьПоСсылке: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<ДоговорыЭквайрингаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоговорыЭквайринга/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоговорыЭквайрингаВыбратьПоКоду: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<ДоговорыЭквайрингаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоговорыЭквайринга/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоговорыЭквайрингаВыбратьПоНаименованию: V82.СправочникиСсылка.ДоговорыЭквайринга,IReturn<ДоговорыЭквайрингаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DogovoryEHkvajjringaResponse//ДоговорыЭквайрингаОтвет
+	public class ДоговорыЭквайрингаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DogovoryEHkvajjringas")]
-	[Route("/Catalogs/DogovoryEHkvajjringas/{Codes}")]
-	public class DogovoryEHkvajjringasRequest/*ДоговорыЭквайрингаЗапрос*/: IReturn<List<DogovoryEHkvajjringaRequest>>
+	public class ДоговорыЭквайрингаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DogovoryEHkvajjringasRequest(params string[] Codes)
+		
+		public object Get(ДоговорыЭквайрингаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DogovoryEHkvajjringasResponse//ДоговорыЭквайрингаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DogovoryEHkvajjringaService /*ДоговорыЭквайрингаСервис*/ : Service
-	{
-		public object Any(DogovoryEHkvajjringaRequest request)
+		
+		public object Get(ДоговорыЭквайрингаНайтиПоКоду Запрос)
 		{
-			return new DogovoryEHkvajjringaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DogovoryEHkvajjringaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДоговорыЭквайринга.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DogovoryEHkvajjringaResponse() {Result = "ДоговорыЭквайринга c кодом '" + request.Code+"' не найдено."};
+				return new ДоговорыЭквайрингаОтвет() {Ответ = "ДоговорыЭквайринга c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DogovoryEHkvajjringasRequest request)
+		
+		public object Get(ДоговорыЭквайрингаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоговорыЭквайринга>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДоговорыЭквайринга.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДоговорыЭквайрингаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоговорыЭквайрингаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоговорыЭквайрингаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДоговорыЭквайрингаЗапрос Запрос)
+		{
+			return new ДоговорыЭквайрингаОтвет {Ответ = "ДоговорыЭквайринга, "};
+		}
+
+		public object Post(ДоговорыЭквайрингаЗапрос ЗапросДоговорыЭквайринга)
+		{
+			var Ссылка = (СправочникиСсылка.ДоговорыЭквайринга)ЗапросДоговорыЭквайринга;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

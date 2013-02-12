@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,81 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/AdresnyeSokrashheniya")]
-	[Route("/Catalogs/AdresnyeSokrashheniya/FindById/{Id}")]
-	[Route("/Catalogs/AdresnyeSokrashheniya/FindByCode/{Code}")]
-	[Route("/Catalogs/AdresnyeSokrashheniya/FindByDescr/{Descr}")]
-	public class AdresnyeSokrashheniyaRequest/*АдресныеСокращенияЗапрос*/: V82.СправочникиСсылка.АдресныеСокращения,IReturn<AdresnyeSokrashheniyaRequest>
+	//AdresnyeSokrashheniya
+	[Маршрут("Справочники/АдресныеСокращения","")]
+	public class АдресныеСокращенияЗапрос: V82.СправочникиСсылка.АдресныеСокращения,IReturn<АдресныеСокращенияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/АдресныеСокращения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/АдресныеСокращения/ПоСсылке","{Ссылка}")]
+	public class АдресныеСокращенияНайтиПоСсылке: V82.СправочникиСсылка.АдресныеСокращения,IReturn<АдресныеСокращенияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/АдресныеСокращения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/АдресныеСокращения/ПоКоду","{Код}")]
+	public class АдресныеСокращенияНайтиПоКоду: V82.СправочникиСсылка.АдресныеСокращения,IReturn<АдресныеСокращенияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/АдресныеСокращения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/АдресныеСокращения/ПоНаименованию","{Наименование}")]
+	public class АдресныеСокращенияНайтиПоНаименованию: V82.СправочникиСсылка.АдресныеСокращения,IReturn<АдресныеСокращенияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/АдресныеСокращения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class АдресныеСокращенияВыбратьПоСсылке: V82.СправочникиСсылка.АдресныеСокращения,IReturn<АдресныеСокращенияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/АдресныеСокращения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class АдресныеСокращенияВыбратьПоКоду: V82.СправочникиСсылка.АдресныеСокращения,IReturn<АдресныеСокращенияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public decimal ___Мин {get; set;}
+		public decimal ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/АдресныеСокращения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class АдресныеСокращенияВыбратьПоНаименованию: V82.СправочникиСсылка.АдресныеСокращения,IReturn<АдресныеСокращенияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class AdresnyeSokrashheniyaResponse//АдресныеСокращенияОтвет
+	public class АдресныеСокращенияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/AdresnyeSokrashheniyas")]
-	[Route("/Catalogs/AdresnyeSokrashheniyas/{Codes}")]
-	public class AdresnyeSokrashheniyasRequest/*АдресныеСокращенияЗапрос*/: IReturn<List<AdresnyeSokrashheniyaRequest>>
+	public class АдресныеСокращенияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public AdresnyeSokrashheniyasRequest(params string[] Codes)
+		
+		public object Get(АдресныеСокращенияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class AdresnyeSokrashheniyasResponse//АдресныеСокращенияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class AdresnyeSokrashheniyaService /*АдресныеСокращенияСервис*/ : Service
-	{
-		public object Any(AdresnyeSokrashheniyaRequest request)
+		
+		public object Get(АдресныеСокращенияНайтиПоКоду Запрос)
 		{
-			return new AdresnyeSokrashheniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(AdresnyeSokrashheniyaRequest request)
-		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			if(Запрос.Код == null)
 			{
-				return new AdresnyeSokrashheniyaResponse() {Result = "АдресныеСокращения c кодом '" + request.Code+"' не найдено."};
+				return null;
 			}
+			decimal СтрокаКод = Запрос.Код;
 			var Ссылка = V82.Справочники.АдресныеСокращения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new AdresnyeSokrashheniyaResponse() {Result = "АдресныеСокращения c кодом '" + request.Code+"' не найдено."};
+				return new АдресныеСокращенияОтвет() {Ответ = "АдресныеСокращения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(AdresnyeSokrashheniyasRequest request)
+		
+		public object Get(АдресныеСокращенияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.АдресныеСокращения>();
-			foreach (var Code in request.Codes)
-			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
-				{
-				continue;//ToDo: Регестрация ошибки.
-				}
-				var Ссылка = V82.Справочники.АдресныеСокращения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(АдресныеСокращенияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(АдресныеСокращенияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(АдресныеСокращенияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(АдресныеСокращенияЗапрос Запрос)
+		{
+			return new АдресныеСокращенияОтвет {Ответ = "АдресныеСокращения, "};
+		}
+
+		public object Post(АдресныеСокращенияЗапрос ЗапросАдресныеСокращения)
+		{
+			var Ссылка = (СправочникиСсылка.АдресныеСокращения)ЗапросАдресныеСокращения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

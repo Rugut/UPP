@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PrichinyOtsutstviyaNaRabote")]
-	[Route("/Catalogs/PrichinyOtsutstviyaNaRabote/FindById/{Id}")]
-	[Route("/Catalogs/PrichinyOtsutstviyaNaRabote/FindByCode/{Code}")]
-	[Route("/Catalogs/PrichinyOtsutstviyaNaRabote/FindByDescr/{Descr}")]
-	public class PrichinyOtsutstviyaNaRaboteRequest/*ПричиныОтсутствияНаРаботеЗапрос*/: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<PrichinyOtsutstviyaNaRaboteRequest>
+	//PrichinyOtsutstviyaNaRabote
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе","")]
+	public class ПричиныОтсутствияНаРаботеЗапрос: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<ПричиныОтсутствияНаРаботеЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/ПоСсылке","{Ссылка}")]
+	public class ПричиныОтсутствияНаРаботеНайтиПоСсылке: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<ПричиныОтсутствияНаРаботеНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/ПоКоду","{Код}")]
+	public class ПричиныОтсутствияНаРаботеНайтиПоКоду: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<ПричиныОтсутствияНаРаботеНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/ПоНаименованию","{Наименование}")]
+	public class ПричиныОтсутствияНаРаботеНайтиПоНаименованию: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<ПричиныОтсутствияНаРаботеНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныОтсутствияНаРаботеВыбратьПоСсылке: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<ПричиныОтсутствияНаРаботеВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныОтсутствияНаРаботеВыбратьПоКоду: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<ПричиныОтсутствияНаРаботеВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныОтсутствияНаРаботе/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныОтсутствияНаРаботеВыбратьПоНаименованию: V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе,IReturn<ПричиныОтсутствияНаРаботеВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PrichinyOtsutstviyaNaRaboteResponse//ПричиныОтсутствияНаРаботеОтвет
+	public class ПричиныОтсутствияНаРаботеОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PrichinyOtsutstviyaNaRabotes")]
-	[Route("/Catalogs/PrichinyOtsutstviyaNaRabotes/{Codes}")]
-	public class PrichinyOtsutstviyaNaRabotesRequest/*ПричиныОтсутствияНаРаботеЗапрос*/: IReturn<List<PrichinyOtsutstviyaNaRaboteRequest>>
+	public class ПричиныОтсутствияНаРаботеСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PrichinyOtsutstviyaNaRabotesRequest(params string[] Codes)
+		
+		public object Get(ПричиныОтсутствияНаРаботеНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PrichinyOtsutstviyaNaRabotesResponse//ПричиныОтсутствияНаРаботеОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PrichinyOtsutstviyaNaRaboteService /*ПричиныОтсутствияНаРаботеСервис*/ : Service
-	{
-		public object Any(PrichinyOtsutstviyaNaRaboteRequest request)
+		
+		public object Get(ПричиныОтсутствияНаРаботеНайтиПоКоду Запрос)
 		{
-			return new PrichinyOtsutstviyaNaRaboteResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PrichinyOtsutstviyaNaRaboteRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПричиныОтсутствияНаРаботе.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PrichinyOtsutstviyaNaRaboteResponse() {Result = "ПричиныОтсутствияНаРаботе c кодом '" + request.Code+"' не найдено."};
+				return new ПричиныОтсутствияНаРаботеОтвет() {Ответ = "ПричиныОтсутствияНаРаботе c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PrichinyOtsutstviyaNaRabotesRequest request)
+		
+		public object Get(ПричиныОтсутствияНаРаботеНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПричиныОтсутствияНаРаботе>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПричиныОтсутствияНаРаботе.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПричиныОтсутствияНаРаботеВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныОтсутствияНаРаботеВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныОтсутствияНаРаботеВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПричиныОтсутствияНаРаботеЗапрос Запрос)
+		{
+			return new ПричиныОтсутствияНаРаботеОтвет {Ответ = "ПричиныОтсутствияНаРаботе, "};
+		}
+
+		public object Post(ПричиныОтсутствияНаРаботеЗапрос ЗапросПричиныОтсутствияНаРаботе)
+		{
+			var Ссылка = (СправочникиСсылка.ПричиныОтсутствияНаРаботе)ЗапросПричиныОтсутствияНаРаботе;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

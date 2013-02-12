@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/CenovyeGruppy")]
-	[Route("/Catalogs/CenovyeGruppy/FindById/{Id}")]
-	[Route("/Catalogs/CenovyeGruppy/FindByCode/{Code}")]
-	[Route("/Catalogs/CenovyeGruppy/FindByDescr/{Descr}")]
-	public class CenovyeGruppyRequest/*ЦеновыеГруппыЗапрос*/: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<CenovyeGruppyRequest>
+	//CenovyeGruppy
+	[Маршрут("Справочники/ЦеновыеГруппы","")]
+	public class ЦеновыеГруппыЗапрос: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<ЦеновыеГруппыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЦеновыеГруппы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЦеновыеГруппы/ПоСсылке","{Ссылка}")]
+	public class ЦеновыеГруппыНайтиПоСсылке: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<ЦеновыеГруппыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЦеновыеГруппы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЦеновыеГруппы/ПоКоду","{Код}")]
+	public class ЦеновыеГруппыНайтиПоКоду: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<ЦеновыеГруппыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЦеновыеГруппы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЦеновыеГруппы/ПоНаименованию","{Наименование}")]
+	public class ЦеновыеГруппыНайтиПоНаименованию: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<ЦеновыеГруппыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЦеновыеГруппы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦеновыеГруппыВыбратьПоСсылке: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<ЦеновыеГруппыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЦеновыеГруппы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦеновыеГруппыВыбратьПоКоду: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<ЦеновыеГруппыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЦеновыеГруппы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦеновыеГруппыВыбратьПоНаименованию: V82.СправочникиСсылка.ЦеновыеГруппы,IReturn<ЦеновыеГруппыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class CenovyeGruppyResponse//ЦеновыеГруппыОтвет
+	public class ЦеновыеГруппыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/CenovyeGruppys")]
-	[Route("/Catalogs/CenovyeGruppys/{Codes}")]
-	public class CenovyeGruppysRequest/*ЦеновыеГруппыЗапрос*/: IReturn<List<CenovyeGruppyRequest>>
+	public class ЦеновыеГруппыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public CenovyeGruppysRequest(params string[] Codes)
+		
+		public object Get(ЦеновыеГруппыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class CenovyeGruppysResponse//ЦеновыеГруппыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class CenovyeGruppyService /*ЦеновыеГруппыСервис*/ : Service
-	{
-		public object Any(CenovyeGruppyRequest request)
+		
+		public object Get(ЦеновыеГруппыНайтиПоКоду Запрос)
 		{
-			return new CenovyeGruppyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(CenovyeGruppyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЦеновыеГруппы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new CenovyeGruppyResponse() {Result = "ЦеновыеГруппы c кодом '" + request.Code+"' не найдено."};
+				return new ЦеновыеГруппыОтвет() {Ответ = "ЦеновыеГруппы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(CenovyeGruppysRequest request)
+		
+		public object Get(ЦеновыеГруппыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЦеновыеГруппы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЦеновыеГруппы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЦеновыеГруппыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЦеновыеГруппыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЦеновыеГруппыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЦеновыеГруппыЗапрос Запрос)
+		{
+			return new ЦеновыеГруппыОтвет {Ответ = "ЦеновыеГруппы, "};
+		}
+
+		public object Post(ЦеновыеГруппыЗапрос ЗапросЦеновыеГруппы)
+		{
+			var Ссылка = (СправочникиСсылка.ЦеновыеГруппы)ЗапросЦеновыеГруппы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

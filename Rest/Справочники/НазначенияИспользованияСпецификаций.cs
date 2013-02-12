@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/FindById/{Id}")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/FindByCode/{Code}")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/FindByDescr/{Descr}")]
-	public class NaznacheniyaIspolzovaniyaSpecifikacijjRequest/*НазначенияИспользованияСпецификацийЗапрос*/: V82.СправочникиСсылка.НазначенияИспользованияСпецификаций,IReturn<NaznacheniyaIspolzovaniyaSpecifikacijjRequest>
+	//NaznacheniyaIspolzovaniyaSpecifikacijj
+	[Маршрут("Справочники/НазначенияИспользованияСпецификаций","")]
+	public class НазначенияИспользованияСпецификацийЗапрос: V82.СправочникиСсылка.НазначенияИспользованияСпецификаций,IReturn<НазначенияИспользованияСпецификацийЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НазначенияИспользованияСпецификаций/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НазначенияИспользованияСпецификаций/ПоСсылке","{Ссылка}")]
+	public class НазначенияИспользованияСпецификацийНайтиПоСсылке: V82.СправочникиСсылка.НазначенияИспользованияСпецификаций,IReturn<НазначенияИспользованияСпецификацийНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НазначенияИспользованияСпецификаций/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НазначенияИспользованияСпецификаций/ПоНаименованию","{Наименование}")]
+	public class НазначенияИспользованияСпецификацийНайтиПоНаименованию: V82.СправочникиСсылка.НазначенияИспользованияСпецификаций,IReturn<НазначенияИспользованияСпецификацийНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НазначенияИспользованияСпецификаций/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияИспользованияСпецификацийВыбратьПоСсылке: V82.СправочникиСсылка.НазначенияИспользованияСпецификаций,IReturn<НазначенияИспользованияСпецификацийВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НазначенияИспользованияСпецификаций/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НазначенияИспользованияСпецификацийВыбратьПоНаименованию: V82.СправочникиСсылка.НазначенияИспользованияСпецификаций,IReturn<НазначенияИспользованияСпецификацийВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NaznacheniyaIspolzovaniyaSpecifikacijjResponse//НазначенияИспользованияСпецификацийОтвет
+	public class НазначенияИспользованияСпецификацийОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijjs")]
-	[Route("/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijjs/{Codes}")]
-	public class NaznacheniyaIspolzovaniyaSpecifikacijjsRequest/*НазначенияИспользованияСпецификацийЗапрос*/: IReturn<List<NaznacheniyaIspolzovaniyaSpecifikacijjRequest>>
+	public class НазначенияИспользованияСпецификацийСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NaznacheniyaIspolzovaniyaSpecifikacijjsRequest(params string[] Codes)
+		
+		public object Get(НазначенияИспользованияСпецификацийНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NaznacheniyaIspolzovaniyaSpecifikacijjsResponse//НазначенияИспользованияСпецификацийОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NaznacheniyaIspolzovaniyaSpecifikacijjService /*НазначенияИспользованияСпецификацийСервис*/ : Service
-	{
-		public object Any(NaznacheniyaIspolzovaniyaSpecifikacijjRequest request)
+		
+		public object Get(НазначенияИспользованияСпецификацийНайтиПоНаименованию Запрос)
 		{
-			return new NaznacheniyaIspolzovaniyaSpecifikacijjResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NaznacheniyaIspolzovaniyaSpecifikacijjRequest request)
+		
+		public object Get(НазначенияИспользованияСпецификацийВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НазначенияИспользованияСпецификацийВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NaznacheniyaIspolzovaniyaSpecifikacijjsRequest request)
+		public object Any(НазначенияИспользованияСпецификацийЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НазначенияИспользованияСпецификаций>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НазначенияИспользованияСпецификацийОтвет {Ответ = "НазначенияИспользованияСпецификаций, "};
 		}
+
+		public object Post(НазначенияИспользованияСпецификацийЗапрос ЗапросНазначенияИспользованияСпецификаций)
+		{
+			var Ссылка = (СправочникиСсылка.НазначенияИспользованияСпецификаций)ЗапросНазначенияИспользованияСпецификаций;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВариантыНастроекФинАнализа:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВариантыНастроекФинАнализаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VariantyNastroekFinAnaliza/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВариантыНастроекФинАнализа/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VariantyNastroekFinAnalizaRequest());
+			ВариантыНастроекФинАнализаЗапрос ВариантыНастроекФинАнализаЗапрос = null;
+			try
+			{
+				ВариантыНастроекФинАнализаЗапрос = Клиент.Get(new ВариантыНастроекФинАнализаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВариантыНастроекФинАнализаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВариантыНастроекФинАнализаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VariantyNastroekFinAnaliza/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВариантыНастроекФинАнализа/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VariantyNastroekFinAnalizaRequest());
+			ВариантыНастроекФинАнализаЗапрос ВариантыНастроекФинАнализаЗапрос = null;
+			try
+			{
+				ВариантыНастроекФинАнализаЗапрос = Клиент.Get(new ВариантыНастроекФинАнализаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВариантыНастроекФинАнализаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВариантыНастроекФинАнализаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VariantyNastroekFinAnaliza/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВариантыНастроекФинАнализа/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VariantyNastroekFinAnalizaRequest());
+			ВариантыНастроекФинАнализаЗапрос ВариантыНастроекФинАнализаЗапрос = null;
+			try
+			{
+				ВариантыНастроекФинАнализаЗапрос = Клиент.Get(new ВариантыНастроекФинАнализаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВариантыНастроекФинАнализаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВариантыНастроекФинАнализаЗапрос ВариантыНастроекФинАнализаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VariantyNastroekFinAnaliza/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВариантыНастроекФинАнализа?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VariantyNastroekFinAnalizaRequest());
+			var ВариантыНастроекФинАнализаОтвет = Клиент.Post(ВариантыНастроекФинАнализаЗапрос);
+		}
+		public static void Записать(ВариантыНастроекФинАнализаЗапрос ВариантыНастроекФинАнализаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВариантыНастроекФинАнализа?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВариантыНастроекФинАнализаОтвет = Клиент.Put(ВариантыНастроекФинАнализаЗапрос);
+		}
+		public static void Удалить(ВариантыНастроекФинАнализаЗапрос ВариантыНастроекФинАнализаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВариантыНастроекФинАнализа?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВариантыНастроекФинАнализаОтвет = Клиент.Delete(ВариантыНастроекФинАнализаЗапрос);
 		}
 	}
 }

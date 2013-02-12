@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПричиныЗакрытияЗаказов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПричиныЗакрытияЗаказовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyZakrytiyaZakazov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныЗакрытияЗаказов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PrichinyZakrytiyaZakazovRequest());
+			ПричиныЗакрытияЗаказовЗапрос ПричиныЗакрытияЗаказовЗапрос = null;
+			try
+			{
+				ПричиныЗакрытияЗаказовЗапрос = Клиент.Get(new ПричиныЗакрытияЗаказовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныЗакрытияЗаказовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПричиныЗакрытияЗаказовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyZakrytiyaZakazov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныЗакрытияЗаказов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PrichinyZakrytiyaZakazovRequest());
+			ПричиныЗакрытияЗаказовЗапрос ПричиныЗакрытияЗаказовЗапрос = null;
+			try
+			{
+				ПричиныЗакрытияЗаказовЗапрос = Клиент.Get(new ПричиныЗакрытияЗаказовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныЗакрытияЗаказовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПричиныЗакрытияЗаказовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyZakrytiyaZakazov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныЗакрытияЗаказов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PrichinyZakrytiyaZakazovRequest());
+			ПричиныЗакрытияЗаказовЗапрос ПричиныЗакрытияЗаказовЗапрос = null;
+			try
+			{
+				ПричиныЗакрытияЗаказовЗапрос = Клиент.Get(new ПричиныЗакрытияЗаказовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныЗакрытияЗаказовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПричиныЗакрытияЗаказовЗапрос ПричиныЗакрытияЗаказовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyZakrytiyaZakazov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныЗакрытияЗаказов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PrichinyZakrytiyaZakazovRequest());
+			var ПричиныЗакрытияЗаказовОтвет = Клиент.Post(ПричиныЗакрытияЗаказовЗапрос);
+		}
+		public static void Записать(ПричиныЗакрытияЗаказовЗапрос ПричиныЗакрытияЗаказовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПричиныЗакрытияЗаказов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПричиныЗакрытияЗаказовОтвет = Клиент.Put(ПричиныЗакрытияЗаказовЗапрос);
+		}
+		public static void Удалить(ПричиныЗакрытияЗаказовЗапрос ПричиныЗакрытияЗаказовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПричиныЗакрытияЗаказов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПричиныЗакрытияЗаказовОтвет = Клиент.Delete(ПричиныЗакрытияЗаказовЗапрос);
 		}
 	}
 }

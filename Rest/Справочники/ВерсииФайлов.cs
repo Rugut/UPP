@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VersiiFajjlov")]
-	[Route("/Catalogs/VersiiFajjlov/FindById/{Id}")]
-	[Route("/Catalogs/VersiiFajjlov/FindByCode/{Code}")]
-	[Route("/Catalogs/VersiiFajjlov/FindByDescr/{Descr}")]
-	public class VersiiFajjlovRequest/*ВерсииФайловЗапрос*/: V82.СправочникиСсылка.ВерсииФайлов,IReturn<VersiiFajjlovRequest>
+	//VersiiFajjlov
+	[Маршрут("Справочники/ВерсииФайлов","")]
+	public class ВерсииФайловЗапрос: V82.СправочникиСсылка.ВерсииФайлов,IReturn<ВерсииФайловЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВерсииФайлов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВерсииФайлов/ПоСсылке","{Ссылка}")]
+	public class ВерсииФайловНайтиПоСсылке: V82.СправочникиСсылка.ВерсииФайлов,IReturn<ВерсииФайловНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВерсииФайлов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВерсииФайлов/ПоКоду","{Код}")]
+	public class ВерсииФайловНайтиПоКоду: V82.СправочникиСсылка.ВерсииФайлов,IReturn<ВерсииФайловНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВерсииФайлов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВерсииФайлов/ПоНаименованию","{Наименование}")]
+	public class ВерсииФайловНайтиПоНаименованию: V82.СправочникиСсылка.ВерсииФайлов,IReturn<ВерсииФайловНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВерсииФайлов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВерсииФайловВыбратьПоСсылке: V82.СправочникиСсылка.ВерсииФайлов,IReturn<ВерсииФайловВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВерсииФайлов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВерсииФайловВыбратьПоКоду: V82.СправочникиСсылка.ВерсииФайлов,IReturn<ВерсииФайловВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВерсииФайлов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВерсииФайловВыбратьПоНаименованию: V82.СправочникиСсылка.ВерсииФайлов,IReturn<ВерсииФайловВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VersiiFajjlovResponse//ВерсииФайловОтвет
+	public class ВерсииФайловОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VersiiFajjlovs")]
-	[Route("/Catalogs/VersiiFajjlovs/{Codes}")]
-	public class VersiiFajjlovsRequest/*ВерсииФайловЗапрос*/: IReturn<List<VersiiFajjlovRequest>>
+	public class ВерсииФайловСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VersiiFajjlovsRequest(params string[] Codes)
+		
+		public object Get(ВерсииФайловНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VersiiFajjlovsResponse//ВерсииФайловОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VersiiFajjlovService /*ВерсииФайловСервис*/ : Service
-	{
-		public object Any(VersiiFajjlovRequest request)
+		
+		public object Get(ВерсииФайловНайтиПоКоду Запрос)
 		{
-			return new VersiiFajjlovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VersiiFajjlovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВерсииФайлов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VersiiFajjlovResponse() {Result = "ВерсииФайлов c кодом '" + request.Code+"' не найдено."};
+				return new ВерсииФайловОтвет() {Ответ = "ВерсииФайлов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VersiiFajjlovsRequest request)
+		
+		public object Get(ВерсииФайловНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВерсииФайлов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВерсииФайлов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВерсииФайловВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВерсииФайловВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВерсииФайловВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВерсииФайловЗапрос Запрос)
+		{
+			return new ВерсииФайловОтвет {Ответ = "ВерсииФайлов, "};
+		}
+
+		public object Post(ВерсииФайловЗапрос ЗапросВерсииФайлов)
+		{
+			var Ссылка = (СправочникиСсылка.ВерсииФайлов)ЗапросВерсииФайлов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

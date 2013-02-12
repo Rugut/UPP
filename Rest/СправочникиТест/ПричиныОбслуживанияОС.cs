@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПричиныОбслуживанияОС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПричиныОбслуживанияОСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОбслуживанияОС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PrichinyObsluzhivaniyaOSRequest());
+			ПричиныОбслуживанияОСЗапрос ПричиныОбслуживанияОСЗапрос = null;
+			try
+			{
+				ПричиныОбслуживанияОСЗапрос = Клиент.Get(new ПричиныОбслуживанияОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныОбслуживанияОСЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПричиныОбслуживанияОСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОбслуживанияОС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PrichinyObsluzhivaniyaOSRequest());
+			ПричиныОбслуживанияОСЗапрос ПричиныОбслуживанияОСЗапрос = null;
+			try
+			{
+				ПричиныОбслуживанияОСЗапрос = Клиент.Get(new ПричиныОбслуживанияОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныОбслуживанияОСЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПричиныОбслуживанияОСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОбслуживанияОС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PrichinyObsluzhivaniyaOSRequest());
+			ПричиныОбслуживанияОСЗапрос ПричиныОбслуживанияОСЗапрос = null;
+			try
+			{
+				ПричиныОбслуживанияОСЗапрос = Клиент.Get(new ПричиныОбслуживанияОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныОбслуживанияОСЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПричиныОбслуживанияОСЗапрос ПричиныОбслуживанияОСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyObsluzhivaniyaOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОбслуживанияОС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PrichinyObsluzhivaniyaOSRequest());
+			var ПричиныОбслуживанияОСОтвет = Клиент.Post(ПричиныОбслуживанияОСЗапрос);
+		}
+		public static void Записать(ПричиныОбслуживанияОСЗапрос ПричиныОбслуживанияОСЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОбслуживанияОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПричиныОбслуживанияОСОтвет = Клиент.Put(ПричиныОбслуживанияОСЗапрос);
+		}
+		public static void Удалить(ПричиныОбслуживанияОСЗапрос ПричиныОбслуживанияОСЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОбслуживанияОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПричиныОбслуживанияОСОтвет = Клиент.Delete(ПричиныОбслуживанияОСЗапрос);
 		}
 	}
 }

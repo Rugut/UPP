@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Kachestvo")]
-	[Route("/Catalogs/Kachestvo/FindById/{Id}")]
-	[Route("/Catalogs/Kachestvo/FindByCode/{Code}")]
-	[Route("/Catalogs/Kachestvo/FindByDescr/{Descr}")]
-	public class KachestvoRequest/*КачествоЗапрос*/: V82.СправочникиСсылка.Качество,IReturn<KachestvoRequest>
+	//Kachestvo
+	[Маршрут("Справочники/Качество","")]
+	public class КачествоЗапрос: V82.СправочникиСсылка.Качество,IReturn<КачествоЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Качество/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Качество/ПоСсылке","{Ссылка}")]
+	public class КачествоНайтиПоСсылке: V82.СправочникиСсылка.Качество,IReturn<КачествоНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Качество/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Качество/ПоКоду","{Код}")]
+	public class КачествоНайтиПоКоду: V82.СправочникиСсылка.Качество,IReturn<КачествоНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Качество/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Качество/ПоНаименованию","{Наименование}")]
+	public class КачествоНайтиПоНаименованию: V82.СправочникиСсылка.Качество,IReturn<КачествоНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Качество/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КачествоВыбратьПоСсылке: V82.СправочникиСсылка.Качество,IReturn<КачествоВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Качество/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КачествоВыбратьПоКоду: V82.СправочникиСсылка.Качество,IReturn<КачествоВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Качество/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КачествоВыбратьПоНаименованию: V82.СправочникиСсылка.Качество,IReturn<КачествоВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KachestvoResponse//КачествоОтвет
+	public class КачествоОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Kachestvos")]
-	[Route("/Catalogs/Kachestvos/{Codes}")]
-	public class KachestvosRequest/*КачествоЗапрос*/: IReturn<List<KachestvoRequest>>
+	public class КачествоСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KachestvosRequest(params string[] Codes)
+		
+		public object Get(КачествоНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KachestvosResponse//КачествоОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KachestvoService /*КачествоСервис*/ : Service
-	{
-		public object Any(KachestvoRequest request)
+		
+		public object Get(КачествоНайтиПоКоду Запрос)
 		{
-			return new KachestvoResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KachestvoRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Качество.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KachestvoResponse() {Result = "Качество c кодом '" + request.Code+"' не найдено."};
+				return new КачествоОтвет() {Ответ = "Качество c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KachestvosRequest request)
+		
+		public object Get(КачествоНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Качество>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Качество.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КачествоВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КачествоВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КачествоВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КачествоЗапрос Запрос)
+		{
+			return new КачествоОтвет {Ответ = "Качество, "};
+		}
+
+		public object Post(КачествоЗапрос ЗапросКачество)
+		{
+			var Ссылка = (СправочникиСсылка.Качество)ЗапросКачество;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

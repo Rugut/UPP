@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SHablonyFormulRascheta")]
-	[Route("/Catalogs/SHablonyFormulRascheta/FindById/{Id}")]
-	[Route("/Catalogs/SHablonyFormulRascheta/FindByCode/{Code}")]
-	[Route("/Catalogs/SHablonyFormulRascheta/FindByDescr/{Descr}")]
-	public class SHablonyFormulRaschetaRequest/*ШаблоныФормулРасчетаЗапрос*/: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<SHablonyFormulRaschetaRequest>
+	//SHablonyFormulRascheta
+	[Маршрут("Справочники/ШаблоныФормулРасчета","")]
+	public class ШаблоныФормулРасчетаЗапрос: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<ШаблоныФормулРасчетаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ШаблоныФормулРасчета/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ШаблоныФормулРасчета/ПоСсылке","{Ссылка}")]
+	public class ШаблоныФормулРасчетаНайтиПоСсылке: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<ШаблоныФормулРасчетаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ШаблоныФормулРасчета/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ШаблоныФормулРасчета/ПоКоду","{Код}")]
+	public class ШаблоныФормулРасчетаНайтиПоКоду: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<ШаблоныФормулРасчетаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ШаблоныФормулРасчета/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ШаблоныФормулРасчета/ПоНаименованию","{Наименование}")]
+	public class ШаблоныФормулРасчетаНайтиПоНаименованию: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<ШаблоныФормулРасчетаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ШаблоныФормулРасчета/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ШаблоныФормулРасчетаВыбратьПоСсылке: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<ШаблоныФормулРасчетаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ШаблоныФормулРасчета/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ШаблоныФормулРасчетаВыбратьПоКоду: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<ШаблоныФормулРасчетаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ШаблоныФормулРасчета/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ШаблоныФормулРасчетаВыбратьПоНаименованию: V82.СправочникиСсылка.ШаблоныФормулРасчета,IReturn<ШаблоныФормулРасчетаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SHablonyFormulRaschetaResponse//ШаблоныФормулРасчетаОтвет
+	public class ШаблоныФормулРасчетаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SHablonyFormulRaschetas")]
-	[Route("/Catalogs/SHablonyFormulRaschetas/{Codes}")]
-	public class SHablonyFormulRaschetasRequest/*ШаблоныФормулРасчетаЗапрос*/: IReturn<List<SHablonyFormulRaschetaRequest>>
+	public class ШаблоныФормулРасчетаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SHablonyFormulRaschetasRequest(params string[] Codes)
+		
+		public object Get(ШаблоныФормулРасчетаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SHablonyFormulRaschetasResponse//ШаблоныФормулРасчетаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SHablonyFormulRaschetaService /*ШаблоныФормулРасчетаСервис*/ : Service
-	{
-		public object Any(SHablonyFormulRaschetaRequest request)
+		
+		public object Get(ШаблоныФормулРасчетаНайтиПоКоду Запрос)
 		{
-			return new SHablonyFormulRaschetaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SHablonyFormulRaschetaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ШаблоныФормулРасчета.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SHablonyFormulRaschetaResponse() {Result = "ШаблоныФормулРасчета c кодом '" + request.Code+"' не найдено."};
+				return new ШаблоныФормулРасчетаОтвет() {Ответ = "ШаблоныФормулРасчета c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SHablonyFormulRaschetasRequest request)
+		
+		public object Get(ШаблоныФормулРасчетаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ШаблоныФормулРасчета>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ШаблоныФормулРасчета.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ШаблоныФормулРасчетаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ШаблоныФормулРасчетаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ШаблоныФормулРасчетаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ШаблоныФормулРасчетаЗапрос Запрос)
+		{
+			return new ШаблоныФормулРасчетаОтвет {Ответ = "ШаблоныФормулРасчета, "};
+		}
+
+		public object Post(ШаблоныФормулРасчетаЗапрос ЗапросШаблоныФормулРасчета)
+		{
+			var Ссылка = (СправочникиСсылка.ШаблоныФормулРасчета)ЗапросШаблоныФормулРасчета;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

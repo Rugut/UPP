@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class РегламентированныеОтчеты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static РегламентированныеОтчетыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ReglamentirovannyeOtchety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегламентированныеОтчеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ReglamentirovannyeOtchetyRequest());
+			РегламентированныеОтчетыЗапрос РегламентированныеОтчетыЗапрос = null;
+			try
+			{
+				РегламентированныеОтчетыЗапрос = Клиент.Get(new РегламентированныеОтчетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегламентированныеОтчетыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static РегламентированныеОтчетыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ReglamentirovannyeOtchety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегламентированныеОтчеты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ReglamentirovannyeOtchetyRequest());
+			РегламентированныеОтчетыЗапрос РегламентированныеОтчетыЗапрос = null;
+			try
+			{
+				РегламентированныеОтчетыЗапрос = Клиент.Get(new РегламентированныеОтчетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегламентированныеОтчетыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static РегламентированныеОтчетыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ReglamentirovannyeOtchety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегламентированныеОтчеты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ReglamentirovannyeOtchetyRequest());
+			РегламентированныеОтчетыЗапрос РегламентированныеОтчетыЗапрос = null;
+			try
+			{
+				РегламентированныеОтчетыЗапрос = Клиент.Get(new РегламентированныеОтчетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегламентированныеОтчетыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(РегламентированныеОтчетыЗапрос РегламентированныеОтчетыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ReglamentirovannyeOtchety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегламентированныеОтчеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ReglamentirovannyeOtchetyRequest());
+			var РегламентированныеОтчетыОтвет = Клиент.Post(РегламентированныеОтчетыЗапрос);
+		}
+		public static void Записать(РегламентированныеОтчетыЗапрос РегламентированныеОтчетыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/РегламентированныеОтчеты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РегламентированныеОтчетыОтвет = Клиент.Put(РегламентированныеОтчетыЗапрос);
+		}
+		public static void Удалить(РегламентированныеОтчетыЗапрос РегламентированныеОтчетыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/РегламентированныеОтчеты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РегламентированныеОтчетыОтвет = Клиент.Delete(РегламентированныеОтчетыЗапрос);
 		}
 	}
 }

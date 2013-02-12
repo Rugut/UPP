@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KassyKKM")]
-	[Route("/Catalogs/KassyKKM/FindById/{Id}")]
-	[Route("/Catalogs/KassyKKM/FindByCode/{Code}")]
-	[Route("/Catalogs/KassyKKM/FindByDescr/{Descr}")]
-	public class KassyKKMRequest/*КассыККМЗапрос*/: V82.СправочникиСсылка.КассыККМ,IReturn<KassyKKMRequest>
+	//KassyKKM
+	[Маршрут("Справочники/КассыККМ","")]
+	public class КассыККМЗапрос: V82.СправочникиСсылка.КассыККМ,IReturn<КассыККМЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КассыККМ/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КассыККМ/ПоСсылке","{Ссылка}")]
+	public class КассыККМНайтиПоСсылке: V82.СправочникиСсылка.КассыККМ,IReturn<КассыККМНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КассыККМ/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КассыККМ/ПоКоду","{Код}")]
+	public class КассыККМНайтиПоКоду: V82.СправочникиСсылка.КассыККМ,IReturn<КассыККМНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КассыККМ/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КассыККМ/ПоНаименованию","{Наименование}")]
+	public class КассыККМНайтиПоНаименованию: V82.СправочникиСсылка.КассыККМ,IReturn<КассыККМНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КассыККМ/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КассыККМВыбратьПоСсылке: V82.СправочникиСсылка.КассыККМ,IReturn<КассыККМВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КассыККМ/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КассыККМВыбратьПоКоду: V82.СправочникиСсылка.КассыККМ,IReturn<КассыККМВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КассыККМ/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КассыККМВыбратьПоНаименованию: V82.СправочникиСсылка.КассыККМ,IReturn<КассыККМВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KassyKKMResponse//КассыККМОтвет
+	public class КассыККМОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KassyKKMs")]
-	[Route("/Catalogs/KassyKKMs/{Codes}")]
-	public class KassyKKMsRequest/*КассыККМЗапрос*/: IReturn<List<KassyKKMRequest>>
+	public class КассыККМСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KassyKKMsRequest(params string[] Codes)
+		
+		public object Get(КассыККМНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KassyKKMsResponse//КассыККМОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KassyKKMService /*КассыККМСервис*/ : Service
-	{
-		public object Any(KassyKKMRequest request)
+		
+		public object Get(КассыККМНайтиПоКоду Запрос)
 		{
-			return new KassyKKMResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KassyKKMRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КассыККМ.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KassyKKMResponse() {Result = "КассыККМ c кодом '" + request.Code+"' не найдено."};
+				return new КассыККМОтвет() {Ответ = "КассыККМ c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KassyKKMsRequest request)
+		
+		public object Get(КассыККМНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КассыККМ>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КассыККМ.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КассыККМВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КассыККМВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КассыККМВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КассыККМЗапрос Запрос)
+		{
+			return new КассыККМОтвет {Ответ = "КассыККМ, "};
+		}
+
+		public object Post(КассыККМЗапрос ЗапросКассыККМ)
+		{
+			var Ссылка = (СправочникиСсылка.КассыККМ)ЗапросКассыККМ;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

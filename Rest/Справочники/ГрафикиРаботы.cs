@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GrafikiRaboty")]
-	[Route("/Catalogs/GrafikiRaboty/FindById/{Id}")]
-	[Route("/Catalogs/GrafikiRaboty/FindByCode/{Code}")]
-	[Route("/Catalogs/GrafikiRaboty/FindByDescr/{Descr}")]
-	public class GrafikiRabotyRequest/*ГрафикиРаботыЗапрос*/: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<GrafikiRabotyRequest>
+	//GrafikiRaboty
+	[Маршрут("Справочники/ГрафикиРаботы","")]
+	public class ГрафикиРаботыЗапрос: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<ГрафикиРаботыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГрафикиРаботы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГрафикиРаботы/ПоСсылке","{Ссылка}")]
+	public class ГрафикиРаботыНайтиПоСсылке: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<ГрафикиРаботыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГрафикиРаботы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГрафикиРаботы/ПоНаименованию","{Наименование}")]
+	public class ГрафикиРаботыНайтиПоНаименованию: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<ГрафикиРаботыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГрафикиРаботы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГрафикиРаботыВыбратьПоСсылке: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<ГрафикиРаботыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГрафикиРаботы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГрафикиРаботыВыбратьПоНаименованию: V82.СправочникиСсылка.ГрафикиРаботы,IReturn<ГрафикиРаботыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GrafikiRabotyResponse//ГрафикиРаботыОтвет
+	public class ГрафикиРаботыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GrafikiRabotys")]
-	[Route("/Catalogs/GrafikiRabotys/{Codes}")]
-	public class GrafikiRabotysRequest/*ГрафикиРаботыЗапрос*/: IReturn<List<GrafikiRabotyRequest>>
+	public class ГрафикиРаботыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GrafikiRabotysRequest(params string[] Codes)
+		
+		public object Get(ГрафикиРаботыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GrafikiRabotysResponse//ГрафикиРаботыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GrafikiRabotyService /*ГрафикиРаботыСервис*/ : Service
-	{
-		public object Any(GrafikiRabotyRequest request)
+		
+		public object Get(ГрафикиРаботыНайтиПоНаименованию Запрос)
 		{
-			return new GrafikiRabotyResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(GrafikiRabotyRequest request)
+		
+		public object Get(ГрафикиРаботыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГрафикиРаботыВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(GrafikiRabotysRequest request)
+		public object Any(ГрафикиРаботыЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГрафикиРаботы>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ГрафикиРаботыОтвет {Ответ = "ГрафикиРаботы, "};
 		}
+
+		public object Post(ГрафикиРаботыЗапрос ЗапросГрафикиРаботы)
+		{
+			var Ссылка = (СправочникиСсылка.ГрафикиРаботы)ЗапросГрафикиРаботы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

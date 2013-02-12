@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПричиныОтсутствияНаРаботе:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПричиныОтсутствияНаРаботеЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyOtsutstviyaNaRabote/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОтсутствияНаРаботе/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PrichinyOtsutstviyaNaRaboteRequest());
+			ПричиныОтсутствияНаРаботеЗапрос ПричиныОтсутствияНаРаботеЗапрос = null;
+			try
+			{
+				ПричиныОтсутствияНаРаботеЗапрос = Клиент.Get(new ПричиныОтсутствияНаРаботеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныОтсутствияНаРаботеЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПричиныОтсутствияНаРаботеЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyOtsutstviyaNaRabote/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОтсутствияНаРаботе/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PrichinyOtsutstviyaNaRaboteRequest());
+			ПричиныОтсутствияНаРаботеЗапрос ПричиныОтсутствияНаРаботеЗапрос = null;
+			try
+			{
+				ПричиныОтсутствияНаРаботеЗапрос = Клиент.Get(new ПричиныОтсутствияНаРаботеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныОтсутствияНаРаботеЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПричиныОтсутствияНаРаботеЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyOtsutstviyaNaRabote/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОтсутствияНаРаботе/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PrichinyOtsutstviyaNaRaboteRequest());
+			ПричиныОтсутствияНаРаботеЗапрос ПричиныОтсутствияНаРаботеЗапрос = null;
+			try
+			{
+				ПричиныОтсутствияНаРаботеЗапрос = Клиент.Get(new ПричиныОтсутствияНаРаботеЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПричиныОтсутствияНаРаботеЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПричиныОтсутствияНаРаботеЗапрос ПричиныОтсутствияНаРаботеЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PrichinyOtsutstviyaNaRabote/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОтсутствияНаРаботе?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PrichinyOtsutstviyaNaRaboteRequest());
+			var ПричиныОтсутствияНаРаботеОтвет = Клиент.Post(ПричиныОтсутствияНаРаботеЗапрос);
+		}
+		public static void Записать(ПричиныОтсутствияНаРаботеЗапрос ПричиныОтсутствияНаРаботеЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОтсутствияНаРаботе?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПричиныОтсутствияНаРаботеОтвет = Клиент.Put(ПричиныОтсутствияНаРаботеЗапрос);
+		}
+		public static void Удалить(ПричиныОтсутствияНаРаботеЗапрос ПричиныОтсутствияНаРаботеЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПричиныОтсутствияНаРаботе?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПричиныОтсутствияНаРаботеОтвет = Клиент.Delete(ПричиныОтсутствияНаРаботеЗапрос);
 		}
 	}
 }

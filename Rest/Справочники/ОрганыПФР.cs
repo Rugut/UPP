@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OrganyPFR")]
-	[Route("/Catalogs/OrganyPFR/FindById/{Id}")]
-	[Route("/Catalogs/OrganyPFR/FindByCode/{Code}")]
-	[Route("/Catalogs/OrganyPFR/FindByDescr/{Descr}")]
-	public class OrganyPFRRequest/*ОрганыПФРЗапрос*/: V82.СправочникиСсылка.ОрганыПФР,IReturn<OrganyPFRRequest>
+	//OrganyPFR
+	[Маршрут("Справочники/ОрганыПФР","")]
+	public class ОрганыПФРЗапрос: V82.СправочникиСсылка.ОрганыПФР,IReturn<ОрганыПФРЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОрганыПФР/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОрганыПФР/ПоСсылке","{Ссылка}")]
+	public class ОрганыПФРНайтиПоСсылке: V82.СправочникиСсылка.ОрганыПФР,IReturn<ОрганыПФРНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОрганыПФР/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОрганыПФР/ПоКоду","{Код}")]
+	public class ОрганыПФРНайтиПоКоду: V82.СправочникиСсылка.ОрганыПФР,IReturn<ОрганыПФРНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОрганыПФР/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОрганыПФР/ПоНаименованию","{Наименование}")]
+	public class ОрганыПФРНайтиПоНаименованию: V82.СправочникиСсылка.ОрганыПФР,IReturn<ОрганыПФРНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОрганыПФР/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганыПФРВыбратьПоСсылке: V82.СправочникиСсылка.ОрганыПФР,IReturn<ОрганыПФРВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОрганыПФР/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганыПФРВыбратьПоКоду: V82.СправочникиСсылка.ОрганыПФР,IReturn<ОрганыПФРВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОрганыПФР/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОрганыПФРВыбратьПоНаименованию: V82.СправочникиСсылка.ОрганыПФР,IReturn<ОрганыПФРВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OrganyPFRResponse//ОрганыПФРОтвет
+	public class ОрганыПФРОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OrganyPFRs")]
-	[Route("/Catalogs/OrganyPFRs/{Codes}")]
-	public class OrganyPFRsRequest/*ОрганыПФРЗапрос*/: IReturn<List<OrganyPFRRequest>>
+	public class ОрганыПФРСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OrganyPFRsRequest(params string[] Codes)
+		
+		public object Get(ОрганыПФРНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OrganyPFRsResponse//ОрганыПФРОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OrganyPFRService /*ОрганыПФРСервис*/ : Service
-	{
-		public object Any(OrganyPFRRequest request)
+		
+		public object Get(ОрганыПФРНайтиПоКоду Запрос)
 		{
-			return new OrganyPFRResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OrganyPFRRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОрганыПФР.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OrganyPFRResponse() {Result = "ОрганыПФР c кодом '" + request.Code+"' не найдено."};
+				return new ОрганыПФРОтвет() {Ответ = "ОрганыПФР c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OrganyPFRsRequest request)
+		
+		public object Get(ОрганыПФРНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОрганыПФР>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОрганыПФР.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОрганыПФРВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОрганыПФРВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОрганыПФРВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОрганыПФРЗапрос Запрос)
+		{
+			return new ОрганыПФРОтвет {Ответ = "ОрганыПФР, "};
+		}
+
+		public object Post(ОрганыПФРЗапрос ЗапросОрганыПФР)
+		{
+			var Ссылка = (СправочникиСсылка.ОрганыПФР)ЗапросОрганыПФР;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

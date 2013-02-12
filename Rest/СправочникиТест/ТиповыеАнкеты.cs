@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТиповыеАнкеты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТиповыеАнкетыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipovyeAnkety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TipovyeAnketyRequest());
+			ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос = null;
+			try
+			{
+				ТиповыеАнкетыЗапрос = Клиент.Get(new ТиповыеАнкетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТиповыеАнкетыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТиповыеАнкетыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipovyeAnkety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TipovyeAnketyRequest());
+			ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос = null;
+			try
+			{
+				ТиповыеАнкетыЗапрос = Клиент.Get(new ТиповыеАнкетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТиповыеАнкетыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТиповыеАнкетыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipovyeAnkety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TipovyeAnketyRequest());
+			ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос = null;
+			try
+			{
+				ТиповыеАнкетыЗапрос = Клиент.Get(new ТиповыеАнкетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТиповыеАнкетыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipovyeAnkety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TipovyeAnketyRequest());
+			var ТиповыеАнкетыОтвет = Клиент.Post(ТиповыеАнкетыЗапрос);
+		}
+		public static void Записать(ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТиповыеАнкетыОтвет = Клиент.Put(ТиповыеАнкетыЗапрос);
+		}
+		public static void Удалить(ТиповыеАнкетыЗапрос ТиповыеАнкетыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТиповыеАнкеты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТиповыеАнкетыОтвет = Клиент.Delete(ТиповыеАнкетыЗапрос);
 		}
 	}
 }

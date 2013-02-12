@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиРасчетаЦеныНоменклатуры:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиРасчетаЦеныНоменклатурыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaCenyNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаЦеныНоменклатуры/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiRaschetaCenyNomenklaturyRequest());
+			НастройкиРасчетаЦеныНоменклатурыЗапрос НастройкиРасчетаЦеныНоменклатурыЗапрос = null;
+			try
+			{
+				НастройкиРасчетаЦеныНоменклатурыЗапрос = Клиент.Get(new НастройкиРасчетаЦеныНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиРасчетаЦеныНоменклатурыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиРасчетаЦеныНоменклатурыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaCenyNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаЦеныНоменклатуры/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiRaschetaCenyNomenklaturyRequest());
+			НастройкиРасчетаЦеныНоменклатурыЗапрос НастройкиРасчетаЦеныНоменклатурыЗапрос = null;
+			try
+			{
+				НастройкиРасчетаЦеныНоменклатурыЗапрос = Клиент.Get(new НастройкиРасчетаЦеныНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиРасчетаЦеныНоменклатурыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкиРасчетаЦеныНоменклатурыЗапрос НастройкиРасчетаЦеныНоменклатурыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaCenyNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаЦеныНоменклатуры?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiRaschetaCenyNomenklaturyRequest());
+			var НастройкиРасчетаЦеныНоменклатурыОтвет = Клиент.Post(НастройкиРасчетаЦеныНоменклатурыЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкиРасчетаЦеныНоменклатурыЗапрос НастройкиРасчетаЦеныНоменклатурыЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiRaschetaCenyNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаЦеныНоменклатуры?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiRaschetaCenyNomenklaturyRequest());
+			var НастройкиРасчетаЦеныНоменклатурыОтвет = Клиент.Put(НастройкиРасчетаЦеныНоменклатурыЗапрос);
+		}
+		public static void Удалить(НастройкиРасчетаЦеныНоменклатурыЗапрос НастройкиРасчетаЦеныНоменклатурыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиРасчетаЦеныНоменклатуры?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиРасчетаЦеныНоменклатурыОтвет = Клиент.Delete(НастройкиРасчетаЦеныНоменклатурыЗапрос);
 		}
 	}
 }

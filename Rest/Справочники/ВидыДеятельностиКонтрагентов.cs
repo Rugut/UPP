@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyDeyatelnostiKontragentov")]
-	[Route("/Catalogs/VidyDeyatelnostiKontragentov/FindById/{Id}")]
-	[Route("/Catalogs/VidyDeyatelnostiKontragentov/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyDeyatelnostiKontragentov/FindByDescr/{Descr}")]
-	public class VidyDeyatelnostiKontragentovRequest/*ВидыДеятельностиКонтрагентовЗапрос*/: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<VidyDeyatelnostiKontragentovRequest>
+	//VidyDeyatelnostiKontragentov
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов","")]
+	public class ВидыДеятельностиКонтрагентовЗапрос: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<ВидыДеятельностиКонтрагентовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/ПоСсылке","{Ссылка}")]
+	public class ВидыДеятельностиКонтрагентовНайтиПоСсылке: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<ВидыДеятельностиКонтрагентовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/ПоКоду","{Код}")]
+	public class ВидыДеятельностиКонтрагентовНайтиПоКоду: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<ВидыДеятельностиКонтрагентовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/ПоНаименованию","{Наименование}")]
+	public class ВидыДеятельностиКонтрагентовНайтиПоНаименованию: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<ВидыДеятельностиКонтрагентовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыДеятельностиКонтрагентовВыбратьПоСсылке: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<ВидыДеятельностиКонтрагентовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыДеятельностиКонтрагентовВыбратьПоКоду: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<ВидыДеятельностиКонтрагентовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыДеятельностиКонтрагентов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыДеятельностиКонтрагентовВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов,IReturn<ВидыДеятельностиКонтрагентовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyDeyatelnostiKontragentovResponse//ВидыДеятельностиКонтрагентовОтвет
+	public class ВидыДеятельностиКонтрагентовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyDeyatelnostiKontragentovs")]
-	[Route("/Catalogs/VidyDeyatelnostiKontragentovs/{Codes}")]
-	public class VidyDeyatelnostiKontragentovsRequest/*ВидыДеятельностиКонтрагентовЗапрос*/: IReturn<List<VidyDeyatelnostiKontragentovRequest>>
+	public class ВидыДеятельностиКонтрагентовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyDeyatelnostiKontragentovsRequest(params string[] Codes)
+		
+		public object Get(ВидыДеятельностиКонтрагентовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyDeyatelnostiKontragentovsResponse//ВидыДеятельностиКонтрагентовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyDeyatelnostiKontragentovService /*ВидыДеятельностиКонтрагентовСервис*/ : Service
-	{
-		public object Any(VidyDeyatelnostiKontragentovRequest request)
+		
+		public object Get(ВидыДеятельностиКонтрагентовНайтиПоКоду Запрос)
 		{
-			return new VidyDeyatelnostiKontragentovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyDeyatelnostiKontragentovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыДеятельностиКонтрагентов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyDeyatelnostiKontragentovResponse() {Result = "ВидыДеятельностиКонтрагентов c кодом '" + request.Code+"' не найдено."};
+				return new ВидыДеятельностиКонтрагентовОтвет() {Ответ = "ВидыДеятельностиКонтрагентов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyDeyatelnostiKontragentovsRequest request)
+		
+		public object Get(ВидыДеятельностиКонтрагентовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыДеятельностиКонтрагентов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыДеятельностиКонтрагентовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыДеятельностиКонтрагентовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыДеятельностиКонтрагентовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыДеятельностиКонтрагентовЗапрос Запрос)
+		{
+			return new ВидыДеятельностиКонтрагентовОтвет {Ответ = "ВидыДеятельностиКонтрагентов, "};
+		}
+
+		public object Post(ВидыДеятельностиКонтрагентовЗапрос ЗапросВидыДеятельностиКонтрагентов)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыДеятельностиКонтрагентов)ЗапросВидыДеятельностиКонтрагентов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

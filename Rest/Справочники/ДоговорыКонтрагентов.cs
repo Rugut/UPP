@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DogovoryKontragentov")]
-	[Route("/Catalogs/DogovoryKontragentov/FindById/{Id}")]
-	[Route("/Catalogs/DogovoryKontragentov/FindByCode/{Code}")]
-	[Route("/Catalogs/DogovoryKontragentov/FindByDescr/{Descr}")]
-	public class DogovoryKontragentovRequest/*ДоговорыКонтрагентовЗапрос*/: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<DogovoryKontragentovRequest>
+	//DogovoryKontragentov
+	[Маршрут("Справочники/ДоговорыКонтрагентов","")]
+	public class ДоговорыКонтрагентовЗапрос: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<ДоговорыКонтрагентовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДоговорыКонтрагентов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДоговорыКонтрагентов/ПоСсылке","{Ссылка}")]
+	public class ДоговорыКонтрагентовНайтиПоСсылке: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<ДоговорыКонтрагентовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДоговорыКонтрагентов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДоговорыКонтрагентов/ПоКоду","{Код}")]
+	public class ДоговорыКонтрагентовНайтиПоКоду: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<ДоговорыКонтрагентовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДоговорыКонтрагентов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДоговорыКонтрагентов/ПоНаименованию","{Наименование}")]
+	public class ДоговорыКонтрагентовНайтиПоНаименованию: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<ДоговорыКонтрагентовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоговорыКонтрагентовВыбратьПоСсылке: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<ДоговорыКонтрагентовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоговорыКонтрагентов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоговорыКонтрагентовВыбратьПоКоду: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<ДоговорыКонтрагентовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоговорыКонтрагентов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоговорыКонтрагентовВыбратьПоНаименованию: V82.СправочникиСсылка.ДоговорыКонтрагентов,IReturn<ДоговорыКонтрагентовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DogovoryKontragentovResponse//ДоговорыКонтрагентовОтвет
+	public class ДоговорыКонтрагентовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DogovoryKontragentovs")]
-	[Route("/Catalogs/DogovoryKontragentovs/{Codes}")]
-	public class DogovoryKontragentovsRequest/*ДоговорыКонтрагентовЗапрос*/: IReturn<List<DogovoryKontragentovRequest>>
+	public class ДоговорыКонтрагентовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DogovoryKontragentovsRequest(params string[] Codes)
+		
+		public object Get(ДоговорыКонтрагентовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DogovoryKontragentovsResponse//ДоговорыКонтрагентовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DogovoryKontragentovService /*ДоговорыКонтрагентовСервис*/ : Service
-	{
-		public object Any(DogovoryKontragentovRequest request)
+		
+		public object Get(ДоговорыКонтрагентовНайтиПоКоду Запрос)
 		{
-			return new DogovoryKontragentovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DogovoryKontragentovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДоговорыКонтрагентов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DogovoryKontragentovResponse() {Result = "ДоговорыКонтрагентов c кодом '" + request.Code+"' не найдено."};
+				return new ДоговорыКонтрагентовОтвет() {Ответ = "ДоговорыКонтрагентов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DogovoryKontragentovsRequest request)
+		
+		public object Get(ДоговорыКонтрагентовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоговорыКонтрагентов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДоговорыКонтрагентов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДоговорыКонтрагентовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоговорыКонтрагентовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоговорыКонтрагентовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДоговорыКонтрагентовЗапрос Запрос)
+		{
+			return new ДоговорыКонтрагентовОтвет {Ответ = "ДоговорыКонтрагентов, "};
+		}
+
+		public object Post(ДоговорыКонтрагентовЗапрос ЗапросДоговорыКонтрагентов)
+		{
+			var Ссылка = (СправочникиСсылка.ДоговорыКонтрагентов)ЗапросДоговорыКонтрагентов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

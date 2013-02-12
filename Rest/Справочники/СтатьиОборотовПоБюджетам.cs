@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StatiOborotovPoByudzhetam")]
-	[Route("/Catalogs/StatiOborotovPoByudzhetam/FindById/{Id}")]
-	[Route("/Catalogs/StatiOborotovPoByudzhetam/FindByCode/{Code}")]
-	[Route("/Catalogs/StatiOborotovPoByudzhetam/FindByDescr/{Descr}")]
-	public class StatiOborotovPoByudzhetamRequest/*СтатьиОборотовПоБюджетамЗапрос*/: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<StatiOborotovPoByudzhetamRequest>
+	//StatiOborotovPoByudzhetam
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам","")]
+	public class СтатьиОборотовПоБюджетамЗапрос: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<СтатьиОборотовПоБюджетамЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/ПоСсылке","{Ссылка}")]
+	public class СтатьиОборотовПоБюджетамНайтиПоСсылке: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<СтатьиОборотовПоБюджетамНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/ПоКоду","{Код}")]
+	public class СтатьиОборотовПоБюджетамНайтиПоКоду: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<СтатьиОборотовПоБюджетамНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/ПоНаименованию","{Наименование}")]
+	public class СтатьиОборотовПоБюджетамНайтиПоНаименованию: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<СтатьиОборотовПоБюджетамНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиОборотовПоБюджетамВыбратьПоСсылке: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<СтатьиОборотовПоБюджетамВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиОборотовПоБюджетамВыбратьПоКоду: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<СтатьиОборотовПоБюджетамВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиОборотовПоБюджетам/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиОборотовПоБюджетамВыбратьПоНаименованию: V82.СправочникиСсылка.СтатьиОборотовПоБюджетам,IReturn<СтатьиОборотовПоБюджетамВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StatiOborotovPoByudzhetamResponse//СтатьиОборотовПоБюджетамОтвет
+	public class СтатьиОборотовПоБюджетамОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StatiOborotovPoByudzhetams")]
-	[Route("/Catalogs/StatiOborotovPoByudzhetams/{Codes}")]
-	public class StatiOborotovPoByudzhetamsRequest/*СтатьиОборотовПоБюджетамЗапрос*/: IReturn<List<StatiOborotovPoByudzhetamRequest>>
+	public class СтатьиОборотовПоБюджетамСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StatiOborotovPoByudzhetamsRequest(params string[] Codes)
+		
+		public object Get(СтатьиОборотовПоБюджетамНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StatiOborotovPoByudzhetamsResponse//СтатьиОборотовПоБюджетамОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StatiOborotovPoByudzhetamService /*СтатьиОборотовПоБюджетамСервис*/ : Service
-	{
-		public object Any(StatiOborotovPoByudzhetamRequest request)
+		
+		public object Get(СтатьиОборотовПоБюджетамНайтиПоКоду Запрос)
 		{
-			return new StatiOborotovPoByudzhetamResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StatiOborotovPoByudzhetamRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтатьиОборотовПоБюджетам.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StatiOborotovPoByudzhetamResponse() {Result = "СтатьиОборотовПоБюджетам c кодом '" + request.Code+"' не найдено."};
+				return new СтатьиОборотовПоБюджетамОтвет() {Ответ = "СтатьиОборотовПоБюджетам c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StatiOborotovPoByudzhetamsRequest request)
+		
+		public object Get(СтатьиОборотовПоБюджетамНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтатьиОборотовПоБюджетам>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтатьиОборотовПоБюджетам.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтатьиОборотовПоБюджетамВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиОборотовПоБюджетамВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиОборотовПоБюджетамВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтатьиОборотовПоБюджетамЗапрос Запрос)
+		{
+			return new СтатьиОборотовПоБюджетамОтвет {Ответ = "СтатьиОборотовПоБюджетам, "};
+		}
+
+		public object Post(СтатьиОборотовПоБюджетамЗапрос ЗапросСтатьиОборотовПоБюджетам)
+		{
+			var Ссылка = (СправочникиСсылка.СтатьиОборотовПоБюджетам)ЗапросСтатьиОборотовПоБюджетам;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

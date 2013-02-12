@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppyDostupaKontragentov")]
-	[Route("/Catalogs/GruppyDostupaKontragentov/FindById/{Id}")]
-	[Route("/Catalogs/GruppyDostupaKontragentov/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppyDostupaKontragentov/FindByDescr/{Descr}")]
-	public class GruppyDostupaKontragentovRequest/*ГруппыДоступаКонтрагентовЗапрос*/: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<GruppyDostupaKontragentovRequest>
+	//GruppyDostupaKontragentov
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов","")]
+	public class ГруппыДоступаКонтрагентовЗапрос: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<ГруппыДоступаКонтрагентовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/ПоСсылке","{Ссылка}")]
+	public class ГруппыДоступаКонтрагентовНайтиПоСсылке: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<ГруппыДоступаКонтрагентовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/ПоКоду","{Код}")]
+	public class ГруппыДоступаКонтрагентовНайтиПоКоду: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<ГруппыДоступаКонтрагентовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/ПоНаименованию","{Наименование}")]
+	public class ГруппыДоступаКонтрагентовНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<ГруппыДоступаКонтрагентовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступаКонтрагентовВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<ГруппыДоступаКонтрагентовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступаКонтрагентовВыбратьПоКоду: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<ГруппыДоступаКонтрагентовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступаКонтрагентов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступаКонтрагентовВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыДоступаКонтрагентов,IReturn<ГруппыДоступаКонтрагентовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppyDostupaKontragentovResponse//ГруппыДоступаКонтрагентовОтвет
+	public class ГруппыДоступаКонтрагентовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppyDostupaKontragentovs")]
-	[Route("/Catalogs/GruppyDostupaKontragentovs/{Codes}")]
-	public class GruppyDostupaKontragentovsRequest/*ГруппыДоступаКонтрагентовЗапрос*/: IReturn<List<GruppyDostupaKontragentovRequest>>
+	public class ГруппыДоступаКонтрагентовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppyDostupaKontragentovsRequest(params string[] Codes)
+		
+		public object Get(ГруппыДоступаКонтрагентовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppyDostupaKontragentovsResponse//ГруппыДоступаКонтрагентовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppyDostupaKontragentovService /*ГруппыДоступаКонтрагентовСервис*/ : Service
-	{
-		public object Any(GruppyDostupaKontragentovRequest request)
+		
+		public object Get(ГруппыДоступаКонтрагентовНайтиПоКоду Запрос)
 		{
-			return new GruppyDostupaKontragentovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppyDostupaKontragentovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыДоступаКонтрагентов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppyDostupaKontragentovResponse() {Result = "ГруппыДоступаКонтрагентов c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыДоступаКонтрагентовОтвет() {Ответ = "ГруппыДоступаКонтрагентов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppyDostupaKontragentovsRequest request)
+		
+		public object Get(ГруппыДоступаКонтрагентовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыДоступаКонтрагентов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыДоступаКонтрагентов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыДоступаКонтрагентовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыДоступаКонтрагентовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыДоступаКонтрагентовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыДоступаКонтрагентовЗапрос Запрос)
+		{
+			return new ГруппыДоступаКонтрагентовОтвет {Ответ = "ГруппыДоступаКонтрагентов, "};
+		}
+
+		public object Post(ГруппыДоступаКонтрагентовЗапрос ЗапросГруппыДоступаКонтрагентов)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыДоступаКонтрагентов)ЗапросГруппыДоступаКонтрагентов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГодовыеГрафикиАмортизацииОС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГодовыеГрафикиАмортизацииОСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GodovyeGrafikiAmortizaciiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГодовыеГрафикиАмортизацииОС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GodovyeGrafikiAmortizaciiOSRequest());
+			ГодовыеГрафикиАмортизацииОСЗапрос ГодовыеГрафикиАмортизацииОСЗапрос = null;
+			try
+			{
+				ГодовыеГрафикиАмортизацииОСЗапрос = Клиент.Get(new ГодовыеГрафикиАмортизацииОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГодовыеГрафикиАмортизацииОСЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГодовыеГрафикиАмортизацииОСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/GodovyeGrafikiAmortizaciiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГодовыеГрафикиАмортизацииОС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GodovyeGrafikiAmortizaciiOSRequest());
+			ГодовыеГрафикиАмортизацииОСЗапрос ГодовыеГрафикиАмортизацииОСЗапрос = null;
+			try
+			{
+				ГодовыеГрафикиАмортизацииОСЗапрос = Клиент.Get(new ГодовыеГрафикиАмортизацииОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГодовыеГрафикиАмортизацииОСЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ГодовыеГрафикиАмортизацииОСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GodovyeGrafikiAmortizaciiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГодовыеГрафикиАмортизацииОС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GodovyeGrafikiAmortizaciiOSRequest());
+			ГодовыеГрафикиАмортизацииОСЗапрос ГодовыеГрафикиАмортизацииОСЗапрос = null;
+			try
+			{
+				ГодовыеГрафикиАмортизацииОСЗапрос = Клиент.Get(new ГодовыеГрафикиАмортизацииОСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГодовыеГрафикиАмортизацииОСЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ГодовыеГрафикиАмортизацииОСЗапрос ГодовыеГрафикиАмортизацииОСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GodovyeGrafikiAmortizaciiOS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГодовыеГрафикиАмортизацииОС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GodovyeGrafikiAmortizaciiOSRequest());
+			var ГодовыеГрафикиАмортизацииОСОтвет = Клиент.Post(ГодовыеГрафикиАмортизацииОСЗапрос);
+		}
+		public static void Записать(ГодовыеГрафикиАмортизацииОСЗапрос ГодовыеГрафикиАмортизацииОСЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГодовыеГрафикиАмортизацииОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГодовыеГрафикиАмортизацииОСОтвет = Клиент.Put(ГодовыеГрафикиАмортизацииОСЗапрос);
+		}
+		public static void Удалить(ГодовыеГрафикиАмортизацииОСЗапрос ГодовыеГрафикиАмортизацииОСЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГодовыеГрафикиАмортизацииОС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГодовыеГрафикиАмортизацииОСОтвет = Клиент.Delete(ГодовыеГрафикиАмортизацииОСЗапрос);
 		}
 	}
 }

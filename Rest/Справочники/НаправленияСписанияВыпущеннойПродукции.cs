@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii")]
-	[Route("/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii/FindById/{Id}")]
-	[Route("/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii/FindByCode/{Code}")]
-	[Route("/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukcii/FindByDescr/{Descr}")]
-	public class NapravleniyaSpisaniyaVypushhennojjProdukciiRequest/*НаправленияСписанияВыпущеннойПродукцииЗапрос*/: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<NapravleniyaSpisaniyaVypushhennojjProdukciiRequest>
+	//NapravleniyaSpisaniyaVypushhennojjProdukcii
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции","")]
+	public class НаправленияСписанияВыпущеннойПродукцииЗапрос: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<НаправленияСписанияВыпущеннойПродукцииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/ПоСсылке","{Ссылка}")]
+	public class НаправленияСписанияВыпущеннойПродукцииНайтиПоСсылке: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<НаправленияСписанияВыпущеннойПродукцииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/ПоКоду","{Код}")]
+	public class НаправленияСписанияВыпущеннойПродукцииНайтиПоКоду: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<НаправленияСписанияВыпущеннойПродукцииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/ПоНаименованию","{Наименование}")]
+	public class НаправленияСписанияВыпущеннойПродукцииНайтиПоНаименованию: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<НаправленияСписанияВыпущеннойПродукцииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаправленияСписанияВыпущеннойПродукцииВыбратьПоСсылке: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<НаправленияСписанияВыпущеннойПродукцииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаправленияСписанияВыпущеннойПродукцииВыбратьПоКоду: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<НаправленияСписанияВыпущеннойПродукцииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НаправленияСписанияВыпущеннойПродукции/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаправленияСписанияВыпущеннойПродукцииВыбратьПоНаименованию: V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции,IReturn<НаправленияСписанияВыпущеннойПродукцииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NapravleniyaSpisaniyaVypushhennojjProdukciiResponse//НаправленияСписанияВыпущеннойПродукцииОтвет
+	public class НаправленияСписанияВыпущеннойПродукцииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukciis")]
-	[Route("/Catalogs/NapravleniyaSpisaniyaVypushhennojjProdukciis/{Codes}")]
-	public class NapravleniyaSpisaniyaVypushhennojjProdukciisRequest/*НаправленияСписанияВыпущеннойПродукцииЗапрос*/: IReturn<List<NapravleniyaSpisaniyaVypushhennojjProdukciiRequest>>
+	public class НаправленияСписанияВыпущеннойПродукцииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NapravleniyaSpisaniyaVypushhennojjProdukciisRequest(params string[] Codes)
+		
+		public object Get(НаправленияСписанияВыпущеннойПродукцииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NapravleniyaSpisaniyaVypushhennojjProdukciisResponse//НаправленияСписанияВыпущеннойПродукцииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NapravleniyaSpisaniyaVypushhennojjProdukciiService /*НаправленияСписанияВыпущеннойПродукцииСервис*/ : Service
-	{
-		public object Any(NapravleniyaSpisaniyaVypushhennojjProdukciiRequest request)
+		
+		public object Get(НаправленияСписанияВыпущеннойПродукцииНайтиПоКоду Запрос)
 		{
-			return new NapravleniyaSpisaniyaVypushhennojjProdukciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NapravleniyaSpisaniyaVypushhennojjProdukciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НаправленияСписанияВыпущеннойПродукции.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NapravleniyaSpisaniyaVypushhennojjProdukciiResponse() {Result = "НаправленияСписанияВыпущеннойПродукции c кодом '" + request.Code+"' не найдено."};
+				return new НаправленияСписанияВыпущеннойПродукцииОтвет() {Ответ = "НаправленияСписанияВыпущеннойПродукции c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NapravleniyaSpisaniyaVypushhennojjProdukciisRequest request)
+		
+		public object Get(НаправленияСписанияВыпущеннойПродукцииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НаправленияСписанияВыпущеннойПродукции.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НаправленияСписанияВыпущеннойПродукцииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НаправленияСписанияВыпущеннойПродукцииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НаправленияСписанияВыпущеннойПродукцииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НаправленияСписанияВыпущеннойПродукцииЗапрос Запрос)
+		{
+			return new НаправленияСписанияВыпущеннойПродукцииОтвет {Ответ = "НаправленияСписанияВыпущеннойПродукции, "};
+		}
+
+		public object Post(НаправленияСписанияВыпущеннойПродукцииЗапрос ЗапросНаправленияСписанияВыпущеннойПродукции)
+		{
+			var Ссылка = (СправочникиСсылка.НаправленияСписанияВыпущеннойПродукции)ЗапросНаправленияСписанияВыпущеннойПродукции;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПорядокПрисвоенияСерийныхНомеров:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПорядокПрисвоенияСерийныхНомеровЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПорядокПрисвоенияСерийныхНомеров/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PoryadokPrisvoeniyaSerijjnykhNomerovRequest());
+			ПорядокПрисвоенияСерийныхНомеровЗапрос ПорядокПрисвоенияСерийныхНомеровЗапрос = null;
+			try
+			{
+				ПорядокПрисвоенияСерийныхНомеровЗапрос = Клиент.Get(new ПорядокПрисвоенияСерийныхНомеровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПорядокПрисвоенияСерийныхНомеровЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПорядокПрисвоенияСерийныхНомеровЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПорядокПрисвоенияСерийныхНомеров/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PoryadokPrisvoeniyaSerijjnykhNomerovRequest());
+			ПорядокПрисвоенияСерийныхНомеровЗапрос ПорядокПрисвоенияСерийныхНомеровЗапрос = null;
+			try
+			{
+				ПорядокПрисвоенияСерийныхНомеровЗапрос = Клиент.Get(new ПорядокПрисвоенияСерийныхНомеровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПорядокПрисвоенияСерийныхНомеровЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПорядокПрисвоенияСерийныхНомеровЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПорядокПрисвоенияСерийныхНомеров/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PoryadokPrisvoeniyaSerijjnykhNomerovRequest());
+			ПорядокПрисвоенияСерийныхНомеровЗапрос ПорядокПрисвоенияСерийныхНомеровЗапрос = null;
+			try
+			{
+				ПорядокПрисвоенияСерийныхНомеровЗапрос = Клиент.Get(new ПорядокПрисвоенияСерийныхНомеровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПорядокПрисвоенияСерийныхНомеровЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПорядокПрисвоенияСерийныхНомеровЗапрос ПорядокПрисвоенияСерийныхНомеровЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПорядокПрисвоенияСерийныхНомеров?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PoryadokPrisvoeniyaSerijjnykhNomerovRequest());
+			var ПорядокПрисвоенияСерийныхНомеровОтвет = Клиент.Post(ПорядокПрисвоенияСерийныхНомеровЗапрос);
+		}
+		public static void Записать(ПорядокПрисвоенияСерийныхНомеровЗапрос ПорядокПрисвоенияСерийныхНомеровЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПорядокПрисвоенияСерийныхНомеров?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПорядокПрисвоенияСерийныхНомеровОтвет = Клиент.Put(ПорядокПрисвоенияСерийныхНомеровЗапрос);
+		}
+		public static void Удалить(ПорядокПрисвоенияСерийныхНомеровЗапрос ПорядокПрисвоенияСерийныхНомеровЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПорядокПрисвоенияСерийныхНомеров?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПорядокПрисвоенияСерийныхНомеровОтвет = Клиент.Delete(ПорядокПрисвоенияСерийныхНомеровЗапрос);
 		}
 	}
 }

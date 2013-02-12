@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov")]
-	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/FindById/{Id}")]
-	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/FindByCode/{Code}")]
-	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerov/FindByDescr/{Descr}")]
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovRequest/*ПорядокПрисвоенияСерийныхНомеровЗапрос*/: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<PoryadokPrisvoeniyaSerijjnykhNomerovRequest>
+	//PoryadokPrisvoeniyaSerijjnykhNomerov
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров","")]
+	public class ПорядокПрисвоенияСерийныхНомеровЗапрос: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<ПорядокПрисвоенияСерийныхНомеровЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/ПоСсылке","{Ссылка}")]
+	public class ПорядокПрисвоенияСерийныхНомеровНайтиПоСсылке: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<ПорядокПрисвоенияСерийныхНомеровНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/ПоКоду","{Код}")]
+	public class ПорядокПрисвоенияСерийныхНомеровНайтиПоКоду: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<ПорядокПрисвоенияСерийныхНомеровНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/ПоНаименованию","{Наименование}")]
+	public class ПорядокПрисвоенияСерийныхНомеровНайтиПоНаименованию: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<ПорядокПрисвоенияСерийныхНомеровНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПорядокПрисвоенияСерийныхНомеровВыбратьПоСсылке: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<ПорядокПрисвоенияСерийныхНомеровВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПорядокПрисвоенияСерийныхНомеровВыбратьПоКоду: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<ПорядокПрисвоенияСерийныхНомеровВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПорядокПрисвоенияСерийныхНомеров/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПорядокПрисвоенияСерийныхНомеровВыбратьПоНаименованию: V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров,IReturn<ПорядокПрисвоенияСерийныхНомеровВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovResponse//ПорядокПрисвоенияСерийныхНомеровОтвет
+	public class ПорядокПрисвоенияСерийныхНомеровОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerovs")]
-	[Route("/Catalogs/PoryadokPrisvoeniyaSerijjnykhNomerovs/{Codes}")]
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovsRequest/*ПорядокПрисвоенияСерийныхНомеровЗапрос*/: IReturn<List<PoryadokPrisvoeniyaSerijjnykhNomerovRequest>>
+	public class ПорядокПрисвоенияСерийныхНомеровСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PoryadokPrisvoeniyaSerijjnykhNomerovsRequest(params string[] Codes)
+		
+		public object Get(ПорядокПрисвоенияСерийныхНомеровНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovsResponse//ПорядокПрисвоенияСерийныхНомеровОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PoryadokPrisvoeniyaSerijjnykhNomerovService /*ПорядокПрисвоенияСерийныхНомеровСервис*/ : Service
-	{
-		public object Any(PoryadokPrisvoeniyaSerijjnykhNomerovRequest request)
+		
+		public object Get(ПорядокПрисвоенияСерийныхНомеровНайтиПоКоду Запрос)
 		{
-			return new PoryadokPrisvoeniyaSerijjnykhNomerovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PoryadokPrisvoeniyaSerijjnykhNomerovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПорядокПрисвоенияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PoryadokPrisvoeniyaSerijjnykhNomerovResponse() {Result = "ПорядокПрисвоенияСерийныхНомеров c кодом '" + request.Code+"' не найдено."};
+				return new ПорядокПрисвоенияСерийныхНомеровОтвет() {Ответ = "ПорядокПрисвоенияСерийныхНомеров c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PoryadokPrisvoeniyaSerijjnykhNomerovsRequest request)
+		
+		public object Get(ПорядокПрисвоенияСерийныхНомеровНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПорядокПрисвоенияСерийныхНомеров.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПорядокПрисвоенияСерийныхНомеровВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПорядокПрисвоенияСерийныхНомеровВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПорядокПрисвоенияСерийныхНомеровВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПорядокПрисвоенияСерийныхНомеровЗапрос Запрос)
+		{
+			return new ПорядокПрисвоенияСерийныхНомеровОтвет {Ответ = "ПорядокПрисвоенияСерийныхНомеров, "};
+		}
+
+		public object Post(ПорядокПрисвоенияСерийныхНомеровЗапрос ЗапросПорядокПрисвоенияСерийныхНомеров)
+		{
+			var Ссылка = (СправочникиСсылка.ПорядокПрисвоенияСерийныхНомеров)ЗапросПорядокПрисвоенияСерийныхНомеров;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

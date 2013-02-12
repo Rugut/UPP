@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijj")]
-	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijj/FindById/{Id}")]
-	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijj/FindByCode/{Code}")]
-	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijj/FindByDescr/{Descr}")]
-	public class KlyuchiAnalitikiUchetaPartijjRequest/*КлючиАналитикиУчетаПартийЗапрос*/: V82.СправочникиСсылка.КлючиАналитикиУчетаПартий,IReturn<KlyuchiAnalitikiUchetaPartijjRequest>
+	//KlyuchiAnalitikiUchetaPartijj
+	[Маршрут("Справочники/КлючиАналитикиУчетаПартий","")]
+	public class КлючиАналитикиУчетаПартийЗапрос: V82.СправочникиСсылка.КлючиАналитикиУчетаПартий,IReturn<КлючиАналитикиУчетаПартийЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КлючиАналитикиУчетаПартий/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КлючиАналитикиУчетаПартий/ПоСсылке","{Ссылка}")]
+	public class КлючиАналитикиУчетаПартийНайтиПоСсылке: V82.СправочникиСсылка.КлючиАналитикиУчетаПартий,IReturn<КлючиАналитикиУчетаПартийНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КлючиАналитикиУчетаПартий/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КлючиАналитикиУчетаПартий/ПоНаименованию","{Наименование}")]
+	public class КлючиАналитикиУчетаПартийНайтиПоНаименованию: V82.СправочникиСсылка.КлючиАналитикиУчетаПартий,IReturn<КлючиАналитикиУчетаПартийНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КлючиАналитикиУчетаПартий/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлючиАналитикиУчетаПартийВыбратьПоСсылке: V82.СправочникиСсылка.КлючиАналитикиУчетаПартий,IReturn<КлючиАналитикиУчетаПартийВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлючиАналитикиУчетаПартий/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлючиАналитикиУчетаПартийВыбратьПоНаименованию: V82.СправочникиСсылка.КлючиАналитикиУчетаПартий,IReturn<КлючиАналитикиУчетаПартийВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KlyuchiAnalitikiUchetaPartijjResponse//КлючиАналитикиУчетаПартийОтвет
+	public class КлючиАналитикиУчетаПартийОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijjs")]
-	[Route("/Catalogs/KlyuchiAnalitikiUchetaPartijjs/{Codes}")]
-	public class KlyuchiAnalitikiUchetaPartijjsRequest/*КлючиАналитикиУчетаПартийЗапрос*/: IReturn<List<KlyuchiAnalitikiUchetaPartijjRequest>>
+	public class КлючиАналитикиУчетаПартийСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KlyuchiAnalitikiUchetaPartijjsRequest(params string[] Codes)
+		
+		public object Get(КлючиАналитикиУчетаПартийНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KlyuchiAnalitikiUchetaPartijjsResponse//КлючиАналитикиУчетаПартийОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KlyuchiAnalitikiUchetaPartijjService /*КлючиАналитикиУчетаПартийСервис*/ : Service
-	{
-		public object Any(KlyuchiAnalitikiUchetaPartijjRequest request)
+		
+		public object Get(КлючиАналитикиУчетаПартийНайтиПоНаименованию Запрос)
 		{
-			return new KlyuchiAnalitikiUchetaPartijjResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(KlyuchiAnalitikiUchetaPartijjRequest request)
+		
+		public object Get(КлючиАналитикиУчетаПартийВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлючиАналитикиУчетаПартийВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(KlyuchiAnalitikiUchetaPartijjsRequest request)
+		public object Any(КлючиАналитикиУчетаПартийЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлючиАналитикиУчетаПартий>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new КлючиАналитикиУчетаПартийОтвет {Ответ = "КлючиАналитикиУчетаПартий, "};
 		}
+
+		public object Post(КлючиАналитикиУчетаПартийЗапрос ЗапросКлючиАналитикиУчетаПартий)
+		{
+			var Ссылка = (СправочникиСсылка.КлючиАналитикиУчетаПартий)ЗапросКлючиАналитикиУчетаПартий;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

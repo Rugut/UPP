@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj")]
-	[Route("/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj/FindById/{Id}")]
-	[Route("/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj/FindByCode/{Code}")]
-	[Route("/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejj/FindByDescr/{Descr}")]
-	public class IstochnikiInformaciiPriObrashheniiPokupatelejjRequest/*ИсточникиИнформацииПриОбращенииПокупателейЗапрос*/: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<IstochnikiInformaciiPriObrashheniiPokupatelejjRequest>
+	//IstochnikiInformaciiPriObrashheniiPokupatelejj
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей","")]
+	public class ИсточникиИнформацииПриОбращенииПокупателейЗапрос: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<ИсточникиИнформацииПриОбращенииПокупателейЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/ПоСсылке","{Ссылка}")]
+	public class ИсточникиИнформацииПриОбращенииПокупателейНайтиПоСсылке: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<ИсточникиИнформацииПриОбращенииПокупателейНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/ПоКоду","{Код}")]
+	public class ИсточникиИнформацииПриОбращенииПокупателейНайтиПоКоду: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<ИсточникиИнформацииПриОбращенииПокупателейНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/ПоНаименованию","{Наименование}")]
+	public class ИсточникиИнформацииПриОбращенииПокупателейНайтиПоНаименованию: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<ИсточникиИнформацииПриОбращенииПокупателейНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоСсылке: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоКоду: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИсточникиИнформацииПриОбращенииПокупателей/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоНаименованию: V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей,IReturn<ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class IstochnikiInformaciiPriObrashheniiPokupatelejjResponse//ИсточникиИнформацииПриОбращенииПокупателейОтвет
+	public class ИсточникиИнформацииПриОбращенииПокупателейОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejjs")]
-	[Route("/Catalogs/IstochnikiInformaciiPriObrashheniiPokupatelejjs/{Codes}")]
-	public class IstochnikiInformaciiPriObrashheniiPokupatelejjsRequest/*ИсточникиИнформацииПриОбращенииПокупателейЗапрос*/: IReturn<List<IstochnikiInformaciiPriObrashheniiPokupatelejjRequest>>
+	public class ИсточникиИнформацииПриОбращенииПокупателейСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public IstochnikiInformaciiPriObrashheniiPokupatelejjsRequest(params string[] Codes)
+		
+		public object Get(ИсточникиИнформацииПриОбращенииПокупателейНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class IstochnikiInformaciiPriObrashheniiPokupatelejjsResponse//ИсточникиИнформацииПриОбращенииПокупателейОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class IstochnikiInformaciiPriObrashheniiPokupatelejjService /*ИсточникиИнформацииПриОбращенииПокупателейСервис*/ : Service
-	{
-		public object Any(IstochnikiInformaciiPriObrashheniiPokupatelejjRequest request)
+		
+		public object Get(ИсточникиИнформацииПриОбращенииПокупателейНайтиПоКоду Запрос)
 		{
-			return new IstochnikiInformaciiPriObrashheniiPokupatelejjResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(IstochnikiInformaciiPriObrashheniiPokupatelejjRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ИсточникиИнформацииПриОбращенииПокупателей.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new IstochnikiInformaciiPriObrashheniiPokupatelejjResponse() {Result = "ИсточникиИнформацииПриОбращенииПокупателей c кодом '" + request.Code+"' не найдено."};
+				return new ИсточникиИнформацииПриОбращенииПокупателейОтвет() {Ответ = "ИсточникиИнформацииПриОбращенииПокупателей c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(IstochnikiInformaciiPriObrashheniiPokupatelejjsRequest request)
+		
+		public object Get(ИсточникиИнформацииПриОбращенииПокупателейНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ИсточникиИнформацииПриОбращенииПокупателей.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИсточникиИнформацииПриОбращенииПокупателейВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ИсточникиИнформацииПриОбращенииПокупателейЗапрос Запрос)
+		{
+			return new ИсточникиИнформацииПриОбращенииПокупателейОтвет {Ответ = "ИсточникиИнформацииПриОбращенииПокупателей, "};
+		}
+
+		public object Post(ИсточникиИнформацииПриОбращенииПокупателейЗапрос ЗапросИсточникиИнформацииПриОбращенииПокупателей)
+		{
+			var Ссылка = (СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей)ЗапросИсточникиИнформацииПриОбращенииПокупателей;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

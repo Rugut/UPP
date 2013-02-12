@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ФинансовыеРасчеты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ФинансовыеРасчетыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/FinansovyeRaschety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФинансовыеРасчеты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new FinansovyeRaschetyRequest());
+			ФинансовыеРасчетыЗапрос ФинансовыеРасчетыЗапрос = null;
+			try
+			{
+				ФинансовыеРасчетыЗапрос = Клиент.Get(new ФинансовыеРасчетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФинансовыеРасчетыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ФинансовыеРасчетыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/FinansovyeRaschety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФинансовыеРасчеты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new FinansovyeRaschetyRequest());
+			ФинансовыеРасчетыЗапрос ФинансовыеРасчетыЗапрос = null;
+			try
+			{
+				ФинансовыеРасчетыЗапрос = Клиент.Get(new ФинансовыеРасчетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФинансовыеРасчетыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ФинансовыеРасчетыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/FinansovyeRaschety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФинансовыеРасчеты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new FinansovyeRaschetyRequest());
+			ФинансовыеРасчетыЗапрос ФинансовыеРасчетыЗапрос = null;
+			try
+			{
+				ФинансовыеРасчетыЗапрос = Клиент.Get(new ФинансовыеРасчетыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ФинансовыеРасчетыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ФинансовыеРасчетыЗапрос ФинансовыеРасчетыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/FinansovyeRaschety/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ФинансовыеРасчеты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new FinansovyeRaschetyRequest());
+			var ФинансовыеРасчетыОтвет = Клиент.Post(ФинансовыеРасчетыЗапрос);
+		}
+		public static void Записать(ФинансовыеРасчетыЗапрос ФинансовыеРасчетыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ФинансовыеРасчеты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ФинансовыеРасчетыОтвет = Клиент.Put(ФинансовыеРасчетыЗапрос);
+		}
+		public static void Удалить(ФинансовыеРасчетыЗапрос ФинансовыеРасчетыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ФинансовыеРасчеты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ФинансовыеРасчетыОтвет = Клиент.Delete(ФинансовыеРасчетыЗапрос);
 		}
 	}
 }

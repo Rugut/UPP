@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77")]
-	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/FindById/{Id}")]
-	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/FindByCode/{Code}")]
-	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77/FindByDescr/{Descr}")]
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request/*КонвертацииИзИнформационныхБаз1СПредприятия77Запрос*/: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request>
+	//KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77","")]
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77Запрос: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<КонвертацииИзИнформационныхБаз1СПредприятия77Запрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ПоСсылке","{Ссылка}")]
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоСсылке: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ПоКоду","{Код}")]
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоКоду: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ПоНаименованию","{Наименование}")]
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоНаименованию: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоСсылке: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоКоду: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоНаименованию: V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77,IReturn<КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Response//КонвертацииИзИнформационныхБаз1СПредприятия77Ответ
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77Ответ
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77s")]
-	[Route("/Catalogs/KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77s/{Codes}")]
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sRequest/*КонвертацииИзИнформационныхБаз1СПредприятия77Запрос*/: IReturn<List<KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request>>
+	public class КонвертацииИзИнформационныхБаз1СПредприятия77Сервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sRequest(params string[] Codes)
+		
+		public object Get(КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sResponse//КонвертацииИзИнформационныхБаз1СПредприятия77Ответ
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Service /*КонвертацииИзИнформационныхБаз1СПредприятия77Сервис*/ : Service
-	{
-		public object Any(KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request request)
+		
+		public object Get(КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоКоду Запрос)
 		{
-			return new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Response {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Request request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КонвертацииИзИнформационныхБаз1СПредприятия77.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77Response() {Result = "КонвертацииИзИнформационныхБаз1СПредприятия77 c кодом '" + request.Code+"' не найдено."};
+				return new КонвертацииИзИнформационныхБаз1СПредприятия77Ответ() {Ответ = "КонвертацииИзИнформационныхБаз1СПредприятия77 c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KonvertaciiIzInformacionnykhBaz1SPredpriyatiya77sRequest request)
+		
+		public object Get(КонвертацииИзИнформационныхБаз1СПредприятия77НайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КонвертацииИзИнформационныхБаз1СПредприятия77.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонвертацииИзИнформационныхБаз1СПредприятия77ВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос Запрос)
+		{
+			return new КонвертацииИзИнформационныхБаз1СПредприятия77Ответ {Ответ = "КонвертацииИзИнформационныхБаз1СПредприятия77, "};
+		}
+
+		public object Post(КонвертацииИзИнформационныхБаз1СПредприятия77Запрос ЗапросКонвертацииИзИнформационныхБаз1СПредприятия77)
+		{
+			var Ссылка = (СправочникиСсылка.КонвертацииИзИнформационныхБаз1СПредприятия77)ЗапросКонвертацииИзИнформационныхБаз1СПредприятия77;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

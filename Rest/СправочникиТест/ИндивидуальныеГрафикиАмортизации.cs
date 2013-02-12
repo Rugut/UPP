@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ИндивидуальныеГрафикиАмортизации:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ИндивидуальныеГрафикиАмортизацииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IndividualnyeGrafikiAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИндивидуальныеГрафикиАмортизации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new IndividualnyeGrafikiAmortizaciiRequest());
+			ИндивидуальныеГрафикиАмортизацииЗапрос ИндивидуальныеГрафикиАмортизацииЗапрос = null;
+			try
+			{
+				ИндивидуальныеГрафикиАмортизацииЗапрос = Клиент.Get(new ИндивидуальныеГрафикиАмортизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИндивидуальныеГрафикиАмортизацииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ИндивидуальныеГрафикиАмортизацииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/IndividualnyeGrafikiAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИндивидуальныеГрафикиАмортизации/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new IndividualnyeGrafikiAmortizaciiRequest());
+			ИндивидуальныеГрафикиАмортизацииЗапрос ИндивидуальныеГрафикиАмортизацииЗапрос = null;
+			try
+			{
+				ИндивидуальныеГрафикиАмортизацииЗапрос = Клиент.Get(new ИндивидуальныеГрафикиАмортизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИндивидуальныеГрафикиАмортизацииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ИндивидуальныеГрафикиАмортизацииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IndividualnyeGrafikiAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИндивидуальныеГрафикиАмортизации/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new IndividualnyeGrafikiAmortizaciiRequest());
+			ИндивидуальныеГрафикиАмортизацииЗапрос ИндивидуальныеГрафикиАмортизацииЗапрос = null;
+			try
+			{
+				ИндивидуальныеГрафикиАмортизацииЗапрос = Клиент.Get(new ИндивидуальныеГрафикиАмортизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИндивидуальныеГрафикиАмортизацииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ИндивидуальныеГрафикиАмортизацииЗапрос ИндивидуальныеГрафикиАмортизацииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/IndividualnyeGrafikiAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИндивидуальныеГрафикиАмортизации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new IndividualnyeGrafikiAmortizaciiRequest());
+			var ИндивидуальныеГрафикиАмортизацииОтвет = Клиент.Post(ИндивидуальныеГрафикиАмортизацииЗапрос);
+		}
+		public static void Записать(ИндивидуальныеГрафикиАмортизацииЗапрос ИндивидуальныеГрафикиАмортизацииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИндивидуальныеГрафикиАмортизации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИндивидуальныеГрафикиАмортизацииОтвет = Клиент.Put(ИндивидуальныеГрафикиАмортизацииЗапрос);
+		}
+		public static void Удалить(ИндивидуальныеГрафикиАмортизацииЗапрос ИндивидуальныеГрафикиАмортизацииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИндивидуальныеГрафикиАмортизации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИндивидуальныеГрафикиАмортизацииОтвет = Клиент.Delete(ИндивидуальныеГрафикиАмортизацииЗапрос);
 		}
 	}
 }

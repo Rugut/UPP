@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha")]
-	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha/FindById/{Id}")]
-	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha/FindByCode/{Code}")]
-	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazha/FindByDescr/{Descr}")]
-	public class OsnovaniyaIschislyaemogoTrudovogoStazhaRequest/*ОснованияИсчисляемогоТрудовогоСтажаЗапрос*/: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<OsnovaniyaIschislyaemogoTrudovogoStazhaRequest>
+	//OsnovaniyaIschislyaemogoTrudovogoStazha
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа","")]
+	public class ОснованияИсчисляемогоТрудовогоСтажаЗапрос: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<ОснованияИсчисляемогоТрудовогоСтажаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/ПоСсылке","{Ссылка}")]
+	public class ОснованияИсчисляемогоТрудовогоСтажаНайтиПоСсылке: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<ОснованияИсчисляемогоТрудовогоСтажаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/ПоКоду","{Код}")]
+	public class ОснованияИсчисляемогоТрудовогоСтажаНайтиПоКоду: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<ОснованияИсчисляемогоТрудовогоСтажаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/ПоНаименованию","{Наименование}")]
+	public class ОснованияИсчисляемогоТрудовогоСтажаНайтиПоНаименованию: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<ОснованияИсчисляемогоТрудовогоСтажаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоСсылке: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоКоду: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОснованияИсчисляемогоТрудовогоСтажа/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоНаименованию: V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа,IReturn<ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OsnovaniyaIschislyaemogoTrudovogoStazhaResponse//ОснованияИсчисляемогоТрудовогоСтажаОтвет
+	public class ОснованияИсчисляемогоТрудовогоСтажаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazhas")]
-	[Route("/Catalogs/OsnovaniyaIschislyaemogoTrudovogoStazhas/{Codes}")]
-	public class OsnovaniyaIschislyaemogoTrudovogoStazhasRequest/*ОснованияИсчисляемогоТрудовогоСтажаЗапрос*/: IReturn<List<OsnovaniyaIschislyaemogoTrudovogoStazhaRequest>>
+	public class ОснованияИсчисляемогоТрудовогоСтажаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OsnovaniyaIschislyaemogoTrudovogoStazhasRequest(params string[] Codes)
+		
+		public object Get(ОснованияИсчисляемогоТрудовогоСтажаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OsnovaniyaIschislyaemogoTrudovogoStazhasResponse//ОснованияИсчисляемогоТрудовогоСтажаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OsnovaniyaIschislyaemogoTrudovogoStazhaService /*ОснованияИсчисляемогоТрудовогоСтажаСервис*/ : Service
-	{
-		public object Any(OsnovaniyaIschislyaemogoTrudovogoStazhaRequest request)
+		
+		public object Get(ОснованияИсчисляемогоТрудовогоСтажаНайтиПоКоду Запрос)
 		{
-			return new OsnovaniyaIschislyaemogoTrudovogoStazhaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OsnovaniyaIschislyaemogoTrudovogoStazhaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОснованияИсчисляемогоТрудовогоСтажа.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OsnovaniyaIschislyaemogoTrudovogoStazhaResponse() {Result = "ОснованияИсчисляемогоТрудовогоСтажа c кодом '" + request.Code+"' не найдено."};
+				return new ОснованияИсчисляемогоТрудовогоСтажаОтвет() {Ответ = "ОснованияИсчисляемогоТрудовогоСтажа c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OsnovaniyaIschislyaemogoTrudovogoStazhasRequest request)
+		
+		public object Get(ОснованияИсчисляемогоТрудовогоСтажаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОснованияИсчисляемогоТрудовогоСтажа.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОснованияИсчисляемогоТрудовогоСтажаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОснованияИсчисляемогоТрудовогоСтажаЗапрос Запрос)
+		{
+			return new ОснованияИсчисляемогоТрудовогоСтажаОтвет {Ответ = "ОснованияИсчисляемогоТрудовогоСтажа, "};
+		}
+
+		public object Post(ОснованияИсчисляемогоТрудовогоСтажаЗапрос ЗапросОснованияИсчисляемогоТрудовогоСтажа)
+		{
+			var Ссылка = (СправочникиСсылка.ОснованияИсчисляемогоТрудовогоСтажа)ЗапросОснованияИсчисляемогоТрудовогоСтажа;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

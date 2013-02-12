@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыЗаметок:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыЗаметокЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыЗаметок/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidyZametokRequest());
+			ВидыЗаметокЗапрос ВидыЗаметокЗапрос = null;
+			try
+			{
+				ВидыЗаметокЗапрос = Клиент.Get(new ВидыЗаметокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыЗаметокЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыЗаметокЗапрос НайтиПоКоду(decimal Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыЗаметок/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidyZametokRequest());
+			ВидыЗаметокЗапрос ВидыЗаметокЗапрос = null;
+			try
+			{
+				ВидыЗаметокЗапрос = Клиент.Get(new ВидыЗаметокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыЗаметокЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыЗаметокЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыЗаметок/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidyZametokRequest());
+			ВидыЗаметокЗапрос ВидыЗаметокЗапрос = null;
+			try
+			{
+				ВидыЗаметокЗапрос = Клиент.Get(new ВидыЗаметокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыЗаметокЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыЗаметокЗапрос ВидыЗаметокЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыЗаметок?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidyZametokRequest());
+			var ВидыЗаметокОтвет = Клиент.Post(ВидыЗаметокЗапрос);
+		}
+		public static void Записать(ВидыЗаметокЗапрос ВидыЗаметокЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыЗаметок?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыЗаметокОтвет = Клиент.Put(ВидыЗаметокЗапрос);
+		}
+		public static void Удалить(ВидыЗаметокЗапрос ВидыЗаметокЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыЗаметок?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыЗаметокОтвет = Клиент.Delete(ВидыЗаметокЗапрос);
 		}
 	}
 }

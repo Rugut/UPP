@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,81 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov")]
-	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/FindById/{Id}")]
-	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/FindByCode/{Code}")]
-	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov/FindByDescr/{Descr}")]
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest/*ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос*/: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest>
+	//EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondov
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов","")]
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ПоСсылке","{Ссылка}")]
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоСсылке: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ПоКоду","{Код}")]
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоКоду: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ПоНаименованию","{Наименование}")]
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоНаименованию: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоСсылке: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоКоду: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public decimal ___Мин {get; set;}
+		public decimal ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоНаименованию: V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов,IReturn<ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse//ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovs")]
-	[Route("/Catalogs/EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovs/{Codes}")]
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsRequest/*ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос*/: IReturn<List<EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest>>
+	public class ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsRequest(params string[] Codes)
+		
+		public object Get(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsResponse//ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovService /*ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовСервис*/ : Service
-	{
-		public object Any(EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest request)
+		
+		public object Get(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоКоду Запрос)
 		{
-			return new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovRequest request)
-		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			if(Запрос.Код == null)
 			{
-				return new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse() {Result = "ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов c кодом '" + request.Code+"' не найдено."};
+				return null;
 			}
+			decimal СтрокаКод = Запрос.Код;
 			var Ссылка = V82.Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovResponse() {Result = "ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов c кодом '" + request.Code+"' не найдено."};
+				return new ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет() {Ответ = "ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(EdinyeNormyAmortizacionnykhOtchislenijjOsnovnykhFondovsRequest request)
+		
+		public object Get(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов>();
-			foreach (var Code in request.Codes)
-			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
-				{
-				continue;//ToDo: Регестрация ошибки.
-				}
-				var Ссылка = V82.Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос Запрос)
+		{
+			return new ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовОтвет {Ответ = "ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов, "};
+		}
+
+		public object Post(ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондовЗапрос ЗапросЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов)
+		{
+			var Ссылка = (СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов)ЗапросЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

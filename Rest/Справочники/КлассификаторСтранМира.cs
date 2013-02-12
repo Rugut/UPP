@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KlassifikatorStranMira")]
-	[Route("/Catalogs/KlassifikatorStranMira/FindById/{Id}")]
-	[Route("/Catalogs/KlassifikatorStranMira/FindByCode/{Code}")]
-	[Route("/Catalogs/KlassifikatorStranMira/FindByDescr/{Descr}")]
-	public class KlassifikatorStranMiraRequest/*КлассификаторСтранМираЗапрос*/: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<KlassifikatorStranMiraRequest>
+	//KlassifikatorStranMira
+	[Маршрут("Справочники/КлассификаторСтранМира","")]
+	public class КлассификаторСтранМираЗапрос: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<КлассификаторСтранМираЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КлассификаторСтранМира/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КлассификаторСтранМира/ПоСсылке","{Ссылка}")]
+	public class КлассификаторСтранМираНайтиПоСсылке: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<КлассификаторСтранМираНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторСтранМира/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КлассификаторСтранМира/ПоКоду","{Код}")]
+	public class КлассификаторСтранМираНайтиПоКоду: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<КлассификаторСтранМираНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторСтранМира/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КлассификаторСтранМира/ПоНаименованию","{Наименование}")]
+	public class КлассификаторСтранМираНайтиПоНаименованию: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<КлассификаторСтранМираНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторСтранМира/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторСтранМираВыбратьПоСсылке: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<КлассификаторСтранМираВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлассификаторСтранМира/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторСтранМираВыбратьПоКоду: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<КлассификаторСтранМираВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлассификаторСтранМира/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторСтранМираВыбратьПоНаименованию: V82.СправочникиСсылка.КлассификаторСтранМира,IReturn<КлассификаторСтранМираВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KlassifikatorStranMiraResponse//КлассификаторСтранМираОтвет
+	public class КлассификаторСтранМираОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KlassifikatorStranMiras")]
-	[Route("/Catalogs/KlassifikatorStranMiras/{Codes}")]
-	public class KlassifikatorStranMirasRequest/*КлассификаторСтранМираЗапрос*/: IReturn<List<KlassifikatorStranMiraRequest>>
+	public class КлассификаторСтранМираСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KlassifikatorStranMirasRequest(params string[] Codes)
+		
+		public object Get(КлассификаторСтранМираНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KlassifikatorStranMirasResponse//КлассификаторСтранМираОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KlassifikatorStranMiraService /*КлассификаторСтранМираСервис*/ : Service
-	{
-		public object Any(KlassifikatorStranMiraRequest request)
+		
+		public object Get(КлассификаторСтранМираНайтиПоКоду Запрос)
 		{
-			return new KlassifikatorStranMiraResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KlassifikatorStranMiraRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КлассификаторСтранМира.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KlassifikatorStranMiraResponse() {Result = "КлассификаторСтранМира c кодом '" + request.Code+"' не найдено."};
+				return new КлассификаторСтранМираОтвет() {Ответ = "КлассификаторСтранМира c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KlassifikatorStranMirasRequest request)
+		
+		public object Get(КлассификаторСтранМираНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлассификаторСтранМира>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КлассификаторСтранМира.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КлассификаторСтранМираВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлассификаторСтранМираВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлассификаторСтранМираВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КлассификаторСтранМираЗапрос Запрос)
+		{
+			return new КлассификаторСтранМираОтвет {Ответ = "КлассификаторСтранМира, "};
+		}
+
+		public object Post(КлассификаторСтранМираЗапрос ЗапросКлассификаторСтранМира)
+		{
+			var Ссылка = (СправочникиСсылка.КлассификаторСтранМира)ЗапросКлассификаторСтранМира;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

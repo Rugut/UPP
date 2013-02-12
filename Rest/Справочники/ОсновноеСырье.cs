@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OsnovnoeSyre")]
-	[Route("/Catalogs/OsnovnoeSyre/FindById/{Id}")]
-	[Route("/Catalogs/OsnovnoeSyre/FindByCode/{Code}")]
-	[Route("/Catalogs/OsnovnoeSyre/FindByDescr/{Descr}")]
-	public class OsnovnoeSyreRequest/*ОсновноеСырьеЗапрос*/: V82.СправочникиСсылка.ОсновноеСырье,IReturn<OsnovnoeSyreRequest>
+	//OsnovnoeSyre
+	[Маршрут("Справочники/ОсновноеСырье","")]
+	public class ОсновноеСырьеЗапрос: V82.СправочникиСсылка.ОсновноеСырье,IReturn<ОсновноеСырьеЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОсновноеСырье/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОсновноеСырье/ПоСсылке","{Ссылка}")]
+	public class ОсновноеСырьеНайтиПоСсылке: V82.СправочникиСсылка.ОсновноеСырье,IReturn<ОсновноеСырьеНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОсновноеСырье/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОсновноеСырье/ПоКоду","{Код}")]
+	public class ОсновноеСырьеНайтиПоКоду: V82.СправочникиСсылка.ОсновноеСырье,IReturn<ОсновноеСырьеНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОсновноеСырье/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОсновноеСырье/ПоНаименованию","{Наименование}")]
+	public class ОсновноеСырьеНайтиПоНаименованию: V82.СправочникиСсылка.ОсновноеСырье,IReturn<ОсновноеСырьеНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОсновноеСырье/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсновноеСырьеВыбратьПоСсылке: V82.СправочникиСсылка.ОсновноеСырье,IReturn<ОсновноеСырьеВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОсновноеСырье/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсновноеСырьеВыбратьПоКоду: V82.СправочникиСсылка.ОсновноеСырье,IReturn<ОсновноеСырьеВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОсновноеСырье/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсновноеСырьеВыбратьПоНаименованию: V82.СправочникиСсылка.ОсновноеСырье,IReturn<ОсновноеСырьеВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OsnovnoeSyreResponse//ОсновноеСырьеОтвет
+	public class ОсновноеСырьеОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OsnovnoeSyres")]
-	[Route("/Catalogs/OsnovnoeSyres/{Codes}")]
-	public class OsnovnoeSyresRequest/*ОсновноеСырьеЗапрос*/: IReturn<List<OsnovnoeSyreRequest>>
+	public class ОсновноеСырьеСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OsnovnoeSyresRequest(params string[] Codes)
+		
+		public object Get(ОсновноеСырьеНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OsnovnoeSyresResponse//ОсновноеСырьеОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OsnovnoeSyreService /*ОсновноеСырьеСервис*/ : Service
-	{
-		public object Any(OsnovnoeSyreRequest request)
+		
+		public object Get(ОсновноеСырьеНайтиПоКоду Запрос)
 		{
-			return new OsnovnoeSyreResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OsnovnoeSyreRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OsnovnoeSyreResponse() {Result = "ОсновноеСырье c кодом '" + request.Code+"' не найдено."};
+				return new ОсновноеСырьеОтвет() {Ответ = "ОсновноеСырье c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OsnovnoeSyresRequest request)
+		
+		public object Get(ОсновноеСырьеНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОсновноеСырье>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОсновноеСырье.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОсновноеСырьеВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОсновноеСырьеВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОсновноеСырьеВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОсновноеСырьеЗапрос Запрос)
+		{
+			return new ОсновноеСырьеОтвет {Ответ = "ОсновноеСырье, "};
+		}
+
+		public object Post(ОсновноеСырьеЗапрос ЗапросОсновноеСырье)
+		{
+			var Ссылка = (СправочникиСсылка.ОсновноеСырье)ЗапросОсновноеСырье;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

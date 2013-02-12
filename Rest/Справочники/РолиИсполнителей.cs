@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/RoliIspolnitelejj")]
-	[Route("/Catalogs/RoliIspolnitelejj/FindById/{Id}")]
-	[Route("/Catalogs/RoliIspolnitelejj/FindByCode/{Code}")]
-	[Route("/Catalogs/RoliIspolnitelejj/FindByDescr/{Descr}")]
-	public class RoliIspolnitelejjRequest/*РолиИсполнителейЗапрос*/: V82.СправочникиСсылка.РолиИсполнителей,IReturn<RoliIspolnitelejjRequest>
+	//RoliIspolnitelejj
+	[Маршрут("Справочники/РолиИсполнителей","")]
+	public class РолиИсполнителейЗапрос: V82.СправочникиСсылка.РолиИсполнителей,IReturn<РолиИсполнителейЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/РолиИсполнителей/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/РолиИсполнителей/ПоСсылке","{Ссылка}")]
+	public class РолиИсполнителейНайтиПоСсылке: V82.СправочникиСсылка.РолиИсполнителей,IReturn<РолиИсполнителейНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/РолиИсполнителей/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/РолиИсполнителей/ПоКоду","{Код}")]
+	public class РолиИсполнителейНайтиПоКоду: V82.СправочникиСсылка.РолиИсполнителей,IReturn<РолиИсполнителейНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/РолиИсполнителей/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/РолиИсполнителей/ПоНаименованию","{Наименование}")]
+	public class РолиИсполнителейНайтиПоНаименованию: V82.СправочникиСсылка.РолиИсполнителей,IReturn<РолиИсполнителейНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/РолиИсполнителей/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РолиИсполнителейВыбратьПоСсылке: V82.СправочникиСсылка.РолиИсполнителей,IReturn<РолиИсполнителейВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РолиИсполнителей/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РолиИсполнителейВыбратьПоКоду: V82.СправочникиСсылка.РолиИсполнителей,IReturn<РолиИсполнителейВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РолиИсполнителей/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РолиИсполнителейВыбратьПоНаименованию: V82.СправочникиСсылка.РолиИсполнителей,IReturn<РолиИсполнителейВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RoliIspolnitelejjResponse//РолиИсполнителейОтвет
+	public class РолиИсполнителейОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/RoliIspolnitelejjs")]
-	[Route("/Catalogs/RoliIspolnitelejjs/{Codes}")]
-	public class RoliIspolnitelejjsRequest/*РолиИсполнителейЗапрос*/: IReturn<List<RoliIspolnitelejjRequest>>
+	public class РолиИсполнителейСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RoliIspolnitelejjsRequest(params string[] Codes)
+		
+		public object Get(РолиИсполнителейНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RoliIspolnitelejjsResponse//РолиИсполнителейОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RoliIspolnitelejjService /*РолиИсполнителейСервис*/ : Service
-	{
-		public object Any(RoliIspolnitelejjRequest request)
+		
+		public object Get(РолиИсполнителейНайтиПоКоду Запрос)
 		{
-			return new RoliIspolnitelejjResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RoliIspolnitelejjRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.РолиИсполнителей.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RoliIspolnitelejjResponse() {Result = "РолиИсполнителей c кодом '" + request.Code+"' не найдено."};
+				return new РолиИсполнителейОтвет() {Ответ = "РолиИсполнителей c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RoliIspolnitelejjsRequest request)
+		
+		public object Get(РолиИсполнителейНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РолиИсполнителей>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.РолиИсполнителей.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РолиИсполнителейВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РолиИсполнителейВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РолиИсполнителейВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РолиИсполнителейЗапрос Запрос)
+		{
+			return new РолиИсполнителейОтвет {Ответ = "РолиИсполнителей, "};
+		}
+
+		public object Post(РолиИсполнителейЗапрос ЗапросРолиИсполнителей)
+		{
+			var Ссылка = (СправочникиСсылка.РолиИсполнителей)ЗапросРолиИсполнителей;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

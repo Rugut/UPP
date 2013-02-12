@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Rezervy")]
-	[Route("/Catalogs/Rezervy/FindById/{Id}")]
-	[Route("/Catalogs/Rezervy/FindByCode/{Code}")]
-	[Route("/Catalogs/Rezervy/FindByDescr/{Descr}")]
-	public class RezervyRequest/*РезервыЗапрос*/: V82.СправочникиСсылка.Резервы,IReturn<RezervyRequest>
+	//Rezervy
+	[Маршрут("Справочники/Резервы","")]
+	public class РезервыЗапрос: V82.СправочникиСсылка.Резервы,IReturn<РезервыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Резервы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Резервы/ПоСсылке","{Ссылка}")]
+	public class РезервыНайтиПоСсылке: V82.СправочникиСсылка.Резервы,IReturn<РезервыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Резервы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Резервы/ПоКоду","{Код}")]
+	public class РезервыНайтиПоКоду: V82.СправочникиСсылка.Резервы,IReturn<РезервыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Резервы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Резервы/ПоНаименованию","{Наименование}")]
+	public class РезервыНайтиПоНаименованию: V82.СправочникиСсылка.Резервы,IReturn<РезервыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Резервы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РезервыВыбратьПоСсылке: V82.СправочникиСсылка.Резервы,IReturn<РезервыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Резервы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РезервыВыбратьПоКоду: V82.СправочникиСсылка.Резервы,IReturn<РезервыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Резервы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РезервыВыбратьПоНаименованию: V82.СправочникиСсылка.Резервы,IReturn<РезервыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RezervyResponse//РезервыОтвет
+	public class РезервыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Rezervys")]
-	[Route("/Catalogs/Rezervys/{Codes}")]
-	public class RezervysRequest/*РезервыЗапрос*/: IReturn<List<RezervyRequest>>
+	public class РезервыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RezervysRequest(params string[] Codes)
+		
+		public object Get(РезервыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RezervysResponse//РезервыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RezervyService /*РезервыСервис*/ : Service
-	{
-		public object Any(RezervyRequest request)
+		
+		public object Get(РезервыНайтиПоКоду Запрос)
 		{
-			return new RezervyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RezervyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Резервы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RezervyResponse() {Result = "Резервы c кодом '" + request.Code+"' не найдено."};
+				return new РезервыОтвет() {Ответ = "Резервы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RezervysRequest request)
+		
+		public object Get(РезервыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Резервы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Резервы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РезервыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РезервыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РезервыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РезервыЗапрос Запрос)
+		{
+			return new РезервыОтвет {Ответ = "Резервы, "};
+		}
+
+		public object Post(РезервыЗапрос ЗапросРезервы)
+		{
+			var Ссылка = (СправочникиСсылка.Резервы)ЗапросРезервы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

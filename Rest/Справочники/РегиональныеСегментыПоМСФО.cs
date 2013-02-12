@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO")]
-	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO/FindById/{Id}")]
-	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO/FindByCode/{Code}")]
-	[Route("/Catalogs/RegionalnyeSegmentyPoMSFO/FindByDescr/{Descr}")]
-	public class RegionalnyeSegmentyPoMSFORequest/*РегиональныеСегментыПоМСФОЗапрос*/: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<RegionalnyeSegmentyPoMSFORequest>
+	//RegionalnyeSegmentyPoMSFO
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО","")]
+	public class РегиональныеСегментыПоМСФОЗапрос: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<РегиональныеСегментыПоМСФОЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/ПоСсылке","{Ссылка}")]
+	public class РегиональныеСегментыПоМСФОНайтиПоСсылке: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<РегиональныеСегментыПоМСФОНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/ПоКоду","{Код}")]
+	public class РегиональныеСегментыПоМСФОНайтиПоКоду: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<РегиональныеСегментыПоМСФОНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/ПоНаименованию","{Наименование}")]
+	public class РегиональныеСегментыПоМСФОНайтиПоНаименованию: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<РегиональныеСегментыПоМСФОНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегиональныеСегментыПоМСФОВыбратьПоСсылке: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<РегиональныеСегментыПоМСФОВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегиональныеСегментыПоМСФОВыбратьПоКоду: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<РегиональныеСегментыПоМСФОВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РегиональныеСегментыПоМСФО/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегиональныеСегментыПоМСФОВыбратьПоНаименованию: V82.СправочникиСсылка.РегиональныеСегментыПоМСФО,IReturn<РегиональныеСегментыПоМСФОВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RegionalnyeSegmentyPoMSFOResponse//РегиональныеСегментыПоМСФООтвет
+	public class РегиональныеСегментыПоМСФООтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/RegionalnyeSegmentyPoMSFOs")]
-	[Route("/Catalogs/RegionalnyeSegmentyPoMSFOs/{Codes}")]
-	public class RegionalnyeSegmentyPoMSFOsRequest/*РегиональныеСегментыПоМСФОЗапрос*/: IReturn<List<RegionalnyeSegmentyPoMSFORequest>>
+	public class РегиональныеСегментыПоМСФОСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RegionalnyeSegmentyPoMSFOsRequest(params string[] Codes)
+		
+		public object Get(РегиональныеСегментыПоМСФОНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RegionalnyeSegmentyPoMSFOsResponse//РегиональныеСегментыПоМСФООтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RegionalnyeSegmentyPoMSFOService /*РегиональныеСегментыПоМСФОСервис*/ : Service
-	{
-		public object Any(RegionalnyeSegmentyPoMSFORequest request)
+		
+		public object Get(РегиональныеСегментыПоМСФОНайтиПоКоду Запрос)
 		{
-			return new RegionalnyeSegmentyPoMSFOResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RegionalnyeSegmentyPoMSFORequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.РегиональныеСегментыПоМСФО.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RegionalnyeSegmentyPoMSFOResponse() {Result = "РегиональныеСегментыПоМСФО c кодом '" + request.Code+"' не найдено."};
+				return new РегиональныеСегментыПоМСФООтвет() {Ответ = "РегиональныеСегментыПоМСФО c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RegionalnyeSegmentyPoMSFOsRequest request)
+		
+		public object Get(РегиональныеСегментыПоМСФОНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РегиональныеСегментыПоМСФО>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.РегиональныеСегментыПоМСФО.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РегиональныеСегментыПоМСФОВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегиональныеСегментыПоМСФОВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегиональныеСегментыПоМСФОВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РегиональныеСегментыПоМСФОЗапрос Запрос)
+		{
+			return new РегиональныеСегментыПоМСФООтвет {Ответ = "РегиональныеСегментыПоМСФО, "};
+		}
+
+		public object Post(РегиональныеСегментыПоМСФОЗапрос ЗапросРегиональныеСегментыПоМСФО)
+		{
+			var Ссылка = (СправочникиСсылка.РегиональныеСегментыПоМСФО)ЗапросРегиональныеСегментыПоМСФО;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem")]
-	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem/FindById/{Id}")]
-	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem/FindByCode/{Code}")]
-	[Route("/Catalogs/VlozheniyaEHlektronnykhPisem/FindByDescr/{Descr}")]
-	public class VlozheniyaEHlektronnykhPisemRequest/*ВложенияЭлектронныхПисемЗапрос*/: V82.СправочникиСсылка.ВложенияЭлектронныхПисем,IReturn<VlozheniyaEHlektronnykhPisemRequest>
+	//VlozheniyaEHlektronnykhPisem
+	[Маршрут("Справочники/ВложенияЭлектронныхПисем","")]
+	public class ВложенияЭлектронныхПисемЗапрос: V82.СправочникиСсылка.ВложенияЭлектронныхПисем,IReturn<ВложенияЭлектронныхПисемЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВложенияЭлектронныхПисем/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВложенияЭлектронныхПисем/ПоСсылке","{Ссылка}")]
+	public class ВложенияЭлектронныхПисемНайтиПоСсылке: V82.СправочникиСсылка.ВложенияЭлектронныхПисем,IReturn<ВложенияЭлектронныхПисемНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВложенияЭлектронныхПисем/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВложенияЭлектронныхПисем/ПоНаименованию","{Наименование}")]
+	public class ВложенияЭлектронныхПисемНайтиПоНаименованию: V82.СправочникиСсылка.ВложенияЭлектронныхПисем,IReturn<ВложенияЭлектронныхПисемНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВложенияЭлектронныхПисем/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВложенияЭлектронныхПисемВыбратьПоСсылке: V82.СправочникиСсылка.ВложенияЭлектронныхПисем,IReturn<ВложенияЭлектронныхПисемВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВложенияЭлектронныхПисем/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВложенияЭлектронныхПисемВыбратьПоНаименованию: V82.СправочникиСсылка.ВложенияЭлектронныхПисем,IReturn<ВложенияЭлектронныхПисемВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VlozheniyaEHlektronnykhPisemResponse//ВложенияЭлектронныхПисемОтвет
+	public class ВложенияЭлектронныхПисемОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VlozheniyaEHlektronnykhPisems")]
-	[Route("/Catalogs/VlozheniyaEHlektronnykhPisems/{Codes}")]
-	public class VlozheniyaEHlektronnykhPisemsRequest/*ВложенияЭлектронныхПисемЗапрос*/: IReturn<List<VlozheniyaEHlektronnykhPisemRequest>>
+	public class ВложенияЭлектронныхПисемСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VlozheniyaEHlektronnykhPisemsRequest(params string[] Codes)
+		
+		public object Get(ВложенияЭлектронныхПисемНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VlozheniyaEHlektronnykhPisemsResponse//ВложенияЭлектронныхПисемОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VlozheniyaEHlektronnykhPisemService /*ВложенияЭлектронныхПисемСервис*/ : Service
-	{
-		public object Any(VlozheniyaEHlektronnykhPisemRequest request)
+		
+		public object Get(ВложенияЭлектронныхПисемНайтиПоНаименованию Запрос)
 		{
-			return new VlozheniyaEHlektronnykhPisemResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(VlozheniyaEHlektronnykhPisemRequest request)
+		
+		public object Get(ВложенияЭлектронныхПисемВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВложенияЭлектронныхПисемВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(VlozheniyaEHlektronnykhPisemsRequest request)
+		public object Any(ВложенияЭлектронныхПисемЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВложенияЭлектронныхПисем>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ВложенияЭлектронныхПисемОтвет {Ответ = "ВложенияЭлектронныхПисем, "};
 		}
+
+		public object Post(ВложенияЭлектронныхПисемЗапрос ЗапросВложенияЭлектронныхПисем)
+		{
+			var Ссылка = (СправочникиСсылка.ВложенияЭлектронныхПисем)ЗапросВложенияЭлектронныхПисем;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

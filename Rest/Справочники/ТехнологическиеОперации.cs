@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TekhnologicheskieOperacii")]
-	[Route("/Catalogs/TekhnologicheskieOperacii/FindById/{Id}")]
-	[Route("/Catalogs/TekhnologicheskieOperacii/FindByCode/{Code}")]
-	[Route("/Catalogs/TekhnologicheskieOperacii/FindByDescr/{Descr}")]
-	public class TekhnologicheskieOperaciiRequest/*ТехнологическиеОперацииЗапрос*/: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<TekhnologicheskieOperaciiRequest>
+	//TekhnologicheskieOperacii
+	[Маршрут("Справочники/ТехнологическиеОперации","")]
+	public class ТехнологическиеОперацииЗапрос: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<ТехнологическиеОперацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТехнологическиеОперации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТехнологическиеОперации/ПоСсылке","{Ссылка}")]
+	public class ТехнологическиеОперацииНайтиПоСсылке: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<ТехнологическиеОперацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТехнологическиеОперации/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТехнологическиеОперации/ПоКоду","{Код}")]
+	public class ТехнологическиеОперацииНайтиПоКоду: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<ТехнологическиеОперацииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТехнологическиеОперации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТехнологическиеОперации/ПоНаименованию","{Наименование}")]
+	public class ТехнологическиеОперацииНайтиПоНаименованию: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<ТехнологическиеОперацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТехнологическиеОперации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТехнологическиеОперацииВыбратьПоСсылке: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<ТехнологическиеОперацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТехнологическиеОперации/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТехнологическиеОперацииВыбратьПоКоду: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<ТехнологическиеОперацииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТехнологическиеОперации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТехнологическиеОперацииВыбратьПоНаименованию: V82.СправочникиСсылка.ТехнологическиеОперации,IReturn<ТехнологическиеОперацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TekhnologicheskieOperaciiResponse//ТехнологическиеОперацииОтвет
+	public class ТехнологическиеОперацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TekhnologicheskieOperaciis")]
-	[Route("/Catalogs/TekhnologicheskieOperaciis/{Codes}")]
-	public class TekhnologicheskieOperaciisRequest/*ТехнологическиеОперацииЗапрос*/: IReturn<List<TekhnologicheskieOperaciiRequest>>
+	public class ТехнологическиеОперацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TekhnologicheskieOperaciisRequest(params string[] Codes)
+		
+		public object Get(ТехнологическиеОперацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TekhnologicheskieOperaciisResponse//ТехнологическиеОперацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TekhnologicheskieOperaciiService /*ТехнологическиеОперацииСервис*/ : Service
-	{
-		public object Any(TekhnologicheskieOperaciiRequest request)
+		
+		public object Get(ТехнологическиеОперацииНайтиПоКоду Запрос)
 		{
-			return new TekhnologicheskieOperaciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TekhnologicheskieOperaciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТехнологическиеОперации.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TekhnologicheskieOperaciiResponse() {Result = "ТехнологическиеОперации c кодом '" + request.Code+"' не найдено."};
+				return new ТехнологическиеОперацииОтвет() {Ответ = "ТехнологическиеОперации c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TekhnologicheskieOperaciisRequest request)
+		
+		public object Get(ТехнологическиеОперацииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТехнологическиеОперации>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТехнологическиеОперации.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТехнологическиеОперацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТехнологическиеОперацииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТехнологическиеОперацииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТехнологическиеОперацииЗапрос Запрос)
+		{
+			return new ТехнологическиеОперацииОтвет {Ответ = "ТехнологическиеОперации, "};
+		}
+
+		public object Post(ТехнологическиеОперацииЗапрос ЗапросТехнологическиеОперации)
+		{
+			var Ссылка = (СправочникиСсылка.ТехнологическиеОперации)ЗапросТехнологическиеОперации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

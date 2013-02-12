@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПерепискаСКонтролирующимиОрганами:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПерепискаСКонтролирующимиОрганамиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PerepiskaSKontroliruyushhimiOrganami/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПерепискаСКонтролирующимиОрганами/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new PerepiskaSKontroliruyushhimiOrganamiRequest());
+			ПерепискаСКонтролирующимиОрганамиЗапрос ПерепискаСКонтролирующимиОрганамиЗапрос = null;
+			try
+			{
+				ПерепискаСКонтролирующимиОрганамиЗапрос = Клиент.Get(new ПерепискаСКонтролирующимиОрганамиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПерепискаСКонтролирующимиОрганамиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПерепискаСКонтролирующимиОрганамиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/PerepiskaSKontroliruyushhimiOrganami/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПерепискаСКонтролирующимиОрганами/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new PerepiskaSKontroliruyushhimiOrganamiRequest());
+			ПерепискаСКонтролирующимиОрганамиЗапрос ПерепискаСКонтролирующимиОрганамиЗапрос = null;
+			try
+			{
+				ПерепискаСКонтролирующимиОрганамиЗапрос = Клиент.Get(new ПерепискаСКонтролирующимиОрганамиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПерепискаСКонтролирующимиОрганамиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПерепискаСКонтролирующимиОрганамиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/PerepiskaSKontroliruyushhimiOrganami/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПерепискаСКонтролирующимиОрганами/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new PerepiskaSKontroliruyushhimiOrganamiRequest());
+			ПерепискаСКонтролирующимиОрганамиЗапрос ПерепискаСКонтролирующимиОрганамиЗапрос = null;
+			try
+			{
+				ПерепискаСКонтролирующимиОрганамиЗапрос = Клиент.Get(new ПерепискаСКонтролирующимиОрганамиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПерепискаСКонтролирующимиОрганамиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПерепискаСКонтролирующимиОрганамиЗапрос ПерепискаСКонтролирующимиОрганамиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/PerepiskaSKontroliruyushhimiOrganami/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПерепискаСКонтролирующимиОрганами?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new PerepiskaSKontroliruyushhimiOrganamiRequest());
+			var ПерепискаСКонтролирующимиОрганамиОтвет = Клиент.Post(ПерепискаСКонтролирующимиОрганамиЗапрос);
+		}
+		public static void Записать(ПерепискаСКонтролирующимиОрганамиЗапрос ПерепискаСКонтролирующимиОрганамиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПерепискаСКонтролирующимиОрганами?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПерепискаСКонтролирующимиОрганамиОтвет = Клиент.Put(ПерепискаСКонтролирующимиОрганамиЗапрос);
+		}
+		public static void Удалить(ПерепискаСКонтролирующимиОрганамиЗапрос ПерепискаСКонтролирующимиОрганамиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПерепискаСКонтролирующимиОрганами?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПерепискаСКонтролирующимиОрганамиОтвет = Клиент.Delete(ПерепискаСКонтролирующимиОрганамиЗапрос);
 		}
 	}
 }

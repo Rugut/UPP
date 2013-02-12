@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/UchetnyeZapisiEHlektronnojjPochty")]
-	[Route("/Catalogs/UchetnyeZapisiEHlektronnojjPochty/FindById/{Id}")]
-	[Route("/Catalogs/UchetnyeZapisiEHlektronnojjPochty/FindByCode/{Code}")]
-	[Route("/Catalogs/UchetnyeZapisiEHlektronnojjPochty/FindByDescr/{Descr}")]
-	public class UchetnyeZapisiEHlektronnojjPochtyRequest/*УчетныеЗаписиЭлектроннойПочтыЗапрос*/: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<UchetnyeZapisiEHlektronnojjPochtyRequest>
+	//UchetnyeZapisiEHlektronnojjPochty
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты","")]
+	public class УчетныеЗаписиЭлектроннойПочтыЗапрос: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<УчетныеЗаписиЭлектроннойПочтыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/ПоСсылке","{Ссылка}")]
+	public class УчетныеЗаписиЭлектроннойПочтыНайтиПоСсылке: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<УчетныеЗаписиЭлектроннойПочтыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/ПоКоду","{Код}")]
+	public class УчетныеЗаписиЭлектроннойПочтыНайтиПоКоду: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<УчетныеЗаписиЭлектроннойПочтыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/ПоНаименованию","{Наименование}")]
+	public class УчетныеЗаписиЭлектроннойПочтыНайтиПоНаименованию: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<УчетныеЗаписиЭлектроннойПочтыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчетныеЗаписиЭлектроннойПочтыВыбратьПоСсылке: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<УчетныеЗаписиЭлектроннойПочтыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчетныеЗаписиЭлектроннойПочтыВыбратьПоКоду: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<УчетныеЗаписиЭлектроннойПочтыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчетныеЗаписиЭлектроннойПочтыВыбратьПоНаименованию: V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты,IReturn<УчетныеЗаписиЭлектроннойПочтыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class UchetnyeZapisiEHlektronnojjPochtyResponse//УчетныеЗаписиЭлектроннойПочтыОтвет
+	public class УчетныеЗаписиЭлектроннойПочтыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/UchetnyeZapisiEHlektronnojjPochtys")]
-	[Route("/Catalogs/UchetnyeZapisiEHlektronnojjPochtys/{Codes}")]
-	public class UchetnyeZapisiEHlektronnojjPochtysRequest/*УчетныеЗаписиЭлектроннойПочтыЗапрос*/: IReturn<List<UchetnyeZapisiEHlektronnojjPochtyRequest>>
+	public class УчетныеЗаписиЭлектроннойПочтыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public UchetnyeZapisiEHlektronnojjPochtysRequest(params string[] Codes)
+		
+		public object Get(УчетныеЗаписиЭлектроннойПочтыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class UchetnyeZapisiEHlektronnojjPochtysResponse//УчетныеЗаписиЭлектроннойПочтыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class UchetnyeZapisiEHlektronnojjPochtyService /*УчетныеЗаписиЭлектроннойПочтыСервис*/ : Service
-	{
-		public object Any(UchetnyeZapisiEHlektronnojjPochtyRequest request)
+		
+		public object Get(УчетныеЗаписиЭлектроннойПочтыНайтиПоКоду Запрос)
 		{
-			return new UchetnyeZapisiEHlektronnojjPochtyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(UchetnyeZapisiEHlektronnojjPochtyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.УчетныеЗаписиЭлектроннойПочты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new UchetnyeZapisiEHlektronnojjPochtyResponse() {Result = "УчетныеЗаписиЭлектроннойПочты c кодом '" + request.Code+"' не найдено."};
+				return new УчетныеЗаписиЭлектроннойПочтыОтвет() {Ответ = "УчетныеЗаписиЭлектроннойПочты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(UchetnyeZapisiEHlektronnojjPochtysRequest request)
+		
+		public object Get(УчетныеЗаписиЭлектроннойПочтыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.УчетныеЗаписиЭлектроннойПочты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(УчетныеЗаписиЭлектроннойПочтыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УчетныеЗаписиЭлектроннойПочтыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УчетныеЗаписиЭлектроннойПочтыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(УчетныеЗаписиЭлектроннойПочтыЗапрос Запрос)
+		{
+			return new УчетныеЗаписиЭлектроннойПочтыОтвет {Ответ = "УчетныеЗаписиЭлектроннойПочты, "};
+		}
+
+		public object Post(УчетныеЗаписиЭлектроннойПочтыЗапрос ЗапросУчетныеЗаписиЭлектроннойПочты)
+		{
+			var Ссылка = (СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты)ЗапросУчетныеЗаписиЭлектроннойПочты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca")]
-	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiZakrytiyaMesyaca/FindByDescr/{Descr}")]
-	public class NastrojjkiZakrytiyaMesyacaRequest/*НастройкиЗакрытияМесяцаЗапрос*/: V82.СправочникиСсылка.НастройкиЗакрытияМесяца,IReturn<NastrojjkiZakrytiyaMesyacaRequest>
+	//NastrojjkiZakrytiyaMesyaca
+	[Маршрут("Справочники/НастройкиЗакрытияМесяца","")]
+	public class НастройкиЗакрытияМесяцаЗапрос: V82.СправочникиСсылка.НастройкиЗакрытияМесяца,IReturn<НастройкиЗакрытияМесяцаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиЗакрытияМесяца/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиЗакрытияМесяца/ПоСсылке","{Ссылка}")]
+	public class НастройкиЗакрытияМесяцаНайтиПоСсылке: V82.СправочникиСсылка.НастройкиЗакрытияМесяца,IReturn<НастройкиЗакрытияМесяцаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиЗакрытияМесяца/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиЗакрытияМесяца/ПоНаименованию","{Наименование}")]
+	public class НастройкиЗакрытияМесяцаНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиЗакрытияМесяца,IReturn<НастройкиЗакрытияМесяцаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиЗакрытияМесяцаВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиЗакрытияМесяца,IReturn<НастройкиЗакрытияМесяцаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиЗакрытияМесяца/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиЗакрытияМесяцаВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиЗакрытияМесяца,IReturn<НастройкиЗакрытияМесяцаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiZakrytiyaMesyacaResponse//НастройкиЗакрытияМесяцаОтвет
+	public class НастройкиЗакрытияМесяцаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiZakrytiyaMesyacas")]
-	[Route("/Catalogs/NastrojjkiZakrytiyaMesyacas/{Codes}")]
-	public class NastrojjkiZakrytiyaMesyacasRequest/*НастройкиЗакрытияМесяцаЗапрос*/: IReturn<List<NastrojjkiZakrytiyaMesyacaRequest>>
+	public class НастройкиЗакрытияМесяцаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiZakrytiyaMesyacasRequest(params string[] Codes)
+		
+		public object Get(НастройкиЗакрытияМесяцаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiZakrytiyaMesyacasResponse//НастройкиЗакрытияМесяцаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiZakrytiyaMesyacaService /*НастройкиЗакрытияМесяцаСервис*/ : Service
-	{
-		public object Any(NastrojjkiZakrytiyaMesyacaRequest request)
+		
+		public object Get(НастройкиЗакрытияМесяцаНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiZakrytiyaMesyacaResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiZakrytiyaMesyacaRequest request)
+		
+		public object Get(НастройкиЗакрытияМесяцаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиЗакрытияМесяцаВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiZakrytiyaMesyacasRequest request)
+		public object Any(НастройкиЗакрытияМесяцаЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиЗакрытияМесяца>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиЗакрытияМесяцаОтвет {Ответ = "НастройкиЗакрытияМесяца, "};
 		}
+
+		public object Post(НастройкиЗакрытияМесяцаЗапрос ЗапросНастройкиЗакрытияМесяца)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиЗакрытияМесяца)ЗапросНастройкиЗакрытияМесяца;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

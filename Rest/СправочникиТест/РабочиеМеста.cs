@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class РабочиеМеста:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static РабочиеМестаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/RabochieMesta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new RabochieMestaRequest());
+			РабочиеМестаЗапрос РабочиеМестаЗапрос = null;
+			try
+			{
+				РабочиеМестаЗапрос = Клиент.Get(new РабочиеМестаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РабочиеМестаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static РабочиеМестаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/RabochieMesta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new RabochieMestaRequest());
+			РабочиеМестаЗапрос РабочиеМестаЗапрос = null;
+			try
+			{
+				РабочиеМестаЗапрос = Клиент.Get(new РабочиеМестаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РабочиеМестаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static РабочиеМестаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/RabochieMesta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new RabochieMestaRequest());
+			РабочиеМестаЗапрос РабочиеМестаЗапрос = null;
+			try
+			{
+				РабочиеМестаЗапрос = Клиент.Get(new РабочиеМестаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РабочиеМестаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(РабочиеМестаЗапрос РабочиеМестаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/RabochieMesta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new RabochieMestaRequest());
+			var РабочиеМестаОтвет = Клиент.Post(РабочиеМестаЗапрос);
+		}
+		public static void Записать(РабочиеМестаЗапрос РабочиеМестаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РабочиеМестаОтвет = Клиент.Put(РабочиеМестаЗапрос);
+		}
+		public static void Удалить(РабочиеМестаЗапрос РабочиеМестаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/РабочиеМеста?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РабочиеМестаОтвет = Клиент.Delete(РабочиеМестаЗапрос);
 		}
 	}
 }

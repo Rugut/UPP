@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Rabotodateli")]
-	[Route("/Catalogs/Rabotodateli/FindById/{Id}")]
-	[Route("/Catalogs/Rabotodateli/FindByCode/{Code}")]
-	[Route("/Catalogs/Rabotodateli/FindByDescr/{Descr}")]
-	public class RabotodateliRequest/*РаботодателиЗапрос*/: V82.СправочникиСсылка.Работодатели,IReturn<RabotodateliRequest>
+	//Rabotodateli
+	[Маршрут("Справочники/Работодатели","")]
+	public class РаботодателиЗапрос: V82.СправочникиСсылка.Работодатели,IReturn<РаботодателиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Работодатели/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Работодатели/ПоСсылке","{Ссылка}")]
+	public class РаботодателиНайтиПоСсылке: V82.СправочникиСсылка.Работодатели,IReturn<РаботодателиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Работодатели/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Работодатели/ПоКоду","{Код}")]
+	public class РаботодателиНайтиПоКоду: V82.СправочникиСсылка.Работодатели,IReturn<РаботодателиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Работодатели/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Работодатели/ПоНаименованию","{Наименование}")]
+	public class РаботодателиНайтиПоНаименованию: V82.СправочникиСсылка.Работодатели,IReturn<РаботодателиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Работодатели/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РаботодателиВыбратьПоСсылке: V82.СправочникиСсылка.Работодатели,IReturn<РаботодателиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Работодатели/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РаботодателиВыбратьПоКоду: V82.СправочникиСсылка.Работодатели,IReturn<РаботодателиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Работодатели/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РаботодателиВыбратьПоНаименованию: V82.СправочникиСсылка.Работодатели,IReturn<РаботодателиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RabotodateliResponse//РаботодателиОтвет
+	public class РаботодателиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Rabotodatelis")]
-	[Route("/Catalogs/Rabotodatelis/{Codes}")]
-	public class RabotodatelisRequest/*РаботодателиЗапрос*/: IReturn<List<RabotodateliRequest>>
+	public class РаботодателиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RabotodatelisRequest(params string[] Codes)
+		
+		public object Get(РаботодателиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RabotodatelisResponse//РаботодателиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RabotodateliService /*РаботодателиСервис*/ : Service
-	{
-		public object Any(RabotodateliRequest request)
+		
+		public object Get(РаботодателиНайтиПоКоду Запрос)
 		{
-			return new RabotodateliResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RabotodateliRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Работодатели.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RabotodateliResponse() {Result = "Работодатели c кодом '" + request.Code+"' не найдено."};
+				return new РаботодателиОтвет() {Ответ = "Работодатели c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RabotodatelisRequest request)
+		
+		public object Get(РаботодателиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Работодатели>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Работодатели.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РаботодателиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РаботодателиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РаботодателиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РаботодателиЗапрос Запрос)
+		{
+			return new РаботодателиОтвет {Ответ = "Работодатели, "};
+		}
+
+		public object Post(РаботодателиЗапрос ЗапросРаботодатели)
+		{
+			var Ссылка = (СправочникиСсылка.Работодатели)ЗапросРаботодатели;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

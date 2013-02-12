@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НоменклатурныеГруппы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НоменклатурныеГруппыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NomenklaturnyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НоменклатурныеГруппы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NomenklaturnyeGruppyRequest());
+			НоменклатурныеГруппыЗапрос НоменклатурныеГруппыЗапрос = null;
+			try
+			{
+				НоменклатурныеГруппыЗапрос = Клиент.Get(new НоменклатурныеГруппыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НоменклатурныеГруппыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НоменклатурныеГруппыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NomenklaturnyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НоменклатурныеГруппы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NomenklaturnyeGruppyRequest());
+			НоменклатурныеГруппыЗапрос НоменклатурныеГруппыЗапрос = null;
+			try
+			{
+				НоменклатурныеГруппыЗапрос = Клиент.Get(new НоменклатурныеГруппыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НоменклатурныеГруппыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НоменклатурныеГруппыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NomenklaturnyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НоменклатурныеГруппы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NomenklaturnyeGruppyRequest());
+			НоменклатурныеГруппыЗапрос НоменклатурныеГруппыЗапрос = null;
+			try
+			{
+				НоменклатурныеГруппыЗапрос = Клиент.Get(new НоменклатурныеГруппыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НоменклатурныеГруппыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НоменклатурныеГруппыЗапрос НоменклатурныеГруппыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NomenklaturnyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НоменклатурныеГруппы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NomenklaturnyeGruppyRequest());
+			var НоменклатурныеГруппыОтвет = Клиент.Post(НоменклатурныеГруппыЗапрос);
+		}
+		public static void Записать(НоменклатурныеГруппыЗапрос НоменклатурныеГруппыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НоменклатурныеГруппы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НоменклатурныеГруппыОтвет = Клиент.Put(НоменклатурныеГруппыЗапрос);
+		}
+		public static void Удалить(НоменклатурныеГруппыЗапрос НоменклатурныеГруппыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НоменклатурныеГруппы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НоменклатурныеГруппыОтвет = Клиент.Delete(НоменклатурныеГруппыЗапрос);
 		}
 	}
 }

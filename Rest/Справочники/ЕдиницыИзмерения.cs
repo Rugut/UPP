@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/EdinicyIzmereniya")]
-	[Route("/Catalogs/EdinicyIzmereniya/FindById/{Id}")]
-	[Route("/Catalogs/EdinicyIzmereniya/FindByCode/{Code}")]
-	[Route("/Catalogs/EdinicyIzmereniya/FindByDescr/{Descr}")]
-	public class EdinicyIzmereniyaRequest/*ЕдиницыИзмеренияЗапрос*/: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<EdinicyIzmereniyaRequest>
+	//EdinicyIzmereniya
+	[Маршрут("Справочники/ЕдиницыИзмерения","")]
+	public class ЕдиницыИзмеренияЗапрос: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<ЕдиницыИзмеренияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЕдиницыИзмерения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЕдиницыИзмерения/ПоСсылке","{Ссылка}")]
+	public class ЕдиницыИзмеренияНайтиПоСсылке: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<ЕдиницыИзмеренияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЕдиницыИзмерения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЕдиницыИзмерения/ПоКоду","{Код}")]
+	public class ЕдиницыИзмеренияНайтиПоКоду: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<ЕдиницыИзмеренияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЕдиницыИзмерения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЕдиницыИзмерения/ПоНаименованию","{Наименование}")]
+	public class ЕдиницыИзмеренияНайтиПоНаименованию: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<ЕдиницыИзмеренияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЕдиницыИзмерения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЕдиницыИзмеренияВыбратьПоСсылке: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<ЕдиницыИзмеренияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЕдиницыИзмерения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЕдиницыИзмеренияВыбратьПоКоду: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<ЕдиницыИзмеренияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЕдиницыИзмерения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЕдиницыИзмеренияВыбратьПоНаименованию: V82.СправочникиСсылка.ЕдиницыИзмерения,IReturn<ЕдиницыИзмеренияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class EdinicyIzmereniyaResponse//ЕдиницыИзмеренияОтвет
+	public class ЕдиницыИзмеренияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/EdinicyIzmereniyas")]
-	[Route("/Catalogs/EdinicyIzmereniyas/{Codes}")]
-	public class EdinicyIzmereniyasRequest/*ЕдиницыИзмеренияЗапрос*/: IReturn<List<EdinicyIzmereniyaRequest>>
+	public class ЕдиницыИзмеренияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public EdinicyIzmereniyasRequest(params string[] Codes)
+		
+		public object Get(ЕдиницыИзмеренияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class EdinicyIzmereniyasResponse//ЕдиницыИзмеренияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class EdinicyIzmereniyaService /*ЕдиницыИзмеренияСервис*/ : Service
-	{
-		public object Any(EdinicyIzmereniyaRequest request)
+		
+		public object Get(ЕдиницыИзмеренияНайтиПоКоду Запрос)
 		{
-			return new EdinicyIzmereniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(EdinicyIzmereniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЕдиницыИзмерения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new EdinicyIzmereniyaResponse() {Result = "ЕдиницыИзмерения c кодом '" + request.Code+"' не найдено."};
+				return new ЕдиницыИзмеренияОтвет() {Ответ = "ЕдиницыИзмерения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(EdinicyIzmereniyasRequest request)
+		
+		public object Get(ЕдиницыИзмеренияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЕдиницыИзмерения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЕдиницыИзмерения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЕдиницыИзмеренияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЕдиницыИзмеренияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЕдиницыИзмеренияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЕдиницыИзмеренияЗапрос Запрос)
+		{
+			return new ЕдиницыИзмеренияОтвет {Ответ = "ЕдиницыИзмерения, "};
+		}
+
+		public object Post(ЕдиницыИзмеренияЗапрос ЗапросЕдиницыИзмерения)
+		{
+			var Ссылка = (СправочникиСсылка.ЕдиницыИзмерения)ЗапросЕдиницыИзмерения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami")]
-	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami/FindById/{Id}")]
-	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami/FindByCode/{Code}")]
-	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganami/FindByDescr/{Descr}")]
-	public class PerepiskaSKontroliruyushhimiOrganamiRequest/*ПерепискаСКонтролирующимиОрганамиЗапрос*/: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<PerepiskaSKontroliruyushhimiOrganamiRequest>
+	//PerepiskaSKontroliruyushhimiOrganami
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами","")]
+	public class ПерепискаСКонтролирующимиОрганамиЗапрос: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<ПерепискаСКонтролирующимиОрганамиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/ПоСсылке","{Ссылка}")]
+	public class ПерепискаСКонтролирующимиОрганамиНайтиПоСсылке: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<ПерепискаСКонтролирующимиОрганамиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/ПоКоду","{Код}")]
+	public class ПерепискаСКонтролирующимиОрганамиНайтиПоКоду: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<ПерепискаСКонтролирующимиОрганамиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/ПоНаименованию","{Наименование}")]
+	public class ПерепискаСКонтролирующимиОрганамиНайтиПоНаименованию: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<ПерепискаСКонтролирующимиОрганамиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПерепискаСКонтролирующимиОрганамиВыбратьПоСсылке: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<ПерепискаСКонтролирующимиОрганамиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПерепискаСКонтролирующимиОрганамиВыбратьПоКоду: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<ПерепискаСКонтролирующимиОрганамиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПерепискаСКонтролирующимиОрганами/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПерепискаСКонтролирующимиОрганамиВыбратьПоНаименованию: V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами,IReturn<ПерепискаСКонтролирующимиОрганамиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PerepiskaSKontroliruyushhimiOrganamiResponse//ПерепискаСКонтролирующимиОрганамиОтвет
+	public class ПерепискаСКонтролирующимиОрганамиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganamis")]
-	[Route("/Catalogs/PerepiskaSKontroliruyushhimiOrganamis/{Codes}")]
-	public class PerepiskaSKontroliruyushhimiOrganamisRequest/*ПерепискаСКонтролирующимиОрганамиЗапрос*/: IReturn<List<PerepiskaSKontroliruyushhimiOrganamiRequest>>
+	public class ПерепискаСКонтролирующимиОрганамиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PerepiskaSKontroliruyushhimiOrganamisRequest(params string[] Codes)
+		
+		public object Get(ПерепискаСКонтролирующимиОрганамиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PerepiskaSKontroliruyushhimiOrganamisResponse//ПерепискаСКонтролирующимиОрганамиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PerepiskaSKontroliruyushhimiOrganamiService /*ПерепискаСКонтролирующимиОрганамиСервис*/ : Service
-	{
-		public object Any(PerepiskaSKontroliruyushhimiOrganamiRequest request)
+		
+		public object Get(ПерепискаСКонтролирующимиОрганамиНайтиПоКоду Запрос)
 		{
-			return new PerepiskaSKontroliruyushhimiOrganamiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PerepiskaSKontroliruyushhimiOrganamiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПерепискаСКонтролирующимиОрганами.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PerepiskaSKontroliruyushhimiOrganamiResponse() {Result = "ПерепискаСКонтролирующимиОрганами c кодом '" + request.Code+"' не найдено."};
+				return new ПерепискаСКонтролирующимиОрганамиОтвет() {Ответ = "ПерепискаСКонтролирующимиОрганами c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PerepiskaSKontroliruyushhimiOrganamisRequest request)
+		
+		public object Get(ПерепискаСКонтролирующимиОрганамиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПерепискаСКонтролирующимиОрганами.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПерепискаСКонтролирующимиОрганамиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПерепискаСКонтролирующимиОрганамиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПерепискаСКонтролирующимиОрганамиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПерепискаСКонтролирующимиОрганамиЗапрос Запрос)
+		{
+			return new ПерепискаСКонтролирующимиОрганамиОтвет {Ответ = "ПерепискаСКонтролирующимиОрганами, "};
+		}
+
+		public object Post(ПерепискаСКонтролирующимиОрганамиЗапрос ЗапросПерепискаСКонтролирующимиОрганами)
+		{
+			var Ссылка = (СправочникиСсылка.ПерепискаСКонтролирующимиОрганами)ЗапросПерепискаСКонтролирующимиОрганами;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

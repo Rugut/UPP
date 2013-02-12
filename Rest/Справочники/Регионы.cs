@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Regiony")]
-	[Route("/Catalogs/Regiony/FindById/{Id}")]
-	[Route("/Catalogs/Regiony/FindByCode/{Code}")]
-	[Route("/Catalogs/Regiony/FindByDescr/{Descr}")]
-	public class RegionyRequest/*РегионыЗапрос*/: V82.СправочникиСсылка.Регионы,IReturn<RegionyRequest>
+	//Regiony
+	[Маршрут("Справочники/Регионы","")]
+	public class РегионыЗапрос: V82.СправочникиСсылка.Регионы,IReturn<РегионыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Регионы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Регионы/ПоСсылке","{Ссылка}")]
+	public class РегионыНайтиПоСсылке: V82.СправочникиСсылка.Регионы,IReturn<РегионыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Регионы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Регионы/ПоКоду","{Код}")]
+	public class РегионыНайтиПоКоду: V82.СправочникиСсылка.Регионы,IReturn<РегионыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Регионы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Регионы/ПоНаименованию","{Наименование}")]
+	public class РегионыНайтиПоНаименованию: V82.СправочникиСсылка.Регионы,IReturn<РегионыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Регионы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегионыВыбратьПоСсылке: V82.СправочникиСсылка.Регионы,IReturn<РегионыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Регионы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегионыВыбратьПоКоду: V82.СправочникиСсылка.Регионы,IReturn<РегионыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Регионы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РегионыВыбратьПоНаименованию: V82.СправочникиСсылка.Регионы,IReturn<РегионыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RegionyResponse//РегионыОтвет
+	public class РегионыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Regionys")]
-	[Route("/Catalogs/Regionys/{Codes}")]
-	public class RegionysRequest/*РегионыЗапрос*/: IReturn<List<RegionyRequest>>
+	public class РегионыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RegionysRequest(params string[] Codes)
+		
+		public object Get(РегионыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RegionysResponse//РегионыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RegionyService /*РегионыСервис*/ : Service
-	{
-		public object Any(RegionyRequest request)
+		
+		public object Get(РегионыНайтиПоКоду Запрос)
 		{
-			return new RegionyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RegionyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Регионы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RegionyResponse() {Result = "Регионы c кодом '" + request.Code+"' не найдено."};
+				return new РегионыОтвет() {Ответ = "Регионы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RegionysRequest request)
+		
+		public object Get(РегионыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Регионы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Регионы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РегионыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегионыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РегионыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РегионыЗапрос Запрос)
+		{
+			return new РегионыОтвет {Ответ = "Регионы, "};
+		}
+
+		public object Post(РегионыЗапрос ЗапросРегионы)
+		{
+			var Ссылка = (СправочникиСсылка.Регионы)ЗапросРегионы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya")]
-	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya/FindById/{Id}")]
-	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya/FindByCode/{Code}")]
-	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiya/FindByDescr/{Descr}")]
-	public class KlyuchevyeResursyPredpriyatiyaRequest/*КлючевыеРесурсыПредприятияЗапрос*/: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<KlyuchevyeResursyPredpriyatiyaRequest>
+	//KlyuchevyeResursyPredpriyatiya
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия","")]
+	public class КлючевыеРесурсыПредприятияЗапрос: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<КлючевыеРесурсыПредприятияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/ПоСсылке","{Ссылка}")]
+	public class КлючевыеРесурсыПредприятияНайтиПоСсылке: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<КлючевыеРесурсыПредприятияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/ПоКоду","{Код}")]
+	public class КлючевыеРесурсыПредприятияНайтиПоКоду: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<КлючевыеРесурсыПредприятияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/ПоНаименованию","{Наименование}")]
+	public class КлючевыеРесурсыПредприятияНайтиПоНаименованию: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<КлючевыеРесурсыПредприятияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлючевыеРесурсыПредприятияВыбратьПоСсылке: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<КлючевыеРесурсыПредприятияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлючевыеРесурсыПредприятияВыбратьПоКоду: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<КлючевыеРесурсыПредприятияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлючевыеРесурсыПредприятияВыбратьПоНаименованию: V82.СправочникиСсылка.КлючевыеРесурсыПредприятия,IReturn<КлючевыеРесурсыПредприятияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KlyuchevyeResursyPredpriyatiyaResponse//КлючевыеРесурсыПредприятияОтвет
+	public class КлючевыеРесурсыПредприятияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiyas")]
-	[Route("/Catalogs/KlyuchevyeResursyPredpriyatiyas/{Codes}")]
-	public class KlyuchevyeResursyPredpriyatiyasRequest/*КлючевыеРесурсыПредприятияЗапрос*/: IReturn<List<KlyuchevyeResursyPredpriyatiyaRequest>>
+	public class КлючевыеРесурсыПредприятияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KlyuchevyeResursyPredpriyatiyasRequest(params string[] Codes)
+		
+		public object Get(КлючевыеРесурсыПредприятияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KlyuchevyeResursyPredpriyatiyasResponse//КлючевыеРесурсыПредприятияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KlyuchevyeResursyPredpriyatiyaService /*КлючевыеРесурсыПредприятияСервис*/ : Service
-	{
-		public object Any(KlyuchevyeResursyPredpriyatiyaRequest request)
+		
+		public object Get(КлючевыеРесурсыПредприятияНайтиПоКоду Запрос)
 		{
-			return new KlyuchevyeResursyPredpriyatiyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KlyuchevyeResursyPredpriyatiyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КлючевыеРесурсыПредприятия.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KlyuchevyeResursyPredpriyatiyaResponse() {Result = "КлючевыеРесурсыПредприятия c кодом '" + request.Code+"' не найдено."};
+				return new КлючевыеРесурсыПредприятияОтвет() {Ответ = "КлючевыеРесурсыПредприятия c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KlyuchevyeResursyPredpriyatiyasRequest request)
+		
+		public object Get(КлючевыеРесурсыПредприятияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлючевыеРесурсыПредприятия>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КлючевыеРесурсыПредприятия.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КлючевыеРесурсыПредприятияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлючевыеРесурсыПредприятияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлючевыеРесурсыПредприятияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КлючевыеРесурсыПредприятияЗапрос Запрос)
+		{
+			return new КлючевыеРесурсыПредприятияОтвет {Ответ = "КлючевыеРесурсыПредприятия, "};
+		}
+
+		public object Post(КлючевыеРесурсыПредприятияЗапрос ЗапросКлючевыеРесурсыПредприятия)
+		{
+			var Ссылка = (СправочникиСсылка.КлючевыеРесурсыПредприятия)ЗапросКлючевыеРесурсыПредприятия;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

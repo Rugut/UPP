@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KompetenciiRabotnikov")]
-	[Route("/Catalogs/KompetenciiRabotnikov/FindById/{Id}")]
-	[Route("/Catalogs/KompetenciiRabotnikov/FindByCode/{Code}")]
-	[Route("/Catalogs/KompetenciiRabotnikov/FindByDescr/{Descr}")]
-	public class KompetenciiRabotnikovRequest/*КомпетенцииРаботниковЗапрос*/: V82.СправочникиСсылка.КомпетенцииРаботников,IReturn<KompetenciiRabotnikovRequest>
+	//KompetenciiRabotnikov
+	[Маршрут("Справочники/КомпетенцииРаботников","")]
+	public class КомпетенцииРаботниковЗапрос: V82.СправочникиСсылка.КомпетенцииРаботников,IReturn<КомпетенцииРаботниковЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КомпетенцииРаботников/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КомпетенцииРаботников/ПоСсылке","{Ссылка}")]
+	public class КомпетенцииРаботниковНайтиПоСсылке: V82.СправочникиСсылка.КомпетенцииРаботников,IReturn<КомпетенцииРаботниковНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КомпетенцииРаботников/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КомпетенцииРаботников/ПоНаименованию","{Наименование}")]
+	public class КомпетенцииРаботниковНайтиПоНаименованию: V82.СправочникиСсылка.КомпетенцииРаботников,IReturn<КомпетенцииРаботниковНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КомпетенцииРаботников/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КомпетенцииРаботниковВыбратьПоСсылке: V82.СправочникиСсылка.КомпетенцииРаботников,IReturn<КомпетенцииРаботниковВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КомпетенцииРаботников/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КомпетенцииРаботниковВыбратьПоНаименованию: V82.СправочникиСсылка.КомпетенцииРаботников,IReturn<КомпетенцииРаботниковВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KompetenciiRabotnikovResponse//КомпетенцииРаботниковОтвет
+	public class КомпетенцииРаботниковОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KompetenciiRabotnikovs")]
-	[Route("/Catalogs/KompetenciiRabotnikovs/{Codes}")]
-	public class KompetenciiRabotnikovsRequest/*КомпетенцииРаботниковЗапрос*/: IReturn<List<KompetenciiRabotnikovRequest>>
+	public class КомпетенцииРаботниковСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KompetenciiRabotnikovsRequest(params string[] Codes)
+		
+		public object Get(КомпетенцииРаботниковНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KompetenciiRabotnikovsResponse//КомпетенцииРаботниковОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KompetenciiRabotnikovService /*КомпетенцииРаботниковСервис*/ : Service
-	{
-		public object Any(KompetenciiRabotnikovRequest request)
+		
+		public object Get(КомпетенцииРаботниковНайтиПоНаименованию Запрос)
 		{
-			return new KompetenciiRabotnikovResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(KompetenciiRabotnikovRequest request)
+		
+		public object Get(КомпетенцииРаботниковВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КомпетенцииРаботниковВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(KompetenciiRabotnikovsRequest request)
+		public object Any(КомпетенцииРаботниковЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КомпетенцииРаботников>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new КомпетенцииРаботниковОтвет {Ответ = "КомпетенцииРаботников, "};
 		}
+
+		public object Post(КомпетенцииРаботниковЗапрос ЗапросКомпетенцииРаботников)
+		{
+			var Ссылка = (СправочникиСсылка.КомпетенцииРаботников)ЗапросКомпетенцииРаботников;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

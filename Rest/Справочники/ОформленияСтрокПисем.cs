@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OformleniyaStrokPisem")]
-	[Route("/Catalogs/OformleniyaStrokPisem/FindById/{Id}")]
-	[Route("/Catalogs/OformleniyaStrokPisem/FindByCode/{Code}")]
-	[Route("/Catalogs/OformleniyaStrokPisem/FindByDescr/{Descr}")]
-	public class OformleniyaStrokPisemRequest/*ОформленияСтрокПисемЗапрос*/: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<OformleniyaStrokPisemRequest>
+	//OformleniyaStrokPisem
+	[Маршрут("Справочники/ОформленияСтрокПисем","")]
+	public class ОформленияСтрокПисемЗапрос: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<ОформленияСтрокПисемЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОформленияСтрокПисем/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОформленияСтрокПисем/ПоСсылке","{Ссылка}")]
+	public class ОформленияСтрокПисемНайтиПоСсылке: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<ОформленияСтрокПисемНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОформленияСтрокПисем/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОформленияСтрокПисем/ПоКоду","{Код}")]
+	public class ОформленияСтрокПисемНайтиПоКоду: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<ОформленияСтрокПисемНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОформленияСтрокПисем/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОформленияСтрокПисем/ПоНаименованию","{Наименование}")]
+	public class ОформленияСтрокПисемНайтиПоНаименованию: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<ОформленияСтрокПисемНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОформленияСтрокПисем/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОформленияСтрокПисемВыбратьПоСсылке: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<ОформленияСтрокПисемВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОформленияСтрокПисем/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОформленияСтрокПисемВыбратьПоКоду: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<ОформленияСтрокПисемВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОформленияСтрокПисем/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОформленияСтрокПисемВыбратьПоНаименованию: V82.СправочникиСсылка.ОформленияСтрокПисем,IReturn<ОформленияСтрокПисемВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OformleniyaStrokPisemResponse//ОформленияСтрокПисемОтвет
+	public class ОформленияСтрокПисемОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OformleniyaStrokPisems")]
-	[Route("/Catalogs/OformleniyaStrokPisems/{Codes}")]
-	public class OformleniyaStrokPisemsRequest/*ОформленияСтрокПисемЗапрос*/: IReturn<List<OformleniyaStrokPisemRequest>>
+	public class ОформленияСтрокПисемСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OformleniyaStrokPisemsRequest(params string[] Codes)
+		
+		public object Get(ОформленияСтрокПисемНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OformleniyaStrokPisemsResponse//ОформленияСтрокПисемОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OformleniyaStrokPisemService /*ОформленияСтрокПисемСервис*/ : Service
-	{
-		public object Any(OformleniyaStrokPisemRequest request)
+		
+		public object Get(ОформленияСтрокПисемНайтиПоКоду Запрос)
 		{
-			return new OformleniyaStrokPisemResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OformleniyaStrokPisemRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОформленияСтрокПисем.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OformleniyaStrokPisemResponse() {Result = "ОформленияСтрокПисем c кодом '" + request.Code+"' не найдено."};
+				return new ОформленияСтрокПисемОтвет() {Ответ = "ОформленияСтрокПисем c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OformleniyaStrokPisemsRequest request)
+		
+		public object Get(ОформленияСтрокПисемНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОформленияСтрокПисем>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОформленияСтрокПисем.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОформленияСтрокПисемВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОформленияСтрокПисемВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОформленияСтрокПисемВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОформленияСтрокПисемЗапрос Запрос)
+		{
+			return new ОформленияСтрокПисемОтвет {Ответ = "ОформленияСтрокПисем, "};
+		}
+
+		public object Post(ОформленияСтрокПисемЗапрос ЗапросОформленияСтрокПисем)
+		{
+			var Ссылка = (СправочникиСсылка.ОформленияСтрокПисем)ЗапросОформленияСтрокПисем;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

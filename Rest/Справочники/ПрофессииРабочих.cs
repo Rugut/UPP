@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProfessiiRabochikh")]
-	[Route("/Catalogs/ProfessiiRabochikh/FindById/{Id}")]
-	[Route("/Catalogs/ProfessiiRabochikh/FindByCode/{Code}")]
-	[Route("/Catalogs/ProfessiiRabochikh/FindByDescr/{Descr}")]
-	public class ProfessiiRabochikhRequest/*ПрофессииРабочихЗапрос*/: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ProfessiiRabochikhRequest>
+	//ProfessiiRabochikh
+	[Маршрут("Справочники/ПрофессииРабочих","")]
+	public class ПрофессииРабочихЗапрос: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ПрофессииРабочихЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПрофессииРабочих/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПрофессииРабочих/ПоСсылке","{Ссылка}")]
+	public class ПрофессииРабочихНайтиПоСсылке: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ПрофессииРабочихНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПрофессииРабочих/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПрофессииРабочих/ПоКоду","{Код}")]
+	public class ПрофессииРабочихНайтиПоКоду: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ПрофессииРабочихНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПрофессииРабочих/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПрофессииРабочих/ПоНаименованию","{Наименование}")]
+	public class ПрофессииРабочихНайтиПоНаименованию: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ПрофессииРабочихНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПрофессииРабочих/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофессииРабочихВыбратьПоСсылке: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ПрофессииРабочихВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрофессииРабочих/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофессииРабочихВыбратьПоКоду: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ПрофессииРабочихВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрофессииРабочих/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофессииРабочихВыбратьПоНаименованию: V82.СправочникиСсылка.ПрофессииРабочих,IReturn<ПрофессииРабочихВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProfessiiRabochikhResponse//ПрофессииРабочихОтвет
+	public class ПрофессииРабочихОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProfessiiRabochikhs")]
-	[Route("/Catalogs/ProfessiiRabochikhs/{Codes}")]
-	public class ProfessiiRabochikhsRequest/*ПрофессииРабочихЗапрос*/: IReturn<List<ProfessiiRabochikhRequest>>
+	public class ПрофессииРабочихСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProfessiiRabochikhsRequest(params string[] Codes)
+		
+		public object Get(ПрофессииРабочихНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProfessiiRabochikhsResponse//ПрофессииРабочихОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProfessiiRabochikhService /*ПрофессииРабочихСервис*/ : Service
-	{
-		public object Any(ProfessiiRabochikhRequest request)
+		
+		public object Get(ПрофессииРабочихНайтиПоКоду Запрос)
 		{
-			return new ProfessiiRabochikhResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ProfessiiRabochikhRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПрофессииРабочих.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ProfessiiRabochikhResponse() {Result = "ПрофессииРабочих c кодом '" + request.Code+"' не найдено."};
+				return new ПрофессииРабочихОтвет() {Ответ = "ПрофессииРабочих c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ProfessiiRabochikhsRequest request)
+		
+		public object Get(ПрофессииРабочихНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрофессииРабочих>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПрофессииРабочих.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПрофессииРабочихВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрофессииРабочихВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрофессииРабочихВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПрофессииРабочихЗапрос Запрос)
+		{
+			return new ПрофессииРабочихОтвет {Ответ = "ПрофессииРабочих, "};
+		}
+
+		public object Post(ПрофессииРабочихЗапрос ЗапросПрофессииРабочих)
+		{
+			var Ссылка = (СправочникиСсылка.ПрофессииРабочих)ЗапросПрофессииРабочих;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

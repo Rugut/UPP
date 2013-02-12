@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,81 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TransportnyeUpakovki")]
-	[Route("/Catalogs/TransportnyeUpakovki/FindById/{Id}")]
-	[Route("/Catalogs/TransportnyeUpakovki/FindByCode/{Code}")]
-	[Route("/Catalogs/TransportnyeUpakovki/FindByDescr/{Descr}")]
-	public class TransportnyeUpakovkiRequest/*ТранспортныеУпаковкиЗапрос*/: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<TransportnyeUpakovkiRequest>
+	//TransportnyeUpakovki
+	[Маршрут("Справочники/ТранспортныеУпаковки","")]
+	public class ТранспортныеУпаковкиЗапрос: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<ТранспортныеУпаковкиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТранспортныеУпаковки/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТранспортныеУпаковки/ПоСсылке","{Ссылка}")]
+	public class ТранспортныеУпаковкиНайтиПоСсылке: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<ТранспортныеУпаковкиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТранспортныеУпаковки/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТранспортныеУпаковки/ПоКоду","{Код}")]
+	public class ТранспортныеУпаковкиНайтиПоКоду: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<ТранспортныеУпаковкиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТранспортныеУпаковки/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТранспортныеУпаковки/ПоНаименованию","{Наименование}")]
+	public class ТранспортныеУпаковкиНайтиПоНаименованию: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<ТранспортныеУпаковкиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТранспортныеУпаковкиВыбратьПоСсылке: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<ТранспортныеУпаковкиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТранспортныеУпаковки/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТранспортныеУпаковкиВыбратьПоКоду: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<ТранспортныеУпаковкиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public decimal ___Мин {get; set;}
+		public decimal ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТранспортныеУпаковки/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТранспортныеУпаковкиВыбратьПоНаименованию: V82.СправочникиСсылка.ТранспортныеУпаковки,IReturn<ТранспортныеУпаковкиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TransportnyeUpakovkiResponse//ТранспортныеУпаковкиОтвет
+	public class ТранспортныеУпаковкиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TransportnyeUpakovkis")]
-	[Route("/Catalogs/TransportnyeUpakovkis/{Codes}")]
-	public class TransportnyeUpakovkisRequest/*ТранспортныеУпаковкиЗапрос*/: IReturn<List<TransportnyeUpakovkiRequest>>
+	public class ТранспортныеУпаковкиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TransportnyeUpakovkisRequest(params string[] Codes)
+		
+		public object Get(ТранспортныеУпаковкиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TransportnyeUpakovkisResponse//ТранспортныеУпаковкиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TransportnyeUpakovkiService /*ТранспортныеУпаковкиСервис*/ : Service
-	{
-		public object Any(TransportnyeUpakovkiRequest request)
+		
+		public object Get(ТранспортныеУпаковкиНайтиПоКоду Запрос)
 		{
-			return new TransportnyeUpakovkiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TransportnyeUpakovkiRequest request)
-		{
-			decimal СтрокаКод = 0;
-			if (decimal.TryParse(request.Code, out СтрокаКод))
+			if(Запрос.Код == null)
 			{
-				return new TransportnyeUpakovkiResponse() {Result = "ТранспортныеУпаковки c кодом '" + request.Code+"' не найдено."};
+				return null;
 			}
+			decimal СтрокаКод = Запрос.Код;
 			var Ссылка = V82.Справочники.ТранспортныеУпаковки.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TransportnyeUpakovkiResponse() {Result = "ТранспортныеУпаковки c кодом '" + request.Code+"' не найдено."};
+				return new ТранспортныеУпаковкиОтвет() {Ответ = "ТранспортныеУпаковки c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TransportnyeUpakovkisRequest request)
+		
+		public object Get(ТранспортныеУпаковкиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТранспортныеУпаковки>();
-			foreach (var Code in request.Codes)
-			{
-				decimal СтрокаКод = 0;
-				if (decimal.TryParse(Code, out СтрокаКод))
-				{
-				continue;//ToDo: Регестрация ошибки.
-				}
-				var Ссылка = V82.Справочники.ТранспортныеУпаковки.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТранспортныеУпаковкиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТранспортныеУпаковкиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТранспортныеУпаковкиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТранспортныеУпаковкиЗапрос Запрос)
+		{
+			return new ТранспортныеУпаковкиОтвет {Ответ = "ТранспортныеУпаковки, "};
+		}
+
+		public object Post(ТранспортныеУпаковкиЗапрос ЗапросТранспортныеУпаковки)
+		{
+			var Ссылка = (СправочникиСсылка.ТранспортныеУпаковки)ЗапросТранспортныеУпаковки;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

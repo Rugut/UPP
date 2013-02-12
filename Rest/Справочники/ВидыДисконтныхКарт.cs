@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyDiskontnykhKart")]
-	[Route("/Catalogs/VidyDiskontnykhKart/FindById/{Id}")]
-	[Route("/Catalogs/VidyDiskontnykhKart/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyDiskontnykhKart/FindByDescr/{Descr}")]
-	public class VidyDiskontnykhKartRequest/*ВидыДисконтныхКартЗапрос*/: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<VidyDiskontnykhKartRequest>
+	//VidyDiskontnykhKart
+	[Маршрут("Справочники/ВидыДисконтныхКарт","")]
+	public class ВидыДисконтныхКартЗапрос: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<ВидыДисконтныхКартЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыДисконтныхКарт/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыДисконтныхКарт/ПоСсылке","{Ссылка}")]
+	public class ВидыДисконтныхКартНайтиПоСсылке: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<ВидыДисконтныхКартНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыДисконтныхКарт/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыДисконтныхКарт/ПоКоду","{Код}")]
+	public class ВидыДисконтныхКартНайтиПоКоду: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<ВидыДисконтныхКартНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыДисконтныхКарт/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыДисконтныхКарт/ПоНаименованию","{Наименование}")]
+	public class ВидыДисконтныхКартНайтиПоНаименованию: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<ВидыДисконтныхКартНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыДисконтныхКарт/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыДисконтныхКартВыбратьПоСсылке: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<ВидыДисконтныхКартВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыДисконтныхКарт/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыДисконтныхКартВыбратьПоКоду: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<ВидыДисконтныхКартВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыДисконтныхКарт/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыДисконтныхКартВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыДисконтныхКарт,IReturn<ВидыДисконтныхКартВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyDiskontnykhKartResponse//ВидыДисконтныхКартОтвет
+	public class ВидыДисконтныхКартОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyDiskontnykhKarts")]
-	[Route("/Catalogs/VidyDiskontnykhKarts/{Codes}")]
-	public class VidyDiskontnykhKartsRequest/*ВидыДисконтныхКартЗапрос*/: IReturn<List<VidyDiskontnykhKartRequest>>
+	public class ВидыДисконтныхКартСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyDiskontnykhKartsRequest(params string[] Codes)
+		
+		public object Get(ВидыДисконтныхКартНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyDiskontnykhKartsResponse//ВидыДисконтныхКартОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyDiskontnykhKartService /*ВидыДисконтныхКартСервис*/ : Service
-	{
-		public object Any(VidyDiskontnykhKartRequest request)
+		
+		public object Get(ВидыДисконтныхКартНайтиПоКоду Запрос)
 		{
-			return new VidyDiskontnykhKartResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyDiskontnykhKartRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыДисконтныхКарт.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyDiskontnykhKartResponse() {Result = "ВидыДисконтныхКарт c кодом '" + request.Code+"' не найдено."};
+				return new ВидыДисконтныхКартОтвет() {Ответ = "ВидыДисконтныхКарт c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyDiskontnykhKartsRequest request)
+		
+		public object Get(ВидыДисконтныхКартНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыДисконтныхКарт>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыДисконтныхКарт.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыДисконтныхКартВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыДисконтныхКартВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыДисконтныхКартВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыДисконтныхКартЗапрос Запрос)
+		{
+			return new ВидыДисконтныхКартОтвет {Ответ = "ВидыДисконтныхКарт, "};
+		}
+
+		public object Post(ВидыДисконтныхКартЗапрос ЗапросВидыДисконтныхКарт)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыДисконтныхКарт)ЗапросВидыДисконтныхКарт;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

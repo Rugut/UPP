@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/CennyeBumagi")]
-	[Route("/Catalogs/CennyeBumagi/FindById/{Id}")]
-	[Route("/Catalogs/CennyeBumagi/FindByCode/{Code}")]
-	[Route("/Catalogs/CennyeBumagi/FindByDescr/{Descr}")]
-	public class CennyeBumagiRequest/*ЦенныеБумагиЗапрос*/: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<CennyeBumagiRequest>
+	//CennyeBumagi
+	[Маршрут("Справочники/ЦенныеБумаги","")]
+	public class ЦенныеБумагиЗапрос: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<ЦенныеБумагиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЦенныеБумаги/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЦенныеБумаги/ПоСсылке","{Ссылка}")]
+	public class ЦенныеБумагиНайтиПоСсылке: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<ЦенныеБумагиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЦенныеБумаги/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЦенныеБумаги/ПоКоду","{Код}")]
+	public class ЦенныеБумагиНайтиПоКоду: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<ЦенныеБумагиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЦенныеБумаги/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЦенныеБумаги/ПоНаименованию","{Наименование}")]
+	public class ЦенныеБумагиНайтиПоНаименованию: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<ЦенныеБумагиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЦенныеБумаги/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦенныеБумагиВыбратьПоСсылке: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<ЦенныеБумагиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЦенныеБумаги/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦенныеБумагиВыбратьПоКоду: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<ЦенныеБумагиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЦенныеБумаги/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦенныеБумагиВыбратьПоНаименованию: V82.СправочникиСсылка.ЦенныеБумаги,IReturn<ЦенныеБумагиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class CennyeBumagiResponse//ЦенныеБумагиОтвет
+	public class ЦенныеБумагиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/CennyeBumagis")]
-	[Route("/Catalogs/CennyeBumagis/{Codes}")]
-	public class CennyeBumagisRequest/*ЦенныеБумагиЗапрос*/: IReturn<List<CennyeBumagiRequest>>
+	public class ЦенныеБумагиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public CennyeBumagisRequest(params string[] Codes)
+		
+		public object Get(ЦенныеБумагиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class CennyeBumagisResponse//ЦенныеБумагиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class CennyeBumagiService /*ЦенныеБумагиСервис*/ : Service
-	{
-		public object Any(CennyeBumagiRequest request)
+		
+		public object Get(ЦенныеБумагиНайтиПоКоду Запрос)
 		{
-			return new CennyeBumagiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(CennyeBumagiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЦенныеБумаги.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new CennyeBumagiResponse() {Result = "ЦенныеБумаги c кодом '" + request.Code+"' не найдено."};
+				return new ЦенныеБумагиОтвет() {Ответ = "ЦенныеБумаги c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(CennyeBumagisRequest request)
+		
+		public object Get(ЦенныеБумагиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЦенныеБумаги>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЦенныеБумаги.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЦенныеБумагиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЦенныеБумагиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЦенныеБумагиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЦенныеБумагиЗапрос Запрос)
+		{
+			return new ЦенныеБумагиОтвет {Ответ = "ЦенныеБумаги, "};
+		}
+
+		public object Post(ЦенныеБумагиЗапрос ЗапросЦенныеБумаги)
+		{
+			var Ссылка = (СправочникиСсылка.ЦенныеБумаги)ЗапросЦенныеБумаги;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/YAzykiNarodovMira")]
-	[Route("/Catalogs/YAzykiNarodovMira/FindById/{Id}")]
-	[Route("/Catalogs/YAzykiNarodovMira/FindByCode/{Code}")]
-	[Route("/Catalogs/YAzykiNarodovMira/FindByDescr/{Descr}")]
-	public class YAzykiNarodovMiraRequest/*ЯзыкиНародовМираЗапрос*/: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<YAzykiNarodovMiraRequest>
+	//YAzykiNarodovMira
+	[Маршрут("Справочники/ЯзыкиНародовМира","")]
+	public class ЯзыкиНародовМираЗапрос: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<ЯзыкиНародовМираЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЯзыкиНародовМира/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЯзыкиНародовМира/ПоСсылке","{Ссылка}")]
+	public class ЯзыкиНародовМираНайтиПоСсылке: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<ЯзыкиНародовМираНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЯзыкиНародовМира/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЯзыкиНародовМира/ПоКоду","{Код}")]
+	public class ЯзыкиНародовМираНайтиПоКоду: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<ЯзыкиНародовМираНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЯзыкиНародовМира/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЯзыкиНародовМира/ПоНаименованию","{Наименование}")]
+	public class ЯзыкиНародовМираНайтиПоНаименованию: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<ЯзыкиНародовМираНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЯзыкиНародовМира/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЯзыкиНародовМираВыбратьПоСсылке: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<ЯзыкиНародовМираВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЯзыкиНародовМира/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЯзыкиНародовМираВыбратьПоКоду: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<ЯзыкиНародовМираВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЯзыкиНародовМира/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЯзыкиНародовМираВыбратьПоНаименованию: V82.СправочникиСсылка.ЯзыкиНародовМира,IReturn<ЯзыкиНародовМираВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class YAzykiNarodovMiraResponse//ЯзыкиНародовМираОтвет
+	public class ЯзыкиНародовМираОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/YAzykiNarodovMiras")]
-	[Route("/Catalogs/YAzykiNarodovMiras/{Codes}")]
-	public class YAzykiNarodovMirasRequest/*ЯзыкиНародовМираЗапрос*/: IReturn<List<YAzykiNarodovMiraRequest>>
+	public class ЯзыкиНародовМираСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public YAzykiNarodovMirasRequest(params string[] Codes)
+		
+		public object Get(ЯзыкиНародовМираНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class YAzykiNarodovMirasResponse//ЯзыкиНародовМираОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class YAzykiNarodovMiraService /*ЯзыкиНародовМираСервис*/ : Service
-	{
-		public object Any(YAzykiNarodovMiraRequest request)
+		
+		public object Get(ЯзыкиНародовМираНайтиПоКоду Запрос)
 		{
-			return new YAzykiNarodovMiraResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(YAzykiNarodovMiraRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЯзыкиНародовМира.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new YAzykiNarodovMiraResponse() {Result = "ЯзыкиНародовМира c кодом '" + request.Code+"' не найдено."};
+				return new ЯзыкиНародовМираОтвет() {Ответ = "ЯзыкиНародовМира c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(YAzykiNarodovMirasRequest request)
+		
+		public object Get(ЯзыкиНародовМираНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЯзыкиНародовМира>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЯзыкиНародовМира.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЯзыкиНародовМираВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЯзыкиНародовМираВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЯзыкиНародовМираВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЯзыкиНародовМираЗапрос Запрос)
+		{
+			return new ЯзыкиНародовМираОтвет {Ответ = "ЯзыкиНародовМира, "};
+		}
+
+		public object Post(ЯзыкиНародовМираЗапрос ЗапросЯзыкиНародовМира)
+		{
+			var Ссылка = (СправочникиСсылка.ЯзыкиНародовМира)ЗапросЯзыкиНародовМира;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

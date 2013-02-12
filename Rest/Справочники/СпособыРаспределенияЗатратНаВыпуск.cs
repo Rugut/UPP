@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SposobyRaspredeleniyaZatratNaVypusk")]
-	[Route("/Catalogs/SposobyRaspredeleniyaZatratNaVypusk/FindById/{Id}")]
-	[Route("/Catalogs/SposobyRaspredeleniyaZatratNaVypusk/FindByCode/{Code}")]
-	[Route("/Catalogs/SposobyRaspredeleniyaZatratNaVypusk/FindByDescr/{Descr}")]
-	public class SposobyRaspredeleniyaZatratNaVypuskRequest/*СпособыРаспределенияЗатратНаВыпускЗапрос*/: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<SposobyRaspredeleniyaZatratNaVypuskRequest>
+	//SposobyRaspredeleniyaZatratNaVypusk
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск","")]
+	public class СпособыРаспределенияЗатратНаВыпускЗапрос: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<СпособыРаспределенияЗатратНаВыпускЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/ПоСсылке","{Ссылка}")]
+	public class СпособыРаспределенияЗатратНаВыпускНайтиПоСсылке: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<СпособыРаспределенияЗатратНаВыпускНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/ПоКоду","{Код}")]
+	public class СпособыРаспределенияЗатратНаВыпускНайтиПоКоду: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<СпособыРаспределенияЗатратНаВыпускНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/ПоНаименованию","{Наименование}")]
+	public class СпособыРаспределенияЗатратНаВыпускНайтиПоНаименованию: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<СпособыРаспределенияЗатратНаВыпускНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыРаспределенияЗатратНаВыпускВыбратьПоСсылке: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<СпособыРаспределенияЗатратНаВыпускВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыРаспределенияЗатратНаВыпускВыбратьПоКоду: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<СпособыРаспределенияЗатратНаВыпускВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпособыРаспределенияЗатратНаВыпуск/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпособыРаспределенияЗатратНаВыпускВыбратьПоНаименованию: V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск,IReturn<СпособыРаспределенияЗатратНаВыпускВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SposobyRaspredeleniyaZatratNaVypuskResponse//СпособыРаспределенияЗатратНаВыпускОтвет
+	public class СпособыРаспределенияЗатратНаВыпускОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SposobyRaspredeleniyaZatratNaVypusks")]
-	[Route("/Catalogs/SposobyRaspredeleniyaZatratNaVypusks/{Codes}")]
-	public class SposobyRaspredeleniyaZatratNaVypusksRequest/*СпособыРаспределенияЗатратНаВыпускЗапрос*/: IReturn<List<SposobyRaspredeleniyaZatratNaVypuskRequest>>
+	public class СпособыРаспределенияЗатратНаВыпускСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SposobyRaspredeleniyaZatratNaVypusksRequest(params string[] Codes)
+		
+		public object Get(СпособыРаспределенияЗатратНаВыпускНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SposobyRaspredeleniyaZatratNaVypusksResponse//СпособыРаспределенияЗатратНаВыпускОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SposobyRaspredeleniyaZatratNaVypuskService /*СпособыРаспределенияЗатратНаВыпускСервис*/ : Service
-	{
-		public object Any(SposobyRaspredeleniyaZatratNaVypuskRequest request)
+		
+		public object Get(СпособыРаспределенияЗатратНаВыпускНайтиПоКоду Запрос)
 		{
-			return new SposobyRaspredeleniyaZatratNaVypuskResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SposobyRaspredeleniyaZatratNaVypuskRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СпособыРаспределенияЗатратНаВыпуск.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SposobyRaspredeleniyaZatratNaVypuskResponse() {Result = "СпособыРаспределенияЗатратНаВыпуск c кодом '" + request.Code+"' не найдено."};
+				return new СпособыРаспределенияЗатратНаВыпускОтвет() {Ответ = "СпособыРаспределенияЗатратНаВыпуск c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SposobyRaspredeleniyaZatratNaVypusksRequest request)
+		
+		public object Get(СпособыРаспределенияЗатратНаВыпускНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СпособыРаспределенияЗатратНаВыпуск.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СпособыРаспределенияЗатратНаВыпускВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпособыРаспределенияЗатратНаВыпускВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпособыРаспределенияЗатратНаВыпускВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СпособыРаспределенияЗатратНаВыпускЗапрос Запрос)
+		{
+			return new СпособыРаспределенияЗатратНаВыпускОтвет {Ответ = "СпособыРаспределенияЗатратНаВыпуск, "};
+		}
+
+		public object Post(СпособыРаспределенияЗатратНаВыпускЗапрос ЗапросСпособыРаспределенияЗатратНаВыпуск)
+		{
+			var Ссылка = (СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск)ЗапросСпособыРаспределенияЗатратНаВыпуск;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

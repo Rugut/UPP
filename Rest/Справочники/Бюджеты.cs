@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Byudzhety")]
-	[Route("/Catalogs/Byudzhety/FindById/{Id}")]
-	[Route("/Catalogs/Byudzhety/FindByCode/{Code}")]
-	[Route("/Catalogs/Byudzhety/FindByDescr/{Descr}")]
-	public class ByudzhetyRequest/*БюджетыЗапрос*/: V82.СправочникиСсылка.Бюджеты,IReturn<ByudzhetyRequest>
+	//Byudzhety
+	[Маршрут("Справочники/Бюджеты","")]
+	public class БюджетыЗапрос: V82.СправочникиСсылка.Бюджеты,IReturn<БюджетыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Бюджеты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Бюджеты/ПоСсылке","{Ссылка}")]
+	public class БюджетыНайтиПоСсылке: V82.СправочникиСсылка.Бюджеты,IReturn<БюджетыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Бюджеты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Бюджеты/ПоНаименованию","{Наименование}")]
+	public class БюджетыНайтиПоНаименованию: V82.СправочникиСсылка.Бюджеты,IReturn<БюджетыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Бюджеты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class БюджетыВыбратьПоСсылке: V82.СправочникиСсылка.Бюджеты,IReturn<БюджетыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Бюджеты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class БюджетыВыбратьПоНаименованию: V82.СправочникиСсылка.Бюджеты,IReturn<БюджетыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ByudzhetyResponse//БюджетыОтвет
+	public class БюджетыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Byudzhetys")]
-	[Route("/Catalogs/Byudzhetys/{Codes}")]
-	public class ByudzhetysRequest/*БюджетыЗапрос*/: IReturn<List<ByudzhetyRequest>>
+	public class БюджетыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ByudzhetysRequest(params string[] Codes)
+		
+		public object Get(БюджетыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ByudzhetysResponse//БюджетыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ByudzhetyService /*БюджетыСервис*/ : Service
-	{
-		public object Any(ByudzhetyRequest request)
+		
+		public object Get(БюджетыНайтиПоНаименованию Запрос)
 		{
-			return new ByudzhetyResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(ByudzhetyRequest request)
+		
+		public object Get(БюджетыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(БюджетыВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(ByudzhetysRequest request)
+		public object Any(БюджетыЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Бюджеты>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new БюджетыОтвет {Ответ = "Бюджеты, "};
 		}
+
+		public object Post(БюджетыЗапрос ЗапросБюджеты)
+		{
+			var Ссылка = (СправочникиСсылка.Бюджеты)ЗапросБюджеты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

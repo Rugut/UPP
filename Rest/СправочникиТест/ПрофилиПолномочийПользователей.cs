@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрофилиПолномочийПользователей:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрофилиПолномочийПользователейЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliPolnomochijjPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиПолномочийПользователей/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProfiliPolnomochijjPolzovatelejjRequest());
+			ПрофилиПолномочийПользователейЗапрос ПрофилиПолномочийПользователейЗапрос = null;
+			try
+			{
+				ПрофилиПолномочийПользователейЗапрос = Клиент.Get(new ПрофилиПолномочийПользователейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиПолномочийПользователейЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрофилиПолномочийПользователейЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliPolnomochijjPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиПолномочийПользователей/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProfiliPolnomochijjPolzovatelejjRequest());
+			ПрофилиПолномочийПользователейЗапрос ПрофилиПолномочийПользователейЗапрос = null;
+			try
+			{
+				ПрофилиПолномочийПользователейЗапрос = Клиент.Get(new ПрофилиПолномочийПользователейЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиПолномочийПользователейЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ПрофилиПолномочийПользователейЗапрос ПрофилиПолномочийПользователейЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliPolnomochijjPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиПолномочийПользователей?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProfiliPolnomochijjPolzovatelejjRequest());
+			var ПрофилиПолномочийПользователейОтвет = Клиент.Post(ПрофилиПолномочийПользователейЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ПрофилиПолномочийПользователейЗапрос ПрофилиПолномочийПользователейЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliPolnomochijjPolzovatelejj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиПолномочийПользователей?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProfiliPolnomochijjPolzovatelejjRequest());
+			var ПрофилиПолномочийПользователейОтвет = Клиент.Put(ПрофилиПолномочийПользователейЗапрос);
+		}
+		public static void Удалить(ПрофилиПолномочийПользователейЗапрос ПрофилиПолномочийПользователейЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиПолномочийПользователей?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофилиПолномочийПользователейОтвет = Клиент.Delete(ПрофилиПолномочийПользователейЗапрос);
 		}
 	}
 }

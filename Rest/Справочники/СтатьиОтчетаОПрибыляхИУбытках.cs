@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StatiOtchetaOPribylyakhIUbytkakh")]
-	[Route("/Catalogs/StatiOtchetaOPribylyakhIUbytkakh/FindById/{Id}")]
-	[Route("/Catalogs/StatiOtchetaOPribylyakhIUbytkakh/FindByCode/{Code}")]
-	[Route("/Catalogs/StatiOtchetaOPribylyakhIUbytkakh/FindByDescr/{Descr}")]
-	public class StatiOtchetaOPribylyakhIUbytkakhRequest/*СтатьиОтчетаОПрибыляхИУбыткахЗапрос*/: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<StatiOtchetaOPribylyakhIUbytkakhRequest>
+	//StatiOtchetaOPribylyakhIUbytkakh
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках","")]
+	public class СтатьиОтчетаОПрибыляхИУбыткахЗапрос: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<СтатьиОтчетаОПрибыляхИУбыткахЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/ПоСсылке","{Ссылка}")]
+	public class СтатьиОтчетаОПрибыляхИУбыткахНайтиПоСсылке: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<СтатьиОтчетаОПрибыляхИУбыткахНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/ПоКоду","{Код}")]
+	public class СтатьиОтчетаОПрибыляхИУбыткахНайтиПоКоду: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<СтатьиОтчетаОПрибыляхИУбыткахНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/ПоНаименованию","{Наименование}")]
+	public class СтатьиОтчетаОПрибыляхИУбыткахНайтиПоНаименованию: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<СтатьиОтчетаОПрибыляхИУбыткахНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоСсылке: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоКоду: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиОтчетаОПрибыляхИУбытках/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоНаименованию: V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках,IReturn<СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StatiOtchetaOPribylyakhIUbytkakhResponse//СтатьиОтчетаОПрибыляхИУбыткахОтвет
+	public class СтатьиОтчетаОПрибыляхИУбыткахОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StatiOtchetaOPribylyakhIUbytkakhs")]
-	[Route("/Catalogs/StatiOtchetaOPribylyakhIUbytkakhs/{Codes}")]
-	public class StatiOtchetaOPribylyakhIUbytkakhsRequest/*СтатьиОтчетаОПрибыляхИУбыткахЗапрос*/: IReturn<List<StatiOtchetaOPribylyakhIUbytkakhRequest>>
+	public class СтатьиОтчетаОПрибыляхИУбыткахСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StatiOtchetaOPribylyakhIUbytkakhsRequest(params string[] Codes)
+		
+		public object Get(СтатьиОтчетаОПрибыляхИУбыткахНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StatiOtchetaOPribylyakhIUbytkakhsResponse//СтатьиОтчетаОПрибыляхИУбыткахОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StatiOtchetaOPribylyakhIUbytkakhService /*СтатьиОтчетаОПрибыляхИУбыткахСервис*/ : Service
-	{
-		public object Any(StatiOtchetaOPribylyakhIUbytkakhRequest request)
+		
+		public object Get(СтатьиОтчетаОПрибыляхИУбыткахНайтиПоКоду Запрос)
 		{
-			return new StatiOtchetaOPribylyakhIUbytkakhResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StatiOtchetaOPribylyakhIUbytkakhRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтатьиОтчетаОПрибыляхИУбытках.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StatiOtchetaOPribylyakhIUbytkakhResponse() {Result = "СтатьиОтчетаОПрибыляхИУбытках c кодом '" + request.Code+"' не найдено."};
+				return new СтатьиОтчетаОПрибыляхИУбыткахОтвет() {Ответ = "СтатьиОтчетаОПрибыляхИУбытках c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StatiOtchetaOPribylyakhIUbytkakhsRequest request)
+		
+		public object Get(СтатьиОтчетаОПрибыляхИУбыткахНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтатьиОтчетаОПрибыляхИУбытках.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиОтчетаОПрибыляхИУбыткахВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтатьиОтчетаОПрибыляхИУбыткахЗапрос Запрос)
+		{
+			return new СтатьиОтчетаОПрибыляхИУбыткахОтвет {Ответ = "СтатьиОтчетаОПрибыляхИУбытках, "};
+		}
+
+		public object Post(СтатьиОтчетаОПрибыляхИУбыткахЗапрос ЗапросСтатьиОтчетаОПрибыляхИУбытках)
+		{
+			var Ссылка = (СправочникиСсылка.СтатьиОтчетаОПрибыляхИУбытках)ЗапросСтатьиОтчетаОПрибыляхИУбытках;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

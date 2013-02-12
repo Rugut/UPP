@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS")]
-	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS/FindById/{Id}")]
-	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS/FindByCode/{Code}")]
-	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOS/FindByDescr/{Descr}")]
-	public class GodovyeGrafikiAmortizaciiOSRequest/*ГодовыеГрафикиАмортизацииОСЗапрос*/: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<GodovyeGrafikiAmortizaciiOSRequest>
+	//GodovyeGrafikiAmortizaciiOS
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС","")]
+	public class ГодовыеГрафикиАмортизацииОСЗапрос: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<ГодовыеГрафикиАмортизацииОСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/ПоСсылке","{Ссылка}")]
+	public class ГодовыеГрафикиАмортизацииОСНайтиПоСсылке: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<ГодовыеГрафикиАмортизацииОСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/ПоКоду","{Код}")]
+	public class ГодовыеГрафикиАмортизацииОСНайтиПоКоду: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<ГодовыеГрафикиАмортизацииОСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/ПоНаименованию","{Наименование}")]
+	public class ГодовыеГрафикиАмортизацииОСНайтиПоНаименованию: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<ГодовыеГрафикиАмортизацииОСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГодовыеГрафикиАмортизацииОСВыбратьПоСсылке: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<ГодовыеГрафикиАмортизацииОСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГодовыеГрафикиАмортизацииОСВыбратьПоКоду: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<ГодовыеГрафикиАмортизацииОСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГодовыеГрафикиАмортизацииОС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГодовыеГрафикиАмортизацииОСВыбратьПоНаименованию: V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС,IReturn<ГодовыеГрафикиАмортизацииОСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GodovyeGrafikiAmortizaciiOSResponse//ГодовыеГрафикиАмортизацииОСОтвет
+	public class ГодовыеГрафикиАмортизацииОСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOSs")]
-	[Route("/Catalogs/GodovyeGrafikiAmortizaciiOSs/{Codes}")]
-	public class GodovyeGrafikiAmortizaciiOSsRequest/*ГодовыеГрафикиАмортизацииОСЗапрос*/: IReturn<List<GodovyeGrafikiAmortizaciiOSRequest>>
+	public class ГодовыеГрафикиАмортизацииОССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GodovyeGrafikiAmortizaciiOSsRequest(params string[] Codes)
+		
+		public object Get(ГодовыеГрафикиАмортизацииОСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GodovyeGrafikiAmortizaciiOSsResponse//ГодовыеГрафикиАмортизацииОСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GodovyeGrafikiAmortizaciiOSService /*ГодовыеГрафикиАмортизацииОССервис*/ : Service
-	{
-		public object Any(GodovyeGrafikiAmortizaciiOSRequest request)
+		
+		public object Get(ГодовыеГрафикиАмортизацииОСНайтиПоКоду Запрос)
 		{
-			return new GodovyeGrafikiAmortizaciiOSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GodovyeGrafikiAmortizaciiOSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГодовыеГрафикиАмортизацииОС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GodovyeGrafikiAmortizaciiOSResponse() {Result = "ГодовыеГрафикиАмортизацииОС c кодом '" + request.Code+"' не найдено."};
+				return new ГодовыеГрафикиАмортизацииОСОтвет() {Ответ = "ГодовыеГрафикиАмортизацииОС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GodovyeGrafikiAmortizaciiOSsRequest request)
+		
+		public object Get(ГодовыеГрафикиАмортизацииОСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГодовыеГрафикиАмортизацииОС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГодовыеГрафикиАмортизацииОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГодовыеГрафикиАмортизацииОСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГодовыеГрафикиАмортизацииОСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГодовыеГрафикиАмортизацииОСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГодовыеГрафикиАмортизацииОСЗапрос Запрос)
+		{
+			return new ГодовыеГрафикиАмортизацииОСОтвет {Ответ = "ГодовыеГрафикиАмортизацииОС, "};
+		}
+
+		public object Post(ГодовыеГрафикиАмортизацииОСЗапрос ЗапросГодовыеГрафикиАмортизацииОС)
+		{
+			var Ссылка = (СправочникиСсылка.ГодовыеГрафикиАмортизацииОС)ЗапросГодовыеГрафикиАмортизацииОС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

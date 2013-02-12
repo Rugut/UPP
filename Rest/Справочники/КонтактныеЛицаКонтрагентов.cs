@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KontaktnyeLicaKontragentov")]
-	[Route("/Catalogs/KontaktnyeLicaKontragentov/FindById/{Id}")]
-	[Route("/Catalogs/KontaktnyeLicaKontragentov/FindByCode/{Code}")]
-	[Route("/Catalogs/KontaktnyeLicaKontragentov/FindByDescr/{Descr}")]
-	public class KontaktnyeLicaKontragentovRequest/*КонтактныеЛицаКонтрагентовЗапрос*/: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<KontaktnyeLicaKontragentovRequest>
+	//KontaktnyeLicaKontragentov
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов","")]
+	public class КонтактныеЛицаКонтрагентовЗапрос: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<КонтактныеЛицаКонтрагентовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/ПоСсылке","{Ссылка}")]
+	public class КонтактныеЛицаКонтрагентовНайтиПоСсылке: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<КонтактныеЛицаКонтрагентовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/ПоКоду","{Код}")]
+	public class КонтактныеЛицаКонтрагентовНайтиПоКоду: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<КонтактныеЛицаКонтрагентовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/ПоНаименованию","{Наименование}")]
+	public class КонтактныеЛицаКонтрагентовНайтиПоНаименованию: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<КонтактныеЛицаКонтрагентовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтактныеЛицаКонтрагентовВыбратьПоСсылке: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<КонтактныеЛицаКонтрагентовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтактныеЛицаКонтрагентовВыбратьПоКоду: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<КонтактныеЛицаКонтрагентовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтактныеЛицаКонтрагентовВыбратьПоНаименованию: V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов,IReturn<КонтактныеЛицаКонтрагентовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KontaktnyeLicaKontragentovResponse//КонтактныеЛицаКонтрагентовОтвет
+	public class КонтактныеЛицаКонтрагентовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KontaktnyeLicaKontragentovs")]
-	[Route("/Catalogs/KontaktnyeLicaKontragentovs/{Codes}")]
-	public class KontaktnyeLicaKontragentovsRequest/*КонтактныеЛицаКонтрагентовЗапрос*/: IReturn<List<KontaktnyeLicaKontragentovRequest>>
+	public class КонтактныеЛицаКонтрагентовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KontaktnyeLicaKontragentovsRequest(params string[] Codes)
+		
+		public object Get(КонтактныеЛицаКонтрагентовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KontaktnyeLicaKontragentovsResponse//КонтактныеЛицаКонтрагентовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KontaktnyeLicaKontragentovService /*КонтактныеЛицаКонтрагентовСервис*/ : Service
-	{
-		public object Any(KontaktnyeLicaKontragentovRequest request)
+		
+		public object Get(КонтактныеЛицаКонтрагентовНайтиПоКоду Запрос)
 		{
-			return new KontaktnyeLicaKontragentovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KontaktnyeLicaKontragentovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КонтактныеЛицаКонтрагентов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KontaktnyeLicaKontragentovResponse() {Result = "КонтактныеЛицаКонтрагентов c кодом '" + request.Code+"' не найдено."};
+				return new КонтактныеЛицаКонтрагентовОтвет() {Ответ = "КонтактныеЛицаКонтрагентов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KontaktnyeLicaKontragentovsRequest request)
+		
+		public object Get(КонтактныеЛицаКонтрагентовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КонтактныеЛицаКонтрагентов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КонтактныеЛицаКонтрагентовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонтактныеЛицаКонтрагентовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонтактныеЛицаКонтрагентовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КонтактныеЛицаКонтрагентовЗапрос Запрос)
+		{
+			return new КонтактныеЛицаКонтрагентовОтвет {Ответ = "КонтактныеЛицаКонтрагентов, "};
+		}
+
+		public object Post(КонтактныеЛицаКонтрагентовЗапрос ЗапросКонтактныеЛицаКонтрагентов)
+		{
+			var Ссылка = (СправочникиСсылка.КонтактныеЛицаКонтрагентов)ЗапросКонтактныеЛицаКонтрагентов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОбработкиОбслуживанияТО:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОбработкиОбслуживанияТОЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObrabotkiObsluzhivaniyaTO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбработкиОбслуживанияТО/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ObrabotkiObsluzhivaniyaTORequest());
+			ОбработкиОбслуживанияТОЗапрос ОбработкиОбслуживанияТОЗапрос = null;
+			try
+			{
+				ОбработкиОбслуживанияТОЗапрос = Клиент.Get(new ОбработкиОбслуживанияТОЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбработкиОбслуживанияТОЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОбработкиОбслуживанияТОЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObrabotkiObsluzhivaniyaTO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбработкиОбслуживанияТО/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ObrabotkiObsluzhivaniyaTORequest());
+			ОбработкиОбслуживанияТОЗапрос ОбработкиОбслуживанияТОЗапрос = null;
+			try
+			{
+				ОбработкиОбслуживанияТОЗапрос = Клиент.Get(new ОбработкиОбслуживанияТОЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбработкиОбслуживанияТОЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОбработкиОбслуживанияТОЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObrabotkiObsluzhivaniyaTO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбработкиОбслуживанияТО/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ObrabotkiObsluzhivaniyaTORequest());
+			ОбработкиОбслуживанияТОЗапрос ОбработкиОбслуживанияТОЗапрос = null;
+			try
+			{
+				ОбработкиОбслуживанияТОЗапрос = Клиент.Get(new ОбработкиОбслуживанияТОЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбработкиОбслуживанияТОЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОбработкиОбслуживанияТОЗапрос ОбработкиОбслуживанияТОЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObrabotkiObsluzhivaniyaTO/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбработкиОбслуживанияТО?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ObrabotkiObsluzhivaniyaTORequest());
+			var ОбработкиОбслуживанияТООтвет = Клиент.Post(ОбработкиОбслуживанияТОЗапрос);
+		}
+		public static void Записать(ОбработкиОбслуживанияТОЗапрос ОбработкиОбслуживанияТОЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбработкиОбслуживанияТО?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбработкиОбслуживанияТООтвет = Клиент.Put(ОбработкиОбслуживанияТОЗапрос);
+		}
+		public static void Удалить(ОбработкиОбслуживанияТОЗапрос ОбработкиОбслуживанияТОЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбработкиОбслуживанияТО?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбработкиОбслуживанияТООтвет = Клиент.Delete(ОбработкиОбслуживанияТОЗапрос);
 		}
 	}
 }

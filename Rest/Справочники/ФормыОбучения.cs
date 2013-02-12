@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/FormyObucheniya")]
-	[Route("/Catalogs/FormyObucheniya/FindById/{Id}")]
-	[Route("/Catalogs/FormyObucheniya/FindByCode/{Code}")]
-	[Route("/Catalogs/FormyObucheniya/FindByDescr/{Descr}")]
-	public class FormyObucheniyaRequest/*ФормыОбученияЗапрос*/: V82.СправочникиСсылка.ФормыОбучения,IReturn<FormyObucheniyaRequest>
+	//FormyObucheniya
+	[Маршрут("Справочники/ФормыОбучения","")]
+	public class ФормыОбученияЗапрос: V82.СправочникиСсылка.ФормыОбучения,IReturn<ФормыОбученияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ФормыОбучения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ФормыОбучения/ПоСсылке","{Ссылка}")]
+	public class ФормыОбученияНайтиПоСсылке: V82.СправочникиСсылка.ФормыОбучения,IReturn<ФормыОбученияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ФормыОбучения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ФормыОбучения/ПоКоду","{Код}")]
+	public class ФормыОбученияНайтиПоКоду: V82.СправочникиСсылка.ФормыОбучения,IReturn<ФормыОбученияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ФормыОбучения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ФормыОбучения/ПоНаименованию","{Наименование}")]
+	public class ФормыОбученияНайтиПоНаименованию: V82.СправочникиСсылка.ФормыОбучения,IReturn<ФормыОбученияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ФормыОбучения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФормыОбученияВыбратьПоСсылке: V82.СправочникиСсылка.ФормыОбучения,IReturn<ФормыОбученияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФормыОбучения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФормыОбученияВыбратьПоКоду: V82.СправочникиСсылка.ФормыОбучения,IReturn<ФормыОбученияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФормыОбучения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФормыОбученияВыбратьПоНаименованию: V82.СправочникиСсылка.ФормыОбучения,IReturn<ФормыОбученияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class FormyObucheniyaResponse//ФормыОбученияОтвет
+	public class ФормыОбученияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/FormyObucheniyas")]
-	[Route("/Catalogs/FormyObucheniyas/{Codes}")]
-	public class FormyObucheniyasRequest/*ФормыОбученияЗапрос*/: IReturn<List<FormyObucheniyaRequest>>
+	public class ФормыОбученияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public FormyObucheniyasRequest(params string[] Codes)
+		
+		public object Get(ФормыОбученияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class FormyObucheniyasResponse//ФормыОбученияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class FormyObucheniyaService /*ФормыОбученияСервис*/ : Service
-	{
-		public object Any(FormyObucheniyaRequest request)
+		
+		public object Get(ФормыОбученияНайтиПоКоду Запрос)
 		{
-			return new FormyObucheniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(FormyObucheniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ФормыОбучения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new FormyObucheniyaResponse() {Result = "ФормыОбучения c кодом '" + request.Code+"' не найдено."};
+				return new ФормыОбученияОтвет() {Ответ = "ФормыОбучения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(FormyObucheniyasRequest request)
+		
+		public object Get(ФормыОбученияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ФормыОбучения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ФормыОбучения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ФормыОбученияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФормыОбученияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФормыОбученияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ФормыОбученияЗапрос Запрос)
+		{
+			return new ФормыОбученияОтвет {Ответ = "ФормыОбучения, "};
+		}
+
+		public object Post(ФормыОбученияЗапрос ЗапросФормыОбучения)
+		{
+			var Ссылка = (СправочникиСсылка.ФормыОбучения)ЗапросФормыОбучения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

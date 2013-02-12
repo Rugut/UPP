@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Valyuty")]
-	[Route("/Catalogs/Valyuty/FindById/{Id}")]
-	[Route("/Catalogs/Valyuty/FindByCode/{Code}")]
-	[Route("/Catalogs/Valyuty/FindByDescr/{Descr}")]
-	public class ValyutyRequest/*ВалютыЗапрос*/: V82.СправочникиСсылка.Валюты,IReturn<ValyutyRequest>
+	//Valyuty
+	[Маршрут("Справочники/Валюты","")]
+	public class ВалютыЗапрос: V82.СправочникиСсылка.Валюты,IReturn<ВалютыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Валюты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Валюты/ПоСсылке","{Ссылка}")]
+	public class ВалютыНайтиПоСсылке: V82.СправочникиСсылка.Валюты,IReturn<ВалютыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Валюты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Валюты/ПоКоду","{Код}")]
+	public class ВалютыНайтиПоКоду: V82.СправочникиСсылка.Валюты,IReturn<ВалютыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Валюты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Валюты/ПоНаименованию","{Наименование}")]
+	public class ВалютыНайтиПоНаименованию: V82.СправочникиСсылка.Валюты,IReturn<ВалютыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Валюты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВалютыВыбратьПоСсылке: V82.СправочникиСсылка.Валюты,IReturn<ВалютыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Валюты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВалютыВыбратьПоКоду: V82.СправочникиСсылка.Валюты,IReturn<ВалютыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Валюты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВалютыВыбратьПоНаименованию: V82.СправочникиСсылка.Валюты,IReturn<ВалютыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ValyutyResponse//ВалютыОтвет
+	public class ВалютыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Valyutys")]
-	[Route("/Catalogs/Valyutys/{Codes}")]
-	public class ValyutysRequest/*ВалютыЗапрос*/: IReturn<List<ValyutyRequest>>
+	public class ВалютыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ValyutysRequest(params string[] Codes)
+		
+		public object Get(ВалютыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ValyutysResponse//ВалютыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ValyutyService /*ВалютыСервис*/ : Service
-	{
-		public object Any(ValyutyRequest request)
+		
+		public object Get(ВалютыНайтиПоКоду Запрос)
 		{
-			return new ValyutyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ValyutyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Валюты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ValyutyResponse() {Result = "Валюты c кодом '" + request.Code+"' не найдено."};
+				return new ВалютыОтвет() {Ответ = "Валюты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ValyutysRequest request)
+		
+		public object Get(ВалютыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Валюты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Валюты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВалютыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВалютыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВалютыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВалютыЗапрос Запрос)
+		{
+			return new ВалютыОтвет {Ответ = "Валюты, "};
+		}
+
+		public object Post(ВалютыЗапрос ЗапросВалюты)
+		{
+			var Ссылка = (СправочникиСсылка.Валюты)ЗапросВалюты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

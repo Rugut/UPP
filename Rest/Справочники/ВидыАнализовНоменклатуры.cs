@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyAnalizovNomenklatury")]
-	[Route("/Catalogs/VidyAnalizovNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/VidyAnalizovNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyAnalizovNomenklatury/FindByDescr/{Descr}")]
-	public class VidyAnalizovNomenklaturyRequest/*ВидыАнализовНоменклатурыЗапрос*/: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<VidyAnalizovNomenklaturyRequest>
+	//VidyAnalizovNomenklatury
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры","")]
+	public class ВидыАнализовНоменклатурыЗапрос: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<ВидыАнализовНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class ВидыАнализовНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<ВидыАнализовНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/ПоКоду","{Код}")]
+	public class ВидыАнализовНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<ВидыАнализовНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class ВидыАнализовНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<ВидыАнализовНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыАнализовНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<ВидыАнализовНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыАнализовНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<ВидыАнализовНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыАнализовНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыАнализовНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыАнализовНоменклатуры,IReturn<ВидыАнализовНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyAnalizovNomenklaturyResponse//ВидыАнализовНоменклатурыОтвет
+	public class ВидыАнализовНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyAnalizovNomenklaturys")]
-	[Route("/Catalogs/VidyAnalizovNomenklaturys/{Codes}")]
-	public class VidyAnalizovNomenklaturysRequest/*ВидыАнализовНоменклатурыЗапрос*/: IReturn<List<VidyAnalizovNomenklaturyRequest>>
+	public class ВидыАнализовНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyAnalizovNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(ВидыАнализовНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyAnalizovNomenklaturysResponse//ВидыАнализовНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyAnalizovNomenklaturyService /*ВидыАнализовНоменклатурыСервис*/ : Service
-	{
-		public object Any(VidyAnalizovNomenklaturyRequest request)
+		
+		public object Get(ВидыАнализовНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new VidyAnalizovNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyAnalizovNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыАнализовНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyAnalizovNomenklaturyResponse() {Result = "ВидыАнализовНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new ВидыАнализовНоменклатурыОтвет() {Ответ = "ВидыАнализовНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyAnalizovNomenklaturysRequest request)
+		
+		public object Get(ВидыАнализовНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыАнализовНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыАнализовНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыАнализовНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыАнализовНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыАнализовНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыАнализовНоменклатурыЗапрос Запрос)
+		{
+			return new ВидыАнализовНоменклатурыОтвет {Ответ = "ВидыАнализовНоменклатуры, "};
+		}
+
+		public object Post(ВидыАнализовНоменклатурыЗапрос ЗапросВидыАнализовНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыАнализовНоменклатуры)ЗапросВидыАнализовНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

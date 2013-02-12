@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОснованияВыслугиЛет:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОснованияВыслугиЛетЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaVyslugiLet/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияВыслугиЛет/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OsnovaniyaVyslugiLetRequest());
+			ОснованияВыслугиЛетЗапрос ОснованияВыслугиЛетЗапрос = null;
+			try
+			{
+				ОснованияВыслугиЛетЗапрос = Клиент.Get(new ОснованияВыслугиЛетЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОснованияВыслугиЛетЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОснованияВыслугиЛетЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaVyslugiLet/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияВыслугиЛет/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OsnovaniyaVyslugiLetRequest());
+			ОснованияВыслугиЛетЗапрос ОснованияВыслугиЛетЗапрос = null;
+			try
+			{
+				ОснованияВыслугиЛетЗапрос = Клиент.Get(new ОснованияВыслугиЛетЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОснованияВыслугиЛетЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОснованияВыслугиЛетЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaVyslugiLet/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияВыслугиЛет/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OsnovaniyaVyslugiLetRequest());
+			ОснованияВыслугиЛетЗапрос ОснованияВыслугиЛетЗапрос = null;
+			try
+			{
+				ОснованияВыслугиЛетЗапрос = Клиент.Get(new ОснованияВыслугиЛетЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОснованияВыслугиЛетЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОснованияВыслугиЛетЗапрос ОснованияВыслугиЛетЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaVyslugiLet/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияВыслугиЛет?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OsnovaniyaVyslugiLetRequest());
+			var ОснованияВыслугиЛетОтвет = Клиент.Post(ОснованияВыслугиЛетЗапрос);
+		}
+		public static void Записать(ОснованияВыслугиЛетЗапрос ОснованияВыслугиЛетЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОснованияВыслугиЛет?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОснованияВыслугиЛетОтвет = Клиент.Put(ОснованияВыслугиЛетЗапрос);
+		}
+		public static void Удалить(ОснованияВыслугиЛетЗапрос ОснованияВыслугиЛетЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОснованияВыслугиЛет?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОснованияВыслугиЛетОтвет = Клиент.Delete(ОснованияВыслугиЛетЗапрос);
 		}
 	}
 }

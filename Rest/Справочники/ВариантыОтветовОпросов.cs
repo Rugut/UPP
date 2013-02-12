@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VariantyOtvetovOprosov")]
-	[Route("/Catalogs/VariantyOtvetovOprosov/FindById/{Id}")]
-	[Route("/Catalogs/VariantyOtvetovOprosov/FindByCode/{Code}")]
-	[Route("/Catalogs/VariantyOtvetovOprosov/FindByDescr/{Descr}")]
-	public class VariantyOtvetovOprosovRequest/*ВариантыОтветовОпросовЗапрос*/: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<VariantyOtvetovOprosovRequest>
+	//VariantyOtvetovOprosov
+	[Маршрут("Справочники/ВариантыОтветовОпросов","")]
+	public class ВариантыОтветовОпросовЗапрос: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<ВариантыОтветовОпросовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВариантыОтветовОпросов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВариантыОтветовОпросов/ПоСсылке","{Ссылка}")]
+	public class ВариантыОтветовОпросовНайтиПоСсылке: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<ВариантыОтветовОпросовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВариантыОтветовОпросов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВариантыОтветовОпросов/ПоКоду","{Код}")]
+	public class ВариантыОтветовОпросовНайтиПоКоду: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<ВариантыОтветовОпросовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВариантыОтветовОпросов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВариантыОтветовОпросов/ПоНаименованию","{Наименование}")]
+	public class ВариантыОтветовОпросовНайтиПоНаименованию: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<ВариантыОтветовОпросовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВариантыОтветовОпросов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыОтветовОпросовВыбратьПоСсылке: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<ВариантыОтветовОпросовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВариантыОтветовОпросов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыОтветовОпросовВыбратьПоКоду: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<ВариантыОтветовОпросовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВариантыОтветовОпросов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВариантыОтветовОпросовВыбратьПоНаименованию: V82.СправочникиСсылка.ВариантыОтветовОпросов,IReturn<ВариантыОтветовОпросовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VariantyOtvetovOprosovResponse//ВариантыОтветовОпросовОтвет
+	public class ВариантыОтветовОпросовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VariantyOtvetovOprosovs")]
-	[Route("/Catalogs/VariantyOtvetovOprosovs/{Codes}")]
-	public class VariantyOtvetovOprosovsRequest/*ВариантыОтветовОпросовЗапрос*/: IReturn<List<VariantyOtvetovOprosovRequest>>
+	public class ВариантыОтветовОпросовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VariantyOtvetovOprosovsRequest(params string[] Codes)
+		
+		public object Get(ВариантыОтветовОпросовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VariantyOtvetovOprosovsResponse//ВариантыОтветовОпросовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VariantyOtvetovOprosovService /*ВариантыОтветовОпросовСервис*/ : Service
-	{
-		public object Any(VariantyOtvetovOprosovRequest request)
+		
+		public object Get(ВариантыОтветовОпросовНайтиПоКоду Запрос)
 		{
-			return new VariantyOtvetovOprosovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VariantyOtvetovOprosovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВариантыОтветовОпросов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VariantyOtvetovOprosovResponse() {Result = "ВариантыОтветовОпросов c кодом '" + request.Code+"' не найдено."};
+				return new ВариантыОтветовОпросовОтвет() {Ответ = "ВариантыОтветовОпросов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VariantyOtvetovOprosovsRequest request)
+		
+		public object Get(ВариантыОтветовОпросовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВариантыОтветовОпросов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВариантыОтветовОпросов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВариантыОтветовОпросовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВариантыОтветовОпросовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВариантыОтветовОпросовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВариантыОтветовОпросовЗапрос Запрос)
+		{
+			return new ВариантыОтветовОпросовОтвет {Ответ = "ВариантыОтветовОпросов, "};
+		}
+
+		public object Post(ВариантыОтветовОпросовЗапрос ЗапросВариантыОтветовОпросов)
+		{
+			var Ссылка = (СправочникиСсылка.ВариантыОтветовОпросов)ЗапросВариантыОтветовОпросов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

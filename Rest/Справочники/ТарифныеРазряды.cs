@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TarifnyeRazryady")]
-	[Route("/Catalogs/TarifnyeRazryady/FindById/{Id}")]
-	[Route("/Catalogs/TarifnyeRazryady/FindByCode/{Code}")]
-	[Route("/Catalogs/TarifnyeRazryady/FindByDescr/{Descr}")]
-	public class TarifnyeRazryadyRequest/*ТарифныеРазрядыЗапрос*/: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<TarifnyeRazryadyRequest>
+	//TarifnyeRazryady
+	[Маршрут("Справочники/ТарифныеРазряды","")]
+	public class ТарифныеРазрядыЗапрос: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<ТарифныеРазрядыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТарифныеРазряды/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТарифныеРазряды/ПоСсылке","{Ссылка}")]
+	public class ТарифныеРазрядыНайтиПоСсылке: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<ТарифныеРазрядыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТарифныеРазряды/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТарифныеРазряды/ПоКоду","{Код}")]
+	public class ТарифныеРазрядыНайтиПоКоду: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<ТарифныеРазрядыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТарифныеРазряды/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТарифныеРазряды/ПоНаименованию","{Наименование}")]
+	public class ТарифныеРазрядыНайтиПоНаименованию: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<ТарифныеРазрядыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТарифныеРазряды/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифныеРазрядыВыбратьПоСсылке: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<ТарифныеРазрядыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТарифныеРазряды/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифныеРазрядыВыбратьПоКоду: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<ТарифныеРазрядыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТарифныеРазряды/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифныеРазрядыВыбратьПоНаименованию: V82.СправочникиСсылка.ТарифныеРазряды,IReturn<ТарифныеРазрядыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TarifnyeRazryadyResponse//ТарифныеРазрядыОтвет
+	public class ТарифныеРазрядыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TarifnyeRazryadys")]
-	[Route("/Catalogs/TarifnyeRazryadys/{Codes}")]
-	public class TarifnyeRazryadysRequest/*ТарифныеРазрядыЗапрос*/: IReturn<List<TarifnyeRazryadyRequest>>
+	public class ТарифныеРазрядыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TarifnyeRazryadysRequest(params string[] Codes)
+		
+		public object Get(ТарифныеРазрядыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TarifnyeRazryadysResponse//ТарифныеРазрядыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TarifnyeRazryadyService /*ТарифныеРазрядыСервис*/ : Service
-	{
-		public object Any(TarifnyeRazryadyRequest request)
+		
+		public object Get(ТарифныеРазрядыНайтиПоКоду Запрос)
 		{
-			return new TarifnyeRazryadyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TarifnyeRazryadyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТарифныеРазряды.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TarifnyeRazryadyResponse() {Result = "ТарифныеРазряды c кодом '" + request.Code+"' не найдено."};
+				return new ТарифныеРазрядыОтвет() {Ответ = "ТарифныеРазряды c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TarifnyeRazryadysRequest request)
+		
+		public object Get(ТарифныеРазрядыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТарифныеРазряды>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТарифныеРазряды.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТарифныеРазрядыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТарифныеРазрядыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТарифныеРазрядыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТарифныеРазрядыЗапрос Запрос)
+		{
+			return new ТарифныеРазрядыОтвет {Ответ = "ТарифныеРазряды, "};
+		}
+
+		public object Post(ТарифныеРазрядыЗапрос ЗапросТарифныеРазряды)
+		{
+			var Ссылка = (СправочникиСсылка.ТарифныеРазряды)ЗапросТарифныеРазряды;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

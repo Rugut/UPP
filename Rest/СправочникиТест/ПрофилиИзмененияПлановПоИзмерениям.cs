@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрофилиИзмененияПлановПоИзмерениям:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрофилиИзмененияПлановПоИзмерениямЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоИзмерениям/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProfiliIzmeneniyaPlanovPoIzmereniyamRequest());
+			ПрофилиИзмененияПлановПоИзмерениямЗапрос ПрофилиИзмененияПлановПоИзмерениямЗапрос = null;
+			try
+			{
+				ПрофилиИзмененияПлановПоИзмерениямЗапрос = Клиент.Get(new ПрофилиИзмененияПлановПоИзмерениямЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиИзмененияПлановПоИзмерениямЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрофилиИзмененияПлановПоИзмерениямЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоИзмерениям/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProfiliIzmeneniyaPlanovPoIzmereniyamRequest());
+			ПрофилиИзмененияПлановПоИзмерениямЗапрос ПрофилиИзмененияПлановПоИзмерениямЗапрос = null;
+			try
+			{
+				ПрофилиИзмененияПлановПоИзмерениямЗапрос = Клиент.Get(new ПрофилиИзмененияПлановПоИзмерениямЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиИзмененияПлановПоИзмерениямЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПрофилиИзмененияПлановПоИзмерениямЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоИзмерениям/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProfiliIzmeneniyaPlanovPoIzmereniyamRequest());
+			ПрофилиИзмененияПлановПоИзмерениямЗапрос ПрофилиИзмененияПлановПоИзмерениямЗапрос = null;
+			try
+			{
+				ПрофилиИзмененияПлановПоИзмерениямЗапрос = Клиент.Get(new ПрофилиИзмененияПлановПоИзмерениямЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиИзмененияПлановПоИзмерениямЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПрофилиИзмененияПлановПоИзмерениямЗапрос ПрофилиИзмененияПлановПоИзмерениямЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoIzmereniyam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоИзмерениям?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProfiliIzmeneniyaPlanovPoIzmereniyamRequest());
+			var ПрофилиИзмененияПлановПоИзмерениямОтвет = Клиент.Post(ПрофилиИзмененияПлановПоИзмерениямЗапрос);
+		}
+		public static void Записать(ПрофилиИзмененияПлановПоИзмерениямЗапрос ПрофилиИзмененияПлановПоИзмерениямЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоИзмерениям?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофилиИзмененияПлановПоИзмерениямОтвет = Клиент.Put(ПрофилиИзмененияПлановПоИзмерениямЗапрос);
+		}
+		public static void Удалить(ПрофилиИзмененияПлановПоИзмерениямЗапрос ПрофилиИзмененияПлановПоИзмерениямЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоИзмерениям?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофилиИзмененияПлановПоИзмерениямОтвет = Клиент.Delete(ПрофилиИзмененияПлановПоИзмерениямЗапрос);
 		}
 	}
 }

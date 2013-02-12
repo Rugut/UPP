@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Podrazdeleniya")]
-	[Route("/Catalogs/Podrazdeleniya/FindById/{Id}")]
-	[Route("/Catalogs/Podrazdeleniya/FindByCode/{Code}")]
-	[Route("/Catalogs/Podrazdeleniya/FindByDescr/{Descr}")]
-	public class PodrazdeleniyaRequest/*ПодразделенияЗапрос*/: V82.СправочникиСсылка.Подразделения,IReturn<PodrazdeleniyaRequest>
+	//Podrazdeleniya
+	[Маршрут("Справочники/Подразделения","")]
+	public class ПодразделенияЗапрос: V82.СправочникиСсылка.Подразделения,IReturn<ПодразделенияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Подразделения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Подразделения/ПоСсылке","{Ссылка}")]
+	public class ПодразделенияНайтиПоСсылке: V82.СправочникиСсылка.Подразделения,IReturn<ПодразделенияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Подразделения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Подразделения/ПоКоду","{Код}")]
+	public class ПодразделенияНайтиПоКоду: V82.СправочникиСсылка.Подразделения,IReturn<ПодразделенияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Подразделения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Подразделения/ПоНаименованию","{Наименование}")]
+	public class ПодразделенияНайтиПоНаименованию: V82.СправочникиСсылка.Подразделения,IReturn<ПодразделенияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Подразделения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПодразделенияВыбратьПоСсылке: V82.СправочникиСсылка.Подразделения,IReturn<ПодразделенияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Подразделения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПодразделенияВыбратьПоКоду: V82.СправочникиСсылка.Подразделения,IReturn<ПодразделенияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Подразделения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПодразделенияВыбратьПоНаименованию: V82.СправочникиСсылка.Подразделения,IReturn<ПодразделенияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PodrazdeleniyaResponse//ПодразделенияОтвет
+	public class ПодразделенияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Podrazdeleniyas")]
-	[Route("/Catalogs/Podrazdeleniyas/{Codes}")]
-	public class PodrazdeleniyasRequest/*ПодразделенияЗапрос*/: IReturn<List<PodrazdeleniyaRequest>>
+	public class ПодразделенияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PodrazdeleniyasRequest(params string[] Codes)
+		
+		public object Get(ПодразделенияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PodrazdeleniyasResponse//ПодразделенияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PodrazdeleniyaService /*ПодразделенияСервис*/ : Service
-	{
-		public object Any(PodrazdeleniyaRequest request)
+		
+		public object Get(ПодразделенияНайтиПоКоду Запрос)
 		{
-			return new PodrazdeleniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PodrazdeleniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Подразделения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PodrazdeleniyaResponse() {Result = "Подразделения c кодом '" + request.Code+"' не найдено."};
+				return new ПодразделенияОтвет() {Ответ = "Подразделения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PodrazdeleniyasRequest request)
+		
+		public object Get(ПодразделенияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Подразделения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Подразделения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПодразделенияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПодразделенияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПодразделенияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПодразделенияЗапрос Запрос)
+		{
+			return new ПодразделенияОтвет {Ответ = "Подразделения, "};
+		}
+
+		public object Post(ПодразделенияЗапрос ЗапросПодразделения)
+		{
+			var Ссылка = (СправочникиСсылка.Подразделения)ЗапросПодразделения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

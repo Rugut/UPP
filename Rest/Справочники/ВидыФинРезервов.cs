@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyFinRezervov")]
-	[Route("/Catalogs/VidyFinRezervov/FindById/{Id}")]
-	[Route("/Catalogs/VidyFinRezervov/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyFinRezervov/FindByDescr/{Descr}")]
-	public class VidyFinRezervovRequest/*ВидыФинРезервовЗапрос*/: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<VidyFinRezervovRequest>
+	//VidyFinRezervov
+	[Маршрут("Справочники/ВидыФинРезервов","")]
+	public class ВидыФинРезервовЗапрос: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<ВидыФинРезервовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыФинРезервов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыФинРезервов/ПоСсылке","{Ссылка}")]
+	public class ВидыФинРезервовНайтиПоСсылке: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<ВидыФинРезервовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыФинРезервов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыФинРезервов/ПоКоду","{Код}")]
+	public class ВидыФинРезервовНайтиПоКоду: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<ВидыФинРезервовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыФинРезервов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыФинРезервов/ПоНаименованию","{Наименование}")]
+	public class ВидыФинРезервовНайтиПоНаименованию: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<ВидыФинРезервовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыФинРезервов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыФинРезервовВыбратьПоСсылке: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<ВидыФинРезервовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыФинРезервов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыФинРезервовВыбратьПоКоду: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<ВидыФинРезервовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыФинРезервов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыФинРезервовВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыФинРезервов,IReturn<ВидыФинРезервовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyFinRezervovResponse//ВидыФинРезервовОтвет
+	public class ВидыФинРезервовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyFinRezervovs")]
-	[Route("/Catalogs/VidyFinRezervovs/{Codes}")]
-	public class VidyFinRezervovsRequest/*ВидыФинРезервовЗапрос*/: IReturn<List<VidyFinRezervovRequest>>
+	public class ВидыФинРезервовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyFinRezervovsRequest(params string[] Codes)
+		
+		public object Get(ВидыФинРезервовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyFinRezervovsResponse//ВидыФинРезервовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyFinRezervovService /*ВидыФинРезервовСервис*/ : Service
-	{
-		public object Any(VidyFinRezervovRequest request)
+		
+		public object Get(ВидыФинРезервовНайтиПоКоду Запрос)
 		{
-			return new VidyFinRezervovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyFinRezervovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыФинРезервов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyFinRezervovResponse() {Result = "ВидыФинРезервов c кодом '" + request.Code+"' не найдено."};
+				return new ВидыФинРезервовОтвет() {Ответ = "ВидыФинРезервов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyFinRezervovsRequest request)
+		
+		public object Get(ВидыФинРезервовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыФинРезервов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыФинРезервов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыФинРезервовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыФинРезервовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыФинРезервовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыФинРезервовЗапрос Запрос)
+		{
+			return new ВидыФинРезервовОтвет {Ответ = "ВидыФинРезервов, "};
+		}
+
+		public object Post(ВидыФинРезервовЗапрос ЗапросВидыФинРезервов)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыФинРезервов)ЗапросВидыФинРезервов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

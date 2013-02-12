@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SostavyVoennosluzhashhikh")]
-	[Route("/Catalogs/SostavyVoennosluzhashhikh/FindById/{Id}")]
-	[Route("/Catalogs/SostavyVoennosluzhashhikh/FindByCode/{Code}")]
-	[Route("/Catalogs/SostavyVoennosluzhashhikh/FindByDescr/{Descr}")]
-	public class SostavyVoennosluzhashhikhRequest/*СоставыВоеннослужащихЗапрос*/: V82.СправочникиСсылка.СоставыВоеннослужащих,IReturn<SostavyVoennosluzhashhikhRequest>
+	//SostavyVoennosluzhashhikh
+	[Маршрут("Справочники/СоставыВоеннослужащих","")]
+	public class СоставыВоеннослужащихЗапрос: V82.СправочникиСсылка.СоставыВоеннослужащих,IReturn<СоставыВоеннослужащихЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СоставыВоеннослужащих/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СоставыВоеннослужащих/ПоСсылке","{Ссылка}")]
+	public class СоставыВоеннослужащихНайтиПоСсылке: V82.СправочникиСсылка.СоставыВоеннослужащих,IReturn<СоставыВоеннослужащихНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СоставыВоеннослужащих/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СоставыВоеннослужащих/ПоНаименованию","{Наименование}")]
+	public class СоставыВоеннослужащихНайтиПоНаименованию: V82.СправочникиСсылка.СоставыВоеннослужащих,IReturn<СоставыВоеннослужащихНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СоставыВоеннослужащих/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставыВоеннослужащихВыбратьПоСсылке: V82.СправочникиСсылка.СоставыВоеннослужащих,IReturn<СоставыВоеннослужащихВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СоставыВоеннослужащих/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставыВоеннослужащихВыбратьПоНаименованию: V82.СправочникиСсылка.СоставыВоеннослужащих,IReturn<СоставыВоеннослужащихВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SostavyVoennosluzhashhikhResponse//СоставыВоеннослужащихОтвет
+	public class СоставыВоеннослужащихОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SostavyVoennosluzhashhikhs")]
-	[Route("/Catalogs/SostavyVoennosluzhashhikhs/{Codes}")]
-	public class SostavyVoennosluzhashhikhsRequest/*СоставыВоеннослужащихЗапрос*/: IReturn<List<SostavyVoennosluzhashhikhRequest>>
+	public class СоставыВоеннослужащихСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SostavyVoennosluzhashhikhsRequest(params string[] Codes)
+		
+		public object Get(СоставыВоеннослужащихНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SostavyVoennosluzhashhikhsResponse//СоставыВоеннослужащихОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SostavyVoennosluzhashhikhService /*СоставыВоеннослужащихСервис*/ : Service
-	{
-		public object Any(SostavyVoennosluzhashhikhRequest request)
+		
+		public object Get(СоставыВоеннослужащихНайтиПоНаименованию Запрос)
 		{
-			return new SostavyVoennosluzhashhikhResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(SostavyVoennosluzhashhikhRequest request)
+		
+		public object Get(СоставыВоеннослужащихВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СоставыВоеннослужащихВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(SostavyVoennosluzhashhikhsRequest request)
+		public object Any(СоставыВоеннослужащихЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СоставыВоеннослужащих>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new СоставыВоеннослужащихОтвет {Ответ = "СоставыВоеннослужащих, "};
 		}
+
+		public object Post(СоставыВоеннослужащихЗапрос ЗапросСоставыВоеннослужащих)
+		{
+			var Ссылка = (СправочникиСсылка.СоставыВоеннослужащих)ЗапросСоставыВоеннослужащих;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

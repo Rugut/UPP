@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КатегорииОбъектов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КатегорииОбъектовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KategoriiObektov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КатегорииОбъектов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KategoriiObektovRequest());
+			КатегорииОбъектовЗапрос КатегорииОбъектовЗапрос = null;
+			try
+			{
+				КатегорииОбъектовЗапрос = Клиент.Get(new КатегорииОбъектовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КатегорииОбъектовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КатегорииОбъектовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KategoriiObektov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КатегорииОбъектов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KategoriiObektovRequest());
+			КатегорииОбъектовЗапрос КатегорииОбъектовЗапрос = null;
+			try
+			{
+				КатегорииОбъектовЗапрос = Клиент.Get(new КатегорииОбъектовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КатегорииОбъектовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КатегорииОбъектовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KategoriiObektov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КатегорииОбъектов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KategoriiObektovRequest());
+			КатегорииОбъектовЗапрос КатегорииОбъектовЗапрос = null;
+			try
+			{
+				КатегорииОбъектовЗапрос = Клиент.Get(new КатегорииОбъектовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КатегорииОбъектовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КатегорииОбъектовЗапрос КатегорииОбъектовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KategoriiObektov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КатегорииОбъектов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KategoriiObektovRequest());
+			var КатегорииОбъектовОтвет = Клиент.Post(КатегорииОбъектовЗапрос);
+		}
+		public static void Записать(КатегорииОбъектовЗапрос КатегорииОбъектовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/КатегорииОбъектов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КатегорииОбъектовОтвет = Клиент.Put(КатегорииОбъектовЗапрос);
+		}
+		public static void Удалить(КатегорииОбъектовЗапрос КатегорииОбъектовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КатегорииОбъектов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КатегорииОбъектовОтвет = Клиент.Delete(КатегорииОбъектовЗапрос);
 		}
 	}
 }

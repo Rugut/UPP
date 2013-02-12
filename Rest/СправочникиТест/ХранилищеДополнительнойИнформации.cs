@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ХранилищеДополнительнойИнформации:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ХранилищеДополнительнойИнформацииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KHranilishheDopolnitelnojjInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ХранилищеДополнительнойИнформации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KHranilishheDopolnitelnojjInformaciiRequest());
+			ХранилищеДополнительнойИнформацииЗапрос ХранилищеДополнительнойИнформацииЗапрос = null;
+			try
+			{
+				ХранилищеДополнительнойИнформацииЗапрос = Клиент.Get(new ХранилищеДополнительнойИнформацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ХранилищеДополнительнойИнформацииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ХранилищеДополнительнойИнформацииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KHranilishheDopolnitelnojjInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ХранилищеДополнительнойИнформации/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KHranilishheDopolnitelnojjInformaciiRequest());
+			ХранилищеДополнительнойИнформацииЗапрос ХранилищеДополнительнойИнформацииЗапрос = null;
+			try
+			{
+				ХранилищеДополнительнойИнформацииЗапрос = Клиент.Get(new ХранилищеДополнительнойИнформацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ХранилищеДополнительнойИнформацииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ХранилищеДополнительнойИнформацииЗапрос ХранилищеДополнительнойИнформацииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KHranilishheDopolnitelnojjInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ХранилищеДополнительнойИнформации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KHranilishheDopolnitelnojjInformaciiRequest());
+			var ХранилищеДополнительнойИнформацииОтвет = Клиент.Post(ХранилищеДополнительнойИнформацииЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ХранилищеДополнительнойИнформацииЗапрос ХранилищеДополнительнойИнформацииЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KHranilishheDopolnitelnojjInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ХранилищеДополнительнойИнформации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KHranilishheDopolnitelnojjInformaciiRequest());
+			var ХранилищеДополнительнойИнформацииОтвет = Клиент.Put(ХранилищеДополнительнойИнформацииЗапрос);
+		}
+		public static void Удалить(ХранилищеДополнительнойИнформацииЗапрос ХранилищеДополнительнойИнформацииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ХранилищеДополнительнойИнформации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ХранилищеДополнительнойИнформацииОтвет = Клиент.Delete(ХранилищеДополнительнойИнформацииЗапрос);
 		}
 	}
 }

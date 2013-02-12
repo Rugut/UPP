@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/UchebnyeZavedeniya")]
-	[Route("/Catalogs/UchebnyeZavedeniya/FindById/{Id}")]
-	[Route("/Catalogs/UchebnyeZavedeniya/FindByCode/{Code}")]
-	[Route("/Catalogs/UchebnyeZavedeniya/FindByDescr/{Descr}")]
-	public class UchebnyeZavedeniyaRequest/*УчебныеЗаведенияЗапрос*/: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<UchebnyeZavedeniyaRequest>
+	//UchebnyeZavedeniya
+	[Маршрут("Справочники/УчебныеЗаведения","")]
+	public class УчебныеЗаведенияЗапрос: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<УчебныеЗаведенияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/УчебныеЗаведения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/УчебныеЗаведения/ПоСсылке","{Ссылка}")]
+	public class УчебныеЗаведенияНайтиПоСсылке: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<УчебныеЗаведенияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/УчебныеЗаведения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/УчебныеЗаведения/ПоКоду","{Код}")]
+	public class УчебныеЗаведенияНайтиПоКоду: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<УчебныеЗаведенияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/УчебныеЗаведения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/УчебныеЗаведения/ПоНаименованию","{Наименование}")]
+	public class УчебныеЗаведенияНайтиПоНаименованию: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<УчебныеЗаведенияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/УчебныеЗаведения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчебныеЗаведенияВыбратьПоСсылке: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<УчебныеЗаведенияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УчебныеЗаведения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчебныеЗаведенияВыбратьПоКоду: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<УчебныеЗаведенияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УчебныеЗаведения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class УчебныеЗаведенияВыбратьПоНаименованию: V82.СправочникиСсылка.УчебныеЗаведения,IReturn<УчебныеЗаведенияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class UchebnyeZavedeniyaResponse//УчебныеЗаведенияОтвет
+	public class УчебныеЗаведенияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/UchebnyeZavedeniyas")]
-	[Route("/Catalogs/UchebnyeZavedeniyas/{Codes}")]
-	public class UchebnyeZavedeniyasRequest/*УчебныеЗаведенияЗапрос*/: IReturn<List<UchebnyeZavedeniyaRequest>>
+	public class УчебныеЗаведенияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public UchebnyeZavedeniyasRequest(params string[] Codes)
+		
+		public object Get(УчебныеЗаведенияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class UchebnyeZavedeniyasResponse//УчебныеЗаведенияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class UchebnyeZavedeniyaService /*УчебныеЗаведенияСервис*/ : Service
-	{
-		public object Any(UchebnyeZavedeniyaRequest request)
+		
+		public object Get(УчебныеЗаведенияНайтиПоКоду Запрос)
 		{
-			return new UchebnyeZavedeniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(UchebnyeZavedeniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.УчебныеЗаведения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new UchebnyeZavedeniyaResponse() {Result = "УчебныеЗаведения c кодом '" + request.Code+"' не найдено."};
+				return new УчебныеЗаведенияОтвет() {Ответ = "УчебныеЗаведения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(UchebnyeZavedeniyasRequest request)
+		
+		public object Get(УчебныеЗаведенияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УчебныеЗаведения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.УчебныеЗаведения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(УчебныеЗаведенияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УчебныеЗаведенияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УчебныеЗаведенияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(УчебныеЗаведенияЗапрос Запрос)
+		{
+			return new УчебныеЗаведенияОтвет {Ответ = "УчебныеЗаведения, "};
+		}
+
+		public object Post(УчебныеЗаведенияЗапрос ЗапросУчебныеЗаведения)
+		{
+			var Ссылка = (СправочникиСсылка.УчебныеЗаведения)ЗапросУчебныеЗаведения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

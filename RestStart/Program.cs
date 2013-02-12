@@ -23,7 +23,7 @@ namespace RestStart
         static void Main(string[] args)
         {
             ЗапуститьRest();
-
+            Console.ReadLine();
         }
     }
 }

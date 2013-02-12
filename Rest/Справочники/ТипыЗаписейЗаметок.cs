@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TipyZapisejjZametok")]
-	[Route("/Catalogs/TipyZapisejjZametok/FindById/{Id}")]
-	[Route("/Catalogs/TipyZapisejjZametok/FindByCode/{Code}")]
-	[Route("/Catalogs/TipyZapisejjZametok/FindByDescr/{Descr}")]
-	public class TipyZapisejjZametokRequest/*ТипыЗаписейЗаметокЗапрос*/: V82.СправочникиСсылка.ТипыЗаписейЗаметок,IReturn<TipyZapisejjZametokRequest>
+	//TipyZapisejjZametok
+	[Маршрут("Справочники/ТипыЗаписейЗаметок","")]
+	public class ТипыЗаписейЗаметокЗапрос: V82.СправочникиСсылка.ТипыЗаписейЗаметок,IReturn<ТипыЗаписейЗаметокЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТипыЗаписейЗаметок/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТипыЗаписейЗаметок/ПоСсылке","{Ссылка}")]
+	public class ТипыЗаписейЗаметокНайтиПоСсылке: V82.СправочникиСсылка.ТипыЗаписейЗаметок,IReturn<ТипыЗаписейЗаметокНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТипыЗаписейЗаметок/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТипыЗаписейЗаметок/ПоНаименованию","{Наименование}")]
+	public class ТипыЗаписейЗаметокНайтиПоНаименованию: V82.СправочникиСсылка.ТипыЗаписейЗаметок,IReturn<ТипыЗаписейЗаметокНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТипыЗаписейЗаметок/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыЗаписейЗаметокВыбратьПоСсылке: V82.СправочникиСсылка.ТипыЗаписейЗаметок,IReturn<ТипыЗаписейЗаметокВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТипыЗаписейЗаметок/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТипыЗаписейЗаметокВыбратьПоНаименованию: V82.СправочникиСсылка.ТипыЗаписейЗаметок,IReturn<ТипыЗаписейЗаметокВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TipyZapisejjZametokResponse//ТипыЗаписейЗаметокОтвет
+	public class ТипыЗаписейЗаметокОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TipyZapisejjZametoks")]
-	[Route("/Catalogs/TipyZapisejjZametoks/{Codes}")]
-	public class TipyZapisejjZametoksRequest/*ТипыЗаписейЗаметокЗапрос*/: IReturn<List<TipyZapisejjZametokRequest>>
+	public class ТипыЗаписейЗаметокСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TipyZapisejjZametoksRequest(params string[] Codes)
+		
+		public object Get(ТипыЗаписейЗаметокНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TipyZapisejjZametoksResponse//ТипыЗаписейЗаметокОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TipyZapisejjZametokService /*ТипыЗаписейЗаметокСервис*/ : Service
-	{
-		public object Any(TipyZapisejjZametokRequest request)
+		
+		public object Get(ТипыЗаписейЗаметокНайтиПоНаименованию Запрос)
 		{
-			return new TipyZapisejjZametokResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(TipyZapisejjZametokRequest request)
+		
+		public object Get(ТипыЗаписейЗаметокВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТипыЗаписейЗаметокВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(TipyZapisejjZametoksRequest request)
+		public object Any(ТипыЗаписейЗаметокЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТипыЗаписейЗаметок>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ТипыЗаписейЗаметокОтвет {Ответ = "ТипыЗаписейЗаметок, "};
 		}
+
+		public object Post(ТипыЗаписейЗаметокЗапрос ЗапросТипыЗаписейЗаметок)
+		{
+			var Ссылка = (СправочникиСсылка.ТипыЗаписейЗаметок)ЗапросТипыЗаписейЗаметок;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

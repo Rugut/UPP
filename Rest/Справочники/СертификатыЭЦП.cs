@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SertifikatyEHCP")]
-	[Route("/Catalogs/SertifikatyEHCP/FindById/{Id}")]
-	[Route("/Catalogs/SertifikatyEHCP/FindByCode/{Code}")]
-	[Route("/Catalogs/SertifikatyEHCP/FindByDescr/{Descr}")]
-	public class SertifikatyEHCPRequest/*СертификатыЭЦПЗапрос*/: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<SertifikatyEHCPRequest>
+	//SertifikatyEHCP
+	[Маршрут("Справочники/СертификатыЭЦП","")]
+	public class СертификатыЭЦПЗапрос: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<СертификатыЭЦПЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СертификатыЭЦП/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СертификатыЭЦП/ПоСсылке","{Ссылка}")]
+	public class СертификатыЭЦПНайтиПоСсылке: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<СертификатыЭЦПНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СертификатыЭЦП/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СертификатыЭЦП/ПоНаименованию","{Наименование}")]
+	public class СертификатыЭЦПНайтиПоНаименованию: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<СертификатыЭЦПНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СертификатыЭЦП/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СертификатыЭЦПВыбратьПоСсылке: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<СертификатыЭЦПВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СертификатыЭЦП/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СертификатыЭЦПВыбратьПоНаименованию: V82.СправочникиСсылка.СертификатыЭЦП,IReturn<СертификатыЭЦПВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SertifikatyEHCPResponse//СертификатыЭЦПОтвет
+	public class СертификатыЭЦПОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SertifikatyEHCPs")]
-	[Route("/Catalogs/SertifikatyEHCPs/{Codes}")]
-	public class SertifikatyEHCPsRequest/*СертификатыЭЦПЗапрос*/: IReturn<List<SertifikatyEHCPRequest>>
+	public class СертификатыЭЦПСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SertifikatyEHCPsRequest(params string[] Codes)
+		
+		public object Get(СертификатыЭЦПНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SertifikatyEHCPsResponse//СертификатыЭЦПОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SertifikatyEHCPService /*СертификатыЭЦПСервис*/ : Service
-	{
-		public object Any(SertifikatyEHCPRequest request)
+		
+		public object Get(СертификатыЭЦПНайтиПоНаименованию Запрос)
 		{
-			return new SertifikatyEHCPResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(SertifikatyEHCPRequest request)
+		
+		public object Get(СертификатыЭЦПВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СертификатыЭЦПВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(SertifikatyEHCPsRequest request)
+		public object Any(СертификатыЭЦПЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СертификатыЭЦП>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new СертификатыЭЦПОтвет {Ответ = "СертификатыЭЦП, "};
 		}
+
+		public object Post(СертификатыЭЦПЗапрос ЗапросСертификатыЭЦП)
+		{
+			var Ссылка = (СправочникиСсылка.СертификатыЭЦП)ЗапросСертификатыЭЦП;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

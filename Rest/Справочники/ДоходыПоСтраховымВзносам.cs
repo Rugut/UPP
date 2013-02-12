@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DokhodyPoStrakhovymVznosam")]
-	[Route("/Catalogs/DokhodyPoStrakhovymVznosam/FindById/{Id}")]
-	[Route("/Catalogs/DokhodyPoStrakhovymVznosam/FindByCode/{Code}")]
-	[Route("/Catalogs/DokhodyPoStrakhovymVznosam/FindByDescr/{Descr}")]
-	public class DokhodyPoStrakhovymVznosamRequest/*ДоходыПоСтраховымВзносамЗапрос*/: V82.СправочникиСсылка.ДоходыПоСтраховымВзносам,IReturn<DokhodyPoStrakhovymVznosamRequest>
+	//DokhodyPoStrakhovymVznosam
+	[Маршрут("Справочники/ДоходыПоСтраховымВзносам","")]
+	public class ДоходыПоСтраховымВзносамЗапрос: V82.СправочникиСсылка.ДоходыПоСтраховымВзносам,IReturn<ДоходыПоСтраховымВзносамЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДоходыПоСтраховымВзносам/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДоходыПоСтраховымВзносам/ПоСсылке","{Ссылка}")]
+	public class ДоходыПоСтраховымВзносамНайтиПоСсылке: V82.СправочникиСсылка.ДоходыПоСтраховымВзносам,IReturn<ДоходыПоСтраховымВзносамНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДоходыПоСтраховымВзносам/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДоходыПоСтраховымВзносам/ПоНаименованию","{Наименование}")]
+	public class ДоходыПоСтраховымВзносамНайтиПоНаименованию: V82.СправочникиСсылка.ДоходыПоСтраховымВзносам,IReturn<ДоходыПоСтраховымВзносамНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДоходыПоСтраховымВзносам/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыПоСтраховымВзносамВыбратьПоСсылке: V82.СправочникиСсылка.ДоходыПоСтраховымВзносам,IReturn<ДоходыПоСтраховымВзносамВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоходыПоСтраховымВзносам/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыПоСтраховымВзносамВыбратьПоНаименованию: V82.СправочникиСсылка.ДоходыПоСтраховымВзносам,IReturn<ДоходыПоСтраховымВзносамВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DokhodyPoStrakhovymVznosamResponse//ДоходыПоСтраховымВзносамОтвет
+	public class ДоходыПоСтраховымВзносамОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DokhodyPoStrakhovymVznosams")]
-	[Route("/Catalogs/DokhodyPoStrakhovymVznosams/{Codes}")]
-	public class DokhodyPoStrakhovymVznosamsRequest/*ДоходыПоСтраховымВзносамЗапрос*/: IReturn<List<DokhodyPoStrakhovymVznosamRequest>>
+	public class ДоходыПоСтраховымВзносамСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DokhodyPoStrakhovymVznosamsRequest(params string[] Codes)
+		
+		public object Get(ДоходыПоСтраховымВзносамНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DokhodyPoStrakhovymVznosamsResponse//ДоходыПоСтраховымВзносамОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DokhodyPoStrakhovymVznosamService /*ДоходыПоСтраховымВзносамСервис*/ : Service
-	{
-		public object Any(DokhodyPoStrakhovymVznosamRequest request)
+		
+		public object Get(ДоходыПоСтраховымВзносамНайтиПоНаименованию Запрос)
 		{
-			return new DokhodyPoStrakhovymVznosamResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(DokhodyPoStrakhovymVznosamRequest request)
+		
+		public object Get(ДоходыПоСтраховымВзносамВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоходыПоСтраховымВзносамВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(DokhodyPoStrakhovymVznosamsRequest request)
+		public object Any(ДоходыПоСтраховымВзносамЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоходыПоСтраховымВзносам>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ДоходыПоСтраховымВзносамОтвет {Ответ = "ДоходыПоСтраховымВзносам, "};
 		}
+
+		public object Post(ДоходыПоСтраховымВзносамЗапрос ЗапросДоходыПоСтраховымВзносам)
+		{
+			var Ссылка = (СправочникиСсылка.ДоходыПоСтраховымВзносам)ЗапросДоходыПоСтраховымВзносам;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

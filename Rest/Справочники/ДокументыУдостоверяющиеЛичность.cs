@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost")]
-	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost/FindById/{Id}")]
-	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost/FindByCode/{Code}")]
-	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnost/FindByDescr/{Descr}")]
-	public class DokumentyUdostoveryayushhieLichnostRequest/*ДокументыУдостоверяющиеЛичностьЗапрос*/: V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность,IReturn<DokumentyUdostoveryayushhieLichnostRequest>
+	//DokumentyUdostoveryayushhieLichnost
+	[Маршрут("Справочники/ДокументыУдостоверяющиеЛичность","")]
+	public class ДокументыУдостоверяющиеЛичностьЗапрос: V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность,IReturn<ДокументыУдостоверяющиеЛичностьЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДокументыУдостоверяющиеЛичность/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДокументыУдостоверяющиеЛичность/ПоСсылке","{Ссылка}")]
+	public class ДокументыУдостоверяющиеЛичностьНайтиПоСсылке: V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность,IReturn<ДокументыУдостоверяющиеЛичностьНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДокументыУдостоверяющиеЛичность/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДокументыУдостоверяющиеЛичность/ПоНаименованию","{Наименование}")]
+	public class ДокументыУдостоверяющиеЛичностьНайтиПоНаименованию: V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность,IReturn<ДокументыУдостоверяющиеЛичностьНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДокументыУдостоверяющиеЛичность/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыУдостоверяющиеЛичностьВыбратьПоСсылке: V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность,IReturn<ДокументыУдостоверяющиеЛичностьВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДокументыУдостоверяющиеЛичность/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыУдостоверяющиеЛичностьВыбратьПоНаименованию: V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность,IReturn<ДокументыУдостоверяющиеЛичностьВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DokumentyUdostoveryayushhieLichnostResponse//ДокументыУдостоверяющиеЛичностьОтвет
+	public class ДокументыУдостоверяющиеЛичностьОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnosts")]
-	[Route("/Catalogs/DokumentyUdostoveryayushhieLichnosts/{Codes}")]
-	public class DokumentyUdostoveryayushhieLichnostsRequest/*ДокументыУдостоверяющиеЛичностьЗапрос*/: IReturn<List<DokumentyUdostoveryayushhieLichnostRequest>>
+	public class ДокументыУдостоверяющиеЛичностьСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DokumentyUdostoveryayushhieLichnostsRequest(params string[] Codes)
+		
+		public object Get(ДокументыУдостоверяющиеЛичностьНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DokumentyUdostoveryayushhieLichnostsResponse//ДокументыУдостоверяющиеЛичностьОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DokumentyUdostoveryayushhieLichnostService /*ДокументыУдостоверяющиеЛичностьСервис*/ : Service
-	{
-		public object Any(DokumentyUdostoveryayushhieLichnostRequest request)
+		
+		public object Get(ДокументыУдостоверяющиеЛичностьНайтиПоНаименованию Запрос)
 		{
-			return new DokumentyUdostoveryayushhieLichnostResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(DokumentyUdostoveryayushhieLichnostRequest request)
+		
+		public object Get(ДокументыУдостоверяющиеЛичностьВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДокументыУдостоверяющиеЛичностьВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(DokumentyUdostoveryayushhieLichnostsRequest request)
+		public object Any(ДокументыУдостоверяющиеЛичностьЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ДокументыУдостоверяющиеЛичностьОтвет {Ответ = "ДокументыУдостоверяющиеЛичность, "};
 		}
+
+		public object Post(ДокументыУдостоверяющиеЛичностьЗапрос ЗапросДокументыУдостоверяющиеЛичность)
+		{
+			var Ссылка = (СправочникиСсылка.ДокументыУдостоверяющиеЛичность)ЗапросДокументыУдостоверяющиеЛичность;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

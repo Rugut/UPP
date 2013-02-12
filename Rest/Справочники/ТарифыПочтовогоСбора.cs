@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TarifyPochtovogoSbora")]
-	[Route("/Catalogs/TarifyPochtovogoSbora/FindById/{Id}")]
-	[Route("/Catalogs/TarifyPochtovogoSbora/FindByCode/{Code}")]
-	[Route("/Catalogs/TarifyPochtovogoSbora/FindByDescr/{Descr}")]
-	public class TarifyPochtovogoSboraRequest/*ТарифыПочтовогоСбораЗапрос*/: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<TarifyPochtovogoSboraRequest>
+	//TarifyPochtovogoSbora
+	[Маршрут("Справочники/ТарифыПочтовогоСбора","")]
+	public class ТарифыПочтовогоСбораЗапрос: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<ТарифыПочтовогоСбораЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/ПоСсылке","{Ссылка}")]
+	public class ТарифыПочтовогоСбораНайтиПоСсылке: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<ТарифыПочтовогоСбораНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/ПоКоду","{Код}")]
+	public class ТарифыПочтовогоСбораНайтиПоКоду: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<ТарифыПочтовогоСбораНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/ПоНаименованию","{Наименование}")]
+	public class ТарифыПочтовогоСбораНайтиПоНаименованию: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<ТарифыПочтовогоСбораНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифыПочтовогоСбораВыбратьПоСсылке: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<ТарифыПочтовогоСбораВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифыПочтовогоСбораВыбратьПоКоду: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<ТарифыПочтовогоСбораВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТарифыПочтовогоСбора/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТарифыПочтовогоСбораВыбратьПоНаименованию: V82.СправочникиСсылка.ТарифыПочтовогоСбора,IReturn<ТарифыПочтовогоСбораВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TarifyPochtovogoSboraResponse//ТарифыПочтовогоСбораОтвет
+	public class ТарифыПочтовогоСбораОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TarifyPochtovogoSboras")]
-	[Route("/Catalogs/TarifyPochtovogoSboras/{Codes}")]
-	public class TarifyPochtovogoSborasRequest/*ТарифыПочтовогоСбораЗапрос*/: IReturn<List<TarifyPochtovogoSboraRequest>>
+	public class ТарифыПочтовогоСбораСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TarifyPochtovogoSborasRequest(params string[] Codes)
+		
+		public object Get(ТарифыПочтовогоСбораНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TarifyPochtovogoSborasResponse//ТарифыПочтовогоСбораОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TarifyPochtovogoSboraService /*ТарифыПочтовогоСбораСервис*/ : Service
-	{
-		public object Any(TarifyPochtovogoSboraRequest request)
+		
+		public object Get(ТарифыПочтовогоСбораНайтиПоКоду Запрос)
 		{
-			return new TarifyPochtovogoSboraResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TarifyPochtovogoSboraRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТарифыПочтовогоСбора.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TarifyPochtovogoSboraResponse() {Result = "ТарифыПочтовогоСбора c кодом '" + request.Code+"' не найдено."};
+				return new ТарифыПочтовогоСбораОтвет() {Ответ = "ТарифыПочтовогоСбора c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TarifyPochtovogoSborasRequest request)
+		
+		public object Get(ТарифыПочтовогоСбораНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТарифыПочтовогоСбора>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТарифыПочтовогоСбора.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТарифыПочтовогоСбораВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТарифыПочтовогоСбораВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТарифыПочтовогоСбораВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТарифыПочтовогоСбораЗапрос Запрос)
+		{
+			return new ТарифыПочтовогоСбораОтвет {Ответ = "ТарифыПочтовогоСбора, "};
+		}
+
+		public object Post(ТарифыПочтовогоСбораЗапрос ЗапросТарифыПочтовогоСбора)
+		{
+			var Ссылка = (СправочникиСсылка.ТарифыПочтовогоСбора)ЗапросТарифыПочтовогоСбора;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

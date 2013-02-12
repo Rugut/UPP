@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ZanyatiyaKursovObucheniya")]
-	[Route("/Catalogs/ZanyatiyaKursovObucheniya/FindById/{Id}")]
-	[Route("/Catalogs/ZanyatiyaKursovObucheniya/FindByCode/{Code}")]
-	[Route("/Catalogs/ZanyatiyaKursovObucheniya/FindByDescr/{Descr}")]
-	public class ZanyatiyaKursovObucheniyaRequest/*ЗанятияКурсовОбученияЗапрос*/: V82.СправочникиСсылка.ЗанятияКурсовОбучения,IReturn<ZanyatiyaKursovObucheniyaRequest>
+	//ZanyatiyaKursovObucheniya
+	[Маршрут("Справочники/ЗанятияКурсовОбучения","")]
+	public class ЗанятияКурсовОбученияЗапрос: V82.СправочникиСсылка.ЗанятияКурсовОбучения,IReturn<ЗанятияКурсовОбученияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЗанятияКурсовОбучения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЗанятияКурсовОбучения/ПоСсылке","{Ссылка}")]
+	public class ЗанятияКурсовОбученияНайтиПоСсылке: V82.СправочникиСсылка.ЗанятияКурсовОбучения,IReturn<ЗанятияКурсовОбученияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЗанятияКурсовОбучения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЗанятияКурсовОбучения/ПоНаименованию","{Наименование}")]
+	public class ЗанятияКурсовОбученияНайтиПоНаименованию: V82.СправочникиСсылка.ЗанятияКурсовОбучения,IReturn<ЗанятияКурсовОбученияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЗанятияКурсовОбучения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗанятияКурсовОбученияВыбратьПоСсылке: V82.СправочникиСсылка.ЗанятияКурсовОбучения,IReturn<ЗанятияКурсовОбученияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗанятияКурсовОбучения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗанятияКурсовОбученияВыбратьПоНаименованию: V82.СправочникиСсылка.ЗанятияКурсовОбучения,IReturn<ЗанятияКурсовОбученияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ZanyatiyaKursovObucheniyaResponse//ЗанятияКурсовОбученияОтвет
+	public class ЗанятияКурсовОбученияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ZanyatiyaKursovObucheniyas")]
-	[Route("/Catalogs/ZanyatiyaKursovObucheniyas/{Codes}")]
-	public class ZanyatiyaKursovObucheniyasRequest/*ЗанятияКурсовОбученияЗапрос*/: IReturn<List<ZanyatiyaKursovObucheniyaRequest>>
+	public class ЗанятияКурсовОбученияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ZanyatiyaKursovObucheniyasRequest(params string[] Codes)
+		
+		public object Get(ЗанятияКурсовОбученияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ZanyatiyaKursovObucheniyasResponse//ЗанятияКурсовОбученияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ZanyatiyaKursovObucheniyaService /*ЗанятияКурсовОбученияСервис*/ : Service
-	{
-		public object Any(ZanyatiyaKursovObucheniyaRequest request)
+		
+		public object Get(ЗанятияКурсовОбученияНайтиПоНаименованию Запрос)
 		{
-			return new ZanyatiyaKursovObucheniyaResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(ZanyatiyaKursovObucheniyaRequest request)
+		
+		public object Get(ЗанятияКурсовОбученияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗанятияКурсовОбученияВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(ZanyatiyaKursovObucheniyasRequest request)
+		public object Any(ЗанятияКурсовОбученияЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЗанятияКурсовОбучения>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ЗанятияКурсовОбученияОтвет {Ответ = "ЗанятияКурсовОбучения, "};
 		}
+
+		public object Post(ЗанятияКурсовОбученияЗапрос ЗапросЗанятияКурсовОбучения)
+		{
+			var Ссылка = (СправочникиСсылка.ЗанятияКурсовОбучения)ЗапросЗанятияКурсовОбучения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

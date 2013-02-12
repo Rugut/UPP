@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyParametrovVypuskaProdukcii")]
-	[Route("/Catalogs/VidyParametrovVypuskaProdukcii/FindById/{Id}")]
-	[Route("/Catalogs/VidyParametrovVypuskaProdukcii/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyParametrovVypuskaProdukcii/FindByDescr/{Descr}")]
-	public class VidyParametrovVypuskaProdukciiRequest/*ВидыПараметровВыпускаПродукцииЗапрос*/: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<VidyParametrovVypuskaProdukciiRequest>
+	//VidyParametrovVypuskaProdukcii
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции","")]
+	public class ВидыПараметровВыпускаПродукцииЗапрос: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<ВидыПараметровВыпускаПродукцииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/ПоСсылке","{Ссылка}")]
+	public class ВидыПараметровВыпускаПродукцииНайтиПоСсылке: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<ВидыПараметровВыпускаПродукцииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/ПоКоду","{Код}")]
+	public class ВидыПараметровВыпускаПродукцииНайтиПоКоду: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<ВидыПараметровВыпускаПродукцииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/ПоНаименованию","{Наименование}")]
+	public class ВидыПараметровВыпускаПродукцииНайтиПоНаименованию: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<ВидыПараметровВыпускаПродукцииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыПараметровВыпускаПродукцииВыбратьПоСсылке: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<ВидыПараметровВыпускаПродукцииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыПараметровВыпускаПродукцииВыбратьПоКоду: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<ВидыПараметровВыпускаПродукцииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыПараметровВыпускаПродукции/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыПараметровВыпускаПродукцииВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции,IReturn<ВидыПараметровВыпускаПродукцииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyParametrovVypuskaProdukciiResponse//ВидыПараметровВыпускаПродукцииОтвет
+	public class ВидыПараметровВыпускаПродукцииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyParametrovVypuskaProdukciis")]
-	[Route("/Catalogs/VidyParametrovVypuskaProdukciis/{Codes}")]
-	public class VidyParametrovVypuskaProdukciisRequest/*ВидыПараметровВыпускаПродукцииЗапрос*/: IReturn<List<VidyParametrovVypuskaProdukciiRequest>>
+	public class ВидыПараметровВыпускаПродукцииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyParametrovVypuskaProdukciisRequest(params string[] Codes)
+		
+		public object Get(ВидыПараметровВыпускаПродукцииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyParametrovVypuskaProdukciisResponse//ВидыПараметровВыпускаПродукцииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyParametrovVypuskaProdukciiService /*ВидыПараметровВыпускаПродукцииСервис*/ : Service
-	{
-		public object Any(VidyParametrovVypuskaProdukciiRequest request)
+		
+		public object Get(ВидыПараметровВыпускаПродукцииНайтиПоКоду Запрос)
 		{
-			return new VidyParametrovVypuskaProdukciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyParametrovVypuskaProdukciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыПараметровВыпускаПродукции.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyParametrovVypuskaProdukciiResponse() {Result = "ВидыПараметровВыпускаПродукции c кодом '" + request.Code+"' не найдено."};
+				return new ВидыПараметровВыпускаПродукцииОтвет() {Ответ = "ВидыПараметровВыпускаПродукции c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyParametrovVypuskaProdukciisRequest request)
+		
+		public object Get(ВидыПараметровВыпускаПродукцииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыПараметровВыпускаПродукции>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыПараметровВыпускаПродукции.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыПараметровВыпускаПродукцииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыПараметровВыпускаПродукцииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыПараметровВыпускаПродукцииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыПараметровВыпускаПродукцииЗапрос Запрос)
+		{
+			return new ВидыПараметровВыпускаПродукцииОтвет {Ответ = "ВидыПараметровВыпускаПродукции, "};
+		}
+
+		public object Post(ВидыПараметровВыпускаПродукцииЗапрос ЗапросВидыПараметровВыпускаПродукции)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыПараметровВыпускаПродукции)ЗапросВидыПараметровВыпускаПродукции;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

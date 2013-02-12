@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СчетчикДляФормированияСерийныхНомеров:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СчетчикДляФормированияСерийныхНомеровЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетчикДляФормированияСерийныхНомеров/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest());
+			СчетчикДляФормированияСерийныхНомеровЗапрос СчетчикДляФормированияСерийныхНомеровЗапрос = null;
+			try
+			{
+				СчетчикДляФормированияСерийныхНомеровЗапрос = Клиент.Get(new СчетчикДляФормированияСерийныхНомеровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СчетчикДляФормированияСерийныхНомеровЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СчетчикДляФормированияСерийныхНомеровЗапрос НайтиПоКоду(decimal Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетчикДляФормированияСерийныхНомеров/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest());
+			СчетчикДляФормированияСерийныхНомеровЗапрос СчетчикДляФормированияСерийныхНомеровЗапрос = null;
+			try
+			{
+				СчетчикДляФормированияСерийныхНомеровЗапрос = Клиент.Get(new СчетчикДляФормированияСерийныхНомеровЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СчетчикДляФормированияСерийныхНомеровЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(СчетчикДляФормированияСерийныхНомеровЗапрос СчетчикДляФормированияСерийныхНомеровЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетчикДляФормированияСерийныхНомеров?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest());
+			var СчетчикДляФормированияСерийныхНомеровОтвет = Клиент.Post(СчетчикДляФормированияСерийныхНомеровЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(СчетчикДляФормированияСерийныхНомеровЗапрос СчетчикДляФормированияСерийныхНомеровЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetchikDlyaFormirovaniyaSerijjnykhNomerov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетчикДляФормированияСерийныхНомеров?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SchetchikDlyaFormirovaniyaSerijjnykhNomerovRequest());
+			var СчетчикДляФормированияСерийныхНомеровОтвет = Клиент.Put(СчетчикДляФормированияСерийныхНомеровЗапрос);
+		}
+		public static void Удалить(СчетчикДляФормированияСерийныхНомеровЗапрос СчетчикДляФормированияСерийныхНомеровЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СчетчикДляФормированияСерийныхНомеров?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СчетчикДляФормированияСерийныхНомеровОтвет = Клиент.Delete(СчетчикДляФормированияСерийныхНомеровЗапрос);
 		}
 	}
 }

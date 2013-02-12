@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ZnacheniyaPokazatelejjAnalizovNomenklatury")]
-	[Route("/Catalogs/ZnacheniyaPokazatelejjAnalizovNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/ZnacheniyaPokazatelejjAnalizovNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/ZnacheniyaPokazatelejjAnalizovNomenklatury/FindByDescr/{Descr}")]
-	public class ZnacheniyaPokazatelejjAnalizovNomenklaturyRequest/*ЗначенияПоказателейАнализовНоменклатурыЗапрос*/: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ZnacheniyaPokazatelejjAnalizovNomenklaturyRequest>
+	//ZnacheniyaPokazatelejjAnalizovNomenklatury
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры","")]
+	public class ЗначенияПоказателейАнализовНоменклатурыЗапрос: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ЗначенияПоказателейАнализовНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class ЗначенияПоказателейАнализовНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ЗначенияПоказателейАнализовНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/ПоКоду","{Код}")]
+	public class ЗначенияПоказателейАнализовНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ЗначенияПоказателейАнализовНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class ЗначенияПоказателейАнализовНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ЗначенияПоказателейАнализовНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗначенияПоказателейАнализовНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ЗначенияПоказателейАнализовНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗначенияПоказателейАнализовНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ЗначенияПоказателейАнализовНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗначенияПоказателейАнализовНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗначенияПоказателейАнализовНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры,IReturn<ЗначенияПоказателейАнализовНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ZnacheniyaPokazatelejjAnalizovNomenklaturyResponse//ЗначенияПоказателейАнализовНоменклатурыОтвет
+	public class ЗначенияПоказателейАнализовНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ZnacheniyaPokazatelejjAnalizovNomenklaturys")]
-	[Route("/Catalogs/ZnacheniyaPokazatelejjAnalizovNomenklaturys/{Codes}")]
-	public class ZnacheniyaPokazatelejjAnalizovNomenklaturysRequest/*ЗначенияПоказателейАнализовНоменклатурыЗапрос*/: IReturn<List<ZnacheniyaPokazatelejjAnalizovNomenklaturyRequest>>
+	public class ЗначенияПоказателейАнализовНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ZnacheniyaPokazatelejjAnalizovNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(ЗначенияПоказателейАнализовНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ZnacheniyaPokazatelejjAnalizovNomenklaturysResponse//ЗначенияПоказателейАнализовНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ZnacheniyaPokazatelejjAnalizovNomenklaturyService /*ЗначенияПоказателейАнализовНоменклатурыСервис*/ : Service
-	{
-		public object Any(ZnacheniyaPokazatelejjAnalizovNomenklaturyRequest request)
+		
+		public object Get(ЗначенияПоказателейАнализовНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new ZnacheniyaPokazatelejjAnalizovNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ZnacheniyaPokazatelejjAnalizovNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЗначенияПоказателейАнализовНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ZnacheniyaPokazatelejjAnalizovNomenklaturyResponse() {Result = "ЗначенияПоказателейАнализовНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new ЗначенияПоказателейАнализовНоменклатурыОтвет() {Ответ = "ЗначенияПоказателейАнализовНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ZnacheniyaPokazatelejjAnalizovNomenklaturysRequest request)
+		
+		public object Get(ЗначенияПоказателейАнализовНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЗначенияПоказателейАнализовНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЗначенияПоказателейАнализовНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗначенияПоказателейАнализовНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗначенияПоказателейАнализовНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЗначенияПоказателейАнализовНоменклатурыЗапрос Запрос)
+		{
+			return new ЗначенияПоказателейАнализовНоменклатурыОтвет {Ответ = "ЗначенияПоказателейАнализовНоменклатуры, "};
+		}
+
+		public object Post(ЗначенияПоказателейАнализовНоменклатурыЗапрос ЗапросЗначенияПоказателейАнализовНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.ЗначенияПоказателейАнализовНоменклатуры)ЗапросЗначенияПоказателейАнализовНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

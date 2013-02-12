@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДокументыУдостоверяющиеЛичность:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДокументыУдостоверяющиеЛичностьЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyUdostoveryayushhieLichnost/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыУдостоверяющиеЛичность/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DokumentyUdostoveryayushhieLichnostRequest());
+			ДокументыУдостоверяющиеЛичностьЗапрос ДокументыУдостоверяющиеЛичностьЗапрос = null;
+			try
+			{
+				ДокументыУдостоверяющиеЛичностьЗапрос = Клиент.Get(new ДокументыУдостоверяющиеЛичностьЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыУдостоверяющиеЛичностьЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДокументыУдостоверяющиеЛичностьЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyUdostoveryayushhieLichnost/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыУдостоверяющиеЛичность/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DokumentyUdostoveryayushhieLichnostRequest());
+			ДокументыУдостоверяющиеЛичностьЗапрос ДокументыУдостоверяющиеЛичностьЗапрос = null;
+			try
+			{
+				ДокументыУдостоверяющиеЛичностьЗапрос = Клиент.Get(new ДокументыУдостоверяющиеЛичностьЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыУдостоверяющиеЛичностьЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ДокументыУдостоверяющиеЛичностьЗапрос ДокументыУдостоверяющиеЛичностьЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyUdostoveryayushhieLichnost/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыУдостоверяющиеЛичность?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DokumentyUdostoveryayushhieLichnostRequest());
+			var ДокументыУдостоверяющиеЛичностьОтвет = Клиент.Post(ДокументыУдостоверяющиеЛичностьЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ДокументыУдостоверяющиеЛичностьЗапрос ДокументыУдостоверяющиеЛичностьЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyUdostoveryayushhieLichnost/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыУдостоверяющиеЛичность?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DokumentyUdostoveryayushhieLichnostRequest());
+			var ДокументыУдостоверяющиеЛичностьОтвет = Клиент.Put(ДокументыУдостоверяющиеЛичностьЗапрос);
+		}
+		public static void Удалить(ДокументыУдостоверяющиеЛичностьЗапрос ДокументыУдостоверяющиеЛичностьЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДокументыУдостоверяющиеЛичность?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДокументыУдостоверяющиеЛичностьОтвет = Клиент.Delete(ДокументыУдостоверяющиеЛичностьЗапрос);
 		}
 	}
 }

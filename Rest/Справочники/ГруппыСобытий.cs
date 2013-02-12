@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppySobytijj")]
-	[Route("/Catalogs/GruppySobytijj/FindById/{Id}")]
-	[Route("/Catalogs/GruppySobytijj/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppySobytijj/FindByDescr/{Descr}")]
-	public class GruppySobytijjRequest/*ГруппыСобытийЗапрос*/: V82.СправочникиСсылка.ГруппыСобытий,IReturn<GruppySobytijjRequest>
+	//GruppySobytijj
+	[Маршрут("Справочники/ГруппыСобытий","")]
+	public class ГруппыСобытийЗапрос: V82.СправочникиСсылка.ГруппыСобытий,IReturn<ГруппыСобытийЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыСобытий/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыСобытий/ПоСсылке","{Ссылка}")]
+	public class ГруппыСобытийНайтиПоСсылке: V82.СправочникиСсылка.ГруппыСобытий,IReturn<ГруппыСобытийНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыСобытий/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыСобытий/ПоКоду","{Код}")]
+	public class ГруппыСобытийНайтиПоКоду: V82.СправочникиСсылка.ГруппыСобытий,IReturn<ГруппыСобытийНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыСобытий/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыСобытий/ПоНаименованию","{Наименование}")]
+	public class ГруппыСобытийНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыСобытий,IReturn<ГруппыСобытийНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыСобытий/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыСобытийВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыСобытий,IReturn<ГруппыСобытийВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыСобытий/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыСобытийВыбратьПоКоду: V82.СправочникиСсылка.ГруппыСобытий,IReturn<ГруппыСобытийВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыСобытий/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыСобытийВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыСобытий,IReturn<ГруппыСобытийВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppySobytijjResponse//ГруппыСобытийОтвет
+	public class ГруппыСобытийОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppySobytijjs")]
-	[Route("/Catalogs/GruppySobytijjs/{Codes}")]
-	public class GruppySobytijjsRequest/*ГруппыСобытийЗапрос*/: IReturn<List<GruppySobytijjRequest>>
+	public class ГруппыСобытийСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppySobytijjsRequest(params string[] Codes)
+		
+		public object Get(ГруппыСобытийНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppySobytijjsResponse//ГруппыСобытийОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppySobytijjService /*ГруппыСобытийСервис*/ : Service
-	{
-		public object Any(GruppySobytijjRequest request)
+		
+		public object Get(ГруппыСобытийНайтиПоКоду Запрос)
 		{
-			return new GruppySobytijjResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppySobytijjRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыСобытий.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppySobytijjResponse() {Result = "ГруппыСобытий c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыСобытийОтвет() {Ответ = "ГруппыСобытий c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppySobytijjsRequest request)
+		
+		public object Get(ГруппыСобытийНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыСобытий>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыСобытий.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыСобытийВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыСобытийВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыСобытийВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыСобытийЗапрос Запрос)
+		{
+			return new ГруппыСобытийОтвет {Ответ = "ГруппыСобытий, "};
+		}
+
+		public object Post(ГруппыСобытийЗапрос ЗапросГруппыСобытий)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыСобытий)ЗапросГруппыСобытий;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

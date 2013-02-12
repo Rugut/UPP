@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DoverennostiNalogoplatelshhika")]
-	[Route("/Catalogs/DoverennostiNalogoplatelshhika/FindById/{Id}")]
-	[Route("/Catalogs/DoverennostiNalogoplatelshhika/FindByCode/{Code}")]
-	[Route("/Catalogs/DoverennostiNalogoplatelshhika/FindByDescr/{Descr}")]
-	public class DoverennostiNalogoplatelshhikaRequest/*ДоверенностиНалогоплательщикаЗапрос*/: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<DoverennostiNalogoplatelshhikaRequest>
+	//DoverennostiNalogoplatelshhika
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика","")]
+	public class ДоверенностиНалогоплательщикаЗапрос: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<ДоверенностиНалогоплательщикаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/ПоСсылке","{Ссылка}")]
+	public class ДоверенностиНалогоплательщикаНайтиПоСсылке: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<ДоверенностиНалогоплательщикаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/ПоКоду","{Код}")]
+	public class ДоверенностиНалогоплательщикаНайтиПоКоду: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<ДоверенностиНалогоплательщикаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/ПоНаименованию","{Наименование}")]
+	public class ДоверенностиНалогоплательщикаНайтиПоНаименованию: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<ДоверенностиНалогоплательщикаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоверенностиНалогоплательщикаВыбратьПоСсылке: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<ДоверенностиНалогоплательщикаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоверенностиНалогоплательщикаВыбратьПоКоду: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<ДоверенностиНалогоплательщикаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоверенностиНалогоплательщика/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоверенностиНалогоплательщикаВыбратьПоНаименованию: V82.СправочникиСсылка.ДоверенностиНалогоплательщика,IReturn<ДоверенностиНалогоплательщикаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DoverennostiNalogoplatelshhikaResponse//ДоверенностиНалогоплательщикаОтвет
+	public class ДоверенностиНалогоплательщикаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DoverennostiNalogoplatelshhikas")]
-	[Route("/Catalogs/DoverennostiNalogoplatelshhikas/{Codes}")]
-	public class DoverennostiNalogoplatelshhikasRequest/*ДоверенностиНалогоплательщикаЗапрос*/: IReturn<List<DoverennostiNalogoplatelshhikaRequest>>
+	public class ДоверенностиНалогоплательщикаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DoverennostiNalogoplatelshhikasRequest(params string[] Codes)
+		
+		public object Get(ДоверенностиНалогоплательщикаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DoverennostiNalogoplatelshhikasResponse//ДоверенностиНалогоплательщикаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DoverennostiNalogoplatelshhikaService /*ДоверенностиНалогоплательщикаСервис*/ : Service
-	{
-		public object Any(DoverennostiNalogoplatelshhikaRequest request)
+		
+		public object Get(ДоверенностиНалогоплательщикаНайтиПоКоду Запрос)
 		{
-			return new DoverennostiNalogoplatelshhikaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DoverennostiNalogoplatelshhikaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДоверенностиНалогоплательщика.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DoverennostiNalogoplatelshhikaResponse() {Result = "ДоверенностиНалогоплательщика c кодом '" + request.Code+"' не найдено."};
+				return new ДоверенностиНалогоплательщикаОтвет() {Ответ = "ДоверенностиНалогоплательщика c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DoverennostiNalogoplatelshhikasRequest request)
+		
+		public object Get(ДоверенностиНалогоплательщикаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоверенностиНалогоплательщика>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДоверенностиНалогоплательщика.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДоверенностиНалогоплательщикаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоверенностиНалогоплательщикаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоверенностиНалогоплательщикаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДоверенностиНалогоплательщикаЗапрос Запрос)
+		{
+			return new ДоверенностиНалогоплательщикаОтвет {Ответ = "ДоверенностиНалогоплательщика, "};
+		}
+
+		public object Post(ДоверенностиНалогоплательщикаЗапрос ЗапросДоверенностиНалогоплательщика)
+		{
+			var Ссылка = (СправочникиСсылка.ДоверенностиНалогоплательщика)ЗапросДоверенностиНалогоплательщика;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДокументыОбОбразовании:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДокументыОбОбразованииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyObObrazovanii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыОбОбразовании/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DokumentyObObrazovaniiRequest());
+			ДокументыОбОбразованииЗапрос ДокументыОбОбразованииЗапрос = null;
+			try
+			{
+				ДокументыОбОбразованииЗапрос = Клиент.Get(new ДокументыОбОбразованииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыОбОбразованииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДокументыОбОбразованииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyObObrazovanii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыОбОбразовании/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DokumentyObObrazovaniiRequest());
+			ДокументыОбОбразованииЗапрос ДокументыОбОбразованииЗапрос = null;
+			try
+			{
+				ДокументыОбОбразованииЗапрос = Клиент.Get(new ДокументыОбОбразованииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыОбОбразованииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДокументыОбОбразованииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyObObrazovanii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыОбОбразовании/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DokumentyObObrazovaniiRequest());
+			ДокументыОбОбразованииЗапрос ДокументыОбОбразованииЗапрос = null;
+			try
+			{
+				ДокументыОбОбразованииЗапрос = Клиент.Get(new ДокументыОбОбразованииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДокументыОбОбразованииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДокументыОбОбразованииЗапрос ДокументыОбОбразованииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DokumentyObObrazovanii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДокументыОбОбразовании?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DokumentyObObrazovaniiRequest());
+			var ДокументыОбОбразованииОтвет = Клиент.Post(ДокументыОбОбразованииЗапрос);
+		}
+		public static void Записать(ДокументыОбОбразованииЗапрос ДокументыОбОбразованииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДокументыОбОбразовании?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДокументыОбОбразованииОтвет = Клиент.Put(ДокументыОбОбразованииЗапрос);
+		}
+		public static void Удалить(ДокументыОбОбразованииЗапрос ДокументыОбОбразованииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДокументыОбОбразовании?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДокументыОбОбразованииОтвет = Клиент.Delete(ДокументыОбОбразованииЗапрос);
 		}
 	}
 }

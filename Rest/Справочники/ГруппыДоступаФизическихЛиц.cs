@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppyDostupaFizicheskikhLic")]
-	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/FindById/{Id}")]
-	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppyDostupaFizicheskikhLic/FindByDescr/{Descr}")]
-	public class GruppyDostupaFizicheskikhLicRequest/*ГруппыДоступаФизическихЛицЗапрос*/: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<GruppyDostupaFizicheskikhLicRequest>
+	//GruppyDostupaFizicheskikhLic
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц","")]
+	public class ГруппыДоступаФизическихЛицЗапрос: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<ГруппыДоступаФизическихЛицЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/ПоСсылке","{Ссылка}")]
+	public class ГруппыДоступаФизическихЛицНайтиПоСсылке: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<ГруппыДоступаФизическихЛицНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/ПоКоду","{Код}")]
+	public class ГруппыДоступаФизическихЛицНайтиПоКоду: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<ГруппыДоступаФизическихЛицНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/ПоНаименованию","{Наименование}")]
+	public class ГруппыДоступаФизическихЛицНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<ГруппыДоступаФизическихЛицНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступаФизическихЛицВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<ГруппыДоступаФизическихЛицВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступаФизическихЛицВыбратьПоКоду: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<ГруппыДоступаФизическихЛицВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыДоступаФизическихЛиц/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыДоступаФизическихЛицВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц,IReturn<ГруппыДоступаФизическихЛицВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppyDostupaFizicheskikhLicResponse//ГруппыДоступаФизическихЛицОтвет
+	public class ГруппыДоступаФизическихЛицОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppyDostupaFizicheskikhLics")]
-	[Route("/Catalogs/GruppyDostupaFizicheskikhLics/{Codes}")]
-	public class GruppyDostupaFizicheskikhLicsRequest/*ГруппыДоступаФизическихЛицЗапрос*/: IReturn<List<GruppyDostupaFizicheskikhLicRequest>>
+	public class ГруппыДоступаФизическихЛицСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppyDostupaFizicheskikhLicsRequest(params string[] Codes)
+		
+		public object Get(ГруппыДоступаФизическихЛицНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppyDostupaFizicheskikhLicsResponse//ГруппыДоступаФизическихЛицОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppyDostupaFizicheskikhLicService /*ГруппыДоступаФизическихЛицСервис*/ : Service
-	{
-		public object Any(GruppyDostupaFizicheskikhLicRequest request)
+		
+		public object Get(ГруппыДоступаФизическихЛицНайтиПоКоду Запрос)
 		{
-			return new GruppyDostupaFizicheskikhLicResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppyDostupaFizicheskikhLicRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыДоступаФизическихЛиц.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppyDostupaFizicheskikhLicResponse() {Result = "ГруппыДоступаФизическихЛиц c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыДоступаФизическихЛицОтвет() {Ответ = "ГруппыДоступаФизическихЛиц c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppyDostupaFizicheskikhLicsRequest request)
+		
+		public object Get(ГруппыДоступаФизическихЛицНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыДоступаФизическихЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыДоступаФизическихЛицВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыДоступаФизическихЛицВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыДоступаФизическихЛицВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыДоступаФизическихЛицЗапрос Запрос)
+		{
+			return new ГруппыДоступаФизическихЛицОтвет {Ответ = "ГруппыДоступаФизическихЛиц, "};
+		}
+
+		public object Post(ГруппыДоступаФизическихЛицЗапрос ЗапросГруппыДоступаФизическихЛиц)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыДоступаФизическихЛиц)ЗапросГруппыДоступаФизическихЛиц;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

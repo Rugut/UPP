@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KontaktnyeLica")]
-	[Route("/Catalogs/KontaktnyeLica/FindById/{Id}")]
-	[Route("/Catalogs/KontaktnyeLica/FindByCode/{Code}")]
-	[Route("/Catalogs/KontaktnyeLica/FindByDescr/{Descr}")]
-	public class KontaktnyeLicaRequest/*КонтактныеЛицаЗапрос*/: V82.СправочникиСсылка.КонтактныеЛица,IReturn<KontaktnyeLicaRequest>
+	//KontaktnyeLica
+	[Маршрут("Справочники/КонтактныеЛица","")]
+	public class КонтактныеЛицаЗапрос: V82.СправочникиСсылка.КонтактныеЛица,IReturn<КонтактныеЛицаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КонтактныеЛица/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КонтактныеЛица/ПоСсылке","{Ссылка}")]
+	public class КонтактныеЛицаНайтиПоСсылке: V82.СправочникиСсылка.КонтактныеЛица,IReturn<КонтактныеЛицаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КонтактныеЛица/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КонтактныеЛица/ПоКоду","{Код}")]
+	public class КонтактныеЛицаНайтиПоКоду: V82.СправочникиСсылка.КонтактныеЛица,IReturn<КонтактныеЛицаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КонтактныеЛица/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КонтактныеЛица/ПоНаименованию","{Наименование}")]
+	public class КонтактныеЛицаНайтиПоНаименованию: V82.СправочникиСсылка.КонтактныеЛица,IReturn<КонтактныеЛицаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КонтактныеЛица/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтактныеЛицаВыбратьПоСсылке: V82.СправочникиСсылка.КонтактныеЛица,IReturn<КонтактныеЛицаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КонтактныеЛица/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтактныеЛицаВыбратьПоКоду: V82.СправочникиСсылка.КонтактныеЛица,IReturn<КонтактныеЛицаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КонтактныеЛица/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КонтактныеЛицаВыбратьПоНаименованию: V82.СправочникиСсылка.КонтактныеЛица,IReturn<КонтактныеЛицаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KontaktnyeLicaResponse//КонтактныеЛицаОтвет
+	public class КонтактныеЛицаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KontaktnyeLicas")]
-	[Route("/Catalogs/KontaktnyeLicas/{Codes}")]
-	public class KontaktnyeLicasRequest/*КонтактныеЛицаЗапрос*/: IReturn<List<KontaktnyeLicaRequest>>
+	public class КонтактныеЛицаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KontaktnyeLicasRequest(params string[] Codes)
+		
+		public object Get(КонтактныеЛицаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KontaktnyeLicasResponse//КонтактныеЛицаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KontaktnyeLicaService /*КонтактныеЛицаСервис*/ : Service
-	{
-		public object Any(KontaktnyeLicaRequest request)
+		
+		public object Get(КонтактныеЛицаНайтиПоКоду Запрос)
 		{
-			return new KontaktnyeLicaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KontaktnyeLicaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КонтактныеЛица.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KontaktnyeLicaResponse() {Result = "КонтактныеЛица c кодом '" + request.Code+"' не найдено."};
+				return new КонтактныеЛицаОтвет() {Ответ = "КонтактныеЛица c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KontaktnyeLicasRequest request)
+		
+		public object Get(КонтактныеЛицаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КонтактныеЛица>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КонтактныеЛица.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КонтактныеЛицаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонтактныеЛицаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КонтактныеЛицаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КонтактныеЛицаЗапрос Запрос)
+		{
+			return new КонтактныеЛицаОтвет {Ответ = "КонтактныеЛица, "};
+		}
+
+		public object Post(КонтактныеЛицаЗапрос ЗапросКонтактныеЛица)
+		{
+			var Ссылка = (СправочникиСсылка.КонтактныеЛица)ЗапросКонтактныеЛица;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НалоговыеОрганы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НалоговыеОрганыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NalogovyeOrgany/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НалоговыеОрганы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NalogovyeOrganyRequest());
+			НалоговыеОрганыЗапрос НалоговыеОрганыЗапрос = null;
+			try
+			{
+				НалоговыеОрганыЗапрос = Клиент.Get(new НалоговыеОрганыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НалоговыеОрганыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НалоговыеОрганыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NalogovyeOrgany/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НалоговыеОрганы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NalogovyeOrganyRequest());
+			НалоговыеОрганыЗапрос НалоговыеОрганыЗапрос = null;
+			try
+			{
+				НалоговыеОрганыЗапрос = Клиент.Get(new НалоговыеОрганыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НалоговыеОрганыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НалоговыеОрганыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NalogovyeOrgany/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НалоговыеОрганы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NalogovyeOrganyRequest());
+			НалоговыеОрганыЗапрос НалоговыеОрганыЗапрос = null;
+			try
+			{
+				НалоговыеОрганыЗапрос = Клиент.Get(new НалоговыеОрганыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НалоговыеОрганыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НалоговыеОрганыЗапрос НалоговыеОрганыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NalogovyeOrgany/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НалоговыеОрганы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NalogovyeOrganyRequest());
+			var НалоговыеОрганыОтвет = Клиент.Post(НалоговыеОрганыЗапрос);
+		}
+		public static void Записать(НалоговыеОрганыЗапрос НалоговыеОрганыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НалоговыеОрганы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НалоговыеОрганыОтвет = Клиент.Put(НалоговыеОрганыЗапрос);
+		}
+		public static void Удалить(НалоговыеОрганыЗапрос НалоговыеОрганыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НалоговыеОрганы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НалоговыеОрганыОтвет = Клиент.Delete(НалоговыеОрганыЗапрос);
 		}
 	}
 }

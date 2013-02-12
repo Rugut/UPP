@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СерверыДокументооборота:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СерверыДокументооборотаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ServeryDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СерверыДокументооборота/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ServeryDokumentooborotaRequest());
+			СерверыДокументооборотаЗапрос СерверыДокументооборотаЗапрос = null;
+			try
+			{
+				СерверыДокументооборотаЗапрос = Клиент.Get(new СерверыДокументооборотаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СерверыДокументооборотаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СерверыДокументооборотаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ServeryDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СерверыДокументооборота/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ServeryDokumentooborotaRequest());
+			СерверыДокументооборотаЗапрос СерверыДокументооборотаЗапрос = null;
+			try
+			{
+				СерверыДокументооборотаЗапрос = Клиент.Get(new СерверыДокументооборотаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СерверыДокументооборотаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СерверыДокументооборотаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ServeryDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СерверыДокументооборота/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ServeryDokumentooborotaRequest());
+			СерверыДокументооборотаЗапрос СерверыДокументооборотаЗапрос = null;
+			try
+			{
+				СерверыДокументооборотаЗапрос = Клиент.Get(new СерверыДокументооборотаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СерверыДокументооборотаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СерверыДокументооборотаЗапрос СерверыДокументооборотаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ServeryDokumentooborota/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СерверыДокументооборота?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ServeryDokumentooborotaRequest());
+			var СерверыДокументооборотаОтвет = Клиент.Post(СерверыДокументооборотаЗапрос);
+		}
+		public static void Записать(СерверыДокументооборотаЗапрос СерверыДокументооборотаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СерверыДокументооборота?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СерверыДокументооборотаОтвет = Клиент.Put(СерверыДокументооборотаЗапрос);
+		}
+		public static void Удалить(СерверыДокументооборотаЗапрос СерверыДокументооборотаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СерверыДокументооборота?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СерверыДокументооборотаОтвет = Клиент.Delete(СерверыДокументооборотаЗапрос);
 		}
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НазначенияИспользованияСпецификаций:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НазначенияИспользованияСпецификацийЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначенияИспользованияСпецификаций/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NaznacheniyaIspolzovaniyaSpecifikacijjRequest());
+			НазначенияИспользованияСпецификацийЗапрос НазначенияИспользованияСпецификацийЗапрос = null;
+			try
+			{
+				НазначенияИспользованияСпецификацийЗапрос = Клиент.Get(new НазначенияИспользованияСпецификацийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НазначенияИспользованияСпецификацийЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НазначенияИспользованияСпецификацийЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначенияИспользованияСпецификаций/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NaznacheniyaIspolzovaniyaSpecifikacijjRequest());
+			НазначенияИспользованияСпецификацийЗапрос НазначенияИспользованияСпецификацийЗапрос = null;
+			try
+			{
+				НазначенияИспользованияСпецификацийЗапрос = Клиент.Get(new НазначенияИспользованияСпецификацийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НазначенияИспользованияСпецификацийЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НазначенияИспользованияСпецификацийЗапрос НазначенияИспользованияСпецификацийЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначенияИспользованияСпецификаций?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NaznacheniyaIspolzovaniyaSpecifikacijjRequest());
+			var НазначенияИспользованияСпецификацийОтвет = Клиент.Post(НазначенияИспользованияСпецификацийЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НазначенияИспользованияСпецификацийЗапрос НазначенияИспользованияСпецификацийЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NaznacheniyaIspolzovaniyaSpecifikacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НазначенияИспользованияСпецификаций?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NaznacheniyaIspolzovaniyaSpecifikacijjRequest());
+			var НазначенияИспользованияСпецификацийОтвет = Клиент.Put(НазначенияИспользованияСпецификацийЗапрос);
+		}
+		public static void Удалить(НазначенияИспользованияСпецификацийЗапрос НазначенияИспользованияСпецификацийЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НазначенияИспользованияСпецификаций?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НазначенияИспользованияСпецификацийОтвет = Клиент.Delete(НазначенияИспользованияСпецификацийЗапрос);
 		}
 	}
 }

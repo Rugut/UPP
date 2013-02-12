@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КлассификаторИспользованияРабочегоВремени:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КлассификаторИспользованияРабочегоВремениЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторИспользованияРабочегоВремени/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KlassifikatorIspolzovaniyaRabochegoVremeniRequest());
+			КлассификаторИспользованияРабочегоВремениЗапрос КлассификаторИспользованияРабочегоВремениЗапрос = null;
+			try
+			{
+				КлассификаторИспользованияРабочегоВремениЗапрос = Клиент.Get(new КлассификаторИспользованияРабочегоВремениЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторИспользованияРабочегоВремениЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КлассификаторИспользованияРабочегоВремениЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторИспользованияРабочегоВремени/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KlassifikatorIspolzovaniyaRabochegoVremeniRequest());
+			КлассификаторИспользованияРабочегоВремениЗапрос КлассификаторИспользованияРабочегоВремениЗапрос = null;
+			try
+			{
+				КлассификаторИспользованияРабочегоВремениЗапрос = Клиент.Get(new КлассификаторИспользованияРабочегоВремениЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлассификаторИспользованияРабочегоВремениЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(КлассификаторИспользованияРабочегоВремениЗапрос КлассификаторИспользованияРабочегоВремениЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторИспользованияРабочегоВремени?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KlassifikatorIspolzovaniyaRabochegoVremeniRequest());
+			var КлассификаторИспользованияРабочегоВремениОтвет = Клиент.Post(КлассификаторИспользованияРабочегоВремениЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(КлассификаторИспользованияРабочегоВремениЗапрос КлассификаторИспользованияРабочегоВремениЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlassifikatorIspolzovaniyaRabochegoVremeni/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторИспользованияРабочегоВремени?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KlassifikatorIspolzovaniyaRabochegoVremeniRequest());
+			var КлассификаторИспользованияРабочегоВремениОтвет = Клиент.Put(КлассификаторИспользованияРабочегоВремениЗапрос);
+		}
+		public static void Удалить(КлассификаторИспользованияРабочегоВремениЗапрос КлассификаторИспользованияРабочегоВремениЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлассификаторИспользованияРабочегоВремени?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлассификаторИспользованияРабочегоВремениОтвет = Клиент.Delete(КлассификаторИспользованияРабочегоВремениЗапрос);
 		}
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СпособыРаспределенияЗатратНаВыпуск:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СпособыРаспределенияЗатратНаВыпускЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyRaspredeleniyaZatratNaVypusk/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыРаспределенияЗатратНаВыпуск/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SposobyRaspredeleniyaZatratNaVypuskRequest());
+			СпособыРаспределенияЗатратНаВыпускЗапрос СпособыРаспределенияЗатратНаВыпускЗапрос = null;
+			try
+			{
+				СпособыРаспределенияЗатратНаВыпускЗапрос = Клиент.Get(new СпособыРаспределенияЗатратНаВыпускЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыРаспределенияЗатратНаВыпускЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СпособыРаспределенияЗатратНаВыпускЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyRaspredeleniyaZatratNaVypusk/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыРаспределенияЗатратНаВыпуск/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SposobyRaspredeleniyaZatratNaVypuskRequest());
+			СпособыРаспределенияЗатратНаВыпускЗапрос СпособыРаспределенияЗатратНаВыпускЗапрос = null;
+			try
+			{
+				СпособыРаспределенияЗатратНаВыпускЗапрос = Клиент.Get(new СпособыРаспределенияЗатратНаВыпускЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыРаспределенияЗатратНаВыпускЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СпособыРаспределенияЗатратНаВыпускЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyRaspredeleniyaZatratNaVypusk/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыРаспределенияЗатратНаВыпуск/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SposobyRaspredeleniyaZatratNaVypuskRequest());
+			СпособыРаспределенияЗатратНаВыпускЗапрос СпособыРаспределенияЗатратНаВыпускЗапрос = null;
+			try
+			{
+				СпособыРаспределенияЗатратНаВыпускЗапрос = Клиент.Get(new СпособыРаспределенияЗатратНаВыпускЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыРаспределенияЗатратНаВыпускЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СпособыРаспределенияЗатратНаВыпускЗапрос СпособыРаспределенияЗатратНаВыпускЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyRaspredeleniyaZatratNaVypusk/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыРаспределенияЗатратНаВыпуск?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SposobyRaspredeleniyaZatratNaVypuskRequest());
+			var СпособыРаспределенияЗатратНаВыпускОтвет = Клиент.Post(СпособыРаспределенияЗатратНаВыпускЗапрос);
+		}
+		public static void Записать(СпособыРаспределенияЗатратНаВыпускЗапрос СпособыРаспределенияЗатратНаВыпускЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СпособыРаспределенияЗатратНаВыпуск?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СпособыРаспределенияЗатратНаВыпускОтвет = Клиент.Put(СпособыРаспределенияЗатратНаВыпускЗапрос);
+		}
+		public static void Удалить(СпособыРаспределенияЗатратНаВыпускЗапрос СпособыРаспределенияЗатратНаВыпускЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СпособыРаспределенияЗатратНаВыпуск?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СпособыРаспределенияЗатратНаВыпускОтвет = Клиент.Delete(СпособыРаспределенияЗатратНаВыпускЗапрос);
 		}
 	}
 }

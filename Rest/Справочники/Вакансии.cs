@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Vakansii")]
-	[Route("/Catalogs/Vakansii/FindById/{Id}")]
-	[Route("/Catalogs/Vakansii/FindByCode/{Code}")]
-	[Route("/Catalogs/Vakansii/FindByDescr/{Descr}")]
-	public class VakansiiRequest/*ВакансииЗапрос*/: V82.СправочникиСсылка.Вакансии,IReturn<VakansiiRequest>
+	//Vakansii
+	[Маршрут("Справочники/Вакансии","")]
+	public class ВакансииЗапрос: V82.СправочникиСсылка.Вакансии,IReturn<ВакансииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Вакансии/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Вакансии/ПоСсылке","{Ссылка}")]
+	public class ВакансииНайтиПоСсылке: V82.СправочникиСсылка.Вакансии,IReturn<ВакансииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Вакансии/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Вакансии/ПоКоду","{Код}")]
+	public class ВакансииНайтиПоКоду: V82.СправочникиСсылка.Вакансии,IReturn<ВакансииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Вакансии/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Вакансии/ПоНаименованию","{Наименование}")]
+	public class ВакансииНайтиПоНаименованию: V82.СправочникиСсылка.Вакансии,IReturn<ВакансииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Вакансии/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВакансииВыбратьПоСсылке: V82.СправочникиСсылка.Вакансии,IReturn<ВакансииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Вакансии/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВакансииВыбратьПоКоду: V82.СправочникиСсылка.Вакансии,IReturn<ВакансииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Вакансии/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВакансииВыбратьПоНаименованию: V82.СправочникиСсылка.Вакансии,IReturn<ВакансииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VakansiiResponse//ВакансииОтвет
+	public class ВакансииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Vakansiis")]
-	[Route("/Catalogs/Vakansiis/{Codes}")]
-	public class VakansiisRequest/*ВакансииЗапрос*/: IReturn<List<VakansiiRequest>>
+	public class ВакансииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VakansiisRequest(params string[] Codes)
+		
+		public object Get(ВакансииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VakansiisResponse//ВакансииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VakansiiService /*ВакансииСервис*/ : Service
-	{
-		public object Any(VakansiiRequest request)
+		
+		public object Get(ВакансииНайтиПоКоду Запрос)
 		{
-			return new VakansiiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VakansiiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Вакансии.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VakansiiResponse() {Result = "Вакансии c кодом '" + request.Code+"' не найдено."};
+				return new ВакансииОтвет() {Ответ = "Вакансии c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VakansiisRequest request)
+		
+		public object Get(ВакансииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Вакансии>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Вакансии.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВакансииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВакансииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВакансииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВакансииЗапрос Запрос)
+		{
+			return new ВакансииОтвет {Ответ = "Вакансии, "};
+		}
+
+		public object Post(ВакансииЗапрос ЗапросВакансии)
+		{
+			var Ссылка = (СправочникиСсылка.Вакансии)ЗапросВакансии;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

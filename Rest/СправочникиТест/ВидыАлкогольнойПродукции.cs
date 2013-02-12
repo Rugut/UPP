@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыАлкогольнойПродукции:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыАлкогольнойПродукцииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyAlkogolnojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыАлкогольнойПродукции/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidyAlkogolnojjProdukciiRequest());
+			ВидыАлкогольнойПродукцииЗапрос ВидыАлкогольнойПродукцииЗапрос = null;
+			try
+			{
+				ВидыАлкогольнойПродукцииЗапрос = Клиент.Get(new ВидыАлкогольнойПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыАлкогольнойПродукцииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыАлкогольнойПродукцииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyAlkogolnojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыАлкогольнойПродукции/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidyAlkogolnojjProdukciiRequest());
+			ВидыАлкогольнойПродукцииЗапрос ВидыАлкогольнойПродукцииЗапрос = null;
+			try
+			{
+				ВидыАлкогольнойПродукцииЗапрос = Клиент.Get(new ВидыАлкогольнойПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыАлкогольнойПродукцииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыАлкогольнойПродукцииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyAlkogolnojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыАлкогольнойПродукции/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidyAlkogolnojjProdukciiRequest());
+			ВидыАлкогольнойПродукцииЗапрос ВидыАлкогольнойПродукцииЗапрос = null;
+			try
+			{
+				ВидыАлкогольнойПродукцииЗапрос = Клиент.Get(new ВидыАлкогольнойПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыАлкогольнойПродукцииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыАлкогольнойПродукцииЗапрос ВидыАлкогольнойПродукцииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyAlkogolnojjProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыАлкогольнойПродукции?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidyAlkogolnojjProdukciiRequest());
+			var ВидыАлкогольнойПродукцииОтвет = Клиент.Post(ВидыАлкогольнойПродукцииЗапрос);
+		}
+		public static void Записать(ВидыАлкогольнойПродукцииЗапрос ВидыАлкогольнойПродукцииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыАлкогольнойПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыАлкогольнойПродукцииОтвет = Клиент.Put(ВидыАлкогольнойПродукцииЗапрос);
+		}
+		public static void Удалить(ВидыАлкогольнойПродукцииЗапрос ВидыАлкогольнойПродукцииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыАлкогольнойПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыАлкогольнойПродукцииОтвет = Клиент.Delete(ВидыАлкогольнойПродукцииЗапрос);
 		}
 	}
 }

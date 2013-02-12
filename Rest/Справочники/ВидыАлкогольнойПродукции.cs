@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyAlkogolnojjProdukcii")]
-	[Route("/Catalogs/VidyAlkogolnojjProdukcii/FindById/{Id}")]
-	[Route("/Catalogs/VidyAlkogolnojjProdukcii/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyAlkogolnojjProdukcii/FindByDescr/{Descr}")]
-	public class VidyAlkogolnojjProdukciiRequest/*ВидыАлкогольнойПродукцииЗапрос*/: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<VidyAlkogolnojjProdukciiRequest>
+	//VidyAlkogolnojjProdukcii
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции","")]
+	public class ВидыАлкогольнойПродукцииЗапрос: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<ВидыАлкогольнойПродукцииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/ПоСсылке","{Ссылка}")]
+	public class ВидыАлкогольнойПродукцииНайтиПоСсылке: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<ВидыАлкогольнойПродукцииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/ПоКоду","{Код}")]
+	public class ВидыАлкогольнойПродукцииНайтиПоКоду: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<ВидыАлкогольнойПродукцииНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/ПоНаименованию","{Наименование}")]
+	public class ВидыАлкогольнойПродукцииНайтиПоНаименованию: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<ВидыАлкогольнойПродукцииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыАлкогольнойПродукцииВыбратьПоСсылке: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<ВидыАлкогольнойПродукцииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыАлкогольнойПродукцииВыбратьПоКоду: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<ВидыАлкогольнойПродукцииВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыАлкогольнойПродукции/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыАлкогольнойПродукцииВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыАлкогольнойПродукции,IReturn<ВидыАлкогольнойПродукцииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyAlkogolnojjProdukciiResponse//ВидыАлкогольнойПродукцииОтвет
+	public class ВидыАлкогольнойПродукцииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyAlkogolnojjProdukciis")]
-	[Route("/Catalogs/VidyAlkogolnojjProdukciis/{Codes}")]
-	public class VidyAlkogolnojjProdukciisRequest/*ВидыАлкогольнойПродукцииЗапрос*/: IReturn<List<VidyAlkogolnojjProdukciiRequest>>
+	public class ВидыАлкогольнойПродукцииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyAlkogolnojjProdukciisRequest(params string[] Codes)
+		
+		public object Get(ВидыАлкогольнойПродукцииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyAlkogolnojjProdukciisResponse//ВидыАлкогольнойПродукцииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyAlkogolnojjProdukciiService /*ВидыАлкогольнойПродукцииСервис*/ : Service
-	{
-		public object Any(VidyAlkogolnojjProdukciiRequest request)
+		
+		public object Get(ВидыАлкогольнойПродукцииНайтиПоКоду Запрос)
 		{
-			return new VidyAlkogolnojjProdukciiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyAlkogolnojjProdukciiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыАлкогольнойПродукции.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyAlkogolnojjProdukciiResponse() {Result = "ВидыАлкогольнойПродукции c кодом '" + request.Code+"' не найдено."};
+				return new ВидыАлкогольнойПродукцииОтвет() {Ответ = "ВидыАлкогольнойПродукции c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyAlkogolnojjProdukciisRequest request)
+		
+		public object Get(ВидыАлкогольнойПродукцииНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыАлкогольнойПродукции>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыАлкогольнойПродукции.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыАлкогольнойПродукцииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыАлкогольнойПродукцииВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыАлкогольнойПродукцииВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыАлкогольнойПродукцииЗапрос Запрос)
+		{
+			return new ВидыАлкогольнойПродукцииОтвет {Ответ = "ВидыАлкогольнойПродукции, "};
+		}
+
+		public object Post(ВидыАлкогольнойПродукцииЗапрос ЗапросВидыАлкогольнойПродукции)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыАлкогольнойПродукции)ЗапросВидыАлкогольнойПродукции;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

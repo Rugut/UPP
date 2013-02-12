@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov")]
-	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/FindById/{Id}")]
-	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/FindByCode/{Code}")]
-	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganov/FindByDescr/{Descr}")]
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest/*ДокументыРеализацииПолномочийНалоговыхОргановЗапрос*/: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest>
+	//DokumentyRealizaciiPolnomochijjNalogovykhOrganov
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов","")]
+	public class ДокументыРеализацииПолномочийНалоговыхОргановЗапрос: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<ДокументыРеализацииПолномочийНалоговыхОргановЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/ПоСсылке","{Ссылка}")]
+	public class ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоСсылке: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/ПоКоду","{Код}")]
+	public class ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоКоду: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/ПоНаименованию","{Наименование}")]
+	public class ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоНаименованию: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоСсылке: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоКоду: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДокументыРеализацииПолномочийНалоговыхОрганов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоНаименованию: V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов,IReturn<ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovResponse//ДокументыРеализацииПолномочийНалоговыхОргановОтвет
+	public class ДокументыРеализацииПолномочийНалоговыхОргановОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganovs")]
-	[Route("/Catalogs/DokumentyRealizaciiPolnomochijjNalogovykhOrganovs/{Codes}")]
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovsRequest/*ДокументыРеализацииПолномочийНалоговыхОргановЗапрос*/: IReturn<List<DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest>>
+	public class ДокументыРеализацииПолномочийНалоговыхОргановСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DokumentyRealizaciiPolnomochijjNalogovykhOrganovsRequest(params string[] Codes)
+		
+		public object Get(ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovsResponse//ДокументыРеализацииПолномочийНалоговыхОргановОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DokumentyRealizaciiPolnomochijjNalogovykhOrganovService /*ДокументыРеализацииПолномочийНалоговыхОргановСервис*/ : Service
-	{
-		public object Any(DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest request)
+		
+		public object Get(ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоКоду Запрос)
 		{
-			return new DokumentyRealizaciiPolnomochijjNalogovykhOrganovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DokumentyRealizaciiPolnomochijjNalogovykhOrganovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДокументыРеализацииПолномочийНалоговыхОрганов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DokumentyRealizaciiPolnomochijjNalogovykhOrganovResponse() {Result = "ДокументыРеализацииПолномочийНалоговыхОрганов c кодом '" + request.Code+"' не найдено."};
+				return new ДокументыРеализацииПолномочийНалоговыхОргановОтвет() {Ответ = "ДокументыРеализацииПолномочийНалоговыхОрганов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DokumentyRealizaciiPolnomochijjNalogovykhOrganovsRequest request)
+		
+		public object Get(ДокументыРеализацииПолномочийНалоговыхОргановНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДокументыРеализацииПолномочийНалоговыхОрганов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДокументыРеализацииПолномочийНалоговыхОргановВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос Запрос)
+		{
+			return new ДокументыРеализацииПолномочийНалоговыхОргановОтвет {Ответ = "ДокументыРеализацииПолномочийНалоговыхОрганов, "};
+		}
+
+		public object Post(ДокументыРеализацииПолномочийНалоговыхОргановЗапрос ЗапросДокументыРеализацииПолномочийНалоговыхОрганов)
+		{
+			var Ссылка = (СправочникиСсылка.ДокументыРеализацииПолномочийНалоговыхОрганов)ЗапросДокументыРеализацииПолномочийНалоговыхОрганов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

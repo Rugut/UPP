@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/CiklyObmena")]
-	[Route("/Catalogs/CiklyObmena/FindById/{Id}")]
-	[Route("/Catalogs/CiklyObmena/FindByCode/{Code}")]
-	[Route("/Catalogs/CiklyObmena/FindByDescr/{Descr}")]
-	public class CiklyObmenaRequest/*ЦиклыОбменаЗапрос*/: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<CiklyObmenaRequest>
+	//CiklyObmena
+	[Маршрут("Справочники/ЦиклыОбмена","")]
+	public class ЦиклыОбменаЗапрос: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<ЦиклыОбменаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЦиклыОбмена/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЦиклыОбмена/ПоСсылке","{Ссылка}")]
+	public class ЦиклыОбменаНайтиПоСсылке: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<ЦиклыОбменаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЦиклыОбмена/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЦиклыОбмена/ПоКоду","{Код}")]
+	public class ЦиклыОбменаНайтиПоКоду: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<ЦиклыОбменаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЦиклыОбмена/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЦиклыОбмена/ПоНаименованию","{Наименование}")]
+	public class ЦиклыОбменаНайтиПоНаименованию: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<ЦиклыОбменаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЦиклыОбмена/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦиклыОбменаВыбратьПоСсылке: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<ЦиклыОбменаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЦиклыОбмена/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦиклыОбменаВыбратьПоКоду: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<ЦиклыОбменаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЦиклыОбмена/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЦиклыОбменаВыбратьПоНаименованию: V82.СправочникиСсылка.ЦиклыОбмена,IReturn<ЦиклыОбменаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class CiklyObmenaResponse//ЦиклыОбменаОтвет
+	public class ЦиклыОбменаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/CiklyObmenas")]
-	[Route("/Catalogs/CiklyObmenas/{Codes}")]
-	public class CiklyObmenasRequest/*ЦиклыОбменаЗапрос*/: IReturn<List<CiklyObmenaRequest>>
+	public class ЦиклыОбменаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public CiklyObmenasRequest(params string[] Codes)
+		
+		public object Get(ЦиклыОбменаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class CiklyObmenasResponse//ЦиклыОбменаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class CiklyObmenaService /*ЦиклыОбменаСервис*/ : Service
-	{
-		public object Any(CiklyObmenaRequest request)
+		
+		public object Get(ЦиклыОбменаНайтиПоКоду Запрос)
 		{
-			return new CiklyObmenaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(CiklyObmenaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЦиклыОбмена.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new CiklyObmenaResponse() {Result = "ЦиклыОбмена c кодом '" + request.Code+"' не найдено."};
+				return new ЦиклыОбменаОтвет() {Ответ = "ЦиклыОбмена c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(CiklyObmenasRequest request)
+		
+		public object Get(ЦиклыОбменаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЦиклыОбмена>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЦиклыОбмена.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЦиклыОбменаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЦиклыОбменаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЦиклыОбменаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЦиклыОбменаЗапрос Запрос)
+		{
+			return new ЦиклыОбменаОтвет {Ответ = "ЦиклыОбмена, "};
+		}
+
+		public object Post(ЦиклыОбменаЗапрос ЗапросЦиклыОбмена)
+		{
+			var Ссылка = (СправочникиСсылка.ЦиклыОбмена)ЗапросЦиклыОбмена;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

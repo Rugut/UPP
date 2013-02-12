@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TorgovoeOborudovanie")]
-	[Route("/Catalogs/TorgovoeOborudovanie/FindById/{Id}")]
-	[Route("/Catalogs/TorgovoeOborudovanie/FindByCode/{Code}")]
-	[Route("/Catalogs/TorgovoeOborudovanie/FindByDescr/{Descr}")]
-	public class TorgovoeOborudovanieRequest/*ТорговоеОборудованиеЗапрос*/: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<TorgovoeOborudovanieRequest>
+	//TorgovoeOborudovanie
+	[Маршрут("Справочники/ТорговоеОборудование","")]
+	public class ТорговоеОборудованиеЗапрос: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<ТорговоеОборудованиеЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТорговоеОборудование/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТорговоеОборудование/ПоСсылке","{Ссылка}")]
+	public class ТорговоеОборудованиеНайтиПоСсылке: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<ТорговоеОборудованиеНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТорговоеОборудование/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТорговоеОборудование/ПоКоду","{Код}")]
+	public class ТорговоеОборудованиеНайтиПоКоду: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<ТорговоеОборудованиеНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТорговоеОборудование/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТорговоеОборудование/ПоНаименованию","{Наименование}")]
+	public class ТорговоеОборудованиеНайтиПоНаименованию: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<ТорговоеОборудованиеНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТорговоеОборудование/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТорговоеОборудованиеВыбратьПоСсылке: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<ТорговоеОборудованиеВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТорговоеОборудование/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТорговоеОборудованиеВыбратьПоКоду: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<ТорговоеОборудованиеВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТорговоеОборудование/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТорговоеОборудованиеВыбратьПоНаименованию: V82.СправочникиСсылка.ТорговоеОборудование,IReturn<ТорговоеОборудованиеВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TorgovoeOborudovanieResponse//ТорговоеОборудованиеОтвет
+	public class ТорговоеОборудованиеОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TorgovoeOborudovanies")]
-	[Route("/Catalogs/TorgovoeOborudovanies/{Codes}")]
-	public class TorgovoeOborudovaniesRequest/*ТорговоеОборудованиеЗапрос*/: IReturn<List<TorgovoeOborudovanieRequest>>
+	public class ТорговоеОборудованиеСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TorgovoeOborudovaniesRequest(params string[] Codes)
+		
+		public object Get(ТорговоеОборудованиеНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TorgovoeOborudovaniesResponse//ТорговоеОборудованиеОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TorgovoeOborudovanieService /*ТорговоеОборудованиеСервис*/ : Service
-	{
-		public object Any(TorgovoeOborudovanieRequest request)
+		
+		public object Get(ТорговоеОборудованиеНайтиПоКоду Запрос)
 		{
-			return new TorgovoeOborudovanieResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TorgovoeOborudovanieRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТорговоеОборудование.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TorgovoeOborudovanieResponse() {Result = "ТорговоеОборудование c кодом '" + request.Code+"' не найдено."};
+				return new ТорговоеОборудованиеОтвет() {Ответ = "ТорговоеОборудование c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TorgovoeOborudovaniesRequest request)
+		
+		public object Get(ТорговоеОборудованиеНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТорговоеОборудование>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТорговоеОборудование.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТорговоеОборудованиеВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТорговоеОборудованиеВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТорговоеОборудованиеВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТорговоеОборудованиеЗапрос Запрос)
+		{
+			return new ТорговоеОборудованиеОтвет {Ответ = "ТорговоеОборудование, "};
+		}
+
+		public object Post(ТорговоеОборудованиеЗапрос ЗапросТорговоеОборудование)
+		{
+			var Ссылка = (СправочникиСсылка.ТорговоеОборудование)ЗапросТорговоеОборудование;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

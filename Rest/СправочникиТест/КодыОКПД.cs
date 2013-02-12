@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КодыОКПД:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КодыОКПДЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KodyOKPD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КодыОКПД/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KodyOKPDRequest());
+			КодыОКПДЗапрос КодыОКПДЗапрос = null;
+			try
+			{
+				КодыОКПДЗапрос = Клиент.Get(new КодыОКПДЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КодыОКПДЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КодыОКПДЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KodyOKPD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КодыОКПД/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KodyOKPDRequest());
+			КодыОКПДЗапрос КодыОКПДЗапрос = null;
+			try
+			{
+				КодыОКПДЗапрос = Клиент.Get(new КодыОКПДЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КодыОКПДЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(КодыОКПДЗапрос КодыОКПДЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KodyOKPD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КодыОКПД?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KodyOKPDRequest());
+			var КодыОКПДОтвет = Клиент.Post(КодыОКПДЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(КодыОКПДЗапрос КодыОКПДЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KodyOKPD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КодыОКПД?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KodyOKPDRequest());
+			var КодыОКПДОтвет = Клиент.Put(КодыОКПДЗапрос);
+		}
+		public static void Удалить(КодыОКПДЗапрос КодыОКПДЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КодыОКПД?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КодыОКПДОтвет = Клиент.Delete(КодыОКПДЗапрос);
 		}
 	}
 }

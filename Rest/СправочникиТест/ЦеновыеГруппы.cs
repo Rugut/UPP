@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ЦеновыеГруппы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ЦеновыеГруппыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/CenovyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new CenovyeGruppyRequest());
+			ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос = null;
+			try
+			{
+				ЦеновыеГруппыЗапрос = Клиент.Get(new ЦеновыеГруппыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЦеновыеГруппыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ЦеновыеГруппыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/CenovyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new CenovyeGruppyRequest());
+			ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос = null;
+			try
+			{
+				ЦеновыеГруппыЗапрос = Клиент.Get(new ЦеновыеГруппыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЦеновыеГруппыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ЦеновыеГруппыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/CenovyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new CenovyeGruppyRequest());
+			ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос = null;
+			try
+			{
+				ЦеновыеГруппыЗапрос = Клиент.Get(new ЦеновыеГруппыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ЦеновыеГруппыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/CenovyeGruppy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new CenovyeGruppyRequest());
+			var ЦеновыеГруппыОтвет = Клиент.Post(ЦеновыеГруппыЗапрос);
+		}
+		public static void Записать(ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЦеновыеГруппыОтвет = Клиент.Put(ЦеновыеГруппыЗапрос);
+		}
+		public static void Удалить(ЦеновыеГруппыЗапрос ЦеновыеГруппыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ЦеновыеГруппы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ЦеновыеГруппыОтвет = Клиент.Delete(ЦеновыеГруппыЗапрос);
 		}
 	}
 }

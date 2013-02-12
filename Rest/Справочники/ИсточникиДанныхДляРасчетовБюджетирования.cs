@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya")]
-	[Route("/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya/FindById/{Id}")]
-	[Route("/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya/FindByCode/{Code}")]
-	[Route("/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniya/FindByDescr/{Descr}")]
-	public class IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest/*ИсточникиДанныхДляРасчетовБюджетированияЗапрос*/: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest>
+	//IstochnikiDannykhDlyaRaschetovByudzhetirovaniya
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования","")]
+	public class ИсточникиДанныхДляРасчетовБюджетированияЗапрос: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<ИсточникиДанныхДляРасчетовБюджетированияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ПоСсылке","{Ссылка}")]
+	public class ИсточникиДанныхДляРасчетовБюджетированияНайтиПоСсылке: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<ИсточникиДанныхДляРасчетовБюджетированияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ПоКоду","{Код}")]
+	public class ИсточникиДанныхДляРасчетовБюджетированияНайтиПоКоду: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<ИсточникиДанныхДляРасчетовБюджетированияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ПоНаименованию","{Наименование}")]
+	public class ИсточникиДанныхДляРасчетовБюджетированияНайтиПоНаименованию: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<ИсточникиДанныхДляРасчетовБюджетированияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоСсылке: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоКоду: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоНаименованию: V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования,IReturn<ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaResponse//ИсточникиДанныхДляРасчетовБюджетированияОтвет
+	public class ИсточникиДанныхДляРасчетовБюджетированияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniyas")]
-	[Route("/Catalogs/IstochnikiDannykhDlyaRaschetovByudzhetirovaniyas/{Codes}")]
-	public class IstochnikiDannykhDlyaRaschetovByudzhetirovaniyasRequest/*ИсточникиДанныхДляРасчетовБюджетированияЗапрос*/: IReturn<List<IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest>>
+	public class ИсточникиДанныхДляРасчетовБюджетированияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public IstochnikiDannykhDlyaRaschetovByudzhetirovaniyasRequest(params string[] Codes)
+		
+		public object Get(ИсточникиДанныхДляРасчетовБюджетированияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class IstochnikiDannykhDlyaRaschetovByudzhetirovaniyasResponse//ИсточникиДанныхДляРасчетовБюджетированияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaService /*ИсточникиДанныхДляРасчетовБюджетированияСервис*/ : Service
-	{
-		public object Any(IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest request)
+		
+		public object Get(ИсточникиДанныхДляРасчетовБюджетированияНайтиПоКоду Запрос)
 		{
-			return new IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ИсточникиДанныхДляРасчетовБюджетирования.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new IstochnikiDannykhDlyaRaschetovByudzhetirovaniyaResponse() {Result = "ИсточникиДанныхДляРасчетовБюджетирования c кодом '" + request.Code+"' не найдено."};
+				return new ИсточникиДанныхДляРасчетовБюджетированияОтвет() {Ответ = "ИсточникиДанныхДляРасчетовБюджетирования c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(IstochnikiDannykhDlyaRaschetovByudzhetirovaniyasRequest request)
+		
+		public object Get(ИсточникиДанныхДляРасчетовБюджетированияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ИсточникиДанныхДляРасчетовБюджетирования.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ИсточникиДанныхДляРасчетовБюджетированияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ИсточникиДанныхДляРасчетовБюджетированияЗапрос Запрос)
+		{
+			return new ИсточникиДанныхДляРасчетовБюджетированияОтвет {Ответ = "ИсточникиДанныхДляРасчетовБюджетирования, "};
+		}
+
+		public object Post(ИсточникиДанныхДляРасчетовБюджетированияЗапрос ЗапросИсточникиДанныхДляРасчетовБюджетирования)
+		{
+			var Ссылка = (СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования)ЗапросИсточникиДанныхДляРасчетовБюджетирования;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

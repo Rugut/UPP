@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OsnovaniyaVyslugiLet")]
-	[Route("/Catalogs/OsnovaniyaVyslugiLet/FindById/{Id}")]
-	[Route("/Catalogs/OsnovaniyaVyslugiLet/FindByCode/{Code}")]
-	[Route("/Catalogs/OsnovaniyaVyslugiLet/FindByDescr/{Descr}")]
-	public class OsnovaniyaVyslugiLetRequest/*ОснованияВыслугиЛетЗапрос*/: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<OsnovaniyaVyslugiLetRequest>
+	//OsnovaniyaVyslugiLet
+	[Маршрут("Справочники/ОснованияВыслугиЛет","")]
+	public class ОснованияВыслугиЛетЗапрос: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<ОснованияВыслугиЛетЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОснованияВыслугиЛет/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОснованияВыслугиЛет/ПоСсылке","{Ссылка}")]
+	public class ОснованияВыслугиЛетНайтиПоСсылке: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<ОснованияВыслугиЛетНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОснованияВыслугиЛет/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОснованияВыслугиЛет/ПоКоду","{Код}")]
+	public class ОснованияВыслугиЛетНайтиПоКоду: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<ОснованияВыслугиЛетНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОснованияВыслугиЛет/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОснованияВыслугиЛет/ПоНаименованию","{Наименование}")]
+	public class ОснованияВыслугиЛетНайтиПоНаименованию: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<ОснованияВыслугиЛетНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОснованияВыслугиЛет/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияВыслугиЛетВыбратьПоСсылке: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<ОснованияВыслугиЛетВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОснованияВыслугиЛет/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияВыслугиЛетВыбратьПоКоду: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<ОснованияВыслугиЛетВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОснованияВыслугиЛет/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияВыслугиЛетВыбратьПоНаименованию: V82.СправочникиСсылка.ОснованияВыслугиЛет,IReturn<ОснованияВыслугиЛетВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OsnovaniyaVyslugiLetResponse//ОснованияВыслугиЛетОтвет
+	public class ОснованияВыслугиЛетОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OsnovaniyaVyslugiLets")]
-	[Route("/Catalogs/OsnovaniyaVyslugiLets/{Codes}")]
-	public class OsnovaniyaVyslugiLetsRequest/*ОснованияВыслугиЛетЗапрос*/: IReturn<List<OsnovaniyaVyslugiLetRequest>>
+	public class ОснованияВыслугиЛетСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OsnovaniyaVyslugiLetsRequest(params string[] Codes)
+		
+		public object Get(ОснованияВыслугиЛетНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OsnovaniyaVyslugiLetsResponse//ОснованияВыслугиЛетОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OsnovaniyaVyslugiLetService /*ОснованияВыслугиЛетСервис*/ : Service
-	{
-		public object Any(OsnovaniyaVyslugiLetRequest request)
+		
+		public object Get(ОснованияВыслугиЛетНайтиПоКоду Запрос)
 		{
-			return new OsnovaniyaVyslugiLetResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OsnovaniyaVyslugiLetRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОснованияВыслугиЛет.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OsnovaniyaVyslugiLetResponse() {Result = "ОснованияВыслугиЛет c кодом '" + request.Code+"' не найдено."};
+				return new ОснованияВыслугиЛетОтвет() {Ответ = "ОснованияВыслугиЛет c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OsnovaniyaVyslugiLetsRequest request)
+		
+		public object Get(ОснованияВыслугиЛетНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОснованияВыслугиЛет>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОснованияВыслугиЛет.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОснованияВыслугиЛетВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОснованияВыслугиЛетВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОснованияВыслугиЛетВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОснованияВыслугиЛетЗапрос Запрос)
+		{
+			return new ОснованияВыслугиЛетОтвет {Ответ = "ОснованияВыслугиЛет, "};
+		}
+
+		public object Post(ОснованияВыслугиЛетЗапрос ЗапросОснованияВыслугиЛет)
+		{
+			var Ссылка = (СправочникиСсылка.ОснованияВыслугиЛет)ЗапросОснованияВыслугиЛет;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

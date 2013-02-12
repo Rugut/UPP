@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS")]
-	[Route("/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS/FindByDescr/{Descr}")]
-	public class NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest/*НастройкиРегламентногоФормированияДокументовПоНДСЗапрос*/: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest>
+	//NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDS
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС","")]
+	public class НастройкиРегламентногоФормированияДокументовПоНДСЗапрос: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<НастройкиРегламентногоФормированияДокументовПоНДСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/ПоСсылке","{Ссылка}")]
+	public class НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоСсылке: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/ПоКоду","{Код}")]
+	public class НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоКоду: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/ПоНаименованию","{Наименование}")]
+	public class НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоКоду: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиРегламентногоФормированияДокументовПоНДС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС,IReturn<НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSResponse//НастройкиРегламентногоФормированияДокументовПоНДСОтвет
+	public class НастройкиРегламентногоФормированияДокументовПоНДСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSs")]
-	[Route("/Catalogs/NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSs/{Codes}")]
-	public class NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSsRequest/*НастройкиРегламентногоФормированияДокументовПоНДСЗапрос*/: IReturn<List<NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest>>
+	public class НастройкиРегламентногоФормированияДокументовПоНДССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSsRequest(params string[] Codes)
+		
+		public object Get(НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSsResponse//НастройкиРегламентногоФормированияДокументовПоНДСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSService /*НастройкиРегламентногоФормированияДокументовПоНДССервис*/ : Service
-	{
-		public object Any(NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest request)
+		
+		public object Get(НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоКоду Запрос)
 		{
-			return new NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НастройкиРегламентногоФормированияДокументовПоНДС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSResponse() {Result = "НастройкиРегламентногоФормированияДокументовПоНДС c кодом '" + request.Code+"' не найдено."};
+				return new НастройкиРегламентногоФормированияДокументовПоНДСОтвет() {Ответ = "НастройкиРегламентногоФормированияДокументовПоНДС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NastrojjkiReglamentnogoFormirovaniyaDokumentovPoNDSsRequest request)
+		
+		public object Get(НастройкиРегламентногоФормированияДокументовПоНДСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НастройкиРегламентногоФормированияДокументовПоНДС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиРегламентногоФормированияДокументовПоНДСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос Запрос)
+		{
+			return new НастройкиРегламентногоФормированияДокументовПоНДСОтвет {Ответ = "НастройкиРегламентногоФормированияДокументовПоНДС, "};
+		}
+
+		public object Post(НастройкиРегламентногоФормированияДокументовПоНДСЗапрос ЗапросНастройкиРегламентногоФормированияДокументовПоНДС)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиРегламентногоФормированияДокументовПоНДС)ЗапросНастройкиРегламентногоФормированияДокументовПоНДС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

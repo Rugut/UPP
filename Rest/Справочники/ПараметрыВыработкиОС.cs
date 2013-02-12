@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ParametryVyrabotkiOS")]
-	[Route("/Catalogs/ParametryVyrabotkiOS/FindById/{Id}")]
-	[Route("/Catalogs/ParametryVyrabotkiOS/FindByCode/{Code}")]
-	[Route("/Catalogs/ParametryVyrabotkiOS/FindByDescr/{Descr}")]
-	public class ParametryVyrabotkiOSRequest/*ПараметрыВыработкиОСЗапрос*/: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ParametryVyrabotkiOSRequest>
+	//ParametryVyrabotkiOS
+	[Маршрут("Справочники/ПараметрыВыработкиОС","")]
+	public class ПараметрыВыработкиОСЗапрос: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ПараметрыВыработкиОСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПараметрыВыработкиОС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПараметрыВыработкиОС/ПоСсылке","{Ссылка}")]
+	public class ПараметрыВыработкиОСНайтиПоСсылке: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ПараметрыВыработкиОСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПараметрыВыработкиОС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПараметрыВыработкиОС/ПоКоду","{Код}")]
+	public class ПараметрыВыработкиОСНайтиПоКоду: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ПараметрыВыработкиОСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПараметрыВыработкиОС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПараметрыВыработкиОС/ПоНаименованию","{Наименование}")]
+	public class ПараметрыВыработкиОСНайтиПоНаименованию: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ПараметрыВыработкиОСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПараметрыВыработкиОС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПараметрыВыработкиОСВыбратьПоСсылке: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ПараметрыВыработкиОСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПараметрыВыработкиОС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПараметрыВыработкиОСВыбратьПоКоду: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ПараметрыВыработкиОСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПараметрыВыработкиОС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПараметрыВыработкиОСВыбратьПоНаименованию: V82.СправочникиСсылка.ПараметрыВыработкиОС,IReturn<ПараметрыВыработкиОСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ParametryVyrabotkiOSResponse//ПараметрыВыработкиОСОтвет
+	public class ПараметрыВыработкиОСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ParametryVyrabotkiOSs")]
-	[Route("/Catalogs/ParametryVyrabotkiOSs/{Codes}")]
-	public class ParametryVyrabotkiOSsRequest/*ПараметрыВыработкиОСЗапрос*/: IReturn<List<ParametryVyrabotkiOSRequest>>
+	public class ПараметрыВыработкиОССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ParametryVyrabotkiOSsRequest(params string[] Codes)
+		
+		public object Get(ПараметрыВыработкиОСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ParametryVyrabotkiOSsResponse//ПараметрыВыработкиОСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ParametryVyrabotkiOSService /*ПараметрыВыработкиОССервис*/ : Service
-	{
-		public object Any(ParametryVyrabotkiOSRequest request)
+		
+		public object Get(ПараметрыВыработкиОСНайтиПоКоду Запрос)
 		{
-			return new ParametryVyrabotkiOSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ParametryVyrabotkiOSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПараметрыВыработкиОС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ParametryVyrabotkiOSResponse() {Result = "ПараметрыВыработкиОС c кодом '" + request.Code+"' не найдено."};
+				return new ПараметрыВыработкиОСОтвет() {Ответ = "ПараметрыВыработкиОС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ParametryVyrabotkiOSsRequest request)
+		
+		public object Get(ПараметрыВыработкиОСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПараметрыВыработкиОС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПараметрыВыработкиОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПараметрыВыработкиОСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПараметрыВыработкиОСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПараметрыВыработкиОСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПараметрыВыработкиОСЗапрос Запрос)
+		{
+			return new ПараметрыВыработкиОСОтвет {Ответ = "ПараметрыВыработкиОС, "};
+		}
+
+		public object Post(ПараметрыВыработкиОСЗапрос ЗапросПараметрыВыработкиОС)
+		{
+			var Ссылка = (СправочникиСсылка.ПараметрыВыработкиОС)ЗапросПараметрыВыработкиОС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

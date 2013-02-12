@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СтатьиОборотовПоБюджетам:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СтатьиОборотовПоБюджетамЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOborotovPoByudzhetam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОборотовПоБюджетам/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new StatiOborotovPoByudzhetamRequest());
+			СтатьиОборотовПоБюджетамЗапрос СтатьиОборотовПоБюджетамЗапрос = null;
+			try
+			{
+				СтатьиОборотовПоБюджетамЗапрос = Клиент.Get(new СтатьиОборотовПоБюджетамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиОборотовПоБюджетамЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СтатьиОборотовПоБюджетамЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOborotovPoByudzhetam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОборотовПоБюджетам/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new StatiOborotovPoByudzhetamRequest());
+			СтатьиОборотовПоБюджетамЗапрос СтатьиОборотовПоБюджетамЗапрос = null;
+			try
+			{
+				СтатьиОборотовПоБюджетамЗапрос = Клиент.Get(new СтатьиОборотовПоБюджетамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиОборотовПоБюджетамЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СтатьиОборотовПоБюджетамЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOborotovPoByudzhetam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОборотовПоБюджетам/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new StatiOborotovPoByudzhetamRequest());
+			СтатьиОборотовПоБюджетамЗапрос СтатьиОборотовПоБюджетамЗапрос = null;
+			try
+			{
+				СтатьиОборотовПоБюджетамЗапрос = Клиент.Get(new СтатьиОборотовПоБюджетамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиОборотовПоБюджетамЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СтатьиОборотовПоБюджетамЗапрос СтатьиОборотовПоБюджетамЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOborotovPoByudzhetam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОборотовПоБюджетам?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new StatiOborotovPoByudzhetamRequest());
+			var СтатьиОборотовПоБюджетамОтвет = Клиент.Post(СтатьиОборотовПоБюджетамЗапрос);
+		}
+		public static void Записать(СтатьиОборотовПоБюджетамЗапрос СтатьиОборотовПоБюджетамЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОборотовПоБюджетам?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиОборотовПоБюджетамОтвет = Клиент.Put(СтатьиОборотовПоБюджетамЗапрос);
+		}
+		public static void Удалить(СтатьиОборотовПоБюджетамЗапрос СтатьиОборотовПоБюджетамЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОборотовПоБюджетам?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиОборотовПоБюджетамОтвет = Клиент.Delete(СтатьиОборотовПоБюджетамЗапрос);
 		}
 	}
 }

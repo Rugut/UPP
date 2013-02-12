@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Subkonto")]
-	[Route("/Catalogs/Subkonto/FindById/{Id}")]
-	[Route("/Catalogs/Subkonto/FindByCode/{Code}")]
-	[Route("/Catalogs/Subkonto/FindByDescr/{Descr}")]
-	public class SubkontoRequest/*СубконтоЗапрос*/: V82.СправочникиСсылка.Субконто,IReturn<SubkontoRequest>
+	//Subkonto
+	[Маршрут("Справочники/Субконто","")]
+	public class СубконтоЗапрос: V82.СправочникиСсылка.Субконто,IReturn<СубконтоЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Субконто/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Субконто/ПоСсылке","{Ссылка}")]
+	public class СубконтоНайтиПоСсылке: V82.СправочникиСсылка.Субконто,IReturn<СубконтоНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Субконто/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Субконто/ПоКоду","{Код}")]
+	public class СубконтоНайтиПоКоду: V82.СправочникиСсылка.Субконто,IReturn<СубконтоНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Субконто/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Субконто/ПоНаименованию","{Наименование}")]
+	public class СубконтоНайтиПоНаименованию: V82.СправочникиСсылка.Субконто,IReturn<СубконтоНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Субконто/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СубконтоВыбратьПоСсылке: V82.СправочникиСсылка.Субконто,IReturn<СубконтоВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Субконто/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СубконтоВыбратьПоКоду: V82.СправочникиСсылка.Субконто,IReturn<СубконтоВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Субконто/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СубконтоВыбратьПоНаименованию: V82.СправочникиСсылка.Субконто,IReturn<СубконтоВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SubkontoResponse//СубконтоОтвет
+	public class СубконтоОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Subkontos")]
-	[Route("/Catalogs/Subkontos/{Codes}")]
-	public class SubkontosRequest/*СубконтоЗапрос*/: IReturn<List<SubkontoRequest>>
+	public class СубконтоСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SubkontosRequest(params string[] Codes)
+		
+		public object Get(СубконтоНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SubkontosResponse//СубконтоОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SubkontoService /*СубконтоСервис*/ : Service
-	{
-		public object Any(SubkontoRequest request)
+		
+		public object Get(СубконтоНайтиПоКоду Запрос)
 		{
-			return new SubkontoResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SubkontoRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Субконто.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SubkontoResponse() {Result = "Субконто c кодом '" + request.Code+"' не найдено."};
+				return new СубконтоОтвет() {Ответ = "Субконто c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SubkontosRequest request)
+		
+		public object Get(СубконтоНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Субконто>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Субконто.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СубконтоВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СубконтоВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СубконтоВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СубконтоЗапрос Запрос)
+		{
+			return new СубконтоОтвет {Ответ = "Субконто, "};
+		}
+
+		public object Post(СубконтоЗапрос ЗапросСубконто)
+		{
+			var Ссылка = (СправочникиСсылка.Субконто)ЗапросСубконто;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

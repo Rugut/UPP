@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProchieDokhodyIRaskhody")]
-	[Route("/Catalogs/ProchieDokhodyIRaskhody/FindById/{Id}")]
-	[Route("/Catalogs/ProchieDokhodyIRaskhody/FindByCode/{Code}")]
-	[Route("/Catalogs/ProchieDokhodyIRaskhody/FindByDescr/{Descr}")]
-	public class ProchieDokhodyIRaskhodyRequest/*ПрочиеДоходыИРасходыЗапрос*/: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ProchieDokhodyIRaskhodyRequest>
+	//ProchieDokhodyIRaskhody
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы","")]
+	public class ПрочиеДоходыИРасходыЗапрос: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ПрочиеДоходыИРасходыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/ПоСсылке","{Ссылка}")]
+	public class ПрочиеДоходыИРасходыНайтиПоСсылке: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ПрочиеДоходыИРасходыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/ПоКоду","{Код}")]
+	public class ПрочиеДоходыИРасходыНайтиПоКоду: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ПрочиеДоходыИРасходыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/ПоНаименованию","{Наименование}")]
+	public class ПрочиеДоходыИРасходыНайтиПоНаименованию: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ПрочиеДоходыИРасходыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрочиеДоходыИРасходыВыбратьПоСсылке: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ПрочиеДоходыИРасходыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрочиеДоходыИРасходыВыбратьПоКоду: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ПрочиеДоходыИРасходыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрочиеДоходыИРасходы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрочиеДоходыИРасходыВыбратьПоНаименованию: V82.СправочникиСсылка.ПрочиеДоходыИРасходы,IReturn<ПрочиеДоходыИРасходыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProchieDokhodyIRaskhodyResponse//ПрочиеДоходыИРасходыОтвет
+	public class ПрочиеДоходыИРасходыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProchieDokhodyIRaskhodys")]
-	[Route("/Catalogs/ProchieDokhodyIRaskhodys/{Codes}")]
-	public class ProchieDokhodyIRaskhodysRequest/*ПрочиеДоходыИРасходыЗапрос*/: IReturn<List<ProchieDokhodyIRaskhodyRequest>>
+	public class ПрочиеДоходыИРасходыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProchieDokhodyIRaskhodysRequest(params string[] Codes)
+		
+		public object Get(ПрочиеДоходыИРасходыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProchieDokhodyIRaskhodysResponse//ПрочиеДоходыИРасходыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProchieDokhodyIRaskhodyService /*ПрочиеДоходыИРасходыСервис*/ : Service
-	{
-		public object Any(ProchieDokhodyIRaskhodyRequest request)
+		
+		public object Get(ПрочиеДоходыИРасходыНайтиПоКоду Запрос)
 		{
-			return new ProchieDokhodyIRaskhodyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ProchieDokhodyIRaskhodyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПрочиеДоходыИРасходы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ProchieDokhodyIRaskhodyResponse() {Result = "ПрочиеДоходыИРасходы c кодом '" + request.Code+"' не найдено."};
+				return new ПрочиеДоходыИРасходыОтвет() {Ответ = "ПрочиеДоходыИРасходы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ProchieDokhodyIRaskhodysRequest request)
+		
+		public object Get(ПрочиеДоходыИРасходыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрочиеДоходыИРасходы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПрочиеДоходыИРасходы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПрочиеДоходыИРасходыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрочиеДоходыИРасходыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрочиеДоходыИРасходыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПрочиеДоходыИРасходыЗапрос Запрос)
+		{
+			return new ПрочиеДоходыИРасходыОтвет {Ответ = "ПрочиеДоходыИРасходы, "};
+		}
+
+		public object Post(ПрочиеДоходыИРасходыЗапрос ЗапросПрочиеДоходыИРасходы)
+		{
+			var Ссылка = (СправочникиСсылка.ПрочиеДоходыИРасходы)ЗапросПрочиеДоходыИРасходы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

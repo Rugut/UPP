@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NapravleniyaIspolzovaniyaPribyli")]
-	[Route("/Catalogs/NapravleniyaIspolzovaniyaPribyli/FindById/{Id}")]
-	[Route("/Catalogs/NapravleniyaIspolzovaniyaPribyli/FindByCode/{Code}")]
-	[Route("/Catalogs/NapravleniyaIspolzovaniyaPribyli/FindByDescr/{Descr}")]
-	public class NapravleniyaIspolzovaniyaPribyliRequest/*НаправленияИспользованияПрибылиЗапрос*/: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<NapravleniyaIspolzovaniyaPribyliRequest>
+	//NapravleniyaIspolzovaniyaPribyli
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли","")]
+	public class НаправленияИспользованияПрибылиЗапрос: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<НаправленияИспользованияПрибылиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/ПоСсылке","{Ссылка}")]
+	public class НаправленияИспользованияПрибылиНайтиПоСсылке: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<НаправленияИспользованияПрибылиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/ПоКоду","{Код}")]
+	public class НаправленияИспользованияПрибылиНайтиПоКоду: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<НаправленияИспользованияПрибылиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/ПоНаименованию","{Наименование}")]
+	public class НаправленияИспользованияПрибылиНайтиПоНаименованию: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<НаправленияИспользованияПрибылиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаправленияИспользованияПрибылиВыбратьПоСсылке: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<НаправленияИспользованияПрибылиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаправленияИспользованияПрибылиВыбратьПоКоду: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<НаправленияИспользованияПрибылиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НаправленияИспользованияПрибыли/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаправленияИспользованияПрибылиВыбратьПоНаименованию: V82.СправочникиСсылка.НаправленияИспользованияПрибыли,IReturn<НаправленияИспользованияПрибылиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NapravleniyaIspolzovaniyaPribyliResponse//НаправленияИспользованияПрибылиОтвет
+	public class НаправленияИспользованияПрибылиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NapravleniyaIspolzovaniyaPribylis")]
-	[Route("/Catalogs/NapravleniyaIspolzovaniyaPribylis/{Codes}")]
-	public class NapravleniyaIspolzovaniyaPribylisRequest/*НаправленияИспользованияПрибылиЗапрос*/: IReturn<List<NapravleniyaIspolzovaniyaPribyliRequest>>
+	public class НаправленияИспользованияПрибылиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NapravleniyaIspolzovaniyaPribylisRequest(params string[] Codes)
+		
+		public object Get(НаправленияИспользованияПрибылиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NapravleniyaIspolzovaniyaPribylisResponse//НаправленияИспользованияПрибылиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NapravleniyaIspolzovaniyaPribyliService /*НаправленияИспользованияПрибылиСервис*/ : Service
-	{
-		public object Any(NapravleniyaIspolzovaniyaPribyliRequest request)
+		
+		public object Get(НаправленияИспользованияПрибылиНайтиПоКоду Запрос)
 		{
-			return new NapravleniyaIspolzovaniyaPribyliResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NapravleniyaIspolzovaniyaPribyliRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НаправленияИспользованияПрибыли.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NapravleniyaIspolzovaniyaPribyliResponse() {Result = "НаправленияИспользованияПрибыли c кодом '" + request.Code+"' не найдено."};
+				return new НаправленияИспользованияПрибылиОтвет() {Ответ = "НаправленияИспользованияПрибыли c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NapravleniyaIspolzovaniyaPribylisRequest request)
+		
+		public object Get(НаправленияИспользованияПрибылиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НаправленияИспользованияПрибыли>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НаправленияИспользованияПрибыли.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НаправленияИспользованияПрибылиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НаправленияИспользованияПрибылиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НаправленияИспользованияПрибылиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НаправленияИспользованияПрибылиЗапрос Запрос)
+		{
+			return new НаправленияИспользованияПрибылиОтвет {Ответ = "НаправленияИспользованияПрибыли, "};
+		}
+
+		public object Post(НаправленияИспользованияПрибылиЗапрос ЗапросНаправленияИспользованияПрибыли)
+		{
+			var Ссылка = (СправочникиСсылка.НаправленияИспользованияПрибыли)ЗапросНаправленияИспользованияПрибыли;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

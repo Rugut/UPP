@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyZadachPolzovatelejj")]
-	[Route("/Catalogs/VidyZadachPolzovatelejj/FindById/{Id}")]
-	[Route("/Catalogs/VidyZadachPolzovatelejj/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyZadachPolzovatelejj/FindByDescr/{Descr}")]
-	public class VidyZadachPolzovatelejjRequest/*ВидыЗадачПользователейЗапрос*/: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<VidyZadachPolzovatelejjRequest>
+	//VidyZadachPolzovatelejj
+	[Маршрут("Справочники/ВидыЗадачПользователей","")]
+	public class ВидыЗадачПользователейЗапрос: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<ВидыЗадачПользователейЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыЗадачПользователей/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыЗадачПользователей/ПоСсылке","{Ссылка}")]
+	public class ВидыЗадачПользователейНайтиПоСсылке: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<ВидыЗадачПользователейНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыЗадачПользователей/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыЗадачПользователей/ПоКоду","{Код}")]
+	public class ВидыЗадачПользователейНайтиПоКоду: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<ВидыЗадачПользователейНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыЗадачПользователей/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыЗадачПользователей/ПоНаименованию","{Наименование}")]
+	public class ВидыЗадачПользователейНайтиПоНаименованию: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<ВидыЗадачПользователейНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыЗадачПользователей/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЗадачПользователейВыбратьПоСсылке: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<ВидыЗадачПользователейВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЗадачПользователей/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЗадачПользователейВыбратьПоКоду: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<ВидыЗадачПользователейВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыЗадачПользователей/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыЗадачПользователейВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыЗадачПользователей,IReturn<ВидыЗадачПользователейВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyZadachPolzovatelejjResponse//ВидыЗадачПользователейОтвет
+	public class ВидыЗадачПользователейОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyZadachPolzovatelejjs")]
-	[Route("/Catalogs/VidyZadachPolzovatelejjs/{Codes}")]
-	public class VidyZadachPolzovatelejjsRequest/*ВидыЗадачПользователейЗапрос*/: IReturn<List<VidyZadachPolzovatelejjRequest>>
+	public class ВидыЗадачПользователейСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyZadachPolzovatelejjsRequest(params string[] Codes)
+		
+		public object Get(ВидыЗадачПользователейНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyZadachPolzovatelejjsResponse//ВидыЗадачПользователейОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyZadachPolzovatelejjService /*ВидыЗадачПользователейСервис*/ : Service
-	{
-		public object Any(VidyZadachPolzovatelejjRequest request)
+		
+		public object Get(ВидыЗадачПользователейНайтиПоКоду Запрос)
 		{
-			return new VidyZadachPolzovatelejjResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyZadachPolzovatelejjRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыЗадачПользователей.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyZadachPolzovatelejjResponse() {Result = "ВидыЗадачПользователей c кодом '" + request.Code+"' не найдено."};
+				return new ВидыЗадачПользователейОтвет() {Ответ = "ВидыЗадачПользователей c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyZadachPolzovatelejjsRequest request)
+		
+		public object Get(ВидыЗадачПользователейНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыЗадачПользователей>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыЗадачПользователей.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыЗадачПользователейВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЗадачПользователейВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыЗадачПользователейВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыЗадачПользователейЗапрос Запрос)
+		{
+			return new ВидыЗадачПользователейОтвет {Ответ = "ВидыЗадачПользователей, "};
+		}
+
+		public object Post(ВидыЗадачПользователейЗапрос ЗапросВидыЗадачПользователей)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыЗадачПользователей)ЗапросВидыЗадачПользователей;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/GruppyPolzovatelejj")]
-	[Route("/Catalogs/GruppyPolzovatelejj/FindById/{Id}")]
-	[Route("/Catalogs/GruppyPolzovatelejj/FindByCode/{Code}")]
-	[Route("/Catalogs/GruppyPolzovatelejj/FindByDescr/{Descr}")]
-	public class GruppyPolzovatelejjRequest/*ГруппыПользователейЗапрос*/: V82.СправочникиСсылка.ГруппыПользователей,IReturn<GruppyPolzovatelejjRequest>
+	//GruppyPolzovatelejj
+	[Маршрут("Справочники/ГруппыПользователей","")]
+	public class ГруппыПользователейЗапрос: V82.СправочникиСсылка.ГруппыПользователей,IReturn<ГруппыПользователейЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ГруппыПользователей/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ГруппыПользователей/ПоСсылке","{Ссылка}")]
+	public class ГруппыПользователейНайтиПоСсылке: V82.СправочникиСсылка.ГруппыПользователей,IReturn<ГруппыПользователейНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПользователей/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ГруппыПользователей/ПоКоду","{Код}")]
+	public class ГруппыПользователейНайтиПоКоду: V82.СправочникиСсылка.ГруппыПользователей,IReturn<ГруппыПользователейНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПользователей/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ГруппыПользователей/ПоНаименованию","{Наименование}")]
+	public class ГруппыПользователейНайтиПоНаименованию: V82.СправочникиСсылка.ГруппыПользователей,IReturn<ГруппыПользователейНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ГруппыПользователей/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПользователейВыбратьПоСсылке: V82.СправочникиСсылка.ГруппыПользователей,IReturn<ГруппыПользователейВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыПользователей/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПользователейВыбратьПоКоду: V82.СправочникиСсылка.ГруппыПользователей,IReturn<ГруппыПользователейВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ГруппыПользователей/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ГруппыПользователейВыбратьПоНаименованию: V82.СправочникиСсылка.ГруппыПользователей,IReturn<ГруппыПользователейВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class GruppyPolzovatelejjResponse//ГруппыПользователейОтвет
+	public class ГруппыПользователейОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/GruppyPolzovatelejjs")]
-	[Route("/Catalogs/GruppyPolzovatelejjs/{Codes}")]
-	public class GruppyPolzovatelejjsRequest/*ГруппыПользователейЗапрос*/: IReturn<List<GruppyPolzovatelejjRequest>>
+	public class ГруппыПользователейСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public GruppyPolzovatelejjsRequest(params string[] Codes)
+		
+		public object Get(ГруппыПользователейНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class GruppyPolzovatelejjsResponse//ГруппыПользователейОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class GruppyPolzovatelejjService /*ГруппыПользователейСервис*/ : Service
-	{
-		public object Any(GruppyPolzovatelejjRequest request)
+		
+		public object Get(ГруппыПользователейНайтиПоКоду Запрос)
 		{
-			return new GruppyPolzovatelejjResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(GruppyPolzovatelejjRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ГруппыПользователей.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new GruppyPolzovatelejjResponse() {Result = "ГруппыПользователей c кодом '" + request.Code+"' не найдено."};
+				return new ГруппыПользователейОтвет() {Ответ = "ГруппыПользователей c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(GruppyPolzovatelejjsRequest request)
+		
+		public object Get(ГруппыПользователейНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ГруппыПользователей>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ГруппыПользователей.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ГруппыПользователейВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыПользователейВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ГруппыПользователейВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ГруппыПользователейЗапрос Запрос)
+		{
+			return new ГруппыПользователейОтвет {Ответ = "ГруппыПользователей, "};
+		}
+
+		public object Post(ГруппыПользователейЗапрос ЗапросГруппыПользователей)
+		{
+			var Ссылка = (СправочникиСсылка.ГруппыПользователей)ЗапросГруппыПользователей;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОснованияУвольнения:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОснованияУвольненияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaUvolneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияУвольнения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OsnovaniyaUvolneniyaRequest());
+			ОснованияУвольненияЗапрос ОснованияУвольненияЗапрос = null;
+			try
+			{
+				ОснованияУвольненияЗапрос = Клиент.Get(new ОснованияУвольненияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОснованияУвольненияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОснованияУвольненияЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaUvolneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияУвольнения/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OsnovaniyaUvolneniyaRequest());
+			ОснованияУвольненияЗапрос ОснованияУвольненияЗапрос = null;
+			try
+			{
+				ОснованияУвольненияЗапрос = Клиент.Get(new ОснованияУвольненияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОснованияУвольненияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОснованияУвольненияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaUvolneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияУвольнения/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OsnovaniyaUvolneniyaRequest());
+			ОснованияУвольненияЗапрос ОснованияУвольненияЗапрос = null;
+			try
+			{
+				ОснованияУвольненияЗапрос = Клиент.Get(new ОснованияУвольненияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОснованияУвольненияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОснованияУвольненияЗапрос ОснованияУвольненияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OsnovaniyaUvolneniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОснованияУвольнения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OsnovaniyaUvolneniyaRequest());
+			var ОснованияУвольненияОтвет = Клиент.Post(ОснованияУвольненияЗапрос);
+		}
+		public static void Записать(ОснованияУвольненияЗапрос ОснованияУвольненияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОснованияУвольнения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОснованияУвольненияОтвет = Клиент.Put(ОснованияУвольненияЗапрос);
+		}
+		public static void Удалить(ОснованияУвольненияЗапрос ОснованияУвольненияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОснованияУвольнения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОснованияУвольненияОтвет = Клиент.Delete(ОснованияУвольненияЗапрос);
 		}
 	}
 }

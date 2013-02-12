@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиЗаполненияФорм:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиЗаполненияФормЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiZapolneniyaForm/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиЗаполненияФорм/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiZapolneniyaFormRequest());
+			НастройкиЗаполненияФормЗапрос НастройкиЗаполненияФормЗапрос = null;
+			try
+			{
+				НастройкиЗаполненияФормЗапрос = Клиент.Get(new НастройкиЗаполненияФормЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиЗаполненияФормЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиЗаполненияФормЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiZapolneniyaForm/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиЗаполненияФорм/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiZapolneniyaFormRequest());
+			НастройкиЗаполненияФормЗапрос НастройкиЗаполненияФормЗапрос = null;
+			try
+			{
+				НастройкиЗаполненияФормЗапрос = Клиент.Get(new НастройкиЗаполненияФормЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиЗаполненияФормЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкиЗаполненияФормЗапрос НастройкиЗаполненияФормЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiZapolneniyaForm/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиЗаполненияФорм?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiZapolneniyaFormRequest());
+			var НастройкиЗаполненияФормОтвет = Клиент.Post(НастройкиЗаполненияФормЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкиЗаполненияФормЗапрос НастройкиЗаполненияФормЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiZapolneniyaForm/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиЗаполненияФорм?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiZapolneniyaFormRequest());
+			var НастройкиЗаполненияФормОтвет = Клиент.Put(НастройкиЗаполненияФормЗапрос);
+		}
+		public static void Удалить(НастройкиЗаполненияФормЗапрос НастройкиЗаполненияФормЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиЗаполненияФорм?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиЗаполненияФормОтвет = Клиент.Delete(НастройкиЗаполненияФормЗапрос);
 		}
 	}
 }

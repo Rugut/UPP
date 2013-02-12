@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыСчетчиковДляЗначенийРазрядов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыСчетчиковДляЗначенийРазрядовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыСчетчиковДляЗначенийРазрядов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidySchetchikovDlyaZnachenijjRazryadovRequest());
+			ВидыСчетчиковДляЗначенийРазрядовЗапрос ВидыСчетчиковДляЗначенийРазрядовЗапрос = null;
+			try
+			{
+				ВидыСчетчиковДляЗначенийРазрядовЗапрос = Клиент.Get(new ВидыСчетчиковДляЗначенийРазрядовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыСчетчиковДляЗначенийРазрядовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыСчетчиковДляЗначенийРазрядовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыСчетчиковДляЗначенийРазрядов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidySchetchikovDlyaZnachenijjRazryadovRequest());
+			ВидыСчетчиковДляЗначенийРазрядовЗапрос ВидыСчетчиковДляЗначенийРазрядовЗапрос = null;
+			try
+			{
+				ВидыСчетчиковДляЗначенийРазрядовЗапрос = Клиент.Get(new ВидыСчетчиковДляЗначенийРазрядовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыСчетчиковДляЗначенийРазрядовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыСчетчиковДляЗначенийРазрядовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыСчетчиковДляЗначенийРазрядов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidySchetchikovDlyaZnachenijjRazryadovRequest());
+			ВидыСчетчиковДляЗначенийРазрядовЗапрос ВидыСчетчиковДляЗначенийРазрядовЗапрос = null;
+			try
+			{
+				ВидыСчетчиковДляЗначенийРазрядовЗапрос = Клиент.Get(new ВидыСчетчиковДляЗначенийРазрядовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыСчетчиковДляЗначенийРазрядовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыСчетчиковДляЗначенийРазрядовЗапрос ВидыСчетчиковДляЗначенийРазрядовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidySchetchikovDlyaZnachenijjRazryadov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыСчетчиковДляЗначенийРазрядов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidySchetchikovDlyaZnachenijjRazryadovRequest());
+			var ВидыСчетчиковДляЗначенийРазрядовОтвет = Клиент.Post(ВидыСчетчиковДляЗначенийРазрядовЗапрос);
+		}
+		public static void Записать(ВидыСчетчиковДляЗначенийРазрядовЗапрос ВидыСчетчиковДляЗначенийРазрядовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыСчетчиковДляЗначенийРазрядов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыСчетчиковДляЗначенийРазрядовОтвет = Клиент.Put(ВидыСчетчиковДляЗначенийРазрядовЗапрос);
+		}
+		public static void Удалить(ВидыСчетчиковДляЗначенийРазрядовЗапрос ВидыСчетчиковДляЗначенийРазрядовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыСчетчиковДляЗначенийРазрядов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыСчетчиковДляЗначенийРазрядовОтвет = Клиент.Delete(ВидыСчетчиковДляЗначенийРазрядовЗапрос);
 		}
 	}
 }

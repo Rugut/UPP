@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТехнологическиеОперации:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТехнологическиеОперацииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieOperacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеОперации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TekhnologicheskieOperaciiRequest());
+			ТехнологическиеОперацииЗапрос ТехнологическиеОперацииЗапрос = null;
+			try
+			{
+				ТехнологическиеОперацииЗапрос = Клиент.Get(new ТехнологическиеОперацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТехнологическиеОперацииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТехнологическиеОперацииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieOperacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеОперации/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TekhnologicheskieOperaciiRequest());
+			ТехнологическиеОперацииЗапрос ТехнологическиеОперацииЗапрос = null;
+			try
+			{
+				ТехнологическиеОперацииЗапрос = Клиент.Get(new ТехнологическиеОперацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТехнологическиеОперацииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТехнологическиеОперацииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieOperacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеОперации/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TekhnologicheskieOperaciiRequest());
+			ТехнологическиеОперацииЗапрос ТехнологическиеОперацииЗапрос = null;
+			try
+			{
+				ТехнологическиеОперацииЗапрос = Клиент.Get(new ТехнологическиеОперацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТехнологическиеОперацииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТехнологическиеОперацииЗапрос ТехнологическиеОперацииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TekhnologicheskieOperacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеОперации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TekhnologicheskieOperaciiRequest());
+			var ТехнологическиеОперацииОтвет = Клиент.Post(ТехнологическиеОперацииЗапрос);
+		}
+		public static void Записать(ТехнологическиеОперацииЗапрос ТехнологическиеОперацииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеОперации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТехнологическиеОперацииОтвет = Клиент.Put(ТехнологическиеОперацииЗапрос);
+		}
+		public static void Удалить(ТехнологическиеОперацииЗапрос ТехнологическиеОперацииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТехнологическиеОперации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТехнологическиеОперацииОтвет = Клиент.Delete(ТехнологическиеОперацииЗапрос);
 		}
 	}
 }

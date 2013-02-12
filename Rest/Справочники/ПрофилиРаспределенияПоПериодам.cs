@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam")]
-	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/FindById/{Id}")]
-	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/FindByCode/{Code}")]
-	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodam/FindByDescr/{Descr}")]
-	public class ProfiliRaspredeleniyaPoPeriodamRequest/*ПрофилиРаспределенияПоПериодамЗапрос*/: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ProfiliRaspredeleniyaPoPeriodamRequest>
+	//ProfiliRaspredeleniyaPoPeriodam
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам","")]
+	public class ПрофилиРаспределенияПоПериодамЗапрос: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ПрофилиРаспределенияПоПериодамЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/ПоСсылке","{Ссылка}")]
+	public class ПрофилиРаспределенияПоПериодамНайтиПоСсылке: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ПрофилиРаспределенияПоПериодамНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/ПоКоду","{Код}")]
+	public class ПрофилиРаспределенияПоПериодамНайтиПоКоду: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ПрофилиРаспределенияПоПериодамНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/ПоНаименованию","{Наименование}")]
+	public class ПрофилиРаспределенияПоПериодамНайтиПоНаименованию: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ПрофилиРаспределенияПоПериодамНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиРаспределенияПоПериодамВыбратьПоСсылке: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ПрофилиРаспределенияПоПериодамВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиРаспределенияПоПериодамВыбратьПоКоду: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ПрофилиРаспределенияПоПериодамВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрофилиРаспределенияПоПериодам/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрофилиРаспределенияПоПериодамВыбратьПоНаименованию: V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам,IReturn<ПрофилиРаспределенияПоПериодамВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProfiliRaspredeleniyaPoPeriodamResponse//ПрофилиРаспределенияПоПериодамОтвет
+	public class ПрофилиРаспределенияПоПериодамОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodams")]
-	[Route("/Catalogs/ProfiliRaspredeleniyaPoPeriodams/{Codes}")]
-	public class ProfiliRaspredeleniyaPoPeriodamsRequest/*ПрофилиРаспределенияПоПериодамЗапрос*/: IReturn<List<ProfiliRaspredeleniyaPoPeriodamRequest>>
+	public class ПрофилиРаспределенияПоПериодамСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProfiliRaspredeleniyaPoPeriodamsRequest(params string[] Codes)
+		
+		public object Get(ПрофилиРаспределенияПоПериодамНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProfiliRaspredeleniyaPoPeriodamsResponse//ПрофилиРаспределенияПоПериодамОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProfiliRaspredeleniyaPoPeriodamService /*ПрофилиРаспределенияПоПериодамСервис*/ : Service
-	{
-		public object Any(ProfiliRaspredeleniyaPoPeriodamRequest request)
+		
+		public object Get(ПрофилиРаспределенияПоПериодамНайтиПоКоду Запрос)
 		{
-			return new ProfiliRaspredeleniyaPoPeriodamResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ProfiliRaspredeleniyaPoPeriodamRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПрофилиРаспределенияПоПериодам.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ProfiliRaspredeleniyaPoPeriodamResponse() {Result = "ПрофилиРаспределенияПоПериодам c кодом '" + request.Code+"' не найдено."};
+				return new ПрофилиРаспределенияПоПериодамОтвет() {Ответ = "ПрофилиРаспределенияПоПериодам c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ProfiliRaspredeleniyaPoPeriodamsRequest request)
+		
+		public object Get(ПрофилиРаспределенияПоПериодамНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрофилиРаспределенияПоПериодам>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПрофилиРаспределенияПоПериодам.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПрофилиРаспределенияПоПериодамВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрофилиРаспределенияПоПериодамВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрофилиРаспределенияПоПериодамВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПрофилиРаспределенияПоПериодамЗапрос Запрос)
+		{
+			return new ПрофилиРаспределенияПоПериодамОтвет {Ответ = "ПрофилиРаспределенияПоПериодам, "};
+		}
+
+		public object Post(ПрофилиРаспределенияПоПериодамЗапрос ЗапросПрофилиРаспределенияПоПериодам)
+		{
+			var Ссылка = (СправочникиСсылка.ПрофилиРаспределенияПоПериодам)ЗапросПрофилиРаспределенияПоПериодам;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

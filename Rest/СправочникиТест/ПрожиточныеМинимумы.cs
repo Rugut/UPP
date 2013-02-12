@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрожиточныеМинимумы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрожиточныеМинимумыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProzhitochnyeMinimumy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрожиточныеМинимумы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProzhitochnyeMinimumyRequest());
+			ПрожиточныеМинимумыЗапрос ПрожиточныеМинимумыЗапрос = null;
+			try
+			{
+				ПрожиточныеМинимумыЗапрос = Клиент.Get(new ПрожиточныеМинимумыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрожиточныеМинимумыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрожиточныеМинимумыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProzhitochnyeMinimumy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрожиточныеМинимумы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProzhitochnyeMinimumyRequest());
+			ПрожиточныеМинимумыЗапрос ПрожиточныеМинимумыЗапрос = null;
+			try
+			{
+				ПрожиточныеМинимумыЗапрос = Клиент.Get(new ПрожиточныеМинимумыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрожиточныеМинимумыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПрожиточныеМинимумыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProzhitochnyeMinimumy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрожиточныеМинимумы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProzhitochnyeMinimumyRequest());
+			ПрожиточныеМинимумыЗапрос ПрожиточныеМинимумыЗапрос = null;
+			try
+			{
+				ПрожиточныеМинимумыЗапрос = Клиент.Get(new ПрожиточныеМинимумыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрожиточныеМинимумыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПрожиточныеМинимумыЗапрос ПрожиточныеМинимумыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProzhitochnyeMinimumy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрожиточныеМинимумы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProzhitochnyeMinimumyRequest());
+			var ПрожиточныеМинимумыОтвет = Клиент.Post(ПрожиточныеМинимумыЗапрос);
+		}
+		public static void Записать(ПрожиточныеМинимумыЗапрос ПрожиточныеМинимумыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрожиточныеМинимумы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрожиточныеМинимумыОтвет = Клиент.Put(ПрожиточныеМинимумыЗапрос);
+		}
+		public static void Удалить(ПрожиточныеМинимумыЗапрос ПрожиточныеМинимумыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрожиточныеМинимумы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрожиточныеМинимумыОтвет = Клиент.Delete(ПрожиточныеМинимумыЗапрос);
 		}
 	}
 }

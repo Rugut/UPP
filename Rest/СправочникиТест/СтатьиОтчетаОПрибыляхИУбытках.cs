@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СтатьиОтчетаОПрибыляхИУбытках:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СтатьиОтчетаОПрибыляхИУбыткахЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОтчетаОПрибыляхИУбытках/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new StatiOtchetaOPribylyakhIUbytkakhRequest());
+			СтатьиОтчетаОПрибыляхИУбыткахЗапрос СтатьиОтчетаОПрибыляхИУбыткахЗапрос = null;
+			try
+			{
+				СтатьиОтчетаОПрибыляхИУбыткахЗапрос = Клиент.Get(new СтатьиОтчетаОПрибыляхИУбыткахЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиОтчетаОПрибыляхИУбыткахЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СтатьиОтчетаОПрибыляхИУбыткахЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОтчетаОПрибыляхИУбытках/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new StatiOtchetaOPribylyakhIUbytkakhRequest());
+			СтатьиОтчетаОПрибыляхИУбыткахЗапрос СтатьиОтчетаОПрибыляхИУбыткахЗапрос = null;
+			try
+			{
+				СтатьиОтчетаОПрибыляхИУбыткахЗапрос = Клиент.Get(new СтатьиОтчетаОПрибыляхИУбыткахЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиОтчетаОПрибыляхИУбыткахЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СтатьиОтчетаОПрибыляхИУбыткахЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОтчетаОПрибыляхИУбытках/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new StatiOtchetaOPribylyakhIUbytkakhRequest());
+			СтатьиОтчетаОПрибыляхИУбыткахЗапрос СтатьиОтчетаОПрибыляхИУбыткахЗапрос = null;
+			try
+			{
+				СтатьиОтчетаОПрибыляхИУбыткахЗапрос = Клиент.Get(new СтатьиОтчетаОПрибыляхИУбыткахЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиОтчетаОПрибыляхИУбыткахЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СтатьиОтчетаОПрибыляхИУбыткахЗапрос СтатьиОтчетаОПрибыляхИУбыткахЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiOtchetaOPribylyakhIUbytkakh/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОтчетаОПрибыляхИУбытках?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new StatiOtchetaOPribylyakhIUbytkakhRequest());
+			var СтатьиОтчетаОПрибыляхИУбыткахОтвет = Клиент.Post(СтатьиОтчетаОПрибыляхИУбыткахЗапрос);
+		}
+		public static void Записать(СтатьиОтчетаОПрибыляхИУбыткахЗапрос СтатьиОтчетаОПрибыляхИУбыткахЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОтчетаОПрибыляхИУбытках?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиОтчетаОПрибыляхИУбыткахОтвет = Клиент.Put(СтатьиОтчетаОПрибыляхИУбыткахЗапрос);
+		}
+		public static void Удалить(СтатьиОтчетаОПрибыляхИУбыткахЗапрос СтатьиОтчетаОПрибыляхИУбыткахЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиОтчетаОПрибыляхИУбытках?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиОтчетаОПрибыляхИУбыткахОтвет = Клиент.Delete(СтатьиОтчетаОПрибыляхИУбыткахЗапрос);
 		}
 	}
 }

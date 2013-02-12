@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НаправленияИспользованияПрибыли:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НаправленияИспользованияПрибылиЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaIspolzovaniyaPribyli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияИспользованияПрибыли/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NapravleniyaIspolzovaniyaPribyliRequest());
+			НаправленияИспользованияПрибылиЗапрос НаправленияИспользованияПрибылиЗапрос = null;
+			try
+			{
+				НаправленияИспользованияПрибылиЗапрос = Клиент.Get(new НаправленияИспользованияПрибылиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НаправленияИспользованияПрибылиЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НаправленияИспользованияПрибылиЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaIspolzovaniyaPribyli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияИспользованияПрибыли/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NapravleniyaIspolzovaniyaPribyliRequest());
+			НаправленияИспользованияПрибылиЗапрос НаправленияИспользованияПрибылиЗапрос = null;
+			try
+			{
+				НаправленияИспользованияПрибылиЗапрос = Клиент.Get(new НаправленияИспользованияПрибылиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НаправленияИспользованияПрибылиЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static НаправленияИспользованияПрибылиЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaIspolzovaniyaPribyli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияИспользованияПрибыли/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NapravleniyaIspolzovaniyaPribyliRequest());
+			НаправленияИспользованияПрибылиЗапрос НаправленияИспользованияПрибылиЗапрос = null;
+			try
+			{
+				НаправленияИспользованияПрибылиЗапрос = Клиент.Get(new НаправленияИспользованияПрибылиЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НаправленияИспользованияПрибылиЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(НаправленияИспользованияПрибылиЗапрос НаправленияИспользованияПрибылиЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NapravleniyaIspolzovaniyaPribyli/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НаправленияИспользованияПрибыли?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NapravleniyaIspolzovaniyaPribyliRequest());
+			var НаправленияИспользованияПрибылиОтвет = Клиент.Post(НаправленияИспользованияПрибылиЗапрос);
+		}
+		public static void Записать(НаправленияИспользованияПрибылиЗапрос НаправленияИспользованияПрибылиЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/НаправленияИспользованияПрибыли?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НаправленияИспользованияПрибылиОтвет = Клиент.Put(НаправленияИспользованияПрибылиЗапрос);
+		}
+		public static void Удалить(НаправленияИспользованияПрибылиЗапрос НаправленияИспользованияПрибылиЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НаправленияИспользованияПрибыли?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НаправленияИспользованияПрибылиОтвет = Клиент.Delete(НаправленияИспользованияПрибылиЗапрос);
 		}
 	}
 }

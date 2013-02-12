@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Nagrady")]
-	[Route("/Catalogs/Nagrady/FindById/{Id}")]
-	[Route("/Catalogs/Nagrady/FindByCode/{Code}")]
-	[Route("/Catalogs/Nagrady/FindByDescr/{Descr}")]
-	public class NagradyRequest/*НаградыЗапрос*/: V82.СправочникиСсылка.Награды,IReturn<NagradyRequest>
+	//Nagrady
+	[Маршрут("Справочники/Награды","")]
+	public class НаградыЗапрос: V82.СправочникиСсылка.Награды,IReturn<НаградыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Награды/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Награды/ПоСсылке","{Ссылка}")]
+	public class НаградыНайтиПоСсылке: V82.СправочникиСсылка.Награды,IReturn<НаградыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Награды/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Награды/ПоНаименованию","{Наименование}")]
+	public class НаградыНайтиПоНаименованию: V82.СправочникиСсылка.Награды,IReturn<НаградыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Награды/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаградыВыбратьПоСсылке: V82.СправочникиСсылка.Награды,IReturn<НаградыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Награды/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НаградыВыбратьПоНаименованию: V82.СправочникиСсылка.Награды,IReturn<НаградыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NagradyResponse//НаградыОтвет
+	public class НаградыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Nagradys")]
-	[Route("/Catalogs/Nagradys/{Codes}")]
-	public class NagradysRequest/*НаградыЗапрос*/: IReturn<List<NagradyRequest>>
+	public class НаградыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NagradysRequest(params string[] Codes)
+		
+		public object Get(НаградыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NagradysResponse//НаградыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NagradyService /*НаградыСервис*/ : Service
-	{
-		public object Any(NagradyRequest request)
+		
+		public object Get(НаградыНайтиПоНаименованию Запрос)
 		{
-			return new NagradyResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NagradyRequest request)
+		
+		public object Get(НаградыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НаградыВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NagradysRequest request)
+		public object Any(НаградыЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Награды>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НаградыОтвет {Ответ = "Награды, "};
 		}
+
+		public object Post(НаградыЗапрос ЗапросНаграды)
+		{
+			var Ссылка = (СправочникиСсылка.Награды)ЗапросНаграды;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

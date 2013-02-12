@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОрганыФСГС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОрганыФСГСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OrganyFSGS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОрганыФСГС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OrganyFSGSRequest());
+			ОрганыФСГСЗапрос ОрганыФСГСЗапрос = null;
+			try
+			{
+				ОрганыФСГСЗапрос = Клиент.Get(new ОрганыФСГСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОрганыФСГСЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОрганыФСГСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/OrganyFSGS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОрганыФСГС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OrganyFSGSRequest());
+			ОрганыФСГСЗапрос ОрганыФСГСЗапрос = null;
+			try
+			{
+				ОрганыФСГСЗапрос = Клиент.Get(new ОрганыФСГСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОрганыФСГСЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОрганыФСГСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OrganyFSGS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОрганыФСГС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OrganyFSGSRequest());
+			ОрганыФСГСЗапрос ОрганыФСГСЗапрос = null;
+			try
+			{
+				ОрганыФСГСЗапрос = Клиент.Get(new ОрганыФСГСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОрганыФСГСЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОрганыФСГСЗапрос ОрганыФСГСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OrganyFSGS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОрганыФСГС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OrganyFSGSRequest());
+			var ОрганыФСГСОтвет = Клиент.Post(ОрганыФСГСЗапрос);
+		}
+		public static void Записать(ОрганыФСГСЗапрос ОрганыФСГСЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОрганыФСГС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОрганыФСГСОтвет = Клиент.Put(ОрганыФСГСЗапрос);
+		}
+		public static void Удалить(ОрганыФСГСЗапрос ОрганыФСГСЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОрганыФСГС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОрганыФСГСОтвет = Клиент.Delete(ОрганыФСГСЗапрос);
 		}
 	}
 }

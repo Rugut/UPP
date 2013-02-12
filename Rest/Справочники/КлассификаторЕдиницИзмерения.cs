@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KlassifikatorEdinicIzmereniya")]
-	[Route("/Catalogs/KlassifikatorEdinicIzmereniya/FindById/{Id}")]
-	[Route("/Catalogs/KlassifikatorEdinicIzmereniya/FindByCode/{Code}")]
-	[Route("/Catalogs/KlassifikatorEdinicIzmereniya/FindByDescr/{Descr}")]
-	public class KlassifikatorEdinicIzmereniyaRequest/*КлассификаторЕдиницИзмеренияЗапрос*/: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<KlassifikatorEdinicIzmereniyaRequest>
+	//KlassifikatorEdinicIzmereniya
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения","")]
+	public class КлассификаторЕдиницИзмеренияЗапрос: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<КлассификаторЕдиницИзмеренияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/ПоСсылке","{Ссылка}")]
+	public class КлассификаторЕдиницИзмеренияНайтиПоСсылке: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<КлассификаторЕдиницИзмеренияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/ПоКоду","{Код}")]
+	public class КлассификаторЕдиницИзмеренияНайтиПоКоду: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<КлассификаторЕдиницИзмеренияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/ПоНаименованию","{Наименование}")]
+	public class КлассификаторЕдиницИзмеренияНайтиПоНаименованию: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<КлассификаторЕдиницИзмеренияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторЕдиницИзмеренияВыбратьПоСсылке: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<КлассификаторЕдиницИзмеренияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторЕдиницИзмеренияВыбратьПоКоду: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<КлассификаторЕдиницИзмеренияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КлассификаторЕдиницИзмерения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КлассификаторЕдиницИзмеренияВыбратьПоНаименованию: V82.СправочникиСсылка.КлассификаторЕдиницИзмерения,IReturn<КлассификаторЕдиницИзмеренияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KlassifikatorEdinicIzmereniyaResponse//КлассификаторЕдиницИзмеренияОтвет
+	public class КлассификаторЕдиницИзмеренияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KlassifikatorEdinicIzmereniyas")]
-	[Route("/Catalogs/KlassifikatorEdinicIzmereniyas/{Codes}")]
-	public class KlassifikatorEdinicIzmereniyasRequest/*КлассификаторЕдиницИзмеренияЗапрос*/: IReturn<List<KlassifikatorEdinicIzmereniyaRequest>>
+	public class КлассификаторЕдиницИзмеренияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KlassifikatorEdinicIzmereniyasRequest(params string[] Codes)
+		
+		public object Get(КлассификаторЕдиницИзмеренияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KlassifikatorEdinicIzmereniyasResponse//КлассификаторЕдиницИзмеренияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KlassifikatorEdinicIzmereniyaService /*КлассификаторЕдиницИзмеренияСервис*/ : Service
-	{
-		public object Any(KlassifikatorEdinicIzmereniyaRequest request)
+		
+		public object Get(КлассификаторЕдиницИзмеренияНайтиПоКоду Запрос)
 		{
-			return new KlassifikatorEdinicIzmereniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KlassifikatorEdinicIzmereniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КлассификаторЕдиницИзмерения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KlassifikatorEdinicIzmereniyaResponse() {Result = "КлассификаторЕдиницИзмерения c кодом '" + request.Code+"' не найдено."};
+				return new КлассификаторЕдиницИзмеренияОтвет() {Ответ = "КлассификаторЕдиницИзмерения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KlassifikatorEdinicIzmereniyasRequest request)
+		
+		public object Get(КлассификаторЕдиницИзмеренияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КлассификаторЕдиницИзмерения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КлассификаторЕдиницИзмерения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КлассификаторЕдиницИзмеренияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлассификаторЕдиницИзмеренияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КлассификаторЕдиницИзмеренияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КлассификаторЕдиницИзмеренияЗапрос Запрос)
+		{
+			return new КлассификаторЕдиницИзмеренияОтвет {Ответ = "КлассификаторЕдиницИзмерения, "};
+		}
+
+		public object Post(КлассификаторЕдиницИзмеренияЗапрос ЗапросКлассификаторЕдиницИзмерения)
+		{
+			var Ссылка = (СправочникиСсылка.КлассификаторЕдиницИзмерения)ЗапросКлассификаторЕдиницИзмерения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

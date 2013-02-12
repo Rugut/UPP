@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ВидыВзаиморасчетов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВидыВзаиморасчетовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyVzaimoraschetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыВзаиморасчетов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new VidyVzaimoraschetovRequest());
+			ВидыВзаиморасчетовЗапрос ВидыВзаиморасчетовЗапрос = null;
+			try
+			{
+				ВидыВзаиморасчетовЗапрос = Клиент.Get(new ВидыВзаиморасчетовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыВзаиморасчетовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВидыВзаиморасчетовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyVzaimoraschetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыВзаиморасчетов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new VidyVzaimoraschetovRequest());
+			ВидыВзаиморасчетовЗапрос ВидыВзаиморасчетовЗапрос = null;
+			try
+			{
+				ВидыВзаиморасчетовЗапрос = Клиент.Get(new ВидыВзаиморасчетовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыВзаиморасчетовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВидыВзаиморасчетовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyVzaimoraschetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыВзаиморасчетов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new VidyVzaimoraschetovRequest());
+			ВидыВзаиморасчетовЗапрос ВидыВзаиморасчетовЗапрос = null;
+			try
+			{
+				ВидыВзаиморасчетовЗапрос = Клиент.Get(new ВидыВзаиморасчетовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВидыВзаиморасчетовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВидыВзаиморасчетовЗапрос ВидыВзаиморасчетовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/VidyVzaimoraschetov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ВидыВзаиморасчетов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new VidyVzaimoraschetovRequest());
+			var ВидыВзаиморасчетовОтвет = Клиент.Post(ВидыВзаиморасчетовЗапрос);
+		}
+		public static void Записать(ВидыВзаиморасчетовЗапрос ВидыВзаиморасчетовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыВзаиморасчетов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыВзаиморасчетовОтвет = Клиент.Put(ВидыВзаиморасчетовЗапрос);
+		}
+		public static void Удалить(ВидыВзаиморасчетовЗапрос ВидыВзаиморасчетовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ВидыВзаиморасчетов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВидыВзаиморасчетовОтвет = Клиент.Delete(ВидыВзаиморасчетовЗапрос);
 		}
 	}
 }

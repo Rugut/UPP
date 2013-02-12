@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TipovyeAnkety")]
-	[Route("/Catalogs/TipovyeAnkety/FindById/{Id}")]
-	[Route("/Catalogs/TipovyeAnkety/FindByCode/{Code}")]
-	[Route("/Catalogs/TipovyeAnkety/FindByDescr/{Descr}")]
-	public class TipovyeAnketyRequest/*ТиповыеАнкетыЗапрос*/: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<TipovyeAnketyRequest>
+	//TipovyeAnkety
+	[Маршрут("Справочники/ТиповыеАнкеты","")]
+	public class ТиповыеАнкетыЗапрос: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<ТиповыеАнкетыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТиповыеАнкеты/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТиповыеАнкеты/ПоСсылке","{Ссылка}")]
+	public class ТиповыеАнкетыНайтиПоСсылке: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<ТиповыеАнкетыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТиповыеАнкеты/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТиповыеАнкеты/ПоКоду","{Код}")]
+	public class ТиповыеАнкетыНайтиПоКоду: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<ТиповыеАнкетыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТиповыеАнкеты/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТиповыеАнкеты/ПоНаименованию","{Наименование}")]
+	public class ТиповыеАнкетыНайтиПоНаименованию: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<ТиповыеАнкетыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТиповыеАнкеты/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТиповыеАнкетыВыбратьПоСсылке: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<ТиповыеАнкетыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТиповыеАнкеты/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТиповыеАнкетыВыбратьПоКоду: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<ТиповыеАнкетыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТиповыеАнкеты/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТиповыеАнкетыВыбратьПоНаименованию: V82.СправочникиСсылка.ТиповыеАнкеты,IReturn<ТиповыеАнкетыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TipovyeAnketyResponse//ТиповыеАнкетыОтвет
+	public class ТиповыеАнкетыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TipovyeAnketys")]
-	[Route("/Catalogs/TipovyeAnketys/{Codes}")]
-	public class TipovyeAnketysRequest/*ТиповыеАнкетыЗапрос*/: IReturn<List<TipovyeAnketyRequest>>
+	public class ТиповыеАнкетыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TipovyeAnketysRequest(params string[] Codes)
+		
+		public object Get(ТиповыеАнкетыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TipovyeAnketysResponse//ТиповыеАнкетыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TipovyeAnketyService /*ТиповыеАнкетыСервис*/ : Service
-	{
-		public object Any(TipovyeAnketyRequest request)
+		
+		public object Get(ТиповыеАнкетыНайтиПоКоду Запрос)
 		{
-			return new TipovyeAnketyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TipovyeAnketyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТиповыеАнкеты.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TipovyeAnketyResponse() {Result = "ТиповыеАнкеты c кодом '" + request.Code+"' не найдено."};
+				return new ТиповыеАнкетыОтвет() {Ответ = "ТиповыеАнкеты c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TipovyeAnketysRequest request)
+		
+		public object Get(ТиповыеАнкетыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТиповыеАнкеты>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТиповыеАнкеты.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТиповыеАнкетыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТиповыеАнкетыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТиповыеАнкетыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТиповыеАнкетыЗапрос Запрос)
+		{
+			return new ТиповыеАнкетыОтвет {Ответ = "ТиповыеАнкеты, "};
+		}
+
+		public object Post(ТиповыеАнкетыЗапрос ЗапросТиповыеАнкеты)
+		{
+			var Ссылка = (СправочникиСсылка.ТиповыеАнкеты)ЗапросТиповыеАнкеты;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

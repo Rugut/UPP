@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОбщероссийскийКлассификаторПродукции:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОбщероссийскийКлассификаторПродукцииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторПродукции/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ObshherossijjskijjKlassifikatorProdukciiRequest());
+			ОбщероссийскийКлассификаторПродукцииЗапрос ОбщероссийскийКлассификаторПродукцииЗапрос = null;
+			try
+			{
+				ОбщероссийскийКлассификаторПродукцииЗапрос = Клиент.Get(new ОбщероссийскийКлассификаторПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбщероссийскийКлассификаторПродукцииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОбщероссийскийКлассификаторПродукцииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторПродукции/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ObshherossijjskijjKlassifikatorProdukciiRequest());
+			ОбщероссийскийКлассификаторПродукцииЗапрос ОбщероссийскийКлассификаторПродукцииЗапрос = null;
+			try
+			{
+				ОбщероссийскийКлассификаторПродукцииЗапрос = Клиент.Get(new ОбщероссийскийКлассификаторПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбщероссийскийКлассификаторПродукцииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОбщероссийскийКлассификаторПродукцииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторПродукции/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ObshherossijjskijjKlassifikatorProdukciiRequest());
+			ОбщероссийскийКлассификаторПродукцииЗапрос ОбщероссийскийКлассификаторПродукцииЗапрос = null;
+			try
+			{
+				ОбщероссийскийКлассификаторПродукцииЗапрос = Клиент.Get(new ОбщероссийскийКлассификаторПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбщероссийскийКлассификаторПродукцииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОбщероссийскийКлассификаторПродукцииЗапрос ОбщероссийскийКлассификаторПродукцииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObshherossijjskijjKlassifikatorProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторПродукции?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ObshherossijjskijjKlassifikatorProdukciiRequest());
+			var ОбщероссийскийКлассификаторПродукцииОтвет = Клиент.Post(ОбщероссийскийКлассификаторПродукцииЗапрос);
+		}
+		public static void Записать(ОбщероссийскийКлассификаторПродукцииЗапрос ОбщероссийскийКлассификаторПродукцииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбщероссийскийКлассификаторПродукцииОтвет = Клиент.Put(ОбщероссийскийКлассификаторПродукцииЗапрос);
+		}
+		public static void Удалить(ОбщероссийскийКлассификаторПродукцииЗапрос ОбщероссийскийКлассификаторПродукцииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбщероссийскийКлассификаторПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбщероссийскийКлассификаторПродукцииОтвет = Клиент.Delete(ОбщероссийскийКлассификаторПродукцииЗапрос);
 		}
 	}
 }

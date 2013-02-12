@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KoehfficientyStazha")]
-	[Route("/Catalogs/KoehfficientyStazha/FindById/{Id}")]
-	[Route("/Catalogs/KoehfficientyStazha/FindByCode/{Code}")]
-	[Route("/Catalogs/KoehfficientyStazha/FindByDescr/{Descr}")]
-	public class KoehfficientyStazhaRequest/*КоэффициентыСтажаЗапрос*/: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<KoehfficientyStazhaRequest>
+	//KoehfficientyStazha
+	[Маршрут("Справочники/КоэффициентыСтажа","")]
+	public class КоэффициентыСтажаЗапрос: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<КоэффициентыСтажаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КоэффициентыСтажа/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КоэффициентыСтажа/ПоСсылке","{Ссылка}")]
+	public class КоэффициентыСтажаНайтиПоСсылке: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<КоэффициентыСтажаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КоэффициентыСтажа/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КоэффициентыСтажа/ПоКоду","{Код}")]
+	public class КоэффициентыСтажаНайтиПоКоду: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<КоэффициентыСтажаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КоэффициентыСтажа/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КоэффициентыСтажа/ПоНаименованию","{Наименование}")]
+	public class КоэффициентыСтажаНайтиПоНаименованию: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<КоэффициентыСтажаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КоэффициентыСтажа/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КоэффициентыСтажаВыбратьПоСсылке: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<КоэффициентыСтажаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КоэффициентыСтажа/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КоэффициентыСтажаВыбратьПоКоду: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<КоэффициентыСтажаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КоэффициентыСтажа/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КоэффициентыСтажаВыбратьПоНаименованию: V82.СправочникиСсылка.КоэффициентыСтажа,IReturn<КоэффициентыСтажаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KoehfficientyStazhaResponse//КоэффициентыСтажаОтвет
+	public class КоэффициентыСтажаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KoehfficientyStazhas")]
-	[Route("/Catalogs/KoehfficientyStazhas/{Codes}")]
-	public class KoehfficientyStazhasRequest/*КоэффициентыСтажаЗапрос*/: IReturn<List<KoehfficientyStazhaRequest>>
+	public class КоэффициентыСтажаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KoehfficientyStazhasRequest(params string[] Codes)
+		
+		public object Get(КоэффициентыСтажаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KoehfficientyStazhasResponse//КоэффициентыСтажаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KoehfficientyStazhaService /*КоэффициентыСтажаСервис*/ : Service
-	{
-		public object Any(KoehfficientyStazhaRequest request)
+		
+		public object Get(КоэффициентыСтажаНайтиПоКоду Запрос)
 		{
-			return new KoehfficientyStazhaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KoehfficientyStazhaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КоэффициентыСтажа.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KoehfficientyStazhaResponse() {Result = "КоэффициентыСтажа c кодом '" + request.Code+"' не найдено."};
+				return new КоэффициентыСтажаОтвет() {Ответ = "КоэффициентыСтажа c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KoehfficientyStazhasRequest request)
+		
+		public object Get(КоэффициентыСтажаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КоэффициентыСтажа>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КоэффициентыСтажа.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КоэффициентыСтажаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КоэффициентыСтажаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КоэффициентыСтажаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КоэффициентыСтажаЗапрос Запрос)
+		{
+			return new КоэффициентыСтажаОтвет {Ответ = "КоэффициентыСтажа, "};
+		}
+
+		public object Post(КоэффициентыСтажаЗапрос ЗапросКоэффициентыСтажа)
+		{
+			var Ссылка = (СправочникиСсылка.КоэффициентыСтажа)ЗапросКоэффициентыСтажа;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

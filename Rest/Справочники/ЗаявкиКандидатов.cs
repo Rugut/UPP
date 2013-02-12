@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ZayavkiKandidatov")]
-	[Route("/Catalogs/ZayavkiKandidatov/FindById/{Id}")]
-	[Route("/Catalogs/ZayavkiKandidatov/FindByCode/{Code}")]
-	[Route("/Catalogs/ZayavkiKandidatov/FindByDescr/{Descr}")]
-	public class ZayavkiKandidatovRequest/*ЗаявкиКандидатовЗапрос*/: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ZayavkiKandidatovRequest>
+	//ZayavkiKandidatov
+	[Маршрут("Справочники/ЗаявкиКандидатов","")]
+	public class ЗаявкиКандидатовЗапрос: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ЗаявкиКандидатовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ЗаявкиКандидатов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ЗаявкиКандидатов/ПоСсылке","{Ссылка}")]
+	public class ЗаявкиКандидатовНайтиПоСсылке: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ЗаявкиКандидатовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ЗаявкиКандидатов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ЗаявкиКандидатов/ПоКоду","{Код}")]
+	public class ЗаявкиКандидатовНайтиПоКоду: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ЗаявкиКандидатовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ЗаявкиКандидатов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ЗаявкиКандидатов/ПоНаименованию","{Наименование}")]
+	public class ЗаявкиКандидатовНайтиПоНаименованию: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ЗаявкиКандидатовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗаявкиКандидатовВыбратьПоСсылке: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ЗаявкиКандидатовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗаявкиКандидатов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗаявкиКандидатовВыбратьПоКоду: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ЗаявкиКандидатовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ЗаявкиКандидатов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ЗаявкиКандидатовВыбратьПоНаименованию: V82.СправочникиСсылка.ЗаявкиКандидатов,IReturn<ЗаявкиКандидатовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ZayavkiKandidatovResponse//ЗаявкиКандидатовОтвет
+	public class ЗаявкиКандидатовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ZayavkiKandidatovs")]
-	[Route("/Catalogs/ZayavkiKandidatovs/{Codes}")]
-	public class ZayavkiKandidatovsRequest/*ЗаявкиКандидатовЗапрос*/: IReturn<List<ZayavkiKandidatovRequest>>
+	public class ЗаявкиКандидатовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ZayavkiKandidatovsRequest(params string[] Codes)
+		
+		public object Get(ЗаявкиКандидатовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ZayavkiKandidatovsResponse//ЗаявкиКандидатовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ZayavkiKandidatovService /*ЗаявкиКандидатовСервис*/ : Service
-	{
-		public object Any(ZayavkiKandidatovRequest request)
+		
+		public object Get(ЗаявкиКандидатовНайтиПоКоду Запрос)
 		{
-			return new ZayavkiKandidatovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ZayavkiKandidatovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ЗаявкиКандидатов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ZayavkiKandidatovResponse() {Result = "ЗаявкиКандидатов c кодом '" + request.Code+"' не найдено."};
+				return new ЗаявкиКандидатовОтвет() {Ответ = "ЗаявкиКандидатов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ZayavkiKandidatovsRequest request)
+		
+		public object Get(ЗаявкиКандидатовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ЗаявкиКандидатов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ЗаявкиКандидатов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ЗаявкиКандидатовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗаявкиКандидатовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ЗаявкиКандидатовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ЗаявкиКандидатовЗапрос Запрос)
+		{
+			return new ЗаявкиКандидатовОтвет {Ответ = "ЗаявкиКандидатов, "};
+		}
+
+		public object Post(ЗаявкиКандидатовЗапрос ЗапросЗаявкиКандидатов)
+		{
+			var Ссылка = (СправочникиСсылка.ЗаявкиКандидатов)ЗапросЗаявкиКандидатов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

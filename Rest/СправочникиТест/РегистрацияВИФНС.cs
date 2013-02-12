@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class РегистрацияВИФНС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static РегистрацияВИФНСЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegistraciyaVIFNS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегистрацияВИФНС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new RegistraciyaVIFNSRequest());
+			РегистрацияВИФНСЗапрос РегистрацияВИФНСЗапрос = null;
+			try
+			{
+				РегистрацияВИФНСЗапрос = Клиент.Get(new РегистрацияВИФНСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегистрацияВИФНСЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static РегистрацияВИФНСЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegistraciyaVIFNS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегистрацияВИФНС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new RegistraciyaVIFNSRequest());
+			РегистрацияВИФНСЗапрос РегистрацияВИФНСЗапрос = null;
+			try
+			{
+				РегистрацияВИФНСЗапрос = Клиент.Get(new РегистрацияВИФНСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегистрацияВИФНСЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static РегистрацияВИФНСЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegistraciyaVIFNS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегистрацияВИФНС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new RegistraciyaVIFNSRequest());
+			РегистрацияВИФНСЗапрос РегистрацияВИФНСЗапрос = null;
+			try
+			{
+				РегистрацияВИФНСЗапрос = Клиент.Get(new РегистрацияВИФНСЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return РегистрацияВИФНСЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(РегистрацияВИФНСЗапрос РегистрацияВИФНСЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/RegistraciyaVIFNS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/РегистрацияВИФНС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new RegistraciyaVIFNSRequest());
+			var РегистрацияВИФНСОтвет = Клиент.Post(РегистрацияВИФНСЗапрос);
+		}
+		public static void Записать(РегистрацияВИФНСЗапрос РегистрацияВИФНСЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/РегистрацияВИФНС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РегистрацияВИФНСОтвет = Клиент.Put(РегистрацияВИФНСЗапрос);
+		}
+		public static void Удалить(РегистрацияВИФНСЗапрос РегистрацияВИФНСЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/РегистрацияВИФНС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var РегистрацияВИФНСОтвет = Клиент.Delete(РегистрацияВИФНСЗапрос);
 		}
 	}
 }

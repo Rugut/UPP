@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PokazateliSkhemMotivacii")]
-	[Route("/Catalogs/PokazateliSkhemMotivacii/FindById/{Id}")]
-	[Route("/Catalogs/PokazateliSkhemMotivacii/FindByCode/{Code}")]
-	[Route("/Catalogs/PokazateliSkhemMotivacii/FindByDescr/{Descr}")]
-	public class PokazateliSkhemMotivaciiRequest/*ПоказателиСхемМотивацииЗапрос*/: V82.СправочникиСсылка.ПоказателиСхемМотивации,IReturn<PokazateliSkhemMotivaciiRequest>
+	//PokazateliSkhemMotivacii
+	[Маршрут("Справочники/ПоказателиСхемМотивации","")]
+	public class ПоказателиСхемМотивацииЗапрос: V82.СправочникиСсылка.ПоказателиСхемМотивации,IReturn<ПоказателиСхемМотивацииЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПоказателиСхемМотивации/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПоказателиСхемМотивации/ПоСсылке","{Ссылка}")]
+	public class ПоказателиСхемМотивацииНайтиПоСсылке: V82.СправочникиСсылка.ПоказателиСхемМотивации,IReturn<ПоказателиСхемМотивацииНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПоказателиСхемМотивации/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПоказателиСхемМотивации/ПоНаименованию","{Наименование}")]
+	public class ПоказателиСхемМотивацииНайтиПоНаименованию: V82.СправочникиСсылка.ПоказателиСхемМотивации,IReturn<ПоказателиСхемМотивацииНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПоказателиСхемМотивацииВыбратьПоСсылке: V82.СправочникиСсылка.ПоказателиСхемМотивации,IReturn<ПоказателиСхемМотивацииВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПоказателиСхемМотивации/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПоказателиСхемМотивацииВыбратьПоНаименованию: V82.СправочникиСсылка.ПоказателиСхемМотивации,IReturn<ПоказателиСхемМотивацииВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PokazateliSkhemMotivaciiResponse//ПоказателиСхемМотивацииОтвет
+	public class ПоказателиСхемМотивацииОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PokazateliSkhemMotivaciis")]
-	[Route("/Catalogs/PokazateliSkhemMotivaciis/{Codes}")]
-	public class PokazateliSkhemMotivaciisRequest/*ПоказателиСхемМотивацииЗапрос*/: IReturn<List<PokazateliSkhemMotivaciiRequest>>
+	public class ПоказателиСхемМотивацииСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PokazateliSkhemMotivaciisRequest(params string[] Codes)
+		
+		public object Get(ПоказателиСхемМотивацииНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PokazateliSkhemMotivaciisResponse//ПоказателиСхемМотивацииОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PokazateliSkhemMotivaciiService /*ПоказателиСхемМотивацииСервис*/ : Service
-	{
-		public object Any(PokazateliSkhemMotivaciiRequest request)
+		
+		public object Get(ПоказателиСхемМотивацииНайтиПоНаименованию Запрос)
 		{
-			return new PokazateliSkhemMotivaciiResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(PokazateliSkhemMotivaciiRequest request)
+		
+		public object Get(ПоказателиСхемМотивацииВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПоказателиСхемМотивацииВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(PokazateliSkhemMotivaciisRequest request)
+		public object Any(ПоказателиСхемМотивацииЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПоказателиСхемМотивации>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ПоказателиСхемМотивацииОтвет {Ответ = "ПоказателиСхемМотивации, "};
 		}
+
+		public object Post(ПоказателиСхемМотивацииЗапрос ЗапросПоказателиСхемМотивации)
+		{
+			var Ссылка = (СправочникиСсылка.ПоказателиСхемМотивации)ЗапросПоказателиСхемМотивации;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

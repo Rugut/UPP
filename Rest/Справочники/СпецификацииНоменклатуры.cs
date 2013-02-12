@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SpecifikaciiNomenklatury")]
-	[Route("/Catalogs/SpecifikaciiNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/SpecifikaciiNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/SpecifikaciiNomenklatury/FindByDescr/{Descr}")]
-	public class SpecifikaciiNomenklaturyRequest/*СпецификацииНоменклатурыЗапрос*/: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<SpecifikaciiNomenklaturyRequest>
+	//SpecifikaciiNomenklatury
+	[Маршрут("Справочники/СпецификацииНоменклатуры","")]
+	public class СпецификацииНоменклатурыЗапрос: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<СпецификацииНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СпецификацииНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СпецификацииНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class СпецификацииНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<СпецификацииНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СпецификацииНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СпецификацииНоменклатуры/ПоКоду","{Код}")]
+	public class СпецификацииНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<СпецификацииНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СпецификацииНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СпецификацииНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class СпецификацииНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<СпецификацииНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпецификацииНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<СпецификацииНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпецификацииНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпецификацииНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<СпецификацииНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СпецификацииНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СпецификацииНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.СпецификацииНоменклатуры,IReturn<СпецификацииНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SpecifikaciiNomenklaturyResponse//СпецификацииНоменклатурыОтвет
+	public class СпецификацииНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SpecifikaciiNomenklaturys")]
-	[Route("/Catalogs/SpecifikaciiNomenklaturys/{Codes}")]
-	public class SpecifikaciiNomenklaturysRequest/*СпецификацииНоменклатурыЗапрос*/: IReturn<List<SpecifikaciiNomenklaturyRequest>>
+	public class СпецификацииНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SpecifikaciiNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(СпецификацииНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SpecifikaciiNomenklaturysResponse//СпецификацииНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SpecifikaciiNomenklaturyService /*СпецификацииНоменклатурыСервис*/ : Service
-	{
-		public object Any(SpecifikaciiNomenklaturyRequest request)
+		
+		public object Get(СпецификацииНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new SpecifikaciiNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SpecifikaciiNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СпецификацииНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SpecifikaciiNomenklaturyResponse() {Result = "СпецификацииНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new СпецификацииНоменклатурыОтвет() {Ответ = "СпецификацииНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SpecifikaciiNomenklaturysRequest request)
+		
+		public object Get(СпецификацииНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СпецификацииНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СпецификацииНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СпецификацииНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпецификацииНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СпецификацииНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СпецификацииНоменклатурыЗапрос Запрос)
+		{
+			return new СпецификацииНоменклатурыОтвет {Ответ = "СпецификацииНоменклатуры, "};
+		}
+
+		public object Post(СпецификацииНоменклатурыЗапрос ЗапросСпецификацииНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.СпецификацииНоменклатуры)ЗапросСпецификацииНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

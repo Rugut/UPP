@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КонтактныеЛицаКонтрагентов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КонтактныеЛицаКонтрагентовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KontaktnyeLicaKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонтактныеЛицаКонтрагентов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KontaktnyeLicaKontragentovRequest());
+			КонтактныеЛицаКонтрагентовЗапрос КонтактныеЛицаКонтрагентовЗапрос = null;
+			try
+			{
+				КонтактныеЛицаКонтрагентовЗапрос = Клиент.Get(new КонтактныеЛицаКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КонтактныеЛицаКонтрагентовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КонтактныеЛицаКонтрагентовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/KontaktnyeLicaKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонтактныеЛицаКонтрагентов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KontaktnyeLicaKontragentovRequest());
+			КонтактныеЛицаКонтрагентовЗапрос КонтактныеЛицаКонтрагентовЗапрос = null;
+			try
+			{
+				КонтактныеЛицаКонтрагентовЗапрос = Клиент.Get(new КонтактныеЛицаКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КонтактныеЛицаКонтрагентовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КонтактныеЛицаКонтрагентовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KontaktnyeLicaKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонтактныеЛицаКонтрагентов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KontaktnyeLicaKontragentovRequest());
+			КонтактныеЛицаКонтрагентовЗапрос КонтактныеЛицаКонтрагентовЗапрос = null;
+			try
+			{
+				КонтактныеЛицаКонтрагентовЗапрос = Клиент.Get(new КонтактныеЛицаКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КонтактныеЛицаКонтрагентовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КонтактныеЛицаКонтрагентовЗапрос КонтактныеЛицаКонтрагентовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KontaktnyeLicaKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КонтактныеЛицаКонтрагентов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KontaktnyeLicaKontragentovRequest());
+			var КонтактныеЛицаКонтрагентовОтвет = Клиент.Post(КонтактныеЛицаКонтрагентовЗапрос);
+		}
+		public static void Записать(КонтактныеЛицаКонтрагентовЗапрос КонтактныеЛицаКонтрагентовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/КонтактныеЛицаКонтрагентов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КонтактныеЛицаКонтрагентовОтвет = Клиент.Put(КонтактныеЛицаКонтрагентовЗапрос);
+		}
+		public static void Удалить(КонтактныеЛицаКонтрагентовЗапрос КонтактныеЛицаКонтрагентовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КонтактныеЛицаКонтрагентов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КонтактныеЛицаКонтрагентовОтвет = Клиент.Delete(КонтактныеЛицаКонтрагентовЗапрос);
 		}
 	}
 }

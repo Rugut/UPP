@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТипыЗаписейЗаметок:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТипыЗаписейЗаметокЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyZapisejjZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЗаписейЗаметок/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TipyZapisejjZametokRequest());
+			ТипыЗаписейЗаметокЗапрос ТипыЗаписейЗаметокЗапрос = null;
+			try
+			{
+				ТипыЗаписейЗаметокЗапрос = Клиент.Get(new ТипыЗаписейЗаметокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыЗаписейЗаметокЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТипыЗаписейЗаметокЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyZapisejjZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЗаписейЗаметок/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TipyZapisejjZametokRequest());
+			ТипыЗаписейЗаметокЗапрос ТипыЗаписейЗаметокЗапрос = null;
+			try
+			{
+				ТипыЗаписейЗаметокЗапрос = Клиент.Get(new ТипыЗаписейЗаметокЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыЗаписейЗаметокЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(ТипыЗаписейЗаметокЗапрос ТипыЗаписейЗаметокЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyZapisejjZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЗаписейЗаметок?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TipyZapisejjZametokRequest());
+			var ТипыЗаписейЗаметокОтвет = Клиент.Post(ТипыЗаписейЗаметокЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(ТипыЗаписейЗаметокЗапрос ТипыЗаписейЗаметокЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyZapisejjZametok/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЗаписейЗаметок?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TipyZapisejjZametokRequest());
+			var ТипыЗаписейЗаметокОтвет = Клиент.Put(ТипыЗаписейЗаметокЗапрос);
+		}
+		public static void Удалить(ТипыЗаписейЗаметокЗапрос ТипыЗаписейЗаметокЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТипыЗаписейЗаметок?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТипыЗаписейЗаметокОтвет = Клиент.Delete(ТипыЗаписейЗаметокЗапрос);
 		}
 	}
 }

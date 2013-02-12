@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class АдресныеСокращения:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static АдресныеСокращенияЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/AdresnyeSokrashheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/АдресныеСокращения/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new AdresnyeSokrashheniyaRequest());
+			АдресныеСокращенияЗапрос АдресныеСокращенияЗапрос = null;
+			try
+			{
+				АдресныеСокращенияЗапрос = Клиент.Get(new АдресныеСокращенияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return АдресныеСокращенияЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static АдресныеСокращенияЗапрос НайтиПоКоду(decimal Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/AdresnyeSokrashheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/АдресныеСокращения/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new AdresnyeSokrashheniyaRequest());
+			АдресныеСокращенияЗапрос АдресныеСокращенияЗапрос = null;
+			try
+			{
+				АдресныеСокращенияЗапрос = Клиент.Get(new АдресныеСокращенияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return АдресныеСокращенияЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static АдресныеСокращенияЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/AdresnyeSokrashheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/АдресныеСокращения/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new AdresnyeSokrashheniyaRequest());
+			АдресныеСокращенияЗапрос АдресныеСокращенияЗапрос = null;
+			try
+			{
+				АдресныеСокращенияЗапрос = Клиент.Get(new АдресныеСокращенияЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return АдресныеСокращенияЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(АдресныеСокращенияЗапрос АдресныеСокращенияЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/AdresnyeSokrashheniya/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/АдресныеСокращения?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new AdresnyeSokrashheniyaRequest());
+			var АдресныеСокращенияОтвет = Клиент.Post(АдресныеСокращенияЗапрос);
+		}
+		public static void Записать(АдресныеСокращенияЗапрос АдресныеСокращенияЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/АдресныеСокращения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var АдресныеСокращенияОтвет = Клиент.Put(АдресныеСокращенияЗапрос);
+		}
+		public static void Удалить(АдресныеСокращенияЗапрос АдресныеСокращенияЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/АдресныеСокращения?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var АдресныеСокращенияОтвет = Клиент.Delete(АдресныеСокращенияЗапрос);
 		}
 	}
 }

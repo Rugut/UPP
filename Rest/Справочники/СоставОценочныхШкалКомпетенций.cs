@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SostavOcenochnykhSHkalKompetencijj")]
-	[Route("/Catalogs/SostavOcenochnykhSHkalKompetencijj/FindById/{Id}")]
-	[Route("/Catalogs/SostavOcenochnykhSHkalKompetencijj/FindByCode/{Code}")]
-	[Route("/Catalogs/SostavOcenochnykhSHkalKompetencijj/FindByDescr/{Descr}")]
-	public class SostavOcenochnykhSHkalKompetencijjRequest/*СоставОценочныхШкалКомпетенцийЗапрос*/: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<SostavOcenochnykhSHkalKompetencijjRequest>
+	//SostavOcenochnykhSHkalKompetencijj
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций","")]
+	public class СоставОценочныхШкалКомпетенцийЗапрос: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<СоставОценочныхШкалКомпетенцийЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/ПоСсылке","{Ссылка}")]
+	public class СоставОценочныхШкалКомпетенцийНайтиПоСсылке: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<СоставОценочныхШкалКомпетенцийНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/ПоКоду","{Код}")]
+	public class СоставОценочныхШкалКомпетенцийНайтиПоКоду: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<СоставОценочныхШкалКомпетенцийНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/ПоНаименованию","{Наименование}")]
+	public class СоставОценочныхШкалКомпетенцийНайтиПоНаименованию: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<СоставОценочныхШкалКомпетенцийНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставОценочныхШкалКомпетенцийВыбратьПоСсылке: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<СоставОценочныхШкалКомпетенцийВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставОценочныхШкалКомпетенцийВыбратьПоКоду: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<СоставОценочныхШкалКомпетенцийВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СоставОценочныхШкалКомпетенций/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СоставОценочныхШкалКомпетенцийВыбратьПоНаименованию: V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций,IReturn<СоставОценочныхШкалКомпетенцийВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SostavOcenochnykhSHkalKompetencijjResponse//СоставОценочныхШкалКомпетенцийОтвет
+	public class СоставОценочныхШкалКомпетенцийОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SostavOcenochnykhSHkalKompetencijjs")]
-	[Route("/Catalogs/SostavOcenochnykhSHkalKompetencijjs/{Codes}")]
-	public class SostavOcenochnykhSHkalKompetencijjsRequest/*СоставОценочныхШкалКомпетенцийЗапрос*/: IReturn<List<SostavOcenochnykhSHkalKompetencijjRequest>>
+	public class СоставОценочныхШкалКомпетенцийСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SostavOcenochnykhSHkalKompetencijjsRequest(params string[] Codes)
+		
+		public object Get(СоставОценочныхШкалКомпетенцийНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SostavOcenochnykhSHkalKompetencijjsResponse//СоставОценочныхШкалКомпетенцийОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SostavOcenochnykhSHkalKompetencijjService /*СоставОценочныхШкалКомпетенцийСервис*/ : Service
-	{
-		public object Any(SostavOcenochnykhSHkalKompetencijjRequest request)
+		
+		public object Get(СоставОценочныхШкалКомпетенцийНайтиПоКоду Запрос)
 		{
-			return new SostavOcenochnykhSHkalKompetencijjResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SostavOcenochnykhSHkalKompetencijjRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СоставОценочныхШкалКомпетенций.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SostavOcenochnykhSHkalKompetencijjResponse() {Result = "СоставОценочныхШкалКомпетенций c кодом '" + request.Code+"' не найдено."};
+				return new СоставОценочныхШкалКомпетенцийОтвет() {Ответ = "СоставОценочныхШкалКомпетенций c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SostavOcenochnykhSHkalKompetencijjsRequest request)
+		
+		public object Get(СоставОценочныхШкалКомпетенцийНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СоставОценочныхШкалКомпетенций>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СоставОценочныхШкалКомпетенций.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СоставОценочныхШкалКомпетенцийВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СоставОценочныхШкалКомпетенцийВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СоставОценочныхШкалКомпетенцийВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СоставОценочныхШкалКомпетенцийЗапрос Запрос)
+		{
+			return new СоставОценочныхШкалКомпетенцийОтвет {Ответ = "СоставОценочныхШкалКомпетенций, "};
+		}
+
+		public object Post(СоставОценочныхШкалКомпетенцийЗапрос ЗапросСоставОценочныхШкалКомпетенций)
+		{
+			var Ссылка = (СправочникиСсылка.СоставОценочныхШкалКомпетенций)ЗапросСоставОценочныхШкалКомпетенций;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

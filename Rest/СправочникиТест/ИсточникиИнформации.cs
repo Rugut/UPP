@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ИсточникиИнформации:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ИсточникиИнформацииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new IstochnikiInformaciiRequest());
+			ИсточникиИнформацииЗапрос ИсточникиИнформацииЗапрос = null;
+			try
+			{
+				ИсточникиИнформацииЗапрос = Клиент.Get(new ИсточникиИнформацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиИнформацииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ИсточникиИнформацииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформации/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new IstochnikiInformaciiRequest());
+			ИсточникиИнформацииЗапрос ИсточникиИнформацииЗапрос = null;
+			try
+			{
+				ИсточникиИнформацииЗапрос = Клиент.Get(new ИсточникиИнформацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиИнформацииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ИсточникиИнформацииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформации/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new IstochnikiInformaciiRequest());
+			ИсточникиИнформацииЗапрос ИсточникиИнформацииЗапрос = null;
+			try
+			{
+				ИсточникиИнформацииЗапрос = Клиент.Get(new ИсточникиИнформацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ИсточникиИнформацииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ИсточникиИнформацииЗапрос ИсточникиИнформацииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/IstochnikiInformacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new IstochnikiInformaciiRequest());
+			var ИсточникиИнформацииОтвет = Клиент.Post(ИсточникиИнформацииЗапрос);
+		}
+		public static void Записать(ИсточникиИнформацииЗапрос ИсточникиИнформацииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИсточникиИнформацииОтвет = Клиент.Put(ИсточникиИнформацииЗапрос);
+		}
+		public static void Удалить(ИсточникиИнформацииЗапрос ИсточникиИнформацииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ИсточникиИнформации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ИсточникиИнформацииОтвет = Клиент.Delete(ИсточникиИнформацииЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva")]
-	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/FindById/{Id}")]
-	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/FindByCode/{Code}")]
-	[Route("/Catalogs/UdalitOcenochnyeObyazatelstva/FindByDescr/{Descr}")]
-	public class UdalitOcenochnyeObyazatelstvaRequest/*УдалитьОценочныеОбязательстваЗапрос*/: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<UdalitOcenochnyeObyazatelstvaRequest>
+	//UdalitOcenochnyeObyazatelstva
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства","")]
+	public class УдалитьОценочныеОбязательстваЗапрос: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<УдалитьОценочныеОбязательстваЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/ПоСсылке","{Ссылка}")]
+	public class УдалитьОценочныеОбязательстваНайтиПоСсылке: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<УдалитьОценочныеОбязательстваНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/ПоКоду","{Код}")]
+	public class УдалитьОценочныеОбязательстваНайтиПоКоду: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<УдалитьОценочныеОбязательстваНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/ПоНаименованию","{Наименование}")]
+	public class УдалитьОценочныеОбязательстваНайтиПоНаименованию: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<УдалитьОценочныеОбязательстваНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class УдалитьОценочныеОбязательстваВыбратьПоСсылке: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<УдалитьОценочныеОбязательстваВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class УдалитьОценочныеОбязательстваВыбратьПоКоду: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<УдалитьОценочныеОбязательстваВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УдалитьОценочныеОбязательства/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class УдалитьОценочныеОбязательстваВыбратьПоНаименованию: V82.СправочникиСсылка.УдалитьОценочныеОбязательства,IReturn<УдалитьОценочныеОбязательстваВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class UdalitOcenochnyeObyazatelstvaResponse//УдалитьОценочныеОбязательстваОтвет
+	public class УдалитьОценочныеОбязательстваОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/UdalitOcenochnyeObyazatelstvas")]
-	[Route("/Catalogs/UdalitOcenochnyeObyazatelstvas/{Codes}")]
-	public class UdalitOcenochnyeObyazatelstvasRequest/*УдалитьОценочныеОбязательстваЗапрос*/: IReturn<List<UdalitOcenochnyeObyazatelstvaRequest>>
+	public class УдалитьОценочныеОбязательстваСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public UdalitOcenochnyeObyazatelstvasRequest(params string[] Codes)
+		
+		public object Get(УдалитьОценочныеОбязательстваНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class UdalitOcenochnyeObyazatelstvasResponse//УдалитьОценочныеОбязательстваОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class UdalitOcenochnyeObyazatelstvaService /*УдалитьОценочныеОбязательстваСервис*/ : Service
-	{
-		public object Any(UdalitOcenochnyeObyazatelstvaRequest request)
+		
+		public object Get(УдалитьОценочныеОбязательстваНайтиПоКоду Запрос)
 		{
-			return new UdalitOcenochnyeObyazatelstvaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(UdalitOcenochnyeObyazatelstvaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.УдалитьОценочныеОбязательства.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new UdalitOcenochnyeObyazatelstvaResponse() {Result = "УдалитьОценочныеОбязательства c кодом '" + request.Code+"' не найдено."};
+				return new УдалитьОценочныеОбязательстваОтвет() {Ответ = "УдалитьОценочныеОбязательства c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(UdalitOcenochnyeObyazatelstvasRequest request)
+		
+		public object Get(УдалитьОценочныеОбязательстваНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УдалитьОценочныеОбязательства>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.УдалитьОценочныеОбязательства.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(УдалитьОценочныеОбязательстваВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УдалитьОценочныеОбязательстваВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УдалитьОценочныеОбязательстваВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(УдалитьОценочныеОбязательстваЗапрос Запрос)
+		{
+			return new УдалитьОценочныеОбязательстваОтвет {Ответ = "УдалитьОценочныеОбязательства, "};
+		}
+
+		public object Post(УдалитьОценочныеОбязательстваЗапрос ЗапросУдалитьОценочныеОбязательства)
+		{
+			var Ссылка = (СправочникиСсылка.УдалитьОценочныеОбязательства)ЗапросУдалитьОценочныеОбязательства;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

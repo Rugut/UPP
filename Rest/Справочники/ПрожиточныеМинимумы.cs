@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ProzhitochnyeMinimumy")]
-	[Route("/Catalogs/ProzhitochnyeMinimumy/FindById/{Id}")]
-	[Route("/Catalogs/ProzhitochnyeMinimumy/FindByCode/{Code}")]
-	[Route("/Catalogs/ProzhitochnyeMinimumy/FindByDescr/{Descr}")]
-	public class ProzhitochnyeMinimumyRequest/*ПрожиточныеМинимумыЗапрос*/: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ProzhitochnyeMinimumyRequest>
+	//ProzhitochnyeMinimumy
+	[Маршрут("Справочники/ПрожиточныеМинимумы","")]
+	public class ПрожиточныеМинимумыЗапрос: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ПрожиточныеМинимумыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПрожиточныеМинимумы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПрожиточныеМинимумы/ПоСсылке","{Ссылка}")]
+	public class ПрожиточныеМинимумыНайтиПоСсылке: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ПрожиточныеМинимумыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПрожиточныеМинимумы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПрожиточныеМинимумы/ПоКоду","{Код}")]
+	public class ПрожиточныеМинимумыНайтиПоКоду: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ПрожиточныеМинимумыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПрожиточныеМинимумы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПрожиточныеМинимумы/ПоНаименованию","{Наименование}")]
+	public class ПрожиточныеМинимумыНайтиПоНаименованию: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ПрожиточныеМинимумыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПрожиточныеМинимумы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрожиточныеМинимумыВыбратьПоСсылке: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ПрожиточныеМинимумыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрожиточныеМинимумы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрожиточныеМинимумыВыбратьПоКоду: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ПрожиточныеМинимумыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПрожиточныеМинимумы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПрожиточныеМинимумыВыбратьПоНаименованию: V82.СправочникиСсылка.ПрожиточныеМинимумы,IReturn<ПрожиточныеМинимумыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ProzhitochnyeMinimumyResponse//ПрожиточныеМинимумыОтвет
+	public class ПрожиточныеМинимумыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ProzhitochnyeMinimumys")]
-	[Route("/Catalogs/ProzhitochnyeMinimumys/{Codes}")]
-	public class ProzhitochnyeMinimumysRequest/*ПрожиточныеМинимумыЗапрос*/: IReturn<List<ProzhitochnyeMinimumyRequest>>
+	public class ПрожиточныеМинимумыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ProzhitochnyeMinimumysRequest(params string[] Codes)
+		
+		public object Get(ПрожиточныеМинимумыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ProzhitochnyeMinimumysResponse//ПрожиточныеМинимумыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ProzhitochnyeMinimumyService /*ПрожиточныеМинимумыСервис*/ : Service
-	{
-		public object Any(ProzhitochnyeMinimumyRequest request)
+		
+		public object Get(ПрожиточныеМинимумыНайтиПоКоду Запрос)
 		{
-			return new ProzhitochnyeMinimumyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ProzhitochnyeMinimumyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПрожиточныеМинимумы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ProzhitochnyeMinimumyResponse() {Result = "ПрожиточныеМинимумы c кодом '" + request.Code+"' не найдено."};
+				return new ПрожиточныеМинимумыОтвет() {Ответ = "ПрожиточныеМинимумы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ProzhitochnyeMinimumysRequest request)
+		
+		public object Get(ПрожиточныеМинимумыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПрожиточныеМинимумы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПрожиточныеМинимумы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПрожиточныеМинимумыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрожиточныеМинимумыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПрожиточныеМинимумыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПрожиточныеМинимумыЗапрос Запрос)
+		{
+			return new ПрожиточныеМинимумыОтвет {Ответ = "ПрожиточныеМинимумы, "};
+		}
+
+		public object Post(ПрожиточныеМинимумыЗапрос ЗапросПрожиточныеМинимумы)
+		{
+			var Ссылка = (СправочникиСсылка.ПрожиточныеМинимумы)ЗапросПрожиточныеМинимумы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

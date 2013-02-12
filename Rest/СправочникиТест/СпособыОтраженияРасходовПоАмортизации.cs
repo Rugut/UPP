@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СпособыОтраженияРасходовПоАмортизации:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СпособыОтраженияРасходовПоАмортизацииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияРасходовПоАмортизации/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest());
+			СпособыОтраженияРасходовПоАмортизацииЗапрос СпособыОтраженияРасходовПоАмортизацииЗапрос = null;
+			try
+			{
+				СпособыОтраженияРасходовПоАмортизацииЗапрос = Клиент.Get(new СпособыОтраженияРасходовПоАмортизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыОтраженияРасходовПоАмортизацииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СпособыОтраженияРасходовПоАмортизацииЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияРасходовПоАмортизации/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest());
+			СпособыОтраженияРасходовПоАмортизацииЗапрос СпособыОтраженияРасходовПоАмортизацииЗапрос = null;
+			try
+			{
+				СпособыОтраженияРасходовПоАмортизацииЗапрос = Клиент.Get(new СпособыОтраженияРасходовПоАмортизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыОтраженияРасходовПоАмортизацииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СпособыОтраженияРасходовПоАмортизацииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияРасходовПоАмортизации/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest());
+			СпособыОтраженияРасходовПоАмортизацииЗапрос СпособыОтраженияРасходовПоАмортизацииЗапрос = null;
+			try
+			{
+				СпособыОтраженияРасходовПоАмортизацииЗапрос = Клиент.Get(new СпособыОтраженияРасходовПоАмортизацииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СпособыОтраженияРасходовПоАмортизацииЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СпособыОтраженияРасходовПоАмортизацииЗапрос СпособыОтраженияРасходовПоАмортизацииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SposobyOtrazheniyaRaskhodovPoAmortizacii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияРасходовПоАмортизации?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SposobyOtrazheniyaRaskhodovPoAmortizaciiRequest());
+			var СпособыОтраженияРасходовПоАмортизацииОтвет = Клиент.Post(СпособыОтраженияРасходовПоАмортизацииЗапрос);
+		}
+		public static void Записать(СпособыОтраженияРасходовПоАмортизацииЗапрос СпособыОтраженияРасходовПоАмортизацииЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияРасходовПоАмортизации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СпособыОтраженияРасходовПоАмортизацииОтвет = Клиент.Put(СпособыОтраженияРасходовПоАмортизацииЗапрос);
+		}
+		public static void Удалить(СпособыОтраженияРасходовПоАмортизацииЗапрос СпособыОтраженияРасходовПоАмортизацииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СпособыОтраженияРасходовПоАмортизации?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СпособыОтраженияРасходовПоАмортизацииОтвет = Клиент.Delete(СпособыОтраженияРасходовПоАмортизацииЗапрос);
 		}
 	}
 }

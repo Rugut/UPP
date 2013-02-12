@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh")]
-	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/FindById/{Id}")]
-	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/FindByCode/{Code}")]
-	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakh/FindByDescr/{Descr}")]
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest/*ДетализацияОтчетаОПрибыляхИУбыткахЗапрос*/: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest>
+	//DetalizaciyaOtchetaOPribylyakhIUbytkakh
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках","")]
+	public class ДетализацияОтчетаОПрибыляхИУбыткахЗапрос: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<ДетализацияОтчетаОПрибыляхИУбыткахЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ПоСсылке","{Ссылка}")]
+	public class ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоСсылке: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ПоКоду","{Код}")]
+	public class ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоКоду: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ПоНаименованию","{Наименование}")]
+	public class ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоНаименованию: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоСсылке: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоКоду: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоНаименованию: V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках,IReturn<ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhResponse//ДетализацияОтчетаОПрибыляхИУбыткахОтвет
+	public class ДетализацияОтчетаОПрибыляхИУбыткахОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakhs")]
-	[Route("/Catalogs/DetalizaciyaOtchetaOPribylyakhIUbytkakhs/{Codes}")]
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhsRequest/*ДетализацияОтчетаОПрибыляхИУбыткахЗапрос*/: IReturn<List<DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest>>
+	public class ДетализацияОтчетаОПрибыляхИУбыткахСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DetalizaciyaOtchetaOPribylyakhIUbytkakhsRequest(params string[] Codes)
+		
+		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhsResponse//ДетализацияОтчетаОПрибыляхИУбыткахОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DetalizaciyaOtchetaOPribylyakhIUbytkakhService /*ДетализацияОтчетаОПрибыляхИУбыткахСервис*/ : Service
-	{
-		public object Any(DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest request)
+		
+		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоКоду Запрос)
 		{
-			return new DetalizaciyaOtchetaOPribylyakhIUbytkakhResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DetalizaciyaOtchetaOPribylyakhIUbytkakhRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДетализацияОтчетаОПрибыляхИУбытках.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DetalizaciyaOtchetaOPribylyakhIUbytkakhResponse() {Result = "ДетализацияОтчетаОПрибыляхИУбытках c кодом '" + request.Code+"' не найдено."};
+				return new ДетализацияОтчетаОПрибыляхИУбыткахОтвет() {Ответ = "ДетализацияОтчетаОПрибыляхИУбытках c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DetalizaciyaOtchetaOPribylyakhIUbytkakhsRequest request)
+		
+		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДетализацияОтчетаОПрибыляхИУбытках.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос Запрос)
+		{
+			return new ДетализацияОтчетаОПрибыляхИУбыткахОтвет {Ответ = "ДетализацияОтчетаОПрибыляхИУбытках, "};
+		}
+
+		public object Post(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос ЗапросДетализацияОтчетаОПрибыляхИУбытках)
+		{
+			var Ссылка = (СправочникиСсылка.ДетализацияОтчетаОПрибыляхИУбытках)ЗапросДетализацияОтчетаОПрибыляхИУбытках;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

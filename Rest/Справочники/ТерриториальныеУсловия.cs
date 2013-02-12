@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TerritorialnyeUsloviya")]
-	[Route("/Catalogs/TerritorialnyeUsloviya/FindById/{Id}")]
-	[Route("/Catalogs/TerritorialnyeUsloviya/FindByCode/{Code}")]
-	[Route("/Catalogs/TerritorialnyeUsloviya/FindByDescr/{Descr}")]
-	public class TerritorialnyeUsloviyaRequest/*ТерриториальныеУсловияЗапрос*/: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<TerritorialnyeUsloviyaRequest>
+	//TerritorialnyeUsloviya
+	[Маршрут("Справочники/ТерриториальныеУсловия","")]
+	public class ТерриториальныеУсловияЗапрос: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<ТерриториальныеУсловияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТерриториальныеУсловия/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТерриториальныеУсловия/ПоСсылке","{Ссылка}")]
+	public class ТерриториальныеУсловияНайтиПоСсылке: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<ТерриториальныеУсловияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТерриториальныеУсловия/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТерриториальныеУсловия/ПоКоду","{Код}")]
+	public class ТерриториальныеУсловияНайтиПоКоду: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<ТерриториальныеУсловияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТерриториальныеУсловия/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТерриториальныеУсловия/ПоНаименованию","{Наименование}")]
+	public class ТерриториальныеУсловияНайтиПоНаименованию: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<ТерриториальныеУсловияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТерриториальныеУсловия/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТерриториальныеУсловияВыбратьПоСсылке: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<ТерриториальныеУсловияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТерриториальныеУсловия/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТерриториальныеУсловияВыбратьПоКоду: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<ТерриториальныеУсловияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТерриториальныеУсловия/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТерриториальныеУсловияВыбратьПоНаименованию: V82.СправочникиСсылка.ТерриториальныеУсловия,IReturn<ТерриториальныеУсловияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TerritorialnyeUsloviyaResponse//ТерриториальныеУсловияОтвет
+	public class ТерриториальныеУсловияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TerritorialnyeUsloviyas")]
-	[Route("/Catalogs/TerritorialnyeUsloviyas/{Codes}")]
-	public class TerritorialnyeUsloviyasRequest/*ТерриториальныеУсловияЗапрос*/: IReturn<List<TerritorialnyeUsloviyaRequest>>
+	public class ТерриториальныеУсловияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TerritorialnyeUsloviyasRequest(params string[] Codes)
+		
+		public object Get(ТерриториальныеУсловияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TerritorialnyeUsloviyasResponse//ТерриториальныеУсловияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TerritorialnyeUsloviyaService /*ТерриториальныеУсловияСервис*/ : Service
-	{
-		public object Any(TerritorialnyeUsloviyaRequest request)
+		
+		public object Get(ТерриториальныеУсловияНайтиПоКоду Запрос)
 		{
-			return new TerritorialnyeUsloviyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TerritorialnyeUsloviyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТерриториальныеУсловия.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TerritorialnyeUsloviyaResponse() {Result = "ТерриториальныеУсловия c кодом '" + request.Code+"' не найдено."};
+				return new ТерриториальныеУсловияОтвет() {Ответ = "ТерриториальныеУсловия c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TerritorialnyeUsloviyasRequest request)
+		
+		public object Get(ТерриториальныеУсловияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТерриториальныеУсловия>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТерриториальныеУсловия.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТерриториальныеУсловияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТерриториальныеУсловияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТерриториальныеУсловияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТерриториальныеУсловияЗапрос Запрос)
+		{
+			return new ТерриториальныеУсловияОтвет {Ответ = "ТерриториальныеУсловия, "};
+		}
+
+		public object Post(ТерриториальныеУсловияЗапрос ЗапросТерриториальныеУсловия)
+		{
+			var Ссылка = (СправочникиСсылка.ТерриториальныеУсловия)ЗапросТерриториальныеУсловия;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

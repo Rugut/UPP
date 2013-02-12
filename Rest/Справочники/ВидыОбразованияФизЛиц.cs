@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/VidyObrazovaniyaFizLic")]
-	[Route("/Catalogs/VidyObrazovaniyaFizLic/FindById/{Id}")]
-	[Route("/Catalogs/VidyObrazovaniyaFizLic/FindByCode/{Code}")]
-	[Route("/Catalogs/VidyObrazovaniyaFizLic/FindByDescr/{Descr}")]
-	public class VidyObrazovaniyaFizLicRequest/*ВидыОбразованияФизЛицЗапрос*/: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<VidyObrazovaniyaFizLicRequest>
+	//VidyObrazovaniyaFizLic
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц","")]
+	public class ВидыОбразованияФизЛицЗапрос: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<ВидыОбразованияФизЛицЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/ПоСсылке","{Ссылка}")]
+	public class ВидыОбразованияФизЛицНайтиПоСсылке: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<ВидыОбразованияФизЛицНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/ПоКоду","{Код}")]
+	public class ВидыОбразованияФизЛицНайтиПоКоду: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<ВидыОбразованияФизЛицНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/ПоНаименованию","{Наименование}")]
+	public class ВидыОбразованияФизЛицНайтиПоНаименованию: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<ВидыОбразованияФизЛицНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбразованияФизЛицВыбратьПоСсылке: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<ВидыОбразованияФизЛицВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбразованияФизЛицВыбратьПоКоду: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<ВидыОбразованияФизЛицВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ВидыОбразованияФизЛиц/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ВидыОбразованияФизЛицВыбратьПоНаименованию: V82.СправочникиСсылка.ВидыОбразованияФизЛиц,IReturn<ВидыОбразованияФизЛицВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class VidyObrazovaniyaFizLicResponse//ВидыОбразованияФизЛицОтвет
+	public class ВидыОбразованияФизЛицОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/VidyObrazovaniyaFizLics")]
-	[Route("/Catalogs/VidyObrazovaniyaFizLics/{Codes}")]
-	public class VidyObrazovaniyaFizLicsRequest/*ВидыОбразованияФизЛицЗапрос*/: IReturn<List<VidyObrazovaniyaFizLicRequest>>
+	public class ВидыОбразованияФизЛицСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public VidyObrazovaniyaFizLicsRequest(params string[] Codes)
+		
+		public object Get(ВидыОбразованияФизЛицНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class VidyObrazovaniyaFizLicsResponse//ВидыОбразованияФизЛицОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class VidyObrazovaniyaFizLicService /*ВидыОбразованияФизЛицСервис*/ : Service
-	{
-		public object Any(VidyObrazovaniyaFizLicRequest request)
+		
+		public object Get(ВидыОбразованияФизЛицНайтиПоКоду Запрос)
 		{
-			return new VidyObrazovaniyaFizLicResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(VidyObrazovaniyaFizLicRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ВидыОбразованияФизЛиц.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new VidyObrazovaniyaFizLicResponse() {Result = "ВидыОбразованияФизЛиц c кодом '" + request.Code+"' не найдено."};
+				return new ВидыОбразованияФизЛицОтвет() {Ответ = "ВидыОбразованияФизЛиц c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(VidyObrazovaniyaFizLicsRequest request)
+		
+		public object Get(ВидыОбразованияФизЛицНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ВидыОбразованияФизЛиц>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ВидыОбразованияФизЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ВидыОбразованияФизЛицВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОбразованияФизЛицВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ВидыОбразованияФизЛицВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ВидыОбразованияФизЛицЗапрос Запрос)
+		{
+			return new ВидыОбразованияФизЛицОтвет {Ответ = "ВидыОбразованияФизЛиц, "};
+		}
+
+		public object Post(ВидыОбразованияФизЛицЗапрос ЗапросВидыОбразованияФизЛиц)
+		{
+			var Ссылка = (СправочникиСсылка.ВидыОбразованияФизЛиц)ЗапросВидыОбразованияФизЛиц;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

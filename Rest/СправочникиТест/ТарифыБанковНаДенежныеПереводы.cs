@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТарифыБанковНаДенежныеПереводы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТарифыБанковНаДенежныеПереводыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifyBankovNaDenezhnyePerevody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифыБанковНаДенежныеПереводы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TarifyBankovNaDenezhnyePerevodyRequest());
+			ТарифыБанковНаДенежныеПереводыЗапрос ТарифыБанковНаДенежныеПереводыЗапрос = null;
+			try
+			{
+				ТарифыБанковНаДенежныеПереводыЗапрос = Клиент.Get(new ТарифыБанковНаДенежныеПереводыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТарифыБанковНаДенежныеПереводыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТарифыБанковНаДенежныеПереводыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifyBankovNaDenezhnyePerevody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифыБанковНаДенежныеПереводы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TarifyBankovNaDenezhnyePerevodyRequest());
+			ТарифыБанковНаДенежныеПереводыЗапрос ТарифыБанковНаДенежныеПереводыЗапрос = null;
+			try
+			{
+				ТарифыБанковНаДенежныеПереводыЗапрос = Клиент.Get(new ТарифыБанковНаДенежныеПереводыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТарифыБанковНаДенежныеПереводыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТарифыБанковНаДенежныеПереводыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifyBankovNaDenezhnyePerevody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифыБанковНаДенежныеПереводы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TarifyBankovNaDenezhnyePerevodyRequest());
+			ТарифыБанковНаДенежныеПереводыЗапрос ТарифыБанковНаДенежныеПереводыЗапрос = null;
+			try
+			{
+				ТарифыБанковНаДенежныеПереводыЗапрос = Клиент.Get(new ТарифыБанковНаДенежныеПереводыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТарифыБанковНаДенежныеПереводыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТарифыБанковНаДенежныеПереводыЗапрос ТарифыБанковНаДенежныеПереводыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TarifyBankovNaDenezhnyePerevody/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТарифыБанковНаДенежныеПереводы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TarifyBankovNaDenezhnyePerevodyRequest());
+			var ТарифыБанковНаДенежныеПереводыОтвет = Клиент.Post(ТарифыБанковНаДенежныеПереводыЗапрос);
+		}
+		public static void Записать(ТарифыБанковНаДенежныеПереводыЗапрос ТарифыБанковНаДенежныеПереводыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТарифыБанковНаДенежныеПереводы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТарифыБанковНаДенежныеПереводыОтвет = Клиент.Put(ТарифыБанковНаДенежныеПереводыЗапрос);
+		}
+		public static void Удалить(ТарифыБанковНаДенежныеПереводыЗапрос ТарифыБанковНаДенежныеПереводыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТарифыБанковНаДенежныеПереводы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТарифыБанковНаДенежныеПереводыОтвет = Клиент.Delete(ТарифыБанковНаДенежныеПереводыЗапрос);
 		}
 	}
 }

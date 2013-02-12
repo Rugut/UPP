@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class НастройкиФормированияДокументовВыпускаПродукции:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static НастройкиФормированияДокументовВыпускаПродукцииЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовВыпускаПродукции/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest());
+			НастройкиФормированияДокументовВыпускаПродукцииЗапрос НастройкиФормированияДокументовВыпускаПродукцииЗапрос = null;
+			try
+			{
+				НастройкиФормированияДокументовВыпускаПродукцииЗапрос = Клиент.Get(new НастройкиФормированияДокументовВыпускаПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиФормированияДокументовВыпускаПродукцииЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static НастройкиФормированияДокументовВыпускаПродукцииЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовВыпускаПродукции/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest());
+			НастройкиФормированияДокументовВыпускаПродукцииЗапрос НастройкиФормированияДокументовВыпускаПродукцииЗапрос = null;
+			try
+			{
+				НастройкиФормированияДокументовВыпускаПродукцииЗапрос = Клиент.Get(new НастройкиФормированияДокументовВыпускаПродукцииЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return НастройкиФормированияДокументовВыпускаПродукцииЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(НастройкиФормированияДокументовВыпускаПродукцииЗапрос НастройкиФормированияДокументовВыпускаПродукцииЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовВыпускаПродукции?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest());
+			var НастройкиФормированияДокументовВыпускаПродукцииОтвет = Клиент.Post(НастройкиФормированияДокументовВыпускаПродукцииЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(НастройкиФормированияДокументовВыпускаПродукцииЗапрос НастройкиФормированияДокументовВыпускаПродукцииЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/NastrojjkiFormirovaniyaDokumentovVypuskaProdukcii/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовВыпускаПродукции?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new NastrojjkiFormirovaniyaDokumentovVypuskaProdukciiRequest());
+			var НастройкиФормированияДокументовВыпускаПродукцииОтвет = Клиент.Put(НастройкиФормированияДокументовВыпускаПродукцииЗапрос);
+		}
+		public static void Удалить(НастройкиФормированияДокументовВыпускаПродукцииЗапрос НастройкиФормированияДокументовВыпускаПродукцииЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/НастройкиФормированияДокументовВыпускаПродукции?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var НастройкиФормированияДокументовВыпускаПродукцииОтвет = Клиент.Delete(НастройкиФормированияДокументовВыпускаПродукцииЗапрос);
 		}
 	}
 }

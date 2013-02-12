@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NalogovyeOrgany")]
-	[Route("/Catalogs/NalogovyeOrgany/FindById/{Id}")]
-	[Route("/Catalogs/NalogovyeOrgany/FindByCode/{Code}")]
-	[Route("/Catalogs/NalogovyeOrgany/FindByDescr/{Descr}")]
-	public class NalogovyeOrganyRequest/*НалоговыеОрганыЗапрос*/: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<NalogovyeOrganyRequest>
+	//NalogovyeOrgany
+	[Маршрут("Справочники/НалоговыеОрганы","")]
+	public class НалоговыеОрганыЗапрос: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<НалоговыеОрганыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НалоговыеОрганы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НалоговыеОрганы/ПоСсылке","{Ссылка}")]
+	public class НалоговыеОрганыНайтиПоСсылке: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<НалоговыеОрганыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НалоговыеОрганы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НалоговыеОрганы/ПоКоду","{Код}")]
+	public class НалоговыеОрганыНайтиПоКоду: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<НалоговыеОрганыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НалоговыеОрганы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НалоговыеОрганы/ПоНаименованию","{Наименование}")]
+	public class НалоговыеОрганыНайтиПоНаименованию: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<НалоговыеОрганыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НалоговыеОрганы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НалоговыеОрганыВыбратьПоСсылке: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<НалоговыеОрганыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НалоговыеОрганы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НалоговыеОрганыВыбратьПоКоду: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<НалоговыеОрганыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НалоговыеОрганы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НалоговыеОрганыВыбратьПоНаименованию: V82.СправочникиСсылка.НалоговыеОрганы,IReturn<НалоговыеОрганыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NalogovyeOrganyResponse//НалоговыеОрганыОтвет
+	public class НалоговыеОрганыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NalogovyeOrganys")]
-	[Route("/Catalogs/NalogovyeOrganys/{Codes}")]
-	public class NalogovyeOrganysRequest/*НалоговыеОрганыЗапрос*/: IReturn<List<NalogovyeOrganyRequest>>
+	public class НалоговыеОрганыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NalogovyeOrganysRequest(params string[] Codes)
+		
+		public object Get(НалоговыеОрганыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NalogovyeOrganysResponse//НалоговыеОрганыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NalogovyeOrganyService /*НалоговыеОрганыСервис*/ : Service
-	{
-		public object Any(NalogovyeOrganyRequest request)
+		
+		public object Get(НалоговыеОрганыНайтиПоКоду Запрос)
 		{
-			return new NalogovyeOrganyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NalogovyeOrganyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НалоговыеОрганы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NalogovyeOrganyResponse() {Result = "НалоговыеОрганы c кодом '" + request.Code+"' не найдено."};
+				return new НалоговыеОрганыОтвет() {Ответ = "НалоговыеОрганы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NalogovyeOrganysRequest request)
+		
+		public object Get(НалоговыеОрганыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НалоговыеОрганы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НалоговыеОрганы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НалоговыеОрганыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НалоговыеОрганыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НалоговыеОрганыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НалоговыеОрганыЗапрос Запрос)
+		{
+			return new НалоговыеОрганыОтвет {Ответ = "НалоговыеОрганы, "};
+		}
+
+		public object Post(НалоговыеОрганыЗапрос ЗапросНалоговыеОрганы)
+		{
+			var Ссылка = (СправочникиСсылка.НалоговыеОрганы)ЗапросНалоговыеОрганы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

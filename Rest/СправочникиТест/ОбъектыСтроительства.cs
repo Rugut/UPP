@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОбъектыСтроительства:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОбъектыСтроительстваЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObektyStroitelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбъектыСтроительства/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ObektyStroitelstvaRequest());
+			ОбъектыСтроительстваЗапрос ОбъектыСтроительстваЗапрос = null;
+			try
+			{
+				ОбъектыСтроительстваЗапрос = Клиент.Get(new ОбъектыСтроительстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбъектыСтроительстваЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОбъектыСтроительстваЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObektyStroitelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбъектыСтроительства/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ObektyStroitelstvaRequest());
+			ОбъектыСтроительстваЗапрос ОбъектыСтроительстваЗапрос = null;
+			try
+			{
+				ОбъектыСтроительстваЗапрос = Клиент.Get(new ОбъектыСтроительстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбъектыСтроительстваЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОбъектыСтроительстваЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObektyStroitelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбъектыСтроительства/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ObektyStroitelstvaRequest());
+			ОбъектыСтроительстваЗапрос ОбъектыСтроительстваЗапрос = null;
+			try
+			{
+				ОбъектыСтроительстваЗапрос = Клиент.Get(new ОбъектыСтроительстваЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОбъектыСтроительстваЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОбъектыСтроительстваЗапрос ОбъектыСтроительстваЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ObektyStroitelstva/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОбъектыСтроительства?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ObektyStroitelstvaRequest());
+			var ОбъектыСтроительстваОтвет = Клиент.Post(ОбъектыСтроительстваЗапрос);
+		}
+		public static void Записать(ОбъектыСтроительстваЗапрос ОбъектыСтроительстваЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбъектыСтроительства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбъектыСтроительстваОтвет = Клиент.Put(ОбъектыСтроительстваЗапрос);
+		}
+		public static void Удалить(ОбъектыСтроительстваЗапрос ОбъектыСтроительстваЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОбъектыСтроительства?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОбъектыСтроительстваОтвет = Клиент.Delete(ОбъектыСтроительстваЗапрос);
 		}
 	}
 }

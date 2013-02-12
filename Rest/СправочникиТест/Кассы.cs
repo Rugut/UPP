@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Кассы:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КассыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kassy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Кассы/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KassyRequest());
+			КассыЗапрос КассыЗапрос = null;
+			try
+			{
+				КассыЗапрос = Клиент.Get(new КассыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КассыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КассыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kassy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Кассы/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KassyRequest());
+			КассыЗапрос КассыЗапрос = null;
+			try
+			{
+				КассыЗапрос = Клиент.Get(new КассыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КассыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static КассыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kassy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Кассы/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KassyRequest());
+			КассыЗапрос КассыЗапрос = null;
+			try
+			{
+				КассыЗапрос = Клиент.Get(new КассыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КассыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(КассыЗапрос КассыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Kassy/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Кассы?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KassyRequest());
+			var КассыОтвет = Клиент.Post(КассыЗапрос);
+		}
+		public static void Записать(КассыЗапрос КассыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Кассы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КассыОтвет = Клиент.Put(КассыЗапрос);
+		}
+		public static void Удалить(КассыЗапрос КассыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Кассы?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КассыОтвет = Клиент.Delete(КассыЗапрос);
 		}
 	}
 }

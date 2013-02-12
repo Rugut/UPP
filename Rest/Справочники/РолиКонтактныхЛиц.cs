@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/RoliKontaktnykhLic")]
-	[Route("/Catalogs/RoliKontaktnykhLic/FindById/{Id}")]
-	[Route("/Catalogs/RoliKontaktnykhLic/FindByCode/{Code}")]
-	[Route("/Catalogs/RoliKontaktnykhLic/FindByDescr/{Descr}")]
-	public class RoliKontaktnykhLicRequest/*РолиКонтактныхЛицЗапрос*/: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<RoliKontaktnykhLicRequest>
+	//RoliKontaktnykhLic
+	[Маршрут("Справочники/РолиКонтактныхЛиц","")]
+	public class РолиКонтактныхЛицЗапрос: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<РолиКонтактныхЛицЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/РолиКонтактныхЛиц/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/РолиКонтактныхЛиц/ПоСсылке","{Ссылка}")]
+	public class РолиКонтактныхЛицНайтиПоСсылке: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<РолиКонтактныхЛицНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/РолиКонтактныхЛиц/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/РолиКонтактныхЛиц/ПоКоду","{Код}")]
+	public class РолиКонтактныхЛицНайтиПоКоду: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<РолиКонтактныхЛицНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/РолиКонтактныхЛиц/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/РолиКонтактныхЛиц/ПоНаименованию","{Наименование}")]
+	public class РолиКонтактныхЛицНайтиПоНаименованию: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<РолиКонтактныхЛицНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/РолиКонтактныхЛиц/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class РолиКонтактныхЛицВыбратьПоСсылке: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<РолиКонтактныхЛицВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РолиКонтактныхЛиц/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class РолиКонтактныхЛицВыбратьПоКоду: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<РолиКонтактныхЛицВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/РолиКонтактныхЛиц/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class РолиКонтактныхЛицВыбратьПоНаименованию: V82.СправочникиСсылка.РолиКонтактныхЛиц,IReturn<РолиКонтактныхЛицВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class RoliKontaktnykhLicResponse//РолиКонтактныхЛицОтвет
+	public class РолиКонтактныхЛицОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/RoliKontaktnykhLics")]
-	[Route("/Catalogs/RoliKontaktnykhLics/{Codes}")]
-	public class RoliKontaktnykhLicsRequest/*РолиКонтактныхЛицЗапрос*/: IReturn<List<RoliKontaktnykhLicRequest>>
+	public class РолиКонтактныхЛицСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public RoliKontaktnykhLicsRequest(params string[] Codes)
+		
+		public object Get(РолиКонтактныхЛицНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class RoliKontaktnykhLicsResponse//РолиКонтактныхЛицОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class RoliKontaktnykhLicService /*РолиКонтактныхЛицСервис*/ : Service
-	{
-		public object Any(RoliKontaktnykhLicRequest request)
+		
+		public object Get(РолиКонтактныхЛицНайтиПоКоду Запрос)
 		{
-			return new RoliKontaktnykhLicResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(RoliKontaktnykhLicRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.РолиКонтактныхЛиц.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new RoliKontaktnykhLicResponse() {Result = "РолиКонтактныхЛиц c кодом '" + request.Code+"' не найдено."};
+				return new РолиКонтактныхЛицОтвет() {Ответ = "РолиКонтактныхЛиц c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(RoliKontaktnykhLicsRequest request)
+		
+		public object Get(РолиКонтактныхЛицНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.РолиКонтактныхЛиц>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.РолиКонтактныхЛиц.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(РолиКонтактныхЛицВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РолиКонтактныхЛицВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(РолиКонтактныхЛицВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(РолиКонтактныхЛицЗапрос Запрос)
+		{
+			return new РолиКонтактныхЛицОтвет {Ответ = "РолиКонтактныхЛиц, "};
+		}
+
+		public object Post(РолиКонтактныхЛицЗапрос ЗапросРолиКонтактныхЛиц)
+		{
+			var Ссылка = (СправочникиСсылка.РолиКонтактныхЛиц)ЗапросРолиКонтактныхЛиц;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

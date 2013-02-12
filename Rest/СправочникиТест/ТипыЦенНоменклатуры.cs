@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ТипыЦенНоменклатуры:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ТипыЦенНоменклатурыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyCenNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЦенНоменклатуры/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new TipyCenNomenklaturyRequest());
+			ТипыЦенНоменклатурыЗапрос ТипыЦенНоменклатурыЗапрос = null;
+			try
+			{
+				ТипыЦенНоменклатурыЗапрос = Клиент.Get(new ТипыЦенНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыЦенНоменклатурыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ТипыЦенНоменклатурыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyCenNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЦенНоменклатуры/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new TipyCenNomenklaturyRequest());
+			ТипыЦенНоменклатурыЗапрос ТипыЦенНоменклатурыЗапрос = null;
+			try
+			{
+				ТипыЦенНоменклатурыЗапрос = Клиент.Get(new ТипыЦенНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыЦенНоменклатурыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ТипыЦенНоменклатурыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyCenNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЦенНоменклатуры/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new TipyCenNomenklaturyRequest());
+			ТипыЦенНоменклатурыЗапрос ТипыЦенНоменклатурыЗапрос = null;
+			try
+			{
+				ТипыЦенНоменклатурыЗапрос = Клиент.Get(new ТипыЦенНоменклатурыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ТипыЦенНоменклатурыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ТипыЦенНоменклатурыЗапрос ТипыЦенНоменклатурыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/TipyCenNomenklatury/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ТипыЦенНоменклатуры?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new TipyCenNomenklaturyRequest());
+			var ТипыЦенНоменклатурыОтвет = Клиент.Post(ТипыЦенНоменклатурыЗапрос);
+		}
+		public static void Записать(ТипыЦенНоменклатурыЗапрос ТипыЦенНоменклатурыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТипыЦенНоменклатуры?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТипыЦенНоменклатурыОтвет = Клиент.Put(ТипыЦенНоменклатурыЗапрос);
+		}
+		public static void Удалить(ТипыЦенНоменклатурыЗапрос ТипыЦенНоменклатурыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ТипыЦенНоменклатуры?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ТипыЦенНоменклатурыОтвет = Клиент.Delete(ТипыЦенНоменклатурыЗапрос);
 		}
 	}
 }

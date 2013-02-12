@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/UsloviyaProdazh")]
-	[Route("/Catalogs/UsloviyaProdazh/FindById/{Id}")]
-	[Route("/Catalogs/UsloviyaProdazh/FindByCode/{Code}")]
-	[Route("/Catalogs/UsloviyaProdazh/FindByDescr/{Descr}")]
-	public class UsloviyaProdazhRequest/*УсловияПродажЗапрос*/: V82.СправочникиСсылка.УсловияПродаж,IReturn<UsloviyaProdazhRequest>
+	//UsloviyaProdazh
+	[Маршрут("Справочники/УсловияПродаж","")]
+	public class УсловияПродажЗапрос: V82.СправочникиСсылка.УсловияПродаж,IReturn<УсловияПродажЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/УсловияПродаж/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/УсловияПродаж/ПоСсылке","{Ссылка}")]
+	public class УсловияПродажНайтиПоСсылке: V82.СправочникиСсылка.УсловияПродаж,IReturn<УсловияПродажНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/УсловияПродаж/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/УсловияПродаж/ПоКоду","{Код}")]
+	public class УсловияПродажНайтиПоКоду: V82.СправочникиСсылка.УсловияПродаж,IReturn<УсловияПродажНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/УсловияПродаж/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/УсловияПродаж/ПоНаименованию","{Наименование}")]
+	public class УсловияПродажНайтиПоНаименованию: V82.СправочникиСсылка.УсловияПродаж,IReturn<УсловияПродажНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/УсловияПродаж/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class УсловияПродажВыбратьПоСсылке: V82.СправочникиСсылка.УсловияПродаж,IReturn<УсловияПродажВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УсловияПродаж/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class УсловияПродажВыбратьПоКоду: V82.СправочникиСсылка.УсловияПродаж,IReturn<УсловияПродажВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/УсловияПродаж/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class УсловияПродажВыбратьПоНаименованию: V82.СправочникиСсылка.УсловияПродаж,IReturn<УсловияПродажВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class UsloviyaProdazhResponse//УсловияПродажОтвет
+	public class УсловияПродажОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/UsloviyaProdazhs")]
-	[Route("/Catalogs/UsloviyaProdazhs/{Codes}")]
-	public class UsloviyaProdazhsRequest/*УсловияПродажЗапрос*/: IReturn<List<UsloviyaProdazhRequest>>
+	public class УсловияПродажСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public UsloviyaProdazhsRequest(params string[] Codes)
+		
+		public object Get(УсловияПродажНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class UsloviyaProdazhsResponse//УсловияПродажОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class UsloviyaProdazhService /*УсловияПродажСервис*/ : Service
-	{
-		public object Any(UsloviyaProdazhRequest request)
+		
+		public object Get(УсловияПродажНайтиПоКоду Запрос)
 		{
-			return new UsloviyaProdazhResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(UsloviyaProdazhRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.УсловияПродаж.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new UsloviyaProdazhResponse() {Result = "УсловияПродаж c кодом '" + request.Code+"' не найдено."};
+				return new УсловияПродажОтвет() {Ответ = "УсловияПродаж c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(UsloviyaProdazhsRequest request)
+		
+		public object Get(УсловияПродажНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.УсловияПродаж>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.УсловияПродаж.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(УсловияПродажВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УсловияПродажВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(УсловияПродажВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(УсловияПродажЗапрос Запрос)
+		{
+			return new УсловияПродажОтвет {Ответ = "УсловияПродаж, "};
+		}
+
+		public object Post(УсловияПродажЗапрос ЗапросУсловияПродаж)
+		{
+			var Ссылка = (СправочникиСсылка.УсловияПродаж)ЗапросУсловияПродаж;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

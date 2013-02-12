@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OtpravkiFSS")]
-	[Route("/Catalogs/OtpravkiFSS/FindById/{Id}")]
-	[Route("/Catalogs/OtpravkiFSS/FindByCode/{Code}")]
-	[Route("/Catalogs/OtpravkiFSS/FindByDescr/{Descr}")]
-	public class OtpravkiFSSRequest/*ОтправкиФССЗапрос*/: V82.СправочникиСсылка.ОтправкиФСС,IReturn<OtpravkiFSSRequest>
+	//OtpravkiFSS
+	[Маршрут("Справочники/ОтправкиФСС","")]
+	public class ОтправкиФССЗапрос: V82.СправочникиСсылка.ОтправкиФСС,IReturn<ОтправкиФССЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОтправкиФСС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОтправкиФСС/ПоСсылке","{Ссылка}")]
+	public class ОтправкиФССНайтиПоСсылке: V82.СправочникиСсылка.ОтправкиФСС,IReturn<ОтправкиФССНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОтправкиФСС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОтправкиФСС/ПоКоду","{Код}")]
+	public class ОтправкиФССНайтиПоКоду: V82.СправочникиСсылка.ОтправкиФСС,IReturn<ОтправкиФССНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОтправкиФСС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОтправкиФСС/ПоНаименованию","{Наименование}")]
+	public class ОтправкиФССНайтиПоНаименованию: V82.СправочникиСсылка.ОтправкиФСС,IReturn<ОтправкиФССНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОтправкиФСС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОтправкиФССВыбратьПоСсылке: V82.СправочникиСсылка.ОтправкиФСС,IReturn<ОтправкиФССВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОтправкиФСС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОтправкиФССВыбратьПоКоду: V82.СправочникиСсылка.ОтправкиФСС,IReturn<ОтправкиФССВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОтправкиФСС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОтправкиФССВыбратьПоНаименованию: V82.СправочникиСсылка.ОтправкиФСС,IReturn<ОтправкиФССВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OtpravkiFSSResponse//ОтправкиФССОтвет
+	public class ОтправкиФССОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OtpravkiFSSs")]
-	[Route("/Catalogs/OtpravkiFSSs/{Codes}")]
-	public class OtpravkiFSSsRequest/*ОтправкиФССЗапрос*/: IReturn<List<OtpravkiFSSRequest>>
+	public class ОтправкиФСССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OtpravkiFSSsRequest(params string[] Codes)
+		
+		public object Get(ОтправкиФССНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OtpravkiFSSsResponse//ОтправкиФССОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OtpravkiFSSService /*ОтправкиФСССервис*/ : Service
-	{
-		public object Any(OtpravkiFSSRequest request)
+		
+		public object Get(ОтправкиФССНайтиПоКоду Запрос)
 		{
-			return new OtpravkiFSSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OtpravkiFSSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОтправкиФСС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OtpravkiFSSResponse() {Result = "ОтправкиФСС c кодом '" + request.Code+"' не найдено."};
+				return new ОтправкиФССОтвет() {Ответ = "ОтправкиФСС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OtpravkiFSSsRequest request)
+		
+		public object Get(ОтправкиФССНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОтправкиФСС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОтправкиФСС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОтправкиФССВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОтправкиФССВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОтправкиФССВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОтправкиФССЗапрос Запрос)
+		{
+			return new ОтправкиФССОтвет {Ответ = "ОтправкиФСС, "};
+		}
+
+		public object Post(ОтправкиФССЗапрос ЗапросОтправкиФСС)
+		{
+			var Ссылка = (СправочникиСсылка.ОтправкиФСС)ЗапросОтправкиФСС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

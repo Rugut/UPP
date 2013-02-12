@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДоговорыКонтрагентов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДоговорыКонтрагентовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыКонтрагентов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DogovoryKontragentovRequest());
+			ДоговорыКонтрагентовЗапрос ДоговорыКонтрагентовЗапрос = null;
+			try
+			{
+				ДоговорыКонтрагентовЗапрос = Клиент.Get(new ДоговорыКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоговорыКонтрагентовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДоговорыКонтрагентовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыКонтрагентов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DogovoryKontragentovRequest());
+			ДоговорыКонтрагентовЗапрос ДоговорыКонтрагентовЗапрос = null;
+			try
+			{
+				ДоговорыКонтрагентовЗапрос = Клиент.Get(new ДоговорыКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоговорыКонтрагентовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДоговорыКонтрагентовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыКонтрагентов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DogovoryKontragentovRequest());
+			ДоговорыКонтрагентовЗапрос ДоговорыКонтрагентовЗапрос = null;
+			try
+			{
+				ДоговорыКонтрагентовЗапрос = Клиент.Get(new ДоговорыКонтрагентовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДоговорыКонтрагентовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДоговорыКонтрагентовЗапрос ДоговорыКонтрагентовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DogovoryKontragentov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыКонтрагентов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DogovoryKontragentovRequest());
+			var ДоговорыКонтрагентовОтвет = Клиент.Post(ДоговорыКонтрагентовЗапрос);
+		}
+		public static void Записать(ДоговорыКонтрагентовЗапрос ДоговорыКонтрагентовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыКонтрагентов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДоговорыКонтрагентовОтвет = Клиент.Put(ДоговорыКонтрагентовЗапрос);
+		}
+		public static void Удалить(ДоговорыКонтрагентовЗапрос ДоговорыКонтрагентовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДоговорыКонтрагентов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДоговорыКонтрагентовОтвет = Клиент.Delete(ДоговорыКонтрагентовЗапрос);
 		}
 	}
 }

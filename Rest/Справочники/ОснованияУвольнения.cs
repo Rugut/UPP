@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OsnovaniyaUvolneniya")]
-	[Route("/Catalogs/OsnovaniyaUvolneniya/FindById/{Id}")]
-	[Route("/Catalogs/OsnovaniyaUvolneniya/FindByCode/{Code}")]
-	[Route("/Catalogs/OsnovaniyaUvolneniya/FindByDescr/{Descr}")]
-	public class OsnovaniyaUvolneniyaRequest/*ОснованияУвольненияЗапрос*/: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<OsnovaniyaUvolneniyaRequest>
+	//OsnovaniyaUvolneniya
+	[Маршрут("Справочники/ОснованияУвольнения","")]
+	public class ОснованияУвольненияЗапрос: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<ОснованияУвольненияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОснованияУвольнения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОснованияУвольнения/ПоСсылке","{Ссылка}")]
+	public class ОснованияУвольненияНайтиПоСсылке: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<ОснованияУвольненияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОснованияУвольнения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОснованияУвольнения/ПоКоду","{Код}")]
+	public class ОснованияУвольненияНайтиПоКоду: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<ОснованияУвольненияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОснованияУвольнения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОснованияУвольнения/ПоНаименованию","{Наименование}")]
+	public class ОснованияУвольненияНайтиПоНаименованию: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<ОснованияУвольненияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОснованияУвольнения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияУвольненияВыбратьПоСсылке: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<ОснованияУвольненияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОснованияУвольнения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияУвольненияВыбратьПоКоду: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<ОснованияУвольненияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОснованияУвольнения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОснованияУвольненияВыбратьПоНаименованию: V82.СправочникиСсылка.ОснованияУвольнения,IReturn<ОснованияУвольненияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OsnovaniyaUvolneniyaResponse//ОснованияУвольненияОтвет
+	public class ОснованияУвольненияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OsnovaniyaUvolneniyas")]
-	[Route("/Catalogs/OsnovaniyaUvolneniyas/{Codes}")]
-	public class OsnovaniyaUvolneniyasRequest/*ОснованияУвольненияЗапрос*/: IReturn<List<OsnovaniyaUvolneniyaRequest>>
+	public class ОснованияУвольненияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OsnovaniyaUvolneniyasRequest(params string[] Codes)
+		
+		public object Get(ОснованияУвольненияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OsnovaniyaUvolneniyasResponse//ОснованияУвольненияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OsnovaniyaUvolneniyaService /*ОснованияУвольненияСервис*/ : Service
-	{
-		public object Any(OsnovaniyaUvolneniyaRequest request)
+		
+		public object Get(ОснованияУвольненияНайтиПоКоду Запрос)
 		{
-			return new OsnovaniyaUvolneniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OsnovaniyaUvolneniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОснованияУвольнения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OsnovaniyaUvolneniyaResponse() {Result = "ОснованияУвольнения c кодом '" + request.Code+"' не найдено."};
+				return new ОснованияУвольненияОтвет() {Ответ = "ОснованияУвольнения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OsnovaniyaUvolneniyasRequest request)
+		
+		public object Get(ОснованияУвольненияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОснованияУвольнения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОснованияУвольнения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОснованияУвольненияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОснованияУвольненияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОснованияУвольненияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОснованияУвольненияЗапрос Запрос)
+		{
+			return new ОснованияУвольненияОтвет {Ответ = "ОснованияУвольнения, "};
+		}
+
+		public object Post(ОснованияУвольненияЗапрос ЗапросОснованияУвольнения)
+		{
+			var Ссылка = (СправочникиСсылка.ОснованияУвольнения)ЗапросОснованияУвольнения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class КлючиАналитикиУчетаЗатрат:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static КлючиАналитикиУчетаЗатратЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchiAnalitikiUchetaZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючиАналитикиУчетаЗатрат/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new KlyuchiAnalitikiUchetaZatratRequest());
+			КлючиАналитикиУчетаЗатратЗапрос КлючиАналитикиУчетаЗатратЗапрос = null;
+			try
+			{
+				КлючиАналитикиУчетаЗатратЗапрос = Клиент.Get(new КлючиАналитикиУчетаЗатратЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлючиАналитикиУчетаЗатратЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static КлючиАналитикиУчетаЗатратЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchiAnalitikiUchetaZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючиАналитикиУчетаЗатрат/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new KlyuchiAnalitikiUchetaZatratRequest());
+			КлючиАналитикиУчетаЗатратЗапрос КлючиАналитикиУчетаЗатратЗапрос = null;
+			try
+			{
+				КлючиАналитикиУчетаЗатратЗапрос = Клиент.Get(new КлючиАналитикиУчетаЗатратЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return КлючиАналитикиУчетаЗатратЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(КлючиАналитикиУчетаЗатратЗапрос КлючиАналитикиУчетаЗатратЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchiAnalitikiUchetaZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючиАналитикиУчетаЗатрат?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new KlyuchiAnalitikiUchetaZatratRequest());
+			var КлючиАналитикиУчетаЗатратОтвет = Клиент.Post(КлючиАналитикиУчетаЗатратЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(КлючиАналитикиУчетаЗатратЗапрос КлючиАналитикиУчетаЗатратЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/KlyuchiAnalitikiUchetaZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/КлючиАналитикиУчетаЗатрат?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new KlyuchiAnalitikiUchetaZatratRequest());
+			var КлючиАналитикиУчетаЗатратОтвет = Клиент.Put(КлючиАналитикиУчетаЗатратЗапрос);
+		}
+		public static void Удалить(КлючиАналитикиУчетаЗатратЗапрос КлючиАналитикиУчетаЗатратЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/КлючиАналитикиУчетаЗатрат?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var КлючиАналитикиУчетаЗатратОтвет = Клиент.Delete(КлючиАналитикиУчетаЗатратЗапрос);
 		}
 	}
 }

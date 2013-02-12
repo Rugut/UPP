@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ГруппыДоступностиСкладов:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ГруппыДоступностиСкладовЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupnostiSkladov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступностиСкладов/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new GruppyDostupnostiSkladovRequest());
+			ГруппыДоступностиСкладовЗапрос ГруппыДоступностиСкладовЗапрос = null;
+			try
+			{
+				ГруппыДоступностиСкладовЗапрос = Клиент.Get(new ГруппыДоступностиСкладовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыДоступностиСкладовЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ГруппыДоступностиСкладовЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupnostiSkladov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступностиСкладов/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new GruppyDostupnostiSkladovRequest());
+			ГруппыДоступностиСкладовЗапрос ГруппыДоступностиСкладовЗапрос = null;
+			try
+			{
+				ГруппыДоступностиСкладовЗапрос = Клиент.Get(new ГруппыДоступностиСкладовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыДоступностиСкладовЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ГруппыДоступностиСкладовЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupnostiSkladov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступностиСкладов/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new GruppyDostupnostiSkladovRequest());
+			ГруппыДоступностиСкладовЗапрос ГруппыДоступностиСкладовЗапрос = null;
+			try
+			{
+				ГруппыДоступностиСкладовЗапрос = Клиент.Get(new ГруппыДоступностиСкладовЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ГруппыДоступностиСкладовЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ГруппыДоступностиСкладовЗапрос ГруппыДоступностиСкладовЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/GruppyDostupnostiSkladov/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступностиСкладов?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new GruppyDostupnostiSkladovRequest());
+			var ГруппыДоступностиСкладовОтвет = Клиент.Post(ГруппыДоступностиСкладовЗапрос);
+		}
+		public static void Записать(ГруппыДоступностиСкладовЗапрос ГруппыДоступностиСкладовЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступностиСкладов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыДоступностиСкладовОтвет = Клиент.Put(ГруппыДоступностиСкладовЗапрос);
+		}
+		public static void Удалить(ГруппыДоступностиСкладовЗапрос ГруппыДоступностиСкладовЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ГруппыДоступностиСкладов?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ГруппыДоступностиСкладовОтвет = Клиент.Delete(ГруппыДоступностиСкладовЗапрос);
 		}
 	}
 }

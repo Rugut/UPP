@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СемейноеПоложениеФизЛиц:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СемейноеПоложениеФизЛицЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SemejjnoePolozhenieFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СемейноеПоложениеФизЛиц/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SemejjnoePolozhenieFizLicRequest());
+			СемейноеПоложениеФизЛицЗапрос СемейноеПоложениеФизЛицЗапрос = null;
+			try
+			{
+				СемейноеПоложениеФизЛицЗапрос = Клиент.Get(new СемейноеПоложениеФизЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СемейноеПоложениеФизЛицЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СемейноеПоложениеФизЛицЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/SemejjnoePolozhenieFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СемейноеПоложениеФизЛиц/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SemejjnoePolozhenieFizLicRequest());
+			СемейноеПоложениеФизЛицЗапрос СемейноеПоложениеФизЛицЗапрос = null;
+			try
+			{
+				СемейноеПоложениеФизЛицЗапрос = Клиент.Get(new СемейноеПоложениеФизЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СемейноеПоложениеФизЛицЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СемейноеПоложениеФизЛицЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SemejjnoePolozhenieFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СемейноеПоложениеФизЛиц/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SemejjnoePolozhenieFizLicRequest());
+			СемейноеПоложениеФизЛицЗапрос СемейноеПоложениеФизЛицЗапрос = null;
+			try
+			{
+				СемейноеПоложениеФизЛицЗапрос = Клиент.Get(new СемейноеПоложениеФизЛицЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СемейноеПоложениеФизЛицЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СемейноеПоложениеФизЛицЗапрос СемейноеПоложениеФизЛицЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SemejjnoePolozhenieFizLic/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СемейноеПоложениеФизЛиц?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SemejjnoePolozhenieFizLicRequest());
+			var СемейноеПоложениеФизЛицОтвет = Клиент.Post(СемейноеПоложениеФизЛицЗапрос);
+		}
+		public static void Записать(СемейноеПоложениеФизЛицЗапрос СемейноеПоложениеФизЛицЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СемейноеПоложениеФизЛиц?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СемейноеПоложениеФизЛицОтвет = Клиент.Put(СемейноеПоложениеФизЛицЗапрос);
+		}
+		public static void Удалить(СемейноеПоложениеФизЛицЗапрос СемейноеПоложениеФизЛицЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СемейноеПоложениеФизЛиц?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СемейноеПоложениеФизЛицОтвет = Клиент.Delete(СемейноеПоложениеФизЛицЗапрос);
 		}
 	}
 }

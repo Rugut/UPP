@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ШаблоныФормулРасчета:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ШаблоныФормулРасчетаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SHablonyFormulRascheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ШаблоныФормулРасчета/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SHablonyFormulRaschetaRequest());
+			ШаблоныФормулРасчетаЗапрос ШаблоныФормулРасчетаЗапрос = null;
+			try
+			{
+				ШаблоныФормулРасчетаЗапрос = Клиент.Get(new ШаблоныФормулРасчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ШаблоныФормулРасчетаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ШаблоныФормулРасчетаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/SHablonyFormulRascheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ШаблоныФормулРасчета/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SHablonyFormulRaschetaRequest());
+			ШаблоныФормулРасчетаЗапрос ШаблоныФормулРасчетаЗапрос = null;
+			try
+			{
+				ШаблоныФормулРасчетаЗапрос = Клиент.Get(new ШаблоныФормулРасчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ШаблоныФормулРасчетаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ШаблоныФормулРасчетаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SHablonyFormulRascheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ШаблоныФормулРасчета/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SHablonyFormulRaschetaRequest());
+			ШаблоныФормулРасчетаЗапрос ШаблоныФормулРасчетаЗапрос = null;
+			try
+			{
+				ШаблоныФормулРасчетаЗапрос = Клиент.Get(new ШаблоныФормулРасчетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ШаблоныФормулРасчетаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ШаблоныФормулРасчетаЗапрос ШаблоныФормулРасчетаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SHablonyFormulRascheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ШаблоныФормулРасчета?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SHablonyFormulRaschetaRequest());
+			var ШаблоныФормулРасчетаОтвет = Клиент.Post(ШаблоныФормулРасчетаЗапрос);
+		}
+		public static void Записать(ШаблоныФормулРасчетаЗапрос ШаблоныФормулРасчетаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ШаблоныФормулРасчета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ШаблоныФормулРасчетаОтвет = Клиент.Put(ШаблоныФормулРасчетаЗапрос);
+		}
+		public static void Удалить(ШаблоныФормулРасчетаЗапрос ШаблоныФормулРасчетаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ШаблоныФормулРасчета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ШаблоныФормулРасчетаОтвет = Клиент.Delete(ШаблоныФормулРасчетаЗапрос);
 		}
 	}
 }

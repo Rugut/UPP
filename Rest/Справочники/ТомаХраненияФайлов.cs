@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TomaKHraneniyaFajjlov")]
-	[Route("/Catalogs/TomaKHraneniyaFajjlov/FindById/{Id}")]
-	[Route("/Catalogs/TomaKHraneniyaFajjlov/FindByCode/{Code}")]
-	[Route("/Catalogs/TomaKHraneniyaFajjlov/FindByDescr/{Descr}")]
-	public class TomaKHraneniyaFajjlovRequest/*ТомаХраненияФайловЗапрос*/: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<TomaKHraneniyaFajjlovRequest>
+	//TomaKHraneniyaFajjlov
+	[Маршрут("Справочники/ТомаХраненияФайлов","")]
+	public class ТомаХраненияФайловЗапрос: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<ТомаХраненияФайловЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТомаХраненияФайлов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТомаХраненияФайлов/ПоСсылке","{Ссылка}")]
+	public class ТомаХраненияФайловНайтиПоСсылке: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<ТомаХраненияФайловНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТомаХраненияФайлов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТомаХраненияФайлов/ПоКоду","{Код}")]
+	public class ТомаХраненияФайловНайтиПоКоду: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<ТомаХраненияФайловНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТомаХраненияФайлов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТомаХраненияФайлов/ПоНаименованию","{Наименование}")]
+	public class ТомаХраненияФайловНайтиПоНаименованию: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<ТомаХраненияФайловНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТомаХраненияФайлов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТомаХраненияФайловВыбратьПоСсылке: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<ТомаХраненияФайловВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТомаХраненияФайлов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТомаХраненияФайловВыбратьПоКоду: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<ТомаХраненияФайловВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТомаХраненияФайлов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТомаХраненияФайловВыбратьПоНаименованию: V82.СправочникиСсылка.ТомаХраненияФайлов,IReturn<ТомаХраненияФайловВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TomaKHraneniyaFajjlovResponse//ТомаХраненияФайловОтвет
+	public class ТомаХраненияФайловОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TomaKHraneniyaFajjlovs")]
-	[Route("/Catalogs/TomaKHraneniyaFajjlovs/{Codes}")]
-	public class TomaKHraneniyaFajjlovsRequest/*ТомаХраненияФайловЗапрос*/: IReturn<List<TomaKHraneniyaFajjlovRequest>>
+	public class ТомаХраненияФайловСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TomaKHraneniyaFajjlovsRequest(params string[] Codes)
+		
+		public object Get(ТомаХраненияФайловНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TomaKHraneniyaFajjlovsResponse//ТомаХраненияФайловОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TomaKHraneniyaFajjlovService /*ТомаХраненияФайловСервис*/ : Service
-	{
-		public object Any(TomaKHraneniyaFajjlovRequest request)
+		
+		public object Get(ТомаХраненияФайловНайтиПоКоду Запрос)
 		{
-			return new TomaKHraneniyaFajjlovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TomaKHraneniyaFajjlovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТомаХраненияФайлов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TomaKHraneniyaFajjlovResponse() {Result = "ТомаХраненияФайлов c кодом '" + request.Code+"' не найдено."};
+				return new ТомаХраненияФайловОтвет() {Ответ = "ТомаХраненияФайлов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TomaKHraneniyaFajjlovsRequest request)
+		
+		public object Get(ТомаХраненияФайловНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТомаХраненияФайлов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТомаХраненияФайлов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТомаХраненияФайловВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТомаХраненияФайловВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТомаХраненияФайловВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТомаХраненияФайловЗапрос Запрос)
+		{
+			return new ТомаХраненияФайловОтвет {Ответ = "ТомаХраненияФайлов, "};
+		}
+
+		public object Post(ТомаХраненияФайловЗапрос ЗапросТомаХраненияФайлов)
+		{
+			var Ссылка = (СправочникиСсылка.ТомаХраненияФайлов)ЗапросТомаХраненияФайлов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

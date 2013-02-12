@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Sklady")]
-	[Route("/Catalogs/Sklady/FindById/{Id}")]
-	[Route("/Catalogs/Sklady/FindByCode/{Code}")]
-	[Route("/Catalogs/Sklady/FindByDescr/{Descr}")]
-	public class SkladyRequest/*СкладыЗапрос*/: V82.СправочникиСсылка.Склады,IReturn<SkladyRequest>
+	//Sklady
+	[Маршрут("Справочники/Склады","")]
+	public class СкладыЗапрос: V82.СправочникиСсылка.Склады,IReturn<СкладыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Склады/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Склады/ПоСсылке","{Ссылка}")]
+	public class СкладыНайтиПоСсылке: V82.СправочникиСсылка.Склады,IReturn<СкладыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Склады/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Склады/ПоКоду","{Код}")]
+	public class СкладыНайтиПоКоду: V82.СправочникиСсылка.Склады,IReturn<СкладыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Склады/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Склады/ПоНаименованию","{Наименование}")]
+	public class СкладыНайтиПоНаименованию: V82.СправочникиСсылка.Склады,IReturn<СкладыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Склады/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СкладыВыбратьПоСсылке: V82.СправочникиСсылка.Склады,IReturn<СкладыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Склады/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СкладыВыбратьПоКоду: V82.СправочникиСсылка.Склады,IReturn<СкладыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Склады/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СкладыВыбратьПоНаименованию: V82.СправочникиСсылка.Склады,IReturn<СкладыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SkladyResponse//СкладыОтвет
+	public class СкладыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Skladys")]
-	[Route("/Catalogs/Skladys/{Codes}")]
-	public class SkladysRequest/*СкладыЗапрос*/: IReturn<List<SkladyRequest>>
+	public class СкладыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SkladysRequest(params string[] Codes)
+		
+		public object Get(СкладыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SkladysResponse//СкладыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SkladyService /*СкладыСервис*/ : Service
-	{
-		public object Any(SkladyRequest request)
+		
+		public object Get(СкладыНайтиПоКоду Запрос)
 		{
-			return new SkladyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SkladyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Склады.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SkladyResponse() {Result = "Склады c кодом '" + request.Code+"' не найдено."};
+				return new СкладыОтвет() {Ответ = "Склады c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SkladysRequest request)
+		
+		public object Get(СкладыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Склады>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Склады.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СкладыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СкладыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СкладыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СкладыЗапрос Запрос)
+		{
+			return new СкладыОтвет {Ответ = "Склады, "};
+		}
+
+		public object Post(СкладыЗапрос ЗапросСклады)
+		{
+			var Ссылка = (СправочникиСсылка.Склады)ЗапросСклады;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

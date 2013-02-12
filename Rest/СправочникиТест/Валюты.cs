@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Валюты:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ВалютыЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Valyuty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Валюты/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ValyutyRequest());
+			ВалютыЗапрос ВалютыЗапрос = null;
+			try
+			{
+				ВалютыЗапрос = Клиент.Get(new ВалютыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВалютыЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ВалютыЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Valyuty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Валюты/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ValyutyRequest());
+			ВалютыЗапрос ВалютыЗапрос = null;
+			try
+			{
+				ВалютыЗапрос = Клиент.Get(new ВалютыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВалютыЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ВалютыЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Valyuty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Валюты/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ValyutyRequest());
+			ВалютыЗапрос ВалютыЗапрос = null;
+			try
+			{
+				ВалютыЗапрос = Клиент.Get(new ВалютыЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ВалютыЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ВалютыЗапрос ВалютыЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Valyuty/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Валюты?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ValyutyRequest());
+			var ВалютыОтвет = Клиент.Post(ВалютыЗапрос);
+		}
+		public static void Записать(ВалютыЗапрос ВалютыЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Валюты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВалютыОтвет = Клиент.Put(ВалютыЗапрос);
+		}
+		public static void Удалить(ВалютыЗапрос ВалютыЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Валюты?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ВалютыОтвет = Клиент.Delete(ВалютыЗапрос);
 		}
 	}
 }

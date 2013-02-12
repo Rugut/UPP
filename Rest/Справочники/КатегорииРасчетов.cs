@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KategoriiRaschetov")]
-	[Route("/Catalogs/KategoriiRaschetov/FindById/{Id}")]
-	[Route("/Catalogs/KategoriiRaschetov/FindByCode/{Code}")]
-	[Route("/Catalogs/KategoriiRaschetov/FindByDescr/{Descr}")]
-	public class KategoriiRaschetovRequest/*КатегорииРасчетовЗапрос*/: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<KategoriiRaschetovRequest>
+	//KategoriiRaschetov
+	[Маршрут("Справочники/КатегорииРасчетов","")]
+	public class КатегорииРасчетовЗапрос: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<КатегорииРасчетовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КатегорииРасчетов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КатегорииРасчетов/ПоСсылке","{Ссылка}")]
+	public class КатегорииРасчетовНайтиПоСсылке: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<КатегорииРасчетовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КатегорииРасчетов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КатегорииРасчетов/ПоКоду","{Код}")]
+	public class КатегорииРасчетовНайтиПоКоду: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<КатегорииРасчетовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КатегорииРасчетов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/КатегорииРасчетов/ПоНаименованию","{Наименование}")]
+	public class КатегорииРасчетовНайтиПоНаименованию: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<КатегорииРасчетовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/КатегорииРасчетов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КатегорииРасчетовВыбратьПоСсылке: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<КатегорииРасчетовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КатегорииРасчетов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КатегорииРасчетовВыбратьПоКоду: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<КатегорииРасчетовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КатегорииРасчетов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class КатегорииРасчетовВыбратьПоНаименованию: V82.СправочникиСсылка.КатегорииРасчетов,IReturn<КатегорииРасчетовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KategoriiRaschetovResponse//КатегорииРасчетовОтвет
+	public class КатегорииРасчетовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KategoriiRaschetovs")]
-	[Route("/Catalogs/KategoriiRaschetovs/{Codes}")]
-	public class KategoriiRaschetovsRequest/*КатегорииРасчетовЗапрос*/: IReturn<List<KategoriiRaschetovRequest>>
+	public class КатегорииРасчетовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KategoriiRaschetovsRequest(params string[] Codes)
+		
+		public object Get(КатегорииРасчетовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KategoriiRaschetovsResponse//КатегорииРасчетовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KategoriiRaschetovService /*КатегорииРасчетовСервис*/ : Service
-	{
-		public object Any(KategoriiRaschetovRequest request)
+		
+		public object Get(КатегорииРасчетовНайтиПоКоду Запрос)
 		{
-			return new KategoriiRaschetovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KategoriiRaschetovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КатегорииРасчетов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KategoriiRaschetovResponse() {Result = "КатегорииРасчетов c кодом '" + request.Code+"' не найдено."};
+				return new КатегорииРасчетовОтвет() {Ответ = "КатегорииРасчетов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KategoriiRaschetovsRequest request)
+		
+		public object Get(КатегорииРасчетовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КатегорииРасчетов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КатегорииРасчетов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КатегорииРасчетовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КатегорииРасчетовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(КатегорииРасчетовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КатегорииРасчетовЗапрос Запрос)
+		{
+			return new КатегорииРасчетовОтвет {Ответ = "КатегорииРасчетов, "};
+		}
+
+		public object Post(КатегорииРасчетовЗапрос ЗапросКатегорииРасчетов)
+		{
+			var Ссылка = (СправочникиСсылка.КатегорииРасчетов)ЗапросКатегорииРасчетов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

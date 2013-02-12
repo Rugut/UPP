@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PrichinyObsluzhivaniyaOS")]
-	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/FindById/{Id}")]
-	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/FindByCode/{Code}")]
-	[Route("/Catalogs/PrichinyObsluzhivaniyaOS/FindByDescr/{Descr}")]
-	public class PrichinyObsluzhivaniyaOSRequest/*ПричиныОбслуживанияОСЗапрос*/: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<PrichinyObsluzhivaniyaOSRequest>
+	//PrichinyObsluzhivaniyaOS
+	[Маршрут("Справочники/ПричиныОбслуживанияОС","")]
+	public class ПричиныОбслуживанияОСЗапрос: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<ПричиныОбслуживанияОСЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/ПоСсылке","{Ссылка}")]
+	public class ПричиныОбслуживанияОСНайтиПоСсылке: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<ПричиныОбслуживанияОСНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/ПоКоду","{Код}")]
+	public class ПричиныОбслуживанияОСНайтиПоКоду: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<ПричиныОбслуживанияОСНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/ПоНаименованию","{Наименование}")]
+	public class ПричиныОбслуживанияОСНайтиПоНаименованию: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<ПричиныОбслуживанияОСНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныОбслуживанияОСВыбратьПоСсылке: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<ПричиныОбслуживанияОСВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныОбслуживанияОСВыбратьПоКоду: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<ПричиныОбслуживанияОСВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПричиныОбслуживанияОС/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПричиныОбслуживанияОСВыбратьПоНаименованию: V82.СправочникиСсылка.ПричиныОбслуживанияОС,IReturn<ПричиныОбслуживанияОСВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PrichinyObsluzhivaniyaOSResponse//ПричиныОбслуживанияОСОтвет
+	public class ПричиныОбслуживанияОСОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PrichinyObsluzhivaniyaOSs")]
-	[Route("/Catalogs/PrichinyObsluzhivaniyaOSs/{Codes}")]
-	public class PrichinyObsluzhivaniyaOSsRequest/*ПричиныОбслуживанияОСЗапрос*/: IReturn<List<PrichinyObsluzhivaniyaOSRequest>>
+	public class ПричиныОбслуживанияОССервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PrichinyObsluzhivaniyaOSsRequest(params string[] Codes)
+		
+		public object Get(ПричиныОбслуживанияОСНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PrichinyObsluzhivaniyaOSsResponse//ПричиныОбслуживанияОСОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PrichinyObsluzhivaniyaOSService /*ПричиныОбслуживанияОССервис*/ : Service
-	{
-		public object Any(PrichinyObsluzhivaniyaOSRequest request)
+		
+		public object Get(ПричиныОбслуживанияОСНайтиПоКоду Запрос)
 		{
-			return new PrichinyObsluzhivaniyaOSResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PrichinyObsluzhivaniyaOSRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПричиныОбслуживанияОС.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PrichinyObsluzhivaniyaOSResponse() {Result = "ПричиныОбслуживанияОС c кодом '" + request.Code+"' не найдено."};
+				return new ПричиныОбслуживанияОСОтвет() {Ответ = "ПричиныОбслуживанияОС c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PrichinyObsluzhivaniyaOSsRequest request)
+		
+		public object Get(ПричиныОбслуживанияОСНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПричиныОбслуживанияОС>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПричиныОбслуживанияОС.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПричиныОбслуживанияОСВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныОбслуживанияОСВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПричиныОбслуживанияОСВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПричиныОбслуживанияОСЗапрос Запрос)
+		{
+			return new ПричиныОбслуживанияОСОтвет {Ответ = "ПричиныОбслуживанияОС, "};
+		}
+
+		public object Post(ПричиныОбслуживанияОСЗапрос ЗапросПричиныОбслуживанияОС)
+		{
+			var Ссылка = (СправочникиСсылка.ПричиныОбслуживанияОС)ЗапросПричиныОбслуживанияОС;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury")]
-	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklatury/FindByDescr/{Descr}")]
-	public class NormativnyeDokumentySertifikaciiNomenklaturyRequest/*НормативныеДокументыСертификацииНоменклатурыЗапрос*/: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<NormativnyeDokumentySertifikaciiNomenklaturyRequest>
+	//NormativnyeDokumentySertifikaciiNomenklatury
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры","")]
+	public class НормативныеДокументыСертификацииНоменклатурыЗапрос: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<НормативныеДокументыСертификацииНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class НормативныеДокументыСертификацииНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<НормативныеДокументыСертификацииНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/ПоКоду","{Код}")]
+	public class НормативныеДокументыСертификацииНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<НормативныеДокументыСертификацииНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class НормативныеДокументыСертификацииНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<НормативныеДокументыСертификацииНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НормативныеДокументыСертификацииНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<НормативныеДокументыСертификацииНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class НормативныеДокументыСертификацииНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<НормативныеДокументыСертификацииНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НормативныеДокументыСертификацииНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НормативныеДокументыСертификацииНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры,IReturn<НормативныеДокументыСертификацииНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NormativnyeDokumentySertifikaciiNomenklaturyResponse//НормативныеДокументыСертификацииНоменклатурыОтвет
+	public class НормативныеДокументыСертификацииНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklaturys")]
-	[Route("/Catalogs/NormativnyeDokumentySertifikaciiNomenklaturys/{Codes}")]
-	public class NormativnyeDokumentySertifikaciiNomenklaturysRequest/*НормативныеДокументыСертификацииНоменклатурыЗапрос*/: IReturn<List<NormativnyeDokumentySertifikaciiNomenklaturyRequest>>
+	public class НормативныеДокументыСертификацииНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NormativnyeDokumentySertifikaciiNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(НормативныеДокументыСертификацииНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NormativnyeDokumentySertifikaciiNomenklaturysResponse//НормативныеДокументыСертификацииНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NormativnyeDokumentySertifikaciiNomenklaturyService /*НормативныеДокументыСертификацииНоменклатурыСервис*/ : Service
-	{
-		public object Any(NormativnyeDokumentySertifikaciiNomenklaturyRequest request)
+		
+		public object Get(НормативныеДокументыСертификацииНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new NormativnyeDokumentySertifikaciiNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(NormativnyeDokumentySertifikaciiNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.НормативныеДокументыСертификацииНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new NormativnyeDokumentySertifikaciiNomenklaturyResponse() {Result = "НормативныеДокументыСертификацииНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new НормативныеДокументыСертификацииНоменклатурыОтвет() {Ответ = "НормативныеДокументыСертификацииНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(NormativnyeDokumentySertifikaciiNomenklaturysRequest request)
+		
+		public object Get(НормативныеДокументыСертификацииНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.НормативныеДокументыСертификацииНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(НормативныеДокументыСертификацииНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НормативныеДокументыСертификацииНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НормативныеДокументыСертификацииНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(НормативныеДокументыСертификацииНоменклатурыЗапрос Запрос)
+		{
+			return new НормативныеДокументыСертификацииНоменклатурыОтвет {Ответ = "НормативныеДокументыСертификацииНоменклатуры, "};
+		}
+
+		public object Post(НормативныеДокументыСертификацииНоменклатурыЗапрос ЗапросНормативныеДокументыСертификацииНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.НормативныеДокументыСертификацииНоменклатуры)ЗапросНормативныеДокументыСертификацииНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

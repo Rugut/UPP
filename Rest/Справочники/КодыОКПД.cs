@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,87 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/KodyOKPD")]
-	[Route("/Catalogs/KodyOKPD/FindById/{Id}")]
-	[Route("/Catalogs/KodyOKPD/FindByCode/{Code}")]
-	[Route("/Catalogs/KodyOKPD/FindByDescr/{Descr}")]
-	public class KodyOKPDRequest/*КодыОКПДЗапрос*/: V82.СправочникиСсылка.КодыОКПД,IReturn<KodyOKPDRequest>
+	//KodyOKPD
+	[Маршрут("Справочники/КодыОКПД","")]
+	public class КодыОКПДЗапрос: V82.СправочникиСсылка.КодыОКПД,IReturn<КодыОКПДЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/КодыОКПД/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/КодыОКПД/ПоСсылке","{Ссылка}")]
+	public class КодыОКПДНайтиПоСсылке: V82.СправочникиСсылка.КодыОКПД,IReturn<КодыОКПДНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/КодыОКПД/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/КодыОКПД/ПоКоду","{Код}")]
+	public class КодыОКПДНайтиПоКоду: V82.СправочникиСсылка.КодыОКПД,IReturn<КодыОКПДНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/КодыОКПД/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class КодыОКПДВыбратьПоСсылке: V82.СправочникиСсылка.КодыОКПД,IReturn<КодыОКПДВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/КодыОКПД/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class КодыОКПДВыбратьПоКоду: V82.СправочникиСсылка.КодыОКПД,IReturn<КодыОКПДВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class KodyOKPDResponse//КодыОКПДОтвет
+	public class КодыОКПДОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/KodyOKPDs")]
-	[Route("/Catalogs/KodyOKPDs/{Codes}")]
-	public class KodyOKPDsRequest/*КодыОКПДЗапрос*/: IReturn<List<KodyOKPDRequest>>
+	public class КодыОКПДСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public KodyOKPDsRequest(params string[] Codes)
+		
+		public object Get(КодыОКПДНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class KodyOKPDsResponse//КодыОКПДОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class KodyOKPDService /*КодыОКПДСервис*/ : Service
-	{
-		public object Any(KodyOKPDRequest request)
+		
+		public object Get(КодыОКПДНайтиПоКоду Запрос)
 		{
-			return new KodyOKPDResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(KodyOKPDRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.КодыОКПД.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new KodyOKPDResponse() {Result = "КодыОКПД c кодом '" + request.Code+"' не найдено."};
+				return new КодыОКПДОтвет() {Ответ = "КодыОКПД c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(KodyOKPDsRequest request)
+		
+		public object Get(КодыОКПДВыбратьПоСсылке Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.КодыОКПД>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.КодыОКПД.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(КодыОКПДВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+
+		public object Any(КодыОКПДЗапрос Запрос)
+		{
+			return new КодыОКПДОтвет {Ответ = "КодыОКПД, "};
+		}
+
+		public object Post(КодыОКПДЗапрос ЗапросКодыОКПД)
+		{
+			var Ссылка = (СправочникиСсылка.КодыОКПД)ЗапросКодыОКПД;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

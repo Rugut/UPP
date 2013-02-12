@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DokhodyESN")]
-	[Route("/Catalogs/DokhodyESN/FindById/{Id}")]
-	[Route("/Catalogs/DokhodyESN/FindByCode/{Code}")]
-	[Route("/Catalogs/DokhodyESN/FindByDescr/{Descr}")]
-	public class DokhodyESNRequest/*ДоходыЕСНЗапрос*/: V82.СправочникиСсылка.ДоходыЕСН,IReturn<DokhodyESNRequest>
+	//DokhodyESN
+	[Маршрут("Справочники/ДоходыЕСН","")]
+	public class ДоходыЕСНЗапрос: V82.СправочникиСсылка.ДоходыЕСН,IReturn<ДоходыЕСНЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДоходыЕСН/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДоходыЕСН/ПоСсылке","{Ссылка}")]
+	public class ДоходыЕСННайтиПоСсылке: V82.СправочникиСсылка.ДоходыЕСН,IReturn<ДоходыЕСННайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДоходыЕСН/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДоходыЕСН/ПоНаименованию","{Наименование}")]
+	public class ДоходыЕСННайтиПоНаименованию: V82.СправочникиСсылка.ДоходыЕСН,IReturn<ДоходыЕСННайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДоходыЕСН/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыЕСНВыбратьПоСсылке: V82.СправочникиСсылка.ДоходыЕСН,IReturn<ДоходыЕСНВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоходыЕСН/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыЕСНВыбратьПоНаименованию: V82.СправочникиСсылка.ДоходыЕСН,IReturn<ДоходыЕСНВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DokhodyESNResponse//ДоходыЕСНОтвет
+	public class ДоходыЕСНОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DokhodyESNs")]
-	[Route("/Catalogs/DokhodyESNs/{Codes}")]
-	public class DokhodyESNsRequest/*ДоходыЕСНЗапрос*/: IReturn<List<DokhodyESNRequest>>
+	public class ДоходыЕСНСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DokhodyESNsRequest(params string[] Codes)
+		
+		public object Get(ДоходыЕСННайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DokhodyESNsResponse//ДоходыЕСНОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DokhodyESNService /*ДоходыЕСНСервис*/ : Service
-	{
-		public object Any(DokhodyESNRequest request)
+		
+		public object Get(ДоходыЕСННайтиПоНаименованию Запрос)
 		{
-			return new DokhodyESNResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(DokhodyESNRequest request)
+		
+		public object Get(ДоходыЕСНВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоходыЕСНВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(DokhodyESNsRequest request)
+		public object Any(ДоходыЕСНЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоходыЕСН>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new ДоходыЕСНОтвет {Ответ = "ДоходыЕСН, "};
 		}
+
+		public object Post(ДоходыЕСНЗапрос ЗапросДоходыЕСН)
+		{
+			var Ссылка = (СправочникиСсылка.ДоходыЕСН)ЗапросДоходыЕСН;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SostoyaniyaZayavokKandidatov")]
-	[Route("/Catalogs/SostoyaniyaZayavokKandidatov/FindById/{Id}")]
-	[Route("/Catalogs/SostoyaniyaZayavokKandidatov/FindByCode/{Code}")]
-	[Route("/Catalogs/SostoyaniyaZayavokKandidatov/FindByDescr/{Descr}")]
-	public class SostoyaniyaZayavokKandidatovRequest/*СостоянияЗаявокКандидатовЗапрос*/: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<SostoyaniyaZayavokKandidatovRequest>
+	//SostoyaniyaZayavokKandidatov
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов","")]
+	public class СостоянияЗаявокКандидатовЗапрос: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<СостоянияЗаявокКандидатовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/ПоСсылке","{Ссылка}")]
+	public class СостоянияЗаявокКандидатовНайтиПоСсылке: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<СостоянияЗаявокКандидатовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/ПоКоду","{Код}")]
+	public class СостоянияЗаявокКандидатовНайтиПоКоду: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<СостоянияЗаявокКандидатовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/ПоНаименованию","{Наименование}")]
+	public class СостоянияЗаявокКандидатовНайтиПоНаименованию: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<СостоянияЗаявокКандидатовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СостоянияЗаявокКандидатовВыбратьПоСсылке: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<СостоянияЗаявокКандидатовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СостоянияЗаявокКандидатовВыбратьПоКоду: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<СостоянияЗаявокКандидатовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СостоянияЗаявокКандидатов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СостоянияЗаявокКандидатовВыбратьПоНаименованию: V82.СправочникиСсылка.СостоянияЗаявокКандидатов,IReturn<СостоянияЗаявокКандидатовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SostoyaniyaZayavokKandidatovResponse//СостоянияЗаявокКандидатовОтвет
+	public class СостоянияЗаявокКандидатовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SostoyaniyaZayavokKandidatovs")]
-	[Route("/Catalogs/SostoyaniyaZayavokKandidatovs/{Codes}")]
-	public class SostoyaniyaZayavokKandidatovsRequest/*СостоянияЗаявокКандидатовЗапрос*/: IReturn<List<SostoyaniyaZayavokKandidatovRequest>>
+	public class СостоянияЗаявокКандидатовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SostoyaniyaZayavokKandidatovsRequest(params string[] Codes)
+		
+		public object Get(СостоянияЗаявокКандидатовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SostoyaniyaZayavokKandidatovsResponse//СостоянияЗаявокКандидатовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SostoyaniyaZayavokKandidatovService /*СостоянияЗаявокКандидатовСервис*/ : Service
-	{
-		public object Any(SostoyaniyaZayavokKandidatovRequest request)
+		
+		public object Get(СостоянияЗаявокКандидатовНайтиПоКоду Запрос)
 		{
-			return new SostoyaniyaZayavokKandidatovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(SostoyaniyaZayavokKandidatovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СостоянияЗаявокКандидатов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new SostoyaniyaZayavokKandidatovResponse() {Result = "СостоянияЗаявокКандидатов c кодом '" + request.Code+"' не найдено."};
+				return new СостоянияЗаявокКандидатовОтвет() {Ответ = "СостоянияЗаявокКандидатов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(SostoyaniyaZayavokKandidatovsRequest request)
+		
+		public object Get(СостоянияЗаявокКандидатовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СостоянияЗаявокКандидатов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СостоянияЗаявокКандидатов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СостоянияЗаявокКандидатовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СостоянияЗаявокКандидатовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СостоянияЗаявокКандидатовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СостоянияЗаявокКандидатовЗапрос Запрос)
+		{
+			return new СостоянияЗаявокКандидатовОтвет {Ответ = "СостоянияЗаявокКандидатов, "};
+		}
+
+		public object Post(СостоянияЗаявокКандидатовЗапрос ЗапросСостоянияЗаявокКандидатов)
+		{
+			var Ссылка = (СправочникиСсылка.СостоянияЗаявокКандидатов)ЗапросСостоянияЗаявокКандидатов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,53 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СоглашенияОбИспользованииЭД:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СоглашенияОбИспользованииЭДЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SoglasheniyaObIspolzovaniiEHD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоглашенияОбИспользованииЭД/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SoglasheniyaObIspolzovaniiEHDRequest());
+			СоглашенияОбИспользованииЭДЗапрос СоглашенияОбИспользованииЭДЗапрос = null;
+			try
+			{
+				СоглашенияОбИспользованииЭДЗапрос = Клиент.Get(new СоглашенияОбИспользованииЭДЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СоглашенияОбИспользованииЭДЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СоглашенияОбИспользованииЭДЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SoglasheniyaObIspolzovaniiEHD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоглашенияОбИспользованииЭД/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SoglasheniyaObIspolzovaniiEHDRequest());
+			СоглашенияОбИспользованииЭДЗапрос СоглашенияОбИспользованииЭДЗапрос = null;
+			try
+			{
+				СоглашенияОбИспользованииЭДЗапрос = Клиент.Get(new СоглашенияОбИспользованииЭДЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СоглашенияОбИспользованииЭДЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static void ЗаписатьНовый(СоглашенияОбИспользованииЭДЗапрос СоглашенияОбИспользованииЭДЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SoglasheniyaObIspolzovaniiEHD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоглашенияОбИспользованииЭД?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SoglasheniyaObIspolzovaniiEHDRequest());
+			var СоглашенияОбИспользованииЭДОтвет = Клиент.Post(СоглашенияОбИспользованииЭДЗапрос);
 		}
-		public static void Удалить()//
+		public static void Записать(СоглашенияОбИспользованииЭДЗапрос СоглашенияОбИспользованииЭДЗапрос)//Обновить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SoglasheniyaObIspolzovaniiEHD/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СоглашенияОбИспользованииЭД?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SoglasheniyaObIspolzovaniiEHDRequest());
+			var СоглашенияОбИспользованииЭДОтвет = Клиент.Put(СоглашенияОбИспользованииЭДЗапрос);
+		}
+		public static void Удалить(СоглашенияОбИспользованииЭДЗапрос СоглашенияОбИспользованииЭДЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СоглашенияОбИспользованииЭД?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СоглашенияОбИспользованииЭДОтвет = Клиент.Delete(СоглашенияОбИспользованииЭДЗапрос);
 		}
 	}
 }

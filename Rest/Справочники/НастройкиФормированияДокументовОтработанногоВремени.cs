@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni/FindByDescr/{Descr}")]
-	public class NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest/*НастройкиФормированияДокументовОтработанногоВремениЗапрос*/: V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени,IReturn<NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest>
+	//NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeni
+	[Маршрут("Справочники/НастройкиФормированияДокументовОтработанногоВремени","")]
+	public class НастройкиФормированияДокументовОтработанногоВремениЗапрос: V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени,IReturn<НастройкиФормированияДокументовОтработанногоВремениЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовОтработанногоВремени/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиФормированияДокументовОтработанногоВремени/ПоСсылке","{Ссылка}")]
+	public class НастройкиФормированияДокументовОтработанногоВремениНайтиПоСсылке: V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени,IReturn<НастройкиФормированияДокументовОтработанногоВремениНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовОтработанногоВремени/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиФормированияДокументовОтработанногоВремени/ПоНаименованию","{Наименование}")]
+	public class НастройкиФормированияДокументовОтработанногоВремениНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени,IReturn<НастройкиФормированияДокументовОтработанногоВремениНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовОтработанногоВремени/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиФормированияДокументовОтработанногоВремениВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени,IReturn<НастройкиФормированияДокументовОтработанногоВремениВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовОтработанногоВремени/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиФормированияДокументовОтработанногоВремениВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени,IReturn<НастройкиФормированияДокументовОтработанногоВремениВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniResponse//НастройкиФормированияДокументовОтработанногоВремениОтвет
+	public class НастройкиФормированияДокументовОтработанногоВремениОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremenis")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremenis/{Codes}")]
-	public class NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremenisRequest/*НастройкиФормированияДокументовОтработанногоВремениЗапрос*/: IReturn<List<NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest>>
+	public class НастройкиФормированияДокументовОтработанногоВремениСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremenisRequest(params string[] Codes)
+		
+		public object Get(НастройкиФормированияДокументовОтработанногоВремениНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremenisResponse//НастройкиФормированияДокументовОтработанногоВремениОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniService /*НастройкиФормированияДокументовОтработанногоВремениСервис*/ : Service
-	{
-		public object Any(NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest request)
+		
+		public object Get(НастройкиФормированияДокументовОтработанногоВремениНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremeniRequest request)
+		
+		public object Get(НастройкиФормированияДокументовОтработанногоВремениВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиФормированияДокументовОтработанногоВремениВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiFormirovaniyaDokumentovOtrabotannogoVremenisRequest request)
+		public object Any(НастройкиФормированияДокументовОтработанногоВремениЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиФормированияДокументовОтработанногоВремениОтвет {Ответ = "НастройкиФормированияДокументовОтработанногоВремени, "};
 		}
+
+		public object Post(НастройкиФормированияДокументовОтработанногоВремениЗапрос ЗапросНастройкиФормированияДокументовОтработанногоВремени)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиФормированияДокументовОтработанногоВремени)ЗапросНастройкиФормированияДокументовОтработанногоВремени;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

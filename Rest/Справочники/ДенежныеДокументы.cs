@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DenezhnyeDokumenty")]
-	[Route("/Catalogs/DenezhnyeDokumenty/FindById/{Id}")]
-	[Route("/Catalogs/DenezhnyeDokumenty/FindByCode/{Code}")]
-	[Route("/Catalogs/DenezhnyeDokumenty/FindByDescr/{Descr}")]
-	public class DenezhnyeDokumentyRequest/*ДенежныеДокументыЗапрос*/: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<DenezhnyeDokumentyRequest>
+	//DenezhnyeDokumenty
+	[Маршрут("Справочники/ДенежныеДокументы","")]
+	public class ДенежныеДокументыЗапрос: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<ДенежныеДокументыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДенежныеДокументы/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДенежныеДокументы/ПоСсылке","{Ссылка}")]
+	public class ДенежныеДокументыНайтиПоСсылке: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<ДенежныеДокументыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДенежныеДокументы/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДенежныеДокументы/ПоКоду","{Код}")]
+	public class ДенежныеДокументыНайтиПоКоду: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<ДенежныеДокументыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДенежныеДокументы/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДенежныеДокументы/ПоНаименованию","{Наименование}")]
+	public class ДенежныеДокументыНайтиПоНаименованию: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<ДенежныеДокументыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДенежныеДокументы/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДенежныеДокументыВыбратьПоСсылке: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<ДенежныеДокументыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДенежныеДокументы/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДенежныеДокументыВыбратьПоКоду: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<ДенежныеДокументыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДенежныеДокументы/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДенежныеДокументыВыбратьПоНаименованию: V82.СправочникиСсылка.ДенежныеДокументы,IReturn<ДенежныеДокументыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DenezhnyeDokumentyResponse//ДенежныеДокументыОтвет
+	public class ДенежныеДокументыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DenezhnyeDokumentys")]
-	[Route("/Catalogs/DenezhnyeDokumentys/{Codes}")]
-	public class DenezhnyeDokumentysRequest/*ДенежныеДокументыЗапрос*/: IReturn<List<DenezhnyeDokumentyRequest>>
+	public class ДенежныеДокументыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DenezhnyeDokumentysRequest(params string[] Codes)
+		
+		public object Get(ДенежныеДокументыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DenezhnyeDokumentysResponse//ДенежныеДокументыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DenezhnyeDokumentyService /*ДенежныеДокументыСервис*/ : Service
-	{
-		public object Any(DenezhnyeDokumentyRequest request)
+		
+		public object Get(ДенежныеДокументыНайтиПоКоду Запрос)
 		{
-			return new DenezhnyeDokumentyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DenezhnyeDokumentyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДенежныеДокументы.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DenezhnyeDokumentyResponse() {Result = "ДенежныеДокументы c кодом '" + request.Code+"' не найдено."};
+				return new ДенежныеДокументыОтвет() {Ответ = "ДенежныеДокументы c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DenezhnyeDokumentysRequest request)
+		
+		public object Get(ДенежныеДокументыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДенежныеДокументы>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДенежныеДокументы.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДенежныеДокументыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДенежныеДокументыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДенежныеДокументыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДенежныеДокументыЗапрос Запрос)
+		{
+			return new ДенежныеДокументыОтвет {Ответ = "ДенежныеДокументы, "};
+		}
+
+		public object Post(ДенежныеДокументыЗапрос ЗапросДенежныеДокументы)
+		{
+			var Ссылка = (СправочникиСсылка.ДенежныеДокументы)ЗапросДенежныеДокументы;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

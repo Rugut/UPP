@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class Субконто:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СубконтоЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Subkonto/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Субконто/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SubkontoRequest());
+			СубконтоЗапрос СубконтоЗапрос = null;
+			try
+			{
+				СубконтоЗапрос = Клиент.Get(new СубконтоЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СубконтоЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СубконтоЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/Subkonto/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Субконто/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SubkontoRequest());
+			СубконтоЗапрос СубконтоЗапрос = null;
+			try
+			{
+				СубконтоЗапрос = Клиент.Get(new СубконтоЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СубконтоЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СубконтоЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/Subkonto/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Субконто/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SubkontoRequest());
+			СубконтоЗапрос СубконтоЗапрос = null;
+			try
+			{
+				СубконтоЗапрос = Клиент.Get(new СубконтоЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СубконтоЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СубконтоЗапрос СубконтоЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/Subkonto/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/Субконто?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SubkontoRequest());
+			var СубконтоОтвет = Клиент.Post(СубконтоЗапрос);
+		}
+		public static void Записать(СубконтоЗапрос СубконтоЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/Субконто?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СубконтоОтвет = Клиент.Put(СубконтоЗапрос);
+		}
+		public static void Удалить(СубконтоЗапрос СубконтоЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/Субконто?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СубконтоОтвет = Клиент.Delete(СубконтоЗапрос);
 		}
 	}
 }

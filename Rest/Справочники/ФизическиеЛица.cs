@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/FizicheskieLica")]
-	[Route("/Catalogs/FizicheskieLica/FindById/{Id}")]
-	[Route("/Catalogs/FizicheskieLica/FindByCode/{Code}")]
-	[Route("/Catalogs/FizicheskieLica/FindByDescr/{Descr}")]
-	public class FizicheskieLicaRequest/*ФизическиеЛицаЗапрос*/: V82.СправочникиСсылка.ФизическиеЛица,IReturn<FizicheskieLicaRequest>
+	//FizicheskieLica
+	[Маршрут("Справочники/ФизическиеЛица","")]
+	public class ФизическиеЛицаЗапрос: V82.СправочникиСсылка.ФизическиеЛица,IReturn<ФизическиеЛицаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ФизическиеЛица/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ФизическиеЛица/ПоСсылке","{Ссылка}")]
+	public class ФизическиеЛицаНайтиПоСсылке: V82.СправочникиСсылка.ФизическиеЛица,IReturn<ФизическиеЛицаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ФизическиеЛица/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ФизическиеЛица/ПоКоду","{Код}")]
+	public class ФизическиеЛицаНайтиПоКоду: V82.СправочникиСсылка.ФизическиеЛица,IReturn<ФизическиеЛицаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ФизическиеЛица/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ФизическиеЛица/ПоНаименованию","{Наименование}")]
+	public class ФизическиеЛицаНайтиПоНаименованию: V82.СправочникиСсылка.ФизическиеЛица,IReturn<ФизическиеЛицаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ФизическиеЛица/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФизическиеЛицаВыбратьПоСсылке: V82.СправочникиСсылка.ФизическиеЛица,IReturn<ФизическиеЛицаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФизическиеЛица/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФизическиеЛицаВыбратьПоКоду: V82.СправочникиСсылка.ФизическиеЛица,IReturn<ФизическиеЛицаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ФизическиеЛица/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ФизическиеЛицаВыбратьПоНаименованию: V82.СправочникиСсылка.ФизическиеЛица,IReturn<ФизическиеЛицаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class FizicheskieLicaResponse//ФизическиеЛицаОтвет
+	public class ФизическиеЛицаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/FizicheskieLicas")]
-	[Route("/Catalogs/FizicheskieLicas/{Codes}")]
-	public class FizicheskieLicasRequest/*ФизическиеЛицаЗапрос*/: IReturn<List<FizicheskieLicaRequest>>
+	public class ФизическиеЛицаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public FizicheskieLicasRequest(params string[] Codes)
+		
+		public object Get(ФизическиеЛицаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class FizicheskieLicasResponse//ФизическиеЛицаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class FizicheskieLicaService /*ФизическиеЛицаСервис*/ : Service
-	{
-		public object Any(FizicheskieLicaRequest request)
+		
+		public object Get(ФизическиеЛицаНайтиПоКоду Запрос)
 		{
-			return new FizicheskieLicaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(FizicheskieLicaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ФизическиеЛица.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new FizicheskieLicaResponse() {Result = "ФизическиеЛица c кодом '" + request.Code+"' не найдено."};
+				return new ФизическиеЛицаОтвет() {Ответ = "ФизическиеЛица c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(FizicheskieLicasRequest request)
+		
+		public object Get(ФизическиеЛицаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ФизическиеЛица>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ФизическиеЛица.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ФизическиеЛицаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФизическиеЛицаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ФизическиеЛицаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ФизическиеЛицаЗапрос Запрос)
+		{
+			return new ФизическиеЛицаОтвет {Ответ = "ФизическиеЛица, "};
+		}
+
+		public object Post(ФизическиеЛицаЗапрос ЗапросФизическиеЛица)
+		{
+			var Ссылка = (СправочникиСсылка.ФизическиеЛица)ЗапросФизическиеЛица;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

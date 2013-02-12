@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/TochkiMarshruta")]
-	[Route("/Catalogs/TochkiMarshruta/FindById/{Id}")]
-	[Route("/Catalogs/TochkiMarshruta/FindByCode/{Code}")]
-	[Route("/Catalogs/TochkiMarshruta/FindByDescr/{Descr}")]
-	public class TochkiMarshrutaRequest/*ТочкиМаршрутаЗапрос*/: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<TochkiMarshrutaRequest>
+	//TochkiMarshruta
+	[Маршрут("Справочники/ТочкиМаршрута","")]
+	public class ТочкиМаршрутаЗапрос: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<ТочкиМаршрутаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ТочкиМаршрута/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ТочкиМаршрута/ПоСсылке","{Ссылка}")]
+	public class ТочкиМаршрутаНайтиПоСсылке: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<ТочкиМаршрутаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ТочкиМаршрута/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ТочкиМаршрута/ПоКоду","{Код}")]
+	public class ТочкиМаршрутаНайтиПоКоду: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<ТочкиМаршрутаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ТочкиМаршрута/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ТочкиМаршрута/ПоНаименованию","{Наименование}")]
+	public class ТочкиМаршрутаНайтиПоНаименованию: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<ТочкиМаршрутаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ТочкиМаршрута/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТочкиМаршрутаВыбратьПоСсылке: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<ТочкиМаршрутаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТочкиМаршрута/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТочкиМаршрутаВыбратьПоКоду: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<ТочкиМаршрутаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ТочкиМаршрута/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ТочкиМаршрутаВыбратьПоНаименованию: V82.СправочникиСсылка.ТочкиМаршрута,IReturn<ТочкиМаршрутаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class TochkiMarshrutaResponse//ТочкиМаршрутаОтвет
+	public class ТочкиМаршрутаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/TochkiMarshrutas")]
-	[Route("/Catalogs/TochkiMarshrutas/{Codes}")]
-	public class TochkiMarshrutasRequest/*ТочкиМаршрутаЗапрос*/: IReturn<List<TochkiMarshrutaRequest>>
+	public class ТочкиМаршрутаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public TochkiMarshrutasRequest(params string[] Codes)
+		
+		public object Get(ТочкиМаршрутаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class TochkiMarshrutasResponse//ТочкиМаршрутаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class TochkiMarshrutaService /*ТочкиМаршрутаСервис*/ : Service
-	{
-		public object Any(TochkiMarshrutaRequest request)
+		
+		public object Get(ТочкиМаршрутаНайтиПоКоду Запрос)
 		{
-			return new TochkiMarshrutaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(TochkiMarshrutaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ТочкиМаршрута.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new TochkiMarshrutaResponse() {Result = "ТочкиМаршрута c кодом '" + request.Code+"' не найдено."};
+				return new ТочкиМаршрутаОтвет() {Ответ = "ТочкиМаршрута c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(TochkiMarshrutasRequest request)
+		
+		public object Get(ТочкиМаршрутаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ТочкиМаршрута>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ТочкиМаршрута.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ТочкиМаршрутаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТочкиМаршрутаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ТочкиМаршрутаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ТочкиМаршрутаЗапрос Запрос)
+		{
+			return new ТочкиМаршрутаОтвет {Ответ = "ТочкиМаршрута, "};
+		}
+
+		public object Post(ТочкиМаршрутаЗапрос ЗапросТочкиМаршрута)
+		{
+			var Ссылка = (СправочникиСсылка.ТочкиМаршрута)ЗапросТочкиМаршрута;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

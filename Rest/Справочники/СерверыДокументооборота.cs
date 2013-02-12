@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/ServeryDokumentooborota")]
-	[Route("/Catalogs/ServeryDokumentooborota/FindById/{Id}")]
-	[Route("/Catalogs/ServeryDokumentooborota/FindByCode/{Code}")]
-	[Route("/Catalogs/ServeryDokumentooborota/FindByDescr/{Descr}")]
-	public class ServeryDokumentooborotaRequest/*СерверыДокументооборотаЗапрос*/: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<ServeryDokumentooborotaRequest>
+	//ServeryDokumentooborota
+	[Маршрут("Справочники/СерверыДокументооборота","")]
+	public class СерверыДокументооборотаЗапрос: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<СерверыДокументооборотаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СерверыДокументооборота/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СерверыДокументооборота/ПоСсылке","{Ссылка}")]
+	public class СерверыДокументооборотаНайтиПоСсылке: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<СерверыДокументооборотаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СерверыДокументооборота/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СерверыДокументооборота/ПоКоду","{Код}")]
+	public class СерверыДокументооборотаНайтиПоКоду: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<СерверыДокументооборотаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СерверыДокументооборота/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СерверыДокументооборота/ПоНаименованию","{Наименование}")]
+	public class СерверыДокументооборотаНайтиПоНаименованию: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<СерверыДокументооборотаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СерверыДокументооборота/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СерверыДокументооборотаВыбратьПоСсылке: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<СерверыДокументооборотаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СерверыДокументооборота/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СерверыДокументооборотаВыбратьПоКоду: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<СерверыДокументооборотаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СерверыДокументооборота/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СерверыДокументооборотаВыбратьПоНаименованию: V82.СправочникиСсылка.СерверыДокументооборота,IReturn<СерверыДокументооборотаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class ServeryDokumentooborotaResponse//СерверыДокументооборотаОтвет
+	public class СерверыДокументооборотаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/ServeryDokumentooborotas")]
-	[Route("/Catalogs/ServeryDokumentooborotas/{Codes}")]
-	public class ServeryDokumentooborotasRequest/*СерверыДокументооборотаЗапрос*/: IReturn<List<ServeryDokumentooborotaRequest>>
+	public class СерверыДокументооборотаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public ServeryDokumentooborotasRequest(params string[] Codes)
+		
+		public object Get(СерверыДокументооборотаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class ServeryDokumentooborotasResponse//СерверыДокументооборотаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class ServeryDokumentooborotaService /*СерверыДокументооборотаСервис*/ : Service
-	{
-		public object Any(ServeryDokumentooborotaRequest request)
+		
+		public object Get(СерверыДокументооборотаНайтиПоКоду Запрос)
 		{
-			return new ServeryDokumentooborotaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(ServeryDokumentooborotaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СерверыДокументооборота.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new ServeryDokumentooborotaResponse() {Result = "СерверыДокументооборота c кодом '" + request.Code+"' не найдено."};
+				return new СерверыДокументооборотаОтвет() {Ответ = "СерверыДокументооборота c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(ServeryDokumentooborotasRequest request)
+		
+		public object Get(СерверыДокументооборотаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СерверыДокументооборота>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СерверыДокументооборота.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СерверыДокументооборотаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СерверыДокументооборотаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СерверыДокументооборотаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СерверыДокументооборотаЗапрос Запрос)
+		{
+			return new СерверыДокументооборотаОтвет {Ответ = "СерверыДокументооборота, "};
+		}
+
+		public object Post(СерверыДокументооборотаЗапрос ЗапросСерверыДокументооборота)
+		{
+			var Ссылка = (СправочникиСсылка.СерверыДокументооборота)ЗапросСерверыДокументооборота;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

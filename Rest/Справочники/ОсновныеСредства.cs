@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/OsnovnyeSredstva")]
-	[Route("/Catalogs/OsnovnyeSredstva/FindById/{Id}")]
-	[Route("/Catalogs/OsnovnyeSredstva/FindByCode/{Code}")]
-	[Route("/Catalogs/OsnovnyeSredstva/FindByDescr/{Descr}")]
-	public class OsnovnyeSredstvaRequest/*ОсновныеСредстваЗапрос*/: V82.СправочникиСсылка.ОсновныеСредства,IReturn<OsnovnyeSredstvaRequest>
+	//OsnovnyeSredstva
+	[Маршрут("Справочники/ОсновныеСредства","")]
+	public class ОсновныеСредстваЗапрос: V82.СправочникиСсылка.ОсновныеСредства,IReturn<ОсновныеСредстваЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ОсновныеСредства/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ОсновныеСредства/ПоСсылке","{Ссылка}")]
+	public class ОсновныеСредстваНайтиПоСсылке: V82.СправочникиСсылка.ОсновныеСредства,IReturn<ОсновныеСредстваНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ОсновныеСредства/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ОсновныеСредства/ПоКоду","{Код}")]
+	public class ОсновныеСредстваНайтиПоКоду: V82.СправочникиСсылка.ОсновныеСредства,IReturn<ОсновныеСредстваНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ОсновныеСредства/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ОсновныеСредства/ПоНаименованию","{Наименование}")]
+	public class ОсновныеСредстваНайтиПоНаименованию: V82.СправочникиСсылка.ОсновныеСредства,IReturn<ОсновныеСредстваНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ОсновныеСредства/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсновныеСредстваВыбратьПоСсылке: V82.СправочникиСсылка.ОсновныеСредства,IReturn<ОсновныеСредстваВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОсновныеСредства/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсновныеСредстваВыбратьПоКоду: V82.СправочникиСсылка.ОсновныеСредства,IReturn<ОсновныеСредстваВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ОсновныеСредства/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ОсновныеСредстваВыбратьПоНаименованию: V82.СправочникиСсылка.ОсновныеСредства,IReturn<ОсновныеСредстваВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class OsnovnyeSredstvaResponse//ОсновныеСредстваОтвет
+	public class ОсновныеСредстваОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/OsnovnyeSredstvas")]
-	[Route("/Catalogs/OsnovnyeSredstvas/{Codes}")]
-	public class OsnovnyeSredstvasRequest/*ОсновныеСредстваЗапрос*/: IReturn<List<OsnovnyeSredstvaRequest>>
+	public class ОсновныеСредстваСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public OsnovnyeSredstvasRequest(params string[] Codes)
+		
+		public object Get(ОсновныеСредстваНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class OsnovnyeSredstvasResponse//ОсновныеСредстваОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class OsnovnyeSredstvaService /*ОсновныеСредстваСервис*/ : Service
-	{
-		public object Any(OsnovnyeSredstvaRequest request)
+		
+		public object Get(ОсновныеСредстваНайтиПоКоду Запрос)
 		{
-			return new OsnovnyeSredstvaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(OsnovnyeSredstvaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ОсновныеСредства.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new OsnovnyeSredstvaResponse() {Result = "ОсновныеСредства c кодом '" + request.Code+"' не найдено."};
+				return new ОсновныеСредстваОтвет() {Ответ = "ОсновныеСредства c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(OsnovnyeSredstvasRequest request)
+		
+		public object Get(ОсновныеСредстваНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ОсновныеСредства>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ОсновныеСредства.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ОсновныеСредстваВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОсновныеСредстваВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ОсновныеСредстваВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ОсновныеСредстваЗапрос Запрос)
+		{
+			return new ОсновныеСредстваОтвет {Ответ = "ОсновныеСредства, "};
+		}
+
+		public object Post(ОсновныеСредстваЗапрос ЗапросОсновныеСредства)
+		{
+			var Ссылка = (СправочникиСсылка.ОсновныеСредства)ЗапросОсновныеСредства;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ОтправкиФСС:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ОтправкиФССЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OtpravkiFSS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОтправкиФСС/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new OtpravkiFSSRequest());
+			ОтправкиФССЗапрос ОтправкиФССЗапрос = null;
+			try
+			{
+				ОтправкиФССЗапрос = Клиент.Get(new ОтправкиФССЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОтправкиФССЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ОтправкиФССЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/OtpravkiFSS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОтправкиФСС/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new OtpravkiFSSRequest());
+			ОтправкиФССЗапрос ОтправкиФССЗапрос = null;
+			try
+			{
+				ОтправкиФССЗапрос = Клиент.Get(new ОтправкиФССЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОтправкиФССЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ОтправкиФССЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/OtpravkiFSS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОтправкиФСС/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new OtpravkiFSSRequest());
+			ОтправкиФССЗапрос ОтправкиФССЗапрос = null;
+			try
+			{
+				ОтправкиФССЗапрос = Клиент.Get(new ОтправкиФССЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ОтправкиФССЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ОтправкиФССЗапрос ОтправкиФССЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/OtpravkiFSS/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ОтправкиФСС?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new OtpravkiFSSRequest());
+			var ОтправкиФССОтвет = Клиент.Post(ОтправкиФССЗапрос);
+		}
+		public static void Записать(ОтправкиФССЗапрос ОтправкиФССЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОтправкиФСС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОтправкиФССОтвет = Клиент.Put(ОтправкиФССЗапрос);
+		}
+		public static void Удалить(ОтправкиФССЗапрос ОтправкиФССЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ОтправкиФСС?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ОтправкиФССОтвет = Клиент.Delete(ОтправкиФССЗапрос);
 		}
 	}
 }

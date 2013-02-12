@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti")]
-	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiRaschetaSebestoimosti/FindByDescr/{Descr}")]
-	public class NastrojjkiRaschetaSebestoimostiRequest/*НастройкиРасчетаСебестоимостиЗапрос*/: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<NastrojjkiRaschetaSebestoimostiRequest>
+	//NastrojjkiRaschetaSebestoimosti
+	[Маршрут("Справочники/НастройкиРасчетаСебестоимости","")]
+	public class НастройкиРасчетаСебестоимостиЗапрос: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<НастройкиРасчетаСебестоимостиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиРасчетаСебестоимости/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиРасчетаСебестоимости/ПоСсылке","{Ссылка}")]
+	public class НастройкиРасчетаСебестоимостиНайтиПоСсылке: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<НастройкиРасчетаСебестоимостиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиРасчетаСебестоимости/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиРасчетаСебестоимости/ПоНаименованию","{Наименование}")]
+	public class НастройкиРасчетаСебестоимостиНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<НастройкиРасчетаСебестоимостиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиРасчетаСебестоимостиВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<НастройкиРасчетаСебестоимостиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиРасчетаСебестоимостиВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиРасчетаСебестоимости,IReturn<НастройкиРасчетаСебестоимостиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiRaschetaSebestoimostiResponse//НастройкиРасчетаСебестоимостиОтвет
+	public class НастройкиРасчетаСебестоимостиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiRaschetaSebestoimostis")]
-	[Route("/Catalogs/NastrojjkiRaschetaSebestoimostis/{Codes}")]
-	public class NastrojjkiRaschetaSebestoimostisRequest/*НастройкиРасчетаСебестоимостиЗапрос*/: IReturn<List<NastrojjkiRaschetaSebestoimostiRequest>>
+	public class НастройкиРасчетаСебестоимостиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiRaschetaSebestoimostisRequest(params string[] Codes)
+		
+		public object Get(НастройкиРасчетаСебестоимостиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiRaschetaSebestoimostisResponse//НастройкиРасчетаСебестоимостиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiRaschetaSebestoimostiService /*НастройкиРасчетаСебестоимостиСервис*/ : Service
-	{
-		public object Any(NastrojjkiRaschetaSebestoimostiRequest request)
+		
+		public object Get(НастройкиРасчетаСебестоимостиНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiRaschetaSebestoimostiResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiRaschetaSebestoimostiRequest request)
+		
+		public object Get(НастройкиРасчетаСебестоимостиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиРасчетаСебестоимостиВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiRaschetaSebestoimostisRequest request)
+		public object Any(НастройкиРасчетаСебестоимостиЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиРасчетаСебестоимости>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиРасчетаСебестоимостиОтвет {Ответ = "НастройкиРасчетаСебестоимости, "};
 		}
+
+		public object Post(НастройкиРасчетаСебестоимостиЗапрос ЗапросНастройкиРасчетаСебестоимости)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиРасчетаСебестоимости)ЗапросНастройкиРасчетаСебестоимости;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

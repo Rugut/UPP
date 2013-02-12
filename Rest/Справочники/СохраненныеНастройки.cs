@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/SokhranennyeNastrojjki")]
-	[Route("/Catalogs/SokhranennyeNastrojjki/FindById/{Id}")]
-	[Route("/Catalogs/SokhranennyeNastrojjki/FindByCode/{Code}")]
-	[Route("/Catalogs/SokhranennyeNastrojjki/FindByDescr/{Descr}")]
-	public class SokhranennyeNastrojjkiRequest/*СохраненныеНастройкиЗапрос*/: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<SokhranennyeNastrojjkiRequest>
+	//SokhranennyeNastrojjki
+	[Маршрут("Справочники/СохраненныеНастройки","")]
+	public class СохраненныеНастройкиЗапрос: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<СохраненныеНастройкиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СохраненныеНастройки/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СохраненныеНастройки/ПоСсылке","{Ссылка}")]
+	public class СохраненныеНастройкиНайтиПоСсылке: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<СохраненныеНастройкиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СохраненныеНастройки/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СохраненныеНастройки/ПоНаименованию","{Наименование}")]
+	public class СохраненныеНастройкиНайтиПоНаименованию: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<СохраненныеНастройкиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СохраненныеНастройки/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СохраненныеНастройкиВыбратьПоСсылке: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<СохраненныеНастройкиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СохраненныеНастройки/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СохраненныеНастройкиВыбратьПоНаименованию: V82.СправочникиСсылка.СохраненныеНастройки,IReturn<СохраненныеНастройкиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class SokhranennyeNastrojjkiResponse//СохраненныеНастройкиОтвет
+	public class СохраненныеНастройкиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/SokhranennyeNastrojjkis")]
-	[Route("/Catalogs/SokhranennyeNastrojjkis/{Codes}")]
-	public class SokhranennyeNastrojjkisRequest/*СохраненныеНастройкиЗапрос*/: IReturn<List<SokhranennyeNastrojjkiRequest>>
+	public class СохраненныеНастройкиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public SokhranennyeNastrojjkisRequest(params string[] Codes)
+		
+		public object Get(СохраненныеНастройкиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class SokhranennyeNastrojjkisResponse//СохраненныеНастройкиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class SokhranennyeNastrojjkiService /*СохраненныеНастройкиСервис*/ : Service
-	{
-		public object Any(SokhranennyeNastrojjkiRequest request)
+		
+		public object Get(СохраненныеНастройкиНайтиПоНаименованию Запрос)
 		{
-			return new SokhranennyeNastrojjkiResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(SokhranennyeNastrojjkiRequest request)
+		
+		public object Get(СохраненныеНастройкиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СохраненныеНастройкиВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(SokhranennyeNastrojjkisRequest request)
+		public object Any(СохраненныеНастройкиЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СохраненныеНастройки>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new СохраненныеНастройкиОтвет {Ответ = "СохраненныеНастройки, "};
 		}
+
+		public object Post(СохраненныеНастройкиЗапрос ЗапросСохраненныеНастройки)
+		{
+			var Ссылка = (СправочникиСсылка.СохраненныеНастройки)ЗапросСохраненныеНастройки;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СчетаБюджета:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СчетаБюджетаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetaByudzheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетаБюджета/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new SchetaByudzhetaRequest());
+			СчетаБюджетаЗапрос СчетаБюджетаЗапрос = null;
+			try
+			{
+				СчетаБюджетаЗапрос = Клиент.Get(new СчетаБюджетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СчетаБюджетаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СчетаБюджетаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetaByudzheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетаБюджета/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new SchetaByudzhetaRequest());
+			СчетаБюджетаЗапрос СчетаБюджетаЗапрос = null;
+			try
+			{
+				СчетаБюджетаЗапрос = Клиент.Get(new СчетаБюджетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СчетаБюджетаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СчетаБюджетаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetaByudzheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетаБюджета/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new SchetaByudzhetaRequest());
+			СчетаБюджетаЗапрос СчетаБюджетаЗапрос = null;
+			try
+			{
+				СчетаБюджетаЗапрос = Клиент.Get(new СчетаБюджетаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СчетаБюджетаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СчетаБюджетаЗапрос СчетаБюджетаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/SchetaByudzheta/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СчетаБюджета?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new SchetaByudzhetaRequest());
+			var СчетаБюджетаОтвет = Клиент.Post(СчетаБюджетаЗапрос);
+		}
+		public static void Записать(СчетаБюджетаЗапрос СчетаБюджетаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СчетаБюджета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СчетаБюджетаОтвет = Клиент.Put(СчетаБюджетаЗапрос);
+		}
+		public static void Удалить(СчетаБюджетаЗапрос СчетаБюджетаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СчетаБюджета?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СчетаБюджетаОтвет = Клиент.Delete(СчетаБюджетаЗапрос);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/DokhodyBudushhikhPeriodov")]
-	[Route("/Catalogs/DokhodyBudushhikhPeriodov/FindById/{Id}")]
-	[Route("/Catalogs/DokhodyBudushhikhPeriodov/FindByCode/{Code}")]
-	[Route("/Catalogs/DokhodyBudushhikhPeriodov/FindByDescr/{Descr}")]
-	public class DokhodyBudushhikhPeriodovRequest/*ДоходыБудущихПериодовЗапрос*/: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<DokhodyBudushhikhPeriodovRequest>
+	//DokhodyBudushhikhPeriodov
+	[Маршрут("Справочники/ДоходыБудущихПериодов","")]
+	public class ДоходыБудущихПериодовЗапрос: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<ДоходыБудущихПериодовЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ДоходыБудущихПериодов/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ДоходыБудущихПериодов/ПоСсылке","{Ссылка}")]
+	public class ДоходыБудущихПериодовНайтиПоСсылке: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<ДоходыБудущихПериодовНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ДоходыБудущихПериодов/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ДоходыБудущихПериодов/ПоКоду","{Код}")]
+	public class ДоходыБудущихПериодовНайтиПоКоду: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<ДоходыБудущихПериодовНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ДоходыБудущихПериодов/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ДоходыБудущихПериодов/ПоНаименованию","{Наименование}")]
+	public class ДоходыБудущихПериодовНайтиПоНаименованию: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<ДоходыБудущихПериодовНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ДоходыБудущихПериодов/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыБудущихПериодовВыбратьПоСсылке: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<ДоходыБудущихПериодовВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоходыБудущихПериодов/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыБудущихПериодовВыбратьПоКоду: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<ДоходыБудущихПериодовВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ДоходыБудущихПериодов/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДоходыБудущихПериодовВыбратьПоНаименованию: V82.СправочникиСсылка.ДоходыБудущихПериодов,IReturn<ДоходыБудущихПериодовВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DokhodyBudushhikhPeriodovResponse//ДоходыБудущихПериодовОтвет
+	public class ДоходыБудущихПериодовОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/DokhodyBudushhikhPeriodovs")]
-	[Route("/Catalogs/DokhodyBudushhikhPeriodovs/{Codes}")]
-	public class DokhodyBudushhikhPeriodovsRequest/*ДоходыБудущихПериодовЗапрос*/: IReturn<List<DokhodyBudushhikhPeriodovRequest>>
+	public class ДоходыБудущихПериодовСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DokhodyBudushhikhPeriodovsRequest(params string[] Codes)
+		
+		public object Get(ДоходыБудущихПериодовНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DokhodyBudushhikhPeriodovsResponse//ДоходыБудущихПериодовОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DokhodyBudushhikhPeriodovService /*ДоходыБудущихПериодовСервис*/ : Service
-	{
-		public object Any(DokhodyBudushhikhPeriodovRequest request)
+		
+		public object Get(ДоходыБудущихПериодовНайтиПоКоду Запрос)
 		{
-			return new DokhodyBudushhikhPeriodovResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DokhodyBudushhikhPeriodovRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ДоходыБудущихПериодов.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DokhodyBudushhikhPeriodovResponse() {Result = "ДоходыБудущихПериодов c кодом '" + request.Code+"' не найдено."};
+				return new ДоходыБудущихПериодовОтвет() {Ответ = "ДоходыБудущихПериодов c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DokhodyBudushhikhPeriodovsRequest request)
+		
+		public object Get(ДоходыБудущихПериодовНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ДоходыБудущихПериодов>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ДоходыБудущихПериодов.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДоходыБудущихПериодовВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоходыБудущихПериодовВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДоходыБудущихПериодовВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДоходыБудущихПериодовЗапрос Запрос)
+		{
+			return new ДоходыБудущихПериодовОтвет {Ответ = "ДоходыБудущихПериодов, "};
+		}
+
+		public object Post(ДоходыБудущихПериодовЗапрос ЗапросДоходыБудущихПериодов)
+		{
+			var Ссылка = (СправочникиСсылка.ДоходыБудущихПериодов)ЗапросДоходыБудущихПериодов;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/MestaKHraneniya")]
-	[Route("/Catalogs/MestaKHraneniya/FindById/{Id}")]
-	[Route("/Catalogs/MestaKHraneniya/FindByCode/{Code}")]
-	[Route("/Catalogs/MestaKHraneniya/FindByDescr/{Descr}")]
-	public class MestaKHraneniyaRequest/*МестаХраненияЗапрос*/: V82.СправочникиСсылка.МестаХранения,IReturn<MestaKHraneniyaRequest>
+	//MestaKHraneniya
+	[Маршрут("Справочники/МестаХранения","")]
+	public class МестаХраненияЗапрос: V82.СправочникиСсылка.МестаХранения,IReturn<МестаХраненияЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/МестаХранения/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/МестаХранения/ПоСсылке","{Ссылка}")]
+	public class МестаХраненияНайтиПоСсылке: V82.СправочникиСсылка.МестаХранения,IReturn<МестаХраненияНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/МестаХранения/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/МестаХранения/ПоКоду","{Код}")]
+	public class МестаХраненияНайтиПоКоду: V82.СправочникиСсылка.МестаХранения,IReturn<МестаХраненияНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/МестаХранения/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/МестаХранения/ПоНаименованию","{Наименование}")]
+	public class МестаХраненияНайтиПоНаименованию: V82.СправочникиСсылка.МестаХранения,IReturn<МестаХраненияНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/МестаХранения/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class МестаХраненияВыбратьПоСсылке: V82.СправочникиСсылка.МестаХранения,IReturn<МестаХраненияВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/МестаХранения/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class МестаХраненияВыбратьПоКоду: V82.СправочникиСсылка.МестаХранения,IReturn<МестаХраненияВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/МестаХранения/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class МестаХраненияВыбратьПоНаименованию: V82.СправочникиСсылка.МестаХранения,IReturn<МестаХраненияВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class MestaKHraneniyaResponse//МестаХраненияОтвет
+	public class МестаХраненияОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/MestaKHraneniyas")]
-	[Route("/Catalogs/MestaKHraneniyas/{Codes}")]
-	public class MestaKHraneniyasRequest/*МестаХраненияЗапрос*/: IReturn<List<MestaKHraneniyaRequest>>
+	public class МестаХраненияСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public MestaKHraneniyasRequest(params string[] Codes)
+		
+		public object Get(МестаХраненияНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class MestaKHraneniyasResponse//МестаХраненияОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class MestaKHraneniyaService /*МестаХраненияСервис*/ : Service
-	{
-		public object Any(MestaKHraneniyaRequest request)
+		
+		public object Get(МестаХраненияНайтиПоКоду Запрос)
 		{
-			return new MestaKHraneniyaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(MestaKHraneniyaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.МестаХранения.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new MestaKHraneniyaResponse() {Result = "МестаХранения c кодом '" + request.Code+"' не найдено."};
+				return new МестаХраненияОтвет() {Ответ = "МестаХранения c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(MestaKHraneniyasRequest request)
+		
+		public object Get(МестаХраненияНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.МестаХранения>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.МестаХранения.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(МестаХраненияВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МестаХраненияВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(МестаХраненияВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(МестаХраненияЗапрос Запрос)
+		{
+			return new МестаХраненияОтвет {Ответ = "МестаХранения, "};
+		}
+
+		public object Post(МестаХраненияЗапрос ЗапросМестаХранения)
+		{
+			var Ссылка = (СправочникиСсылка.МестаХранения)ЗапросМестаХранения;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

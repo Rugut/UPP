@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StepeniZnaniyaYAzyka")]
-	[Route("/Catalogs/StepeniZnaniyaYAzyka/FindById/{Id}")]
-	[Route("/Catalogs/StepeniZnaniyaYAzyka/FindByCode/{Code}")]
-	[Route("/Catalogs/StepeniZnaniyaYAzyka/FindByDescr/{Descr}")]
-	public class StepeniZnaniyaYAzykaRequest/*СтепениЗнанияЯзыкаЗапрос*/: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<StepeniZnaniyaYAzykaRequest>
+	//StepeniZnaniyaYAzyka
+	[Маршрут("Справочники/СтепениЗнанияЯзыка","")]
+	public class СтепениЗнанияЯзыкаЗапрос: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<СтепениЗнанияЯзыкаЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/ПоСсылке","{Ссылка}")]
+	public class СтепениЗнанияЯзыкаНайтиПоСсылке: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<СтепениЗнанияЯзыкаНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/ПоКоду","{Код}")]
+	public class СтепениЗнанияЯзыкаНайтиПоКоду: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<СтепениЗнанияЯзыкаНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/ПоНаименованию","{Наименование}")]
+	public class СтепениЗнанияЯзыкаНайтиПоНаименованию: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<СтепениЗнанияЯзыкаНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтепениЗнанияЯзыкаВыбратьПоСсылке: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<СтепениЗнанияЯзыкаВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтепениЗнанияЯзыкаВыбратьПоКоду: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<СтепениЗнанияЯзыкаВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтепениЗнанияЯзыка/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтепениЗнанияЯзыкаВыбратьПоНаименованию: V82.СправочникиСсылка.СтепениЗнанияЯзыка,IReturn<СтепениЗнанияЯзыкаВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StepeniZnaniyaYAzykaResponse//СтепениЗнанияЯзыкаОтвет
+	public class СтепениЗнанияЯзыкаОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StepeniZnaniyaYAzykas")]
-	[Route("/Catalogs/StepeniZnaniyaYAzykas/{Codes}")]
-	public class StepeniZnaniyaYAzykasRequest/*СтепениЗнанияЯзыкаЗапрос*/: IReturn<List<StepeniZnaniyaYAzykaRequest>>
+	public class СтепениЗнанияЯзыкаСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StepeniZnaniyaYAzykasRequest(params string[] Codes)
+		
+		public object Get(СтепениЗнанияЯзыкаНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StepeniZnaniyaYAzykasResponse//СтепениЗнанияЯзыкаОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StepeniZnaniyaYAzykaService /*СтепениЗнанияЯзыкаСервис*/ : Service
-	{
-		public object Any(StepeniZnaniyaYAzykaRequest request)
+		
+		public object Get(СтепениЗнанияЯзыкаНайтиПоКоду Запрос)
 		{
-			return new StepeniZnaniyaYAzykaResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StepeniZnaniyaYAzykaRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтепениЗнанияЯзыка.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StepeniZnaniyaYAzykaResponse() {Result = "СтепениЗнанияЯзыка c кодом '" + request.Code+"' не найдено."};
+				return new СтепениЗнанияЯзыкаОтвет() {Ответ = "СтепениЗнанияЯзыка c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StepeniZnaniyaYAzykasRequest request)
+		
+		public object Get(СтепениЗнанияЯзыкаНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтепениЗнанияЯзыка>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтепениЗнанияЯзыка.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтепениЗнанияЯзыкаВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтепениЗнанияЯзыкаВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтепениЗнанияЯзыкаВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтепениЗнанияЯзыкаЗапрос Запрос)
+		{
+			return new СтепениЗнанияЯзыкаОтвет {Ответ = "СтепениЗнанияЯзыка, "};
+		}
+
+		public object Post(СтепениЗнанияЯзыкаЗапрос ЗапросСтепениЗнанияЯзыка)
+		{
+			var Ссылка = (СправочникиСсылка.СтепениЗнанияЯзыка)ЗапросСтепениЗнанияЯзыка;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

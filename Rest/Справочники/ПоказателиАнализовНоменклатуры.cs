@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/PokazateliAnalizovNomenklatury")]
-	[Route("/Catalogs/PokazateliAnalizovNomenklatury/FindById/{Id}")]
-	[Route("/Catalogs/PokazateliAnalizovNomenklatury/FindByCode/{Code}")]
-	[Route("/Catalogs/PokazateliAnalizovNomenklatury/FindByDescr/{Descr}")]
-	public class PokazateliAnalizovNomenklaturyRequest/*ПоказателиАнализовНоменклатурыЗапрос*/: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<PokazateliAnalizovNomenklaturyRequest>
+	//PokazateliAnalizovNomenklatury
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры","")]
+	public class ПоказателиАнализовНоменклатурыЗапрос: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<ПоказателиАнализовНоменклатурыЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/ПоСсылке","{Ссылка}")]
+	public class ПоказателиАнализовНоменклатурыНайтиПоСсылке: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<ПоказателиАнализовНоменклатурыНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/ПоКоду","{Код}")]
+	public class ПоказателиАнализовНоменклатурыНайтиПоКоду: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<ПоказателиАнализовНоменклатурыНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/ПоНаименованию","{Наименование}")]
+	public class ПоказателиАнализовНоменклатурыНайтиПоНаименованию: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<ПоказателиАнализовНоменклатурыНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПоказателиАнализовНоменклатурыВыбратьПоСсылке: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<ПоказателиАнализовНоменклатурыВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПоказателиАнализовНоменклатурыВыбратьПоКоду: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<ПоказателиАнализовНоменклатурыВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ПоказателиАнализовНоменклатурыВыбратьПоНаименованию: V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры,IReturn<ПоказателиАнализовНоменклатурыВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class PokazateliAnalizovNomenklaturyResponse//ПоказателиАнализовНоменклатурыОтвет
+	public class ПоказателиАнализовНоменклатурыОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/PokazateliAnalizovNomenklaturys")]
-	[Route("/Catalogs/PokazateliAnalizovNomenklaturys/{Codes}")]
-	public class PokazateliAnalizovNomenklaturysRequest/*ПоказателиАнализовНоменклатурыЗапрос*/: IReturn<List<PokazateliAnalizovNomenklaturyRequest>>
+	public class ПоказателиАнализовНоменклатурыСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public PokazateliAnalizovNomenklaturysRequest(params string[] Codes)
+		
+		public object Get(ПоказателиАнализовНоменклатурыНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class PokazateliAnalizovNomenklaturysResponse//ПоказателиАнализовНоменклатурыОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class PokazateliAnalizovNomenklaturyService /*ПоказателиАнализовНоменклатурыСервис*/ : Service
-	{
-		public object Any(PokazateliAnalizovNomenklaturyRequest request)
+		
+		public object Get(ПоказателиАнализовНоменклатурыНайтиПоКоду Запрос)
 		{
-			return new PokazateliAnalizovNomenklaturyResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(PokazateliAnalizovNomenklaturyRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.ПоказателиАнализовНоменклатуры.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new PokazateliAnalizovNomenklaturyResponse() {Result = "ПоказателиАнализовНоменклатуры c кодом '" + request.Code+"' не найдено."};
+				return new ПоказателиАнализовНоменклатурыОтвет() {Ответ = "ПоказателиАнализовНоменклатуры c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(PokazateliAnalizovNomenklaturysRequest request)
+		
+		public object Get(ПоказателиАнализовНоменклатурыНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.ПоказателиАнализовНоменклатуры>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.ПоказателиАнализовНоменклатуры.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ПоказателиАнализовНоменклатурыВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПоказателиАнализовНоменклатурыВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ПоказателиАнализовНоменклатурыВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ПоказателиАнализовНоменклатурыЗапрос Запрос)
+		{
+			return new ПоказателиАнализовНоменклатурыОтвет {Ответ = "ПоказателиАнализовНоменклатуры, "};
+		}
+
+		public object Post(ПоказателиАнализовНоменклатурыЗапрос ЗапросПоказателиАнализовНоменклатуры)
+		{
+			var Ссылка = (СправочникиСсылка.ПоказателиАнализовНоменклатуры)ЗапросПоказателиАнализовНоменклатуры;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

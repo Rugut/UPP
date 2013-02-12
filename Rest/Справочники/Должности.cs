@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/Dolzhnosti")]
-	[Route("/Catalogs/Dolzhnosti/FindById/{Id}")]
-	[Route("/Catalogs/Dolzhnosti/FindByCode/{Code}")]
-	[Route("/Catalogs/Dolzhnosti/FindByDescr/{Descr}")]
-	public class DolzhnostiRequest/*ДолжностиЗапрос*/: V82.СправочникиСсылка.Должности,IReturn<DolzhnostiRequest>
+	//Dolzhnosti
+	[Маршрут("Справочники/Должности","")]
+	public class ДолжностиЗапрос: V82.СправочникиСсылка.Должности,IReturn<ДолжностиЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/Должности/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/Должности/ПоСсылке","{Ссылка}")]
+	public class ДолжностиНайтиПоСсылке: V82.СправочникиСсылка.Должности,IReturn<ДолжностиНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/Должности/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/Должности/ПоКоду","{Код}")]
+	public class ДолжностиНайтиПоКоду: V82.СправочникиСсылка.Должности,IReturn<ДолжностиНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/Должности/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/Должности/ПоНаименованию","{Наименование}")]
+	public class ДолжностиНайтиПоНаименованию: V82.СправочникиСсылка.Должности,IReturn<ДолжностиНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/Должности/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДолжностиВыбратьПоСсылке: V82.СправочникиСсылка.Должности,IReturn<ДолжностиВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Должности/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДолжностиВыбратьПоКоду: V82.СправочникиСсылка.Должности,IReturn<ДолжностиВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/Должности/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class ДолжностиВыбратьПоНаименованию: V82.СправочникиСсылка.Должности,IReturn<ДолжностиВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class DolzhnostiResponse//ДолжностиОтвет
+	public class ДолжностиОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/Dolzhnostis")]
-	[Route("/Catalogs/Dolzhnostis/{Codes}")]
-	public class DolzhnostisRequest/*ДолжностиЗапрос*/: IReturn<List<DolzhnostiRequest>>
+	public class ДолжностиСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public DolzhnostisRequest(params string[] Codes)
+		
+		public object Get(ДолжностиНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class DolzhnostisResponse//ДолжностиОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class DolzhnostiService /*ДолжностиСервис*/ : Service
-	{
-		public object Any(DolzhnostiRequest request)
+		
+		public object Get(ДолжностиНайтиПоКоду Запрос)
 		{
-			return new DolzhnostiResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(DolzhnostiRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.Должности.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new DolzhnostiResponse() {Result = "Должности c кодом '" + request.Code+"' не найдено."};
+				return new ДолжностиОтвет() {Ответ = "Должности c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(DolzhnostisRequest request)
+		
+		public object Get(ДолжностиНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.Должности>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.Должности.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(ДолжностиВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДолжностиВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(ДолжностиВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(ДолжностиЗапрос Запрос)
+		{
+			return new ДолжностиОтвет {Ответ = "Должности, "};
+		}
+
+		public object Post(ДолжностиЗапрос ЗапросДолжности)
+		{
+			var Ссылка = (СправочникиСсылка.Должности)ЗапросДолжности;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

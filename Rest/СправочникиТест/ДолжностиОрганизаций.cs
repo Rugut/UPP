@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДолжностиОрганизаций:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДолжностиОрганизацийЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DolzhnostiOrganizacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДолжностиОрганизаций/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DolzhnostiOrganizacijjRequest());
+			ДолжностиОрганизацийЗапрос ДолжностиОрганизацийЗапрос = null;
+			try
+			{
+				ДолжностиОрганизацийЗапрос = Клиент.Get(new ДолжностиОрганизацийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДолжностиОрганизацийЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДолжностиОрганизацийЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DolzhnostiOrganizacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДолжностиОрганизаций/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DolzhnostiOrganizacijjRequest());
+			ДолжностиОрганизацийЗапрос ДолжностиОрганизацийЗапрос = null;
+			try
+			{
+				ДолжностиОрганизацийЗапрос = Клиент.Get(new ДолжностиОрганизацийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДолжностиОрганизацийЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДолжностиОрганизацийЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DolzhnostiOrganizacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДолжностиОрганизаций/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DolzhnostiOrganizacijjRequest());
+			ДолжностиОрганизацийЗапрос ДолжностиОрганизацийЗапрос = null;
+			try
+			{
+				ДолжностиОрганизацийЗапрос = Клиент.Get(new ДолжностиОрганизацийЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДолжностиОрганизацийЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДолжностиОрганизацийЗапрос ДолжностиОрганизацийЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DolzhnostiOrganizacijj/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДолжностиОрганизаций?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DolzhnostiOrganizacijjRequest());
+			var ДолжностиОрганизацийОтвет = Клиент.Post(ДолжностиОрганизацийЗапрос);
+		}
+		public static void Записать(ДолжностиОрганизацийЗапрос ДолжностиОрганизацийЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДолжностиОрганизаций?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДолжностиОрганизацийОтвет = Клиент.Put(ДолжностиОрганизацийЗапрос);
+		}
+		public static void Удалить(ДолжностиОрганизацийЗапрос ДолжностиОрганизацийЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДолжностиОрганизаций?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДолжностиОрганизацийОтвет = Клиент.Delete(ДолжностиОрганизацийЗапрос);
 		}
 	}
 }

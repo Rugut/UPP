@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,73 +8,109 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv")]
-	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv/FindById/{Id}")]
-	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv/FindByCode/{Code}")]
-	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstv/FindByDescr/{Descr}")]
-	public class StatiDvizheniyaDenezhnykhSredstvRequest/*СтатьиДвиженияДенежныхСредствЗапрос*/: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<StatiDvizheniyaDenezhnykhSredstvRequest>
+	//StatiDvizheniyaDenezhnykhSredstv
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств","")]
+	public class СтатьиДвиженияДенежныхСредствЗапрос: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<СтатьиДвиженияДенежныхСредствЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/ПоСсылке","{Ссылка}")]
+	public class СтатьиДвиженияДенежныхСредствНайтиПоСсылке: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<СтатьиДвиженияДенежныхСредствНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/НайтиПоКоду","{Код}")]
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/ПоКоду","{Код}")]
+	public class СтатьиДвиженияДенежныхСредствНайтиПоКоду: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<СтатьиДвиженияДенежныхСредствНайтиПоКоду>
+	{
+	}
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/ПоНаименованию","{Наименование}")]
+	public class СтатьиДвиженияДенежныхСредствНайтиПоНаименованию: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<СтатьиДвиженияДенежныхСредствНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиДвиженияДенежныхСредствВыбратьПоСсылке: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<СтатьиДвиженияДенежныхСредствВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/ВыбратьПоКоду","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиДвиженияДенежныхСредствВыбратьПоКоду: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<СтатьиДвиженияДенежныхСредствВыбратьПоКоду>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/СтатьиДвиженияДенежныхСредств/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class СтатьиДвиженияДенежныхСредствВыбратьПоНаименованию: V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств,IReturn<СтатьиДвиженияДенежныхСредствВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class StatiDvizheniyaDenezhnykhSredstvResponse//СтатьиДвиженияДенежныхСредствОтвет
+	public class СтатьиДвиженияДенежныхСредствОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstvs")]
-	[Route("/Catalogs/StatiDvizheniyaDenezhnykhSredstvs/{Codes}")]
-	public class StatiDvizheniyaDenezhnykhSredstvsRequest/*СтатьиДвиженияДенежныхСредствЗапрос*/: IReturn<List<StatiDvizheniyaDenezhnykhSredstvRequest>>
+	public class СтатьиДвиженияДенежныхСредствСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public StatiDvizheniyaDenezhnykhSredstvsRequest(params string[] Codes)
+		
+		public object Get(СтатьиДвиженияДенежныхСредствНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class StatiDvizheniyaDenezhnykhSredstvsResponse//СтатьиДвиженияДенежныхСредствОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class StatiDvizheniyaDenezhnykhSredstvService /*СтатьиДвиженияДенежныхСредствСервис*/ : Service
-	{
-		public object Any(StatiDvizheniyaDenezhnykhSredstvRequest request)
+		
+		public object Get(СтатьиДвиженияДенежныхСредствНайтиПоКоду Запрос)
 		{
-			return new StatiDvizheniyaDenezhnykhSredstvResponse {Result = "Tovar, " + request.Code};
-		}
-
-		public object Get(StatiDvizheniyaDenezhnykhSredstvRequest request)
-		{
-			string СтрокаКод = System.Uri.UnescapeDataString(request.Code);
+			if(Запрос.Код == null)
+			{
+				return null;
+			}
+			string СтрокаКод = System.Uri.UnescapeDataString(Запрос.Код);
 			var Ссылка = V82.Справочники.СтатьиДвиженияДенежныхСредств.НайтиПоКоду(СтрокаКод);
 			if (Ссылка == null)
 			{
-				return new StatiDvizheniyaDenezhnykhSredstvResponse() {Result = "СтатьиДвиженияДенежныхСредств c кодом '" + request.Code+"' не найдено."};
+				return new СтатьиДвиженияДенежныхСредствОтвет() {Ответ = "СтатьиДвиженияДенежныхСредств c кодом '" + Запрос.Код+"' не найдено."};
 			}
 			return Ссылка;
 		}
-
-		public object Get(StatiDvizheniyaDenezhnykhSredstvsRequest request)
+		
+		public object Get(СтатьиДвиженияДенежныхСредствНайтиПоНаименованию Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.СтатьиДвиженияДенежныхСредств>();
-			foreach (var Code in request.Codes)
-			{
-				string СтрокаКод = System.Uri.UnescapeDataString(Code);
-				var Ссылка = V82.Справочники.СтатьиДвиженияДенежныхСредств.НайтиПоКоду(СтрокаКод);
-				if (Ссылка != null)
-				{
-					Коллекция.Add(Ссылка);
-				}
-			}
-			return Коллекция;
+			return null;
 		}
+		
+		public object Get(СтатьиДвиженияДенежныхСредствВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиДвиженияДенежныхСредствВыбратьПоКоду Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(СтатьиДвиженияДенежныхСредствВыбратьПоНаименованию Запрос)
+		{
+			return null;
+		}
+
+		public object Any(СтатьиДвиженияДенежныхСредствЗапрос Запрос)
+		{
+			return new СтатьиДвиженияДенежныхСредствОтвет {Ответ = "СтатьиДвиженияДенежныхСредств, "};
+		}
+
+		public object Post(СтатьиДвиженияДенежныхСредствЗапрос ЗапросСтатьиДвиженияДенежныхСредств)
+		{
+			var Ссылка = (СправочникиСсылка.СтатьиДвиженияДенежныхСредств)ЗапросСтатьиДвиженияДенежныхСредств;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

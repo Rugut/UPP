@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ДетализацияАналитическогоБаланса:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ДетализацияАналитическогоБалансаЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияАналитическогоБаланса/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new DetalizaciyaAnaliticheskogoBalansaRequest());
+			ДетализацияАналитическогоБалансаЗапрос ДетализацияАналитическогоБалансаЗапрос = null;
+			try
+			{
+				ДетализацияАналитическогоБалансаЗапрос = Клиент.Get(new ДетализацияАналитическогоБалансаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДетализацияАналитическогоБалансаЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ДетализацияАналитическогоБалансаЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияАналитическогоБаланса/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new DetalizaciyaAnaliticheskogoBalansaRequest());
+			ДетализацияАналитическогоБалансаЗапрос ДетализацияАналитическогоБалансаЗапрос = null;
+			try
+			{
+				ДетализацияАналитическогоБалансаЗапрос = Клиент.Get(new ДетализацияАналитическогоБалансаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДетализацияАналитическогоБалансаЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ДетализацияАналитическогоБалансаЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияАналитическогоБаланса/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new DetalizaciyaAnaliticheskogoBalansaRequest());
+			ДетализацияАналитическогоБалансаЗапрос ДетализацияАналитическогоБалансаЗапрос = null;
+			try
+			{
+				ДетализацияАналитическогоБалансаЗапрос = Клиент.Get(new ДетализацияАналитическогоБалансаЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ДетализацияАналитическогоБалансаЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ДетализацияАналитическогоБалансаЗапрос ДетализацияАналитическогоБалансаЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/DetalizaciyaAnaliticheskogoBalansa/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияАналитическогоБаланса?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new DetalizaciyaAnaliticheskogoBalansaRequest());
+			var ДетализацияАналитическогоБалансаОтвет = Клиент.Post(ДетализацияАналитическогоБалансаЗапрос);
+		}
+		public static void Записать(ДетализацияАналитическогоБалансаЗапрос ДетализацияАналитическогоБалансаЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияАналитическогоБаланса?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДетализацияАналитическогоБалансаОтвет = Клиент.Put(ДетализацияАналитическогоБалансаЗапрос);
+		}
+		public static void Удалить(ДетализацияАналитическогоБалансаЗапрос ДетализацияАналитическогоБалансаЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ДетализацияАналитическогоБаланса?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ДетализацияАналитическогоБалансаОтвет = Клиент.Delete(ДетализацияАналитическогоБалансаЗапрос);
 		}
 	}
 }

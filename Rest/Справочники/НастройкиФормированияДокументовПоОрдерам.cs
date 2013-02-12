@@ -1,4 +1,6 @@
-
+﻿
+using System;
+using Rest;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -6,62 +8,77 @@ using ServiceStack.ServiceInterface;
 
 namespace V82.Справочники
 {
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/FindById/{Id}")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/FindByCode/{Code}")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderam/FindByDescr/{Descr}")]
-	public class NastrojjkiFormirovaniyaDokumentovPoOrderamRequest/*НастройкиФормированияДокументовПоОрдерамЗапрос*/: V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам,IReturn<NastrojjkiFormirovaniyaDokumentovPoOrderamRequest>
+	//NastrojjkiFormirovaniyaDokumentovPoOrderam
+	[Маршрут("Справочники/НастройкиФормированияДокументовПоОрдерам","")]
+	public class НастройкиФормированияДокументовПоОрдерамЗапрос: V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам,IReturn<НастройкиФормированияДокументовПоОрдерамЗапрос>
 	{
-		public string Id { get; set; }
-		public string Code {get;set;}
-		public string Descr {get;set;}
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовПоОрдерам/НайтиПоСсылке","{Ссылка}")]
+	[Маршрут("Справочники/НастройкиФормированияДокументовПоОрдерам/ПоСсылке","{Ссылка}")]
+	public class НастройкиФормированияДокументовПоОрдерамНайтиПоСсылке: V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам,IReturn<НастройкиФормированияДокументовПоОрдерамНайтиПоСсылке>
+	{
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовПоОрдерам/НайтиПоНаименованию","{Наименование}")]
+	[Маршрут("Справочники/НастройкиФормированияДокументовПоОрдерам/ПоНаименованию","{Наименование}")]
+	public class НастройкиФормированияДокументовПоОрдерамНайтиПоНаименованию: V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам,IReturn<НастройкиФормированияДокументовПоОрдерамНайтиПоНаименованию>
+	{
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовПоОрдерам/ВыбратьПоСсылке","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиФормированияДокументовПоОрдерамВыбратьПоСсылке: V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам,IReturn<НастройкиФормированияДокументовПоОрдерамВыбратьПоСсылке>
+	{
+		public int ___Первые {get; set;}
+		public Guid ___Мин {get; set;}
+		public Guid ___Макс {get; set;}
+	}
+	[Маршрут("Справочники/НастройкиФормированияДокументовПоОрдерам/ВыбратьПоНаименованию","{___Первые}/{___Мин}/{___Макс}")]
+	public class НастройкиФормированияДокументовПоОрдерамВыбратьПоНаименованию: V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам,IReturn<НастройкиФормированияДокументовПоОрдерамВыбратьПоНаименованию>
+	{
+		public int ___Первые {get; set;}
+		public string ___Мин {get; set;}
+		public string ___Макс {get; set;}
 	}
 
-	public class NastrojjkiFormirovaniyaDokumentovPoOrderamResponse//НастройкиФормированияДокументовПоОрдерамОтвет
+	public class НастройкиФормированияДокументовПоОрдерамОтвет
 	{
-		public string Result {get;set;}
+		public string Ответ {get;set;}
 	}
 
-
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderams")]
-	[Route("/Catalogs/NastrojjkiFormirovaniyaDokumentovPoOrderams/{Codes}")]
-	public class NastrojjkiFormirovaniyaDokumentovPoOrderamsRequest/*НастройкиФормированияДокументовПоОрдерамЗапрос*/: IReturn<List<NastrojjkiFormirovaniyaDokumentovPoOrderamRequest>>
+	public class НастройкиФормированияДокументовПоОрдерамСервис : Service
 	{
-		public string[] Codes {get;set;}
-		public string[] Descrs {get;set;}
-		public NastrojjkiFormirovaniyaDokumentovPoOrderamsRequest(params string[] Codes)
+		
+		public object Get(НастройкиФормированияДокументовПоОрдерамНайтиПоСсылке Запрос)
 		{
-			this.Codes = Codes;
+			return null;
 		}
-	}
-
-	public class NastrojjkiFormirovaniyaDokumentovPoOrderamsResponse//НастройкиФормированияДокументовПоОрдерамОтвет
-	{
-		public string Result {get;set;}
-	}
-
-
-	public class NastrojjkiFormirovaniyaDokumentovPoOrderamService /*НастройкиФормированияДокументовПоОрдерамСервис*/ : Service
-	{
-		public object Any(NastrojjkiFormirovaniyaDokumentovPoOrderamRequest request)
+		
+		public object Get(НастройкиФормированияДокументовПоОрдерамНайтиПоНаименованию Запрос)
 		{
-			return new NastrojjkiFormirovaniyaDokumentovPoOrderamResponse {Result = "Tovar, " + request.Code};
+			return null;
 		}
-
-		public object Get(NastrojjkiFormirovaniyaDokumentovPoOrderamRequest request)
+		
+		public object Get(НастройкиФормированияДокументовПоОрдерамВыбратьПоСсылке Запрос)
+		{
+			return null;
+		}
+		
+		public object Get(НастройкиФормированияДокументовПоОрдерамВыбратьПоНаименованию Запрос)
 		{
 			return null;
 		}
 
-		public object Get(NastrojjkiFormirovaniyaDokumentovPoOrderamsRequest request)
+		public object Any(НастройкиФормированияДокументовПоОрдерамЗапрос Запрос)
 		{
-			var Коллекция = new List<V82.СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам>();
-			foreach (var Code in request.Codes)
-			{
-					Коллекция.Add(null);
-			}
-			return Коллекция;
+			return new НастройкиФормированияДокументовПоОрдерамОтвет {Ответ = "НастройкиФормированияДокументовПоОрдерам, "};
 		}
+
+		public object Post(НастройкиФормированияДокументовПоОрдерамЗапрос ЗапросНастройкиФормированияДокументовПоОрдерам)
+		{
+			var Ссылка = (СправочникиСсылка.НастройкиФормированияДокументовПоОрдерам)ЗапросНастройкиФормированияДокументовПоОрдерам;
+			var Объект = Ссылка.ПолучитьОбъект();
+			Объект.Записать();
+			return null;
+		}
+
 
 	}
 }

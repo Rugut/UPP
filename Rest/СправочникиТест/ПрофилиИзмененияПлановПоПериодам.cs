@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class ПрофилиИзмененияПлановПоПериодам:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static ПрофилиИзмененияПлановПоПериодамЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоПериодам/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new ProfiliIzmeneniyaPlanovPoPeriodamRequest());
+			ПрофилиИзмененияПлановПоПериодамЗапрос ПрофилиИзмененияПлановПоПериодамЗапрос = null;
+			try
+			{
+				ПрофилиИзмененияПлановПоПериодамЗапрос = Клиент.Get(new ПрофилиИзмененияПлановПоПериодамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиИзмененияПлановПоПериодамЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static ПрофилиИзмененияПлановПоПериодамЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоПериодам/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new ProfiliIzmeneniyaPlanovPoPeriodamRequest());
+			ПрофилиИзмененияПлановПоПериодамЗапрос ПрофилиИзмененияПлановПоПериодамЗапрос = null;
+			try
+			{
+				ПрофилиИзмененияПлановПоПериодамЗапрос = Клиент.Get(new ПрофилиИзмененияПлановПоПериодамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиИзмененияПлановПоПериодамЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static ПрофилиИзмененияПлановПоПериодамЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоПериодам/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new ProfiliIzmeneniyaPlanovPoPeriodamRequest());
+			ПрофилиИзмененияПлановПоПериодамЗапрос ПрофилиИзмененияПлановПоПериодамЗапрос = null;
+			try
+			{
+				ПрофилиИзмененияПлановПоПериодамЗапрос = Клиент.Get(new ПрофилиИзмененияПлановПоПериодамЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return ПрофилиИзмененияПлановПоПериодамЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(ПрофилиИзмененияПлановПоПериодамЗапрос ПрофилиИзмененияПлановПоПериодамЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/ProfiliIzmeneniyaPlanovPoPeriodam/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоПериодам?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new ProfiliIzmeneniyaPlanovPoPeriodamRequest());
+			var ПрофилиИзмененияПлановПоПериодамОтвет = Клиент.Post(ПрофилиИзмененияПлановПоПериодамЗапрос);
+		}
+		public static void Записать(ПрофилиИзмененияПлановПоПериодамЗапрос ПрофилиИзмененияПлановПоПериодамЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоПериодам?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофилиИзмененияПлановПоПериодамОтвет = Клиент.Put(ПрофилиИзмененияПлановПоПериодамЗапрос);
+		}
+		public static void Удалить(ПрофилиИзмененияПлановПоПериодамЗапрос ПрофилиИзмененияПлановПоПериодамЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/ПрофилиИзмененияПлановПоПериодам?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var ПрофилиИзмененияПлановПоПериодамОтвет = Клиент.Delete(ПрофилиИзмененияПлановПоПериодамЗапрос);
 		}
 	}
 }

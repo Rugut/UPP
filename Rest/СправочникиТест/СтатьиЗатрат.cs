@@ -1,4 +1,5 @@
-
+﻿
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using ServiceStack.ServiceHost;
@@ -10,29 +11,68 @@ namespace V82.Rest.СправочникиТест
 {
 	public class СтатьиЗатрат:V82.Rest.СправочникиТест.СправочникТест
 	{
-		public static void Получить()//Взять
+		public static СтатьиЗатратЗапрос НайтиПоУникальномуИдентификатору(Guid УникальныйИдентификатор)//ПолучитьПоСсылке,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиЗатрат/НайтиПоСсылке/"+УникальныйИдентификатор+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Get(new StatiZatratRequest());
+			СтатьиЗатратЗапрос СтатьиЗатратЗапрос = null;
+			try
+			{
+				СтатьиЗатратЗапрос = Клиент.Get(new СтатьиЗатратЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиЗатратЗапрос;
 		}
-		public static void ЗаписатьНовый()//Положить
+		public static СтатьиЗатратЗапрос НайтиПоКоду(string Код)
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиЗатрат/НайтиПоКоду/"+Код+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Post(new StatiZatratRequest());
+			СтатьиЗатратЗапрос СтатьиЗатратЗапрос = null;
+			try
+			{
+				СтатьиЗатратЗапрос = Клиент.Get(new СтатьиЗатратЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиЗатратЗапрос;
 		}
-		public static void Записать()//Обновить
+		public static СтатьиЗатратЗапрос НайтиПоНаименованию(string Наименование)//ПолучитьПоНаименованию,Взять
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиЗатрат/НайтиПоНаименованию/"+Наименование+"?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Put(new StatiZatratRequest());
+			СтатьиЗатратЗапрос СтатьиЗатратЗапрос = null;
+			try
+			{
+				СтатьиЗатратЗапрос = Клиент.Get(new СтатьиЗатратЗапрос());
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+			return СтатьиЗатратЗапрос;
 		}
-		public static void Удалить()//
+		public static void ЗаписатьНовый(СтатьиЗатратЗапрос СтатьиЗатратЗапрос)//Положить
 		{
-			var Урл = "http://localhost:1337/Catalogs/StatiZatrat/043735824?format=json";
+			var Урл = "http://localhost:1337/Catalogs/СтатьиЗатрат?format=json";
 			var Клиент = new JsonServiceClient(Урл);
-			var all = Клиент.Delete(new StatiZatratRequest());
+			var СтатьиЗатратОтвет = Клиент.Post(СтатьиЗатратЗапрос);
+		}
+		public static void Записать(СтатьиЗатратЗапрос СтатьиЗатратЗапрос)//Обновить
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиЗатрат?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиЗатратОтвет = Клиент.Put(СтатьиЗатратЗапрос);
+		}
+		public static void Удалить(СтатьиЗатратЗапрос СтатьиЗатратЗапрос)//
+		{
+			var Урл = "http://localhost:1337/Catalogs/СтатьиЗатрат?format=json";
+			var Клиент = new JsonServiceClient(Урл);
+			var СтатьиЗатратОтвет = Клиент.Delete(СтатьиЗатратЗапрос);
 		}
 	}
 }
