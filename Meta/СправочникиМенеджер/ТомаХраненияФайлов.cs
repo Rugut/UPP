@@ -85,7 +85,7 @@ namespace V82.Справочники//Менеджер
 					,_Fld3987 [ПолныйПутьLinux]
 					,_Fld3988 [ПолныйПутьWindows]
 					,_Fld3989 [ПорядокЗаполнения]
-							From _Reference271(NOLOCK)";
+					From _Reference271(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТомаХраненияФайлов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -121,7 +121,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -133,7 +133,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld3987 [ПолныйПутьLinux]
 					,_Fld3988 [ПолныйПутьWindows]
 					,_Fld3989 [ПорядокЗаполнения]
-							From _Reference271(NOLOCK)";
+					From _Reference271(NOLOCK)
+					Where _IDRRef between @Мин and @Макс
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.ТомаХраненияФайлов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -169,7 +173,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -181,7 +185,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld3987 [ПолныйПутьLinux]
 					,_Fld3988 [ПолныйПутьWindows]
 					,_Fld3989 [ПорядокЗаполнения]
-							From _Reference271(NOLOCK)";
+					From _Reference271(NOLOCK)
+					Where _Code between @Мин and @Макс
+					Order by _Code", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.ТомаХраненияФайлов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -217,6 +225,58 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3985 [Комментарий]
+					,_Fld3986 [МаксимальныйРазмер]
+					,_Fld3987 [ПолныйПутьLinux]
+					,_Fld3988 [ПолныйПутьWindows]
+					,_Fld3989 [ПорядокЗаполнения]
+					From _Reference271(NOLOCK)
+					Where _Description between @Мин and @Макс
+					Order by _Description", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.ТомаХраненияФайлов();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ТомаХраненияФайлов();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Комментарий = Читалка.GetString(6);
+							Ссылка.МаксимальныйРазмер = Читалка.GetDecimal(7);
+							Ссылка.ПолныйПутьLinux = Читалка.GetString(8);
+							Ссылка.ПолныйПутьWindows = Читалка.GetString(9);
+							Ссылка.ПорядокЗаполнения = Читалка.GetDecimal(10);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ТомаХраненияФайлов СтраницаПоСсылке(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
 					Команда.CommandText = @"Select top 1000 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
@@ -229,7 +289,103 @@ namespace V82.Справочники//Менеджер
 					,_Fld3987 [ПолныйПутьLinux]
 					,_Fld3988 [ПолныйПутьWindows]
 					,_Fld3989 [ПорядокЗаполнения]
-							From _Reference271(NOLOCK)";
+					From _Reference271(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.ТомаХраненияФайлов();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ТомаХраненияФайлов();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Комментарий = Читалка.GetString(6);
+							Ссылка.МаксимальныйРазмер = Читалка.GetDecimal(7);
+							Ссылка.ПолныйПутьLinux = Читалка.GetString(8);
+							Ссылка.ПолныйПутьWindows = Читалка.GetString(9);
+							Ссылка.ПорядокЗаполнения = Читалка.GetDecimal(10);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ТомаХраненияФайлов СтраницаПоКоду(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3985 [Комментарий]
+					,_Fld3986 [МаксимальныйРазмер]
+					,_Fld3987 [ПолныйПутьLinux]
+					,_Fld3988 [ПолныйПутьWindows]
+					,_Fld3989 [ПорядокЗаполнения]
+					From _Reference271(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.ТомаХраненияФайлов();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ТомаХраненияФайлов();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Комментарий = Читалка.GetString(6);
+							Ссылка.МаксимальныйРазмер = Читалка.GetDecimal(7);
+							Ссылка.ПолныйПутьLinux = Читалка.GetString(8);
+							Ссылка.ПолныйПутьWindows = Читалка.GetString(9);
+							Ссылка.ПорядокЗаполнения = Читалка.GetDecimal(10);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ТомаХраненияФайлов СтраницаПоНаименованию(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3985 [Комментарий]
+					,_Fld3986 [МаксимальныйРазмер]
+					,_Fld3987 [ПолныйПутьLinux]
+					,_Fld3988 [ПолныйПутьWindows]
+					,_Fld3989 [ПорядокЗаполнения]
+					From _Reference271(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТомаХраненияФайлов();
 					using (var Читалка = Команда.ExecuteReader())
 					{

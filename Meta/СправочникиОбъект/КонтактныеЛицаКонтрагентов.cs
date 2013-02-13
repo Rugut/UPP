@@ -2,6 +2,7 @@
 using System;
 using System.Data.SqlClient;
 using V82;
+using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
 using V82.СправочникиОбъект;
 using V82.ДокументыСсылка;

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using V82;
+using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
 using V82.ДокументыСсылка;
 using V82.ДокументыОбъект;

@@ -30,7 +30,7 @@ namespace V82.Справочники//Менеджер
 					,_Fld2293 [ВходитВБазуФОМС]
 					,_Fld2294 [ВходитВБазуФСС]
 					,_Fld2295 [ВходитВБазуФедеральныйБюджет]
-							From _Reference94(NOLOCK)";
+					From _Reference94(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ДоходыЕСН();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -63,7 +63,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -72,7 +72,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld2293 [ВходитВБазуФОМС]
 					,_Fld2294 [ВходитВБазуФСС]
 					,_Fld2295 [ВходитВБазуФедеральныйБюджет]
-							From _Reference94(NOLOCK)";
+					From _Reference94(NOLOCK)
+					Where _IDRRef between @Мин and @Макс
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.ДоходыЕСН();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -105,6 +109,52 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2293 [ВходитВБазуФОМС]
+					,_Fld2294 [ВходитВБазуФСС]
+					,_Fld2295 [ВходитВБазуФедеральныйБюджет]
+					From _Reference94(NOLOCK)
+					Where _Description between @Мин and @Макс
+					Order by _Description", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.ДоходыЕСН();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ДоходыЕСН();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Наименование = Читалка.GetString(4);
+							Ссылка.ВходитВБазуФОМС = ((byte[])Читалка.GetValue(5))[0]==1?true:false;
+							Ссылка.ВходитВБазуФСС = ((byte[])Читалка.GetValue(6))[0]==1?true:false;
+							Ссылка.ВходитВБазуФедеральныйБюджет = ((byte[])Читалка.GetValue(7))[0]==1?true:false;
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ДоходыЕСН СтраницаПоСсылке(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
 					Команда.CommandText = @"Select top 1000 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
@@ -114,7 +164,49 @@ namespace V82.Справочники//Менеджер
 					,_Fld2293 [ВходитВБазуФОМС]
 					,_Fld2294 [ВходитВБазуФСС]
 					,_Fld2295 [ВходитВБазуФедеральныйБюджет]
-							From _Reference94(NOLOCK)";
+					From _Reference94(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.ДоходыЕСН();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ДоходыЕСН();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Наименование = Читалка.GetString(4);
+							Ссылка.ВходитВБазуФОМС = ((byte[])Читалка.GetValue(5))[0]==1?true:false;
+							Ссылка.ВходитВБазуФСС = ((byte[])Читалка.GetValue(6))[0]==1?true:false;
+							Ссылка.ВходитВБазуФедеральныйБюджет = ((byte[])Читалка.GetValue(7))[0]==1?true:false;
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ДоходыЕСН СтраницаПоНаименованию(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2293 [ВходитВБазуФОМС]
+					,_Fld2294 [ВходитВБазуФСС]
+					,_Fld2295 [ВходитВБазуФедеральныйБюджет]
+					From _Reference94(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ДоходыЕСН();
 					using (var Читалка = Команда.ExecuteReader())
 					{

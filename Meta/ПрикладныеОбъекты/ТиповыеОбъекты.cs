@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace V82.СправочникиСсылка
 {
-    public class ХранилищеЗначения
-    {
-    }
+
     public class ПланОбменаСсылка
     {
     }
-    public class УникальныйИдентификатор
-    {
-    }
+ 
     
 
 }

@@ -91,7 +91,7 @@ namespace V82.Справочники//Менеджер
 					,_Fld2453 [ДатаРождения]
 					,_Fld2454 [Описание]
 					,_Fld2455RRef [Пол]
-							From _Reference128(NOLOCK)";
+					From _Reference128(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛица();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -130,7 +130,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -145,7 +145,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld2453 [ДатаРождения]
 					,_Fld2454 [Описание]
 					,_Fld2455RRef [Пол]
-							From _Reference128(NOLOCK)";
+					From _Reference128(NOLOCK)
+					Where _IDRRef between @Мин and @Макс
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛица();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -184,7 +188,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -199,7 +203,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld2453 [ДатаРождения]
 					,_Fld2454 [Описание]
 					,_Fld2455RRef [Пол]
-							From _Reference128(NOLOCK)";
+					From _Reference128(NOLOCK)
+					Where _Code between @Мин and @Макс
+					Order by _Code", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛица();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -238,6 +246,64 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2448 [Фамилия]
+					,_Fld2449 [Имя]
+					,_Fld2450 [КоличествоДнейДоНапоминания]
+					,_Fld2451 [НапоминатьОДнеРождения]
+					,_Fld2452 [Отчество]
+					,_Fld2453 [ДатаРождения]
+					,_Fld2454 [Описание]
+					,_Fld2455RRef [Пол]
+					From _Reference128(NOLOCK)
+					Where _Description between @Мин and @Макс
+					Order by _Description", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.КонтактныеЛица();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.КонтактныеЛица();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Фамилия = Читалка.GetString(6);
+							Ссылка.Имя = Читалка.GetString(7);
+							Ссылка.КоличествоДнейДоНапоминания = Читалка.GetDecimal(8);
+							Ссылка.НапоминатьОДнеРождения = ((byte[])Читалка.GetValue(9))[0]==1?true:false;
+							Ссылка.Отчество = Читалка.GetString(10);
+							Ссылка.ДатаРождения = Читалка.GetDateTime(11);
+							Ссылка.Описание = Читалка.GetString(12);
+							Ссылка.Пол = V82.Перечисления/*Ссылка*/.ПолФизическихЛиц.ПустаяСсылка.Получить((byte[])Читалка.GetValue(13));
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.КонтактныеЛица СтраницаПоСсылке(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
 					Команда.CommandText = @"Select top 1000 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
@@ -253,7 +319,115 @@ namespace V82.Справочники//Менеджер
 					,_Fld2453 [ДатаРождения]
 					,_Fld2454 [Описание]
 					,_Fld2455RRef [Пол]
-							From _Reference128(NOLOCK)";
+					From _Reference128(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.КонтактныеЛица();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.КонтактныеЛица();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Фамилия = Читалка.GetString(6);
+							Ссылка.Имя = Читалка.GetString(7);
+							Ссылка.КоличествоДнейДоНапоминания = Читалка.GetDecimal(8);
+							Ссылка.НапоминатьОДнеРождения = ((byte[])Читалка.GetValue(9))[0]==1?true:false;
+							Ссылка.Отчество = Читалка.GetString(10);
+							Ссылка.ДатаРождения = Читалка.GetDateTime(11);
+							Ссылка.Описание = Читалка.GetString(12);
+							Ссылка.Пол = V82.Перечисления/*Ссылка*/.ПолФизическихЛиц.ПустаяСсылка.Получить((byte[])Читалка.GetValue(13));
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.КонтактныеЛица СтраницаПоКоду(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2448 [Фамилия]
+					,_Fld2449 [Имя]
+					,_Fld2450 [КоличествоДнейДоНапоминания]
+					,_Fld2451 [НапоминатьОДнеРождения]
+					,_Fld2452 [Отчество]
+					,_Fld2453 [ДатаРождения]
+					,_Fld2454 [Описание]
+					,_Fld2455RRef [Пол]
+					From _Reference128(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.КонтактныеЛица();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.КонтактныеЛица();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Фамилия = Читалка.GetString(6);
+							Ссылка.Имя = Читалка.GetString(7);
+							Ссылка.КоличествоДнейДоНапоминания = Читалка.GetDecimal(8);
+							Ссылка.НапоминатьОДнеРождения = ((byte[])Читалка.GetValue(9))[0]==1?true:false;
+							Ссылка.Отчество = Читалка.GetString(10);
+							Ссылка.ДатаРождения = Читалка.GetDateTime(11);
+							Ссылка.Описание = Читалка.GetString(12);
+							Ссылка.Пол = V82.Перечисления/*Ссылка*/.ПолФизическихЛиц.ПустаяСсылка.Получить((byte[])Читалка.GetValue(13));
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.КонтактныеЛица СтраницаПоНаименованию(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2448 [Фамилия]
+					,_Fld2449 [Имя]
+					,_Fld2450 [КоличествоДнейДоНапоминания]
+					,_Fld2451 [НапоминатьОДнеРождения]
+					,_Fld2452 [Отчество]
+					,_Fld2453 [ДатаРождения]
+					,_Fld2454 [Описание]
+					,_Fld2455RRef [Пол]
+					From _Reference128(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛица();
 					using (var Читалка = Команда.ExecuteReader())
 					{

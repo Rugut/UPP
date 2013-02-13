@@ -3,7 +3,7 @@ using System;
 using V82;
 namespace V82.ОбщиеОбъекты
 {
-	public class ГенераторСлучайныхЧисел
+	public partial class ГенераторСлучайныхЧисел
 	{
 		private static Random rnd = new Random((int)DateTime.Now.Ticks%1000000000);
 		public static int Следующий(int МаксимальноеЗначение)

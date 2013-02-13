@@ -76,7 +76,7 @@ namespace V82.Справочники//Менеджер
 					,_Description [Наименование]
 					,_Fld2314 [НормаАмортизационныхОтчислений]
 					,_Fld2315 [ПроцентОтСтоимостиМашины]
-							From _Reference98(NOLOCK)";
+					From _Reference98(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -109,7 +109,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -118,7 +118,11 @@ namespace V82.Справочники//Менеджер
 					,_Description [Наименование]
 					,_Fld2314 [НормаАмортизационныхОтчислений]
 					,_Fld2315 [ПроцентОтСтоимостиМашины]
-							From _Reference98(NOLOCK)";
+					From _Reference98(NOLOCK)
+					Where _IDRRef between @Мин and @Макс
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -151,7 +155,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -160,7 +164,11 @@ namespace V82.Справочники//Менеджер
 					,_Description [Наименование]
 					,_Fld2314 [НормаАмортизационныхОтчислений]
 					,_Fld2315 [ПроцентОтСтоимостиМашины]
-							From _Reference98(NOLOCK)";
+					From _Reference98(NOLOCK)
+					Where _Code between @Мин and @Макс
+					Order by _Code", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -193,6 +201,52 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2314 [НормаАмортизационныхОтчислений]
+					,_Fld2315 [ПроцентОтСтоимостиМашины]
+					From _Reference98(NOLOCK)
+					Where _Description between @Мин and @Макс
+					Order by _Description", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetDecimal(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.НормаАмортизационныхОтчислений = Читалка.GetDecimal(6);
+							Ссылка.ПроцентОтСтоимостиМашины = Читалка.GetDecimal(7);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов СтраницаПоСсылке(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
 					Команда.CommandText = @"Select top 1000 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
@@ -202,7 +256,91 @@ namespace V82.Справочники//Менеджер
 					,_Description [Наименование]
 					,_Fld2314 [НормаАмортизационныхОтчислений]
 					,_Fld2315 [ПроцентОтСтоимостиМашины]
-							From _Reference98(NOLOCK)";
+					From _Reference98(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetDecimal(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.НормаАмортизационныхОтчислений = Читалка.GetDecimal(6);
+							Ссылка.ПроцентОтСтоимостиМашины = Читалка.GetDecimal(7);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов СтраницаПоКоду(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2314 [НормаАмортизационныхОтчислений]
+					,_Fld2315 [ПроцентОтСтоимостиМашины]
+					From _Reference98(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetDecimal(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.НормаАмортизационныхОтчислений = Читалка.GetDecimal(6);
+							Ссылка.ПроцентОтСтоимостиМашины = Читалка.GetDecimal(7);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов СтраницаПоНаименованию(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2314 [НормаАмортизационныхОтчислений]
+					,_Fld2315 [ПроцентОтСтоимостиМашины]
+					From _Reference98(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов();
 					using (var Читалка = Команда.ExecuteReader())
 					{

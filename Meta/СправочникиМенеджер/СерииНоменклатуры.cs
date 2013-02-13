@@ -85,7 +85,7 @@ namespace V82.Справочники//Менеджер
 					,_Fld3404RRef [СтранаПроисхождения]
 					,_Fld3405RRef [ОсновноеИзображение]
 					,_Fld3406 [Комментарий]
-							From _Reference226(NOLOCK)";
+					From _Reference226(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СерииНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -122,7 +122,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -135,7 +135,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld3404RRef [СтранаПроисхождения]
 					,_Fld3405RRef [ОсновноеИзображение]
 					,_Fld3406 [Комментарий]
-							From _Reference226(NOLOCK)";
+					From _Reference226(NOLOCK)
+					Where _IDRRef between @Мин and @Макс
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.СерииНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -172,7 +176,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -185,7 +189,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld3404RRef [СтранаПроисхождения]
 					,_Fld3405RRef [ОсновноеИзображение]
 					,_Fld3406 [Комментарий]
-							From _Reference226(NOLOCK)";
+					From _Reference226(NOLOCK)
+					Where _Code between @Мин and @Макс
+					Order by _Code", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.СерииНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -222,6 +230,60 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3401 [СерийныйНомер]
+					,_Fld3402 [СрокГодности]
+					,_Fld3403RRef [НомерГТД]
+					,_Fld3404RRef [СтранаПроисхождения]
+					,_Fld3405RRef [ОсновноеИзображение]
+					,_Fld3406 [Комментарий]
+					From _Reference226(NOLOCK)
+					Where _Description between @Мин and @Макс
+					Order by _Description", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.СерииНоменклатуры();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.СерииНоменклатуры();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.СерийныйНомер = Читалка.GetString(6);
+							Ссылка.СрокГодности = Читалка.GetDateTime(7);
+							//Ссылка.НомерГТД = new V82.СправочникиСсылка.НомераГТД((byte[])Читалка.GetValue(8));
+							//Ссылка.СтранаПроисхождения = new V82.СправочникиСсылка.КлассификаторСтранМира((byte[])Читалка.GetValue(9));
+							//Ссылка.ОсновноеИзображение = new V82.СправочникиСсылка.ХранилищеДополнительнойИнформации((byte[])Читалка.GetValue(10));
+							Ссылка.Комментарий = Читалка.GetString(11);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.СерииНоменклатуры СтраницаПоСсылке(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
 					Команда.CommandText = @"Select top 1000 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
@@ -235,7 +297,107 @@ namespace V82.Справочники//Менеджер
 					,_Fld3404RRef [СтранаПроисхождения]
 					,_Fld3405RRef [ОсновноеИзображение]
 					,_Fld3406 [Комментарий]
-							From _Reference226(NOLOCK)";
+					From _Reference226(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.СерииНоменклатуры();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.СерииНоменклатуры();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.СерийныйНомер = Читалка.GetString(6);
+							Ссылка.СрокГодности = Читалка.GetDateTime(7);
+							//Ссылка.НомерГТД = new V82.СправочникиСсылка.НомераГТД((byte[])Читалка.GetValue(8));
+							//Ссылка.СтранаПроисхождения = new V82.СправочникиСсылка.КлассификаторСтранМира((byte[])Читалка.GetValue(9));
+							//Ссылка.ОсновноеИзображение = new V82.СправочникиСсылка.ХранилищеДополнительнойИнформации((byte[])Читалка.GetValue(10));
+							Ссылка.Комментарий = Читалка.GetString(11);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.СерииНоменклатуры СтраницаПоКоду(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3401 [СерийныйНомер]
+					,_Fld3402 [СрокГодности]
+					,_Fld3403RRef [НомерГТД]
+					,_Fld3404RRef [СтранаПроисхождения]
+					,_Fld3405RRef [ОсновноеИзображение]
+					,_Fld3406 [Комментарий]
+					From _Reference226(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.СерииНоменклатуры();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.СерииНоменклатуры();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.СерийныйНомер = Читалка.GetString(6);
+							Ссылка.СрокГодности = Читалка.GetDateTime(7);
+							//Ссылка.НомерГТД = new V82.СправочникиСсылка.НомераГТД((byte[])Читалка.GetValue(8));
+							//Ссылка.СтранаПроисхождения = new V82.СправочникиСсылка.КлассификаторСтранМира((byte[])Читалка.GetValue(9));
+							//Ссылка.ОсновноеИзображение = new V82.СправочникиСсылка.ХранилищеДополнительнойИнформации((byte[])Читалка.GetValue(10));
+							Ссылка.Комментарий = Читалка.GetString(11);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.СерииНоменклатуры СтраницаПоНаименованию(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3401 [СерийныйНомер]
+					,_Fld3402 [СрокГодности]
+					,_Fld3403RRef [НомерГТД]
+					,_Fld3404RRef [СтранаПроисхождения]
+					,_Fld3405RRef [ОсновноеИзображение]
+					,_Fld3406 [Комментарий]
+					From _Reference226(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СерииНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{

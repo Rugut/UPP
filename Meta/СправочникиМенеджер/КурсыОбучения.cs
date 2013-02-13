@@ -30,7 +30,7 @@ namespace V82.Справочники//Менеджер
 					,_Fld2508RRef [ВидДокументаОбОбразовании]
 					,_Fld2509RRef [Валюта]
 					,_Fld2510 [ОтражатьВРегУчете]
-							From _Reference132(NOLOCK)";
+					From _Reference132(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КурсыОбучения();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -66,7 +66,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -78,7 +78,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld2508RRef [ВидДокументаОбОбразовании]
 					,_Fld2509RRef [Валюта]
 					,_Fld2510 [ОтражатьВРегУчете]
-							From _Reference132(NOLOCK)";
+					From _Reference132(NOLOCK)
+					Where _IDRRef between @Мин and @Макс
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.КурсыОбучения();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -114,6 +118,58 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2505 [ОписаниеКурса]
+					,_Fld2506 [ДлительностьКурса]
+					,_Fld2507 [ЗатратыНаОдногоОбучающегося]
+					,_Fld2508RRef [ВидДокументаОбОбразовании]
+					,_Fld2509RRef [Валюта]
+					,_Fld2510 [ОтражатьВРегУчете]
+					From _Reference132(NOLOCK)
+					Where _Description between @Мин and @Макс
+					Order by _Description", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.КурсыОбучения();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.КурсыОбучения();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Наименование = Читалка.GetString(4);
+							Ссылка.ОписаниеКурса = Читалка.GetString(5);
+							Ссылка.ДлительностьКурса = Читалка.GetDecimal(6);
+							Ссылка.ЗатратыНаОдногоОбучающегося = Читалка.GetDecimal(7);
+							//Ссылка.ВидДокументаОбОбразовании = new V82.СправочникиСсылка.ДокументыОбОбразовании((byte[])Читалка.GetValue(8));
+							//Ссылка.Валюта = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(9));
+							Ссылка.ОтражатьВРегУчете = ((byte[])Читалка.GetValue(10))[0]==1?true:false;
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.КурсыОбучения СтраницаПоСсылке(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
 					Команда.CommandText = @"Select top 1000 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
@@ -126,7 +182,55 @@ namespace V82.Справочники//Менеджер
 					,_Fld2508RRef [ВидДокументаОбОбразовании]
 					,_Fld2509RRef [Валюта]
 					,_Fld2510 [ОтражатьВРегУчете]
-							From _Reference132(NOLOCK)";
+					From _Reference132(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.КурсыОбучения();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.КурсыОбучения();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Наименование = Читалка.GetString(4);
+							Ссылка.ОписаниеКурса = Читалка.GetString(5);
+							Ссылка.ДлительностьКурса = Читалка.GetDecimal(6);
+							Ссылка.ЗатратыНаОдногоОбучающегося = Читалка.GetDecimal(7);
+							//Ссылка.ВидДокументаОбОбразовании = new V82.СправочникиСсылка.ДокументыОбОбразовании((byte[])Читалка.GetValue(8));
+							//Ссылка.Валюта = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(9));
+							Ссылка.ОтражатьВРегУчете = ((byte[])Читалка.GetValue(10))[0]==1?true:false;
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.КурсыОбучения СтраницаПоНаименованию(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2505 [ОписаниеКурса]
+					,_Fld2506 [ДлительностьКурса]
+					,_Fld2507 [ЗатратыНаОдногоОбучающегося]
+					,_Fld2508RRef [ВидДокументаОбОбразовании]
+					,_Fld2509RRef [Валюта]
+					,_Fld2510 [ОтражатьВРегУчете]
+					From _Reference132(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КурсыОбучения();
 					using (var Читалка = Команда.ExecuteReader())
 					{

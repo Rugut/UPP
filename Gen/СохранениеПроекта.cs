@@ -100,6 +100,10 @@ namespace Gen
 
         private void ИзменитьАтрибутЧтенияФайла(string ИмяФайла,bool Установить)
         {
+            if (!File.Exists(ИмяФайла))
+            {
+                return;
+            }
             var Атрибуты = File.GetAttributes(ИмяФайла);
             if (Установить)
             {

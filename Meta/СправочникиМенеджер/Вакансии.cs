@@ -102,7 +102,7 @@ namespace V82.Справочники//Менеджер
 					,_Fld1881 [Условия]
 					,_Fld1882 [ДатаОткрытия]
 					,_Fld1883 [ДатаЗакрытия]
-							From _Reference39(NOLOCK)";
+					From _Reference39(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Вакансии();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -144,7 +144,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -163,7 +163,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld1881 [Условия]
 					,_Fld1882 [ДатаОткрытия]
 					,_Fld1883 [ДатаЗакрытия]
-							From _Reference39(NOLOCK)";
+					From _Reference39(NOLOCK)
+					Where _IDRRef between @Мин and @Макс
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.Вакансии();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -205,7 +209,7 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Select top 1000 
+					Команда.CommandText = string.Format(@"Select top {0} 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
@@ -224,7 +228,11 @@ namespace V82.Справочники//Менеджер
 					,_Fld1881 [Условия]
 					,_Fld1882 [ДатаОткрытия]
 					,_Fld1883 [ДатаЗакрытия]
-							From _Reference39(NOLOCK)";
+					From _Reference39(NOLOCK)
+					Where _Code between @Мин and @Макс
+					Order by _Code", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
 					var Выборка = new V82.СправочникиВыборка.Вакансии();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -266,6 +274,71 @@ namespace V82.Справочники//Менеджер
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld1872 [Закрыта]
+					,_Fld1873RRef [Должность]
+					,_Fld1874RRef [Заявитель]
+					,_Fld1875 [Обязанности]
+					,_Fld1876RRef [Организация]
+					,_Fld1877RRef [Ответственный]
+					,_Fld1878 [ПлановаяДатаЗакрытия]
+					,_Fld1879_TYPE [Подразделение_Тип],_Fld1879_RRRef [Подразделение],_Fld1879_RTRef [Подразделение_Вид]
+					,_Fld1880 [Требования]
+					,_Fld1881 [Условия]
+					,_Fld1882 [ДатаОткрытия]
+					,_Fld1883 [ДатаЗакрытия]
+					From _Reference39(NOLOCK)
+					Where _Description between @Мин and @Макс
+					Order by _Description", Первые);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.Вакансии();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.Вакансии();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Закрыта = ((byte[])Читалка.GetValue(6))[0]==1?true:false;
+							//Ссылка.Должность = new V82.СправочникиСсылка.Должности((byte[])Читалка.GetValue(7));
+							//Ссылка.Заявитель = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8));
+							Ссылка.Обязанности = Читалка.GetString(9);
+							//Ссылка.Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(10));
+							//Ссылка.Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(11));
+							Ссылка.ПлановаяДатаЗакрытия = Читалка.GetDateTime(12);
+							Ссылка.Требования = Читалка.GetString(16);
+							Ссылка.Условия = Читалка.GetString(17);
+							Ссылка.ДатаОткрытия = Читалка.GetDateTime(18);
+							Ссылка.ДатаЗакрытия = Читалка.GetDateTime(19);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.Вакансии СтраницаПоСсылке(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
 					Команда.CommandText = @"Select top 1000 
 					_IDRRef [Ссылка]
 					,_Version [Версия]
@@ -285,7 +358,129 @@ namespace V82.Справочники//Менеджер
 					,_Fld1881 [Условия]
 					,_Fld1882 [ДатаОткрытия]
 					,_Fld1883 [ДатаЗакрытия]
-							From _Reference39(NOLOCK)";
+					From _Reference39(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.Вакансии();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.Вакансии();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Закрыта = ((byte[])Читалка.GetValue(6))[0]==1?true:false;
+							//Ссылка.Должность = new V82.СправочникиСсылка.Должности((byte[])Читалка.GetValue(7));
+							//Ссылка.Заявитель = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8));
+							Ссылка.Обязанности = Читалка.GetString(9);
+							//Ссылка.Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(10));
+							//Ссылка.Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(11));
+							Ссылка.ПлановаяДатаЗакрытия = Читалка.GetDateTime(12);
+							Ссылка.Требования = Читалка.GetString(16);
+							Ссылка.Условия = Читалка.GetString(17);
+							Ссылка.ДатаОткрытия = Читалка.GetDateTime(18);
+							Ссылка.ДатаЗакрытия = Читалка.GetDateTime(19);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.Вакансии СтраницаПоКоду(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld1872 [Закрыта]
+					,_Fld1873RRef [Должность]
+					,_Fld1874RRef [Заявитель]
+					,_Fld1875 [Обязанности]
+					,_Fld1876RRef [Организация]
+					,_Fld1877RRef [Ответственный]
+					,_Fld1878 [ПлановаяДатаЗакрытия]
+					,_Fld1879_TYPE [Подразделение_Тип],_Fld1879_RRRef [Подразделение],_Fld1879_RTRef [Подразделение_Вид]
+					,_Fld1880 [Требования]
+					,_Fld1881 [Условия]
+					,_Fld1882 [ДатаОткрытия]
+					,_Fld1883 [ДатаЗакрытия]
+					From _Reference39(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.Вакансии();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.Вакансии();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1?true:false;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1?true:false;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Закрыта = ((byte[])Читалка.GetValue(6))[0]==1?true:false;
+							//Ссылка.Должность = new V82.СправочникиСсылка.Должности((byte[])Читалка.GetValue(7));
+							//Ссылка.Заявитель = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8));
+							Ссылка.Обязанности = Читалка.GetString(9);
+							//Ссылка.Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(10));
+							//Ссылка.Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(11));
+							Ссылка.ПлановаяДатаЗакрытия = Читалка.GetDateTime(12);
+							Ссылка.Требования = Читалка.GetString(16);
+							Ссылка.Условия = Читалка.GetString(17);
+							Ссылка.ДатаОткрытия = Читалка.GetDateTime(18);
+							Ссылка.ДатаЗакрытия = Читалка.GetDateTime(19);
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.Вакансии СтраницаПоНаименованию(int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld1872 [Закрыта]
+					,_Fld1873RRef [Должность]
+					,_Fld1874RRef [Заявитель]
+					,_Fld1875 [Обязанности]
+					,_Fld1876RRef [Организация]
+					,_Fld1877RRef [Ответственный]
+					,_Fld1878 [ПлановаяДатаЗакрытия]
+					,_Fld1879_TYPE [Подразделение_Тип],_Fld1879_RRRef [Подразделение],_Fld1879_RTRef [Подразделение_Вид]
+					,_Fld1880 [Требования]
+					,_Fld1881 [Условия]
+					,_Fld1882 [ДатаОткрытия]
+					,_Fld1883 [ДатаЗакрытия]
+					From _Reference39(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Вакансии();
 					using (var Читалка = Команда.ExecuteReader())
 					{
