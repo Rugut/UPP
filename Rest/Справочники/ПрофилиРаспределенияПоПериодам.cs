@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ПрофилиРаспределенияПоПериодамСервис : Service
+	public partial class ПрофилиРаспределенияПоПериодамСервис : Service
 	{
+		
+		public object Get(ПрофилиРаспределенияПоПериодамЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ПрофилиРаспределенияПоПериодамНайтиПоСсылке Запрос)
 		{

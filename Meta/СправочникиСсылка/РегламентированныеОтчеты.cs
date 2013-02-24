@@ -25,49 +25,24 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*6*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(255)*/ ИсточникОтчета {get;set;}//Источник отчета
-		[DataMember]
-		[ProtoMember(10)]
 		public bool НеПоказыватьВСписке {get;set;}//Не показывать в списке
 		///<summary>
 		///Любая дополнительная информация
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(0)*/ Описание {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public bool ВнешнийОтчетИспользовать {get;set;}//Использовать внешний отчет
-		[DataMember]
-		[ProtoMember(13)]
 		public ХранилищеЗначения ВнешнийОтчетХранилище {get;set;}//Хранилище с внешним отчетом
-		[DataMember]
-		[ProtoMember(14)]
 		public ХранилищеЗначения Периоды {get;set;}
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(32)*/ ВнешнийОтчетВерсия {get;set;}//Версия внешнего отчета
 
 		public V82.СправочникиОбъект.РегламентированныеОтчеты  ПолучитьОбъект()
@@ -78,8 +53,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.ИсточникОтчета = ИсточникОтчета;

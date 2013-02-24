@@ -25,49 +25,24 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*150*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public V82.СправочникиСсылка.НалоговыеОрганы НалоговыйОрган {get;set;}//Налоговый орган
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(150)*/ Идентификатор {get;set;}
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(150)*/ ИдентификаторОснования {get;set;}//Идентификатор основания
 		///<summary>
 		///Вид налогового документа
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public object ВидДокумента {get;set;}//Вид документа
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(150)*/ НомерДокумента {get;set;}//Номер документа
-		[DataMember]
-		[ProtoMember(13)]
 		public DateTime ДатаДокумента {get;set;}//Дата документа
-		[DataMember]
-		[ProtoMember(14)]
 		public DateTime ДатаСообщения {get;set;}//Дата сообщения
-		[DataMember]
-		[ProtoMember(15)]
 		public DateTime ДатаОтправки {get;set;}//Дата отправки
 
 		public V82.СправочникиОбъект.ДокументыРеализацииПолномочийНалоговыхОрганов  ПолучитьОбъект()

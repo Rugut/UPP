@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class НазначенияСертификатовЭЦПСервис : Service
+	public partial class НазначенияСертификатовЭЦПСервис : Service
 	{
+		
+		public object Get(НазначенияСертификатовЭЦПЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(НазначенияСертификатовЭЦПНайтиПоСсылке Запрос)
 		{

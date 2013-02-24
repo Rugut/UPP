@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыОтправляемыхДокументовСервис : Service
+	public partial class ВидыОтправляемыхДокументовСервис : Service
 	{
+		
+		public object Get(ВидыОтправляемыхДокументовЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыОтправляемыхДокументовНайтиПоСсылке Запрос)
 		{

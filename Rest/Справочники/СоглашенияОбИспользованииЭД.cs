@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class СоглашенияОбИспользованииЭДСервис : Service
+	public partial class СоглашенияОбИспользованииЭДСервис : Service
 	{
+		
+		public object Get(СоглашенияОбИспользованииЭДЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(СоглашенияОбИспользованииЭДНайтиПоСсылке Запрос)
 		{

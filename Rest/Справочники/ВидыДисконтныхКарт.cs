@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыДисконтныхКартСервис : Service
+	public partial class ВидыДисконтныхКартСервис : Service
 	{
+		
+		public object Get(ВидыДисконтныхКартЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыДисконтныхКартНайтиПоСсылке Запрос)
 		{

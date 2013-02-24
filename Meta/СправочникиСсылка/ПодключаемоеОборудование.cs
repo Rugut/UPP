@@ -25,49 +25,26 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///Версия компоненты
 		///</summary>
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*(16)*/ ВерсияКомпоненты {get;set;}//Версия компоненты
 		///<summary>
 		///Уникальный идентификатор устройства стандарта оборудования
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(36)*/ ИдентификаторУстройства {get;set;}//Идентификатор устройства
-		[DataMember]
-		[ProtoMember(8)]
 		public bool УстройствоОтключено {get;set;}//Устройство отключено
-		[DataMember]
-		[ProtoMember(9)]
 		public bool УстройствоИспользуется {get;set;}//Устройство используется
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.Перечисления/*Ссылка*/.ОбработчикиДрайверовПодключаемогоОборудования ОбработчикДрайвера {get;set;}//Обработчик драйвера
-		[DataMember]
-		[ProtoMember(11)]
 		public ХранилищеЗначения Параметры {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.РабочиеМеста РабочееМесто {get;set;}//Рабочее место
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.Перечисления/*Ссылка*/.ТипыПодключаемогоОборудования ТипОборудования {get;set;}//Тип оборудования
-		[DataMember]
-		[ProtoMember(14)]
 		public bool ТребуетсяПереустановка {get;set;}//Требуется переустановка
 
 		public V82.СправочникиОбъект.ПодключаемоеОборудование  ПолучитьОбъект()

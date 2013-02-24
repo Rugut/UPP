@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ШкалыОценокКомпетенцийСервис : Service
+	public partial class ШкалыОценокКомпетенцийСервис : Service
 	{
+		
+		public object Get(ШкалыОценокКомпетенцийЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ШкалыОценокКомпетенцийНайтиПоСсылке Запрос)
 		{

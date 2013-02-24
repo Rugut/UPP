@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ТарифныеРазрядыСервис : Service
+	public partial class ТарифныеРазрядыСервис : Service
 	{
+		
+		public object Get(ТарифныеРазрядыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ТарифныеРазрядыНайтиПоСсылке Запрос)
 		{

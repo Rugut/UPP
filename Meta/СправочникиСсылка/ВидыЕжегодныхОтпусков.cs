@@ -28,28 +28,15 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public V82.Перечисления/*Ссылка*/.СпособыРасчетаОстаткаОтпуска СпособРасчетаОстаткаОтпуска {get;set;}//Способ расчета остатка отпуска
-		[DataMember]
-		[ProtoMember(8)]
 		public decimal/*(2)*/ КоличествоДнейОтпускаВГод {get;set;}//Количество дней отпуска в год
-		[DataMember]
-		[ProtoMember(9)]
 		public bool ПредоставлятьОтпускВсемСотрудникам {get;set;}//Предоставлять отпуск всем сотрудникам
 
 		public V82.СправочникиОбъект.ВидыЕжегодныхОтпусков  ПолучитьОбъект()

@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -12,6 +16,8 @@ namespace V82.СправочникиОбъект
 	///<summary>
 	///Доверенности налогоплательщика на представителя
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class ДоверенностиНалогоплательщика:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -19,63 +25,159 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*9*/ Код;
-		public string/*100*/ Наименование;
-		public string/*(50)*/ НомерДовер;//Номер доверенности
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public Guid Владелец {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public string/*9*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*100*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public string/*(50)*/ НомерДовер {get;set;}//Номер доверенности
 		///<summary>
 		///Дата выдачи доверенности
 		///</summary>
-		public DateTime ДатаВыдачи;//Дата выдачи
+		[DataMember]
+		[ProtoMember(10)]
+		public DateTime ДатаВыдачи {get;set;}//Дата выдачи
 		///<summary>
 		///Дата окончания действия доверенности
 		///</summary>
-		public DateTime ДатаОкончания;//Дата окончания
-		public decimal/*(1)*/ ПризнакДоверителя;//Признак доверителя
-		public string/*(1000)*/ ДоверительЮЛ_НаимОрг;//Наименование организации
-		public string/*(10)*/ ДоверительЮЛ_ИНН;//ИНН
-		public string/*(9)*/ ДоверительЮЛ_КПП;//КПП
-		public string/*(13)*/ ДоверительЮЛ_ОГРН;//ОГРН
+		[DataMember]
+		[ProtoMember(11)]
+		public DateTime ДатаОкончания {get;set;}//Дата окончания
+		[DataMember]
+		[ProtoMember(12)]
+		public decimal/*(1)*/ ПризнакДоверителя {get;set;}//Признак доверителя
+		[DataMember]
+		[ProtoMember(13)]
+		public string/*(1000)*/ ДоверительЮЛ_НаимОрг {get;set;}//Наименование организации
+		[DataMember]
+		[ProtoMember(14)]
+		public string/*(10)*/ ДоверительЮЛ_ИНН {get;set;}//ИНН
+		[DataMember]
+		[ProtoMember(15)]
+		public string/*(9)*/ ДоверительЮЛ_КПП {get;set;}//КПП
+		[DataMember]
+		[ProtoMember(16)]
+		public string/*(13)*/ ДоверительЮЛ_ОГРН {get;set;}//ОГРН
 		///<summary>
 		///ИНН руководителя доверителя
 		///</summary>
-		public string/*(12)*/ ДоверительРук_ИНН;//ИНН руководителя доверителя
-		public string/*(12)*/ ДоверительФЛ_ИНН;//ИНН
-		public string/*(15)*/ ДоверительФЛ_ОГРН;//ОГРН
-		public V82.СправочникиСсылка.КлассификаторСтранМира ДоверительФЛ_Гражданство;//Гражданство
-		public DateTime ДоверительФЛ_ДатаРождения;//ДатаРождения
-		public string/*(1000)*/ ПредставительЮЛ_НаимОрг;//Наименование организации
-		public string/*(10)*/ ПредставительЮЛ_ИНН;//ИНН
-		public string/*(9)*/ ПредставительЮЛ_КПП;//КПП
-		public string/*(13)*/ ПредставительЮЛ_ОГРН;//ОГРН
-		public string/*(12)*/ ПредставительФЛ_ИНН;//ИНН
-		public string/*(15)*/ ПредставительФЛ_ОГРН;//ОГРН
-		public V82.СправочникиСсылка.КлассификаторСтранМира ПредставительФЛ_Гражданство;//Гражданство
-		public DateTime ПредставительФЛ_ДатаРождения;//ДатаРождения
-		public string/*(1000)*/ НотариусЮЛ_НаимОрг;//Наименование организации
-		public string/*(10)*/ НотариусЮЛ_ИНН;//ИНН
-		public string/*(9)*/ НотариусЮЛ_КПП;//КПП
-		public string/*(13)*/ НотариусЮЛ_ОГРН;//ОГРН
-		public string/*(12)*/ НотариусФЛ_ИНН;//ИНН
-		public bool ДоверительЯвляетсяЮЛ;//Доверитель является ЮЛ
-		public bool ПредставительЯвляетсяЮЛ;//Представитель является ЮЛ
-		public bool НотариусЯвляетсяЮЛ;//Нотариус является ЮЛ
-		public bool ЗаверенаНотариально;//Заверена нотариально
+		[DataMember]
+		[ProtoMember(17)]
+		public string/*(12)*/ ДоверительРук_ИНН {get;set;}//ИНН руководителя доверителя
+		[DataMember]
+		[ProtoMember(18)]
+		public string/*(12)*/ ДоверительФЛ_ИНН {get;set;}//ИНН
+		[DataMember]
+		[ProtoMember(19)]
+		public string/*(15)*/ ДоверительФЛ_ОГРН {get;set;}//ОГРН
+		[DataMember]
+		[ProtoMember(20)]
+		public V82.СправочникиСсылка.КлассификаторСтранМира ДоверительФЛ_Гражданство {get;set;}//Гражданство
+		[DataMember]
+		[ProtoMember(21)]
+		public DateTime ДоверительФЛ_ДатаРождения {get;set;}//ДатаРождения
+		[DataMember]
+		[ProtoMember(22)]
+		public string/*(1000)*/ ПредставительЮЛ_НаимОрг {get;set;}//Наименование организации
+		[DataMember]
+		[ProtoMember(23)]
+		public string/*(10)*/ ПредставительЮЛ_ИНН {get;set;}//ИНН
+		[DataMember]
+		[ProtoMember(24)]
+		public string/*(9)*/ ПредставительЮЛ_КПП {get;set;}//КПП
+		[DataMember]
+		[ProtoMember(25)]
+		public string/*(13)*/ ПредставительЮЛ_ОГРН {get;set;}//ОГРН
+		[DataMember]
+		[ProtoMember(26)]
+		public string/*(12)*/ ПредставительФЛ_ИНН {get;set;}//ИНН
+		[DataMember]
+		[ProtoMember(27)]
+		public string/*(15)*/ ПредставительФЛ_ОГРН {get;set;}//ОГРН
+		[DataMember]
+		[ProtoMember(28)]
+		public V82.СправочникиСсылка.КлассификаторСтранМира ПредставительФЛ_Гражданство {get;set;}//Гражданство
+		[DataMember]
+		[ProtoMember(29)]
+		public DateTime ПредставительФЛ_ДатаРождения {get;set;}//ДатаРождения
+		[DataMember]
+		[ProtoMember(30)]
+		public string/*(1000)*/ НотариусЮЛ_НаимОрг {get;set;}//Наименование организации
+		[DataMember]
+		[ProtoMember(31)]
+		public string/*(10)*/ НотариусЮЛ_ИНН {get;set;}//ИНН
+		[DataMember]
+		[ProtoMember(32)]
+		public string/*(9)*/ НотариусЮЛ_КПП {get;set;}//КПП
+		[DataMember]
+		[ProtoMember(33)]
+		public string/*(13)*/ НотариусЮЛ_ОГРН {get;set;}//ОГРН
+		[DataMember]
+		[ProtoMember(34)]
+		public string/*(12)*/ НотариусФЛ_ИНН {get;set;}//ИНН
+		[DataMember]
+		[ProtoMember(35)]
+		public bool ДоверительЯвляетсяЮЛ {get;set;}//Доверитель является ЮЛ
+		[DataMember]
+		[ProtoMember(36)]
+		public bool ПредставительЯвляетсяЮЛ {get;set;}//Представитель является ЮЛ
+		[DataMember]
+		[ProtoMember(37)]
+		public bool НотариусЯвляетсяЮЛ {get;set;}//Нотариус является ЮЛ
+		[DataMember]
+		[ProtoMember(38)]
+		public bool ЗаверенаНотариально {get;set;}//Заверена нотариально
 		///<summary>
 		///наличие уполномоченного лица у доверителя - юл
 		///</summary>
-		public bool ДоверительИмеетУЛ;//Доверитель имеет УЛ
-		public bool ПредставительЯвляетсяСотрудником;//Представитель является сотрудником
+		[DataMember]
+		[ProtoMember(39)]
+		public bool ДоверительИмеетУЛ {get;set;}//Доверитель имеет УЛ
+		[DataMember]
+		[ProtoMember(40)]
+		public bool ПредставительЯвляетсяСотрудником {get;set;}//Представитель является сотрудником
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

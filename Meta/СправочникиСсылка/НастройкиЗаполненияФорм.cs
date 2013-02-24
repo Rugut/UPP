@@ -25,22 +25,13 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*70*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*(300)*/ Объект {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public ХранилищеЗначения Данные {get;set;}
 
 		public V82.СправочникиОбъект.НастройкиЗаполненияФорм  ПолучитьОбъект()

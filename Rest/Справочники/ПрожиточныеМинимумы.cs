@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ПрожиточныеМинимумыСервис : Service
+	public partial class ПрожиточныеМинимумыСервис : Service
 	{
+		
+		public object Get(ПрожиточныеМинимумыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ПрожиточныеМинимумыНайтиПоСсылке Запрос)
 		{

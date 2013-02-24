@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ДоверенностиНалогоплательщикаСервис : Service
+	public partial class ДоверенностиНалогоплательщикаСервис : Service
 	{
+		
+		public object Get(ДоверенностиНалогоплательщикаЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ДоверенностиНалогоплательщикаНайтиПоСсылке Запрос)
 		{

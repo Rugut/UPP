@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class РегламентированныеОтчетыСервис : Service
+	public partial class РегламентированныеОтчетыСервис : Service
 	{
+		
+		public object Get(РегламентированныеОтчетыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(РегламентированныеОтчетыНайтиПоСсылке Запрос)
 		{

@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВалютыСервис : Service
+	public partial class ВалютыСервис : Service
 	{
+		
+		public object Get(ВалютыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВалютыНайтиПоСсылке Запрос)
 		{

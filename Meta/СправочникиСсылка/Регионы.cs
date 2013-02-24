@@ -28,43 +28,23 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*150*/ Наименование {get;set;}
 		///<summary>
 		///Комментарий
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(0)*/ Комментарий {get;set;}
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(5)*/ КодРегиона {get;set;}//Код региона
-		[DataMember]
-		[ProtoMember(11)]
 		public decimal/*(25)*/ КодАдресногоЭлемента {get;set;}//Код адресного элемента
 		///<summary>
 		///Железнодорожная станция назначения
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(100)*/ ЖДСтанцияНазначения {get;set;}//Ж/Д cтанция назначения
 
 		public V82.СправочникиОбъект.Регионы  ПолучитьОбъект()
@@ -75,7 +55,6 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;

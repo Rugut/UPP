@@ -25,40 +25,19 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*50*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public decimal/*(2)*/ РазмерСчетчика {get;set;}//Размер счетчика
-		[DataMember]
-		[ProtoMember(8)]
 		public bool ВПределахОрганизации {get;set;}//В пределах организации
-		[DataMember]
-		[ProtoMember(9)]
 		public bool ВПределахПодразделения {get;set;}//В пределах подразделения
-		[DataMember]
-		[ProtoMember(10)]
 		public bool ВПределахНоменклатурнойГруппы {get;set;}//В пределах номенклатурной группы
-		[DataMember]
-		[ProtoMember(11)]
 		public bool ВПределахНоменклатуры {get;set;}//В пределах номенклатуры
-		[DataMember]
-		[ProtoMember(12)]
 		public decimal/*(20)*/ НачальноеЗначение {get;set;}//Начальное значение
-		[DataMember]
-		[ProtoMember(13)]
 		public decimal/*(20)*/ КонечноеЗначение {get;set;}//Конечное значение
 
 		public V82.СправочникиОбъект.ВидыСчетчиковДляЗначенийРазрядов  ПолучитьОбъект()

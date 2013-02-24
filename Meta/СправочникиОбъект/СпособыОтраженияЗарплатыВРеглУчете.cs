@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -12,6 +16,8 @@ namespace V82.СправочникиОбъект
 	///<summary>
 	///(Регл)
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class СпособыОтраженияЗарплатыВРеглУчете:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -19,39 +25,114 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*100*/ Наименование;
-		public object СчетДт;//Счет Дт
-		public object СубконтоДт1;//Субконто Дт номер 1
-		public object СубконтоДт2;//Субконто Дт номер 2
-		public object СубконтоДт3;//Субконто Дт номер 3
-		public V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск СпособРаспределенияЗатрат;//Способ распределения затрат
-		public object СчетКт;//Счет Кт
-		public object СубконтоКт1;//Субконто Кт номер 1
-		public object СубконтоКт2;//Субконто Кт номер 2
-		public object СубконтоКт3;//Субконто Кт номер 3
-		public object СчетДтНУ;//Счет дебета налогового учета
-		public object СубконтоДтНУ1;//Субконто Дт нал. учета номер 1
-		public object СубконтоДтНУ2;//Субконто Дт нал. учета номер 2
-		public object СубконтоДтНУ3;//Субконто Дт нал. учета номер 3
-		public object СчетКтНУ;//Счет кредита налогового учета
-		public object СубконтоКтНУ1;//Субконто Кт нал. учета номер 1
-		public object СубконтоКтНУ2;//Субконто Кт нал. учета номер 2
-		public object СубконтоКтНУ3;//Субконто Кт нал. учета номер 3
-		public V82.Перечисления/*Ссылка*/.ОтражениеВУСН ОтражениеВУСН;//Отражение ВУСН
-		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеДт;//Подразделение Дт
-		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеКт;//Подразделение Кт
-		public V82.Перечисления/*Ссылка*/.ВидыНачисленийОплатыТрудаПоСт255НК ВидНачисленийОплатыТрудаПоСтатье255НК;//Вид начислений оплаты труда по статье255 НК
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public Guid Родитель {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*100*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public object СчетДт {get;set;}//Счет Дт
+		[DataMember]
+		[ProtoMember(10)]
+		public object СубконтоДт1 {get;set;}//Субконто Дт номер 1
+		[DataMember]
+		[ProtoMember(11)]
+		public object СубконтоДт2 {get;set;}//Субконто Дт номер 2
+		[DataMember]
+		[ProtoMember(12)]
+		public object СубконтоДт3 {get;set;}//Субконто Дт номер 3
+		[DataMember]
+		[ProtoMember(13)]
+		public V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск СпособРаспределенияЗатрат {get;set;}//Способ распределения затрат
+		[DataMember]
+		[ProtoMember(14)]
+		public object СчетКт {get;set;}//Счет Кт
+		[DataMember]
+		[ProtoMember(15)]
+		public object СубконтоКт1 {get;set;}//Субконто Кт номер 1
+		[DataMember]
+		[ProtoMember(16)]
+		public object СубконтоКт2 {get;set;}//Субконто Кт номер 2
+		[DataMember]
+		[ProtoMember(17)]
+		public object СубконтоКт3 {get;set;}//Субконто Кт номер 3
+		[DataMember]
+		[ProtoMember(18)]
+		public object СчетДтНУ {get;set;}//Счет дебета налогового учета
+		[DataMember]
+		[ProtoMember(19)]
+		public object СубконтоДтНУ1 {get;set;}//Субконто Дт нал. учета номер 1
+		[DataMember]
+		[ProtoMember(20)]
+		public object СубконтоДтНУ2 {get;set;}//Субконто Дт нал. учета номер 2
+		[DataMember]
+		[ProtoMember(21)]
+		public object СубконтоДтНУ3 {get;set;}//Субконто Дт нал. учета номер 3
+		[DataMember]
+		[ProtoMember(22)]
+		public object СчетКтНУ {get;set;}//Счет кредита налогового учета
+		[DataMember]
+		[ProtoMember(23)]
+		public object СубконтоКтНУ1 {get;set;}//Субконто Кт нал. учета номер 1
+		[DataMember]
+		[ProtoMember(24)]
+		public object СубконтоКтНУ2 {get;set;}//Субконто Кт нал. учета номер 2
+		[DataMember]
+		[ProtoMember(25)]
+		public object СубконтоКтНУ3 {get;set;}//Субконто Кт нал. учета номер 3
+		[DataMember]
+		[ProtoMember(26)]
+		public V82.Перечисления/*Ссылка*/.ОтражениеВУСН ОтражениеВУСН {get;set;}//Отражение ВУСН
+		[DataMember]
+		[ProtoMember(27)]
+		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеДт {get;set;}//Подразделение Дт
+		[DataMember]
+		[ProtoMember(28)]
+		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеКт {get;set;}//Подразделение Кт
+		[DataMember]
+		[ProtoMember(29)]
+		public V82.Перечисления/*Ссылка*/.ВидыНачисленийОплатыТрудаПоСт255НК ВидНачисленийОплатыТрудаПоСтатье255НК {get;set;}//Вид начислений оплаты труда по статье255 НК
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

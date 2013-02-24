@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class НематериальныеАктивыСервис : Service
+	public partial class НематериальныеАктивыСервис : Service
 	{
+		
+		public object Get(НематериальныеАктивыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(НематериальныеАктивыНайтиПоСсылке Запрос)
 		{

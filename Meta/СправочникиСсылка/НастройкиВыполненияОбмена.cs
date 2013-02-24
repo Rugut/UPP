@@ -25,61 +25,26 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*6*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*150*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public bool ВыполнятьДействияПодПолнымиПравами {get;set;}//Выполнять действия под полными правами
-		[DataMember]
-		[ProtoMember(8)]
 		public bool ИспользоватьРегламентныеЗадания {get;set;}//Использовать регламентные задания
-		[DataMember]
-		[ProtoMember(9)]
 		public bool ДинамическиИзменятьИнтервалМеждуОбменами {get;set;}//Динамически изменять интервал между обменами
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}//Пользователь
-		[DataMember]
-		[ProtoMember(11)]
 		public bool КаждыйЗапускПрограммы {get;set;}//Каждый запуск программы
-		[DataMember]
-		[ProtoMember(12)]
 		public bool КаждоеЗавершениеРаботыСПрограммой {get;set;}//Каждое завершение работы с программой
-		[DataMember]
-		[ProtoMember(13)]
 		public string/*(255)*/ КаталогПроверкиДоступности {get;set;}//Каталог проверки доступности
-		[DataMember]
-		[ProtoMember(14)]
 		public string/*(255)*/ ВыполнятьОбменПриПоявленииФайла {get;set;}//Выполнять обмен при появлении файла
-		[DataMember]
-		[ProtoMember(15)]
 		public decimal/*(10)*/ КоличествоЭлементовВТранзакцииНаВыгрузкуДанных {get;set;}//Количество элементов в транзакции на выгрузку данных
-		[DataMember]
-		[ProtoMember(16)]
 		public decimal/*(10)*/ КоличествоЭлементовВТранзакцииНаЗагрузкуДанных {get;set;}//Количество элементов в транзакции на загрузку данных
-		[DataMember]
-		[ProtoMember(17)]
 		public V82.СправочникиСсылка.УчетныеЗаписиЭлектроннойПочты УчетнаяЗаписьОтправкиСообщенияОбОшибке {get;set;}//Учетная запись отправки сообщения об ошибке
-		[DataMember]
-		[ProtoMember(18)]
 		public string/*(100)*/ АдресДляОтправкиСообщенийОбОшибке {get;set;}//Адрес для отправки сообщений об ошибке
-		[DataMember]
-		[ProtoMember(19)]
 		public string/*(0)*/ Комментарий {get;set;}
-		[DataMember]
-		[ProtoMember(20)]
 		public string/*(40)*/ РегламентноеЗадание {get;set;}//Регламентное задание
 
 		public V82.СправочникиОбъект.НастройкиВыполненияОбмена  ПолучитьОбъект()

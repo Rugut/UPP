@@ -28,40 +28,21 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public Guid Владелец {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.Валюты ВалютаЦены {get;set;}//Валюта цены по умолчанию
 		///<summary>
 		///Истина - цена включает НДС, ложь - не включает
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public bool ЦенаВключаетНДС {get;set;}//Цена включает НДС
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.СправочникиСсылка.ТипыЦенНоменклатуры ТипЦеныНоменклатуры {get;set;}//Тип цены номенклатуры
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(0)*/ ОписаниеТипаЦеныНоменклатурыКонтрагента {get;set;}//Описание типа цены номенклатуры контрагента
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ Комментарий {get;set;}
 
 		public V82.СправочникиОбъект.ТипыЦенНоменклатурыКонтрагентов  ПолучитьОбъект()

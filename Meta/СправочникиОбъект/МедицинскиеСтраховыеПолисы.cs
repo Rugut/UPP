@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -9,6 +13,8 @@ using V82.ДокументыСсылка;
 using V82.Перечисления;//Ссылка;
 namespace V82.СправочникиОбъект
 {
+	[ProtoContract]
+	[DataContract]
 	public partial class МедицинскиеСтраховыеПолисы:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -16,57 +22,126 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*9*/ Код;
-		public string/*25*/ Наименование;
-		public V82.СправочникиСсылка.ФизическиеЛица Физлицо;
-		public V82.СправочникиСсылка.Организации Организация;
-		public V82.Перечисления/*Ссылка*/.ВидыМедицинскогоСтрахования ВидСтрахования;//Вид страхования
-		public DateTime ДатаВыдачиПолиса;//Дата выдачи полиса
-		public DateTime ДатаОкончанияПолиса;//Дата окончания полиса
-		public V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования ПрограммаСтрахования;//Программа страхования
-		public bool СтрахованиеРодственника;//Страхование родственника
-		public string/*(50)*/ Родственник;
-		public V82.Перечисления/*Ссылка*/.ПолФизическихЛиц Пол;
-		public DateTime ДатаРождения;//Дата рождения
-		public string/*(300)*/ УдостоверениеЛичности;//Удостоверение личности
-		public string/*(100)*/ АдресФактический;//Адрес фактический
-		public string/*(100)*/ ТелефонДомашний;//Телефон домашний
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public string/*9*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public string/*25*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public V82.СправочникиСсылка.ФизическиеЛица Физлицо {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public V82.СправочникиСсылка.Организации Организация {get;set;}
+		[DataMember]
+		[ProtoMember(10)]
+		public V82.Перечисления/*Ссылка*/.ВидыМедицинскогоСтрахования ВидСтрахования {get;set;}//Вид страхования
+		[DataMember]
+		[ProtoMember(11)]
+		public DateTime ДатаВыдачиПолиса {get;set;}//Дата выдачи полиса
+		[DataMember]
+		[ProtoMember(12)]
+		public DateTime ДатаОкончанияПолиса {get;set;}//Дата окончания полиса
+		[DataMember]
+		[ProtoMember(13)]
+		public V82.СправочникиСсылка.ПрограммыМедицинскогоСтрахования ПрограммаСтрахования {get;set;}//Программа страхования
+		[DataMember]
+		[ProtoMember(14)]
+		public bool СтрахованиеРодственника {get;set;}//Страхование родственника
+		[DataMember]
+		[ProtoMember(15)]
+		public string/*(50)*/ Родственник {get;set;}
+		[DataMember]
+		[ProtoMember(16)]
+		public V82.Перечисления/*Ссылка*/.ПолФизическихЛиц Пол {get;set;}
+		[DataMember]
+		[ProtoMember(17)]
+		public DateTime ДатаРождения {get;set;}//Дата рождения
+		[DataMember]
+		[ProtoMember(18)]
+		public string/*(300)*/ УдостоверениеЛичности {get;set;}//Удостоверение личности
+		[DataMember]
+		[ProtoMember(19)]
+		public string/*(100)*/ АдресФактический {get;set;}//Адрес фактический
+		[DataMember]
+		[ProtoMember(20)]
+		public string/*(100)*/ ТелефонДомашний {get;set;}//Телефон домашний
 		///<summary>
 		///(Общ)
 		///</summary>
-		public V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность ДокументВид;//Вид документа
+		[DataMember]
+		[ProtoMember(21)]
+		public V82.СправочникиСсылка.ДокументыУдостоверяющиеЛичность ДокументВид {get;set;}//Вид документа
 		///<summary>
 		///(Общ)
 		///</summary>
-		public string/*(14)*/ ДокументСерия;//Серия документа
+		[DataMember]
+		[ProtoMember(22)]
+		public string/*(14)*/ ДокументСерия {get;set;}//Серия документа
 		///<summary>
 		///(Общ)
 		///</summary>
-		public string/*(14)*/ ДокументНомер;//Номер документа
+		[DataMember]
+		[ProtoMember(23)]
+		public string/*(14)*/ ДокументНомер {get;set;}//Номер документа
 		///<summary>
 		///(Общ)
 		///</summary>
-		public DateTime ДокументДатаВыдачи;//Дата выдачи документа
+		[DataMember]
+		[ProtoMember(24)]
+		public DateTime ДокументДатаВыдачи {get;set;}//Дата выдачи документа
 		///<summary>
 		///(Общ)
 		///</summary>
-		public string/*(0)*/ ДокументКемВыдан;//Кем выдан документ
+		[DataMember]
+		[ProtoMember(25)]
+		public string/*(0)*/ ДокументКемВыдан {get;set;}//Кем выдан документ
 		///<summary>
 		///(Регл)
 		///</summary>
-		public string/*(15)*/ ДокументКодПодразделения;//Код подразделения в документе
-		public string/*(0)*/ Комментарий;
+		[DataMember]
+		[ProtoMember(26)]
+		public string/*(15)*/ ДокументКодПодразделения {get;set;}//Код подразделения в документе
+		[DataMember]
+		[ProtoMember(27)]
+		public string/*(0)*/ Комментарий {get;set;}
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

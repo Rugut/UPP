@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ТиповыеАнкетыСервис : Service
+	public partial class ТиповыеАнкетыСервис : Service
 	{
+		
+		public object Get(ТиповыеАнкетыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ТиповыеАнкетыНайтиПоСсылке Запрос)
 		{

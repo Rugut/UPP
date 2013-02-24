@@ -25,28 +25,17 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*150*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*(0)*/ ОписаниеЗанятия {get;set;}//Описание занятия
 		///<summary>
 		///Длительность занятия в часах
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public decimal/*(6.2)*/ ДлительностьЗанятия {get;set;}//Длительность занятия
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.ФормыОбучения ВидЗанятия {get;set;}//Вид занятия
 
 		public V82.СправочникиОбъект.ЗанятияКурсовОбучения  ПолучитьОбъект()

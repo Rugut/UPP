@@ -28,76 +28,43 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.Перечисления/*Ссылка*/.Периодичность Периодичность {get;set;}
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.Перечисления/*Ссылка*/.ДетализацияПланирования ДетализацияПланирования {get;set;}//Детализация планирования
-		[DataMember]
-		[ProtoMember(11)]
 		public bool УчетПоСуммам {get;set;}//Учет по суммам
-		[DataMember]
-		[ProtoMember(12)]
 		public bool УчетПоКоличеству {get;set;}//Учет по количеству
 		///<summary>
 		///Валюта данных сценария
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.СправочникиСсылка.Валюты Валюта {get;set;}
-		[DataMember]
-		[ProtoMember(14)]
 		public V82.Перечисления/*Ссылка*/.СпособыПланирования СпособПланирования {get;set;}//Способ планирования
 		///<summary>
 		///Продолжительность цикла планирования по сценарию (в периодах планирования)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public decimal/*(10)*/ ПродолжительностьЦикла {get;set;}//Продолжительность цикла
 		///<summary>
 		///Начало интервала планирования
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public DateTime НачалоПлана {get;set;}//Начало плана
 		///<summary>
 		///Конец интервала планирования
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public DateTime КонецПлана {get;set;}//Конец плана
 		///<summary>
 		///Годовая норма доходности для сценария
 		///</summary>
-		[DataMember]
-		[ProtoMember(18)]
 		public decimal/*(6.3)*/ НормаДоходности {get;set;}//Норма доходности, %
 		///<summary>
 		///Признак использования отдельной линейки курсов валют для сценария
 		///</summary>
-		[DataMember]
-		[ProtoMember(19)]
 		public bool ИспользоватьКурсыСценария {get;set;}//Использовать курсы сценария
 
 		public V82.СправочникиОбъект.СценарииПланирования  ПолучитьОбъект()
@@ -108,8 +75,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.Периодичность = Периодичность;

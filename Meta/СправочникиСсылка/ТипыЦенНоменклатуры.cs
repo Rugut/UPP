@@ -28,70 +28,45 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*25*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public V82.СправочникиСсылка.Валюты ВалютаЦены {get;set;}//Валюта цены по умолчанию
 		///<summary>
 		///(Общ) Тип цен, от которого рассчитываются цены данного типа, если не выбран, то цены задаются вручную
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.ТипыЦенНоменклатуры БазовыйТипЦен {get;set;}//Базовый тип цен
 		///<summary>
 		///(Общ) Истина - цены автоматически рассчитываются (не хранятся) на основании цен базового типа
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public bool Рассчитывается {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public decimal/*(5.2)*/ ПроцентСкидкиНаценки {get;set;}//Процент скидки или наценки по умолчанию
 		///<summary>
 		///(Общ) Истина - цена включает НДС, ложь - не включает
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public bool ЦенаВключаетНДС {get;set;}//Цена включает НДС
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.Перечисления/*Ссылка*/.ПорядкиОкругления ПорядокОкругления {get;set;}//Порядок округления
 		///<summary>
 		///(Общ) Истина, то при порядке округления "5" 0.01 будет округлена до 5, ложь - округление по арифметическим правилам
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public bool ОкруглятьВБольшуюСторону {get;set;}//Округлять в большую сторону
 		///<summary>
 		///(Общ) Любая дополнительная информация
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public string/*(0)*/ Комментарий {get;set;}
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.Перечисления/*Ссылка*/.СпособыРасчетаЦены СпособРасчетаЦены {get;set;}//Способ расчета цены
 
 		public V82.СправочникиОбъект.ТипыЦенНоменклатуры  ПолучитьОбъект()

@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ПерепискаСКонтролирующимиОрганамиСервис : Service
+	public partial class ПерепискаСКонтролирующимиОрганамиСервис : Service
 	{
+		
+		public object Get(ПерепискаСКонтролирующимиОрганамиЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ПерепискаСКонтролирующимиОрганамиНайтиПоСсылке Запрос)
 		{

@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class КлассификаторЕдиницИзмеренияСервис : Service
+	public partial class КлассификаторЕдиницИзмеренияСервис : Service
 	{
+		
+		public object Get(КлассификаторЕдиницИзмеренияЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(КлассификаторЕдиницИзмеренияНайтиПоСсылке Запрос)
 		{

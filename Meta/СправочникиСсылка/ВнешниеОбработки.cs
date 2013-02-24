@@ -25,43 +25,24 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*150*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public ХранилищеЗначения ХранилищеВнешнейОбработки {get;set;}//Хранилище внешней обработки
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.Перечисления/*Ссылка*/.ВидыДополнительныхВнешнихОбработок ВидОбработки {get;set;}//Вид обработки
 		///<summary>
 		///(Общ) Любая дополнительная информация
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///(Общ) Любая дополнительная информация
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ КомментарийКФайлуИсточнику {get;set;}//Комментарий к файлу источнику
 
 		public V82.СправочникиОбъект.ВнешниеОбработки  ПолучитьОбъект()
@@ -72,8 +53,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.ХранилищеВнешнейОбработки = ХранилищеВнешнейОбработки;

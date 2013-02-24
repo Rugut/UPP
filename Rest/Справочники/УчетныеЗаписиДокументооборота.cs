@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class УчетныеЗаписиДокументооборотаСервис : Service
+	public partial class УчетныеЗаписиДокументооборотаСервис : Service
 	{
+		
+		public object Get(УчетныеЗаписиДокументооборотаЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(УчетныеЗаписиДокументооборотаНайтиПоСсылке Запрос)
 		{

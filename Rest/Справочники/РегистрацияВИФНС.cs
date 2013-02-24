@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class РегистрацияВИФНССервис : Service
+	public partial class РегистрацияВИФНССервис : Service
 	{
+		
+		public object Get(РегистрацияВИФНСЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(РегистрацияВИФНСНайтиПоСсылке Запрос)
 		{

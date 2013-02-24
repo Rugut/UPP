@@ -25,61 +25,32 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*25*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public object ОтчетСсылка {get;set;}//Ссылка на регламентированный отчет
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(100)*/ ИдентификаторОтправкиНаСервере {get;set;}//Идентификатор отправки на сервере
-		[DataMember]
-		[ProtoMember(9)]
 		public ХранилищеЗначения ЗашифрованныйПакет {get;set;}//Зашифрованный пакет выгрузки
 		///<summary>
 		///Имя файла зашифрованного пакета выгрузки
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(100)*/ ИмяФайлаПакета {get;set;}//Имя файла пакета
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.Перечисления/*Ссылка*/.СтатусыОтправки СтатусОтправки {get;set;}//Статус отправки
 		///<summary>
 		///Протокол обработки
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public ХранилищеЗначения Протокол {get;set;}//Протокол обработки
-		[DataMember]
-		[ProtoMember(13)]
 		public DateTime ДатаОтправки {get;set;}//Дата отправки
-		[DataMember]
-		[ProtoMember(14)]
 		public DateTime ДатаПолученияРезультата {get;set;}//Дата получения результата
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
-		[DataMember]
-		[ProtoMember(16)]
 		public string/*(4)*/ КодОрганаФСС {get;set;}//Код органа ФСС
 		///<summary>
 		///Квитанция успеха
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public ХранилищеЗначения Квитанция {get;set;}
 
 		public V82.СправочникиОбъект.ОтправкиФСС  ПолучитьОбъект()

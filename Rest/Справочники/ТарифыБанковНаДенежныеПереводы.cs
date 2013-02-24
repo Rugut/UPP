@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ТарифыБанковНаДенежныеПереводыСервис : Service
+	public partial class ТарифыБанковНаДенежныеПереводыСервис : Service
 	{
+		
+		public object Get(ТарифыБанковНаДенежныеПереводыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ТарифыБанковНаДенежныеПереводыНайтиПоСсылке Запрос)
 		{

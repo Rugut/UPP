@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ПодключаемоеОборудованиеСервис : Service
+	public partial class ПодключаемоеОборудованиеСервис : Service
 	{
+		
+		public object Get(ПодключаемоеОборудованиеЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ПодключаемоеОборудованиеНайтиПоСсылке Запрос)
 		{

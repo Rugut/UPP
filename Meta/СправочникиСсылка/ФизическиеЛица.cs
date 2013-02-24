@@ -28,91 +28,54 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*10*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public DateTime ДатаРождения {get;set;}//Дата рождения
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(12)*/ ИНН {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(4)*/ КодИМНС {get;set;}//Код ИФНС
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public string/*(14)*/ СтраховойНомерПФР {get;set;}//Страховой номер ПФР
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public V82.Перечисления/*Ссылка*/.ПолФизическихЛиц Пол {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(240)*/ МестоРождения {get;set;}//Место рождения
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public V82.СправочникиСсылка.ХранилищеДополнительнойИнформации ОсновноеИзображение {get;set;}//Основное изображение
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public string/*(11)*/ МестоРожденияКодПоОКАТО {get;set;}//Место рождения - код по ОКАТО
-		[DataMember]
-		[ProtoMember(18)]
 		public V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц ГруппаДоступаФизическогоЛица {get;set;}//Группа доступа физического лица
-		[DataMember]
-		[ProtoMember(19)]
 		public V82.Перечисления/*Ссылка*/.ВидыЛьготПриНачисленииБольничных ЛьготаПриНачисленииПособий {get;set;}//Льгота при начислении пособий
-		[DataMember]
-		[ProtoMember(20)]
 		public bool ИмеетНаучныеТруды {get;set;}//Имеет научные труды
-		[DataMember]
-		[ProtoMember(21)]
 		public bool ИмеетИзобретения {get;set;}//Имеет изобретения
 
 		public V82.СправочникиОбъект.ФизическиеЛица  ПолучитьОбъект()
@@ -123,8 +86,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.ДатаРождения = ДатаРождения;

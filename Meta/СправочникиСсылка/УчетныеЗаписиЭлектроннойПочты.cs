@@ -25,160 +25,61 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*150*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(100)*/ SMTPСервер {get;set;}//Сервер исходящей почты (SMTP)
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(100)*/ POP3Сервер {get;set;}//Сервер входящей почты (POP3)
-		[DataMember]
-		[ProtoMember(9)]
 		public decimal/*(4)*/ ПортSMTP {get;set;}//Порт SMTP
-		[DataMember]
-		[ProtoMember(10)]
 		public decimal/*(4)*/ ПортPOP3 {get;set;}//Порт POP3
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(200)*/ Логин {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(200)*/ Пароль {get;set;}
-		[DataMember]
-		[ProtoMember(13)]
 		public bool ТребуетсяSMTPАутентификация {get;set;}//Требуется SMTP Аутентификация
-		[DataMember]
-		[ProtoMember(14)]
 		public string/*(200)*/ ЛогинSMTP {get;set;}//Логин SMTP
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(200)*/ ПарольSMTP {get;set;}//Пароль SMTP
-		[DataMember]
-		[ProtoMember(16)]
 		public decimal/*(4)*/ ВремяОжиданияСервера {get;set;}//Время ожидания сервера
-		[DataMember]
-		[ProtoMember(17)]
 		public bool ОставлятьКопииСообщенийНаСервере {get;set;}//Оставлять копии сообщений на сервере
-		[DataMember]
-		[ProtoMember(18)]
 		public bool УдалятьПисьмаССервераЧерез {get;set;}//Удалять письма с сервера через
-		[DataMember]
-		[ProtoMember(19)]
 		public decimal/*(3)*/ КоличествоДнейУдаленияПисемССервера {get;set;}//Количество дней удаления писем с сервера
-		[DataMember]
-		[ProtoMember(20)]
 		public string/*(150)*/ АдресЭлектроннойПочты {get;set;}//Адрес электронной почты
-		[DataMember]
-		[ProtoMember(21)]
 		public V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты ГруппаВходящие {get;set;}//Группа входящие
-		[DataMember]
-		[ProtoMember(22)]
 		public V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты ГруппаИсходящие {get;set;}//Группа исходящие
-		[DataMember]
-		[ProtoMember(23)]
 		public V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты ГруппаУдаленные {get;set;}//Группа удаленные
-		[DataMember]
-		[ProtoMember(24)]
 		public V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты ГруппаЧерновики {get;set;}//Группа черновики
-		[DataMember]
-		[ProtoMember(25)]
 		public V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты ГруппаНежелательные {get;set;}//Группа нежелательные
-		[DataMember]
-		[ProtoMember(26)]
 		public V82.Перечисления/*Ссылка*/.ВидыТекстовЭлектронныхПисем ФорматТекстаПисьмаПоУмолчанию {get;set;}//Формат текста письма по умолчанию
-		[DataMember]
-		[ProtoMember(27)]
 		public string/*(0)*/ ТекстПодписи {get;set;}//Текст подписи
-		[DataMember]
-		[ProtoMember(28)]
 		public bool ДобавлятьПодписьКИсходящимПисьмам {get;set;}//Добавлять подпись к исходящим письмам
-		[DataMember]
-		[ProtoMember(29)]
 		public bool ДобавлятьПодписьКОтветамИПересылкам {get;set;}//Добавлять подпись к ответам и пересылкам
-		[DataMember]
-		[ProtoMember(30)]
 		public bool АвтоПолучениеОтправкаСообщений {get;set;}//Авто получение/отправка сообщений
-		[DataMember]
-		[ProtoMember(31)]
 		public decimal/*(2)*/ ИнтервалАвтоПолученияОтправкиСообщений {get;set;}//Интервал авто получения/отправки сообщений (в минутах)
-		[DataMember]
-		[ProtoMember(32)]
 		public V82.СправочникиСсылка.Пользователи ОтветственныйЗаАвтоПолучениеОтправкуСообщений {get;set;}//Ответственный за авто получение отправку сообщений
-		[DataMember]
-		[ProtoMember(33)]
 		public bool ПомещатьОтветыИПереадресацииВТужеГруппу {get;set;}//Помещать ответы и переадресации в туже группу
-		[DataMember]
-		[ProtoMember(34)]
 		public V82.Перечисления/*Ссылка*/.ВидыДействийАвтоПолученияОтправкиЭлектронныхПисем ДействиеАвтополученияОтправкиСообщений {get;set;}//Действие автополучения отправки сообщений
-		[DataMember]
-		[ProtoMember(35)]
 		public bool АвтоматическаяУстановкаПометкиРассмотрено {get;set;}//Автоматическая установка пометки рассмотрено
-		[DataMember]
-		[ProtoMember(36)]
 		public decimal/*(2)*/ ИнтервалАвтоматическойУстановкиОтметкиРассмотрено {get;set;}//Интервал автоматической установки отметки рассмотрено
-		[DataMember]
-		[ProtoMember(37)]
 		public bool АвтоматическаяУстановкаПометкиРассмотреноПриОтвете {get;set;}//Автоматическая установка пометки рассмотрено при ответе
-		[DataMember]
-		[ProtoMember(38)]
 		public bool АвтоматическаяУстановкаПометкиРассмотреноПриПолученииОтвета {get;set;}//Автоматическая установка пометки рассмотрено при ответе или переадресации
-		[DataMember]
-		[ProtoMember(39)]
 		public bool ИспользоватьКлассификациюПисемПоПредметам {get;set;}//Использовать классификацию писем по предметам
-		[DataMember]
-		[ProtoMember(40)]
 		public bool ЗаполнятьПустойПредметДляНовыхПисемИзТемыПисьма {get;set;}//Заполнять пустой предмет для новых писем из темы письма
-		[DataMember]
-		[ProtoMember(41)]
 		public bool ДляВходящихОтветовИПереадресацийИскатьПисьмаОснованияИЗаполнятьПредмет {get;set;}//Для входящих ответов и переадресаций искать письма основания и заполнять предмет
-		[DataMember]
-		[ProtoMember(42)]
 		public bool ДляВходящихОтветовИПереадресацийИскатьПисьмаОснованияИЗаполнятьОснованиеНовогоПисьма {get;set;}//Для входящих ответов и переадресаций искать письма основания и заполнять основание нового письма
-		[DataMember]
-		[ProtoMember(43)]
 		public bool ДляВходящихОтветовИПереадресацийИскатьПисьмаОснованияИЗаполнятьГруппуПисемНовогоПисьма {get;set;}//Для входящих ответов и переадресаций искать письма основания и заполнять группу писем нового письма
-		[DataMember]
-		[ProtoMember(44)]
 		public bool АвтосохранениеПисем {get;set;}//Автосохранение писем
-		[DataMember]
-		[ProtoMember(45)]
 		public decimal/*(3)*/ ИнтервалАвтосохраненияПисем {get;set;}//Интервал автосохранения писем
-		[DataMember]
-		[ProtoMember(46)]
 		public bool ФорматПисьмаДляОтветовИПереадресацийБратьИзИсходного {get;set;}//Формат письма для ответов и переадресаций брать из исходного
-		[DataMember]
-		[ProtoMember(47)]
 		public string/*(200)*/ КодировкаПисемПоУмолчанию {get;set;}//Кодировка писем по умолчанию
-		[DataMember]
-		[ProtoMember(48)]
 		public bool КодировкуПисьмаДляОтветовБратьИзИсходного {get;set;}//Кодировку письма для ответов брать из исходного
-		[DataMember]
-		[ProtoMember(49)]
 		public bool ЗаполнятьОбъектыИзАдресовПервогоПисьма {get;set;}//Заполнять объекты из адресов первого письма
-		[DataMember]
-		[ProtoMember(50)]
 		public V82.Перечисления/*Ссылка*/.НазначенияУчетнойЗаписи НазначениеУчетнойЗаписи {get;set;}//Назначение учетной записи
 		///<summary>
 		///И
 		///</summary>
-		[DataMember]
-		[ProtoMember(51)]
 		public bool ИспользоватьДляОтправки {get;set;}//Использовать для отправки
-		[DataMember]
-		[ProtoMember(52)]
 		public bool ИспользоватьДляПолучения {get;set;}//Использовать для получения
 
 		public V82.СправочникиОбъект.УчетныеЗаписиЭлектроннойПочты  ПолучитьОбъект()

@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -12,6 +16,8 @@ namespace V82.СправочникиОбъект
 	///<summary>
 	///(Общ)
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class ОсновныеСредства:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -19,71 +25,138 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*9*/ Код;
-		public string/*100*/ Наименование;
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public Guid Родитель {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*9*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		public bool Автотранспорт;//Признак автотранспорта
+		[DataMember]
+		[ProtoMember(10)]
+		public bool Автотранспорт {get;set;}//Признак автотранспорта
 		///<summary>
 		///Адрес местонахождения объекта недвижимости
 		///</summary>
-		public string/*(0)*/ АдресМестонахождения;//Адрес местонахождения
+		[DataMember]
+		[ProtoMember(11)]
+		public string/*(0)*/ АдресМестонахождения {get;set;}//Адрес местонахождения
 		///<summary>
 		///(Регл)
 		///</summary>
-		public V82.Перечисления/*Ссылка*/.АмортизационныеГруппы АмортизационнаяГруппа;//Амортизационная группа
+		[DataMember]
+		[ProtoMember(12)]
+		public V82.Перечисления/*Ссылка*/.АмортизационныеГруппы АмортизационнаяГруппа {get;set;}//Амортизационная группа
 		///<summary>
 		///(Регл)
 		///</summary>
-		public V82.Перечисления/*Ссылка*/.ГруппыОС ГруппаОС;//Группа ОС
+		[DataMember]
+		[ProtoMember(13)]
+		public V82.Перечисления/*Ссылка*/.ГруппыОС ГруппаОС {get;set;}//Группа ОС
 		///<summary>
 		///(Общ)
 		///</summary>
-		public DateTime ДатаВыпуска;//Дата выпуска (постройки)
+		[DataMember]
+		[ProtoMember(14)]
+		public DateTime ДатаВыпуска {get;set;}//Дата выпуска (постройки)
 		///<summary>
 		///(Общ)
 		///</summary>
-		public string/*(0)*/ ЗаводскойНомер;//Заводской номер
+		[DataMember]
+		[ProtoMember(15)]
+		public string/*(0)*/ ЗаводскойНомер {get;set;}//Заводской номер
 		///<summary>
 		///(Общ) Организация-изготовитель
 		///</summary>
-		public string/*(0)*/ Изготовитель;
+		[DataMember]
+		[ProtoMember(16)]
+		public string/*(0)*/ Изготовитель {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		public V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов КодПоОКОФ;//Код по ОКОФ
+		[DataMember]
+		[ProtoMember(17)]
+		public V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов КодПоОКОФ {get;set;}//Код по ОКОФ
 		///<summary>
 		///Код региона объекта недвижимости
 		///</summary>
-		public string/*(2)*/ КодРегиона;//Код региона
+		[DataMember]
+		[ProtoMember(18)]
+		public string/*(2)*/ КодРегиона {get;set;}//Код региона
 		///<summary>
 		///(Общ)
 		///</summary>
-		public string/*(0)*/ Комментарий;
+		[DataMember]
+		[ProtoMember(19)]
+		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		public string/*(0)*/ НаименованиеПолное;//Полное наименование
+		[DataMember]
+		[ProtoMember(20)]
+		public string/*(0)*/ НаименованиеПолное {get;set;}//Полное наименование
 		///<summary>
 		///(Общ)
 		///</summary>
-		public string/*(0)*/ НомерПаспорта;//Номер паспорта (регистрационный)
-		public bool Помещение;//Является помещением или составной частью здания (сооружения)
-		public string/*(100)*/ КадастровыйНомер;//Кадастровый номер
-		public string/*(21)*/ УсловныйНомер;//Условный номер
-		public V82.Перечисления/*Ссылка*/.НазначенияПомещения НазначениеПомещения;//Назначение помещения
+		[DataMember]
+		[ProtoMember(21)]
+		public string/*(0)*/ НомерПаспорта {get;set;}//Номер паспорта (регистрационный)
+		[DataMember]
+		[ProtoMember(22)]
+		public bool Помещение {get;set;}//Является помещением или составной частью здания (сооружения)
+		[DataMember]
+		[ProtoMember(23)]
+		public string/*(100)*/ КадастровыйНомер {get;set;}//Кадастровый номер
+		[DataMember]
+		[ProtoMember(24)]
+		public string/*(21)*/ УсловныйНомер {get;set;}//Условный номер
+		[DataMember]
+		[ProtoMember(25)]
+		public V82.Перечисления/*Ссылка*/.НазначенияПомещения НазначениеПомещения {get;set;}//Назначение помещения
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

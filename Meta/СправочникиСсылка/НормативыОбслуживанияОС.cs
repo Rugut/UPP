@@ -28,79 +28,50 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.Перечисления/*Ссылка*/.СостоянияОбъектов Состояние {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public DateTime ДатаУтверждения {get;set;}//Дата утверждения
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.Номенклатура Услуга {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.Перечисления/*Ссылка*/.Периодичность ПериодичностьОбслуживания {get;set;}//Периодичность обслуживания
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public decimal/*(10.2)*/ КоличествоПериодов {get;set;}//Количество периодов
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.СправочникиСсылка.ПараметрыВыработкиОС ПараметрВыработки {get;set;}//Параметр выработки
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public decimal/*(15.3)*/ ЗначениеПараметраВыработки {get;set;}//Значение параметра выработки
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public decimal/*(15.3)*/ Количество {get;set;}
 
 		public V82.СправочникиОбъект.НормативыОбслуживанияОС  ПолучитьОбъект()
@@ -111,8 +82,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.Комментарий = Комментарий;

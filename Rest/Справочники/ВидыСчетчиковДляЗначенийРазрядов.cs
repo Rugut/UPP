@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыСчетчиковДляЗначенийРазрядовСервис : Service
+	public partial class ВидыСчетчиковДляЗначенийРазрядовСервис : Service
 	{
+		
+		public object Get(ВидыСчетчиковДляЗначенийРазрядовЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыСчетчиковДляЗначенийРазрядовНайтиПоСсылке Запрос)
 		{

@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class НастройкиРасчетаЦеныНоменклатурыСервис : Service
+	public partial class НастройкиРасчетаЦеныНоменклатурыСервис : Service
 	{
+		
+		public object Get(НастройкиРасчетаЦеныНоменклатурыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(НастройкиРасчетаЦеныНоменклатурыНайтиПоСсылке Запрос)
 		{

@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ЯзыкиНародовМираСервис : Service
+	public partial class ЯзыкиНародовМираСервис : Service
 	{
+		
+		public object Get(ЯзыкиНародовМираЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ЯзыкиНародовМираНайтиПоСсылке Запрос)
 		{

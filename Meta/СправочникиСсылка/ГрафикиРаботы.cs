@@ -28,100 +28,59 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(6)]
 		public V82.Перечисления/*Ссылка*/.ВидыРабочихГрафиков ВидГрафика {get;set;}//Вид графика
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public bool СуммированныйУчетРабочегоВремени {get;set;}//Суммированный учет рабочего времени
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.Перечисления/*Ссылка*/.ДниНедели ПервыйВыходной {get;set;}//Первый выходной
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.Перечисления/*Ссылка*/.ДниНедели ВторойВыходной {get;set;}//Второй выходной
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public DateTime ДатаОтсчета {get;set;}//Дата отсчета
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public decimal/*(7.2)*/ ДлительностьРабочейНедели {get;set;}//Длительность рабочей недели
-		[DataMember]
-		[ProtoMember(12)]
 		public bool СокращенноеРабочееВремя {get;set;}//Сокращенное рабочее время
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.СправочникиСсылка.ГрафикиРаботы ГрафикПолногоРабочегоВремени {get;set;}//График полного рабочего времени
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public DateTime НачалоДневныхЧасов {get;set;}//Начало дневных часов
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public DateTime НачалоВечернихЧасов {get;set;}//Начало вечерних часов
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public DateTime НачалоНочныхЧасов {get;set;}//Начало ночных часов
-		[DataMember]
-		[ProtoMember(17)]
 		public bool СокращеннаяРабочаяНеделя {get;set;}//Сокращенная рабочая неделя
-		[DataMember]
-		[ProtoMember(18)]
 		public bool НеполныйРабочийДень {get;set;}//Неполный рабочий день
 		///<summary>
 		///Учитывать праздники при автозаполнении графика
 		///</summary>
-		[DataMember]
-		[ProtoMember(19)]
 		public bool УчитыватьПраздники {get;set;}//Учитывать праздники
-		[DataMember]
-		[ProtoMember(20)]
 		public bool УчитыватьВечерниеЧасы {get;set;}//Учитывать вечерние часы
-		[DataMember]
-		[ProtoMember(21)]
 		public bool УчитыватьНочныеЧасы {get;set;}//Учитывать ночные часы
-		[DataMember]
-		[ProtoMember(22)]
 		public V82.Перечисления/*Ссылка*/.ШаблонЗаполненияГрафикаРаботы ШаблонЗаполнения {get;set;}//Шаблон заполнения
-		[DataMember]
-		[ProtoMember(23)]
 		public bool УдалитьВыходныеПоСкользящемуГрафику {get;set;}//Удалить выходные по скользящему графику
 
 		public V82.СправочникиОбъект.ГрафикиРаботы  ПолучитьОбъект()

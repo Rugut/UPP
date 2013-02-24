@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ФильтрыДляЭлектронныхПисемСервис : Service
+	public partial class ФильтрыДляЭлектронныхПисемСервис : Service
 	{
+		
+		public object Get(ФильтрыДляЭлектронныхПисемЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ФильтрыДляЭлектронныхПисемНайтиПоСсылке Запрос)
 		{

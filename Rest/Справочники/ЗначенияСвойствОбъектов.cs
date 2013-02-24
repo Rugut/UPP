@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ЗначенияСвойствОбъектовСервис : Service
+	public partial class ЗначенияСвойствОбъектовСервис : Service
 	{
+		
+		public object Get(ЗначенияСвойствОбъектовЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ЗначенияСвойствОбъектовНайтиПоСсылке Запрос)
 		{

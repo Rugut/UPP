@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ПроизвольныеОтчетыСервис : Service
+	public partial class ПроизвольныеОтчетыСервис : Service
 	{
+		
+		public object Get(ПроизвольныеОтчетыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ПроизвольныеОтчетыНайтиПоСсылке Запрос)
 		{

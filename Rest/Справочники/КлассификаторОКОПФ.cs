@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class КлассификаторОКОПФСервис : Service
+	public partial class КлассификаторОКОПФСервис : Service
 	{
+		
+		public object Get(КлассификаторОКОПФЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(КлассификаторОКОПФНайтиПоСсылке Запрос)
 		{

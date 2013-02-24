@@ -256,7 +256,15 @@ namespace V82.Справочники//Менеджер
 			var Объект = new V82.СправочникиОбъект.КодыОКПД();
 			Объект._ЭтоНовый = true;
 			Объект.Ссылка = Guid.NewGuid();/*http://msdn.microsoft.com/ru-ru/library/aa379322(VS.85).aspx*/
-			Объект.ЭтоГруппа = false;
+			Объект.Имя = "";
+			return Объект;
+		}
+		
+		public static V82.СправочникиОбъект.КодыОКПД СоздатьГруппу()
+		{
+			var Объект = new V82.СправочникиОбъект.КодыОКПД();
+			Объект._ЭтоНовый = true;
+			Объект.Ссылка = Guid.NewGuid();/*http://msdn.microsoft.com/ru-ru/library/aa379322(VS.85).aspx*/
 			Объект.Имя = "";
 			return Объект;
 		}

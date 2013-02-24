@@ -25,82 +25,33 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*(9)*/ Номер {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public DateTime Дата {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.Перечисления/*Ссылка*/.СпособыОбменаЭД СпособОбменаЭД {get;set;}//Способ обмена
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.Перечисления/*Ссылка*/.СтатусыСоглашенийЭД СтатусСоглашения {get;set;}//Статус соглашения
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.СправочникиСсылка.Контрагенты Контрагент {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(10)*/ Партнер {get;set;}
-		[DataMember]
-		[ProtoMember(13)]
 		public string/*(50)*/ ИдентификаторОрганизации {get;set;}//Идентификатор
-		[DataMember]
-		[ProtoMember(14)]
 		public string/*(50)*/ ИдентификаторКонтрагента {get;set;}//Идентификатор контрагента
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.СправочникиСсылка.СертификатыЭЦП СертификатОрганизацииДляРасшифровки {get;set;}//Сертификат расшифровки
-		[DataMember]
-		[ProtoMember(16)]
 		public ХранилищеЗначения СертификатКонтрагентаДляШифрования {get;set;}//Сертификат для шифрования
-		[DataMember]
-		[ProtoMember(17)]
 		public object АдресРесурсаОрганизации {get;set;}//Адрес ресурса организации
-		[DataMember]
-		[ProtoMember(18)]
 		public string/*(255)*/ АдресРесурсаКонтрагента {get;set;}//Адрес ресурса контрагента
-		[DataMember]
-		[ProtoMember(19)]
 		public DateTime СрокДействия {get;set;}//Срок действия
-		[DataMember]
-		[ProtoMember(20)]
 		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}//Ответственный за обмен
-		[DataMember]
-		[ProtoMember(21)]
 		public string/*(0)*/ Комментарий {get;set;}
-		[DataMember]
-		[ProtoMember(22)]
 		public V82.СправочникиСсылка.СоглашенияОбИспользованииЭД ТиповоеСоглашение {get;set;}//Типовое соглашение
-		[DataMember]
-		[ProtoMember(23)]
 		public bool ПроверятьСертификатыПодписей {get;set;}//Проверять сертификаты подписей
-		[DataMember]
-		[ProtoMember(24)]
 		public bool ЭтоТиповое {get;set;}//Это типовое
-		[DataMember]
-		[ProtoMember(25)]
 		public bool ЭтоИнтеркампани {get;set;}//Это обмен между организациями
-		[DataMember]
-		[ProtoMember(26)]
 		public V82.СправочникиСсылка.СертификатыЭЦП СертификатАбонента {get;set;}//Сертификат
-		[DataMember]
-		[ProtoMember(27)]
 		public string/*(100)*/ ЛогинАбонента {get;set;}//Логин абонента
 
 		public V82.СправочникиОбъект.СоглашенияОбИспользованииЭД  ПолучитьОбъект()

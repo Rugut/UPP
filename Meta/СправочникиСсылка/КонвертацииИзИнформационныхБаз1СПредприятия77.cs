@@ -28,52 +28,23 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*25*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(50)*/ ИдентификаторКонфигурации {get;set;}//Идентификатор конфигурации
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(0)*/ Конфигурация {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(8)*/ НомерРелиза {get;set;}//Номер релиза
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(10)*/ КонвертацияПомощник {get;set;}//Помощник выгрузки
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(10)*/ КонвертацияОбработка {get;set;}//Обработка выгрузки
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(10)*/ КонвертацияПравила {get;set;}//Правила выгрузки
-		[DataMember]
-		[ProtoMember(13)]
 		public ХранилищеЗначения ХранилищеПомощник {get;set;}//Хранилище помощника
-		[DataMember]
-		[ProtoMember(14)]
 		public ХранилищеЗначения ХранилищеОписаниеПомощника {get;set;}//Хранилище описания помощника
-		[DataMember]
-		[ProtoMember(15)]
 		public ХранилищеЗначения ХранилищеОбработка {get;set;}//Хранилище обработки выгрузки
-		[DataMember]
-		[ProtoMember(16)]
 		public ХранилищеЗначения ХранилищеПравила {get;set;}//Хранилище правил выгрузки
-		[DataMember]
-		[ProtoMember(17)]
 		public string/*(256)*/ ИдентификаторЭлемента {get;set;}//Идентификатор элемента
 
 		public V82.СправочникиОбъект.КонвертацииИзИнформационныхБаз1СПредприятия77  ПолучитьОбъект()

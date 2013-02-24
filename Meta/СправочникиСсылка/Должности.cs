@@ -28,37 +28,20 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(0)*/ Требования {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(0)*/ Обязанности {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(0)*/ Условия {get;set;}
 		///<summary>
 		///Название вакансии в средствах массовой информации
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(200)*/ УдалитьНазваниеВакансииВСМИ {get;set;}//Название вакансии в СМИ
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.СправочникиСсылка.ТиповыеАнкеты АнкетаРезюмеКандидата {get;set;}//Анкета резюме кандидата
 
 		public V82.СправочникиОбъект.Должности  ПолучитьОбъект()

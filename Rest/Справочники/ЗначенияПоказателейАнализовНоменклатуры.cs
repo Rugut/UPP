@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ЗначенияПоказателейАнализовНоменклатурыСервис : Service
+	public partial class ЗначенияПоказателейАнализовНоменклатурыСервис : Service
 	{
+		
+		public object Get(ЗначенияПоказателейАнализовНоменклатурыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ЗначенияПоказателейАнализовНоменклатурыНайтиПоСсылке Запрос)
 		{

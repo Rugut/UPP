@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -12,6 +16,8 @@ namespace V82.СправочникиОбъект
 	///<summary>
 	///(Упр)
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class СценарииПланирования:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -19,48 +25,105 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*9*/ Код;
-		public string/*100*/ Наименование;
-		public V82.Перечисления/*Ссылка*/.Периодичность Периодичность;
-		public V82.Перечисления/*Ссылка*/.ДетализацияПланирования ДетализацияПланирования;//Детализация планирования
-		public bool УчетПоСуммам;//Учет по суммам
-		public bool УчетПоКоличеству;//Учет по количеству
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public Guid Родитель {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*9*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public string/*100*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(10)]
+		public V82.Перечисления/*Ссылка*/.Периодичность Периодичность {get;set;}
+		[DataMember]
+		[ProtoMember(11)]
+		public V82.Перечисления/*Ссылка*/.ДетализацияПланирования ДетализацияПланирования {get;set;}//Детализация планирования
+		[DataMember]
+		[ProtoMember(12)]
+		public bool УчетПоСуммам {get;set;}//Учет по суммам
+		[DataMember]
+		[ProtoMember(13)]
+		public bool УчетПоКоличеству {get;set;}//Учет по количеству
 		///<summary>
 		///Валюта данных сценария
 		///</summary>
-		public V82.СправочникиСсылка.Валюты Валюта;
-		public V82.Перечисления/*Ссылка*/.СпособыПланирования СпособПланирования;//Способ планирования
+		[DataMember]
+		[ProtoMember(14)]
+		public V82.СправочникиСсылка.Валюты Валюта {get;set;}
+		[DataMember]
+		[ProtoMember(15)]
+		public V82.Перечисления/*Ссылка*/.СпособыПланирования СпособПланирования {get;set;}//Способ планирования
 		///<summary>
 		///Продолжительность цикла планирования по сценарию (в периодах планирования)
 		///</summary>
-		public decimal/*(10)*/ ПродолжительностьЦикла;//Продолжительность цикла
+		[DataMember]
+		[ProtoMember(16)]
+		public decimal/*(10)*/ ПродолжительностьЦикла {get;set;}//Продолжительность цикла
 		///<summary>
 		///Начало интервала планирования
 		///</summary>
-		public DateTime НачалоПлана;//Начало плана
+		[DataMember]
+		[ProtoMember(17)]
+		public DateTime НачалоПлана {get;set;}//Начало плана
 		///<summary>
 		///Конец интервала планирования
 		///</summary>
-		public DateTime КонецПлана;//Конец плана
+		[DataMember]
+		[ProtoMember(18)]
+		public DateTime КонецПлана {get;set;}//Конец плана
 		///<summary>
 		///Годовая норма доходности для сценария
 		///</summary>
-		public decimal/*(6.3)*/ НормаДоходности;//Норма доходности, %
+		[DataMember]
+		[ProtoMember(19)]
+		public decimal/*(6.3)*/ НормаДоходности {get;set;}//Норма доходности, %
 		///<summary>
 		///Признак использования отдельной линейки курсов валют для сценария
 		///</summary>
-		public bool ИспользоватьКурсыСценария;//Использовать курсы сценария
+		[DataMember]
+		[ProtoMember(20)]
+		public bool ИспользоватьКурсыСценария {get;set;}//Использовать курсы сценария
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

@@ -28,154 +28,97 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(0)*/ НаименованиеПолное {get;set;}//Полное наименование
 		///<summary>
 		///(Общ) Любая дополнительная информация
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///(Общ) Дополнительное описание
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(0)*/ ДополнительноеОписание {get;set;}//Дополнительное описание
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.Контрагенты ГоловнойКонтрагент {get;set;}//Головной контрагент
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.СправочникиСсылка.ИсточникиИнформацииПриОбращенииПокупателей ИсточникИнформацииПриОбращении {get;set;}//Источник информации при обращении
 		///<summary>
 		///(Регл) 
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public string/*(10)*/ КодПоОКПО {get;set;}//Код по ОКПО
 		///<summary>
 		///(Регл) Идентификационный номер налогоплательщика
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(12)*/ ИНН {get;set;}
 		///<summary>
 		///(Регл) Идентификационный номер налогоплательщика
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public string/*(9)*/ КПП {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public V82.Перечисления/*Ссылка*/.ЮрФизЛицо ЮрФизЛицо {get;set;}//Юр. / физ. лицо
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(18)]
 		public V82.СправочникиСсылка.БанковскиеСчета ОсновнойБанковскийСчет {get;set;}//Основной банковский счет
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(19)]
 		public V82.СправочникиСсылка.ДоговорыКонтрагентов ОсновнойДоговорКонтрагента {get;set;}//Основной договор контрагента
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(20)]
 		public V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов ОсновнойВидДеятельности {get;set;}//Основной вид деятельности
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(21)]
 		public string/*(0)*/ ДокументУдостоверяющийЛичность {get;set;}//Документ, удостоверяющий личность
 		///<summary>
 		///(Упр) Основной менеджер
 		///</summary>
-		[DataMember]
-		[ProtoMember(22)]
 		public V82.СправочникиСсылка.Пользователи ОсновнойМенеджерПокупателя {get;set;}//Основной менеджер покупателя
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(23)]
 		public bool Покупатель {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(24)]
 		public bool Поставщик {get;set;}
 		///<summary>
 		///(Общ) Расписание работы строкой
 		///</summary>
-		[DataMember]
-		[ProtoMember(25)]
 		public string/*(0)*/ РасписаниеРаботыСтрокой {get;set;}//Расписание работы строкой
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(26)]
 		public decimal/*(3)*/ СрокВыполненияЗаказаПоставщиком {get;set;}//Срок выполнения заказа поставщиком (в днях)
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(27)]
 		public V82.СправочникиСсылка.КонтактныеЛицаКонтрагентов ОсновноеКонтактноеЛицо {get;set;}//Основное контактное лицо
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(28)]
 		public bool НеЯвляетсяРезидентом {get;set;}//Не является резидентом
-		[DataMember]
-		[ProtoMember(29)]
 		public V82.СправочникиСсылка.КлассификаторОКОПФ ОКОПФ {get;set;}
-		[DataMember]
-		[ProtoMember(30)]
 		public V82.СправочникиСсылка.Регионы Регион {get;set;}
-		[DataMember]
-		[ProtoMember(31)]
 		public V82.СправочникиСсылка.ГруппыДоступаКонтрагентов ГруппаДоступаКонтрагента {get;set;}//Группа доступа контрагента
 
 		public V82.СправочникиОбъект.Контрагенты  ПолучитьОбъект()
@@ -186,8 +129,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.НаименованиеПолное = НаименованиеПолное;

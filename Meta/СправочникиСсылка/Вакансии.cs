@@ -25,55 +25,24 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public bool Закрыта {get;set;}//Вакансия закрыта
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.Должности Должность {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.СправочникиСсылка.Пользователи Заявитель {get;set;}
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(0)*/ Обязанности {get;set;}
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}//Ответственный за вакансию
-		[DataMember]
-		[ProtoMember(13)]
 		public DateTime ПлановаяДатаЗакрытия {get;set;}//Плановая дата закрытия
-		[DataMember]
-		[ProtoMember(14)]
 		public object Подразделение {get;set;}
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(0)*/ Требования {get;set;}
-		[DataMember]
-		[ProtoMember(16)]
 		public string/*(0)*/ Условия {get;set;}
-		[DataMember]
-		[ProtoMember(17)]
 		public DateTime ДатаОткрытия {get;set;}//Дата открытия
-		[DataMember]
-		[ProtoMember(18)]
 		public DateTime ДатаЗакрытия {get;set;}//Дата закрытия
 
 		public V82.СправочникиОбъект.Вакансии  ПолучитьОбъект()

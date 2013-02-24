@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыНалоговыхОргановСервис : Service
+	public partial class ВидыНалоговыхОргановСервис : Service
 	{
+		
+		public object Get(ВидыНалоговыхОргановЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыНалоговыхОргановНайтиПоСсылке Запрос)
 		{

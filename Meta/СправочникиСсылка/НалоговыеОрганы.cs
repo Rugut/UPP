@@ -25,64 +25,26 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*4*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*120*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.СправочникиСсылка.ВидыНалоговыхОрганов Вид {get;set;}//Вид налогового органа
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(250)*/ ПолноеНаименование {get;set;}//Полное наименование
-		[DataMember]
-		[ProtoMember(11)]
 		public bool УчетНалогоплательщиков {get;set;}//Учет налогоплательщиков
-		[DataMember]
-		[ProtoMember(12)]
 		public bool ПриемНалоговойОтчетности {get;set;}//Прием налоговой отчетности
-		[DataMember]
-		[ProtoMember(13)]
 		public string/*(10)*/ ИНН {get;set;}
-		[DataMember]
-		[ProtoMember(14)]
 		public string/*(9)*/ КПП {get;set;}
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(128)*/ Адрес {get;set;}
-		[DataMember]
-		[ProtoMember(16)]
 		public string/*(64)*/ Телефон {get;set;}
-		[DataMember]
-		[ProtoMember(17)]
 		public string/*(64)*/ АдресЭлектроннойПочты {get;set;}//Адрес электронной почты
-		[DataMember]
-		[ProtoMember(18)]
 		public string/*(64)*/ АдресСайта {get;set;}//Адрес сайта
-		[DataMember]
-		[ProtoMember(19)]
 		public string/*(250)*/ Комментарий {get;set;}
-		[DataMember]
-		[ProtoMember(20)]
 		public string/*(40)*/ УдалитьСертификат {get;set;}//Удалить сертификат
-		[DataMember]
-		[ProtoMember(21)]
 		public string/*(254)*/ АдресЭлектроннойПочтыДляЦелейДокументооборотаСНалогоплательщиками {get;set;}//Адрес электронной почты для целей документооборота с налогоплательщиками
 
 		public V82.СправочникиОбъект.НалоговыеОрганы  ПолучитьОбъект()
@@ -93,7 +55,6 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;

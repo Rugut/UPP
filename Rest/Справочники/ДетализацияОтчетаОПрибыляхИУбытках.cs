@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ДетализацияОтчетаОПрибыляхИУбыткахСервис : Service
+	public partial class ДетализацияОтчетаОПрибыляхИУбыткахСервис : Service
 	{
+		
+		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ДетализацияОтчетаОПрибыляхИУбыткахНайтиПоСсылке Запрос)
 		{

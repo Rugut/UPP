@@ -28,37 +28,20 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*10*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(1)*/ КонтрольноеЧисло {get;set;}//Контрольное число
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(0)*/ НаименованиеГруппировки {get;set;}//Наименование группировки
 		///<summary>
 		///Амортизационная группа
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.Перечисления/*Ссылка*/.АмортизационныеГруппы АмортизационнаяГруппа {get;set;}//Амортизационная группа
 
 		public V82.СправочникиОбъект.ОбщероссийскийКлассификаторОсновныхФондов  ПолучитьОбъект()
@@ -69,8 +52,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.КонтрольноеЧисло = КонтрольноеЧисло;

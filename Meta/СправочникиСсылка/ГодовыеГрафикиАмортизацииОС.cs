@@ -28,97 +28,64 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(0)*/ Комментарий {get;set;}//Прочие сведения
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public decimal/*(6.3)*/ Коэффициент1 {get;set;}//Январь
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public decimal/*(6.3)*/ Коэффициент2 {get;set;}//Февраль
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public decimal/*(6.3)*/ Коэффициент3 {get;set;}//Март
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public decimal/*(6.3)*/ Коэффициент4 {get;set;}//Апрель
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public decimal/*(6.3)*/ Коэффициент5 {get;set;}//Май
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public decimal/*(6.3)*/ Коэффициент6 {get;set;}//Июнь
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public decimal/*(6.3)*/ Коэффициент7 {get;set;}//Июль
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public decimal/*(6.3)*/ Коэффициент8 {get;set;}//Август
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public decimal/*(6.3)*/ Коэффициент9 {get;set;}//Сентябрь
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public decimal/*(6.3)*/ Коэффициент10 {get;set;}//Октябрь
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(18)]
 		public decimal/*(6.3)*/ Коэффициент11 {get;set;}//Ноябрь
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(19)]
 		public decimal/*(6.3)*/ Коэффициент12 {get;set;}//Декабрь
 
 		public V82.СправочникиОбъект.ГодовыеГрафикиАмортизацииОС  ПолучитьОбъект()

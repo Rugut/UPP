@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Rest;
 
+
 namespace RestStart
 {
     class Program
@@ -14,7 +15,7 @@ namespace RestStart
             //http://ru.wikipedia.org/wiki/REST
             WebHost.Запустить();
             //Может закончиться ошибкой, отказано в доступе.
-            //Можно запустить проект с админскими правами, а можно студию.
+            //Можно запустить проект с админскими правами, а можно студию запустить с админскими правами.
 
         }
 

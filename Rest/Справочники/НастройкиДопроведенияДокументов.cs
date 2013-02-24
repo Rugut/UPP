@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class НастройкиДопроведенияДокументовСервис : Service
+	public partial class НастройкиДопроведенияДокументовСервис : Service
 	{
+		
+		public object Get(НастройкиДопроведенияДокументовЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(НастройкиДопроведенияДокументовНайтиПоСсылке Запрос)
 		{

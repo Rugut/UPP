@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -12,6 +16,8 @@ namespace V82.СправочникиОбъект
 	///<summary>
 	///(Регл)
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class ВычетыНДФЛ:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -19,30 +25,81 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*7*/ Код;
-		public string/*150*/ Наименование;
-		public string/*(3)*/ КодДляОтчетности2007;//Код для отчетности 2007 г.
-		public string/*(3)*/ КодДляОтчетности2008;//Код для отчетности 2008 г.
-		public string/*(3)*/ КодДляОтчетности2009;//Код для отчетности 2009 г.
-		public string/*(0)*/ Наименование2007;//Наименование 2007 г.
-		public string/*(0)*/ Наименование2008;//Наименование 2008 г.
-		public string/*(3)*/ КодДляОтчетности2010;//Код для отчетности 2010 г.
-		public bool НеПредоставляетсяНерезидентам;//Не предоставляется нерезидентам
-		public bool НеОтражаетсяВОтчетности2010;//Не отражается в отчетности-2010
-		public V82.Перечисления/*Ссылка*/.ГруппыВычетовПоНДФЛ ГруппаВычета;//Группа вычета
-		public string/*(0)*/ Наименование2010;//Наименование 2010 г.
-		public string/*(3)*/ КодДляОтчетности2011;//Код для отчетности 2011 г.
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public string/*7*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public string/*150*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*(3)*/ КодДляОтчетности2007 {get;set;}//Код для отчетности 2007 г.
+		[DataMember]
+		[ProtoMember(9)]
+		public string/*(3)*/ КодДляОтчетности2008 {get;set;}//Код для отчетности 2008 г.
+		[DataMember]
+		[ProtoMember(10)]
+		public string/*(3)*/ КодДляОтчетности2009 {get;set;}//Код для отчетности 2009 г.
+		[DataMember]
+		[ProtoMember(11)]
+		public string/*(0)*/ Наименование2007 {get;set;}//Наименование 2007 г.
+		[DataMember]
+		[ProtoMember(12)]
+		public string/*(0)*/ Наименование2008 {get;set;}//Наименование 2008 г.
+		[DataMember]
+		[ProtoMember(13)]
+		public string/*(3)*/ КодДляОтчетности2010 {get;set;}//Код для отчетности 2010 г.
+		[DataMember]
+		[ProtoMember(14)]
+		public bool НеПредоставляетсяНерезидентам {get;set;}//Не предоставляется нерезидентам
+		[DataMember]
+		[ProtoMember(15)]
+		public bool НеОтражаетсяВОтчетности2010 {get;set;}//Не отражается в отчетности-2010
+		[DataMember]
+		[ProtoMember(16)]
+		public V82.Перечисления/*Ссылка*/.ГруппыВычетовПоНДФЛ ГруппаВычета {get;set;}//Группа вычета
+		[DataMember]
+		[ProtoMember(17)]
+		public string/*(0)*/ Наименование2010 {get;set;}//Наименование 2010 г.
+		[DataMember]
+		[ProtoMember(18)]
+		public string/*(3)*/ КодДляОтчетности2011 {get;set;}//Код для отчетности 2011 г.
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

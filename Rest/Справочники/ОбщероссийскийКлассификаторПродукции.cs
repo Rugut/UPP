@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ОбщероссийскийКлассификаторПродукцииСервис : Service
+	public partial class ОбщероссийскийКлассификаторПродукцииСервис : Service
 	{
+		
+		public object Get(ОбщероссийскийКлассификаторПродукцииЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ОбщероссийскийКлассификаторПродукцииНайтиПоСсылке Запрос)
 		{

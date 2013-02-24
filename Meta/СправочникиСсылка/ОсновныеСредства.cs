@@ -28,109 +28,66 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public bool Автотранспорт {get;set;}//Признак автотранспорта
 		///<summary>
 		///Адрес местонахождения объекта недвижимости
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(0)*/ АдресМестонахождения {get;set;}//Адрес местонахождения
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.Перечисления/*Ссылка*/.АмортизационныеГруппы АмортизационнаяГруппа {get;set;}//Амортизационная группа
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.Перечисления/*Ссылка*/.ГруппыОС ГруппаОС {get;set;}//Группа ОС
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public DateTime ДатаВыпуска {get;set;}//Дата выпуска (постройки)
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public string/*(0)*/ ЗаводскойНомер {get;set;}//Заводской номер
 		///<summary>
 		///(Общ) Организация-изготовитель
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(0)*/ Изготовитель {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов КодПоОКОФ {get;set;}//Код по ОКОФ
 		///<summary>
 		///Код региона объекта недвижимости
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public string/*(2)*/ КодРегиона {get;set;}//Код региона
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(18)]
 		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(19)]
 		public string/*(0)*/ НаименованиеПолное {get;set;}//Полное наименование
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(20)]
 		public string/*(0)*/ НомерПаспорта {get;set;}//Номер паспорта (регистрационный)
-		[DataMember]
-		[ProtoMember(21)]
 		public bool Помещение {get;set;}//Является помещением или составной частью здания (сооружения)
-		[DataMember]
-		[ProtoMember(22)]
 		public string/*(100)*/ КадастровыйНомер {get;set;}//Кадастровый номер
-		[DataMember]
-		[ProtoMember(23)]
 		public string/*(21)*/ УсловныйНомер {get;set;}//Условный номер
-		[DataMember]
-		[ProtoMember(24)]
 		public V82.Перечисления/*Ссылка*/.НазначенияПомещения НазначениеПомещения {get;set;}//Назначение помещения
 
 		public V82.СправочникиОбъект.ОсновныеСредства  ПолучитьОбъект()
@@ -141,8 +98,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.Автотранспорт = Автотранспорт;

@@ -28,52 +28,23 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*7*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*150*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(3)*/ КодДляОтчетности2007 {get;set;}//Код для отчетности 2007 г.
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(3)*/ КодДляОтчетности2008 {get;set;}//Код для отчетности 2008 г.
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(3)*/ КодДляОтчетности2009 {get;set;}//Код для отчетности 2009 г.
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(0)*/ Наименование2007 {get;set;}//Наименование 2007 г.
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(0)*/ Наименование2008 {get;set;}//Наименование 2008 г.
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(3)*/ КодДляОтчетности2010 {get;set;}//Код для отчетности 2010 г.
-		[DataMember]
-		[ProtoMember(13)]
 		public bool НеПредоставляетсяНерезидентам {get;set;}//Не предоставляется нерезидентам
-		[DataMember]
-		[ProtoMember(14)]
 		public bool НеОтражаетсяВОтчетности2010 {get;set;}//Не отражается в отчетности-2010
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.Перечисления/*Ссылка*/.ГруппыВычетовПоНДФЛ ГруппаВычета {get;set;}//Группа вычета
-		[DataMember]
-		[ProtoMember(16)]
 		public string/*(0)*/ Наименование2010 {get;set;}//Наименование 2010 г.
-		[DataMember]
-		[ProtoMember(17)]
 		public string/*(3)*/ КодДляОтчетности2011 {get;set;}//Код для отчетности 2011 г.
 
 		public V82.СправочникиОбъект.ВычетыНДФЛ  ПолучитьОбъект()

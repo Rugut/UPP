@@ -25,40 +25,19 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*25*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*50*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public bool УправленческийУчет {get;set;}//Управленческий учет
-		[DataMember]
-		[ProtoMember(10)]
 		public bool РегламентированныйУчет {get;set;}//Регламентированный учет
-		[DataMember]
-		[ProtoMember(11)]
 		public object ЗначениеПоУмолчанию {get;set;}//Значение по умолчанию
-		[DataMember]
-		[ProtoMember(12)]
 		public bool ТолькоПросмотр {get;set;}//Только просмотр
-		[DataMember]
-		[ProtoMember(13)]
 		public bool ТолькоПросмотрРегл {get;set;}//Только просмотр регл.
 
 		public V82.СправочникиОбъект.НастройкиАналитикиУчета  ПолучитьОбъект()
@@ -69,8 +48,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.УправленческийУчет = УправленческийУчет;

@@ -28,37 +28,18 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*50*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.Перечисления/*Ссылка*/.ТипыОплатЧекаККМ ТипОплаты {get;set;}//Тип оплаты
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.СправочникиСсылка.Контрагенты БанкКредитор {get;set;}//Банк-кредитор
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.СправочникиСсылка.ДоговорыКонтрагентов ДоговорВзаиморасчетовБанкаКредитора {get;set;}//Договор взаиморасчетов банка-кредитора
-		[DataMember]
-		[ProtoMember(12)]
 		public decimal/*(5.2)*/ ПроцентБанковскойКомиссии {get;set;}//Процент банковской комиссии
 
 		public V82.СправочникиОбъект.ВидыОплатЧекаККМ  ПолучитьОбъект()
@@ -69,8 +50,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.ТипОплаты = ТипОплаты;

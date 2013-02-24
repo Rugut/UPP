@@ -25,55 +25,28 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*(150)*/ ДолжностьПоСертификату {get;set;}//Должность по сертификату
-		[DataMember]
-		[ProtoMember(7)]
 		public bool ЗапомнитьПарольКСертификату {get;set;}//Запомнить пароль к сертификату
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(0)*/ Назначение {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public bool ОграничитьДоступКСертификату {get;set;}//Ограничить доступ к сертификату
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
-		[DataMember]
-		[ProtoMember(11)]
 		public bool Отозван {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(255)*/ Отпечаток {get;set;}
-		[DataMember]
-		[ProtoMember(13)]
 		public string/*(50)*/ ПарольПользователя {get;set;}//Пароль пользователя
 		///<summary>
 		///Пользователь, кому доступен сертификат подписи
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public V82.СправочникиСсылка.Пользователи Пользователь {get;set;}
-		[DataMember]
-		[ProtoMember(15)]
 		public bool ПроверятьСоставИсполнителей {get;set;}//Проверять состав исполнителей
 		///<summary>
 		///Двоичные данные сертификата
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public ХранилищеЗначения ФайлСертификата {get;set;}//Файл сертификата
 
 		public V82.СправочникиОбъект.СертификатыЭЦП  ПолучитьОбъект()

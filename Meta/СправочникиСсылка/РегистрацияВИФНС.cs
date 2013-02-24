@@ -25,52 +25,31 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public Guid Владелец {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*4*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///Код причины постановки
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(9)*/ КПП {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(254)*/ НаименованиеИФНС {get;set;}//Наименование ИФНС
 		///<summary>
 		///Представитель в территориальном органе ФНС
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public object Представитель {get;set;}
 		///<summary>
 		///Название документа, подтверждающего полномочия представителя
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(1000)*/ ДокументПредставителя {get;set;}//Документ представителя
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ УполномоченноеЛицоПредставителя {get;set;}//Уполномоченное лицо представителя
 		///<summary>
 		///Доверенность налогоплательщика на представителя
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.СправочникиСсылка.ДоверенностиНалогоплательщика Доверенность {get;set;}
 
 		public V82.СправочникиОбъект.РегистрацияВИФНС  ПолучитьОбъект()

@@ -28,52 +28,31 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(0)*/ НаименованиеПолное {get;set;}//Полное наименование
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.Перечисления/*Ссылка*/.ВидыНМА ВидНМА {get;set;}//Вид НМА
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.Перечисления/*Ссылка*/.АмортизационныеГруппы АмортизационнаяГруппа {get;set;}//Амортизационная группа
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ ПрочиеСведения {get;set;}//Прочие сведения
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.Перечисления/*Ссылка*/.ВидыОбъектовУчетаНМА ВидОбъектаУчета {get;set;}//Вид объекта учета
 
 		public V82.СправочникиОбъект.НематериальныеАктивы  ПолучитьОбъект()
@@ -84,8 +63,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.НаименованиеПолное = НаименованиеПолное;

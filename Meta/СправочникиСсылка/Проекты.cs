@@ -28,43 +28,24 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///Дата начала проекта
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public DateTime ДатаНачала {get;set;}//Дата начала
 		///<summary>
 		///Дата окончания проекта
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public DateTime ДатаОкончания {get;set;}//Дата окончания
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ Описание {get;set;}
 
 		public V82.СправочникиОбъект.Проекты  ПолучитьОбъект()
@@ -75,8 +56,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.ДатаНачала = ДатаНачала;

@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ПоказателиСхемМотивацииСервис : Service
+	public partial class ПоказателиСхемМотивацииСервис : Service
 	{
+		
+		public object Get(ПоказателиСхемМотивацииЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ПоказателиСхемМотивацииНайтиПоСсылке Запрос)
 		{

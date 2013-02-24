@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class СохраненныеНастройкиСервис : Service
+	public partial class СохраненныеНастройкиСервис : Service
 	{
+		
+		public object Get(СохраненныеНастройкиЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(СохраненныеНастройкиНайтиПоСсылке Запрос)
 		{

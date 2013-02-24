@@ -25,46 +25,21 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*8*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*150*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public object Получатель {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public object ВидОтчета {get;set;}//Вид отчета
-		[DataMember]
-		[ProtoMember(10)]
 		public DateTime ДатаНачала {get;set;}//Дата начала
-		[DataMember]
-		[ProtoMember(11)]
 		public DateTime ДатаОкончания {get;set;}//Дата окончания
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ Комментарий {get;set;}
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.Перечисления/*Ссылка*/.Периодичность Периодичность {get;set;}
-		[DataMember]
-		[ProtoMember(14)]
 		public DateTime ДатаИмпорта {get;set;}//Дата импорта
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.Перечисления/*Ссылка*/.ТипыКонтролирующихОрганов ТипПолучателя {get;set;}//Тип получателя
 
 		public V82.СправочникиОбъект.ЭлектронныеПредставленияРегламентированныхОтчетов  ПолучитьОбъект()

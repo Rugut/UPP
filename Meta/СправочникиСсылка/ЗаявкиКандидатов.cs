@@ -28,61 +28,26 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public V82.СправочникиСсылка.ФизическиеЛица ФизЛицо {get;set;}//Физическое лицо
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.СостоянияЗаявокКандидатов Состояние {get;set;}//Текущее состояние
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.Перечисления/*Ссылка*/.Важность Важность {get;set;}
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(0)*/ Комментарий {get;set;}//Описание кандидата
-		[DataMember]
-		[ProtoMember(11)]
 		public bool Закрыта {get;set;}//Работа по кандидату завершена
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ РезультатЗакрытия {get;set;}//Результат работы по кандидату
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.СправочникиСсылка.ГруппыЗаявокКандидатов ГруппаЗаявок {get;set;}//Группа кандидатов
-		[DataMember]
-		[ProtoMember(14)]
 		public DateTime ДатаОткрытия {get;set;}//Дата поступления кандидата
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.СправочникиСсылка.ИсточникиИнформации ИсточникИнформации {get;set;}//Источник информации
-		[DataMember]
-		[ProtoMember(16)]
 		public V82.СправочникиСсылка.Вакансии Вакансия {get;set;}
-		[DataMember]
-		[ProtoMember(17)]
 		public object Подразделение {get;set;}
-		[DataMember]
-		[ProtoMember(18)]
 		public V82.СправочникиСсылка.Должности Должность {get;set;}
-		[DataMember]
-		[ProtoMember(19)]
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
-		[DataMember]
-		[ProtoMember(20)]
 		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}
 
 		public V82.СправочникиОбъект.ЗаявкиКандидатов  ПолучитьОбъект()

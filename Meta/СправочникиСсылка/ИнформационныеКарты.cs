@@ -28,43 +28,20 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*50*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(100)*/ КодКарты {get;set;}//Код карты
-		[DataMember]
-		[ProtoMember(10)]
 		public object ВладелецКарты {get;set;}//Владелец карты
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.Перечисления/*Ссылка*/.ВидыИнформационныхКарт ВидКарты {get;set;}//Вид карты
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.Перечисления/*Ссылка*/.ТипыИнформационныхКарт ТипКарты {get;set;}//Тип карты
-		[DataMember]
-		[ProtoMember(13)]
 		public object ТипШтрихКода {get;set;}//Тип штрих кода
-		[DataMember]
-		[ProtoMember(14)]
 		public V82.СправочникиСсылка.ВидыДисконтныхКарт ВидДисконтнойКарты {get;set;}//Вид дисконтной карты
 
 		public V82.СправочникиОбъект.ИнформационныеКарты  ПолучитьОбъект()
@@ -75,8 +52,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.КодКарты = КодКарты;

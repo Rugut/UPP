@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class АдресныеСокращенияСервис : Service
+	public partial class АдресныеСокращенияСервис : Service
 	{
+		
+		public object Get(АдресныеСокращенияЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(АдресныеСокращенияНайтиПоСсылке Запрос)
 		{

@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class КоэффициентыСтажаСервис : Service
+	public partial class КоэффициентыСтажаСервис : Service
 	{
+		
+		public object Get(КоэффициентыСтажаЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(КоэффициентыСтажаНайтиПоСсылке Запрос)
 		{

@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ЦеновыеГруппыСервис : Service
+	public partial class ЦеновыеГруппыСервис : Service
 	{
+		
+		public object Get(ЦеновыеГруппыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ЦеновыеГруппыНайтиПоСсылке Запрос)
 		{

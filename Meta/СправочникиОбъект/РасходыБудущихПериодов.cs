@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -12,6 +16,8 @@ namespace V82.СправочникиОбъект
 	///<summary>
 	///(Общ)
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class РасходыБудущихПериодов:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -19,88 +25,171 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*11*/ Код;
-		public string/*100*/ Наименование;
-		public V82.Перечисления/*Ссылка*/.ВидыРБП ВидРБП;//Вид РБП
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public Guid Родитель {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*11*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public string/*100*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(10)]
+		public V82.Перечисления/*Ссылка*/.ВидыРБП ВидРБП {get;set;}//Вид РБП
 		///<summary>
 		///(Общ)
 		///</summary>
-		public DateTime ДатаНачалаСписания;//Дата начала списания
+		[DataMember]
+		[ProtoMember(11)]
+		public DateTime ДатаНачалаСписания {get;set;}//Дата начала списания
 		///<summary>
 		///(Общ)
 		///</summary>
-		public DateTime ДатаОкончанияСписания;//Дата окончания списания
+		[DataMember]
+		[ProtoMember(12)]
+		public DateTime ДатаОкончанияСписания {get;set;}//Дата окончания списания
 		///<summary>
 		///(Упр)
 		///</summary>
-		public V82.СправочникиСсылка.НоменклатурныеГруппы НоменклатурнаяГруппа;//Номенклатурная группа
-		public V82.СправочникиСсылка.ОбъектыСтроительства ОбъектСтроительства;//Объект строительства
+		[DataMember]
+		[ProtoMember(13)]
+		public V82.СправочникиСсылка.НоменклатурныеГруппы НоменклатурнаяГруппа {get;set;}//Номенклатурная группа
+		[DataMember]
+		[ProtoMember(14)]
+		public V82.СправочникиСсылка.ОбъектыСтроительства ОбъектСтроительства {get;set;}//Объект строительства
 		///<summary>
 		///(Упр)
 		///</summary>
-		public V82.СправочникиСсылка.Подразделения Подразделение;
+		[DataMember]
+		[ProtoMember(15)]
+		public V82.СправочникиСсылка.Подразделения Подразделение {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеОрганизации;//Подразделение организации
-		public V82.СправочникиСсылка.Номенклатура Продукция;
-		public V82.СправочникиСсылка.СерииНоменклатуры СерияПродукции;//Серия продукции
+		[DataMember]
+		[ProtoMember(16)]
+		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеОрганизации {get;set;}//Подразделение организации
+		[DataMember]
+		[ProtoMember(17)]
+		public V82.СправочникиСсылка.Номенклатура Продукция {get;set;}
+		[DataMember]
+		[ProtoMember(18)]
+		public V82.СправочникиСсылка.СерииНоменклатуры СерияПродукции {get;set;}//Серия продукции
 		///<summary>
 		///(Общ)
 		///</summary>
-		public V82.СправочникиСсылка.СтатьиЗатрат СтатьяЗатрат;//Статья затрат
+		[DataMember]
+		[ProtoMember(19)]
+		public V82.СправочникиСсылка.СтатьиЗатрат СтатьяЗатрат {get;set;}//Статья затрат
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СчетБУ;//Счет БУ
+		[DataMember]
+		[ProtoMember(20)]
+		public object СчетБУ {get;set;}//Счет БУ
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СубконтоБУ1;//Субконто БУ 1
+		[DataMember]
+		[ProtoMember(21)]
+		public object СубконтоБУ1 {get;set;}//Субконто БУ 1
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СубконтоБУ2;//Субконто БУ 2
+		[DataMember]
+		[ProtoMember(22)]
+		public object СубконтоБУ2 {get;set;}//Субконто БУ 2
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СубконтоБУ3;//Субконто БУ 3
+		[DataMember]
+		[ProtoMember(23)]
+		public object СубконтоБУ3 {get;set;}//Субконто БУ 3
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СчетНУ;//Счет НУ
+		[DataMember]
+		[ProtoMember(24)]
+		public object СчетНУ {get;set;}//Счет НУ
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СубконтоНУ1;//Субконто НУ 1
+		[DataMember]
+		[ProtoMember(25)]
+		public object СубконтоНУ1 {get;set;}//Субконто НУ 1
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СубконтоНУ2;//Субконто НУ 2
+		[DataMember]
+		[ProtoMember(26)]
+		public object СубконтоНУ2 {get;set;}//Субконто НУ 2
 		///<summary>
 		///(Регл)
 		///</summary>
-		public object СубконтоНУ3;//Субконто НУ 3
+		[DataMember]
+		[ProtoMember(27)]
+		public object СубконтоНУ3 {get;set;}//Субконто НУ 3
 		///<summary>
 		///(Общ)
 		///</summary>
-		public decimal/*(15.2)*/ Сумма;
-		public V82.СправочникиСсылка.ХарактеристикиНоменклатуры ХарактеристикаПродукции;//Характеристика продукции
-		public V82.Перечисления/*Ссылка*/.СпособыПризнанияРасходов СпособПризнанияРасходов;//Способ признания расходов
-		public V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск СпособРаспределенияЗатратНаВыпуск;//Способ распределения затрат на выпуск
-		public V82.Перечисления/*Ссылка*/.СпособыСтроительства СпособСтроительства;//Способ строительства
-		public V82.Перечисления/*Ссылка*/.ВидыАктивовДляРБП ВидАктива;//Вид актива
+		[DataMember]
+		[ProtoMember(28)]
+		public decimal/*(15.2)*/ Сумма {get;set;}
+		[DataMember]
+		[ProtoMember(29)]
+		public V82.СправочникиСсылка.ХарактеристикиНоменклатуры ХарактеристикаПродукции {get;set;}//Характеристика продукции
+		[DataMember]
+		[ProtoMember(30)]
+		public V82.Перечисления/*Ссылка*/.СпособыПризнанияРасходов СпособПризнанияРасходов {get;set;}//Способ признания расходов
+		[DataMember]
+		[ProtoMember(31)]
+		public V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск СпособРаспределенияЗатратНаВыпуск {get;set;}//Способ распределения затрат на выпуск
+		[DataMember]
+		[ProtoMember(32)]
+		public V82.Перечисления/*Ссылка*/.СпособыСтроительства СпособСтроительства {get;set;}//Способ строительства
+		[DataMember]
+		[ProtoMember(33)]
+		public V82.Перечисления/*Ссылка*/.ВидыАктивовДляРБП ВидАктива {get;set;}//Вид актива
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class НазначенияИспользованияСпецификацийСервис : Service
+	public partial class НазначенияИспользованияСпецификацийСервис : Service
 	{
+		
+		public object Get(НазначенияИспользованияСпецификацийЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(НазначенияИспользованияСпецификацийНайтиПоСсылке Запрос)
 		{

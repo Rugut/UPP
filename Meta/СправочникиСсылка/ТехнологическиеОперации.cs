@@ -28,79 +28,50 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.СправочникиСсылка.СтатьиЗатрат ОсновнаяСтатьяЗатратНаПроизводство {get;set;}//Основная статья затрат на производство
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете СпособОтраженияЗарплатыВБухучете {get;set;}//Способ отражения зарплаты в бухучете
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск ОсновнойСпособРаспределенияЗатратНаВыпуск {get;set;}//Основной способ распределения затрат на выпуск
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.НоменклатурныеГруппы ОсновнаяНоменклатурнаяГруппа {get;set;}//Основная номенклатурная группа
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public decimal/*(15.3)*/ Расценка {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public V82.СправочникиСсылка.КлассификаторЕдиницИзмерения БазоваяЕдиницаИзмерения {get;set;}//Базовая единица измерения
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.СправочникиСсылка.Валюты Валюта {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public decimal/*(10)*/ НормаВремени {get;set;}//Норма времени
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public decimal/*(10.3)*/ Коэффициент {get;set;}
 
 		public V82.СправочникиОбъект.ТехнологическиеОперации  ПолучитьОбъект()
@@ -111,8 +82,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.ОсновнаяСтатьяЗатратНаПроизводство = ОсновнаяСтатьяЗатратНаПроизводство;

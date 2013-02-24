@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -9,6 +13,8 @@ using V82.ДокументыСсылка;
 using V82.Перечисления;//Ссылка;
 namespace V82.СправочникиОбъект
 {
+	[ProtoContract]
+	[DataContract]
 	public partial class НалоговыеОрганы:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -16,32 +22,90 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*4*/ Код;
-		public string/*120*/ Наименование;
-		public V82.СправочникиСсылка.ВидыНалоговыхОрганов Вид;//Вид налогового органа
-		public string/*(250)*/ ПолноеНаименование;//Полное наименование
-		public bool УчетНалогоплательщиков;//Учет налогоплательщиков
-		public bool ПриемНалоговойОтчетности;//Прием налоговой отчетности
-		public string/*(10)*/ ИНН;
-		public string/*(9)*/ КПП;
-		public string/*(128)*/ Адрес;
-		public string/*(64)*/ Телефон;
-		public string/*(64)*/ АдресЭлектроннойПочты;//Адрес электронной почты
-		public string/*(64)*/ АдресСайта;//Адрес сайта
-		public string/*(250)*/ Комментарий;
-		public string/*(40)*/ УдалитьСертификат;//Удалить сертификат
-		public string/*(254)*/ АдресЭлектроннойПочтыДляЦелейДокументооборотаСНалогоплательщиками;//Адрес электронной почты для целей документооборота с налогоплательщиками
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public Guid Родитель {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public string/*4*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*120*/ Наименование {get;set;}
+		[DataMember]
+		[ProtoMember(9)]
+		public V82.СправочникиСсылка.ВидыНалоговыхОрганов Вид {get;set;}//Вид налогового органа
+		[DataMember]
+		[ProtoMember(10)]
+		public string/*(250)*/ ПолноеНаименование {get;set;}//Полное наименование
+		[DataMember]
+		[ProtoMember(11)]
+		public bool УчетНалогоплательщиков {get;set;}//Учет налогоплательщиков
+		[DataMember]
+		[ProtoMember(12)]
+		public bool ПриемНалоговойОтчетности {get;set;}//Прием налоговой отчетности
+		[DataMember]
+		[ProtoMember(13)]
+		public string/*(10)*/ ИНН {get;set;}
+		[DataMember]
+		[ProtoMember(14)]
+		public string/*(9)*/ КПП {get;set;}
+		[DataMember]
+		[ProtoMember(15)]
+		public string/*(128)*/ Адрес {get;set;}
+		[DataMember]
+		[ProtoMember(16)]
+		public string/*(64)*/ Телефон {get;set;}
+		[DataMember]
+		[ProtoMember(17)]
+		public string/*(64)*/ АдресЭлектроннойПочты {get;set;}//Адрес электронной почты
+		[DataMember]
+		[ProtoMember(18)]
+		public string/*(64)*/ АдресСайта {get;set;}//Адрес сайта
+		[DataMember]
+		[ProtoMember(19)]
+		public string/*(250)*/ Комментарий {get;set;}
+		[DataMember]
+		[ProtoMember(20)]
+		public string/*(40)*/ УдалитьСертификат {get;set;}//Удалить сертификат
+		[DataMember]
+		[ProtoMember(21)]
+		public string/*(254)*/ АдресЭлектроннойПочтыДляЦелейДокументооборотаСНалогоплательщиками {get;set;}//Адрес электронной почты для целей документооборота с налогоплательщиками
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

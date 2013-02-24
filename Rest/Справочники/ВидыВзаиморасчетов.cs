@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыВзаиморасчетовСервис : Service
+	public partial class ВидыВзаиморасчетовСервис : Service
 	{
+		
+		public object Get(ВидыВзаиморасчетовЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыВзаиморасчетовНайтиПоСсылке Запрос)
 		{

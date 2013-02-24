@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыОбщественноПолезнойДеятельностиСервис : Service
+	public partial class ВидыОбщественноПолезнойДеятельностиСервис : Service
 	{
+		
+		public object Get(ВидыОбщественноПолезнойДеятельностиЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыОбщественноПолезнойДеятельностиНайтиПоСсылке Запрос)
 		{

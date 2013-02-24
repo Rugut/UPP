@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ТранспортныеУпаковкиСервис : Service
+	public partial class ТранспортныеУпаковкиСервис : Service
 	{
+		
+		public object Get(ТранспортныеУпаковкиЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ТранспортныеУпаковкиНайтиПоСсылке Запрос)
 		{

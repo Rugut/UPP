@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ЭДПрисоединенныеФайлыСервис : Service
+	public partial class ЭДПрисоединенныеФайлыСервис : Service
 	{
+		
+		public object Get(ЭДПрисоединенныеФайлыЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ЭДПрисоединенныеФайлыНайтиПоСсылке Запрос)
 		{

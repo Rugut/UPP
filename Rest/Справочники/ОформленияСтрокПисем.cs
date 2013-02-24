@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ОформленияСтрокПисемСервис : Service
+	public partial class ОформленияСтрокПисемСервис : Service
 	{
+		
+		public object Get(ОформленияСтрокПисемЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ОформленияСтрокПисемНайтиПоСсылке Запрос)
 		{

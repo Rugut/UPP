@@ -28,31 +28,16 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public decimal/*6*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public decimal/*(4.2)*/ НормаАмортизационныхОтчислений {get;set;}//Норма амортизационных отчислений (в процентах к балансовой стоимости)
-		[DataMember]
-		[ProtoMember(10)]
 		public decimal/*(4.2)*/ ПроцентОтСтоимостиМашины {get;set;}//Процент от стоимости машины на 1000 км пробега
 
 		public V82.СправочникиОбъект.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов  ПолучитьОбъект()
@@ -63,8 +48,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.НормаАмортизационныхОтчислений = НормаАмортизационныхОтчислений;

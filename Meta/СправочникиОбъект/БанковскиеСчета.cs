@@ -1,6 +1,10 @@
 ﻿
 using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
 using V82.СправочникиСсылка;
@@ -12,6 +16,8 @@ namespace V82.СправочникиОбъект
 	///<summary>
 	///(Общ)
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class БанковскиеСчета:СправочникОбъект
 	{
 		public bool _ЭтоНовый;
@@ -19,67 +25,123 @@ namespace V82.СправочникиОбъект
 		{
 			return _ЭтоНовый;
 		}
-		public Guid Ссылка;
-		public long Версия;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		public bool ПометкаУдаления;
-		public bool Предопределенный;
-		public Guid Владелец;
-		public bool ЭтоГруппа;
-		public Guid Родитель;
-		public string/*9*/ Код;
-		public string/*100*/ Наименование;
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public bool Предопределенный {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public Guid Владелец {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public string/*9*/ Код {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ) Номер расчетного счета
 		///</summary>
-		public string/*(20)*/ НомерСчета;//Номер счета
+		[DataMember]
+		[ProtoMember(9)]
+		public string/*(20)*/ НомерСчета {get;set;}//Номер счета
 		///<summary>
 		///(Общ)
 		///</summary>
-		public V82.СправочникиСсылка.Банки Банк;
+		[DataMember]
+		[ProtoMember(10)]
+		public V82.СправочникиСсылка.Банки Банк {get;set;}
 		///<summary>
 		///(Регл) Банк, в случае непрямых расчетов
 		///</summary>
-		public V82.СправочникиСсылка.Банки БанкДляРасчетов;//Банк для расчетов
+		[DataMember]
+		[ProtoMember(11)]
+		public V82.СправочникиСсылка.Банки БанкДляРасчетов {get;set;}//Банк для расчетов
 		///<summary>
 		///(Регл) Текст "Плательщик\Получатель" в платежных документах
 		///</summary>
-		public string/*(0)*/ ТекстКорреспондента;//Текст корреспондента
+		[DataMember]
+		[ProtoMember(12)]
+		public string/*(0)*/ ТекстКорреспондента {get;set;}//Текст корреспондента
 		///<summary>
 		///(Общ) Текст назначения платежа
 		///</summary>
-		public string/*(0)*/ ТекстНазначения;//Текст назначения
+		[DataMember]
+		[ProtoMember(13)]
+		public string/*(0)*/ ТекстНазначения {get;set;}//Текст назначения
 		///<summary>
 		///(Общ) Расчетный, депозитный, ссудный, иной
 		///</summary>
-		public string/*(15)*/ ВидСчета;//Вид счета
+		[DataMember]
+		[ProtoMember(14)]
+		public string/*(15)*/ ВидСчета {get;set;}//Вид счета
 		///<summary>
 		///(Общ) Валюта, в которой хранятся денежные средства
 		///</summary>
-		public V82.СправочникиСсылка.Валюты ВалютаДенежныхСредств;//Валюта денежных средств
+		[DataMember]
+		[ProtoMember(15)]
+		public V82.СправочникиСсылка.Валюты ВалютаДенежныхСредств {get;set;}//Валюта денежных средств
 		///<summary>
 		///(Регл) Номер и дата разрешения открытия счета
 		///</summary>
-		public string/*(30)*/ НомерИДатаРазрешения;//Номер и дата разрешения
+		[DataMember]
+		[ProtoMember(16)]
+		public string/*(30)*/ НомерИДатаРазрешения {get;set;}//Номер и дата разрешения
 		///<summary>
 		///(Общ) Дата открытия счета
 		///</summary>
-		public DateTime ДатаОткрытия;//Дата открытия
+		[DataMember]
+		[ProtoMember(17)]
+		public DateTime ДатаОткрытия {get;set;}//Дата открытия
 		///<summary>
 		///(Общ) Дата закрытия счета
 		///</summary>
-		public DateTime ДатаЗакрытия;//Дата закрытия
+		[DataMember]
+		[ProtoMember(18)]
+		public DateTime ДатаЗакрытия {get;set;}//Дата закрытия
 		///<summary>
 		///(Общ) Указывать в дате документа месяц прописью
 		///</summary>
-		public bool МесяцПрописью;//Месяц прописью
+		[DataMember]
+		[ProtoMember(19)]
+		public bool МесяцПрописью {get;set;}//Месяц прописью
 		///<summary>
 		///(Общ) Указывать сумму без копеек, если она в целых рублях
 		///</summary>
-		public bool СуммаБезКопеек;//Сумма без копеек
+		[DataMember]
+		[ProtoMember(20)]
+		public bool СуммаБезКопеек {get;set;}//Сумма без копеек
 		public void Записать()
 		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для справочников.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();

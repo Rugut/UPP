@@ -28,49 +28,32 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*150*/ Наименование {get;set;}
 		///<summary>
 		///Описание тома
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///Максимальный размер файлов на томе, в Мб
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public decimal/*(10)*/ МаксимальныйРазмер {get;set;}//Максимальный размер
 		///<summary>
 		///Полный путь в Linux
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(0)*/ ПолныйПутьLinux {get;set;}//Полный путь linux
 		///<summary>
 		///Полный путь в UNC формате
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public string/*(0)*/ ПолныйПутьWindows {get;set;}//Полный путь windows
 		///<summary>
 		///Определяет порядок заполнения томов - начинаем с наименьшего
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public decimal/*(3)*/ ПорядокЗаполнения {get;set;}//Порядок заполнения
 
 		public V82.СправочникиОбъект.ТомаХраненияФайлов  ПолучитьОбъект()

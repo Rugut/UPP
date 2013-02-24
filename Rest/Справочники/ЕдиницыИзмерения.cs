@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ЕдиницыИзмеренияСервис : Service
+	public partial class ЕдиницыИзмеренияСервис : Service
 	{
+		
+		public object Get(ЕдиницыИзмеренияЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ЕдиницыИзмеренияНайтиПоСсылке Запрос)
 		{

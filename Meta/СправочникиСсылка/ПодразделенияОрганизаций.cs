@@ -28,70 +28,40 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public Guid Владелец {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.Перечисления/*Ссылка*/.ВидыПодразделений ВидПодразделения {get;set;}//Вид подразделения
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(11)*/ КодПоОКАТО {get;set;}//Код по ОКАТО
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(9)*/ КПП {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public decimal/*(5.2)*/ РайонныйКоэффициент {get;set;}//Районный коэффициент
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public decimal/*(5.2)*/ РайонныйКоэффициентРФ {get;set;}//Районный коэффициент РФ
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.СправочникиСсылка.ТерриториальныеУсловия ТерриториальныеУсловияПФР {get;set;}//Территориальные условия ПФР
-		[DataMember]
-		[ProtoMember(16)]
 		public decimal/*(6)*/ Порядок {get;set;}
-		[DataMember]
-		[ProtoMember(17)]
 		public bool СоответствуетСудамПодФлагомРФ {get;set;}//Соответствует судам под флагом РФ
 
 		public V82.СправочникиОбъект.ПодразделенияОрганизаций  ПолучитьОбъект()
@@ -103,7 +73,6 @@ namespace V82.СправочникиСсылка
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
 			Объект.Владелец = Владелец;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;

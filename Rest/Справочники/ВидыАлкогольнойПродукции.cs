@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыАлкогольнойПродукцииСервис : Service
+	public partial class ВидыАлкогольнойПродукцииСервис : Service
 	{
+		
+		public object Get(ВидыАлкогольнойПродукцииЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыАлкогольнойПродукцииНайтиПоСсылке Запрос)
 		{

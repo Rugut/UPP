@@ -28,52 +28,31 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public Guid Владелец {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.КлассификаторЕдиницИзмерения ЕдиницаПоКлассификатору {get;set;}//Единица по классификатору
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public decimal/*(15.3)*/ Вес {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public decimal/*(15.3)*/ Объем {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public decimal/*(10.3)*/ Коэффициент {get;set;}
-		[DataMember]
-		[ProtoMember(12)]
 		public decimal/*(10)*/ ПорогОкругления {get;set;}//Порог округления
-		[DataMember]
-		[ProtoMember(13)]
 		public bool ПредупреждатьОНецелыхМестах {get;set;}//При округлении предупреждать о нецелых местах
 
 		public V82.СправочникиОбъект.ЕдиницыИзмерения  ПолучитьОбъект()

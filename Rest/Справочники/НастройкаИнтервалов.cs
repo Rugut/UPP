@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class НастройкаИнтерваловСервис : Service
+	public partial class НастройкаИнтерваловСервис : Service
 	{
+		
+		public object Get(НастройкаИнтерваловЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(НастройкаИнтерваловНайтиПоСсылке Запрос)
 		{

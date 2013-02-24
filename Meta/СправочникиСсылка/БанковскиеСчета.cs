@@ -28,94 +28,61 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public Guid Владелец {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ) Номер расчетного счета
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(20)*/ НомерСчета {get;set;}//Номер счета
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.СправочникиСсылка.Банки Банк {get;set;}
 		///<summary>
 		///(Регл) Банк, в случае непрямых расчетов
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.СправочникиСсылка.Банки БанкДляРасчетов {get;set;}//Банк для расчетов
 		///<summary>
 		///(Регл) Текст "Плательщик\Получатель" в платежных документах
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(0)*/ ТекстКорреспондента {get;set;}//Текст корреспондента
 		///<summary>
 		///(Общ) Текст назначения платежа
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public string/*(0)*/ ТекстНазначения {get;set;}//Текст назначения
 		///<summary>
 		///(Общ) Расчетный, депозитный, ссудный, иной
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public string/*(15)*/ ВидСчета {get;set;}//Вид счета
 		///<summary>
 		///(Общ) Валюта, в которой хранятся денежные средства
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public V82.СправочникиСсылка.Валюты ВалютаДенежныхСредств {get;set;}//Валюта денежных средств
 		///<summary>
 		///(Регл) Номер и дата разрешения открытия счета
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public string/*(30)*/ НомерИДатаРазрешения {get;set;}//Номер и дата разрешения
 		///<summary>
 		///(Общ) Дата открытия счета
 		///</summary>
-		[DataMember]
-		[ProtoMember(16)]
 		public DateTime ДатаОткрытия {get;set;}//Дата открытия
 		///<summary>
 		///(Общ) Дата закрытия счета
 		///</summary>
-		[DataMember]
-		[ProtoMember(17)]
 		public DateTime ДатаЗакрытия {get;set;}//Дата закрытия
 		///<summary>
 		///(Общ) Указывать в дате документа месяц прописью
 		///</summary>
-		[DataMember]
-		[ProtoMember(18)]
 		public bool МесяцПрописью {get;set;}//Месяц прописью
 		///<summary>
 		///(Общ) Указывать сумму без копеек, если она в целых рублях
 		///</summary>
-		[DataMember]
-		[ProtoMember(19)]
 		public bool СуммаБезКопеек {get;set;}//Сумма без копеек
 
 		public V82.СправочникиОбъект.БанковскиеСчета  ПолучитьОбъект()

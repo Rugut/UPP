@@ -28,55 +28,26 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public V82.СправочникиСсылка.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения КодПозицииСписка {get;set;}//Код позиции списка
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.СправочникиСсылка.ОснованияВыслугиЛет ОснованиеВыслугиЛет {get;set;}//Основание выслуги лет
-		[DataMember]
-		[ProtoMember(9)]
 		public bool АУП {get;set;}//Административно-управленческий персонал
-		[DataMember]
-		[ProtoMember(10)]
 		public V82.Перечисления/*Ссылка*/.КатегорииДолжностейДляВоинскогоУчета КатегорияВоинскогоУчета {get;set;}//Категория воинского учета
-		[DataMember]
-		[ProtoMember(11)]
 		public string/*(6)*/ КодПоОКПДТР {get;set;}//Код по ОКПДТР
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.Должности Должность {get;set;}//Должность кадрового плана
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.Перечисления/*Ссылка*/.КатегорииДолжностейДляСтатистическогоУчета КатегорияСтатистическогоУчета {get;set;}//Категория статистического учета
-		[DataMember]
-		[ProtoMember(14)]
 		public bool ЯвляетсяДолжностьюЛетногоЭкипажа {get;set;}//Является должностью летного экипажа
-		[DataMember]
-		[ProtoMember(15)]
 		public bool ЯвляетсяШахтерскойДолжностью {get;set;}//Является шахтерской должностью
-		[DataMember]
-		[ProtoMember(16)]
 		public V82.Перечисления/*Ссылка*/.КатегорииДолжностейДляУчетаЗабронированныхС2011Года КатегорияУчетаЗабронированных {get;set;}//Категория учета забронированных
-		[DataMember]
-		[ProtoMember(17)]
 		public bool ЯвляетсяФармацевтическойДолжностью {get;set;}//Является фармацевтической должностью
 
 		public V82.СправочникиОбъект.ДолжностиОрганизаций  ПолучитьОбъект()

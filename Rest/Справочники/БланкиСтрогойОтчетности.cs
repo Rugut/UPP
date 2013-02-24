@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class БланкиСтрогойОтчетностиСервис : Service
+	public partial class БланкиСтрогойОтчетностиСервис : Service
 	{
+		
+		public object Get(БланкиСтрогойОтчетностиЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(БланкиСтрогойОтчетностиНайтиПоСсылке Запрос)
 		{

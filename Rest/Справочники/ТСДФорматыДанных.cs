@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ТСДФорматыДанныхСервис : Service
+	public partial class ТСДФорматыДанныхСервис : Service
 	{
+		
+		public object Get(ТСДФорматыДанныхЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ТСДФорматыДанныхНайтиПоСсылке Запрос)
 		{

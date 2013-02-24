@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВариантыНастроекФинАнализаСервис : Service
+	public partial class ВариантыНастроекФинАнализаСервис : Service
 	{
+		
+		public object Get(ВариантыНастроекФинАнализаЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВариантыНастроекФинАнализаНайтиПоСсылке Запрос)
 		{

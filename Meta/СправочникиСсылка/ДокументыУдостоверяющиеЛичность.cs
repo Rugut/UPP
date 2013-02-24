@@ -28,28 +28,19 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*(2)*/ КодИМНС {get;set;}//Код ИФНС
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(15)*/ КодПФР {get;set;}//Код ПФР
 
 		public V82.СправочникиОбъект.ДокументыУдостоверяющиеЛичность  ПолучитьОбъект()

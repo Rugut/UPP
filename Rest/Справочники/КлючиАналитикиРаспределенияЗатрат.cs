@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class КлючиАналитикиРаспределенияЗатратСервис : Service
+	public partial class КлючиАналитикиРаспределенияЗатратСервис : Service
 	{
+		
+		public object Get(КлючиАналитикиРаспределенияЗатратЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(КлючиАналитикиРаспределенияЗатратНайтиПоСсылке Запрос)
 		{

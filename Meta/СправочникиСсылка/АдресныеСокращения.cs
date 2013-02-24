@@ -28,31 +28,20 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public decimal/*3*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*30*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public decimal/*(1)*/ Уровень {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*(10)*/ Сокращение {get;set;}
 
 		public V82.СправочникиОбъект.АдресныеСокращения  ПолучитьОбъект()

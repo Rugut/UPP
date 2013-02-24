@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class СемейноеПоложениеФизЛицСервис : Service
+	public partial class СемейноеПоложениеФизЛицСервис : Service
 	{
+		
+		public object Get(СемейноеПоложениеФизЛицЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(СемейноеПоложениеФизЛицНайтиПоСсылке Запрос)
 		{

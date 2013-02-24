@@ -25,25 +25,14 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public Guid Владелец {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции ОКП {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public bool Активная {get;set;}
 
 		public V82.СправочникиОбъект.ХарактеристикиНоменклатуры  ПолучитьОбъект()

@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВидыДеятельностиКонтрагентовСервис : Service
+	public partial class ВидыДеятельностиКонтрагентовСервис : Service
 	{
+		
+		public object Get(ВидыДеятельностиКонтрагентовЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВидыДеятельностиКонтрагентовНайтиПоСсылке Запрос)
 		{

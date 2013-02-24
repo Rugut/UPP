@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ГодовыеГрафикиАмортизацииОССервис : Service
+	public partial class ГодовыеГрафикиАмортизацииОССервис : Service
 	{
+		
+		public object Get(ГодовыеГрафикиАмортизацииОСЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ГодовыеГрафикиАмортизацииОСНайтиПоСсылке Запрос)
 		{

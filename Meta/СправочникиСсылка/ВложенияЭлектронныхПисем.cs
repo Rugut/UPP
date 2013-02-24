@@ -28,43 +28,26 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///Объект
 		///</summary>
-		[DataMember]
-		[ProtoMember(6)]
 		public V82.ДокументыСсылка.ЭлектронноеПисьмо Объект {get;set;}
 		///<summary>
 		///Имя файла
 		///</summary>
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*(0)*/ ИмяФайла {get;set;}//Имя файла
 		///<summary>
 		///Хранилище
 		///</summary>
-		[DataMember]
-		[ProtoMember(8)]
 		public ХранилищеЗначения Хранилище {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public string/*(200)*/ ИДФайлаПочтовогоПисьма {get;set;}//ИДФайла почтового письма
-		[DataMember]
-		[ProtoMember(10)]
 		public object Предмет {get;set;}
-		[DataMember]
-		[ProtoMember(11)]
 		public ХранилищеЗначения ТекстФайла {get;set;}//Текст файла
 
 		public V82.СправочникиОбъект.ВложенияЭлектронныхПисем  ПолучитьОбъект()

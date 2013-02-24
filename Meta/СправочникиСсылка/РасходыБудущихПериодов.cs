@@ -28,142 +28,83 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*11*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(9)]
 		public V82.Перечисления/*Ссылка*/.ВидыРБП ВидРБП {get;set;}//Вид РБП
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(10)]
 		public DateTime ДатаНачалаСписания {get;set;}//Дата начала списания
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(11)]
 		public DateTime ДатаОкончанияСписания {get;set;}//Дата окончания списания
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.НоменклатурныеГруппы НоменклатурнаяГруппа {get;set;}//Номенклатурная группа
-		[DataMember]
-		[ProtoMember(13)]
 		public V82.СправочникиСсылка.ОбъектыСтроительства ОбъектСтроительства {get;set;}//Объект строительства
 		///<summary>
 		///(Упр)
 		///</summary>
-		[DataMember]
-		[ProtoMember(14)]
 		public V82.СправочникиСсылка.Подразделения Подразделение {get;set;}
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(15)]
 		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеОрганизации {get;set;}//Подразделение организации
-		[DataMember]
-		[ProtoMember(16)]
 		public V82.СправочникиСсылка.Номенклатура Продукция {get;set;}
-		[DataMember]
-		[ProtoMember(17)]
 		public V82.СправочникиСсылка.СерииНоменклатуры СерияПродукции {get;set;}//Серия продукции
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(18)]
 		public V82.СправочникиСсылка.СтатьиЗатрат СтатьяЗатрат {get;set;}//Статья затрат
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(19)]
 		public object СчетБУ {get;set;}//Счет БУ
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(20)]
 		public object СубконтоБУ1 {get;set;}//Субконто БУ 1
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(21)]
 		public object СубконтоБУ2 {get;set;}//Субконто БУ 2
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(22)]
 		public object СубконтоБУ3 {get;set;}//Субконто БУ 3
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(23)]
 		public object СчетНУ {get;set;}//Счет НУ
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(24)]
 		public object СубконтоНУ1 {get;set;}//Субконто НУ 1
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(25)]
 		public object СубконтоНУ2 {get;set;}//Субконто НУ 2
 		///<summary>
 		///(Регл)
 		///</summary>
-		[DataMember]
-		[ProtoMember(26)]
 		public object СубконтоНУ3 {get;set;}//Субконто НУ 3
 		///<summary>
 		///(Общ)
 		///</summary>
-		[DataMember]
-		[ProtoMember(27)]
 		public decimal/*(15.2)*/ Сумма {get;set;}
-		[DataMember]
-		[ProtoMember(28)]
 		public V82.СправочникиСсылка.ХарактеристикиНоменклатуры ХарактеристикаПродукции {get;set;}//Характеристика продукции
-		[DataMember]
-		[ProtoMember(29)]
 		public V82.Перечисления/*Ссылка*/.СпособыПризнанияРасходов СпособПризнанияРасходов {get;set;}//Способ признания расходов
-		[DataMember]
-		[ProtoMember(30)]
 		public V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск СпособРаспределенияЗатратНаВыпуск {get;set;}//Способ распределения затрат на выпуск
-		[DataMember]
-		[ProtoMember(31)]
 		public V82.Перечисления/*Ссылка*/.СпособыСтроительства СпособСтроительства {get;set;}//Способ строительства
-		[DataMember]
-		[ProtoMember(32)]
 		public V82.Перечисления/*Ссылка*/.ВидыАктивовДляРБП ВидАктива {get;set;}//Вид актива
 
 		public V82.СправочникиОбъект.РасходыБудущихПериодов  ПолучитьОбъект()
@@ -174,8 +115,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Код = Код;
 			Объект.Наименование = Наименование;
 			Объект.ВидРБП = ВидРБП;

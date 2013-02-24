@@ -28,85 +28,34 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
-		public bool ЭтоГруппа {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public Guid Родитель {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
+		public bool ЭтоГруппа {get;set;}
 		public string/*100*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public object СчетДт {get;set;}//Счет Дт
-		[DataMember]
-		[ProtoMember(9)]
 		public object СубконтоДт1 {get;set;}//Субконто Дт номер 1
-		[DataMember]
-		[ProtoMember(10)]
 		public object СубконтоДт2 {get;set;}//Субконто Дт номер 2
-		[DataMember]
-		[ProtoMember(11)]
 		public object СубконтоДт3 {get;set;}//Субконто Дт номер 3
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск СпособРаспределенияЗатрат {get;set;}//Способ распределения затрат
-		[DataMember]
-		[ProtoMember(13)]
 		public object СчетКт {get;set;}//Счет Кт
-		[DataMember]
-		[ProtoMember(14)]
 		public object СубконтоКт1 {get;set;}//Субконто Кт номер 1
-		[DataMember]
-		[ProtoMember(15)]
 		public object СубконтоКт2 {get;set;}//Субконто Кт номер 2
-		[DataMember]
-		[ProtoMember(16)]
 		public object СубконтоКт3 {get;set;}//Субконто Кт номер 3
-		[DataMember]
-		[ProtoMember(17)]
 		public object СчетДтНУ {get;set;}//Счет дебета налогового учета
-		[DataMember]
-		[ProtoMember(18)]
 		public object СубконтоДтНУ1 {get;set;}//Субконто Дт нал. учета номер 1
-		[DataMember]
-		[ProtoMember(19)]
 		public object СубконтоДтНУ2 {get;set;}//Субконто Дт нал. учета номер 2
-		[DataMember]
-		[ProtoMember(20)]
 		public object СубконтоДтНУ3 {get;set;}//Субконто Дт нал. учета номер 3
-		[DataMember]
-		[ProtoMember(21)]
 		public object СчетКтНУ {get;set;}//Счет кредита налогового учета
-		[DataMember]
-		[ProtoMember(22)]
 		public object СубконтоКтНУ1 {get;set;}//Субконто Кт нал. учета номер 1
-		[DataMember]
-		[ProtoMember(23)]
 		public object СубконтоКтНУ2 {get;set;}//Субконто Кт нал. учета номер 2
-		[DataMember]
-		[ProtoMember(24)]
 		public object СубконтоКтНУ3 {get;set;}//Субконто Кт нал. учета номер 3
-		[DataMember]
-		[ProtoMember(25)]
 		public V82.Перечисления/*Ссылка*/.ОтражениеВУСН ОтражениеВУСН {get;set;}//Отражение ВУСН
-		[DataMember]
-		[ProtoMember(26)]
 		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеДт {get;set;}//Подразделение Дт
-		[DataMember]
-		[ProtoMember(27)]
 		public V82.СправочникиСсылка.ПодразделенияОрганизаций ПодразделениеКт {get;set;}//Подразделение Кт
-		[DataMember]
-		[ProtoMember(28)]
 		public V82.Перечисления/*Ссылка*/.ВидыНачисленийОплатыТрудаПоСт255НК ВидНачисленийОплатыТрудаПоСтатье255НК {get;set;}//Вид начислений оплаты труда по статье255 НК
 
 		public V82.СправочникиОбъект.СпособыОтраженияЗарплатыВРеглУчете  ПолучитьОбъект()
@@ -117,8 +66,8 @@ namespace V82.СправочникиСсылка
 			Объект.Версия = Версия;
 			Объект.ПометкаУдаления = ПометкаУдаления;
 			Объект.Предопределенный = Предопределенный;
-			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Родитель = Родитель;
+			Объект.ЭтоГруппа = ЭтоГруппа;
 			Объект.Наименование = Наименование;
 			Объект.СчетДт = СчетДт;
 			Объект.СубконтоДт1 = СубконтоДт1;

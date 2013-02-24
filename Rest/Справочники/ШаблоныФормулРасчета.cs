@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ШаблоныФормулРасчетаСервис : Service
+	public partial class ШаблоныФормулРасчетаСервис : Service
 	{
+		
+		public object Get(ШаблоныФормулРасчетаЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ШаблоныФормулРасчетаНайтиПоСсылке Запрос)
 		{

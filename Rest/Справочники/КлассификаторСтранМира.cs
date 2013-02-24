@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class КлассификаторСтранМираСервис : Service
+	public partial class КлассификаторСтранМираСервис : Service
 	{
+		
+		public object Get(КлассификаторСтранМираЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(КлассификаторСтранМираНайтиПоСсылке Запрос)
 		{

@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ПрофилиПолномочийПользователейСервис : Service
+	public partial class ПрофилиПолномочийПользователейСервис : Service
 	{
+		
+		public object Get(ПрофилиПолномочийПользователейЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ПрофилиПолномочийПользователейНайтиПоСсылке Запрос)
 		{

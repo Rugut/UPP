@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ДокументыУдостоверяющиеЛичностьСервис : Service
+	public partial class ДокументыУдостоверяющиеЛичностьСервис : Service
 	{
+		
+		public object Get(ДокументыУдостоверяющиеЛичностьЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ДокументыУдостоверяющиеЛичностьНайтиПоСсылке Запрос)
 		{

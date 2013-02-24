@@ -79,8 +79,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class ВычетыНДФЛСервис : Service
+	public partial class ВычетыНДФЛСервис : Service
 	{
+		
+		public object Get(ВычетыНДФЛЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(ВычетыНДФЛНайтиПоСсылке Запрос)
 		{

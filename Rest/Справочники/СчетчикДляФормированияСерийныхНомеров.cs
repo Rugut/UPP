@@ -59,8 +59,13 @@ namespace V82.Справочники
 		public string Ответ {get;set;}
 	}
 
-	public class СчетчикДляФормированияСерийныхНомеровСервис : Service
+	public partial class СчетчикДляФормированияСерийныхНомеровСервис : Service
 	{
+		
+		public object Get(СчетчикДляФормированияСерийныхНомеровЗапрос Запрос)
+		{
+			return null;
+		}
 		
 		public object Get(СчетчикДляФормированияСерийныхНомеровНайтиПоСсылке Запрос)
 		{

@@ -25,37 +25,18 @@ namespace V82.СправочникиСсылка
 		[DataMember]
 		[ProtoMember(2)]
 		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
 		/*static хэш сумма состава и порядка реквизитов*/
 		/*версия класса восстановленного из пакета*/
-		[DataMember]
-		[ProtoMember(3)]
 		public bool ПометкаУдаления {get;set;}
-		[DataMember]
-		[ProtoMember(4)]
 		public bool Предопределенный {get;set;}
-		[DataMember]
-		[ProtoMember(5)]
 		public Guid Владелец {get;set;}
-		[DataMember]
-		[ProtoMember(6)]
 		public string/*9*/ Код {get;set;}
-		[DataMember]
-		[ProtoMember(7)]
 		public string/*50*/ Наименование {get;set;}
-		[DataMember]
-		[ProtoMember(8)]
 		public V82.Перечисления/*Ссылка*/.СпособыПогашенияСтоимости СпособПогашенияСтоимости {get;set;}//Способ погашения стоимости
-		[DataMember]
-		[ProtoMember(9)]
 		public decimal/*(4)*/ СрокПолезногоИспользования {get;set;}//Срок полезного использования
-		[DataMember]
-		[ProtoMember(10)]
 		public decimal/*(15.3)*/ Количество {get;set;}
-		[DataMember]
-		[ProtoMember(11)]
 		public V82.СправочникиСсылка.ЕдиницыИзмерения ЕдиницаИзмерения {get;set;}//Единица измерения
-		[DataMember]
-		[ProtoMember(12)]
 		public V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации СпособОтраженияРасходов {get;set;}//Способ отражения расходов
 
 		public V82.СправочникиОбъект.НазначенияИспользования  ПолучитьОбъект()
