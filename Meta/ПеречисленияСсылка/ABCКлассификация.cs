@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ABCКлассификация
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"0888700c-0656-4a8f-81dc-86301e6283e1\", \"Представление\":\"AКласс\"}")]
 		AКласс = 0,//A - класс
+		[EnumMember(Value = "{\"Ссылка\":\"9e4207b6-cb63-4d3e-b28d-c4be70c3e9bf\", \"Представление\":\"BКласс\"}")]
 		BКласс = 1,//B - класс
+		[EnumMember(Value = "{\"Ссылка\":\"bd0ffda8-d4cd-4f55-9668-68129319c398\", \"Представление\":\"CКласс\"}")]
 		CКласс = 2,//C - класс
 	}
 	public static partial class ABCКлассификация_Значения//:ПеречислениеСсылка

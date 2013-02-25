@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыКонтролируемогоЗначенияБюджета
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"c435fd69-ae75-4f69-9938-5662916ec9fe\", \"Представление\":\"Ограничивающее\"}")]
 		Ограничивающее = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"085b6364-078d-49c0-829a-ba8ad49f24e1\", \"Представление\":\"Целевое\"}")]
 		Целевое = 1,
 	}
 	public static partial class ВидыКонтролируемогоЗначенияБюджета_Значения//:ПеречислениеСсылка

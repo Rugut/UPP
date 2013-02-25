@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыКорпусов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"9df7bc46-a15d-4b45-825c-b098413738c4\", \"Представление\":\"Корпус\"}")]
 		Корпус = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"e1b454ec-dc04-46a6-bc64-3a11920874fa\", \"Представление\":\"Строение\"}")]
 		Строение = 1,
 	}
 	public static partial class ТипыКорпусов_Значения//:ПеречислениеСсылка

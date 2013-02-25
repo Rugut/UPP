@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -33,6 +34,8 @@ namespace V82.СправочникиСсылка
 		/*версия класса восстановленного из пакета*/
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///Объект
@@ -49,7 +52,60 @@ namespace V82.СправочникиСсылка
 		public string/*(200)*/ ИДФайлаПочтовогоПисьма {get;set;}//ИДФайла почтового письма
 		public object Предмет {get;set;}
 		public ХранилищеЗначения ТекстФайла {get;set;}//Текст файла
-
+		
+		public ВложенияЭлектронныхПисем()
+		{
+		}
+		
+		public ВложенияЭлектронныхПисем(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld1986RRef [Объект]
+					,_Fld1987 [ИмяФайла]
+					,_Fld1988 [Хранилище]
+					,_Fld1989 [ИДФайлаПочтовогоПисьма]
+					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
+					,_Fld1991 [ТекстФайла]
+					From _Reference67(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Наименование = Читалка.GetString(4);
+							//Объект = new V82.ДокументыСсылка.ЭлектронноеПисьмо((byte[])Читалка.GetValue(5));
+							ИмяФайла = Читалка.GetString(6);
+							ИДФайлаПочтовогоПисьма = Читалка.GetString(8);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ВложенияЭлектронныхПисем  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ВложенияЭлектронныхПисем();
@@ -66,17 +122,17 @@ namespace V82.СправочникиСсылка
 			Объект.ТекстФайла = ТекстФайла;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ДетализацияПланирования
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"304fa183-1b64-4427-94bd-7a731a09c9a2\", \"Представление\":\"Номенклатура\"}")]
 		Номенклатура = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"28fa6cb3-ca6f-42b2-abef-1292aa227a1a\", \"Представление\":\"НоменклатурныеГруппы\"}")]
 		НоменклатурныеГруппы = 1,//Номенклатурные группы
 	}
 	public static partial class ДетализацияПланирования_Значения//:ПеречислениеСсылка

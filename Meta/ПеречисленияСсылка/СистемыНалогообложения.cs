@@ -1,19 +1,24 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum СистемыНалогообложения
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///ОСН
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"6e1c630f-0662-4da8-a92a-695647c30cba\", \"Представление\":\"Общая\"}")]
 		Общая = 0,
 	///<summary>
 	///УСН
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"75aa500e-d0cf-4886-86ca-a5170c905a4a\", \"Представление\":\"Упрощенная\"}")]
 		Упрощенная = 1,
 	}
 	public static partial class СистемыНалогообложения_Значения//:ПеречислениеСсылка

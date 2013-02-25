@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ПорядокПогашенияЗаймаПроцентов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"b634b956-0dec-42c1-97b7-ac83602cb797\", \"Представление\":\"Ежемесячно\"}")]
 		Ежемесячно = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"d91b3353-e907-422c-bc3f-ab6e37694374\", \"Представление\":\"ПоОкончанииСрока\"}")]
 		ПоОкончанииСрока = 1,//По окончании срока
 	}
 	public static partial class ПорядокПогашенияЗаймаПроцентов_Значения//:ПеречислениеСсылка

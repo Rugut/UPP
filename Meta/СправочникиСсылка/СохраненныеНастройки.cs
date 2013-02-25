@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -30,6 +31,8 @@ namespace V82.СправочникиСсылка
 		/*версия класса восстановленного из пакета*/
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		public V82.Перечисления/*Ссылка*/.ТипыНастроек ТипНастройки {get;set;}//Тип настройки
 		public object НастраиваемыйОбъект {get;set;}//Настраиваемый объект
@@ -40,7 +43,67 @@ namespace V82.СправочникиСсылка
 		public ХранилищеЗначения ХранилищеНастроек {get;set;}//Хранилище настроек
 		public string/*(1000)*/ Описание {get;set;}
 		public string/*(100)*/ КраткийСоставНастройки {get;set;}//Краткий состав настройки
-
+		
+		public СохраненныеНастройки()
+		{
+		}
+		
+		public СохраненныеНастройки(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld3564RRef [ТипНастройки]
+					,_Fld3565_TYPE [НастраиваемыйОбъект_Тип],_Fld3565_RRRef [НастраиваемыйОбъект],_Fld3565_RTRef [НастраиваемыйОбъект_Вид]
+					,_Fld3566 [СохранятьАвтоматически]
+					,_Fld3567 [ИспользоватьПриОткрытии]
+					,_Fld3568 [СохранятьПериод]
+					,_Fld3569 [ОткрыватьПриЗапуске]
+					,_Fld3570 [ХранилищеНастроек]
+					,_Fld3571 [Описание]
+					,_Fld3572 [КраткийСоставНастройки]
+					From _Reference238(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Наименование = Читалка.GetString(4);
+							ТипНастройки = V82.Перечисления/*Ссылка*/.ТипыНастроек.ПустаяСсылка.Получить((byte[])Читалка.GetValue(5));
+							СохранятьАвтоматически = ((byte[])Читалка.GetValue(9))[0]==1;
+							ИспользоватьПриОткрытии = ((byte[])Читалка.GetValue(10))[0]==1;
+							СохранятьПериод = ((byte[])Читалка.GetValue(11))[0]==1;
+							ОткрыватьПриЗапуске = ((byte[])Читалка.GetValue(12))[0]==1;
+							Описание = Читалка.GetString(14);
+							КраткийСоставНастройки = Читалка.GetString(15);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.СохраненныеНастройки  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.СохраненныеНастройки();
@@ -61,17 +124,17 @@ namespace V82.СправочникиСсылка
 			Объект.КраткийСоставНастройки = КраткийСоставНастройки;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

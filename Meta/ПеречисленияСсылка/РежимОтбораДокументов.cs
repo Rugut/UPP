@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum РежимОтбораДокументов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"ce819f81-66e4-4c8d-a5d4-0c782bf43bd6\", \"Представление\":\"ПоРеквизитам\"}")]
 		ПоРеквизитам = 0,//По реквизитам
+		[EnumMember(Value = "{\"Ссылка\":\"afbd8899-345e-476b-80a0-5b6d6f741e97\", \"Представление\":\"ПоОборотам\"}")]
 		ПоОборотам = 1,//По оборотам
 	}
 	public static partial class РежимОтбораДокументов_Значения//:ПеречислениеСсылка

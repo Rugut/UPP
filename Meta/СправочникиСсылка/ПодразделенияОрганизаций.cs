@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -36,6 +37,8 @@ namespace V82.СправочникиСсылка
 		public Guid Владелец {get;set;}
 		public Guid Родитель {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
@@ -63,7 +66,69 @@ namespace V82.СправочникиСсылка
 		public V82.СправочникиСсылка.ТерриториальныеУсловия ТерриториальныеУсловияПФР {get;set;}//Территориальные условия ПФР
 		public decimal/*(6)*/ Порядок {get;set;}
 		public bool СоответствуетСудамПодФлагомРФ {get;set;}//Соответствует судам под флагом РФ
-
+		
+		public ПодразделенияОрганизаций()
+		{
+		}
+		
+		public ПодразделенияОрганизаций(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3202RRef [ВидПодразделения]
+					,_Fld3203 [КодПоОКАТО]
+					,_Fld3204 [КПП]
+					,_Fld3205 [РайонныйКоэффициент]
+					,_Fld3206 [РайонныйКоэффициентРФ]
+					,_Fld3207RRef [ТерриториальныеУсловияПФР]
+					,_Fld3208 [Порядок]
+					,_Fld3209 [СоответствуетСудамПодФлагомРФ]
+					From _Reference192(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							ВидПодразделения = V82.Перечисления/*Ссылка*/.ВидыПодразделений.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
+							КодПоОКАТО = Читалка.GetString(7);
+							КПП = Читалка.GetString(8);
+							РайонныйКоэффициент = Читалка.GetDecimal(9);
+							РайонныйКоэффициентРФ = Читалка.GetDecimal(10);
+							ТерриториальныеУсловияПФР = new V82.СправочникиСсылка.ТерриториальныеУсловия((byte[])Читалка.GetValue(11));
+							Порядок = Читалка.GetDecimal(12);
+							СоответствуетСудамПодФлагомРФ = ((byte[])Читалка.GetValue(13))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ПодразделенияОрганизаций  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ПодразделенияОрганизаций();
@@ -86,17 +151,17 @@ namespace V82.СправочникиСсылка
 			Объект.СоответствуетСудамПодФлагомРФ = СоответствуетСудамПодФлагомРФ;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

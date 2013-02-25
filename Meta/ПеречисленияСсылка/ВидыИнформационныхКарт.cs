@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыИнформационныхКарт
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"70176b0f-1e67-4fb7-b1a7-c6e2fa474a90\", \"Представление\":\"Магнитная\"}")]
 		Магнитная = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"111e19ef-0500-4a19-85fd-9c87c395c624\", \"Представление\":\"Штриховая\"}")]
 		Штриховая = 1,
 	}
 	public static partial class ВидыИнформационныхКарт_Значения//:ПеречислениеСсылка

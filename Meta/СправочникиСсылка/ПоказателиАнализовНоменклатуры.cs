@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -33,12 +34,67 @@ namespace V82.СправочникиСсылка
 		public Guid Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*50*/ Наименование {get;set;}
 		public object ВидРезультатаАнализа {get;set;}//Вид результата анализа
 		public decimal/*(15.5)*/ МинЗначение {get;set;}//Минимальное значение
 		public decimal/*(15.5)*/ МаксЗначение {get;set;}//Максимальное значение
 		public V82.СправочникиСсылка.КлассификаторЕдиницИзмерения ЕдиницаИзмерения {get;set;}//Единица измерения
-
+		
+		public ПоказателиАнализовНоменклатуры()
+		{
+		}
+		
+		public ПоказателиАнализовНоменклатуры(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3214RRef [ВидРезультатаАнализа]
+					,_Fld3215 [МинЗначение]
+					,_Fld3216 [МаксЗначение]
+					,_Fld3217RRef [ЕдиницаИзмерения]
+					From _Reference193(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							МинЗначение = Читалка.GetDecimal(7);
+							МаксЗначение = Читалка.GetDecimal(8);
+							ЕдиницаИзмерения = new V82.СправочникиСсылка.КлассификаторЕдиницИзмерения((byte[])Читалка.GetValue(9));
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ПоказателиАнализовНоменклатуры  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ПоказателиАнализовНоменклатуры();
@@ -57,17 +113,17 @@ namespace V82.СправочникиСсылка
 			Объект.ЕдиницаИзмерения = ЕдиницаИзмерения;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum НаправленияЭД
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"abef7262-5fb1-4894-a65b-6535f3a768a2\", \"Представление\":\"Входящий\"}")]
 		Входящий = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"03ddc270-bf90-4826-8c30-84903fbe1bb0\", \"Представление\":\"Интеркампани\"}")]
 		Интеркампани = 1,//Между организациями
+		[EnumMember(Value = "{\"Ссылка\":\"b68175ec-9020-42bf-bbc6-73c07b6c6ec3\", \"Представление\":\"Исходящий\"}")]
 		Исходящий = 2,
 	}
 	public static partial class НаправленияЭД_Значения//:ПеречислениеСсылка

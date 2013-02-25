@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидПриемаРозничнойВыручки
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"e6132b5f-59d4-4e1a-a49f-5beca403c2da\", \"Представление\":\"ИзКассы\"}")]
 		ИзКассы = 0,//из кассы
+		[EnumMember(Value = "{\"Ссылка\":\"c19352ac-0ec6-4240-8830-5d8ddd81c9ec\", \"Представление\":\"ИзНТТ\"}")]
 		ИзНТТ = 1,//из НТТ
 	}
 	public static partial class ВидПриемаРозничнойВыручки_Значения//:ПеречислениеСсылка

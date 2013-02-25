@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum СтатусыУчетнойЗаписиДокументооборота
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"e1ce17db-091a-47e3-a4bb-2a2fcbf3879f\", \"Представление\":\"Активна\"}")]
 		Активна = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"3c11699a-3332-4256-b1e9-ba3260c63a46\", \"Представление\":\"Заблокирована\"}")]
 		Заблокирована = 1,
 	}
 	public static partial class СтатусыУчетнойЗаписиДокументооборота_Значения//:ПеречислениеСсылка

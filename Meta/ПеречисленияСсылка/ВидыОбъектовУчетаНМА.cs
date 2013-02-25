@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum ВидыОбъектовУчетаНМА
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"f00b84d5-28d8-4184-9a1b-0d271ed09d84\", \"Представление\":\"НематериальныйАктив\"}")]
 		НематериальныйАктив = 0,//Нематериальный актив
+		[EnumMember(Value = "{\"Ссылка\":\"bf5e049e-299d-4b2a-bcbf-d4f0d6bed542\", \"Представление\":\"РасходыНаНИОКР\"}")]
 		РасходыНаНИОКР = 1,//Расходы на НИОКР
 	}
 	public static partial class ВидыОбъектовУчетаНМА_Значения//:ПеречислениеСсылка

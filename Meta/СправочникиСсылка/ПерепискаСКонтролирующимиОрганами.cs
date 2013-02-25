@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -31,6 +32,8 @@ namespace V82.СправочникиСсылка
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*150*/ Наименование {get;set;}
 		public V82.Перечисления/*Ссылка*/.ТипыПерепискиСКонтролирующимиОрганами Тип {get;set;}
 		public V82.Перечисления/*Ссылка*/.СтатусыПисем Статус {get;set;}
@@ -46,7 +49,73 @@ namespace V82.СправочникиСсылка
 		public string/*(36)*/ Идентификатор {get;set;}
 		public string/*(36)*/ ИдентификаторОснования {get;set;}//Идентификатор основания
 		public bool Ретроконверсия {get;set;}
-
+		
+		public ПерепискаСКонтролирующимиОрганами()
+		{
+		}
+		
+		public ПерепискаСКонтролирующимиОрганами(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3163RRef [Тип]
+					,_Fld3164RRef [Статус]
+					,_Fld3165RRef [Организация]
+					,_Fld3166_TYPE [Отправитель_Тип],_Fld3166_RRRef [Отправитель],_Fld3166_RTRef [Отправитель_Вид]
+					,_Fld3167_TYPE [Получатель_Тип],_Fld3167_RRRef [Получатель],_Fld3167_RTRef [Получатель_Вид]
+					,_Fld3168 [Содержание]
+					,_Fld3169 [ДатаСообщения]
+					,_Fld3170 [ДатаОтправки]
+					,_Fld3171 [Идентификатор]
+					,_Fld3172 [ИдентификаторОснования]
+					,_Fld3173 [Ретроконверсия]
+					From _Reference189(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							Тип = V82.Перечисления/*Ссылка*/.ТипыПерепискиСКонтролирующимиОрганами.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
+							Статус = V82.Перечисления/*Ссылка*/.СтатусыПисем.ПустаяСсылка.Получить((byte[])Читалка.GetValue(7));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(8));
+							Содержание = Читалка.GetString(15);
+							ДатаСообщения = Читалка.GetDateTime(16);
+							ДатаОтправки = Читалка.GetDateTime(17);
+							Идентификатор = Читалка.GetString(18);
+							ИдентификаторОснования = Читалка.GetString(19);
+							Ретроконверсия = ((byte[])Читалка.GetValue(20))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ПерепискаСКонтролирующимиОрганами  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ПерепискаСКонтролирующимиОрганами();
@@ -70,17 +139,17 @@ namespace V82.СправочникиСсылка
 			Объект.Ретроконверсия = Ретроконверсия;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

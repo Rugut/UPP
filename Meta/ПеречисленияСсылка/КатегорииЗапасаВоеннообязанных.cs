@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum КатегорииЗапасаВоеннообязанных
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"7c325e71-0596-47cc-83e2-6aa47ec0ac8f\", \"Представление\":\"До45лет\"}")]
 		До45лет = 0,//1 - до 45 лет
+		[EnumMember(Value = "{\"Ссылка\":\"da06cae5-2a8d-4c8c-9d28-5bf7aeeb5ef3\", \"Представление\":\"До50лет\"}")]
 		До50лет = 1,//2 - до 50 лет
+		[EnumMember(Value = "{\"Ссылка\":\"ff9313b9-f882-45ed-bec3-7339af496342\", \"Представление\":\"До55лет\"}")]
 		До55лет = 2,//3 - до 55 лет
 	}
 	public static partial class КатегорииЗапасаВоеннообязанных_Значения//:ПеречислениеСсылка

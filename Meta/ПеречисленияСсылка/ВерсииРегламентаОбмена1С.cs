@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВерсииРегламентаОбмена1С
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"8eb436fb-280c-407c-ba6d-e4ab8d26aaed\", \"Представление\":\"Версия10\"}")]
 		Версия10 = 0,//1.0
+		[EnumMember(Value = "{\"Ссылка\":\"189c597a-714f-4482-975f-47c5ac5511f9\", \"Представление\":\"Версия20\"}")]
 		Версия20 = 1,//2.0
 	}
 	public static partial class ВерсииРегламентаОбмена1С_Значения//:ПеречислениеСсылка

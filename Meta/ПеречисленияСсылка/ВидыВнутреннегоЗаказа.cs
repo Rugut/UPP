@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыВнутреннегоЗаказа
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"4ae21c5b-b1a7-4327-9d4b-d3983d7bacb5\", \"Представление\":\"НаСклад\"}")]
 		НаСклад = 0,//На склад
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"69d5e9a5-c458-4a42-817c-373c3c6ed425\", \"Представление\":\"ВПодразделение\"}")]
 		ВПодразделение = 1,//В подразделение
 	}
 	public static partial class ВидыВнутреннегоЗаказа_Значения//:ПеречислениеСсылка

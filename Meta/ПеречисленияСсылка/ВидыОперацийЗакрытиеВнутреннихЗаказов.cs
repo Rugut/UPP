@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОперацийЗакрытиеВнутреннихЗаказов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"f72b9f1c-bda4-48d0-ace9-f579dc5bd544\", \"Представление\":\"ЗакрытиеЗаказов\"}")]
 		ЗакрытиеЗаказов = 0,//закрытие внутренних заказов
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"10ae8308-00d2-436f-9ec0-18ff9c507268\", \"Представление\":\"СнятиеРезервов\"}")]
 		СнятиеРезервов = 1,//снятие резервов и размещения
 	}
 	public static partial class ВидыОперацийЗакрытиеВнутреннихЗаказов_Значения//:ПеречислениеСсылка

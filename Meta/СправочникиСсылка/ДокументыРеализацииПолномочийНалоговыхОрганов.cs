@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -31,6 +32,8 @@ namespace V82.СправочникиСсылка
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*150*/ Наименование {get;set;}
 		public V82.СправочникиСсылка.НалоговыеОрганы НалоговыйОрган {get;set;}//Налоговый орган
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
@@ -44,7 +47,70 @@ namespace V82.СправочникиСсылка
 		public DateTime ДатаДокумента {get;set;}//Дата документа
 		public DateTime ДатаСообщения {get;set;}//Дата сообщения
 		public DateTime ДатаОтправки {get;set;}//Дата отправки
-
+		
+		public ДокументыРеализацииПолномочийНалоговыхОрганов()
+		{
+		}
+		
+		public ДокументыРеализацииПолномочийНалоговыхОрганов(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2249RRef [НалоговыйОрган]
+					,_Fld2250RRef [Организация]
+					,_Fld2251 [Идентификатор]
+					,_Fld2252 [ИдентификаторОснования]
+					,_Fld2253_TYPE [ВидДокумента_Тип],_Fld2253_RRRef [ВидДокумента],_Fld2253_RTRef [ВидДокумента_Вид]
+					,_Fld2254 [НомерДокумента]
+					,_Fld2255 [ДатаДокумента]
+					,_Fld2256 [ДатаСообщения]
+					,_Fld2257 [ДатаОтправки]
+					From _Reference89(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							НалоговыйОрган = new V82.СправочникиСсылка.НалоговыеОрганы((byte[])Читалка.GetValue(6));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(7));
+							Идентификатор = Читалка.GetString(8);
+							ИдентификаторОснования = Читалка.GetString(9);
+							НомерДокумента = Читалка.GetString(13);
+							ДатаДокумента = Читалка.GetDateTime(14);
+							ДатаСообщения = Читалка.GetDateTime(15);
+							ДатаОтправки = Читалка.GetDateTime(16);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ДокументыРеализацииПолномочийНалоговыхОрганов  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ДокументыРеализацииПолномочийНалоговыхОрганов();
@@ -66,17 +132,17 @@ namespace V82.СправочникиСсылка
 			Объект.ДатаОтправки = ДатаОтправки;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

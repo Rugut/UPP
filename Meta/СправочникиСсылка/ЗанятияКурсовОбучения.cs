@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -30,6 +31,8 @@ namespace V82.СправочникиСсылка
 		/*версия класса восстановленного из пакета*/
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*150*/ Наименование {get;set;}
 		public string/*(0)*/ ОписаниеЗанятия {get;set;}//Описание занятия
 		///<summary>
@@ -37,7 +40,57 @@ namespace V82.СправочникиСсылка
 		///</summary>
 		public decimal/*(6.2)*/ ДлительностьЗанятия {get;set;}//Длительность занятия
 		public V82.СправочникиСсылка.ФормыОбучения ВидЗанятия {get;set;}//Вид занятия
-
+		
+		public ЗанятияКурсовОбучения()
+		{
+		}
+		
+		public ЗанятияКурсовОбучения(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2317 [ОписаниеЗанятия]
+					,_Fld2318 [ДлительностьЗанятия]
+					,_Fld2319RRef [ВидЗанятия]
+					From _Reference99(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Наименование = Читалка.GetString(4);
+							ОписаниеЗанятия = Читалка.GetString(5);
+							ДлительностьЗанятия = Читалка.GetDecimal(6);
+							ВидЗанятия = new V82.СправочникиСсылка.ФормыОбучения((byte[])Читалка.GetValue(7));
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ЗанятияКурсовОбучения  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ЗанятияКурсовОбучения();
@@ -52,17 +105,17 @@ namespace V82.СправочникиСсылка
 			Объект.ВидЗанятия = ВидЗанятия;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

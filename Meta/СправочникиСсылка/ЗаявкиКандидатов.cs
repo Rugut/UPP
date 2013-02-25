@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -34,6 +35,8 @@ namespace V82.СправочникиСсылка
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		public V82.СправочникиСсылка.ФизическиеЛица ФизЛицо {get;set;}//Физическое лицо
 		public V82.СправочникиСсылка.СостоянияЗаявокКандидатов Состояние {get;set;}//Текущее состояние
@@ -49,7 +52,80 @@ namespace V82.СправочникиСсылка
 		public V82.СправочникиСсылка.Должности Должность {get;set;}
 		public V82.СправочникиСсылка.Организации Организация {get;set;}
 		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}
-
+		
+		public ЗаявкиКандидатов()
+		{
+		}
+		
+		public ЗаявкиКандидатов(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2325RRef [ФизЛицо]
+					,_Fld2326RRef [Состояние]
+					,_Fld2327RRef [Важность]
+					,_Fld2328 [Комментарий]
+					,_Fld2329 [Закрыта]
+					,_Fld2330 [РезультатЗакрытия]
+					,_Fld2331RRef [ГруппаЗаявок]
+					,_Fld2332 [ДатаОткрытия]
+					,_Fld2333RRef [ИсточникИнформации]
+					,_Fld2334RRef [Вакансия]
+					,_Fld2335_TYPE [Подразделение_Тип],_Fld2335_RRRef [Подразделение],_Fld2335_RTRef [Подразделение_Вид]
+					,_Fld2336RRef [Должность]
+					,_Fld2337RRef [Организация]
+					,_Fld2338RRef [Ответственный]
+					From _Reference100(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							ФизЛицо = new V82.СправочникиСсылка.ФизическиеЛица((byte[])Читалка.GetValue(6));
+							Состояние = new V82.СправочникиСсылка.СостоянияЗаявокКандидатов((byte[])Читалка.GetValue(7));
+							Важность = V82.Перечисления/*Ссылка*/.Важность.ПустаяСсылка.Получить((byte[])Читалка.GetValue(8));
+							Комментарий = Читалка.GetString(9);
+							Закрыта = ((byte[])Читалка.GetValue(10))[0]==1;
+							РезультатЗакрытия = Читалка.GetString(11);
+							ГруппаЗаявок = new V82.СправочникиСсылка.ГруппыЗаявокКандидатов((byte[])Читалка.GetValue(12));
+							ДатаОткрытия = Читалка.GetDateTime(13);
+							ИсточникИнформации = new V82.СправочникиСсылка.ИсточникиИнформации((byte[])Читалка.GetValue(14));
+							Вакансия = new V82.СправочникиСсылка.Вакансии((byte[])Читалка.GetValue(15));
+							Должность = new V82.СправочникиСсылка.Должности((byte[])Читалка.GetValue(19));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(20));
+							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(21));
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ЗаявкиКандидатов  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ЗаявкиКандидатов();
@@ -76,17 +152,17 @@ namespace V82.СправочникиСсылка
 			Объект.Ответственный = Ответственный;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

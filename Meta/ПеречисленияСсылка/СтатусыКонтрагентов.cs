@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum СтатусыКонтрагентов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"e099df13-e87c-44c5-9dcb-3d82c8617841\", \"Представление\":\"Покупатель\"}")]
 		Покупатель = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"80f431b9-957e-4130-8056-3568d2d1d100\", \"Представление\":\"Поставщик\"}")]
 		Поставщик = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"dd8f5e06-0f24-4ac8-b10e-f6f7039a92b3\", \"Представление\":\"Прочее\"}")]
 		Прочее = 2,
 	}
 	public static partial class СтатусыКонтрагентов_Значения//:ПеречислениеСсылка

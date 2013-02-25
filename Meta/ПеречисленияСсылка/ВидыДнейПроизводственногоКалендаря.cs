@@ -1,34 +1,42 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыДнейПроизводственногоКалендаря
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ) Рабочий день
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"69e4df1c-a076-4416-be29-1134d754c86b\", \"Представление\":\"Рабочий\"}")]
 		Рабочий = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"52cf4b59-8091-41cf-80e7-b8bb3d713d7b\", \"Представление\":\"Суббота\"}")]
 		Суббота = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"a85fbda9-b64a-4f99-bf3c-b91cfd4da6b9\", \"Представление\":\"Воскресенье\"}")]
 		Воскресенье = 2,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"78c63f93-574e-44df-86b7-c9a6c1816635\", \"Представление\":\"Предпраздничный\"}")]
 		Предпраздничный = 3,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"59e37e0e-a2ac-488e-b9aa-f136fda865d3\", \"Представление\":\"Праздник\"}")]
 		Праздник = 4,
 	}
 	public static partial class ВидыДнейПроизводственногоКалендаря_Значения//:ПеречислениеСсылка

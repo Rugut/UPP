@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum Занятость
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"5d5947aa-9c73-4268-88e6-4be75cd5f5b6\", \"Представление\":\"Свободно\"}")]
 		Свободно = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"2fa05dc3-4bec-4ab0-ba96-61d676114e63\", \"Представление\":\"Занято\"}")]
 		Занято = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"fb8e7538-a139-4c9f-a0d9-117bef3e0506\", \"Представление\":\"Недоступно\"}")]
 		Недоступно = 2,
 	}
 	public static partial class Занятость_Значения//:ПеречислениеСсылка

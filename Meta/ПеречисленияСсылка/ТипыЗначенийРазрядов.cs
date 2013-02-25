@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыЗначенийРазрядов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"0d66db10-301d-4099-af97-3b9b34d4058c\", \"Представление\":\"Число\"}")]
 		Число = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"fec65e4b-2ef2-40b8-8d1b-7a3d45c05c03\", \"Представление\":\"Строка\"}")]
 		Строка = 1,
 	}
 	public static partial class ТипыЗначенийРазрядов_Значения//:ПеречислениеСсылка

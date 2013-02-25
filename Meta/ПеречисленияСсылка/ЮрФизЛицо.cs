@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ЮрФизЛицо
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"eef13a4c-c4de-4f59-b391-7a6dc08ea0f6\", \"Представление\":\"ЮрЛицо\"}")]
 		ЮрЛицо = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"d2cff47a-bafa-4720-a13e-b9b8fc82a286\", \"Представление\":\"ФизЛицо\"}")]
 		ФизЛицо = 1,
 	}
 	public static partial class ЮрФизЛицо_Значения//:ПеречислениеСсылка

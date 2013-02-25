@@ -101,27 +101,7 @@ namespace UPP
         }
         
 
-        [DataContract]
-        private class A
-        {
-            [DataMember]
-            public int id { get; set; }
-            [DataMember]
-            public int Code { get; set; }
-            [DataMember]
-            public B b { get; set; }
 
-        }
-
-
-        [DataContract]
-        private class B
-        {
-            [DataMember(Name = "Ссылка")]
-            public int id { get; set; }
-            [DataMember(Name = "Представление")]
-            public int Code { get; set; }
-        }
 
 
         static void Main(string[] args)
@@ -133,22 +113,10 @@ namespace UPP
             //dynamic м = new Массив();
             //м.Добавить(1);
 
-            var a = new A();
-            a.id = 1;
-            a.Code = 1;
-
-            var b = new B();
-            b.id = 1;
-            b.Code = 1;
-
-            a.b = b;
-
-            var s = a.ToJson();
-
 
             var Стр = new Структура("Булево,Число,Дата,Строка", false, 10, "Дата", "Привет" );
 
-            Console.WriteLine(s);
+            //Console.WriteLine(s);
 
             Console.ReadLine();
         }

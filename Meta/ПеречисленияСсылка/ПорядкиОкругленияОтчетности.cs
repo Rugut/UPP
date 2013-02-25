@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ПорядкиОкругленияОтчетности
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"294ed411-060d-46f6-92af-417031844766\", \"Представление\":\"Окр1\"}")]
 		Окр1 = 0,//1
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"7e85a6d7-84d0-43b2-9101-52c6b50c957d\", \"Представление\":\"Окр1000\"}")]
 		Окр1000 = 1,//1 000
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"9d574fc0-06fd-4804-b76c-fb366e9752e9\", \"Представление\":\"Окр1000000\"}")]
 		Окр1000000 = 2,//1 000 000
 	}
 	public static partial class ПорядкиОкругленияОтчетности_Значения//:ПеречислениеСсылка

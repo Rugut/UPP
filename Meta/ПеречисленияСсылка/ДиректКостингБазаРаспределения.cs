@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ДиректКостингБазаРаспределения
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"dc5c71ce-9d50-4c85-9f38-1f75f1031dc4\", \"Представление\":\"Себестоимость\"}")]
 		Себестоимость = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"52695f32-02f8-49ab-8cf0-e254d25ed0b2\", \"Представление\":\"ВыручкаОтПродаж\"}")]
 		ВыручкаОтПродаж = 1,//Выручка от продаж
 	}
 	public static partial class ДиректКостингБазаРаспределения_Значения//:ПеречислениеСсылка

@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ХарактерУчастияВМероприятиях
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"b3d3f83c-155d-46e0-92ab-982c839a2183\", \"Представление\":\"Слушатель\"}")]
 		Слушатель = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"7e4fa0fc-57a0-456c-bf35-4fc540484187\", \"Представление\":\"Участник\"}")]
 		Участник = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"b55ac461-aaf0-4b78-bb97-1a3520656eae\", \"Представление\":\"Ответственный\"}")]
 		Ответственный = 2,
 	}
 	public static partial class ХарактерУчастияВМероприятиях_Значения//:ПеречислениеСсылка

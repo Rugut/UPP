@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыРасчетовСКонтрагентами
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"30b4d531-8d2b-42a6-9f33-5b1b32af50df\", \"Представление\":\"ПоПриобретению\"}")]
 		ПоПриобретению = 0,//По приобретению
+		[EnumMember(Value = "{\"Ссылка\":\"8ba4c299-8fae-44ab-ad7d-47cf8c4c496c\", \"Представление\":\"ПоРеализации\"}")]
 		ПоРеализации = 1,//По реализации
+		[EnumMember(Value = "{\"Ссылка\":\"c74cb0e6-8425-40cb-8f84-15b03ac71323\", \"Представление\":\"Прочее\"}")]
 		Прочее = 2,
 	}
 	public static partial class ВидыРасчетовСКонтрагентами_Значения//:ПеречислениеСсылка

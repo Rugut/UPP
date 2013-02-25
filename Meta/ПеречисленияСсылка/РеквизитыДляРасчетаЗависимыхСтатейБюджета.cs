@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum РеквизитыДляРасчетаЗависимыхСтатейБюджета
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"5a7254cd-1bed-4c7c-bce6-9f437722948a\", \"Представление\":\"Количество\"}")]
 		Количество = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"632ca6f4-a39b-4a49-a4ec-2658f1f8ba8c\", \"Представление\":\"Сумма\"}")]
 		Сумма = 1,
 	}
 	public static partial class РеквизитыДляРасчетаЗависимыхСтатейБюджета_Значения//:ПеречислениеСсылка

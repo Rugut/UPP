@@ -1,17 +1,26 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ФорматОтветаНаЗапросИОН
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"2fb7d226-a683-42e0-abfe-8a22b7cf486e\", \"Представление\":\"TXT\"}")]
 		TXT = 0,//Текстовый документ
+		[EnumMember(Value = "{\"Ссылка\":\"de8ddc6a-6aba-46eb-be51-8662f04cfca1\", \"Представление\":\"PDF\"}")]
 		PDF = 1,//Документ PDF
+		[EnumMember(Value = "{\"Ссылка\":\"597e918c-80af-4a71-af03-9a239e410966\", \"Представление\":\"RTF\"}")]
 		RTF = 2,//Документ RTF
+		[EnumMember(Value = "{\"Ссылка\":\"47cf54e0-c988-41af-be26-344f7eb6e7f5\", \"Представление\":\"XML\"}")]
 		XML = 3,//Документ XML
+		[EnumMember(Value = "{\"Ссылка\":\"c7445b5a-fa11-49c8-abb2-4b25c33fa788\", \"Представление\":\"HTML\"}")]
 		HTML = 4,//Документ HTML
+		[EnumMember(Value = "{\"Ссылка\":\"653330a1-a16b-4ec2-89fb-438f5cc0eab0\", \"Представление\":\"XLS\"}")]
 		XLS = 5,//Документ XLS
 	}
 	public static partial class ФорматОтветаНаЗапросИОН_Значения//:ПеречислениеСсылка

@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыОтклоненийКонтролируемыхЗначенийБюджетов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"210a21b3-43dd-4592-b0d8-928c97f84351\", \"Представление\":\"Абсолютное\"}")]
 		Абсолютное = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"f3adcb27-77c6-42d0-b528-7a2b117bb7a0\", \"Представление\":\"Относительное\"}")]
 		Относительное = 1,
 	}
 	public static partial class ВидыОтклоненийКонтролируемыхЗначенийБюджетов_Значения//:ПеречислениеСсылка

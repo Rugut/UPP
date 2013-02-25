@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum ДоходыФСС_НС
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"a760fa20-0576-49bb-806f-2c6142aaff0a\", \"Представление\":\"Облагается\"}")]
 		Облагается = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"0960827d-3fd0-43cd-ae99-0800429de4f7\", \"Представление\":\"НеОблагается\"}")]
 		НеОблагается = 1,//Не облагается
 	}
 	public static partial class ДоходыФСС_НС_Значения//:ПеречислениеСсылка

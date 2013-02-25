@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОперацийРезервированиеТоваров
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"4ddcfcf6-0884-4de3-aacb-02780692bff5\", \"Представление\":\"ПоСкладам\"}")]
 		ПоСкладам = 0,//по складам
 	///<summary>
 	///(Упр)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"586b1d67-c4ca-4ef7-8d31-79ac51e95201\", \"Представление\":\"ПоЗаказам\"}")]
 		ПоЗаказам = 1,//по заказам
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"7ff0de64-68c6-4cb4-92bc-4705f87037db\", \"Представление\":\"ПоСкладамИЗаказам\"}")]
 		ПоСкладамИЗаказам = 2,//по складам и заказам
 	}
 	public static partial class ВидыОперацийРезервированиеТоваров_Значения//:ПеречислениеСсылка

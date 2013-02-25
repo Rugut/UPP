@@ -1,15 +1,22 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыКонтролирующихОрганов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"34a9057c-8973-4861-af88-08eeaef55e9d\", \"Представление\":\"ФНС\"}")]
 		ФНС = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"742fde9a-f8f6-4375-9f4e-e13d89c19f40\", \"Представление\":\"ПФР\"}")]
 		ПФР = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"51b5abbe-e758-4453-a9b6-4c93e0e03d99\", \"Представление\":\"ФСС\"}")]
 		ФСС = 2,
+		[EnumMember(Value = "{\"Ссылка\":\"3dfeb33c-359c-48be-9845-0fec4f05807d\", \"Представление\":\"ФСГС\"}")]
 		ФСГС = 3,//Росстат
 	}
 	public static partial class ТипыКонтролирующихОрганов_Значения//:ПеречислениеСсылка

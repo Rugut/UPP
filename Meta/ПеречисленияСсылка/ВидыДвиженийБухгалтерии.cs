@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыДвиженийБухгалтерии
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"4f9fbfea-3bb4-4000-b67a-d23f1e07f54a\", \"Представление\":\"Дебет\"}")]
 		Дебет = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"fdcefb80-09ca-4ab5-977c-841b162aa2d8\", \"Представление\":\"Кредит\"}")]
 		Кредит = 1,
 	}
 	public static partial class ВидыДвиженийБухгалтерии_Значения//:ПеречислениеСсылка

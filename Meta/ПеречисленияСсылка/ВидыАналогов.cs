@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыАналогов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"a2abade5-67df-4d6b-a862-8b80fa243b7f\", \"Представление\":\"Комплектующая\"}")]
 		Комплектующая = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"31abca43-dbe7-4b66-85c9-580044579d6b\", \"Представление\":\"Узел\"}")]
 		Узел = 1,
 	}
 	public static partial class ВидыАналогов_Значения//:ПеречислениеСсылка

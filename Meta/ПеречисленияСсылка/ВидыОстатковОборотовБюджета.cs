@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыОстатковОборотовБюджета
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"27cc0861-7eab-4365-bcb3-17b5766c088c\", \"Представление\":\"Количественный\"}")]
 		Количественный = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"1592eb56-dcbe-444e-a0c5-83b91defdcfd\", \"Представление\":\"Суммовой\"}")]
 		Суммовой = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"2ef75ba3-1250-46f2-b027-f41c9ae62120\", \"Представление\":\"Произвольный\"}")]
 		Произвольный = 2,
 	}
 	public static partial class ВидыОстатковОборотовБюджета_Значения//:ПеречислениеСсылка

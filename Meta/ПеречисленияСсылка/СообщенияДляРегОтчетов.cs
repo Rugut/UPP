@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum СообщенияДляРегОтчетов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"f792b691-d177-4571-8a93-fdfe8bdbf7ae\", \"Представление\":\"СдачаОтчета\"}")]
 		СдачаОтчета = 0,//Сдача отчета
+		[EnumMember(Value = "{\"Ссылка\":\"7f6826f8-6184-4540-a95c-bfcb916250b9\", \"Представление\":\"УплатаНалога\"}")]
 		УплатаНалога = 1,//Уплата налога
 	}
 	public static partial class СообщенияДляРегОтчетов_Значения//:ПеречислениеСсылка

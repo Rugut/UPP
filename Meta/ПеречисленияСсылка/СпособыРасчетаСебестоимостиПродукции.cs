@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum СпособыРасчетаСебестоимостиПродукции
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"4e6052bb-65b4-4c19-8d9d-ac8a831054c0\", \"Представление\":\"ПоПеределам\"}")]
 		ПоПеределам = 0,//По переделам
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"b7c057c6-7985-46fb-bb16-951dd8f00d70\", \"Представление\":\"ПоПодразделениям\"}")]
 		ПоПодразделениям = 1,//По подразделениям
 	}
 	public static partial class СпособыРасчетаСебестоимостиПродукции_Значения//:ПеречислениеСсылка

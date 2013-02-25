@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыКомплектации
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"8956a992-4937-4d41-9a1f-cb44b192914d\", \"Представление\":\"Сборка\"}")]
 		Сборка = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"5b53842d-bbbe-497b-84e6-7b8f933acb37\", \"Представление\":\"Разборка\"}")]
 		Разборка = 1,
 	}
 	public static partial class ВидыКомплектации_Значения//:ПеречислениеСсылка

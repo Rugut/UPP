@@ -1,15 +1,22 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыТекстовЭлектронныхПисем
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"286e20e8-c2a1-4530-801c-8e900250d309\", \"Представление\":\"HTML\"}")]
 		HTML = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"8186d7b5-af80-46d6-a176-7a25f5e66145\", \"Представление\":\"Текст\"}")]
 		Текст = 1,//Простой текст
+		[EnumMember(Value = "{\"Ссылка\":\"9f02ff83-628a-48db-bd08-d5e36a38580f\", \"Представление\":\"Прочее\"}")]
 		Прочее = 2,
+		[EnumMember(Value = "{\"Ссылка\":\"5b11992f-11b9-4e1f-aab6-edbf4183f3cd\", \"Представление\":\"HTMLСКартинками\"}")]
 		HTMLСКартинками = 3,//HTML с картинками
 	}
 	public static partial class ВидыТекстовЭлектронныхПисем_Значения//:ПеречислениеСсылка

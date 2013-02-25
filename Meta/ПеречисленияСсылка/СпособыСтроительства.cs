@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(регл)
-		///</summary>
+	///<summary>
+	///(регл)
+	///</summary>
+	[DataContract]
 	public enum СпособыСтроительства
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///С привлечением подрядных организаций
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"19838f7f-c4b9-4e06-b27c-b771316c9696\", \"Представление\":\"Подрядный\"}")]
 		Подрядный = 0,
 	///<summary>
 	///Строительство собственными силами
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"a41cdbe4-9d2c-48d9-b9f3-8c09b2e25a98\", \"Представление\":\"Хозспособ\"}")]
 		Хозспособ = 1,
 	}
 	public static partial class СпособыСтроительства_Значения//:ПеречислениеСсылка

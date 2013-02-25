@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -36,6 +37,8 @@ namespace V82.СправочникиСсылка
 		public Guid Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*10*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
@@ -77,7 +80,79 @@ namespace V82.СправочникиСсылка
 		public V82.Перечисления/*Ссылка*/.ВидыЛьготПриНачисленииБольничных ЛьготаПриНачисленииПособий {get;set;}//Льгота при начислении пособий
 		public bool ИмеетНаучныеТруды {get;set;}//Имеет научные труды
 		public bool ИмеетИзобретения {get;set;}//Имеет изобретения
-
+		
+		public ФизическиеЛица()
+		{
+		}
+		
+		public ФизическиеЛица(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld4121 [ДатаРождения]
+					,_Fld4122 [ИНН]
+					,_Fld4123 [КодИМНС]
+					,_Fld4124 [Комментарий]
+					,_Fld4125 [СтраховойНомерПФР]
+					,_Fld4126RRef [Пол]
+					,_Fld4127 [МестоРождения]
+					,_Fld4128RRef [ОсновноеИзображение]
+					,_Fld4129 [МестоРожденияКодПоОКАТО]
+					,_Fld4130RRef [ГруппаДоступаФизическогоЛица]
+					,_Fld4131RRef [ЛьготаПриНачисленииПособий]
+					,_Fld4132 [ИмеетНаучныеТруды]
+					,_Fld4133 [ИмеетИзобретения]
+					From _Reference283(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							ДатаРождения = Читалка.GetDateTime(6);
+							ИНН = Читалка.GetString(7);
+							КодИМНС = Читалка.GetString(8);
+							Комментарий = Читалка.GetString(9);
+							СтраховойНомерПФР = Читалка.GetString(10);
+							Пол = V82.Перечисления/*Ссылка*/.ПолФизическихЛиц.ПустаяСсылка.Получить((byte[])Читалка.GetValue(11));
+							МестоРождения = Читалка.GetString(12);
+							ОсновноеИзображение = new V82.СправочникиСсылка.ХранилищеДополнительнойИнформации((byte[])Читалка.GetValue(13));
+							МестоРожденияКодПоОКАТО = Читалка.GetString(14);
+							ГруппаДоступаФизическогоЛица = new V82.СправочникиСсылка.ГруппыДоступаФизическихЛиц((byte[])Читалка.GetValue(15));
+							ЛьготаПриНачисленииПособий = V82.Перечисления/*Ссылка*/.ВидыЛьготПриНачисленииБольничных.ПустаяСсылка.Получить((byte[])Читалка.GetValue(16));
+							ИмеетНаучныеТруды = ((byte[])Читалка.GetValue(17))[0]==1;
+							ИмеетИзобретения = ((byte[])Читалка.GetValue(18))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ФизическиеЛица  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ФизическиеЛица();
@@ -105,17 +180,17 @@ namespace V82.СправочникиСсылка
 			Объект.ИмеетИзобретения = ИмеетИзобретения;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

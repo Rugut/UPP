@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -36,6 +37,8 @@ namespace V82.СправочникиСсылка
 		public Guid Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*50*/ Наименование {get;set;}
 		///<summary>
 		///Дата начала проекта
@@ -47,7 +50,61 @@ namespace V82.СправочникиСсылка
 		public DateTime ДатаОкончания {get;set;}//Дата окончания
 		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}
 		public string/*(0)*/ Описание {get;set;}
-
+		
+		public Проекты()
+		{
+		}
+		
+		public Проекты(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3257 [ДатаНачала]
+					,_Fld3258 [ДатаОкончания]
+					,_Fld3259RRef [Ответственный]
+					,_Fld3260 [Описание]
+					From _Reference203(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							ДатаНачала = Читалка.GetDateTime(6);
+							ДатаОкончания = Читалка.GetDateTime(7);
+							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8));
+							Описание = Читалка.GetString(9);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.Проекты  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.Проекты();
@@ -66,17 +123,17 @@ namespace V82.СправочникиСсылка
 			Объект.Описание = Описание;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

@@ -1,27 +1,34 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыРабочихГрафиков
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"4dba4830-c4fc-4ec2-af8c-1c6787a62e8d\", \"Представление\":\"Пятидневка\"}")]
 		Пятидневка = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"c661367d-ad0b-408a-bf69-a34ec8f0d26f\", \"Представление\":\"Шестидневка\"}")]
 		Шестидневка = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"eaa213a4-8b88-4cb6-916e-eed082428756\", \"Представление\":\"Сменный\"}")]
 		Сменный = 2,
+		[EnumMember(Value = "{\"Ссылка\":\"c643ce52-aa80-40ec-8d2e-e9c15f7bdd8b\", \"Представление\":\"КалендарныеДни\"}")]
 		КалендарныеДни = 3,//Календарные дни
 	}
 	public static partial class ВидыРабочихГрафиков_Значения//:ПеречислениеСсылка

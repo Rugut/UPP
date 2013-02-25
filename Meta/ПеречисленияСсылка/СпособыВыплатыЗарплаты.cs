@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum СпособыВыплатыЗарплаты
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"480d89b7-efd6-49fc-9331-905a546b3f02\", \"Представление\":\"ЧерезКассу\"}")]
 		ЧерезКассу = 0,//Через кассу
+		[EnumMember(Value = "{\"Ссылка\":\"c0ebe4e4-6c21-4a99-9e92-ce4a0a8a8f75\", \"Представление\":\"ЧерезБанк\"}")]
 		ЧерезБанк = 1,//Через банк
 	}
 	public static partial class СпособыВыплатыЗарплаты_Значения//:ПеречислениеСсылка

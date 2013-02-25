@@ -1,15 +1,22 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ПредставленияЭлементовОтчетов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"6cc0f3ce-a15d-4ed1-bdb4-70d82c398362\", \"Представление\":\"Таблица\"}")]
 		Таблица = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"d18171d0-7dbc-4d55-9fb4-180faef46a4b\", \"Представление\":\"КроссТаблица\"}")]
 		КроссТаблица = 1,//Кросс-таблица
+		[EnumMember(Value = "{\"Ссылка\":\"0d9f8b8e-27c2-4bce-ae7f-fbaab0ea6cab\", \"Представление\":\"Диаграмма\"}")]
 		Диаграмма = 2,
+		[EnumMember(Value = "{\"Ссылка\":\"d77f02c6-bf83-4d5c-9c61-4ef5f2988f53\", \"Представление\":\"Сложный\"}")]
 		Сложный = 3,
 	}
 	public static partial class ПредставленияЭлементовОтчетов_Значения//:ПеречислениеСсылка

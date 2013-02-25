@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum МоментыОпределенияНалоговойБазыНДС
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"830e3156-6f24-4a0f-a07e-d0bb0fe38c14\", \"Представление\":\"ПоОтгрузке\"}")]
 		ПоОтгрузке = 0,//По отгрузке
+		[EnumMember(Value = "{\"Ссылка\":\"4eb7551f-2155-4d67-b659-1c0938a61236\", \"Представление\":\"ПоОплате\"}")]
 		ПоОплате = 1,//По оплате
 	}
 	public static partial class МоментыОпределенияНалоговойБазыНДС_Значения//:ПеречислениеСсылка

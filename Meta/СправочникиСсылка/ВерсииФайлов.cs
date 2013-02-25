@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -31,6 +32,8 @@ namespace V82.СправочникиСсылка
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
 		public string/*11*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*150*/ Наименование {get;set;}
 		///<summary>
 		///Автор - пользователь, создавший версию
@@ -104,7 +107,87 @@ namespace V82.СправочникиСсылка
 		///Файл версии
 		///</summary>
 		public ХранилищеЗначения ФайлХранилище {get;set;}//Файл
-
+		
+		public ВерсииФайлов()
+		{
+		}
+		
+		public ВерсииФайлов(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld1895RRef [Автор]
+					,_Fld1896 [ДатаМодификацииУниверсальная]
+					,_Fld1897 [ДатаСоздания]
+					,_Fld1898 [Зашифрован]
+					,_Fld1899 [ИндексКартинки]
+					,_Fld1900 [Комментарий]
+					,_Fld1901 [НомерВерсии]
+					,_Fld1902 [ПодписанЭЦП]
+					,_Fld1903 [ПолноеНаименование]
+					,_Fld1904 [ПутьКФайлу]
+					,_Fld1905 [Размер]
+					,_Fld1906 [Расширение]
+					,_Fld1907RRef [РодительскаяВерсия]
+					,_Fld1908RRef [СтатусИзвлеченияТекста]
+					,_Fld1909 [ТекстХранилище]
+					,_Fld1910RRef [ТипХраненияФайла]
+					,_Fld1911RRef [Том]
+					,_Fld1912 [ФайлХранилище]
+					From _Reference44(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							Автор = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(6));
+							ДатаМодификацииУниверсальная = Читалка.GetDateTime(7);
+							ДатаСоздания = Читалка.GetDateTime(8);
+							Зашифрован = ((byte[])Читалка.GetValue(9))[0]==1;
+							ИндексКартинки = Читалка.GetDecimal(10);
+							Комментарий = Читалка.GetString(11);
+							НомерВерсии = Читалка.GetDecimal(12);
+							ПодписанЭЦП = ((byte[])Читалка.GetValue(13))[0]==1;
+							ПолноеНаименование = Читалка.GetString(14);
+							ПутьКФайлу = Читалка.GetString(15);
+							Размер = Читалка.GetDecimal(16);
+							Расширение = Читалка.GetString(17);
+							РодительскаяВерсия = new V82.СправочникиСсылка.ВерсииФайлов((byte[])Читалка.GetValue(18));
+							СтатусИзвлеченияТекста = V82.Перечисления/*Ссылка*/.СтатусыИзвлеченияТекстаФайлов.ПустаяСсылка.Получить((byte[])Читалка.GetValue(19));
+							ТипХраненияФайла = V82.Перечисления/*Ссылка*/.ТипыХраненияФайлов.ПустаяСсылка.Получить((byte[])Читалка.GetValue(21));
+							Том = new V82.СправочникиСсылка.ТомаХраненияФайлов((byte[])Читалка.GetValue(22));
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ВерсииФайлов  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ВерсииФайлов();
@@ -135,17 +218,17 @@ namespace V82.СправочникиСсылка
 			Объект.ФайлХранилище = ФайлХранилище;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыАнкет
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"6b7ca2ca-b282-4332-9fd8-2bd9eb7d8f70\", \"Представление\":\"Опрос\"}")]
 		Опрос = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"0ba86304-c5f5-439f-ac90-fdd047673b70\", \"Представление\":\"Тестирование\"}")]
 		Тестирование = 1,
 	}
 	public static partial class ВидыАнкет_Значения//:ПеречислениеСсылка

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -35,6 +36,8 @@ namespace V82.СправочникиСсылка
 		public bool Предопределенный {get;set;}
 		public Guid Владелец {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ) Номер расчетного счета
@@ -84,7 +87,77 @@ namespace V82.СправочникиСсылка
 		///(Общ) Указывать сумму без копеек, если она в целых рублях
 		///</summary>
 		public bool СуммаБезКопеек {get;set;}//Сумма без копеек
-
+		
+		public БанковскиеСчета()
+		{
+		}
+		
+		public БанковскиеСчета(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld1854 [НомерСчета]
+					,_Fld1855RRef [Банк]
+					,_Fld1856RRef [БанкДляРасчетов]
+					,_Fld1857 [ТекстКорреспондента]
+					,_Fld1858 [ТекстНазначения]
+					,_Fld1859 [ВидСчета]
+					,_Fld1860RRef [ВалютаДенежныхСредств]
+					,_Fld1861 [НомерИДатаРазрешения]
+					,_Fld1862 [ДатаОткрытия]
+					,_Fld1863 [ДатаЗакрытия]
+					,_Fld1864 [МесяцПрописью]
+					,_Fld1865 [СуммаБезКопеек]
+					From _Reference36(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							НомерСчета = Читалка.GetString(6);
+							Банк = new V82.СправочникиСсылка.Банки((byte[])Читалка.GetValue(7));
+							БанкДляРасчетов = new V82.СправочникиСсылка.Банки((byte[])Читалка.GetValue(8));
+							ТекстКорреспондента = Читалка.GetString(9);
+							ТекстНазначения = Читалка.GetString(10);
+							ВидСчета = Читалка.GetString(11);
+							ВалютаДенежныхСредств = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(12));
+							НомерИДатаРазрешения = Читалка.GetString(13);
+							ДатаОткрытия = Читалка.GetDateTime(14);
+							ДатаЗакрытия = Читалка.GetDateTime(15);
+							МесяцПрописью = ((byte[])Читалка.GetValue(16))[0]==1;
+							СуммаБезКопеек = ((byte[])Читалка.GetValue(17))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.БанковскиеСчета  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.БанковскиеСчета();
@@ -110,17 +183,17 @@ namespace V82.СправочникиСсылка
 			Объект.СуммаБезКопеек = СуммаБезКопеек;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

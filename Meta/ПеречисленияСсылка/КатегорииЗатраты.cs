@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum КатегорииЗатраты
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"1fd9acca-3d2f-4930-bb7f-a3b0ad20a475\", \"Представление\":\"Зарплата\"}")]
 		Зарплата = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"d5f1b12d-980c-4fce-a849-624b9359a057\", \"Представление\":\"ЕСН\"}")]
 		ЕСН = 1,//Страховые взносы (ранее ЕСН)
+		[EnumMember(Value = "{\"Ссылка\":\"a3e08a86-e133-43e1-8185-6cdff5551469\", \"Представление\":\"НДФЛ\"}")]
 		НДФЛ = 2,
 	}
 	public static partial class КатегорииЗатраты_Значения//:ПеречислениеСсылка

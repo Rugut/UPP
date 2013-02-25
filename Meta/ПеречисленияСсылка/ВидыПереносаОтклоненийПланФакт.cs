@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыПереносаОтклоненийПланФакт
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"e4b98d94-5309-4a4f-acef-bca1aa4ed70d\", \"Представление\":\"РучноеУказаниеПериода\"}")]
 		РучноеУказаниеПериода = 0,//Ручное указание периода
+		[EnumMember(Value = "{\"Ссылка\":\"8946153a-bed0-4332-8aa8-e4927d52124a\", \"Представление\":\"ПоПрофилю\"}")]
 		ПоПрофилю = 1,//По профилю
 	}
 	public static partial class ВидыПереносаОтклоненийПланФакт_Значения//:ПеречислениеСсылка

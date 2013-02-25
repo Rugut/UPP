@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыЗаданийНаПроизводство
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"a2050e6d-5b2b-460a-a9b1-e41ae258c212\", \"Представление\":\"НаВыпуск\"}")]
 		НаВыпуск = 0,//На выпуск
+		[EnumMember(Value = "{\"Ссылка\":\"49cfdda4-92dc-48d5-85e0-668b4a7b8812\", \"Представление\":\"НаТехПроцесс\"}")]
 		НаТехПроцесс = 1,//На тех. процесс
 	}
 	public static partial class ВидыЗаданийНаПроизводство_Значения//:ПеречислениеСсылка

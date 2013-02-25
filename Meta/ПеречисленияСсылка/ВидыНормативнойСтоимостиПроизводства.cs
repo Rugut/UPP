@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыНормативнойСтоимостиПроизводства
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"be1efd1a-6cb4-4a48-831e-b73d0752723a\", \"Представление\":\"Рассчитывается\"}")]
 		Рассчитывается = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"f115b515-4ab3-490e-97d1-a2bef29bd087\", \"Представление\":\"Фиксированная\"}")]
 		Фиксированная = 1,
 	}
 	public static partial class ВидыНормативнойСтоимостиПроизводства_Значения//:ПеречислениеСсылка

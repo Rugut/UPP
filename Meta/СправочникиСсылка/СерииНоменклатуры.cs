@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -32,6 +33,8 @@ namespace V82.СправочникиСсылка
 		public bool Предопределенный {get;set;}
 		public Guid Владелец {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
@@ -57,7 +60,65 @@ namespace V82.СправочникиСсылка
 		///(Общ) Любая дополнительная информация
 		///</summary>
 		public string/*(0)*/ Комментарий {get;set;}
-
+		
+		public СерииНоменклатуры()
+		{
+		}
+		
+		public СерииНоменклатуры(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3401 [СерийныйНомер]
+					,_Fld3402 [СрокГодности]
+					,_Fld3403RRef [НомерГТД]
+					,_Fld3404RRef [СтранаПроисхождения]
+					,_Fld3405RRef [ОсновноеИзображение]
+					,_Fld3406 [Комментарий]
+					From _Reference226(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							СерийныйНомер = Читалка.GetString(6);
+							СрокГодности = Читалка.GetDateTime(7);
+							НомерГТД = new V82.СправочникиСсылка.НомераГТД((byte[])Читалка.GetValue(8));
+							СтранаПроисхождения = new V82.СправочникиСсылка.КлассификаторСтранМира((byte[])Читалка.GetValue(9));
+							ОсновноеИзображение = new V82.СправочникиСсылка.ХранилищеДополнительнойИнформации((byte[])Читалка.GetValue(10));
+							Комментарий = Читалка.GetString(11);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.СерииНоменклатуры  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.СерииНоменклатуры();
@@ -77,17 +138,17 @@ namespace V82.СправочникиСсылка
 			Объект.Комментарий = Комментарий;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

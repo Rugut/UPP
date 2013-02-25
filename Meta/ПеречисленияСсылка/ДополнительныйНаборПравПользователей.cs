@@ -1,15 +1,19 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ДополнительныйНаборПравПользователей
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"4beef90f-d3bb-4927-85d7-404362cbedba\", \"Представление\":\"ДополнительныеПечатныеФормы\"}")]
 		ДополнительныеПечатныеФормы = 0,//Дополнительные печатные формы
 	}
 	public static partial class ДополнительныйНаборПравПользователей_Значения//:ПеречислениеСсылка

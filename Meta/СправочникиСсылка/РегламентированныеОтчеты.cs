@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -33,6 +34,8 @@ namespace V82.СправочникиСсылка
 		public Guid Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*6*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		public string/*(255)*/ ИсточникОтчета {get;set;}//Источник отчета
 		public bool НеПоказыватьВСписке {get;set;}//Не показывать в списке
@@ -44,7 +47,65 @@ namespace V82.СправочникиСсылка
 		public ХранилищеЗначения ВнешнийОтчетХранилище {get;set;}//Хранилище с внешним отчетом
 		public ХранилищеЗначения Периоды {get;set;}
 		public string/*(32)*/ ВнешнийОтчетВерсия {get;set;}//Версия внешнего отчета
-
+		
+		public РегламентированныеОтчеты()
+		{
+		}
+		
+		public РегламентированныеОтчеты(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3373 [ИсточникОтчета]
+					,_Fld3374 [НеПоказыватьВСписке]
+					,_Fld3375 [Описание]
+					,_Fld3376 [ВнешнийОтчетИспользовать]
+					,_Fld3377 [ВнешнийОтчетХранилище]
+					,_Fld3378 [Периоды]
+					,_Fld3379 [ВнешнийОтчетВерсия]
+					From _Reference220(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							ИсточникОтчета = Читалка.GetString(6);
+							НеПоказыватьВСписке = ((byte[])Читалка.GetValue(7))[0]==1;
+							Описание = Читалка.GetString(8);
+							ВнешнийОтчетИспользовать = ((byte[])Читалка.GetValue(9))[0]==1;
+							ВнешнийОтчетВерсия = Читалка.GetString(12);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.РегламентированныеОтчеты  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.РегламентированныеОтчеты();
@@ -66,17 +127,17 @@ namespace V82.СправочникиСсылка
 			Объект.ВнешнийОтчетВерсия = ВнешнийОтчетВерсия;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

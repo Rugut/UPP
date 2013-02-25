@@ -1,23 +1,29 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum СпособыОценки
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"91b64739-8224-47ee-8408-62d9943ad313\", \"Представление\":\"ПоСредней\"}")]
 		ПоСредней = 0,//По средней
 	///<summary>
 	///First input, first output (первым пришел, первым обработан)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"8faf6ff7-7088-462e-afa5-c665e28d2a6b\", \"Представление\":\"ФИФО\"}")]
 		ФИФО = 1,
 	///<summary>
 	///Last input, first output (последним пришел, первым обработан)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"f411d078-5909-46f4-9516-5d596f3ce774\", \"Представление\":\"ЛИФО\"}")]
 		ЛИФО = 2,
 	}
 	public static partial class СпособыОценки_Значения//:ПеречислениеСсылка

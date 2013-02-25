@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыВыпуска
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"11ff4bdc-cb61-4e6c-aa4f-fc50894b52b2\", \"Представление\":\"Выпуск\"}")]
 		Выпуск = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"c0c7475e-e926-4448-99c0-2f657e1fa71d\", \"Представление\":\"Наработка\"}")]
 		Наработка = 1,
 	}
 	public static partial class ВидыВыпуска_Значения//:ПеречислениеСсылка

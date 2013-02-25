@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТранспортныеПротоколы
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"d05dfce3-cd25-4a5f-88e7-b898eefd556e\", \"Представление\":\"SMTP\"}")]
 		SMTP = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"048456b8-6fd6-4585-ae95-1ac553dab245\", \"Представление\":\"POP3\"}")]
 		POP3 = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"cf63c87f-2460-4e6f-b22a-39fbd614255b\", \"Представление\":\"HTTP\"}")]
 		HTTP = 2,
 	}
 	public static partial class ТранспортныеПротоколы_Значения//:ПеречислениеСсылка

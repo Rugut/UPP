@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum СостоянияСобытий
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"e3a62af1-a9c5-4ef8-815f-5494f965d2b0\", \"Представление\":\"Запланировано\"}")]
 		Запланировано = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"17d898c6-65f2-4e50-bf62-93720b19abde\", \"Представление\":\"Завершено\"}")]
 		Завершено = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"07faeb27-7668-4cca-a072-e3538a24c7c0\", \"Представление\":\"Отменено\"}")]
 		Отменено = 2,
 	}
 	public static partial class СостоянияСобытий_Значения//:ПеречислениеСсылка

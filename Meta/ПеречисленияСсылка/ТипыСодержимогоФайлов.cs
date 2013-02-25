@@ -1,26 +1,44 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыСодержимогоФайлов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"98da877b-42b0-46be-a57e-423402e735a3\", \"Представление\":\"Текст866\"}")]
 		Текст866 = 0,//Текст в кодировке DOS
+		[EnumMember(Value = "{\"Ссылка\":\"87c2b717-8f4d-4fa1-984b-84159af41631\", \"Представление\":\"Текст1251\"}")]
 		Текст1251 = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"cad2ab82-5314-488e-8bd8-4571a273e774\", \"Представление\":\"xml\"}")]
 		xml = 2,
+		[EnumMember(Value = "{\"Ссылка\":\"d46d1d6c-5a32-4105-9199-bef675c78fbc\", \"Представление\":\"html\"}")]
 		html = 3,
+		[EnumMember(Value = "{\"Ссылка\":\"dea310f5-de9c-46af-982f-3e15d7221c45\", \"Представление\":\"pdf\"}")]
 		pdf = 4,//Документ в формате PDF
+		[EnumMember(Value = "{\"Ссылка\":\"c0e6083c-f2ec-4d7c-a92f-6c8b142a2ded\", \"Представление\":\"rtf\"}")]
 		rtf = 5,//Документ в формате RTF
+		[EnumMember(Value = "{\"Ссылка\":\"d8e33a14-809a-440a-a517-1a835bcd2d0f\", \"Представление\":\"tiff\"}")]
 		tiff = 6,//Документ в формате TIFF
+		[EnumMember(Value = "{\"Ссылка\":\"36701a44-f464-4b59-9ca5-cf77a319cafc\", \"Представление\":\"jpeg\"}")]
 		jpeg = 7,//Документ в формате JPEG
+		[EnumMember(Value = "{\"Ссылка\":\"2c240515-4831-4fb5-a51d-ee0b15699d70\", \"Представление\":\"ms_word\"}")]
 		ms_word = 8,//Документ в формате Microsoft Word
+		[EnumMember(Value = "{\"Ссылка\":\"77fce2ae-bb84-47cd-846c-406cfa8ebafa\", \"Представление\":\"ms_excel\"}")]
 		ms_excel = 9,//Документ в формате Microsoft Excel
+		[EnumMember(Value = "{\"Ссылка\":\"8ffe72ec-c6bd-4f99-9523-a83b94a7cd48\", \"Представление\":\"odf_text\"}")]
 		odf_text = 10,//Документ в формате Open Document Text
+		[EnumMember(Value = "{\"Ссылка\":\"37943491-c95f-45b4-b067-1868aee6d27a\", \"Представление\":\"odf_spreadsheet\"}")]
 		odf_spreadsheet = 11,//Документ в формате Open Document Spreadsheet
+		[EnumMember(Value = "{\"Ссылка\":\"332da8bc-b1c4-45cf-8c67-ce24a15b813e\", \"Представление\":\"oxml_word\"}")]
 		oxml_word = 12,//Документ в формате Open XML Word
+		[EnumMember(Value = "{\"Ссылка\":\"b5cdb6f9-4ce7-4121-b62a-41cd37dd6ebe\", \"Представление\":\"oxml_spreadsheet\"}")]
 		oxml_spreadsheet = 13,//Документ в формате Open XML Spreadsheet
+		[EnumMember(Value = "{\"Ссылка\":\"acf5175c-00e8-4d7d-98f2-dc9ec5720310\", \"Представление\":\"Неизвестный\"}")]
 		Неизвестный = 14,
 	}
 	public static partial class ТипыСодержимогоФайлов_Значения//:ПеречислениеСсылка

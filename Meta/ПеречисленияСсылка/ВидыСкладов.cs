@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыСкладов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ) Оптовый склад
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"70b37882-34f4-422a-a187-01a13ce539dd\", \"Представление\":\"Оптовый\"}")]
 		Оптовый = 0,
 	///<summary>
 	///(Общ) Розничный
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"7fdc7b68-8b01-4730-8c86-5047e2fb2120\", \"Представление\":\"Розничный\"}")]
 		Розничный = 1,
 	///<summary>
 	///(Общ) Неавтоматизированная торговая точка
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"6fee5b3d-a2c0-4bb3-b69b-c761710f6117\", \"Представление\":\"НТТ\"}")]
 		НТТ = 2,
 	}
 	public static partial class ВидыСкладов_Значения//:ПеречислениеСсылка

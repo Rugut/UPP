@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыСобственныхКонтрагентов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"7b2c0a64-5b14-4f04-952f-d341c60b6b46\", \"Представление\":\"Организация\"}")]
 		Организация = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"e31bff22-72fc-486a-bb8e-9164ad97be58\", \"Представление\":\"ФизЛицо\"}")]
 		ФизЛицо = 1,//Физ. лицо
 	}
 	public static partial class ВидыСобственныхКонтрагентов_Значения//:ПеречислениеСсылка

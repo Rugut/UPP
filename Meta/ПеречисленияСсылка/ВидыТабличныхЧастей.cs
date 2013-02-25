@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыТабличныхЧастей
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"83a08316-9229-4296-a7ff-0473c4590531\", \"Представление\":\"Товары\"}")]
 		Товары = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"fe2d95bc-62b9-44ba-8000-cf971dedbb15\", \"Представление\":\"Тара\"}")]
 		Тара = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"f6ea32e0-8466-493b-828b-b9ec4abf477a\", \"Представление\":\"Оборудование\"}")]
 		Оборудование = 2,
 	}
 	public static partial class ВидыТабличныхЧастей_Значения//:ПеречислениеСсылка

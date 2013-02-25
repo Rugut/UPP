@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ПорядкиОкругленияЕСН
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"423da236-e0c4-4639-9b73-ff1af3a05013\", \"Представление\":\"Точно\"}")]
 		Точно = 0,//С максимальной точностью
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"821934dc-d0c9-4dd1-ba43-e6a10d16f544\", \"Представление\":\"ВРублях\"}")]
 		ВРублях = 1,//В рублях
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"eec4a2d2-c535-4832-8061-234d305fbdba\", \"Представление\":\"ВРубляхИКопейках\"}")]
 		ВРубляхИКопейках = 2,//В рублях и копейках
 	}
 	public static partial class ПорядкиОкругленияЕСН_Значения//:ПеречислениеСсылка

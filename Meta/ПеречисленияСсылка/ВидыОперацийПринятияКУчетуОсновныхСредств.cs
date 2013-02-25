@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОперацийПринятияКУчетуОсновныхСредств
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"91c1d6f8-738b-4f8c-bd10-4b1913dca07a\", \"Представление\":\"Оборудование\"}")]
 		Оборудование = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"a527360a-ccc6-4baa-b29b-03a55502bdc8\", \"Представление\":\"ОбъектыСтроительства\"}")]
 		ОбъектыСтроительства = 1,//Объекты строительства
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"3edcee5e-81c6-41f8-88a2-b86b29d91d32\", \"Представление\":\"Прочее\"}")]
 		Прочее = 2,
 	}
 	public static partial class ВидыОперацийПринятияКУчетуОсновныхСредств_Значения//:ПеречислениеСсылка

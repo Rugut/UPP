@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыСкидок
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"e56dacec-54a0-4dc3-96d4-4330fe19cfa9\", \"Представление\":\"Оптовая\"}")]
 		Оптовая = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"a1a984f8-0cec-4225-8214-07f0e5df7514\", \"Представление\":\"Розничная\"}")]
 		Розничная = 1,
 	}
 	public static partial class ВидыСкидок_Значения//:ПеречислениеСсылка

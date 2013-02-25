@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыДенежныхСредств
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"c4a92552-f580-4852-b22e-ff74250c7563\", \"Представление\":\"Наличные\"}")]
 		Наличные = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"770c5ff4-4997-40d7-b7c6-4684137bd0ad\", \"Представление\":\"Безналичные\"}")]
 		Безналичные = 1,
 	}
 	public static partial class ВидыДенежныхСредств_Значения//:ПеречислениеСсылка

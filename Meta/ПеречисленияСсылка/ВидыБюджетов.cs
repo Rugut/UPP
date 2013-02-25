@@ -1,20 +1,26 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыБюджетов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///Бюджет доходов и расходов
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"4b525b58-d022-4f0b-8caf-4cec044b486b\", \"Представление\":\"БДР\"}")]
 		БДР = 0,//Бюджет доходов и расходов
+		[EnumMember(Value = "{\"Ссылка\":\"a0bf2e21-fbd7-4230-bf1a-98998027b533\", \"Представление\":\"БДДС\"}")]
 		БДДС = 1,//Бюджет движения денежных средств
+		[EnumMember(Value = "{\"Ссылка\":\"601c1b8b-c5fc-4719-9813-30a91432fe22\", \"Представление\":\"Прочие\"}")]
 		Прочие = 2,//Прочие оборотные бюджеты
 	}
 	public static partial class ВидыБюджетов_Значения//:ПеречислениеСсылка

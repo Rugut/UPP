@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОперацийВозвратТоваровОтПокупателя
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"546cc453-9bde-4dbb-9471-c60f986bfccb\", \"Представление\":\"ПродажаКомиссия\"}")]
 		ПродажаКомиссия = 0,//продажа, комиссия
+		[EnumMember(Value = "{\"Ссылка\":\"184b70c6-249f-4cf0-9498-dea5720b362c\", \"Представление\":\"Оборудование\"}")]
 		Оборудование = 1,
 	}
 	public static partial class ВидыОперацийВозвратТоваровОтПокупателя_Значения//:ПеречислениеСсылка

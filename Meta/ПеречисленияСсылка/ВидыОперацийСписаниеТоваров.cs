@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОперацийСписаниеТоваров
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"b140ba26-4e8e-48c4-9ae3-568fd87621e5\", \"Представление\":\"ТоварыПродукция\"}")]
 		ТоварыПродукция = 0,//товары, продукция
+		[EnumMember(Value = "{\"Ссылка\":\"bfd14844-a490-4eef-ab4c-02b92818f06b\", \"Представление\":\"Оборудование\"}")]
 		Оборудование = 1,
 	}
 	public static partial class ВидыОперацийСписаниеТоваров_Значения//:ПеречислениеСсылка

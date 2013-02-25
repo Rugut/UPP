@@ -1,15 +1,22 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum СтатусыПисем
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"7ff9c8ea-c53a-43b0-a935-bca257f660bb\", \"Представление\":\"Полученное\"}")]
 		Полученное = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"10fd8ab3-b64d-4991-a2d8-2b06058703dc\", \"Представление\":\"Отправленное\"}")]
 		Отправленное = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"201e4f9f-2345-4d62-8870-9074bcd4dc69\", \"Представление\":\"Исходящее\"}")]
 		Исходящее = 2,
+		[EnumMember(Value = "{\"Ссылка\":\"bd244fcb-bc30-407d-90d4-cad8c54c07af\", \"Представление\":\"Сохраненное\"}")]
 		Сохраненное = 3,
 	}
 	public static partial class СтатусыПисем_Значения//:ПеречислениеСсылка

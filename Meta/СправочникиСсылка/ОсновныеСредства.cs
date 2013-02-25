@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -36,6 +37,8 @@ namespace V82.СправочникиСсылка
 		public Guid Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
@@ -89,7 +92,85 @@ namespace V82.СправочникиСсылка
 		public string/*(100)*/ КадастровыйНомер {get;set;}//Кадастровый номер
 		public string/*(21)*/ УсловныйНомер {get;set;}//Условный номер
 		public V82.Перечисления/*Ссылка*/.НазначенияПомещения НазначениеПомещения {get;set;}//Назначение помещения
-
+		
+		public ОсновныеСредства()
+		{
+		}
+		
+		public ОсновныеСредства(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3092 [Автотранспорт]
+					,_Fld3093 [АдресМестонахождения]
+					,_Fld3094RRef [АмортизационнаяГруппа]
+					,_Fld3095RRef [ГруппаОС]
+					,_Fld3096 [ДатаВыпуска]
+					,_Fld3097 [ЗаводскойНомер]
+					,_Fld3098 [Изготовитель]
+					,_Fld3099RRef [КодПоОКОФ]
+					,_Fld3100 [КодРегиона]
+					,_Fld3101 [Комментарий]
+					,_Fld3102 [НаименованиеПолное]
+					,_Fld3103 [НомерПаспорта]
+					,_Fld3104 [Помещение]
+					,_Fld3105 [КадастровыйНомер]
+					,_Fld3106 [УсловныйНомер]
+					,_Fld3107RRef [НазначениеПомещения]
+					From _Reference180(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							Автотранспорт = ((byte[])Читалка.GetValue(6))[0]==1;
+							АдресМестонахождения = Читалка.GetString(7);
+							АмортизационнаяГруппа = V82.Перечисления/*Ссылка*/.АмортизационныеГруппы.ПустаяСсылка.Получить((byte[])Читалка.GetValue(8));
+							ГруппаОС = V82.Перечисления/*Ссылка*/.ГруппыОС.ПустаяСсылка.Получить((byte[])Читалка.GetValue(9));
+							ДатаВыпуска = Читалка.GetDateTime(10);
+							ЗаводскойНомер = Читалка.GetString(11);
+							Изготовитель = Читалка.GetString(12);
+							КодПоОКОФ = new V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов((byte[])Читалка.GetValue(13));
+							КодРегиона = Читалка.GetString(14);
+							Комментарий = Читалка.GetString(15);
+							НаименованиеПолное = Читалка.GetString(16);
+							НомерПаспорта = Читалка.GetString(17);
+							Помещение = ((byte[])Читалка.GetValue(18))[0]==1;
+							КадастровыйНомер = Читалка.GetString(19);
+							УсловныйНомер = Читалка.GetString(20);
+							НазначениеПомещения = V82.Перечисления/*Ссылка*/.НазначенияПомещения.ПустаяСсылка.Получить((byte[])Читалка.GetValue(21));
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ОсновныеСредства  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ОсновныеСредства();
@@ -120,17 +201,17 @@ namespace V82.СправочникиСсылка
 			Объект.НазначениеПомещения = НазначениеПомещения;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

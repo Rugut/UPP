@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыТарифныхСтавок
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"044e60a3-44bf-4f5b-b90f-b6fdba064604\", \"Представление\":\"Месячная\"}")]
 		Месячная = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"0daf7c58-240e-4a73-9ddd-4efc0b6b2076\", \"Представление\":\"Дневная\"}")]
 		Дневная = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"d56f600a-43f3-470a-b325-ed42a4e28df2\", \"Представление\":\"Часовая\"}")]
 		Часовая = 2,
 	}
 	public static partial class ВидыТарифныхСтавок_Значения//:ПеречислениеСсылка

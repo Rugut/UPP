@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыКвартир
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"75d6a533-d4e1-46fd-94a6-f5714795152d\", \"Представление\":\"Квартира\"}")]
 		Квартира = 0,//кв.
+		[EnumMember(Value = "{\"Ссылка\":\"f4dcca98-1ef8-439c-926e-0c4a23946d8c\", \"Представление\":\"Офис\"}")]
 		Офис = 1,//оф.
 	}
 	public static partial class ТипыКвартир_Значения//:ПеречислениеСсылка

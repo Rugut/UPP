@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///Способ вывода отчета
-		///</summary>
+	///<summary>
+	///Способ вывода отчета
+	///</summary>
+	[DataContract]
 	public enum СпособВыводаОтчета
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"98ee4701-c3ff-4c27-9c56-87b2d0a49b55\", \"Представление\":\"ПоВертикали\"}")]
 		ПоВертикали = 0,//По вертикали
+		[EnumMember(Value = "{\"Ссылка\":\"a6d4743e-9f04-459f-bdf0-f6b97cca3292\", \"Представление\":\"ПоГоризонтали\"}")]
 		ПоГоризонтали = 1,//По горизонтали
 	}
 	public static partial class СпособВыводаОтчета_Значения//:ПеречислениеСсылка

@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum УсловияОплатыРасчетныхДокументов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"9e3d9385-0b07-4064-b51e-ab53a3179596\", \"Представление\":\"САкцептом\"}")]
 		САкцептом = 0,//С акцептом
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"6e69cac4-70f5-4d57-9ad5-83c1e21485fb\", \"Представление\":\"БезАкцепта\"}")]
 		БезАкцепта = 1,//Без акцепта
 	}
 	public static partial class УсловияОплатыРасчетныхДокументов_Значения//:ПеречислениеСсылка

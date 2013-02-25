@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ПараметрыABCКлассификацииПокупателей
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"9cd7b78f-7b93-4f47-9eb8-372cc21c3f88\", \"Представление\":\"СуммаВыручки\"}")]
 		СуммаВыручки = 0,//Сумма выручки
+		[EnumMember(Value = "{\"Ссылка\":\"2d727518-3e47-421e-977d-10acddb71abe\", \"Представление\":\"СуммаВаловойПрибыли\"}")]
 		СуммаВаловойПрибыли = 1,//Сумма валовой прибыли
 	}
 	public static partial class ПараметрыABCКлассификацииПокупателей_Значения//:ПеречислениеСсылка

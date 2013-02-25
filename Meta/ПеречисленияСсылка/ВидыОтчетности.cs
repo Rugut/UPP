@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОтчетности
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Регл)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"ad89b07d-0a3d-40fa-b6b0-8ae46828be6a\", \"Представление\":\"РегламентированнаяОтчетность\"}")]
 		РегламентированнаяОтчетность = 0,//Регламентированная отчетность
 	///<summary>
 	///(Упр)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"a1879de2-5909-44cc-8731-64919e6d57a7\", \"Представление\":\"ОтчетностьПоМСФО\"}")]
 		ОтчетностьПоМСФО = 1,//Отчетность по МСФО
 	}
 	public static partial class ВидыОтчетности_Значения//:ПеречислениеСсылка

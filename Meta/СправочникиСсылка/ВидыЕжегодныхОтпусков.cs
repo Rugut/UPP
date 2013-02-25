@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -34,11 +35,65 @@ namespace V82.СправочникиСсылка
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		public V82.Перечисления/*Ссылка*/.СпособыРасчетаОстаткаОтпуска СпособРасчетаОстаткаОтпуска {get;set;}//Способ расчета остатка отпуска
 		public decimal/*(2)*/ КоличествоДнейОтпускаВГод {get;set;}//Количество дней отпуска в год
 		public bool ПредоставлятьОтпускВсемСотрудникам {get;set;}//Предоставлять отпуск всем сотрудникам
-
+		
+		public ВидыЕжегодныхОтпусков()
+		{
+		}
+		
+		public ВидыЕжегодныхОтпусков(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld1937RRef [СпособРасчетаОстаткаОтпуска]
+					,_Fld1938 [КоличествоДнейОтпускаВГод]
+					,_Fld1939 [ПредоставлятьОтпускВсемСотрудникам]
+					From _Reference50(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							СпособРасчетаОстаткаОтпуска = V82.Перечисления/*Ссылка*/.СпособыРасчетаОстаткаОтпуска.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
+							КоличествоДнейОтпускаВГод = Читалка.GetDecimal(7);
+							ПредоставлятьОтпускВсемСотрудникам = ((byte[])Читалка.GetValue(8))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ВидыЕжегодныхОтпусков  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ВидыЕжегодныхОтпусков();
@@ -54,17 +109,17 @@ namespace V82.СправочникиСсылка
 			Объект.ПредоставлятьОтпускВсемСотрудникам = ПредоставлятьОтпускВсемСотрудникам;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -33,11 +34,63 @@ namespace V82.СправочникиСсылка
 		/*версия класса восстановленного из пакета*/
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*150*/ Наименование {get;set;}
 		public bool ВходитВБазуФОМС {get;set;}//Входит в базу ФОМС
 		public bool ВходитВБазуФСС {get;set;}//Входит в базу ФСС
 		public bool ВходитВБазуФедеральныйБюджет {get;set;}//Входит в базу федеральный бюджет
-
+		
+		public ДоходыЕСН()
+		{
+		}
+		
+		public ДоходыЕСН(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2293 [ВходитВБазуФОМС]
+					,_Fld2294 [ВходитВБазуФСС]
+					,_Fld2295 [ВходитВБазуФедеральныйБюджет]
+					From _Reference94(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Наименование = Читалка.GetString(4);
+							ВходитВБазуФОМС = ((byte[])Читалка.GetValue(5))[0]==1;
+							ВходитВБазуФСС = ((byte[])Читалка.GetValue(6))[0]==1;
+							ВходитВБазуФедеральныйБюджет = ((byte[])Читалка.GetValue(7))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ДоходыЕСН  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ДоходыЕСН();
@@ -52,17 +105,17 @@ namespace V82.СправочникиСсылка
 			Объект.ВходитВБазуФедеральныйБюджет = ВходитВБазуФедеральныйБюджет;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

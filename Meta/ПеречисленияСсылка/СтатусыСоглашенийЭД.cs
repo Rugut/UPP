@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum СтатусыСоглашенийЭД
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"392e3a4f-fdfc-41c5-96e0-65bfbfdc8af5\", \"Представление\":\"Действует\"}")]
 		Действует = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"9f210ed8-a279-4896-824e-6f5f01c0e6cf\", \"Представление\":\"Закрыто\"}")]
 		Закрыто = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"7309d3f3-312d-4e5b-a6b7-0d5d2476ec3b\", \"Представление\":\"НеСогласовано\"}")]
 		НеСогласовано = 2,//Не согласовано
 	}
 	public static partial class СтатусыСоглашенийЭД_Значения//:ПеречислениеСсылка

@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ПриоритетПравилПереносаСчетов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"140fc5ef-a853-478c-8302-fe918d56ef33\", \"Представление\":\"Высокий\"}")]
 		Высокий = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"d2d4173c-9d70-408b-8707-43125f46cc41\", \"Представление\":\"Средний\"}")]
 		Средний = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"e5af2a6c-3926-459e-91c3-e561a1a6188a\", \"Представление\":\"Низкий\"}")]
 		Низкий = 2,
 	}
 	public static partial class ПриоритетПравилПереносаСчетов_Значения//:ПеречислениеСсылка

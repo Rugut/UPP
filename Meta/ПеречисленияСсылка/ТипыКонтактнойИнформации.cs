@@ -1,34 +1,42 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ТипыКонтактнойИнформации
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"972971a9-31dd-473f-9c49-b3cc99a0381f\", \"Представление\":\"Адрес\"}")]
 		Адрес = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"4cd904b6-2224-41f1-94a0-fd27bdad5c80\", \"Представление\":\"Телефон\"}")]
 		Телефон = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"79c1c3e0-3a7b-41a8-af80-fc923034c1ed\", \"Представление\":\"АдресЭлектроннойПочты\"}")]
 		АдресЭлектроннойПочты = 2,//E-Mail
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"6135332b-8e4a-4a06-8e64-c4379ab17307\", \"Представление\":\"ВебСтраница\"}")]
 		ВебСтраница = 3,//Веб-страница
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"125ade40-314a-455f-bdd7-34bd5ba49413\", \"Представление\":\"Другое\"}")]
 		Другое = 4,
 	}
 	public static partial class ТипыКонтактнойИнформации_Значения//:ПеречислениеСсылка

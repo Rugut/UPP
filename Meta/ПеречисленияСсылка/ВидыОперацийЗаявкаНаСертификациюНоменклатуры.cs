@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыОперацийЗаявкаНаСертификациюНоменклатуры
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"54694357-685a-4617-956b-c276e665a6a2\", \"Представление\":\"Внутренняя\"}")]
 		Внутренняя = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"52bfa3ab-c18e-495e-bfe5-72ce4fb3478b\", \"Представление\":\"Внешняя\"}")]
 		Внешняя = 1,
 	}
 	public static partial class ВидыОперацийЗаявкаНаСертификациюНоменклатуры_Значения//:ПеречислениеСсылка

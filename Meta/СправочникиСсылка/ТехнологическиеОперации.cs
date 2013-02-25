@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -36,6 +37,8 @@ namespace V82.СправочникиСсылка
 		public Guid Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		///<summary>
 		///(Общ)
@@ -73,7 +76,71 @@ namespace V82.СправочникиСсылка
 		///(Общ)
 		///</summary>
 		public decimal/*(10.3)*/ Коэффициент {get;set;}
-
+		
+		public ТехнологическиеОперации()
+		{
+		}
+		
+		public ТехнологическиеОперации(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3906RRef [ОсновнаяСтатьяЗатратНаПроизводство]
+					,_Fld3907RRef [СпособОтраженияЗарплатыВБухучете]
+					,_Fld3908RRef [ОсновнойСпособРаспределенияЗатратНаВыпуск]
+					,_Fld3909RRef [ОсновнаяНоменклатурнаяГруппа]
+					,_Fld3910 [Расценка]
+					,_Fld3911RRef [БазоваяЕдиницаИзмерения]
+					,_Fld3912RRef [Валюта]
+					,_Fld3913 [НормаВремени]
+					,_Fld3914 [Коэффициент]
+					From _Reference264(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							ОсновнаяСтатьяЗатратНаПроизводство = new V82.СправочникиСсылка.СтатьиЗатрат((byte[])Читалка.GetValue(6));
+							СпособОтраженияЗарплатыВБухучете = new V82.СправочникиСсылка.СпособыОтраженияЗарплатыВРеглУчете((byte[])Читалка.GetValue(7));
+							ОсновнойСпособРаспределенияЗатратНаВыпуск = new V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск((byte[])Читалка.GetValue(8));
+							ОсновнаяНоменклатурнаяГруппа = new V82.СправочникиСсылка.НоменклатурныеГруппы((byte[])Читалка.GetValue(9));
+							Расценка = Читалка.GetDecimal(10);
+							БазоваяЕдиницаИзмерения = new V82.СправочникиСсылка.КлассификаторЕдиницИзмерения((byte[])Читалка.GetValue(11));
+							Валюта = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(12));
+							НормаВремени = Читалка.GetDecimal(13);
+							Коэффициент = Читалка.GetDecimal(14);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.ТехнологическиеОперации  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.ТехнологическиеОперации();
@@ -97,17 +164,17 @@ namespace V82.СправочникиСсылка
 			Объект.Коэффициент = Коэффициент;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

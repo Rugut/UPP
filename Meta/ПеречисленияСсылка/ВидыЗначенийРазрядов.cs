@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыЗначенийРазрядов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"7ef38d2a-5c6e-4ff8-9308-5b13d05df8ec\", \"Представление\":\"Код\"}")]
 		Код = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"738bd98a-1c08-449d-ab2c-5a3934bd99b7\", \"Представление\":\"Артикул\"}")]
 		Артикул = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"61af8c5b-2677-4f0d-af48-4ef78119b75c\", \"Представление\":\"Свойство\"}")]
 		Свойство = 2,
 	}
 	public static partial class ВидыЗначенийРазрядов_Значения//:ПеречислениеСсылка

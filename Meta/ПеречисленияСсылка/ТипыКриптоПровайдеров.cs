@@ -1,19 +1,24 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыКриптоПровайдеров
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///Криптопровайдер КриптоПро CSP
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"5b750bc5-51ec-49a3-a031-04215852a966\", \"Представление\":\"CryptoPro\"}")]
 		CryptoPro = 0,//Crypto pro
 	///<summary>
 	///Криптопровайдер VipNet CSP
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"a1a1603b-7092-474f-b82f-e17d944f589d\", \"Представление\":\"VipNet\"}")]
 		VipNet = 1,//Vip net
 	}
 	public static partial class ТипыКриптоПровайдеров_Значения//:ПеречислениеСсылка

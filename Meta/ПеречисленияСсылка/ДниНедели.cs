@@ -1,42 +1,52 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ДниНедели
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"599aab3e-db35-4d2b-abaf-3318ec2e297b\", \"Представление\":\"Понедельник\"}")]
 		Понедельник = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"8b34b573-ef7a-4957-a651-c503e86041bc\", \"Представление\":\"Вторник\"}")]
 		Вторник = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"fa93ea82-2ce3-4955-86f5-91d746fa7c52\", \"Представление\":\"Среда\"}")]
 		Среда = 2,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"a14338bd-99a1-4fe4-941d-5857e0e086e1\", \"Представление\":\"Четверг\"}")]
 		Четверг = 3,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"7d9da492-1466-4427-826c-261acdff6f46\", \"Представление\":\"Пятница\"}")]
 		Пятница = 4,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"abc607d9-bdc0-42dc-9ff1-e91aff3b75a8\", \"Представление\":\"Суббота\"}")]
 		Суббота = 5,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"7a4039a9-72b4-4583-9e7f-3457ef02815e\", \"Представление\":\"Воскресенье\"}")]
 		Воскресенье = 6,
 	}
 	public static partial class ДниНедели_Значения//:ПеречислениеСсылка

@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ВидыДвиженийПриходРасход
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"2333413b-da50-41e1-a4a6-419b9191deb3\", \"Представление\":\"Приход\"}")]
 		Приход = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"0a651848-e33f-42e1-9993-98a4094f534d\", \"Представление\":\"Расход\"}")]
 		Расход = 1,
 	}
 	public static partial class ВидыДвиженийПриходРасход_Значения//:ПеречислениеСсылка

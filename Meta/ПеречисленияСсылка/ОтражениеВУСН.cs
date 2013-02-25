@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum ОтражениеВУСН
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"52e18cff-90de-430a-b9c6-89a0501b1be2\", \"Представление\":\"Принимаются\"}")]
 		Принимаются = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"633bc00c-0476-49f4-b17b-4da61508f89a\", \"Представление\":\"НеПринимаются\"}")]
 		НеПринимаются = 1,//Не принимаются
+		[EnumMember(Value = "{\"Ссылка\":\"1dd8919c-9063-4bdb-b8a0-13f8a4232cb8\", \"Представление\":\"Распределяются\"}")]
 		Распределяются = 2,
 	}
 	public static partial class ОтражениеВУСН_Значения//:ПеречислениеСсылка

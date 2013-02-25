@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ИспытательныйСрок
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"feca8e78-1b60-4476-8950-478d5cef52ab\", \"Представление\":\"СИспытательнымСроком\"}")]
 		СИспытательнымСроком = 0,//С испытательным сроком
+		[EnumMember(Value = "{\"Ссылка\":\"80e9568e-0569-48ed-a45a-c0edb76cffac\", \"Представление\":\"БезИспытательногоСрока\"}")]
 		БезИспытательногоСрока = 1,//Без испытательного срока
 	}
 	public static partial class ИспытательныйСрок_Значения//:ПеречислениеСсылка

@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыВложенийНеформализованныхДокументовНалогоплательщика
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"85a1a133-3609-4d09-89c0-5e8daba7ce89\", \"Представление\":\"ТекстовыйДокумент\"}")]
 		ТекстовыйДокумент = 0,//Текстовый документ
+		[EnumMember(Value = "{\"Ссылка\":\"357fa84d-024a-4add-8c1f-2b7d0fce9c64\", \"Представление\":\"ДокументMicrosoftWord\"}")]
 		ДокументMicrosoftWord = 1,//Документ Microsoft Word
+		[EnumMember(Value = "{\"Ссылка\":\"af394c61-5a9b-4226-b325-d5ae22143bf0\", \"Представление\":\"ДокументMicrosoftExcel\"}")]
 		ДокументMicrosoftExcel = 2,//Документ Microsoft Excel
 	}
 	public static partial class ТипыВложенийНеформализованныхДокументовНалогоплательщика_Значения//:ПеречислениеСсылка

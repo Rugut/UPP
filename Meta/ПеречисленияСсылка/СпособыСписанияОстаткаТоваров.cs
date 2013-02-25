@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum СпособыСписанияОстаткаТоваров
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"8e575bbd-2359-4c0c-b67c-77a78caa9094\", \"Представление\":\"СоСклада\"}")]
 		СоСклада = 0,//Со склада
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"424cd935-cb30-43dc-ba83-15ce6773074a\", \"Представление\":\"ИзРезерва\"}")]
 		ИзРезерва = 1,//Из резерва
 	}
 	public static partial class СпособыСписанияОстаткаТоваров_Значения//:ПеречислениеСсылка

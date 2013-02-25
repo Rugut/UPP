@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -33,13 +34,69 @@ namespace V82.СправочникиСсылка
 		/*версия класса восстановленного из пакета*/
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*50*/ Наименование {get;set;}
 		public string/*(2)*/ БуквенныйКод {get;set;}//Буквенный код
 		public string/*(2)*/ ЦифровойКод {get;set;}//Цифровой код
 		public string/*(0)*/ ПолноеНаименование {get;set;}//Полное наименование
 		public V82.Перечисления/*Ссылка*/.ВидыВремени УдалитьВидВремени {get;set;}//Удалить вид времени
 		public bool РабочееВремя {get;set;}//Рабочее время
-
+		
+		public КлассификаторИспользованияРабочегоВремени()
+		{
+		}
+		
+		public КлассификаторИспользованияРабочегоВремени(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2400 [БуквенныйКод]
+					,_Fld2401 [ЦифровойКод]
+					,_Fld2402 [ПолноеНаименование]
+					,_Fld2403RRef [УдалитьВидВремени]
+					,_Fld2404 [РабочееВремя]
+					From _Reference115(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Наименование = Читалка.GetString(4);
+							БуквенныйКод = Читалка.GetString(5);
+							ЦифровойКод = Читалка.GetString(6);
+							ПолноеНаименование = Читалка.GetString(7);
+							УдалитьВидВремени = V82.Перечисления/*Ссылка*/.ВидыВремени.ПустаяСсылка.Получить((byte[])Читалка.GetValue(8));
+							РабочееВремя = ((byte[])Читалка.GetValue(9))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.КлассификаторИспользованияРабочегоВремени  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.КлассификаторИспользованияРабочегоВремени();
@@ -56,17 +113,17 @@ namespace V82.СправочникиСсылка
 			Объект.РабочееВремя = РабочееВремя;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

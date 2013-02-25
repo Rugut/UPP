@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum ВидыПремии
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"108f69bf-9d80-4d91-b37d-a1d5dca816ee\", \"Представление\":\"НеПремия\"}")]
 		НеПремия = 0,//Не является премией
+		[EnumMember(Value = "{\"Ссылка\":\"d1fd1c36-de23-4cf7-8b21-fe32901dd2b6\", \"Представление\":\"Премия\"}")]
 		Премия = 1,//Является премией
+		[EnumMember(Value = "{\"Ссылка\":\"ab765cc0-d4ad-4d06-80f5-67a81894004b\", \"Представление\":\"ГодоваяПремия\"}")]
 		ГодоваяПремия = 2,//Является годовой премией
 	}
 	public static partial class ВидыПремии_Значения//:ПеречислениеСсылка

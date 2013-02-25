@@ -14,6 +14,7 @@ namespace V82.СправочникиСсылка
 	[Serializable]
 	public partial class СправочникСсылка
 	{
+		public static string СтрокаСоединения = "server=10.2.66.29,59635;Database=UPP;Trusted_Connection=True;";//Чтение,ЧтениеКэш,Запись
 	}
 	public interface IСериализаторProtoBuf
 	{

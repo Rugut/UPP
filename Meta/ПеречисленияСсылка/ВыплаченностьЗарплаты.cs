@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum ВыплаченностьЗарплаты
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"c52fa698-f5de-4cb6-b276-dbc07a71600c\", \"Представление\":\"НеВыплачено\"}")]
 		НеВыплачено = 0,//Не выплачено
+		[EnumMember(Value = "{\"Ссылка\":\"48498c7a-8b0d-4b59-ad53-ae7573302f18\", \"Представление\":\"Выплачено\"}")]
 		Выплачено = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"24b7750d-6551-443f-a126-136edeeb3c46\", \"Представление\":\"Задепонировано\"}")]
 		Задепонировано = 2,
 	}
 	public static partial class ВыплаченностьЗарплаты_Значения//:ПеречислениеСсылка

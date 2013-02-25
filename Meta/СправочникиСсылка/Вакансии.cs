@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -31,6 +32,8 @@ namespace V82.СправочникиСсылка
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		public bool Закрыта {get;set;}//Вакансия закрыта
 		public V82.СправочникиСсылка.Должности Должность {get;set;}
@@ -44,7 +47,76 @@ namespace V82.СправочникиСсылка
 		public string/*(0)*/ Условия {get;set;}
 		public DateTime ДатаОткрытия {get;set;}//Дата открытия
 		public DateTime ДатаЗакрытия {get;set;}//Дата закрытия
-
+		
+		public Вакансии()
+		{
+		}
+		
+		public Вакансии(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld1872 [Закрыта]
+					,_Fld1873RRef [Должность]
+					,_Fld1874RRef [Заявитель]
+					,_Fld1875 [Обязанности]
+					,_Fld1876RRef [Организация]
+					,_Fld1877RRef [Ответственный]
+					,_Fld1878 [ПлановаяДатаЗакрытия]
+					,_Fld1879_TYPE [Подразделение_Тип],_Fld1879_RRRef [Подразделение],_Fld1879_RTRef [Подразделение_Вид]
+					,_Fld1880 [Требования]
+					,_Fld1881 [Условия]
+					,_Fld1882 [ДатаОткрытия]
+					,_Fld1883 [ДатаЗакрытия]
+					From _Reference39(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							Закрыта = ((byte[])Читалка.GetValue(6))[0]==1;
+							Должность = new V82.СправочникиСсылка.Должности((byte[])Читалка.GetValue(7));
+							Заявитель = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8));
+							Обязанности = Читалка.GetString(9);
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(10));
+							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(11));
+							ПлановаяДатаЗакрытия = Читалка.GetDateTime(12);
+							Требования = Читалка.GetString(16);
+							Условия = Читалка.GetString(17);
+							ДатаОткрытия = Читалка.GetDateTime(18);
+							ДатаЗакрытия = Читалка.GetDateTime(19);
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.Вакансии  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.Вакансии();
@@ -69,17 +141,17 @@ namespace V82.СправочникиСсылка
 			Объект.ДатаЗакрытия = ДатаЗакрытия;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

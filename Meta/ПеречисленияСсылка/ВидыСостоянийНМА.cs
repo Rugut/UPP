@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Регл)
-		///</summary>
+	///<summary>
+	///(Регл)
+	///</summary>
+	[DataContract]
 	public enum ВидыСостоянийНМА
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"801ac213-cdec-473d-abcf-2bfb3c325e27\", \"Представление\":\"Поступил\"}")]
 		Поступил = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"766269dc-3abe-47a1-ba80-33c2ef95c341\", \"Представление\":\"ПринятКУчету\"}")]
 		ПринятКУчету = 1,//Принят к учету
+		[EnumMember(Value = "{\"Ссылка\":\"8b0453e4-a7aa-4dc9-ad91-45500c564ca6\", \"Представление\":\"Списан\"}")]
 		Списан = 2,
 	}
 	public static partial class ВидыСостоянийНМА_Значения//:ПеречислениеСсылка

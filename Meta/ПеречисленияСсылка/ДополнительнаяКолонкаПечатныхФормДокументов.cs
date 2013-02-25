@@ -1,26 +1,32 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ДополнительнаяКолонкаПечатныхФормДокументов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"a4434318-22d5-4004-8595-794be6e1c200\", \"Представление\":\"НеВыводить\"}")]
 		НеВыводить = 0,//Не выводить
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"bae5689d-db20-4825-8927-836e934d08dd\", \"Представление\":\"Артикул\"}")]
 		Артикул = 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"d327c727-098f-4867-83e2-0d00a2066f5f\", \"Представление\":\"Код\"}")]
 		Код = 2,
 	}
 	public static partial class ДополнительнаяКолонкаПечатныхФормДокументов_Значения//:ПеречислениеСсылка

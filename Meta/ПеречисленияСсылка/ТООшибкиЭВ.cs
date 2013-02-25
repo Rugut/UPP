@@ -1,11 +1,14 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТООшибкиЭВ
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	}
 	public static partial class ТООшибкиЭВ_Значения//:ПеречислениеСсылка

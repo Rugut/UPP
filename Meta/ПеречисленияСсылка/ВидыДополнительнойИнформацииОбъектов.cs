@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыДополнительнойИнформацииОбъектов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"65d1230b-6ec2-4017-817a-55313cf90695\", \"Представление\":\"Файл\"}")]
 		Файл = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"5b9be8fd-e817-4898-a67c-647e71d2e940\", \"Представление\":\"Изображение\"}")]
 		Изображение = 1,
 	}
 	public static partial class ВидыДополнительнойИнформацииОбъектов_Значения//:ПеречислениеСсылка

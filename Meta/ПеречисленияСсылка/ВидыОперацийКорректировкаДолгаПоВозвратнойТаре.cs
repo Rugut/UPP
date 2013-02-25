@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОперацийКорректировкаДолгаПоВозвратнойТаре
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"08e54852-557f-4317-8827-441f7d459ba0\", \"Представление\":\"Поставщика\"}")]
 		Поставщика = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"5bbc2d7e-a977-47b3-95cf-e8c47c512461\", \"Представление\":\"УПокупателя\"}")]
 		УПокупателя = 1,//у покупателя
 	}
 	public static partial class ВидыОперацийКорректировкаДолгаПоВозвратнойТаре_Значения//:ПеречислениеСсылка

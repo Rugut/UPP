@@ -1,30 +1,37 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыЗатрат
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"d644a70d-49cc-4164-9e07-7fea53aac5e8\", \"Представление\":\"Материальные\"}")]
 		Материальные = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"33d1484e-99eb-4286-9cd6-3bdf1bc86270\", \"Представление\":\"ОплатаТруда\"}")]
 		ОплатаТруда = 1,//Оплата труда
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"5b5cc841-6717-4601-bb3c-f94d58540079\", \"Представление\":\"Амортизация\"}")]
 		Амортизация = 2,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"eada8cc2-d6dd-49bc-8623-c7d05728963a\", \"Представление\":\"Прочие\"}")]
 		Прочие = 3,
 	}
 	public static partial class ВидыЗатрат_Значения//:ПеречислениеСсылка

@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///Виды задолженности: дебиторская, кредиторская
-		///</summary>
+	///<summary>
+	///Виды задолженности: дебиторская, кредиторская
+	///</summary>
+	[DataContract]
 	public enum ВидыЗадолженности
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///Дебиторская
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"eabde08b-a3e4-4216-8c2b-a9e93c7e7fef\", \"Представление\":\"Дебиторская\"}")]
 		Дебиторская = 0,
 	///<summary>
 	///Кредиторская
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"4b211015-d0d7-4414-b09c-f8eb1497baa0\", \"Представление\":\"Кредиторская\"}")]
 		Кредиторская = 1,
 	}
 	public static partial class ВидыЗадолженности_Значения//:ПеречислениеСсылка

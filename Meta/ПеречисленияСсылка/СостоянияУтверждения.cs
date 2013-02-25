@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum СостоянияУтверждения
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"e9afd3ce-e0a0-4fd7-bba3-37801b0b887f\", \"Представление\":\"Утвержден\"}")]
 		Утвержден = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"ad43d4f2-bacc-4a04-9ed5-c3e9b4bdd3db\", \"Представление\":\"НеУтвержден\"}")]
 		НеУтвержден = 1,//Не утвержден
+		[EnumMember(Value = "{\"Ссылка\":\"2f4026ab-033d-45fa-9bc0-b024c44d1c45\", \"Представление\":\"Отклонен\"}")]
 		Отклонен = 2,
 	}
 	public static partial class СостоянияУтверждения_Значения//:ПеречислениеСсылка

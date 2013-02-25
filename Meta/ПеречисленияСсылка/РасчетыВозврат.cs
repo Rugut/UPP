@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum РасчетыВозврат
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"23e68883-dc0b-423f-b858-3317a080a6a1\", \"Представление\":\"Расчеты\"}")]
 		Расчеты = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"0b4ef259-e603-430f-86b8-d337ff4ef4bf\", \"Представление\":\"Возврат\"}")]
 		Возврат = 1,
 	}
 	public static partial class РасчетыВозврат_Значения//:ПеречислениеСсылка

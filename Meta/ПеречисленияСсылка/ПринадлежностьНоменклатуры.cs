@@ -1,12 +1,16 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ПринадлежностьНоменклатуры
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"fb4195cb-5036-4ede-b318-6a87b7868576\", \"Представление\":\"Принятый\"}")]
 		Принятый = 0,
 	}
 	public static partial class ПринадлежностьНоменклатуры_Значения//:ПеречислениеСсылка

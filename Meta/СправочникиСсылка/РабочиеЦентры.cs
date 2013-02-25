@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.IO;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Runtime.Serialization;
 using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
@@ -36,6 +37,8 @@ namespace V82.СправочникиСсылка
 		public Guid Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
+		[DataMember(Name = "Представление")]//Проверить основное представление.
+		[ProtoMember(3)]
 		public string/*100*/ Наименование {get;set;}
 		public V82.СправочникиСсылка.Подразделения Подразделение {get;set;}
 		public string/*(0)*/ Описание {get;set;}
@@ -43,7 +46,59 @@ namespace V82.СправочникиСсылка
 		///Признак того, что при загрузке данного рабочего центра требуется загрузка других рабочих центров и групп заменяемости рабочих центров
 		///</summary>
 		public bool ТребуетсяЗагрузкаПодчиненныхРабочихЦентров {get;set;}//Требуется загрузка подчиненных рабочих центров
-
+		
+		public РабочиеЦентры()
+		{
+		}
+		
+		public РабочиеЦентры(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3324RRef [Подразделение]
+					,_Fld3325 [Описание]
+					,_Fld3326 [ТребуетсяЗагрузкаПодчиненныхРабочихЦентров]
+					From _Reference214(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Код = Читалка.GetString(4);
+							Наименование = Читалка.GetString(5);
+							Подразделение = new V82.СправочникиСсылка.Подразделения((byte[])Читалка.GetValue(6));
+							Описание = Читалка.GetString(7);
+							ТребуетсяЗагрузкаПодчиненныхРабочихЦентров = ((byte[])Читалка.GetValue(8))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public V82.СправочникиОбъект.РабочиеЦентры  ПолучитьОбъект()
 		{
 			var Объект = new V82.СправочникиОбъект.РабочиеЦентры();
@@ -61,17 +116,17 @@ namespace V82.СправочникиСсылка
 			Объект.ТребуетсяЗагрузкаПодчиненныхРабочихЦентров = ТребуетсяЗагрузкаПодчиненныхРабочихЦентров;
 			return Объект;
 		}
-
+		
 		public void СериализацияProtoBuf(Stream Поток)
 		{
 			Serializer.Serialize(Поток,this);
 		}
-
+		
 		public string СериализацияJson()
 		{
 			return this.ToJson();
 		}
-
+		
 		public string СериализацияXml()
 		{
 			return this.ToXml();

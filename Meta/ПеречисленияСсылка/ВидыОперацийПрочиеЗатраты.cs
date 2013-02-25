@@ -1,22 +1,27 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Общ)
-		///</summary>
+	///<summary>
+	///(Общ)
+	///</summary>
+	[DataContract]
 	public enum ВидыОперацийПрочиеЗатраты
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"5d435973-fb91-48d9-ae68-fe9a9b94123a\", \"Представление\":\"Отражение\"}")]
 		Отражение = 0,
 	///<summary>
 	///(Общ)
 	///</summary>
+		[EnumMember(Value = "{\"Ссылка\":\"e63c0913-09fc-4e02-a8a4-2be1aed4c2c2\", \"Представление\":\"Списание\"}")]
 		Списание = 1,
 	}
 	public static partial class ВидыОперацийПрочиеЗатраты_Значения//:ПеречислениеСсылка

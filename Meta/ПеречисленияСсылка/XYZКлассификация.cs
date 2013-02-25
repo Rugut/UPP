@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum XYZКлассификация
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"ff346941-a784-4dd5-a386-993e07bd9a3a\", \"Представление\":\"XКласс\"}")]
 		XКласс = 0,//X - класс
+		[EnumMember(Value = "{\"Ссылка\":\"ee4cb7b2-f113-4745-8c46-8423ce8eefdf\", \"Представление\":\"YКласс\"}")]
 		YКласс = 1,//Y - класс
+		[EnumMember(Value = "{\"Ссылка\":\"f66801e9-fa52-4f6b-b150-8f3349f18533\", \"Представление\":\"ZКласс\"}")]
 		ZКласс = 2,//Z - класс
 	}
 	public static partial class XYZКлассификация_Значения//:ПеречислениеСсылка

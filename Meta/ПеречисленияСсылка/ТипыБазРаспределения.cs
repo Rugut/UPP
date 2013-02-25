@@ -1,14 +1,20 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыБазРаспределения
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"4ba5fd6f-22ad-4139-bce8-75b77f31e0c8\", \"Представление\":\"Предопределенный\"}")]
 		Предопределенный = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"34f86ba4-7091-4bc4-8a08-f5a54615f0de\", \"Представление\":\"Табличный\"}")]
 		Табличный = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"d23ff084-7ae4-4c28-a43a-a8d7e23a4967\", \"Представление\":\"СКД\"}")]
 		СКД = 2,//По данным ИБ
 	}
 	public static partial class ТипыБазРаспределения_Значения//:ПеречислениеСсылка

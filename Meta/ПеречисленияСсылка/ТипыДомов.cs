@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum ТипыДомов
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"9836bf4d-e21c-402a-aee5-bc86914297f8\", \"Представление\":\"Дом\"}")]
 		Дом = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"73a5cfd7-76af-43a8-a416-22da59bbb66f\", \"Представление\":\"Владение\"}")]
 		Владение = 1,
 	}
 	public static partial class ТипыДомов_Значения//:ПеречислениеСсылка

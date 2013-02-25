@@ -1,13 +1,18 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
+	[DataContract]
 	public enum СтатусыПроверкиЭЦП
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"3bc9fd6a-5319-4f87-92e2-bae70355cd36\", \"Представление\":\"Валидна\"}")]
 		Валидна = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"2e1a4dc8-fa84-4174-8075-e9e21f380b74\", \"Представление\":\"НеВалидна\"}")]
 		НеВалидна = 1,//Не валидна
 	}
 	public static partial class СтатусыПроверкиЭЦП_Значения//:ПеречислениеСсылка

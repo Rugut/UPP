@@ -1,17 +1,23 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВидыПланирования
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"3bf8ab60-c4ef-4dae-b920-21c34718e324\", \"Представление\":\"Продажи\"}")]
 		Продажи = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"35909411-cf97-4ac0-bad2-ffb8ff88dcbe\", \"Представление\":\"Производство\"}")]
 		Производство = 1,
+		[EnumMember(Value = "{\"Ссылка\":\"93a0963d-7cb0-4bdd-b67d-d2a921b64bc5\", \"Представление\":\"Закупки\"}")]
 		Закупки = 2,
 	}
 	public static partial class ВидыПланирования_Значения//:ПеречислениеСсылка

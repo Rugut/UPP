@@ -1,16 +1,21 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 using V82;
 using V82.Перечисления;//Ссылка;
 namespace V82.Перечисления//Ссылка
 {
-		///<summary>
-		///(Упр)
-		///</summary>
+	///<summary>
+	///(Упр)
+	///</summary>
+	[DataContract]
 	public enum ВходящееИсходящееСобытие
 	{
+		[NonSerialized]
 		ПустаяСсылка = - 1,
+		[EnumMember(Value = "{\"Ссылка\":\"3642a5f3-3c02-4f08-acaa-fa6ec6531b70\", \"Представление\":\"Входящее\"}")]
 		Входящее = 0,
+		[EnumMember(Value = "{\"Ссылка\":\"ac5a6c99-c9be-4ed8-970d-8ab0b8d636ed\", \"Представление\":\"Исходящее\"}")]
 		Исходящее = 1,
 	}
 	public static partial class ВходящееИсходящееСобытие_Значения//:ПеречислениеСсылка
