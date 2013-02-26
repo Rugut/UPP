@@ -116,11 +116,13 @@ namespace UPP
 
             //var Стр = new Структура("Булево,Число,Дата,Строка", false, 10, "Дата", "Привет" );
 
-            var p = V82.Перечисления.ABCКлассификация.AКласс;
-            var s = p.ToJson();
-            Console.WriteLine(s);
+            //var p = V82.Перечисления.ABCКлассификация.AКласс;
+            //var s = p.ToJson();
+            //Console.WriteLine(s);
 
-            Console.ReadLine();
+            V82.Справочники.Организации.ВыбратьПоСсылке(10, Guid.Empty,new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff"));
+
+            //Console.ReadLine();
         }
     }
 }

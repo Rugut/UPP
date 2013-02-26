@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.IO;
 using System.Data.SqlClient;
 using System.Globalization;
@@ -138,6 +139,20 @@ namespace V82.СправочникиСсылка
 			Объект.ИдентификаторОснования = ИдентификаторОснования;
 			Объект.Ретроконверсия = Ретроконверсия;
 			return Объект;
+		}
+		
+		private static readonly Hashtable Кэш = new Hashtable(1000);
+		
+		public static V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами ВзятьИзКэша(byte[] УникальныйИдентификатор)
+		{
+			var УИ = new Guid(УникальныйИдентификатор);
+			if (Кэш.ContainsKey(УИ))
+			{
+				return (V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами)Кэш[УИ];
+			}
+			var Ссылка = new V82.СправочникиСсылка.ПерепискаСКонтролирующимиОрганами(УникальныйИдентификатор);
+			Кэш.Add(УИ, Ссылка);
+			return Ссылка;
 		}
 		
 		public void СериализацияProtoBuf(Stream Поток)

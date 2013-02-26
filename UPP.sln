@@ -13,21 +13,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gen", "Gen\Gen.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestStart", "RestStart\RestStart.csproj", "{1CDB1D6A-A6E7-4AAC-9262-23D9D83D07D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Perf", "Perf", "{B00DA62B-86B7-4EE5-935C-CE10767A4A97}"
+	ProjectSection(SolutionItems) = preProject
+		Perf\Perf.txt = Perf\Perf.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{8419F4DC-2839-40E1-AA9B-62F82B443216}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Docs.txt = Docs\Docs.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 7
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://rugut.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = Ajax\\Ajax.csproj
-		SccProjectName0 = Ajax
-		SccLocalPath0 = Ajax
-		SccProjectUniqueName1 = UPP\\UPP.csproj
-		SccProjectName1 = UPP
-		SccLocalPath1 = UPP
-		SccProjectUniqueName2 = RestStart\\RestStart.csproj
-		SccProjectName2 = RestStart
-		SccLocalPath2 = RestStart
-		SccLocalPath3 = .
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Ajax\\Ajax.csproj
+		SccProjectName1 = Ajax
+		SccLocalPath1 = Ajax
+		SccProjectUniqueName2 = UPP\\UPP.csproj
+		SccProjectName2 = UPP
+		SccLocalPath2 = UPP
+		SccProjectUniqueName3 = RestStart\\RestStart.csproj
+		SccProjectName3 = RestStart
+		SccLocalPath3 = RestStart
 		SccProjectUniqueName4 = Gen\\Gen.csproj
 		SccProjectName4 = Gen
 		SccLocalPath4 = Gen
@@ -70,5 +80,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

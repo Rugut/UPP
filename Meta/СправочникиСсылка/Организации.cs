@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.IO;
 using System.Data.SqlClient;
 using System.Globalization;
@@ -406,6 +407,20 @@ namespace V82.СправочникиСсылка
 			Объект.ИПРегистрационныйНомерТФОМС = ИПРегистрационныйНомерТФОМС;
 			Объект.НаименованиеТерриториальногоОрганаФСС = НаименованиеТерриториальногоОрганаФСС;
 			return Объект;
+		}
+		
+		private static readonly Hashtable Кэш = new Hashtable(1000);
+		
+		public static V82.СправочникиСсылка.Организации ВзятьИзКэша(byte[] УникальныйИдентификатор)
+		{
+			var УИ = new Guid(УникальныйИдентификатор);
+			if (Кэш.ContainsKey(УИ))
+			{
+				return (V82.СправочникиСсылка.Организации)Кэш[УИ];
+			}
+			var Ссылка = new V82.СправочникиСсылка.Организации(УникальныйИдентификатор);
+			Кэш.Add(УИ, Ссылка);
+			return Ссылка;
 		}
 		
 		public void СериализацияProtoBuf(Stream Поток)
