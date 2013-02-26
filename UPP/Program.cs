@@ -114,9 +114,11 @@ namespace UPP
             //м.Добавить(1);
 
 
-            var Стр = new Структура("Булево,Число,Дата,Строка", false, 10, "Дата", "Привет" );
+            //var Стр = new Структура("Булево,Число,Дата,Строка", false, 10, "Дата", "Привет" );
 
-            //Console.WriteLine(s);
+            var p = V82.Перечисления.ABCКлассификация.AКласс;
+            var s = p.ToJson();
+            Console.WriteLine(s);
 
             Console.ReadLine();
         }
