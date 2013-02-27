@@ -130,9 +130,6 @@
   </Binaries>
   <Reports>
     <Report>
-      <Path>UPP130226.vsp</Path>
-    </Report>
-    <Report>
       <Path>Perf\UPP130227.vsp</Path>
     </Report>
     <Report>
