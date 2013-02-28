@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Transformer.NET</name>
+    </assembly>
+    <members>
+        <member name="M:Transformer.NET.IToken.BeginHandle">
+            <summary>
+            This method is called by parser for first token in own group (Groups collection of Parser) after all tokens are found
+            </summary>
+        </member>
+        <member name="M:Transformer.NET.IToken.EndHandle">
+            <summary>
+            This method is called by parser for first token in own group after calling BegindHandle for tokens in all groups
+            </summary>
+        </member>
+        <member name="M:Transformer.NET.Net.Transform(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Transformer.NET.Net.Transform(System.String,Transformer.NET.TextTransformerConfig)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Transformer.NET.Net.Transform(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Transformer.NET.Net.Transform(System.String,System.Collections.Generic.List{System.Type})">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Transformer.NET.Net.Transform(System.String,System.Collections.Generic.List{System.Type},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Transformer.NET.TokenSelector.selectorPattern" -->
+        <member name="P:Transformer.NET.TokenSelector.Regex">
+            <summary>
+            Selector regex
+            </summary>
+        </member>
+        <member name="P:Transformer.NET.TokenSelector.GroupName">
+            <summary>
+            Name of the group in the regex to determine token position
+            </summary>
+        </member>
+        <member name="P:Transformer.NET.TokenSelector.GroupIndex">
+            <summary>
+            Index of the group in the regex to determine token position (GroupName has priority)
+            </summary>
+        </member>
+        <member name="P:Transformer.NET.TokenSelector.Pseudo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Transformer.NET.TokenSelector.PseudoArg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Transformer.NET.TokenSelector.Position">
+            <summary>
+            Indicates the position to place the token
+            </summary>
+        </member>
+        <member name="P:Transformer.NET.TokenSelector.Flags">
+            <summary>
+            Indicates the position to place the token
+            </summary>
+        </member>
+    </members>
+</doc>
