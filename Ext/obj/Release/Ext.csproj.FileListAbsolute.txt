@@ -32,3 +32,5 @@ C:\v82\UPP\Ext\bin\ru\Microsoft.AspNet.Membership.OpenAuth.resources.dll
 C:\v82\UPP\Ext\obj\Release\Ext.csprojResolveAssemblyReference.cache
 C:\v82\UPP\Ext\obj\Release\Ext.dll
 C:\v82\UPP\Ext\obj\Release\Ext.pdb
+C:\v82\UPP\Ext\bin\Ext.Net.dll
+C:\v82\UPP\Ext\bin\Ext.Net.xml
