@@ -23,6 +23,7 @@ Ext.define('MyDesktop.AccordionWindow', {
             iconCls:'accordion'
         };
     },
+    
 
     createTree : function(){
         var tree = Ext.create('Ext.tree.Panel', {

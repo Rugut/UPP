@@ -6,6 +6,10 @@
 	title: 'Банк',
 	
 	items: [
+	    
+
+
+
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -41,7 +41,7 @@ Ext.define('MyDesktop.BogusMenuModule', {
                     handler: this.createWindow,
                     scope: this,
                     windowId: ++windowIndex,
-                    FormId: 'Справочники.' + Справочник.Имя + '.ФормаЭлемента'
+                    FormId: 'Справочники.' + Справочник.Имя + '.ФормаЭлемента',
                 });
                 
                 if (НомерСправочника > 20)
@@ -50,6 +50,7 @@ Ext.define('MyDesktop.BogusMenuModule', {
                 }
                 
             }
+        
         
 
 

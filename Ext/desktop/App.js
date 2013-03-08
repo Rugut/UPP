@@ -79,6 +79,7 @@ Ext.define('MyDesktop.App', {
         win.show();
         
 
+
         // now ready...
     },
 
