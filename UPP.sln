@@ -23,12 +23,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{8419F4DC-2
 		Docs\Docs.txt = Docs\Docs.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ext", "Ext\Ext.csproj", "{AECBDEA6-C2DE-4991-A5C2-8586DEEC9898}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3EB6368A-BA7C-4386-B855-541399D1A2FD}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ext", "Ext\Ext.csproj", "{F7548E63-F45B-416C-A7BD-698CE4E772C8}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -87,10 +87,10 @@ Global
 		{1CDB1D6A-A6E7-4AAC-9262-23D9D83D07D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CDB1D6A-A6E7-4AAC-9262-23D9D83D07D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CDB1D6A-A6E7-4AAC-9262-23D9D83D07D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AECBDEA6-C2DE-4991-A5C2-8586DEEC9898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AECBDEA6-C2DE-4991-A5C2-8586DEEC9898}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AECBDEA6-C2DE-4991-A5C2-8586DEEC9898}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AECBDEA6-C2DE-4991-A5C2-8586DEEC9898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7548E63-F45B-416C-A7BD-698CE4E772C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7548E63-F45B-416C-A7BD-698CE4E772C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7548E63-F45B-416C-A7BD-698CE4E772C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7548E63-F45B-416C-A7BD-698CE4E772C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

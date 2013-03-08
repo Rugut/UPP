@@ -14,7 +14,7 @@ namespace Gen
         public static readonly string ИдентификаторБазы = ConfigurationManager.AppSettings["ИдентификаторБазы"];
         private static Dictionary<string, string> ЧитатьНастройки(string Имя)
         {
-            var Настройки = new Dictionary<string, string>();
+            var Настройки = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
             var НомерКлюча = 0;
             foreach (var КлючПараметра in ConfigurationManager.AppSettings.AllKeys)
             {

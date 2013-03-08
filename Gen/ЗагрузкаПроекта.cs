@@ -21,7 +21,7 @@ namespace Gen
                 Подключение.Open();
                 using (var Команда = Подключение.CreateCommand())
                 {
-                    Команда.CommandText = "Select Проект, Каталог, Вид, Код from dbo.V82КлассыNet(@ИдентификаторБазы)"; 
+                    Команда.CommandText = "Select Проект, Каталог, Вид, Код from dbo.V82КлассыNet(@ИдентификаторБазы)"; //Where Проект = 'ExtJs'"; 
                     Команда.Parameters.Add("ИдентификаторБазы",Настройки.ИдентификаторБазы);
                     using (var РезультатЗапроса = Команда.ExecuteReader())
                     {
