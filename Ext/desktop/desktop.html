@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <title>ExtTop - Desktop Sample App</title>
+
+    <link rel="stylesheet" type="text/css" href="../../packages/extjs.4.1.1/ext-4.1.1a/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="css/desktop.css" />
+
+    <!-- GC -->
+
+    <!-- <x-compile> -->
+    <!-- <x-bootstrap> -->
+    <script type="text/javascript" src="../../packages/extjs.4.1.1/ext-4.1.1a/ext-debug.js"></script>
+    
+   
+ 
+    <!-- </x-bootstrap> -->
+    <script type="text/javascript">
+        Ext.Loader.setPath({
+            'Ext.ux.desktop': 'js',
+            MyDesktop: ''
+        });
+
+        Ext.require('MyDesktop.App');
+
+        var myDesktopApp;
+        Ext.onReady(function () {
+            myDesktopApp = new MyDesktop.App();
+        });
+        
+        Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
+            enabled: true,  //Загрузчик активен
+            disableCaching: true,   //Не кеширует файоы
+            paths: {
+                Base: "js/Base", //Путь в пространству данных Base
+                Метаданные: "Метаданные"
+            }
+        });
+        //alert(src.FormId);
+        //var Справочники = Ext.create("Метаданные.Справочники");
+        //for (var НомерСправочника = 0,Справочник; Справочник = Справочники[НомерСправочника]; НомерСправочника++) {
+        //    alert(Справочник.Имя);
+        //}
+  
+
+        //orEach(Справочники, function(Имя, Синоним) { alert(Имя + ': ' + Синоним) });
+
+    </script>
+    <!-- </x-compile> -->
+</head>
+
+<body>
+
+<a href="http://www.sencha.com" target="_blank" alt="Powered by Ext JS"
+   id="poweredby"><div></div></a>
+
+</body>
+</html>
