@@ -76,9 +76,194 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:622px;height:121px;',
+			height: 121,width: 622,
+			columns:
+			[
+				{
+					text:'НомерCтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'НазначениеИспользования',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СуммаРегл',
+				},
+				{
+					text:'СчетПередачиБУ',
+				},
+				{
+					text:'СчетПередачиНУ',
+				},
+				{
+					text:'ДокументПередачи',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоСрокуЭксплуатации',
+				},
+				{
+					text:'ЗаполнитьПоДокументуПередачи',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДобавитьПоДокументуПередачи',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоОстаткам',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СписаниеРасходов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СпособСписанияРасходов',
+			style: 'position:absolute;left:100px;top:6px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:35px;width:622px;height:116px;',
+			height: 116,width: 622,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетДт',
+			style: 'position:absolute;left:94px;top:26px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт1',
+			style: 'position:absolute;left:94px;top:50px;width:211px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт2',
+			style: 'position:absolute;left:94px;top:74px;width:211px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт3',
+			style: 'position:absolute;left:94px;top:97px;width:211px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетДтНУ',
+			style: 'position:absolute;left:412px;top:26px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДтНУ1',
+			style: 'position:absolute;left:412px;top:50px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДтНУ2',
+			style: 'position:absolute;left:412px;top:74px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДтНУ3',
+			style: 'position:absolute;left:412px;top:97px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяЗатрат',
+			style: 'position:absolute;left:95px;top:0px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НоменклатурнаяГруппа',
+			style: 'position:absolute;left:412px;top:0px;width:210px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПричинаСписания',
+			style: 'position:absolute;left:418px;top:6px;width:210px;height:19px;',
+		},
+					]
 				},
 			]
 		},

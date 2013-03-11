@@ -287,6 +287,67 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодРегистрации',
+			style: 'position:absolute;left:113px;top:6px;width:111px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ХарактерВыплаты',
+			style: 'position:absolute;left:113px;top:31px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:422px;top:31px;width:304px;height:19px;',
+			height: 19,width: 304,
+			items:
+			[
+				{
+					title:'ПоДокументу',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснование',
+			style: 'position:absolute;left:87px;top:0px;width:217px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СпособВыплаты',
+			style: 'position:absolute;left:324px;top:6px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:422px;top:6px;width:304px;height:19px;',
+			height: 19,width: 304,
+			items:
+			[
+				{
+					title:'ПоДокументу',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Банк',
+			style: 'position:absolute;left:87px;top:0px;width:217px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},

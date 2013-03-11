@@ -80,12 +80,171 @@
 			[
 				{
 					title:'СоставГруппы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:422px;height:183px;',
+			height: 183,width: 422,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Вес',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Свойства',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:422px;height:183px;',
+			height: 183,width: 422,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Свойство',
+				},
+				{
+					text:'Значение',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'Категории',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:422px;height:183px;',
+			height: 183,width: 422,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Принадлежность',
+				},
+				{
+					text:'Категория',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

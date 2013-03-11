@@ -62,12 +62,135 @@
 			[
 				{
 					title:'БазаРаспределения',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'БазаРаспределенияЗатрат',
+			style: 'position:absolute;left:132px;top:6px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПоказательБазыРаспределения',
+			style: 'position:absolute;left:132px;top:30px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТипЦен',
+			style: 'position:absolute;left:416px;top:30px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОсновноеСырье',
+			style: 'position:absolute;left:416px;top:6px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СпособРаспределенияЗатратПоПодразделениям',
+			style: 'position:absolute;left:132px;top:173px;width:464px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Процент',
+			style: 'position:absolute;left:482px;top:54px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Коэффициент',
+			style: 'position:absolute;left:482px;top:78px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПорядокОкругления',
+			style: 'position:absolute;left:482px;top:102px;width:114px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Отбор',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:590px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:590px;height:163px;',
+			height: 163,width: 590,
+			columns:
+			[
+				{
+					text:'Использование',
+				},
+				{
+					text:'Имя',
+				},
+				{
+					text:'ВидСравнения',
+				},
+				{
+					text:'Значение',
+				},
+				{
+					text:'ЗначениеС',
+				},
+				{
+					text:'ЗначениеПо',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Фильтры',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТипФильтраПриРаспределенииЗатратНаВыпуск',
+			style: 'position:absolute;left:168px;top:6px;width:278px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:42px;width:590px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:66px;width:590px;height:128px;',
+			height: 128,width: 590,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'НоменклатурнаяГруппа',
+				},
+				{
+					text:'Продукция',
+				},
+				{
+					text:'Коэффициент',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -167,9 +167,33 @@
 			[
 				{
 					title:'ВнешнийПочтовыйКлиент',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЭлектронныйАдресОтветов',
+			style: 'position:absolute;left:88px;top:0px;width:345px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ВстроенныйПочтовыйКлиент',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'УчетнаяЗаписьДляОтправки',
+			style: 'position:absolute;left:88px;top:0px;width:345px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЭлектронныйАдресОтветовВстроенныйПочтовыйКлиент',
+			style: 'position:absolute;left:88px;top:25px;width:345px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -181,12 +205,132 @@
 			[
 				{
 					title:'Письмо',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТекстПисьма',
+			style: 'position:absolute;left:6px;top:6px;width:419px;height:164px;',
+		},
+					]
 				},
 				{
 					title:'Получатели',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:419px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'ПросмотрHTML',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:419px;height:139px;',
+			height: 139,width: 419,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Объект',
+				},
+				{
+					text:'Получатель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Вложения',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:419px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:419px;height:139px;',
+			height: 139,width: 419,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ИмяФайла',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

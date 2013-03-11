@@ -140,12 +140,127 @@
 			[
 				{
 					title:'Основная',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВидАнкеты',
+			style: 'position:absolute;left:86px;top:6px;width:336px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СекундОтвета',
+			style: 'position:absolute;left:86px;top:90px;width:46px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СтраницаВопросы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:166px;width:416px;height:80px;',
+			height: 80,width: 416,
+			columns:
+			[
+				{
+					text:'Раздел',
+				},
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Вопрос',
+				},
+				{
+					text:'Обязательный',
+				},
+				{
+					text:'ВесВопроса',
+				},
+				{
+					text:'СекундОтвета',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:142px;width:416px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:46px;width:416px;height:74px;',
+			height: 74,width: 416,
+			columns:
+			[
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Комментарий',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:416px;height:24px;',
+			items:
+			[
+				{
+					text:'УдалитьРаздел',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие1',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СтраницаМакет',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:416px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеЗаполнитьМакет',
+				},
+				{
+					text:'ДействиеОчистить',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

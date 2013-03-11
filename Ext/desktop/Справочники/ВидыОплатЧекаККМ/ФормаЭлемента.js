@@ -62,6 +62,27 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'БанкКредитор',
+			style: 'position:absolute;left:140px;top:0px;width:298px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДоговорВзаиморасчетовБанкаКредитора',
+			style: 'position:absolute;left:140px;top:24px;width:298px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПроцентБанковскойКомиссии',
+			style: 'position:absolute;left:140px;top:48px;width:92px;height:19px;',
+		},
+					]
 				},
 			]
 		},

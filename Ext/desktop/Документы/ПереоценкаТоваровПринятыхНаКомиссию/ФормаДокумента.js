@@ -76,9 +76,129 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:624px;height:139px;',
+			height: 139,width: 624,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ЦенаСтарая',
+				},
+				{
+					text:'ЦенаНовая',
+				},
+				{
+					text:'СуммаСтарая',
+				},
+				{
+					text:'СуммаНовая',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:624px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоДоговору',
+				},
+				{
+					text:'ЗаполнитьПоПоступлению',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоПоступлениюВНТТ',
+				},
+				{
+					text:'ДобавитьИзПоступленияВНТТ',
+				},
+				{
+					text:'ДобавитьИзПоступления',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:98px;top:76px;width:212px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:420px;top:76px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:92px;top:27px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},

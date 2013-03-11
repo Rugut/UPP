@@ -83,9 +83,189 @@
 			[
 				{
 					title:'Распределение',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОкончания',
+			style: 'position:absolute;left:537px;top:6px;width:99px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Периодичность',
+			style: 'position:absolute;left:97px;top:6px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоличествоПериодов',
+			style: 'position:absolute;left:358px;top:6px;width:66px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:32px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Перейти',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Перераспределить',
+				},
+				{
+					text:'ДокументыПоКонтрагенту',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'ОтключитьОтбор',
+				},
+				{
+					text:'Взаиморасчеты',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ОтборПоТекущемуЗначению',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'УстановитьОтборИСортировкуСписка___',
+				},
+				{
+					text:'История',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:56px;width:630px;height:208px;',
+			height: 208,width: 630,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'СтадияВзаимоотношений',
+				},
+				{
+					text:'XYZКлассификация',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'КоэффициентВариации',
+				},
+				{
+					text:'ЗначениеПараметра',
+				},
+				{
+					text:'ПроцентПараметра',
+				},
+				{
+					text:'МенеджерКонтрагента',
+				},
+				{
+					text:'СтадияВзаимоотношенийСтарая',
+				},
+				{
+					text:'XYZКлассификацияСтарая',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ПараметрыРаспределения',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РазовыйПокупательНач',
+			style: 'position:absolute;left:109px;top:98px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РазовыйПокупательКон',
+			style: 'position:absolute;left:227px;top:98px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'XКлассНач',
+			style: 'position:absolute;left:109px;top:154px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'XКлассКон',
+			style: 'position:absolute;left:227px;top:154px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'YКлассНач',
+			style: 'position:absolute;left:109px;top:179px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'YКлассКон',
+			style: 'position:absolute;left:227px;top:179px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ZКлассНач',
+			style: 'position:absolute;left:109px;top:204px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ZКлассКон',
+			style: 'position:absolute;left:227px;top:204px;width:86px;height:19px;',
+		},
+					]
 				},
 			]
 		},

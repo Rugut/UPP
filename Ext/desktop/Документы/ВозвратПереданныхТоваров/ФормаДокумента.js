@@ -88,15 +88,195 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:4px;top:25px;width:640px;height:160px;',
+			height: 160,width: 640,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'СчетПередачиБУ',
+				},
+				{
+					text:'СчетПередачиНУ',
+				},
+				{
+					text:'ДокументПартии',
+				},
+				{
+					text:'Качество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:0px;width:640px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоПриходномуОрдеру',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:0px;width:640px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:4px;top:25px;width:640px;height:160px;',
+			height: 160,width: 640,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаУчета',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоТаре',
+			style: 'position:absolute;left:160px;top:6px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:98px;top:54px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:100px;top:27px;width:87px;height:19px;',
+		},
+					]
 				},
 			]
 		},

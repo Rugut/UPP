@@ -76,12 +76,165 @@
 			[
 				{
 					title:'Материалы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:622px;height:121px;',
+			height: 121,width: 622,
+			columns:
+			[
+				{
+					text:'НомерCтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СуммаРегл',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'НоменклатурнаяГруппа',
+				},
+				{
+					text:'СтатьяЗатрат',
+				},
+				{
+					text:'СчетЗатрат',
+				},
+				{
+					text:'СчетЗатратНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоОстаткам',
+				},
+				{
+					text:'ДобавитьИзТребованиюНакладной',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоИнвентаризации',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'БухгалтерскийУчет',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетДт',
+			style: 'position:absolute;left:90px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт1',
+			style: 'position:absolute;left:90px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт2',
+			style: 'position:absolute;left:90px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт3',
+			style: 'position:absolute;left:90px;top:78px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'НалоговыйУчет',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетДтНУ',
+			style: 'position:absolute;left:90px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДтНУ1',
+			style: 'position:absolute;left:90px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДтНУ2',
+			style: 'position:absolute;left:90px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДтНУ3',
+			style: 'position:absolute;left:90px;top:78px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

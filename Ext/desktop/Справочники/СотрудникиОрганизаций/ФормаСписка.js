@@ -202,6 +202,164 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:25px;width:716px;height:150px;',
+			height: 150,width: 716,
+			columns:
+			[
+				{
+					text:'Группа',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'ОбособленноеПодразделение',
+				},
+				{
+					text:'Подразделение',
+				},
+				{
+					text:'Должность',
+				},
+				{
+					text:'Состояние',
+				},
+				{
+					text:'ДатаПриема',
+				},
+				{
+					text:'ДатаУвольнения',
+				},
+				{
+					text:'Аванс',
+				},
+				{
+					text:'НомерЛицевогоСчета',
+				},
+				{
+					text:'Банк',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:28px;width:175px;height:24px;',
+			items:
+			[
+				{
+					text:'НазначитьГруппуДоступа',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'УпорядочитьПо',
+				},
+				{
+					text:'ТекущаяДолжностьОрганизации',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'УстановитьПометкуУдаления',
+				},
+				{
+					text:'ИзменитьЛичныеДанные',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'ПереместитьВГруппу',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'СоздатьДокумент',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'ИзменитьАктуальность',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ТекущееПодразделениеОрганизации',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие10',
+				},
+				{
+					text:'ДатаПриемаНаРаботу',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:180px;width:716px;height:67px;',
+			height: 67,width: 716,
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОстаткаОтпусков',
+			style: 'position:absolute;left:636px;top:0px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -213,6 +371,136 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:24px;width:262px;height:515px;',
+			height: 515,width: 262,
+			items:
+			[
+				{
+					title:'ПоГруппам',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:262px;height:515px;',
+			height: 515,width: 262,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:20px;top:113px;width:182px;height:24px;',
+			items:
+			[
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'НоваяГруппа',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'ПереместитьВГруппу',
+				},
+				{
+					text:'ВыбратьГруппу',
+				},
+				{
+					text:'УстановитьПометкуУдаления',
+				},
+				{
+					text:'Обновить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
+				},
+				{
+					title:'ПоПодразделениям',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:262px;height:515px;',
+			height: 515,width: 262,
+			columns:
+			[
+				{
+					text:'Организация',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Код',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:33px;top:166px;width:203px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+			]
+		},
+					]
+				},
+				{
+					title:'ПоВидуДоговора',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:262px;height:515px;',
+			height: 515,width: 262,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+				{
+					text:'ВидДоговора',
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -224,9 +512,132 @@
 			[
 				{
 					title:'ФормаМедицинскогоСтрахования',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:1px;top:25px;width:715px;height:24px;',
+			items:
+			[
+				{
+					text:'ОтчетМедицинскоеСтрахование',
+				},
+				{
+					text:'ОформитьПолисДМС',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'СправкаМедицинскоеСтрахование',
+				},
+				{
+					text:'НовыйПолис',
+				},
+				{
+					text:'ПродлитьПолисДМС',
+				},
+				{
+					text:'ОформитьПолисОМС',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ОформитьПолисДМСНаРодственника',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:1px;top:50px;width:715px;height:108px;',
+			height: 108,width: 715,
+			columns:
+			[
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'ДатаВыдачиПолиса',
+				},
+				{
+					text:'ДатаОкончанияПолиса',
+				},
+				{
+					text:'ВидСтрахования',
+				},
+				{
+					text:'ПрограммаСтрахования',
+				},
+				{
+					text:'Родственник',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ФормаОстатковОтпусков',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:55px;width:716px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ИзменитьКоличествоДнейОтпуска',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'РедактироватьОстатокОтпуска',
+				},
+				{
+					text:'СправкаПоОтпуску',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:1px;top:81px;width:715px;height:77px;',
+			height: 77,width: 715,
+			columns:
+			[
+				{
+					text:'ВидЕжегодногоОтпуска',
+				},
+				{
+					text:'ГодРаботы',
+				},
+				{
+					text:'ДатаНачалаРабочегоГода',
+				},
+				{
+					text:'ДатаОкончанияРабочегоГода',
+				},
+				{
+					text:'Количество',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

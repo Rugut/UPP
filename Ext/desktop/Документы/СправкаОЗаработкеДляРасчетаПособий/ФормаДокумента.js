@@ -158,12 +158,219 @@
 			[
 				{
 					title:'ДанныеОЗаработке',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:58px;width:652px;height:161px;',
+			height: 161,width: 652,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'РасчетныйГод',
+				},
+				{
+					text:'Заработок',
+				},
+				{
+					text:'ДнейБолезниУходаЗаДетьми',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:33px;width:652px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель2',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодРаботыС',
+			style: 'position:absolute;left:105px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодРаботыПо',
+			style: 'position:absolute;left:218px;top:6px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ДанныеОСтрахователе',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Руководитель',
+			style: 'position:absolute;left:119px;top:123px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДолжностьРуководителя',
+			style: 'position:absolute;left:438px;top:123px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ГлавныйБухгалтер',
+			style: 'position:absolute;left:119px;top:148px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РегистрационныйНомерФСС',
+			style: 'position:absolute;left:146px;top:53px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДополнительныйКодФСС',
+			style: 'position:absolute;left:383px;top:53px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КодПодчиненностиФСС',
+			style: 'position:absolute;left:146px;top:78px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеТерриториальногоОрганаФСС',
+			style: 'position:absolute;left:259px;top:27px;width:399px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТелефонОрганизации',
+			style: 'position:absolute;left:119px;top:173px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаОбновитьДанныеСтрахователя',
+			text: 'Обновить',
+			style: 'position:absolute;left:6px;top:198px;width:82px;height:21px;',
+		},
+					]
 				},
 				{
 					title:'ДанныеОЗастрахованномЛице',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Фамилия',
+			style: 'position:absolute;left:64px;top:6px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Имя',
+			style: 'position:absolute;left:273px;top:6px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Отчество',
+			style: 'position:absolute;left:498px;top:6px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтраховойНомерПФР',
+			style: 'position:absolute;left:128px;top:31px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Адрес',
+			style: 'position:absolute;left:95px;top:135px;width:527px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВидДокумента',
+			style: 'position:absolute;left:95px;top:85px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СерияДокумента',
+			style: 'position:absolute;left:374px;top:85px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерДокумента',
+			style: 'position:absolute;left:542px;top:85px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаВыдачиДокумента',
+			style: 'position:absolute;left:542px;top:110px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КемВыданДокумент',
+			style: 'position:absolute;left:95px;top:110px;width:359px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаОбновитьДанныеСотрудника',
+			text: 'Обновить',
+			style: 'position:absolute;left:6px;top:198px;width:82px;height:21px;',
+		},
+					]
 				},
 			]
 		},

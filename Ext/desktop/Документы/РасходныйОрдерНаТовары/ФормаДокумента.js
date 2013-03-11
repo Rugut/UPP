@@ -85,12 +85,198 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
+			height: 160,width: 610,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'СерияУказываетсяПриОтпускеСоСклада',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ДокументРезерва',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'ЗаполнитьПоДокументуПередачи',
+				},
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'Проверить',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Действие5',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
+			height: 160,width: 610,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'ДокументРезерва',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:98px;top:27px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:408px;top:27px;width:208px;height:19px;',
+		},
+					]
 				},
 			]
 		},

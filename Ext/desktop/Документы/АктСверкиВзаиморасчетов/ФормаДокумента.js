@@ -104,15 +104,213 @@
 			[
 				{
 					title:'ПоДаннымОрганизации',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:0px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоДаннымУправленческогоУчета',
+				},
+				{
+					text:'ЗаполнитьПоДаннымБухгалтерскогоУчета',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:4px;top:24px;width:631px;height:176px;',
+			height: 176,width: 631,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Дата',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'Сделка',
+				},
+				{
+					text:'Документ',
+				},
+				{
+					text:'Представление',
+				},
+				{
+					text:'Дебет',
+				},
+				{
+					text:'Кредит',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокНаНачало',
+			style: 'position:absolute;left:146px;top:207px;width:77px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокНаКонец',
+			style: 'position:absolute;left:280px;top:207px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Расхождение',
+			style: 'position:absolute;left:569px;top:207px;width:66px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ПоДаннымКонтрагента',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:4px;top:24px;width:631px;height:176px;',
+			height: 176,width: 631,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Дата',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'Сделка',
+				},
+				{
+					text:'Документ',
+				},
+				{
+					text:'Представление',
+				},
+				{
+					text:'Дебет',
+				},
+				{
+					text:'Кредит',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:0px;width:631px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеЗаполнитьПоДаннымОрганизации',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокНаНачалоКонтрагент',
+			style: 'position:absolute;left:148px;top:207px;width:77px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокНаКонецКонтрагент',
+			style: 'position:absolute;left:282px;top:207px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РасхождениеКонтрагент',
+			style: 'position:absolute;left:568px;top:207px;width:67px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СчетаРасчетов',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:46px;width:627px;height:178px;',
+			height: 178,width: 627,
+			columns:
+			[
+				{
+					text:'УчаствуетВРасчетах',
+				},
+				{
+					text:'Счет',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоУмолчанию',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:97px;top:6px;width:215px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПредставительОрганизаци',
+			style: 'position:absolute;left:161px;top:53px;width:472px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПредставительКонтрагента',
+			style: 'position:absolute;left:161px;top:77px;width:472px;height:19px;',
+		},
+					]
 				},
 			]
 		},

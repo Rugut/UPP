@@ -68,9 +68,54 @@
 			[
 				{
 					title:'ЧисловойДиапазон',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'МинЗначение',
+			style: 'position:absolute;left:131px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'МаксЗначение',
+			style: 'position:absolute;left:131px;top:31px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЕдиницаИзмерения',
+			style: 'position:absolute;left:131px;top:56px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ВхождениеВСписок',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:6px;width:515px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:30px;width:515px;height:116px;',
+			height: 116,width: 515,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ЗначениеПоказателя',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

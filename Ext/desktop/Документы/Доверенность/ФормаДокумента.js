@@ -49,9 +49,81 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоЗаказу',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:622px;height:120px;',
+			height: 120,width: 622,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'НаименованиеТовара',
+				},
+				{
+					text:'ЕдиницаПоКлассификатору',
+				},
+				{
+					text:'Количество',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:98px;top:99px;width:202px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:413px;top:99px;width:215px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаПолучениеОт',
+			style: 'position:absolute;left:90px;top:27px;width:538px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПоДокументу',
+			style: 'position:absolute;left:90px;top:51px;width:538px;height:19px;',
+		},
+					]
 				},
 			]
 		},

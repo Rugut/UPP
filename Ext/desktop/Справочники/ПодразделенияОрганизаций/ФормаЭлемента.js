@@ -104,15 +104,134 @@
 			[
 				{
 					title:'ОбособленноеПодразделение',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КодПоОКАТО',
+			style: 'position:absolute;left:102px;top:39px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КПП',
+			style: 'position:absolute;left:248px;top:39px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РайонныйКоэффициент',
+			style: 'position:absolute;left:248px;top:89px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РайонныйКоэффициентРФ',
+			style: 'position:absolute;left:248px;top:113px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТерриториальныеУсловияПФР',
+			style: 'position:absolute;left:248px;top:137px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'БухучетЗарплаты',
+					items:
+					[
+					]
 				},
 				{
 					title:'СтраховыеВзносы',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:496px;height:81px;',
+			height: 81,width: 496,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:257px;top:23px;width:245px;height:132px;',
+			height: 132,width: 245,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Принадлежность',
+				},
+				{
+					text:'Категория',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:23px;width:245px;height:132px;',
+			height: 132,width: 245,
+			columns:
+			[
+				{
+					text:'Свойство',
+				},
+				{
+					text:'Значение',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:257px;top:61px;width:245px;height:24px;',
+			items:
+			[
+				{
+					text:'Категории',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:61px;width:245px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действия',
+				},
+				{
+					text:'Действие1',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

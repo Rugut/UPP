@@ -146,9 +146,159 @@
 			[
 				{
 					title:'ОсновныеСредства',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:637px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоОстаткам',
+				},
+				{
+					text:'ЗаполнитьФактическиеДанные',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьДанныеУчета',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:637px;height:265px;',
+			height: 265,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+				{
+					text:'ИнвентарныйНомер',
+				},
+				{
+					text:'МОЛ',
+				},
+				{
+					text:'СтоимостьПоДаннымУчета',
+				},
+				{
+					text:'НаличиеПоДаннымУчета',
+				},
+				{
+					text:'СтоимостьФактическая',
+				},
+				{
+					text:'НаличиеФактическое',
+				},
+				{
+					text:'ИзлишекСумма',
+				},
+				{
+					text:'ИзлишекКоличество',
+				},
+				{
+					text:'НедостачаСумма',
+				},
+				{
+					text:'НедостачаКоличество',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:100px;top:270px;width:543px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:141px;width:637px;height:123px;',
+			height: 123,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'Председатель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:117px;width:637px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснованиеВид',
+			style: 'position:absolute;left:89px;top:27px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснованиеДата',
+			style: 'position:absolute;left:229px;top:51px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснованиеНомер',
+			style: 'position:absolute;left:89px;top:51px;width:115px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаНачалаИнвентаризации',
+			style: 'position:absolute;left:429px;top:27px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОкончанияИнвентаризации',
+			style: 'position:absolute;left:429px;top:51px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПричинаИнвентаризации',
+			style: 'position:absolute;left:89px;top:75px;width:554px;height:19px;',
+		},
+					]
 				},
 			]
 		},

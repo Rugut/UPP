@@ -71,9 +71,84 @@
 			[
 				{
 					title:'ОписаниеДолжности',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Требования',
+			style: 'position:absolute;left:6px;top:25px;width:416px;height:70px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Обязанности',
+			style: 'position:absolute;left:6px;top:119px;width:416px;height:70px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Условия',
+			style: 'position:absolute;left:6px;top:213px;width:416px;height:70px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АнкетаРезюмеКандидата',
+			style: 'position:absolute;left:150px;top:289px;width:272px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Компетенции',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:416px;height:249px;',
+			height: 249,width: 416,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Компетенция',
+				},
+				{
+					text:'Должность',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:416px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

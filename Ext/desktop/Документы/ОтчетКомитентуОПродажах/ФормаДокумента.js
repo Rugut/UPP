@@ -100,21 +100,333 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:634px;height:174px;',
+			height: 174,width: 634,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ЦенаПоступления',
+				},
+				{
+					text:'СуммаПоступления',
+				},
+				{
+					text:'ЦенаРеализации',
+				},
+				{
+					text:'СуммаРеализации',
+				},
+				{
+					text:'СуммаВознаграждения',
+				},
+				{
+					text:'СуммаНДСВознаграждения',
+				},
+				{
+					text:'ДокументПоступления',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'ДатаРеализации',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоПоступлению',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ЗаполнитьРеализованнымиПоДоговору',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ЗаполнитьРеализованнымиПоПоступлению',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ЗаполнитПоПоступлениюВНТТ',
+				},
+				{
+					text:'ЗаполнитьПоДоговору1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ДенежныеСредства',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:634px;height:174px;',
+			height: 174,width: 634,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидОтчетаПоПлатежам',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'ДатаСобытия',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'СчетРасчетов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентом',
+			style: 'position:absolute;left:201px;top:11px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоАвансам',
+			style: 'position:absolute;left:201px;top:34px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СчетаДоходов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаНДСПоРеализации',
+			style: 'position:absolute;left:172px;top:30px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетДоходовБУ',
+			style: 'position:absolute;left:172px;top:54px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетДоходовНУ',
+			style: 'position:absolute;left:172px;top:78px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоБУ',
+			style: 'position:absolute;left:420px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ',
+			style: 'position:absolute;left:420px;top:78px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'УслугаПоВознаграждению',
+			style: 'position:absolute;left:172px;top:6px;width:468px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:142px;top:97px;width:166px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:414px;top:97px;width:226px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:142px;top:27px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект',
+			style: 'position:absolute;left:142px;top:121px;width:166px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ДокументыРасчетовСКонтрагентом',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:637px;height:106px;',
+			height: 106,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДокументРасчетовСКонтрагентом',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'СуммаРегл',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:637px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьТолькоПоЗаказу',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПоДокументуВал',
+			style: 'position:absolute;left:161px;top:134px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПоДокументуРегл',
+			style: 'position:absolute;left:323px;top:134px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПредоплатаВал',
+			style: 'position:absolute;left:161px;top:155px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПредоплатаРегл',
+			style: 'position:absolute;left:323px;top:155px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокРегл',
+			style: 'position:absolute;left:323px;top:181px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокВал',
+			style: 'position:absolute;left:161px;top:181px;width:134px;height:17px;',
+		},
+					]
 				},
 			]
 		},

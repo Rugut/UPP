@@ -82,12 +82,198 @@
 			[
 				{
 					title:'Затраты',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:640px;height:245px;',
+			height: 245,width: 640,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'СтатьяЗатрат',
+				},
+				{
+					text:'ХарактерЗатрат',
+				},
+				{
+					text:'СчетЗатрат',
+				},
+				{
+					text:'СчетЗатратНУ',
+				},
+				{
+					text:'ВидАналитики',
+				},
+				{
+					text:'ВидАналитикиДоп',
+				},
+				{
+					text:'ВидСубконто1',
+				},
+				{
+					text:'ВидСубконто2',
+				},
+				{
+					text:'ВидСубконто3',
+				},
+				{
+					text:'ВидСубконтоНУ1',
+				},
+				{
+					text:'ВидСубконтоНУ2',
+				},
+				{
+					text:'ВидСубконтоНУ3',
+				},
+				{
+					text:'Аналитика',
+				},
+				{
+					text:'НоменклатурнаяГруппа',
+				},
+				{
+					text:'НоменклатурнаяГруппаДоп',
+				},
+				{
+					text:'СпособРаспределенияЗатратНаВыпуск',
+				},
+				{
+					text:'Субконто1',
+				},
+				{
+					text:'Субконто2',
+				},
+				{
+					text:'Субконто3',
+				},
+				{
+					text:'СубконтоНУ1',
+				},
+				{
+					text:'СубконтоНУ2',
+				},
+				{
+					text:'СубконтоНУ3',
+				},
+				{
+					text:'Продукция',
+				},
+				{
+					text:'ХарактеристикаПродукции',
+				},
+				{
+					text:'СерияПродукции',
+				},
+				{
+					text:'ОбъектСтроительства',
+				},
+				{
+					text:'СпособСтроительства',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СуммаРегл',
+				},
+				{
+					text:'СуммаНал',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'Проект',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоОстаткам',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'БухгалтерскийУчет',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Счет',
+			style: 'position:absolute;left:90px;top:6px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто1',
+			style: 'position:absolute;left:90px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто2',
+			style: 'position:absolute;left:90px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто3',
+			style: 'position:absolute;left:90px;top:78px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'НалоговыйУчет',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетНУ',
+			style: 'position:absolute;left:90px;top:6px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ1',
+			style: 'position:absolute;left:90px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ2',
+			style: 'position:absolute;left:90px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ3',
+			style: 'position:absolute;left:90px;top:78px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

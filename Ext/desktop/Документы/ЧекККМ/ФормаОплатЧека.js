@@ -67,6 +67,33 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:24px;width:464px;height:86px;',
+			height: 86,width: 464,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидОплаты',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:464px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

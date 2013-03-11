@@ -67,9 +67,84 @@
 			[
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:618px;height:24px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ЗаполнитьОстаткамиПоДоговору',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:618px;height:102px;',
+			height: 102,width: 618,
+			columns:
+			[
+				{
+					text:'Номер строки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:92px;top:75px;width:214px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:412px;top:75px;width:212px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:93px;top:28px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},

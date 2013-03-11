@@ -15,9 +15,43 @@
 			[
 				{
 					title:'НесколькоВариантовОтвета',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:899px;height:249px;',
+			height: 249,width: 899,
+			columns:
+			[
+				{
+					text:'Выбор',
+				},
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВариантОтвета',
+				},
+				{
+					text:'Ответ',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Табличный',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:899px;height:249px;',
+			height: 249,width: 899,
+			columns:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

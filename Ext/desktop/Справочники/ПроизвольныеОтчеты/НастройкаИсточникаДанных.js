@@ -51,12 +51,51 @@
 			[
 				{
 					title:'Отчет',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ИмяИсточника',
+			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НастройкаОтчета',
+			style: 'position:absolute;left:87px;top:24px;width:256px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ПроизвольныйОтчет',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СохраненнаяНастройка',
+			style: 'position:absolute;left:87px;top:24px;width:256px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПроизвольныйОтчет',
+			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ВнешняяОбработка',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВнешняяОбработка',
+			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
+		},
+					]
 				},
 			]
 		},

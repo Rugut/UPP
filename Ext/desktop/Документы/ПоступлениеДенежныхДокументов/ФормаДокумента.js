@@ -79,9 +79,143 @@
 			[
 				{
 					title:'ОтКого',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:126px;',
+			height: 126,width: 640,
+			items:
+			[
+				{
+					title:'ОтКонтрагента',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентом',
+			style: 'position:absolute;left:82px;top:80px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДоговорКонтрагента',
+			style: 'position:absolute;left:82px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Контрагент',
+			style: 'position:absolute;left:82px;top:0px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПринятоОт',
+			style: 'position:absolute;left:82px;top:26px;width:558px;height:19px;',
+		},
+					]
+				},
+				{
+					title:'Прочее',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентомПрочее',
+			style: 'position:absolute;left:83px;top:28px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоКт1',
+			style: 'position:absolute;left:83px;top:53px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоКт2',
+			style: 'position:absolute;left:83px;top:78px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоКт3',
+			style: 'position:absolute;left:83px;top:103px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПринятоОтПрочее',
+			style: 'position:absolute;left:82px;top:0px;width:558px;height:19px;',
+		},
+					]
+				},
+				{
+					title:'ОтПодотчетногоЛица',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодотчетноеЛицо',
+			style: 'position:absolute;left:82px;top:0px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПринятоОтПодотчетноеЛицо',
+			style: 'position:absolute;left:82px;top:29px;width:558px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РасчетныйДокумент',
+			style: 'position:absolute;left:82px;top:58px;width:558px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ДенежныеДокументы',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:640px;height:102px;',
+			height: 102,width: 640,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДенежныйДокумент',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

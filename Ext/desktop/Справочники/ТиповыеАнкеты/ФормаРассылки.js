@@ -44,12 +44,93 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТекстПисьма',
+			style: 'position:absolute;left:6px;top:6px;width:443px;height:222px;',
+		},
+					]
 				},
 				{
 					title:'Страница3',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
+			items:
+			[
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Добавить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:443px;height:204px;',
+			height: 204,width: 443,
+			columns:
+			[
+				{
+					text:'Объект',
+				},
+				{
+					text:'Получатель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Страница2',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Скопировать',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:443px;height:204px;',
+			height: 204,width: 443,
+			columns:
+			[
+				{
+					text:'ИмяФайла',
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -67,9 +148,27 @@
 			[
 				{
 					title:'ВнешнийПочтовыйКлиент',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЭлектронныйАдресОтветов',
+			style: 'position:absolute;left:82px;top:0px;width:375px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ВстроенныйПочтовыйКлиент',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЭлектронныйАдресОтветовВстроенныйПочтовыйКлиент',
+			style: 'position:absolute;left:89px;top:24px;width:368px;height:19px;',
+		},
+					]
 				},
 			]
 		},

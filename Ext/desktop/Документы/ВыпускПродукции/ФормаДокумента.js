@@ -230,9 +230,108 @@
 			[
 				{
 					title:'Продукция',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:33px;width:642px;height:154px;',
+			height: 154,width: 642,
+			columns:
+			[
+				{
+					text:'НомерCтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'НоменклатурнаяГруппа',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'Заказы',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'ЗаказРезерв',
+				},
+				{
+					text:'Качество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:26px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаЗатрат',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетЗатрат',
+			style: 'position:absolute;left:86px;top:6px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетЗатратНУ',
+			style: 'position:absolute;left:86px;top:30px;width:88px;height:19px;',
+		},
+					]
 				},
 			]
 		},

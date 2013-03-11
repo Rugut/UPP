@@ -149,6 +149,78 @@
 			[
 				{
 					title:'ЦеныНоменклатуры',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:47px;width:497px;height:26px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ЗаполнитьПоЦенамКонтрагента',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДобавитьПоПоступлению',
+				},
+				{
+					text:'ОбновитьПоЦенамКонтрагента',
+				},
+				{
+					text:'ЗаполнитьПоПоступлению',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДобавитьПоЦенамКонтрагента',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СписокТиповЦен',
+			style: 'position:absolute;left:88px;top:0px;width:409px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:73px;width:497px;height:106px;',
+			height: 106,width: 497,
+			columns:
+			[
+				{
+					text:'ИндексСтрокиТаблицыЦен',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

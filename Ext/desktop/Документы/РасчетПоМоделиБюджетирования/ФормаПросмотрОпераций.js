@@ -76,6 +76,43 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:637px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

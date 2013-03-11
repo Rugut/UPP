@@ -230,9 +230,93 @@
 			[
 				{
 					title:'Анализы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:636px;height:108px;',
+			height: 108,width: 636,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ПоказательАнализа',
+				},
+				{
+					text:'ЗначениеПоказателя',
+				},
+				{
+					text:'МинЗначениеПоказателя',
+				},
+				{
+					text:'МаксЗначениеПоказателя',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'СоответствуетНормативу',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:636px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДобавитьИзТиповогоАнализа',
+				},
+				{
+					text:'ЗаполнитьПоТиповомуАнализу',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Сертификат',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснование',
+			style: 'position:absolute;left:85px;top:35px;width:557px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Заключение',
+			style: 'position:absolute;left:85px;top:59px;width:557px;height:73px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаНачалаИспытаний',
+			style: 'position:absolute;left:438px;top:10px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОкончанияИспытаний',
+			style: 'position:absolute;left:553px;top:10px;width:89px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОрганПоСертификации',
+			style: 'position:absolute;left:85px;top:10px;width:221px;height:19px;',
+		},
+					]
 				},
 			]
 		},

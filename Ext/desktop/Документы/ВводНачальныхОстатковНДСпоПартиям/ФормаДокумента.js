@@ -130,6 +130,57 @@
 			[
 				{
 					title:'ДополнительныеСведения',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:40px;width:764px;height:147px;',
+			height: 147,width: 764,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Стоимость',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'НДСВключенВСтоимость',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:764px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

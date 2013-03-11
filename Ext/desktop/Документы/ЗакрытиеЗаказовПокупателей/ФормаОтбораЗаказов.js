@@ -37,9 +37,72 @@
 			[
 				{
 					title:'СтраницаНастройки',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеДатаОтгрузки',
+			style: 'position:absolute;left:258px;top:64px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеПросроченоДнейОтгрузки',
+			style: 'position:absolute;left:318px;top:64px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеПросроченоДнейОплаты',
+			style: 'position:absolute;left:318px;top:120px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеДатаОплаты',
+			style: 'position:absolute;left:258px;top:120px;width:102px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СтраницаДополнительно',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:565px;height:114px;',
+			height: 114,width: 565,
+			columns:
+			[
+				{
+					text:'Использование',
+				},
+				{
+					text:'Имя',
+				},
+				{
+					text:'ВидСравнения',
+				},
+				{
+					text:'Значение',
+				},
+				{
+					text:'ЗначениеС',
+				},
+				{
+					text:'ЗначениеПо',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

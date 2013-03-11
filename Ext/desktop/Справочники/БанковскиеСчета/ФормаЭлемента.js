@@ -80,6 +80,21 @@
 			[
 				{
 					title:'НепрямыеРасчеты',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'БИКБанкаДляРасчетов',
+			style: 'position:absolute;left:93px;top:21px;width:153px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоррсчетБанкаДляРасчетов',
+			style: 'position:absolute;left:328px;top:21px;width:224px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ПрямыеРасчеты',
@@ -94,9 +109,51 @@
 			[
 				{
 					title:'РеквизитыСчетаОрганизации',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерИДатаРазрешения',
+			style: 'position:absolute;left:205px;top:194px;width:346px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТекстПлательщика',
+			style: 'position:absolute;left:0px;top:21px;width:551px;height:33px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОткрытия',
+			style: 'position:absolute;left:94px;top:170px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаЗакрытия',
+			style: 'position:absolute;left:94px;top:194px;width:96px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'РеквизитыСчетаКонтрагента',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТекстНазначения',
+			style: 'position:absolute;left:0px;top:76px;width:550px;height:53px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТекстПолучателя',
+			style: 'position:absolute;left:0px;top:21px;width:550px;height:33px;',
+		},
+					]
 				},
 			]
 		},

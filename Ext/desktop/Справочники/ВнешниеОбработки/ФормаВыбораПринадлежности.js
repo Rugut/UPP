@@ -28,12 +28,54 @@
 			[
 				{
 					title:'Документы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:395px;height:362px;',
+			height: 362,width: 395,
+			columns:
+			[
+				{
+					text:'',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Справочники',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:395px;height:362px;',
+			height: 362,width: 395,
+			columns:
+			[
+				{
+					text:'',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Отчеты',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:395px;height:362px;',
+			height: 362,width: 395,
+			columns:
+			[
+				{
+					text:'',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

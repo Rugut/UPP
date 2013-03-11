@@ -123,12 +123,294 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
+			height: 221,width: 630,
+			columns:
+			[
+				{
+					text:'Пометка',
+				},
+				{
+					text:'ЗаказПоставщику',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'ДобавитьВДокумент',
+				},
+				{
+					text:'Запланировано',
+				},
+				{
+					text:'ОсталосьПолучить',
+				},
+				{
+					text:'Заполнено',
+				},
+				{
+					text:'РазмещенноеКоличество',
+				},
+				{
+					text:'Размещение',
+				},
+				{
+					text:'ФлагЗаполнено',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеАнализ',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ДействиеСнятьФлажки',
+				},
+				{
+					text:'ДействиеИнвертировать',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ДействиеУстановитьФлажки',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Обнулить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Действие1',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
+			height: 221,width: 630,
+			columns:
+			[
+				{
+					text:'Пометка',
+				},
+				{
+					text:'ЗаказПоставщику',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'ДобавитьВДокумент',
+				},
+				{
+					text:'Запланировано',
+				},
+				{
+					text:'ОсталосьПолучить',
+				},
+				{
+					text:'Заполнено',
+				},
+				{
+					text:'РазмещенноеКоличество',
+				},
+				{
+					text:'Размещение',
+				},
+				{
+					text:'ФлагЗаполнено',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеУстановитьФлажки',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Обнулить',
+				},
+				{
+					text:'ДействиеИнвертировать',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'ДействиеСнятьФлажки',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ДействиеАнализ',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Услуги',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеСнятьФлажки',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'ДействиеАнализ',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'ДействиеИнвертировать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ДействиеУстановитьФлажки',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Обнулить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
+			height: 221,width: 630,
+			columns:
+			[
+				{
+					text:'Пометка',
+				},
+				{
+					text:'ЗаказПоставщику',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'ДобавитьВДокумент',
+				},
+				{
+					text:'Запланировано1',
+				},
+				{
+					text:'ОсталосьПолучить',
+				},
+				{
+					text:'Заполнено',
+				},
+				{
+					text:'ФлагЗаполнено',
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -223,9 +505,72 @@
 			[
 				{
 					title:'СтраницаНастройки',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеДатаПоступления',
+			style: 'position:absolute;left:258px;top:64px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеПросроченоДнейОтгрузки',
+			style: 'position:absolute;left:318px;top:64px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеПросроченоДнейОплаты',
+			style: 'position:absolute;left:318px;top:120px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеДатаОплаты',
+			style: 'position:absolute;left:258px;top:120px;width:102px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СтраницаДополнительно',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:630px;height:114px;',
+			height: 114,width: 630,
+			columns:
+			[
+				{
+					text:'Использование',
+				},
+				{
+					text:'Имя',
+				},
+				{
+					text:'ВидСравнения',
+				},
+				{
+					text:'Значение',
+				},
+				{
+					text:'ЗначениеС',
+				},
+				{
+					text:'ЗначениеПо',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

@@ -113,9 +113,169 @@
 			[
 				{
 					title:'Депоненты',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:646px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие13',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие10',
+				},
+				{
+					text:'Действие17',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие16',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие11',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Действие15',
+				},
+				{
+					text:'Действие12',
+				},
+				{
+					text:'СписокРаботников',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Действие14',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:646px;height:187px;',
+			height: 187,width: 646,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'Ведомость',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаУчетаДоходов',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:334px;top:6px;width:318px;height:205px;',
+			height: 205,width: 318,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходовНУ',
+			style: 'position:absolute;left:98px;top:20px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ1',
+			style: 'position:absolute;left:98px;top:45px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ2',
+			style: 'position:absolute;left:98px;top:70px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ3',
+			style: 'position:absolute;left:98px;top:95px;width:220px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:322px;height:205px;',
+			height: 205,width: 322,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходов',
+			style: 'position:absolute;left:97px;top:20px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто1',
+			style: 'position:absolute;left:97px;top:45px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто2',
+			style: 'position:absolute;left:97px;top:70px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто3',
+			style: 'position:absolute;left:97px;top:95px;width:220px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -67,15 +67,237 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
+			height: 160,width: 610,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ИсходноеРазмещение',
+				},
+				{
+					text:'НовоеРазмещение',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ЗаполнитьПоОстаткам',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоОстаткам',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
+			height: 160,width: 610,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'ИсходноеРазмещение',
+				},
+				{
+					text:'НовоеРазмещение',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Материалы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
+			height: 160,width: 610,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаИзмеренияМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ИсходноеРазмещение',
+				},
+				{
+					text:'НовоеРазмещение',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоПотребностям',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоОстаткам',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:98px;top:27px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:412px;top:27px;width:204px;height:19px;',
+		},
+					]
 				},
 			]
 		},

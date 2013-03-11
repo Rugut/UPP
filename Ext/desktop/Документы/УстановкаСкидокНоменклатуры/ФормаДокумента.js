@@ -134,18 +134,276 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеДобавитьПоГруппе',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ДействиеЗаполнитьПоЦеновымГруппам',
+				},
+				{
+					text:'ДействиеДобавитьПоЦеновымГруппам',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ДобавитьПоПоставщику',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоПоставщику',
+				},
+				{
+					text:'ДействиеЗаполнитьПоГруппе',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
+			height: 130,width: 608,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'ПроцентСкидкиНаценки',
+				},
+				{
+					text:'ОграничениеСкидкиНаценки',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ЦеновыеГруппы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
+			height: 130,width: 608,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ЦеноваяГруппа',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'ПроцентСкидкиНаценки',
+				},
+				{
+					text:'ОграничениеСкидкиНаценки',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Бонусы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
+			height: 130,width: 608,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'СпецПредложение',
+				},
+				{
+					text:'ХарактеристикаСпецПредложения',
+				},
+				{
+					text:'КоличествоСпецПредложения',
+				},
+				{
+					text:'ЕдиницаИзмеренияСпецПредложения',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			items:
+			[
+				{
+					text:'КнопкаСоставБонусов',
+				},
+				{
+					text:'КнопкаСоставНоменклатуры',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ПолучателиСкидки',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
+			height: 130,width: 608,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'Получатель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ВремяДействияСкидки',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОбщееВремяНачало',
+			style: 'position:absolute;left:416px;top:135px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОбщееВремяОкончание',
+			style: 'position:absolute;left:531px;top:135px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:608px;height:106px;',
+			height: 106,width: 608,
+			columns:
+			[
+				{
+					text:'Выбран',
+				},
+				{
+					text:'ДеньНедели',
+				},
+				{
+					text:'ВремяНачала',
+				},
+				{
+					text:'ВремяОкончания',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

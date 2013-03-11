@@ -209,15 +209,117 @@
 			[
 				{
 					title:'РаспределениеПоЛабораториям',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:33px;width:622px;height:149px;',
+			height: 149,width: 622,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Подразделение',
+				},
+				{
+					text:'ВидАнализа',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'ПробыДляВнешнейСертификации',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОрганПоСертификации',
+			style: 'position:absolute;left:151px;top:6px;width:477px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Испытания',
+			style: 'position:absolute;left:151px;top:31px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КонтрольнаяПроба',
+			style: 'position:absolute;left:505px;top:29px;width:123px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ИзъятиеПроб',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РезультатНаружногоОсмотра',
+			style: 'position:absolute;left:6px;top:27px;width:622px;height:50px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЗамечанияКУпаковкеМаркировке',
+			style: 'position:absolute;left:6px;top:107px;width:622px;height:50px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоличествоВскрытыхУпаковок',
+			style: 'position:absolute;left:173px;top:162px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Температура',
+			style: 'position:absolute;left:399px;top:162px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Влажность',
+			style: 'position:absolute;left:548px;top:162px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:412px;top:27px;width:216px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:94px;top:27px;width:216px;height:19px;',
+		},
+					]
 				},
 			]
 		},

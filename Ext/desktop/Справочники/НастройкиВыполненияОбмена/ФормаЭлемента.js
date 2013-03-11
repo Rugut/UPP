@@ -62,12 +62,102 @@
 			[
 				{
 					title:'ОбменПоРасписанию',
+					items:
+					[
+		{
+			xtype: 'button',
+			name: 'НастройкаРегламентногоЗадания',
+			text: 'Дополнительные настройки расписания ...',
+			style: 'position:absolute;left:249px;top:95px;width:235px;height:24px;',
+		},
+					]
 				},
 				{
 					title:'ОбменПоСобытиям',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:93px;top:26px;width:391px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КаталогПроверкиДоступности',
+			style: 'position:absolute;left:168px;top:97px;width:316px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВыполнятьОбменПриПоявленииФайла',
+			style: 'position:absolute;left:168px;top:121px;width:316px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоличествоЭлементовВТранзакцииНаЗапись1',
+			style: 'position:absolute;left:260px;top:26px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоличествоЭлементовВТранзакцииНаЧтение1',
+			style: 'position:absolute;left:260px;top:50px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'УчетнаяЗаписьОтправкиСообщенияОбОшибке',
+			style: 'position:absolute;left:148px;top:93px;width:336px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АдресДляОтправкиСообщенийОбОшибке',
+			style: 'position:absolute;left:148px;top:116px;width:336px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:16px;top:166px;width:468px;height:68px;',
+			height: 68,width: 468,
+			columns:
+			[
+				{
+					text:'ТекстСообщения',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:16px;top:139px;width:468px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -152,12 +152,164 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:770px;height:188px;',
+			height: 188,width: 770,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Организация',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ПринадлежностьНоменклатуры',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетДоходовБУ',
+				},
+				{
+					text:'СчетРасходовБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'СчетДоходовНУ',
+				},
+				{
+					text:'СчетРасходовНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:770px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие6',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Услуги',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:770px;height:188px;',
+			height: 188,width: 770,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Организация',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'СчетДоходовБУ',
+				},
+				{
+					text:'СчетРасходовБУ',
+				},
+				{
+					text:'СчетЗатрат',
+				},
+				{
+					text:'СчетДоходовНУ',
+				},
+				{
+					text:'СчетРасходовНУ',
+				},
+				{
+					text:'СчетЗатратНУ',
+				},
+				{
+					text:'Подразделение',
+				},
+				{
+					text:'ПодразделениеОрганизации',
+				},
+				{
+					text:'НоменклатурнаяГруппа',
+				},
+				{
+					text:'ВестиУчетЗатратПоЗаказам',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:770px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'ПорядокУчетаВДокументах',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:45px;width:770px;height:173px;',
+			height: 173,width: 770,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Организация',
+				},
+				{
+					text:'СпособРасчета',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

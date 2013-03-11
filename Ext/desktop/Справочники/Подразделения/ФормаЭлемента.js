@@ -125,9 +125,95 @@
 			[
 				{
 					title:'Основные',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:23px;width:510px;height:206px;',
+			height: 206,width: 510,
+			columns:
+			[
+				{
+					text:'Организация',
+				},
+				{
+					text:'ПодразделениеОрганизации',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СвойстваКатегории',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:257px;top:26px;width:257px;height:201px;',
+			height: 201,width: 257,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Принадлежность',
+				},
+				{
+					text:'Категория',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:26px;width:247px;height:201px;',
+			height: 201,width: 247,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Свойство',
+				},
+				{
+					text:'Значение',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:63px;width:247px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действия',
+				},
+				{
+					text:'Действие1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:257px;top:63px;width:247px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действия',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

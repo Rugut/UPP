@@ -37,21 +37,111 @@
 			[
 				{
 					title:'ПлановыйАванс',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПлановыйАванс_ДнейНеВыплаты',
+			style: 'position:absolute;left:266px;top:0px;width:40px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'АвансЗаПервуюПоловинуМесяца',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АвансЗаПервуюПоловинуМесяца_ДнейНеВыплаты',
+			style: 'position:absolute;left:266px;top:30px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АвансЗаПервуюПоловинуМесяца_Округление',
+			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Зарплата',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Зарплата_ПроцентВыплаты',
+			style: 'position:absolute;left:107px;top:43px;width:61px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Зарплата_ДнейНеВыплаты',
+			style: 'position:absolute;left:266px;top:72px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Зарплата_Округление',
+			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Дивиденды',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Дивиденды_ПроцентВыплаты',
+			style: 'position:absolute;left:107px;top:43px;width:61px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Дивиденды_Округление',
+			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ПрочиеВыплаты',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПрочиеВыплаты_ДнейНеВыплаты',
+			style: 'position:absolute;left:266px;top:74px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПрочиеВыплаты_Округление',
+			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ПрочиеВыплатыБезУдержаний',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПрочиеВыплатыБезУдержаний_ДнейНеВыплаты',
+			style: 'position:absolute;left:266px;top:30px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПрочиеВыплатыБезУдержаний_Округление',
+			style: 'position:absolute;left:101px;top:0px;width:133px;height:19px;',
+		},
+					]
 				},
 			]
 		},

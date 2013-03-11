@@ -602,6 +602,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодРегистрации',
+			style: 'position:absolute;left:52px;top:9px;width:162px;height:19px;',
+		},
+					]
 				},
 			]
 		},

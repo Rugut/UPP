@@ -62,9 +62,42 @@
 			[
 				{
 					title:'СтраницаПодчиненныхРабочихЦентров',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:52px;width:409px;height:123px;',
+			height: 123,width: 409,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'РабочийЦентр',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:27px;width:409px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'СтраницаОписание',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Описание',
+			style: 'position:absolute;left:6px;top:6px;width:409px;height:169px;',
+		},
+					]
 				},
 			]
 		},

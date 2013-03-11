@@ -1,0 +1,208 @@
+﻿Ext.define('Обработки.ВводФормулы.ФормаВводаФормулы',
+	{
+	extend: 'Ext.window.Window',
+	height: 450,width: 479,
+	iconCls: 'bogus',
+	title: 'Ввод формулы',
+	
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:479px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:92px;width:463px;height:51px;',
+			items:
+			[
+				{
+					text:'КнопкаОкр',
+				},
+				{
+					text:'СкобкаОткрыть',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'КодНаименование',
+				},
+				{
+					text:'ЗаполнитьИзШаблона',
+				},
+				{
+					text:'Кнопка2',
+				},
+				{
+					text:'Кнопка4',
+				},
+				{
+					text:'Кнопка9',
+				},
+				{
+					text:'СтеретьСлева',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'СкобкаЗакрыть',
+				},
+				{
+					text:'КнопкаМеньше',
+				},
+				{
+					text:'Кнопка8',
+				},
+				{
+					text:'КнопкаУсловие',
+				},
+				{
+					text:'Кнопка0',
+				},
+				{
+					text:'Кнопка6',
+				},
+				{
+					text:'Параметры',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Кнопка_',
+				},
+				{
+					text:'Раздвинуть',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'КнопкаЦел',
+				},
+				{
+					text:'КнопкаТочка',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Кнопка7',
+				},
+				{
+					text:'ШагВлево',
+				},
+				{
+					text:'Кнопка1',
+				},
+				{
+					text:'КнопкаРавно',
+				},
+				{
+					text:'КнопкаМакс',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Разделить',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ШагВправо',
+				},
+				{
+					text:'Кнопка3',
+				},
+				{
+					text:'Умножить',
+				},
+				{
+					text:'Минус',
+				},
+				{
+					text:'КнопкаМин',
+				},
+				{
+					text:'Кнопка5',
+				},
+				{
+					text:'Плюс',
+				},
+				{
+					text:'КнопкаБольше',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:185px;width:463px;height:85px;',
+			height: 85,width: 463,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'ВидПараметра',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:161px;width:463px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:316px;width:463px;height:101px;',
+			height: 101,width: 463,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:292px;width:463px;height:24px;',
+			items:
+			[
+			]
+		},
+	]
+});

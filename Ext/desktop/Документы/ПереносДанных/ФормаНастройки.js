@@ -31,12 +31,69 @@
 			[
 				{
 					title:'Сведений',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеОтметитьВсеРегистры',
+				},
+				{
+					text:'ДействиеСнятьОтметкуСоВсехРегистров',
+				},
+				{
+					text:'ДействиеИнвертироватьОтметкиРегистров',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Накопления',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеОтметитьВсеРегистры',
+				},
+				{
+					text:'ДействиеИнвертироватьОтметкиРегистров',
+				},
+				{
+					text:'ДействиеСнятьОтметкуСоВсехРегистров',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Расчета',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеОтметитьВсеРегистры',
+				},
+				{
+					text:'ДействиеСнятьОтметкуСоВсехРегистров',
+				},
+				{
+					text:'ДействиеИнвертироватьОтметки',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

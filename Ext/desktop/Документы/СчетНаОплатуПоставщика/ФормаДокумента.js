@@ -64,18 +64,327 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
+			height: 137,width: 628,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'ПлановаяСебестоимость',
+				},
+				{
+					text:'СуммаПлановойСебестоимости',
+				},
+				{
+					text:'СуммаОтклоненияОтСуммыПлановойСебестоимости',
+				},
+				{
+					text:'ПроцентОтклоненияОтСуммыПлановойСебестоимости',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Оборудование',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
+			height: 137,width: 628,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ЕдиницаИзмеренияМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Услуги',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
+			height: 137,width: 628,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Содержание',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
+			height: 137,width: 628,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:90px;top:99px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:418px;top:99px;width:216px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:98px;top:27px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КонтактноеЛицо',
+			style: 'position:absolute;left:90px;top:124px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВремяНапоминания',
+			style: 'position:absolute;left:418px;top:124px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерВходящегоДокумента',
+			style: 'position:absolute;left:90px;top:75px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаВходящегоДокумента',
+			style: 'position:absolute;left:418px;top:75px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснование',
+			style: 'position:absolute;left:90px;top:149px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

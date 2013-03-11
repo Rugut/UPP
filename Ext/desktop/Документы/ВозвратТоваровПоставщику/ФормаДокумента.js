@@ -115,24 +115,474 @@
 			[
 				{
 					title:'Оборудование',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
+			height: 154,width: 632,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'ДокументПоступления',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'Склад',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоПоступлению',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДобавитьИзПоступления',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
+			height: 154,width: 632,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'ДокументПоступления',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'Склад',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ЗаполнитьПоПоступлению',
+				},
+				{
+					text:'СерийныеНомера',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДобавитьИзПоступления',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПоставщику',
+				},
+				{
+					text:'Проверить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоПоступлению',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПоставщику',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ДобавитьИзПоступления',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
+			height: 154,width: 632,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'Склад',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:110px;top:70px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:418px;top:70px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:90px;top:27px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузополучатель',
+			style: 'position:absolute;left:110px;top:124px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'БанковскийСчетОрганизации',
+			style: 'position:absolute;left:418px;top:97px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузоотправитель',
+			style: 'position:absolute;left:110px;top:97px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект',
+			style: 'position:absolute;left:418px;top:124px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СчетаРасчетов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентом',
+			style: 'position:absolute;left:201px;top:25px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоАвансам',
+			style: 'position:absolute;left:201px;top:48px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоТаре',
+			style: 'position:absolute;left:538px;top:48px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоПретензиям',
+			style: 'position:absolute;left:538px;top:25px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходовБУ',
+			style: 'position:absolute;left:201px;top:111px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасходовБУ',
+			style: 'position:absolute;left:201px;top:134px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходовНУ',
+			style: 'position:absolute;left:538px;top:111px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасходовНУ',
+			style: 'position:absolute;left:538px;top:134px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяДоходовИРасходов',
+			style: 'position:absolute;left:201px;top:157px;width:437px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ДокументыРасчетовСКонтрагентом',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
+			height: 154,width: 632,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДокументРасчетовСКонтрагентом',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'СуммаРегл',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеЗаполнитьДокументыРасчетовСКонтрагентом',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'НДС',
+					items:
+					[
+					]
 				},
 			]
 		},

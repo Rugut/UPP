@@ -122,15 +122,303 @@
 			[
 				{
 					title:'ДебиторскаяЗадолженность',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:699px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'ЗаполнитьАктИзДт',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:699px;height:224px;',
+			height: 224,width: 699,
+			columns:
+			[
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'СчетРасчетов',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'Подтверждено',
+				},
+				{
+					text:'НеПодтверждено',
+				},
+				{
+					text:'ИстекСрокДавности',
+				},
+				{
+					text:'ВидЗадолженности',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'КредиторскаяЗадолженность',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:699px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие4',
+				},
+				{
+					text:'ЗаполнитьАктИзКт',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:699px;height:224px;',
+			height: 224,width: 699,
+			columns:
+			[
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'СчетРасчетов',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'Подтверждено',
+				},
+				{
+					text:'НеПодтверждено',
+				},
+				{
+					text:'ИстекСрокДавности',
+				},
+				{
+					text:'ВидЗадолженности',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаРасчетов',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:46px;width:699px;height:229px;',
+			height: 229,width: 699,
+			columns:
+			[
+				{
+					text:'Счет',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:699px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'КнопкаЗаполнить',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие8',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:146px;width:699px;height:130px;',
+			height: 130,width: 699,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'Председатель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:122px;width:699px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснованиеВид',
+			style: 'position:absolute;left:88px;top:26px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснованиеДата',
+			style: 'position:absolute;left:435px;top:26px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснованиеНомер',
+			style: 'position:absolute;left:285px;top:26px;width:115px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаНачалаИнвентаризации',
+			style: 'position:absolute;left:88px;top:50px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОкончанияИнвентаризации',
+			style: 'position:absolute;left:285px;top:50px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПричинаИнвентаризации',
+			style: 'position:absolute;left:88px;top:74px;width:617px;height:19px;',
+		},
+					]
 				},
 			]
 		},

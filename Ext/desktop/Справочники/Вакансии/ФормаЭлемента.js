@@ -107,6 +107,15 @@
 			[
 				{
 					title:'ПоСтруктуреЮридическихЛиц',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:140px;top:0px;width:248px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -179,6 +179,39 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Номер',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Дата',
+			style: 'position:absolute;left:182px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:82px;top:24px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Исполнитель',
+			style: 'position:absolute;left:413px;top:0px;width:215px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерПачки',
+			style: 'position:absolute;left:413px;top:24px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -190,6 +223,248 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:21px;width:628px;height:176px;',
+			height: 176,width: 628,
+			items:
+			[
+				{
+					title:'Работники',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие13',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие12',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьЗаявления',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'Действие11',
+				},
+				{
+					text:'Действие16',
+				},
+				{
+					text:'Действие17',
+				},
+				{
+					text:'Действие15',
+				},
+				{
+					text:'Действие14',
+				},
+				{
+					text:'Действие10',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:25px;width:614px;height:125px;',
+			height: 125,width: 614,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'ДатаПолученияСвидетельства',
+				},
+				{
+					text:'ОтметкаОПредставленииСведений',
+				},
+			]
+		},
+					]
+				},
+				{
+					title:'ДанныеВСвидетельстве',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:25px;width:614px;height:125px;',
+			height: 125,width: 614,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'ПолВСвидетельстве',
+				},
+				{
+					text:'ДатаРожденияВСвидетельстве',
+				},
+				{
+					text:'СтраховойНомерПФРВСвидетельстве',
+				},
+				{
+					text:'ФамилияВСвидетельстве',
+				},
+				{
+					text:'ИмяВСвидетельстве',
+				},
+				{
+					text:'ОтчествоВСвидетельстве',
+				},
+				{
+					text:'МестоРожденияВСвидетельстве',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие5',
+				},
+			]
+		},
+					]
+				},
+				{
+					title:'ИзменившиесяДанные',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:25px;width:614px;height:125px;',
+			height: 125,width: 614,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'Пол',
+				},
+				{
+					text:'ДатаРождения',
+				},
+				{
+					text:'Фамилия',
+				},
+				{
+					text:'Имя',
+				},
+				{
+					text:'Отчество',
+				},
+				{
+					text:'ПризнакОтменыОтчества',
+				},
+				{
+					text:'МестоРождения',
+				},
+				{
+					text:'ПризнакОтменыМестаРождения',
+				},
+				{
+					text:'АдресРегистрации',
+				},
+				{
+					text:'АдресФактический',
+				},
+				{
+					text:'Гражданство',
+				},
+				{
+					text:'Телефоны',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие5',
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -201,6 +476,23 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:0px;width:628px;height:35px;',
+			height: 35,width: 628,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},

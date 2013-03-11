@@ -176,6 +176,33 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'button',
+			name: 'КнопкаРассчитать',
+			text: 'Рассчитать',
+			style: 'position:absolute;left:0px;top:20px;width:80px;height:22px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Зарплата',
+			style: 'position:absolute;left:161px;top:20px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЕСН',
+			style: 'position:absolute;left:161px;top:44px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НДФЛ',
+			style: 'position:absolute;left:161px;top:68px;width:102px;height:19px;',
+		},
+					]
 				},
 			]
 		},

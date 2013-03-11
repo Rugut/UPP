@@ -92,12 +92,63 @@
 			[
 				{
 					title:'РегистрыСведений',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
+			height: 189,width: 620,
+			items:
+			[
+				{
+					title:'Подсказка',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'РегистрыНакопления',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
+			height: 189,width: 620,
+			items:
+			[
+				{
+					title:'Подсказка',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'РегистрыРасчета',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
+			height: 189,width: 620,
+			items:
+			[
+				{
+					title:'Подсказка',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -149,6 +200,9 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+					]
 				},
 			]
 		},

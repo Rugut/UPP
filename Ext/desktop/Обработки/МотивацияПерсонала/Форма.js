@@ -1,0 +1,487 @@
+﻿Ext.define('Обработки.МотивацияПерсонала.Форма',
+	{
+	extend: 'Ext.window.Window',
+	height: 563,width: 936,
+	iconCls: 'bogus',
+	title: 'Финансовая мотивация персонала',
+	
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:494px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:703px;top:33px;width:225px;height:521px;',
+			height: 521,width: 225,
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:33px;width:689px;height:528px;',
+			height: 528,width: 689,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:24px;width:689px;height:159px;',
+			height: 159,width: 689,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:31px;width:274px;height:128px;',
+			height: 128,width: 274,
+			columns:
+			[
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:280px;top:31px;width:409px;height:128px;',
+			height: 128,width: 409,
+			columns:
+			[
+				{
+					text:'ВидРасчета',
+				},
+				{
+					text:'Показатели',
+				},
+				{
+					text:'НаименованиеПоказатель1',
+				},
+				{
+					text:'Показатель1',
+				},
+				{
+					text:'Валюта1',
+				},
+				{
+					text:'НаименованиеПоказательТР1',
+				},
+				{
+					text:'ТарифныйРазряд1',
+				},
+				{
+					text:'НаименованиеПоказатель2',
+				},
+				{
+					text:'Показатель2',
+				},
+				{
+					text:'Валюта2',
+				},
+				{
+					text:'НаименованиеПоказательТР2',
+				},
+				{
+					text:'ТарифныйРазряд2',
+				},
+				{
+					text:'НаименованиеПоказатель3',
+				},
+				{
+					text:'Показатель3',
+				},
+				{
+					text:'Валюта3',
+				},
+				{
+					text:'НаименованиеПоказательТР3',
+				},
+				{
+					text:'ТарифныйРазряд3',
+				},
+				{
+					text:'НаименованиеПоказатель4',
+				},
+				{
+					text:'Показатель4',
+				},
+				{
+					text:'Валюта4',
+				},
+				{
+					text:'НаименованиеПоказательТР4',
+				},
+				{
+					text:'ТарифныйРазряд4',
+				},
+				{
+					text:'НаименованиеПоказатель5',
+				},
+				{
+					text:'Показатель5',
+				},
+				{
+					text:'Валюта5',
+				},
+				{
+					text:'НаименованиеПоказательТР5',
+				},
+				{
+					text:'ТарифныйРазряд5',
+				},
+				{
+					text:'НаименованиеПоказатель6',
+				},
+				{
+					text:'Показатель6',
+				},
+				{
+					text:'Валюта6',
+				},
+				{
+					text:'НаименованиеПоказательТР6',
+				},
+				{
+					text:'ТарифныйРазряд6',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:689px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'ПечатьДолжности',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюДолжности',
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:187px;width:689px;height:333px;',
+			height: 333,width: 689,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:27px;width:689px;height:24px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:233px;top:59px;width:456px;height:274px;',
+			height: 274,width: 456,
+			columns:
+			[
+				{
+					text:'Должность',
+				},
+				{
+					text:'ВидРасчета',
+				},
+				{
+					text:'Показатели',
+				},
+				{
+					text:'НаименованиеПоказатель1',
+				},
+				{
+					text:'Показатель1',
+				},
+				{
+					text:'Валюта1',
+				},
+				{
+					text:'НаименованиеПоказательТР1',
+				},
+				{
+					text:'ТарифныйРазряд1',
+				},
+				{
+					text:'НаименованиеПоказатель2',
+				},
+				{
+					text:'Показатель2',
+				},
+				{
+					text:'Валюта2',
+				},
+				{
+					text:'НаименованиеПоказательТР2',
+				},
+				{
+					text:'ТарифныйРазряд2',
+				},
+				{
+					text:'НаименованиеПоказатель3',
+				},
+				{
+					text:'Показатель3',
+				},
+				{
+					text:'Валюта3',
+				},
+				{
+					text:'НаименованиеПоказательТР3',
+				},
+				{
+					text:'ТарифныйРазряд3',
+				},
+				{
+					text:'НаименованиеПоказатель4',
+				},
+				{
+					text:'Показатель4',
+				},
+				{
+					text:'Валюта4',
+				},
+				{
+					text:'НаименованиеПоказательТР4',
+				},
+				{
+					text:'ТарифныйРазряд4',
+				},
+				{
+					text:'НаименованиеПоказатель5',
+				},
+				{
+					text:'Показатель5',
+				},
+				{
+					text:'Валюта5',
+				},
+				{
+					text:'НаименованиеПоказательТР5',
+				},
+				{
+					text:'ТарифныйРазряд5',
+				},
+				{
+					text:'НаименованиеПоказатель6',
+				},
+				{
+					text:'Показатель6',
+				},
+				{
+					text:'Валюта6',
+				},
+				{
+					text:'НаименованиеПоказательТР6',
+				},
+				{
+					text:'ТарифныйРазряд6',
+				},
+				{
+					text:'Организация',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:59px;width:221px;height:274px;',
+			height: 274,width: 221,
+			items:
+			[
+				{
+					title:'ПодразделенияОрганизаций',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:221px;height:274px;',
+			height: 274,width: 221,
+			columns:
+			[
+				{
+					text:'Организация',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Код',
+				},
+			]
+		},
+					]
+				},
+				{
+					title:'ПоЦФО',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:221px;height:274px;',
+			height: 274,width: 221,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Код',
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:881px;top:0px;width:55px;height:25px;',
+			items:
+			[
+				{
+					text:'ПереключениеСправкиФормы',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:471px;top:0px;width:410px;height:25px;',
+			height: 25,width: 410,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+	]
+});

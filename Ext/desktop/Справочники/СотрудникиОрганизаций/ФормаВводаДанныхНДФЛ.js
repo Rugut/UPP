@@ -31,12 +31,154 @@
 			[
 				{
 					title:'Вычеты',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:158px;width:522px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:46px;width:522px;height:90px;',
+			height: 90,width: 522,
+			columns:
+			[
+				{
+					text:'Период',
+				},
+				{
+					text:'ВычетыЛичныеТекст',
+				},
+				{
+					text:'ВычетыЛичныеПрименение',
+				},
+				{
+					text:'КодВычетаЛичный',
+				},
+				{
+					text:'Основание',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:182px;width:522px;height:90px;',
+			height: 90,width: 522,
+			columns:
+			[
+				{
+					text:'КолонкаПериод',
+				},
+				{
+					text:'Период',
+				},
+				{
+					text:'ПериодЗавершения',
+				},
+				{
+					text:'ВычетыНаДетейТекст',
+				},
+				{
+					text:'ВычетыНаДетейПрименение',
+				},
+				{
+					text:'КодВычетаНаДетей',
+				},
+				{
+					text:'КоличествоДетей',
+				},
+				{
+					text:'Основание',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:522px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаПредоставленияВычетов',
+			style: 'position:absolute;left:256px;top:303px;width:85px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Статус',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
+			style: 'position:absolute;left:115px;top:62px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:40px;top:183px;width:488px;height:28px;',
+			height: 28,width: 488,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Доходы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:46px;width:522px;height:276px;',
+			height: 276,width: 522,
+			columns:
+			[
+				{
+					text:'МесяцНалоговогоПериода',
+				},
+				{
+					text:'Размер',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Год',
+			style: 'position:absolute;left:67px;top:24px;width:60px;height:19px;',
+		},
+					]
 				},
 			]
 		},

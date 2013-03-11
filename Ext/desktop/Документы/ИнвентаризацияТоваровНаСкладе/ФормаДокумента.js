@@ -215,6 +215,21 @@
 			[
 				{
 					title:'Страница2',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеНастройкиНоменклатура',
+			style: 'position:absolute;left:317px;top:0px;width:271px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеНастройкиНоменклатурнаяГруппа',
+			style: 'position:absolute;left:317px;top:24px;width:271px;height:19px;',
+		},
+					]
 				},
 			]
 		},

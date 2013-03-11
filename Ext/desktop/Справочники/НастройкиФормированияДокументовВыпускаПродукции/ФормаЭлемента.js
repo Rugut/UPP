@@ -119,9 +119,45 @@
 			[
 				{
 					title:'ПараметрыФормируемыхДокументов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:86px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеОрганизации',
+			style: 'position:absolute;left:414px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Склад',
+			style: 'position:absolute;left:414px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодДетализации',
+			style: 'position:absolute;left:86px;top:30px;width:140px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'АвтоматическоеФормированиеДокументов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Задержка',
+			style: 'position:absolute;left:278px;top:78px;width:40px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -43,9 +43,75 @@
 			[
 				{
 					title:'ИсходныеКомплектующие',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:484px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:40px;width:484px;height:129px;',
+			height: 129,width: 484,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Значение',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ВозвратныеОтходы',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:484px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:40px;width:484px;height:129px;',
+			height: 129,width: 484,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Значение',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

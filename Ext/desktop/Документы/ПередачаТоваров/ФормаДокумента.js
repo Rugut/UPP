@@ -94,15 +94,267 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:4px;top:25px;width:640px;height:162px;',
+			height: 162,width: 640,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'СчетПередачиБУ',
+				},
+				{
+					text:'СчетПередачиНУ',
+				},
+				{
+					text:'Качество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:0px;width:640px;height:24px;',
+			items:
+			[
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'ДействиеОтобратьИЗаполнитьПоЗаказам',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Проверить',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ДействиеЗаполнитьПоЗаказу',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:0px;width:640px;height:24px;',
+			items:
+			[
+				{
+					text:'Подменю',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:4px;top:25px;width:640px;height:162px;',
+			height: 162,width: 640,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаУчета',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоТаре',
+			style: 'position:absolute;left:196px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходовПоТареБУ',
+			style: 'position:absolute;left:196px;top:57px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасходовПоТареБУ',
+			style: 'position:absolute;left:196px;top:81px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходовПоТареНУ',
+			style: 'position:absolute;left:542px;top:57px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасходовПоТареНУ',
+			style: 'position:absolute;left:542px;top:81px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяПрочихДоходовРасходовПоТаре',
+			style: 'position:absolute;left:196px;top:105px;width:446px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:435px;top:30px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:103px;top:30px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузоотправитель',
+			style: 'position:absolute;left:107px;top:59px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузополучатель',
+			style: 'position:absolute;left:435px;top:57px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АдресДоставки',
+			style: 'position:absolute;left:108px;top:83px;width:536px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДополнениеКАдресуДоставки',
+			style: 'position:absolute;left:108px;top:108px;width:536px;height:19px;',
+		},
+					]
 				},
 			]
 		},

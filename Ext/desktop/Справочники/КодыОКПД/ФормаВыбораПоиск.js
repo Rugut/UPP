@@ -52,6 +52,66 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:56px;top:54px;width:220px;height:19px;',
+			height: 19,width: 220,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:0px;width:308px;height:53px;',
+			height: 53,width: 308,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеВводаПоиска',
+			style: 'position:absolute;left:6px;top:6px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:175px;top:26px;width:127px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:26px;width:113px;height:24px;',
+			items:
+			[
+				{
+					text:'Поиск',
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'button',
+			name: 'ОбновитьИндекс',
+			text: 'Обновить индекс',
+			style: 'position:absolute;left:13px;top:384px;width:117px;height:23px;',
+		},
+					]
 				},
 			]
 		},

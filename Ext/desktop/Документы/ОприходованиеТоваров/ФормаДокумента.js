@@ -152,9 +152,198 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:638px;height:148px;',
+			height: 148,width: 638,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'СтатусПартии',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ПроцентРозничнойНаценки',
+				},
+				{
+					text:'ЦенаВРознице',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СуммаРегл',
+				},
+				{
+					text:'СуммаНУ',
+				},
+				{
+					text:'СуммаВР',
+				},
+				{
+					text:'СуммаПР',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'Качество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:638px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ЗаполнитьПоИнвентаризации',
+				},
+				{
+					text:'СерийныеНомера',
+				},
+				{
+					text:'Проверить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'КоррСчет',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоррСчет',
+			style: 'position:absolute;left:152px;top:6px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто1',
+			style: 'position:absolute;left:152px;top:29px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто2',
+			style: 'position:absolute;left:152px;top:52px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто3',
+			style: 'position:absolute;left:152px;top:75px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоррСчетНУ',
+			style: 'position:absolute;left:479px;top:6px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ1',
+			style: 'position:absolute;left:479px;top:29px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ2',
+			style: 'position:absolute;left:479px;top:52px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоНУ3',
+			style: 'position:absolute;left:479px;top:75px;width:165px;height:19px;',
+		},
+					]
 				},
 			]
 		},

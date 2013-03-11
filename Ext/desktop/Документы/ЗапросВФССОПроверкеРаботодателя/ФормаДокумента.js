@@ -158,12 +158,207 @@
 			[
 				{
 					title:'Страхователи',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:33px;width:293px;height:182px;',
+			height: 182,width: 293,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Справка',
+				},
+				{
+					text:'Страхователь',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:293px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодРаботыС',
+			style: 'position:absolute;left:405px;top:196px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодРаботыПо',
+			style: 'position:absolute;left:505px;top:196px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ИНН',
+			style: 'position:absolute;left:393px;top:58px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КПП',
+			style: 'position:absolute;left:549px;top:58px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РегистрационныйНомерФСССтрахователя',
+			style: 'position:absolute;left:393px;top:83px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДополнительныйКодФСССтрахователя',
+			style: 'position:absolute;left:393px;top:108px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КодПодчиненностиФСССтрахователя',
+			style: 'position:absolute;left:613px;top:108px;width:46px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеТерриториальногоОрганаФСССтрахователя',
+			style: 'position:absolute;left:312px;top:154px;width:347px;height:35px;',
+		},
+					]
 				},
 				{
 					title:'ДанныеОрганизации',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Руководитель',
+			style: 'position:absolute;left:121px;top:129px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДолжностьРуководителя',
+			style: 'position:absolute;left:439px;top:129px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РегистрационныйНомерФСС',
+			style: 'position:absolute;left:146px;top:53px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДополнительныйКодФСС',
+			style: 'position:absolute;left:379px;top:53px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КодПодчиненностиФСС',
+			style: 'position:absolute;left:599px;top:53px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеТерриториальногоОрганаФСС',
+			style: 'position:absolute;left:258px;top:27px;width:401px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаОбновитьДанныеСтрахователя',
+			text: 'Обновить',
+			style: 'position:absolute;left:6px;top:194px;width:82px;height:21px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Адрес1',
+			style: 'position:absolute;left:58px;top:79px;width:601px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ДанныеОЗастрахованномЛице',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Фамилия',
+			style: 'position:absolute;left:112px;top:6px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Имя',
+			style: 'position:absolute;left:112px;top:31px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Отчество',
+			style: 'position:absolute;left:112px;top:56px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтраховойНомерПФР',
+			style: 'position:absolute;left:112px;top:81px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Адрес',
+			style: 'position:absolute;left:112px;top:106px;width:531px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаОбновитьДанныеСотрудника',
+			text: 'Обновить',
+			style: 'position:absolute;left:6px;top:194px;width:82px;height:21px;',
+		},
+					]
 				},
 			]
 		},

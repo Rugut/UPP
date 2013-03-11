@@ -148,21 +148,485 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:915px;height:241px;',
+			height: 241,width: 915,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'СуммаБезСкидок',
+				},
+				{
+					text:'ПроцентСкидкиНаценки',
+				},
+				{
+					text:'ПроцентАвтоматическихСкидок',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'Размещение',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ПлановаяСебестоимость',
+				},
+				{
+					text:'СуммаПлановойСебестоимости',
+				},
+				{
+					text:'СуммаОтклоненияОтСуммыПлановойСебестоимости',
+				},
+				{
+					text:'ПроцентОтклоненияОтСуммыПлановойСебестоимости',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:800px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'СоставНабора',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеОчиститьРазмещение',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ПараметрыВыпуска',
+				},
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'Проверить',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Материалы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:915px;height:241px;',
+			height: 241,width: 915,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоСпецификации',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ДействиеОчиститьРазмещение',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:915px;height:241px;',
+			height: 241,width: 915,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'Размещение',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Услуги',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:915px;height:241px;',
+			height: 241,width: 915,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Содержание',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ПроцентСкидкиНаценки',
+				},
+				{
+					text:'ПроцентАвтоматическихСкидок',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:121px;top:67px;width:316px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:613px;top:67px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:121px;top:25px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КонтактноеЛицо',
+			style: 'position:absolute;left:121px;top:112px;width:316px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВремяНапоминания',
+			style: 'position:absolute;left:613px;top:112px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДисконтнаяКарта',
+			style: 'position:absolute;left:613px;top:25px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузополучатель',
+			style: 'position:absolute;left:613px;top:135px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АдресДоставки',
+			style: 'position:absolute;left:121px;top:158px;width:316px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДополнениеКАдресуДоставки',
+			style: 'position:absolute;left:613px;top:158px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснование',
+			style: 'position:absolute;left:121px;top:181px;width:316px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузоотправитель',
+			style: 'position:absolute;left:121px;top:135px;width:316px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерПоДаннымПокупателя',
+			style: 'position:absolute;left:613px;top:223px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаПоДаннымПокупателя',
+			style: 'position:absolute;left:613px;top:246px;width:140px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'АвтоматическиеСкидки',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:915px;height:259px;',
+			height: 259,width: 915,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'ПроцентАвтоматическихСкидок',
+				},
+				{
+					text:'УсловиеАвтоматическойСкидки',
+				},
+				{
+					text:'ЗначениеУсловияАвтоматическойСкидки',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

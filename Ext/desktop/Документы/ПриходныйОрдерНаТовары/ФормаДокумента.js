@@ -82,12 +82,210 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:622px;height:129px;',
+			height: 129,width: 622,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ДокументРезерва',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоСчетуПоставщика',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПоставщику',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Проверить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель2',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПоставщику',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоСчетуПоставщика',
+				},
+				{
+					text:'Действие7',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:622px;height:129px;',
+			height: 129,width: 622,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'ДокументРезерва',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:98px;top:26px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:414px;top:26px;width:214px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -139,9 +337,27 @@
 			[
 				{
 					title:'Перемещение',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументПеремещения',
+			style: 'position:absolute;left:100px;top:4px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Контрагент',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Контрагент',
+			style: 'position:absolute;left:100px;top:4px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -153,9 +369,27 @@
 			[
 				{
 					title:'ФизЛицо',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ФизЛицо',
+			style: 'position:absolute;left:100px;top:0px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Заказ',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЗаказПоставщику',
+			style: 'position:absolute;left:100px;top:0px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

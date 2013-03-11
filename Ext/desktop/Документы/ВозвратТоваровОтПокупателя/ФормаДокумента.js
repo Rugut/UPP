@@ -103,21 +103,429 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:631px;height:154px;',
+			height: 154,width: 631,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ПроцентСкидкиНаценки',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'ДокументПартии',
+				},
+				{
+					text:'Себестоимость',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'ПереданныеСобственныеБУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаБУ',
+				},
+				{
+					text:'ПереданныеПринятыеБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'ПереданныеСобственныеНУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаНУ',
+				},
+				{
+					text:'ПереданныеПринятыеНУ',
+				},
+				{
+					text:'СчетДоходовБУ',
+				},
+				{
+					text:'СубконтоБУ',
+				},
+				{
+					text:'СчетРасходовБУ',
+				},
+				{
+					text:'СчетДоходовНУ',
+				},
+				{
+					text:'СубконтоНУ',
+				},
+				{
+					text:'СчетРасходовНУ',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'ПроцентАвтоматическихСкидок',
+				},
+				{
+					text:'УсловиеАвтоматическойСкидки',
+				},
+				{
+					text:'ЗначениеУсловияАвтоматическойСкидки',
+				},
+				{
+					text:'ПриходныйОрдер',
+				},
+				{
+					text:'Склад',
+				},
+				{
+					text:'ОтражениеВУСН',
+				},
+				{
+					text:'ЗаказПокупателя',
+				},
+				{
+					text:'ПринадлежностьНоменклатуры',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:631px;height:24px;',
+			items:
+			[
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьНереализованнымиТоварамиПоДоговору',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоПриходномуОрдеру',
+				},
+				{
+					text:'ЗаполнитьНереализованнымиТоварамиПоДокументу',
+				},
+				{
+					text:'ДобавитьПоЗаказуПокупателя',
+				},
+				{
+					text:'Проверить',
+				},
+				{
+					text:'ДобавитьИзРеализации',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'ЗаполнитьПоРеализации',
+				},
+				{
+					text:'СоставНабора',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'СерийныеНомера',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:631px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоРеализации',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДобавитьПоЗаказуПокупателя',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ЗаполнитьПоПриходномуОрдеру',
+				},
+				{
+					text:'ДобавитьИзРеализации',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:631px;height:154px;',
+			height: 154,width: 631,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'ПриходныйОрдер',
+				},
+				{
+					text:'Склад',
+				},
+				{
+					text:'ЗаказПокупателя',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:95px;top:75px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:431px;top:75px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:91px;top:29px;width:78px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект',
+			style: 'position:absolute;left:95px;top:99px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДисконтнаяКарта',
+			style: 'position:absolute;left:431px;top:29px;width:206px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СчетаУчета',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентом',
+			style: 'position:absolute;left:198px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоАвансам',
+			style: 'position:absolute;left:198px;top:29px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоТаре',
+			style: 'position:absolute;left:198px;top:52px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ДокументыРасчетовСКонтрагентом',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:7px;top:27px;width:630px;height:151px;',
+			height: 151,width: 630,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Сделка',
+				},
+				{
+					text:'ДокументРасчетовСКонтрагентом',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'СуммаРегл',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:1px;width:628px;height:26px;',
+			items:
+			[
+				{
+					text:'ДействиеЗаполнитьДокументыРасчетовСКонтрагентом',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'НДС',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтразитьВКнигеПокупок',
+			style: 'position:absolute;left:108px;top:30px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаНДС',
+			style: 'position:absolute;left:108px;top:55px;width:96px;height:19px;',
+		},
+					]
 				},
 			]
 		},

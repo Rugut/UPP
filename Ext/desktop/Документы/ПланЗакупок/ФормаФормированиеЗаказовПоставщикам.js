@@ -31,9 +31,114 @@
 			[
 				{
 					title:'СтраницаПотребности',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:610px;height:383px;',
+			height: 383,width: 610,
+			columns:
+			[
+				{
+					text:'ПоставщикНоменклатура',
+				},
+				{
+					text:'Характеристика',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ТребуемоеКоличество',
+				},
+				{
+					text:'ЗаказанноеКоличество',
+				},
+				{
+					text:'ЗаказатьКоличество',
+				},
+				{
+					text:'Заказ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'УстановитьПометки',
+				},
+				{
+					text:'Обновить',
+				},
+				{
+					text:'СнятьПометки',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ЗаказыПоставщикам',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:610px;height:383px;',
+			height: 383,width: 610,
+			columns:
+			[
+				{
+					text:'ДокументПроведен',
+				},
+				{
+					text:'Документ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'УстановитьПометки',
+				},
+				{
+					text:'СнятьПометки',
+				},
+				{
+					text:'ПометитьНаУдаление',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Обновить',
+				},
+				{
+					text:'Провести',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

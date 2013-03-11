@@ -83,12 +83,102 @@
 			[
 				{
 					title:'СтраницаОС',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:430px;height:179px;',
+			height: 179,width: 430,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОС',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'ЛиквидационнаяСтоимость',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СтраницаНМА',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:430px;height:179px;',
+			height: 179,width: 430,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'НМА',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СтраницаФА',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:430px;height:179px;',
+			height: 179,width: 430,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'Договор',
+				},
+				{
+					text:'СчетУчета',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -95,12 +95,87 @@
 			[
 				{
 					title:'Описание',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Описание',
+			style: 'position:absolute;left:6px;top:6px;width:380px;height:207px;',
+		},
+					]
 				},
 				{
 					title:'Свойства',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:380px;height:183px;',
+			height: 183,width: 380,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Свойство',
+				},
+				{
+					text:'Значение',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:380px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'Категории',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:380px;height:183px;',
+			height: 183,width: 380,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Принадлежность',
+				},
+				{
+					text:'Категория',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:380px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие3',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

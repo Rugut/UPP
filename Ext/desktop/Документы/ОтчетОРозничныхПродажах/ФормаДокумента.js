@@ -188,15 +188,324 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:642px;height:144px;',
+			height: 144,width: 642,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Склад',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'ПроцентСкидкиНаценки',
+				},
+				{
+					text:'ПроцентАвтоматическихСкидок',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаБУ',
+				},
+				{
+					text:'СчетДоходовБУ',
+				},
+				{
+					text:'СубконтоБУ',
+				},
+				{
+					text:'СчетРасходовБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаНУ',
+				},
+				{
+					text:'СчетДоходовНУ',
+				},
+				{
+					text:'СубконтоНУ',
+				},
+				{
+					text:'СчетРасходовНУ',
+				},
+				{
+					text:'УсловиеАвтоматическойСкидки',
+				},
+				{
+					text:'ЗначениеУсловияАвтоматическойСкидки',
+				},
+				{
+					text:'ПринадлежностьНоменклатуры',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			items:
+			[
+				{
+					text:'СерийныеНомера',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ШтрихКоды',
+				},
+				{
+					text:'ЗаполнитьПоИнвентаризации',
+				},
+				{
+					text:'ИзТерминалаСбораДанных',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'СоставНабора',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Проверить',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Всего',
+			style: 'position:absolute;left:553px;top:180px;width:95px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВсегоНДС',
+			style: 'position:absolute;left:552px;top:201px;width:96px;height:17px;',
+		},
+					]
 				},
 				{
 					title:'ОплатаПлатежнымиКартами',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:72px;width:642px;height:102px;',
+			height: 102,width: 642,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидОплаты',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'ПроцентТорговойУступки',
+				},
+				{
+					text:'СуммаТорговойУступки',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:48px;width:642px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВсегоОплатаПлатежнымиКартами',
+			style: 'position:absolute;left:568px;top:180px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВсегоТорговаяУступка',
+			style: 'position:absolute;left:568px;top:201px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДоговорЭквайринга',
+			style: 'position:absolute;left:121px;top:6px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСЭквайрером',
+			style: 'position:absolute;left:566px;top:6px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ОплатаБанковскимиКредитами',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:642px;height:144px;',
+			height: 144,width: 642,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидОплаты',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'ПроцентБанковскойКомиссии',
+				},
+				{
+					text:'СуммаБанковскойКомиссии',
+				},
+				{
+					text:'БанкКредитор',
+				},
+				{
+					text:'ДоговорВзаиморасчетовБанкаКредитора',
+				},
+				{
+					text:'СчетУчетаРасчетовСКонтрагентом',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВсегоОплатаБанковскимиКредитами',
+			style: 'position:absolute;left:568px;top:180px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВсегоСуммаКомиссии',
+			style: 'position:absolute;left:568px;top:201px;width:80px;height:17px;',
+		},
+					]
 				},
 				{
 					title:'ПродажиПоДисконтнымКартам',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:642px;height:188px;',
+			height: 188,width: 642,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДисконтнаяКарта',
+				},
+				{
+					text:'ВладелецДисконтнойКарты',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

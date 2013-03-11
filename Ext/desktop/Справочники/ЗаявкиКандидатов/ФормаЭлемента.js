@@ -143,6 +143,65 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Состояние',
+			style: 'position:absolute;left:421px;top:28px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОткрытия',
+			style: 'position:absolute;left:520px;top:76px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Важность',
+			style: 'position:absolute;left:421px;top:52px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Вакансия',
+			style: 'position:absolute;left:111px;top:28px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Должность',
+			style: 'position:absolute;left:111px;top:52px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:76px;width:335px;height:24px;',
+			height: 24,width: 335,
+			items:
+			[
+				{
+					title:'Организация',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:105px;top:0px;width:230px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:111px;top:100px;width:230px;height:19px;',
+		},
+					]
 				},
 			]
 		},

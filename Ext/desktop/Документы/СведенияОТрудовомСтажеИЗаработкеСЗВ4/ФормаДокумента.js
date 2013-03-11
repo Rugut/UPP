@@ -347,12 +347,39 @@
 			[
 				{
 					title:'Страница2010',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КатегорияЗастрахованныхЛиц',
+			style: 'position:absolute;left:182px;top:50px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КорректируемыйПериод',
+			style: 'position:absolute;left:537px;top:25px;width:206px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СтраницаОписания',
+					items:
+					[
+					]
 				},
 				{
 					title:'Страница2009',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТерриториальныеУсловия',
+			style: 'position:absolute;left:415px;top:0px;width:66px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -370,6 +397,9 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+					]
 				},
 			]
 		},

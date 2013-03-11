@@ -98,6 +98,23 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:0px;width:567px;height:35px;',
+			height: 35,width: 567,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -109,6 +126,39 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Номер',
+			style: 'position:absolute;left:88px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Дата',
+			style: 'position:absolute;left:188px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:88px;top:24px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Исполнитель',
+			style: 'position:absolute;left:88px;top:48px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерПачки',
+			style: 'position:absolute;left:399px;top:48px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -120,6 +170,72 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:567px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'ДействиеРедактироватьСЗВ_К',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:40px;width:567px;height:145px;',
+			height: 145,width: 567,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -67,6 +67,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Описание',
+			style: 'position:absolute;left:0px;top:32px;width:454px;height:268px;',
+		},
+					]
 				},
 			]
 		},
@@ -78,6 +87,9 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+					]
 				},
 			]
 		},

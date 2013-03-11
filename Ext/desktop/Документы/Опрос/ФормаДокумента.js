@@ -71,6 +71,21 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОпрашиваемоеЛицо',
+			style: 'position:absolute;left:114px;top:1px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТиповаяАнкета',
+			style: 'position:absolute;left:114px;top:26px;width:296px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -106,9 +121,41 @@
 			[
 				{
 					title:'Опрос',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:0px;width:410px;height:258px;',
+			height: 258,width: 410,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Раздел',
+				},
+				{
+					text:'Вопрос',
+				},
+				{
+					text:'ТиповойОтвет',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тестирование',
+					items:
+					[
+		{
+			xtype: 'button',
+			name: 'КнопкаНачатьТестирование',
+			text: 'Начать тестирование',
+			style: 'position:absolute;left:145px;top:137px;width:120px;height:20px;',
+		},
+					]
 				},
 			]
 		},
@@ -120,6 +167,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Рассылка',
+			style: 'position:absolute;left:114px;top:0px;width:296px;height:19px;',
+		},
+					]
 				},
 			]
 		},

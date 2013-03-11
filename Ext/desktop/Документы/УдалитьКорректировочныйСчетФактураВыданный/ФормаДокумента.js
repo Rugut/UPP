@@ -188,9 +188,174 @@
 			[
 				{
 					title:'ТоварыИУслугиРеализация',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:751px;height:256px;',
+			height: 256,width: 751,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'НаименованиеНоменклатуры',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'КоличествоДоИзменения',
+				},
+				{
+					text:'КоличествоПослеИзменения',
+				},
+				{
+					text:'ЦенаДоИзменения',
+				},
+				{
+					text:'ЦенаПослеИзменения',
+				},
+				{
+					text:'СтоимостьБезНДСДоИзменения',
+				},
+				{
+					text:'СтоимостьБезНДСПослеИзменения',
+				},
+				{
+					text:'РазницаБезНДСКУменьшению',
+				},
+				{
+					text:'РазницаБезНДСКДоплате',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДСДоИзменения',
+				},
+				{
+					text:'СуммаНДСПослеИзменения',
+				},
+				{
+					text:'РазницаНДСКУменьшению',
+				},
+				{
+					text:'РазницаНДСКДоплате',
+				},
+				{
+					text:'СтоимостьСНДСДоИзменения',
+				},
+				{
+					text:'СтоимостьСНДСПослеИзменения',
+				},
+				{
+					text:'РазницаСНДСКУменьшению',
+				},
+				{
+					text:'РазницаСНДСКДоплате',
+				},
+				{
+					text:'ВидЦенности',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:751px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоСчетуФактуре',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'РеквизитыСчетаФактуры',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеПродавца',
+			style: 'position:absolute;left:150px;top:6px;width:607px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АдресПродавца',
+			style: 'position:absolute;left:150px;top:30px;width:607px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ИННПродавца',
+			style: 'position:absolute;left:150px;top:54px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КПППродавца',
+			style: 'position:absolute;left:290px;top:54px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеПокупателя',
+			style: 'position:absolute;left:150px;top:82px;width:607px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АдресПокупателя',
+			style: 'position:absolute;left:150px;top:106px;width:607px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ИННПокупателя',
+			style: 'position:absolute;left:150px;top:130px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КПППокупателя',
+			style: 'position:absolute;left:290px;top:130px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ФИОРуководителя',
+			style: 'position:absolute;left:150px;top:186px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ФИОГлавногоБухгалтера',
+			style: 'position:absolute;left:517px;top:186px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СвидетельствоИП',
+			style: 'position:absolute;left:150px;top:210px;width:607px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВалютаДокумента',
+			style: 'position:absolute;left:150px;top:158px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},

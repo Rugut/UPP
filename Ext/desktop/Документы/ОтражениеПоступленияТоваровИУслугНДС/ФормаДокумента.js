@@ -131,9 +131,123 @@
 			[
 				{
 					title:'ТоварыИУслуги',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеЗаполнить1',
+				},
+				{
+					text:'ДействиеЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:631px;height:163px;',
+			height: 163,width: 631,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'СчетЗатрат',
+				},
+				{
+					text:'Субконто1',
+				},
+				{
+					text:'Субконто2',
+				},
+				{
+					text:'Субконто3',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'Событие',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ДокументыОплаты',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:631px;height:163px;',
+			height: 163,width: 631,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

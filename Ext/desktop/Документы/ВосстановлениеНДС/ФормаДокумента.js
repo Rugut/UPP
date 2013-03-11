@@ -101,9 +101,96 @@
 			[
 				{
 					title:'НДСкВосстановлению',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:221px;',
+			height: 221,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'СнятьПризнакДопЛиста',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'УстановитьПризнакДопЛиста',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:92px;top:6px;width:282px;height:19px;',
+		},
+					]
 				},
 			]
 		},

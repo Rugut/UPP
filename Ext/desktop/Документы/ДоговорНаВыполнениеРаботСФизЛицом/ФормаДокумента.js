@@ -257,9 +257,21 @@
 			[
 				{
 					title:'СтраницаАвторских',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВидАвторскогоДоговора',
+			style: 'position:absolute;left:88px;top:6px;width:240px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СтраницаСтудОтрядов',
+					items:
+					[
+					]
 				},
 			]
 		},

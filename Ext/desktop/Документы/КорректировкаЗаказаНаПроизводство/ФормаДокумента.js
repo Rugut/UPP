@@ -82,12 +82,207 @@
 			[
 				{
 					title:'Продукция',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
+			height: 177,width: 627,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'Заказ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоЗаказуНаПроизводство',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ПараметрыВыпуска',
+				},
+				{
+					text:'ДобавитьПоЗаказуНаПроизводство',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель2',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Материалы',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:627px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуНаПроизводство',
+				},
+				{
+					text:'ЗаполнитьПоСпецификации',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:25px;width:627px;height:176px;',
+			height: 176,width: 627,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ВидВоспроизводства',
+				},
+				{
+					text:'Размещение',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'Подразделение',
+				},
+				{
+					text:'Продукция',
+				},
+				{
+					text:'ХарактеристикаПродукции',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:94px;top:72px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Исполнитель',
+			style: 'position:absolute;left:94px;top:27px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснование',
+			style: 'position:absolute;left:94px;top:96px;width:223px;height:19px;',
+		},
+					]
 				},
 			]
 		},

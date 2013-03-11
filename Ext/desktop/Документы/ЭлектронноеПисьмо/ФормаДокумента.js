@@ -284,6 +284,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СкрытыеКопии',
+			style: 'position:absolute;left:95px;top:0px;width:552px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -301,15 +310,364 @@
 			[
 				{
 					title:'Письмо',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			items:
+			[
+				{
+					text:'НайтиДобавить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			items:
+			[
+				{
+					text:'НайтиДобавить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			items:
+			[
+				{
+					text:'НайтиДобавить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			items:
+			[
+				{
+					text:'ОткрытьСсылку',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ГруппаУчетнойЗаписи',
+			style: 'position:absolute;left:101px;top:6px;width:277px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:101px;top:212px;width:538px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Комментарий',
+			style: 'position:absolute;left:101px;top:190px;width:538px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОтправления',
+			style: 'position:absolute;left:488px;top:83px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Дата',
+			style: 'position:absolute;left:488px;top:59px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Номер',
+			style: 'position:absolute;left:488px;top:6px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Основание',
+			style: 'position:absolute;left:101px;top:166px;width:538px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаТранспорта',
+			style: 'position:absolute;left:488px;top:107px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Предмет',
+			style: 'position:absolute;left:101px;top:31px;width:538px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ВложенияСохраненные',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:632px;height:201px;',
+			height: 201,width: 632,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'ИмяФайла',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие11',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'СохранитьНаДиске',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'ОткрытьФайлы',
+				},
+				{
+					text:'УстановитьПометкуУдаления',
+				},
+				{
+					text:'Действие10',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'СохранитьНаДиске',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'УстановитьПометкуУдаления',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ОткрытьФайлы',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ВложенияНовые',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:632px;height:201px;',
+			height: 201,width: 632,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'ИмяФайла',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'СохранитьНаДиске',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'СохранитьНаДиске',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Обновить',
+				},
+				{
+					text:'Обновить',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действия',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'ОткрытьФайлы',
+				},
+				{
+					text:'ОткрытьФайлы',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие8',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

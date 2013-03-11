@@ -98,6 +98,23 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:0px;width:749px;height:35px;',
+			height: 35,width: 749,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -109,6 +126,63 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:105px;top:0px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Исполнитель',
+			style: 'position:absolute;left:446px;top:25px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодРегистрации',
+			style: 'position:absolute;left:105px;top:25px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерПлатежногоПоручения',
+			style: 'position:absolute;left:54px;top:97px;width:271px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаПлатежногоПоручения',
+			style: 'position:absolute;left:357px;top:97px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаИсполненияПлатежногоПоручения',
+			style: 'position:absolute;left:591px;top:97px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Номер',
+			style: 'position:absolute;left:446px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Дата',
+			style: 'position:absolute;left:546px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерПачки',
+			style: 'position:absolute;left:105px;top:49px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -120,6 +194,108 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:40px;width:749px;height:204px;',
+			height: 204,width: 749,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'Фамилия',
+				},
+				{
+					text:'Имя',
+				},
+				{
+					text:'Отчество',
+				},
+				{
+					text:'СтраховойНомерПФР',
+				},
+				{
+					text:'ВзносовРаботника',
+				},
+				{
+					text:'ВзносовРаботодателя',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:749px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеЗаполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие14',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие17',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'УдалитьПустые',
+				},
+				{
+					text:'Рассчитать',
+				},
+				{
+					text:'Действие13',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие10',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие16',
+				},
+				{
+					text:'Действие15',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'Действие12',
+				},
+				{
+					text:'Действие11',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'СписокРаботников',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

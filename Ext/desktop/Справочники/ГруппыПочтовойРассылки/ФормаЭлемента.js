@@ -62,9 +62,102 @@
 			[
 				{
 					title:'СоставГруппы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:376px;height:270px;',
+			height: 270,width: 376,
+			columns:
+			[
+				{
+					text:'Объект',
+				},
+				{
+					text:'Владелец',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Очистить',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие9',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ИспользованиеВУчетныхЗаписях',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:376px;height:270px;',
+			height: 270,width: 376,
+			columns:
+			[
+				{
+					text:'Использование',
+				},
+				{
+					text:'УчетнаяЗапись',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'СнятьФлажки',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'УстановитьФлажки',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

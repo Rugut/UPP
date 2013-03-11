@@ -113,12 +113,131 @@
 			[
 				{
 					title:'Ведомости',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:467px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие15',
+				},
+				{
+					text:'Действие12',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Обновить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие13',
+				},
+				{
+					text:'Действие11',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'Действие16',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие10',
+				},
+				{
+					text:'Действие14',
+				},
+				{
+					text:'Действие17',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:467px;height:159px;',
+			height: 159,width: 467,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Ведомость',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Работники',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:467px;height:177px;',
+			height: 177,width: 467,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Физлицо',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаУчета',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасходов',
+			style: 'position:absolute;left:90px;top:6px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто1',
+			style: 'position:absolute;left:90px;top:31px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто2',
+			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Субконто3',
+			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -79,12 +79,360 @@
 			[
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:642px;height:207px;',
+			height: 207,width: 642,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'КоличествоДоКорректировки',
+				},
+				{
+					text:'КоличествоДоИзменения',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЦенаДоКорректировки',
+				},
+				{
+					text:'ЦенаДоИзменения',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'СуммаДоКорректировки',
+				},
+				{
+					text:'СуммаДоИзменения',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДСДоИзменения',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДСДоКорректировки',
+				},
+				{
+					text:'СуммаНДСДоИзменения',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'ВсегоДоКорректировки',
+				},
+				{
+					text:'ВсегоДоИзменения',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'СпособСписанияОстаткаТоваров',
+				},
+				{
+					text:'Склад',
+				},
+				{
+					text:'ЗаказПокупателя',
+				},
+				{
+					text:'ПринадлежностьНоменклатуры',
+				},
+				{
+					text:'Качество',
+				},
+				{
+					text:'НомерГТД',
+				},
+				{
+					text:'СтранаПроисхождения',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаБУ',
+				},
+				{
+					text:'ПереданныеСобственныеБУ',
+				},
+				{
+					text:'ПереданныеПринятыеБУ',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+				{
+					text:'ПринятыеСчетУчетаНУ',
+				},
+				{
+					text:'ПереданныеСобственныеНУ',
+				},
+				{
+					text:'ПереданныеПринятыеНУ',
+				},
+				{
+					text:'СчетДоходовБУ',
+				},
+				{
+					text:'СубконтоБУ',
+				},
+				{
+					text:'СчетРасходовБУ',
+				},
+				{
+					text:'СчетДоходовНУ',
+				},
+				{
+					text:'СубконтоНУ',
+				},
+				{
+					text:'СчетРасходовНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'СерийныеНомера',
+				},
+				{
+					text:'СоставНабора',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель5',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Услуги',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:642px;height:207px;',
+			height: 207,width: 642,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'СодержаниеДоИзменения',
+				},
+				{
+					text:'Содержание',
+				},
+				{
+					text:'КоличествоДоКорректировки',
+				},
+				{
+					text:'КоличествоДоИзменения',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЦенаДоКорректировки',
+				},
+				{
+					text:'ЦенаДоИзменения',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'СуммаДоКорректировки',
+				},
+				{
+					text:'СуммаДоИзменения',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДСДоИзменения',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДСДоКорректировки',
+				},
+				{
+					text:'СуммаНДСДоИзменения',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'ВсегоДоКорректировки',
+				},
+				{
+					text:'ВсегоДоИзменения',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'ЗаказПокупателя',
+				},
+				{
+					text:'СчетДоходовБУ',
+				},
+				{
+					text:'СубконтоБУ',
+				},
+				{
+					text:'СчетРасходовБУ',
+				},
+				{
+					text:'СчетДоходовНУ',
+				},
+				{
+					text:'СубконтоНУ',
+				},
+				{
+					text:'СчетРасходовНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:114px;top:180px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:99px;top:59px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'БанковскийСчетОрганизации',
+			style: 'position:absolute;left:114px;top:155px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ГрузоотправительДополнительно',
+			style: 'position:absolute;left:114px;top:130px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ГрузополучательДополнительно',
+			style: 'position:absolute;left:430px;top:130px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяПрочихДоходовИРасходов',
+			style: 'position:absolute;left:113px;top:6px;width:535px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АдресДоставки',
+			style: 'position:absolute;left:114px;top:105px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДополнениеКАдресуДоставки',
+			style: 'position:absolute;left:430px;top:105px;width:218px;height:19px;',
+		},
+					]
 				},
 			]
 		},

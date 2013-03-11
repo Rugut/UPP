@@ -236,6 +236,21 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ХарактерВыплаты',
+			style: 'position:absolute;left:110px;top:31px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:110px;top:6px;width:400px;height:19px;',
+		},
+					]
 				},
 			]
 		},

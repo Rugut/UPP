@@ -56,9 +56,27 @@
 			[
 				{
 					title:'Параметры',
+					items:
+					[
+					]
 				},
 				{
 					title:'АвтоматическоеВыполнение',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерДняНачалоЗапуска',
+			style: 'position:absolute;left:148px;top:78px;width:22px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерДняКонецЗапуска',
+			style: 'position:absolute;left:187px;top:78px;width:22px;height:19px;',
+		},
+					]
 				},
 			]
 		},

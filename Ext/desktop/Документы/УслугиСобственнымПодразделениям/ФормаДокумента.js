@@ -200,9 +200,111 @@
 			[
 				{
 					title:'Затраты',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:641px;height:179px;',
+			height: 179,width: 641,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ПодразделениеПолучатель',
+				},
+				{
+					text:'ПодразделениеОрганизацииПолучатель',
+				},
+				{
+					text:'СтатьяЗатрат',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Счет',
+				},
+				{
+					text:'СчетНУ',
+				},
+				{
+					text:'ВидАналитики',
+				},
+				{
+					text:'ВидАналитикиДоп',
+				},
+				{
+					text:'Аналитика',
+				},
+				{
+					text:'НоменклатурнаяГруппа',
+				},
+				{
+					text:'Продукция',
+				},
+				{
+					text:'ХарактеристикаПродукции',
+				},
+				{
+					text:'СерияПродукции',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'Проект',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:641px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Исполнитель',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:94px;top:6px;width:212px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетЗатрат',
+			style: 'position:absolute;left:94px;top:54px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеОрганизации',
+			style: 'position:absolute;left:416px;top:6px;width:231px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НоменклатурнаяГруппа',
+			style: 'position:absolute;left:94px;top:30px;width:212px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетЗатратНУ',
+			style: 'position:absolute;left:94px;top:78px;width:88px;height:19px;',
+		},
+					]
 				},
 			]
 		},

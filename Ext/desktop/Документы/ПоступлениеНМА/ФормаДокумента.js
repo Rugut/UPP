@@ -82,12 +82,99 @@
 			[
 				{
 					title:'НематериальныеАктивы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
+			height: 160,width: 610,
+			columns:
+			[
+				{
+					text:'НомерCтроки',
+				},
+				{
+					text:'НематериальныйАктив',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'СчетУчетаБУ',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СчетУчетаНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:92px;top:52px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерВходящегоДокумента',
+			style: 'position:absolute;left:92px;top:27px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаВходящегоДокумента',
+			style: 'position:absolute;left:403px;top:27px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:92px;top:76px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СчетаУчета',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентом',
+			style: 'position:absolute;left:200px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоАвансам',
+			style: 'position:absolute;left:200px;top:29px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},

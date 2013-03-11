@@ -83,12 +83,117 @@
 			[
 				{
 					title:'Общие',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТипЦенРозничнойТорговли',
+			style: 'position:absolute;left:94px;top:62px;width:411px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:94px;top:110px;width:411px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВидСклада',
+			style: 'position:absolute;left:94px;top:38px;width:411px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерСекции',
+			style: 'position:absolute;left:94px;top:86px;width:33px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтветственноеЛицо',
+			style: 'position:absolute;left:94px;top:9px;width:326px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаИстория',
+			text: 'История...',
+			style: 'position:absolute;left:423px;top:9px;width:82px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Свойства',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:499px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:499px;height:127px;',
+			height: 127,width: 499,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Свойство',
+				},
+				{
+					text:'Значение',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Категории',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:499px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие3',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:499px;height:127px;',
+			height: 127,width: 499,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Принадлежность',
+				},
+				{
+					text:'Категория',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

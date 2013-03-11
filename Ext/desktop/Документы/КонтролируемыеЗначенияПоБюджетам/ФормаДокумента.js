@@ -104,9 +104,81 @@
 			[
 				{
 					title:'Выборочно',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:8px;width:394px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:33px;width:394px;height:144px;',
+			height: 144,width: 394,
+			columns:
+			[
+				{
+					text:'Период',
+				},
+				{
+					text:'ВидОтклоненияКонтролируемыхЗначений',
+				},
+				{
+					text:'СтатьяОборотов',
+				},
+				{
+					text:'Отклонение',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'ЦФО',
+				},
+				{
+					text:'Проект',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'Номенклатура',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ПоВсем',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаКонцаКонтролирующегоСценария',
+			style: 'position:absolute;left:174px;top:29px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Отклонение',
+			style: 'position:absolute;left:174px;top:77px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВидОтклоненияКонтролируемыхЗначений',
+			style: 'position:absolute;left:174px;top:53px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаНачалаКонтролирующегоСценария',
+			style: 'position:absolute;left:174px;top:5px;width:100px;height:19px;',
+		},
+					]
 				},
 			]
 		},

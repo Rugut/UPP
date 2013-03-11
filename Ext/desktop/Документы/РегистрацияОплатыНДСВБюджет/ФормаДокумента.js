@@ -101,9 +101,81 @@
 			[
 				{
 					title:'ПоДоговорамНалоговогоАгента',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:232px;',
+			height: 232,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ДляСобственногоПотребления',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:232px;',
+			height: 232,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

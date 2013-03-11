@@ -107,6 +107,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КПП',
+			style: 'position:absolute;left:106px;top:0px;width:92px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -124,9 +133,33 @@
 			[
 				{
 					title:'ПредставительЮрЛицо',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументПредставителя',
+			style: 'position:absolute;left:130px;top:33px;width:328px;height:82px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'УполномоченноеЛицоПредставителя',
+			style: 'position:absolute;left:130px;top:5px;width:328px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ПредставительФизЛицо',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументПредставителя1',
+			style: 'position:absolute;left:130px;top:9px;width:328px;height:106px;',
+		},
+					]
 				},
 			]
 		},

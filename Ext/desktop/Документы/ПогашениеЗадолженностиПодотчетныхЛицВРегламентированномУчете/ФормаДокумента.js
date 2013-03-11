@@ -107,9 +107,117 @@
 			[
 				{
 					title:'Начисления',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеЗаполнитьДолгамиПодотчетныхЛиц',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:27px;width:622px;height:202px;',
+			height: 202,width: 622,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Физлицо',
+				},
+				{
+					text:'ПодразделениеОрганизации',
+				},
+				{
+					text:'Результат',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'ВалютаВзаиморасчетов',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'КурсВзаиморасчетов',
+				},
+				{
+					text:'КратностьВзаиморасчетов',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:622px;height:211px;',
+			height: 211,width: 622,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Физлицо',
+				},
+				{
+					text:'ПодразделениеОрганизации',
+				},
+				{
+					text:'Результат',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'ВалютаВзаиморасчетов',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'КурсВзаиморасчетов',
+				},
+				{
+					text:'КратностьВзаиморасчетов',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеЗаполнитьДолгамиПодотчетныхЛиц',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

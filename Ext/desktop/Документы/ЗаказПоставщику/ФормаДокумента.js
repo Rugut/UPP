@@ -145,21 +145,498 @@
 			[
 				{
 					title:'Оборудование',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:793px;height:24px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
+			height: 187,width: 793,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаИзмеренияМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Товары',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
+			height: 187,width: 793,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'ПлановаяСебестоимость',
+				},
+				{
+					text:'СуммаПлановойСебестоимости',
+				},
+				{
+					text:'СуммаОтклоненияОтСуммыПлановойСебестоимости',
+				},
+				{
+					text:'ПроцентОтклоненияОтСуммыПлановойСебестоимости',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:793px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ДобавитьПоВнутреннемуЗаказу',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуНаПроизводство',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоВнутреннемуЗаказу',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоВнутреннемуЗаказуКомплектующие',
+				},
+				{
+					text:'ЗаполнитьПотребностями',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПокупателяКомплектующие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ДобавитьПоЗаказуНаПроизводство',
+				},
+				{
+					text:'ДобавитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ДобавитьПоВнутреннемуЗаказуКомплектующие',
+				},
+				{
+					text:'ПоискПоШтрихКоду',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'ДобавитьПоЗаказуПокупателяКомплектующие',
+				},
+				{
+					text:'ДобавитьПотребности',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Материалы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
+			height: 187,width: 793,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:793px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьПоСпецификации',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Услуги',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
+			height: 187,width: 793,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Содержание',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:793px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Тара',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:793px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДобавитьПоВнутреннемуЗаказу',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'ЗаполнитьПоВнутреннемуЗаказу',
+				},
+				{
+					text:'ДобавитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ЗаполнитьПотребностями',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДобавитьПотребности',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
+			height: 187,width: 793,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ЕдиницаХранения',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'Заказ',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодразделениеКомпании',
+			style: 'position:absolute;left:116px;top:64px;width:267px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:522px;top:64px;width:277px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:116px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КонтактноеЛицо',
+			style: 'position:absolute;left:116px;top:107px;width:267px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВремяНапоминания',
+			style: 'position:absolute;left:522px;top:107px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументОснование',
+			style: 'position:absolute;left:116px;top:131px;width:267px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерПоДаннымПоставщика',
+			style: 'position:absolute;left:522px;top:174px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаПоДаннымПоставщика',
+			style: 'position:absolute;left:522px;top:198px;width:140px;height:19px;',
+		},
+					]
 				},
 			]
 		},

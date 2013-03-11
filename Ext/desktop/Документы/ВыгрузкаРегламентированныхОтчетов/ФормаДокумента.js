@@ -95,6 +95,63 @@
 			[
 				{
 					title:'Отчеты',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:45px;width:704px;height:211px;',
+			height: 211,width: 704,
+			columns:
+			[
+				{
+					text:'Пометка',
+				},
+				{
+					text:'Отчет',
+				},
+				{
+					text:'Вид',
+				},
+				{
+					text:'Период',
+				},
+				{
+					text:'Комментарий',
+				},
+				{
+					text:'НомерСтрокиТекстаВыгрузки',
+				},
+				{
+					text:'Ссылка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:19px;width:704px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'РаспометитьВсе',
+				},
+				{
+					text:'Текст',
+				},
+				{
+					text:'ПометитьВсе',
+				},
+				{
+					text:'Разделитель2',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -58,24 +58,398 @@
 			[
 				{
 					title:'Расчеты',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Контрагент',
+			style: 'position:absolute;left:87px;top:6px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:30px;width:633px;height:103px;',
+			height: 103,width: 633,
+			items:
+			[
+				{
+					title:'ПлатежПоОднойСделке',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДоговорКонтрагента',
+			style: 'position:absolute;left:81px;top:0px;width:167px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Сделка',
+			style: 'position:absolute;left:409px;top:0px;width:216px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:81px;top:24px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КурсВзаиморасчетов',
+			style: 'position:absolute;left:81px;top:48px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаПодбор',
+			text: 'Подбор',
+			style: 'position:absolute;left:255px;top:0px;width:48px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяДвиженияДенежныхСредств',
+			style: 'position:absolute;left:409px;top:72px;width:216px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаПлатежа',
+			style: 'position:absolute;left:409px;top:48px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект',
+			style: 'position:absolute;left:81px;top:72px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДокументРасчетовСКонтрагентом',
+			style: 'position:absolute;left:409px;top:24px;width:216px;height:19px;',
+		},
+					]
+				},
+				{
+					title:'ПлатежПоНесколькимСделкам',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:24px;width:633px;height:79px;',
+			height: 79,width: 633,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'Сделка',
+				},
+				{
+					text:'ДокументРасчетовСКонтрагентом',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'КурсВзаиморасчетов',
+				},
+				{
+					text:'СуммаПлатежа',
+				},
+				{
+					text:'СтатьяДвиженияДенежныхСредств',
+				},
+				{
+					text:'Проект',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:294px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ВыдачаПодотчетнику',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВалютаВзаиморасчетовПодотчетника',
+			style: 'position:absolute;left:415px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ФизЛицо',
+			style: 'position:absolute;left:87px;top:6px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РасчетныйДокумент',
+			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаПогашенияАванса',
+			style: 'position:absolute;left:87px;top:102px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КурсВзаиморасчетовПодотчетника',
+			style: 'position:absolute;left:87px;top:54px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетовПодотчетника',
+			style: 'position:absolute;left:87px;top:30px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяДвиженияДенежныхСредств1',
+			style: 'position:absolute;left:415px;top:78px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаПлатежаПодотчет',
+			style: 'position:absolute;left:415px;top:54px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект1',
+			style: 'position:absolute;left:87px;top:78px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ВыдачаКассеККМ',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КассаККМ',
+			style: 'position:absolute;left:415px;top:6px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяДвиженияДенежныхСредств2',
+			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетовККМ',
+			style: 'position:absolute;left:87px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект2',
+			style: 'position:absolute;left:87px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВидВыдачиДенежныхСредств',
+			style: 'position:absolute;left:325px;top:6px;width:82px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Прочие',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяДвиженияДенежныхСредств3',
+			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетовПрочие',
+			style: 'position:absolute;left:87px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КонтрагентПрочие',
+			style: 'position:absolute;left:415px;top:6px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект3',
+			style: 'position:absolute;left:87px;top:30px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Описание',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Описание',
+			style: 'position:absolute;left:6px;top:6px;width:628px;height:127px;',
+		},
+					]
 				},
 				{
 					title:'Размещение',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:30px;width:358px;height:24px;',
+			items:
+			[
+				{
+					text:'ДействиеЗаполнитьИПровести',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:54px;width:627px;height:79px;',
+			height: 79,width: 627,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'МестоРазмещения',
+				},
+				{
+					text:'СуммаПлатежа',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Бюджетирование',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Сценарий',
+			style: 'position:absolute;left:87px;top:6px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяОборотов',
+			style: 'position:absolute;left:415px;top:6px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Номенклатура',
+			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КонтрагентОперации',
+			style: 'position:absolute;left:87px;top:30px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

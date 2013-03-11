@@ -110,21 +110,390 @@
 			[
 				{
 					title:'Реализация',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
+			height: 230,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'Событие',
+				},
+				{
+					text:'Состояние',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'СторнирующаяЗаписьДопЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Авансы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
+			height: 230,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'Событие',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'СторнирующаяЗаписьДопЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'НачисленКУплате',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
+			height: 230,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'Событие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ВосстановленПоАвансам',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
+			height: 230,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+				{
+					text:'СторнирующаяЗаписьДопЛиста',
+				},
+				{
+					text:'ИсправленныйСчетФактура',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Восстановлен',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
+			height: 230,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ИсправленныйСчетФактура',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'НеОтражаетсяВКниге',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
+			height: 230,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидНачисления',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'Событие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

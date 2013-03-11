@@ -74,18 +74,690 @@
 			[
 				{
 					title:'Взаиморасчеты',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:651px;height:254px;',
+			height: 254,width: 651,
+			items:
+			[
+				{
+					title:'ВзаиморасчетыСПоставщиками',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЗадолженности',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'Сделка',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'ВзаиморасчетыСПокупателями',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЗадолженности',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'Сделка',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'ДоходЕНВД',
+				},
+				{
+					text:'ДоходКомитента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'ВзаиморасчетыСПодотчетниками',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЗадолженности',
+				},
+				{
+					text:'Подотчетник',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'ВзаиморасчетыССотрудниками',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЗадолженности',
+				},
+				{
+					text:'Работник',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'ВзаиморвасчетыПоНалогам',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЗадолженности',
+				},
+				{
+					text:'СчетРасчетовПоНалогу',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ПартииТоваровНаСкладах',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:651px;height:228px;',
+			height: 228,width: 651,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СерияНоменклатуры',
+				},
+				{
+					text:'СчетУчета',
+				},
+				{
+					text:'Склад',
+				},
+				{
+					text:'ДокументОприходования',
+				},
+				{
+					text:'Количество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:651px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'ПартииТоваровПереданные',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:651px;height:228px;',
+			height: 228,width: 651,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'СчетУчета',
+				},
+				{
+					text:'ДокументОприходования',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'ДокументПередачи',
+				},
+				{
+					text:'Количество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:651px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'РасходыУСН',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:651px;height:254px;',
+			height: 254,width: 651,
+			items:
+			[
+				{
+					title:'Номенклатура',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ДокументОприходования',
+				},
+				{
+					text:'СчетУчета',
+				},
+				{
+					text:'СтатусыПартийУСН',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'СтатусыОплатыРасходовУСН',
+				},
+				{
+					text:'ОтражениеВУСН',
+				},
+				{
+					text:'Валюта',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'НДС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'НМА',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'НМА',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'ОтражениеВУСН',
+				},
+				{
+					text:'Валюта',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'НДС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'Услуги',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'ОтражениеВУСН',
+				},
+				{
+					text:'Валюта',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'НДС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'РБП',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'РБП',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'РасчетныйДокумент',
+				},
+				{
+					text:'СтатусыОплатыРасходовУСН',
+				},
+				{
+					text:'ОтражениеВУСН',
+				},
+				{
+					text:'Валюта',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'НДС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'Запрлата',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Работник',
+				},
+				{
+					text:'ОтражениеВУСН',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'Налоги',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'СчетРасчетовПоНалогу',
+				},
+				{
+					text:'ОтражениеВУСН',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'КорректировкаСведений',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:651px;height:254px;',
+			height: 254,width: 651,
+			items:
+			[
+				{
+					title:'ОсновныеСредства',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+				{
+					text:'ДатаПриобретения',
+				},
+				{
+					text:'ПервоначальнаяСтоимостьУСН',
+				},
+				{
+					text:'СуммаНачисленнойАмортизации',
+				},
+				{
+					text:'СрокПолезногоИспользования',
+				},
+				{
+					text:'ПорядокВключенияСтоимостиВСоставРасходовУСН',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+				{
+					title:'НематериальныеАктивы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
+			height: 196,width: 637,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'НематериальныйАктив',
+				},
+				{
+					text:'ДатаПриобретения',
+				},
+				{
+					text:'ПервоначальнаяСтоимостьУСН',
+				},
+				{
+					text:'СуммаНачисленнойАмортизации',
+				},
+				{
+					text:'СрокПолезногоИспользования',
+				},
+				{
+					text:'ПорядокВключенияСтоимостиВСоставРасходовУСН',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -116,15 +116,261 @@
 			[
 				{
 					title:'ОС',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоНаименованию',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ЗполнитьДляСписка',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:634px;height:141px;',
+			height: 141,width: 634,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+				{
+					text:'ИнвентарныйНомер',
+				},
+				{
+					text:'Стоимость',
+				},
+				{
+					text:'ОстСтоимость',
+				},
+				{
+					text:'Амортизация',
+				},
+				{
+					text:'АмортизацияЗаМесяц',
+				},
+				{
+					text:'СтоимостьБУ',
+				},
+				{
+					text:'ОстСтоимостьБУ',
+				},
+				{
+					text:'АмортизацияБУ',
+				},
+				{
+					text:'АмортизацияЗаМесяцБУ',
+				},
+				{
+					text:'СтоимостьНУ',
+				},
+				{
+					text:'ОстСтоимостьНУ',
+				},
+				{
+					text:'АмортизацияНУ',
+				},
+				{
+					text:'АмортизацияЗаМесяцНУ',
+				},
+				{
+					text:'СуммаКапитальныхВложенийВключаемыхВРасходыНУ',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'СчетДоходовБУ',
+				},
+				{
+					text:'СубконтоБУ',
+				},
+				{
+					text:'СчетДоходовНУ',
+				},
+				{
+					text:'СубконтоНУ',
+				},
+				{
+					text:'СчетРасходовБУ',
+				},
+				{
+					text:'СчетРасходовНУ',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Подразделение',
+			style: 'position:absolute;left:100px;top:86px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:412px;top:86px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'АдресДоставки',
+			style: 'position:absolute;left:100px;top:54px;width:540px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузополучатель',
+			style: 'position:absolute;left:100px;top:30px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СуммаВзаиморасчетов',
+			style: 'position:absolute;left:100px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Грузоотправитель',
+			style: 'position:absolute;left:424px;top:30px;width:216px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СчетаУчета',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентом',
+			style: 'position:absolute;left:204px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовПоАвансам',
+			style: 'position:absolute;left:204px;top:29px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ДокументыРасчетовСКонтрагентом',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:634px;height:89px;',
+			height: 89,width: 634,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Сделка',
+				},
+				{
+					text:'ДокументРасчетовСКонтрагентом',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаВзаиморасчетов',
+				},
+				{
+					text:'СуммаРегл',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:615px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьТолькоПоЗаказу',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПоДокументуВал',
+			style: 'position:absolute;left:161px;top:118px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПоДокументуРегл',
+			style: 'position:absolute;left:323px;top:118px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПредоплатаВал',
+			style: 'position:absolute;left:161px;top:139px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПредоплатаРегл',
+			style: 'position:absolute;left:323px;top:139px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокРегл',
+			style: 'position:absolute;left:323px;top:161px;width:134px;height:17px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОстатокВал',
+			style: 'position:absolute;left:161px;top:161px;width:134px;height:17px;',
+		},
+					]
 				},
 			]
 		},

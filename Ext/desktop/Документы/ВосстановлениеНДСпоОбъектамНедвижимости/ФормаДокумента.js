@@ -95,12 +95,219 @@
 			[
 				{
 					title:'ОбъектыНедвижимости',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:614px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодборОбъектыНедвижимости',
+				},
+				{
+					text:'ЗаполнитьСуммыНДСПоСФ',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьДолюВыручки',
+				},
+				{
+					text:'ЗаполнитьПараметрыОбъектовНедвижимости',
+				},
+				{
+					text:'ЗаполнитьСуммыНДСПоСФвСтроке',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:614px;height:115px;',
+			height: 115,width: 614,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОбъектНедвижимости',
+				},
+				{
+					text:'ИспользуетсяДляОперацийНеОблагаемыхНДС',
+				},
+				{
+					text:'ДатаНачалаИспользованияДляОпераций',
+				},
+				{
+					text:'ДатаВводаВЭксплуатациюБУ',
+				},
+				{
+					text:'ДатаНачисленияАмортизацииНУ',
+				},
+				{
+					text:'СтоимостьОбъектаНедвижимости',
+				},
+				{
+					text:'СуммаНДСПоПодряднымРаботам',
+				},
+				{
+					text:'СуммаНДСПоСМРДляСобственногоПотребления',
+				},
+				{
+					text:'СуммаНДСПоОбъектуНедвижимости',
+				},
+				{
+					text:'ДоляВыручкиНеОблагаемаяНДС',
+				},
+				{
+					text:'СуммаНДСПоПодряднымРаботамВосстановлена',
+				},
+				{
+					text:'СуммаНДСПоСМРДляСобственногоПотребленияВосстановлена',
+				},
+				{
+					text:'СуммаНДСПоОбъектуНедвижимостиВосстановлена',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:164px;width:614px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ПодборСчетовфактур',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:188px;width:614px;height:106px;',
+			height: 106,width: 614,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'КодОперацииДляДекларации',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'СуммаБезНДСВосстановлена',
+				},
+				{
+					text:'НДСВосстановлен',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаСписанияНДС',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетСписанияНДС',
+			style: 'position:absolute;left:105px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДС1',
+			style: 'position:absolute;left:105px;top:35px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДС2',
+			style: 'position:absolute;left:105px;top:59px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДС3',
+			style: 'position:absolute;left:105px;top:82px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетСписанияНДСНУ',
+			style: 'position:absolute;left:421px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДСНУ1',
+			style: 'position:absolute;left:420px;top:35px;width:200px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДСНУ2',
+			style: 'position:absolute;left:420px;top:59px;width:200px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДСНУ3',
+			style: 'position:absolute;left:420px;top:82px;width:200px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:93px;top:6px;width:527px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -93,9 +93,45 @@
 			[
 				{
 					title:'ПроизвольныйПериод',
+					items:
+					[
+		{
+			xtype: 'button',
+			name: 'КнопкаНастройкаПериода2',
+			text: '...',
+			style: 'position:absolute;left:231px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаНачалаПериодаОтчета',
+			style: 'position:absolute;left:21px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаКонцаПериодаОтчета',
+			style: 'position:absolute;left:134px;top:6px;width:80px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СтандартныйПериод',
+					items:
+					[
+		{
+			xtype: 'button',
+			name: 'КнопкаПредыдущийПериод2',
+			text: '',
+			style: 'position:absolute;left:13px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаСледующийПериод2',
+			text: '',
+			style: 'position:absolute;left:229px;top:6px;width:20px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -195,6 +195,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:92px;top:0px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

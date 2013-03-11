@@ -80,12 +80,102 @@
 			[
 				{
 					title:'ОсновныеСредства',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:510px;height:139px;',
+			height: 139,width: 510,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаОплаты',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'НематериальныеАктивы',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:510px;height:139px;',
+			height: 139,width: 510,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'НематериальныйАктив',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаОплаты',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'Модернизация',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:510px;height:139px;',
+			height: 139,width: 510,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДокументМодернизации',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СуммаОплаты',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

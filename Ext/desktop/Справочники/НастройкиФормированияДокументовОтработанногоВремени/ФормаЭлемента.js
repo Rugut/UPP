@@ -62,9 +62,39 @@
 			[
 				{
 					title:'ПараметрыФормируемыхДокументов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеВвода4',
+			style: 'position:absolute;left:99px;top:6px;width:293px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодДетализации',
+			style: 'position:absolute;left:99px;top:54px;width:293px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПолеВвода5',
+			style: 'position:absolute;left:99px;top:30px;width:293px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'АвтоматическоеФормированиеДокументов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Задержка',
+			style: 'position:absolute;left:278px;top:78px;width:40px;height:19px;',
+		},
+					]
 				},
 			]
 		},

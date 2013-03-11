@@ -179,9 +179,108 @@
 			[
 				{
 					title:'НДСкСписанию',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:227px;',
+			height: 227,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаСписанияНДС',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетСписанияНДС',
+			style: 'position:absolute;left:103px;top:28px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДС1',
+			style: 'position:absolute;left:103px;top:52px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДС2',
+			style: 'position:absolute;left:103px;top:76px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДС3',
+			style: 'position:absolute;left:103px;top:100px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетСписанияНДСНУ',
+			style: 'position:absolute;left:473px;top:28px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДСНУ1',
+			style: 'position:absolute;left:473px;top:52px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДСНУ2',
+			style: 'position:absolute;left:473px;top:76px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоСписанияНДСНУ3',
+			style: 'position:absolute;left:473px;top:100px;width:209px;height:19px;',
+		},
+					]
 				},
 			]
 		},

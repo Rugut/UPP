@@ -167,9 +167,171 @@
 			[
 				{
 					title:'Сотрудники',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'ЗаполнитьПоДаннымУчета',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:35px;width:870px;height:352px;',
+			height: 352,width: 870,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Сотрудник',
+				},
+				{
+					text:'Статус',
+				},
+				{
+					text:'СреднедневнойЗаработок',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ДанныеСтрахователя',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Руководитель',
+			style: 'position:absolute;left:119px;top:276px;width:320px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДолжностьРуководителя',
+			style: 'position:absolute;left:554px;top:276px;width:320px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РегистрационныйНомерФСС',
+			style: 'position:absolute;left:146px;top:53px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДополнительныйКодФСС',
+			style: 'position:absolute;left:379px;top:53px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КодПодчиненностиФСС',
+			style: 'position:absolute;left:599px;top:53px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеТерриториальногоОрганаФСС',
+			style: 'position:absolute;left:258px;top:27px;width:618px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Адрес',
+			style: 'position:absolute;left:59px;top:79px;width:817px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'ОбновитьДанныеСтрахователя',
+			text: 'Обновить',
+			style: 'position:absolute;left:6px;top:366px;width:82px;height:21px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Банк',
+			style: 'position:absolute;left:59px;top:133px;width:611px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерСчета',
+			style: 'position:absolute;left:740px;top:133px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеБанка',
+			style: 'position:absolute;left:113px;top:159px;width:430px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'БИКБанка',
+			style: 'position:absolute;left:582px;top:159px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КоррСчет',
+			style: 'position:absolute;left:740px;top:159px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерЛицевогоСчета',
+			style: 'position:absolute;left:113px;top:185px;width:150px;height:19px;',
+		},
+					]
 				},
 			]
 		},

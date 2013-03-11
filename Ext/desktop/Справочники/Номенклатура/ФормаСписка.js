@@ -182,6 +182,9 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+					]
 				},
 			]
 		},
@@ -193,6 +196,70 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:149px;top:20px;width:462px;height:101px;',
+			height: 101,width: 462,
+			columns:
+			[
+				{
+					text:'ХарактеристикаСклад',
+				},
+				{
+					text:'МестоХранения',
+				},
+				{
+					text:'Общий',
+				},
+				{
+					text:'Свободный',
+				},
+				{
+					text:'СвободныйОжидаемый',
+				},
+				{
+					text:'ВРезерве',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:20px;width:143px;height:124px;',
+			height: 124,width: 143,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Ссылка',
+				},
+				{
+					text:'БазовыйТипЦен',
+				},
+				{
+					text:'Рассчитывается',
+				},
+				{
+					text:'ОкруглятьВБольшуюСторону',
+				},
+				{
+					text:'ПроцентСкидкиНаценки',
+				},
+				{
+					text:'Префикс',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВалютаЦены',
+			style: 'position:absolute;left:476px;top:125px;width:135px;height:19px;',
+		},
+					]
 				},
 			]
 		},

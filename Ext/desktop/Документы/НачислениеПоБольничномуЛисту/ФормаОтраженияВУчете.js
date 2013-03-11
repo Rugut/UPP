@@ -172,6 +172,15 @@
 			[
 				{
 					title:'ЕНВД',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодпадаетПодЕНВД',
+			style: 'position:absolute;left:153px;top:37px;width:74px;height:19px;',
+		},
+					]
 				},
 			]
 		},

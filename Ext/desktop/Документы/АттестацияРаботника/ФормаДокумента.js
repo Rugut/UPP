@@ -170,6 +170,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Сотрудник',
+			style: 'position:absolute;left:0px;top:0px;width:220px;height:19px;',
+		},
+					]
 				},
 			]
 		},

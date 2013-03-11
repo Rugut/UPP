@@ -114,6 +114,69 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтборСценарийЗначение',
+			style: 'position:absolute;left:105px;top:0px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтборЦФОЗначение',
+			style: 'position:absolute;left:445px;top:48px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтборСтатьяОборотовЗначение',
+			style: 'position:absolute;left:105px;top:24px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтборПроектЗначение',
+			style: 'position:absolute;left:105px;top:48px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодПланированияС',
+			style: 'position:absolute;left:445px;top:0px;width:105px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПериодПланированияПо',
+			style: 'position:absolute;left:573px;top:0px;width:105px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтборОтветственный',
+			style: 'position:absolute;left:445px;top:24px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтборКонтрагент',
+			style: 'position:absolute;left:105px;top:72px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОтборНоменклатура',
+			style: 'position:absolute;left:445px;top:72px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаНастройкаПериода',
+			text: '...',
+			style: 'position:absolute;left:682px;top:0px;width:20px;height:19px;',
+		},
+					]
 				},
 			]
 		},

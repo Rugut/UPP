@@ -104,9 +104,78 @@
 			[
 				{
 					title:'ДокументыРеализации',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:624px;height:159px;',
+			height: 159,width: 624,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'Событие',
+				},
+				{
+					text:'ПродажиСНДС0',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'КурсоваяРазница',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:624px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:163px;top:50px;width:467px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяПрочихРасходов',
+			style: 'position:absolute;left:163px;top:15px;width:467px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -188,12 +188,156 @@
 			[
 				{
 					title:'РеквизитыСчетаФактуры',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерСчетаФактуры',
+			style: 'position:absolute;left:138px;top:30px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаВходящего',
+			style: 'position:absolute;left:278px;top:30px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерВходящегоДокумента',
+			style: 'position:absolute;left:138px;top:6px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаВходящегоДокумента',
+			style: 'position:absolute;left:278px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РазницаСНДСКУменьшению',
+			style: 'position:absolute;left:138px;top:128px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РазницаНДСКУменьшению',
+			style: 'position:absolute;left:418px;top:128px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НаименованиеПродавца',
+			style: 'position:absolute;left:138px;top:54px;width:513px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ИННПродавца',
+			style: 'position:absolute;left:138px;top:79px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВалютаДокумента',
+			style: 'position:absolute;left:138px;top:104px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КПППродавца',
+			style: 'position:absolute;left:278px;top:79px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РазницаСНДСКДоплате',
+			style: 'position:absolute;left:138px;top:152px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'РазницаНДСКДоплате',
+			style: 'position:absolute;left:418px;top:152px;width:120px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ВосстановлениеНДС',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:53px;width:645px;height:153px;',
+			height: 153,width: 645,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'ВычетНДС',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:53px;width:645px;height:153px;',
+			height: 153,width: 645,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

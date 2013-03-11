@@ -113,9 +113,53 @@
 			[
 				{
 					title:'ОписаниеКомпетенции',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОписаниеКомпетенции',
+			style: 'position:absolute;left:6px;top:6px;width:376px;height:281px;',
+		},
+					]
 				},
 				{
 					title:'ОценкаКомпетенции',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ШкалаОценок',
+			style: 'position:absolute;left:96px;top:6px;width:286px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТиповаяАнкета',
+			style: 'position:absolute;left:96px;top:30px;width:286px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:84px;width:376px;height:203px;',
+			height: 203,width: 376,
+			columns:
+			[
+				{
+					text:'Оценка',
+				},
+				{
+					text:'ПриоритетОценки',
+				},
+				{
+					text:'ВесОценки',
+				},
+				{
+					text:'ОписаниеОценки',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

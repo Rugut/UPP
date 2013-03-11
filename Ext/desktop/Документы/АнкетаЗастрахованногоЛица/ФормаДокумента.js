@@ -179,6 +179,39 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Номер',
+			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Дата',
+			style: 'position:absolute;left:186px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Организация',
+			style: 'position:absolute;left:86px;top:24px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Исполнитель',
+			style: 'position:absolute;left:409px;top:24px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'НомерПачки',
+			style: 'position:absolute;left:409px;top:0px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -190,6 +223,105 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:629px;height:24px;',
+			items:
+			[
+				{
+					text:'РазделительПечать1',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'ДействиеЗаполнить',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'РазделительПодбор',
+				},
+				{
+					text:'РазделительЗаполнить',
+				},
+				{
+					text:'Действие9',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие4',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:0px;top:40px;width:629px;height:229px;',
+			height: 229,width: 629,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ФизЛицо',
+				},
+				{
+					text:'Пол',
+				},
+				{
+					text:'ДатаРождения',
+				},
+				{
+					text:'Фамилия',
+				},
+				{
+					text:'Имя',
+				},
+				{
+					text:'Отчество',
+				},
+				{
+					text:'МестоРождения',
+				},
+				{
+					text:'АдресРегистрации',
+				},
+				{
+					text:'АдресФактический',
+				},
+				{
+					text:'Гражданство',
+				},
+				{
+					text:'Телефоны',
+				},
+			]
+		},
+					]
 				},
 			]
 		},
@@ -201,6 +333,23 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:0px;top:0px;width:629px;height:35px;',
+			height: 35,width: 629,
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+					]
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -85,12 +85,222 @@
 			[
 				{
 					title:'Продукция',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
+			height: 177,width: 627,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'Заказ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДобавитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуНаПроизводство',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДобавитьПоВнутреннемуЗаказу',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДобавитьПоЗаказуНаПроизводство',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеИзменить',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'ЗаполнитьПоЗаказуПокупателя',
+				},
+				{
+					text:'ЗаполнитьПоВнутреннемуЗаказу',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'ПараметрыВыпуска',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Материалы',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:627px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоСпецификации',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
+			height: 177,width: 627,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'ЕдиницаМест',
+				},
+				{
+					text:'КоэффициентМест',
+				},
+				{
+					text:'КоличествоМест',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Единица',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'ВидВоспроизводства',
+				},
+				{
+					text:'Размещение',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'Подразделение',
+				},
+				{
+					text:'Продукция',
+				},
+				{
+					text:'ХарактеристикаПродукции',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:94px;top:35px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВремяНапоминания',
+			style: 'position:absolute;left:94px;top:60px;width:126px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Исполнитель',
+			style: 'position:absolute;left:94px;top:10px;width:223px;height:19px;',
+		},
+					]
 				},
 			]
 		},

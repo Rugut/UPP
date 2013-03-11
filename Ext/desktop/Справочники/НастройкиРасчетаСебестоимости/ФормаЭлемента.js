@@ -50,9 +50,60 @@
 			[
 				{
 					title:'ПараметрыФормируемыхДокументов',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:363px;height:133px;',
+			height: 133,width: 363,
+			columns:
+			[
+				{
+					text:'ВыполняемоеДействие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:363px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'ЗаполнитьВыполняемыеДействия',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'АвтоматическоеФормированиеДокументов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Задержка',
+			style: 'position:absolute;left:218px;top:89px;width:25px;height:19px;',
+		},
+					]
 				},
 			]
 		},

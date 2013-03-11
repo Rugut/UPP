@@ -95,9 +95,102 @@
 			[
 				{
 					title:'ВыпускТехПроцесс',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:614px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:614px;height:189px;',
+			height: 189,width: 614,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Период',
+				},
+				{
+					text:'ДатаОкончания',
+				},
+				{
+					text:'РабочийЦентр',
+				},
+				{
+					text:'Смена',
+				},
+				{
+					text:'ТехОперация',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Спецификация',
+				},
+				{
+					text:'КонечнаяПродукция',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'Проект',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:98px;top:27px;width:206px;height:19px;',
+		},
+					]
 				},
 			]
 		},

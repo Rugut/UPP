@@ -56,9 +56,60 @@
 			[
 				{
 					title:'СтраницаСоставГруппы',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:400px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:32px;width:400px;height:202px;',
+			height: 202,width: 400,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'РабочийЦентр',
+				},
+				{
+					text:'Приоритет',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СтраницаПодчиненныеРабочиеЦентры',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:53px;width:400px;height:181px;',
+			height: 181,width: 400,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'РабочийЦентр',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:26px;width:400px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 			]
 		},

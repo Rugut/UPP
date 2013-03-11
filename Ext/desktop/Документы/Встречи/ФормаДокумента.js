@@ -170,9 +170,88 @@
 			[
 				{
 					title:'Встреча',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Комментарий',
+			style: 'position:absolute;left:6px;top:6px;width:645px;height:194px;',
+		},
+					]
 				},
 				{
 					title:'Планирование',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:245px;top:6px;width:130px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:527px;top:6px;width:123px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:27px;width:75px;height:24px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:56px;width:222px;height:144px;',
+			height: 144,width: 222,
+			columns:
+			[
+				{
+					text:'Физлицо',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:81px;top:27px;width:147px;height:24px;',
+			items:
+			[
+				{
+					text:'ОтображатьЗанятость',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:18px;top:111px;width:175px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -254,6 +254,51 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаПлатежа',
+			style: 'position:absolute;left:84px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'МесяцНалоговогоПериода',
+			style: 'position:absolute;left:193px;top:23px;width:115px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПлатежноеПоручениеНомер',
+			style: 'position:absolute;left:447px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПлатежноеПоручениеДата',
+			style: 'position:absolute;left:547px;top:23px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'КодПоОКАТО',
+			style: 'position:absolute;left:392px;top:48px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ставка',
+			style: 'position:absolute;left:215px;top:48px;width:93px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Сумма',
+			style: 'position:absolute;left:84px;top:48px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -107,18 +107,345 @@
 			[
 				{
 					title:'ВычетПоПриобретеннымЦенностям',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
+			height: 211,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДокументОтгрузки',
+				},
+				{
+					text:'Состояние',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+				{
+					text:'ИсправленныйСчетФактура',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'НДСсАвансов',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
+			height: 211,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Покупатель',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'ДокументОтгрузки',
+				},
+				{
+					text:'Состояние',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'ДатаСобытия',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ВалютаДокумента',
+				},
+				{
+					text:'ВалютнаяСумма',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+				{
+					text:'ИсправленныйСчетФактура',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'НДССАвансовВыданных',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
+			height: 211,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+				{
+					text:'ИсправленныйСчетФактура',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ВычетНДСПоНалоговомуАгенту',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
+			height: 211,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'ДоговорКонтрагента',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'ДокументОплаты',
+				},
+				{
+					text:'ДатаОплаты',
+				},
+				{
+					text:'ДокументОтгрузки',
+				},
+				{
+					text:'Состояние',
+				},
+				{
+					text:'ЗаписьДополнительногоЛиста',
+				},
+				{
+					text:'КорректируемыйПериод',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'ИсправленныйСчетФактура',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ВычетПриИзмененииСтоимости',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
+			height: 211,width: 679,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'Поставщик',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'ИсправленныйСчетФактура',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

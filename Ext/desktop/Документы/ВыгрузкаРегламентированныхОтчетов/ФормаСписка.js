@@ -198,9 +198,55 @@
 			[
 				{
 					title:'Отчеты',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:674px;height:161px;',
+			height: 161,width: 674,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Основание',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ТекстыВыгрузки',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:182px;height:161px;',
+			height: 161,width: 182,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Тип',
+				},
+				{
+					text:'ИмяФайла',
+				},
+				{
+					text:'Текст',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТекстВыгрузки',
+			style: 'position:absolute;left:194px;top:6px;width:486px;height:161px;',
+		},
+					]
 				},
 			]
 		},

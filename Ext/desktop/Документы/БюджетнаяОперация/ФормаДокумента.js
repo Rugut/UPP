@@ -149,9 +149,117 @@
 			[
 				{
 					title:'Основная',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ЦФО',
+			style: 'position:absolute;left:92px;top:6px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Проект',
+			style: 'position:absolute;left:416px;top:6px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Контрагент',
+			style: 'position:absolute;left:92px;top:31px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Номенклатура',
+			style: 'position:absolute;left:416px;top:31px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:92px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Состояние',
+			style: 'position:absolute;left:416px;top:54px;width:220px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Зависимые',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:24px;width:630px;height:160px;',
+			height: 160,width: 630,
+			columns:
+			[
+				{
+					text:'ПериодСтрока',
+				},
+				{
+					text:'СтатьяОборотов',
+				},
+				{
+					text:'ЦФО',
+				},
+				{
+					text:'Проект',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'РеквизитОперацииДляРасчетаСуммы',
+				},
+				{
+					text:'КоэффициентДляРасчетаСуммы',
+				},
+				{
+					text:'РеквизитОперацииДляРасчетаКоличества',
+				},
+				{
+					text:'КоэффициентДляРасчетаКоличества',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

@@ -215,9 +215,33 @@
 			[
 				{
 					title:'БанковскийПеревод',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ТарифБанкаНаДенежныеПереводы',
+			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'ПочтовыйПеревод',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПроцентПочтовогоСбора',
+			style: 'position:absolute;left:180px;top:46px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Тариф',
+			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
+		},
+					]
 				},
 			]
 		},

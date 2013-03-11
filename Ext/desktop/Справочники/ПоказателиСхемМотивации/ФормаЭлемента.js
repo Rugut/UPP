@@ -122,21 +122,78 @@
 			[
 				{
 					title:'АнализПоказателей',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ФактическийПоказатель',
+			style: 'position:absolute;left:28px;top:122px;width:336px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Использование',
+					items:
+					[
+					]
 				},
 				{
 					title:'ШкалаОценки',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:31px;width:383px;height:110px;',
+			height: 110,width: 383,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'ЗначениеС',
+				},
+				{
+					text:'ЗначениеПо',
+				},
+				{
+					text:'Размер',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:383px;height:24px;',
+			items:
+			[
+			]
+		},
+					]
 				},
 				{
 					title:'СуммовойПоказатель',
+					items:
+					[
+					]
 				},
 				{
 					title:'Валюта',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Валюта',
+			style: 'position:absolute;left:56px;top:6px;width:333px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Стаж',
+					items:
+					[
+					]
 				},
 			]
 		},

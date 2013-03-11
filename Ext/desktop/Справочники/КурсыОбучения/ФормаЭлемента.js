@@ -92,12 +92,72 @@
 			[
 				{
 					title:'Стран��ца1',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:384px;height:120px;',
+			height: 120,width: 384,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Занятие',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Страница2',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'КоррекцияВесов',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:384px;height:120px;',
+			height: 120,width: 384,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Компетенция',
+				},
+				{
+					text:'Вес',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Страница3',
+					items:
+					[
+					]
 				},
 			]
 		},

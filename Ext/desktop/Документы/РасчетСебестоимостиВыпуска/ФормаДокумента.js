@@ -194,9 +194,48 @@
 			[
 				{
 					title:'ВыполняемыеДействия',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:333px;height:177px;',
+			height: 177,width: 333,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ВыполняемоеДействие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:333px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьВыполняемыеДействие',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Дополнительно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Ответственный',
+			style: 'position:absolute;left:89px;top:6px;width:250px;height:19px;',
+		},
+					]
 				},
 			]
 		},
@@ -208,9 +247,15 @@
 			[
 				{
 					title:'РасширеннаяАналитика',
+					items:
+					[
+					]
 				},
 				{
 					title:'Основная',
+					items:
+					[
+					]
 				},
 			]
 		},

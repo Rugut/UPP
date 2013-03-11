@@ -82,12 +82,176 @@
 			[
 				{
 					title:'Кому',
+					items:
+					[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:126px;',
+			height: 126,width: 640,
+			items:
+			[
+				{
+					title:'ВозвратПоставщику',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентом',
+			style: 'position:absolute;left:82px;top:80px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДоговорКонтрагента',
+			style: 'position:absolute;left:82px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Контрагент',
+			style: 'position:absolute;left:82px;top:0px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Выдано',
+			style: 'position:absolute;left:82px;top:26px;width:558px;height:19px;',
+		},
+					]
+				},
+				{
+					title:'Прочее',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасчетовСКонтрагентомПрочее',
+			style: 'position:absolute;left:83px;top:28px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт1',
+			style: 'position:absolute;left:83px;top:53px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт2',
+			style: 'position:absolute;left:83px;top:78px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СубконтоДт3',
+			style: 'position:absolute;left:83px;top:103px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВыданоПрочее',
+			style: 'position:absolute;left:82px;top:0px;width:558px;height:19px;',
+		},
+					]
+				},
+				{
+					title:'ВыдачаПодотчетномуЛицу',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПодотчетноеЛицо',
+			style: 'position:absolute;left:83px;top:0px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВыданоПодотчетноеЛицо',
+			style: 'position:absolute;left:83px;top:29px;width:557px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'ДенежныеДокументы',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:640px;height:102px;',
+			height: 102,width: 640,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДенежныйДокумент',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'Стоимость',
+				},
+				{
+					text:'Сумма',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'СчетаДоходовИРасходов',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходов',
+			style: 'position:absolute;left:160px;top:57px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасходов',
+			style: 'position:absolute;left:160px;top:80px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтатьяДоходовИРасходов',
+			style: 'position:absolute;left:160px;top:34px;width:357px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаДоходовНУ',
+			style: 'position:absolute;left:437px;top:57px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СчетУчетаРасходовНУ',
+			style: 'position:absolute;left:437px;top:80px;width:80px;height:19px;',
+		},
+					]
 				},
 			]
 		},

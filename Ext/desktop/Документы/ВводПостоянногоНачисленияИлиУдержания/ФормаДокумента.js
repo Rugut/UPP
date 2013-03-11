@@ -335,6 +335,27 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВидРасчета',
+			style: 'position:absolute;left:296px;top:32px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаДействия',
+			style: 'position:absolute;left:296px;top:78px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаДействияКонец',
+			style: 'position:absolute;left:420px;top:78px;width:96px;height:19px;',
+		},
+					]
 				},
 			]
 		},

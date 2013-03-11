@@ -86,12 +86,87 @@
 			[
 				{
 					title:'Прочее',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПрочиеСведения',
+			style: 'position:absolute;left:6px;top:24px;width:470px;height:133px;',
+		},
+					]
 				},
 				{
 					title:'Свойства',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:470px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:35px;width:470px;height:122px;',
+			height: 122,width: 470,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Свойство',
+				},
+				{
+					text:'Значение',
+				},
+			]
+		},
+					]
 				},
 				{
 					title:'Категории',
+					items:
+					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:470px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие3',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:35px;width:470px;height:122px;',
+			height: 122,width: 470,
+			columns:
+			[
+				{
+					text:'ПометкаУдаления',
+				},
+				{
+					text:'Принадлежность',
+				},
+				{
+					text:'Категория',
+				},
+			]
+		},
+					]
 				},
 			]
 		},

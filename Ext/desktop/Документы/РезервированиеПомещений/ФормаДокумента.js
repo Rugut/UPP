@@ -92,9 +92,33 @@
 			[
 				{
 					title:'Занято',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПродолжительностьДней',
+			style: 'position:absolute;left:88px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ВремяОкончания',
+			style: 'position:absolute;left:312px;top:0px;width:50px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'Недоступно',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ДатаОкончанияРезервирования',
+			style: 'position:absolute;left:88px;top:0px;width:120px;height:19px;',
+		},
+					]
 				},
 			]
 		},

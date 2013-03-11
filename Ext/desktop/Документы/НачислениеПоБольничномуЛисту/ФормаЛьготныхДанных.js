@@ -31,9 +31,63 @@
 			[
 				{
 					title:'СтраницаОтставников',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПроцентОплатыБезЛьгот1',
+			style: 'position:absolute;left:229px;top:48px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОграничениеПособияБезЛьгот1',
+			style: 'position:absolute;left:229px;top:73px;width:351px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтажЛет',
+			style: 'position:absolute;left:229px;top:23px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'СтажМесяцев',
+			style: 'position:absolute;left:317px;top:23px;width:57px;height:19px;',
+		},
+					]
 				},
 				{
 					title:'СтраницаОблученных',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПроцентОплаты3',
+			style: 'position:absolute;left:217px;top:23px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОграничениеПособия',
+			style: 'position:absolute;left:217px;top:48px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ПроцентОплатыБезЛьгот2',
+			style: 'position:absolute;left:408px;top:23px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'ОграничениеПособияБезЛьгот2',
+			style: 'position:absolute;left:408px;top:48px;width:172px;height:19px;',
+		},
+					]
 				},
 			]
 		},

@@ -60,6 +60,15 @@
 			[
 				{
 					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			name: 'Наименование',
+			style: 'position:absolute;left:86px;top:4px;width:449px;height:19px;',
+		},
+					]
 				},
 			]
 		},
