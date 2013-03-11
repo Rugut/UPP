@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Паспортные данные физического лица',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,22 @@
 			hideLabel: true,
 			name: 'ДокументКодПодразделения',
 			style: 'position:absolute;left:118px;top:108px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:135px;width:330px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 	]
 });

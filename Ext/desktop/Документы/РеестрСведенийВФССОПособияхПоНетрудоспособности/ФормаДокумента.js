@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Реестр сведений в ФСС о пособиях по нетрудоспособности',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,139 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:548px;width:896px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'ОткрытьКатегории',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'ОткрытьСвойства',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие4',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:575px;width:1000px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Файл',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'НаДискетку',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'РазделительПечать',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:81px;width:984px;height:463px;',
+			height: 463,width: 984,
+			items:
+			[
+				{
+					title:'Пособия',
+				},
+				{
+					title:'ДанныеСтрахователя',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,30 @@
 	iconCls: 'bogus',
 	title: 'Настройка периода допроведения',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:115px;width:513px;height:25px;',
+			items:
+			[
+				{
+					text:'ИзменитьИнтервал',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеЗакрыть',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеСправка',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа Общероссийский классификатор основных фондов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,35 @@
 			hideLabel: true,
 			name: 'АмортизационнаяГруппа',
 			style: 'position:absolute;left:141px;top:167px;width:278px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:427px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:194px;width:427px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 	]
 });

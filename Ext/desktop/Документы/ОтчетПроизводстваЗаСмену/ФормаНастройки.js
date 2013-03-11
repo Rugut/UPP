@@ -5,6 +5,23 @@
 	iconCls: 'bogus',
 	title: 'Настройка документа',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:409px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 	]
 });

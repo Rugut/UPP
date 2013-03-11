@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Воинский учет',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -53,6 +54,28 @@
 			hideLabel: true,
 			name: 'ВУС',
 			style: 'position:absolute;left:88px;top:126px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:351px;width:430px;height:25px;',
+			items:
+			[
+				{
+					text:'КнопкаИстория',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'РазделительИстория',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

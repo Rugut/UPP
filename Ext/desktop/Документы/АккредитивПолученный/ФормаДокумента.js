@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Аккредитив полученный',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -43,6 +44,92 @@
 			style: 'position:absolute;left:426px;top:104px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'КлиентБанк',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'НастройкаУСН',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Подменю1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:431px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаВходящегоДокумента',
@@ -55,10 +142,41 @@
 			style: 'position:absolute;left:96px;top:56px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:152px;width:636px;height:202px;',
+			height: 202,width: 636,
+			items:
+			[
+				{
+					title:'ПлатежПоОднойСделке',
+				},
+				{
+					title:'ПлатежПоНесколькимСделкам',
+				},
+				{
+					title:'ПлатежПрочие',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:96px;top:128px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:336px;top:56px;width:308px;height:19px;',
+			height: 19,width: 308,
+			items:
+			[
+				{
+					title:'СтраницаОплата',
+				},
+				{
+					title:'СтраницаЧастичнаяОплата',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

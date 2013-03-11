@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Списание МПЗ (международный)',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,62 @@
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:199px;top:33px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:351px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Подменю1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:162px;width:351px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

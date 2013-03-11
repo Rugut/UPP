@@ -5,6 +5,128 @@
 	iconCls: 'bogus',
 	title: 'Серии номенклатуры',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'АнализСерии',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Перейти',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Файлы',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:292px;width:604px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:151px;top:33px;width:445px;height:251px;',
+			height: 251,width: 445,
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+				{
+					title:'СтраницаСертификации',
+				},
+			]
+		},
 	]
 });

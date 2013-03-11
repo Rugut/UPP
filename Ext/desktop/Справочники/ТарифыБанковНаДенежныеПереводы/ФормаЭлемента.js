@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Тарифы банков',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,44 @@
 			hideLabel: true,
 			name: 'Процент',
 			style: 'position:absolute;left:130px;top:62px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Подменю',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:143px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 	]
 });

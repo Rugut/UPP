@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Сохранение файла',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'button',
 			name: 'КнопкаДаДляВсех',

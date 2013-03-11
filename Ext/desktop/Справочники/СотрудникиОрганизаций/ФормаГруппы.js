@@ -5,7 +5,43 @@
 	iconCls: 'bogus',
 	title: 'Сотрудники',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Подменю',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:83px;width:442px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

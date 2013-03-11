@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Передача товаров',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,87 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:348px;width:562px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:666px;height:25px;',
+			items:
+			[
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель13',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'_',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеЗаполнитьИПровести',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:127px;width:650px;height:213px;',
+			height: 213,width: 650,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Тара',
+				},
+				{
+					title:'СчетаУчета',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -59,6 +141,34 @@
 			name: 'КнопкаПерерассчитатьДолг',
 			text: '',
 			style: 'position:absolute;left:643px;top:105px;width:15px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:375px;width:666px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'РазделительЗаписать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

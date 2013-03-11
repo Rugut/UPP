@@ -5,7 +5,73 @@
 	iconCls: 'bogus',
 	title: '',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			items:
+			[
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:421px;width:709px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +101,32 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:102px;width:693px;height:286px;',
+			height: 286,width: 693,
+			items:
+			[
+				{
+					title:'Реализация',
+				},
+				{
+					title:'Авансы',
+				},
+				{
+					title:'НачисленКУплате',
+				},
+				{
+					title:'ВосстановленПоАвансам',
+				},
+				{
+					title:'Восстановлен',
+				},
+				{
+					title:'НеОтражаетсяВКниге',
+				},
+			]
 		},
 	]
 });

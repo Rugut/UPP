@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Статья затрат',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,35 @@
 			hideLabel: true,
 			name: 'ОсновнойВидЗатратНалоговогоУчета',
 			style: 'position:absolute;left:110px;top:129px;width:382px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:156px;width:500px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

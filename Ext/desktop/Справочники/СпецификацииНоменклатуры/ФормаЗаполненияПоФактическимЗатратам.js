@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Спецификации номенклатуры',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:312px;width:700px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +34,42 @@
 			hideLabel: true,
 			name: 'ХарактеристикаНоменклатуры',
 			style: 'position:absolute;left:465px;top:32px;width:227px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:138px;width:684px;height:166px;',
+			height: 166,width: 684,
+			columns:
+			[
+				{
+					text:'Материал',
+				},
+				{
+					text:'ХарактеристикаМатериала',
+				},
+				{
+					text:'СтатьяЗатрат',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Количество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:112px;width:684px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

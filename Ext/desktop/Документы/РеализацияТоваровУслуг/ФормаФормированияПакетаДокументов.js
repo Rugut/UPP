@@ -5,7 +5,30 @@
 	iconCls: 'bogus',
 	title: 'Оформить документы',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:476px;width:376px;height:25px;',
+			items:
+			[
+				{
+					text:'СформироватьДокументы',
+				},
+				{
+					text:'ЗначенияПоУмолчанию',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Заявление об обмене дубликате страхового свидетельства',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:159px;width:269px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущийПериод',

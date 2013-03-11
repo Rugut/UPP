@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Передача ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,97 @@
 			hideLabel: true,
 			name: 'Событие',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Разделитель8',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:664px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:175px;width:648px;height:205px;',
+			height: 205,width: 648,
+			items:
+			[
+				{
+					title:'ОС',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'СчетаУчета',
+				},
+				{
+					title:'ДокументыРасчетовСКонтрагентом',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

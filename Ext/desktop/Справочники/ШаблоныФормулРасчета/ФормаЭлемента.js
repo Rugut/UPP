@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Шаблон формулы расчета',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,35 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:105px;width:405px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:132px;width:500px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 	]
 });

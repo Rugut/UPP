@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Расчет пособия за период после 1 января 2007 года',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:117px;width:377px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОК',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

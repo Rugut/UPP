@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Точки маршрута',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,35 @@
 			hideLabel: true,
 			name: 'РабочийЦентр',
 			style: 'position:absolute;left:97px;top:105px;width:328px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:433px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:132px;width:433px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+			]
 		},
 	]
 });

@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Степени родства физических лиц',
 	
-	items: [
+	items:
+	[
 	]
 });

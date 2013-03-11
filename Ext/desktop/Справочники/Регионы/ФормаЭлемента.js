@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Регионы',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,35 @@
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:90px;top:106px;width:406px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:502px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:207px;width:504px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

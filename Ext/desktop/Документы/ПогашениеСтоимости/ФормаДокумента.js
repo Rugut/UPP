@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Погашение стоимости (спецодежда, спецоснастка, инвентарь)',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,71 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:133px;width:490px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:596px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:160px;width:596px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

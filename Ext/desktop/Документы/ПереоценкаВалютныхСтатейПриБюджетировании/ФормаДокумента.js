@@ -5,7 +5,64 @@
 	iconCls: 'bogus',
 	title: 'Переоценка валютных статей при бюджетировании',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:356px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:213px;width:356px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

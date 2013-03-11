@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Фамилия, имя, отчество физ. лица',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,28 @@
 			hideLabel: true,
 			name: 'Отчество',
 			style: 'position:absolute;left:78px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:116px;width:306px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'КнопкаИстория',
+				},
+				{
+					text:'РазделительИстория',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+			]
 		},
 	]
 });

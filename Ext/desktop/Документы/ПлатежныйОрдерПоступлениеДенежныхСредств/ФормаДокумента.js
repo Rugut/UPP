@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Платежный ордер на поступление денежных средств',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,118 @@
 			hideLabel: true,
 			name: 'СчетКонтрагента',
 			style: 'position:absolute;left:430px;top:104px;width:219px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'КлиентБанк',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'НастройкаУСН',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:430px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительЗаписать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'ОК',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:152px;width:641px;height:201px;',
+			height: 201,width: 641,
+			items:
+			[
+				{
+					title:'ПлатежПоОднойСделке',
+				},
+				{
+					title:'ПлатежПоНесколькимСделкам',
+				},
+				{
+					title:'ПлатежПрочие',
+				},
+				{
+					title:'КупляПродажаВалюты',
+				},
+				{
+					title:'ОплатаПоПлатежнымКартам',
+				},
+				{
+					title:'УчетЗатрат',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

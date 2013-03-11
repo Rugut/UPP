@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Ввод коэффициентов индексации заработка',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,134 @@
 			hideLabel: true,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:422px;top:57px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:534px;height:24px;',
+			items:
+			[
+				{
+					text:'СписокРаботников',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие3',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:148px;width:534px;height:125px;',
+			height: 125,width: 534,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ТабельныйНомерСтрока',
+				},
+				{
+					text:'Сотрудник',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:550px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:307px;width:550px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

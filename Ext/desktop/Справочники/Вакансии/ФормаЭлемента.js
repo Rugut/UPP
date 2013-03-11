@@ -5,7 +5,82 @@
 	iconCls: 'bogus',
 	title: 'Вакансия',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:811px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие3',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:383px;width:811px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +98,17 @@
 			hideLabel: true,
 			name: 'Должность',
 			style: 'position:absolute;left:148px;top:33px;width:248px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:57px;width:388px;height:24px;',
+			height: 24,width: 388,
+			items:
+			[
+				{
+					title:'ПоСтруктуреЮридическихЛиц',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

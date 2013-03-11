@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Загрузка справочника ОКПД из CSV файла',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:121px;width:320px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

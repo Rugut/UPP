@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Код дохода для исчисления НДФЛ',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,35 @@
 			hideLabel: true,
 			name: 'КодДляОтчетности',
 			style: 'position:absolute;left:183px;top:57px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:471px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:222px;width:471px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 	]
 });

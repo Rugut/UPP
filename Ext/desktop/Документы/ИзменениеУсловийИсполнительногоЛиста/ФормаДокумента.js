@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Изменение условий удержания по исполнительному листу',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -49,6 +50,146 @@
 			style: 'position:absolute;left:100px;top:420px;width:600px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:447px;width:708px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Предел',
@@ -65,6 +206,20 @@
 			hideLabel: true,
 			name: 'ДатаИзменения',
 			style: 'position:absolute;left:522px;top:80px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:338px;top:342px;width:362px;height:65px;',
+			height: 65,width: 362,
+			items:
+			[
+				{
+					title:'БанковскийПеревод',
+				},
+				{
+					title:'ПочтовыйПеревод',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

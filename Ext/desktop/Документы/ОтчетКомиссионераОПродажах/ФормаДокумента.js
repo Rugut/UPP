@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Отчет комиссионера',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,90 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:495px;width:562px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ПараметрыЭлектронногоОбменаДокументами',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ДействиеЗаполнитьИПровести',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:150px;width:648px;height:280px;',
+			height: 280,width: 648,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'ДенежныеСредства',
+				},
+				{
+					title:'УчетЗатрат',
+				},
+				{
+					title:'СчетаРасчетов',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'ДокументыРасчетовСКонтрагентом',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -95,6 +180,34 @@
 			hideLabel: true,
 			name: 'ПроцентКомиссионногоВознаграждения',
 			style: 'position:absolute;left:94px;top:128px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:522px;width:664px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
 		},
 	]
 });

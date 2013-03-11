@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Ученое звание',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,35 @@
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:89px;top:33px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:438px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:60px;width:438px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 	]
 });

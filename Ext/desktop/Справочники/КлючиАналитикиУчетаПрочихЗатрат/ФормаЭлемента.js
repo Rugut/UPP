@@ -5,12 +5,42 @@
 	iconCls: 'bogus',
 	title: 'Ключ аналитики учета прочих затрат',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:95px;top:33px;width:506px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:610px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:334px;width:610px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

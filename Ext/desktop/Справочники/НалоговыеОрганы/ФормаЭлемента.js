@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Налоговые органы',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -77,6 +78,35 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:431px;width:590px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:694px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:458px;width:694px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

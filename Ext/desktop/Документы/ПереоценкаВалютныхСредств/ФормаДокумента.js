@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Переоценка валютных средств',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,71 @@
 			hideLabel: true,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:96px;top:318px;width:249px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:393px;width:353px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

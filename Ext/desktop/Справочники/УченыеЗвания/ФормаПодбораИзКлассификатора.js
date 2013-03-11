@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Ученые звания',
 	
-	items: [
+	items:
+	[
 	]
 });

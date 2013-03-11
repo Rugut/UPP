@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Работодатели',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,35 @@
 			hideLabel: true,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:132px;top:58px;width:378px;height:48px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:518px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:239px;width:518px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

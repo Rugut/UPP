@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Инвентаризация товаров отданных на комиссию',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,36 @@
 			style: 'position:absolute;left:98px;top:351px;width:546px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:137px;width:636px;height:210px;',
+			height: 210,width: 636,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -41,6 +72,34 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:378px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

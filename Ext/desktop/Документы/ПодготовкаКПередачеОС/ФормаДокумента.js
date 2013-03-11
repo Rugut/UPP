@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Подготовка к передаче ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,152 @@
 			hideLabel: true,
 			name: 'Событие',
 			style: 'position:absolute;left:96px;top:80px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:123px;width:707px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьДляСписка',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПоНаименованию',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:147px;width:707px;height:194px;',
+			height: 194,width: 707,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+				{
+					text:'ИнвентарныйНомер',
+				},
+				{
+					text:'Стоимость',
+				},
+				{
+					text:'ОстСтоимость',
+				},
+				{
+					text:'Амортизация',
+				},
+				{
+					text:'АмортизацияЗаМесяц',
+				},
+				{
+					text:'СтоимостьБУ',
+				},
+				{
+					text:'ОстСтоимостьБУ',
+				},
+				{
+					text:'АмортизацияБУ',
+				},
+				{
+					text:'АмортизацияЗаМесяцБУ',
+				},
+				{
+					text:'СтоимостьНУ',
+				},
+				{
+					text:'ОстСтоимостьНУ',
+				},
+				{
+					text:'АмортизацияНУ',
+				},
+				{
+					text:'АмортизацияЗаМесяцНУ',
+				},
+				{
+					text:'СуммаКапитальныхВложенийВключаемыхВРасходыНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:723px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:398px;width:723px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

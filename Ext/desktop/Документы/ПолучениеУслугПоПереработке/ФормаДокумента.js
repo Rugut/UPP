@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Получение услуг по переработке',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,84 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:428px;width:566px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:153px;width:656px;height:227px;',
+			height: 227,width: 656,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Услуги',
+				},
+				{
+					title:'ИспользованныеМатериалы',
+				},
+				{
+					title:'УчетЗатрат',
+				},
+				{
+					title:'СчетаУчета',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'ДокументыРасчетовСКонтрагентом',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -71,6 +150,34 @@
 			hideLabel: true,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:546px;top:406px;width:100px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

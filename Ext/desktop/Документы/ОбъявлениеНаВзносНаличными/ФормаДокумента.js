@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Объявление на взнос наличными',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,62 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:102px;top:208px;width:269px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:379px;height:25px;',
+			items:
+			[
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:259px;width:379px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

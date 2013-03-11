@@ -5,7 +5,76 @@
 	iconCls: 'bogus',
 	title: 'Внутреннее перемещение средств при бюджетировании',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:653px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Подменю',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:330px;width:653px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Амортизация ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,71 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:133px;width:490px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:596px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:160px;width:596px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

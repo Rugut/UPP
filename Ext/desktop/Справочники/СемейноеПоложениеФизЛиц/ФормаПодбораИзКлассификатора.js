@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Семейное положение физических лиц',
 	
-	items: [
+	items:
+	[
 	]
 });

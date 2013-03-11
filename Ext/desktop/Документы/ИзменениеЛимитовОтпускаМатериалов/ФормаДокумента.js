@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Изменение лимитов отпуска материалов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,34 @@
 			style: 'position:absolute;left:96px;top:350px;width:564px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -35,6 +64,88 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:326px;width:564px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:377px;width:669px;height:25px;',
+			items:
+			[
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительОК',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:148px;width:652px;height:172px;',
+			height: 172,width: 652,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'Периодичность',
+				},
+				{
+					text:'ЛимитОтпуска',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'КонтролироватьЛимит',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:652px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

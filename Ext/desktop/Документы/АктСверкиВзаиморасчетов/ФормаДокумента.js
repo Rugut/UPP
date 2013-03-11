@@ -5,7 +5,43 @@
 	iconCls: 'bogus',
 	title: 'Акт сверки взаиморасчетов',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:416px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -59,6 +95,26 @@
 			hideLabel: true,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:530px;top:33px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:132px;width:641px;height:250px;',
+			height: 250,width: 641,
+			items:
+			[
+				{
+					title:'ПоДаннымОрганизации',
+				},
+				{
+					title:'ПоДаннымКонтрагента',
+				},
+				{
+					title:'СчетаРасчетов',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'button',

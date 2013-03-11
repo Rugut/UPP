@@ -5,6 +5,54 @@
 	iconCls: 'bogus',
 	title: 'Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:186px;top:33px;width:502px;height:280px;',
+			height: 280,width: 502,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'НормаАмортизационныхОтчислений',
+				},
+				{
+					text:'ПроцентОтСтоимостиМашины',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:696px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:171px;height:280px;',
+			height: 280,width: 171,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+			]
+		},
 	]
 });

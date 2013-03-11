@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Статьи движения денежных средств',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,83 @@
 			hideLabel: true,
 			name: 'ВидДвиженияДенежныхСредств',
 			style: 'position:absolute;left:119px;top:56px;width:370px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:497px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:118px;width:497px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 	]
 });

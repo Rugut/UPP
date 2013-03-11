@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Реестр сведений в ФСС о пособиях при рождении ребенка',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,139 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:524px;width:796px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'ОткрытьСвойства',
+				},
+				{
+					text:'ОткрытьКатегории',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:551px;width:900px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительПечать',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Файл',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'НаДискетку',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:81px;width:884px;height:437px;',
+			height: 437,width: 884,
+			items:
+			[
+				{
+					title:'Сотрудники',
+				},
+				{
+					title:'ДанныеСтрахователя',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

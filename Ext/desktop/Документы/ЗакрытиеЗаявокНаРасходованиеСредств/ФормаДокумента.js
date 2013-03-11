@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Закрытие заявок на расходование средств',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,107 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:354px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:142px;width:656px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:166px;width:656px;height:180px;',
+			height: 180,width: 656,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Заявка',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'ОстатокЗаявка',
+				},
+				{
+					text:'ВалютаЗаявка',
+				},
+				{
+					text:'ОстатокРезерва',
+				},
+				{
+					text:'ОстатокРазмещение',
+				},
+				{
+					text:'Ответственный',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:408px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Расчеты по налогу на прибыль',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,62 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:234px;width:327px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:289px;width:431px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Дей��твие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

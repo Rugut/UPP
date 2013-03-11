@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Корректировка стоимости списания товаров',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,62 @@
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:249px;top:33px;width:142px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:399px;height:25px;',
+			items:
+			[
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:178px;width:399px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

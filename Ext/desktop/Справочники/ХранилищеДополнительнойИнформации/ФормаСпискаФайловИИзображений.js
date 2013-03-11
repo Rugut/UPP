@@ -5,6 +5,21 @@
 	iconCls: 'bogus',
 	title: 'Хранилище дополнительной информации',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:10px;width:635px;height:236px;',
+			height: 236,width: 635,
+			items:
+			[
+				{
+					title:'Изображения',
+				},
+				{
+					title:'Файлы',
+				},
+			]
+		},
 	]
 });

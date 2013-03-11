@@ -5,7 +5,97 @@
 	iconCls: 'bogus',
 	title: 'Обработка обслуживания ТО',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:473px;height:25px;',
+			items:
+			[
+				{
+					text:'Действия',
+				},
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'НайтиВСписке',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Экспорт',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Справка',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:476px;width:473px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +125,20 @@
 			hideLabel: true,
 			name: 'Описание',
 			style: 'position:absolute;left:113px;top:126px;width:352px;height:46px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:276px;width:457px;height:192px;',
+			height: 192,width: 457,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Модель',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

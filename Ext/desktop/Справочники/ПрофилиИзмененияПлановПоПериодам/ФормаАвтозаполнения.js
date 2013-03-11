@@ -5,7 +5,21 @@
 	iconCls: 'bogus',
 	title: 'Параметры изменения по периодам',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:243px;width:296px;height:25px;',
+			items:
+			[
+				{
+					text:'Ок',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

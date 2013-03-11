@@ -5,7 +5,54 @@
 	iconCls: 'bogus',
 	title: 'Статьи оборотов по бюджетам',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:495px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:432px;width:495px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:84px;width:479px;height:316px;',
+			height: 316,width: 479,
+			items:
+			[
+				{
+					title:'Основная',
+				},
+				{
+					title:'Проводки',
+				},
+				{
+					title:'Данные',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

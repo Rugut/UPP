@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Заявления ДСВ-1',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:159px;width:269px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущийПериод',

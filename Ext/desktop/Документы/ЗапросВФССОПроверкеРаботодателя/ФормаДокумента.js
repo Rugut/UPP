@@ -5,7 +5,115 @@
 	iconCls: 'bogus',
 	title: 'Запрос в ФСС о проверке работодателя',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'ОткрытьКатегории',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ОткрытьСвойства',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие4',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:385px;width:682px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +149,23 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:358px;width:578px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:111px;width:666px;height:241px;',
+			height: 241,width: 666,
+			items:
+			[
+				{
+					title:'Страхователи',
+				},
+				{
+					title:'ДанныеОрганизации',
+				},
+				{
+					title:'ДанныеОЗастрахованномЛице',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

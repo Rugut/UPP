@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: '',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:155px;width:348px;height:25px;',
+			items:
+			[
+				{
+					text:'Ок',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Возврат товаров от покупателя',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,102 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:388px;width:563px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:661px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Разделитель13',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ПараметрыЭлектронногоОбменаДокументами',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОткрытьФормуНастройкиБланкаТоварногоНаполнения',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:136px;width:645px;height:204px;',
+			height: 204,width: 645,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Тара',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'СчетаУчета',
+				},
+				{
+					title:'ДокументыРасчетовСКонтрагентом',
+				},
+				{
+					title:'НДС',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -71,6 +168,34 @@
 			hideLabel: true,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:549px;top:366px;width:100px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:415px;width:661px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

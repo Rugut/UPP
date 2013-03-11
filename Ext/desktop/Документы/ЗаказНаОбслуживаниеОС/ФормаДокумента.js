@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Заказ на обслуживание ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -47,6 +48,104 @@
 			hideLabel: true,
 			name: 'ДатаНачалаОбслуживанияОС',
 			style: 'position:absolute;left:146px;top:129px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:172px;width:370px;height:24px;',
+			items:
+			[
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ЗаполнитьПоНаименованию',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:196px;width:370px;height:145px;',
+			height: 145,width: 370,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ИнвентарныйНомер',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+				{
+					text:'Количество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:386px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель5',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:396px;width:386px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

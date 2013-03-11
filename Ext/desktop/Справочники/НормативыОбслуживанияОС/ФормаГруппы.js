@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа Нормативы обслуживания ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,35 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:93px;top:57px;width:299px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:84px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+			]
 		},
 	]
 });

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Ввод начальных остатков ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,6 +32,71 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			items:
+			[
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:395px;width:654px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
@@ -41,6 +107,20 @@
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:426px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:108px;width:638px;height:252px;',
+			height: 252,width: 638,
+			items:
+			[
+				{
+					title:'ОС',
+				},
+				{
+					title:'Итоги',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

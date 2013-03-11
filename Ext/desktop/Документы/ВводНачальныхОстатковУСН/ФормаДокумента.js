@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Ввод начальных остатков УСН',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,70 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:57px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:681px;height:25px;',
+			items:
+			[
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:428px;width:681px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:86px;width:665px;height:286px;',
+			height: 286,width: 665,
+			items:
+			[
+				{
+					title:'Взаиморасчеты',
+				},
+				{
+					title:'ПартииТоваровНаСкладах',
+				},
+				{
+					title:'ПартииТоваровПереданные',
+				},
+				{
+					title:'РасходыУСН',
+				},
+				{
+					title:'КорректировкаСведений',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

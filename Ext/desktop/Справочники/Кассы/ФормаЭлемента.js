@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Кассы',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,38 @@
 			hideLabel: true,
 			name: 'ВалютаДенежныхСредств',
 			style: 'position:absolute;left:94px;top:108px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:515px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:164px;width:515px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

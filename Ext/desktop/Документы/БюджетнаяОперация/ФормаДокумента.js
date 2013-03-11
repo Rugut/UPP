@@ -5,7 +5,76 @@
 	iconCls: 'bogus',
 	title: 'Бюджетная операция',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Файлы',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:401px;width:659px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -71,6 +140,20 @@
 			hideLabel: true,
 			name: 'Цена',
 			style: 'position:absolute;left:432px;top:105px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:156px;width:644px;height:210px;',
+			height: 210,width: 644,
+			items:
+			[
+				{
+					title:'Основная',
+				},
+				{
+					title:'Зависимые',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

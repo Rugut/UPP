@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа Сценарии планирования',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,35 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:33px;width:304px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:88px;width:406px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 	]
 });

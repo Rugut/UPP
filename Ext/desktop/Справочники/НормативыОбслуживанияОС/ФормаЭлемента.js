@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Нормативы обслуживания ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -71,6 +72,65 @@
 			hideLabel: true,
 			name: 'ЗначениеПараметраВыработкиОС',
 			style: 'position:absolute;left:136px;top:250px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:293px;width:390px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:317px;width:390px;height:80px;',
+			height: 80,width: 390,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ИнвентарныйНомер',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:429px;width:404px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

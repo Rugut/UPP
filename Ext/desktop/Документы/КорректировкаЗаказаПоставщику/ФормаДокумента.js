@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Корректировка заказа поставщику',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,72 @@
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДействиеАнализ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:109px;width:636px;height:228px;',
+			height: 228,width: 636,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Тара',
+				},
+				{
+					title:'Оборудование',
+				},
+				{
+					title:'Материалы',
+				},
+				{
+					title:'Услуги',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -35,6 +102,34 @@
 			hideLabel: true,
 			name: 'ЗаказПоставщику',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:415px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'ОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

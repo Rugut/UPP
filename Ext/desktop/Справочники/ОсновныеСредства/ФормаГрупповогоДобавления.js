@@ -5,7 +5,30 @@
 	iconCls: 'bogus',
 	title: 'Групповое добавление элементов справочника ""Основные средства""',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:392px;width:414px;height:25px;',
+			items:
+			[
+				{
+					text:'Создать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

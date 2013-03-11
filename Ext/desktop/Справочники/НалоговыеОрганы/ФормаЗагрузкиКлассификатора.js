@@ -5,7 +5,30 @@
 	iconCls: 'bogus',
 	title: 'Импорт классификатора СОУН',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:139px;width:602px;height:25px;',
+			items:
+			[
+				{
+					text:'Отмена',
+				},
+				{
+					text:'Импортировать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

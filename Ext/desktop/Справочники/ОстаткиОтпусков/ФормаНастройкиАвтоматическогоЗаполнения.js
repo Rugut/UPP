@@ -5,6 +5,23 @@
 	iconCls: 'bogus',
 	title: 'Настройка автоматического заполнения',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:87px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Отмена',
+				},
+			]
+		},
 	]
 });

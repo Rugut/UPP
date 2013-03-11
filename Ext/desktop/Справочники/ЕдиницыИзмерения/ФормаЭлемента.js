@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Единицы измерения',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,35 @@
 			hideLabel: true,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:118px;top:148px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:225px;width:470px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

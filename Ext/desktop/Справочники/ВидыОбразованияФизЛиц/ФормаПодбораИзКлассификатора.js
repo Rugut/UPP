@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Виды образования физических лиц',
 	
-	items: [
+	items:
+	[
 	]
 });

@@ -5,7 +5,37 @@
 	iconCls: 'bogus',
 	title: 'Элемент Банковские счета',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:496px;width:568px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +71,34 @@
 			hideLabel: true,
 			name: 'КоррсчетБанка',
 			style: 'position:absolute;left:336px;top:82px;width:224px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:157px;width:552px;height:65px;',
+			height: 65,width: 552,
+			items:
+			[
+				{
+					title:'НепрямыеРасчеты',
+				},
+				{
+					title:'ПрямыеРасчеты',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:246px;width:552px;height:213px;',
+			height: 213,width: 552,
+			items:
+			[
+				{
+					title:'РеквизитыСчетаОрганизации',
+				},
+				{
+					title:'РеквизитыСчетаКонтрагента',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

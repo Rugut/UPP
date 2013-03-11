@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Закрытие планируемых поступлений денежных средств',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,104 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:351px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:142px;width:656px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:166px;width:656px;height:180px;',
+			height: 180,width: 656,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ДокументПланирования',
+				},
+				{
+					text:'ОстатокПоступление',
+				},
+				{
+					text:'ВалютаПоступление',
+				},
+				{
+					text:'ОстатокРазмещение',
+				},
+				{
+					text:'Ответственный',
+				},
+				{
+					text:'Контрагент',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Разделитель6',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:402px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

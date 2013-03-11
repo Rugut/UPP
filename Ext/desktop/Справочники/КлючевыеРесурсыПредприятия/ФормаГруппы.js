@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа Ключевые ресурсы предприятия',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,35 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:33px;width:328px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:85px;width:430px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 	]
 });

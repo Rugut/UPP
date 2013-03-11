@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Документ Внутренний заказ',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,69 @@
 			style: 'position:absolute;left:90px;top:344px;width:559px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель14',
+				},
+				{
+					text:'ДействиеЗаполнитьИПровести',
+				},
+				{
+					text:'Разделитель13',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'ДействиеАнализ',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:109px;width:641px;height:227px;',
+			height: 227,width: 641,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Тара',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -41,6 +105,34 @@
 			hideLabel: true,
 			name: 'ДатаОтгрузки',
 			style: 'position:absolute;left:90px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:370px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

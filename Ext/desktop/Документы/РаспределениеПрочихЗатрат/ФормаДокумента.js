@@ -5,7 +5,79 @@
 	iconCls: 'bogus',
 	title: 'Распределение прочих затрат',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Настройка',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:391px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Печать',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +113,23 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:353px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:135px;width:636px;height:186px;',
+			height: 186,width: 636,
+			items:
+			[
+				{
+					title:'Продукция',
+				},
+				{
+					title:'ПрочиеЗатраты',
+				},
+				{
+					title:'РаспределениеПрочихЗатрат',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

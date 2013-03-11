@@ -5,7 +5,55 @@
 	iconCls: 'bogus',
 	title: '',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:396px;width:709px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +83,57 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:119px;width:693px;height:246px;',
+			height: 246,width: 693,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОбъектСтроительства',
+				},
+				{
+					text:'СчетФактура',
+				},
+				{
+					text:'ВидЦенности',
+				},
+				{
+					text:'СчетУчетаНДС',
+				},
+				{
+					text:'СуммаБезНДС',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'НДС',
+				},
+				{
+					text:'НДСВключенВСтоимость',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:95px;width:693px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
 		},
 	]
 });

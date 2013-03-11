@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,35 @@
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:131px;top:33px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:463px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:60px;width:463px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 	]
 });

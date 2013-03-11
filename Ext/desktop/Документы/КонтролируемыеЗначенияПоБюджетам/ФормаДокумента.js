@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Контролируемые значения по бюджетам',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -47,6 +48,67 @@
 			hideLabel: true,
 			name: 'КонтролирующийСценарий',
 			style: 'position:absolute;left:182px;top:157px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:433px;width:410px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:176px;width:394px;height:177px;',
+			height: 177,width: 394,
+			items:
+			[
+				{
+					title:'Выборочно',
+				},
+				{
+					title:'ПоВсем',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

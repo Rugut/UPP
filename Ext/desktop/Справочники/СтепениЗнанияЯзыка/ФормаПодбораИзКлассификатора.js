@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Степени знания языков',
 	
-	items: [
+	items:
+	[
 	]
 });

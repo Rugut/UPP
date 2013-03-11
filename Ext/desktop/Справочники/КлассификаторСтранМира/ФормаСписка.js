@@ -5,6 +5,40 @@
 	iconCls: 'bogus',
 	title: 'Классификатор стран мира',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:460px;height:280px;',
+			height: 280,width: 460,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'НаименованиеПолное',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:479px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеПодбор',
+				},
+				{
+					text:'Разделитель7',
+				},
+			]
+		},
 	]
 });

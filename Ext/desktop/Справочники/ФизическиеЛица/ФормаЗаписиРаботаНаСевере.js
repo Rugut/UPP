@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Сведения о стаже работы на севере',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,28 @@
 			hideLabel: true,
 			name: 'НачальныйПроцентСевернойНадбавки',
 			style: 'position:absolute;left:176px;top:32px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:140px;width:304px;height:25px;',
+			items:
+			[
+				{
+					text:'КнопкаИстория',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'РазделительИстория',
+				},
+				{
+					text:'Действие',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

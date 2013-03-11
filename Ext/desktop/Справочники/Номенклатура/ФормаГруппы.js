@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа Номенклатура',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,41 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:117px;top:33px;width:297px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:422px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительПрава',
+				},
+				{
+					text:'Права',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:144px;width:422px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,6 +5,23 @@
 	iconCls: 'bogus',
 	title: 'Настройка спецификации номенклатуры',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:209px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
+		},
 	]
 });

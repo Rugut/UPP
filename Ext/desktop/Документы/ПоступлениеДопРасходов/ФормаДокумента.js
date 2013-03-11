@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Документ Поступление доп. расходов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,87 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:106px;top:429px;width:561px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:189px;width:660px;height:188px;',
+			height: 188,width: 660,
+			items:
+			[
+				{
+					title:'Оборудование',
+				},
+				{
+					title:'Товары',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'ДополнительноБезВзаиморасчетов',
+				},
+				{
+					title:'СчетаУчета',
+				},
+				{
+					title:'ДокументыРасчетовСКонтрагентом',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -59,6 +141,34 @@
 			hideLabel: true,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:565px;top:405px;width:103px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:676px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

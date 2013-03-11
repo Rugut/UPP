@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Возврат товаров поставщику',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,117 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:390px;width:564px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
+			items:
+			[
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель13',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLПанель',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLЭлПочта',
+				},
+				{
+					text:'ДействиеЗаполнитьИПровести',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLФайл',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceML',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLФайлПанель',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLЭлПочтаПанель',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:131px;width:646px;height:210px;',
+			height: 210,width: 646,
+			items:
+			[
+				{
+					title:'Оборудование',
+				},
+				{
+					title:'Товары',
+				},
+				{
+					title:'Тара',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'СчетаРасчетов',
+				},
+				{
+					title:'ДокументыРасчетовСКонтрагентом',
+				},
+				{
+					title:'НДС',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -71,6 +183,34 @@
 			hideLabel: true,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:574px;top:366px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:417px;width:662px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Контактные лица',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,76 @@
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:98px;top:57px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'НаписатьПисьмо',
+				},
+				{
+					text:'ЭлектронныеПисьма',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:362px;width:595px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:84px;width:579px;height:270px;',
+			height: 270,width: 579,
+			items:
+			[
+				{
+					title:'АдресаИТелефоны',
+				},
+				{
+					title:'Контрагенты',
+				},
+				{
+					title:'События',
+				},
+				{
+					title:'ДополнительнаяИнформация',
+				},
+				{
+					title:'Свойства',
+				},
+				{
+					title:'Категории',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

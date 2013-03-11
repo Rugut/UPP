@@ -5,6 +5,45 @@
 	iconCls: 'bogus',
 	title: 'Справочник Виды оплат чека ККМ',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:159px;top:33px;width:434px;height:280px;',
+			height: 280,width: 434,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'ТипОплаты',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:145px;height:280px;',
+			height: 280,width: 145,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:601px;height:25px;',
+			items:
+			[
+			]
+		},
 	]
 });

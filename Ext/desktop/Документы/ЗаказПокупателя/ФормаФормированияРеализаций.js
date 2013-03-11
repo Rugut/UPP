@@ -5,7 +5,37 @@
 	iconCls: 'bogus',
 	title: 'Оформление документов ""Реализация товаров и услуг""',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:376px;width:744px;height:25px;',
+			items:
+			[
+				{
+					text:'СформироватьДокументы',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:744px;height:25px;',
+			items:
+			[
+				{
+					text:'ЗначенияПоУмолчанию',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПоказыватьФорму',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

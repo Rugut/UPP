@@ -5,6 +5,60 @@
 	iconCls: 'bogus',
 	title: 'Места хранения',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:174px;top:33px;width:438px;height:279px;',
+			height: 279,width: 438,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Владелец',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'ДействияФормыВыбрать',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:279px;',
+			height: 279,width: 160,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+			]
+		},
 	]
 });

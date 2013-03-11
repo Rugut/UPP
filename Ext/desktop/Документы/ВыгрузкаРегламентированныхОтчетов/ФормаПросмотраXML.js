@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Просмотр XML',
 	
-	items: [
+	items:
+	[
 	]
 });

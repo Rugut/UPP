@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Языки народов мира',
 	
-	items: [
+	items:
+	[
 	]
 });

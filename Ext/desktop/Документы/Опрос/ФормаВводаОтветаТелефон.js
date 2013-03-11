@@ -5,7 +5,18 @@
 	iconCls: 'bogus',
 	title: 'Ответ',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:128px;width:341px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

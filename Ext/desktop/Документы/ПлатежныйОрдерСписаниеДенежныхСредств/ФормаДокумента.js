@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Платежный ордер на списание денежных средств',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -43,10 +44,122 @@
 			style: 'position:absolute;left:429px;top:105px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'КлиентБанк',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'НастройкаУСН',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:431px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Печать',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'РасчетныйДокумент',
 			style: 'position:absolute;left:92px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:152px;width:641px;height:203px;',
+			height: 203,width: 641,
+			items:
+			[
+				{
+					title:'ПлатежПоОднойСделке',
+				},
+				{
+					title:'ПлатежПоНесколькимСделкам',
+				},
+				{
+					title:'ПлатежПрочие',
+				},
+				{
+					title:'ПеречислениеЗП',
+				},
+				{
+					title:'ПереводНаДругойСчет',
+				},
+				{
+					title:'ВыдачаПодотчетнику',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'ГТД по импорту',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,75 @@
 			style: 'position:absolute;left:90px;top:382px;width:568px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:667px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:116px;width:651px;height:258px;',
+			height: 258,width: 651,
+			items:
+			[
+				{
+					title:'Основные',
+				},
+				{
+					title:'РазделыГТД',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'СчетаУчета',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -41,6 +111,34 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:408px;width:667px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

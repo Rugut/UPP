@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Кассы ККМ',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,38 @@
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:89px;top:57px;width:263px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:452px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:191px;width:452px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

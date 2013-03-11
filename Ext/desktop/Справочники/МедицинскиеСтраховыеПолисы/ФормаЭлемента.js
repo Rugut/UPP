@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Медицинский страховой полис',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -83,6 +84,41 @@
 			hideLabel: true,
 			name: 'ТелефонДомашний',
 			style: 'position:absolute;left:145px;top:331px;width:307px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
+			items:
+			[
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Разделитель3',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:490px;width:460px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

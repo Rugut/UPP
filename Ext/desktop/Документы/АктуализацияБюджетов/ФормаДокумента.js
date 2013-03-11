@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Актуализация бюджетов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,59 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:125px;width:563px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:661px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ПереносТранзакций',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:152px;width:661px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

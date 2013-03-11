@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Сохранить файлы',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,12 +5,33 @@
 	iconCls: 'bogus',
 	title: 'Ключ аналитики вида учета',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:97px;top:33px;width:270px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:375px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:273px;width:375px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,94 @@
 	iconCls: 'bogus',
 	title: 'Кандидат',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Подменю1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:555px;width:665px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -49,6 +136,40 @@
 			style: 'position:absolute;left:490px;top:390px;width:167px;height:19px;',
 		},
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:63px;width:649px;height:127px;',
+			height: 127,width: 649,
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:390px;width:341px;height:157px;',
+			height: 157,width: 341,
+			columns:
+			[
+				{
+					text:'ВидДокумента',
+				},
+				{
+					text:'ЕстьВложения',
+				},
+				{
+					text:'ДатаКонтакта',
+				},
+				{
+					text:'Тема',
+				},
+				{
+					text:'ОтправительИмя',
+				},
+			]
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаОткрытьРезюме',
 			text: 'Открыть резюме',
@@ -59,6 +180,33 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:490px;top:462px;width:167px;height:19px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:366px;top:220px;width:291px;height:144px;',
+			height: 144,width: 291,
+			columns:
+			[
+				{
+					text:'Период',
+				},
+				{
+					text:'Описание',
+				},
+				{
+					text:'Состояние',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:16px;top:500px;width:251px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗарегистрироватьРезультат',
+				},
+			]
 		},
 	]
 });

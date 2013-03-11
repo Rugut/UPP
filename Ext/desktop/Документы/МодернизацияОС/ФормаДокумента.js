@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Модернизация ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -43,6 +44,71 @@
 			style: 'position:absolute;left:421px;top:57px;width:226px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:655px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:475px;width:655px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидОперацийСОсновнымиСредствами',
@@ -53,6 +119,23 @@
 			hideLabel: true,
 			name: 'СобытиеРегл',
 			style: 'position:absolute;left:421px;top:81px;width:226px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:151px;width:639px;height:267px;',
+			height: 267,width: 639,
+			items:
+			[
+				{
+					title:'ОсновныеСредства',
+				},
+				{
+					title:'ВложенияВоВнеоборотныеАктивы',
+				},
+				{
+					title:'АмортизационнаяПремия',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

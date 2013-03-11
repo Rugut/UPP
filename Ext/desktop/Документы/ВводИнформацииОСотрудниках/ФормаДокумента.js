@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Ввод информации о сотрудниках',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,76 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:8px;top:252px;width:384px;height:41px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:384px;height:187px;',
+			height: 187,width: 384,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Сотрудник',
+				},
+				{
+					text:'ПодразделениеОрганизации',
+				},
+				{
+					text:'Должность',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:349px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 	]
 });

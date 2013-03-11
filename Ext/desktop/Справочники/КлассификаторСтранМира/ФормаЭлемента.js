@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Классификатор стран мира',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,35 @@
 			hideLabel: true,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:138px;top:56px;width:366px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:512px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:83px;width:512px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Разделите��ьОК',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

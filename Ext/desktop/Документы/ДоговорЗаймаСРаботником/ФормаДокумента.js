@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Договор займа с сотрудником',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -53,6 +54,161 @@
 			hideLabel: true,
 			name: 'СрокПогашения',
 			style: 'position:absolute;left:405px;top:182px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель5',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:407px;width:534px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -107,6 +263,17 @@
 			hideLabel: true,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:94px;top:182px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:334px;top:33px;width:192px;height:67px;',
+			height: 67,width: 192,
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+			]
 		},
 	]
 });

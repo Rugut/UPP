@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Проекты',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,73 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:105px;width:304px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'РазделительПрава',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Права',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:377px;width:410px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:130px;width:394px;height:239px;',
+			height: 239,width: 394,
+			items:
+			[
+				{
+					title:'Описание',
+				},
+				{
+					title:'Свойства',
+				},
+				{
+					title:'Категории',
+				},
+			]
 		},
 	]
 });

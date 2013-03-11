@@ -5,7 +5,100 @@
 	iconCls: 'bogus',
 	title: 'Поступление товаров из переработки',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Настройка',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель8',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:397px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -47,6 +140,41 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:370px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:157px;width:636px;height:180px;',
+			height: 180,width: 636,
+			items:
+			[
+				{
+					title:'Продукция',
+				},
+				{
+					title:'Тара',
+				},
+				{
+					title:'Материалы',
+				},
+				{
+					title:'Распределение',
+				},
+				{
+					title:'ПрочиеЗатраты',
+				},
+				{
+					title:'РаспределениеПрочихЗатрат',
+				},
+				{
+					title:'ВозвратныеОтходы',
+				},
+				{
+					title:'РаспределениеВозвратныхОтходов',
+				},
+				{
+					title:'СчетаУчета',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Контактные лица контрагентов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,22 @@
 			hideLabel: true,
 			name: 'РольКонтактногоЛица',
 			style: 'position:absolute;left:98px;top:187px;width:427px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:395px;width:533px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,21 @@
 	iconCls: 'bogus',
 	title: 'Авторизация: Введите пароль или прочитайте регистрационную карту',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:59px;width:468px;height:25px;',
+			items:
+			[
+				{
+					text:'ВыполнитьАвторизацию',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

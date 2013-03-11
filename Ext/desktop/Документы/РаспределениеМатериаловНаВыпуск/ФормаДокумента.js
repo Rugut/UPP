@@ -5,7 +5,76 @@
 	iconCls: 'bogus',
 	title: 'Распределение материалов на выпуск',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Настройка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:383px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +110,29 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:356px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:137px;width:636px;height:187px;',
+			height: 187,width: 636,
+			items:
+			[
+				{
+					title:'Продукция',
+				},
+				{
+					title:'Материалы',
+				},
+				{
+					title:'Распределение',
+				},
+				{
+					title:'ВозвратныеОтходы',
+				},
+				{
+					title:'РаспределениеВозвратныхОтходов',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

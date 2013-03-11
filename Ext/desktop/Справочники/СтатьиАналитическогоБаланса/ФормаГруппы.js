@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Группа Статьи аналитического баланса',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:35px;width:486px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Затраты прочие',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,72 @@
 			style: 'position:absolute;left:96px;top:439px;width:566px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'Разделитель6',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:108px;width:654px;height:301px;',
+			height: 301,width: 654,
+			items:
+			[
+				{
+					title:'Затраты',
+				},
+				{
+					title:'БухгалтерскийУчет',
+				},
+				{
+					title:'НалоговыйУчет',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -41,6 +108,31 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:415px;width:566px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

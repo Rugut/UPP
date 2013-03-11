@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Отражение в учете договора',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:148px;width:514px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОК',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

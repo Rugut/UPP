@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Списание ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,158 @@
 			hideLabel: true,
 			name: 'Событие',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:148px;width:673px;height:24px;',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'ЗаполнитьДляСписка',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ЗаполнитьПоНаименованию',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:172px;width:673px;height:160px;',
+			height: 160,width: 673,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+				{
+					text:'ИнвентарныйНомер',
+				},
+				{
+					text:'СписаноНаЗатраты',
+				},
+				{
+					text:'СписаноНаЗатратыБУ',
+				},
+				{
+					text:'Стоимость',
+				},
+				{
+					text:'ОстСтоимость',
+				},
+				{
+					text:'Амортизация',
+				},
+				{
+					text:'АмортизацияЗаМесяц',
+				},
+				{
+					text:'СтоимостьБУ',
+				},
+				{
+					text:'ОстСтоимостьБУ',
+				},
+				{
+					text:'АмортизацияБУ',
+				},
+				{
+					text:'АмортизацияЗаМесяцБУ',
+				},
+				{
+					text:'СтоимостьНУ',
+				},
+				{
+					text:'ОстСтоимостьНУ',
+				},
+				{
+					text:'АмортизацияНУ',
+				},
+				{
+					text:'АмортизацияЗаМесяцНУ',
+				},
+				{
+					text:'СуммаКапитальныхВложенийВключаемыхВРасходыНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:689px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:388px;width:689px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

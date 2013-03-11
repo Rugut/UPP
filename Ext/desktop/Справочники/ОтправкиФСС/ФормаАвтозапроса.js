@@ -5,6 +5,21 @@
 	iconCls: 'bogus',
 	title: 'Автообмен с сервером ФСС',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:44px;width:351px;height:51px;',
+			height: 51,width: 351,
+			items:
+			[
+				{
+					title:'СтраницаОтсчета',
+				},
+				{
+					title:'СтраницаРезультата',
+				},
+			]
+		},
 	]
 });

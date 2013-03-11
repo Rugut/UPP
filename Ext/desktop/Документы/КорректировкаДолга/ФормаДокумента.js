@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Корректировка долга',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,46 @@
 			style: 'position:absolute;left:96px;top:423px;width:548px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Контрагент',
@@ -35,6 +76,57 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:450px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Записать',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:130px;width:636px;height:261px;',
+			height: 261,width: 636,
+			items:
+			[
+				{
+					title:'Взаиморасчеты',
+				},
+				{
+					title:'УменьшениеДолга',
+				},
+				{
+					title:'ВспомогательныйСчет',
+				},
+				{
+					title:'СчетаУчета',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

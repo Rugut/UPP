@@ -5,6 +5,34 @@
 	iconCls: 'bogus',
 	title: '(не используется) Оценочные обязательства',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:493px;height:259px;',
+			height: 259,width: 493,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'ДатаИсполнения',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:509px;height:25px;',
+			items:
+			[
+			]
+		},
 	]
 });

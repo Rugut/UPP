@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Поступление денежных документов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,66 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:319px;width:560px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'НастройкаУСН',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель5',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:107px;width:654px;height:159px;',
+			height: 159,width: 654,
+			items:
+			[
+				{
+					title:'ОтКого',
+				},
+				{
+					title:'ДенежныеДокументы',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -47,6 +108,28 @@
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:542px;top:271px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:346px;width:670px;height:25px;',
+			items:
+			[
+				{
+					text:'Записать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'РазделительОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

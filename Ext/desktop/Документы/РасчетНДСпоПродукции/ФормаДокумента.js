@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Расчет НДС по продукции (работам, услугам)',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,56 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:108px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:161px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

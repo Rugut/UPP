@@ -11,7 +11,7 @@ Ext.define('MyDesktop.BogusMenuModule', {
     init: function () {
 
         this.launcher = {
-            text: 'Справочники',
+            text: 'Справочники элементы',
             iconCls: 'bogus',
             handler: function () {
                 return false;
@@ -42,6 +42,7 @@ Ext.define('MyDesktop.BogusMenuModule', {
                     scope: this,
                     windowId: ++windowIndex,
                     FormId: 'Справочники.' + Справочник.Имя + '.ФормаЭлемента',
+                    //FormId: 'Справочники.' + Справочник.Имя + '.ФормаСписка',
                 });
                 
                 if (НомерСправочника > 20)
@@ -58,6 +59,60 @@ Ext.define('MyDesktop.BogusMenuModule', {
 });
 
 Ext.define('MyDesktop.BogusMenuModule1', {
+    extend: 'MyDesktop.BogusModule',
+
+    init: function () {
+
+        this.launcher = {
+            text: 'Справочники списки',
+            iconCls: 'bogus',
+            handler: function () {
+                return false;
+            },
+            menu: {
+                items: []
+            }
+        };
+
+        Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
+            enabled: true,  //Загрузчик активен
+            disableCaching: true,   //Не кеширует файоы
+            paths: {
+                Base: "js/Base", //Путь в пространству данных Base
+                Метаданные: "Метаданные",
+                Справочники: "Справочники",
+                Документы: "Документы",
+            }
+        });
+        //alert(src.FormId);
+        var Справочники = Ext.create("Метаданные.Справочники");
+        for (var НомерСправочника = 0, Справочник; Справочник = Справочники[НомерСправочника]; НомерСправочника++) {
+            this.launcher.menu.items.push({
+                text: Справочник.Имя,
+                iconCls: 'bogus',
+                handler: this.createWindow,
+                scope: this,
+                windowId: ++windowIndex,
+                //FormId: 'Справочники.' + Справочник.Имя + '.ФормаЭлемента',
+                FormId: 'Справочники.' + Справочник.Имя + '.ФормаСписка',
+            });
+
+            if (НомерСправочника > 20) {
+                break;
+            }
+
+        }
+
+
+
+
+    }
+});
+
+
+
+
+Ext.define('MyDesktop.BogusMenuModule2', {
     extend: 'MyDesktop.BogusModule',
 
     init: function () {

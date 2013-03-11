@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Передача НМА',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,52 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:344px;width:546px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель13',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -47,6 +94,34 @@
 			name: 'КнопкаПерерассчитатьДолг',
 			text: '',
 			style: 'position:absolute;left:627px;top:105px;width:15px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:371px;width:650px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗаписать',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

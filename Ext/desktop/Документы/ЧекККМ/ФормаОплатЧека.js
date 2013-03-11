@@ -5,7 +5,30 @@
 	iconCls: 'bogus',
 	title: 'Оплата чека',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:203px;width:480px;height:25px;',
+			items:
+			[
+				{
+					text:'ОплатитьКартой',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОк',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДействиеОтмена',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +58,17 @@
 			hideLabel: true,
 			name: 'Сдача',
 			style: 'position:absolute;left:362px;top:175px;width:110px;height:22px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:59px;width:464px;height:116px;',
+			height: 116,width: 464,
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+			]
 		},
 	]
 });

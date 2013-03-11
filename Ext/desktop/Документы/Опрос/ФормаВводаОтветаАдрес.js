@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Ответ',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -59,6 +60,16 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:197px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:224px;width:330px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

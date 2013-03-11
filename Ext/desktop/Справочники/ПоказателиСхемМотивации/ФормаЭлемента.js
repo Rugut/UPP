@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Показатели схем мотивации',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,83 @@
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:413px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:368px;width:413px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидПоказателя',
@@ -35,6 +113,32 @@
 			hideLabel: true,
 			name: 'Идентификатор',
 			style: 'position:absolute;left:96px;top:65px;width:309px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:193px;width:397px;height:167px;',
+			height: 167,width: 397,
+			items:
+			[
+				{
+					title:'АнализПоказателей',
+				},
+				{
+					title:'Использование',
+				},
+				{
+					title:'ШкалаОценки',
+				},
+				{
+					title:'СуммовойПоказатель',
+				},
+				{
+					title:'Валюта',
+				},
+				{
+					title:'Стаж',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Отчет о розничных продажах',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,85 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:405px;width:570px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'ВыгрузитьВФорматеCommerceMLФайл',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеЗаполнитьИПровести',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLПанель',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLЭлПочтаПанель',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLЭлПочта',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLФайлПанель',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceML',
+				},
+				{
+					text:'Подменю1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -61,6 +141,34 @@
 			style: 'position:absolute;left:428px;top:81px;width:236px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:432px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Печать',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяДвиженияДенежныхСредств',
@@ -71,6 +179,26 @@
 			hideLabel: true,
 			name: 'Проект',
 			style: 'position:absolute;left:428px;top:356px;width:236px;height:20px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:108px;width:656px;height:244px;',
+			height: 244,width: 656,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'ОплатаПлатежнымиКартами',
+				},
+				{
+					title:'ОплатаБанковскимиКредитами',
+				},
+				{
+					title:'ПродажиПоДисконтнымКартам',
+				},
+			]
 		},
 	]
 });

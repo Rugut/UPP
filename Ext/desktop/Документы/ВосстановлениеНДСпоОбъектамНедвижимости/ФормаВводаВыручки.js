@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Ввод доли выручки, не облагаемой НДС (%)',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:85px;width:353px;height:25px;',
+			items:
+			[
+				{
+					text:'Отмена',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

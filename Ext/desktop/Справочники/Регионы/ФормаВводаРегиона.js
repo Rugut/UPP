@@ -5,7 +5,34 @@
 	iconCls: 'bogus',
 	title: 'Ввод региона',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:336px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействияФормыЗагрузитьАК',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:247px;width:336px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

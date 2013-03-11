@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Способы распределения затрат',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,52 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:412px;width:522px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:438px;width:620px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:184px;width:604px;height:222px;',
+			height: 222,width: 604,
+			items:
+			[
+				{
+					title:'БазаРаспределения',
+				},
+				{
+					title:'Отбор',
+				},
+				{
+					title:'Фильтры',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Установка скидок номенклатуры',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Назначения использования',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -53,6 +54,35 @@
 			hideLabel: true,
 			name: 'СпособОтраженияРасходов',
 			style: 'position:absolute;left:186px;top:153px;width:227px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:421px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:180px;width:421px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 	]
 });

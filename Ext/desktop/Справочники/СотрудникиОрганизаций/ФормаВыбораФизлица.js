@@ -5,7 +5,31 @@
 	iconCls: 'bogus',
 	title: 'Список физлиц с похожими данными',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:29px;width:506px;height:96px;',
+			height: 96,width: 506,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'ДатаРождения',
+				},
+				{
+					text:'ИНН',
+				},
+				{
+					text:'СтраховойНомерПФР',
+				},
+			]
+		},
 		{
 			xtype: 'button',
 			name: 'ВвестиНового',

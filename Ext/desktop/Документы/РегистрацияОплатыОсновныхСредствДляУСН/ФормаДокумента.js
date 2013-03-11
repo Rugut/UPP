@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Регистрация оплаты ОС и НМА для УСН',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,70 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:57px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:540px;height:25px;',
+			items:
+			[
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:334px;width:540px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:81px;width:524px;height:195px;',
+			height: 195,width: 524,
+			items:
+			[
+				{
+					title:'ОсновныеСредства',
+				},
+				{
+					title:'НематериальныеАктивы',
+				},
+				{
+					title:'Модернизация',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа отчетов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,28 @@
 			hideLabel: true,
 			name: 'Описание',
 			style: 'position:absolute;left:8px;top:53px;width:306px;height:220px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:281px;width:322px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+			]
 		},
 	]
 });

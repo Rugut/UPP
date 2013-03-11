@@ -5,12 +5,98 @@
 	iconCls: 'bogus',
 	title: 'Планируемое поступление денежных средств',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель11',
+				},
+				{
+					text:'Файлы1',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'ДействиеСвойства',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеКатегории',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:81px;width:641px;height:127px;',
+			height: 127,width: 641,
+			items:
+			[
+				{
+					title:'Расчеты',
+				},
+				{
+					title:'ПолучениеИзКассыККМ',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:96px;top:57px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:336px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

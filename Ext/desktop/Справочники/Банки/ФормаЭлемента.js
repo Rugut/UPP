@@ -5,11 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Банк',
 	
-	items: [
-	    
-
-
-
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -51,6 +48,35 @@
 			hideLabel: true,
 			name: 'Телефоны',
 			style: 'position:absolute;left:94px;top:167px;width:260px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:362px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:194px;width:362px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 	]
 });

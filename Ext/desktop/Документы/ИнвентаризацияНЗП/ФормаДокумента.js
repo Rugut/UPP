@@ -5,7 +5,52 @@
 	iconCls: 'bogus',
 	title: 'Инвентаризация незавершенного производства',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:410px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -59,6 +104,20 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:97px;top:359px;width:547px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:161px;width:636px;height:190px;',
+			height: 190,width: 636,
+			items:
+			[
+				{
+					title:'Материалы',
+				},
+				{
+					title:'ПрочиеЗатраты',
+				},
+			]
 		},
 	]
 });

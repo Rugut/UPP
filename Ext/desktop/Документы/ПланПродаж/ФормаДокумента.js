@@ -5,12 +5,134 @@
 	iconCls: 'bogus',
 	title: 'План продаж',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:328px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ЗаполнитьПлан',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеПодбор',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:171px;width:636px;height:108px;',
+			height: 108,width: 636,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Период',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Артикул',
+				},
+				{
+					text:'Номенклатура',
+				},
+				{
+					text:'ХарактеристикаНоменклатуры',
+				},
+				{
+					text:'Количество',
+				},
+				{
+					text:'ЕдиницаИзмерения',
+				},
+				{
+					text:'Коэффициент',
+				},
+				{
+					text:'Цена',
+				},
+				{
+					text:'Сумма',
+				},
+				{
+					text:'СтавкаНДС',
+				},
+				{
+					text:'СуммаНДС',
+				},
+				{
+					text:'Всего',
+				},
+				{
+					text:'Контрагент',
+				},
+				{
+					text:'Договор',
+				},
+				{
+					text:'Заказ',
+				},
+				{
+					text:'Источник',
+				},
+				{
+					text:'ВариантРаспределения',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -23,6 +145,34 @@
 			hideLabel: true,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:564px;top:306px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:355px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

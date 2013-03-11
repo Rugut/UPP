@@ -5,7 +5,37 @@
 	iconCls: 'bogus',
 	title: 'Вид оплаты чека ККМ',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:454px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:155px;width:454px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +53,17 @@
 			hideLabel: true,
 			name: 'ТипОплаты',
 			style: 'position:absolute;left:148px;top:57px;width:298px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:80px;width:438px;height:67px;',
+			height: 67,width: 438,
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+			]
 		},
 	]
 });

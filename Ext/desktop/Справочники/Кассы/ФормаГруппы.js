@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа Кассы',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,38 @@
 			hideLabel: true,
 			name: 'Владелец',
 			style: 'position:absolute;left:94px;top:33px;width:444px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:546px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель3',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:108px;width:546px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Установка зависимостей оборотов по статьям',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -59,6 +60,98 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:129px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:172px;width:640px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:196px;width:640px;height:160px;',
+			height: 160,width: 640,
+			columns:
+			[
+				{
+					text:'СтатьяОборотовЗависимая',
+				},
+				{
+					text:'РеквизитВлияющейСтатьиДляРасчетаСуммы',
+				},
+				{
+					text:'КоэффициентДляРасчетаСуммы',
+				},
+				{
+					text:'РеквизитВлияющейСтатьиДляРасчетаКоличества',
+				},
+				{
+					text:'КоэффициентДляРасчетаКоличества',
+				},
+				{
+					text:'ЗначениеИзмененияПоПериодам',
+				},
+				{
+					text:'ЗависимаяНоменклатура',
+				},
+				{
+					text:'ЗависимыйКонтрагент',
+				},
+				{
+					text:'ЗависимыйПроект',
+				},
+				{
+					text:'ЗависимыйЦФО',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			items:
+			[
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:388px;width:656px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

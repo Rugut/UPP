@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Установка скидок номенклатуры',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,65 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:394px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
+			items:
+			[
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:445px;width:638px;height:25px;',
+			items:
+			[
+				{
+					text:'Записать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -65,6 +125,29 @@
 			hideLabel: true,
 			name: 'Условие',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:209px;width:622px;height:180px;',
+			height: 180,width: 622,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'ЦеновыеГруппы',
+				},
+				{
+					title:'Бонусы',
+				},
+				{
+					title:'ПолучателиСкидки',
+				},
+				{
+					title:'ВремяДействияСкидки',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

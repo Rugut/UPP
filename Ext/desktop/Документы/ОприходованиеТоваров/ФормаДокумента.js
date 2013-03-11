@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Оприходование товаров',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,55 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:383px;width:562px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:668px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -65,6 +115,48 @@
 			hideLabel: true,
 			name: 'ИнвентаризацияТоваровНаСкладе',
 			style: 'position:absolute;left:98px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:410px;width:668px;height:25px;',
+			items:
+			[
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:105px;width:652px;height:204px;',
+			height: 204,width: 652,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'КоррСчет',
+				},
+			]
 		},
 	]
 });

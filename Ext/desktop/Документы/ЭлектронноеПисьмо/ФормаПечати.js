@@ -5,6 +5,7 @@
 	iconCls: 'bogus',
 	title: 'Форма',
 	
-	items: [
+	items:
+	[
 	]
 });

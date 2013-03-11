@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Нематериальные активы и расходы на НИОКР',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -43,10 +44,56 @@
 			style: 'position:absolute;left:152px;top:199px;width:340px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:416px;width:500px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидОбъектаУчета',
 			style: 'position:absolute;left:152px;top:153px;width:340px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:225px;width:484px;height:183px;',
+			height: 183,width: 484,
+			items:
+			[
+				{
+					title:'Прочее',
+				},
+				{
+					title:'Свойства',
+				},
+				{
+					title:'Категории',
+				},
+			]
 		},
 	]
 });

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Профили распределения по периодам',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,59 @@
 			hideLabel: true,
 			name: 'Подпериод',
 			style: 'position:absolute;left:94px;top:84px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:127px;width:390px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:151px;width:390px;height:220px;',
+			height: 220,width: 390,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'НомерПодпериода',
+				},
+				{
+					text:'ДоляПодпериода',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:379px;width:406px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+			]
 		},
 	]
 });

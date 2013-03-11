@@ -95,8 +95,9 @@ Ext.define('MyDesktop.App', {
             new MyDesktop.AccordionWindow(),
             new MyDesktop.Notepad(),
             new MyDesktop.BogusMenuModule(),
-            new MyDesktop.BogusModule(),
+            //new MyDesktop.BogusModule(),
             new MyDesktop.BogusMenuModule1(),
+            new MyDesktop.BogusMenuModule2(),
         ];
     },
 

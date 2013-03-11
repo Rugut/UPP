@@ -5,12 +5,35 @@
 	iconCls: 'bogus',
 	title: 'Договор контрагента',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:106px;top:105px;width:284px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:511px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Файлы',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -29,6 +52,57 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:106px;top:81px;width:397px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:554px;width:511px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительОК',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:175px;width:495px;height:346px;',
+			height: 346,width: 495,
+			items:
+			[
+				{
+					title:'Общие',
+				},
+				{
+					title:'УчетТоваров',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'УсловияДоговора',
+				},
+				{
+					title:'Скидки',
+				},
+				{
+					title:'Свойства',
+				},
+				{
+					title:'Категории',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

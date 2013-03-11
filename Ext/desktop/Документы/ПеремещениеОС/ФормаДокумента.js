@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Перемещение ОС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -59,6 +60,98 @@
 			hideLabel: true,
 			name: 'МОЛОрганизации',
 			style: 'position:absolute;left:429px;top:122px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:184px;width:649px;height:24px;',
+			items:
+			[
+				{
+					text:'ЗаполнитьПоНаименованию',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:209px;width:649px;height:175px;',
+			height: 175,width: 649,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'ИнвентарныйНомер',
+				},
+				{
+					text:'ОсновноеСредство',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			items:
+			[
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Подменю1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:439px;width:665px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

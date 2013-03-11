@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Погашение задолженности подотчетных лиц в регл. учете',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,82 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:441px;top:57px;width:203px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Очистить',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:371px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:84px;width:636px;height:255px;',
+			height: 255,width: 636,
+			items:
+			[
+				{
+					title:'Начисления',
+				},
+				{
+					title:'Страница1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

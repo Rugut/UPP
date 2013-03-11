@@ -5,7 +5,24 @@
 	iconCls: 'bogus',
 	title: 'Сведения о доходах физлиц',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:159px;width:269px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'ОК',
+				},
+			]
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущийПериод',

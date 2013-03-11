@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Отражение начисления НДС',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -47,6 +48,82 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:421px;width:574px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:448px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:153px;width:656px;height:220px;',
+			height: 220,width: 656,
+			items:
+			[
+				{
+					title:'ТоварыИУслуги',
+				},
+				{
+					title:'ДокументыОплаты',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

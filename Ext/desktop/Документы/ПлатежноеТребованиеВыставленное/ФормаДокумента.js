@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Платежное требование выставленное',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,117 @@
 			hideLabel: true,
 			name: 'СчетКонтрагента',
 			style: 'position:absolute;left:429px;top:104px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:128px;width:641px;height:247px;',
+			height: 247,width: 641,
+			items:
+			[
+				{
+					title:'СтраницаОсновная',
+				},
+				{
+					title:'СтраницаУсловияПлатежа',
+				},
+				{
+					title:'СтраницаПечать',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'НастройкаУСН',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'КлиентБанк',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:452px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
+			height: 19,width: 304,
+			items:
+			[
+				{
+					title:'СтраницаОплата',
+				},
+				{
+					title:'СтраницаЧастичнаяОплата',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

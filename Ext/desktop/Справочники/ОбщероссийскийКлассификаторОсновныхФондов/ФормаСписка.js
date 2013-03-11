@@ -5,6 +5,57 @@
 	iconCls: 'bogus',
 	title: 'Общероссийский классификатор основных фондов',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:196px;top:33px;width:565px;height:280px;',
+			height: 280,width: 565,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'КонтрольноеЧисло',
+				},
+				{
+					text:'АмортизационнаяГруппа',
+				},
+				{
+					text:'НаименованиеГруппировки',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			items:
+			[
+				{
+					text:'ЗагрузитьКлассификатор',
+				},
+				{
+					text:'Разделитель5',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:182px;height:280px;',
+			height: 280,width: 182,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+			]
+		},
 	]
 });

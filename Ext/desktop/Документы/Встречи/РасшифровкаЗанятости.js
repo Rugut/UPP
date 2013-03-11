@@ -5,6 +5,17 @@
 	iconCls: 'bogus',
 	title: '<ФИО|Помещение>',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
+			items:
+			[
+				{
+					text:'ОткрытьДокумент',
+				},
+			]
+		},
 	]
 });

@@ -5,7 +5,51 @@
 	iconCls: 'bogus',
 	title: 'Типы скидок и наценок',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:483px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:295px;width:483px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:61px;width:467px;height:226px;',
+			height: 226,width: 467,
+			items:
+			[
+				{
+					title:'ПараметрыСкидки',
+				},
+				{
+					title:'ВремяДействия',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

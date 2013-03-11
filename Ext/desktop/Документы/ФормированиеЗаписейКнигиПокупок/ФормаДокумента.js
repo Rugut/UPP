@@ -5,7 +5,70 @@
 	iconCls: 'bogus',
 	title: '',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ПодменюЗаполнить',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ЗаполнитьДокумент',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:396px;width:709px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Печать',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +98,29 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:99px;width:693px;height:267px;',
+			height: 267,width: 693,
+			items:
+			[
+				{
+					title:'ВычетПоПриобретеннымЦенностям',
+				},
+				{
+					title:'НДСсАвансов',
+				},
+				{
+					title:'НДССАвансовВыданных',
+				},
+				{
+					title:'ВычетНДСПоНалоговомуАгенту',
+				},
+				{
+					title:'ВычетПриИзмененииСтоимости',
+				},
+			]
 		},
 	]
 });

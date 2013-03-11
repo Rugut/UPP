@@ -5,6 +5,31 @@
 	iconCls: 'bogus',
 	title: 'Виды анализов номенклатуры',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:344px;height:280px;',
+			height: 280,width: 344,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:360px;height:25px;',
+			items:
+			[
+			]
+		},
 	]
 });

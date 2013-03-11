@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Корректировочный счет-фактура выданный',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -17,6 +18,131 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:120px;top:500px;width:653px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'ДействиеСвойства',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'Разделитель3',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Действие',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:526px;width:780px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительЗаписать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -53,6 +179,20 @@
 			hideLabel: true,
 			name: 'СчетФактура',
 			style: 'position:absolute;left:112px;top:104px;width:661px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:133px;width:765px;height:312px;',
+			height: 312,width: 765,
+			items:
+			[
+				{
+					title:'ТоварыИУслугиРеализация',
+				},
+				{
+					title:'РеквизитыСчетаФактуры',
+				},
+			]
 		},
 	]
 });

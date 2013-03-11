@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Сведения об инвалидности',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,28 @@
 			hideLabel: true,
 			name: 'СрокДействияСправки',
 			style: 'position:absolute;left:142px;top:104px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:174px;width:270px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'РазделительИстория',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'КнопкаИстория',
+				},
+			]
 		},
 	]
 });

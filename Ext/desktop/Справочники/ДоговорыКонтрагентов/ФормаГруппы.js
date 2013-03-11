@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Группа договоров взаиморасчетов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,35 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:134px;top:56px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:111px;width:442px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'РазделительОК',
+				},
+			]
 		},
 	]
 });

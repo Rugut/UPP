@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Оприходование незавершенного производства',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +26,60 @@
 			style: 'position:absolute;left:96px;top:337px;width:548px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:131px;width:636px;height:177px;',
+			height: 177,width: 636,
+			items:
+			[
+				{
+					title:'Материалы',
+				},
+				{
+					title:'БухгалтерскийУчет',
+				},
+				{
+					title:'НалоговыйУчет',
+				},
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -41,6 +96,34 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:313px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:364px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'ОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

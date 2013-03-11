@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Отражение в учете бухгалтерских расчетов с персоналом',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,65 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:113px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:341px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьСвойства1',
+				},
+				{
+					text:'Разделитель5',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:132px;width:341px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+			]
 		},
 	]
 });

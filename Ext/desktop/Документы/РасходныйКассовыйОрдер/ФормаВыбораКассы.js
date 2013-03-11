@@ -5,7 +5,31 @@
 	iconCls: 'bogus',
 	title: 'Укажите кассу поступления денежных средств',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:83px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'ОК',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Ключевые ресурсы предприятия',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -35,6 +36,35 @@
 			hideLabel: true,
 			name: 'БазаЗаданияПотребности',
 			style: 'position:absolute;left:164px;top:130px;width:258px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:157px;width:430px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
 		},
 	]
 });

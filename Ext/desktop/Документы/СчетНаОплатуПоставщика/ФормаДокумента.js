@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Документ Счет на оплату поставщика',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,60 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:399px;width:560px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:156px;width:642px;height:197px;',
+			height: 197,width: 642,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Оборудование',
+				},
+				{
+					title:'Услуги',
+				},
+				{
+					title:'Тара',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -83,6 +138,34 @@
 			hideLabel: true,
 			name: 'ДатаПоступления',
 			style: 'position:absolute;left:90px;top:105px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:430px;width:658px;height:25px;',
+			items:
+			[
+				{
+					text:'Печать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
 		},
 	]
 });

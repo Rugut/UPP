@@ -5,7 +5,82 @@
 	iconCls: 'bogus',
 	title: 'Чек ККМ',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:413px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Записать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'ЧекККМ',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'РазделительЗаписать',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -47,6 +122,20 @@
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:563px;top:340px;width:81px;height:17px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:109px;width:636px;height:225px;',
+			height: 225,width: 636,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

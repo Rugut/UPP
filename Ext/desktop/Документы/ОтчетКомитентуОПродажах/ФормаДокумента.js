@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Отчет комитенту',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,99 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:428px;width:562px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			items:
+			[
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceML',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLФайлПанель',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLПанель',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLЭлПочтаПанель',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLЭлПочта',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'ВыгрузитьВФорматеCommerceMLФайл',
+				},
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель12',
+				},
+				{
+					text:'ДействиеЦеныВалюта',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:152px;width:648px;height:229px;',
+			height: 229,width: 648,
+			items:
+			[
+				{
+					title:'Товары',
+				},
+				{
+					title:'ДенежныеСредства',
+				},
+				{
+					title:'СчетРасчетов',
+				},
+				{
+					title:'СчетаДоходов',
+				},
+				{
+					title:'Дополнительно',
+				},
+				{
+					title:'ДокументыРасчетовСКонтрагентом',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -83,6 +177,34 @@
 			hideLabel: true,
 			name: 'СуммаВознаграждения',
 			style: 'position:absolute;left:576px;top:406px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:664px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'РазделительОК',
+				},
+			]
 		},
 	]
 });

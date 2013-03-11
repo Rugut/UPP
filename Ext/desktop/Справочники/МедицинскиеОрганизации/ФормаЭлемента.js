@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Медицинские организации',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,44 @@
 			hideLabel: true,
 			name: 'АдресКодПоКЛАДР',
 			style: 'position:absolute;left:477px;top:59px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
+			items:
+			[
+				{
+					text:'Подменю',
+				},
+				{
+					text:'Разделитель2',
+				},
+				{
+					text:'РедактироватьКодНомер',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:111px;width:565px;height:25px;',
+			items:
+			[
+				{
+					text:'ОсновныеДействияФормыЗакрыть',
+				},
+				{
+					text:'ОсновныеДействияФормыОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ОсновныеДействияФормыСохранить',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

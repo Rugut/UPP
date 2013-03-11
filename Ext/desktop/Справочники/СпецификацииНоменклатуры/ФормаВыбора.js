@@ -5,6 +5,66 @@
 	iconCls: 'bogus',
 	title: 'Спецификации номенклатуры',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:174px;top:33px;width:598px;height:280px;',
+			height: 280,width: 598,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'КодВерсии',
+				},
+				{
+					text:'Наименование',
+				},
+				{
+					text:'Активная',
+				},
+				{
+					text:'ВидСпецификации',
+				},
+				{
+					text:'Состояние',
+				},
+				{
+					text:'ДатаУтверждения',
+				},
+				{
+					text:'Комментарий',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:280px;',
+			height: 280,width: 160,
+			columns:
+			[
+				{
+					text:'Наименование',
+				},
+			]
+		},
 	]
 });

@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Корректировка остатков по прогнозным балансам',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,104 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:441px;width:428px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:143px;width:514px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:168px;width:514px;height:220px;',
+			height: 220,width: 514,
+			columns:
+			[
+				{
+					text:'НомерСтроки',
+				},
+				{
+					text:'Счет',
+				},
+				{
+					text:'Субконто1',
+				},
+				{
+					text:'Субконто2',
+				},
+				{
+					text:'Субконто3',
+				},
+				{
+					text:'Валюта',
+				},
+				{
+					text:'СуммаУпр',
+				},
+				{
+					text:'ВалютнаяСумма',
+				},
+				{
+					text:'СуммаСценария',
+				},
+				{
+					text:'Количество',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:530px;height:25px;',
+			items:
+			[
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Разделитель6',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:468px;width:530px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие1',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

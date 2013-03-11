@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Инкассовое поручение переданное',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,6 +42,120 @@
 			hideLabel: true,
 			name: 'СчетКонтрагента',
 			style: 'position:absolute;left:429px;top:104px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:128px;width:641px;height:251px;',
+			height: 251,width: 641,
+			items:
+			[
+				{
+					title:'СтраницаОсновная',
+				},
+				{
+					title:'СтраницаПечать',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'КлиентБанк',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Подменю3',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'НастройкаУСН',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'ПоказатьСкрытьСчетаУчета',
+				},
+				{
+					text:'Разделитель6',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:456px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
+			height: 19,width: 304,
+			items:
+			[
+				{
+					title:'СтраницаОплата',
+				},
+				{
+					title:'СтраницаЧастичнаяОплата',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

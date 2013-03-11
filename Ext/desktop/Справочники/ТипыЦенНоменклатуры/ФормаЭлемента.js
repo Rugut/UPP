@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Элемент Типы цен номенклатуры',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -49,10 +50,39 @@
 			style: 'position:absolute;left:113px;top:283px;width:371px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОкруглятьВБольшуюСторону',
 			style: 'position:absolute;left:113px;top:249px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:310px;width:492px;height:25px;',
+			items:
+			[
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительОК',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

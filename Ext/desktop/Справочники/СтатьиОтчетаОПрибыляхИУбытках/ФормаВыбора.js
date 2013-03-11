@@ -5,6 +5,55 @@
 	iconCls: 'bogus',
 	title: 'Статьи отчета о прибылях и убытках',
 	
-	items: [
+	items:
+	[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:400px;height:280px;',
+			height: 280,width: 400,
+			columns:
+			[
+				{
+					text:'Картинка',
+				},
+				{
+					text:'Код',
+				},
+				{
+					text:'Наименование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:416px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Действие13',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Разделитель4',
+				},
+				{
+					text:'Подменю2',
+				},
+			]
+		},
 	]
 });

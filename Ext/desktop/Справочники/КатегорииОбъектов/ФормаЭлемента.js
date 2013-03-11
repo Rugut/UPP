@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Элемент Категории объектов',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,35 @@
 			hideLabel: true,
 			name: 'НазначениеКатегории',
 			style: 'position:absolute;left:94px;top:57px;width:304px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:84px;width:406px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'РазделительОК',
+				},
+				{
+					text:'Закрыть1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'Записать',
+				},
+			]
 		},
 	]
 });

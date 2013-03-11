@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Отражение зарплаты в регламентированном учете',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +30,88 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:431px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
+			items:
+			[
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'Разделитель5',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель8',
+				},
+				{
+					text:'ОткрытьСвойства',
+				},
+				{
+					text:'Разделитель7',
+				},
+				{
+					text:'Очистить',
+				},
+				{
+					text:'ОткрытьКатегории',
+				},
+				{
+					text:'Подменю1',
+				},
+				{
+					text:'ПроводкиДтКт',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'ПроводкиДтКтНУ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:454px;width:659px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Разделитель',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие',
+				},
+				{
+					text:'Разделитель1',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:110px;width:643px;height:312px;',
+			height: 312,width: 643,
+			items:
+			[
+				{
+					title:'Проводки',
+				},
+				{
+					title:'ОсновныеНачисления',
+				},
+				{
+					title:'ДополнительныеНачисления',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

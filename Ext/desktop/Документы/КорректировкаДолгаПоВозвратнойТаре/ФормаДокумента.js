@@ -5,7 +5,8 @@
 	iconCls: 'bogus',
 	title: 'Корректировка долга по возвратной таре',
 	
-	items: [
+	items:
+	[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -23,6 +24,54 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:335px;width:546px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:648px;height:25px;',
+			items:
+			[
+				{
+					text:'Разделитель9',
+				},
+				{
+					text:'СтруктураПодчиненностиДокумента',
+				},
+				{
+					text:'Разделитель10',
+				},
+				{
+					text:'ПодменюВидаОперации',
+				},
+				{
+					text:'Подменю2',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'ДействиеОткрытьСвойства',
+				},
+				{
+					text:'ДвиженияДокументаПоРегистрам',
+				},
+				{
+					text:'ДействиеОткрытьКатегории',
+				},
+			]
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:156px;width:632px;height:152px;',
+			height: 152,width: 632,
+			items:
+			[
+				{
+					title:'Тара',
+				},
+				{
+					title:'Дополнительно',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -77,6 +126,34 @@
 			hideLabel: true,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:234px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:362px;width:648px;height:25px;',
+			items:
+			[
+				{
+					text:'ОК',
+				},
+				{
+					text:'Печать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Разделитель1',
+				},
+				{
+					text:'РазделительЗакрыть',
+				},
+				{
+					text:'РазделительЗаписать',
+				},
+				{
+					text:'Закрыть1',
+				},
+			]
 		},
 	]
 });
