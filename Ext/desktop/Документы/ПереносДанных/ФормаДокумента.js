@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ПереносДанных.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 402,width: 650,
+	style: 'position:absolute;width:650px;height:402px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Перенос данных',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:334px;top:33px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:422px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:502px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,36 +38,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройка состава регистров',
 				},
 				{
-					text:'Подменю1',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 		{
@@ -62,21 +64,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:350px;width:73px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,7 +95,7 @@
 			items:
 			[
 				{
-					title:'РегистрыСведений',
+					title:'Регистры сведений',
 					items:
 					[
 		{
@@ -104,6 +108,13 @@
 					title:'Подсказка',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'ПодсказкаРегистрыСведений',
+			text: 'На этой закладке отображаются движения по регистрам сведений. 
+Чтобы настроить список регистров нажмите кнопку "Настройка состава регистров".',
+			style: 'position:absolute;left:6px;top:6px;width:606px;height:31px;',
+		},
 					]
 				},
 			]
@@ -111,7 +122,7 @@
 					]
 				},
 				{
-					title:'РегистрыНакопления',
+					title:'Регистры накопления',
 					items:
 					[
 		{
@@ -124,6 +135,13 @@
 					title:'Подсказка',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'ПодсказкаРегистрыНакопления',
+			text: 'На этой закладке отображаются движения по регистрам накопления. 
+Чтобы настроить список регистров нажмите кнопку "Настройка состава регистров".',
+			style: 'position:absolute;left:6px;top:6px;width:606px;height:31px;',
+		},
 					]
 				},
 			]
@@ -131,7 +149,7 @@
 					]
 				},
 				{
-					title:'РегистрыРасчета',
+					title:'Регистры расчета',
 					items:
 					[
 		{
@@ -144,6 +162,19 @@
 					title:'Подсказка',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'ПодсказкаРегистрыРасчета',
+			text: 'На этой закладке отображаются движения по регистрам расчета. 
+Чтобы настроить список регистров нажмите кнопку "Настройка состава регистров".',
+			style: 'position:absolute;left:6px;top:6px;width:606px;height:31px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаНастройкаСоставаРегистровРасчета',
+			text: 'Настройка состава регистров расчета',
+			style: 'position:absolute;left:6px;top:47px;width:606px;height:19px;',
+		},
 					]
 				},
 			]
@@ -151,12 +182,24 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:121px;top:33px;width:203px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:334px;top:57px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -170,25 +213,18 @@
 			items:
 			[
 				{
-					text:'ТекущийСотрудник',
+					text:'Расчеты текущего сотрудника',
 				},
 				{
-					text:'ВесьДокумент',
+					text:'Весь документ',
 				},
+				'-',
 				{
-					text:'Исправить',
+					text:'Отменить исправление',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОтменитьИсправление',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СписокСотрудников',
+					text:'Расчеты нескольких сотрудников',
 				},
 			]
 		},
@@ -202,15 +238,33 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьИсправление',
+			text: 'Открыть исправления',
+			style: 'position:absolute;left:0px;top:0px;width:71px;height:33px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период регистрации:',
+			style: 'position:absolute;left:8px;top:57px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:121px;top:57px;width:203px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждение',
+			text: '',
+			style: 'position:absolute;left:30px;top:312px;width:525px;height:33px;',
 		},
 	]
 });

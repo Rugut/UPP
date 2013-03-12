@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеКадровогоПлана.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 520,
+	style: 'position:absolute;width:520px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменения кадрового плана',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -36,23 +43,16 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

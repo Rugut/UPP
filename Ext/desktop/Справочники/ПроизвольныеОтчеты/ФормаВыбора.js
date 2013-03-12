@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПроизвольныеОтчеты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 345,width: 398,
+	style: 'position:absolute;width:398px;height:345px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Произвольные отчеты',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'228',
 				},
 			]
 		},
@@ -24,12 +27,22 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: '',
+			style: 'position:absolute;left:65px;top:306px;width:325px;height:31px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание1',
+			text: 'Описание:',
+			style: 'position:absolute;left:8px;top:306px;width:56px;height:19px;',
 		},
 	]
 });

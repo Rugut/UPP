@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВложенияЭлектронныхПисем.ФормаСохраненияФайлов',
 	{
 	extend: 'Ext.window.Window',
-	height: 100,width: 512,
+	style: 'position:absolute;width:512px;height:100px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сохранить файлы',
 	
 	items:
@@ -14,19 +16,33 @@
 			style: 'position:absolute;left:76px;top:8px;width:428px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИмяКаталога',
+			text: 'Каталог:',
+			style: 'position:absolute;left:8px;top:8px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только чтение',
+			style: 'position:absolute;left:76px;top:32px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Открыть каталог после сохранения',
+			style: 'position:absolute;left:76px;top:52px;width:208px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:75px;width:512px;height:25px;',
 			items:
 			[
 				{
-					text:'КнопкаОК',
+					text:'ОК',
 				},
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

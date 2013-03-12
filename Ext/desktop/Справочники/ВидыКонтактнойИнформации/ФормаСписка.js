@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыКонтактнойИнформации.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 636,
+	style: 'position:absolute;width:636px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды контактной информации',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидОбъектаКонтактнойИнформации',
+					text:'Вид объекта контактной информации',
+					width:'220',
 				},
 			]
 		},

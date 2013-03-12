@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КатегорииОбъектов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 464,
+	style: 'position:absolute;width:464px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Категории объектов',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'НазначениеКатегории',
+					text:'Назначение категории',
+					width:'120',
 				},
 			]
 		},
@@ -33,11 +39,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

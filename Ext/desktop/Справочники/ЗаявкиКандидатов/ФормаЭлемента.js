@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЗаявкиКандидатов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 665,
+	style: 'position:absolute;width:665px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Кандидат',
 	
 	items:
@@ -12,45 +14,28 @@
 			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Редактировать код',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Файлы',
 				},
@@ -66,9 +51,6 @@
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Подменю1',
-				},
 			]
 		},
 		{
@@ -77,21 +59,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:366px;top:35px;width:24px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,22 +84,39 @@
 			style: 'position:absolute;left:392px;top:35px;width:92px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:35px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:96px;top:35px;width:253px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:8px;top:200px;width:341px;height:163px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'checkbox',
+			boxLabel: 'Работа по кандидату завершена',
+			style: 'position:absolute;left:366px;top:491px;width:291px;height:15px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'РезультатЗакрытия',
 			style: 'position:absolute;left:366px;top:507px;width:291px;height:40px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьФизЛицо',
+			text: 'Физическое лицо:',
+			style: 'position:absolute;left:366px;top:438px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,10 +125,22 @@
 			style: 'position:absolute;left:490px;top:438px;width:167px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьГруппаЗадач',
+			text: 'Группа кандидатов:',
+			style: 'position:absolute;left:366px;top:414px;width:118px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГруппаЗадач',
 			style: 'position:absolute;left:490px;top:414px;width:167px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИсточникИнформации',
+			text: 'Источник информации:',
+			style: 'position:absolute;left:366px;top:390px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -146,10 +159,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСостояние',
+			text: 'Результат:',
+			style: 'position:absolute;left:359px;top:28px;width:57px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Состояние',
 			style: 'position:absolute;left:421px;top:28px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаОткрытия',
+			text: 'Дата поступления кандидата:',
+			style: 'position:absolute;left:359px;top:76px;width:155px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -158,16 +183,34 @@
 			style: 'position:absolute;left:520px;top:76px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВажность',
+			text: 'Важность:',
+			style: 'position:absolute;left:359px;top:52px;width:57px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Важность',
 			style: 'position:absolute;left:421px;top:52px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВакансия',
+			text: 'Вакансия:',
+			style: 'position:absolute;left:6px;top:28px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Вакансия',
 			style: 'position:absolute;left:111px;top:28px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжность',
+			text: 'Должность:',
+			style: 'position:absolute;left:6px;top:52px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -186,6 +229,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -194,6 +243,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:6px;top:100px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,21 +267,32 @@
 			columns:
 			[
 				{
-					text:'ВидДокумента',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ЕстьВложения',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ДатаКонтакта',
+					text:'Дата контакта',
+					width:'132',
 				},
 				{
 					text:'Тема',
+					width:'166',
 				},
 				{
-					text:'ОтправительИмя',
+					text:'Отправитель',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЖурнал',
+			text: 'Переписка, встречи и опросы',
+			style: 'position:absolute;left:8px;top:370px;width:341px;height:15px;',
 		},
 		{
 			xtype: 'button',
@@ -235,10 +301,22 @@
 			style: 'position:absolute;left:490px;top:33px;width:167px;height:24px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:366px;top:462px;width:118px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:490px;top:462px;width:167px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТекущаяРабота',
+			text: 'Текущая работа по кандидату',
+			style: 'position:absolute;left:366px;top:200px;width:291px;height:15px;',
 		},
 		{
 			xtype: 'grid',
@@ -247,13 +325,16 @@
 			columns:
 			[
 				{
-					text:'Период',
+					text:'Дата',
+					width:'80',
 				},
 				{
-					text:'Описание',
+					text:'Что сделано',
+					width:'115',
 				},
 				{
-					text:'Состояние',
+					text:'Результат',
+					width:'100',
 				},
 			]
 		},
@@ -263,7 +344,7 @@
 			items:
 			[
 				{
-					text:'ЗарегистрироватьРезультат',
+					text:'Зарегистрировать результат',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеЛимитовВозвратнойТары.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 516,
+	style: 'position:absolute;width:516px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменения лимитов возвратной тары',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -41,23 +50,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:516px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

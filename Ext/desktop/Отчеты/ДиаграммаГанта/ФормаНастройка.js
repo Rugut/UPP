@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ДиаграммаГанта.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 490,
+	style: 'position:absolute;width:490px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка отчета',
 	
 	items:
@@ -18,9 +20,7 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -34,10 +34,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачПериода',
 			style: 'position:absolute;left:64px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:146px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,6 +73,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВидаДиаграммы',
+			text: 'Раздел учета:',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+		},
 					]
 				},
 			]
@@ -79,9 +97,11 @@
 			[
 				{
 					text:'Поле',
+					width:'220',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -105,22 +125,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -144,10 +170,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'120',
 				},
 			]
 		},

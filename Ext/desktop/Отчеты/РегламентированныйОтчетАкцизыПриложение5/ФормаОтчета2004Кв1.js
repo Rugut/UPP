@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАкцизыПриложение5.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 490,width: 750,
+	style: 'position:absolute;width:750px;height:490px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Акцизы (Приложение 5)',
 	
 	items:
@@ -12,38 +14,30 @@
 			style: 'position:absolute;left:0px;top:0px;width:750px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Обновить',
 				},
+				'-',
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодготовитьИПодписать',
+					text:'Подготовить к отправке и подписать',
 				},
 				{
 					text:'Выгрузить',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'Подготовить',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Поиск',
@@ -51,39 +45,23 @@
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'РазделительОтправка',
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'Проверить',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Выгрузка',
+					text:'Проверить выгрузку',
 				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -91,27 +69,18 @@
 			style: 'position:absolute;left:0px;top:465px;width:750px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -124,7 +93,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -160,7 +129,7 @@
 					]
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -196,18 +165,72 @@
 					]
 				},
 				{
-					title:'Раздел21',
+					title:'Раздел 2.1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:193px;top:265px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись27',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:193px;top:265px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:193px;top:265px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись30',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:194px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись32',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:194px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись34',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:194px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:194px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись39',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:424px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел22',
+					title:'Раздел 2.2',
 				},
 				{
-					title:'Раздел23',
+					title:'Раздел 2.3',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницФизЛица',
+			text: '999 из 999',
+			style: 'position:absolute;left:365px;top:265px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел23',
@@ -227,6 +250,12 @@
 			style: 'position:absolute;left:343px;top:265px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел23',
+			text: '999 из 999',
+			style: 'position:absolute;left:365px;top:265px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаСледующаяСтраницаРаздел23',
 			text: '',
@@ -238,10 +267,40 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:650px;top:265px;width:76px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел1',
+			text: '999 из 999',
+			style: 'position:absolute;left:365px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение1',
+			text: '999 из 999',
+			style: 'position:absolute;left:366px;top:239px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение2',
+			text: '999 из 999',
+			style: 'position:absolute;left:366px;top:239px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение3',
+			text: '999 из 999',
+			style: 'position:absolute;left:366px;top:239px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение4',
+			text: '999 из 999',
+			style: 'position:absolute;left:366px;top:239px;width:80px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Приложение1',
+					title:'Приложение 1',
 					items:
 					[
 		{
@@ -289,7 +348,7 @@
 					]
 				},
 				{
-					title:'Приложение2',
+					title:'Приложение 2',
 					items:
 					[
 		{
@@ -337,7 +396,7 @@
 					]
 				},
 				{
-					title:'Приложение3',
+					title:'Приложение 3',
 					items:
 					[
 		{
@@ -385,7 +444,7 @@
 					]
 				},
 				{
-					title:'Приложение4',
+					title:'Приложение 4',
 					items:
 					[
 		{
@@ -433,9 +492,33 @@
 					]
 				},
 				{
-					title:'Приложение5',
+					title:'Приложение 5',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:424px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись33',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:424px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись35',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:424px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:424px;top:265px;width:136px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтрокиПриложение5',
@@ -451,6 +534,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:669px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -475,6 +564,16 @@
 			style: 'position:absolute;left:86px;top:25px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:25px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Ввоз товаров из Республики Беларусь',
+			style: 'position:absolute;left:421px;top:25px;width:225px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -494,6 +593,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

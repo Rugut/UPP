@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.КурсыОбучения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 477,width: 414,
+	style: 'position:absolute;width:414px;height:477px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Курс обучения',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,16 @@
 			style: 'position:absolute;left:94px;top:33px;width:312px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ОписаниеКурса',
 			style: 'position:absolute;left:8px;top:110px;width:398px;height:60px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДлительностьКурса',
+			text: 'Объем курса*, часов:',
+			style: 'position:absolute;left:8px;top:175px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -26,16 +40,34 @@
 			style: 'position:absolute;left:188px;top:175px;width:60px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЗатратыНаОдногоОбучающегося',
+			text: 'Затраты на одного обучающегося:',
+			style: 'position:absolute;left:8px;top:200px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЗатратыНаОдногоОбучающегося',
 			style: 'position:absolute;left:188px;top:200px;width:61px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидДокументаОбОбразовании',
+			text: 'При прохождении курса может быть выдан документ:',
+			style: 'position:absolute;left:8px;top:224px;width:398px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидДокументаОбОбразовании',
 			style: 'position:absolute;left:8px;top:243px;width:398px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалюта',
+			text: 'Валюта:',
+			style: 'position:absolute;left:267px;top:200px;width:45px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -56,32 +88,24 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'*Составить по занятиям',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -91,7 +115,7 @@
 			items:
 			[
 				{
-					title:'Стран��ца1',
+					title:'Состав курса',
 					items:
 					[
 		{
@@ -108,17 +132,19 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Занятие',
+					width:'349',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Изучаемые компетенции*',
 					items:
 					[
 		{
@@ -126,11 +152,9 @@
 			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'КоррекцияВесов',
+					text:'Коррекция весов',
 				},
 			]
 		},
@@ -141,25 +165,39 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Компетенция',
+					width:'242',
 				},
 				{
-					text:'Вес',
+					text:'Вес изучения %',
+					width:'98',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Регламентированный учет',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отражать в регламентированном учете',
+			style: 'position:absolute;left:6px;top:22px;width:384px;height:15px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

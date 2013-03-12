@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыВзаиморасчетов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 436,
+	style: 'position:absolute;width:436px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды взаиморасчетов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

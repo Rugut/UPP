@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиГражданство',
 	{
 	extend: 'Ext.window.Window',
-	height: 417,width: 418,
+	style: 'position:absolute;width:418px;height:417px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Гражданство физического лица',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Запись о гражданстве действует с:',
+			style: 'position:absolute;left:8px;top:365px;width:187px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,21 +33,23 @@
 			items:
 			[
 				{
-					text:'КнопкаИстория',
+					text:'История...',
+				},
+				'-',
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'РазделительИстория',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПФР',
+			text: 'На физическое лицо распространяется обязательное пенсионное страхование в РФ. Таковыми являются граждане РФ, а также постоянно или временно проживающие на территории РФ иностранные граждане и лица без гражданства.',
+			style: 'position:absolute;left:8px;top:144px;width:402px;height:65px;',
 		},
 		{
 			xtype: 'grid',
@@ -48,18 +58,34 @@
 			columns:
 			[
 				{
-					text:'ПринятПоДолгосрочномуДоговору',
+					text:'Заключен трудовой договор на длительный срок',
+					width:'156',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
-					text:'Период',
+					text:'С ...',
+					width:'70',
 				},
 				{
-					text:'ПериодЗавершения',
+					text:'по',
+					width:'70',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Для временно пребывающих на территории РФ иностранных граждан и лиц без гражданства',
+			style: 'position:absolute;left:8px;top:213px;width:402px;height:27px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Для иностранных граждан и лиц без гражданства',
+			style: 'position:absolute;left:8px;top:53px;width:402px;height:19px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПланПроизводстваПоСменам.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 628,
+	style: 'position:absolute;width:628px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'План производства по сменам',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Проект',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -41,23 +50,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:628px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Перейти',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
+				'-',
 				{
-					text:'Подменю3',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

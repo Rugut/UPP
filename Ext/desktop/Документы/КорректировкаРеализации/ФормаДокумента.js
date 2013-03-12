@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.КорректировкаРеализации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 485,width: 672,
+	style: 'position:absolute;width:672px;height:485px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Корректировка реализации',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:433px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,45 +51,38 @@
 			items:
 			[
 				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель8',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Подменю3',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:428px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:506px;top:33px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -88,151 +101,200 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'180',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'180',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'180',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'67',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'40',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'КоличествоДоКорректировки',
+					text:'Количество до корректировки',
+					width:'100',
 				},
 				{
-					text:'КоличествоДоИзменения',
+					text:'Количество до изменения',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
-					text:'ЦенаДоКорректировки',
+					text:'Цена до корректировки',
+					width:'100',
 				},
 				{
-					text:'ЦенаДоИзменения',
+					text:'Цена до изменения',
+					width:'100',
 				},
 				{
 					text:'Цена',
+					width:'100',
 				},
 				{
-					text:'СуммаДоКорректировки',
+					text:'Сумма до корректировки',
+					width:'100',
 				},
 				{
-					text:'СуммаДоИзменения',
+					text:'Сумма до изменения',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДСДоИзменения',
+					text:'% НДС до изменения',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'100',
 				},
 				{
-					text:'СуммаНДСДоКорректировки',
+					text:'Сумма НДС до корректировки',
+					width:'100',
 				},
 				{
-					text:'СуммаНДСДоИзменения',
+					text:'Сумма НДС до изменения',
+					width:'100',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'100',
 				},
 				{
-					text:'ВсегоДоКорректировки',
+					text:'Всего до корректировки',
+					width:'100',
 				},
 				{
-					text:'ВсегоДоИзменения',
+					text:'Всего до изменения',
+					width:'100',
 				},
 				{
 					text:'Всего',
+					width:'100',
 				},
 				{
-					text:'СпособСписанияОстаткаТоваров',
+					text:'Способ списания',
+					width:'100',
 				},
 				{
 					text:'Склад',
+					width:'100',
 				},
 				{
-					text:'ЗаказПокупателя',
+					text:'Заказ покупателя',
+					width:'101',
 				},
 				{
-					text:'ПринадлежностьНоменклатуры',
+					text:'Принадлежность номенклатуры',
+					width:'99',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
-					text:'НомерГТД',
+					text:'Номер ГТД',
+					width:'100',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Собственные, счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'ПринятыеСчетУчетаБУ',
+					text:'Принятые, счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'ПереданныеСобственныеБУ',
+					text:'Переданные, собственные (БУ)',
+					width:'100',
 				},
 				{
-					text:'ПереданныеПринятыеБУ',
+					text:'Переданные, принятые (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПринятыеСчетУчетаНУ',
+					text:'Принятые счет учета (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПереданныеСобственныеНУ',
+					text:'Переданные, собственные (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПереданныеПринятыеНУ',
+					text:'Переданные принятые (НУ)',
+					width:'100',
 				},
 				{
-					text:'СчетДоходовБУ',
+					text:'Счет доходов (БУ)',
+					width:'100',
 				},
 				{
-					text:'СубконтоБУ',
+					text:'Субконто (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетРасходовБУ',
+					text:'Счет расходов (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетДоходовНУ',
+					text:'Счет доходов (НУ)',
+					width:'100',
 				},
 				{
-					text:'СубконтоНУ',
+					text:'Субконто (НУ)',
+					width:'100',
 				},
 				{
-					text:'СчетРасходовНУ',
+					text:'Счет расходов (НУ)',
+					width:'100',
 				},
 			]
 		},
@@ -241,27 +303,19 @@
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Серийные номера',
 				},
 				{
-					text:'СерийныеНомера',
+					text:'Состав набора',
 				},
+				'-',
+				'-',
 				{
-					text:'СоставНабора',
+					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 					]
@@ -277,88 +331,116 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Номенклатура',
+					width:'180',
 				},
 				{
-					text:'СодержаниеДоИзменения',
+					text:'Содержание до изменения',
+					width:'150',
 				},
 				{
-					text:'Содержание',
+					text:'Содержание услуги, доп. сведения',
+					width:'150',
 				},
 				{
-					text:'КоличествоДоКорректировки',
+					text:'Количество до корректировки',
+					width:'100',
 				},
 				{
-					text:'КоличествоДоИзменения',
+					text:'Количество до изменения',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
-					text:'ЦенаДоКорректировки',
+					text:'Цена до корректировки',
+					width:'100',
 				},
 				{
-					text:'ЦенаДоИзменения',
+					text:'Цена до изменения',
+					width:'100',
 				},
 				{
 					text:'Цена',
+					width:'100',
 				},
 				{
-					text:'СуммаДоКорректировки',
+					text:'Сумма до корректировки',
+					width:'100',
 				},
 				{
-					text:'СуммаДоИзменения',
+					text:'Сумма до изменения',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДСДоИзменения',
+					text:'% НДС до изменения',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'100',
 				},
 				{
-					text:'СуммаНДСДоКорректировки',
+					text:'Сумма НДС до корректировки',
+					width:'100',
 				},
 				{
-					text:'СуммаНДСДоИзменения',
+					text:'Сумма НДС до изменения',
+					width:'100',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'100',
 				},
 				{
-					text:'ВсегоДоКорректировки',
+					text:'Всего до корректировки',
+					width:'100',
 				},
 				{
-					text:'ВсегоДоИзменения',
+					text:'Всего до изменения',
+					width:'100',
 				},
 				{
 					text:'Всего',
+					width:'100',
 				},
 				{
-					text:'ЗаказПокупателя',
+					text:'Заказ покупателя',
+					width:'100',
 				},
 				{
-					text:'СчетДоходовБУ',
+					text:'Счет доходов (БУ)',
+					width:'100',
 				},
 				{
-					text:'СубконтоБУ',
+					text:'Субконто (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетРасходовБУ',
+					text:'Счет расходов (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетДоходовНУ',
+					text:'Счет доходов (НУ)',
+					width:'100',
 				},
 				{
-					text:'СубконтоНУ',
+					text:'Субконто (НУ)',
+					width:'100',
 				},
 				{
-					text:'СчетРасходовНУ',
+					text:'Счет расходов (НУ)',
+					width:'100',
 				},
 			]
 		},
@@ -368,15 +450,17 @@
 			items:
 			[
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяПрочихДоходовИРасходов',
+			text: 'Статья прочих доходов и расходов:',
+			style: 'position:absolute;left:6px;top:6px;width:107px;height:27px;',
 		},
 					]
 				},
@@ -437,16 +521,52 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:338px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетФактура',
+			text: 'Счет-фактура:',
+			style: 'position:absolute;left:8px;top:388px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаСчетФактура',
+			text: 'Ввести счет-фактуру',
+			style: 'position:absolute;left:90px;top:388px;width:373px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:470px;top:388px;width:72px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:542px;top:388px;width:122px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсегоНДС',
+			text: 'НДС ( в т. ч.):',
+			style: 'position:absolute;left:470px;top:410px;width:72px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -468,25 +588,53 @@
 				{
 					text:'ОК',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Закрыть1',
-				},
-				{
-					text:'РазделительЗаписать',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:584px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Корректировать',
+			text: 'Корректировать:',
+			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументРеализации',
+			text: 'Основание:',
+			style: 'position:absolute;left:8px;top:82px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДокументРеализации',
 			style: 'position:absolute;left:98px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Бухгалтерский учет прошлого года закрыт для корректировки (отчетность подписана)',
+			style: 'position:absolute;left:98px;top:104px;width:566px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаИсправляемыйДокументРеализации',
+			text: 'Не указан',
+			style: 'position:absolute;left:147px;top:410px;width:316px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИсправляемыйДокументРеализацииНадпись',
+			text: 'Исправляемый документ:',
+			style: 'position:absolute;left:8px;top:410px;width:137px;height:17px;',
 		},
 	]
 });

@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ИнвентаризацияТоваровОтданныхНаКомиссию.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 403,width: 652,
+	style: 'position:absolute;width:652px;height:403px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инвентаризация товаров отданных на комиссию',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:351px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,14 +50,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель9',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 			]
 		},
@@ -58,43 +76,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'64',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'КоличествоУчет',
+					text:'Учет. количество',
+					width:'95',
 				},
 			]
 		},
@@ -104,22 +135,15 @@
 			items:
 			[
 				{
-					text:'КоманднаяПанельТоварыДействиеЗаполнить',
+					text:'Поиск по штрихкоду',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Поиск по штрихкоду',
 				},
+				'-',
 				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 			]
 		},
@@ -146,6 +170,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:336px;top:81px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -156,6 +192,12 @@
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -174,21 +216,15 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -196,6 +232,13 @@
 			hideLabel: true,
 			name: 'Сделка',
 			style: 'position:absolute;left:98px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСделка',
+			text: 'Сделка:
+',
+			style: 'position:absolute;left:8px;top:101px;width:88px;height:28px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РасчетПоМоделиБюджетирования.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 600,
+	style: 'position:absolute;width:600px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчеты по моделям бюджетирования',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ДатаРасчета',
+					text:'Дата расчета',
+					width:'80',
 				},
 				{
 					text:'Сценарий',
+					width:'120',
 				},
 				{
-					text:'ПересчитыватьРегламентно',
+					text:'Пересчитывать регламентно',
+					width:'49',
 				},
 				{
-					text:'ИсточникДанныхДляРасчета',
+					text:'Основной источник данных',
+					width:'91',
 				},
 			]
 		},
@@ -41,17 +50,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

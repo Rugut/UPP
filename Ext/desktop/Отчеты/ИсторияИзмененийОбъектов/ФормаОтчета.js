@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ИсторияИзмененийОбъектов.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 389,width: 485,
+	style: 'position:absolute;width:485px;height:389px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'История изменений объектов',
 	
 	items:
@@ -14,15 +16,24 @@
 			columns:
 			[
 				{
-					text:'НомерВерсии',
+					text:'№',
+					width:'45',
 				},
 				{
-					text:'ДатаВерсии',
+					text:'Дата',
+					width:'119',
 				},
 				{
-					text:'АвторВерсии',
+					text:'Автор изменений',
+					width:'189',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбъект',
+			text: 'Объект:',
+			style: 'position:absolute;left:8px;top:32px;width:43px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,26 +47,20 @@
 			items:
 			[
 				{
-					text:'ДействиеОбновитьСписокВерсий',
+					text:'Обновить список версий',
+				},
+				'-',
+				{
+					text:'Сравнить версии',
 				},
 				{
-					text:'Разделитель2',
+					text:'Показать версию',
 				},
 				{
-					text:'ДействиеОтчетПоИзменениям',
+					text:'Справка',
 				},
-				{
-					text:'ДействиеПоказатьОбъект',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

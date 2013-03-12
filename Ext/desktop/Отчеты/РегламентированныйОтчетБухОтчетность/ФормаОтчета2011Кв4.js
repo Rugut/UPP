@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетБухОтчетность.ФормаОтчета2011Кв4',
 	{
 	extend: 'Ext.window.Window',
-	height: 484,width: 716,
+	style: 'position:absolute;width:716px;height:484px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Бухгалтерская отчетность',
 	
 	items:
@@ -16,115 +18,68 @@
 					text:'Отправить',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'ПодменюНастройка',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
 				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Авторасчет',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
 				{
 					text:'Расшифровка',
 				},
+				'-',
 				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Выгрузить',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'Разделитель3',
+					text:'Настройки отчета...',
 				},
 				{
-					text:'Разделитель1',
+					text:'Заполнить все отчеты',
 				},
 				{
-					text:'Проверить',
+					text:'Очистить бухгалтерский баланс',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Расширить поле бланка',
 				},
 				{
-					text:'Заполнить',
+					text:'Очистить все отчеты',
 				},
 				{
-					text:'ОчиститьОтчет',
+					text:'Подготовить к отправке',
 				},
+				'-',
 				{
-					text:'РасширитьПолеБланка',
+					text:'Обновить',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Очистить',
+					text:'Заполнить бухгалтерский баланс',
 				},
+				'-',
+				'-',
 				{
-					text:'Подготовить',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Очистить',
-				},
-				{
-					text:'РазделительВыгрузка',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюРасшифровка',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьОтчет',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'КнопкаСохранятьРасшифровку',
+					text:'Сохранять',
 				},
 			]
 		},
@@ -133,28 +88,25 @@
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -185,6 +137,11 @@
 			style: 'position:absolute;left:299px;top:24px;width:49px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Внешние данные',
+			style: 'position:absolute;left:261px;top:0px;width:107px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНавигации',
 			text: 'Перейти к ...',
@@ -204,6 +161,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -255,7 +218,7 @@
 			items:
 			[
 				{
-					title:'Баланс',
+					title:'Бухгалтерский баланс',
 					items:
 					[
 		{
@@ -305,7 +268,7 @@
 					]
 				},
 				{
-					title:'ФормаОтчета',
+					title:'Отчет о прибылях и убытках',
 					items:
 					[
 		{
@@ -355,7 +318,7 @@
 					]
 				},
 				{
-					title:'ОИК',
+					title:'Отчет об изменениях капитала',
 					items:
 					[
 		{
@@ -399,7 +362,7 @@
 					]
 				},
 				{
-					title:'ОДДС',
+					title:'Отчет о движении денежных средств',
 					items:
 					[
 		{
@@ -440,10 +403,64 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:612px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения1',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения2',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения3',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения4',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения5',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения6',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения7',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения8',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиПояснения9',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ОЦИПС',
+					title:'Отчет о целевом использовании полученных средств',
 					items:
 					[
 		{
@@ -472,10 +489,34 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись58',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись59',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:302px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись69',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:388px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись70',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:302px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'РасчетАктивов',
+					title:'Расчет оценки стоимости чистых активов',
 					items:
 					[
 		{
@@ -507,7 +548,7 @@
 					]
 				},
 				{
-					title:'Пояснения1',
+					title:'Пояснения. Раздел 1',
 					items:
 					[
 		{
@@ -551,7 +592,7 @@
 					]
 				},
 				{
-					title:'Пояснения2',
+					title:'Пояснения. Раздел 2',
 					items:
 					[
 		{
@@ -595,7 +636,7 @@
 					]
 				},
 				{
-					title:'Пояснения3',
+					title:'Пояснения. Раздел 3',
 					items:
 					[
 		{
@@ -639,7 +680,7 @@
 					]
 				},
 				{
-					title:'Пояснения4',
+					title:'Пояснения. Раздел 4',
 					items:
 					[
 		{
@@ -683,7 +724,7 @@
 					]
 				},
 				{
-					title:'Пояснения5',
+					title:'Пояснения. Раздел 5',
 					items:
 					[
 		{
@@ -727,7 +768,7 @@
 					]
 				},
 				{
-					title:'Пояснения6',
+					title:'Пояснения. Раздел 6',
 					items:
 					[
 		{
@@ -771,7 +812,7 @@
 					]
 				},
 				{
-					title:'Пояснения7',
+					title:'Пояснения. Раздел 7',
 					items:
 					[
 		{
@@ -815,7 +856,7 @@
 					]
 				},
 				{
-					title:'Пояснения8',
+					title:'Пояснения. Раздел 8',
 					items:
 					[
 		{
@@ -859,7 +900,7 @@
 					]
 				},
 				{
-					title:'Пояснения9',
+					title:'Пояснения. Раздел 9',
 					items:
 					[
 		{
@@ -903,24 +944,48 @@
 					]
 				},
 				{
-					title:'ДополнительныеФайлы',
+					title:'Дополнительные файлы',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьФайлПояснительнойЗаписки',
+			text: 'Файл пояснительной записки бухгалтерской отчетности:',
+			style: 'position:absolute;left:6px;top:8px;width:366px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайлаАудиторскогоЗаключения',
+			text: 'Имя файла аудиторского заключения:',
+			style: 'position:absolute;left:6px;top:64px;width:366px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайлаЗаявленияРевизионногоСоюза',
+			text: 'Имя файла заявления ревизионного союза сельскохозяйственных производителей:',
+			style: 'position:absolute;left:6px;top:120px;width:518px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:608px;top:28px;width:83px;height:24px;',
 			items:
 			[
 				{
-					text:'УдалитьФайл',
+					text:'Удалить файл',
 				},
 				{
-					text:'ДобавитьФайл',
+					text:'Добавить файл',
 				},
 				{
-					text:'СохранитьФайлНаДиск',
+					text:'Сохранить файл на диск',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'КомментарийКФайлуПояснительнойЗаписки',
+			text: '',
+			style: 'position:absolute;left:6px;top:28px;width:598px;height:27px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -928,15 +993,21 @@
 			items:
 			[
 				{
-					text:'СохранитьФайлНаДиск',
+					text:'Сохранить файл на диск',
 				},
 				{
-					text:'ДобавитьФайл',
+					text:'Добавить файл',
 				},
 				{
-					text:'УдалитьФайл',
+					text:'Удалить файл',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'КомментарийКФайлуАудиторскогоЗаключения',
+			text: '',
+			style: 'position:absolute;left:6px;top:84px;width:598px;height:27px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -944,15 +1015,21 @@
 			items:
 			[
 				{
-					text:'ДобавитьФайл',
+					text:'Добавить файл',
 				},
 				{
-					text:'СохранитьФайлНаДиск',
+					text:'Сохранить файл на диск',
 				},
 				{
-					text:'УдалитьФайл',
+					text:'Удалить файл',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'КомментарийКФайлуЗаявленияСоюзаСельхозпроизводетелей',
+			text: '',
+			style: 'position:absolute;left:6px;top:141px;width:598px;height:27px;',
 		},
 					]
 				},

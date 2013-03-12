@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСчетаМеждународный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 490,
+	style: 'position:absolute;width:490px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,9 +30,15 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -63,10 +69,25 @@
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:54px;width:378px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:12px;top:170px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по количеству',
+			style: 'position:absolute;left:12px;top:190px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам и субконто корр.счетов',
+			style: 'position:absolute;left:12px;top:126px;width:220px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Детализация счета',
 					items:
 					[
 		{
@@ -77,9 +98,11 @@
 			[
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -90,10 +113,15 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам',
+			style: 'position:absolute;left:6px;top:6px;width:92px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница4',
+					title:'Детализация кор. счетов',
 					items:
 					[
 		{
@@ -111,19 +139,22 @@
 			[
 				{
 					text:'Счет',
+					width:'80',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'80',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -133,22 +164,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},

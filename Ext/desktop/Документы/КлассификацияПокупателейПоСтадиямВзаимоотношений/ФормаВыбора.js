@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.КлассификацияПокупателейПоСтадиямВзаимоотношений.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 720,
+	style: 'position:absolute;width:720px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Классификации покупателей по стадиям взаимоотношений',
 	
 	items:
@@ -14,40 +16,52 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'80',
 				},
 				{
 					text:'Периодичность',
+					width:'80',
 				},
 				{
-					text:'XКлассНач',
+					text:'X класс нач',
+					width:'80',
 				},
 				{
-					text:'XКлассКон',
+					text:'X класс кон',
+					width:'80',
 				},
 				{
-					text:'YКлассНач',
+					text:'Y класс нач',
+					width:'80',
 				},
 				{
-					text:'YКлассКон',
+					text:'Y класс кон',
+					width:'80',
 				},
 				{
-					text:'ZКлассНач',
+					text:'Z класс нач',
+					width:'80',
 				},
 				{
-					text:'ZКлассКон',
+					text:'Z класс кон',
+					width:'80',
 				},
 				{
 					text:'Комментарий',
+					width:'160',
 				},
 			]
 		},
@@ -56,20 +70,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
 			items:
 			[
+				'-',
 				{
 					text:'Подменю2',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие',

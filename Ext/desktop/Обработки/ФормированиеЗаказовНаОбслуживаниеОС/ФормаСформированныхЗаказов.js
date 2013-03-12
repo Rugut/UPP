@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеЗаказовНаОбслуживаниеОС.ФормаСформированныхЗаказов',
 	{
 	extend: 'Ext.window.Window',
-	height: 323,width: 643,
+	style: 'position:absolute;width:643px;height:323px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сформированные заказы на обслуживание ОС',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Обновить',
 				},
@@ -27,25 +27,32 @@
 			columns:
 			[
 				{
-					text:'СостояиеДокумента',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Дата',
+					width:'84',
 				},
 				{
 					text:'Номер',
+					width:'106',
 				},
 				{
 					text:'Услуга',
+					width:'106',
 				},
 				{
-					text:'ВидОбслуживания',
+					text:'Вид обслуживания',
+					width:'102',
 				},
 				{
-					text:'ДатаОбслуживания',
+					text:'Дата обслуживания',
+					width:'110',
 				},
 				{
 					text:'Причина',
+					width:'181',
 				},
 			]
 		},

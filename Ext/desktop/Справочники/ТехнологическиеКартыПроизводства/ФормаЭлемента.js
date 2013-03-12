@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 406,width: 660,
+	style: 'position:absolute;width:660px;height:406px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Технологические карты производства',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код:',
+			style: 'position:absolute;left:546px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:588px;top:33px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:98px;top:33px;width:446px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:98px;top:57px;width:304px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Состояние:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Состояние',
 			style: 'position:absolute;left:98px;top:81px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаУтверждения',
+			text: 'Дата утверждения:',
+			style: 'position:absolute;left:220px;top:81px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,64 +83,84 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерОперации',
+					text:'№ операции',
+					width:'100',
 				},
 				{
-					text:'РабочийЦентрПодготовительныхОпераций',
+					text:'Рабочий центр (подготов.)',
+					width:'240',
 				},
 				{
-					text:'ТехнологическаяОперацияПодготовительная',
+					text:'Тех. операция (подготов.)',
+					width:'140',
 				},
 				{
-					text:'ЕдиницаПодготовительная',
+					text:'Ед.',
+					width:'44',
 				},
 				{
-					text:'КоэффициентПодготовительная',
+					text:'К',
+					width:'41',
 				},
 				{
-					text:'ВремяПодготовительныхОпераций',
+					text:'Время (подготов.)',
+					width:'100',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр (выполн.)',
+					width:'490',
 				},
 				{
-					text:'ТехнологическаяОперация',
+					text:'Тех. операция (выполн.)',
+					width:'140',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'54',
 				},
 				{
-					text:'Коэффициент',
+					text:'К',
+					width:'33',
 				},
 				{
-					text:'ВремяВыполнения',
+					text:'Время (выполн.)',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'80',
 				},
 				{
-					text:'СледующиеОперации',
+					text:'Следующие операции',
+					width:'120',
 				},
 				{
-					text:'ДопускаетПеренос',
+					text:'Перенос',
+					width:'50',
 				},
 				{
-					text:'РабочийЦентрЗаключительныхОпераций',
+					text:'Рабочий центр (заключ.)',
+					width:'240',
 				},
 				{
-					text:'ТехнологическаяОперацияЗаключительная',
+					text:'Тех. операция (заключ.)',
+					width:'140',
 				},
 				{
-					text:'ЕдиницаЗаключительная',
+					text:'Ед.',
+					width:'37',
 				},
 				{
-					text:'КоэффициентЗаключительная',
+					text:'К',
+					width:'33',
 				},
 				{
-					text:'ВремяЗавершающихОпераций',
+					text:'Время (заключ.)',
+					width:'92',
 				},
 			]
 		},
@@ -125,20 +177,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

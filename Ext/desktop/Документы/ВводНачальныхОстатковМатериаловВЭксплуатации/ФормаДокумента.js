@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ВводНачальныхОстатковМатериаловВЭксплуатации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 384,width: 652,
+	style: 'position:absolute;width:652px;height:384px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод начальных остатков материалов в эксплуатации',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:332px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,42 +51,47 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель5',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ПоказатьСкрытьСчетаУчета',
+					text:'Показать/скрыть счета учета',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:498px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,82 +106,108 @@
 			columns:
 			[
 				{
-					text:'НомерCтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
-					text:'Номенклатура',
+					text:'Материал',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика материала',
+					width:'200',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия материала',
+					width:'200',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Работник',
+					width:'141',
 				},
 				{
-					text:'НазначениеИспользования',
+					text:'Назначение использования',
+					width:'146',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К.мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'67',
 				},
 				{
-					text:'ДатаПередачиВЭксплуатацию',
+					text:'Дата передачи в эксплуатацию',
+					width:'100',
 				},
 				{
-					text:'ДокументПартии',
+					text:'Документ партии',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'67',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Стоимость',
+					width:'76',
 				},
 				{
-					text:'ПогашеннаяСтоимость',
+					text:'Погашенная стоимость',
+					width:'100',
 				},
 				{
-					text:'СтоимостьРегл',
+					text:'Стоимость (регл.)',
+					width:'78',
 				},
 				{
-					text:'ПогашеннаяСтоимостьРегл',
+					text:'Погашенная стоимость (регл.)',
+					width:'100',
 				},
 				{
-					text:'ВременнаяРазница',
+					text:'Временная разница (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПогашеннаяВременнаяРазница',
+					text:'Погашенная временная разница (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПостояннаяРазница',
+					text:'Постоянная разница (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПогашеннаяПостояннаяРазница',
+					text:'Погашенная постоянная разница (НУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'75',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'80',
 				},
 			]
 		},
@@ -165,34 +216,43 @@
 			style: 'position:absolute;left:8px;top:126px;width:636px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Изменить',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ДействиеИзменить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
 				{
-					text:'СоздатьДокументыПартии',
+					text:'Создать документы партий',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:82px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:307px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -211,28 +271,33 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:336px;top:80px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:571px;top:33px;width:71px;height:19px;',
 		},
 	]
 });

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ШкалыОценокКомпетенций.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 298,width: 442,
+	style: 'position:absolute;width:442px;height:298px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Шкала оценок компетенций',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:320px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:354px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,14 +38,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
 			]
 		},
@@ -40,20 +49,16 @@
 			style: 'position:absolute;left:0px;top:273px;width:442px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},
@@ -64,13 +69,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'ПриоритетОценки',
+					text:'Приоритет оценки',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -85,9 +93,7 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

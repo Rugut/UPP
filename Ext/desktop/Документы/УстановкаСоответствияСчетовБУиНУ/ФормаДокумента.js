@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.УстановкаСоответствияСчетовБУиНУ.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 594,
+	style: 'position:absolute;width:594px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка соответствия счетов БУ и НУ',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:245px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:245px;width:490px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:269px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,14 +39,9 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -44,24 +53,30 @@
 					text:'Печать',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:44px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:132px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,25 +97,32 @@
 			columns:
 			[
 				{
-					text:'Учитывается',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'СчетБУ',
+					text:'Счет БУ',
+					width:'79',
 				},
 				{
-					text:'СчетКоррБУ',
+					text:'Счет корр БУ',
+					width:'93',
 				},
 				{
-					text:'ВидЗатратНУ',
+					text:'Вид затрат НУ',
+					width:'114',
 				},
 				{
-					text:'СчетНУ',
+					text:'Счет НУ',
+					width:'85',
 				},
 				{
 					text:'Комментарий',
+					width:'91',
 				},
 			]
 		},
@@ -109,26 +131,19 @@
 			style: 'position:absolute;left:8px;top:57px;width:578px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'По текущему соответствию',
 				},
 				{
-					text:'ПоТекущемуСоответствию',
+					text:'Установить Флажки',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'По умолчанию',
 				},
+				'-',
 				{
-					text:'ЗаполнитьПоУмолчанию',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'СнятьФлажки',
+					text:'Снять Флажки',
 				},
 			]
 		},

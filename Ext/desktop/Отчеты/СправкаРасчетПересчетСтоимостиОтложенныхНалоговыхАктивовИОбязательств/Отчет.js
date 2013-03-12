@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СправкаРасчетПересчетСтоимостиОтложенныхНалоговыхАктивовИОбязательств.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 604,
+	style: 'position:absolute;width:604px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Пересчет стоимости отложенных налоговых активов и обязательств',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:177px;top:33px;width:73px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -18,18 +26,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Подписи',
 				},
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Подписи',
 				},
@@ -39,14 +43,9 @@
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие2',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Заголовок',
@@ -54,16 +53,18 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

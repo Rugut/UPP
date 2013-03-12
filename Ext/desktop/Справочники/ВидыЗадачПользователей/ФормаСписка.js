@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыЗадачПользователей.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 424,
+	style: 'position:absolute;width:424px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды задач пользователей',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Использование',
+					text:'И',
+					width:'21',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 			]
 		},
@@ -33,14 +39,9 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Редактировать код номер',
 				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ДокументРасчетовСКонтрагентом.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 620,
+	style: 'position:absolute;width:620px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документы расчетов с контрагентом (ручной учет)',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -42,10 +51,7 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю3',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

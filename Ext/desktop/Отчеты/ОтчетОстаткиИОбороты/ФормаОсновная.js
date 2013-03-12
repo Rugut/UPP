@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетОстаткиИОбороты.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 466,width: 593,
+	style: 'position:absolute;width:593px;height:466px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,69 +14,54 @@
 			style: 'position:absolute;left:0px;top:0px;width:593px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Отбор',
 				},
 				{
-					text:'Разделитель4',
+					text:'Сформировать',
 				},
 				{
-					text:'Разделитель2',
+					text:'Справка',
+				},
+				{
+					text:'Сформировать',
 				},
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Выполнить',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Выполнить',
-				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
@@ -93,10 +80,28 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяРегистра',
+			text: 'Раздел учета:',
+			style: 'position:absolute;left:290px;top:33px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -105,7 +110,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -113,6 +118,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки1',
 			style: 'position:absolute;left:324px;top:0px;width:252px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -133,6 +143,11 @@
 			style: 'position:absolute;left:326px;top:98px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:98px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиС5',
@@ -149,6 +164,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки4',
 			style: 'position:absolute;left:326px;top:72px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:72px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,6 +189,11 @@
 			style: 'position:absolute;left:326px;top:48px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:48px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиС3',
@@ -185,6 +210,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки2',
 			style: 'position:absolute;left:324px;top:24px;width:252px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:24px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

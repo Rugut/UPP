@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаПараметрыИнтеграцииСоСпринтером',
 	{
 	extend: 'Ext.window.Window',
-	height: 128,width: 598,
+	style: 'position:absolute;width:598px;height:128px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры интеграции с ПК ""Спринтер"" компании ""Такском""',
 	
 	items:
@@ -12,24 +14,18 @@
 			style: 'position:absolute;left:0px;top:103px;width:598px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Прочитать данные с настроечной дискеты',
 				},
 				{
-					text:'Разделитель2',
+					text:'Отмена',
 				},
 				{
-					text:'КнопкаПрочитатьСКлючевойДискеты',
+					text:'ОК',
 				},
-				{
-					text:'КнопкаОтмена',
-				},
-				{
-					text:'КнопкаОК',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -40,6 +36,24 @@
 			hideLabel: true,
 			name: 'КодАбонента',
 			style: 'position:absolute;left:189px;top:11px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Отправки данных отчетности:',
+			style: 'position:absolute;left:20px;top:79px;width:166px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Программы электронной почты:',
+			style: 'position:absolute;left:20px;top:57px;width:166px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Логин:',
+			style: 'position:absolute;left:20px;top:13px;width:42px;height:16px;',
 		},
 		{
 			xtype: 'textfield',

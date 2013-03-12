@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РасчетПлановойСебестоимости.ФормаОбработкаРезультата',
 	{
 	extend: 'Ext.window.Window',
-	height: 118,width: 362,
+	style: 'position:absolute;width:362px;height:118px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка результата',
 	
 	items:
@@ -12,22 +14,29 @@
 			style: 'position:absolute;left:0px;top:93px;width:362px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаВыполнить',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Статья затрат:',
+			style: 'position:absolute;left:8px;top:31px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяЗатрат',
 			style: 'position:absolute;left:89px;top:31px;width:265px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Действие:',
+			style: 'position:absolute;left:8px;top:6px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -40,6 +49,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Сумма:',
+			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Сумма',
@@ -51,6 +66,12 @@
 					title:'СтатьяЗатрат',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Новая статья:',
+			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

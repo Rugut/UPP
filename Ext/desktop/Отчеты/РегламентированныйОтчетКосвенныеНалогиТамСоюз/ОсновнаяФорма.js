@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетКосвенныеНалогиТамСоюз.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 237,width: 276,
+	style: 'position:absolute;width:276px;height:237px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Косвенные налоги при ввозе товаров из государств - членов таможенного союза',
 	
 	items:
@@ -15,19 +17,21 @@
 				{
 					text:'ОК',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Действие1',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Справка',
-				},
-				{
-					text:'Действие',
+					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:36px;top:83px;width:199px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:238px;top:83px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:8px;top:132px;width:254px;height:49px;',
 		},
 		{
 			xtype: 'button',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Настройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 409,width: 398,
+	style: 'position:absolute;width:398px;height:409px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки защищенного документооборота',
 	
 	items:
@@ -15,12 +17,8 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -28,6 +26,17 @@
 					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Разрешить обновление модуля через Интернет (рекомендуется)',
+			style: 'position:absolute;left:16px;top:230px;width:363px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Задаются отдельно для каждого пользователя.',
+			style: 'position:absolute;left:8px;top:203px;width:382px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -40,6 +49,11 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Для доступа в Интернет необходима авторизация на прокси',
+			style: 'position:absolute;left:8px;top:7px;width:374px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:61px;top:71px;width:258px;height:45px;',
 			height: 45,width: 258,
@@ -49,6 +63,18 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:2px;top:3px;width:80px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Пароль:',
+			style: 'position:absolute;left:2px;top:28px;width:52px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -64,6 +90,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Если для доступа в Интернет необходима авторизация на прокси, то установите данный флажок и задайте параметры авторизации ниже.',
+			style: 'position:absolute;left:24px;top:24px;width:358px;height:29px;',
 		},
 					]
 				},
@@ -84,6 +116,18 @@
 			hideLabel: true,
 			name: 'МодульДокументооборотаПредставление',
 			style: 'position:absolute;left:8px;top:92px;width:374px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Задаются администратором информационной базы.',
+			style: 'position:absolute;left:0px;top:17px;width:382px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Криптопровайдер:',
+			style: 'position:absolute;left:8px;top:140px;width:98px;height:15px;',
 		},
 					]
 				},

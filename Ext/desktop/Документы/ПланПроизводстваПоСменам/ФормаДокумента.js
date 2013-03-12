@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ПланПроизводстваПоСменам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 420,width: 670,
+	style: 'position:absolute;width:670px;height:420px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'План производства по сменам',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомера',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДаты',
+			text: 'от',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:368px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,33 +50,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель5',
+					text:'Действие открыть категории',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Действие открыть свойства',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Выполнить планирование',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ВыполнитьПланирование',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -67,24 +78,18 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -94,7 +99,7 @@
 			items:
 			[
 				{
-					title:'ПланыПроизводства',
+					title:'Производство по планам',
 					items:
 					[
 		{
@@ -104,31 +109,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Сценарий',
+					width:'167',
 				},
 				{
 					text:'Подразделение',
+					width:'137',
 				},
 				{
 					text:'Проект',
+					width:'123',
 				},
 				{
-					text:'ДатаНач',
+					text:'Дата нач',
+					width:'80',
 				},
 				{
-					text:'ДатаКон',
+					text:'Дата кон',
+					width:'80',
 				},
 				{
-					text:'ДатаЗапуска',
+					text:'Дата запуска',
+					width:'80',
 				},
 				{
-					text:'ДатаВыпуска',
+					text:'Дата выпуска',
+					width:'80',
 				},
 				{
-					text:'ВариантРаспределенияВыпусков',
+					text:'Вариант распределения',
+					width:'200',
 				},
 			]
 		},
@@ -142,7 +156,7 @@
 					]
 				},
 				{
-					title:'Заказы',
+					title:'Производство по заказам',
 					items:
 					[
 		{
@@ -152,22 +166,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Заказ',
+					width:'220',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
-					text:'ДатаЗапуска',
+					text:'Дата запуска',
+					width:'80',
 				},
 				{
-					text:'ДатаВыпуска',
+					text:'Дата выпуска',
+					width:'80',
 				},
 				{
-					text:'ВариантРаспределенияВыпусков',
+					text:'Вариант распределения',
+					width:'200',
 				},
 			]
 		},
@@ -181,7 +201,7 @@
 					]
 				},
 				{
-					title:'Товары',
+					title:'Индивидуальные выпуски',
 					items:
 					[
 		{
@@ -189,15 +209,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Параметры',
 				},
-				{
-					text:'ПараметрыВыпуска',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -210,53 +226,67 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'100',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'200',
 				},
 				{
 					text:'Количество',
+					width:'68',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'45',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ДатаЗапуска',
+					text:'Дата запуска',
+					width:'80',
 				},
 				{
-					text:'ДатаВыпуска',
+					text:'Дата выпуска',
+					width:'80',
 				},
 				{
 					text:'Спецификация',
+					width:'200',
 				},
 				{
 					text:'Заказ',
+					width:'200',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
-					text:'ВариантРаспределенияВыпусков',
+					text:'Вариант распределения',
+					width:'200',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ИсходныеДанныеДляПланирования',
+					title:'Детальное планирование',
 					items:
 					[
 		{
@@ -265,25 +295,19 @@
 			items:
 			[
 				{
-					text:'КнопкаРазвернутьДерево',
+					text:'Раскрыть дерево',
 				},
 				{
-					text:'КнопкаСвернуть',
+					text:'Свернуть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Получить данные',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'КнопкаПолучитьДанные',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'КнопкаСвернутьДерево',
+					text:'Свернуть дерево',
 				},
 			]
 		},
@@ -295,58 +319,89 @@
 			[
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'100',
 				},
 				{
-					text:'ВидВоспроизводства',
+					text:'Вид воспроизводства',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
 					text:'Спецификация',
+					width:'100',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
-					text:'ДатаЗапуска',
+					text:'Дата запуска',
+					width:'100',
 				},
 				{
-					text:'ДатаВыпуска',
+					text:'Дата выпуска',
+					width:'100',
 				},
 				{
-					text:'ВариантРаспределенияВыпусков',
+					text:'Вариант распределения выпусков',
+					width:'100',
 				},
 				{
-					text:'ВРамкахПлана',
+					text:'В рамках плана',
+					width:'100',
 				},
 				{
-					text:'ПоДаннымПланов',
+					text:'По данным планов',
+					width:'100',
 				},
 				{
-					text:'КонечнаяПродукция',
+					text:'Конечная продукция',
+					width:'100',
 				},
 				{
-					text:'КоличествоПоСпецификации',
+					text:'Количество по спецификации',
+					width:'89',
 				},
 				{
-					text:'КлючСтроки',
+					text:'Ключ строки',
+					width:'111',
 				},
 				{
-					text:'НомерОперацииМаршрута',
+					text:'Номер операции',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать детальное планирование',
+			style: 'position:absolute;left:6px;top:235px;width:225px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Разузловывать данные при получении',
+			style: 'position:absolute;left:6px;top:255px;width:225px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Автоматически сворачивать данные при получении',
+			style: 'position:absolute;left:333px;top:235px;width:285px;height:15px;',
 		},
 					]
 				},
 				{
-					title:'ЗанятостьРабочихЦентров',
+					title:'Занятость рабочих центров',
 					items:
 					[
 		{
@@ -356,43 +411,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Период',
+					text:'Дата начала',
+					width:'120',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'120',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'100',
 				},
 				{
 					text:'Смена',
+					width:'100',
 				},
 				{
-					text:'ТехОперация',
+					text:'Тех операция',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'100',
 				},
 				{
 					text:'Спецификация',
+					width:'100',
 				},
 				{
-					text:'КонечнаяПродукция',
+					text:'Конечная продукция',
+					width:'100',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 			]
 		},
@@ -406,7 +474,7 @@
 					]
 				},
 				{
-					title:'ПотребностиПроизводства',
+					title:'Потребности производства',
 					items:
 					[
 		{
@@ -416,40 +484,52 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Период',
+					text:'Дата потребности',
+					width:'120',
 				},
 				{
 					text:'Смена',
+					width:'100',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'100',
 				},
 				{
 					text:'Спецификация',
+					width:'100',
 				},
 				{
-					text:'КонечнаяПродукция',
+					text:'Конечная продукция',
+					width:'100',
 				},
 				{
-					text:'КоличествоИзвне',
+					text:'Количество извне',
+					width:'100',
 				},
 				{
-					text:'КоличествоВнутри',
+					text:'Количество внутри',
+					width:'100',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 			]
 		},
@@ -467,10 +547,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОтветсвенный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:234px;width:90px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:426px;top:234px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:6px;top:234px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -485,18 +577,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Склад',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМоментЗапасов',
+			text: 'Момент определения запасов:',
+			style: 'position:absolute;left:6px;top:30px;width:205px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МоментЗапасов',
 			style: 'position:absolute;left:211px;top:30px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНачальнаяГраница',
+			text: 'Начальная граница перепланирования:',
+			style: 'position:absolute;left:6px;top:6px;width:205px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -510,6 +616,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроект',
+			text: 'Проект:',
+			style: 'position:absolute;left:6px;top:258px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

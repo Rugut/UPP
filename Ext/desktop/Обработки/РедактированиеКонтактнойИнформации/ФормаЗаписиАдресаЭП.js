@@ -1,17 +1,31 @@
 ﻿Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаЭП',
 	{
 	extend: 'Ext.window.Window',
-	height: 181,width: 330,
+	style: 'position:absolute;width:330px;height:181px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Электронная почта',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Адрес эл.почты:',
+			style: 'position:absolute;left:14px;top:105px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Представление',
 			style: 'position:absolute;left:102px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись16',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -34,25 +48,33 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОК',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбъект',
+			text: 'Объект:',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Объект',
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись18',
+			text: 'Вид эл. почты:',
+			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

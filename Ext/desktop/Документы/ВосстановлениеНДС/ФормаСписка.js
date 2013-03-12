@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВосстановлениеНДС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 507,
+	style: 'position:absolute;width:507px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Восстановления НДС',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ОтразитьВКнигеПродаж',
+					text:'В книгу продаж',
+					width:'84',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 			]
 		},
@@ -35,20 +42,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:507px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

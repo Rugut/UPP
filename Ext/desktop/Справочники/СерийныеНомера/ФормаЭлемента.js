@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.СерийныеНомера.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 110,width: 422,
+	style: 'position:absolute;width:422px;height:110px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Серийные номера',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Серийный номер:',
+			style: 'position:absolute;left:8px;top:58px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:100px;top:58px;width:314px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатура',
+			text: 'Номенклатура:',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,19 +46,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

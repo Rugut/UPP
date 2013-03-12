@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ШаблоныФормулРасчета.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 500,
+	style: 'position:absolute;width:500px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Шаблоны формул расчета',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'145',
 				},
 				{
 					text:'Формула',
+					width:'145',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -47,11 +55,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбра��ь',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

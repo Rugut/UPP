@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыДеятельностиКонтрагентов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 780,
+	style: 'position:absolute;width:780px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды деятельности контрагентов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'486',
 				},
 			]
 		},
@@ -39,6 +44,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.НастройкиРегламентногоФормированияДокументовПоНДС.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 238,width: 400,
+	style: 'position:absolute;width:400px;height:238px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки регламентного формирования документов по НДС',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:121px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:135px;top:57px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:121px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:135px;top:33px;width:257px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:81px;width:121px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:135px;top:81px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:186px;width:121px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,19 +70,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
 		},
@@ -67,9 +89,20 @@
 			items:
 			[
 				{
-					title:'АвтоматическоеВыполнение',
+					title:'Автоматическое выполнение',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать расписание:',
+			style: 'position:absolute;left:0px;top:6px;width:161px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПредставлениеРасписания',
+			text: '<Ввести расписание>',
+			style: 'position:absolute;left:13px;top:27px;width:365px;height:43px;',
+		},
 					]
 				},
 			]

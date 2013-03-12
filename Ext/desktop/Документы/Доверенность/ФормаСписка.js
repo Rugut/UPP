@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.Доверенность.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 780,
+	style: 'position:absolute;width:780px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Доверенности',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Подотчетное лицо',
+					width:'120',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Подразделение',
+					width:'152',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -48,14 +59,10 @@
 			items:
 			[
 				{
-					text:'ДействиеПечать',
+					text:'Печать по умолчанию',
 				},
-				{
-					text:'Разделитель10',
-				},
-				{
-					text:'Разделитель11',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

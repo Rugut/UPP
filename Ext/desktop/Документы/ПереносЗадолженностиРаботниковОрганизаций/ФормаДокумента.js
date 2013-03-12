@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ПереносЗадолженностиРаботниковОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 389,width: 624,
+	style: 'position:absolute;width:624px;height:389px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Перенос задолженности из прошлых периодов в текущий',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:58px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:58px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:337px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:337px;width:520px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:338px;top:58px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,56 +74,35 @@
 			style: 'position:absolute;left:0px;top:0px;width:624px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель7',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'',
 				},
 				{
-					text:'Подменю2',
+					text:'Списком сотрудников',
 				},
+				'-',
+				'-',
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'СписокРаботников',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Рассчитать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Редактировать номер',
 				},
 				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'ПоЗадолженности',
-				},
-				{
-					text:'Подменю1',
+					text:'По задолженности',
 				},
 			]
 		},
@@ -101,21 +112,23 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Перенести в:',
+			style: 'position:absolute;left:338px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -130,16 +143,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Физлицо',
+					text:'Сотрудник',
+					width:'180',
 				},
 				{
-					text:'ПериодВозникновения',
+					text:'Месяц возникновения',
+					width:'120',
 				},
 				{
-					text:'Результат',
+					text:'Перенести в размере',
+					width:'120',
 				},
 			]
 		},
@@ -172,19 +189,21 @@
 				{
 					text:'Действие13',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие10',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:83px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

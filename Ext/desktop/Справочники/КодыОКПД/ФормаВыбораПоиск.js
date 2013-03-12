@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КодыОКПД.ФормаВыбораПоиск',
 	{
 	extend: 'Ext.window.Window',
-	height: 473,width: 788,
+	style: 'position:absolute;width:788px;height:473px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Коды ОКПД',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Код',
+					width:'100',
 				},
 				{
 					text:'Имя',
+					width:'350',
 				},
 			]
 		},
@@ -30,11 +34,9 @@
 					text:'Действие',
 				},
 				{
-					text:'ИерархическийПросмотр',
+					text:'Иерархический просмотр',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -64,6 +66,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Найдено',
+			text: 'Введите строку поиска',
+			style: 'position:absolute;left:20px;top:0px;width:142px;height:19px;',
+		},
 					]
 				},
 			]
@@ -111,9 +119,22 @@
 			text: 'Обновить индекс',
 			style: 'position:absolute;left:13px;top:384px;width:117px;height:23px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаАктуальностиИндекса',
+			text: 'Дата актуальности индекса
+Признак актуальности индекса',
+			style: 'position:absolute;left:13px;top:343px;width:294px;height:38px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнформация',
+			text: '',
+			style: 'position:absolute;left:472px;top:33px;width:308px;height:112px;',
 		},
 	]
 });

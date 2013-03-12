@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиБюджета.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 644,
+	style: 'position:absolute;width:644px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи бюджета',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'120',
 				},
 				{
 					text:'Знак',
+					width:'48',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'211',
 				},
 			]
 		},
@@ -47,10 +55,10 @@
 			items:
 			[
 				{
-					text:'КоманднаяПанельПереместитьВверх',
+					text:'Переместить вверх',
 				},
 				{
-					text:'КоманднаяПанельПереместитьВниз',
+					text:'Переместить вниз',
 				},
 			]
 		},

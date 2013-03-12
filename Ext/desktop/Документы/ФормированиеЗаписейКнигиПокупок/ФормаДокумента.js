@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ФормированиеЗаписейКнигиПокупок.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 709,
+	style: 'position:absolute;width:709px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,32 +14,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Заполнить документ',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ЗаполнитьДокумент',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -46,28 +36,28 @@
 			style: 'position:absolute;left:0px;top:396px;width:709px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:369px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -76,10 +66,27 @@
 			style: 'position:absolute;left:90px;top:369px;width:611px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Предъявлен к вычету НДС 0%',
+			style: 'position:absolute;left:8px;top:81px;width:176px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,10 +95,22 @@
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:329px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -106,7 +125,7 @@
 			items:
 			[
 				{
-					title:'ВычетПоПриобретеннымЦенностям',
+					title:'Вычет НДС по приобретенным ценностям',
 					items:
 					[
 		{
@@ -116,49 +135,64 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ДокументОтгрузки',
+					text:'Документ отгрузки',
+					width:'120',
 				},
 				{
 					text:'Состояние',
+					width:'120',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
 					text:'Поставщик',
+					width:'120',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'СуммаБезНДС',
+					text:'Сумма без НДС',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'90',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'120',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'80',
 				},
 				{
-					text:'ЗаписьДополнительногоЛиста',
+					text:'Запись доп. листа',
+					width:'60',
 				},
 				{
-					text:'КорректируемыйПериод',
+					text:'Корректируемый период',
+					width:'80',
 				},
 				{
-					text:'ИсправленныйСчетФактура',
+					text:'Исправленный счет-фактура',
+					width:'100',
 				},
 			]
 		},
@@ -167,21 +201,16 @@
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
-				},
-				{
-					text:'ПодменюЗаполнить',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'НДСсАвансов',
+					title:'Вычет НДС с полученных авансов',
 					items:
 					[
 		{
@@ -191,187 +220,64 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Покупатель',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
-					text:'ДокументОтгрузки',
-				},
-				{
-					text:'Состояние',
-				},
-				{
-					text:'СчетФактура',
-				},
-				{
-					text:'ДатаСобытия',
-				},
-				{
-					text:'СуммаБезНДС',
-				},
-				{
-					text:'СтавкаНДС',
-				},
-				{
-					text:'НДС',
-				},
-				{
-					text:'ВалютаДокумента',
-				},
-				{
-					text:'ВалютнаяСумма',
-				},
-				{
-					text:'ЗаписьДополнительногоЛиста',
-				},
-				{
-					text:'КорректируемыйПериод',
-				},
-				{
-					text:'ИсправленныйСчетФактура',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
-			items:
-			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Заполнить',
-				},
-			]
-		},
-					]
-				},
-				{
-					title:'НДССАвансовВыданных',
-					items:
-					[
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
-			height: 211,width: 679,
-			columns:
-			[
-				{
-					text:'НомерСтроки',
-				},
-				{
-					text:'Поставщик',
-				},
-				{
-					text:'ДоговорКонтрагента',
-				},
-				{
-					text:'СчетФактура',
-				},
-				{
-					text:'СуммаБезНДС',
-				},
-				{
-					text:'СтавкаНДС',
-				},
-				{
-					text:'НДС',
-				},
-				{
-					text:'ЗаписьДополнительногоЛиста',
-				},
-				{
-					text:'КорректируемыйПериод',
-				},
-				{
-					text:'ИсправленныйСчетФактура',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
-			items:
-			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Заполнить',
-				},
-			]
-		},
-					]
-				},
-				{
-					title:'ВычетНДСПоНалоговомуАгенту',
-					items:
-					[
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
-			height: 211,width: 679,
-			columns:
-			[
-				{
-					text:'НомерСтроки',
-				},
-				{
-					text:'ВидЦенности',
-				},
-				{
-					text:'Поставщик',
-				},
-				{
-					text:'ДоговорКонтрагента',
-				},
-				{
-					text:'СчетФактура',
-				},
-				{
-					text:'СуммаБезНДС',
-				},
-				{
-					text:'СтавкаНДС',
-				},
-				{
-					text:'НДС',
-				},
-				{
-					text:'ДокументОплаты',
-				},
-				{
-					text:'ДатаОплаты',
-				},
-				{
-					text:'ДокументОтгрузки',
+					text:'Документ отгрузки',
+					width:'120',
 				},
 				{
 					text:'Состояние',
+					width:'120',
 				},
 				{
-					text:'ЗаписьДополнительногоЛиста',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'КорректируемыйПериод',
+					text:'Дата зачета аванса',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Сумма без НДС',
+					width:'120',
 				},
 				{
-					text:'ИсправленныйСчетФактура',
+					text:'% НДС',
+					width:'90',
+				},
+				{
+					text:'НДС',
+					width:'120',
+				},
+				{
+					text:'Валюта документа',
+					width:'60',
+				},
+				{
+					text:'Сумма по документу-основанию',
+					width:'120',
+				},
+				{
+					text:'Запись доп. листа',
+					width:'80',
+				},
+				{
+					text:'Корректируемый период',
+					width:'80',
+				},
+				{
+					text:'Исправленный счет-фактура',
+					width:'100',
 				},
 			]
 		},
@@ -380,21 +286,16 @@
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить по авансам полученным',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВычетПриИзмененииСтоимости',
+					title:'Вычет НДС с выданных авансов',
 					items:
 					[
 		{
@@ -404,31 +305,194 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
-				},
-				{
-					text:'ВидЦенности',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Поставщик',
+					width:'120',
 				},
 				{
-					text:'СчетФактура',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'СуммаБезНДС',
+					text:'Сумма без НДС',
+					width:'120',
+				},
+				{
+					text:'% НДС',
+					width:'96',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Запись доп. листа',
+					width:'80',
 				},
 				{
-					text:'ИсправленныйСчетФактура',
+					text:'Корректируемый период',
+					width:'80',
+				},
+				{
+					text:'Исправленный счет-фактура',
+					width:'100',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+					]
+				},
+				{
+					title:'Вычет НДС по налоговому агенту',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
+			height: 211,width: 679,
+			columns:
+			[
+				{
+					text:'№',
+					width:'28',
+				},
+				{
+					text:'Вид ценности',
+					width:'120',
+				},
+				{
+					text:'Поставщик',
+					width:'120',
+				},
+				{
+					text:'Договор контрагента',
+					width:'120',
+				},
+				{
+					text:'Документ поступления',
+					width:'120',
+				},
+				{
+					text:'Сумма без НДС',
+					width:'120',
+				},
+				{
+					text:'% НДС',
+					width:'80',
+				},
+				{
+					text:'НДС',
+					width:'120',
+				},
+				{
+					text:'Документ оплаты',
+					width:'120',
+				},
+				{
+					text:'Дата оплаты',
+					width:'80',
+				},
+				{
+					text:'Документ отгрузки',
+					width:'120',
+				},
+				{
+					text:'Состояние',
+					width:'120',
+				},
+				{
+					text:'Запись доп. листа',
+					width:'80',
+				},
+				{
+					text:'Корректируемый период',
+					width:'100',
+				},
+				{
+					text:'Счет учета НДС',
+					width:'96',
+				},
+				{
+					text:'Исправленный счет-фактура',
+					width:'100',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+					]
+				},
+				{
+					title:'Вычет НДС по уменьшению стоимости реализации',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
+			height: 211,width: 679,
+			columns:
+			[
+				{
+					text:'№',
+					width:'28',
+				},
+				{
+					text:'Вид ценности',
+					width:'100',
+				},
+				{
+					text:'Покупатель',
+					width:'100',
+				},
+				{
+					text:'Счет-фактура',
+					width:'100',
+				},
+				{
+					text:'% НДС',
+					width:'100',
+				},
+				{
+					text:'Сумма без НДС',
+					width:'100',
+				},
+				{
+					text:'НДС',
+					width:'100',
+				},
+				{
+					text:'Счет учета НДС',
+					width:'100',
+				},
+				{
+					text:'Исправленный счет-фактура',
+					width:'100',
 				},
 			]
 		},
@@ -438,9 +502,6 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Заполнить',
 				},
 			]
@@ -448,6 +509,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Имеется решение о возмещении НДС',
+			style: 'position:absolute;left:190px;top:81px;width:215px;height:15px;',
 		},
 	]
 });

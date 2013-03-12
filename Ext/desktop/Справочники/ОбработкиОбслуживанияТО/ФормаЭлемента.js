@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 501,width: 473,
+	style: 'position:absolute;width:473px;height:501px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка обслуживания ТО',
 	
 	items:
@@ -13,65 +15,48 @@
 			items:
 			[
 				{
-					text:'Действия',
-				},
-				{
 					text:'Перечитать',
 				},
 				{
 					text:'НайтиВСписке',
 				},
 				{
-					text:'Действие3',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Экспорт в файл',
 				},
 				{
-					text:'Разделитель3',
+					text:'Перечитать',
 				},
 				{
-					text:'Экспорт',
+					text:'Редактировать код',
 				},
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие5',
+					text:'Закрыть',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'Действие4',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Найти в списке',
 				},
 				{
 					text:'Скопировать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Скопировать',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -79,22 +64,24 @@
 			style: 'position:absolute;left:0px;top:476px;width:473px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -103,10 +90,22 @@
 			style: 'position:absolute;left:113px;top:33px;width:244px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:362px;top:33px;width:22px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:385px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбработка',
+			text: 'Обработка:',
+			style: 'position:absolute;left:8px;top:78px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -115,13 +114,25 @@
 			style: 'position:absolute;left:113px;top:78px;width:302px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВид',
+			text: 'Вид:',
+			style: 'position:absolute;left:8px;top:102px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Вид',
 			style: 'position:absolute;left:113px;top:102px;width:352px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: 'Описание:',
+			style: 'position:absolute;left:8px;top:126px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Описание',
 			style: 'position:absolute;left:113px;top:126px;width:352px;height:46px;',
@@ -133,12 +144,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'Модель',
+					text:'Модель торгового оборудования',
+					width:'250',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВерсия',
+			text: 'Версия обработки:',
+			style: 'position:absolute;left:8px;top:201px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,10 +166,22 @@
 			style: 'position:absolute;left:113px;top:201px;width:352px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИдентификатор',
+			text: 'ID:',
+			style: 'position:absolute;left:8px;top:225px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Идентификатор',
 			style: 'position:absolute;left:113px;top:225px;width:352px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВерсияAPI',
+			text: 'Версия API:',
+			style: 'position:absolute;left:8px;top:177px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

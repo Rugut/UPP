@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТиповыеАнализыНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 360,width: 550,
+	style: 'position:absolute;width:550px;height:360px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Типовые анализы номенклатуры',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'56',
 				},
 				{
 					text:'Наименование',
+					width:'295',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -49,10 +55,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'34',
 				},
 				{
-					text:'ПоказательАнализа',
+					text:'Показатель анализа',
+					width:'338',
 				},
 			]
 		},

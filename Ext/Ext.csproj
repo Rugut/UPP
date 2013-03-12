@@ -1319,8 +1319,16 @@
     <Content Include="desktop\Документы\ЭлектронноеПисьмо\ФормаПечати.js" />
     <Content Include="desktop\Документы\ЭлектронноеПисьмо\ФормаПодбораПолучателя.js" />
     <Content Include="desktop\Документы\ЭлектронноеПисьмо\ФормаСписка.js" />
+    <Content Include="desktop\ЗагрузкаTab.js" />
+    <Content Include="desktop\Меню\ДокументыФормыДокумента.js" />
+    <Content Include="desktop\Меню\ДокументыФормыСписка.js" />
+    <Content Include="desktop\Меню\ОбработкиФормыОбработки.js" />
+    <Content Include="desktop\Меню\ОтчетыФормыОтчета.js" />
+    <Content Include="desktop\Меню\СправочникиФормыСписка.js" />
+    <Content Include="desktop\Меню\СправочникиФормыЭлемента.js" />
     <Content Include="desktop\Метаданные\Документы.js" />
-    <Content Include="desktop\Метаданные\Организации.js" />
+    <Content Include="desktop\Метаданные\Обработки.js" />
+    <Content Include="desktop\Метаданные\Отчеты.js" />
     <Content Include="desktop\Метаданные\Справочники.js" />
     <Content Include="desktop\Обработки\АвтоПолучениеОтправкаЭлектронныхПисем\Форма.js" />
     <Content Include="desktop\Обработки\АдминистрированиеПользователей\СхемаСистемыПравИНастроекПользователей.js" />

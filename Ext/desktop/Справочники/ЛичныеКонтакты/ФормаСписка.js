@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЛичныеКонтакты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 508,
+	style: 'position:absolute;width:508px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Личные контакты',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'ФИО',
+					width:'220',
 				},
 			]
 		},

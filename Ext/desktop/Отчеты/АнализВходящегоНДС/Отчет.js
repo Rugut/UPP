@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.АнализВходящегоНДС.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 447,width: 604,
+	style: 'position:absolute;width:604px;height:447px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ входящего НДС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -18,15 +26,8 @@
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -34,31 +35,27 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Справка',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 			]
 		},
@@ -73,6 +70,18 @@
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'button',

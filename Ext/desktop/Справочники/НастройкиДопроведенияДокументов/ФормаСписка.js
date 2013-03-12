@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиДопроведенияДокументов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 675,
+	style: 'position:absolute;width:675px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки допроведения документов',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Наименование',
+					width:'284',
 				},
 				{
-					text:'ЗапускатьАвтоматически',
+					text:'Автоматич.',
+					width:'65',
 				},
 				{
 					text:'Комментарий',
+					width:'237',
 				},
 			]
 		},

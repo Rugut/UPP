@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РедактированиеВычетовНаДетей2011.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 589,width: 996,
+	style: 'position:absolute;width:996px;height:589px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Стандартные вычеты - 2011',
 	
 	items:
@@ -13,15 +15,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'Выполнить',
+					text:'Записать вычеты и закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаголовокГлавногоОкна',
+			text: 'Выделение вычетов на второго, третьего (четвертого, ...) ребенка',
+			style: 'position:absolute;left:8px;top:8px;width:709px;height:25px;',
 		},
 		{
 			xtype: 'grid',
@@ -30,7 +36,8 @@
 			columns:
 			[
 				{
-					text:'Наименование',
+					text:'Сотрудник',
+					width:'100',
 				},
 			]
 		},
@@ -41,30 +48,44 @@
 			columns:
 			[
 				{
-					text:'КолонкаПериод',
+					text:'Период (с ... по)',
+					width:'140',
 				},
 				{
-					text:'Период',
+					text:'С',
+					width:'70',
 				},
 				{
-					text:'ПериодЗавершения',
+					text:'по',
+					width:'70',
 				},
 				{
-					text:'ВычетыНаДетейТекст',
+					text:'Код и количество детей',
+					width:'83',
 				},
 				{
-					text:'ВычетыНаДетейПрименение',
+					text:'Применение',
+					width:'70',
 				},
 				{
-					text:'КодВычетаНаДетей',
+					text:'Вычет на детей',
+					width:'60',
 				},
 				{
-					text:'КоличествоДетей',
+					text:'Количество детей',
+					width:'24',
 				},
 				{
 					text:'Основание',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:39px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,39 +100,51 @@
 			columns:
 			[
 				{
-					text:'КолонкаПериод',
+					text:'Период (с ... по)',
+					width:'140',
 				},
 				{
-					text:'Период',
+					text:'С',
+					width:'70',
 				},
 				{
-					text:'ПериодЗавершения',
+					text:'по',
+					width:'70',
 				},
 				{
-					text:'ВычетыНаДетейТекст',
+					text:'Код и количество детей',
+					width:'83',
 				},
 				{
-					text:'ВычетыНаДетейПрименение',
+					text:'Применение',
+					width:'70',
 				},
 				{
-					text:'КодВычетаНаДетей',
+					text:'Вычет на детей',
+					width:'60',
 				},
 				{
-					text:'КоличествоДетей',
+					text:'Количество детей',
+					width:'24',
 				},
 				{
 					text:'Основание',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись26',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:98px;width:96px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:226px;top:411px;width:762px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -127,13 +160,32 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись27',
+			text: 'Вычеты, применявшиеся ранее',
+			style: 'position:absolute;left:226px;top:98px;width:197px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись28',
+			text: 'Вычеты, действующие с января 2011 в соответствии с Законом № 330-ФЗ и приказом ФНС об изменении перечня вычетов',
+			style: 'position:absolute;left:226px;top:389px;width:762px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснения',
+			text: 'Первая строка пояснения
+Вторая строка пояснения',
+			style: 'position:absolute;left:8px;top:63px;width:980px;height:32px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:226px;top:246px;width:762px;height:140px;',
 			height: 140,width: 762,
 			items:
 			[
 				{
-					title:'СтраницаПереключателей',
+					title:'Страница переключателей',
 					items:
 					[
 		{
@@ -153,19 +205,25 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Вычеты с кодом 108',
+			style: 'position:absolute;left:0px;top:0px;width:126px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
 			items:
 			[
 				{
-					title:'СтраницаМногихДетей',
+					title:'Страница многих детей',
 					items:
 					[
 					]
 				},
 				{
-					title:'СтраницаОдногоРебенка',
+					title:'Страница одного ребенка',
 					items:
 					[
 					]
@@ -187,19 +245,25 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись30',
+			text: 'Вычеты с кодом 110',
+			style: 'position:absolute;left:0px;top:0px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
 			items:
 			[
 				{
-					title:'СтраницаМногихДетей',
+					title:'Страница многих детей',
 					items:
 					[
 					]
 				},
 				{
-					title:'СтраницаОдногоРебенка',
+					title:'Страница одного ребенка',
 					items:
 					[
 					]
@@ -221,19 +285,25 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Вычеты с кодом 111',
+			style: 'position:absolute;left:0px;top:0px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
 			items:
 			[
 				{
-					title:'СтраницаМногихДетей',
+					title:'Страница многих детей',
 					items:
 					[
 					]
 				},
 				{
-					title:'СтраницаОдногоРебенка',
+					title:'Страница одного ребенка',
 					items:
 					[
 					]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПредварительныйПросмотрПечатныхФорм',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 740,
+	style: 'position:absolute;width:740px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Печать документов циклов обмена',
 	
 	items:
@@ -12,33 +14,24 @@
 			style: 'position:absolute;left:0px;top:425px;width:740px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'Сохранить',
+					text:'В формате табличных документов (MXL)',
 				},
 				{
-					text:'ВВидеТабличныхДокументов',
-				},
-				{
-					text:'ВФорматеMicrosoftExcel',
+					text:'В формате Microsoft Excel (XLS)',
 				},
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -48,13 +41,16 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Объект',
+					width:'159',
 				},
 				{
-					text:'ТабличныйДокумент',
+					text:'Табличный документ',
+					width:'100',
 				},
 			]
 		},
@@ -64,29 +60,25 @@
 			items:
 			[
 				{
-					text:'ПереместитьВниз',
+					text:'Переместить вниз',
 				},
 				{
 					text:'Раскрыть',
 				},
 				{
-					text:'УстановитьПометки',
+					text:'Установить пометки',
 				},
 				{
-					text:'ПереместитьВверх',
+					text:'Переместить вверх',
 				},
 				{
 					text:'Свернуть',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Снять пометки',
 				},
-				{
-					text:'РаспометитьВсе',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -94,6 +86,12 @@
 			hideLabel: true,
 			name: 'КоличествоКопий',
 			style: 'position:absolute;left:160px;top:398px;width:46px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоКопий',
+			text: 'Количество копий:',
+			style: 'position:absolute;left:14px;top:399px;width:100px;height:18px;',
 		},
 	]
 });

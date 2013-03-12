@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.СписокПользователейИБ.ФормаОтбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 319,width: 530,
+	style: 'position:absolute;width:530px;height:319px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отбор',
 	
 	items:
@@ -18,10 +20,20 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Аутентификация Windows:',
+			style: 'position:absolute;left:8px;top:267px;width:178px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Аутентификация 1С:Предприятия:',
+			style: 'position:absolute;left:8px;top:243px;width:178px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -29,10 +41,10 @@
 			items:
 			[
 				{
-					text:'СнятьФлажкиРоли',
+					text:'СнятьФлажки',
 				},
 				{
-					text:'УстановитьФлажкиРоли',
+					text:'Установить флажки роли',
 				},
 			]
 		},
@@ -42,10 +54,10 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажкиЯзыки',
+					text:'Установить флажки языки',
 				},
 				{
-					text:'СнятьФлажкиЯзыки',
+					text:'СнятьФлажки',
 				},
 			]
 		},
@@ -55,10 +67,10 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажкиИнтерфейсы',
+					text:'Установить флажки интерфейсы',
 				},
 				{
-					text:'СнятьФлажкиИнтерфейсы',
+					text:'СнятьФлажки',
 				},
 			]
 		},
@@ -70,6 +82,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},
@@ -81,6 +94,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},
@@ -92,6 +106,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},

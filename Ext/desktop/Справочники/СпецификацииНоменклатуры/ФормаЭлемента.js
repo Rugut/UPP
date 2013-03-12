@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 444,width: 652,
+	style: 'position:absolute;width:652px;height:444px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Спецификации номенклатуры',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:426px;top:58px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:468px;top:58px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -27,47 +41,25 @@
 				{
 					text:'Настройка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Версии спецификации',
 				},
 				{
-					text:'УстановитьОсновнуюСпецификацию',
+					text:'Создать версию',
 				},
 				{
-					text:'Разделитель4',
+					text:'Заполнить по спецификации',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Заполнить по фактическим затратам',
 				},
 				{
-					text:'ВерсииСпецификации',
-				},
-				{
-					text:'СоздатьВерсию',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'ПоСпецификации',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ЗаполнитьПоФактическимЗатратам',
-				},
-				{
-					text:'ПодменюВидаСпецификации',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'УстановитьОсновнуюСпецификациюНаДату',
+					text:'Установить основной спецификацией на дату...',
 				},
 				{
 					text:'Файлы',
@@ -80,21 +72,23 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -103,10 +97,27 @@
 			style: 'position:absolute;left:94px;top:33px;width:550px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКодВерсии',
+			text: 'Код версии:',
+			style: 'position:absolute;left:534px;top:58px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КодВерсии',
 			style: 'position:absolute;left:604px;top:58px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Активная спецификация',
+			style: 'position:absolute;left:8px;top:82px;width:151px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:392px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -125,41 +136,44 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'ГиперссылкаТехнологическаяКартаСпецификацииПланирования',
+			text: 'Выбрать технологическую карту',
+			style: 'position:absolute;left:86px;top:270px;width:550px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:95px;width:636px;height:169px;',
 			height: 169,width: 636,
 			items:
 			[
 				{
-					title:'ИсходныеКомплектующие',
+					title:'Исходные комплектующие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСостояние',
+			text: 'Состояние:',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Подбор',
 				},
 				{
-					text:'ОсновноеСырье',
+					text:'Основное сырье',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Заполнить по спецификации',
 				},
-				{
-					text:'ЗаполнитьПоСпецификации',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -169,71 +183,91 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерОперацииМаршрута',
+					text:'№ операции',
+					width:'80',
 				},
 				{
-					text:'ПозицияПоСпецификации',
+					text:'Позиция',
+					width:'48',
 				},
 				{
-					text:'ВидНорматива',
+					text:'Вид норматива',
+					width:'120',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'120',
 				},
 				{
-					text:'МинимальнаяПартия',
+					text:'Мин. партия',
+					width:'80',
 				},
 				{
 					text:'Кратность',
+					width:'80',
 				},
 				{
-					text:'ВидВоспроизводства',
+					text:'Вид воспроизводства',
+					width:'116',
 				},
 				{
 					text:'Спецификация',
+					width:'120',
 				},
 				{
-					text:'УказаниеНорматива',
+					text:'Указание норматива',
+					width:'115',
 				},
 				{
 					text:'Формула',
+					width:'100',
 				},
 				{
-					text:'СписаниеКомплектующей',
+					text:'Списание комплектующей',
+					width:'109',
 				},
 				{
 					text:'Свойство',
+					width:'105',
 				},
 				{
-					text:'ТочкаМаршрута',
+					text:'Точка маршрута',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВозвратныеОтходы',
+					title:'Возвратные отходы',
 					items:
 					[
 		{
@@ -243,55 +277,72 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерОперацииМаршрута',
+					text:'№ операции',
+					width:'80',
 				},
 				{
-					text:'ВидНорматива',
+					text:'Вид норматива',
+					width:'120',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (регл.)',
+					width:'80',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'120',
 				},
 				{
-					text:'УказаниеНорматива',
+					text:'Указание норматива',
+					width:'115',
 				},
 				{
 					text:'Формула',
+					width:'100',
 				},
 				{
-					text:'СписаниеКомплектующей',
+					text:'Отражение возвр. отхода',
+					width:'109',
 				},
 				{
 					text:'Свойство',
+					width:'105',
 				},
 				{
-					text:'ТочкаМаршрута',
+					text:'Точка маршрута',
+					width:'100',
 				},
 			]
 		},
@@ -300,29 +351,28 @@
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ЗаполнитьПоСпецификации',
+					text:'Заполнить по спецификации',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПараметрыВыпускаПродукции',
+					title:'Параметры выпуска продукции',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаУтверждения',
+			text: 'Дата утверждения:',
+			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:113px;',
@@ -330,13 +380,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидПараметра',
+					text:'Вид параметра',
+					width:'276',
 				},
 				{
-					text:'Значение',
+					text:'Значение по умолчанию',
+					width:'130',
 				},
 			]
 		},
@@ -346,16 +399,11 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьИзШаблона',
+					text:'Заполнить из шаблона',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ЗаполнитьПоСпецификации',
+					text:'Заполнить по спецификации',
 				},
 			]
 		},
@@ -372,13 +420,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Обозначение',
+					width:'100',
 				},
 				{
 					text:'Наименование',
+					width:'342',
 				},
 			]
 		},
@@ -388,14 +439,9 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПоСпецификации',
+					text:'Заполнить по спецификации',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
@@ -417,10 +463,22 @@
 			style: 'position:absolute;left:108px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:108px;top:54px;width:198px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНазначение',
+			text: 'Назначение:',
+			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -443,10 +501,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНоменклатура',
+			text: 'Номенклатура:',
+			style: 'position:absolute;left:6px;top:22px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:86px;top:22px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьХарактеристикаНоменклатуры',
+			text: 'Характеристика:',
+			style: 'position:absolute;left:326px;top:22px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -479,6 +549,12 @@
 			style: 'position:absolute;left:416px;top:46px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТочкаМаршрута',
+			text: 'Точка маршрута:',
+			style: 'position:absolute;left:326px;top:46px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Кратность',
@@ -489,6 +565,18 @@
 			hideLabel: true,
 			name: 'МинимальнаяПартия',
 			style: 'position:absolute;left:416px;top:70px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМинимальнаяПартияИзделия',
+			text: 'Кратность:',
+			style: 'position:absolute;left:168px;top:70px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМинимальнаяПартия',
+			text: 'Мин. партия:',
+			style: 'position:absolute;left:326px;top:70px;width:88px;height:19px;',
 		},
 					]
 				},
@@ -504,9 +592,7 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -516,46 +602,64 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерОперацииМаршрута',
+					text:'№ операции',
+					width:'80',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 				{
-					text:'МинимальнаяПартия',
+					text:'Мин. партия',
+					width:'80',
 				},
 				{
 					text:'Кратность',
+					width:'80',
 				},
 				{
-					text:'ДоляСтоимости',
+					text:'Доля стоим.',
+					width:'80',
 				},
 				{
-					text:'ТочкаМаршрута',
+					text:'Точка маршрута',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТехКарта',
+			text: 'Тех. карта:',
+			style: 'position:absolute;left:0px;top:270px;width:84px;height:15px;',
 		},
 					]
 				},
@@ -570,7 +674,7 @@
 			items:
 			[
 				{
-					title:'ИсходныеКомплектующие',
+					title:'Исходные комплектующие',
 					items:
 					[
 		{
@@ -579,20 +683,13 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ЗаполнитьПоСпецификации',
+					text:'Заполнить по спецификации',
 				},
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -602,55 +699,72 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ПозицияПоСпецификации',
+					text:'Позиция',
+					width:'48',
 				},
 				{
-					text:'ВидНорматива',
+					text:'Вид норматива',
+					width:'120',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'120',
 				},
 				{
-					text:'МинимальнаяПартияИзделий',
+					text:'Мин. партия',
+					width:'80',
 				},
 				{
-					text:'ВидВоспроизводства',
+					text:'Вид воспроизводства',
+					width:'116',
 				},
 				{
 					text:'Спецификация',
+					width:'120',
 				},
 				{
-					text:'УказаниеНорматива',
+					text:'Указание норматива',
+					width:'115',
 				},
 				{
 					text:'Формула',
+					width:'100',
 				},
 				{
-					text:'СписаниеКомплектующей',
+					text:'Списание комплектующей',
+					width:'109',
 				},
 				{
 					text:'Свойство',
+					width:'105',
 				},
 			]
 		},
@@ -661,10 +775,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСостояниеУзел',
+			text: 'Состояние:',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СостояниеУзел',
 			style: 'position:absolute;left:108px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаУтвержденияУзел',
+			text: 'Дата утверждения:',
+			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -673,10 +799,22 @@
 			style: 'position:absolute;left:108px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственныйУзел',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтветственныйУзел',
 			style: 'position:absolute;left:108px;top:54px;width:198px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНазначение1',
+			text: 'Назначение:',
+			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -691,6 +829,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ТекстОсновнаяСпецификация',
+			text: '',
+			style: 'position:absolute;left:164px;top:82px;width:480px;height:15px;',
 		},
 	]
 });

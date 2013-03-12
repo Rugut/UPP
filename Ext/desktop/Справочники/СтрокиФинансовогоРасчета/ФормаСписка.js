@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтрокиФинансовогоРасчета.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 616,
+	style: 'position:absolute;width:616px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Строки финансового расчета',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидСтроки',
+					text:'Вид строки',
+					width:'120',
 				},
 				{
 					text:'Измерение',
+					width:'120',
 				},
 				{
 					text:'Формула',
+					width:'220',
 				},
 			]
 		},
@@ -39,10 +47,10 @@
 			items:
 			[
 				{
-					text:'КоманднаяПанельПереместитьВверх1',
+					text:'Переместить вверх',
 				},
 				{
-					text:'КоманднаяПанельПереместитьВниз1',
+					text:'Переместить вниз',
 				},
 			]
 		},

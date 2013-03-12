@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ГлавнаяКнигаХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 236,width: 490,
+	style: 'position:absolute;width:490px;height:236px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Главная книга',
 	
 	items:
@@ -13,19 +15,15 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
 					text:'Действие2',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'ОК',
 				},
 			]
 		},
@@ -36,7 +34,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
 		{
@@ -52,10 +50,22 @@
 			style: 'position:absolute;left:184px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:266px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:30px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -63,10 +73,36 @@
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:30px;width:382px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Период:',
+			style: 'position:absolute;left:6px;top:54px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Все периоды',
+			style: 'position:absolute;left:272px;top:54px;width:194px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Развернутое сальдо',
+			style: 'position:absolute;left:12px;top:108px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Разбивать по листам',
+			style: 'position:absolute;left:12px;top:127px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам кор. счетов',
+			style: 'position:absolute;left:12px;top:146px;width:194px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'РазвернутоеСальдо',
+					title:'Развернутое сальдо',
 					items:
 					[
 		{
@@ -77,12 +113,15 @@
 			[
 				{
 					text:'Счет',
+					width:'120',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'78',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'249',
 				},
 			]
 		},
@@ -91,11 +130,9 @@
 			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоУмолчанию',
+					text:'По умолчанию',
 				},
 			]
 		},

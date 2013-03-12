@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСостоянияСертификацииНоменклатуры.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 780,
+	style: 'position:absolute;width:780px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,33 +14,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:508px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'РазделительНовыйОтчет',
+					text:'Восстановить настройку...',
 				},
-				{
-					text:'ВосстановитьНастройку',
-				},
-				{
-					text:'РазделительНастройка',
-				},
-				{
-					text:'РазделительСформировать',
-				},
-				{
-					text:'РазделительСохранитьВосстановитьНастройку',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'БыстрыеОтборы',
+					text:'Быстрые отборы',
 				},
 				{
-					text:'ЗаголовокОтчета',
+					text:'Заголовок отчета',
 				},
-				{
-					text:'РазделительДействия',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -46,58 +38,43 @@
 					text:'Справка',
 				},
 				{
-					text:'ВосстановитьНастройку',
+					text:'Восстановить настройку...',
 				},
 				{
-					text:'НовыйОтчет',
+					text:'Новый отчет',
+				},
+				'-',
+				{
+					text:'Заголовок отчета',
 				},
 				{
-					text:'РазделительНастройка',
+					text:'Настройка...',
 				},
 				{
-					text:'ЗаголовокОтчета',
+					text:'Быстрые отборы',
 				},
 				{
-					text:'Подменю',
+					text:'Сохранить настройку...',
 				},
 				{
-					text:'Настройка',
+					text:'Новый отчет',
 				},
+				'-',
 				{
-					text:'БыстрыеОтборы',
-				},
-				{
-					text:'СохранитьНастройку',
-				},
-				{
-					text:'НовыйОтчет',
-				},
-				{
-					text:'РазделительБыстрыеОтборыЗаголовокОтчета',
-				},
-				{
-					text:'СохранитьНастройку',
+					text:'Сохранить настройку...',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'ДействиеЗакрыть',
+					text:'Действие закрыть',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'РазделительБыстрыеОтборыЗаголовокОтчета',
-				},
-				{
-					text:'РазделительСохранитьВосстановитьНастройку',
-				},
-				{
-					text:'РазделительНовыйОтчет',
-				},
-				{
-					text:'РазделительСформировать',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 			]
 		},
@@ -108,7 +85,7 @@
 			items:
 			[
 				{
-					title:'СтраницаПроизвольныйПериод',
+					title:'Произвольный период',
 					items:
 					[
 		{
@@ -129,10 +106,40 @@
 			text: '...',
 			style: 'position:absolute;left:239px;top:0px;width:20px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодС',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаДату',
+			text: 'На дату:',
+			style: 'position:absolute;left:122px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Период',
+			text: '',
+			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:28px;top:0px;width:55px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаНаДату',
+					title:'На дату',
 					items:
 					[
 		{
@@ -144,7 +151,7 @@
 					]
 				},
 				{
-					title:'СтраницаПериод',
+					title:'Период',
 					items:
 					[
 		{
@@ -169,6 +176,11 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выбирать позиции по которым есть остатки на складе',
+			style: 'position:absolute;left:8px;top:33px;width:305px;height:19px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.НастройкаПараметровСохраненияРегламентированногоОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 86,width: 604,
+	style: 'position:absolute;width:604px;height:86px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Укажите каталог',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Сохранить',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Отмена',
 				},

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ФормированиеПотребностей.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 650,
+	style: 'position:absolute;width:650px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Формирование потребностей',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,31 +33,22 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'Выбирать даты периодом',
 				},
 				{
-					text:'Разделитель1',
+					text:'Действие открыть свойства',
 				},
 				{
-					text:'Разделитель5',
+					text:'Движения документа по регистрам',
 				},
+				'-',
 				{
-					text:'РежимВыбораДатПериодом',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Действие открыть категории',
 				},
 			]
 		},
@@ -59,26 +58,20 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -88,7 +81,7 @@
 			items:
 			[
 				{
-					title:'ПланыПродаж',
+					title:'Планы продаж',
 					items:
 					[
 		{
@@ -98,22 +91,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Сценарий',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ДатаНач',
+					text:'Дата нач.',
+					width:'80',
 				},
 				{
-					text:'ДатаКон',
+					text:'Дата кон.',
+					width:'80',
 				},
 			]
 		},
@@ -127,7 +126,7 @@
 					]
 				},
 				{
-					title:'ПланыПроизводства',
+					title:'Планы производства',
 					items:
 					[
 		{
@@ -137,22 +136,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Сценарий',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ДатаНач',
+					text:'Дата нач.',
+					width:'80',
 				},
 				{
-					text:'ДатаКон',
+					text:'Дата кон.',
+					width:'80',
 				},
 			]
 		},
@@ -166,7 +171,7 @@
 					]
 				},
 				{
-					title:'ПланыЗакупок',
+					title:'Планы закупок',
 					items:
 					[
 		{
@@ -176,22 +181,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Сценарий',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ДатаНач',
+					text:'Дата нач.',
+					width:'80',
 				},
 				{
-					text:'ДатаКон',
+					text:'Дата кон.',
+					width:'80',
 				},
 			]
 		},
@@ -205,7 +216,7 @@
 					]
 				},
 				{
-					title:'ВнутренниеЗаказы',
+					title:'Внутренние заказы',
 					items:
 					[
 		{
@@ -215,13 +226,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Заказ',
+					width:'220',
 				},
 				{
-					text:'ДатаПотребности',
+					text:'Дата потребности',
+					width:'100',
 				},
 			]
 		},
@@ -231,26 +245,60 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьВнутреннимиЗаказами',
+					text:'Заполнить неисполненными внутренними заказами',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
+		},
+					]
 				},
 				{
-					text:'Разделитель',
+					title:'Заказы покупателей',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:30px;width:620px;height:276px;',
+			height: 276,width: 620,
+			columns:
+			[
+				{
+					text:'№',
+					width:'28',
 				},
+				{
+					text:'Заказ',
+					width:'220',
+				},
+				{
+					text:'Дата потребности',
+					width:'100',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
 				{
 					text:'Подбор',
 				},
 				{
-					text:'Разделитель1',
+					text:'Заполнить неисполненными заказами покупателей',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'ЗаказыПокупателей',
+					title:'Заказы на производство',
 					items:
 					[
 		{
@@ -260,13 +308,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Заказ',
+					width:'220',
 				},
 				{
-					text:'ДатаПотребности',
+					text:'Дата потребности',
+					width:'100',
 				},
 			]
 		},
@@ -275,27 +326,20 @@
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить неисполненными заказами на производство',
 				},
 				{
 					text:'Подбор',
 				},
-				{
-					text:'ЗаполнитьЗаказамиПокупателей',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'ЗаказыНаПроизводство',
+					title:'Планы посменные',
 					items:
 					[
 		{
@@ -305,64 +349,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
-				},
-				{
-					text:'Заказ',
-				},
-				{
-					text:'ДатаПотребности',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
-			items:
-			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьЗаказамиНаПроизводство',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Разделитель1',
-				},
-			]
-		},
-					]
-				},
-				{
-					title:'ПланыПосменные',
-					items:
-					[
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:6px;top:30px;width:620px;height:276px;',
-			height: 276,width: 620,
-			columns:
-			[
-				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
-					text:'ДатаНач',
+					text:'Дата нач.',
+					width:'80',
 				},
 				{
-					text:'ДатаКон',
+					text:'Дата кон.',
+					width:'80',
 				},
 			]
 		},
@@ -386,43 +390,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ДатаПотребности',
+					text:'Дата потребности',
+					width:'100',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Артикул',
+					width:'60',
 				},
 				{
 					text:'Номенклатура',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'200',
 				},
 				{
 					text:'Количество',
+					width:'68',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ТоварТара',
+					text:'Товар/тара',
+					width:'70',
 				},
 				{
-					text:'КонечнаяПродукция',
+					text:'Конечная продукция',
+					width:'200',
 				},
 				{
 					text:'Заказ',
+					width:'200',
 				},
 				{
 					text:'Проект',
+					width:'200',
 				},
 			]
 		},
@@ -431,32 +448,23 @@
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
 				{
-					text:'Действие11',
+					text:'Отключить отбор',
 				},
 				{
-					text:'ЗаполнитьПотребности',
+					text:'Заполнить потребности',
+				},
+				'-',
+				{
+					text:'Действие1',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие10',
+					text:'Установить отбор и сортировку списка...',
 				},
 			]
 		},
@@ -467,10 +475,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразд - ние:',
+			style: 'position:absolute;left:6px;top:74px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:86px;top:74px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный1',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:317px;top:74px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -481,6 +501,18 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:168px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:398px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

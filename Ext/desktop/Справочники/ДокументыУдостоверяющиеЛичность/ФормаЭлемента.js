@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ДокументыУдостоверяющиеЛичность.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 133,width: 322,
+	style: 'position:absolute;width:322px;height:133px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документы, удостоверяющие личность',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКодИМНС',
+			text: 'Код ИФНС:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КодИМНС',
 			style: 'position:absolute;left:94px;top:81px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодПФР',
+			text: 'Код ПФР:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,19 +58,15 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},

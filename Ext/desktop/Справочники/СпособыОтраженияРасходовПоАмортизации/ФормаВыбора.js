@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СпособыОтраженияРасходовПоАмортизации.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 281,width: 604,
+	style: 'position:absolute;width:604px;height:281px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Способы отражения расходов',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'200',
 				},
 				{
 					text:'Организация',
+					width:'105',
 				},
 				{
-					text:'СпособРаспределенияЗатратНаВыпуск',
+					text:'Способ распределения затрат на выпуск',
+					width:'219',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

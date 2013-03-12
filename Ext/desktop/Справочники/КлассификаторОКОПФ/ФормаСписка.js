@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КлассификаторОКОПФ.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 476,
+	style: 'position:absolute;width:476px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Классификатор ОКОПФ',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'80',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Наименование полное',
+					width:'220',
 				},
 				{
-					text:'БыстрыйВыбор',
+					text:'Быстрый выбор',
+					width:'100',
 				},
 			]
 		},
@@ -38,9 +45,7 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.НДФЛПодтверждениеПраваНаИмущественныйВычет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 392,width: 621,
+	style: 'position:absolute;width:621px;height:392px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Подтверждение права на имущественный вычет',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:82px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:113px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:340px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,9 +44,7 @@
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
@@ -42,9 +54,7 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -69,31 +79,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'120',
 				},
 				{
-					text:'ДатаСобытия',
+					text:'Дата',
+					width:'60',
 				},
 				{
 					text:'Расходы',
+					width:'90',
 				},
 				{
-					text:'ПроцентыПоКредитам',
+					text:'%% по кредитам',
+					width:'90',
 				},
 				{
-					text:'ПроцентыПриПерекредитовании',
+					text:'%% при перекредитовании',
+					width:'120',
 				},
 				{
-					text:'КодНалоговогоОргана',
+					text:'Код ИФНС',
+					width:'66',
 				},
 				{
-					text:'НомерВходящегоДокумента',
+					text:'Номер уведомления',
+					width:'100',
 				},
 				{
-					text:'ДатаУведомления',
+					text:'Дата уведомления',
+					width:'97',
 				},
 			]
 		},
@@ -103,34 +122,22 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -140,21 +147,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,16 +178,40 @@
 			style: 'position:absolute;left:213px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:195px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Учреждение:',
+			style: 'position:absolute;left:8px;top:57px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:113px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйПериод',
+			text: 'Вычет по налогу за:',
+			style: 'position:absolute;left:8px;top:107px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:113px;top:107px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГод',
+			text: 'год',
+			style: 'position:absolute;left:201px;top:107px;width:25px;height:19px;',
 		},
 	]
 });

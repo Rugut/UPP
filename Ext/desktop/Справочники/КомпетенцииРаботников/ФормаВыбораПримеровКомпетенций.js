@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КомпетенцииРаботников.ФормаВыбораПримеровКомпетенций',
 	{
 	extend: 'Ext.window.Window',
-	height: 360,width: 441,
+	style: 'position:absolute;width:441px;height:360px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Примеры компетенций (критериев оценки)',
 	
 	items:

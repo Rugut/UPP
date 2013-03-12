@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиДопроведенияДокументов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 677,
+	style: 'position:absolute;width:677px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки допроведения документов',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Наименование',
+					width:'284',
 				},
 				{
-					text:'ЗапускатьАвтоматически',
+					text:'Автоматич.',
+					width:'65',
 				},
 				{
 					text:'Комментарий',
+					width:'237',
 				},
 			]
 		},
@@ -33,11 +39,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

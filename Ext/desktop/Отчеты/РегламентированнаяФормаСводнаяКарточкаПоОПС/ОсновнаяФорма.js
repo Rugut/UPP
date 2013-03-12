@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.РегламентированнаяФормаСводнаяКарточкаПоОПС.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 387,width: 651,
+	style: 'position:absolute;width:651px;height:387px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сводная карточка ОПС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,59 +27,42 @@
 			items:
 			[
 				{
-					text:'ВосстановитьЗначения___',
+					text:'Восстановить значения',
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'На принтер',
 				},
 				{
-					text:'Разделитель',
+					text:'Новый отчет',
+				},
+				'-',
+				'-',
+				{
+					text:'Новый отчет',
+				},
+				{
+					text:'Сохранить значения',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ВыполнитьПечать',
-				},
-				{
-					text:'ДействиеНовыйОтчет',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеНовыйОтчет',
-				},
-				{
-					text:'СохранитьЗначения___',
-				},
-				{
-					text:'Сформировать1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ВыполнитьПечать',
+					text:'На принтер',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 			]
 		},
 		{
@@ -79,6 +70,12 @@
 			hideLabel: true,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Налоговый период:',
+			style: 'position:absolute;left:326px;top:33px;width:104px;height:19px;',
 		},
 	]
 });

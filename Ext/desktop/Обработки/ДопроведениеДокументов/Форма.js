@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДопроведениеДокументов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 291,width: 427,
+	style: 'position:absolute;width:427px;height:291px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Допроведение документов',
 	
 	items:
@@ -12,16 +14,20 @@
 			style: 'position:absolute;left:0px;top:266px;width:427px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ВыполнитьДопроведение',
+					text:'Выполнить допроведение',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНастройкаДопроведения',
+			text: 'Настройка:',
+			style: 'position:absolute;left:8px;top:33px;width:63px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,10 +36,22 @@
 			style: 'position:absolute;left:74px;top:33px;width:345px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОбрабатыватьДокументы',
+			text: 'Документы:',
+			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачалоИнтервалаДопроведения',
 			style: 'position:absolute;left:78px;top:126px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:163px;top:126px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -52,19 +70,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:427px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Отчеты',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'ДиаграммаОтложенногоПроведения',
+					text:'Диаграмма отложенного проведения',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизации',
+			text: 'Организации:',
+			style: 'position:absolute;left:8px;top:150px;width:83px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'За период с:',
+			style: 'position:absolute;left:8px;top:126px;width:69px;height:19px;',
 		},
 	]
 });

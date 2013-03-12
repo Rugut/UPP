@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.РасходныйОрдерНаТовары.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 399,width: 640,
+	style: 'position:absolute;width:640px;height:399px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расходный ордер на товары',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:170px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:347px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,50 +51,31 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю3',
+					text:'Открыть форму настройки бланка товарного наполнения',
 				},
 				{
-					text:'ОткрытьФормуНастройкиБланкаТоварногоНаполнения',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
 				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель10',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель9',
-				},
+				'-',
 			]
 		},
 		{
@@ -94,55 +95,72 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'290',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияУказываетсяПриОтпускеСоСклада',
+					text:'Серия указана...',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'71',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'51',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
-					text:'НомерГТД',
+					text:'Номер ГТД',
+					width:'100',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'100',
 				},
 			]
 		},
@@ -155,38 +173,26 @@
 					text:'Подбор',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Штрихкоды',
 				},
 				{
-					text:'ШтрихКоды',
+					text:'Заполнить по документу передачи',
 				},
 				{
-					text:'ЗаполнитьПоДокументуПередачи',
+					text:'Заполнить из терминала сбора данных',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'ИзТерминалаСбораДанных',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
+					text:'Поиск по штрихкоду',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Тара',
+					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -195,37 +201,35 @@
 			items:
 			[
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие8',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие7',
+					text:'Сортировать по возрастанию',
+				},
+				'-',
+				{
+					text:'Подбор',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 			]
 		},
@@ -236,25 +240,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед. хранения',
+					width:'52',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'100',
 				},
 			]
 		},
@@ -264,6 +275,12 @@
 					title:'Дополнительно',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -281,10 +298,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:105px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:90px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -293,10 +322,22 @@
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:330px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:412px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоДокументу',
+			text: 'По документу:',
+			style: 'position:absolute;left:8px;top:81px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -313,20 +354,14 @@
 					text:'Печать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'РазделительЗаписать',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},

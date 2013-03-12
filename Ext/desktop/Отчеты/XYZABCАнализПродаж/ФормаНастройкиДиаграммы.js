@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.XYZABCАнализПродаж.ФормаНастройкиДиаграммы',
 	{
 	extend: 'Ext.window.Window',
-	height: 394,width: 270,
+	style: 'position:absolute;width:270px;height:394px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка диаграммы (XYZ/ABC-анализ продаж)',
 	
 	items:
@@ -16,11 +18,9 @@
 					text:'ОК',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -40,17 +40,25 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Представление',
+					text:'Имя показателя',
+					width:'220',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Тип',
+			text: 'Тип:',
+			style: 'position:absolute;left:6px;top:6px;width:37px;height:15px;',
 		},
 					]
 				},
 				{
-					title:'НастройкаГистограммы',
+					title:'Настройка гистограммы',
 					items:
 					[
 		{
@@ -64,10 +72,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьМаксимальноеЗначение',
+			text: 'Максимальное значение:',
+			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МаксимальноеЗначение',
 			style: 'position:absolute;left:135px;top:0px;width:105px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнтервал',
+			text: 'Интервал:',
+			style: 'position:absolute;left:0px;top:24px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -76,10 +96,27 @@
 			style: 'position:absolute;left:135px;top:24px;width:105px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Показывать распределение по классам',
+			style: 'position:absolute;left:0px;top:76px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВысота',
+			text: 'Высота:',
+			style: 'position:absolute;left:0px;top:48px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВысотаГистрограммы',
 			style: 'position:absolute;left:135px;top:48px;width:105px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Выводить',
+			text: 'Выводить',
+			style: 'position:absolute;left:0px;top:101px;width:130px;height:19px;',
 		},
 					]
 				},

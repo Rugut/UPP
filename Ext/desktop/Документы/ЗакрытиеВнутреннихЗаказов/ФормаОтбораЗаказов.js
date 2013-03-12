@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗакрытиеВнутреннихЗаказов.ФормаОтбораЗаказов',
 	{
 	extend: 'Ext.window.Window',
-	height: 397,width: 595,
+	style: 'position:absolute;width:595px;height:397px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отобрать внутренние заказы',
 	
 	items:
@@ -13,19 +15,15 @@
 			items:
 			[
 				{
-					text:'ДействиеПеренести',
+					text:'Перенести',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Закрыть1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
 		},
@@ -36,7 +34,7 @@
 			items:
 			[
 				{
-					title:'СтраницаНастройки',
+					title:'Настройки',
 					items:
 					[
 		{
@@ -44,6 +42,24 @@
 			hideLabel: true,
 			name: 'ПолеДатаОтгрузки',
 			style: 'position:absolute;left:250px;top:68px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСрокОтргузки',
+			text: 'Дата отгрузки:',
+			style: 'position:absolute;left:16px;top:68px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаличиеРезервов',
+			text: 'Наличие резервов:',
+			style: 'position:absolute;left:16px;top:12px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеОтгрузки',
+			text: 'Состояние отгрузки:',
+			style: 'position:absolute;left:16px;top:44px;width:124px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,7 +70,7 @@
 					]
 				},
 				{
-					title:'СтраницаДополнительно',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -64,22 +80,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -89,6 +111,11 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:352px;top:4px;width:219px;height:17px;',
 		},
 					]
 				},
@@ -100,46 +127,36 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'По возрастанию',
+				},
+				'-',
+				{
+					text:'Настройка списка',
 				},
 				{
-					text:'Разделитель3',
+					text:'Вверх',
 				},
 				{
-					text:'Действие6',
+					text:'Заполнить',
 				},
 				{
-					text:'Действие',
+					text:'Включить все',
+				},
+				'-',
+				{
+					text:'Вниз',
+				},
+				'-',
+				'-',
+				{
+					text:'Выключить все',
+				},
+				'-',
+				{
+					text:'По убыванию',
 				},
 				{
-					text:'ДействиеЗаполнить',
-				},
-				{
-					text:'ДействиеВключитьВсе',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеВыключитьВсе',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'ДействиеАнализ',
+					text:'Анализ',
 				},
 			]
 		},
@@ -150,57 +167,80 @@
 			columns:
 			[
 				{
-					text:'Переносить',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Ссылка',
+					width:'23',
 				},
 				{
 					text:'Дата',
+					width:'110',
 				},
 				{
 					text:'Номер',
+					width:'86',
 				},
 				{
-					text:'ВидЗаказа',
+					text:'Вид заказа',
+					width:'100',
 				},
 				{
 					text:'Заказчик',
+					width:'110',
 				},
 				{
-					text:'КонтактноеЛицо',
+					text:'Контактное лицо',
+					width:'100',
 				},
 				{
-					text:'ЗаказыОстаток',
+					text:'Ост. отгр.',
+					width:'80',
 				},
 				{
-					text:'ЗаказыКоличество',
+					text:'Кол.',
+					width:'35',
 				},
 				{
-					text:'РезервыКоличество',
+					text:'Рез.',
+					width:'35',
 				},
 				{
-					text:'РазмещенияКоличество',
+					text:'Разм.',
+					width:'35',
 				},
 				{
-					text:'ДатаОтгрузки',
+					text:'Дата отгрузки',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Проведен',
+					width:'70',
 				},
 				{
-					text:'ПричинаЗакрытияЗаказа',
+					text:'Причина закрытия',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособЗаполнения',
+			text: 'Вариант отбора:',
+			style: 'position:absolute;left:317px;top:6px;width:87px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -215,6 +255,18 @@
 			style: 'position:absolute;left:180px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'За период с:',
+			style: 'position:absolute;left:8px;top:6px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:160px;top:6px;width:15px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -225,6 +277,12 @@
 			hideLabel: true,
 			name: 'ПолеВводаПричинаЗакрытия',
 			style: 'position:absolute;left:160px;top:164px;width:200px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПричинаЗакрытия',
+			text: 'Причина закрытия заказов:',
+			style: 'position:absolute;left:8px;top:164px;width:148px;height:19px;',
 		},
 	]
 });

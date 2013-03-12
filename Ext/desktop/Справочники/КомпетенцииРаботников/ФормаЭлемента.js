@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.КомпетенцииРаботников.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 428,width: 406,
+	style: 'position:absolute;width:406px;height:428px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Компетенция сотрудника',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:109px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -24,9 +32,7 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -51,30 +57,15 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -82,27 +73,21 @@
 			style: 'position:absolute;left:0px;top:403px;width:406px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -112,11 +97,11 @@
 			items:
 			[
 				{
-					title:'ОписаниеКомпетенции',
+					title:'Описание компетенции',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ОписаниеКомпетенции',
 			style: 'position:absolute;left:6px;top:6px;width:376px;height:281px;',
@@ -124,14 +109,26 @@
 					]
 				},
 				{
-					title:'ОценкаКомпетенции',
+					title:'Оценка компетенции',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьШкалаОценок',
+			text: 'Шкала оценок:',
+			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ШкалаОценок',
 			style: 'position:absolute;left:96px;top:6px;width:286px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТиповаяАнкета',
+			text: 'Типовая анкета:',
+			style: 'position:absolute;left:6px;top:30px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,21 +144,31 @@
 			[
 				{
 					text:'Оценка',
+					width:'140',
 				},
 				{
-					text:'ПриоритетОценки',
+					text:'Приоритет',
+					width:'60',
 				},
 				{
-					text:'ВесОценки',
+					text:'Ожидаемая доля оценки,  %',
+					width:'80',
 				},
 				{
-					text:'ОписаниеОценки',
+					text:'Описание оценки',
+					width:'250',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа компетенций:',
+			style: 'position:absolute;left:8px;top:58px;width:109px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

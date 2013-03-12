@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДоверенностиНалогоплательщика.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Доверенности налогоплательщика',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'61',
 				},
 				{
 					text:'Наименование',
+					width:'253',
 				},
 				{
-					text:'Владелец',
+					text:'Организация',
+					width:'183',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'90',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

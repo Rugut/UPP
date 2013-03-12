@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетПоСобытиям.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 309,width: 490,
+	style: 'position:absolute;width:490px;height:309px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка отчет по событиям',
 	
 	items:
@@ -12,14 +14,12 @@
 			style: 'position:absolute;left:0px;top:284px;width:490px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'ОК',
 				},
 				{
-					text:'Выполнить',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -34,10 +34,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:64px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:146px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,6 +62,16 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:246px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:33px;width:207px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:6px;top:53px;width:163px;height:15px;',
 		},
 					]
 				},
@@ -64,10 +86,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'303',
 				},
 				{
 					text:'Тип',
+					width:'132',
 				},
 			]
 		},
@@ -91,22 +115,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -130,10 +160,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'60',
 				},
 			]
 		},

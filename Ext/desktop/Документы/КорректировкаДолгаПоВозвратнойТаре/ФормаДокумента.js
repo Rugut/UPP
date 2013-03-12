@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.КорректировкаДолгаПоВозвратнойТаре.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 387,width: 648,
+	style: 'position:absolute;width:648px;height:387px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Корректировка долга по возвратной таре',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:335px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,32 +50,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель9',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель10',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 			]
 		},
@@ -66,7 +74,7 @@
 			items:
 			[
 				{
-					title:'Тара',
+					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -78,17 +86,10 @@
 					text:'Подбор',
 				},
 				{
-					text:'ЗаполнитьОстаткамиПоДоговору',
+					text:'Заполнить остатками по договору (счету на оплату)',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -98,25 +99,32 @@
 			columns:
 			[
 				{
-					text:'Номер строки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 			]
 		},
@@ -149,6 +157,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:334px;top:105px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -159,6 +179,12 @@
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -173,10 +199,29 @@
 			style: 'position:absolute;left:94px;top:129px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСделка',
+			text: 'Сделка:
+',
+			style: 'position:absolute;left:8px;top:125px;width:84px;height:28px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьДолга',
+			text: 'По договору 250 USD, 1 USD = 30 руб.',
+			style: 'position:absolute;left:334px;top:129px;width:288px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПерерассчитатьДолг',
 			text: '',
 			style: 'position:absolute;left:625px;top:129px;width:15px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего:',
+			style: 'position:absolute;left:417px;top:313px;width:139px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -191,10 +236,28 @@
 			style: 'position:absolute;left:420px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумента',
+			text: 'Валюта:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:94px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:',
+			style: 'position:absolute;left:334px;top:57px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКурсДокумента',
+			text: 'Курс:',
+			style: 'position:absolute;left:174px;top:81px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -216,17 +279,11 @@
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'РазделительЗаписать',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 			]
 		},

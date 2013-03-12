@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОбъявлениеНаВзносНаличными.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 556,
+	style: 'position:absolute;width:556px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Объявления на взнос наличными',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'СуммаДокумента',
+					text:'Сумма',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -38,23 +46,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:556px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю3',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

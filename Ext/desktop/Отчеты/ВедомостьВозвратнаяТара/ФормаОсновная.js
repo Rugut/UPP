@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВедомостьВозвратнаяТара.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 448,width: 604,
+	style: 'position:absolute;width:604px;height:448px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,58 +15,47 @@
 			items:
 			[
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Подменю',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Восстановить значения',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие2',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
-				},
-				{
-					text:'Действие3',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -79,6 +70,18 @@
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'button',

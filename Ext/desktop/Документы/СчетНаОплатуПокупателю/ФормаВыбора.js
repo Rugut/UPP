@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.СчетНаОплатуПокупателю.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 640,
+	style: 'position:absolute;width:640px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Счет на оплату покупателю',
 	
 	items:
@@ -14,34 +16,44 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'СуммаДокумента',
+					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта',
+					width:'60',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 			]
 		},
@@ -50,17 +62,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю3',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Действие',

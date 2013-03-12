@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КатегорииОбъекта.КатегорииОбъекта',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 376,
+	style: 'position:absolute;width:376px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Категории',
 	
 	items:
@@ -13,28 +15,26 @@
 			items:
 			[
 				{
-					text:'ДействиеИзменить',
+					text:'&Изменить',
 				},
 				{
-					text:'ДействиеПеречитать',
+					text:'Перечитать',
 				},
 				{
-					text:'ДействиеДобавить',
+					text:'&Добавить',
 				},
 				{
-					text:'ДействиеУдалить',
+					text:'&Удалить',
 				},
 				{
-					text:'ДействиеЗакончитьРедактирование',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'ДействиеЗаписать',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеСправка',
+					text:'Справка',
 				},
 			]
 		},
@@ -45,13 +45,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Принадлежность',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Категория',
+					width:'320',
 				},
 			]
 		},
@@ -60,14 +63,12 @@
 			style: 'position:absolute;left:0px;top:275px;width:376px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
 				{
-					text:'КнопкаOK',
+					text:'OK',
 				},
 			]
 		},

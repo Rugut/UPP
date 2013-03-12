@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.МестаХранения.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 620,
+	style: 'position:absolute;width:620px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Места хранения',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Владелец',
+					width:'76',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'264',
 				},
 			]
 		},
@@ -33,14 +39,9 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Редактировать код',
 				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 		{
@@ -51,6 +52,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Помещения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 130,width: 400,
+	style: 'position:absolute;width:400px;height:130px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Помещения',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:288px;top:33px;width:23px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:314px;top:33px;width:78px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,21 @@
 			style: 'position:absolute;left:93px;top:33px;width:187px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТерритория',
+			text: 'Территория:',
+			style: 'position:absolute;left:8px;top:57px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Владелец',
 			style: 'position:absolute;left:93px;top:57px;width:299px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Для встреч',
+			style: 'position:absolute;left:8px;top:82px;width:384px;height:15px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -31,14 +56,9 @@
 			items:
 			[
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -47,19 +67,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

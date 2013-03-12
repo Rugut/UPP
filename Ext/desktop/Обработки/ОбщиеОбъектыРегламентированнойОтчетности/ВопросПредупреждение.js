@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ВопросПредупреждение',
 	{
 	extend: 'Ext.window.Window',
-	height: 218,width: 663,
+	style: 'position:absolute;width:663px;height:218px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'ВНИМАНИЕ',
 	
 	items:
@@ -13,15 +15,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыПродолжить',
+					text:'Продолжить',
 				},
 				{
-					text:'ОсновныеДействияФормыОтмена',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОсновнойТекст',
+			text: '',
+			style: 'position:absolute;left:92px;top:14px;width:551px;height:92px;',
 		},
 	]
 });

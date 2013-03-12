@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ОбесценениеАктивовМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 433,width: 444,
+	style: 'position:absolute;width:444px;height:433px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Вид актива:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,28 +59,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'СчетУчета',
+					text:'Счет учета',
+					width:'160',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья прочих расходов',
+					width:'160',
 				},
 				{
-					text:'СчетРезерва',
+					text:'Счет снижения стоимости',
+					width:'100',
 				},
 				{
-					text:'Объект',
+					text:'Актив',
+					width:'160',
 				},
 				{
-					text:'Субконто2',
+					text:'',
+					width:'160',
 				},
 				{
-					text:'Субконто3',
+					text:'',
+					width:'160',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 			]
 		},
@@ -69,27 +97,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:444px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -98,27 +119,27 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,10 +148,22 @@
 			style: 'position:absolute;left:94px;top:56px;width:342px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:105px;width:342px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:381px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

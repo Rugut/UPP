@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.Опрос.ФормаВводаОстальныхОтветов',
 	{
 	extend: 'Ext.window.Window',
-	height: 290,width: 915,
+	style: 'position:absolute;width:915px;height:290px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ответ',
 	
 	items:
@@ -14,7 +16,7 @@
 			items:
 			[
 				{
-					title:'НесколькоВариантовОтвета',
+					title:'Несколько вариантов ответа',
 					items:
 					[
 		{
@@ -24,16 +26,20 @@
 			columns:
 			[
 				{
-					text:'Выбор',
+					text:'',
+					width:'25',
 				},
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'35',
 				},
 				{
-					text:'ВариантОтвета',
+					text:'Составной ответ',
+					width:'204',
 				},
 				{
-					text:'Ответ',
+					text:'Развернутый ответ',
+					width:'200',
 				},
 			]
 		},
@@ -63,11 +69,9 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Отмена',
 				},
 			]
 		},

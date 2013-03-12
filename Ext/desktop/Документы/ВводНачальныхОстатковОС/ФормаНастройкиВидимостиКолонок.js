@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВводНачальныхОстатковОС.ФормаНастройкиВидимостиКолонок',
 	{
 	extend: 'Ext.window.Window',
-	height: 390,width: 500,
+	style: 'position:absolute;width:500px;height:390px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка видимости колонок',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:365px;width:500px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -24,9 +24,7 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -37,6 +35,7 @@
 			[
 				{
 					text:'Реквизит',
+					width:'337',
 				},
 			]
 		},
@@ -51,6 +50,11 @@
 			name: 'УстановитьПометки',
 			text: '',
 			style: 'position:absolute;left:468px;top:37px;width:24px;height:24px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Фиксировать колонки ОС',
+			style: 'position:absolute;left:8px;top:338px;width:484px;height:19px;',
 		},
 	]
 });

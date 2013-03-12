@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.РегистрРасчетАмортизационнойПремии.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 432,width: 604,
+	style: 'position:absolute;width:604px;height:432px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистр-расчет амортизационной премии',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,50 +27,37 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Подменю',
+					text:'Справка',
 				},
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Сформировать',
 				},
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Разделитель',
+					text:'Восстановить значения...',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -78,16 +73,39 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьАмортизационнаяГруппа',
+			text: 'Амортизационная группа:',
+			style: 'position:absolute;left:8px;top:57px;width:136px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'АмортизационнаяГруппа',
 			style: 'position:absolute;left:146px;top:57px;width:450px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Группировать по объектам основных средств',
+			style: 'position:absolute;left:8px;top:81px;width:256px;height:15px;',
 		},
 	]
 });

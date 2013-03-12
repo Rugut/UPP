@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 336,
+	style: 'position:absolute;width:336px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Источники данных для расчетов бюджетирования',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -26,9 +29,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

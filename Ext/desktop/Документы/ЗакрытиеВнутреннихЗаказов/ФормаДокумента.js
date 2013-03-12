@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ЗакрытиеВнутреннихЗаказов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 401,width: 650,
+	style: 'position:absolute;width:650px;height:401px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Закрытие внутренних заказов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:349px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,30 +51,26 @@
 			items:
 			[
 				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ПодменюВидаОперации',
+					text:'',
 				},
+				'-',
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель9',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:334px;top:325px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -69,28 +85,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВнутреннийЗаказ',
+					text:'Внутренний заказ',
+					width:'220',
 				},
 				{
-					text:'ВидЗаказа',
+					text:'Вид заказа',
+					width:'90',
 				},
 				{
-					text:'Заказчик',
+					text:'Получатель',
+					width:'100',
 				},
 				{
-					text:'ОтветственныйЗаЗаказ',
+					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ПричинаЗакрытияЗаказа',
+					text:'Причина закрытия заказа',
+					width:'100',
 				},
 				{
-					text:'ОрганизацияЗаказа',
+					text:'Организация',
+					width:'120',
 				},
 			]
 		},
@@ -100,15 +124,16 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить',
 				},
-				{
-					text:'ДействиеЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеКомпании',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:325px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,21 +146,15 @@
 			style: 'position:absolute;left:0px;top:376px;width:650px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -143,6 +162,12 @@
 					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:74px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

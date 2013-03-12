@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 110,width: 446,
+	style: 'position:absolute;width:446px;height:110px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа типовых анкет',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код:',
+			style: 'position:absolute;left:316px;top:58px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:358px;top:58px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:58px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Родитель:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,14 +51,9 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Редактировать код',
 				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -46,20 +61,16 @@
 			style: 'position:absolute;left:0px;top:85px;width:446px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},

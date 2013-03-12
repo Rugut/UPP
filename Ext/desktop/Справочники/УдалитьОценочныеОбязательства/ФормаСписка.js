@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.УдалитьОценочныеОбязательства.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 509,
+	style: 'position:absolute;width:509px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '(не используется) Оценочные обязательства',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'290',
 				},
 				{
-					text:'ДатаИсполнения',
+					text:'Дата исполнения',
+					width:'170',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьБухМСФО.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 328,
+	style: 'position:absolute;width:328px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Оборотно-сальдовая ведомость',
 	
 	items:
@@ -12,20 +14,16 @@
 			style: 'position:absolute;left:0px;top:286px;width:328px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'Действие',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Отмена',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -36,14 +34,30 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по забалансовым счетам',
+			style: 'position:absolute;left:12px;top:143px;width:200px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:30px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Детализация по субсчетам и субконто',
+			style: 'position:absolute;left:12px;top:103px;width:220px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,15 +72,37 @@
 			style: 'position:absolute;left:184px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:166px;top:6px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:12px;top:123px;width:128px;height:15px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:266px;top:6px;width:20px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Развернутое сальдо',
+			style: 'position:absolute;left:12px;top:83px;width:128px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Развернутое сальдо',
 					items:
 					[
 		{
@@ -84,19 +120,22 @@
 			[
 				{
 					text:'Счет',
+					width:'80',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'80',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаДетализацияОтчета',
+					title:'Детализация',
 					items:
 					[
 		{
@@ -114,12 +153,15 @@
 			[
 				{
 					text:'Счет',
+					width:'80',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'80',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'120',
 				},
 			]
 		},

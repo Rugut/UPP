@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.НастройкаПараметровУчета.ФормаИстории',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 431,
+	style: 'position:absolute;width:431px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -53,11 +53,9 @@
 			items:
 			[
 				{
-					text:'ПрименитьИзменения',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

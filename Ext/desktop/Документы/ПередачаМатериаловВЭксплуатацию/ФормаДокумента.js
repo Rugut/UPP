@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПередачаМатериаловВЭксплуатацию.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 383,width: 652,
+	style: 'position:absolute;width:652px;height:383px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Передача материалов в эксплуатацию',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:331px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,48 +51,51 @@
 			items:
 			[
 				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПоказатьСкрытьСчетаУчета',
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель8',
+					text:'Заполнить и провести',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель9',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ДействиеЗаполнитьИПровести',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:498px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -87,67 +110,88 @@
 			columns:
 			[
 				{
-					text:'НомерCтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
-					text:'Номенклатура',
+					text:'Материал',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика материала',
+					width:'200',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия материала',
+					width:'200',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Работник',
+					width:'100',
 				},
 				{
-					text:'НазначениеИспользования',
+					text:'Назначение использования',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К.мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'67',
 				},
 				{
 					text:'Количество',
+					width:'67',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'80',
 				},
 				{
-					text:'СчетПередачиБУ',
+					text:'Счет передачи (БУ)',
+					width:'100',
 				},
 				{
-					text:'ОтражениеВУСН',
+					text:'Отражение в НУ',
+					width:'100',
 				},
 				{
-					text:'СчетПередачиНУ',
+					text:'Счет передачи (НУ)',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
-					text:'ВнутреннийЗаказ',
+					text:'Внутренний заказ',
+					width:'100',
 				},
 			]
 		},
@@ -160,21 +204,20 @@
 					text:'Подбор',
 				},
 				{
-					text:'ДобавитьПоВнутреннемуЗаказу',
+					text:'Заполнить',
 				},
 				{
-					text:'ЗаполнитьПоВнутреннемуЗаказу',
+					text:'Заполнить по внутреннему заказу',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,10 +226,28 @@
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:82px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:306px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -199,34 +260,39 @@
 			style: 'position:absolute;left:0px;top:358px;width:652px;height:25px;',
 			items:
 			[
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:336px;top:80px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:571px;top:33px;width:71px;height:19px;',
 		},
 	]
 });

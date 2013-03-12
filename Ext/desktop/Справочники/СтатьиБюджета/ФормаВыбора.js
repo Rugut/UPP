@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиБюджета.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 551,
+	style: 'position:absolute;width:551px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи бюджета',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -43,9 +49,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

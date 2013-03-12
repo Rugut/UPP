@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НазначенияИспользования.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 500,
+	style: 'position:absolute;width:500px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Назначения использования',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Владелец',
+					width:'100',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 				{
-					text:'СпособПогашенияСтоимости',
+					text:'Способ погашения стоимости',
+					width:'158',
 				},
 				{
-					text:'СрокПолезногоИспользования',
+					text:'Срок полезного использования',
+					width:'43',
 				},
 				{
 					text:'Количество',
+					width:'68',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'70',
 				},
 				{
-					text:'СпособОтраженияРасходов',
+					text:'Способ отражения расходов',
+					width:'165',
 				},
 			]
 		},

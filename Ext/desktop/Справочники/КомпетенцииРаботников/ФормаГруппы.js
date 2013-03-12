@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.КомпетенцииРаботников.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 110,width: 400,
+	style: 'position:absolute;width:400px;height:110px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа компетенций сотрудников',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:58px;width:299px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,20 +46,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ВыплатаЗарплатыРасходнымиОрдерами.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 375,width: 600,
+	style: 'position:absolute;width:600px;height:375px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выплата зарплаты расходными ордерами',
 	
 	items:
@@ -13,27 +15,35 @@
 			items:
 			[
 				{
-					text:'Провести',
+					text:'Провести документы',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:6px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:80px;top:6px;width:192px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПлатежнаяВедомость',
+			text: 'Платежная ведомость:',
+			style: 'position:absolute;left:280px;top:6px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -48,19 +58,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Отметка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Сотрудник',
+					width:'220',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'РКО',
+					text:'Проведено по кассе документом',
+					width:'220',
 				},
 			]
 		},
@@ -69,31 +84,39 @@
 			style: 'position:absolute;left:8px;top:49px;width:584px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Инвертировать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Обновить',
 				},
 				{
-					text:'Снятьфлаги',
+					text:'Снять флаги',
 				},
 				{
-					text:'УстановитьФлаги',
+					text:'Установить флаги',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРКО',
+			text: 'Проставить дату:',
+			style: 'position:absolute;left:170px;top:299px;width:93px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаРКО',
 			style: 'position:absolute;left:263px;top:299px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПервогоРКО',
+			text: 'Нумеровать с:',
+			style: 'position:absolute;left:8px;top:299px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -112,6 +135,12 @@
 			hideLabel: true,
 			name: 'Касса',
 			style: 'position:absolute;left:86px;top:323px;width:297px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Касса:',
+			style: 'position:absolute;left:8px;top:323px;width:78px;height:19px;',
 		},
 	]
 });

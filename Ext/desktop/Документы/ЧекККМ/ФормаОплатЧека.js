@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЧекККМ.ФормаОплатЧека',
 	{
 	extend: 'Ext.window.Window',
-	height: 228,width: 480,
+	style: 'position:absolute;width:480px;height:228px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оплата чека',
 	
 	items:
@@ -13,21 +15,23 @@
 			items:
 			[
 				{
-					text:'ОплатитьКартой',
+					text:'Оплатить картой',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'ДействиеОк',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОтмена',
+					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтого',
+			text: 'Итого (руб.):',
+			style: 'position:absolute;left:8px;top:7px;width:111px;height:22px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,10 +40,22 @@
 			style: 'position:absolute;left:143px;top:33px;width:237px;height:22px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОплата',
+			text: 'Оплата:',
+			style: 'position:absolute;left:8px;top:33px;width:111px;height:22px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:362px;top:7px;width:110px;height:22px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаОплаты',
+			text: 'Сумма оплаты:',
+			style: 'position:absolute;left:8px;top:175px;width:111px;height:22px;',
 		},
 		{
 			xtype: 'textfield',
@@ -52,6 +68,12 @@
 			name: 'КнопкаОплатаБезСдачи',
 			text: '',
 			style: 'position:absolute;left:121px;top:175px;width:20px;height:22px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСдача',
+			text: 'Сдача (руб.):',
+			style: 'position:absolute;left:263px;top:175px;width:96px;height:22px;',
 		},
 		{
 			xtype: 'textfield',
@@ -76,13 +98,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидОплаты',
+					text:'Вид оплаты',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГруппыДоступаКонтрагентов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 623,
+	style: 'position:absolute;width:623px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы доступа контрагентов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'42',
 				},
 				{
 					text:'Наименование',
+					width:'340',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -40,20 +46,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:623px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю',
+					text:'Доступ к справочнику в целом',
 				},
 				{
-					text:'Права',
-				},
-				{
-					text:'РазделительПрава',
-				},
-				{
-					text:'ПраваДоступаПользователейКоВсемуСправочнику',
-				},
-				{
-					text:'ПраваДоступаПользователейКТекущемуЭлементу',
+					text:'Доступ к текущему элементу',
 				},
 			]
 		},

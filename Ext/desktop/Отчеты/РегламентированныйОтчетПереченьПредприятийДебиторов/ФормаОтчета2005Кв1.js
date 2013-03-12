@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетПереченьПредприятийДебиторов.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 395,width: 716,
+	style: 'position:absolute;width:716px;height:395px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Перечень предприятий-дебиторов',
 	
 	items:
@@ -12,23 +14,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Обновить',
 				},
+				'-',
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'Действие2',
 				},
 				{
 					text:'Заполнить',
@@ -37,14 +33,10 @@
 					text:'Очистить',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -52,28 +44,25 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'ПодменюПечати',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -149,6 +138,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:4px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

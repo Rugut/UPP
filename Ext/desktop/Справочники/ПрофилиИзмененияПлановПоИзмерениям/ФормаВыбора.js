@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 502,
+	style: 'position:absolute;width:502px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Профили изменения планов по измерениям',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -41,11 +47,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ВводСерийныхНомеров.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 332,width: 781,
+	style: 'position:absolute;width:781px;height:332px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод серийных номеров',
 	
 	items:
@@ -20,15 +22,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'ОК',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатура',
+			text: 'Номенклатура (характеристика, серия):',
+			style: 'position:absolute;left:8px;top:59px;width:134px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,16 +55,34 @@
 			style: 'position:absolute;left:452px;top:59px;width:140px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоличество',
+			text: 'Количество:',
+			style: 'position:absolute;left:8px;top:86px;width:134px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Количество',
 			style: 'position:absolute;left:142px;top:86px;width:89px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмерения',
+			text: 'Единица:',
+			style: 'position:absolute;left:239px;top:86px;width:63px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:307px;top:86px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерСтрокиТабличнойЧасти',
+			text: 'Номер строки документа:',
+			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +97,7 @@
 			items:
 			[
 				{
-					title:'ФормированиеСерийныхНомеров',
+					title:'Формирование серийных номеров',
 					items:
 					[
 		{
@@ -83,13 +107,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'51',
 				},
 				{
-					text:'СерийныйНомер',
+					text:'Серийный номер',
+					width:'358',
 				},
 				{
-					text:'КлючСвязи',
+					text:'Ключ связи',
+					width:'100',
 				},
 			]
 		},
@@ -98,14 +125,9 @@
 			style: 'position:absolute;left:430px;top:26px;width:335px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'СформироватьСерийныеНомера',
-				},
-				{
-					text:'Сформировать',
+					text:'Сформировать серийные номера',
 				},
 			]
 		},
@@ -116,22 +138,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'50',
 				},
 				{
 					text:'Источник',
+					width:'82',
 				},
 				{
 					text:'Значение',
+					width:'78',
 				},
 				{
-					text:'ТипРазряда',
+					text:'Тип разряда',
+					width:'68',
 				},
 				{
-					text:'РазмерРазряда',
+					text:'Размер разряда',
+					width:'50',
 				},
 				{
-					text:'НачальноеЗначениеРазряда',
+					text:'Начальное значение разряда',
+					width:'95',
 				},
 			]
 		},
@@ -140,16 +168,17 @@
 			style: 'position:absolute;left:0px;top:26px;width:149px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ЗаполнитьПоПорядкуПрисвоения',
+					text:'Заполнить по порядку присвоения',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокПрисвоенияСерийногоНомера',
+			text: 'Порядок присвоения:',
+			style: 'position:absolute;left:150px;top:28px;width:115px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -158,16 +187,34 @@
 			style: 'position:absolute;left:265px;top:28px;width:161px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПримерСерийногоНомера',
+			text: 'Пример номера:',
+			style: 'position:absolute;left:0px;top:175px;width:89px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПримерСерийногоНомера',
 			style: 'position:absolute;left:89px;top:175px;width:210px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоличествоЗнаков',
+			text: 'Кол-во знаков:',
+			style: 'position:absolute;left:305px;top:175px;width:91px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоЗнаков',
 			style: 'position:absolute;left:396px;top:175px;width:30px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоСерийныхНомеров',
+			text: 'Кол-во серийных номеров:',
+			style: 'position:absolute;left:596px;top:175px;width:139px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -178,7 +225,7 @@
 					]
 				},
 				{
-					title:'ВводСерийныхНомеров',
+					title:'Ввод серийных номеров',
 					items:
 					[
 		{
@@ -195,15 +242,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'СерийныйНомер',
+					text:'Серийный номер',
+					width:'184',
 				},
 				{
-					text:'КлючСвязи',
+					text:'Ключ связи',
+					width:'81',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоСерийныхНомеровВвод',
+			text: 'Кол-во серийных номеров:',
+			style: 'position:absolute;left:596px;top:175px;width:139px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

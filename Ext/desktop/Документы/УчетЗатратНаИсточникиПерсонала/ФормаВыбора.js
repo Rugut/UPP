@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УчетЗатратНаИсточникиПерсонала.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Учет затрат на источники персонала',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'87',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 			]
 		},
@@ -33,17 +39,12 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

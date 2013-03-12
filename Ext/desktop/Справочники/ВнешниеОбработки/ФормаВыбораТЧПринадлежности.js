@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВнешниеОбработки.ФормаВыбораТЧПринадлежности',
 	{
 	extend: 'Ext.window.Window',
-	height: 245,width: 335,
+	style: 'position:absolute;width:335px;height:245px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Табличная часть',
 	
 	items:
@@ -16,7 +18,7 @@
 					text:'Отмена',
 				},
 				{
-					text:'КнопкаОК',
+					text:'ОК',
 				},
 			]
 		},
@@ -28,6 +30,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},

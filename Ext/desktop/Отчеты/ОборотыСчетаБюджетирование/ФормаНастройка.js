@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотыСчетаБюджетирование.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 323,width: 490,
+	style: 'position:absolute;width:490px;height:323px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -30,14 +30,25 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Счет',
 			style: 'position:absolute;left:68px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам',
+			style: 'position:absolute;left:258px;top:242px;width:96px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,6 +69,66 @@
 			style: 'position:absolute;left:250px;top:30px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:12px;top:126px;width:128px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дебет',
+			style: 'position:absolute;left:126px;top:169px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Кредит',
+			style: 'position:absolute;left:192px;top:169px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дебет',
+			style: 'position:absolute;left:126px;top:193px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Кредит',
+			style: 'position:absolute;left:192px;top:193px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дебет',
+			style: 'position:absolute;left:126px;top:218px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Кредит',
+			style: 'position:absolute;left:192px;top:218px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дебет',
+			style: 'position:absolute;left:126px;top:242px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Кредит',
+			style: 'position:absolute;left:192px;top:242px;width:60px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Все периоды',
+			style: 'position:absolute;left:286px;top:78px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по количеству',
+			style: 'position:absolute;left:192px;top:126px;width:140px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'В валюте сценария',
+			style: 'position:absolute;left:12px;top:146px;width:120px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Сценарий',
@@ -66,7 +137,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Детализация счета',
 					items:
 					[
 		{
@@ -77,9 +148,11 @@
 			[
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'80',
 				},
 			]
 		},
@@ -93,7 +166,7 @@
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -103,19 +176,24 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},

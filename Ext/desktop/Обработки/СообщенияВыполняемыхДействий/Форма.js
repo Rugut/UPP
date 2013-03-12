@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.СообщенияВыполняемыхДействий.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 303,width: 483,
+	style: 'position:absolute;width:483px;height:303px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Внимание!',
 	
 	items:

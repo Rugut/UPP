@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ДетализацияАналитическогоБаланса.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 338,width: 406,
+	style: 'position:absolute;width:406px;height:338px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Детализация аналитического баланса',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:179px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:275px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,21 +38,17 @@
 			style: 'position:absolute;left:0px;top:313px;width:406px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -80,27 +90,38 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Счет',
+					width:'80',
 				},
 				{
-					text:'НаименованиеСчета',
+					text:'Наименование счета',
+					width:'120',
 				},
 				{
-					text:'ВидОстатка',
+					text:'Вид остатка',
+					width:'120',
 				},
 				{
 					text:'Знак',
+					width:'40',
 				},
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'НаименованиеДляОтчета',
 			style: 'position:absolute;left:94px;top:57px;width:304px;height:40px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеДляОтчета',
+			text: 'Наименование для отчета:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:27px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыОплатЧекаККМ.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 85,width: 402,
+	style: 'position:absolute;width:402px;height:85px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Виды оплат чека ККМ',
 	
 	items:
@@ -20,27 +22,35 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:312px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:354px;top:33px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ФинансовыеРасчеты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 496,
+	style: 'position:absolute;width:496px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Финансовые расчеты',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'406',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

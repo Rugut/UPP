@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.РегистрУчетаРасходовПоОплатеТруда.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 433,width: 605,
+	style: 'position:absolute;width:605px;height:433px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистр учета расходов по оплате труда',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:286px;top:33px;width:72px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,26 +27,17 @@
 			items:
 			[
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -57,12 +56,8 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -76,6 +71,18 @@
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:173px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:149px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'button',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиЗатрат.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 728,
+	style: 'position:absolute;width:728px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи затрат',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'34',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'180',
 				},
 				{
-					text:'ВидЗатрат',
+					text:'Вид затрат',
+					width:'120',
 				},
 				{
-					text:'СтатусМатериальныхЗатрат',
+					text:'Статус мат. затрат',
+					width:'116',
 				},
 				{
-					text:'ХарактерЗатрат',
+					text:'Характер затрат',
+					width:'120',
 				},
 				{
-					text:'ВидЗатратНалоговогоУчета',
+					text:'Вид расходов (НУ)',
+					width:'140',
 				},
 			]
 		},
@@ -42,11 +51,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -57,6 +64,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'184',
 				},
 			]
 		},

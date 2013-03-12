@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СводныеПроводкиХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 640,
+	style: 'position:absolute;width:640px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет Сводные проводки',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:20px;top:33px;width:56px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:80px;top:33px;width:84px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:168px;top:33px;width:28px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:200px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:340px;top:33px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -34,61 +54,44 @@
 					text:'Сформировать',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Подменю',
+					text:'Сохранить значения...',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие1',
+					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Настройка...',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Закрыть',
 				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Разделитель1',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 			]
 		},

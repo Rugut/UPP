@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛ',
 	{
 	extend: 'Ext.window.Window',
-	height: 373,width: 692,
+	style: 'position:absolute;width:692px;height:373px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Физические лица',
 	
 	items:
@@ -12,20 +14,16 @@
 			style: 'position:absolute;left:0px;top:348px;width:692px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},
@@ -46,19 +44,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'Период',
+					text:'Дата',
+					width:'80',
 				},
 				{
-					text:'ПрименятьВычетыТекст',
+					text:'Применять вычеты в организации',
+					width:'320',
 				},
 				{
-					text:'ВычетыПрименение',
+					text:'Применение',
+					width:'30',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 			]
 		},
@@ -107,22 +110,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'Период',
+					text:'Дата',
+					width:'70',
 				},
 				{
-					text:'ВычетыЛичныеТекст',
+					text:'Код',
+					width:'103',
 				},
 				{
-					text:'ВычетыЛичныеПрименение',
+					text:'Применение',
+					width:'80',
 				},
 				{
-					text:'КодВычетаЛичный',
+					text:'Вычет личный',
+					width:'50',
 				},
 				{
 					text:'Основание',
+					width:'100',
 				},
 			]
 		},
@@ -133,31 +142,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'КолонкаПериод',
+					text:'Период (с ... по)',
+					width:'140',
 				},
 				{
-					text:'Период',
+					text:'С',
+					width:'70',
 				},
 				{
-					text:'ПериодЗавершения',
+					text:'по',
+					width:'70',
 				},
 				{
-					text:'ВычетыНаДетейТекст',
+					text:'Код и количество детей',
+					width:'83',
 				},
 				{
-					text:'ВычетыНаДетейПрименение',
+					text:'Применение',
+					width:'70',
 				},
 				{
-					text:'КодВычетаНаДетей',
+					text:'Вычет на детей',
+					width:'60',
 				},
 				{
-					text:'КоличествоДетей',
+					text:'Количество детей',
+					width:'24',
 				},
 				{
 					text:'Основание',
+					width:'100',
 				},
 			]
 		},
@@ -183,14 +201,44 @@
 					]
 				},
 				{
-					title:'СтатусНалогоплательщика',
+					title:'Статус налогоплательщика',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьНДФЛ',
+			text: 'Физическое лицо постоянно находится на территории РФ (за прошедшие 12 месяцев - более 183 дней). При исчислении НДФЛ с оплаты труда будет применяться ставка 13%',
+			style: 'position:absolute;left:29px;top:200px;width:553px;height:51px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Применяется с:',
+			style: 'position:absolute;left:19px;top:51px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИстория',
+			text: 'История изменения ...',
+			style: 'position:absolute;left:332px;top:51px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОкончаниеДействияСтатусаНДФЛ',
+			text: '',
+			style: 'position:absolute;left:226px;top:51px;width:100px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
 			style: 'position:absolute;left:104px;top:51px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Статус налогоплательщика по НДФЛ задается с точностью до месяца и определяет порядок представления налоговых вычетов и ставку налога.',
+			style: 'position:absolute;left:6px;top:6px;width:662px;height:31px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -209,7 +257,7 @@
 					]
 				},
 				{
-					title:'Доходы',
+					title:'Доходы на предыдущих местах работы',
 					items:
 					[
 		{
@@ -219,10 +267,12 @@
 			columns:
 			[
 				{
-					text:'МесяцНалоговогоПериода',
+					text:'Месяц',
+					width:'160',
 				},
 				{
-					text:'Размер',
+					text:'Сумма дохода',
+					width:'120',
 				},
 			]
 		},
@@ -231,6 +281,18 @@
 			hideLabel: true,
 			name: 'Год',
 			style: 'position:absolute;left:404px;top:6px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГод',
+			text: 'Год:',
+			style: 'position:absolute;left:362px;top:6px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Данные по организации:',
+			style: 'position:absolute;left:6px;top:6px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

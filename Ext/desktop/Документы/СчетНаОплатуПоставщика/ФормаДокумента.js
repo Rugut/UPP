@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.СчетНаОплатуПоставщика.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 455,width: 658,
+	style: 'position:absolute;width:658px;height:455px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документ Счет на оплату поставщика',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:170px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:399px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,29 +50,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю2',
+					text:'',
+				},
+				'-',
+				{
+					text:'Цены и валюта...',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ДействиеЦеныВалюта',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 			]
 		},
@@ -73,64 +84,84 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'59',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'40',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'80',
 				},
 				{
 					text:'Всего',
+					width:'80',
 				},
 				{
-					text:'ПлановаяСебестоимость',
+					text:'Себестоимость',
+					width:'80',
 				},
 				{
-					text:'СуммаПлановойСебестоимости',
+					text:'Сумма себестоимости',
+					width:'80',
 				},
 				{
-					text:'СуммаОтклоненияОтСуммыПлановойСебестоимости',
+					text:'Отклонение',
+					width:'80',
 				},
 				{
-					text:'ПроцентОтклоненияОтСуммыПлановойСебестоимости',
+					text:'% отклонения',
+					width:'80',
 				},
 			]
 		},
@@ -139,22 +170,24 @@
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Подбор',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Поиск по штрихкоду',
 				},
 				{
-					text:'ПоискПоШтрихКоду',
+					text:'Изменить',
 				},
-				{
-					text:'ДействиеИзменить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:330px;top:99px;width:88px;height:19px;',
 		},
 					]
 				},
@@ -167,11 +200,9 @@
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 			]
 		},
@@ -182,46 +213,60 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ЕдиницаИзмеренияМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'50',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'59',
 				},
 				{
 					text:'Количество',
+					width:'68',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'45',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'122',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'50',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'88',
 				},
 				{
 					text:'Всего',
+					width:'93',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 			]
 		},
@@ -232,37 +277,52 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСуммаВзаиморасчетов',
+			text: 'Сумма <нет валюты>:',
+			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
 			height: 137,width: 628,
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'Содержание',
+					text:'Содержание услуги, доп. сведения',
+					width:'220',
 				},
 				{
 					text:'Количество',
+					width:'60',
 				},
 				{
 					text:'Цена',
+					width:'57',
 				},
 				{
 					text:'Сумма',
+					width:'61',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'58',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'76',
 				},
 				{
 					text:'Всего',
+					width:'80',
 				},
 			]
 		},
@@ -272,17 +332,15 @@
 			items:
 			[
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'Тара',
+					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -290,11 +348,9 @@
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 			]
 		},
@@ -305,28 +361,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед. хранения',
+					width:'52',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 			]
 		},
@@ -355,16 +419,33 @@
 			style: 'position:absolute;left:98px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ИнфНадписьКурса',
+			text: '(10000 TRL = 6500 руб.)',
+			style: 'position:absolute;left:183px;top:27px;width:451px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КонтактноеЛицо',
 			style: 'position:absolute;left:90px;top:124px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'напомнить',
+			style: 'position:absolute;left:330px;top:124px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВремяНапоминания',
 			style: 'position:absolute;left:418px;top:124px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаВходящегоДокумента',
+			text: 'Вх. дата:',
+			style: 'position:absolute;left:330px;top:75px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -389,6 +470,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:330px;top:82px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:82px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -401,10 +494,22 @@
 			style: 'position:absolute;left:90px;top:82px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:8px;top:129px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -413,16 +518,40 @@
 			style: 'position:absolute;left:90px;top:129px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ИнфНадписьТоварыИтоги',
+			text: 'Оптовые цены, Скидка 20%',
+			style: 'position:absolute;left:8px;top:355px;width:454px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьДолга',
+			text: 'По договору 250 USD, 1 USD = 30 руб.',
+			style: 'position:absolute;left:330px;top:105px;width:299px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПерерассчитатьДолг',
 			text: '',
 			style: 'position:absolute;left:635px;top:105px;width:15px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:472px;top:355px;width:72px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:547px;top:355px;width:103px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсегоНДС',
+			text: 'НДС ( в т. ч.):',
+			style: 'position:absolute;left:472px;top:377px;width:72px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -437,6 +566,12 @@
 			style: 'position:absolute;left:420px;top:129px;width:230px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтруктурнойЕдиницы',
+			text: 'Б/счет, касса:',
+			style: 'position:absolute;left:330px;top:129px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОплаты',
@@ -449,6 +584,18 @@
 			style: 'position:absolute;left:90px;top:105px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатыОплаты',
+			text: 'Оплата:',
+			style: 'position:absolute;left:170px;top:105px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатыОтгрузки',
+			text: 'Поступление:',
+			style: 'position:absolute;left:8px;top:105px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:430px;width:658px;height:25px;',
 			items:
@@ -459,22 +606,22 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьИтоговоеОтклонениеОтПлановойСебестоимости',
+			text: 'Отклонение от плановой себестоимости',
+			style: 'position:absolute;left:8px;top:377px;width:454px;height:17px;',
 		},
 	]
 });

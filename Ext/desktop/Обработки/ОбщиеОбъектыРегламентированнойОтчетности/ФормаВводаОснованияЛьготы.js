@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаОснованияЛьготы',
 	{
 	extend: 'Ext.window.Window',
-	height: 154,width: 349,
+	style: 'position:absolute;width:349px;height:154px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод основания применения льготы',
 	
 	items:
@@ -13,15 +15,25 @@
 			items:
 			[
 				{
-					text:'ВыполнитьВвод',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатья',
+			text: 'Статья нормативного правового акта представительного органа муниципального образования, в соответствии с которым предоставляется льгота:',
+			style: 'position:absolute;left:8px;top:8px;width:333px;height:40px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерСтатьи',
+			text: 'Номер статьи:',
+			style: 'position:absolute;left:8px;top:54px;width:75px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,10 +42,22 @@
 			style: 'position:absolute;left:88px;top:54px;width:49px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПункт',
+			text: 'Пункт:',
+			style: 'position:absolute;left:8px;top:78px;width:39px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Пункт',
 			style: 'position:absolute;left:88px;top:78px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодпункт',
+			text: 'Подпункт:',
+			style: 'position:absolute;left:8px;top:102px;width:75px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.НДФЛПерерасчет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 401,width: 697,
+	style: 'position:absolute;width:697px;height:401px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Перерасчет НДФЛ',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,16 +28,40 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Перерасчет за:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:324px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:324px;width:593px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:349px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,12 +77,8 @@
 				{
 					text:'Действие15',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие11',
 				},
@@ -87,76 +115,100 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'120',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение организации',
+					width:'100',
 				},
 				{
-					text:'НалогПоСтавке13',
+					text:'По ставке 13 (30)%',
+					width:'80',
 				},
 				{
-					text:'ПримененныйВычетЛичный',
+					text:'Вычет личный',
+					width:'80',
 				},
 				{
-					text:'КолонкаЗаголовок',
+					text:'Вычеты на детей',
+					width:'360',
 				},
 				{
-					text:'ПримененныйВычетНаДетей',
+					text:'...на первого',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаДетейДвойной',
+					text:'  двойной',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаДетейДвойнойВторой',
+					text:' второй',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаВторогоРебенка',
+					text:'...на второго',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаВторогоРебенкаДвойной',
+					text:' двойной',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаВторогоРебенкаДвойнойВторой',
+					text:' второй',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаТретьегоРебенка',
+					text:'... на третьего ',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаТретьегоРебенкаДвойной',
+					text:'  двойной',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаТретьегоРебенкаДвойнойВторой',
+					text:' второй',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаДетейИнвалидов',
+					text:'...инвалидов',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаДетейИнвалидовДвойной',
+					text:'  двойной',
+					width:'60',
 				},
 				{
-					text:'ПримененныйВычетНаДетейИнвалидовДвойнойВторой',
+					text:' второй',
+					width:'60',
 				},
 				{
-					text:'КолонкаЗаголовокИмущественный',
+					text:'Вычеты имущественные',
+					width:'160',
 				},
 				{
-					text:'ПримененныйВычетИмущественныйРасход',
+					text:'Расходы',
+					width:'80',
 				},
 				{
-					text:'ПримененныйВычетИмущественныйПроцентыПоКредитам',
+					text:'%% по кредитам',
+					width:'80',
 				},
 				{
-					text:'ПримененныйВычетИмущественныйПроцентыПриПерекредитовании',
+					text:'%% при перекредитовании',
+					width:'80',
 				},
 				{
-					text:'НалогПоСтавке09',
+					text:'По ставке 9 (30)%',
+					width:'80',
 				},
 				{
-					text:'НалогПоСтавке35',
+					text:'По ставке  35 (30)%',
+					width:'83',
 				},
 			]
 		},
@@ -165,51 +217,32 @@
 			style: 'position:absolute;left:0px;top:0px;width:697px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
 					text:'Рассчитать',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель4',
+					text:'Списком сотрудников',
 				},
+				'-',
+				'-',
 				{
-					text:'Подменю1',
+					text:'Редактировать номер',
 				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -218,21 +251,29 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМесяцОтражения',
+			text: 'Отразить в расчетах с сотрудниками:',
+			style: 'position:absolute;left:231px;top:81px;width:192px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ТоварныйОтчетТОРГ29.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 780,
+	style: 'position:absolute;width:780px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Товарный отчет (ТОРГ-29)',
 	
 	items:
@@ -24,6 +26,12 @@
 			style: 'position:absolute;left:437px;top:33px;width:335px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:362px;top:33px;width:70px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
@@ -34,6 +42,18 @@
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:188px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:170px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -48,10 +68,22 @@
 			style: 'position:absolute;left:88px;top:56px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомерОтчета',
+			text: 'Номер отчета:',
+			style: 'position:absolute;left:8px;top:56px;width:73px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:437px;top:56px;width:335px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:362px;top:56px;width:70px;height:19px;',
 		},
 	]
 });

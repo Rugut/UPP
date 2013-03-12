@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПричиныОтсутствияНаРаботе.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 455,
+	style: 'position:absolute;width:455px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Причины отсутствия на работе',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -30,19 +35,12 @@
 			items:
 			[
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
+				'-',
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},

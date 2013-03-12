@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыЦФО.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 542,
+	style: 'position:absolute;width:542px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды ЦФО',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -45,6 +48,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},

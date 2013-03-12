@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ДополнительныеСвойстваТранспортногоСообщения',
 	{
 	extend: 'Ext.window.Window',
-	height: 434,width: 464,
+	style: 'position:absolute;width:464px;height:434px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Дополнительно...',
 	
 	items:
@@ -18,9 +20,7 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -31,9 +31,11 @@
 			[
 				{
 					text:'Имя',
+					width:'221',
 				},
 				{
 					text:'Значение',
+					width:'194',
 				},
 			]
 		},

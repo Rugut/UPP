@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ВводКоэффициентовИндексацииЗаработка.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 332,width: 550,
+	style: 'position:absolute;width:550px;height:332px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод коэффициентов индексации заработка',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:280px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:98px;top:280px;width:444px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоэффициент',
+			text: 'Коэффициент:',
+			style: 'position:absolute;left:334px;top:57px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,7 +51,7 @@
 			items:
 			[
 				{
-					text:'СписокРаботников',
+					text:'Списком сотрудников',
 				},
 				{
 					text:'Действие',
@@ -54,24 +74,15 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -84,13 +95,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'68',
 				},
 				{
 					text:'Сотрудник',
+					width:'210',
 				},
 			]
 		},
@@ -99,35 +113,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:550px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
 				{
-					text:'Разделитель5',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 			]
 		},
@@ -136,22 +138,24 @@
 			style: 'position:absolute;left:0px;top:307px;width:550px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -166,10 +170,28 @@
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Месяц:',
+			style: 'position:absolute;left:334px;top:33px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

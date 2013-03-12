@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПравоНаДополнительныеДниОтпуска.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 561,
+	style: 'position:absolute;width:561px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Права на дополнительные дни отпуска',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'КраткийСоставДокумента',
+					text:'Краткий состав документа',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -38,23 +46,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:561px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

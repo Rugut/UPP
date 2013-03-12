@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетПлатаЗаЗагрязнение.ФормаОтчета2004кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Плата за загрязнение окружающей среды',
 	
 	items:
@@ -12,72 +14,50 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодготовитьИПодписать',
+					text:'Подготовить к отправке и подписать',
 				},
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'Проверить',
-				},
-				{
-					text:'Отправка',
+					text:'Проверить в Интернете',
 				},
 				{
 					text:'Справка',
 				},
+				'-',
 				{
-					text:'РазделительОтправка',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Подготовить',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Очистить',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
 					text:'Отправить',
 				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -85,28 +65,25 @@
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюПечати',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -131,6 +108,11 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -150,6 +132,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:7px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

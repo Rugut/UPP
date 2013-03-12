@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.НематериальныеАктивы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 441,width: 500,
+	style: 'position:absolute;width:500px;height:441px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Нематериальные активы и расходы на НИОКР',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:410px;top:56px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:452px;top:56px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,22 +34,46 @@
 			style: 'position:absolute;left:94px;top:56px;width:312px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:33px;width:398px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьНаименованиеПолное',
+			text: 'Полное наименование:',
+			style: 'position:absolute;left:8px;top:83px;width:84px;height:27px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:94px;top:83px;width:398px;height:40px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидНМА',
+			text: 'Вид НМА:',
+			style: 'position:absolute;left:14px;top:176px;width:136px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидНМА',
 			style: 'position:absolute;left:152px;top:176px;width:340px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАмортизационнаяГруппа',
+			text: 'Амортизационная группа:',
+			style: 'position:absolute;left:14px;top:199px;width:136px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,22 +93,24 @@
 			style: 'position:absolute;left:0px;top:416px;width:500px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидОбъектаУчета',
+			text: 'Вид объекта учета:',
+			style: 'position:absolute;left:14px;top:153px;width:136px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -89,7 +129,7 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ПрочиеСведения',
 			style: 'position:absolute;left:6px;top:24px;width:470px;height:133px;',
@@ -114,13 +154,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Свойство',
+					width:'120',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 			]
 		},
@@ -136,16 +179,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие1',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие3',
+					text:'Закончить редактирование',
 				},
 			]
 		},
@@ -156,13 +199,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Принадлежность',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Категория',
+					width:'188',
 				},
 			]
 		},

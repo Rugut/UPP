@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетПоНаличиюСчетовФактур.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 375,width: 367,
+	style: 'position:absolute;width:367px;height:375px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет по наличию счетов-фактур',
 	
 	items:
@@ -15,30 +17,19 @@
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -57,10 +48,22 @@
 			style: 'position:absolute;left:251px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:124px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:139px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаличиеСчетаФактуры',
+			text: 'Наличие счета-фактуры:',
+			style: 'position:absolute;left:8px;top:81px;width:124px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -70,6 +73,7 @@
 			[
 				{
 					text:'Документ',
+					width:'100',
 				},
 			]
 		},
@@ -91,6 +95,24 @@
 			hideLabel: true,
 			name: 'ВсеКромеСпискаДокументов',
 			style: 'position:absolute;left:271px;top:126px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтбор',
+			text: 'Отбор:',
+			style: 'position:absolute;left:230px;top:126px;width:37px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:50px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'по:',
+			style: 'position:absolute;left:228px;top:33px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'button',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РОКИПараметрыАвтонастройкиНовойУчетнойЗаписи',
 	{
 	extend: 'Ext.window.Window',
-	height: 336,width: 456,
+	style: 'position:absolute;width:456px;height:336px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры организации',
 	
 	items:
@@ -12,16 +14,21 @@
 			style: 'position:absolute;left:0px;top:311px;width:456px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОК',
+					text:'Продолжить',
 				},
 				{
 					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Укажите организацию, для которой необходимо настроить параметры учетной записи налогоплательщика, или задайте ее ИНН/КПП.
+Эти параметры необходимы для обращения к серверу Интернет, на котором хранятся настройки.',
+			style: 'position:absolute;left:8px;top:103px;width:440px;height:57px;',
 		},
 		{
 			xtype: 'textfield',
@@ -40,6 +47,18 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'ИНН:',
+			style: 'position:absolute;left:0px;top:1px;width:69px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'КПП:',
+			style: 'position:absolute;left:0px;top:28px;width:69px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИНН',
@@ -54,6 +73,18 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Перед настройкой необходимо установить в системе личные сертификаты при помощи сервисов криптопровайдера.',
+			style: 'position:absolute;left:8px;top:60px;width:440px;height:32px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Возможность автоматической настройки параметров учетной записи доступна только абонентам специализированного оператора связи - компании "Такском".',
+			style: 'position:absolute;left:71px;top:12px;width:377px;height:40px;',
 		},
 	]
 });

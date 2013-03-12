@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СчетчикДляФормированияСерийныхНомеров.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Счетчик для формирования серийных номеров',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'225',
 				},
 			]
 		},
@@ -27,11 +31,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

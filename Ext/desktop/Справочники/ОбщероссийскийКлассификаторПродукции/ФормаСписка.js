@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОбщероссийскийКлассификаторПродукции.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 344,width: 604,
+	style: 'position:absolute;width:604px;height:344px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Общероссийский классификатор продукции',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'59',
 				},
 				{
 					text:'Наименование',
+					width:'280',
 				},
 				{
-					text:'КонтрольноеЧисло',
+					text:'Контрольное число',
+					width:'36',
 				},
 				{
 					text:'Комментарий',
+					width:'255',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'141',
 				},
 			]
 		},
@@ -47,7 +55,7 @@
 			items:
 			[
 				{
-					text:'ЗагрузитьКлассификатор',
+					text:'Загрузить классификатор',
 				},
 			]
 		},

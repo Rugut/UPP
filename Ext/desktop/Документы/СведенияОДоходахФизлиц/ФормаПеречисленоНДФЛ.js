@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛ',
 	{
 	extend: 'Ext.window.Window',
-	height: 347,width: 619,
+	style: 'position:absolute;width:619px;height:347px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочно',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'25',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Физ лицо',
+					width:'103',
 				},
 				{
 					text:'Ставка',
+					width:'50',
 				},
 				{
 					text:'КБК',
+					width:'74',
 				},
 				{
-					text:'КодПоОКАТО',
+					text:'Код по ОКАТО',
+					width:'84',
 				},
 				{
 					text:'Перечислено',
+					width:'100',
 				},
 				{
-					text:'Удержано',
+					text:'Удержано (справочно)',
+					width:'88',
 				},
 			]
 		},
@@ -43,19 +52,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Ставка',
+					width:'100',
 				},
 				{
 					text:'КБК',
+					width:'100',
 				},
 				{
-					text:'КодПоОКАТО',
+					text:'Код по ОКАТО',
+					width:'122',
 				},
 				{
 					text:'Перечислено',
+					width:'106',
 				},
 			]
 		},

@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПереоценкаТоваровВРознице.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 652,
+	style: 'position:absolute;width:652px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Переоценка товаров в рознице',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:268px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,31 +51,19 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель9',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -66,34 +74,44 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед.',
+					width:'52',
 				},
 				{
-					text:'ЦенаВРозницеСтарая',
+					text:'Старая розн. цена',
+					width:'100',
 				},
 				{
-					text:'ЦенаВРознице',
+					text:'Розн. цена (руб.)',
+					width:'90',
 				},
 			]
 		},
@@ -102,31 +120,30 @@
 			style: 'position:absolute;left:8px;top:81px;width:636px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Заполнить по измененным ценам',
 				},
 				{
-					text:'ЗаполнитьПоЦенам',
+					text:'Заполнить по остаткам',
 				},
 				{
-					text:'ЗаполнитьПоОстаткам',
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'Поиск по штрихкоду',
 				},
 				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'ЗаполнитьИзУстановкиЦен',
+					text:'Заполнить из установки цен',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -135,16 +152,34 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:324px;top:57px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:408px;top:57px;width:236px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:244px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:244px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:244px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -160,25 +195,25 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументУстановкаЦен',
+			text: 'Установка цен:',
+			style: 'position:absolute;left:324px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

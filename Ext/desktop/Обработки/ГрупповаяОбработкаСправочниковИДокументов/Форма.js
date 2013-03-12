@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 414,width: 573,
+	style: 'position:absolute;width:573px;height:414px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Групповая обработка справочников и документов',
 	
 	items:
@@ -22,14 +24,12 @@
 			style: 'position:absolute;left:0px;top:389px;width:573px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ВыполнитьОтбор',
+					text:'Отобрать',
 				},
 			]
 		},
@@ -40,9 +40,15 @@
 			items:
 			[
 				{
-					title:'ОбъектыОтбора',
+					title:'Объекты отбора',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Тип объекта:',
+			style: 'position:absolute;left:8px;top:11px;width:68px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:65px;width:543px;height:93px;',
@@ -50,10 +56,12 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеТаблицы',
+					text:'Представление таблицы',
+					width:'100',
 				},
 				{
-					text:'ИмяТаблицы',
+					text:'Имя таблицы',
+					width:'194',
 				},
 			]
 		},
@@ -64,22 +72,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'63',
 				},
 				{
 					text:'Значение',
+					width:'98',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'98',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'98',
 				},
 			]
 		},
@@ -109,6 +123,11 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Обрабатывать табличные части',
+			style: 'position:absolute;left:246px;top:11px;width:186px;height:19px;',
+		},
 					]
 				},
 				{
@@ -121,14 +140,12 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажки',
+					text:'Установить все флажки',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'Снять все флажки',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -138,7 +155,8 @@
 			columns:
 			[
 				{
-					text:'Ш_ВидПредставление',
+					text:'Вид',
+					width:'100',
 				},
 			]
 		},

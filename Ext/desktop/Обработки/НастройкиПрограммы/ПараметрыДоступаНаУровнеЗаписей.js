@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.НастройкиПрограммы.ПараметрыДоступаНаУровнеЗаписей',
 	{
 	extend: 'Ext.window.Window',
-	height: 335,width: 333,
+	style: 'position:absolute;width:333px;height:335px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры доступа на уровне записей',
 	
 	items:
@@ -12,28 +14,27 @@
 			style: 'position:absolute;left:0px;top:310px;width:333px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'ОК',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Справка',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ДействиеСправка',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеЗаписать',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Ограничить доступ на уровне записей по видам объектов:',
+			style: 'position:absolute;left:8px;top:8px;width:317px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -42,9 +43,16 @@
 			columns:
 			[
 				{
-					text:'ВидОбъектаДоступа',
+					text:'Вид объекта доступа',
+					width:'164',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодсказкаКВидамОбъектов',
+			text: 'Настройка доступа выполняется для групп пользователей.',
+			style: 'position:absolute;left:8px;top:283px;width:317px;height:19px;',
 		},
 	]
 });

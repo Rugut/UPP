@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.РезультатыПоиска',
 	{
 	extend: 'Ext.window.Window',
-	height: 235,width: 728,
+	style: 'position:absolute;width:728px;height:235px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Результаты поиска',
 	
 	items:
@@ -18,9 +20,7 @@
 				{
 					text:'Вперед',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,24 +30,36 @@
 			columns:
 			[
 				{
-					text:'НаименованиеЛиста',
+					text:'Наименование раздела',
+					width:'255',
 				},
 				{
-					text:'Страница',
+					text:'№ листа',
+					width:'87',
 				},
 				{
-					text:'НайденоВСтроке',
+					text:'Найдено в строке',
+					width:'374',
 				},
 				{
-					text:'ИмяЯчейки',
+					text:'Ячейка',
+					width:'185',
 				},
 				{
 					text:'Раздел',
+					width:'63',
 				},
 				{
 					text:'СтрокаПП',
+					width:'58',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНайдено',
+			text: '',
+			style: 'position:absolute;left:100px;top:5px;width:622px;height:15px;',
 		},
 	]
 });

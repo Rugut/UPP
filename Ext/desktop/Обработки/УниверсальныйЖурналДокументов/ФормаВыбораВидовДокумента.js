@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.УниверсальныйЖурналДокументов.ФормаВыбораВидовДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 290,width: 292,
+	style: 'position:absolute;width:292px;height:290px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор объектов: Документ',
 	
 	items:
@@ -13,10 +15,10 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'',
 				},
 			]
 		},
@@ -29,11 +31,9 @@
 					text:'ОК',
 				},
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

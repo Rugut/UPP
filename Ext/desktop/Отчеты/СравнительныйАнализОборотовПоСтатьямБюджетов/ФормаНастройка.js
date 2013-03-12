@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 389,width: 490,
+	style: 'position:absolute;width:490px;height:389px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -18,10 +20,21 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать измерения',
+			style: 'position:absolute;left:286px;top:281px;width:160px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяБаланса',
 			style: 'position:absolute;left:96px;top:6px;width:370px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБюджет',
+			text: 'Статья баланса:',
+			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -30,10 +43,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Представление',
+					text:'Показатель',
+					width:'220',
 				},
 			]
 		},
@@ -43,16 +58,16 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
-					text:'Действие3',
+					text:'&Переместить вниз',
 				},
 			]
 		},
@@ -63,21 +78,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВидДанных',
+					text:'Вид данных',
+					width:'100',
 				},
 				{
 					text:'Сценарий',
+					width:'172',
 				},
 				{
-					text:'ДатаНач',
+					text:'Дата начала',
+					width:'94',
 				},
 				{
-					text:'ДатаКон',
+					text:'Дата конца',
+					width:'89',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить отклонения, абс.',
+			style: 'position:absolute;left:286px;top:221px;width:164px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить отклонения, %',
+			style: 'position:absolute;left:286px;top:241px;width:152px;height:15px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -85,24 +115,29 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Детализировать по периодам',
+			style: 'position:absolute;left:286px;top:261px;width:176px;height:15px;',
 		},
 					]
 				},
@@ -118,9 +153,11 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 				{
 					text:'Тип',
+					width:'40',
 				},
 			]
 		},
@@ -134,7 +171,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -144,22 +181,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -184,6 +227,7 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 			]
 		},
@@ -203,9 +247,7 @@
 			style: 'position:absolute;left:0px;top:364px;width:490px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -215,9 +257,7 @@
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

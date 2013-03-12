@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПередачаДСВвПФР.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 184,width: 269,
+	style: 'position:absolute;width:269px;height:184px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Заявления ДСВ-1',
 	
 	items:
@@ -15,13 +17,17 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:42px;top:33px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -34,6 +40,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:222px;top:33px;width:21px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:17px;top:84px;width:244px;height:40px;',
 		},
 		{
 			xtype: 'button',

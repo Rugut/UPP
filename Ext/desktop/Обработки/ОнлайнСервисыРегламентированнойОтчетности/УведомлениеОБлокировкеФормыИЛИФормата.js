@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.УведомлениеОБлокировкеФормыИЛИФормата',
 	{
 	extend: 'Ext.window.Window',
-	height: 335,width: 545,
+	style: 'position:absolute;width:545px;height:335px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Внимание!',
 	
 	items:
@@ -17,6 +19,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Продолжить действие, несмотря на предупреждение (не рекомендуется).',
+			style: 'position:absolute;left:0px;top:9px;width:396px;height:15px;',
+		},
 					]
 				},
 			]
@@ -28,7 +35,7 @@
 			items:
 			[
 				{
-					title:'МягкаяБлокировка',
+					title:'Мягкая блокировка',
 					items:
 					[
 		{
@@ -58,7 +65,7 @@
 					]
 				},
 				{
-					title:'ЖесткаяБлокировка',
+					title:'Жесткая блокировка',
 					items:
 					[
 		{

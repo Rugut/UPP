@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ВыгрузкаДанныхCommerceML.ФормаФайловВыгрузки',
 	{
 	extend: 'Ext.window.Window',
-	height: 367,width: 476,
+	style: 'position:absolute;width:476px;height:367px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выгруженные файлы',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -25,17 +27,33 @@
 			[
 				{
 					text:'Контрагент',
+					width:'200',
 				},
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'200',
 				},
 				{
-					text:'КоличествоДокументов',
+					text:'Кол-во документов',
+					width:'100',
 				},
 				{
-					text:'РезультатВыгрузки',
+					text:'Успешно',
+					width:'60',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыгрузкиДокументов',
+			text: 'Надпись выгрузки документов. Информация по выгруженным файлам приведена ниже:',
+			style: 'position:absolute;left:50px;top:8px;width:418px;height:32px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКаталогВыгрузкиДанных',
+			text: 'Каталог выгрузки данных:',
+			style: 'position:absolute;left:8px;top:45px;width:138px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

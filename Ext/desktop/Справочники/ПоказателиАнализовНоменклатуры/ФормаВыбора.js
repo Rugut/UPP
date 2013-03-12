@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПоказателиАнализовНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 360,width: 550,
+	style: 'position:absolute;width:550px;height:360px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Показатели анализов номенклатуры',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -41,11 +47,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

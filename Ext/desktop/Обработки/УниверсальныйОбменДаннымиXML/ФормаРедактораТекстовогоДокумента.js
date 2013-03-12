@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.УниверсальныйОбменДаннымиXML.ФормаРедактораТекстовогоДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 575,width: 638,
+	style: 'position:absolute;width:638px;height:575px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Модуль отладки обработчиков и алгоритмов',
 	
 	items:
@@ -12,14 +14,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'КнопкаСкопироватьВБуферОбмена',
+					text:'Копировать в буфер обмена',
 				},
 			]
 		},
@@ -30,10 +30,10 @@
 			items:
 			[
 				{
-					title:'Страница_ПолеОбработчикиСобытий',
+					title:'Модуль отладки',
 				},
 				{
-					title:'Страница_ПолеОшибкиВыгрузки',
+					title:'Ошибки выгрузки',
 				},
 				{
 					title:'Страница1',

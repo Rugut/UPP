@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Контрагенты.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 376,
+	style: 'position:absolute;width:376px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы контрагентов',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -26,9 +29,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

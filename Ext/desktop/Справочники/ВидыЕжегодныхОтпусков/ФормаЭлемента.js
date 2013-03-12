@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ВидыЕжегодныхОтпусков.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 183,width: 470,
+	style: 'position:absolute;width:470px;height:183px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Вид ежегодного отпуска',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:350px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:382px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,30 +38,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Редактировать код',
 				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -60,21 +66,14 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -86,27 +85,34 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоДнейОтпускаВГод',
+			text: 'количество дней отпуска в год:',
+			style: 'position:absolute;left:254px;top:131px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоДнейОтпускаВГод',
 			style: 'position:absolute;left:419px;top:131px;width:43px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Предоставлять отпуск всем сотрудникам',
+			style: 'position:absolute;left:8px;top:131px;width:232px;height:19px;',
 		},
 	]
 });

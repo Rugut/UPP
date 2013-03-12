@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Банки.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 780,
+	style: 'position:absolute;width:780px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Банки',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Код',
+					text:'БИК',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'КоррСчет',
+					text:'Корр. счет',
+					width:'160',
 				},
 				{
 					text:'Город',
+					width:'160',
 				},
 				{
 					text:'Адрес',
+					width:'120',
 				},
 				{
 					text:'Телефоны',
+					width:'120',
 				},
 			]
 		},
@@ -44,6 +53,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -52,11 +62,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Бюджеты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 210,width: 322,
+	style: 'position:absolute;width:322px;height:210px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Бюджеты',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаголовок',
+			text: 'Заголовок:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,13 +34,25 @@
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТипБюджета',
+			text: 'Тип бюджета:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТипБюджета',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:72px;',
@@ -44,20 +70,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

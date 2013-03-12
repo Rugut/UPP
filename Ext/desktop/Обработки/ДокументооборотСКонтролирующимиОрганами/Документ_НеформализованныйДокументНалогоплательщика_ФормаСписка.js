@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Документ_НеформализованныйДокументНалогоплательщика_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 445,width: 700,
+	style: 'position:absolute;width:700px;height:445px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Неформализованные документы налогоплательщиков',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Номер',
+					width:'132',
 				},
 				{
 					text:'Дата',
+					width:'124',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'120',
 				},
 				{
-					text:'ТипФайла',
+					text:'Тип файла',
+					width:'120',
 				},
 			]
 		},
@@ -38,17 +46,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ЦиклыОбмена',
+					text:'Показать циклы обмена, связанные с документом',
 				},
 				{
 					text:'Действие11',

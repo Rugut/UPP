@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СправкаРасчетНормированияРасходов.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 604,
+	style: 'position:absolute;width:604px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Нормирование расходов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:178px;top:33px;width:72px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -24,24 +32,15 @@
 				{
 					text:'Подписи',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Подписи',
 				},
@@ -54,22 +53,22 @@
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Настройка',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

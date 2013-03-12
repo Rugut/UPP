@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КалендарныйПланЗакупок.ФормаОтображенияЗаказовПоставщикам',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 748,
+	style: 'position:absolute;width:748px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Заказы поставщикам',
 	
 	items:
@@ -21,28 +23,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
-					text:'НомерЗаказа',
+					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ДатаПоступления',
+					text:'Поступление',
+					width:'120',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Оплата',
+					width:'120',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
 					text:'Валюта',
+					width:'60',
 				},
 			]
 		},

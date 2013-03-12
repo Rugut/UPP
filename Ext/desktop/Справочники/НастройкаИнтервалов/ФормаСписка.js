@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкаИнтервалов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 387,width: 384,
+	style: 'position:absolute;width:384px;height:387px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки временных интервалов',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -35,13 +39,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НачалоИнтервала',
+					text:'Граница интервала',
+					width:'120',
 				},
 				{
 					text:'Подпись',
+					width:'220',
 				},
 			]
 		},

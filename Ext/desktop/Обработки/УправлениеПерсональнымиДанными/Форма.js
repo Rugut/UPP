@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.УправлениеПерсональнымиДанными.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 711,
+	style: 'position:absolute;width:711px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Управление персональными данными',
 	
 	items:
@@ -14,9 +16,15 @@
 			items:
 			[
 				{
-					title:'РежимДоступен',
+					title:'Режим доступен',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСубъект',
+			text: 'Субъект:',
+			style: 'position:absolute;left:280px;top:541px;width:45px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,76 +38,110 @@
 			style: 'position:absolute;left:555px;top:541px;width:135px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Подсказка2',
+			text: 'Уничтожение персональных данных по запросу субъекта предусмотрено п.1 ст.14, п.3 ст. 20, п.3 ст.21 и п.4 ст. 21 закона 152-ФЗ ("О персональных данных")',
+			style: 'position:absolute;left:35px;top:507px;width:655px;height:29px;',
+		},
+		{
+			xtype: 'label',
+			name: 'СубъектЯвляется',
+			text: 'Субъект является:',
+			style: 'position:absolute;left:6px;top:542px;width:102px;height:18px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:53px;width:453px;height:424px;',
 			height: 424,width: 453,
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'25',
 				},
 				{
 					text:'Дата',
+					width:'109',
 				},
 				{
-					text:'ПредставлениеСобытия',
-				},
-				{
-					text:'ИмяПользователя',
-				},
-				{
-					text:'ПредставлениеМетаданных',
-				},
-				{
-					text:'Компьютер',
+					text:'Представление события',
+					width:'148',
 				},
 				{
 					text:'Пользователь',
-				},
-				{
-					text:'Данные',
+					width:'134',
 				},
 				{
 					text:'Метаданные',
+					width:'179',
 				},
 				{
-					text:'ВспомогательныйIPПорт',
+					text:'Компьютер',
+					width:'89',
 				},
 				{
-					text:'ИмяПриложения',
+					text:'Пользователь (UID)',
+					width:'36',
+				},
+				{
+					text:'Данные',
+					width:'98',
+				},
+				{
+					text:'Метаданные',
+					width:'100',
+				},
+				{
+					text:'Вспомогательный IPПорт',
+					width:'100',
+				},
+				{
+					text:'Имя приложения',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 				{
-					text:'ОсновнойIPПорт',
+					text:'Основной IPПорт',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеДанных',
+					text:'Представление данных',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеПриложения',
+					text:'Представление приложения',
+					width:'100',
 				},
 				{
-					text:'РабочийСервер',
+					text:'Рабочий сервер',
+					width:'100',
 				},
 				{
 					text:'Сеанс',
+					width:'100',
 				},
 				{
 					text:'Событие',
+					width:'100',
 				},
 				{
 					text:'Соединение',
+					width:'100',
 				},
 				{
-					text:'СтатусТранзакции',
+					text:'Статус транзакции',
+					width:'100',
 				},
 				{
 					text:'Транзакция',
+					width:'100',
 				},
 				{
 					text:'Уровень',
+					width:'100',
 				},
 			]
 		},
@@ -110,9 +152,16 @@
 			columns:
 			[
 				{
-					text:'СубъектСобытия',
+					text:'Список субъектов события',
+					width:'238',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтборСубъект',
+			text: 'Отбор:',
+			style: 'position:absolute;left:94px;top:27px;width:39px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -129,7 +178,7 @@
 					text:'Обновить',
 				},
 				{
-					text:'Период',
+					text:'Установить период',
 				},
 			]
 		},
@@ -140,13 +189,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'25',
 				},
 				{
-					text:'ОбластьДанных',
+					text:'Области данных',
+					width:'196',
 				},
 				{
-					text:'ИмяТаблицыИБ',
+					text:'Список объектов события',
+					width:'206',
 				},
 			]
 		},
@@ -163,7 +215,7 @@
 					]
 				},
 				{
-					title:'РежимНеДоступен',
+					title:'Режим недоступен',
 				},
 			]
 		},

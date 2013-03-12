@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыЗадачПользователей.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды задач пользователей',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'120',
 				},
 			]
 		},
@@ -24,14 +27,9 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'ДействияФормыВыбрать',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

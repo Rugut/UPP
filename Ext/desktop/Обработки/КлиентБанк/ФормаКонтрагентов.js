@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КлиентБанк.ФормаКонтрагентов',
 	{
 	extend: 'Ext.window.Window',
-	height: 301,width: 384,
+	style: 'position:absolute;width:384px;height:301px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Клиент банка: Создание ненайденных объектов',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Создать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,10 +30,12 @@
 			columns:
 			[
 				{
-					text:'Представление',
+					text:'Контрагент: р/счет, договор',
+					width:'196',
 				},
 				{
-					text:'Значение',
+					text:'',
+					width:'180',
 				},
 			]
 		},
@@ -43,12 +45,17 @@
 			items:
 			[
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
-					text:'СнятьВсеПометки',
+					text:'Снять все пометки',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Открывать форму контрагента после записи',
+			style: 'position:absolute;left:8px;top:247px;width:327px;height:21px;',
 		},
 	]
 });

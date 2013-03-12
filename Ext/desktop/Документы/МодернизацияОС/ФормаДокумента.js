@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.МодернизацияОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 500,width: 655,
+	style: 'position:absolute;width:655px;height:500px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Модернизация ОС',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:341px;top:448px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:427px;top:448px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:448px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,22 @@
 			style: 'position:absolute;left:94px;top:448px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытие',
+			text: 'Событие:',
+			style: 'position:absolute;left:334px;top:57px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,40 +82,41 @@
 			style: 'position:absolute;left:421px;top:57px;width:226px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:421px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:494px;top:33px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:655px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель6',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Дт/кт',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель4',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -88,31 +127,48 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражать',
+			text: 'Отражать:',
+			style: 'position:absolute;left:334px;top:33px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:567px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидОперацийСОсновнымиСредствами',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидРабот',
+			text: 'Вид работ:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытиеРегл',
+			text: 'Событие (регл.):',
+			style: 'position:absolute;left:334px;top:81px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,7 +183,7 @@
 			items:
 			[
 				{
-					title:'ОсновныеСредства',
+					title:'Основные средства',
 					items:
 					[
 		{
@@ -135,23 +191,16 @@
 			style: 'position:absolute;left:6px;top:0px;width:625px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'По наименованию',
 				},
 				{
-					text:'ЗаполнитьПоНаименованию',
-				},
-				{
-					text:'ЗаполнитьДляСписка',
+					text:'Для списка ОС',
 				},
 			]
 		},
@@ -162,142 +211,191 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'120',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. №',
+					width:'120',
 				},
 				{
-					text:'СрокПолезногоИспользованияУУ',
+					text:'Новый срок использ. (УУ)',
+					width:'140',
 				},
 				{
-					text:'ФактСрокИспользованияУУ',
+					text:'Факт. срок использ. (УУ)',
+					width:'140',
 				},
 				{
-					text:'ОстСрокИспользованияУУ',
+					text:'Ост. срок использ. (УУ)',
+					width:'140',
 				},
 				{
-					text:'ОбъемПродукцииРаботУУ',
+					text:'Новый объем работ (УУ)',
+					width:'140',
 				},
 				{
-					text:'ФактОбъемПродукцииРаботУУ',
+					text:'Факт. объем работ (УУ)',
+					width:'140',
 				},
 				{
-					text:'ОстОбъемПродукцииРаботУУ',
+					text:'Ост. объем работ (УУ)',
+					width:'140',
 				},
 				{
-					text:'СтоимостьУУ',
+					text:'Стоимость (УУ)',
+					width:'120',
 				},
 				{
-					text:'СуммаМодернизацииУУ',
+					text:'Сумма модерн. (УУ)',
+					width:'120',
 				},
 				{
-					text:'АмортизацияУУ',
+					text:'Факт. аморт. (УУ)',
+					width:'120',
 				},
 				{
-					text:'АмортизацияЗаМесяцУУ',
+					text:'Аморт. за месяц (УУ)',
+					width:'120',
 				},
 				{
-					text:'ОстСтоимостьУУ',
+					text:'Ост. стоимость (УУ)',
+					width:'120',
 				},
 				{
-					text:'КоэффициентАмортизацииУУ',
+					text:'% год. аморт. (УУ)',
+					width:'80',
 				},
 				{
-					text:'КоэффициентУскоренияУУ',
+					text:'Коэф. ускорения (УУ)',
+					width:'80',
 				},
 				{
-					text:'СрокПолезногоИспользованияБУ',
+					text:'Новый срок использ. (БУ)',
+					width:'140',
 				},
 				{
-					text:'ФактСрокИспользованияБУ',
+					text:'Факт. срок использ. (БУ)',
+					width:'140',
 				},
 				{
-					text:'ОстСрокИспользованияБУ',
+					text:'Ост. срок использ. (БУ)',
+					width:'140',
 				},
 				{
-					text:'ОбъемПродукцииРаботБУ',
+					text:'Новый объем работ (БУ)',
+					width:'140',
 				},
 				{
-					text:'ФактОбъемПродукцииРаботБУ',
+					text:'Факт. объем работ (БУ)',
+					width:'140',
 				},
 				{
-					text:'ОстОбъемПродукцииРаботБУ',
+					text:'Ост. объем работ (БУ)',
+					width:'140',
 				},
 				{
-					text:'СтоимостьБУ',
+					text:'Стоимость (БУ)',
+					width:'140',
 				},
 				{
-					text:'СуммаМодернизацииБУ',
+					text:'Сумма модерн. (БУ)',
+					width:'140',
 				},
 				{
-					text:'СуммаМодернизацииБУХоз',
+					text:'в т.ч. хоз. способом (БУ)',
+					width:'140',
 				},
 				{
-					text:'АмортизацияБУ',
+					text:'Факт. аморт. (БУ)',
+					width:'120',
 				},
 				{
-					text:'АмортизацияЗаМесяцБУ',
+					text:'Аморт. за месяц (БУ)',
+					width:'120',
 				},
 				{
-					text:'ОстСтоимостьБУ',
+					text:'Ост. стоимость (БУ)',
+					width:'120',
 				},
 				{
-					text:'КоэффициентАмортизацииБУ',
+					text:'% год. аморт. (БУ)',
+					width:'80',
 				},
 				{
-					text:'КоэффициентУскоренияБУ',
+					text:'Коэф. ускорения (БУ)',
+					width:'80',
 				},
 				{
-					text:'СрокПолезногоИспользованияНУ',
+					text:'Новый срок использ. (НУ)',
+					width:'120',
 				},
 				{
-					text:'СтоимостьНУ',
+					text:'Стоимость (НУ)',
+					width:'140',
 				},
 				{
-					text:'СуммаМодернизацииНУ',
+					text:'Сумма модерн. (НУ)',
+					width:'140',
 				},
 				{
-					text:'СуммаМодернизацииНУХоз',
+					text:'в т.ч. хоз. способом (НУ)',
+					width:'140',
 				},
 				{
-					text:'ОбщаяСуммаНУ',
+					text:'Общая сумма (НУ)',
+					width:'120',
 				},
 				{
-					text:'СуммаКапитальныхВложенийВключаемыхВРасходыНУ',
+					text:'Сумма амортизационной премии (НУ)',
+					width:'120',
 				},
 				{
-					text:'СуммаМодернизацииВР',
+					text:'Сумма модерн. (ВР)',
+					width:'100',
 				},
 				{
-					text:'СуммаМодернизацииВРХоз',
+					text:'в т.ч. хоз. способом (ВР)',
+					width:'100',
 				},
 				{
-					text:'СуммаМодернизацииПР',
+					text:'Сумма модерн. (ПР)',
+					width:'100',
 				},
 				{
-					text:'СуммаМодернизацииПРХоз',
+					text:'в т.ч. хоз. способом (ПР)',
+					width:'100',
 				},
 				{
-					text:'СуммаМодернизацииУСН',
+					text:'Сумма модернизации (УСН)',
+					width:'100',
 				},
 				{
-					text:'СтоимостьПР',
+					text:'Стоимость (ПР)',
+					width:'100',
 				},
 				{
-					text:'АмортизацияПР',
+					text:'Факт. аморт. (ПР)',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВложенияВоВнеоборотныеАктивы',
+					title:'Вложения во внеоборотные активы',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОбъектСтроительства',
+			text: 'Объект:',
+			style: 'position:absolute;left:6px;top:6px;width:74px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -321,10 +419,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСумма',
+			text: 'Сумма (УУ):',
+			style: 'position:absolute;left:0px;top:6px;width:74px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Стоимость',
 			style: 'position:absolute;left:79px;top:6px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'УпрВалюта',
+			text: 'УпрВалюта',
+			style: 'position:absolute;left:204px;top:6px;width:60px;height:19px;',
 		},
 					]
 				},
@@ -341,10 +451,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаБУВнеоборотногоАктива',
+			text: 'Счет (БУ):',
+			style: 'position:absolute;left:6px;top:29px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаБУВнеоборотногоАктива',
 			style: 'position:absolute;left:79px;top:29px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаБУ',
+			text: 'Сумма (БУ):',
+			style: 'position:absolute;left:6px;top:53px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -353,10 +475,28 @@
 			style: 'position:absolute;left:79px;top:53px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'РеглВалюта1',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:204px;top:53px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьБУХоз',
+			text: 'в т.ч. хоз. способом (БУ):',
+			style: 'position:absolute;left:269px;top:53px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьБУХоз',
 			style: 'position:absolute;left:404px;top:53px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта2',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:529px;top:53px;width:60px;height:19px;',
 		},
 					]
 				},
@@ -373,10 +513,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаНУВнеоборотногоАктива',
+			text: 'Счет (НУ):',
+			style: 'position:absolute;left:7px;top:28px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаНУВнеоборотногоАктива',
 			style: 'position:absolute;left:79px;top:28px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаНУ',
+			text: 'Сумма (НУ):',
+			style: 'position:absolute;left:7px;top:52px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -385,10 +537,34 @@
 			style: 'position:absolute;left:79px;top:52px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'РеглВалюта3',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:204px;top:52px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта4',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:529px;top:52px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаНУХоз',
+			text: 'в т.ч. хоз. способом (НУ):',
+			style: 'position:absolute;left:269px;top:52px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьНУХоз',
 			style: 'position:absolute;left:404px;top:52px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаПР',
+			text: 'Сумма (ПР):',
+			style: 'position:absolute;left:7px;top:76px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -397,16 +573,58 @@
 			style: 'position:absolute;left:79px;top:76px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'РеглВалюта5',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:204px;top:76px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта6',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:529px;top:76px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаПРХоз',
+			text: 'в т.ч. хоз. способом (ПР):',
+			style: 'position:absolute;left:269px;top:76px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьПРХоз',
 			style: 'position:absolute;left:404px;top:76px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСуммаВР',
+			text: 'Сумма (ВР):',
+			style: 'position:absolute;left:7px;top:100px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьВР',
 			style: 'position:absolute;left:79px;top:100px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта7',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:204px;top:100px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта8',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:529px;top:100px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаВРХоз',
+			text: 'в т.ч. хоз. способом (ВР):',
+			style: 'position:absolute;left:269px;top:100px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -421,6 +639,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьУСН',
+			text: 'Сумма (УСН):',
+			style: 'position:absolute;left:6px;top:26px;width:69px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьУСН',
@@ -433,13 +657,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'100',
 				},
 				{
-					text:'СуммаОплаты',
+					text:'Сумма оплаты',
+					width:'100',
 				},
 			]
 		},
@@ -449,95 +676,77 @@
 			items:
 			[
 				{
-					text:'Действие10',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие6',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
+				},
+				'-',
+				{
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Разделитель',
+					text:'Настройка списка...',
 				},
 				{
-					text:'Действие12',
+					text:'&Удалить',
 				},
 				{
-					text:'Подменю',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие4',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие4',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие7',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Подменю',
+					text:'Установить отбор...',
 				},
 				{
-					text:'Действие3',
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие7',
+					text:'&Переместить вниз',
+				},
+				'-',
+				'-',
+				{
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие11',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие8',
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Вывести список...',
 				},
 				{
-					text:'Разделитель1',
+					text:'Отключить отбор',
 				},
 				{
-					text:'Действие1',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие',
+					text:'Сортировать по возрастанию',
 				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие13',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 					]
@@ -547,9 +756,16 @@
 					]
 				},
 				{
-					title:'АмортизационнаяПремия',
+					title:'Амортизационная премия',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сумма амортизационной премии указывается в табличном поле "Основные средства"
+индивидуально для каждого основного средства.',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:27px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -574,9 +790,50 @@
 			name: 'СубконтоПоАмортизационнойПремии3',
 			style: 'position:absolute;left:131px;top:113px;width:184px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаЗатратПоАмортизационнойПремии',
+			text: 'Счет учета затрат:',
+			style: 'position:absolute;left:6px;top:41px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоПоАмортизационнойПремии1',
+			text: 'Субконто НУ 1:',
+			style: 'position:absolute;left:6px;top:65px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоПоАмортизационнойПремии2',
+			text: 'Субконто НУ 2:',
+			style: 'position:absolute;left:6px;top:89px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоПоАмортизационнойПремии3',
+			text: 'Субконто НУ 3:',
+			style: 'position:absolute;left:6px;top:113px;width:120px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Включить амортизационную премию в состав расходов',
+			style: 'position:absolute;left:334px;top:106px;width:313px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетФактура',
+			text: 'Счет-фактура:',
+			style: 'position:absolute;left:8px;top:423px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаСчетФактура',
+			text: 'Ввести счет-фактуру',
+			style: 'position:absolute;left:94px;top:423px;width:553px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

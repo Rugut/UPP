@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Кассы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 189,width: 515,
+	style: 'position:absolute;width:515px;height:189px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Кассы',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:405px;top:84px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:447px;top:84px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:84px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:94px;top:84px;width:310px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа касс:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:57px;width:413px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаДенежныхСредств',
+			text: 'Валюта:',
+			style: 'position:absolute;left:8px;top:108px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,9 +62,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:515px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -46,22 +70,24 @@
 			style: 'position:absolute;left:0px;top:164px;width:515px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственноеЛицо',
+			text: 'Ответственное лицо:',
+			style: 'position:absolute;left:8px;top:129px;width:84px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,6 +100,12 @@
 			name: 'КнопкаИстория',
 			text: 'История...',
 			style: 'position:absolute;left:431px;top:134px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВладелец',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

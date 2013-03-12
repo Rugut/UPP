@@ -1,28 +1,34 @@
 ﻿Ext.define('Справочники.ФизическиеЛица.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 498,width: 608,
+	style: 'position:absolute;width:608px;height:498px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Физическое лицо',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Имя:',
+			style: 'position:absolute;left:8px;top:33px;width:38px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель6',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'МедицинскиеСтраховыеПолисы',
+					text:'Медицинские страховые полисы',
 				},
 				{
-					text:'ПерейтиАвансыОрганизаций',
+					text:'Авансы сотрудникам организаций',
 				},
 				{
 					text:'Действие',
@@ -33,18 +39,8 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Перейти',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
+				'-',
 				{
 					text:'Файлы',
 				},
@@ -58,25 +54,20 @@
 					text:'Труд',
 				},
 				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Подменю',
+					text:'Редактировать код',
 				},
 				{
 					text:'Действие3',
 				},
 				{
-					text:'ПерейтиАвансы',
+					text:'Авансы сотрудникам',
 				},
 				{
-					text:'Труд',
+					text:'Трудовая деятельность',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'МедицинскиеСтраховыеПолисы',
+					text:'Медицинские страховые полисы',
 				},
 				{
 					text:'НДФЛ',
@@ -84,20 +75,14 @@
 				{
 					text:'Файлы',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'НДФЛ',
 				},
 				{
-					text:'ПерейтиЛицевыеСчета',
+					text:'Лицевые счета',
 				},
 				{
 					text:'Перечитать',
@@ -105,22 +90,22 @@
 				{
 					text:'Действие2',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Лицевые счета',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПерейтиЛицевыеСчета',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьФИО',
+			text: 'ФИО:',
+			style: 'position:absolute;left:8px;top:57px;width:38px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -134,20 +119,14 @@
 					text:'Записать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -157,7 +136,7 @@
 			items:
 			[
 				{
-					title:'СтраницаОсновные',
+					title:'Общее',
 					items:
 					[
 		{
@@ -197,19 +176,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Тип',
+					width:'100',
 				},
 				{
 					text:'Вид',
+					width:'120',
 				},
 				{
 					text:'Представление',
+					width:'204',
 				},
 				{
 					text:'Комментарий',
+					width:'103',
 				},
 			]
 		},
@@ -218,39 +202,26 @@
 			style: 'position:absolute;left:6px;top:142px;width:578px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие11',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -258,25 +229,22 @@
 					text:'Действие',
 				},
 				{
-					text:'РедактироватьВДиалоге',
+					text:'Редактировать в диалоге',
 				},
 				{
 					text:'Действие4',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'УстановитьОсновным',
+					text:'Основная',
 				},
 				{
 					text:'Действие7',
 				},
 				{
 					text:'Действие9',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Действие1',
@@ -293,11 +261,9 @@
 				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'',
 				},
 			]
 		},
@@ -314,6 +280,12 @@
 			style: 'position:absolute;left:100px;top:54px;width:388px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'По ОКАТО:',
+			style: 'position:absolute;left:322px;top:30px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МестоРожденияКодПоОКАТО',
@@ -322,9 +294,15 @@
 					]
 				},
 				{
-					title:'СтраницаПерсональные',
+					title:'Персональные данные',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРождения',
+			text: 'Дата рождения:',
+			style: 'position:absolute;left:6px;top:6px;width:92px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:124px;width:300px;height:69px;',
@@ -332,13 +310,16 @@
 			columns:
 			[
 				{
-					text:'СтепеньРодства',
+					text:'Степень родства',
+					width:'100',
 				},
 				{
 					text:'Родственник',
+					width:'100',
 				},
 				{
-					text:'ДатаРождения',
+					text:'Дата рождения',
+					width:'100',
 				},
 			]
 		},
@@ -349,22 +330,28 @@
 			columns:
 			[
 				{
-					text:'ВидОбразования',
+					text:'Вид образования',
+					width:'100',
 				},
 				{
-					text:'УчебноеЗаведение',
+					text:'Учебное заведение',
+					width:'120',
 				},
 				{
 					text:'Специальность',
+					width:'120',
 				},
 				{
-					text:'Диплом',
+					text:'Диплом, серия, номер',
+					width:'120',
 				},
 				{
-					text:'ГодОкончания',
+					text:'Год окончания',
+					width:'60',
 				},
 				{
 					text:'Квалификация',
+					width:'120',
 				},
 			]
 		},
@@ -376,11 +363,19 @@
 			[
 				{
 					text:'Язык',
+					width:'73',
 				},
 				{
-					text:'СтепеньЗнанияЯзыка',
+					text:'Степень знания языка',
+					width:'125',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСемейноеПоложение',
+			text: 'Семейное положение:',
+			style: 'position:absolute;left:6px;top:198px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -389,10 +384,22 @@
 			style: 'position:absolute;left:124px;top:198px;width:182px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВоинскийУчет',
+			text: 'Воинский учет:',
+			style: 'position:absolute;left:6px;top:30px;width:81px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВоинскийУчет',
 			style: 'position:absolute;left:89px;top:30px;width:495px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГражданство',
+			text: 'Гражданство:',
+			style: 'position:absolute;left:6px;top:6px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -408,14 +415,27 @@
 			[
 				{
 					text:'Профессия',
+					width:'220',
 				},
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Инвалидность',
 			style: 'position:absolute;left:89px;top:54px;width:495px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнвалидность',
+			text: 'Инвалидность:',
+			style: 'position:absolute;left:6px;top:54px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСвойства',
+			text: 'Свойства',
+			style: 'position:absolute;left:6px;top:6px;width:286px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -423,10 +443,15 @@
 			name: 'ЛьготаПриНачисленииПособий',
 			style: 'position:absolute;left:428px;top:78px;width:156px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Предоставляются льготы как подвергшимся воздействию радиации в связи с:',
+			style: 'position:absolute;left:6px;top:78px;width:422px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'УченыеСтепениЗвания',
+					title:'Ученые степени, звания',
 					items:
 					[
 		{
@@ -436,22 +461,28 @@
 			columns:
 			[
 				{
-					text:'УченаяСтепень',
+					text:'Ученая степень',
+					width:'100',
 				},
 				{
-					text:'ДатаПрисужденияУченойСтепени',
+					text:'Дата присуждения ученой степени',
+					width:'100',
 				},
 				{
-					text:'ОтрасльНауки',
+					text:'Отрасль науки',
+					width:'100',
 				},
 				{
-					text:'ДиссертационныйСовет',
+					text:'Диссертационный совет',
+					width:'100',
 				},
 				{
-					text:'ДипломСерияНомер',
+					text:'Диплом серия, номер',
+					width:'100',
 				},
 				{
-					text:'ДипломВыданОрганизация',
+					text:'Наименование организации, выдавшей диплом',
+					width:'100',
 				},
 			]
 		},
@@ -462,24 +493,40 @@
 			columns:
 			[
 				{
-					text:'УченоеЗвание',
+					text:'Ученое звание',
+					width:'100',
 				},
 				{
-					text:'ДатаПрисвоенияУченогоЗвания',
+					text:'Дата присвоения ученого звания',
+					width:'100',
 				},
 				{
-					text:'АттестатСерия',
+					text:'Аттестат серия',
+					width:'100',
 				},
 				{
-					text:'АттестатНомер',
+					text:'Аттестат номер',
+					width:'100',
 				},
 				{
-					text:'АттестатВыданОрганизация',
+					text:'Наименование организации, выдавшей диплом',
+					width:'100',
 				},
 				{
-					text:'НаучнаяСпециальность',
+					text:'Научная специальность',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Имеет научные труды',
+			style: 'position:absolute;left:6px;top:268px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Имеет изобретения',
+			style: 'position:absolute;left:6px;top:289px;width:142px;height:15px;',
 		},
 					]
 				},
@@ -487,6 +534,12 @@
 					title:'Награды',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПол',
+			text: 'Пол:',
+			style: 'position:absolute;left:182px;top:6px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:578px;height:24px;',
@@ -529,24 +582,34 @@
 			[
 				{
 					text:'Награда',
+					width:'100',
 				},
 				{
-					text:'НомерПриказа',
+					text:'Номер приказа',
+					width:'100',
 				},
 				{
-					text:'ДатаПриказа',
+					text:'Дата приказа',
+					width:'100',
 				},
 				{
-					text:'ЧейПриказ',
+					text:'Приказ',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаДополнительные',
+					title:'Дополнительно',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьУдостоверение',
+			text: 'Удостоверение:',
+			style: 'position:absolute;left:6px;top:54px;width:92px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:286px;height:311px;',
@@ -555,9 +618,11 @@
 			[
 				{
 					text:'Свойство',
+					width:'100',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 			]
 		},
@@ -570,10 +635,7 @@
 					text:'Действие1',
 				},
 				{
-					text:'Действия',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить новое свойство',
 				},
 			]
 		},
@@ -585,11 +647,19 @@
 			[
 				{
 					text:'Принадлежность',
+					width:'21',
 				},
 				{
 					text:'Категория',
+					width:'257',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКатегории',
+			text: 'Категории',
+			style: 'position:absolute;left:298px;top:6px;width:286px;height:17px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -597,10 +667,7 @@
 			items:
 			[
 				{
-					text:'Категории',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить новую категорию',
 				},
 				{
 					text:'Действие1',
@@ -620,19 +687,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Содержание',
+					width:'120',
 				},
 				{
-					text:'ВидЗаметки',
+					text:'Вид заметки',
+					width:'120',
 				},
 				{
 					text:'Автор',
+					width:'120',
 				},
 			]
 		},
@@ -644,7 +716,7 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:6px;top:250px;width:578px;height:85px;',
@@ -654,6 +726,12 @@
 			hideLabel: true,
 			name: 'ГруппаДоступа',
 			style: 'position:absolute;left:97px;top:6px;width:487px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГруппаДоступа',
+			text: 'Группа доступа:',
+			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;',
 		},
 					]
 				},
@@ -678,6 +756,12 @@
 			style: 'position:absolute;left:486px;top:57px;width:114px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:486px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
@@ -694,6 +778,12 @@
 			hideLabel: true,
 			name: 'Отчество',
 			style: 'position:absolute;left:362px;top:57px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа физ. лиц:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.АдминистрированиеПользователей.СхемаСистемыПравИНастроекПользователей',
 	{
 	extend: 'Ext.window.Window',
-	height: 389,width: 844,
+	style: 'position:absolute;width:844px;height:389px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Схема системы прав и настроек пользователей',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

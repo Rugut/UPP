@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаОтчета2005кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 447,width: 670,
+	style: 'position:absolute;width:670px;height:447px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Заявление о ввозе товаров и уплате косвенных налогов',
 	
 	items:
@@ -15,29 +17,21 @@
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 			]
 		},
@@ -46,26 +40,17 @@
 			style: 'position:absolute;left:0px;top:422px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'ПодменюПечати',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 			]
 		},
@@ -126,6 +111,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:48px;',
 			height: 48,width: 654,
@@ -148,6 +139,11 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -167,6 +163,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

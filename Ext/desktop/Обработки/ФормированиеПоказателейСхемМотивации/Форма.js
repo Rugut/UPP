@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеПоказателейСхемМотивации.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 402,
+	style: 'position:absolute;width:402px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Формирование показателей',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Сохранить',
+					text:'Сохранить значения',
 				},
 				{
-					text:'Востановить',
+					text:'Восстановить значения',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -32,15 +32,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Сформировать показатели',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -48,10 +52,10 @@
 			items:
 			[
 				{
-					text:'СнятьФлажки1',
+					text:'Снять флажки',
 				},
 				{
-					text:'УстановитьФлажки1',
+					text:'Установить флажки',
 				},
 			]
 		},
@@ -62,10 +66,12 @@
 			columns:
 			[
 				{
-					text:'ИспользованиеПоказателя',
+					text:'Использование показателя',
+					width:'25',
 				},
 				{
-					text:'ПредставлениеПоказателя',
+					text:'Представление показателя',
+					width:'175',
 				},
 			]
 		},
@@ -74,6 +80,11 @@
 			hideLabel: true,
 			name: 'МесяцСтрока',
 			style: 'position:absolute;left:91px;top:33px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Менеджер:',
+			style: 'position:absolute;left:8px;top:74px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

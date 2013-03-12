@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыСчетчиковДляЗначенийРазрядов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 602,
+	style: 'position:absolute;width:602px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Виды счетчиков для значений разрядов',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'253',
 				},
 				{
-					text:'РазмерСчетчика',
+					text:'Размер счетчика',
+					width:'92',
 				},
 				{
-					text:'НачальноеЗначение',
+					text:'Начальное значение',
+					width:'110',
 				},
 				{
-					text:'КонечноеЗначение',
+					text:'Конечное значение',
+					width:'110',
 				},
 			]
 		},
@@ -39,11 +47,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

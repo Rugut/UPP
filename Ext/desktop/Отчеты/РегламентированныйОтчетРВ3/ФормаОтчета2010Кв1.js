@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетРВ3.ФормаОтчета2010Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 670,
+	style: 'position:absolute;width:670px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'РВ-3 ПФР',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
 				{
 					text:'Поиск',
@@ -21,71 +23,42 @@
 				{
 					text:'Справка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Выгрузить',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Расшифровать',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Очистить',
 				},
-				{
-					text:'ВыбратьВариантОчисткиОтчета',
-				},
-				{
-					text:'РазделительЗаполнить',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 			]
 		},
@@ -94,23 +67,14 @@
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
@@ -127,7 +91,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел12',
+					title:'Раздел 1, Раздел 2',
 					items:
 					[
 		{
@@ -159,7 +123,7 @@
 					]
 				},
 				{
-					title:'Раздел30',
+					title:'Раздел 3',
 					items:
 					[
 		{
@@ -193,6 +157,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:47px;',
 			height: 47,width: 654,
@@ -215,10 +185,20 @@
 			style: 'position:absolute;left:82px;top:23px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:169px;top:23px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:564px;top:23px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Внешние данные',
+			style: 'position:absolute;left:263px;top:0px;width:105px;height:19px;',
 		},
 					]
 				},
@@ -234,6 +214,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:7px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

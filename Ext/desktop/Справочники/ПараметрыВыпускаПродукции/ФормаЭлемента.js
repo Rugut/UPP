@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 281,width: 500,
+	style: 'position:absolute;width:500px;height:281px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры выпуска продукции',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:386px;top:57px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:428px;top:57px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:110px;top:57px;width:274px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьГруппа',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:110px;top:33px;width:382px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:229px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,13 +71,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидПараметра',
+					text:'Вид параметра',
+					width:'223',
 				},
 				{
-					text:'Значение',
+					text:'Значение по умолчанию',
+					width:'130',
 				},
 			]
 		},
@@ -68,19 +97,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
 		},

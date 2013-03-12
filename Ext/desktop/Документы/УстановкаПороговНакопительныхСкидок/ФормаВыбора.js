@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаПороговНакопительныхСкидок.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка порогов накопительных скидок',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'140',
 				},
 				{
 					text:'Номер',
+					width:'77',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -33,22 +39,15 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Выбрать',
 				},
 				{
-					text:'Подменю2',
+					text:'Перейти',
 				},
+				'-',
+				'-',
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},

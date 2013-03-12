@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 739,
+	style: 'position:absolute;width:739px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отмена скидок номенклатуры',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:37px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:51px;top:33px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'От:',
+			style: 'position:absolute;left:183px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -33,31 +47,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'50',
 				},
 				{
-					text:'УстановкаСкидокНоменклатуры',
+					text:'Установка скидок номенклатуры',
+					width:'306',
 				},
 				{
-					text:'ВидОперации',
+					text:'Вид операции',
+					width:'124',
 				},
 				{
-					text:'ВидСкидки',
+					text:'Вид скидки',
+					width:'87',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'93',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'94',
 				},
 				{
 					text:'Условие',
+					width:'192',
 				},
 				{
-					text:'ЗначениеУсловия',
+					text:'Значение условия',
+					width:'100',
 				},
 				{
-					text:'ТипСкидкиНаценки',
+					text:'Тип скидки',
+					width:'138',
 				},
 			]
 		},
@@ -66,17 +89,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:739px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -85,34 +103,40 @@
 			style: 'position:absolute;left:0px;top:296px;width:739px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:7px;top:244px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:95px;top:244px;width:636px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:269px;width:73px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

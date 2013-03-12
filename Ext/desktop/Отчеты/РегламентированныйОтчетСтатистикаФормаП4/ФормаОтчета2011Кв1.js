@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП4.ФормаОтчета2011Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 395,width: 716,
+	style: 'position:absolute;width:716px;height:395px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Форма П-4',
 	
 	items:
@@ -12,44 +14,31 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Проверить выгрузку',
+				},
+				'-',
+				{
+					text:'Обновить',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Действие',
+					text:'Действие2',
 				},
 				{
 					text:'Выгрузить',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие',
-				},
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Очистить',
-				},
-				{
-					text:'Выгрузка',
 				},
 			]
 		},
@@ -62,24 +51,21 @@
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'ОК',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -117,6 +103,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

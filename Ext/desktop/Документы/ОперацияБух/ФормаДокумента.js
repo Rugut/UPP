@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ОперацияБух.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 634,
+	style: 'position:absolute;width:634px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Сумма операции:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,22 @@
 			style: 'position:absolute;left:98px;top:81px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:398px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:398px;width:528px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -48,26 +86,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:634px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 			]
 		},
@@ -77,25 +108,19 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -106,7 +131,7 @@
 			items:
 			[
 				{
-					title:'ПроводкиБУ',
+					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -115,19 +140,17 @@
 			items:
 			[
 				{
-					text:'ВывестиСписок',
+					text:'Вывести список',
+				},
+				'-',
+				{
+					text:'Переключить активность',
 				},
 				{
-					text:'Разделитель2',
+					text:'Установить отбор и сортировку списка',
 				},
 				{
-					text:'ПереключитьАктивность',
-				},
-				{
-					text:'УстановитьОтборИСортировкуСписка___',
-				},
-				{
-					text:'ЗаполнитьНУ',
+					text:'Заполнить',
 				},
 			]
 		},
@@ -138,68 +161,87 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'28',
 				},
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'СчетДт',
+					text:'Счет Дт',
+					width:'80',
 				},
 				{
-					text:'СубконтоДт1',
+					text:'Субконто Дт',
+					width:'100',
 				},
 				{
-					text:'СубконтоДт2',
+					text:'',
+					width:'100',
 				},
 				{
-					text:'СубконтоДт3',
+					text:'',
+					width:'100',
 				},
 				{
-					text:'КоличествоДт',
+					text:'Количество Дт',
+					width:'80',
 				},
 				{
-					text:'ВалютаДт',
+					text:'Валюта Дт',
+					width:'80',
 				},
 				{
-					text:'ВалютнаяСуммаДт',
+					text:'Вал. сумма Дт',
+					width:'80',
 				},
 				{
-					text:'СчетКт',
+					text:'Счет Кт',
+					width:'80',
 				},
 				{
-					text:'СубконтоКт1',
+					text:'Субконто Кт',
+					width:'100',
 				},
 				{
-					text:'СубконтоКт2',
+					text:'',
+					width:'100',
 				},
 				{
-					text:'СубконтоКт3',
+					text:'',
+					width:'100',
 				},
 				{
-					text:'КоличествоКт',
+					text:'Количество Кт',
+					width:'80',
 				},
 				{
-					text:'ВалютаКт',
+					text:'Валюта Кт',
+					width:'80',
 				},
 				{
-					text:'ВалютнаяСуммаКт',
+					text:'Вал. сумма Кт',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
 					text:'Содержание',
+					width:'80',
 				},
 				{
-					text:'НомерЖурнала',
+					text:'№ журнала',
+					width:'80',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПроводкиНУ',
+					title:'Налоговый учет',
 					items:
 					[
 		{
@@ -208,13 +250,13 @@
 			items:
 			[
 				{
-					text:'ПереключитьАктивность',
+					text:'Переключить активность',
 				},
 				{
-					text:'УстановитьОтборИСортировкуСписка___',
+					text:'Установить отбор и сортировку списка',
 				},
 				{
-					text:'ВывестиСписок',
+					text:'Вывести список',
 				},
 			]
 		},
@@ -225,61 +267,84 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'28',
 				},
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'СчетДт',
+					text:'Счет Дт',
+					width:'88',
 				},
 				{
-					text:'КоличествоДт',
+					text:'Количество Дт',
+					width:'88',
 				},
 				{
-					text:'ВидУчетаДт',
+					text:'Вид учета Дт',
+					width:'88',
 				},
 				{
-					text:'СубконтоДт1',
+					text:'Субконто Дт',
+					width:'136',
 				},
 				{
-					text:'СубконтоДт2',
+					text:'',
+					width:'136',
 				},
 				{
-					text:'СубконтоДт3',
+					text:'',
+					width:'136',
 				},
 				{
-					text:'СчетКт',
+					text:'Счет Кт',
+					width:'95',
 				},
 				{
-					text:'КоличествоКт',
+					text:'Количество Кт',
+					width:'95',
 				},
 				{
-					text:'ВидУчетаКт',
+					text:'Вид учета Кт',
+					width:'95',
 				},
 				{
-					text:'СубконтоКт1',
+					text:'Субконто Кт',
+					width:'142',
 				},
 				{
-					text:'СубконтоКт2',
+					text:'',
+					width:'142',
 				},
 				{
-					text:'СубконтоКт3',
+					text:'',
+					width:'142',
 				},
 				{
 					text:'Сумма',
+					width:'124',
 				},
 				{
 					text:'Содержание',
+					width:'124',
 				},
 				{
-					text:'НомерЖурнала',
+					text:'№ журнала',
+					width:'124',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Содержание:',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

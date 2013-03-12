@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ПечатьРегламентированныхОтчетов',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 740,
+	style: 'position:absolute;width:740px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Предварительный просмотр',
 	
 	items:
@@ -15,30 +17,19 @@
 				{
 					text:'Закрыть',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Сохранить',
+					text:'В формате Microsoft Excel (XLS)',
 				},
 				{
-					text:'Разделитель2',
+					text:'В формате табличных документов (MXL)',
 				},
 				{
-					text:'Разделитель4',
+					text:'',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ВФорматеMicrosoftExcel',
-				},
-				{
-					text:'ВВидеТабличныхДокументов',
-				},
-				{
-					text:'АктивизироватьРодительскийОтчет',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
@@ -54,21 +45,51 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Наименование',
+					width:'159',
 				},
 				{
-					text:'ТабличныйДокумент',
+					text:'Табличный документ',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ТекстСтатистики',
+			text: '',
+			style: 'position:absolute;left:11px;top:430px;width:417px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоКопий',
 			style: 'position:absolute;left:117px;top:319px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоКопий',
+			text: 'Количество копий:',
+			style: 'position:absolute;left:14px;top:320px;width:100px;height:18px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'разобрать по копиям',
+			style: 'position:absolute;left:14px;top:340px;width:131px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'отображать сетку',
+			style: 'position:absolute;left:14px;top:381px;width:111px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'отображать заголовки',
+			style: 'position:absolute;left:14px;top:401px;width:135px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -78,26 +99,22 @@
 				{
 					text:'Свернуть',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Переместить вниз',
 				},
+				'-',
 				{
-					text:'ПереместитьВниз',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'УстановитьПометки',
+					text:'Установить пометки',
 				},
 				{
 					text:'Раскрыть',
 				},
 				{
-					text:'ПереместитьВверх',
+					text:'Переместить вверх',
 				},
 				{
-					text:'РаспометитьВсе',
+					text:'Снять пометки',
 				},
 			]
 		},

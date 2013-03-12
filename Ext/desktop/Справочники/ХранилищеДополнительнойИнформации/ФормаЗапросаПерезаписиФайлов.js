@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаЗапросаПерезаписиФайлов',
 	{
 	extend: 'Ext.window.Window',
-	height: 95,width: 508,
+	style: 'position:absolute;width:508px;height:95px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сохранение файла',
 	
 	items:
@@ -36,6 +38,12 @@
 			name: 'КнопкаОтмена',
 			text: 'Отмена',
 			style: 'position:absolute;left:408px;top:68px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждения',
+			text: '',
+			style: 'position:absolute;left:8px;top:8px;width:492px;height:56px;',
 		},
 	]
 });

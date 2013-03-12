@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетПоПроводкамХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 324,width: 460,
+	style: 'position:absolute;width:460px;height:324px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Отчет по проводкам',
 	
 	items:
@@ -12,12 +14,8 @@
 			style: 'position:absolute;left:0px;top:299px;width:460px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -25,7 +23,7 @@
 					text:'Справка',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -52,10 +50,28 @@
 			style: 'position:absolute;left:204px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:184px;top:6px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:288px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:32px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,13 +86,16 @@
 			columns:
 			[
 				{
-					text:'СчетДт',
+					text:'Дебет',
+					width:'45',
 				},
 				{
-					text:'СчетКт',
+					text:'Кредит',
+					width:'47',
 				},
 				{
 					text:'Субконто',
+					width:'240',
 				},
 			]
 		},
@@ -85,9 +104,7 @@
 			style: 'position:absolute;left:6px;top:90px;width:126px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -106,22 +123,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -131,13 +154,13 @@
 			items:
 			[
 				{
-					text:'ВыключитьВсе',
+					text:'Выключить все',
 				},
 				{
 					text:'Действие1',
 				},
 				{
-					text:'ВключитьВсе',
+					text:'Включить все',
 				},
 				{
 					text:'Действие',
@@ -157,16 +180,52 @@
 			style: 'position:absolute;left:116px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Валюта:',
+			style: 'position:absolute;left:6px;top:6px;width:106px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерЖурнала',
 			style: 'position:absolute;left:116px;top:32px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номер журнала:',
+			style: 'position:absolute;left:6px;top:32px;width:106px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подстрока',
 			style: 'position:absolute;left:72px;top:125px;width:364px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'В субконто',
+			style: 'position:absolute;left:72px;top:172px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'В содержании',
+			style: 'position:absolute;left:72px;top:149px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Без учета регистра',
+			style: 'position:absolute;left:228px;top:149px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Подстрока:',
+			style: 'position:absolute;left:6px;top:125px;width:62px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документ:',
+			style: 'position:absolute;left:6px;top:59px;width:106px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

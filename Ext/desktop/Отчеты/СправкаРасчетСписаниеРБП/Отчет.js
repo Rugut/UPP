@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СправкаРасчетСписаниеРБП.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 604,
+	style: 'position:absolute;width:604px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Списание расходов будущих периодов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:176px;top:33px;width:72px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,9 +27,6 @@
 			items:
 			[
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие1',
 				},
 				{
@@ -33,27 +38,15 @@
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Подписи',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заголовок',
 				},
@@ -70,6 +63,12 @@
 					text:'Сформировать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

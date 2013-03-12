@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТСДФорматыДанных.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 495,
+	style: 'position:absolute;width:495px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Форматы выгрузки для терминалов сбора данных',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 			]
 		},
@@ -30,11 +35,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПоступлениеНМАМеждународный.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 444,
+	style: 'position:absolute;width:444px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поступление НМА (международный)',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 			]
 		},
@@ -33,16 +39,11 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

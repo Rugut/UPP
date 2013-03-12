@@ -1,12 +1,20 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Документ_НеформализованныйДокументНалогоплательщика_ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 476,width: 591,
+	style: 'position:absolute;width:591px;height:476px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:95px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,89 +27,60 @@
 			items:
 			[
 				{
-					text:'Отправка',
-				},
-				{
 					text:'Действие2',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'ВКонвертИПодписать',
+					text:'Подготовить к отправке и подписать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 				{
-					text:'ЦиклыОбмена',
+					text:'Показать циклы обмена, связанные с документом',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
+				'-',
 				{
-					text:'Подменю',
+					text:'Подготовить к отправке',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ВКонверт',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -112,22 +91,24 @@
 			style: 'position:absolute;left:0px;top:451px;width:591px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -142,6 +123,18 @@
 			style: 'position:absolute;left:251px;top:33px;width:119px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:220px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Тип:',
+			style: 'position:absolute;left:8px;top:134px;width:95px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:575px;height:291px;',
 			height: 291,width: 575,
@@ -152,10 +145,22 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'ИмяДокумента',
+			text: '',
+			style: 'position:absolute;left:97px;top:7px;width:430px;height:18px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Содержимое',
 			style: 'position:absolute;left:0px;top:28px;width:575px;height:263px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТема',
+			text: 'Тема (имя файла):',
+			style: 'position:absolute;left:0px;top:7px;width:95px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,10 +174,10 @@
 			items:
 			[
 				{
-					text:'Загрузить',
+					text:'Загрузить текст',
 				},
 				{
-					text:'Выгрузить',
+					text:'Выгрузить текст',
 				},
 			]
 		},
@@ -195,9 +200,21 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Документ:',
+			style: 'position:absolute;left:0px;top:7px;width:95px;height:15px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйОрган',
+			text: 'Получатель:',
+			style: 'position:absolute;left:8px;top:81px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

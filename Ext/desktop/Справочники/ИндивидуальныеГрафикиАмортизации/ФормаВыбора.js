@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ИндивидуальныеГрафикиАмортизации.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 464,
+	style: 'position:absolute;width:464px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Индивидуальные графики амортизации',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'Комментарий',
+					text:'Прочие сведения',
+					width:'120',
 				},
 			]
 		},
@@ -32,11 +38,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:464px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

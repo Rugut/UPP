@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЗаявкиКандидатов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 649,
+	style: 'position:absolute;width:649px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Кандидаты',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Важность',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Состояние',
+					width:'100',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'100',
 				},
 				{
 					text:'Организация',
+					width:'350',
 				},
 			]
 		},
@@ -43,13 +52,15 @@
 			style: 'position:absolute;left:341px;top:33px;width:300px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:248px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:649px;height:24px;',
 			items:
 			[
-				{
-					text:'Подменю1',
-				},
 				{
 					text:'Действие4',
 				},
@@ -57,22 +68,16 @@
 					text:'Действие7',
 				},
 				{
-					text:'Перейти',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие5',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие8',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Действие2',
@@ -81,40 +86,27 @@
 					text:'Действие5',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие9',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Действие формы выбрать',
 				},
+				'-',
 				{
-					text:'ДействиеФормыВыбрать',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие10',
@@ -131,24 +123,14 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -157,9 +139,6 @@
 				},
 				{
 					text:'Действие4',
-				},
-				{
-					text:'Подменю1',
 				},
 			]
 		},

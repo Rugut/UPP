@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НалоговыеОрганы.ФормаЗагрузкиКлассификатора',
 	{
 	extend: 'Ext.window.Window',
-	height: 164,width: 602,
+	style: 'position:absolute;width:602px;height:164px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Импорт классификатора СОУН',
 	
 	items:
@@ -21,19 +23,50 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКаталог',
+			text: 'Каталог:',
+			style: 'position:absolute;left:8px;top:12px;width:56px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Каталог',
 			style: 'position:absolute;left:66px;top:10px;width:528px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'не обновлять комментарий',
+			style: 'position:absolute;left:66px;top:111px;width:160px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер версии:',
+			style: 'position:absolute;left:66px;top:38px;width:83px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Дата версии:',
+			style: 'position:absolute;left:66px;top:59px;width:83px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерВерсии',
+			text: '',
+			style: 'position:absolute;left:154px;top:38px;width:83px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаВерсии',
+			text: '',
+			style: 'position:absolute;left:154px;top:59px;width:83px;height:15px;',
 		},
 	]
 });

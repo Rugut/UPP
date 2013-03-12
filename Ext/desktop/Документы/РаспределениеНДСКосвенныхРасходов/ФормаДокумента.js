@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РаспределениеНДСКосвенныхРасходов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 470,width: 715,
+	style: 'position:absolute;width:715px;height:470px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,36 +14,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:715px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Дт/кт',
 				},
 				{
-					text:'Подменю2',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Заполнить документ',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ЗаполнитьДокумент',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -49,28 +39,28 @@
 			style: 'position:absolute;left:0px;top:445px;width:715px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:418px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,10 +69,22 @@
 			style: 'position:absolute;left:94px;top:418px;width:613px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,10 +93,22 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -103,13 +117,19 @@
 			style: 'position:absolute;left:426px;top:56px;width:281px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НалоговыйПериод',
+			text: 'Налоговый период',
+			style: 'position:absolute;left:336px;top:33px;width:261px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:85px;width:699px;height:328px;',
 			height: 328,width: 699,
 			items:
 			[
 				{
-					title:'Реализация',
+					title:'Выручка от реализации',
 					items:
 					[
 		{
@@ -137,6 +157,12 @@
 			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ТекстВыручкаЕНВД',
+			text: 'Сумма реализации с ЕНВД:',
+			style: 'position:absolute;left:6px;top:82px;width:156px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВыручкаЕНВД',
@@ -145,7 +171,7 @@
 					]
 				},
 				{
-					title:'КосвенныеРасходы',
+					title:'Косвенные расходы',
 					items:
 					[
 		{
@@ -159,12 +185,7 @@
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -174,60 +195,84 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
 					text:'Поставщик',
+					width:'120',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'56',
 				},
 				{
-					text:'БазисРаспределенияВключаетЕНВД',
+					text:'Распр. с учетом выручки по ЕНВД',
+					width:'98',
 				},
 				{
-					text:'НДСВключенВСтоимость',
+					text:'НДС включен в стоимость',
+					width:'85',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'80',
 				},
 				{
-					text:'СуммаВсего',
+					text:'Сумма по счету',
+					width:'120',
 				},
 				{
-					text:'НДСВсего',
+					text:'НДС по счету',
+					width:'120',
 				},
 				{
-					text:'НДССумма',
+					text:'Сумма (НДС)',
+					width:'120',
 				},
 				{
-					text:'НДС18',
+					text:'НДС (НДС)',
+					width:'120',
 				},
 				{
-					text:'БезНДССумма',
+					text:'Сумма (Без НДС)',
+					width:'120',
 				},
 				{
-					text:'БезНДС',
+					text:'НДС (Без НДС)',
+					width:'120',
 				},
 				{
-					text:'ЕНВДСумма',
+					text:'Сумма (ЕНВД)',
+					width:'120',
 				},
 				{
-					text:'ЕНВДНДС',
+					text:'НДС (ЕНВД)',
+					width:'120',
 				},
 				{
-					text:'СуммаБезНДС0',
+					text:'0% (Сумма)',
+					width:'120',
 				},
 				{
-					text:'НДС0',
+					text:'0% (НДС)',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ТекстВыручкаНДС',
+			text: 'Сумма реализации с НДС:',
+			style: 'position:absolute;left:6px;top:33px;width:156px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -236,105 +281,157 @@
 			columns:
 			[
 				{
-					text:'ОтражатьВНалоговомУчете',
+					text:'НУ',
+					width:'20',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'100',
 				},
 				{
-					text:'ХарактерЗатрат',
+					text:'Хар-р затрат',
+					width:'100',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'120',
 				},
 				{
-					text:'СчетЗатратНУ',
+					text:'Счет затрат (НУ)',
+					width:'120',
 				},
 				{
-					text:'СчетЗатратЕНВД',
+					text:'Счет затрат ЕНВД',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ВидАналитики',
+					text:'Вид аналитики',
+					width:'100',
 				},
 				{
-					text:'ВидАналитикиДоп',
+					text:'Вид аналитики (доп)',
+					width:'100',
 				},
 				{
-					text:'ВидСубконто1',
+					text:'Вид субконто 1',
+					width:'100',
 				},
 				{
-					text:'ВидСубконто2',
+					text:'Вид субконто 2',
+					width:'100',
 				},
 				{
-					text:'ВидСубконто3',
+					text:'Вид субконто 3',
+					width:'100',
 				},
 				{
-					text:'ВидСубконтоНУ1',
+					text:'Вид субконто 1 (НУ)',
+					width:'100',
 				},
 				{
-					text:'ВидСубконтоНУ2',
+					text:'Вид субконто 2 (НУ)',
+					width:'100',
 				},
 				{
-					text:'ВидСубконтоНУ3',
+					text:'Вид субконто 3 (НУ)',
+					width:'100',
 				},
 				{
 					text:'Аналитика',
+					width:'100',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'100',
 				},
 				{
 					text:'Субконто1',
+					width:'120',
 				},
 				{
 					text:'Субконто2',
+					width:'120',
 				},
 				{
 					text:'Субконто3',
+					width:'120',
 				},
 				{
-					text:'СубконтоНУ1',
+					text:'Субконто1 (НУ)',
+					width:'120',
 				},
 				{
-					text:'СубконтоНУ2',
+					text:'Субконто2 (НУ)',
+					width:'120',
 				},
 				{
-					text:'СубконтоНУ3',
+					text:'Субконто3 (НУ)',
+					width:'120',
 				},
 				{
-					text:'СуммаБезНДС',
+					text:'Сумма',
+					width:'120',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
 					text:'Затрата',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаЗатраты',
+					text:'Характеристика затраты',
+					width:'100',
 				},
 				{
-					text:'СерияЗатраты',
+					text:'Серия затраты',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СчетаСписанияНДС',
+					title:'Счета списания НДС',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'ТекстВыручкаБезНДС',
+			text: 'Сумма реализации без НДС:',
+			style: 'position:absolute;left:6px;top:58px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Для списания НДС использовать счет и аналитику затрат',
+			style: 'position:absolute;left:6px;top:6px;width:320px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяЗатратСписанияНДС',
+			text: 'Статья затрат:',
+			style: 'position:absolute;left:6px;top:80px;width:92px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяЗатратСписанияНДС',
 			style: 'position:absolute;left:98px;top:80px;width:241px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатурнаяГруппа',
+			text: 'Ном. группа:',
+			style: 'position:absolute;left:6px;top:104px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -353,10 +450,34 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДС',
+			text: 'Счет:',
+			style: 'position:absolute;left:0px;top:0px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетСписанияНДС',
 			style: 'position:absolute;left:92px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:0px;top:24px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:0px;top:48px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:0px;top:72px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -376,6 +497,12 @@
 			name: 'СубконтоСписанияНДС3',
 			style: 'position:absolute;left:92px;top:72px;width:240px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДСНеТребуется',
+			text: 'В соответствии с настройкой учетной политики по налоговому учету указание счета списания НДС в бухгалтерском учете не требуется - НДС включается в стоимость, а не списывается на затраты',
+			style: 'position:absolute;left:0px;top:0px;width:304px;height:54px;',
+		},
 					]
 				},
 				{
@@ -394,10 +521,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСчетДтНУ',
+			text: 'Счет (НУ):',
+			style: 'position:absolute;left:0px;top:0px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетСписанияНДСНУ',
 			style: 'position:absolute;left:92px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ1',
+			text: 'Субконто 1 (НУ):',
+			style: 'position:absolute;left:0px;top:24px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -406,10 +545,22 @@
 			style: 'position:absolute;left:92px;top:24px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ2',
+			text: 'Субконто 2 (НУ):',
+			style: 'position:absolute;left:0px;top:48px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоСписанияНДСНУ2',
 			style: 'position:absolute;left:92px;top:48px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ3',
+			text: 'Субконто 3 (НУ):',
+			style: 'position:absolute;left:0px;top:72px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -417,12 +568,24 @@
 			name: 'СубконтоСписанияНДСНУ3',
 			style: 'position:absolute;left:92px;top:72px;width:240px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДСНУНеТребуется',
+			text: 'Указание счета списания НДС в налоговом учете не требуется - НДС включается в стоимость, а не списывается на затраты',
+			style: 'position:absolute;left:0px;top:0px;width:304px;height:51px;',
+		},
 					]
 				},
 				{
 					title:'Надпись',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:6px;top:51px;width:92px;height:27px;',
 		},
 		{
 			xtype: 'textfield',

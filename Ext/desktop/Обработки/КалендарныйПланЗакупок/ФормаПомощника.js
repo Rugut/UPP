@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КалендарныйПланЗакупок.ФормаПомощника',
 	{
 	extend: 'Ext.window.Window',
-	height: 430,width: 780,
+	style: 'position:absolute;width:780px;height:430px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Помощник заполнения календарного плана закупок',
 	
 	items:
@@ -12,26 +14,20 @@
 			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Отмена',
 				},
 				{
-					text:'Назад',
+					text:'<< Назад',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Готово',
 				},
 				{
-					text:'Далее',
+					text:'Далее >>',
 				},
 			]
 		},
@@ -52,19 +48,24 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'КоличествоЗаказать',
+					text:'Заказать',
+					width:'120',
 				},
 				{
-					text:'КоличествоПлана',
+					text:'Потребность',
+					width:'120',
 				},
 				{
-					text:'КоличествоЗаказа',
+					text:'Заказано',
+					width:'120',
 				},
 			]
 		},
@@ -77,11 +78,9 @@
 					text:'Действие6',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
@@ -92,7 +91,7 @@
 					text:'Действие5',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 			]
 		},
@@ -109,16 +108,20 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ПредставлениеФильтра',
+					text:'Имя',
+					width:'191',
 				},
 				{
-					text:'ВидСравненияФильтра',
+					text:'Вид сравнения',
+					width:'150',
 				},
 				{
-					text:'ЗначениеФильтра',
+					text:'Значение',
+					width:'180',
 				},
 			]
 		},
@@ -128,6 +131,21 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подбирать только основных поставщиков',
+			style: 'position:absolute;left:17px;top:21px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Надежность поставщика:',
+			style: 'position:absolute;left:17px;top:45px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Срок поставщика для выполнения заказа:',
+			style: 'position:absolute;left:17px;top:69px;width:236px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -185,20 +203,18 @@
 			items:
 			[
 				{
-					text:'ОткрытьДоговор',
+					text:'Открыть договор',
 				},
 				{
-					text:'ОткрытьУсловияПоставки',
+					text:'Открыть условия поставки',
 				},
 				{
-					text:'ИсторияПокупок',
+					text:'История покупок',
 				},
 				{
-					text:'АнализУсловийПоставки',
+					text:'Анализ условий поставки',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]

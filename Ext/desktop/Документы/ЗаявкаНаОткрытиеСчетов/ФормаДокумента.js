@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ЗаявкаНаОткрытиеСчетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 647,
+	style: 'position:absolute;width:647px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Заявка на открытие счетов',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:86px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:168px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:186px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:86px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:325px;top:57px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,22 @@
 			style: 'position:absolute;left:419px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьБанковскийСчет',
+			text: 'Зарплатный счет:',
+			style: 'position:absolute;left:325px;top:103px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'БанковскийСчет',
 			style: 'position:absolute;left:419px;top:103px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерДоговора',
+			text: '№ договора:',
+			style: 'position:absolute;left:14px;top:129px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,10 +82,22 @@
 			style: 'position:absolute;left:86px;top:129px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:398px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:86px;top:398px;width:553px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодВида',
+			text: 'Код вида:',
+			style: 'position:absolute;left:14px;top:202px;width:64px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -58,7 +108,7 @@
 					text:'Действие3',
 				},
 				{
-					text:'ПоказыватьВсеПоля',
+					text:'Показывать все поля',
 				},
 				{
 					text:'Действие2',
@@ -75,12 +125,8 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -93,9 +139,7 @@
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -105,115 +149,152 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'207',
 				},
 				{
-					text:'НомерЛицевогоСчета',
+					text:'Номер лицевого счета',
+					width:'180',
 				},
 				{
-					text:'ЭмбоссированныйТекст',
+					text:'Эмбоссированный текст',
+					width:'100',
 				},
 				{
-					text:'ЭмбоссированныйТекст1',
+					text:'Имя (лат.)',
+					width:'120',
 				},
 				{
-					text:'ЭмбоссированныйТекст2',
+					text:'Фамилия (лат.)',
+					width:'120',
 				},
 				{
-					text:'ЭмбоссированныйТекст3',
+					text:'Титул (лат.)',
+					width:'120',
 				},
 				{
 					text:'Резидент',
+					width:'100',
 				},
 				{
 					text:'Гражданство',
+					width:'100',
 				},
 				{
-					text:'МиграционнаяКарта',
+					text:'Миграционная карта',
+					width:'100',
 				},
 				{
-					text:'НомерМиграционнойКарты',
+					text:'Номер',
+					width:'100',
 				},
 				{
-					text:'ДатаНачалаПребыванияМиграционнойКарты',
+					text:'Дата начала пребывания',
+					width:'100',
 				},
 				{
-					text:'ДатаОкончанияПребыванияМиграционнойКарты',
+					text:'Дата окончания пребывания',
+					width:'100',
 				},
 				{
-					text:'МиграционныйДокумент',
+					text:'Миграционный документ',
+					width:'100',
 				},
 				{
-					text:'КодМиграционногоДокумента',
+					text:'Код',
+					width:'100',
 				},
 				{
-					text:'НомерМиграционногоДокумента',
+					text:'Номер',
+					width:'100',
 				},
 				{
-					text:'ДатаНачалаПребыванияМиграционногоДокумента',
+					text:'Дата начала пребывания',
+					width:'100',
 				},
 				{
-					text:'ДатаОкончанияПребыванияМиграционногоДокумента',
+					text:'Дата окончания пребывания',
+					width:'100',
 				},
 				{
-					text:'КонтрольнаяИнформация',
+					text:'Контрольная информация',
+					width:'141',
 				},
 				{
 					text:'Должность',
+					width:'100',
 				},
 				{
-					text:'РабочийТелефон',
+					text:'Рабочий телефон',
+					width:'100',
 				},
 				{
-					text:'ДомашнийТелефон',
+					text:'Домашний телефон',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
-					text:'ПрогнозируемыйМесячныйДоход',
+					text:'Прогнозируемый месячный доход',
+					width:'100',
 				},
 				{
-					text:'ПризнакЗарплатный',
+					text:'Признак зарплатный',
+					width:'100',
 				},
 				{
-					text:'КатегорияНаселения',
+					text:'Категория населения',
+					width:'100',
 				},
 				{
-					text:'БонусУчастника',
+					text:'Бонус участника',
+					width:'100',
 				},
 				{
-					text:'ТарифСледующийГод',
+					text:'Тариф следующий год',
+					width:'100',
 				},
 				{
-					text:'ТарифТекущийГод',
+					text:'Тариф текущий год',
+					width:'100',
 				},
 				{
-					text:'БонусПрограмма',
+					text:'Бонус программа',
+					width:'100',
 				},
 				{
-					text:'ПризнакРассылки',
+					text:'Признак рассылки',
+					width:'100',
 				},
 				{
-					text:'ИнтернетАдрес',
+					text:'Интернет адрес',
+					width:'100',
 				},
 				{
-					text:'СчетДебета',
+					text:'Счет дебета',
+					width:'100',
 				},
 				{
-					text:'МобильныйТелефон',
+					text:'Мобильный телефон',
+					width:'100',
 				},
 				{
-					text:'ОператорСвязи',
+					text:'Оператор связи',
+					width:'100',
 				},
 				{
-					text:'МобильныйБанк',
+					text:'Мобильный банк',
+					width:'100',
 				},
 				{
-					text:'ПередачаБКИ',
+					text:'Передача БКИ',
+					width:'100',
 				},
 			]
 		},
@@ -223,37 +304,21 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
+				'-',
 				{
-					text:'Подменю1',
+					text:'Редактировать номер',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ЛицевыеСчетаРаботниковОрганизации',
-				},
-				{
-					text:'Подменю2',
+					text:'Лицевые счета сотрудников организации',
 				},
 			]
 		},
@@ -263,21 +328,35 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБанк',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:14px;top:102px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодПодвида',
+			text: 'Код подвида:',
+			style: 'position:absolute;left:164px;top:202px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодВалюты',
+			text: 'Код валюты:',
+			style: 'position:absolute;left:164px;top:177px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -304,10 +383,27 @@
 			style: 'position:absolute;left:234px;top:177px;width:72px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидВклада',
+			text: 'Вид вклада:',
+			style: 'position:absolute;left:14px;top:177px;width:64px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидВкладаСтрокой',
 			style: 'position:absolute;left:78px;top:177px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Ввод начальных сведений',
+			style: 'position:absolute;left:325px;top:33px;width:162px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаВыплатыЗаработнойПлаты',
+			text: 'День выплаты заработной платы:',
+			style: 'position:absolute;left:325px;top:177px;width:177px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

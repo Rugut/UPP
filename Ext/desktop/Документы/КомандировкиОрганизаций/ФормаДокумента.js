@@ -1,12 +1,26 @@
 ﻿Ext.define('Документы.КомандировкиОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 480,width: 652,
+	style: 'position:absolute;width:652px;height:480px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Командировки организации',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:428px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,41 +62,27 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Открыть начисления',
+				},
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+				'-',
+				{
+					text:'Открыть категории',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Открыть свойства',
 				},
 				{
-					text:'Разделитель8',
-				},
-				{
-					text:'ДокументыНачисления',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ОткрытьКатегории',
-				},
-				{
-					text:'ОткрытьСвойства',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -79,20 +91,16 @@
 			style: 'position:absolute;left:268px;top:455px;width:384px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -103,37 +111,48 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'90',
 				},
 				{
 					text:'Сотрудник',
+					width:'179',
 				},
 				{
-					text:'ОсвобождатьСтавку',
+					text:'Освобождать ставку',
+					width:'76',
 				},
 				{
-					text:'ДатаНачала',
+					text:'C ...',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'По',
+					width:'80',
 				},
 				{
-					text:'ВремяНахожденияВПути',
+					text:'Время нахождения в пути (дней)',
+					width:'100',
 				},
 				{
-					text:'НапомнитьПоЗавершении',
+					text:'Напомнить ',
+					width:'62',
 				},
 				{
 					text:'Цель',
+					width:'138',
 				},
 				{
-					text:'ИсточникФинансирования',
+					text:'Источник финансирования',
+					width:'115',
 				},
 				{
 					text:'Сторно',
+					width:'100',
 				},
 			]
 		},
@@ -151,9 +170,7 @@
 				{
 					text:'Удалить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие14',
 				},
@@ -163,20 +180,15 @@
 				{
 					text:'Добавить',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие16',
 				},
 				{
-					text:'СписокРаботников',
+					text:'Списком сотрудников',
 				},
 				{
 					text:'Изменить',
-				},
-				{
-					text:'ПодменюЗаполнить',
 				},
 				{
 					text:'Действие17',
@@ -184,13 +196,15 @@
 				{
 					text:'Действие15',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Страна, город:',
+			style: 'position:absolute;left:16px;top:105px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -199,10 +213,22 @@
 			style: 'position:absolute;left:96px;top:105px;width:548px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Организация:',
+			style: 'position:absolute;left:16px;top:129px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВвода2',
 			style: 'position:absolute;left:96px;top:129px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:57px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -217,6 +243,18 @@
 			style: 'position:absolute;left:96px;top:177px;width:548px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Основание:',
+			style: 'position:absolute;left:16px;top:177px;width:78px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждение',
+			text: '',
+			style: 'position:absolute;left:30px;top:389px;width:401px;height:33px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:431px;top:389px;width:83px;height:33px;',
 			height: 33,width: 83,
@@ -226,6 +264,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьИсправление',
+			text: 'Открыть исправления',
+			style: 'position:absolute;left:0px;top:0px;width:71px;height:33px;',
+		},
 					]
 				},
 			]
@@ -240,6 +284,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьИсходный',
+			text: 'Открыть исправленный документ',
+			style: 'position:absolute;left:0px;top:0px;width:129px;height:33px;',
+		},
 					]
 				},
 			]
@@ -250,25 +300,18 @@
 			items:
 			[
 				{
-					text:'ВесьДокумент',
+					text:'Весь документ',
+				},
+				'-',
+				'-',
+				{
+					text:'Строки текущего сотрудника',
 				},
 				{
-					text:'Разделитель',
+					text:'Отменить исправление',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ТекущийСотрудник',
-				},
-				{
-					text:'ОтменитьИсправление',
-				},
-				{
-					text:'Исправить',
-				},
-				{
-					text:'СписокСотрудников',
+					text:'Строки нескольких сотрудников',
 				},
 			]
 		},
@@ -283,15 +326,11 @@
 				{
 					text:'Действие12',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -305,10 +344,7 @@
 					text:'Действие6',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Подменю',
+					text:'',
 				},
 				{
 					text:'Действие14',
@@ -334,9 +370,7 @@
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПеремещениеТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 652,
+	style: 'position:absolute;width:652px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Перемещение товаров',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:365px;width:79px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,57 +51,48 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Открыть форму настройки бланка товарного наполнения',
 				},
 				{
-					text:'Разделитель5',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'Подменю1',
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель6',
+					text:'Дт/кт',
 				},
 				{
-					text:'Подменю3',
+					text:'Заполнить и провести',
 				},
 				{
-					text:'Разделитель9',
+					text:'',
 				},
-				{
-					text:'ОткрытьФормуНастройкиБланкаТоварногоНаполнения',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ПоказатьСкрытьСчетаУчета',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'ДействиеЗаполнитьИПровести',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:406px;top:33px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:485px;top:33px;width:71px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -100,79 +111,104 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'252',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'64',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'Цена',
+					text:'Розн. цена (руб.)',
+					width:'90',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'250',
 				},
 				{
-					text:'ВнутреннийЗаказ',
+					text:'Внутренний заказ',
+					width:'153',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета отпр. (БУ)',
+					width:'87',
 				},
 				{
-					text:'НовыйСчетУчетаБУ',
+					text:'Счет учета получ. (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета отпр. (НУ)',
+					width:'100',
 				},
 				{
-					text:'НовыйСчетУчетаНУ',
+					text:'Счет учета получ. (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПринятыеСчетУчетаБУ',
+					text:'Принятые, счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'ПринятыеСчетУчетаНУ',
+					text:'Принятые счет учета (НУ)',
+					width:'100',
 				},
 				{
-					text:'НовыйПринятыеСчетУчетаБУ',
+					text:'Новый счет учета принятых (БУ)',
+					width:'100',
 				},
 				{
-					text:'НовыйПринятыеСчетУчетаНУ',
+					text:'Новый счет учета принятых (НУ)',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
-					text:'ПринадлежностьНоменклатуры',
+					text:'Принадлежность номенклатуры',
+					width:'100',
 				},
 			]
 		},
@@ -181,75 +217,53 @@
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Поиск по штрихкоду',
 				},
 				{
-					text:'ПоискПоШтрихКоду',
+					text:'Штрихкоды',
+				},
+				'-',
+				{
+					text:'Заполнить по остаткам (при распределении по складам)',
+				},
+				'-',
+				{
+					text:'Заполнить остатками на складе-отправителе',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Добавить по внутреннему заказу',
 				},
 				{
-					text:'ШтрихКоды',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ЗаполнитПоОстаткамПриРаспределенииПоСкладам',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьОстаткамиПоСкладуОтправителю',
-				},
-				{
-					text:'ДобавитьПоВнутреннемуЗаказу',
-				},
-				{
-					text:'ИзТерминалаСбораДанных',
+					text:'Заполнить из терминала сбора данных',
 				},
 				{
 					text:'Переоценка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Подбор',
+				},
+				'-',
+				'-',
+				{
+					text:'Заполнить розничную цену для НТТ',
 				},
 				{
-					text:'Разделитель2',
+					text:'Изменить',
 				},
+				'-',
 				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьЦенуНТТ',
-				},
-				{
-					text:'ДействиеИзменить',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ЗаполнитьПоВнутреннемуЗаказу',
+					text:'Заполнить по внутреннему заказу',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Тара',
+					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -258,23 +272,16 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПоВнутреннемуЗаказу',
+					text:'Заполнить по внутреннему заказу',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Добавить по внутреннему заказу',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Добавить по внутреннему заказу',
 				},
-				{
-					text:'ДобавитьПоВнутреннемуЗаказу',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 			]
 		},
 		{
@@ -284,37 +291,48 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'250',
 				},
 				{
-					text:'ВнутреннийЗаказ',
+					text:'Внутренний заказ',
+					width:'153',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета отпр. (БУ)',
+					width:'100',
 				},
 				{
-					text:'НовыйСчетУчетаБУ',
+					text:'Счет учета получ. (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета отпр. (НУ)',
+					width:'100',
 				},
 				{
-					text:'НовыйСчетУчетаНУ',
+					text:'Счет учета получ. (НУ)',
+					width:'100',
 				},
 			]
 		},
@@ -324,6 +342,18 @@
 					title:'НДС',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:327px;top:50px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНДСвСтоимостиТоваров',
+			text: 'НДС в стоим. товаров:',
+			style: 'position:absolute;left:6px;top:6px;width:94px;height:27px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -341,10 +371,34 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДС',
+			text: 'Счет:',
+			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетСписанияНДС',
 			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:0px;top:24px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:0px;top:48px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:0px;top:71px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -364,6 +418,12 @@
 			name: 'СубконтоСписанияНДС3',
 			style: 'position:absolute;left:94px;top:71px;width:210px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДСНеТребуется',
+			text: 'В соответствии с настройкой учетной политики по налоговому учету указание счета списания НДС в бухгалтерском учете не требуется - НДС включается в стоимость, а не списывается на затраты',
+			style: 'position:absolute;left:0px;top:0px;width:304px;height:54px;',
+		},
 					]
 				},
 				{
@@ -382,10 +442,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДСНУ',
+			text: 'Счет (НУ):',
+			style: 'position:absolute;left:0px;top:0px;width:93px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетСписанияНДСНУ',
 			style: 'position:absolute;left:93px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ1',
+			text: 'Субконто 1 (НУ):',
+			style: 'position:absolute;left:0px;top:24px;width:93px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -394,16 +466,34 @@
 			style: 'position:absolute;left:93px;top:24px;width:211px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ2',
+			text: 'Субконто 2 (НУ):',
+			style: 'position:absolute;left:0px;top:48px;width:93px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоСписанияНДСНУ2',
 			style: 'position:absolute;left:93px;top:48px;width:211px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ3',
+			text: 'Субконто 3 (НУ):',
+			style: 'position:absolute;left:0px;top:71px;width:93px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоСписанияНДСНУ3',
 			style: 'position:absolute;left:93px;top:71px;width:211px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДСНУНеТребуется',
+			text: 'Указание счета списания НДС в налоговом учете не требуется - НДС включается в стоимость, а не списывается на затраты',
+			style: 'position:absolute;left:0px;top:0px;width:304px;height:51px;',
 		},
 					]
 				},
@@ -413,16 +503,34 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяЗатратСписанияНДС',
+			text: 'Статья затрат:',
+			style: 'position:absolute;left:6px;top:82px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяЗатратСписанияНДС',
 			style: 'position:absolute;left:100px;top:82px;width:210px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНоменклатурнаяГруппа',
+			text: 'Ном. группа:',
+			style: 'position:absolute;left:324px;top:82px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НоменклатурнаяГруппа',
 			style: 'position:absolute;left:416px;top:82px;width:212px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:6px;top:55px;width:94px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -437,6 +545,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:10px;top:50px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеКомпании',
@@ -448,9 +562,20 @@
 			name: 'Ответственный',
 			style: 'position:absolute;left:415px;top:50px;width:213px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределение остатков товаров организаций по складам',
+			style: 'position:absolute;left:6px;top:6px;width:321px;height:15px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -459,10 +584,28 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСкладОтправитель',
+			text: 'Отправитель:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СкладОтправитель',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСкладПолучатель',
+			text: 'Получатель:',
+			style: 'position:absolute;left:336px;top:81px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -475,34 +618,45 @@
 			style: 'position:absolute;left:0px;top:391px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:558px;top:33px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВнутреннийЗаказ',
+			text: 'Внутр. заказ:',
+			style: 'position:absolute;left:336px;top:57px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВнутреннийЗаказ',
 			style: 'position:absolute;left:406px;top:57px;width:238px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Розничная сумма (руб.):',
+			style: 'position:absolute;left:441px;top:343px;width:123px;height:17px;',
 		},
 		{
 			xtype: 'textfield',

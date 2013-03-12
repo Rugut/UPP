@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотыМеждуСубконтоМеждународный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 400,
+	style: 'position:absolute;width:400px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка Обороты между субконто',
 	
 	items:
@@ -18,15 +20,11 @@
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -40,10 +38,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:88px;top:6px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:212px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,6 +68,12 @@
 			style: 'position:absolute;left:355px;top:6px;width:21px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:32px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -70,10 +86,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидСубконто',
+					text:'Вид субконто',
+					width:'100',
 				},
 			]
 		},
@@ -84,10 +102,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидСубконто',
+					text:'Вид субконто',
+					width:'100',
 				},
 			]
 		},
@@ -119,9 +139,11 @@
 			[
 				{
 					text:'Поле',
+					width:'118',
 				},
 				{
 					text:'Тип',
+					width:'79',
 				},
 			]
 		},
@@ -140,6 +162,7 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 			]
 		},
@@ -168,22 +191,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},

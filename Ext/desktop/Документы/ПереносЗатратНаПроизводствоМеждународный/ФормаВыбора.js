@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПереносЗатратНаПроизводствоМеждународный.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 516,
+	style: 'position:absolute;width:516px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Переносы затрат на производство (международный)',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -35,21 +42,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:516px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

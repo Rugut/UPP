@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.СтатьиДвиженияДенежныхСредств.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 143,width: 497,
+	style: 'position:absolute;width:497px;height:143px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи движения денежных средств',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:377px;top:33px;width:27px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:409px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,23 @@
 			style: 'position:absolute;left:119px;top:33px;width:244px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:91px;width:106px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:119px;top:91px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидДвиженияДенежныхСредств',
+			text: 'Вид движения 
+денежных средств:',
+			style: 'position:absolute;left:8px;top:54px;width:106px;height:31px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,53 +64,40 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель2',
+					text:'Найти в списке',
 				},
 				{
-					text:'Подменю',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Скопировать',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
 				{
-					text:'Действие4',
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Действие2',
+					text:'Скопировать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -92,19 +106,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

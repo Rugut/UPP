@@ -11,7 +11,7 @@
 
     <!-- <x-compile> -->
     <!-- <x-bootstrap> -->
-    <script type="text/javascript" src="../../packages/extjs.4.1.1/ext-4.1.1a/ext-debug.js"></script>
+    <script type="text/javascript" src="../../packages/extjs.4.1.1/ext-4.1.1a/ext.js"></script>
     
    
  
@@ -19,7 +19,21 @@
     <script type="text/javascript">
         Ext.Loader.setPath({
             'Ext.ux.desktop': 'js',
-            MyDesktop: ''
+           // MyDesktop: ''
+        });
+        Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
+            enabled: true,  //Загрузчик активен
+            disableCaching: false,   //Не кеширует файлы
+            paths: {
+                MyDesktop: '',
+                Base: "js/Base", //Путь в пространству данных Base
+                Меню: "Меню",
+                Метаданные: "Метаданные",
+                Справочники: "Справочники",
+                Документы: "Документы",
+                Отчеты: "Отчеты",
+                Обработки: "Обработки",
+            }
         });
 
         Ext.require('MyDesktop.App');
@@ -28,32 +42,15 @@
         Ext.onReady(function () {
             myDesktopApp = new MyDesktop.App();
         });
-        
-        Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
-            enabled: true,  //Загрузчик активен
-            disableCaching: true,   //Не кеширует файоы
-            paths: {
-                Base: "js/Base", //Путь в пространству данных Base
-                Метаданные: "Метаданные"
-            }
-        });
-        //alert(src.FormId);
-        //var Справочники = Ext.create("Метаданные.Справочники");
-        //for (var НомерСправочника = 0,Справочник; Справочник = Справочники[НомерСправочника]; НомерСправочника++) {
-        //    alert(Справочник.Имя);
-        //}
-  
-
-        //orEach(Справочники, function(Имя, Синоним) { alert(Имя + ': ' + Синоним) });
-
+       
     </script>
     <!-- </x-compile> -->
 </head>
 
 <body>
 
-<a href="http://www.sencha.com" target="_blank" alt="Powered by Ext JS"
-   id="poweredby"><div></div></a>
+<!--<a href="http://www.sencha.com" target="_blank" alt="Powered by Ext JS"
+   id="poweredby"><div></div></a>-->
 
 </body>
 </html>

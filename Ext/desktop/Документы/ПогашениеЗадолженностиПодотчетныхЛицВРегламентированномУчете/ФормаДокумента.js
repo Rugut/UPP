@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 396,width: 652,
+	style: 'position:absolute;width:652px;height:396px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Погашение задолженности подотчетных лиц в регл. учете',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,40 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМесяц',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:336px;top:33px;width:105px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:344px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:344px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:57px;width:105px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,32 +80,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -79,23 +108,17 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -114,14 +137,9 @@
 			style: 'position:absolute;left:6px;top:0px;width:622px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ДействиеЗаполнитьДолгамиПодотчетныхЛиц',
+					text:'Заполнить долгами подотчетных лиц',
 				},
 			]
 		},
@@ -132,38 +150,47 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Физлицо',
+					text:'Работник',
+					width:'90',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Результат',
+					width:'100',
 				},
 				{
-					text:'РасчетныйДокумент',
+					text:'Расчетный документ',
+					width:'100',
 				},
 				{
-					text:'ВалютаВзаиморасчетов',
+					text:'Валюта',
+					width:'100',
 				},
 				{
-					text:'СуммаВзаиморасчетов',
+					text:'Сумма в валюте',
+					width:'100',
 				},
 				{
-					text:'КурсВзаиморасчетов',
+					text:'Курс',
+					width:'100',
 				},
 				{
-					text:'КратностьВзаиморасчетов',
+					text:'Кратность',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница1',
+					title:'Удержания',
 					items:
 					[
 		{
@@ -173,31 +200,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'Физлицо',
+					text:'Работник',
+					width:'90',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Результат',
+					width:'100',
 				},
 				{
-					text:'РасчетныйДокумент',
+					text:'Расчетный документ',
+					width:'100',
 				},
 				{
-					text:'ВалютаВзаиморасчетов',
+					text:'Валюта',
+					width:'100',
 				},
 				{
-					text:'СуммаВзаиморасчетов',
+					text:'Сумма в валюте',
+					width:'100',
 				},
 				{
-					text:'КурсВзаиморасчетов',
+					text:'Курс',
+					width:'100',
 				},
 				{
-					text:'КратностьВзаиморасчетов',
+					text:'Кратность',
+					width:'100',
 				},
 			]
 		},
@@ -206,14 +242,9 @@
 			style: 'position:absolute;left:6px;top:0px;width:622px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ДействиеЗаполнитьДолгамиПодотчетныхЛиц',
+					text:'Заполнить долгами подотчетных лиц',
 				},
 			]
 		},

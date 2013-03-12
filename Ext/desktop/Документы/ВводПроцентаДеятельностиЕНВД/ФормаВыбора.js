@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВводПроцентаДеятельностиЕНВД.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 700,
+	style: 'position:absolute;width:700px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод процента деятельности ЕНВД',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'Период',
+					text:'Месяц',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -41,23 +50,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
 					text:'Подменю2',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

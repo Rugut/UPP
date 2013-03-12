@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаПередШифрованиемИОтправкой',
 	{
 	extend: 'Ext.window.Window',
-	height: 116,width: 378,
+	style: 'position:absolute;width:378px;height:116px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Шифрование и отправка',
 	
 	items:
@@ -12,17 +14,13 @@
 			style: 'position:absolute;left:0px;top:91px;width:378px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Отмена',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаПродолжить',
+					text:'Продолжить',
 				},
 				{
 					text:'Действие',
@@ -36,9 +34,17 @@
 			items:
 			[
 				{
-					title:'СтраницаОписание',
+					title:'Описание',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: 'Нажмите кнопку "Продолжить" для того, чтобы сохранить файлы 
+на диске и передать управление программному комплексу 
+"Спринтер" компании "Такском".',
+			style: 'position:absolute;left:0px;top:0px;width:362px;height:74px;',
+		},
 					]
 				},
 			]

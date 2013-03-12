@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЗагрузкаРезультатовАнкетирования.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 417,width: 573,
+	style: 'position:absolute;width:573px;height:417px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Загрузка результатов анкетирования',
 	
 	items:
@@ -14,7 +16,7 @@
 			items:
 			[
 				{
-					title:'ЗагрузкаИзПочты',
+					title:'Загрузка из почты',
 					items:
 					[
 		{
@@ -25,17 +27,32 @@
 			[
 				{
 					text:'Тема',
+					width:'135',
 				},
 				{
-					text:'ОбъектЗагрузки',
+					text:'Эл. справочника',
+					width:'70',
 				},
 				{
 					text:'Анкета',
+					width:'144',
 				},
 				{
 					text:'Опрос',
+					width:'215',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только непрочитанные входящие письма',
+			style: 'position:absolute;left:6px;top:6px;width:234px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Предварительный просмотр:',
+			style: 'position:absolute;left:234px;top:74px;width:171px;height:25px;',
 		},
 		{
 			xtype: 'grid',
@@ -44,7 +61,8 @@
 			columns:
 			[
 				{
-					text:'Вложение',
+					text:'Вложения',
+					width:'101',
 				},
 			]
 		},
@@ -56,12 +74,15 @@
 			[
 				{
 					text:'Вопрос',
+					width:'89',
 				},
 				{
 					text:'Ответ',
+					width:'96',
 				},
 				{
-					text:'РазвернутыйОтвет',
+					text:'Развернутый ответ',
+					width:'198',
 				},
 			]
 		},
@@ -70,28 +91,27 @@
 			style: 'position:absolute;left:6px;top:74px;width:222px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Пометить все файлы как незагружаемые',
 				},
 				{
-					text:'Разделитель2',
+					text:'Загрузить',
 				},
 				{
-					text:'СнятьВсе1',
+					text:'Обновить',
 				},
 				{
-					text:'Выполнить',
+					text:'Пометить все файлы для загрузки',
 				},
-				{
-					text:'Обновить1',
-				},
-				{
-					text:'ВыбратьВсе1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отображать письма по указанной анкете',
+			style: 'position:absolute;left:6px;top:26px;width:234px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -115,10 +135,15 @@
 			name: 'УчетнаяЗапись',
 			style: 'position:absolute;left:245px;top:48px;width:304px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По учетной записи',
+			style: 'position:absolute;left:6px;top:48px;width:222px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ЗагрузкаИзКаталога',
+					title:'Загрузка из каталога',
 					items:
 					[
 		{
@@ -128,16 +153,20 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Файл',
+					width:'60',
 				},
 				{
 					text:'Анкета',
+					width:'61',
 				},
 				{
-					text:'ОбъектЗагрузки',
+					text:'Эл. справочника',
+					width:'88',
 				},
 				{
 					text:'Опрос',
+					width:'63',
 				},
 			]
 		},
@@ -153,34 +182,26 @@
 			items:
 			[
 				{
-					text:'УстановитьФлагУдаления',
+					text:'Удалить текущий файл с данными опроса после загрузки',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Пометить все файлы для загрузки',
 				},
 				{
-					text:'Разделитель2',
+					text:'Загрузить',
 				},
+				'-',
 				{
-					text:'Заполнить',
+					text:'Пометить все файлы как незагружаемые',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ВыбратьВсе',
-				},
-				{
-					text:'Выполнить1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СнятьВсе',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПредПросмотр',
+					text:'Предварительный просмотр файла',
 				},
 			]
 		},
@@ -192,12 +213,15 @@
 			[
 				{
 					text:'Вопрос',
+					width:'99',
 				},
 				{
 					text:'Ответ',
+					width:'148',
 				},
 				{
-					text:'РазвернутыйОтвет',
+					text:'Развернутый ответ',
+					width:'148',
 				},
 			]
 		},
@@ -210,6 +234,34 @@
 					text:'HTML',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Просматривать подкаталоги',
+			style: 'position:absolute;left:6px;top:27px;width:175px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Предварительный просмотр:',
+			style: 'position:absolute;left:285px;top:85px;width:169px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Файлы с ответами:',
+			style: 'position:absolute;left:6px;top:84px;width:169px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Каталог:',
+			style: 'position:absolute;left:6px;top:5px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отображать файлы по указанной анкете',
+			style: 'position:absolute;left:6px;top:44px;width:234px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

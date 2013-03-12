@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонсольОтчетов.ФормаВыбораСтрокиДереваЗапросов',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 336,
+	style: 'position:absolute;width:336px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выберите строку дерева отчетов',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Отчет',
+					width:'309',
 				},
 			]
 		},

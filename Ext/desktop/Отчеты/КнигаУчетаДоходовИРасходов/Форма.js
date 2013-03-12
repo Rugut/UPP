@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.КнигаУчетаДоходовИРасходов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 428,width: 652,
+	style: 'position:absolute;width:652px;height:428px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Книга учета доходов и расходов',
 	
 	items:
@@ -13,48 +15,47 @@
 			items:
 			[
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период составления отчета:',
+			style: 'position:absolute;left:8px;top:33px;width:152px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:346px;top:33px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -69,18 +70,24 @@
 			items:
 			[
 				{
-					title:'ТитульныйЛист',
+					title:'Титульный лист',
 				},
 				{
-					title:'Раздел1',
+					title:'Доходы и расходы',
 				},
 				{
-					title:'РасходыНаПриобретениеОсновныхСредств',
+					title:'Расходы на приобретение основных средств',
 				},
 				{
-					title:'Раздел3',
+					title:'Расчет налоговой базы',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:184px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -93,6 +100,28 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:306px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Включение граф 4 "Доходы всего" и 6 "Расходы всего":',
+			style: 'position:absolute;left:132px;top:57px;width:290px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРежимПечатиНДС',
+			text: 'Режим печати НДС:',
+			style: 'position:absolute;left:320px;top:81px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить расшифровки',
+			style: 'position:absolute;left:8px;top:81px;width:142px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'C начала года',
+			style: 'position:absolute;left:8px;top:57px;width:97px;height:19px;',
 		},
 	]
 });

@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаИзображения',
 	{
 	extend: 'Ext.window.Window',
-	height: 386,width: 400,
+	style: 'position:absolute;width:400px;height:386px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма данных об изображении',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименования',
+			text: 'Описание изображения:',
+			style: 'position:absolute;left:8px;top:58px;width:134px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,64 +22,53 @@
 			style: 'position:absolute;left:142px;top:58px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОбъекта',
+			text: '',
+			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Перечитать',
 				},
 				{
-					text:'Подменю',
+					text:'Изменить изображение',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'ИзменитьИзображение1',
+					text:'Сохранить',
 				},
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'СохранитьИзображение',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИзображение1',
+					text:'Сохранить изображение на диск',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'Действие4',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'ИзменитьИзображение',
+					text:'Изменить',
 				},
 				{
-					text:'Действие5',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -80,17 +77,13 @@
 			items:
 			[
 				{
-					text:'ОК',
+					text:'OK',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Закрыть',
 				},

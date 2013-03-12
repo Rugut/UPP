@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораХарактеристики',
 	{
 	extend: 'Ext.window.Window',
-	height: 192,width: 500,
+	style: 'position:absolute;width:500px;height:192px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Автоподбор характеристики номенклатуры',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'Ок',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -30,7 +30,7 @@
 			items:
 			[
 				{
-					title:'ИсходныеКомплектующие',
+					title:'Исходные комплектующие',
 					items:
 					[
 		{
@@ -47,17 +47,19 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Свойство',
+					width:'306',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВозвратныеОтходы',
+					title:'Возвратные отходы',
 					items:
 					[
 		{
@@ -74,10 +76,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Свойство',
+					width:'306',
 				},
 			]
 		},

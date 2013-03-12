@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрафикОтпусков.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 1000,
+	style: 'position:absolute;width:1000px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'График отпусков',
 	
 	items:
@@ -35,19 +37,31 @@
 			items:
 			[
 				{
-					title:'ПоЦентрамОтветственности',
+					title:'По центрам ответственности',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:0px;top:2px;width:83px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:88px;top:0px;width:234px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:71px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПоСтруктуреЮридическихЛиц',
+					title:'По структуре юридических лиц',
 					items:
 					[
 		{
@@ -67,10 +81,28 @@
 			style: 'position:absolute;left:20px;top:3px;width:48px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЗа',
+			text: 'За',
+			style: 'position:absolute;left:1px;top:3px;width:14px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГод',
+			text: 'год',
+			style: 'position:absolute;left:72px;top:2px;width:22px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаРежимПланированияОтпусков',
 			style: 'position:absolute;left:521px;top:3px;width:243px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСгруппироватьПо',
+			text: 'Сгруппировать',
+			style: 'position:absolute;left:441px;top:3px;width:76px;height:19px;',
 		},
 					]
 				},
@@ -82,7 +114,7 @@
 			items:
 			[
 				{
-					text:'ПереключениеСправкиФормы',
+					text:'Переключение справки формы',
 				},
 			]
 		},
@@ -91,84 +123,60 @@
 			style: 'position:absolute;left:0px;top:0px;width:926px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Структуре юридических лиц',
 				},
 				{
-					text:'Разделитель1',
+					text:'Отчет по отпускам',
 				},
+				'-',
 				{
-					text:'ПоСтруктуреЮридическихЛиц',
+					text:'Дополнительные дни отпуска',
 				},
-				{
-					text:'ОтчетПоОтпускам',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПравоНаДополнительныеДниОтпуска',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'ОтредактироватьОстаткиОтпусков1',
+					text:'Остатки отпусков',
 				},
 				{
 					text:'Обновить',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ОтредактироватьОстаткиОтпусков',
+					text:'Остатки отпусков',
 				},
 				{
 					text:'Действие',
 				},
 				{
-					text:'ЗарегистрироватьФактическийОтпуск',
+					text:'Зарегистрировать фактический отпуск',
 				},
 				{
-					text:'ЗапланироватьОтпуск',
+					text:'Запланировать отпуск',
 				},
 				{
-					text:'ПравоНаДополнительныеДниОтпуска',
+					text:'Дополнительные дни отпуска',
 				},
 				{
-					text:'Подменю',
+					text:'Центрам ответственности',
 				},
 				{
-					text:'ПоЦентрамОтветственности',
+					text:'Отчет по отпускам',
+				},
+				'-',
+				'-',
+				{
+					text:'Показывать только руководителей',
 				},
 				{
-					text:'ОтчетПоОтпускам',
+					text:'Запланировать отпуск',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОтборПоРуководителям',
-				},
-				{
-					text:'ЗапланироватьОтпуск',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

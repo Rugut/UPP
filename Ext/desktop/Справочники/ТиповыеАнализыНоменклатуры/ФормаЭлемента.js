@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ТиповыеАнализыНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 309,width: 480,
+	style: 'position:absolute;width:480px;height:309px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Типовые анализы номенклатуры',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:389px;top:57px;width:23px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:417px;top:57px;width:55px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:88px;top:57px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Родитель:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,19 +58,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
 		},
@@ -61,10 +77,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'43',
 				},
 				{
-					text:'ПоказательАнализа',
+					text:'Показатель анализа',
+					width:'414',
 				},
 			]
 		},

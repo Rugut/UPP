@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Должности.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 424,width: 446,
+	style: 'position:absolute;width:446px;height:424px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Должность',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:316px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:93px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,14 +39,9 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Редактировать код',
 				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -43,24 +52,18 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -70,26 +73,50 @@
 			items:
 			[
 				{
-					title:'ОписаниеДолжности',
+					title:'Описание должности',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Требования',
 			style: 'position:absolute;left:6px;top:25px;width:416px;height:70px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьТребования',
+			text: 'Требования:',
+			style: 'position:absolute;left:6px;top:6px;width:416px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбязанности',
+			text: 'Обязанности:',
+			style: 'position:absolute;left:6px;top:100px;width:416px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Обязанности',
 			style: 'position:absolute;left:6px;top:119px;width:416px;height:70px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Условия',
 			style: 'position:absolute;left:6px;top:213px;width:416px;height:70px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьУсловия',
+			text: 'Условия:',
+			style: 'position:absolute;left:6px;top:194px;width:416px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАнкетаРезюмеКандидата',
+			text: 'Анкета резюме кандидата:',
+			style: 'position:absolute;left:6px;top:289px;width:138px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,13 +137,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Компетенция',
+					width:'181',
 				},
 				{
 					text:'Должность',
+					width:'0',
 				},
 			]
 		},
@@ -134,9 +164,7 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПрофилиРаспределенияПоПериодам.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 404,width: 406,
+	style: 'position:absolute;width:406px;height:404px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Профили распределения по периодам',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:276px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:318px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:180px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:60px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Период',
 			style: 'position:absolute;left:94px;top:60px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодпериод',
+			text: 'Подпериод:',
+			style: 'position:absolute;left:8px;top:84px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,13 +71,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерПодпериода',
+					text:'Номер подпериода',
+					width:'120',
 				},
 				{
-					text:'ДоляПодпериода',
+					text:'Доля подпериода',
+					width:'120',
 				},
 			]
 		},
@@ -68,19 +97,15 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},

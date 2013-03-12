@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПодборНоменклатуры.ФормаВыбораПоиска',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 676,
+	style: 'position:absolute;width:676px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор номенклатуры',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:296px;width:676px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -31,18 +31,23 @@
 			[
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Полное наименование',
+					width:'220',
 				},
 				{
-					text:'Родитель',
+					text:'Группа номенклатуры',
+					width:'120',
 				},
 			]
 		},

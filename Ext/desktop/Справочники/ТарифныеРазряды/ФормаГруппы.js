@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ТарифныеРазряды.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 109,width: 433,
+	style: 'position:absolute;width:433px;height:109px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа тарифных разрядов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:311px;top:57px;width:32px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:345px;top:57px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:57px;width:215px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,10 +51,7 @@
 			items:
 			[
 				{
-					text:'Подменю',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
 			]
 		},
@@ -43,21 +60,17 @@
 			style: 'position:absolute;left:0px;top:84px;width:433px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Записать',
 				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыДеятельностиКонтрагентов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 780,
+	style: 'position:absolute;width:780px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Виды деятельности контрагентов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'488',
 				},
 			]
 		},
@@ -30,11 +35,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -45,6 +48,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

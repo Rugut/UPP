@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиРегламентногоФормированияДокументовПоНДС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 718,
+	style: 'position:absolute;width:718px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки регламентного формирования документов по НДС',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'ФормироватьДокументыАвтоматически',
+					text:'Автоматич.',
+					width:'75',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'120',
 				},
 			]
 		},

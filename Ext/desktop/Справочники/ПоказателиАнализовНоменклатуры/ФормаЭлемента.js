@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПоказателиАнализовНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 531,
+	style: 'position:absolute;width:531px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Показатели анализов номенклатуры',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:442px;top:57px;width:24px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:468px;top:57px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:139px;top:57px;width:296px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:131px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:139px;top:33px;width:384px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидРезультатаАнализа',
+			text: 'Вид результата анализа:',
+			style: 'position:absolute;left:8px;top:81px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,20 +69,16 @@
 			style: 'position:absolute;left:0px;top:295px;width:531px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
 		},
@@ -67,9 +89,15 @@
 			items:
 			[
 				{
-					title:'ЧисловойДиапазон',
+					title:'Числовой диапазон',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьМинЗначение',
+			text: 'Минимальное значение:',
+			style: 'position:absolute;left:0px;top:6px;width:131px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -77,10 +105,22 @@
 			style: 'position:absolute;left:131px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМаксЗначение',
+			text: 'Максимальное значение:',
+			style: 'position:absolute;left:0px;top:31px;width:131px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МаксЗначение',
 			style: 'position:absolute;left:131px;top:31px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмерения',
+			text: 'Единица измерения:',
+			style: 'position:absolute;left:0px;top:56px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,7 +131,7 @@
 					]
 				},
 				{
-					title:'ВхождениеВСписок',
+					title:'Вхождение в список',
 					items:
 					[
 		{
@@ -108,16 +148,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ЗначениеПоказателя',
+					text:'Значение показателя',
+					width:'445',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТекстПояснение',
+			text: '',
+			style: 'position:absolute;left:10px;top:258px;width:513px;height:29px;',
 		},
 	]
 });

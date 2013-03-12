@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетПоБюджету.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 337,width: 490,
+	style: 'position:absolute;width:490px;height:337px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет по бюджету',
 	
 	items:
@@ -24,10 +26,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Представление',
+					width:'320',
 				},
 			]
 		},
@@ -37,24 +41,36 @@
 			items:
 			[
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
-					text:'Действие3',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие2',
+					text:'&Переместить вверх',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:68px;top:6px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:166px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -75,16 +91,34 @@
 			style: 'position:absolute;left:68px;top:54px;width:398px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:6px;top:54px;width:60px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:68px;top:78px;width:398px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись40',
+			text: 'Бюджет:',
+			style: 'position:absolute;left:6px;top:78px;width:60px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидДанныхОтчета',
 			style: 'position:absolute;left:68px;top:30px;width:398px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись41',
+			text: 'Данные:',
+			style: 'position:absolute;left:6px;top:30px;width:60px;height:19px;',
 		},
 					]
 				},
@@ -99,10 +133,12 @@
 			columns:
 			[
 				{
-					text:'Поле',
+					text:'Группировка',
+					width:'156',
 				},
 				{
 					text:'Тип',
+					width:'110',
 				},
 			]
 		},
@@ -122,7 +158,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -132,22 +168,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -157,6 +199,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись39',
+			text: 'Развернуть по горизонтали по:',
+			style: 'position:absolute;left:180px;top:3px;width:164px;height:19px;',
 		},
 					]
 				},
@@ -173,12 +221,8 @@
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},

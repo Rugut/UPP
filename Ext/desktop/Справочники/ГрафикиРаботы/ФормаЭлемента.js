@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГрафикиРаботы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 530,width: 813,
+	style: 'position:absolute;width:813px;height:530px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Графики работы',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -25,21 +25,21 @@
 					text:'Печать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:8px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,320 +61,441 @@
 			[
 				{
 					text:'Месяц',
+					width:'94',
 				},
 				{
-					text:'Итого',
+					text:'Всего',
+					width:'44',
 				},
 				{
-					text:'ДнейЗаМесяц',
+					text:'дней',
+					width:'44',
 				},
 				{
-					text:'ЧасовЗаМесяц',
+					text:'часов',
+					width:'44',
 				},
 				{
-					text:'ВечернихЧасовЗаМесяц',
+					text:'Вечерних',
+					width:'44',
 				},
 				{
-					text:'НочныхЧасовЗаМесяц',
+					text:'Ночных',
+					width:'44',
 				},
 				{
-					text:'ЧасовЗаДень',
+					text:'Часов за день',
+					width:'98',
 				},
 				{
-					text:'ИзНихВечерних',
+					text:'Из них вечерних',
+					width:'98',
 				},
 				{
-					text:'ИзНихНочных',
+					text:'Из них ночных',
+					width:'98',
 				},
 				{
-					text:'День1',
+					text:'1',
+					width:'30',
 				},
 				{
-					text:'ВЧ1',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ1',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День2',
+					text:'2',
+					width:'30',
 				},
 				{
-					text:'ВЧ2',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ2',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День3',
+					text:'3',
+					width:'30',
 				},
 				{
-					text:'ВЧ3',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ3',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День4',
+					text:'4',
+					width:'30',
 				},
 				{
-					text:'ВЧ4',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ4',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День5',
+					text:'5',
+					width:'30',
 				},
 				{
-					text:'ВЧ5',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ5',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День6',
+					text:'6',
+					width:'30',
 				},
 				{
-					text:'ВЧ6',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ6',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День7',
+					text:'7',
+					width:'30',
 				},
 				{
-					text:'ВЧ7',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ7',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День8',
+					text:'8',
+					width:'30',
 				},
 				{
-					text:'ВЧ8',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ8',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День9',
+					text:'9',
+					width:'30',
 				},
 				{
-					text:'ВЧ9',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ9',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День10',
+					text:'10',
+					width:'30',
 				},
 				{
-					text:'ВЧ10',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ10',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День11',
+					text:'11',
+					width:'30',
 				},
 				{
-					text:'ВЧ11',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ11',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День12',
+					text:'12',
+					width:'30',
 				},
 				{
-					text:'ВЧ12',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ12',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День13',
+					text:'13',
+					width:'30',
 				},
 				{
-					text:'ВЧ13',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ13',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День14',
+					text:'14',
+					width:'30',
 				},
 				{
-					text:'ВЧ14',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ14',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День15',
+					text:'15',
+					width:'30',
 				},
 				{
-					text:'ВЧ15',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ15',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День16',
+					text:'16',
+					width:'30',
 				},
 				{
-					text:'ВЧ16',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ16',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День17',
+					text:'17',
+					width:'30',
 				},
 				{
-					text:'ВЧ17',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ17',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День18',
+					text:'18',
+					width:'30',
 				},
 				{
-					text:'ВЧ18',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ18',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День19',
+					text:'19',
+					width:'30',
 				},
 				{
-					text:'ВЧ19',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ19',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День20',
+					text:'20',
+					width:'30',
 				},
 				{
-					text:'ВЧ20',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ20',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День21',
+					text:'21',
+					width:'30',
 				},
 				{
-					text:'ВЧ21',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ21',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День22',
+					text:'22',
+					width:'30',
 				},
 				{
-					text:'ВЧ22',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ22',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День23',
+					text:'23',
+					width:'30',
 				},
 				{
-					text:'ВЧ23',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ23',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День24',
+					text:'24',
+					width:'30',
 				},
 				{
-					text:'ВЧ24',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ24',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День25',
+					text:'25',
+					width:'30',
 				},
 				{
-					text:'ВЧ25',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ25',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День26',
+					text:'26',
+					width:'30',
 				},
 				{
-					text:'ВЧ26',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ26',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День27',
+					text:'27',
+					width:'30',
 				},
 				{
-					text:'ВЧ27',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ27',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День28',
+					text:'28',
+					width:'30',
 				},
 				{
-					text:'ВЧ28',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ28',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День29',
+					text:'29',
+					width:'30',
 				},
 				{
-					text:'ВЧ29',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ29',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День30',
+					text:'30',
+					width:'30',
 				},
 				{
-					text:'ВЧ30',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ30',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'День31',
+					text:'31',
+					width:'30',
 				},
 				{
-					text:'ВЧ31',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НЧ31',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'НомерМесяца',
+					text:'',
+					width:'30',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ПараметрыГрафика',
+			text: 'График пятидневка, 40-часовая рабочая неделя, выходные суббота и воскресенье.',
+			style: 'position:absolute;left:155px;top:35px;width:308px;height:28px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГод',
+			text: 'Год:',
+			style: 'position:absolute;left:712px;top:8px;width:25px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерТекущегоГода',
 			style: 'position:absolute;left:742px;top:8px;width:63px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'СсылкаИзменитьПараметрыЗаполнения',
+			text: 'Изменить параметры заполнения графика...',
+			style: 'position:absolute;left:628px;top:34px;width:177px;height:34px;',
 		},
 	]
 });

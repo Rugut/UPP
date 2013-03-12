@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.АктОтбораПробНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 652,
+	style: 'position:absolute;width:652px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Акт отбора проб номенклатуры',
 	
 	items:
@@ -15,86 +17,51 @@
 				{
 					text:'Действие1',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю4',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие4',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ПодменюВидаОперации',
 				},
 				{
 					text:'Действие3',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие4',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Действие2',
@@ -102,21 +69,17 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -125,9 +88,6 @@
 				},
 				{
 					text:'Действие5',
-				},
-				{
-					text:'Подменю',
 				},
 			]
 		},
@@ -136,28 +96,28 @@
 			style: 'position:absolute;left:0px;top:375px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -166,10 +126,22 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -178,10 +150,22 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:348px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:348px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Заявка на сертификацию:',
+			style: 'position:absolute;left:336px;top:101px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -190,10 +174,22 @@
 			style: 'position:absolute;left:424px;top:105px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номенклатура:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись16',
+			text: 'Серия:',
+			style: 'position:absolute;left:336px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -208,7 +204,7 @@
 			items:
 			[
 				{
-					title:'РаспределениеПоЛабораториям',
+					title:'Распределение по лабораториям',
 					items:
 					[
 		{
@@ -218,19 +214,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Подразделение',
+					text:'Сертифицирующее подразделение',
+					width:'187',
 				},
 				{
-					text:'ВидАнализа',
+					text:'Вид анализа',
+					width:'95',
 				},
 				{
 					text:'Количество',
+					width:'97',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед. хранения',
+					width:'100',
 				},
 			]
 		},
@@ -244,7 +245,7 @@
 					]
 				},
 				{
-					title:'ПробыДляВнешнейСертификации',
+					title:'Пробы для внешней сертификации',
 					items:
 					[
 		{
@@ -268,20 +269,26 @@
 					]
 				},
 				{
-					title:'ИзъятиеПроб',
+					title:'Изъятие проб',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'РезультатНаружногоОсмотра',
 			style: 'position:absolute;left:6px;top:27px;width:622px;height:50px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ЗамечанияКУпаковкеМаркировке',
 			style: 'position:absolute;left:6px;top:107px;width:622px;height:50px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоВскрытыхУпаковок',
+			text: 'Количество вскрытых упаковок:',
+			style: 'position:absolute;left:6px;top:162px;width:166px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -308,10 +315,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:324px;top:27px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:412px;top:27px;width:216px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:6px;top:27px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -319,15 +338,33 @@
 			name: 'Подразделение',
 			style: 'position:absolute;left:94px;top:27px;width:216px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись18',
+			text: 'Количество образцов, отобранных для испытаний:',
+			style: 'position:absolute;left:6px;top:27px;width:145px;height:27px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Нормативный документ:',
+			style: 'position:absolute;left:8px;top:101px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НормативныйДокумент',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись17',
+			text: 'Склад:',
+			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НематериальныеАктивы.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 316,
+	style: 'position:absolute;width:316px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы нематериальных активов и расходов на НИОКР',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -24,11 +27,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

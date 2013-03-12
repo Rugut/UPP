@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ОприходованиеТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 435,width: 668,
+	style: 'position:absolute;width:668px;height:435px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оприходование товаров',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:383px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,48 +51,50 @@
 			items:
 			[
 				{
-					text:'ДействиеЦеныВалюта',
+					text:'Цены и валюта...',
 				},
 				{
-					text:'ПоказатьСкрытьСчетаУчета',
+					text:'Показать/скрыть счета учета',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ПодменюВидаОперации',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Дт/кт',
 				},
+				'-',
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:428px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:502px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:335px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,10 +103,22 @@
 			style: 'position:absolute;left:98px;top:335px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:338px;top:335px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:428px;top:335px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,16 +133,53 @@
 			style: 'position:absolute;left:98px;top:359px;width:562px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:
+',
+			style: 'position:absolute;left:8px;top:359px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:428px;top:57px;width:232px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ИнфНадписьТоварыИтоги',
+			text: 'Оптовые цены, Скидка 20%',
+			style: 'position:absolute;left:8px;top:313px;width:476px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:338px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:490px;top:313px;width:68px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:561px;top:313px;width:99px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнвентаризацияТоваровНаСкладе',
+			text: 'Инвентаризация:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +193,7 @@
 			items:
 			[
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
@@ -130,19 +201,18 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:580px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -161,82 +231,108 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия',
+					width:'120',
 				},
 				{
-					text:'СтатусПартии',
+					text:'Статус партии',
+					width:'120',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'60',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
-					text:'ПроцентРозничнойНаценки',
+					text:'% наценки',
+					width:'60',
 				},
 				{
-					text:'ЦенаВРознице',
+					text:'Розн. цена (руб.)',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (регл.)',
+					width:'80',
 				},
 				{
-					text:'СуммаНУ',
+					text:'Сумма НУ',
+					width:'74',
 				},
 				{
-					text:'СуммаВР',
+					text:'Сумма ВР',
+					width:'74',
 				},
 				{
-					text:'СуммаПР',
+					text:'Сумма ПР',
+					width:'72',
 				},
 				{
-					text:'НомерГТД',
+					text:'Номер ГТД',
+					width:'120',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'80',
 				},
 				{
 					text:'Качество',
+					width:'120',
 				},
 			]
 		},
@@ -245,61 +341,63 @@
 			style: 'position:absolute;left:6px;top:6px;width:638px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Штрихкоды',
 				},
 				{
-					text:'ШтрихКоды',
+					text:'Изменить',
 				},
 				{
-					text:'ДействиеИзменить',
+					text:'Поиск по штрихкоду',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+				'-',
+				{
+					text:'Заполнить из терминала сбора данных',
+				},
+				'-',
+				{
+					text:'Заполнить по инвентаризации',
 				},
 				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ИзТерминалаСбораДанных',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ЗаполнитьПоИнвентаризации',
-				},
-				{
-					text:'СерийныеНомера',
-				},
-				{
-					text:'Проверить',
+					text:'Серийные номера',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоррСчетНУ',
+			text: 'Корр. счет (НУ):',
+			style: 'position:absolute;left:333px;top:6px;width:142px;height:19px;',
 		},
 					]
 				},
 				{
-					title:'КоррСчет',
+					title:'Корреспондирующий счет',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКоррСчет',
+			text: 'Корр. счет:',
+			style: 'position:absolute;left:6px;top:6px;width:142px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоррСчет',
 			style: 'position:absolute;left:152px;top:6px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконто1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:6px;top:29px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -308,10 +406,22 @@
 			style: 'position:absolute;left:152px;top:29px;width:165px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконто2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:6px;top:52px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Субконто2',
 			style: 'position:absolute;left:152px;top:52px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконто3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:6px;top:75px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -326,16 +436,34 @@
 			style: 'position:absolute;left:479px;top:6px;width:101px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоНУ1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:333px;top:29px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоНУ1',
 			style: 'position:absolute;left:479px;top:29px;width:165px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоНУ2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:333px;top:52px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоНУ2',
 			style: 'position:absolute;left:479px;top:52px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоНУ3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:333px;top:75px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

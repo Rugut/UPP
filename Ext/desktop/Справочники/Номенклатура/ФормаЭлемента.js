@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Номенклатура.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 475,width: 616,
+	style: 'position:absolute;width:616px;height:475px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Элемент Номенклатура',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:526px;top:56px;width:24px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:553px;top:56px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:139px;top:56px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:226px;top:56px;width:297px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеПолное',
+			text: 'Полное наименование:',
+			style: 'position:absolute;left:8px;top:196px;width:124px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:139px;top:196px;width:469px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАртикул',
+			text: 'Артикул:',
+			style: 'position:absolute;left:139px;top:79px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,21 @@
 			style: 'position:absolute;left:226px;top:79px;width:115px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:424px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:424px;width:518px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести учет по доп.  характеристикам',
+			style: 'position:absolute;left:305px;top:102px;width:206px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -43,119 +80,83 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
 					text:'Изображение',
 				},
 				{
-					text:'Действие',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'ОткрытьПрайсЛист',
+					text:'Прайс-лист',
 				},
 				{
-					text:'Действие2',
+					text:'Скопировать',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель6',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Разделитель5',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие5',
+					text:'',
 				},
 				{
-					text:'Действие4',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Файлы',
 				},
 				{
-					text:'Действие',
+					text:'Штрихкоды транспортных упаковок',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель2',
+					text:'Настройка...',
 				},
 				{
 					text:'Файлы',
 				},
 				{
-					text:'ШтрихкодыТранспортныхУпаковок',
+					text:'Скопировать',
 				},
 				{
-					text:'Настройка',
+					text:'Перечитать',
 				},
+				'-',
+				'-',
 				{
-					text:'Файлы',
+					text:'Перечитать',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Комплектующие',
 				},
+				'-',
 				{
-					text:'Разделитель7',
+					text:'Этикетки',
+				},
+				'-',
+				{
+					text:'Ценники',
 				},
 				{
-					text:'Этикетка',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Ценник',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Печать',
-				},
+				'-',
 			]
 		},
 		{
@@ -163,6 +164,18 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:226px;top:33px;width:382px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:139px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБазоваяЕдиницаИзмерения',
+			text: 'Базовая ед.:',
+			style: 'position:absolute;left:139px;top:102px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -176,29 +189,23 @@
 			items:
 			[
 				{
-					text:'Назад',
+					text:'<< Назад',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыДалее',
+					text:'Далее >>',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -208,9 +215,15 @@
 			items:
 			[
 				{
-					title:'ПоУмолчанию',
+					title:'По умолчанию',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьНомерГТД',
+			text: 'Номер ГТД:',
+			style: 'position:absolute;left:302px;top:30px;width:125px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -218,10 +231,22 @@
 			style: 'position:absolute;left:427px;top:30px;width:165px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтранаПроисхождения',
+			text: 'Страна :',
+			style: 'position:absolute;left:6px;top:30px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтранаПроисхождения',
 			style: 'position:absolute;left:131px;top:30px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтавкаНДС',
+			text: 'НДС:',
+			style: 'position:absolute;left:6px;top:6px;width:125px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -236,10 +261,28 @@
 			style: 'position:absolute;left:131px;top:74px;width:165px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяЗатрат',
+			text: 'Статья затрат:',
+			style: 'position:absolute;left:6px;top:74px;width:125px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатурнаяГруппаЗатрат',
+			text: 'Номенклатурная группа затрат:',
+			style: 'position:absolute;left:299px;top:70px;width:125px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НоменклатурнаяГруппаЗатрат',
 			style: 'position:absolute;left:427px;top:74px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНазначениеИспользования',
+			text: 'Назначение использования:',
+			style: 'position:absolute;left:6px;top:146px;width:124px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -248,16 +291,34 @@
 			style: 'position:absolute;left:131px;top:151px;width:461px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаправлениеВыпуска',
+			text: 'Направление выпуска:',
+			style: 'position:absolute;left:6px;top:98px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НаправлениеВыпуска',
 			style: 'position:absolute;left:131px;top:98px;width:165px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаправлениеСписанияВыпущеннойПродукции',
+			text: 'Направление списания выпущенной продукции:',
+			style: 'position:absolute;left:299px;top:97px;width:126px;height:29px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НаправлениеСписанияВыпущеннойПродукции',
 			style: 'position:absolute;left:427px;top:98px;width:165px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмпортер',
+			text: 'Импортер:',
+			style: 'position:absolute;left:302px;top:6px;width:125px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -302,10 +363,52 @@
 			style: 'position:absolute;left:156px;top:55px;width:436px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНоменклатурнаяГруппа',
+			text: 'Номенклатурная группа:',
+			style: 'position:absolute;left:6px;top:154px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВесовойКоэффициентВхождения',
+			text: 'Вес вхождения в группу:',
+			style: 'position:absolute;left:378px;top:154px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидВоспроизводства',
+			text: 'Вид воспроизводства:',
+			style: 'position:absolute;left:6px;top:6px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственныйМенеджерЗаПокупки',
+			text: 'Ответственный за покупки:',
+			style: 'position:absolute;left:6px;top:30px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОсновнойПоставщик',
+			text: 'Основной поставщик:',
+			style: 'position:absolute;left:6px;top:55px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЦеноваяГруппа',
+			text: 'Ценовая группа:',
+			style: 'position:absolute;left:6px;top:80px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЦеноваяГруппа',
 			style: 'position:absolute;left:156px;top:80px;width:436px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОКП',
+			text: 'ОКП:',
+			style: 'position:absolute;left:6px;top:104px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -316,9 +419,40 @@
 					]
 				},
 				{
-					title:'НастройкаУчета',
+					title:'Настройка учета',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести оперативный учет остатков незавершенного производства',
+			style: 'position:absolute;left:6px;top:26px;width:354px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Требуется внутренняя сертификация',
+			style: 'position:absolute;left:6px;top:157px;width:208px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Требуется внешняя сертификация',
+			style: 'position:absolute;left:258px;top:157px;width:217px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести учет по сериям в незавершенном производстве',
+			style: 'position:absolute;left:6px;top:45px;width:354px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести серийные номера',
+			style: 'position:absolute;left:6px;top:91px;width:209px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокПрисвоенияСерийногоНомера',
+			text: 'Порядок присвоения серийного номера:',
+			style: 'position:absolute;left:6px;top:109px;width:209px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -338,31 +472,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'70',
 				},
 				{
-					text:'ЕдиницаПоКлассификатору',
+					text:'По классификатору',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'44',
 				},
 				{
 					text:'Вес',
+					width:'57',
 				},
 				{
 					text:'Объем',
+					width:'63',
 				},
 				{
-					text:'ПорогОкругления',
+					text:'Порог округления',
+					width:'70',
 				},
 				{
-					text:'ПредупреждатьОНецелыхМестах',
+					text:'Предупреждать',
+					width:'70',
 				},
 			]
 		},
@@ -372,122 +515,90 @@
 			items:
 			[
 				{
-					text:'Действие9',
+					text:'Отключить отбор',
 				},
 				{
-					text:'Действие3',
+					text:'Установить пометку удаления',
 				},
 				{
-					text:'Подменю',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Действие6',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие1',
+					text:'Редактировать в диалоге',
 				},
 				{
-					text:'Действие5',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие',
+					text:'Установить отбор и сортировку списка...',
+				},
+				'-',
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Действие7',
+					text:'&Скопировать',
 				},
 				{
-					text:'Разделитель',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'Действие9',
+					text:'Отбор по значению в текущей колонке',
+				},
+				'-',
+				{
+					text:'Отключить отбор',
 				},
 				{
-					text:'Разделитель2',
+					text:'Вывести список...',
 				},
 				{
-					text:'Действие',
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Настройка списка...',
 				},
 				{
-					text:'Подменю',
+					text:'Просмотр по владельцу',
 				},
 				{
-					text:'Действие1',
+					text:'&Изменить',
+				},
+				'-',
+				{
+					text:'&Добавить',
 				},
 				{
-					text:'Действие7',
+					text:'',
+				},
+				'-',
+				{
+					text:'Просмотр по владельцу',
 				},
 				{
-					text:'Действие',
+					text:'Установить пометку удаления',
+				},
+				'-',
+				'-',
+				{
+					text:'Редактировать в диалоге',
 				},
 				{
-					text:'Действие8',
+					text:'&Изменить',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие10',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие11',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
@@ -503,10 +614,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -530,13 +643,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -560,16 +676,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Период',
+					width:'116',
 				},
 				{
 					text:'Номенклатура',
+					width:'213',
 				},
 				{
 					text:'Проект',
+					width:'234',
 				},
 			]
 		},
@@ -600,13 +720,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Свойство',
+					width:'119',
 				},
 				{
 					text:'Значение',
+					width:'220',
 				},
 			]
 		},
@@ -623,13 +746,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Принадлежность',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Категория',
+					width:'220',
 				},
 			]
 		},
@@ -639,16 +765,16 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 			]
 		},
@@ -665,16 +791,20 @@
 			columns:
 			[
 				{
-					text:'Комплектующая',
+					text:'Комплектующая номенклатуры',
+					width:'220',
 				},
 				{
-					text:'ХарактеристикаКомплектующей',
+					text:'Характеристика комплектующей',
+					width:'220',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 			]
 		},
@@ -684,115 +814,85 @@
 			items:
 			[
 				{
-					text:'Действие6',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Действие5',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Действие7',
+					text:'Отключить отбор',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие10',
+					text:'Обновить',
+				},
+				'-',
+				'-',
+				{
+					text:'Вывести список...',
 				},
 				{
-					text:'Разделитель',
+					text:'&Удалить',
 				},
 				{
-					text:'Разделитель',
+					text:'&Изменить',
 				},
 				{
-					text:'Подменю',
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
 				},
 				{
-					text:'Действие8',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие2',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие1',
+					text:'Отключить отбор',
+				},
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель2',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие4',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Действие3',
+					text:'Настройка списка...',
 				},
 				{
-					text:'Разделитель2',
+					text:'Обновить',
 				},
 				{
-					text:'Подменю1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 			]
 		},
@@ -809,28 +909,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'ТипШтрихкода',
+					text:'Тип штрихкода',
+					width:'100',
 				},
 				{
 					text:'Штрихкод',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'56',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'144',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия',
+					width:'122',
 				},
 				{
 					text:'Качество',
+					width:'95',
 				},
 				{
 					text:'Владелец',
+					width:'123',
 				},
 			]
 		},
@@ -840,128 +948,96 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Действие7',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Обновить',
 				},
 				{
-					text:'Действие9',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Действие8',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие',
+					text:'&Изменить',
+				},
+				'-',
+				'-',
+				{
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие2',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Разделитель3',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Разделитель',
+					text:'Настройка списка...',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'Действие6',
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Просмотр по владельцу',
 				},
 				{
-					text:'Действие7',
+					text:'&Скопировать',
 				},
 				{
-					text:'Подменю',
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'&Добавить',
 				},
 				{
-					text:'Действие11',
+					text:'&Удалить',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Отключить отбор',
 				},
 				{
-					text:'Действие1',
+					text:'Отключить отбор',
 				},
 				{
-					text:'Действие12',
+					text:'Вывести список...',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'Действие6',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие1',
+					text:'Новый штрихкод',
 				},
+				'-',
 				{
-					text:'Подменю1',
+					text:'Редактировать в диалоге',
 				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие10',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'НовыйШтрихкод',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'КодыВесовогоТовара',
+					title:'Коды весового товара',
 					items:
 					[
 		{
@@ -978,29 +1054,35 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'70',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'202',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'114',
 				},
 				{
 					text:'Номенклатура',
+					width:'112',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'МестаХранения',
+					title:'Места хранения',
 					items:
 					[
 		{
@@ -1010,16 +1092,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Склад',
+					width:'257',
 				},
 				{
 					text:'Приоритет',
+					width:'61',
 				},
 				{
-					text:'МестоХранения',
+					text:'Место хранения',
+					width:'241',
 				},
 			]
 		},
@@ -1041,17 +1127,12 @@
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю2',
+					text:'Создать версию',
 				},
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'СоздатьВерсию',
-				},
-				{
-					text:'ВерсииСпецификации',
+					text:'Версии спецификации',
 				},
 			]
 		},
@@ -1062,38 +1143,47 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
-					text:'КодВерсии',
+					text:'Версия',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'181',
 				},
 				{
 					text:'Активная',
+					width:'21',
 				},
 				{
 					text:'Состояние',
+					width:'80',
 				},
 				{
-					text:'ДатаУтверждения',
+					text:'Дата утверждения',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПлановаяСебестоимость',
+					title:'Плановая себестоимость',
 					items:
 					[
 		{
@@ -1101,9 +1191,7 @@
 			style: 'position:absolute;left:6px;top:102px;width:586px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Рассчитать',
 				},
@@ -1116,25 +1204,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'57',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
 					text:'Валюта',
+					width:'60',
 				},
 			]
 		},
@@ -1145,31 +1240,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Регистратор',
+					width:'100',
 				},
 				{
-					text:'ТипЦен',
+					text:'Тип цен',
+					width:'127',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
 					text:'Валюта',
+					width:'70',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'Процент скидки или наценки',
+					width:'56',
 				},
 			]
 		},
@@ -1183,7 +1287,7 @@
 					]
 				},
 				{
-					title:'НоменклатураПоставщика',
+					title:'Номенклатура поставщика',
 					items:
 					[
 		{
@@ -1193,21 +1297,32 @@
 			columns:
 			[
 				{
-					text:'Записать',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ТипЦен',
+					text:'Тип цен',
+					width:'198',
 				},
 				{
 					text:'Цена',
+					width:'78',
 				},
 				{
 					text:'Валюта',
+					width:'72',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'54',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументУстановкаЦенКонтрагента',
+			text: 'Документ установки цен контрагента:',
+			style: 'position:absolute;left:6px;top:82px;width:197px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -1221,17 +1336,13 @@
 			items:
 			[
 				{
-					text:'ПеречитатьТекущиеЦены',
+					text:'Перечитать текущие цены',
 				},
 				{
-					text:'ЗаписатьЦены',
+					text:'Записать цены',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -1241,25 +1352,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'172',
 				},
 				{
-					text:'КодНоменклатурыКонтрагента',
+					text:'Код',
+					width:'69',
 				},
 				{
-					text:'АртикулНоменклатурыКонтрагента',
+					text:'Артикул',
+					width:'97',
 				},
 				{
-					text:'НаименованиеНоменклатурыКонтрагента',
+					text:'Наименование',
+					width:'194',
 				},
 				{
-					text:'ШтрихКодНоменклатурыКонтрагента',
+					text:'Штрихкод',
+					width:'108',
 				},
 				{
-					text:'ЕдиницаНоменклатурыКонтрагента',
+					text:'Ед. изм.',
+					width:'54',
 				},
 			]
 		},
@@ -1273,7 +1391,7 @@
 					]
 				},
 				{
-					title:'ЦеныНоменклатуры',
+					title:'Цены номенклатуры',
 					items:
 					[
 		{
@@ -1283,25 +1401,32 @@
 			columns:
 			[
 				{
-					text:'Записать',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ТипЦен',
+					text:'Тип цен',
+					width:'143',
 				},
 				{
 					text:'Цена',
+					width:'61',
 				},
 				{
-					text:'СпособРасчетаЦены',
+					text:'Способ расчета',
+					width:'124',
 				},
 				{
 					text:'Валюта',
+					width:'47',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'54',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'% скидки (наценки)',
+					width:'72',
 				},
 			]
 		},
@@ -1311,27 +1436,27 @@
 			items:
 			[
 				{
-					text:'РассчитатьПоБазовымЦенам',
+					text:'Рассчитать по базовым ценам',
 				},
 				{
-					text:'ПеречитатьТекущиеЦены',
+					text:'Перечитать текущие цены',
 				},
 				{
-					text:'РассчитатьЦеныКомплекта',
+					text:'Рассчитать цены комплекта',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Записать цены',
 				},
-				{
-					text:'ЗаписатьЦены',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументУстановкаЦен',
+			text: 'Документ установки цен:',
+			style: 'position:absolute;left:6px;top:6px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -1339,17 +1464,28 @@
 			name: 'ДокументУстановкаЦен',
 			style: 'position:absolute;left:142px;top:6px;width:450px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подставлять валюту из диапазона',
+			style: 'position:absolute;left:6px;top:153px;width:586px;height:20px;',
+		},
 					]
 				},
 				{
-					title:'ДополнительноеОписаниеНоменклатуры',
+					title:'Описание',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ПолеДополнительноеОписаниеНоменклатуры',
 			style: 'position:absolute;left:6px;top:34px;width:586px;height:141px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроизводитель',
+			text: 'Производитель:',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -1362,10 +1498,21 @@
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести учет по сериям',
+			style: 'position:absolute;left:305px;top:125px;width:127px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидНоменклатуры',
 			style: 'position:absolute;left:451px;top:79px;width:157px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидНоменклатуры',
+			text: 'Вид номенклатуры:',
+			style: 'position:absolute;left:346px;top:79px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -1392,6 +1539,34 @@
 			hideLabel: true,
 			name: 'ЕдиницаДляОтчетов',
 			style: 'position:absolute;left:226px;top:148px;width:73px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаХраненияОстатков',
+			text: 'Ед. хран. ост.:',
+			style: 'position:absolute;left:139px;top:127px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаДляОтчетов',
+			text: 'Ед. для отчетов:',
+			style: 'position:absolute;left:139px;top:148px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Весовой товар',
+			style: 'position:absolute;left:305px;top:172px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести партионный учет по сериям',
+			style: 'position:absolute;left:305px;top:148px;width:191px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмеренияМест',
+			text: ' Ед. мест:',
+			style: 'position:absolute;left:137px;top:172px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

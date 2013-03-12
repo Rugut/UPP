@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ЦиклыОбмена_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 700,
+	style: 'position:absolute;width:700px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Циклы обмена',
 	
 	items:
@@ -14,37 +16,48 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'96',
 				},
 				{
-					text:'ДатаСоздания',
+					text:'Дата создания',
+					width:'112',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Предмет',
+					width:'104',
 				},
 				{
 					text:'Организация',
+					width:'104',
 				},
 				{
-					text:'ВнешняяОрганизация',
+					text:'Внешняя организация',
+					width:'104',
 				},
 				{
 					text:'Идентификатор',
+					width:'120',
 				},
 				{
-					text:'ДатаЗакрытия',
+					text:'Дата завершения',
+					width:'104',
 				},
 				{
-					text:'ДатаПоследнегоСообщения',
+					text:'Дата последнего сообщения',
+					width:'104',
 				},
 				{
-					text:'Тип',
+					text:'Тип цикла обмена',
+					width:'104',
 				},
 			]
 		},
@@ -53,9 +66,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},

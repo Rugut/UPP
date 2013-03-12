@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.АмортизацияОСМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 644,
+	style: 'position:absolute;width:644px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Амортизация основных средств (международный)',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:309px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,12 +62,7 @@
 			style: 'position:absolute;left:8px;top:100px;width:628px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
@@ -54,16 +75,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'220',
 				},
 				{
-					text:'МетодНачисленияАмортизации',
+					text:'Метод начисления',
+					width:'120',
 				},
 				{
-					text:'КоличествоВыпущеннойПродукции',
+					text:'Количество выпущенной продукции',
+					width:'185',
 				},
 			]
 		},
@@ -73,26 +98,19 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -101,33 +119,39 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:330px;top:57px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:435px;top:57px;width:201px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:330px;top:33px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

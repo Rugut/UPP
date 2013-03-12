@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.УстановкаДолейРаспределенияПоПроектам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 402,width: 669,
+	style: 'position:absolute;width:669px;height:402px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка долей распределения по проектам',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:350px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,33 +51,38 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:326px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,21 +98,15 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -100,13 +119,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'39',
 				},
 				{
 					text:'Проект',
+					width:'258',
 				},
 				{
-					text:'ДоляРаспределения',
+					text:'Доля распределения',
+					width:'72',
 				},
 			]
 		},
@@ -116,6 +138,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидРаспределения',
+			text: 'Вид распределения:',
+			style: 'position:absolute;left:336px;top:57px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

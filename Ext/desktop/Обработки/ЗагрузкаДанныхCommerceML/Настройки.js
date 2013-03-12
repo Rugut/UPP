@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЗагрузкаДанныхCommerceML.Настройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 132,width: 442,
+	style: 'position:absolute;width:442px;height:132px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки загрузки данных',
 	
 	items:
@@ -13,21 +15,35 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Записывать документы в режиме обмена данными',
+			style: 'position:absolute;left:8px;top:8px;width:283px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарийКДокументамИСправочникам',
+			text: 'Начало комментария для документов и справочников:',
+			style: 'position:absolute;left:8px;top:57px;width:283px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:31px;top:80px;width:403px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Автоматически создавать недостающие договоры',
+			style: 'position:absolute;left:8px;top:32px;width:283px;height:19px;',
 		},
 	]
 });

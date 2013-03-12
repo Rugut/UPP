@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетНДС0.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 670,
+	style: 'position:absolute;width:670px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по НДС 0%',
 	
 	items:
@@ -16,71 +18,47 @@
 					text:'Отправить',
 				},
 				{
-					text:'Отправка',
+					text:'Показать отправки',
 				},
+				'-',
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Проверить выгрузку',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Подготовить к отправке и подписать',
+				},
+				'-',
+				{
+					text:'Подготовить к отправке',
+				},
+				'-',
+				'-',
+				{
+					text:'Расширить поле бланка',
 				},
 				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
 				{
 					text:'Выгрузить',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -94,23 +72,14 @@
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -124,7 +93,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -160,16 +129,28 @@
 					]
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись25',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:99px;top:241px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:104px;top:265px;width:148px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
 		{
@@ -219,6 +200,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:49px;',
 			height: 49,width: 654,
@@ -241,6 +228,11 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -260,6 +252,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:4px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

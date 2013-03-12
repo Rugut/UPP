@@ -1,12 +1,26 @@
 ﻿Ext.define('Документы.УчетЗаработкаРаботников.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 428,width: 477,
+	style: 'position:absolute;width:477px;height:428px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Учет заработка сотрудников',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,51 +39,38 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Списком сотрудников',
 				},
 				{
-					text:'Подменю1',
+					text:'Редактировать номер',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СписокРаботников',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'',
 				},
 				{
 					text:'Очистить',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:376px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,12 +86,8 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -106,25 +103,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'75',
 				},
 				{
 					text:'Сотрудник',
+					width:'100',
 				},
 				{
-					text:'ДатаИзменения',
+					text:'Дата',
+					width:'78',
 				},
 				{
-					text:'СпособОтраженияВУпрУчете',
+					text:'Способ отражения в упр учете',
+					width:'160',
 				},
 				{
-					text:'УчетНачисленийПоОрганизации',
+					text:'Учет начислений по организации',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 			]
 		},
@@ -134,48 +138,56 @@
 			items:
 			[
 				{
-					text:'Действие14',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие9',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие13',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие11',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие15',
+					text:'&Переместить вниз',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие17',
+					text:'Сортировать по убыванию',
 				},
 				{
 					text:'Подбор',
 				},
 				{
-					text:'Действие10',
+					text:'&Скопировать',
+				},
+				'-',
+				{
+					text:'&Удалить',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Действие16',
+					text:'Сортировать по возрастанию',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтветственныйЗаДокумент',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:',
+			style: 'position:absolute;left:8px;top:81px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

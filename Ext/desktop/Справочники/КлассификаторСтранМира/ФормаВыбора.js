@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КлассификаторСтранМира.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 528,
+	style: 'position:absolute;width:528px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Классификатор стран мира',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Полное наименование',
+					width:'220',
 				},
 			]
 		},
@@ -33,17 +39,13 @@
 			items:
 			[
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор из ОКСМ',
 				},
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Выбрать',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

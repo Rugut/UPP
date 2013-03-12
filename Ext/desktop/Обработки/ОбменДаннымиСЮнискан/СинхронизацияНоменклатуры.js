@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбменДаннымиСЮнискан.СинхронизацияНоменклатуры',
 	{
 	extend: 'Ext.window.Window',
-	height: 430,width: 640,
+	style: 'position:absolute;width:640px;height:430px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Информация о зарегистрированной номенклатуре (ЮНИСКАН/GS1 Russia)',
 	
 	items:
@@ -12,21 +14,17 @@
 			style: 'position:absolute;left:0px;top:405px;width:640px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Действие1',
 				},
 				{
-					text:'Действие',
+					text:'Запрос',
 				},
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -35,23 +33,21 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
 					text:'Обновить',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -61,51 +57,114 @@
 			columns:
 			[
 				{
-					text:'ШтрихКод',
+					text:'Штрихкод',
+					width:'100',
 				},
 				{
-					text:'Регистрация',
+					text:'Статус',
+					width:'150',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица измерения',
+					width:'100',
 				},
 				{
-					text:'ОписаниеОшибки',
+					text:'Комментарий',
+					width:'120',
 				},
 				{
 					text:'НаименованиеЮнискан',
+					width:'100',
 				},
 				{
 					text:'ЕдиницаИзмеренияЮнискан',
+					width:'100',
 				},
 				{
 					text:'НаименованиеЕдиницыИзмеренияЮнискан',
+					width:'100',
 				},
 				{
 					text:'КоэффициентЮнискан',
+					width:'100',
 				},
 				{
 					text:'ПроизводительЮнискан',
+					width:'100',
 				},
 				{
 					text:'НаименованиеИБ',
+					width:'100',
 				},
 				{
 					text:'ЕдиницаИзмеренияИБ',
+					width:'103',
 				},
 				{
 					text:'НаименованеиЕдиницыИзмеренияИБ',
+					width:'100',
 				},
 				{
 					text:'КоэффициентИБ',
+					width:'100',
 				},
 				{
 					text:'ПроизводительИБ',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроизводитель',
+			text: 'Производитель:',
+			style: 'position:absolute;left:8px;top:249px;width:624px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеИБ',
+			text: 'Наименование (ИБ):',
+			style: 'position:absolute;left:8px;top:271px;width:624px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеЮнискан',
+			text: 'Наименование (Юнискан):',
+			style: 'position:absolute;left:8px;top:293px;width:624px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмеренияИБ',
+			text: 'Ед. измерения (ИБ):',
+			style: 'position:absolute;left:8px;top:314px;width:624px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмеренияЮнискан',
+			text: 'Ед. измерения (Юнискан):',
+			style: 'position:absolute;left:8px;top:336px;width:290px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоэффициентИБ',
+			text: 'Коэффициент (ИБ):',
+			style: 'position:absolute;left:8px;top:358px;width:290px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоэффициентЮнискан',
+			text: 'Коэффициент (Юнискан):',
+			style: 'position:absolute;left:8px;top:380px;width:290px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПараметрыОбменаСЮнискан',
+			text: 'Параметры обмена с БД ЮНИСКАН/GS1 Russia',
+			style: 'position:absolute;left:8px;top:227px;width:624px;height:17px;',
 		},
 		{
 			xtype: 'button',

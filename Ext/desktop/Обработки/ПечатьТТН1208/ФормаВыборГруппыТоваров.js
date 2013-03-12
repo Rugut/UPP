@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПечатьТТН1208.ФормаВыборГруппыТоваров',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 400,
+	style: 'position:absolute;width:400px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Единая тарифно-статистическая номенклатура грузов',
 	
 	items:
@@ -19,14 +21,12 @@
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},
@@ -37,7 +37,8 @@
 			columns:
 			[
 				{
-					text:'Группа',
+					text:'',
+					width:'209',
 				},
 			]
 		},

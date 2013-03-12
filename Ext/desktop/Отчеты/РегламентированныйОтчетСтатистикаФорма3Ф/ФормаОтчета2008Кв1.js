@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма3Ф.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 395,width: 716,
+	style: 'position:absolute;width:716px;height:395px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Форма 3-Ф',
 	
 	items:
@@ -13,32 +15,24 @@
 			items:
 			[
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Действие2',
 				},
 				{
-					text:'Разделитель3',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -47,27 +41,24 @@
 			items:
 			[
 				{
-					text:'ПодменюПечати',
-				},
-				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -105,6 +96,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

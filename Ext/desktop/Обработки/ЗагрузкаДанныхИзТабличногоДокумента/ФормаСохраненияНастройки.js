@@ -1,12 +1,20 @@
 ﻿Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаСохраненияНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 241,width: 411,
+	style: 'position:absolute;width:411px;height:241px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сохранение настройки',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеНастройки',
+			text: 'Наименование настройки:',
+			style: 'position:absolute;left:8px;top:8px;width:309px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -32,6 +40,11 @@
 			style: 'position:absolute;left:329px;top:75px;width:74px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать по умолчанию',
+			style: 'position:absolute;left:8px;top:51px;width:309px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:75px;width:309px;height:158px;',
 			height: 158,width: 309,
@@ -39,6 +52,7 @@
 			[
 				{
 					text:'Колонка1',
+					width:'100',
 				},
 			]
 		},

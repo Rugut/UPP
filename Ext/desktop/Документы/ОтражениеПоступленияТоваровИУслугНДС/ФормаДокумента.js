@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ОтражениеПоступленияТоваровИУслугНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 473,width: 661,
+	style: 'position:absolute;width:661px;height:473px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отражение НДС к вычету',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:81px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:105px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,16 +58,34 @@
 			style: 'position:absolute;left:90px;top:105px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:8px;top:129px;width:52px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:90px;top:129px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРасчетныйДокумент',
+			text: 'Документ расчетов:',
+			style: 'position:absolute;left:319px;top:105px;width:106px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'РасчетныйДокумент',
 			style: 'position:absolute;left:429px;top:105px;width:224px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:421px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,32 +99,22 @@
 			items:
 			[
 				{
-					text:'Подменю2',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Цены и валюта...',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеЦеныВалюта',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -89,27 +123,38 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетФактура',
+			text: 'Счет-фактура:',
+			style: 'position:absolute;left:8px;top:399px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаСчетФактура',
+			text: 'Ввести счет-фактуру',
+			style: 'position:absolute;left:90px;top:399px;width:369px;height:17px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать как запись книги покупок',
+			style: 'position:absolute;left:319px;top:33px;width:288px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -118,10 +163,27 @@
 			style: 'position:absolute;left:190px;top:57px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВходящийНомер',
+			text: 'Вх. номер:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерВходящегоДокумента',
 			style: 'position:absolute;left:90px;top:57px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата1',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:57px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Формировать проводки',
+			style: 'position:absolute;left:319px;top:81px;width:288px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -130,7 +192,7 @@
 			items:
 			[
 				{
-					title:'ТоварыИУслуги',
+					title:'Товары и услуги',
 					items:
 					[
 		{
@@ -138,17 +200,12 @@
 			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'ПодменюЗаполнить',
+					text:'Добавить из расчетного документа',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеЗаполнить1',
-				},
-				{
-					text:'ДействиеЗаполнить',
+					text:'Заполнить по расчетному документу',
 				},
 			]
 		},
@@ -159,65 +216,83 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
 					text:'Цена',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'73',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'120',
 				},
 				{
 					text:'Всего',
+					width:'120',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'80',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1',
+					width:'120',
 				},
 				{
-					text:'Субконто2',
+					text:'Субконто 2',
+					width:'120',
 				},
 				{
-					text:'Субконто3',
+					text:'Субконто 3',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'80',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'100',
 				},
 				{
-					text:'НомерГТД',
+					text:'Номер ГТД',
+					width:'100',
 				},
 				{
 					text:'Событие',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ДокументыОплаты',
+					title:'Документы оплаты',
 					items:
 					[
 		{
@@ -227,13 +302,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'120',
 				},
 			]
 		},
@@ -242,14 +320,24 @@
 			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьТоварыИтоги',
+			text: 'Оптовые цены, Скидка 20%',
+			style: 'position:absolute;left:8px;top:377px;width:451px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего, USD:',
+			style: 'position:absolute;left:464px;top:377px;width:72px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -258,16 +346,32 @@
 			style: 'position:absolute;left:537px;top:377px;width:116px;height:17px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВсегоНДС',
+			text: 'НДС ( в т. ч.):',
+			style: 'position:absolute;left:464px;top:399px;width:72px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:537px;top:399px;width:116px;height:17px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Запись доп. листа за период:',
+			style: 'position:absolute;left:319px;top:57px;width:169px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КорректируемыйПериод',
 			style: 'position:absolute;left:491px;top:57px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать документ расчетов как счет-фактуру',
+			style: 'position:absolute;left:319px;top:129px;width:284px;height:19px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ВыборСертификатаОтветственногоЛица',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 810,
+	style: 'position:absolute;width:810px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор сертификата ответственного лица для подписания',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -24,9 +24,7 @@
 				{
 					text:'Открыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -36,10 +34,12 @@
 			columns:
 			[
 				{
-					text:'ОтветственноеЛицо',
+					text:'Владелец',
+					width:'215',
 				},
 				{
 					text:'Сертификат',
+					width:'546',
 				},
 			]
 		},

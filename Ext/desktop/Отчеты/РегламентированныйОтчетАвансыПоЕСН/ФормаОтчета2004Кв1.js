@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыПоЕСН.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 460,width: 780,
+	style: 'position:absolute;width:780px;height:460px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Авансы по ЕСН',
 	
 	items:
@@ -12,17 +14,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
-				{
-					text:'РазделительЗаполнить',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Очистить',
@@ -30,27 +28,19 @@
 				{
 					text:'Справка',
 				},
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Настройка...',
 				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Обновить',
 				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 		{
@@ -59,25 +49,16 @@
 			items:
 			[
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'ПодменюПечати',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -91,15 +72,27 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:234px;top:302px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Дополнительные строки',
+			style: 'position:absolute;left:462px;top:303px;width:132px;height:19px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:298px;width:762px;height:28px;',
@@ -129,7 +122,7 @@
 					]
 				},
 				{
-					title:'Раздел2_1',
+					title:'Раздел 2.1',
 					items:
 					[
 		{
@@ -161,13 +154,19 @@
 					]
 				},
 				{
-					title:'Раздел2_2',
+					title:'Раздел 2.2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел3',
+			text: '999 из 999',
+			style: 'position:absolute;left:417px;top:302px;width:64px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел2_3',
+					title:'Раздел 2.3',
 					items:
 					[
 		{
@@ -199,7 +198,7 @@
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
 		{
@@ -261,13 +260,13 @@
 					]
 				},
 				{
-					title:'Раздел3_1',
+					title:'Раздел 3.1',
 				},
 				{
-					title:'Раздел3_2',
+					title:'Раздел 3.2',
 				},
 				{
-					title:'Раздел3_3',
+					title:'Раздел 3.3',
 					items:
 					[
 		{
@@ -285,6 +284,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:691px;top:6px;width:82px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',

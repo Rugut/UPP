@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПриходныйКассовыйОрдер.ФормаВыбораКассы',
 	{
 	extend: 'Ext.window.Window',
-	height: 108,width: 400,
+	style: 'position:absolute;width:400px;height:108px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Укажите кассу поступления денежных средств',
 	
 	items:
@@ -23,12 +25,22 @@
 					text:'ОК',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКасса',
+			text: 'Касса:',
+			style: 'position:absolute;left:8px;top:56px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

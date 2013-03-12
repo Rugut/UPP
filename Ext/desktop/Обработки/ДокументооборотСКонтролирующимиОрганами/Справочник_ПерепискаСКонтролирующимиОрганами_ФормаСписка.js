@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ПерепискаСКонтролирующимиОрганами_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 765,
+	style: 'position:absolute;width:765px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Переписка с контролирующими органами',
 	
 	items:
@@ -15,9 +17,7 @@
 				{
 					text:'Действие10',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 		{
@@ -27,22 +27,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Статус',
+					width:'109',
 				},
 				{
-					text:'ДатаСообщения',
+					text:'Дата',
+					width:'119',
 				},
 				{
 					text:'Отправитель',
+					width:'112',
 				},
 				{
 					text:'Получатель',
+					width:'112',
 				},
 				{
-					text:'Наименование',
+					text:'Тема',
+					width:'144',
 				},
 			]
 		},

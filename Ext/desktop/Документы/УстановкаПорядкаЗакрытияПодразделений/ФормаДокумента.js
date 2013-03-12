@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.УстановкаПорядкаЗакрытияПодразделений.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 346,width: 636,
+	style: 'position:absolute;width:636px;height:346px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка порядка закрытия подразделений',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,26 +38,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 			]
 		},
@@ -56,24 +63,24 @@
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:271px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,10 +89,22 @@
 			style: 'position:absolute;left:94px;top:271px;width:533px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:294px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:294px;width:533px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,13 +119,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'Порядок',
+					width:'49',
 				},
 				{
 					text:'Подразделение',
+					width:'347',
 				},
 				{
-					text:'ВидПодразделения',
+					text:'Вид подразделения',
+					width:'105',
 				},
 			]
 		},
@@ -116,12 +138,15 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПодразделения',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить подразделения',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:328px;top:33px;width:62px;height:19px;',
 		},
 	]
 });

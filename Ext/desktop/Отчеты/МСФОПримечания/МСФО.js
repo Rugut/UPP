@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МСФОПримечания.МСФО',
 	{
 	extend: 'Ext.window.Window',
-	height: 434,width: 780,
+	style: 'position:absolute;width:780px;height:434px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Примечания',
 	
 	items:
@@ -12,45 +14,33 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель7',
+					text:'',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РежимВводаИнформации',
+					text:'Режим ввода информации',
 				},
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -58,27 +48,18 @@
 			style: 'position:absolute;left:0px;top:409px;width:780px;height:25px;',
 			items:
 			[
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -88,7 +69,7 @@
 			items:
 			[
 				{
-					title:'Примечания',
+					title:'1. Дочерние компании',
 					items:
 					[
 		{
@@ -118,7 +99,7 @@
 					]
 				},
 				{
-					title:'ПримечанияСД',
+					title:'2. Совместная деятельность',
 					items:
 					[
 		{
@@ -148,7 +129,7 @@
 					]
 				},
 				{
-					title:'ДСОтОперДеят',
+					title:'3. ДС от операционной деятельности',
 					items:
 					[
 		{
@@ -166,6 +147,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:694px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -195,6 +182,11 @@
 			name: 'ВидОтчета',
 			style: 'position:absolute;left:545px;top:0px;width:220px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:172px;top:24px;width:244px;height:19px;',
+		},
 					]
 				},
 			]
@@ -209,6 +201,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:0px;top:4px;width:76px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

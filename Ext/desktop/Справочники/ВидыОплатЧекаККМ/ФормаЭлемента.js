@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыОплатЧекаККМ.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 180,width: 454,
+	style: 'position:absolute;width:454px;height:180px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Вид оплаты чека ККМ',
 	
 	items:
@@ -20,21 +22,23 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:358px;top:33px;width:23px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,10 +47,22 @@
 			style: 'position:absolute;left:386px;top:33px;width:60px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:148px;top:33px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипОплаты',
+			text: 'Тип оплаты:',
+			style: 'position:absolute;left:8px;top:57px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -65,16 +81,34 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьБанкКредитор',
+			text: 'Банк-кредитор:',
+			style: 'position:absolute;left:0px;top:0px;width:134px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'БанкКредитор',
 			style: 'position:absolute;left:140px;top:0px;width:298px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговорВзаиморасчетовБанкаКредитора',
+			text: 'Договор взаиморасчетов:',
+			style: 'position:absolute;left:0px;top:24px;width:134px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорВзаиморасчетовБанкаКредитора',
 			style: 'position:absolute;left:140px;top:24px;width:298px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентБанковскойКомиссии',
+			text: '% банковской комиссии:',
+			style: 'position:absolute;left:0px;top:48px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

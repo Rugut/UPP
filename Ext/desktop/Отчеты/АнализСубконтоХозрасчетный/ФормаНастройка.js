@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСубконтоХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 432,
+	style: 'position:absolute;width:432px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,20 +15,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
 				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -64,16 +62,33 @@
 			style: 'position:absolute;left:88px;top:31px;width:200px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:266px;top:121px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по количеству',
+			style: 'position:absolute;left:266px;top:141px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам',
+			style: 'position:absolute;left:266px;top:76px;width:142px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:96px;width:242px;height:96px;',
 			height: 96,width: 242,
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидСубконто',
+					text:'Вид субконто',
+					width:'191',
 				},
 			]
 		},
@@ -97,22 +112,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -130,6 +151,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:7px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:48px;width:182px;height:146px;',
 			height: 146,width: 182,
@@ -137,9 +164,11 @@
 			[
 				{
 					text:'Направление',
+					width:'107',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'64',
 				},
 			]
 		},
@@ -151,8 +180,15 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сортировать по:',
+			style: 'position:absolute;left:6px;top:6px;width:90px;height:18px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -166,11 +202,9 @@
 					text:'Действие1',
 				},
 				{
-					text:'СменитьНаправление',
+					text:'Направление',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{

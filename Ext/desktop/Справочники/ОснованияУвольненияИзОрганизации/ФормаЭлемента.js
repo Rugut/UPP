@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ОснованияУвольненияИзОрганизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 163,width: 378,
+	style: 'position:absolute;width:378px;height:163px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Основание увольнения (статья ТК РФ)',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -26,24 +34,26 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьТекстОснования',
+			text: 'Текст основания:',
+			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ТекстОснования',
 			style: 'position:absolute;left:8px;top:76px;width:362px;height:54px;',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаФИО',
 	{
 	extend: 'Ext.window.Window',
-	height: 59,width: 378,
+	style: 'position:absolute;width:378px;height:59px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Фамилия, имя, отчество',
 	
 	items:
@@ -13,21 +15,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Действие1',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОк',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьФИО',
+			text: 'ФИО:',
+			style: 'position:absolute;left:8px;top:7px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

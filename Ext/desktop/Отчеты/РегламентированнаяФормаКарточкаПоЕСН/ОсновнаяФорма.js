@@ -1,17 +1,31 @@
 ﻿Ext.define('Отчеты.РегламентированнаяФормаКарточкаПоЕСН.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 412,width: 660,
+	style: 'position:absolute;width:660px;height:412px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Индивидуальная карточка ЕСН',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:86px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:8px;top:57px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -28,55 +42,38 @@
 					text:'Сформировать',
 				},
 				{
-					text:'СохранитьЗначения___',
+					text:'Сохранить значения',
 				},
 				{
-					text:'ДействиеНовыйОтчет',
+					text:'Новый отчет',
 				},
 				{
-					text:'Сформировать1',
+					text:'Сформировать',
 				},
 				{
-					text:'ДействиеНовыйОтчет',
+					text:'Новый отчет',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Восстановить значения',
 				},
+				'-',
+				'-',
 				{
-					text:'ВосстановитьЗначения___',
+					text:'На принтер',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ВыполнитьПечать',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ВыполнитьПечать',
+					text:'На принтер',
 				},
 			]
 		},
@@ -85,6 +82,12 @@
 			hideLabel: true,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Налоговый период:',
+			style: 'position:absolute;left:326px;top:33px;width:105px;height:19px;',
 		},
 	]
 });

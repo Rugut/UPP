@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ИнформацияДляПользователей',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 720,
+	style: 'position:absolute;width:720px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Особенности текущей версии подсистемы ""Регламентированная отчетность""',
 	
 	items:
@@ -13,15 +15,18 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не открывать это окно автоматически',
+			style: 'position:absolute;left:5px;top:430px;width:220px;height:15px;',
 		},
 	]
 });

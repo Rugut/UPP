@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ABCАнализПродаж.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 430,width: 672,
+	style: 'position:absolute;width:672px;height:430px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'АВС-анализ продаж',
 	
 	items:
@@ -12,33 +14,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Отбор',
 				},
 				{
 					text:'Диаграмма',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Разделитель1',
+					text:'Настройка ...',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
@@ -46,54 +38,45 @@
 					text:'Сформировать',
 				},
 				{
-					text:'Настройка',
-				},
-				{
-					text:'Подменю',
+					text:'Настройка ...',
 				},
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Отбор',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -102,10 +85,28 @@
 			style: 'position:absolute;left:70px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:152px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:170px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Параметр анализа:',
+			style: 'position:absolute;left:338px;top:57px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Объект анализа:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -122,6 +123,11 @@
 			hideLabel: true,
 			name: 'ОтборЗначениеКласс',
 			style: 'position:absolute;left:313px;top:0px;width:343px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'АВС-класс:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:18px;',
 		},
 					]
 				},

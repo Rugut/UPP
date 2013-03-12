@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.Склады.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 529,
+	style: 'position:absolute;width:529px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Склады (места хранения)',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:439px;top:58px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:481px;top:58px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:103px;top:58px;width:338px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:267px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,18 +50,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'РазделительПрава',
+					text:'Настройка доступа',
 				},
-				{
-					text:'Права',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 				{
 					text:'Файлы',
 				},
@@ -52,22 +65,24 @@
 			style: 'position:absolute;left:0px;top:295px;width:529px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,10 +101,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьТипЦенРозничнойТорговли',
+			text: 'Тип цен:',
+			style: 'position:absolute;left:6px;top:62px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТипЦенРозничнойТорговли',
 			style: 'position:absolute;left:94px;top:62px;width:411px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:6px;top:110px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,16 +125,39 @@
 			style: 'position:absolute;left:94px;top:110px;width:411px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидСклада',
+			text: 'Вид склада:',
+			style: 'position:absolute;left:6px;top:38px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидСклада',
 			style: 'position:absolute;left:94px;top:38px;width:411px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомерСекции',
+			text: 'Номер секции:',
+			style: 'position:absolute;left:6px;top:86px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерСекции',
 			style: 'position:absolute;left:94px;top:86px;width:33px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Расчет розничных цен по торговой наценке',
+			style: 'position:absolute;left:94px;top:134px;width:246px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственноеЛицо',
+			text: 'Ответственное лицо:',
+			style: 'position:absolute;left:6px;top:6px;width:86px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -141,13 +191,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Свойство',
+					width:'186',
 				},
 				{
 					text:'Значение',
+					width:'259',
 				},
 			]
 		},
@@ -163,16 +216,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 			]
 		},
@@ -183,13 +236,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Принадлежность',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Категория',
+					width:'416',
 				},
 			]
 		},

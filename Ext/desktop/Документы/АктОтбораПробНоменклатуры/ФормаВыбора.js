@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.АктОтбораПробНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 620,
+	style: 'position:absolute;width:620px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Акты отбора проб номенклатуры',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ВидОперации',
+					text:'Вид операции',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -42,11 +51,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

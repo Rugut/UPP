@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ТочкиМаршрута.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 157,width: 433,
+	style: 'position:absolute;width:433px;height:157px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Точки маршрута',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:319px;top:57px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:361px;top:57px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:97px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьГруппа',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:97px;top:33px;width:328px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:81px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:97px;top:81px;width:328px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРабочийЦентр',
+			text: 'Рабочий центр:',
+			style: 'position:absolute;left:8px;top:105px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,20 +81,16 @@
 			style: 'position:absolute;left:0px;top:132px;width:433px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
 		},

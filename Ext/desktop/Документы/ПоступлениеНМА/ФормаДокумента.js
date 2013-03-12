@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПоступлениеНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 419,width: 640,
+	style: 'position:absolute;width:640px;height:419px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поступление НМА',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:170px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:367px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,48 +51,40 @@
 			items:
 			[
 				{
-					text:'ПоказатьСкрытьСчетаУчета',
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель8',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Цены и валюта...',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель12',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ДействиеЦеныВалюта',
-				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:412px;top:33px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -81,7 +93,7 @@
 			items:
 			[
 				{
-					title:'НематериальныеАктивы',
+					title:'Нематериальные активы',
 					items:
 					[
 		{
@@ -91,31 +103,40 @@
 			columns:
 			[
 				{
-					text:'НомерCтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НематериальныйАктив',
+					text:'Нематериальный актив',
+					width:'220',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'60',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'80',
 				},
 				{
 					text:'Всего',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет НДС',
+					width:'90',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'94',
 				},
 			]
 		},
@@ -156,12 +177,24 @@
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:92px;top:76px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Счет учета расчетов с контрагентом:',
+			style: 'position:absolute;left:6px;top:6px;width:192px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СчетаУчета',
+					title:'Счета учета расчетов',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВходящийНомер',
+			text: 'Вх. номер:',
+			style: 'position:absolute;left:6px;top:27px;width:86px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -179,6 +212,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:330px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:81px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -191,16 +236,52 @@
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:330px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетФактура',
+			text: 'Счет-фактура:',
+			style: 'position:absolute;left:8px;top:345px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаСчетФактура',
+			text: 'Ввести счет-фактуру',
+			style: 'position:absolute;left:90px;top:345px;width:355px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:451px;top:323px;width:80px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:534px;top:323px;width:98px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсегоНДС',
+			text: 'НДС ( в т. ч.):',
+			style: 'position:absolute;left:451px;top:345px;width:80px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -214,27 +295,26 @@
 			items:
 			[
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:490px;top:33px;width:80px;height:19px;',
 		},
 	]
 });

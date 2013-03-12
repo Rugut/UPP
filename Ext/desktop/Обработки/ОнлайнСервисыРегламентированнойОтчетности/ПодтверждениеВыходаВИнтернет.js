@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.ПодтверждениеВыходаВИнтернет',
 	{
 	extend: 'Ext.window.Window',
-	height: 312,width: 658,
+	style: 'position:absolute;width:658px;height:312px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Использование сведений из Интернет',
 	
 	items:

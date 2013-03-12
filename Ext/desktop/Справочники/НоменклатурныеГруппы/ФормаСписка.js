@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НоменклатурныеГруппы.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 780,
+	style: 'position:absolute;width:780px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Номенклатурные группы',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'35',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'257',
 				},
 				{
-					text:'ЕдиницаХраненияОстатков',
+					text:'Единица остатков',
+					width:'101',
 				},
 				{
-					text:'БазоваяЕдиницаИзмерения',
+					text:'Базовая единица',
+					width:'97',
 				},
 			]
 		},
@@ -36,13 +43,11 @@
 			items:
 			[
 				{
-					text:'ДействиеСвойства',
+					text:'Свойства',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеКатегории',
+					text:'Категории',
 				},
 			]
 		},
@@ -54,6 +59,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

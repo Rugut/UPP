@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.НастройкиПрограммы.НастройкаТорговогоОборудования',
 	{
 	extend: 'Ext.window.Window',
-	height: 327,width: 650,
+	style: 'position:absolute;width:650px;height:327px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка торгового оборудования',
 	
 	items:
@@ -19,26 +21,18 @@
 					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 				{
-					text:'ДействиеЗаписать',
+					text:'Записать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -49,9 +43,11 @@
 			[
 				{
 					text:'Представление',
+					width:'100',
 				},
 				{
-					text:'ИмяРаздела',
+					text:'Имя раздела',
+					width:'100',
 				},
 			]
 		},
@@ -62,20 +58,49 @@
 			items:
 			[
 				{
-					title:'ТорговоеОборудование',
+					title:'Торговое оборудование',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьРаздела18',
+			text: 'Торговое оборудование',
+			style: 'position:absolute;left:12px;top:6px;width:244px;height:30px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать подключаемое оборудование в тонком клиенте',
+			style: 'position:absolute;left:27px;top:48px;width:337px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ВыгрузкаТоваров',
+					title:'Выгрузка товаров',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокНазначенияPLU',
+			text: 'Порядок назначения кодов товаров (PLU):',
+			style: 'position:absolute;left:12px;top:49px;width:222px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПорядокНазначенияPLU',
 			style: 'position:absolute;left:237px;top:48px;width:219px;height:20px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись21',
+			text: 'Используется при заполнении списка товаров, выгружаемых в ККМ в режиме Offline.',
+			style: 'position:absolute;left:12px;top:70px;width:444px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРаздела14',
+			text: 'Выгрузка товаров в ККМ Off-Line',
+			style: 'position:absolute;left:12px;top:6px;width:348px;height:30px;',
 		},
 					]
 				},
@@ -83,6 +108,18 @@
 					title:'Штрихкоды',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Префикс штрихкода штучного товара:',
+			style: 'position:absolute;left:12px;top:48px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Префикс штрихкода весового товара:',
+			style: 'position:absolute;left:12px;top:108px;width:199px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -96,10 +133,51 @@
 			style: 'position:absolute;left:213px;top:108px;width:52px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Разрешить назначение неуникальных штрихкодов',
+			style: 'position:absolute;left:12px;top:219px;width:289px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Необходимо указать, если предполагается печать этикеток с изображением штрихкодов для штучных товаров.',
+			style: 'position:absolute;left:12px;top:72px;width:440px;height:32px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Необходимо указать, если предполагается печать этикеток с изображением штрихкодов для весовых товаров.',
+			style: 'position:absolute;left:12px;top:129px;width:440px;height:32px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Установить, если на торговом предприятии допускается назначать разным товарам или товарам с разными единицами измерения один и тот же штрихкод.',
+			style: 'position:absolute;left:28px;top:239px;width:424px;height:32px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись19',
+			text: 'Длина кода весового товара:',
+			style: 'position:absolute;left:12px;top:165px;width:199px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'EAN13ДлинаКодаВесовогоТовара',
 			style: 'position:absolute;left:213px;top:165px;width:52px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись20',
+			text: 'Необходимо указать в соответствии с установками имеющегося торгового оборудования.',
+			style: 'position:absolute;left:12px;top:186px;width:440px;height:28px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРазделаШтрихкоды',
+			text: 'Штрихкоды',
+			style: 'position:absolute;left:12px;top:6px;width:140px;height:30px;',
 		},
 					]
 				},

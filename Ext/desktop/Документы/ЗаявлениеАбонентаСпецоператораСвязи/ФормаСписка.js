@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗаявлениеАбонентаСпецоператораСвязи.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Список заявлений абонентов спецоператоров связи',
 	
 	items:

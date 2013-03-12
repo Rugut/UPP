@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СотрудникиОрганизаций.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 275,
+	style: 'position:absolute;width:275px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сотрудники',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -24,11 +27,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.МестаХранения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 620,
+	style: 'position:absolute;width:620px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Места хранения',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Владелец',
+					width:'76',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'279',
 				},
 			]
 		},
@@ -32,20 +38,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Редактировать код',
 				},
+				'-',
 				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
 			]
 		},
@@ -57,6 +56,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},

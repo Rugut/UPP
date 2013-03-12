@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеЦен.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 331,width: 670,
+	style: 'position:absolute;width:670px;height:331px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Формирование цен',
 	
 	items:
@@ -13,10 +15,10 @@
 			items:
 			[
 				{
-					text:'ДействиеУстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
-					text:'ДействиеСнятьФлажки',
+					text:'Снять флажки',
 				},
 			]
 		},
@@ -27,39 +29,55 @@
 			columns:
 			[
 				{
-					text:'Номер строки',
+					text:'№',
+					width:'30',
 				},
 				{
-					text:'Пометка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Номенклатура',
+					width:'144',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'103',
 				},
 				{
-					text:'ЦенаБазовая',
+					text:'Цена базовая',
+					width:'84',
 				},
 				{
-					text:'ВалютаБазовая',
+					text:'Валюта базовая',
+					width:'97',
 				},
 				{
-					text:'СпособРасчетаЦены',
+					text:'Способ расчета',
+					width:'137',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'% скидки (наценки)',
+					width:'46',
 				},
 				{
 					text:'Цена',
+					width:'75',
 				},
 				{
 					text:'Валюта',
+					width:'77',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица измерения',
+					width:'55',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Пересчитывать цену при изменении других реквизитов',
+			style: 'position:absolute;left:6px;top:283px;width:307px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,6 +98,12 @@
 			style: 'position:absolute;left:228px;top:6px;width:200px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаЦен',
+			text: 'Дата чтения цен:',
+			style: 'position:absolute;left:492px;top:37px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаЦен',
@@ -96,10 +120,13 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подставлять валюту из диапазона',
+			style: 'position:absolute;left:466px;top:283px;width:196px;height:15px;',
 		},
 	]
 });

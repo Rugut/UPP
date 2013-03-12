@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ИзвещениеОПолучении',
 	{
 	extend: 'Ext.window.Window',
-	height: 179,width: 648,
+	style: 'position:absolute;width:648px;height:179px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Извещение о получении',
 	
 	items:
@@ -18,6 +20,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Дата и время получения:',
+			style: 'position:absolute;left:8px;top:8px;width:162px;height:18px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаВремяПолучения',
@@ -30,7 +38,8 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'100',
 				},
 			]
 		},

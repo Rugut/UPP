@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.РегистрацияОплатыОсновныхСредствДляУСН.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 359,width: 540,
+	style: 'position:absolute;width:540px;height:359px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация оплаты ОС и НМА для УСН',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:70px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:84px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:166px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:185px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,16 +51,11 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -50,26 +65,20 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -79,7 +88,7 @@
 			items:
 			[
 				{
-					title:'ОсновныеСредства',
+					title:'Основные средства',
 					items:
 					[
 		{
@@ -96,23 +105,27 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'150',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
-					text:'СуммаОплаты',
+					text:'Сумма оплаты',
+					width:'80',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'НематериальныеАктивы',
+					title:'Нематериальные активы',
 					items:
 					[
 		{
@@ -122,16 +135,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'НематериальныйАктив',
+					text:'Нематериальный актив',
+					width:'150',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
-					text:'СуммаОплаты',
+					text:'Сумма оплаты',
+					width:'80',
 				},
 			]
 		},
@@ -145,7 +162,7 @@
 					]
 				},
 				{
-					title:'Модернизация',
+					title:'Модернизации ОС',
 					items:
 					[
 		{
@@ -155,16 +172,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ДокументМодернизации',
+					text:'Документ модернизации',
+					width:'100',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'100',
 				},
 				{
-					text:'СуммаОплаты',
+					text:'Сумма оплаты',
+					width:'100',
 				},
 			]
 		},
@@ -178,12 +199,24 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:282px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:282px;width:436px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:307px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

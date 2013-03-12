@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатуры',
 	{
 	extend: 'Ext.window.Window',
-	height: 262,width: 500,
+	style: 'position:absolute;width:500px;height:262px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Автоподбор номенклатуры',
 	
 	items:
@@ -12,22 +14,32 @@
 			style: 'position:absolute;left:0px;top:237px;width:500px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Ок',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВариантАвтоподбора',
+			text: 'Вариант автоподбора:',
+			style: 'position:absolute;left:8px;top:6px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВариантАвтоподбора',
 			style: 'position:absolute;left:150px;top:6px;width:342px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСвойство',
+			text: 'Свойство характеристики выходного изделия:',
+			style: 'position:absolute;left:8px;top:28px;width:142px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,7 +54,7 @@
 			items:
 			[
 				{
-					title:'ИсходныеКомплектующие',
+					title:'Исходные комплектующие',
 					items:
 					[
 		{
@@ -59,26 +71,31 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Значение',
+					width:'197',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВозвратныеОтходы',
+					title:'Возвратные отходы',
 					items:
 					[
 		{
@@ -95,19 +112,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Значение',
+					width:'197',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 			]
 		},

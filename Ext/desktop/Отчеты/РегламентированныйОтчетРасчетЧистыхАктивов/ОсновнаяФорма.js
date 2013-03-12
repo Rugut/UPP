@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 236,width: 276,
+	style: 'position:absolute;width:276px;height:236px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет чистых активов',
 	
 	items:
@@ -13,21 +15,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:36px;top:83px;width:209px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:248px;top:83px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:14px;top:136px;width:254px;height:40px;',
 		},
 		{
 			xtype: 'button',

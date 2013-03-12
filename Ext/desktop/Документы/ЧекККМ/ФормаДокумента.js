@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЧекККМ.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 438,width: 652,
+	style: 'position:absolute;width:652px;height:438px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Чек ККМ',
 	
 	items:
@@ -12,39 +14,25 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю3',
+					text:'Цены и валюта...',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
-				{
-					text:'ДействиеЦеныВалюта',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель12',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
+				'-',
 			]
 		},
 		{
@@ -59,27 +47,31 @@
 					text:'ОК',
 				},
 				{
-					text:'ЧекККМ',
+					text:'Чек ККМ',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РазделительЗаписать',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:190px;top:32px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,10 +92,29 @@
 			style: 'position:absolute;left:402px;top:32px;width:242px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКассаККМ',
+			text: 'Касса ККМ:
+',
+			style: 'position:absolute;left:337px;top:32px;width:61px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:110px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЧекККМПродажа',
+			text: 'Чек ККМ:',
+			style: 'position:absolute;left:337px;top:56px;width:61px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -112,16 +123,64 @@
 			style: 'position:absolute;left:402px;top:56px;width:242px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:386px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:89px;top:386px;width:555px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ИнфНадписьТоварыИтоги',
+			text: 'Оптовые цены, Скидка 20%',
+			style: 'position:absolute;left:8px;top:340px;width:486px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:497px;top:340px;width:64px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:563px;top:340px;width:81px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЧекККМПробит',
+			text: 'Чек пробит',
+			style: 'position:absolute;left:354px;top:362px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерЧекаККМ',
+			text: 'Номер чека:',
+			style: 'position:absolute;left:427px;top:362px;width:67px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НомерЧекаККМ',
+			text: '1 001',
+			style: 'position:absolute;left:497px;top:362px;width:39px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерСекции',
+			text: 'Номер секции:',
+			style: 'position:absolute;left:544px;top:362px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НомерСекции',
+			text: '1',
+			style: 'position:absolute;left:623px;top:362px;width:21px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -140,46 +199,60 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'60',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
-					text:'СуммаБезСкидок',
+					text:'Сумма без скидок',
+					width:'81',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'% Руч.ск.',
+					width:'66',
 				},
 				{
-					text:'ПроцентАвтоматическихСкидок',
+					text:'% Авт.ск.',
+					width:'83',
 				},
 				{
 					text:'Сумма',
+					width:'105',
 				},
 			]
 		},
@@ -189,53 +262,35 @@
 			items:
 			[
 				{
-					text:'СоставНабора',
+					text:'Состав набора',
+				},
+				'-',
+				{
+					text:'Штрихкоды',
+				},
+				'-',
+				{
+					text:'Поиск по штрихкоду',
 				},
 				{
-					text:'Проверить',
+					text:'Подбор',
 				},
 				{
-					text:'Разделитель4',
+					text:'Серийные номера',
 				},
+				'-',
 				{
-					text:'ШтрихКоды',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'СерийныеНомера',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ОплатитьКартой',
+					text:'Оплатить картой',
 				},
 				{
 					text:'Вес',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Заполнить из терминала сбора данных',
 				},
-				{
-					text:'ИзТерминалаСбораДанных',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -255,13 +310,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидОплаты',
+					text:'Вид оплаты',
+					width:'256',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 			]
 		},
@@ -283,6 +341,18 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьВесы',
+			text: 'Весы:',
+			style: 'position:absolute;left:6px;top:6px;width:31px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:319px;top:6px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
@@ -293,10 +363,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДисконтнаяКарта',
+			text: 'Дисконтная карта:',
+			style: 'position:absolute;left:8px;top:80px;width:97px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДисконтнаяКарта',
 			style: 'position:absolute;left:110px;top:80px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСдача',
+			text: 'Сдача (руб.):',
+			style: 'position:absolute;left:209px;top:362px;width:62px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -315,6 +397,18 @@
 			hideLabel: true,
 			name: 'СуммаОплаты',
 			style: 'position:absolute;left:110px;top:362px;width:91px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОплата',
+			text: 'Оплата:',
+			style: 'position:absolute;left:337px;top:80px;width:61px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаОплаты',
+			text: 'Сумма оплаты:',
+			style: 'position:absolute;left:8px;top:362px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'button',

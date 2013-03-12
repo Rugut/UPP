@@ -1,53 +1,45 @@
 ﻿Ext.define('Документы.ПланируемоеПоступлениеДенежныхСредств.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 657,
+	style: 'position:absolute;width:657px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Планируемое поступление денежных средств',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель11',
+					text:'Файлы',
+				},
+				'-',
+				{
+					text:'Действие открыть свойства',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Файлы1',
+					text:'Действие открыть категории',
 				},
-				{
-					text:'Разделитель12',
-				},
-				{
-					text:'Подменю3',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'ДействиеСвойства',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеКатегории',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -57,7 +49,7 @@
 			items:
 			[
 				{
-					title:'Расчеты',
+					title:'Расчеты с контрагентами',
 					items:
 					[
 		{
@@ -76,6 +68,31 @@
 					title:'ПлатежПоОднойСделке',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаВзаиморасчетов',
+			text: 'Сумма <нет валюты>:',
+			style: 'position:absolute;left:0px;top:24px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСделка',
+			text: 'Сделка:
+',
+			style: 'position:absolute;left:326px;top:0px;width:90px;height:27px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьКурса',
+			text: '(10000 TRL = 6500 руб.)',
+			style: 'position:absolute;left:189px;top:48px;width:119px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -107,6 +124,12 @@
 			style: 'position:absolute;left:88px;top:0px;width:167px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись30',
+			text: 'Статья движ. ден. средств:',
+			style: 'position:absolute;left:326px;top:72px;width:88px;height:31px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяДвиженияДенежныхСредств',
@@ -119,16 +142,46 @@
 			style: 'position:absolute;left:416px;top:48px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сумма платежа:',
+			style: 'position:absolute;left:326px;top:48px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Проект',
 			style: 'position:absolute;left:88px;top:72px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроект',
+			text: 'Проект:',
+			style: 'position:absolute;left:0px;top:72px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись33',
+			text: 'Статья движ. ден. средств:',
+			style: 'position:absolute;left:326px;top:0px;width:82px;height:31px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумент',
+			text: 'USD',
+			style: 'position:absolute;left:520px;top:48px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДокументРасчетовСКонтрагентом',
 			style: 'position:absolute;left:416px;top:24px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументРасчетовСКонтрагентом',
+			text: 'Док. расчетов:',
+			style: 'position:absolute;left:326px;top:27px;width:88px;height:15px;',
 		},
 					]
 				},
@@ -143,31 +196,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'100',
 				},
 				{
 					text:'Сделка',
+					width:'100',
 				},
 				{
-					text:'ДокументРасчетовСКонтрагентом',
+					text:'Документ расчетов с контрагентом',
+					width:'100',
 				},
 				{
-					text:'СуммаВзаиморасчетов',
+					text:'Сумма взаиморасчетов',
+					width:'100',
 				},
 				{
-					text:'КурсВзаиморасчетов',
+					text:'Курс взаиморасчетов',
+					width:'100',
 				},
 				{
-					text:'СуммаПлатежа',
+					text:'Сумма платежа',
+					width:'100',
 				},
 				{
-					text:'СтатьяДвиженияДенежныхСредств',
+					text:'Статья движения денежных средств',
+					width:'164',
 				},
 				{
 					text:'Проект',
+					width:'138',
 				},
 			]
 		},
@@ -177,42 +239,41 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие4',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Закончить редактирование',
 				},
 				{
 					text:'Подбор',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
 					text:'Заполнить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтогоСписок',
+			text: 'Итого платежей по списку:',
+			style: 'position:absolute;left:327px;top:0px;width:301px;height:19px;',
 		},
 					]
 				},
@@ -227,6 +288,12 @@
 			style: 'position:absolute;left:416px;top:0px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСуммаВзаиморасчетовПодотчетник2',
+			text: 'Сумма:',
+			style: 'position:absolute;left:0px;top:0px;width:81px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаВзаиморасчетовПрочие',
@@ -238,21 +305,45 @@
 			name: 'Проект1',
 			style: 'position:absolute;left:88px;top:24px;width:220px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумент1',
+			text: 'USD',
+			style: 'position:absolute;left:192px;top:0px;width:40px;height:19px;',
+		},
 					]
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьРедактировать',
+			text: 'Редактировать:',
+			style: 'position:absolute;left:326px;top:0px;width:89px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПолучениеИзКассыККМ',
+					title:'Получение из кассы ККМ',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КассаККМ',
 			style: 'position:absolute;left:417px;top:6px;width:218px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись32',
+			text: 'Статья движ. ден. средств:',
+			style: 'position:absolute;left:328px;top:30px;width:88px;height:31px;',
 		},
 		{
 			xtype: 'textfield',
@@ -267,16 +358,34 @@
 			style: 'position:absolute;left:329px;top:6px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСуммаВзаиморасчетовПодотчетник3',
+			text: 'Сумма:',
+			style: 'position:absolute;left:0px;top:6px;width:81px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаВзаиморасчетовККМ',
 			style: 'position:absolute;left:88px;top:6px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумент2',
+			text: 'USD',
+			style: 'position:absolute;left:192px;top:6px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроектККМ',
 			style: 'position:absolute;left:88px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроектККМ',
+			text: 'Проект:',
+			style: 'position:absolute;left:0px;top:30px;width:81px;height:19px;',
 		},
 					]
 				},
@@ -289,13 +398,17 @@
 			style: 'position:absolute;left:96px;top:57px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумента',
+			text: 'Валюта:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:336px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -305,14 +418,10 @@
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -323,10 +432,28 @@
 			style: 'position:absolute;left:424px;top:57px;width:225px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьФормаОплаты',
+			text: 'Форма оплаты:',
+			style: 'position:absolute;left:334px;top:57px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Дата прихода:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаПоступления',
 			style: 'position:absolute;left:424px;top:33px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись24',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:285px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -335,16 +462,34 @@
 			style: 'position:absolute;left:96px;top:285px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись22',
+			text: 'Состояние:',
+			style: 'position:absolute;left:334px;top:285px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Состояние',
 			style: 'position:absolute;left:424px;top:285px;width:225px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись25',
+			text: 'Курс:',
+			style: 'position:absolute;left:200px;top:57px;width:33px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:233px;top:57px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись26',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:309px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -359,10 +504,22 @@
 			style: 'position:absolute;left:96px;top:261px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:261px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от',
+			style: 'position:absolute;left:177px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -371,16 +528,39 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСчетКасса1',
+			text: 'Счет / Касса:',
+			style: 'position:absolute;left:8px;top:213px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'БанковскийСчетКасса',
 			style: 'position:absolute;left:96px;top:213px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация1',
+			text: 'Организация:',
+			style: 'position:absolute;left:334px;top:213px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:424px;top:213px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Включать в платежный календарь',
+			style: 'position:absolute;left:334px;top:237px;width:198px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаДокумента',
+			text: 'Итого по заявке: 150 000 USD',
+			style: 'position:absolute;left:8px;top:237px;width:308px;height:19px;',
 		},
 	]
 });

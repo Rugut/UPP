@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЛичныеКонтакты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 548,
+	style: 'position:absolute;width:548px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Личные контакты',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
-					text:'Наименование',
+					text:'ФИО',
+					width:'220',
 				},
 			]
 		},
@@ -30,11 +35,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

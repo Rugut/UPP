@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПоступлениеДенежныхДокументов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 371,width: 670,
+	style: 'position:absolute;width:670px;height:371px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поступление денежных документов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:186px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:319px;width:92px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,45 +51,35 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю2',
+					text:'КУД и Р...',
+				},
+				'-',
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'НастройкаУСН',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель8',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерВходящегоДокумента',
+			text: 'Вх. номер:',
+			style: 'position:absolute;left:346px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -78,7 +88,7 @@
 			items:
 			[
 				{
-					title:'ОтКого',
+					title:'От кого',
 					items:
 					[
 		{
@@ -88,14 +98,26 @@
 			items:
 			[
 				{
-					title:'ОтКонтрагента',
+					title:'От контрагента',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаРасчетовСКонтрагентом',
+			text: 'Счет расчетов:',
+			style: 'position:absolute;left:0px;top:80px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаРасчетовСКонтрагентом',
 			style: 'position:absolute;left:82px;top:80px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,6 +132,18 @@
 			style: 'position:absolute;left:82px;top:0px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:0px;top:54px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПринятоОт',
+			text: 'Принято от:',
+			style: 'position:absolute;left:0px;top:26px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПринятоОт',
@@ -122,10 +156,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаРасчетовСКонтрагентомПрочее',
+			text: 'Счет кредита:',
+			style: 'position:absolute;left:0px;top:28px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаРасчетовСКонтрагентомПрочее',
 			style: 'position:absolute;left:83px;top:28px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоКт1',
+			text: 'Субконто Кт1:',
+			style: 'position:absolute;left:0px;top:53px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,16 +180,34 @@
 			style: 'position:absolute;left:83px;top:53px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоКт2',
+			text: 'Субконто Кт2:',
+			style: 'position:absolute;left:0px;top:78px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоКт2',
 			style: 'position:absolute;left:83px;top:78px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоКт3',
+			text: 'Субконто Кт3:',
+			style: 'position:absolute;left:0px;top:103px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоКт3',
 			style: 'position:absolute;left:83px;top:103px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПринятоОтПрочее',
+			text: 'Принято от:',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,9 +218,15 @@
 					]
 				},
 				{
-					title:'ОтПодотчетногоЛица',
+					title:'От подотчетного лица',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПодотчетноеЛицо',
+			text: 'Подотчетное лицо:',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:28px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -164,10 +234,22 @@
 			style: 'position:absolute;left:82px;top:0px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПринятоОтПодотчетноеЛицо',
+			text: 'Принято от:',
+			style: 'position:absolute;left:0px;top:29px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПринятоОтПодотчетноеЛицо',
 			style: 'position:absolute;left:82px;top:29px;width:558px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРасчетныйДокумент',
+			text: 'Расчетный документ:',
+			style: 'position:absolute;left:0px;top:58px;width:82px;height:28px;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,7 +264,7 @@
 					]
 				},
 				{
-					title:'ДенежныеДокументы',
+					title:'Денежные документы',
 					items:
 					[
 		{
@@ -190,9 +272,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -202,22 +282,38 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ДенежныйДокумент',
+					text:'Денежный документ',
+					width:'180',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаВходящегоДокумента',
+			text: 'от:',
+			style: 'position:absolute;left:537px;top:33px;width:35px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:295px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -238,6 +334,12 @@
 			style: 'position:absolute;left:574px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:470px;top:271px;width:72px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
@@ -255,15 +357,17 @@
 					text:'ОК',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -272,10 +376,22 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаДенежныхДокументов',
+			text: 'Счет учета:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаДенежныхДокументов',
 			style: 'position:absolute;left:96px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумента',
+			text: 'Валюта:',
+			style: 'position:absolute;left:191px;top:81px;width:44px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Склады.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 780,
+	style: 'position:absolute;width:780px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Склады (места хранения)',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидСклада',
+					text:'Вид склада',
+					width:'80',
 				},
 				{
-					text:'НомерСекции',
+					text:'№ секции',
+					width:'54',
 				},
 				{
-					text:'ТипЦенРозничнойТорговли',
+					text:'Тип цен розничной торговли',
+					width:'120',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'160',
 				},
 			]
 		},
@@ -47,6 +57,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -56,11 +67,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

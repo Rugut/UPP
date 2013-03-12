@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ДолжностиОрганизаций.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 473,width: 565,
+	style: 'position:absolute;width:565px;height:473px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Должности организаций',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:477px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,19 +34,19 @@
 			style: 'position:absolute;left:98px;top:33px;width:342px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Административно-управленческий персонал',
+			style: 'position:absolute;left:184px;top:59px;width:256px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
 			items:
 			[
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -41,21 +55,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код по ОКПДТР:',
+			style: 'position:absolute;left:8px;top:59px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,10 +90,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьКодПозицииСписка',
+			text: 'Код позиции списка:',
+			style: 'position:absolute;left:12px;top:124px;width:126px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КодПозицииСписка',
 			style: 'position:absolute;left:140px;top:124px;width:401px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОснованиеВыслугиЛет',
+			text: 'Основание выслуги лет:',
+			style: 'position:absolute;left:12px;top:148px;width:126px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,10 +114,22 @@
 			style: 'position:absolute;left:140px;top:148px;width:401px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКатегорияВоинскогоУчета',
+			text: 'Воинский учет (до 2011 года):',
+			style: 'position:absolute;left:12px;top:51px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КатегорияВоинскогоУчета',
 			style: 'position:absolute;left:167px;top:51px;width:374px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжность',
+			text: 'Описание:',
+			style: 'position:absolute;left:12px;top:295px;width:126px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,10 +138,22 @@
 			style: 'position:absolute;left:140px;top:295px;width:401px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКатегорияСтатистическогоУчета',
+			text: 'Статистический учет:',
+			style: 'position:absolute;left:12px;top:27px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КатегорияСтатистическогоУчета',
 			style: 'position:absolute;left:167px;top:27px;width:374px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКатегорияВоинскогоУчета1',
+			text: 'Воинский учет (с 2011 года):',
+			style: 'position:absolute;left:12px;top:75px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -129,6 +181,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Входит в список должностей летных экипажей, работа в которых дает право на доплату к пенсии',
+			style: 'position:absolute;left:6px;top:6px;width:517px;height:15px;',
+		},
 					]
 				},
 			]
@@ -143,6 +200,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дает право на доплату к пенсии в угольной промышленности',
+			style: 'position:absolute;left:6px;top:6px;width:468px;height:15px;',
+		},
 					]
 				},
 			]
@@ -157,6 +219,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Является фармацевтической должностью',
+			style: 'position:absolute;left:6px;top:6px;width:265px;height:15px;',
+		},
 					]
 				},
 			]
@@ -179,9 +246,11 @@
 			[
 				{
 					text:'Принадлежность',
+					width:'23',
 				},
 				{
 					text:'Категория',
+					width:'100',
 				},
 			]
 		},
@@ -193,9 +262,11 @@
 			[
 				{
 					text:'Свойство',
+					width:'100',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 			]
 		},
@@ -205,13 +276,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить новую категорию',
 				},
 				{
 					text:'Действие1',
-				},
-				{
-					text:'Категории',
 				},
 			]
 		},
@@ -221,10 +289,7 @@
 			items:
 			[
 				{
-					text:'Действия',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить новое свойство',
 				},
 				{
 					text:'Действие1',
@@ -234,7 +299,7 @@
 					]
 				},
 				{
-					title:'ЕжегодныеОтпуска',
+					title:'Ежегодные отпуска',
 					items:
 					[
 		{
@@ -244,10 +309,12 @@
 			columns:
 			[
 				{
-					text:'ВидЕжегодногоОтпуска',
+					text:'Вид ежегодного отпуска',
+					width:'321',
 				},
 				{
-					text:'КоличествоДнейОтпускаВГод',
+					text:'Количество дней отпуска в год',
+					width:'213',
 				},
 			]
 		},

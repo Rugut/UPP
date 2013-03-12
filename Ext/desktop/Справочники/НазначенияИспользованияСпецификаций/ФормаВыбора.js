@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НазначенияИспользованияСпецификаций.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 435,
+	style: 'position:absolute;width:435px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Назначения использования спецификаций',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -26,11 +30,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:435px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
 			]
 		},

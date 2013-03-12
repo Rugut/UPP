@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыЗемля.ФормаОтчета2009Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет по авансовым платежам по земельному налогу',
 	
 	items:
@@ -16,83 +18,54 @@
 					text:'Заполнить',
 				},
 				{
-					text:'Выгрузка',
+					text:'Очистить',
 				},
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Подготовить к отправке',
 				},
+				'-',
+				'-',
 				{
-					text:'Подготовить',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'Отправка',
+					text:'Показать отправки',
 				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -100,23 +73,14 @@
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
@@ -133,7 +97,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -175,7 +139,7 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -189,6 +153,12 @@
 			name: 'КнопкаУдалитьДопСтраницуРаздел2',
 			text: 'Удалить',
 			style: 'position:absolute;left:481px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -213,6 +183,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:48px;',
 			height: 48,width: 654,
@@ -235,6 +211,11 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -254,6 +235,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

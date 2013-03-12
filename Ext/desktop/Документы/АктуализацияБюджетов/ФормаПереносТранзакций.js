@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.АктуализацияБюджетов.ФормаПереносТранзакций',
 	{
 	extend: 'Ext.window.Window',
-	height: 370,width: 626,
+	style: 'position:absolute;width:626px;height:370px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Перенос транзакций на следующие периоды',
 	
 	items:
@@ -31,40 +33,52 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'21',
 				},
 				{
-					text:'ПереноситьТранзакцию',
+					text:'Переносить транзакцию',
+					width:'28',
 				},
 				{
-					text:'УстановкаПериода',
+					text:'Установка периода',
+					width:'115',
 				},
 				{
 					text:'Период',
+					width:'118',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'147',
 				},
 				{
 					text:'Валюта',
+					width:'100',
 				},
 				{
 					text:'ЦФО',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Контрагент',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'89',
 				},
 				{
-					text:'СуммаВал',
+					text:'Сумма в валюте',
+					width:'89',
 				},
 			]
 		},
@@ -74,10 +88,10 @@
 			items:
 			[
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
 					text:'Заполнить',

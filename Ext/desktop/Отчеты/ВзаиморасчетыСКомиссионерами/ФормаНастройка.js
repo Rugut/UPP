@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВзаиморасчетыСКомиссионерами.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 399,width: 620,
+	style: 'position:absolute;width:620px;height:399px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,7 +30,7 @@
 			items:
 			[
 				{
-					title:'ОсновныеПараметры',
+					title:'Основные параметры',
 					items:
 					[
 		{
@@ -40,13 +40,16 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеГруппировки',
+					text:'Группировка',
+					width:'158',
 				},
 				{
-					text:'ТипИтога',
+					text:'Тип итога',
+					width:'59',
 				},
 				{
-					text:'ДополнительныеПоля',
+					text:'Дополнительные поля',
+					width:'147',
 				},
 			]
 		},
@@ -56,27 +59,39 @@
 			items:
 			[
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'КнопкаВыбораГруппировокИзСписка',
+					text:'Из списка',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:65px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:150px;top:6px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,10 +106,12 @@
 			columns:
 			[
 				{
-					text:'ИспользованиеПоказателя',
+					text:'',
+					width:'23',
 				},
 				{
-					text:'ПредставлениеПоказателя',
+					text:'Показатель',
+					width:'177',
 				},
 			]
 		},
@@ -103,22 +120,30 @@
 			style: 'position:absolute;left:346px;top:49px;width:250px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Установить флажки',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие5',
-				},
-				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:434px;top:9px;width:162px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только просроченные',
+			style: 'position:absolute;left:282px;top:9px;width:134px;height:15px;',
 		},
 		{
 			xtype: 'button',
@@ -138,16 +163,16 @@
 			items:
 			[
 				{
-					text:'Действие7',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие4',
+					text:'&Удалить',
 				},
 			]
 		},
@@ -158,16 +183,20 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Поле',
+					width:'103',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Вид сравнения',
+					width:'76',
 				},
 				{
 					text:'Значение',
+					width:'163',
 				},
 			]
 		},

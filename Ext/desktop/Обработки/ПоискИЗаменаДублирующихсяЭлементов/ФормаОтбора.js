@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПоискИЗаменаДублирующихсяЭлементов.ФормаОтбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 392,width: 359,
+	style: 'position:absolute;width:359px;height:392px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Значения настроек',
 	
 	items:
@@ -13,10 +15,10 @@
 			items:
 			[
 				{
-					text:'КнопкаОК',
+					text:'ОК',
 				},
 				{
-					text:'КнопкаОтмена',
+					text:'Кнопка отмена',
 				},
 			]
 		},
@@ -28,12 +30,15 @@
 			[
 				{
 					text:'Представление',
+					width:'276',
 				},
 				{
-					text:'ИндексКартинки',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Значение',
+					text:'',
+					width:'72',
 				},
 			]
 		},

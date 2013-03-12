@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ТОНастройка.ФормаСпискаДоступныхОбработок',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 957,
+	style: 'position:absolute;width:957px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Список доступных обработок обслуживания',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыВыбрать',
+					text:'Выбрать',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыОтмена',
+					text:'Отменить',
 				},
 			]
 		},
@@ -31,18 +31,23 @@
 			[
 				{
 					text:'Наименование',
+					width:'286',
 				},
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'196',
 				},
 				{
 					text:'Описание',
+					width:'563',
 				},
 				{
 					text:'Версия',
+					width:'45',
 				},
 				{
-					text:'ВерсияAPI',
+					text:'Версия API',
+					width:'83',
 				},
 			]
 		},

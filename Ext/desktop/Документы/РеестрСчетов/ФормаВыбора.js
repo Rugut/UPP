@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РеестрСчетов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 600,
+	style: 'position:absolute;width:600px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Реестры счетов',
 	
 	items:
@@ -14,37 +16,48 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'80',
 				},
 				{
 					text:'Номер',
+					width:'132',
 				},
 				{
 					text:'Организация',
+					width:'220',
 				},
 				{
-					text:'НомерАккредитива',
+					text:'Номер аккредитива',
+					width:'110',
 				},
 				{
-					text:'ДатаАккредитива',
+					text:'Дата аккредитива',
+					width:'79',
 				},
 				{
-					text:'СчетОрганизации',
+					text:'Счет организации',
+					width:'191',
 				},
 				{
-					text:'ЮрФизЛицоКонтрагента',
+					text:'Юр физ лицо контрагента',
+					width:'220',
 				},
 				{
-					text:'СуммаАккредитива',
+					text:'Сумма аккредитива',
+					width:'80',
 				},
 				{
-					text:'ДатаЗакрытия',
+					text:'Дата закрытия',
+					width:'79',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -54,11 +67,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

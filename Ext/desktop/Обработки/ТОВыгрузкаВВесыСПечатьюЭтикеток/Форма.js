@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ТОВыгрузкаВВесыСПечатьюЭтикеток.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 700,
+	style: 'position:absolute;width:700px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выгрузка данных в весы с печатью этикеток',
 	
 	items:
@@ -12,41 +14,28 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Выгрузить в весы',
 				},
 				{
-					text:'Разделитель1',
+					text:'Справка',
 				},
 				{
-					text:'Действия',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
+					text:'Справка',
 				},
 				{
 					text:'Заполнить',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'ВыгрузитьВВесы',
+					text:'Заполнить',
+				},
+				{
+					text:'Выгрузить в весы',
 				},
 			]
 		},
@@ -87,22 +76,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -113,6 +108,11 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только имеющиеся в наличии',
+			style: 'position:absolute;left:0px;top:0px;width:233px;height:15px;',
+		},
 					]
 				},
 			]
@@ -122,14 +122,12 @@
 			style: 'position:absolute;left:8px;top:211px;width:684px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выделить все',
 				},
 				{
-					text:'ВыделитьВсе',
-				},
-				{
-					text:'ОчиститьВыделение',
+					text:'Очистить выделение',
 				},
 			]
 		},
@@ -140,34 +138,44 @@
 			columns:
 			[
 				{
-					text:'Выгружать',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
-					text:'КодТовара',
+					text:'Код товара',
+					width:'60',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед. изм',
+					width:'76',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 			]
 		},

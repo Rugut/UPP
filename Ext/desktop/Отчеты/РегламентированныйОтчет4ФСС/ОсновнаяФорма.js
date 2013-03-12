@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 258,width: 276,
+	style: 'position:absolute;width:276px;height:258px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '4-ФСС',
 	
 	items:
@@ -13,21 +15,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
 				{
 					text:'ОК',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Справка',
+					text:'Действие1',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:42px;top:85px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:222px;top:85px;width:21px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:17px;top:139px;width:244px;height:56px;',
 		},
 		{
 			xtype: 'button',

@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.РегистрацияОплатыНДСВБюджет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 428,width: 709,
+	style: 'position:absolute;width:709px;height:428px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:329px;top:57px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:376px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,25 +63,15 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Заполнить документ',
 				},
 				{
-					text:'Подменю2',
+					text:'Движения документа по регистрам',
 				},
+				'-',
+				'-',
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ЗаполнитьДокумент',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить документ',
 				},
 			]
 		},
@@ -68,24 +84,24 @@
 					text:'Печать',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,7 +116,7 @@
 			items:
 			[
 				{
-					title:'ПоДоговорамНалоговогоАгента',
+					title:'По договорам налогового агента',
 					items:
 					[
 		{
@@ -111,9 +127,6 @@
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
 			]
 		},
 		{
@@ -123,23 +136,27 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'120',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ДляСобственногоПотребления',
+					title:'Для собственного потребления',
 					items:
 					[
 		{
@@ -147,9 +164,6 @@
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			items:
 			[
-				{
-					text:'ПодменюЗаполнить',
-				},
 				{
 					text:'Заполнить',
 				},
@@ -162,16 +176,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'120',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 			]
 		},

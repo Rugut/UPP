@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбновлениеРегламентированнойОтчетности.ФормаВыбораОтчетов',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 482,
+	style: 'position:absolute;width:482px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выберите обновляемые отчеты',
 	
 	items:
@@ -16,17 +18,13 @@
 					text:'Справка',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'ОК',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -49,9 +47,11 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Описание',
+					width:'220',
 				},
 			]
 		},

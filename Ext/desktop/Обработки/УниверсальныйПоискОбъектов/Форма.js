@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.УниверсальныйПоискОбъектов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 473,width: 639,
+	style: 'position:absolute;width:639px;height:473px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поиск объектов',
 	
 	items:
@@ -14,7 +16,7 @@
 			items:
 			[
 				{
-					title:'ОсновнаяСтраница',
+					title:'Основная страница',
 					items:
 					[
 		{
@@ -24,28 +26,40 @@
 			style: 'position:absolute;left:84px;top:24px;width:459px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтрокаПоиска',
+			text: 'Строка поиска:',
+			style: 'position:absolute;left:0px;top:24px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:116px;width:627px;height:89px;',
 			height: 89,width: 627,
 			columns:
 			[
 				{
-					text:'ИмяОбъекта',
+					text:'Имя объекта',
+					width:'135',
 				},
 				{
-					text:'ОписаниеТаблицыПоиска',
+					text:'Области поиска',
+					width:'183',
 				},
 				{
-					text:'ПоляПоиска',
+					text:'Поля поиска',
+					width:'215',
 				},
 				{
-					text:'ДополнительныеОграничения',
+					text:'Дополнительные ограничения',
+					width:'201',
 				},
 				{
-					text:'ТаблицаПоиска',
+					text:'Таблица поиска',
+					width:'40',
 				},
 				{
-					text:'ПолеСвязки',
+					text:'Поле связки',
+					width:'115',
 				},
 			]
 		},
@@ -55,24 +69,28 @@
 			items:
 			[
 				{
-					text:'НастройкаПостроителя',
+					text:'Дополнительно...',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Выключить все',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОтменитьПометкуВсехОбластейПоиска',
-				},
-				{
-					text:'ПометитьВсеОбластиПоиска',
+					text:'Включить все',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПринципыОтбора',
+			text: 'Вхождение',
+			style: 'position:absolute;left:0px;top:68px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -81,7 +99,7 @@
 			items:
 			[
 				{
-					title:'СтраницаОтображенияРезультатов',
+					title:'Страница отображения результатов',
 					items:
 					[
 		{
@@ -98,40 +116,45 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Разделитель1',
+					text:'Свернуть',
 				},
 				{
-					text:'Действие2',
+					text:'Сортировать по возрастанию',
+				},
+				'-',
+				'-',
+				{
+					text:'Показать детально',
 				},
 				{
-					text:'ЗакрытьСписок',
+					text:'Раскрыть',
 				},
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ДетальныйПоиск',
-				},
-				{
-					text:'РаскрытьСписок',
-				},
-				{
-					text:'Действие5',
+					text:'Сортировать по убыванию',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипОбъектовПоиска',
+			text: 'Тип объектов:',
+			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Детальное отображение результатов',
+			style: 'position:absolute;left:321px;top:68px;width:212px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -149,16 +172,14 @@
 			items:
 			[
 				{
-					text:'ЗагрузитьНастройку',
+					text:'Загрузить настройку поиска',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'СохранениеНастроекПользователя',
+					text:'Сохранить настройки поиска',
 				},
 			]
 		},
@@ -180,9 +201,7 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отмена',
 				},

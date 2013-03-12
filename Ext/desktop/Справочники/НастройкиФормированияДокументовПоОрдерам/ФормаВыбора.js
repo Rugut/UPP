@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиФормированияДокументовПоОрдерам.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 657,
+	style: 'position:absolute;width:657px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки формирования документов по ордерам',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -30,11 +35,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -45,6 +48,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

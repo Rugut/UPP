@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.МаршрутыСогласования.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 504,
+	style: 'position:absolute;width:504px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Маршруты согласования',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'412',
 				},
 			]
 		},
@@ -26,9 +29,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

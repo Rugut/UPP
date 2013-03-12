@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораТаблицы',
 	{
 	extend: 'Ext.window.Window',
-	height: 463,width: 344,
+	style: 'position:absolute;width:344px;height:463px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Внешняя обработка2',
 	
 	items:
@@ -12,14 +14,12 @@
 			style: 'position:absolute;left:0px;top:438px;width:344px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Выбрать',
 				},
 			]
 		},
@@ -29,10 +29,10 @@
 			items:
 			[
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 			]
 		},
@@ -43,10 +43,12 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеТаблицы',
+					text:'Представление таблицы',
+					width:'106',
 				},
 				{
-					text:'ИмяТаблицы',
+					text:'Имя таблицы',
+					width:'87',
 				},
 			]
 		},

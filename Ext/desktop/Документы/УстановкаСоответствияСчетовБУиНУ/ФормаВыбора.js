@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаСоответствияСчетовБУиНУ.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка соответствия счетов БУ и НУ',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'350',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

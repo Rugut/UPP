@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ПараметрыЗаполнения',
 	{
 	extend: 'Ext.window.Window',
-	height: 453,width: 353,
+	style: 'position:absolute;width:353px;height:453px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка заполнения расшифровки платежа',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выполнить',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -28,35 +28,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Восстановить значения...',
+				},
+				'-',
+				'-',
+				{
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Разделитель',
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 			]
 		},
@@ -81,10 +72,20 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Подбирать сумму:',
+			style: 'position:absolute;left:6px;top:76px;width:116px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаДляПодбора1',
 			style: 'position:absolute;left:129px;top:76px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только включенные в платежный календарь',
+			style: 'position:absolute;left:6px;top:100px;width:256px;height:19px;',
 		},
 					]
 				},
@@ -93,10 +94,40 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Подбирать сумму:',
+			style: 'position:absolute;left:12px;top:144px;width:116px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаДляПодбора',
 			style: 'position:absolute;left:130px;top:144px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подбирать планируемые поступления средств',
+			style: 'position:absolute;left:12px;top:188px;width:297px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не превышать запланированных значений',
+			style: 'position:absolute;left:12px;top:212px;width:297px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только включенные в платежный календарь',
+			style: 'position:absolute;left:12px;top:277px;width:256px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По фактической задолженности',
+			style: 'position:absolute;left:12px;top:25px;width:280px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По оперативной задолженности (с учетом заказов)',
+			style: 'position:absolute;left:12px;top:45px;width:280px;height:15px;',
 		},
 					]
 				},
@@ -105,7 +136,7 @@
 					]
 				},
 				{
-					title:'Отбор',
+					title:'Отбор договоров',
 					items:
 					[
 		{
@@ -115,22 +146,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'156',
 				},
 				{
 					text:'Значение',
+					width:'112',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'112',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'112',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиРегламентногоФормированияДокументовПоНДС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 576,
+	style: 'position:absolute;width:576px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Настройки регламентного формирования документов по НДС',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 			]
 		},
@@ -29,6 +33,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'120',
 				},
 			]
 		},
@@ -38,11 +43,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

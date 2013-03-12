@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеЛимитовОтпускаМатериалов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 680,
+	style: 'position:absolute;width:680px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение лимитов отпуска материалов',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'ОтражатьВУправленческомУчете',
+					text:'УУ',
+					width:'20',
 				},
 				{
-					text:'ОтражатьВБухгалтерскомУчете',
+					text:'БУ',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Склад',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -47,23 +58,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:680px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

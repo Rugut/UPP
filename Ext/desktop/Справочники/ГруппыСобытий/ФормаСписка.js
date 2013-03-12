@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГруппыСобытий.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 500,
+	style: 'position:absolute;width:500px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Группы событий',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 				{
-					text:'ВидОбъекта',
+					text:'Вид объекта',
+					width:'120',
 				},
 				{
-					text:'ОписаниеСобытия',
+					text:'Описание события',
+					width:'350',
 				},
 			]
 		},

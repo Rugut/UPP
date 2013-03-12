@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КонтактныеЛицаКонтрагентов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 416,
+	style: 'position:absolute;width:416px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Контактные лица контрагентов',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
-					text:'Владелец',
+					text:'Контрагент',
+					width:'100',
 				},
 				{
 					text:'Должность',
+					width:'120',
 				},
 				{
-					text:'РольКонтактногоЛица',
+					text:'Роль:',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 				{
-					text:'КонтактноеЛицо',
+					text:'Контактное лицо',
+					width:'120',
 				},
 			]
 		},

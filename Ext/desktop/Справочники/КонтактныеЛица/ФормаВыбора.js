@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КонтактныеЛица.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 464,
+	style: 'position:absolute;width:464px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Контактные лица',
 	
 	items:
@@ -14,37 +16,48 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
-					text:'Наименование',
+					text:'ФИО',
+					width:'220',
 				},
 				{
-					text:'ДатаРождения',
+					text:'Дата рождения',
+					width:'84',
 				},
 				{
 					text:'Имя',
+					width:'120',
 				},
 				{
-					text:'КоличествоДнейДоНапоминания',
+					text:'Количество дней до напоминания',
+					width:'14',
 				},
 				{
-					text:'НапоминатьОДнеРождения',
+					text:'Напоминать о дне рождения',
+					width:'20',
 				},
 				{
 					text:'Описание',
+					width:'120',
 				},
 				{
 					text:'Отчество',
+					width:'120',
 				},
 				{
 					text:'Пол',
+					width:'80',
 				},
 				{
 					text:'Фамилия',
+					width:'120',
 				},
 			]
 		},
@@ -54,11 +67,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

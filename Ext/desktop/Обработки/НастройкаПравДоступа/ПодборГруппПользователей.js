@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.НастройкаПравДоступа.ПодборГруппПользователей',
 	{
 	extend: 'Ext.window.Window',
-	height: 330,width: 354,
+	style: 'position:absolute;width:354px;height:330px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Подбор групп пользователей',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -31,9 +31,11 @@
 			[
 				{
 					text:'Наименование',
+					width:'229',
 				},
 				{
 					text:'Код',
+					width:'57',
 				},
 			]
 		},

@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.СтатьиДвиженияДенежныхСредств.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 109,width: 450,
+	style: 'position:absolute;width:450px;height:109px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Статьи движения денежных средств',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:329px;top:33px;width:33px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:362px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:57px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,52 +51,39 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Скопировать',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель2',
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие3',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие3',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие4',
+					text:'Записать и закрыть',
 				},
 			]
 		},
@@ -86,19 +93,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

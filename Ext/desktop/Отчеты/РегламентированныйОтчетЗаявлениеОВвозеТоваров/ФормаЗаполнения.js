@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаЗаполнения',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 400,
+	style: 'position:absolute;width:400px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Серия, номер и дата товаро-транспортного документа',
 	
 	items:
@@ -20,13 +22,11 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Отмена',
 				},
 			]
 		},

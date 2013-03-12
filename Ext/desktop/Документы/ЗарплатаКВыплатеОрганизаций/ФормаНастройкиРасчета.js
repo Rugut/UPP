@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗарплатаКВыплатеОрганизаций.ФормаНастройкиРасчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 173,width: 352,
+	style: 'position:absolute;width:352px;height:173px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка расчета',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Пересчитать',
+					text:'Рассчитать',
 				},
 				{
 					text:'Отмена',
@@ -21,12 +23,8 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -36,9 +34,21 @@
 			items:
 			[
 				{
-					title:'ПлановыйАванс',
+					title:'Плановый аванс',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'ПлановыйАванс_НадписьДнейНеВыплаты',
+			text: 'Рассчитать компенсацию за задержку выплаты на',
+			style: 'position:absolute;left:0px;top:0px;width:266px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПлановыйАванс_НадписьДней',
+			text: 'дней',
+			style: 'position:absolute;left:310px;top:0px;width:26px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -48,14 +58,31 @@
 					]
 				},
 				{
-					title:'АвансЗаПервуюПоловинуМесяца',
+					title:'Аванс за первую половину месяца',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'АвансЗаПервуюПоловинуМесяца_НадписьДнейНеВыплаты',
+			text: 'Рассчитать компенсацию за задержку выплаты на',
+			style: 'position:absolute;left:1px;top:30px;width:265px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'АвансЗаПервуюПоловинуМесяца_НадписьДней',
+			text: 'дней',
+			style: 'position:absolute;left:310px;top:30px;width:26px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'АвансЗаПервуюПоловинуМесяца_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:30px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлять:',
+			style: 'position:absolute;left:1px;top:0px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -76,10 +103,33 @@
 			style: 'position:absolute;left:107px;top:43px;width:61px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Зарплата_НадписьДнейНеВыплаты',
+			text: 'Рассчитать компенсацию за задержку выплаты на',
+			style: 'position:absolute;left:0px;top:72px;width:265px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Зарплата_НадписьДней',
+			text: 'дней',
+			style: 'position:absolute;left:310px;top:72px;width:26px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлять:',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Зарплата_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:72px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Зарплата_НадписьПроцентВыплаты',
+			text: 'Процент выплаты:',
+			style: 'position:absolute;left:0px;top:43px;width:99px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,6 +150,17 @@
 			style: 'position:absolute;left:107px;top:43px;width:61px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлять:',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Дивиденды_НадписьПроцентВыплаты',
+			text: 'Процент выплаты:',
+			style: 'position:absolute;left:1px;top:43px;width:99px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дивиденды_Округление',
@@ -108,9 +169,37 @@
 					]
 				},
 				{
-					title:'ПрочиеВыплаты',
+					title:'Прочие выплаты',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлять:',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать удержания',
+			style: 'position:absolute;left:0px;top:30px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПрочиеВыплаты_НадписьПредварительныйУчетУдержаний',
+			text: 'Расчет начисленных сумм за вычетом удержаний',
+			style: 'position:absolute;left:0px;top:46px;width:336px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПрочиеВыплаты_НадписьДнейНеВыплаты',
+			text: 'Рассчитать компенсацию за задержку выплаты на',
+			style: 'position:absolute;left:0px;top:74px;width:266px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПрочиеВыплаты_НадписьДней',
+			text: 'дней',
+			style: 'position:absolute;left:310px;top:74px;width:26px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -126,14 +215,31 @@
 					]
 				},
 				{
-					title:'ПрочиеВыплатыБезУдержаний',
+					title:'Прочие выплаты без удержаний',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'ПрочиеВыплатыБезУдержаний_НадписьДнейНеВыплаты',
+			text: 'Рассчитать компенсацию за задержку выплаты на',
+			style: 'position:absolute;left:0px;top:30px;width:266px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПрочиеВыплатыБезУдержаний_НадписьДней',
+			text: 'дней',
+			style: 'position:absolute;left:310px;top:30px;width:26px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПрочиеВыплатыБезУдержаний_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:30px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлять:',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,6 +250,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ЗаголовокРасчета',
+			text: 'Расчет сумм к выплате',
+			style: 'position:absolute;left:8px;top:8px;width:336px;height:27px;',
 		},
 	]
 });

@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.НастройкаИнтервалов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 373,width: 384,
+	style: 'position:absolute;width:384px;height:373px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка интервала',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -27,13 +35,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НачалоИнтервала',
+					text:'Граница интервала',
+					width:'120',
 				},
 				{
-					text:'Подпись',
+					text:'Подпись в отчетах',
+					width:'220',
 				},
 			]
 		},
@@ -49,20 +60,16 @@
 			style: 'position:absolute;left:0px;top:348px;width:384px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},

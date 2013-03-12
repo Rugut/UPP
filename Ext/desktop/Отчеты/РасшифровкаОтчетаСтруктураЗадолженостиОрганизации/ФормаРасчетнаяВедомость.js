@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РасшифровкаОтчетаСтруктураЗадолженостиОрганизации.ФормаРасчетнаяВедомость',
 	{
 	extend: 'Ext.window.Window',
-	height: 487,width: 879,
+	style: 'position:absolute;width:879px;height:487px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расшифровка отчета ',
 	
 	items:

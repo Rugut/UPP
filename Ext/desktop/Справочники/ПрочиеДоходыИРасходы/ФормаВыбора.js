@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПрочиеДоходыИРасходы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 781,
+	style: 'position:absolute;width:781px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Прочие доходы и расходы',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Код',
+					width:'64',
 				},
 				{
 					text:'Наименование',
+					width:'250',
 				},
 				{
-					text:'ВидПрочихДоходовИРасходов',
+					text:'Вид прочих дох. и расх.',
+					width:'250',
 				},
 				{
-					text:'ПринятиеКналоговомуУчету',
+					text:'Принятие к налоговому учету',
+					width:'60',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -47,11 +55,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

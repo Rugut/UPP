@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СохраненныеНастройки.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 327,width: 551,
+	style: 'position:absolute;width:551px;height:327px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор настройки',
 	
 	items:
@@ -15,18 +17,23 @@
 			[
 				{
 					text:'Наименование',
+					width:'217',
 				},
 				{
-					text:'ТипНастройки',
+					text:'Тип настройки',
+					width:'140',
 				},
 				{
-					text:'НастраиваемыйОбъект',
+					text:'Настраиваемый объект',
+					width:'143',
 				},
 				{
 					text:'Описание',
+					width:'206',
 				},
 				{
 					text:'Пользователи',
+					width:'364',
 				},
 			]
 		},
@@ -35,21 +42,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:551px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},
 				{
-					text:'ВыбратьНастройку',
+					text:'Выбрать настройку',
 				},
 				{
 					text:'Сохранить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -62,6 +65,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:0px;top:4px;width:84px;height:18px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

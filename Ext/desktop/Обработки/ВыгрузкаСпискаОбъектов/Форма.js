@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ВыгрузкаСпискаОбъектов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 317,width: 426,
+	style: 'position:absolute;width:426px;height:317px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выгрузка списка объектов',
 	
 	items:
@@ -19,14 +21,12 @@
 			style: 'position:absolute;left:0px;top:292px;width:426px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выполнить',
 				},
 				{
-					text:'ОсновныеДействияФормыВыполнить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -37,10 +37,12 @@
 			columns:
 			[
 				{
-					text:'КартинкаЭлемента',
+					text:'',
+					width:'30',
 				},
 				{
 					text:'Объект',
+					width:'100',
 				},
 			]
 		},
@@ -51,21 +53,25 @@
 			style: 'position:absolute;left:100px;top:33px;width:318px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Файл данных:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:79px;width:410px;height:24px;',
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие4',
+					text:'&Удалить',
 				},
 			]
 		},

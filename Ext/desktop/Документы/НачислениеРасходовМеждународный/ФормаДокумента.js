@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.НачислениеРасходовМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 385,width: 650,
+	style: 'position:absolute;width:650px;height:385px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,27 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Реверсирование расходов',
+			style: 'position:absolute;left:362px;top:33px;width:152px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаДату',
+			text: 'на дату:',
+			style: 'position:absolute;left:516px;top:33px;width:44px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,28 +76,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Счет',
+					text:'Счет расходов',
+					width:'80',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1...3',
+					width:'160',
 				},
 				{
-					text:'Субконто2',
+					text:'',
+					width:'160',
 				},
 				{
-					text:'Субконто3',
+					text:'',
+					width:'160',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
-					text:'СодержаниеОперации',
+					text:'Содержание операции',
+					width:'220',
 				},
 			]
 		},
@@ -75,27 +114,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -106,31 +138,37 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Действие',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:333px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:333px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

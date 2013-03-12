@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормированиеПодтверждений',
 	{
 	extend: 'Ext.window.Window',
-	height: 518,width: 742,
+	style: 'position:absolute;width:742px;height:518px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Формирование подтверждений',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Выполнить',
 				},
@@ -30,54 +30,76 @@
 			columns:
 			[
 				{
-					text:'ПервичноеСообщение',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПодтверждениеОтправки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ОтветНаПодтверждениеОтправки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПодтверждениеДоставки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПротоколПроверки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПодтверждениеНаПротоколПроверки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ОтветНаЗапрос',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ОтветНаОтветНаЗапрос',
+					text:'',
+					width:'34',
 				},
 				{
-					text:'Возврат',
+					text:'',
+					width:'34',
 				},
 				{
-					text:'ПодтверждениеВозврата',
+					text:'',
+					width:'34',
 				},
 				{
 					text:'Тип',
+					width:'78',
 				},
 				{
 					text:'Наименование',
+					width:'81',
 				},
 				{
-					text:'ДатаСоздания',
+					text:'Дата создания',
+					width:'126',
 				},
 				{
-					text:'ДатаЗакрытия',
+					text:'Дата завершения',
+					width:'100',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'НалоговыйОрган',
+					text:'Налоговый орган',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:8px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,29 +108,43 @@
 			style: 'position:absolute;left:142px;top:8px;width:592px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидыЦикловОбмена',
+			text: 'Типы циклов обмена:',
+			style: 'position:absolute;left:8px;top:35px;width:131px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидЦиклаОбмена',
 			style: 'position:absolute;left:296px;top:35px;width:438px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Без учета завершенных циклов обмена',
+			style: 'position:absolute;left:509px;top:61px;width:225px;height:15px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:82px;width:726px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Пометить все',
 				},
 				{
-					text:'УстановитьФлажкиУВсех',
-				},
-				{
-					text:'СнятьФлажкиУВсех',
+					text:'Снять флажки у всех',
 				},
 				{
 					text:'Обновить',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Формировать подтверждения на нераспакованные сообщения',
+			style: 'position:absolute;left:142px;top:61px;width:359px;height:15px;',
 		},
 	]
 });

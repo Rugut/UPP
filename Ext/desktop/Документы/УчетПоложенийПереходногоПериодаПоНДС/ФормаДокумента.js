@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УчетПоложенийПереходногоПериодаПоНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 709,
+	style: 'position:absolute;width:709px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,23 +15,16 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -38,21 +33,23 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:369px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,10 +58,22 @@
 			style: 'position:absolute;left:90px;top:369px;width:611px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,10 +82,22 @@
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:329px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,31 +112,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ОбъектСтроительства',
+					text:'Объект строительства',
+					width:'120',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'100',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'100',
 				},
 				{
-					text:'СуммаБезНДС',
+					text:'Сумма без НДС',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'40',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
-					text:'НДСВключенВСтоимость',
+					text:'НДС включен в стоимость',
+					width:'100',
 				},
 			]
 		},
@@ -124,16 +154,17 @@
 			style: 'position:absolute;left:8px;top:95px;width:693px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НалоговыйПериод',
+			text: '',
+			style: 'position:absolute;left:329px;top:33px;width:261px;height:19px;',
 		},
 	]
 });

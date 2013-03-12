@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.УниверсальныйОтчетПоМетаданным.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 694,
+	style: 'position:absolute;width:694px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет',
 	
 	items:
@@ -16,50 +18,36 @@
 					text:'Сформировать',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Открыть в новом окне',
 				},
 				{
-					text:'ОткрытьВНовомОкне',
+					text:'Сохранить настройки отчета',
 				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Настройки',
+					text:'Настройки...',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Загрузить настройки отчета',
 				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 			]
 		},
 		{
@@ -79,40 +67,52 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'ЛевоеЗначениеДляПодробногоОтображенияЭлемента',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидыСравненияДляПодробногоОтображенияЭлемента',
+					text:'Вид сравнения',
+					width:'75',
 				},
 				{
-					text:'ПравоеЗначениеДляПодробногоОтображенияЭлемента',
+					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеДляПодробногоОтображенияЭлемента',
+					text:'Представление',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеДляКраткогоОтображенияЭлемента',
+					text:'Представление',
+					width:'100',
 				},
 				{
-					text:'ЛевоеЗначениеДляКраткогоОтображенияЭлемента',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидыСравненияДляКраткогоОтображенияЭлемента',
+					text:'Вид сравнения',
+					width:'75',
 				},
 				{
-					text:'ПравоеЗначениеДляКраткогоОтображенияЭлемента',
+					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ТипДляПодробногоОтображенияГруппы',
+					text:'Тип группы',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеДляПодробногоОтображенияГруппы',
+					text:'Представление',
+					width:'100',
 				},
 				{
-					text:'ТипДляКраткогоОтображенияГруппы',
+					text:'Тип группы',
+					width:'100',
 				},
 			]
 		},
@@ -144,6 +144,12 @@
 			style: 'position:absolute;left:52px;top:0px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:136px;top:0px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаКонецПериода',
@@ -154,6 +160,18 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:238px;top:0px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьС',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:0px;width:50px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:126px;top:0px;width:50px;height:19px;',
 		},
 					]
 				},
@@ -175,16 +193,34 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТипДанных',
+			text: 'Тип данных:',
+			style: 'position:absolute;left:8px;top:33px;width:65px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТипДанных',
 			style: 'position:absolute;left:79px;top:33px;width:140px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИмяОбъекта',
+			text: 'Объект:',
+			style: 'position:absolute;left:226px;top:33px;width:46px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяОбъекта',
 			style: 'position:absolute;left:276px;top:33px;width:188px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяТаблицы',
+			text: 'Таблица:',
+			style: 'position:absolute;left:472px;top:33px;width:46px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

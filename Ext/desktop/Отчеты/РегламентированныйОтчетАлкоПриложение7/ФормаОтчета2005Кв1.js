@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 443,width: 670,
+	style: 'position:absolute;width:670px;height:443px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поступления спирта и виноматериалов',
 	
 	items:
@@ -16,38 +18,25 @@
 					text:'Справка',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Обновить',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Очистить',
 				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
@@ -59,27 +48,24 @@
 			items:
 			[
 				{
-					text:'ПодменюПечати',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -88,7 +74,7 @@
 			items:
 			[
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -104,10 +90,22 @@
 			style: 'position:absolute;left:483px;top:256px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:118px;top:256px;width:148px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаРаздел1',
 			text: '',
 			style: 'position:absolute;left:268px;top:256px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел1',
+			text: '999 из 999',
+			style: 'position:absolute;left:290px;top:256px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -133,6 +131,12 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:568px;top:280px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись26',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:349px;top:280px;width:132px;height:19px;',
+		},
 					]
 				},
 			]
@@ -147,6 +151,16 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:0px;top:0px;width:237px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить выбор значений',
+			style: 'position:absolute;left:249px;top:0px;width:163px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -167,6 +181,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ТранспортныеУпаковки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 133,width: 400,
+	style: 'position:absolute;width:400px;height:133px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Транспортные упаковки',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:87px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:101px;top:57px;width:291px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВладелец',
+			text: 'Владелец:',
+			style: 'position:absolute;left:8px;top:81px;width:87px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:101px;top:81px;width:291px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоэффициент',
+			text: 'Коэффициент:',
+			style: 'position:absolute;left:140px;top:33px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:220px;top:33px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерУпаковки',
+			text: 'Номер упаковки:',
+			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,19 +70,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.ОтчетПоДвижениюДенежныхДокументов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 507,width: 700,
+	style: 'position:absolute;width:700px;height:507px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет по движению денежных документов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:288px;top:33px;width:103px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,45 +27,46 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'СохранитьЗначения___',
+					text:'Справка',
 				},
 				{
-					text:'Действие4',
-				},
-				{
-					text:'ВосстановитьЗначения___',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Сформировать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Справка',
 				},
-				{
-					text:'Сформировать1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.УчетЗатратНаИсточникиПерсонала.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 398,width: 504,
+	style: 'position:absolute;width:504px;height:398px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Учет затрат на источники персонала',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,34 +39,32 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие7',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
+				},
+				'-',
+				{
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Разделитель2',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 			]
 		},
@@ -63,22 +75,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Дата',
+					width:'80',
 				},
 				{
-					text:'ИсточникПерсонала',
+					text:'Источник',
+					width:'120',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 				{
 					text:'Валюта',
+					width:'60',
 				},
 				{
-					text:'КурсДокумента',
+					text:'Курс',
+					width:'80',
 				},
 			]
 		},
@@ -88,34 +106,22 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'Редактировать номер',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 			]
 		},
@@ -124,21 +130,17 @@
 			style: 'position:absolute;left:0px;top:373px;width:504px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -146,6 +148,18 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:322px;width:402px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:322px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:346px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

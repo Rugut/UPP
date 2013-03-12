@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СерийныеНомера.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Серийные номера',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Владелец',
+					text:'Номенклатура',
+					width:'150',
 				},
 				{
-					text:'Код',
+					text:'Серийный номер',
+					width:'260',
 				},
 			]
 		},
@@ -30,11 +35,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

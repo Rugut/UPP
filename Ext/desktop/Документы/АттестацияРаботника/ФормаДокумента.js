@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.АттестацияРаботника.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 328,width: 424,
+	style: 'position:absolute;width:424px;height:328px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Аттестация сотрудника',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,28 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,14 +62,12 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'Действие',
+					text:'Текущая должность',
 				},
 				{
 					text:'Действие7',
@@ -54,15 +78,8 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Заполнить',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -73,7 +90,7 @@
 					text:'Действие8',
 				},
 				{
-					text:'ОткрытьАнкету',
+					text:'Анкета',
 				},
 			]
 		},
@@ -84,16 +101,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Компетенция',
+					width:'220',
 				},
 				{
 					text:'Оценка',
+					width:'78',
 				},
 				{
-					text:'ДатаОценки',
+					text:'Дата оценки',
+					width:'82',
 				},
 			]
 		},
@@ -103,35 +124,23 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Подменю',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю1',
+					text:'',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 			]
 		},
 		{
@@ -140,21 +149,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:276px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

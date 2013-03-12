@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПодразделенияОрганизаций.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 351,width: 526,
+	style: 'position:absolute;width:526px;height:351px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Подразделение',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:404px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:438px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,52 +39,37 @@
 			items:
 			[
 				{
-					text:'Действие5',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Разделитель',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Настройка доступа',
 				},
 				{
-					text:'Разделитель1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие4',
+					text:'Скопировать',
 				},
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'РазделительПрава',
-				},
-				{
-					text:'Права',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
+					text:'Перечитать',
 				},
 			]
 		},
@@ -80,20 +79,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -103,14 +98,26 @@
 			items:
 			[
 				{
-					title:'ОбособленноеПодразделение',
+					title:'Обособленное подразделение',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКодПоОКАТО',
+			text: 'Код по ОКАТО:',
+			style: 'position:absolute;left:22px;top:39px;width:78px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КодПоОКАТО',
 			style: 'position:absolute;left:102px;top:39px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКПП',
+			text: 'КПП:',
+			style: 'position:absolute;left:219px;top:39px;width:27px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -136,16 +143,57 @@
 			name: 'ТерриториальныеУсловияПФР',
 			style: 'position:absolute;left:248px;top:137px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьРайонныйКоэффициент2',
+			text: 'Районный коэффициент (местный):',
+			style: 'position:absolute;left:38px;top:89px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРайонныйКоэффициентРФ2',
+			text: 'Районный коэффициент (федеральный):',
+			style: 'position:absolute;left:38px;top:113px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТерриториальныеУсловияПФР2',
+			text: 'Территориальные условия ПФР:',
+			style: 'position:absolute;left:38px;top:137px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подразделение зарегистрировано в ИФНС как обособленное с присвоением кода по ОКАТО и КПП, но не имеет выделенного баланса',
+			style: 'position:absolute;left:6px;top:6px;width:496px;height:28px;',
+		},
 					]
 				},
 				{
-					title:'БухучетЗарплаты',
+					title:'Бухучет зарплаты',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСвойства',
+			text: 'Свойства',
+			style: 'position:absolute;left:6px;top:6px;width:245px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнформацияОтраженияВУчете',
+			text: 'Бухучет зарплаты сотрудников подразделения следует задавать в том случае, если он отличается от бухучета зарплаты сотрудников предприятия в целом.',
+			style: 'position:absolute;left:34px;top:6px;width:468px;height:29px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражениеВБухучетеИзменить',
+			text: 'Задать бухучет зарплаты сотрудников подразделения',
+			style: 'position:absolute;left:34px;top:124px;width:468px;height:33px;',
+		},
 					]
 				},
 				{
-					title:'СтраховыеВзносы',
+					title:'Страховые взносы',
 					items:
 					[
 		{
@@ -158,6 +206,17 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Соответствует судам, зарегистрированным в Российском международном реестре судов',
+			style: 'position:absolute;left:0px;top:0px;width:478px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМоряков',
+			text: 'Надпись моряков',
+			style: 'position:absolute;left:16px;top:25px;width:480px;height:56px;',
+		},
 					]
 				},
 			]
@@ -175,13 +234,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'28',
 				},
 				{
 					text:'Принадлежность',
+					width:'27',
 				},
 				{
 					text:'Категория',
+					width:'166',
 				},
 			]
 		},
@@ -193,11 +255,25 @@
 			[
 				{
 					text:'Свойство',
+					width:'116',
 				},
 				{
 					text:'Значение',
+					width:'94',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКатегории',
+			text: 'Категории',
+			style: 'position:absolute;left:257px;top:6px;width:245px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражениеВБухучете',
+			text: '',
+			style: 'position:absolute;left:34px;top:45px;width:466px;height:79px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -205,13 +281,10 @@
 			items:
 			[
 				{
-					text:'Категории',
+					text:'Вывести список...',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить новую категорию',
 				},
 			]
 		},
@@ -221,13 +294,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить новое свойство',
 				},
 				{
-					text:'Действия',
-				},
-				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -236,10 +306,28 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРуководитель',
+			text: 'Руководитель:',
+			style: 'position:absolute;left:8px;top:59px;width:81px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРуководительТекст',
+			text: '',
+			style: 'position:absolute;left:91px;top:59px;width:427px;height:33px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидПодразделения',
 			style: 'position:absolute;left:91px;top:96px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидПодразделения',
+			text: 'Вид :',
+			style: 'position:absolute;left:8px;top:96px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',

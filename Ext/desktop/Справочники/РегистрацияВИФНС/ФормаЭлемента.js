@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.РегистрацияВИФНС.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 382,width: 480,
+	style: 'position:absolute;width:480px;height:382px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация в ИФНС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код налогового органа:',
+			style: 'position:absolute;left:8px;top:60px;width:131px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,56 +33,43 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Найти в списке',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Скопировать',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'Действие2',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие5',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Разделитель2',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие3',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Подменю',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -82,20 +77,16 @@
 			style: 'position:absolute;left:0px;top:357px;width:480px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
 		},
@@ -126,17 +117,41 @@
 			style: 'position:absolute;left:144px;top:109px;width:328px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПредставитель',
+			text: 'Представитель:',
+			style: 'position:absolute;left:14px;top:187px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПолноеНаименование',
+			text: 'Полное:',
+			style: 'position:absolute;left:14px;top:137px;width:125px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКраткоеНаименование',
+			text: 'Краткое:',
+			style: 'position:absolute;left:14px;top:109px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:14px;top:210px;width:458px;height:115px;',
 			height: 115,width: 458,
 			items:
 			[
 				{
-					title:'ПредставительЮрЛицо',
+					title:'',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьДокументПредставителя',
+			text: 'Документ, подтверждающий полномочия представителя:',
+			style: 'position:absolute;left:0px;top:33px;width:128px;height:82px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ДокументПредставителя',
 			style: 'position:absolute;left:130px;top:33px;width:328px;height:82px;',
@@ -147,12 +162,24 @@
 			name: 'УполномоченноеЛицоПредставителя',
 			style: 'position:absolute;left:130px;top:5px;width:328px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьФИОУполномоченногоФизлица',
+			text: 'ФИО уполномоченного лица представителя:',
+			style: 'position:absolute;left:0px;top:0px;width:128px;height:27px;',
+		},
 					]
 				},
 				{
-					title:'ПредставительФизЛицо',
+					title:'',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДокументПредставителя1',
+			text: 'Документ, подтверждающий полномочия представителя:',
+			style: 'position:absolute;left:0px;top:9px;width:128px;height:106px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -174,6 +201,18 @@
 			hideLabel: true,
 			name: 'Владелец',
 			style: 'position:absolute;left:144px;top:33px;width:328px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоверенность',
+			text: 'Доверенность:',
+			style: 'position:absolute;left:14px;top:330px;width:125px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

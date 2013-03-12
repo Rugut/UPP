@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТарифныеРазряды.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 286,width: 434,
+	style: 'position:absolute;width:434px;height:286px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Тарифный разряд',
 	
 	items:
@@ -12,20 +14,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:434px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
 				{
 					text:'Действие1',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Действие3',
@@ -36,33 +31,25 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -74,27 +61,35 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код:',
+			style: 'position:absolute;left:312px;top:33px;width:32px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:346px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,13 +104,16 @@
 			columns:
 			[
 				{
-					text:'Период',
+					text:'Дата',
+					width:'80',
 				},
 				{
 					text:'Размер',
+					width:'80',
 				},
 				{
 					text:'Валюта',
+					width:'45',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 470,width: 445,
+	style: 'position:absolute;width:445px;height:470px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Типовая анкета',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:316px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,15 +44,8 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -47,46 +54,30 @@
 				},
 				{
 					text:'Действие3',
-				},
-				{
-					text:'Подменю1',
 				},
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -98,38 +89,28 @@
 			items:
 			[
 				{
-					text:'ПросмотрHTML',
+					text:'Просмотр HTML',
 				},
+				'-',
 				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
 				},
 				{
-					text:'ДействиеПечать',
+					text:'Печать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'РазделительОК2',
-				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'РазделительОК1',
-				},
-				{
-					text:'Отправить',
+					text:'Рассылка',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 			]
 		},
 		{
@@ -143,10 +124,37 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Предназначена для загрузки данных в справочник "Физические лица"',
+			style: 'position:absolute;left:6px;top:67px;width:416px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Предназначена для адресной рассылки',
+			style: 'position:absolute;left:6px;top:30px;width:416px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидАнкеты',
+			text: 'Вид анкеты:',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидАнкеты',
 			style: 'position:absolute;left:86px;top:6px;width:336px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заполнять анкету данными',
+			style: 'position:absolute;left:6px;top:49px;width:416px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСекундОтвета',
+			text: 'Секунд ответа:',
+			style: 'position:absolute;left:5px;top:90px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -157,7 +165,7 @@
 					]
 				},
 				{
-					title:'СтраницаВопросы',
+					title:'Состав вопросов',
 					items:
 					[
 		{
@@ -168,21 +176,27 @@
 			[
 				{
 					text:'Раздел',
+					width:'80',
 				},
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'27',
 				},
 				{
 					text:'Вопрос',
+					width:'227',
 				},
 				{
 					text:'Обязательный',
+					width:'80',
 				},
 				{
-					text:'ВесВопроса',
+					text:'Вес вопроса',
+					width:'100',
 				},
 				{
-					text:'СекундОтвета',
+					text:'Секунд ответа',
+					width:'100',
 				},
 			]
 		},
@@ -201,12 +215,15 @@
 			[
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
-					text:'Наименование',
+					text:'Раздел',
+					width:'234',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -216,14 +233,12 @@
 			items:
 			[
 				{
-					text:'УдалитьРаздел',
+					text:'Удалить раздел',
 				},
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -241,7 +256,7 @@
 					]
 				},
 				{
-					title:'СтраницаМакет',
+					title:'Макет печатной формы анкеты',
 					items:
 					[
 		{
@@ -249,14 +264,12 @@
 			style: 'position:absolute;left:6px;top:0px;width:416px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Заполнить',
 				},
 				{
-					text:'ДействиеЗаполнитьМакет',
-				},
-				{
-					text:'ДействиеОчистить',
+					text:'Очистить',
 				},
 			]
 		},
@@ -265,13 +278,25 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Заголовок:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НаименованиеАнкеты',
 			style: 'position:absolute;left:95px;top:57px;width:343px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Вступление:',
+			style: 'position:absolute;left:8px;top:82px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Вступление',
 			style: 'position:absolute;left:95px;top:82px;width:343px;height:80px;',

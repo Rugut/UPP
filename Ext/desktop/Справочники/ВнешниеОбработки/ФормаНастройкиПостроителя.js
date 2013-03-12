@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВнешниеОбработки.ФормаНастройкиПостроителя',
 	{
 	extend: 'Ext.window.Window',
-	height: 267,width: 400,
+	style: 'position:absolute;width:400px;height:267px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка условий',
 	
 	items:
@@ -15,15 +17,11 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -36,22 +34,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},

@@ -1,81 +1,94 @@
 ﻿Ext.define('Документы.ЧекККМ.ФормаРегистрацииПродаж',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 782,
+	style: 'position:absolute;width:782px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Чек ККМ',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'СуммаДокумента',
+			text: '1000000.00',
+			style: 'position:absolute;left:458px;top:354px;width:311px;height:57px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТекущийПользователь',
+			text: '',
+			style: 'position:absolute;left:267px;top:5px;width:507px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДисконтнаяКарта',
+			text: '',
+			style: 'position:absolute;left:160px;top:349px;width:129px;height:18px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:782px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Чек возврата',
 				},
 				{
-					text:'Разделитель',
+					text:'Заполнить из терминала сбора данных',
+				},
+				'-',
+				{
+					text:'Z отчет',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЧекВозврата',
-				},
-				{
-					text:'ИзТерминалаСбораДанных1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ZОтчет',
-				},
-				{
-					text:'ОтчетОСменеБезГашения',
+					text:'Отчет о смене без гашения',
 				},
 				{
 					text:'Авторизация',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Аннулирование чека',
 				},
 				{
-					text:'АннулированиеЧека',
+					text:'&Товарный чек',
 				},
 				{
-					text:'ДействиеПечать',
+					text:'&Выход из программы',
+				},
+				'-',
+				'-',
+				{
+					text:'Внесение денег',
 				},
 				{
-					text:'ВыходИзПрограммы',
+					text:'Назначить скидку',
+				},
+				'-',
+				{
+					text:'Изъятие денег',
 				},
 				{
-					text:'Сервис',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ВнесениеДенег',
-				},
-				{
-					text:'НазначитьСкидку',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ИзъятиеДенег',
-				},
-				{
-					text:'ДействиеЗакрытиеЧека',
+					text:'Закрытие чека',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтог',
+			text: 'Итого:',
+			style: 'position:absolute;left:300px;top:354px;width:152px;height:57px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Скидки',
+			text: 'Скидки:',
+			style: 'position:absolute;left:13px;top:395px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -94,52 +107,84 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'66',
 				},
 				{
 					text:'Артикул',
+					width:'110',
 				},
 				{
-					text:'ШтрихКод',
+					text:'Штрихкод',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'299',
 				},
 				{
 					text:'Количество',
+					width:'72',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед. изм.',
+					width:'66',
 				},
 				{
 					text:'Цена',
+					width:'85',
 				},
 				{
-					text:'СуммаБезСкидок',
+					text:'Сумма без скидок',
+					width:'94',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'% Руч.ск.',
+					width:'60',
 				},
 				{
-					text:'ПроцентАвтоматическихСкидок',
+					text:'% Авт.ск.',
+					width:'55',
 				},
 				{
 					text:'Сумма',
+					width:'102',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'122',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'123',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'СкидкиИтогоСумма',
+			text: '',
+			style: 'position:absolute;left:175px;top:395px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДисконтнаяКарта',
+			text: 'Дисконтная карта:',
+			style: 'position:absolute;left:13px;top:349px;width:142px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ВладелецДисконтнойКарты',
+			text: 'Владелец дисконтной карты',
+			style: 'position:absolute;left:13px;top:371px;width:276px;height:18px;',
 		},
 	]
 });

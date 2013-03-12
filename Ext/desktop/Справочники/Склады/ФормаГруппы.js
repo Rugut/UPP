@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.Склады.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 109,width: 546,
+	style: 'position:absolute;width:546px;height:109px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Склады (места хранения)',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:456px;top:57px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:498px;top:57px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:57px;width:360px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Родитель:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,14 +50,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:546px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'РазделительПрава',
-				},
-				{
-					text:'Права',
+					text:'Настройка доступа',
 				},
 			]
 		},
@@ -46,20 +62,16 @@
 			style: 'position:absolute;left:0px;top:84px;width:546px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},

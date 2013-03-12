@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Кассы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 554,
+	style: 'position:absolute;width:554px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Кассы',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВалютаДенежныхСредств',
+					text:'Валюта',
+					width:'80',
 				},
 				{
 					text:'Владелец',
+					width:'209',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -46,11 +54,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:554px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

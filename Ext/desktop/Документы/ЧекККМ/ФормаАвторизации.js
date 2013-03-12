@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЧекККМ.ФормаАвторизации',
 	{
 	extend: 'Ext.window.Window',
-	height: 84,width: 468,
+	style: 'position:absolute;width:468px;height:84px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Авторизация: Введите пароль или прочитайте регистрационную карту',
 	
 	items:
@@ -13,10 +15,10 @@
 			items:
 			[
 				{
-					text:'ВыполнитьАвторизацию',
+					text:'Выполнить авторизацию',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -27,10 +29,22 @@
 			style: 'position:absolute;left:117px;top:8px;width:343px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:8px;top:8px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Пароль',
 			style: 'position:absolute;left:117px;top:32px;width:343px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Пароль:',
+			style: 'position:absolute;left:8px;top:32px;width:104px;height:19px;',
 		},
 	]
 });

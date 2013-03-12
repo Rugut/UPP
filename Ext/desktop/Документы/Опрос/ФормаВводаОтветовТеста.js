@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.Опрос.ФормаВводаОтветовТеста',
 	{
 	extend: 'Ext.window.Window',
-	height: 561,width: 366,
+	style: 'position:absolute;width:366px;height:561px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Опрос',
 	
 	items:
@@ -32,13 +34,19 @@
 					]
 				},
 				{
-					title:'ОдинИзВариантовОтвета',
+					title:'Один из вариантов ответа',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьРазвернутыйОтвет',
+			text: 'Развернутый ответ:',
+			style: 'position:absolute;left:8px;top:48px;width:342px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'НесколькоВариантовОтвета',
+					title:'Несколько вариантов ответа',
 					items:
 					[
 		{
@@ -48,16 +56,20 @@
 			columns:
 			[
 				{
-					text:'Выбор',
+					text:'',
+					width:'25',
 				},
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'35',
 				},
 				{
-					text:'ВариантОтвета',
+					text:'Составной ответ',
+					width:'204',
 				},
 				{
-					text:'Ответ',
+					text:'Развернутый ответ',
+					width:'200',
 				},
 			]
 		},
@@ -68,10 +80,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Регион:',
+			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Регион',
 			style: 'position:absolute;left:94px;top:0px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Район:',
+			style: 'position:absolute;left:0px;top:24px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,10 +104,22 @@
 			style: 'position:absolute;left:94px;top:24px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Город:',
+			style: 'position:absolute;left:0px;top:48px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Город',
 			style: 'position:absolute;left:94px;top:48px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Нас. пункт:',
+			style: 'position:absolute;left:0px;top:72px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -92,10 +128,22 @@
 			style: 'position:absolute;left:94px;top:72px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Улица:',
+			style: 'position:absolute;left:0px;top:96px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Улица',
 			style: 'position:absolute;left:94px;top:96px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Дом:',
+			style: 'position:absolute;left:0px;top:120px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -104,10 +152,22 @@
 			style: 'position:absolute;left:94px;top:120px;width:35px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Корпус:',
+			style: 'position:absolute;left:140px;top:120px;width:52px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Корпус',
 			style: 'position:absolute;left:192px;top:120px;width:35px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Квартира:',
+			style: 'position:absolute;left:249px;top:120px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,6 +182,18 @@
 			style: 'position:absolute;left:94px;top:168px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:0px;top:168px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Индекс:',
+			style: 'position:absolute;left:0px;top:144px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Индекс',
@@ -134,10 +206,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись16',
+			text: 'Код страны:',
+			style: 'position:absolute;left:0px;top:24px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Поле1',
 			style: 'position:absolute;left:79px;top:24px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись17',
+			text: 'Код города:',
+			style: 'position:absolute;left:0px;top:48px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -146,10 +230,22 @@
 			style: 'position:absolute;left:79px;top:48px;width:140px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись18',
+			text: 'Номер :',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Поле3',
 			style: 'position:absolute;left:79px;top:0px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись19',
+			text: 'Добавочный:',
+			style: 'position:absolute;left:209px;top:0px;width:75px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -163,13 +259,19 @@
 			name: 'КомментарийТелефон',
 			style: 'position:absolute;left:79px;top:72px;width:268px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись20',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:0px;top:72px;width:79px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'АдресЭлектроннойПочты',
+					title:'Адрес электронной почты',
 				},
 				{
-					title:'ВебСтраница',
+					title:'Веб страница',
 				},
 				{
 					title:'Другое',
@@ -193,7 +295,7 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ПолеВводаТекст',
 			style: 'position:absolute;left:0px;top:0px;width:350px;height:238px;',
@@ -201,6 +303,18 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Вопрос',
+			text: '',
+			style: 'position:absolute;left:8px;top:195px;width:350px;height:38px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредставлениеПрошлоСекунд',
+			text: '00:00',
+			style: 'position:absolute;left:66px;top:515px;width:33px;height:15px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -219,6 +333,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Прошло',
+			text: 'Прошло:',
+			style: 'position:absolute;left:8px;top:515px;width:50px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:29px;width:350px;height:162px;',
 			height: 162,width: 350,
@@ -231,6 +351,18 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредставлениеОсталосьСекунд',
+			text: '00:00',
+			style: 'position:absolute;left:184px;top:515px;width:33px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Осталось',
+			text: 'Осталось:',
+			style: 'position:absolute;left:115px;top:515px;width:59px;height:15px;',
 		},
 	]
 });

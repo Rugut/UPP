@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВнешниеОбработки.ФормаВыбораПринадлежности',
 	{
 	extend: 'Ext.window.Window',
-	height: 435,width: 425,
+	style: 'position:absolute;width:425px;height:435px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Принадлежность печатной формы',
 	
 	items:
@@ -16,7 +18,7 @@
 					text:'Отмена',
 				},
 				{
-					text:'КнопкаОК',
+					text:'ОК',
 				},
 			]
 		},
@@ -38,6 +40,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},
@@ -55,6 +58,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},
@@ -72,6 +76,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},

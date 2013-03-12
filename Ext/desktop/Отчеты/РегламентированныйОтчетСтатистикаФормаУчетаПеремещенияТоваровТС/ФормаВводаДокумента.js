@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаУчетаПеремещенияТоваровТС.ФормаВводаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 104,width: 370,
+	style: 'position:absolute;width:370px;height:104px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Графа 10. Документы (ввод реквизитов)',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'ОК',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -28,6 +28,12 @@
 			hideLabel: true,
 			name: 'ДокВыбор',
 			style: 'position:absolute;left:157px;top:5px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокВыбор',
+			text: 'Наименование документа',
+			style: 'position:absolute;left:8px;top:5px;width:144px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -40,6 +46,18 @@
 			hideLabel: true,
 			name: 'ДокНомер',
 			style: 'position:absolute;left:157px;top:29px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокДата',
+			text: 'Дата документа',
+			style: 'position:absolute;left:8px;top:53px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокНомер',
+			text: 'Номер документа',
+			style: 'position:absolute;left:8px;top:29px;width:144px;height:19px;',
 		},
 	]
 });

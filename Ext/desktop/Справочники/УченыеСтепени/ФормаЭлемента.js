@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.УченыеСтепени.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 85,width: 438,
+	style: 'position:absolute;width:438px;height:85px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ученая степень',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:343px;top:33px;width:33px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:378px;top:33px;width:52px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,20 +45,16 @@
 			style: 'position:absolute;left:0px;top:60px;width:438px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

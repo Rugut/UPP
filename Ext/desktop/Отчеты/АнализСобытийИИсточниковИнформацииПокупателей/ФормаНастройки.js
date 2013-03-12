@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСобытийИИсточниковИнформацииПокупателей.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 309,width: 490,
+	style: 'position:absolute;width:490px;height:309px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка отчет анализ событий и источников информации покупателей',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Выполнить',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -34,10 +34,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:64px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:146px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -52,16 +64,28 @@
 			style: 'position:absolute;left:246px;top:6px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:51px;width:207px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:6px;top:71px;width:163px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:128px;width:460px;height:111px;',
 			height: 111,width: 460,
 			columns:
 			[
 				{
-					text:'ИспользованиеПоказателя',
+					text:'',
+					width:'18',
 				},
 				{
-					text:'ПредставлениеПоказателя',
+					text:'Показатель',
+					width:'220',
 				},
 			]
 		},
@@ -71,21 +95,24 @@
 			items:
 			[
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Установить флажки',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'УстановитьФлажки',
-				},
-				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать номенклатуру',
+			style: 'position:absolute;left:6px;top:29px;width:155px;height:16px;',
 		},
 					]
 				},
@@ -100,10 +127,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'220',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -127,22 +156,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -166,10 +201,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'120',
 				},
 			]
 		},

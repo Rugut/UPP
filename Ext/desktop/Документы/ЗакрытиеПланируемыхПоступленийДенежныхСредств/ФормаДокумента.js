@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ЗакрытиеПланируемыхПоступленийДенежныхСредств.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 427,width: 672,
+	style: 'position:absolute;width:672px;height:427px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Закрытие планируемых поступлений денежных средств',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:351px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -33,9 +53,6 @@
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
 			]
 		},
 		{
@@ -45,25 +62,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ДокументПланирования',
+					text:'Документ планирования',
+					width:'220',
 				},
 				{
-					text:'ОстатокПоступление',
+					text:'Остаток',
+					width:'107',
 				},
 				{
-					text:'ВалютаПоступление',
+					text:'Валюта',
+					width:'59',
 				},
 				{
-					text:'ОстатокРазмещение',
+					text:'Остаток в размещении',
+					width:'90',
 				},
 				{
 					text:'Ответственный',
+					width:'98',
 				},
 				{
 					text:'Контрагент',
+					width:'118',
 				},
 			]
 		},
@@ -72,27 +96,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 			]
 		},
 		{
@@ -101,26 +118,20 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -130,10 +141,20 @@
 			style: 'position:absolute;left:444px;top:78px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Подразделение:',
+			style: 'position:absolute;left:338px;top:78px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:102px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент:',
+			style: 'position:absolute;left:14px;top:102px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -142,10 +163,21 @@
 			style: 'position:absolute;left:444px;top:102px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Ответственный:',
+			style: 'position:absolute;left:338px;top:102px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Состояние',
 			style: 'position:absolute;left:444px;top:351px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Состояние:',
+			style: 'position:absolute;left:338px;top:351px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,10 +186,28 @@
 			style: 'position:absolute;left:98px;top:375px;width:566px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:375px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Дата прихода с:',
+			style: 'position:absolute;left:14px;top:78px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтборДатаНач',
 			style: 'position:absolute;left:98px;top:78px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:188px;top:78px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

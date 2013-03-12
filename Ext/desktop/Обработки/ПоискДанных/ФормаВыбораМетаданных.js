@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПоискДанных.ФормаВыбораМетаданных',
 	{
 	extend: 'Ext.window.Window',
-	height: 410,width: 365,
+	style: 'position:absolute;width:365px;height:410px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор объектов поиска',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаЗакрыть',
+					text:'Отмена',
 				},
 			]
 		},
@@ -31,12 +31,15 @@
 			[
 				{
 					text:'Колонка1',
+					width:'21',
 				},
 				{
-					text:'КолонкаКартинки',
+					text:'Тип метаданного',
+					width:'21',
 				},
 				{
 					text:'Колонка2',
+					width:'403',
 				},
 			]
 		},

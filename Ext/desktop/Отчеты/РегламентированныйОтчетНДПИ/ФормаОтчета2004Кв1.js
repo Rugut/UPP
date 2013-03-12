@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетНДПИ.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 490,width: 670,
+	style: 'position:absolute;width:670px;height:490px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по налогу на добычу полезных ископаемых',
 	
 	items:
@@ -12,12 +14,8 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Заполнить',
 				},
@@ -30,66 +28,44 @@
 				{
 					text:'Отправить',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'Отправка',
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'Проверить',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Подготовить',
+					text:'Подготовить к отправке',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Выгрузка',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Расширить поле бланка',
 				},
+				'-',
+				'-',
 				{
-					text:'РасширитьПолеБланка',
+					text:'Подготовить к отправке и подписать',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'РазделительОтправка',
-				},
+				'-',
 			]
 		},
 		{
@@ -98,22 +74,13 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
@@ -130,7 +97,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -166,7 +133,7 @@
 					]
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -202,9 +169,15 @@
 					]
 				},
 				{
-					title:'Раздел21',
+					title:'Раздел 2.1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:109px;top:265px;width:148px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел21',
@@ -216,6 +189,12 @@
 			name: 'КнопкаУдалитьДопСтраницуРаздел21',
 			text: 'Удалить',
 			style: 'position:absolute;left:480px;top:239px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись27',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:109px;top:239px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -235,10 +214,45 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:566px;top:239px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:109px;top:265px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись30',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:109px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись32',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:109px;top:265px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись27',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:109px;top:265px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись28',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:109px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Нал. база определяется как количество добытого в натуральном выражении',
+			style: 'position:absolute;left:206px;top:265px;width:440px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел22',
+					title:'Раздел 2.2',
 					items:
 					[
 		{
@@ -274,9 +288,45 @@
 					]
 				},
 				{
-					title:'Раздел23',
+					title:'Раздел 2.3',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницФизЛица',
+			text: '999 из 999',
+			style: 'position:absolute;left:281px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел21',
+			text: '999 из 999',
+			style: 'position:absolute;left:281px;top:239px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел1',
+			text: '999 из 999',
+			style: 'position:absolute;left:281px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел31',
+			text: '999 из 999',
+			style: 'position:absolute;left:281px;top:239px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел32',
+			text: '999 из 999',
+			style: 'position:absolute;left:281px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел22',
+			text: '999 из 999',
+			style: 'position:absolute;left:281px;top:265px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел23',
@@ -296,6 +346,12 @@
 			style: 'position:absolute;left:259px;top:239px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел23',
+			text: '999 из 999',
+			style: 'position:absolute;left:281px;top:239px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаСледующаяСтраницаРаздел23',
 			text: '',
@@ -307,10 +363,15 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:566px;top:239px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Нал. база определяется как количество добытого в натуральном выражении',
+			style: 'position:absolute;left:206px;top:265px;width:440px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел31',
+					title:'Раздел 3.1',
 					items:
 					[
 		{
@@ -358,7 +419,7 @@
 					]
 				},
 				{
-					title:'Раздел32',
+					title:'Раздел 3.2',
 					items:
 					[
 		{
@@ -394,9 +455,15 @@
 					]
 				},
 				{
-					title:'Раздел321',
+					title:'Раздел 3.2.1',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:6px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -419,6 +486,11 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

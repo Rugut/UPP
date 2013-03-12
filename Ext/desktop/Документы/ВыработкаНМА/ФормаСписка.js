@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВыработкаНМА.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 564,
+	style: 'position:absolute;width:564px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выработка НМА',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'102',
 				},
 				{
 					text:'Проведен',
+					width:'0',
 				},
 				{
 					text:'Ответственный',
+					width:'259',
 				},
 			]
 		},
@@ -36,17 +43,12 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю2',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗаказПокупателя.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 780,
+	style: 'position:absolute;width:780px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Заказы покупателей',
 	
 	items:
@@ -14,43 +16,56 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'ОтражатьВБухгалтерскомУчете',
+					text:'БУ',
+					width:'20',
 				},
 				{
-					text:'ОтражатьВНалоговомУчете',
+					text:'НУ',
+					width:'20',
 				},
 				{
-					text:'ОбособленныйУчет',
+					text:'ОУ',
+					width:'21',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ВидОперации',
+					text:'Вид операции',
+					width:'120',
 				},
 				{
-					text:'СуммаДокумента',
+					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта ',
+					width:'60',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -59,24 +74,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Подменю3',
 				},
+				{
+					text:'Действие',
+				},
+				'-',
 			]
 		},
 	]

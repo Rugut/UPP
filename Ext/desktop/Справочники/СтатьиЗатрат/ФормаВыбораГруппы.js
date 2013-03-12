@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиЗатрат.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 368,
+	style: 'position:absolute;width:368px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы статей затрат',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -24,11 +27,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

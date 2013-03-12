@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВыработкаНМА.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 720,
+	style: 'position:absolute;width:720px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выработка НМА',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'ОтражатьВБухгалтерскомУчете',
+					text:'БУ',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -42,22 +51,15 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Выбрать',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Перейти',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Подменю2',
+					text:'Выбрать',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализОборачиваемостиТоваров.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 322,width: 490,
+	style: 'position:absolute;width:490px;height:322px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -24,12 +26,19 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Представление',
+					width:'194',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать измерения',
+			style: 'position:absolute;left:12px;top:80px;width:156px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,18 +70,23 @@
 			items:
 			[
 				{
-					text:'ПереместитьВниз',
+					text:'Переместить вниз',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
-					text:'ПереместитьВверх',
+					text:'Переместить вверх',
 				},
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:12px;top:100px;width:213px;height:15px;',
 		},
 					]
 				},
@@ -88,9 +102,11 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 				{
 					text:'Тип',
+					width:'40',
 				},
 			]
 		},
@@ -114,22 +130,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -154,6 +176,7 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 			]
 		},
@@ -177,10 +200,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'60',
 				},
 			]
 		},
@@ -200,12 +225,8 @@
 			style: 'position:absolute;left:0px;top:297px;width:490px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Справка',
 				},
@@ -213,7 +234,7 @@
 					text:'ОК',
 				},
 				{
-					text:'Отмена',
+					text:'Закрыть',
 				},
 			]
 		},

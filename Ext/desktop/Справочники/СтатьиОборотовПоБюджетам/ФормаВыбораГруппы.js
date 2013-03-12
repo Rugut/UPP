@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиОборотовПоБюджетам.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 312,
+	style: 'position:absolute;width:312px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы статей оборотов по бюджетам',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'377',
 				},
 			]
 		},
@@ -26,9 +29,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

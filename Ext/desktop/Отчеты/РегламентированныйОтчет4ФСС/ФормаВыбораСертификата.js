@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ФормаВыбораСертификата',
 	{
 	extend: 'Ext.window.Window',
-	height: 255,width: 657,
+	style: 'position:absolute;width:657px;height:255px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выберите сертификат',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Выбрать',
 				},
@@ -30,22 +30,28 @@
 			columns:
 			[
 				{
-					text:'Наименование',
+					text:'Представление',
+					width:'120',
 				},
 				{
-					text:'ДействителенС',
+					text:'Начало действия',
+					width:'120',
 				},
 				{
-					text:'ДействителенПо',
+					text:'Конец действия',
+					width:'120',
 				},
 				{
 					text:'Отпечаток',
+					width:'240',
 				},
 				{
 					text:'Поставщик',
+					width:'120',
 				},
 				{
-					text:'СерийныйНомер',
+					text:'Серийный номер',
+					width:'120',
 				},
 			]
 		},

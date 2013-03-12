@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтрокиФинансовогоРасчета.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 742,
+	style: 'position:absolute;width:742px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Строки финансового расчета',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидСтроки',
+					text:'Вид строки',
+					width:'120',
 				},
 				{
 					text:'Измерение',
+					width:'120',
 				},
 				{
 					text:'Формула',
+					width:'220',
 				},
 			]
 		},
@@ -41,6 +49,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -50,11 +59,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

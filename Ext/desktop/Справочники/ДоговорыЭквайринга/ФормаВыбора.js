@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДоговорыЭквайринга.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 658,
+	style: 'position:absolute;width:658px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Договоры эквайринга',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 				{
 					text:'Эквайрер',
+					width:'210',
 				},
 				{
 					text:'Договор',
+					width:'194',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

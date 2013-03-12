@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РазмещенияВЗаказах.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 780,
+	style: 'position:absolute;width:780px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,38 +15,28 @@
 			items:
 			[
 				{
-					text:'БыстрыеОтборы',
+					text:'Быстрые отборы',
 				},
-				{
-					text:'РазделительДействия',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'СохранитьНастройку',
+					text:'Сохранить настройку...',
 				},
 				{
-					text:'НовыйОтчет',
+					text:'Новый отчет',
 				},
 				{
-					text:'БыстрыеОтборы',
+					text:'Быстрые отборы',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'РазделительСформировать',
+					text:'Восстановить настройку...',
 				},
-				{
-					text:'РазделительНовыйОтчет',
-				},
-				{
-					text:'РазделительСохранитьВосстановитьНастройку',
-				},
-				{
-					text:'ВосстановитьНастройку',
-				},
-				{
-					text:'РазделительНастройка',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -52,49 +44,34 @@
 					text:'Справка',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Заголовок отчета',
 				},
 				{
-					text:'РазделительБыстрыеОтборыЗаголовокОтчета',
+					text:'Заголовок отчета',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Сохранить настройку...',
 				},
 				{
-					text:'ЗаголовокОтчета',
+					text:'Действие закрыть',
 				},
 				{
-					text:'ЗаголовокОтчета',
+					text:'Восстановить настройку...',
 				},
 				{
-					text:'РазделительНастройка',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'РазделительСформировать',
-				},
-				{
-					text:'РазделительНовыйОтчет',
-				},
-				{
-					text:'РазделительБыстрыеОтборыЗаголовокОтчета',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'СохранитьНастройку',
-				},
-				{
-					text:'ДействиеЗакрыть',
-				},
-				{
-					text:'ВосстановитьНастройку',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'РазделительСохранитьВосстановитьНастройку',
-				},
-				{
-					text:'НовыйОтчет',
+					text:'Новый отчет',
 				},
 				{
 					text:'Сформировать',
@@ -108,7 +85,7 @@
 			items:
 			[
 				{
-					title:'СтраницаПроизвольныйПериод',
+					title:'Произвольный период',
 					items:
 					[
 		{
@@ -129,10 +106,40 @@
 			text: '...',
 			style: 'position:absolute;left:239px;top:0px;width:20px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодС',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаДату',
+			text: 'На дату:',
+			style: 'position:absolute;left:122px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Период',
+			text: '',
+			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:28px;top:0px;width:55px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаНаДату',
+					title:'На дату',
 					items:
 					[
 		{
@@ -144,7 +151,7 @@
 					]
 				},
 				{
-					title:'СтраницаПериод',
+					title:'Период',
 					items:
 					[
 		{
@@ -169,6 +176,48 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Типы заказа размещения',
+			style: 'position:absolute;left:8px;top:33px;width:139px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы поставщикам',
+			style: 'position:absolute;left:155px;top:33px;width:129px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы на производство',
+			style: 'position:absolute;left:307px;top:33px;width:153px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Внутренние заказы',
+			style: 'position:absolute;left:466px;top:33px;width:129px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Типы заказа потребителя',
+			style: 'position:absolute;left:8px;top:56px;width:136px;height:17px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы покупателей',
+			style: 'position:absolute;left:155px;top:56px;width:129px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Внутренние заказы',
+			style: 'position:absolute;left:465px;top:56px;width:129px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы на производство',
+			style: 'position:absolute;left:306px;top:56px;width:153px;height:15px;',
 		},
 	]
 });

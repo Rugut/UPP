@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегистрУчетаПрямыхРасходовНаПроизводство.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 353,width: 372,
+	style: 'position:absolute;width:372px;height:353px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистр учета прямых расходов',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -34,6 +36,12 @@
 			style: 'position:absolute;left:84px;top:30px;width:266px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:30px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
@@ -44,6 +52,18 @@
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:166px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -58,10 +78,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Представление',
+					text:'Показатель',
+					width:'220',
 				},
 			]
 		},
@@ -71,23 +93,29 @@
 			items:
 			[
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
 					text:'Действие3',
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Вид отчета:',
+			style: 'position:absolute;left:6px;top:54px;width:76px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ВидыРасходов',
+					title:'Виды расходов',
 					items:
 					[
 		{
@@ -96,10 +124,10 @@
 			items:
 			[
 				{
-					text:'УстановтьВсеВиды',
+					text:'',
 				},
 				{
-					text:'СнятьВсеВиды',
+					text:'',
 				},
 			]
 		},

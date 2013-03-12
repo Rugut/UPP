@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.Проекты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 109,width: 406,
+	style: 'position:absolute;width:406px;height:109px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Проекты',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:276px;top:57px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:317px;top:57px;width:81px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:57px;width:183px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,9 +50,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -41,19 +59,15 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},

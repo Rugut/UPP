@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ВопросПредупреждение',
 	{
 	extend: 'Ext.window.Window',
-	height: 218,width: 663,
+	style: 'position:absolute;width:663px;height:218px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'ВНИМАНИЕ',
 	
 	items:
@@ -13,15 +15,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОтмена',
+					text:'Отмена',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыПродолжить',
+					text:'Продолжить',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОсновнойТекст',
+			text: '',
+			style: 'position:absolute;left:92px;top:14px;width:551px;height:92px;',
 		},
 	]
 });

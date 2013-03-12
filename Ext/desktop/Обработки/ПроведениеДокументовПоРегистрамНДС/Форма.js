@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПроведениеДокументовПоРегистрамНДС.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 398,width: 338,
+	style: 'position:absolute;width:338px;height:398px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Проведение документов по регистрам НДС',
 	
 	items:
@@ -19,22 +21,32 @@
 			style: 'position:absolute;left:0px;top:373px;width:338px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Выполнить',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодС',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:53px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:70px;top:53px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:152px;top:53px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,23 +61,41 @@
 			style: 'position:absolute;left:253px;top:53px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Проводить документы только выбранного периода',
+			style: 'position:absolute;left:8px;top:33px;width:322px;height:15px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:153px;width:322px;height:24px;',
 			items:
 			[
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
 					text:'Обновить',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Проводить документы по оперативным регистрам',
+			style: 'position:absolute;left:8px;top:77px;width:322px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Проводить документы по регистрам партий',
+			style: 'position:absolute;left:8px;top:97px;width:322px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отразить суммовые и курсовые разницы в регистрах НДС',
+			style: 'position:absolute;left:8px;top:117px;width:322px;height:15px;',
 		},
 	]
 });

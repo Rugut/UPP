@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГруппыПисемЭлектроннойПочты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 456,
+	style: 'position:absolute;width:456px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Группы писем электронной почты',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Владелец',
+					width:'220',
 				},
 			]
 		},
@@ -29,9 +33,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

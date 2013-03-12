@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеЦен.ФормаЗаполнения',
 	{
 	extend: 'Ext.window.Window',
-	height: 338,width: 676,
+	style: 'position:absolute;width:676px;height:338px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Формирование цен',
 	
 	items:
@@ -14,7 +16,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -23,16 +25,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'Включить все',
 				},
 				{
-					text:'Действие3',
+					text:'Выключить все',
 				},
 			]
 		},
@@ -43,22 +45,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'221',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'221',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'221',
 				},
 			]
 		},
@@ -71,9 +79,7 @@
 			style: 'position:absolute;left:0px;top:313px;width:676px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Выполнить',
 				},
@@ -89,9 +95,14 @@
 			items:
 			[
 				{
-					title:'СтраницаЗаполнения',
+					title:'',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Включать товары, для которых цены не установлены',
+			style: 'position:absolute;left:0px;top:6px;width:321px;height:15px;',
+		},
 					]
 				},
 			]

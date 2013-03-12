@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТранспортныеУпаковки.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 340,width: 612,
+	style: 'position:absolute;width:612px;height:340px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Транспортные упаковки',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'НомерУпаковки',
+					text:'Номер',
+					width:'39',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 				{
 					text:'Коэффициент',
+					width:'79',
 				},
 				{
 					text:'Владелец',
+					width:'350',
 				},
 			]
 		},

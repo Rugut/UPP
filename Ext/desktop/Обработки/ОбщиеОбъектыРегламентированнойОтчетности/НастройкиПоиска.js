@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.НастройкиПоиска',
 	{
 	extend: 'Ext.window.Window',
-	height: 98,width: 403,
+	style: 'position:absolute;width:403px;height:98px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поиск',
 	
 	items:
@@ -18,16 +20,18 @@
 				{
 					text:'Справка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Искать:',
+			style: 'position:absolute;left:8px;top:11px;width:40px;height:15px;',
 		},
 		{
 			xtype: 'textfield',

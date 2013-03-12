@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НазначенияИспользования.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 500,
+	style: 'position:absolute;width:500px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Назначения использования',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 				{
-					text:'СпособПогашенияСтоимости',
+					text:'Способ погашения стоимости',
+					width:'161',
 				},
 				{
-					text:'СрокПолезногоИспользования',
+					text:'Срок полезного использования',
+					width:'44',
 				},
 				{
 					text:'Количество',
+					width:'68',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'70',
 				},
 				{
-					text:'СпособОтраженияРасходов',
+					text:'Способ отражения расходов',
+					width:'153',
 				},
 				{
 					text:'Владелец',
+					width:'100',
 				},
 			]
 		},
@@ -47,9 +58,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

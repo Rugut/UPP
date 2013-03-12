@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ХарактеристикиНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 334,width: 376,
+	style: 'position:absolute;width:376px;height:334px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Элемент Характеристики номенклатуры',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,13 +28,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Свойство',
+					width:'120',
 				},
 				{
 					text:'Значение',
+					width:'220',
 				},
 			]
 		},
@@ -38,14 +49,10 @@
 				{
 					text:'ОК',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
@@ -57,76 +64,72 @@
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель5',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие13',
+					text:'&Удалить',
 				},
 				{
-					text:'Разделитель',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие15',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие11',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие10',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие17',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
 				{
-					text:'Действие14',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие1',
+					text:'Найти в списке',
 				},
+				'-',
 				{
-					text:'Подменю',
+					text:'Справка',
 				},
-				{
-					text:'Действие16',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие18',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОКП',
+			text: 'ОКП:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОКП',
 			style: 'position:absolute;left:93px;top:57px;width:275px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Активная характеристика',
+			style: 'position:absolute;left:8px;top:81px;width:155px;height:15px;',
 		},
 	]
 });

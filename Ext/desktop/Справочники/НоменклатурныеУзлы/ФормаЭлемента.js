@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.НоменклатурныеУзлы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 377,width: 641,
+	style: 'position:absolute;width:641px;height:377px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Номенклатурные узлы',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:527px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:569px;top:33px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:431px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСостояние',
+			text: 'Состояние:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Состояние',
 			style: 'position:absolute;left:94px;top:57px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаУтверждения',
+			text: 'Дата утверждения:',
+			style: 'position:absolute;left:216px;top:57px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,25 +71,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВидНорматива',
+					text:'Вид норматива',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица',
+					width:'54',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'120',
 				},
 			]
 		},
@@ -80,20 +113,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

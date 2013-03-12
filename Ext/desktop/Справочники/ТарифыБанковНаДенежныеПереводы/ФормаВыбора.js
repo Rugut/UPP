@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТарифыБанковНаДенежныеПереводы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Тарифы банков на денежные переводы',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'150',
 				},
 				{
 					text:'Процент',
+					width:'56',
 				},
 				{
-					text:'МинимальныйТариф',
+					text:'Минимальный тариф',
+					width:'126',
 				},
 				{
-					text:'МаксимальныйТариф',
+					text:'Максимальный тариф',
+					width:'126',
 				},
 			]
 		},
@@ -38,11 +46,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
 			]
 		},

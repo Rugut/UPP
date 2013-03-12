@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрафикЗаказов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 539,width: 1000,
+	style: 'position:absolute;width:1000px;height:539px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'График заказов',
 	
 	items:
@@ -12,56 +14,42 @@
 			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Сохранить график',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'СохранитьИзменения',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить настройку',
 				},
 				{
 					text:'Диагностика',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Справка',
 				},
 				{
-					text:'Действие2',
+					text:'Видимость отборы',
 				},
 				{
-					text:'ВидимостьОтборы',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'ОтменитьИзменения',
+					text:'Отменить не сохраненные изменения',
 				},
 			]
 		},
@@ -82,6 +70,18 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:978px;top:2px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодС',
+			text: 'Период с',
+			style: 'position:absolute;left:769px;top:2px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по',
+			style: 'position:absolute;left:889px;top:2px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -107,22 +107,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'317',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'101',
 				},
 				{
 					text:'Значение',
+					width:'161',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'161',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'161',
 				},
 			]
 		},

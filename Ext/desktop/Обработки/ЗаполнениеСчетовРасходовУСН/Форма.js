@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЗаполнениеСчетовРасходовУСН.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 149,width: 226,
+	style: 'position:absolute;width:226px;height:149px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка',
 	
 	items:
@@ -20,21 +22,31 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Выполнить',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'Дата:',
+			style: 'position:absolute;left:15px;top:48px;width:69px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:91px;top:47px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:16px;top:78px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаИнтервал',
 	{
 	extend: 'Ext.window.Window',
-	height: 136,width: 356,
+	style: 'position:absolute;width:356px;height:136px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Конструктор пользовательского поля',
 	
 	items:
@@ -12,16 +14,38 @@
 			style: 'position:absolute;left:0px;top:111px;width:356px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНижняяГраница',
+			text: 'Нижняя граница:',
+			style: 'position:absolute;left:8px;top:84px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВерхняяГраница',
+			text: 'Верхняя граница:',
+			style: 'position:absolute;left:8px;top:36px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗначение',
+			text: 'Значение:',
+			style: 'position:absolute;left:8px;top:60px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:8px;width:107px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

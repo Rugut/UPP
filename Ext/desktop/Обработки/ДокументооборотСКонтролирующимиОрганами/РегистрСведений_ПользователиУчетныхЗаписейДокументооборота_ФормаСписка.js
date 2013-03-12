@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РегистрСведений_ПользователиУчетныхЗаписейДокументооборота_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 689,
+	style: 'position:absolute;width:689px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Пользователи учетных записей документооборота и их настройки',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'УчетнаяЗапись',
+					text:'Учетная запись',
+					width:'224',
 				},
 				{
 					text:'Пользователь',
+					width:'224',
 				},
 			]
 		},

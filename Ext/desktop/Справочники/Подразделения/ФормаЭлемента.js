@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Подразделения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 472,width: 538,
+	style: 'position:absolute;width:538px;height:472px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Подразделения',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:404px;top:33px;width:24px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:430px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,56 +39,41 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
+				},
+				'-',
+				'-',
+				{
+					text:'Настройка доступа',
 				},
 				{
-					text:'Действие3',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель2',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Права',
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Редактировать код',
 				},
 				{
-					text:'Действие5',
+					text:'Скопировать',
 				},
-				{
-					text:'РазделительПрава',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -82,22 +81,36 @@
 			style: 'position:absolute;left:0px;top:447px;width:538px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРуководитель',
+			text: 'Руководитель:',
+			style: 'position:absolute;left:8px;top:57px;width:81px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРуководительТекст',
+			text: '',
+			style: 'position:absolute;left:91px;top:57px;width:427px;height:34px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидПодразделения',
+			text: 'Вид:',
+			style: 'position:absolute;left:8px;top:93px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -106,10 +119,22 @@
 			style: 'position:absolute;left:93px;top:93px;width:295px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидЦФО',
+			text: 'Вид ЦФО:',
+			style: 'position:absolute;left:8px;top:120px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидЦФО',
 			style: 'position:absolute;left:93px;top:120px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОсновнойПроект',
+			text: 'Основной проект:',
+			style: 'position:absolute;left:8px;top:143px;width:84px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,7 +149,7 @@
 			items:
 			[
 				{
-					title:'Основные',
+					title:'Соответствие подразделений',
 					items:
 					[
 		{
@@ -135,16 +160,24 @@
 			[
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение организации',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСоответствиеПодразделений',
+			text: 'Соответствие подразделениям организаций',
+			style: 'position:absolute;left:6px;top:6px;width:510px;height:15px;',
 		},
 					]
 				},
 				{
-					title:'СвойстваКатегории',
+					title:'Дополнительно',
 					items:
 					[
 		{
@@ -154,13 +187,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Принадлежность',
+					width:'25',
 				},
 				{
 					text:'Категория',
+					width:'120',
 				},
 			]
 		},
@@ -171,13 +207,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Свойство',
+					width:'120',
 				},
 				{
 					text:'Значение',
+					width:'120',
 				},
 			]
 		},
@@ -187,13 +226,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить новое свойство',
 				},
 				{
-					text:'Действия',
-				},
-				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -203,13 +239,10 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 				{
-					text:'Действия',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить новую категорию',
 				},
 			]
 		},

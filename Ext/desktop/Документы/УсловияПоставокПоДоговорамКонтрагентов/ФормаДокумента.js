@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.УсловияПоставокПоДоговорамКонтрагентов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 383,width: 656,
+	style: 'position:absolute;width:656px;height:383px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Условия поставок по договорам контрагентов',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговорКонтрагента',
+			text: 'Договор :',
+			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,16 +58,34 @@
 			style: 'position:absolute;left:428px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНачала',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:98px;top:81px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаОкончания',
+			text: 'по:',
+			style: 'position:absolute;left:180px;top:81px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:198px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодичность',
+			text: 'Периодичность:',
+			style: 'position:absolute;left:338px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,31 +99,22 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель5',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Анализ',
-				},
-				{
-					text:'Подменю1',
 				},
 			]
 		},
@@ -91,24 +126,18 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -118,46 +147,60 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'157',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'155',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'65',
 				},
 				{
 					text:'Количество',
+					width:'74',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Валюта',
+					width:'68',
 				},
 				{
 					text:'Цена',
+					width:'76',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 			]
 		},
@@ -169,16 +212,18 @@
 				{
 					text:'Подбор',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'УстановитьОбщуюСумму',
+					text:'Установить общую сумму',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаУсловийПоДоговору',
+			text: 'Сумма:',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -187,16 +232,40 @@
 			style: 'position:absolute;left:98px;top:105px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ВалютаВзаиморасчетов',
+			text: '',
+			style: 'position:absolute;left:180px;top:105px;width:138px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:331px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:331px;width:552px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:338px;top:105px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:428px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:265px;top:309px;width:300px;height:17px;',
 		},
 		{
 			xtype: 'textfield',

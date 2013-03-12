@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 304,
+	style: 'position:absolute;width:304px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы профилей изменения планов по периодам',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -23,9 +26,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:304px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

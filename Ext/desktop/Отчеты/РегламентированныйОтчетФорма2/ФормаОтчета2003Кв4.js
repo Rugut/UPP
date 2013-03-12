@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетФорма2.ФормаОтчета2003Кв4',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 720,
+	style: 'position:absolute;width:720px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма №2',
 	
 	items:
@@ -12,48 +14,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель6',
+					text:'Настройки отчета...',
 				},
+				'-',
 				{
-					text:'ПодменюНастройка',
+					text:'Кнопка сохранять расшифровку',
 				},
+				'-',
+				'-',
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Проверить выгрузку',
 				},
-				{
-					text:'ПодменюРасшифровка',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'КнопкаСохранятьРасшифровку',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
@@ -67,43 +44,34 @@
 					text:'Заполнить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
+				},
+				'-',
+				'-',
+				{
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Разделитель7',
+					text:'',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
-					text:'ПодготовитьИПодписать',
+					text:'Подготовить к отправке и подписать',
 				},
 			]
 		},
@@ -112,28 +80,25 @@
 			style: 'position:absolute;left:0px;top:466px;width:720px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодменюПечати',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'OK',
 				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:634px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -184,6 +149,12 @@
 			style: 'position:absolute;left:263px;top:3px;width:441px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Статус',
@@ -226,6 +197,12 @@
 			name: 'КнопкаУдалитьДопСтрокиФормаОтчета',
 			text: 'Удалить',
 			style: 'position:absolute;left:228px;top:294px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтроки',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:0px;top:294px;width:136px;height:19px;',
 		},
 					]
 				},

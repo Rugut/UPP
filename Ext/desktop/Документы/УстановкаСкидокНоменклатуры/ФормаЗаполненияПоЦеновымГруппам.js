@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаЗаполненияПоЦеновымГруппам',
 	{
 	extend: 'Ext.window.Window',
-	height: 59,width: 546,
+	style: 'position:absolute;width:546px;height:59px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка скидок номенклатуры',
 	
 	items:
@@ -12,6 +14,12 @@
 			hideLabel: true,
 			name: 'Группы',
 			style: 'position:absolute;left:234px;top:8px;width:304px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГруппы',
+			text: 'Ценовые группы:',
+			style: 'position:absolute;left:8px;top:8px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -26,10 +34,22 @@
 			style: 'position:absolute;left:102px;top:32px;width:57px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроцентСкидки',
+			text: 'Процент скидки:',
+			style: 'position:absolute;left:8px;top:32px;width:89px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОграничениеСкидкиНаценки',
 			style: 'position:absolute;left:289px;top:32px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОграничениеСкидки',
+			text: 'Ограничение скидки:',
+			style: 'position:absolute;left:168px;top:32px;width:111px;height:19px;',
 		},
 		{
 			xtype: 'button',

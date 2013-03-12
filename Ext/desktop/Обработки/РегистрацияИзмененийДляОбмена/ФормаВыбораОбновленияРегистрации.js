@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаВыбораОбновленияРегистрации',
 	{
 	extend: 'Ext.window.Window',
-	height: 172,width: 464,
+	style: 'position:absolute;width:464px;height:172px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация изменений',
 	
 	items:
@@ -19,6 +21,12 @@
 					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ТекстВопроса',
+			text: 'Текст вопроса',
+			style: 'position:absolute;left:8px;top:8px;width:448px;height:70px;',
 		},
 	]
 });

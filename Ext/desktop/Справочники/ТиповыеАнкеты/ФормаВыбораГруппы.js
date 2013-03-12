@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 434,
+	style: 'position:absolute;width:434px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы типовых анкет',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'320',
 				},
 			]
 		},
@@ -26,9 +29,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

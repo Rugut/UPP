@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РеестрСчетов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 260,width: 616,
+	style: 'position:absolute;width:616px;height:260px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Реестры счетов',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'80',
 				},
 				{
 					text:'Номер',
+					width:'132',
 				},
 				{
 					text:'Организация',
+					width:'220',
 				},
 				{
-					text:'СчетОрганизации',
+					text:'Счет организации',
+					width:'220',
 				},
 				{
-					text:'СуммаАккредитива',
+					text:'Аккредитив',
+					width:'80',
 				},
 				{
-					text:'ЮрФизЛицоКонтрагента',
+					text:'Юр физ лицо контрагента',
+					width:'220',
 				},
 				{
 					text:'Ответственный',
+					width:'220',
 				},
 				{
 					text:'Комментарий',
+					width:'220',
 				},
 			]
 		},
@@ -48,11 +59,9 @@
 			items:
 			[
 				{
-					text:'ДействиеПечать',
+					text:'Печать по умолчанию',
 				},
-				{
-					text:'Разделитель10',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОперацияБух.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 740,
+	style: 'position:absolute;width:740px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Операции (бухгалтерский и налоговый учет)',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Содержание',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -41,24 +50,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:740px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Подменю2',
 				},
+				{
+					text:'Действие',
+				},
+				'-',
 			]
 		},
 	]

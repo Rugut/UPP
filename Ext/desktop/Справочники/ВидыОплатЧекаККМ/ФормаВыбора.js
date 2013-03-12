@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыОплатЧекаККМ.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 594,
+	style: 'position:absolute;width:594px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Виды оплат чека ККМ',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ТипОплаты',
+					text:'Тип оплаты',
+					width:'100',
 				},
 			]
 		},
@@ -35,6 +41,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'138',
 				},
 			]
 		},
@@ -44,11 +51,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ВводНаправленийСписания.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 600,
+	style: 'position:absolute;width:600px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод направлений списания продукции (услуг)',
 	
 	items:
@@ -20,15 +22,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатура',
+			text: 'Номенклатура (характеристика, серия):',
+			style: 'position:absolute;left:8px;top:59px;width:134px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,16 +55,34 @@
 			style: 'position:absolute;left:452px;top:59px;width:140px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоличество',
+			text: 'Количество:',
+			style: 'position:absolute;left:8px;top:86px;width:134px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Количество',
 			style: 'position:absolute;left:142px;top:86px;width:89px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмерения',
+			text: 'Единица:',
+			style: 'position:absolute;left:239px;top:86px;width:63px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:307px;top:86px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерСтрокиТабличнойЧасти',
+			text: 'Номер строки документа:',
+			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,103 +97,136 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение организации',
+					width:'120',
 				},
 				{
 					text:'Заказ',
+					width:'97',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'106',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'100',
 				},
 				{
-					text:'СчетЗатратНУ',
+					text:'Счет затрат (НУ)',
+					width:'100',
 				},
 				{
-					text:'ХарактерЗатрат',
+					text:'Хар-р затрат',
+					width:'100',
 				},
 				{
-					text:'ВидАналитики',
+					text:'Вид аналитики',
+					width:'100',
 				},
 				{
-					text:'ВидАналитикиДоп',
+					text:'Вид аналитики (доп)',
+					width:'100',
 				},
 				{
-					text:'ВидСубконто1',
+					text:'Вид субконто 1',
+					width:'100',
 				},
 				{
-					text:'ВидСубконто2',
+					text:'Вид субконто 2',
+					width:'97',
 				},
 				{
-					text:'ВидСубконто3',
+					text:'Вид субконто 3',
+					width:'103',
 				},
 				{
-					text:'ВидСубконтоНУ1',
+					text:'Вид субконто 1 (НУ)',
+					width:'100',
 				},
 				{
-					text:'ВидСубконтоНУ2',
+					text:'Вид субконто 2 (НУ)',
+					width:'100',
 				},
 				{
-					text:'ВидСубконтоНУ3',
+					text:'Вид субконто 3 (НУ)',
+					width:'100',
 				},
 				{
 					text:'Аналитика',
+					width:'204',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'100',
 				},
 				{
-					text:'НоменклатурнаяГруппаДоп',
+					text:'Номенклатурная группа (доп)',
+					width:'100',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1',
+					width:'100',
 				},
 				{
-					text:'Субконто2',
+					text:'Субконто 2',
+					width:'100',
 				},
 				{
-					text:'Субконто3',
+					text:'Субконто 3',
+					width:'100',
 				},
 				{
-					text:'СубконтоНУ1',
+					text:'Субконто 1 (НУ)',
+					width:'100',
 				},
 				{
-					text:'СубконтоНУ2',
+					text:'Субконто 2 (НУ)',
+					width:'100',
 				},
 				{
-					text:'СубконтоНУ3',
+					text:'Субконто 3 (НУ)',
+					width:'100',
 				},
 				{
 					text:'Продукция',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаПродукции',
+					text:'Характеристика продукции',
+					width:'100',
 				},
 				{
-					text:'СерияПродукции',
+					text:'Серия продукции',
+					width:'100',
 				},
 				{
-					text:'ОбъектСтроительства',
+					text:'Объект строительства',
+					width:'100',
 				},
 				{
-					text:'СпособСтроительства',
+					text:'Способ строительства',
+					width:'100',
 				},
 				{
 					text:'Коэффициент',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
-					text:'ОтпущеноСверхЛимита',
+					text:'В т.ч. отпущено сверх лимита',
+					width:'100',
 				},
 			]
 		},
@@ -178,17 +235,12 @@
 			style: 'position:absolute;left:8px;top:125px;width:584px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Заполнить из шаблона',
 				},
 				{
-					text:'ЗаполнитьИзШаблона',
-				},
-				{
-					text:'ДобавитьИзШаблона',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Добавить из шаблона',
 				},
 			]
 		},

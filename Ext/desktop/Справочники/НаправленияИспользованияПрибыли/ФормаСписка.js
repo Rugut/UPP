@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НаправленияИспользованияПрибыли.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 356,
+	style: 'position:absolute;width:356px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Направления использования прибыли',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},

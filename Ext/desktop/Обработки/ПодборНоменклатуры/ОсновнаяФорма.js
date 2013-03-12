@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПодборНоменклатуры.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 453,width: 464,
+	style: 'position:absolute;width:464px;height:453px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Подбор',
 	
 	items:
@@ -14,13 +16,34 @@
 			style: 'position:absolute;left:376px;top:8px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Подбор:',
+			style: 'position:absolute;left:8px;top:8px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:14px;top:395px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:109px;top:395px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:14px;top:418px;width:54px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:215px;width:447px;height:161px;',
 			height: 161,width: 447,
 			items:
 			[
 				{
-					title:'ПоЗапросу',
+					title:'По запросу',
 					items:
 					[
 		{
@@ -30,97 +53,128 @@
 			columns:
 			[
 				{
-					text:'Пиктограмма',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'77',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
 					text:'Артикул',
+					width:'100',
 				},
 				{
-					text:'КоличествоОстатокОрганизации',
+					text:'Остаток организации',
+					width:'60',
 				},
 				{
-					text:'КоличествоСвободныйОстаток',
-				},
-				{
-					text:'КоличествоЗаказанное',
-				},
-				{
-					text:'Цена',
-				},
-				{
-					text:'Лимит',
-				},
-				{
-					text:'ЕдиницаИзмерения',
-				},
-				{
-					text:'Валюта',
-				},
-				{
-					text:'НаименованиеНоменклатурыКонтрагента',
-				},
-				{
-					text:'ХарактеристикаНоменклатуры',
-				},
-				{
-					text:'СерияНоменклатуры',
-				},
-				{
-					text:'Склад',
-				},
-				{
-					text:'Качество',
-				},
-				{
-					text:'АртикулНоменклатурыКонтрагента',
-				},
-				{
-					text:'ПредставлениеНоменклатура',
-				},
-				{
-					text:'ПредставлениеХарактеристикаНоменклатуры',
-				},
-				{
-					text:'ПредставлениеСерияНоменклатуры',
-				},
-				{
-					text:'ПредставлениеЕдиницаИзмерения',
-				},
-				{
-					text:'ПредставлениеВалюта',
-				},
-				{
-					text:'ПредставлениеСклад',
-				},
-				{
-					text:'ПредставлениеКачество',
-				},
-				{
-					text:'Запланировано',
+					text:'Свободный остаток',
+					width:'60',
 				},
 				{
 					text:'Заказано',
+					width:'82',
+				},
+				{
+					text:'Цена',
+					width:'56',
+				},
+				{
+					text:'Лимит',
+					width:'56',
+				},
+				{
+					text:'Единица измерения',
+					width:'54',
+				},
+				{
+					text:'Валюта',
+					width:'80',
+				},
+				{
+					text:'Наименование у контрагента',
+					width:'100',
+				},
+				{
+					text:'Характеристика номенклатуры',
+					width:'120',
+				},
+				{
+					text:'Серия номенклатуры',
+					width:'120',
+				},
+				{
+					text:'Склад',
+					width:'120',
+				},
+				{
+					text:'Качество',
+					width:'120',
+				},
+				{
+					text:'Артикул у контрагента',
+					width:'100',
+				},
+				{
+					text:'Номенклатура (представление)',
+					width:'79',
+				},
+				{
+					text:'Характеристика номенклатуры (представление)',
+					width:'48',
+				},
+				{
+					text:'Серия номенклатуры (представление)',
+					width:'53',
+				},
+				{
+					text:'Единица измерения (представление)',
+					width:'54',
+				},
+				{
+					text:'Валюта (представление)',
+					width:'60',
+				},
+				{
+					text:'Склад (представление)',
+					width:'60',
+				},
+				{
+					text:'Качество (представление)',
+					width:'60',
+				},
+				{
+					text:'Запланировано',
+					width:'71',
+				},
+				{
+					text:'Заказано',
+					width:'74',
 				},
 				{
 					text:'Резерв',
+					width:'78',
 				},
 				{
-					text:'ОсталосьОбеспечить',
+					text:'Осталось обеспечить',
+					width:'85',
 				},
 				{
 					text:'Заказ',
+					width:'161',
 				},
 				{
-					text:'ЗаказчикКонтрагент',
+					text:'Заказчик/Контрагент',
+					width:'113',
 				},
 				{
-					text:'СостояниеЗаказа',
+					text:'Состояние заказа',
+					width:'93',
 				},
 			]
 		},
@@ -130,14 +184,14 @@
 			items:
 			[
 				{
-					text:'ПересчитатьОстаткиВЕдиницуЦены',
+					text:'Пересчитывать остатки в единицу измерения цены',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПоСправочнику',
+					title:'По справочнику',
 					items:
 					[
 		{
@@ -147,25 +201,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'39',
 				},
 				{
 					text:'Код',
+					width:'68',
 				},
 				{
-					text:'Артикул',
+					text:'Артикул ',
+					width:'58',
 				},
 				{
-					text:'Наименование',
+					text:'Номенклатура',
+					width:'233',
 				},
 				{
-					text:'ОсновнаяЕдиницаИзмерения',
+					text:'Единица измерения',
+					width:'41',
 				},
 				{
-					text:'СвободныйОстаток',
+					text:'Свободный остаток',
+					width:'62',
 				},
 				{
-					text:'ОстатокОрганизации',
+					text:'Остаток организации',
+					width:'69',
 				},
 			]
 		},
@@ -176,7 +237,7 @@
 			items:
 			[
 				{
-					title:'ОстаткиТОваров',
+					title:'Остатки товаров',
 					items:
 					[
 		{
@@ -186,22 +247,28 @@
 			columns:
 			[
 				{
-					text:'ХарактеристикаСклад',
+					text:'Характеристика/Склад',
+					width:'151',
 				},
 				{
-					text:'МестоХранения',
+					text:'Ячейка склада',
+					width:'87',
 				},
 				{
 					text:'Общий',
+					width:'60',
 				},
 				{
 					text:'Свободный',
+					width:'71',
 				},
 				{
-					text:'СвободныйОжидаемый',
+					text:'Своб.ожид.',
+					width:'68',
 				},
 				{
-					text:'ВРезерве',
+					text:'В резерве',
+					width:'75',
 				},
 			]
 		},
@@ -212,25 +279,32 @@
 			columns:
 			[
 				{
-					text:'Наименование',
+					text:'Типы цен',
+					width:'133',
 				},
 				{
 					text:'Ссылка',
+					width:'82',
 				},
 				{
-					text:'БазовыйТипЦен',
+					text:'Базовый тип цен',
+					width:'100',
 				},
 				{
 					text:'Рассчитывается',
+					width:'100',
 				},
 				{
-					text:'ОкруглятьВБольшуюСторону',
+					text:'Округлять в большую сторону',
+					width:'100',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'Процент скидки-наценки',
+					width:'100',
 				},
 				{
 					text:'Префикс',
+					width:'100',
 				},
 			]
 		},
@@ -240,6 +314,18 @@
 			name: 'ВалютаЦены',
 			style: 'position:absolute;left:344px;top:73px;width:101px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаЦены',
+			text: 'Валюта:',
+			style: 'position:absolute;left:298px;top:74px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипРасчета',
+			text: 'Валюта цены:',
+			style: 'position:absolute;left:107px;top:74px;width:70px;height:19px;',
+		},
 					]
 				},
 			]
@@ -247,7 +333,7 @@
 					]
 				},
 				{
-					title:'ПоСпецификациям',
+					title:'По спецификациям',
 					items:
 					[
 		{
@@ -257,34 +343,44 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
-					text:'КодВерсии',
+					text:'Версия',
+					width:'60',
 				},
 				{
 					text:'Наименование',
+					width:'124',
 				},
 				{
 					text:'Активная',
+					width:'81',
 				},
 				{
-					text:'ВидСпецификации',
+					text:'Вид',
+					width:'78',
 				},
 				{
 					text:'Состояние',
+					width:'108',
 				},
 				{
-					text:'ДатаУтверждения',
+					text:'Дата утверждения',
+					width:'108',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -299,37 +395,48 @@
 			style: 'position:absolute;left:336px;top:414px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаРасчетов',
+			text: 'Остатки и цены на:',
+			style: 'position:absolute;left:234px;top:414px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоиск',
+			text: 'Искать по:',
+			style: 'position:absolute;left:8px;top:57px;width:60px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеПоиска',
 			style: 'position:absolute;left:193px;top:57px;width:262px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:109px;top:418px;width:103px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьПараметрыПодбора',
+			text: 'Здесь будет отображаться информация о способе подбора',
+			style: 'position:absolute;left:97px;top:79px;width:358px;height:24px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
-					text:'ОстаткиТоваровНаСкладах',
+					text:'Остатки и цены товаров',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -340,13 +447,13 @@
 					text:'Действие5',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Действие',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие10',
@@ -357,18 +464,12 @@
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие9',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -395,6 +496,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -404,22 +506,20 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Пометить все типы цен',
 				},
 				{
-					text:'ПереместитьВверх',
+					text:'Переместить вверх',
 				},
 				{
-					text:'ОтменитьВсе',
+					text:'Отменить пометку всех типов цен',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Обновить',
 				},
 				{
-					text:'ПереместитьВниз',
+					text:'Переместить вниз',
 				},
 			]
 		},
@@ -440,7 +540,7 @@
 					]
 				},
 				{
-					title:'ДеревоСпецификаций',
+					title:'Дерево спецификаций',
 					items:
 					[
 		{
@@ -451,6 +551,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -469,10 +570,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Номенклат.
+группа:',
+			style: 'position:absolute;left:8px;top:28px;width:60px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НоменклатурнаяГруппа',
 			style: 'position:absolute;left:70px;top:32px;width:385px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Показывать остатки',
+			style: 'position:absolute;left:322px;top:395px;width:134px;height:15px;',
 		},
 		{
 			xtype: 'button',

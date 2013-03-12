@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыПоЕСН.ФормаОтчета2007Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 721,
+	style: 'position:absolute;width:721px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Авансы по ЕСН',
 	
 	items:
@@ -13,97 +15,64 @@
 			items:
 			[
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
 				},
 				{
-					text:'ПроверкаПоказателей',
+					text:'Проверка',
 				},
 				{
 					text:'Отправить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'РазделительРасшифровать',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Показать отправки',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Расшифровка',
+				},
+				'-',
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель7',
+					text:'Подготовить к отправке',
 				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Расшифровать',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РазделительЗаполнить',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
+				'-',
 				{
-					text:'РазделительОтправка',
+					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
 				},
 				{
-					text:'Выгрузка',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 			]
 		},
@@ -112,28 +81,25 @@
 			style: 'position:absolute;left:0px;top:466px;width:721px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:635px;top:6px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -158,10 +124,20 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:247px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:556px;top:24px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Внешние данные',
+			style: 'position:absolute;left:274px;top:0px;width:110px;height:19px;',
 		},
 					]
 				},
@@ -177,6 +153,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -203,10 +185,10 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -238,9 +220,15 @@
 					]
 				},
 				{
-					title:'Раздел21',
+					title:'Раздел 2.1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись33',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:393px;top:265px;width:131px;height:19px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:691px;height:24px;',
@@ -270,10 +258,10 @@
 					]
 				},
 				{
-					title:'Раздел21Продолжение',
+					title:'Раздел 2.1 (продолжение)',
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
 		{
@@ -291,7 +279,7 @@
 					]
 				},
 				{
-					title:'Раздел31',
+					title:'Раздел 3.1',
 				},
 			]
 		},

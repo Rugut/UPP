@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.СписаниеНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 470,width: 709,
+	style: 'position:absolute;width:709px;height:470px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,10 +39,7 @@
 			items:
 			[
 				{
-					text:'Подменю2',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие2',
@@ -39,35 +50,25 @@
 				{
 					text:'Действие5',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие7',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие4',
@@ -81,57 +82,34 @@
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Подменю',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -142,28 +120,36 @@
 			style: 'position:absolute;left:0px;top:445px;width:709px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:418px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:418px;width:607px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -178,7 +164,7 @@
 			items:
 			[
 				{
-					title:'НДСкСписанию',
+					title:'НДС к списанию',
 					items:
 					[
 		{
@@ -188,31 +174,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Поставщик',
+					width:'120',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'96',
 				},
 				{
-					text:'СуммаБезНДС',
+					text:'Сумма без НДС',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'96',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'120',
 				},
 			]
 		},
@@ -221,22 +216,56 @@
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДСНУ',
+			text: 'Счет:',
+			style: 'position:absolute;left:356px;top:28px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:356px;top:52px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:356px;top:76px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:356px;top:100px;width:112px;height:19px;',
 		},
 					]
 				},
 				{
-					title:'СчетаСписанияНДС',
+					title:'Счета списания НДС',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДС',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:28px;width:93px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетСписанияНДС',
 			style: 'position:absolute;left:103px;top:28px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:6px;top:52px;width:93px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -245,10 +274,22 @@
 			style: 'position:absolute;left:103px;top:52px;width:205px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:6px;top:76px;width:93px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоСписанияНДС2',
 			style: 'position:absolute;left:103px;top:76px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:6px;top:100px;width:93px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -285,10 +326,27 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:333px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный1',
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:349px;top:33px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:419px;top:33px;width:74px;height:19px;',
 		},
 	]
 });

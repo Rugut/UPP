@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализЗаказаНаПроизводство.ФормаГлавная',
 	{
 	extend: 'Ext.window.Window',
-	height: 406,width: 767,
+	style: 'position:absolute;width:767px;height:406px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ заказа на производство',
 	
 	items:
@@ -13,18 +15,20 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаказ',
+			text: 'Заказ на производство:',
+			style: 'position:absolute;left:8px;top:33px;width:135px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +43,7 @@
 			items:
 			[
 				{
-					title:'СтраницаНаДату',
+					title:'На дату',
 					items:
 					[
 		{
@@ -47,6 +51,12 @@
 			hideLabel: true,
 			name: 'ПолеВводаНаДату',
 			style: 'position:absolute;left:57px;top:2px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаДату',
+			text: 'На дату:',
+			style: 'position:absolute;left:0px;top:2px;width:55px;height:19px;',
 		},
 					]
 				},

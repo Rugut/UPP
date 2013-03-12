@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ДиаграммаХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 400,
+	style: 'position:absolute;width:400px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка Диаграммы',
 	
 	items:
@@ -15,18 +17,14 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -40,10 +38,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:32px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:88px;top:32px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:172px;top:32px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,10 +68,22 @@
 			style: 'position:absolute;left:276px;top:32px;width:21px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:58px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:58px;width:288px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -69,10 +91,16 @@
 			name: 'Счет',
 			style: 'position:absolute;left:88px;top:6px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:6px;top:82px;width:78px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СерииИТочки',
+					title:'Серии и точки',
 					items:
 					[
 		{
@@ -83,9 +111,11 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 				{
 					text:'Тип',
+					width:'40',
 				},
 			]
 		},
@@ -97,9 +127,11 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 				{
 					text:'Тип',
+					width:'40',
 				},
 			]
 		},
@@ -130,6 +162,45 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Серии',
+			style: 'position:absolute;left:6px;top:6px;width:182px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Вид подписей:',
+			style: 'position:absolute;left:6px;top:32px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипДиаграммы',
+			text: 'Тип диаграммы:',
+			style: 'position:absolute;left:6px;top:6px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Окантовка',
+			style: 'position:absolute;left:12px;top:126px;width:140px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отображать заголовок',
+			style: 'position:absolute;left:12px;top:147px;width:140px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отображать легенду',
+			style: 'position:absolute;left:12px;top:168px;width:140px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Раздвижение:',
+			style: 'position:absolute;left:6px;top:56px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:184px;width:150px;height:28px;',
 			height: 28,width: 150,
@@ -139,12 +210,22 @@
 					title:'Плоская',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Градиент',
+			style: 'position:absolute;left:6px;top:6px;width:138px;height:15px;',
+		},
 					]
 				},
 				{
 					title:'Объемная',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Свет',
+			style: 'position:absolute;left:6px;top:6px;width:136px;height:15px;',
+		},
 					]
 				},
 			]
@@ -162,22 +243,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -187,6 +274,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Точки',
+			style: 'position:absolute;left:194px;top:6px;width:182px;height:18px;',
 		},
 					]
 				},

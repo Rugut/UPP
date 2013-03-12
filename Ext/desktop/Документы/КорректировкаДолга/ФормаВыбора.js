@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.КорректировкаДолга.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 516,
+	style: 'position:absolute;width:516px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Корректировки долга',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'ОтражатьВУправленческомУчете',
+					text:'УУ',
+					width:'20',
 				},
 				{
-					text:'ОтражатьВБухгалтерскомУчете',
+					text:'БУ',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -44,29 +54,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:516px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю3',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Выбрать',
 				},
 				{
-					text:'Разделитель',
+					text:'Дт/кт',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

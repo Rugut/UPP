@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ГруппыДоступностиСкладов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 273,width: 467,
+	style: 'position:absolute;width:467px;height:273px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы доступности складов',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код:',
+			style: 'position:absolute;left:384px;top:33px;width:25px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:411px;top:33px;width:48px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,20 +46,16 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -55,10 +65,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Склад',
+					width:'350',
 				},
 			]
 		},

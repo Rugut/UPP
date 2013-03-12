@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МСФОДДС.МСФО',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 732,
+	style: 'position:absolute;width:732px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'МСФО',
 	
 	items:
@@ -12,44 +14,32 @@
 			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Очистить',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Режим ввода информации',
 				},
 				{
-					text:'РежимВводаИнформации',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 			]
 		},
@@ -62,23 +52,14 @@
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -88,7 +69,7 @@
 			items:
 			[
 				{
-					title:'ДДС',
+					title:'Отчет о движении денежных средств',
 					items:
 					[
 		{
@@ -108,6 +89,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:646px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:5px;top:362px;width:719px;height:23px;',
 			height: 23,width: 719,
@@ -117,6 +104,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:2px;top:5px;width:76px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -162,10 +155,25 @@
 			style: 'position:absolute;left:499px;top:24px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Непрямой метод',
+			style: 'position:absolute;left:3px;top:24px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Валюта',
 			style: 'position:absolute;left:53px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'На английском языке',
+			style: 'position:absolute;left:3px;top:44px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:153px;top:43px;width:246px;height:19px;',
 		},
 					]
 				},

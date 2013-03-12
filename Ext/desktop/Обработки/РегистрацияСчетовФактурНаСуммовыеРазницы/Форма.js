@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияСчетовФактурНаСуммовыеРазницы.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 390,width: 736,
+	style: 'position:absolute;width:736px;height:390px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация счетов-фактур на суммовые разницы',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'СписокСчетовФактур',
+					text:'Список счетов-фактур (выд.)',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -25,22 +25,32 @@
 			style: 'position:absolute;left:0px;top:365px;width:736px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выполнить',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:70px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:152px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -59,13 +69,17 @@
 			style: 'position:absolute;left:8px;top:76px;width:720px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:293px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,31 +94,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'29',
 				},
 				{
-					text:'СФсформирован',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Контрагент',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'86',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'Ставка НДС',
+					width:'80',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'80',
 				},
 				{
-					text:'ДокументОснование',
+					text:'Документ основание',
+					width:'120',
 				},
 				{
 					text:'Дата',
+					width:'80',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'101',
 				},
 			]
 		},

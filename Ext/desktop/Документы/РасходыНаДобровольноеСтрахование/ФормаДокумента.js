@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.РасходыНаДобровольноеСтрахование.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 226,width: 320,
+	style: 'position:absolute;width:320px;height:226px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расходы на страхование',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,6 +28,12 @@
 			style: 'position:absolute;left:192px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:81px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -31,26 +45,19 @@
 			items:
 			[
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю1',
+					text:'Дт/кт',
 				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -58,28 +65,44 @@
 			style: 'position:absolute;left:0px;top:201px;width:320px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отразить в бухгалтерском учете',
+			style: 'position:absolute;left:13px;top:105px;width:189px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отразить в налоговом учете',
+			style: 'position:absolute;left:13px;top:126px;width:167px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:148px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,10 +111,22 @@
 			style: 'position:absolute;left:92px;top:148px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:92px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:172px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

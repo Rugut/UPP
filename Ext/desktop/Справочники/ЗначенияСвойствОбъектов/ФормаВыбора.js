@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЗначенияСвойствОбъектов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 456,
+	style: 'position:absolute;width:456px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Значения свойств объектов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

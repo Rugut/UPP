@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ABCКлассификацияПокупателей.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 600,
+	style: 'position:absolute;width:600px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'ABC-классификации покупателей',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Начало',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Окончание',
+					width:'80',
 				},
 				{
-					text:'ПроцентAКласса',
+					text:'% А класса',
+					width:'60',
 				},
 				{
-					text:'ПроцентBКласса',
+					text:'% B класса',
+					width:'60',
 				},
 				{
-					text:'ПроцентCКласса',
+					text:'% С класса',
+					width:'60',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -47,23 +58,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Подменю2',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Действие',
-				},
-				{
-					text:'Подменю2',
 				},
 			]
 		},

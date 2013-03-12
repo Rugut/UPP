@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЖурналРегистрации.ОтборЖурналаРегистрации',
 	{
 	extend: 'Ext.window.Window',
-	height: 0,width: 90,
+	style: 'position:absolute;width:90px;height:0px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:

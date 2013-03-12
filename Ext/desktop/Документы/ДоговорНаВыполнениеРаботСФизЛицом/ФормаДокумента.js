@@ -1,17 +1,37 @@
 ﻿Ext.define('Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 480,width: 350,
+	style: 'position:absolute;width:350px;height:480px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Договор на выполнение работ с физ. лицом',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьСотрудник',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:14px;top:129px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:102px;top:129px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:14px;top:81px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумента',
+			text: 'Валюта:',
+			style: 'position:absolute;left:212px;top:307px;width:41px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +40,22 @@
 			style: 'position:absolute;left:256px;top:307px;width:86px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтоимость',
+			text: 'Стоимость:',
+			style: 'position:absolute;left:14px;top:307px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаЗаРаботу',
 			style: 'position:absolute;left:102px;top:307px;width:99px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:14px;top:428px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,16 +64,40 @@
 			style: 'position:absolute;left:102px;top:428px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:14px;top:403px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:102px;top:403px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Договор:',
+			style: 'position:absolute;left:14px;top:180px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Сроки, с:',
+			style: 'position:absolute;left:14px;top:235px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:102px;top:235px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'по:',
+			style: 'position:absolute;left:192px;top:235px;width:41px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,128 +111,82 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'Перечитать',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель',
+					text:'Отмена проведения',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Действие6',
+					text:'',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель',
+					text:'Провести',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель4',
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель2',
+					text:'Редактировать номер',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'Отмена проведения',
 				},
 				{
-					text:'Действие6',
+					text:'Провести',
 				},
+				'-',
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
-				{
-					text:'ПодменюДействия',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ПодменюПерейти',
-				},
-				{
-					text:'ПодменюНаОсновании',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'ПодменюНаОсновании',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПодменюПерейти',
-				},
+				'-',
 			]
 		},
 		{
@@ -184,28 +194,36 @@
 			style: 'position:absolute;left:0px;top:455px;width:350px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -220,6 +238,12 @@
 			style: 'position:absolute;left:102px;top:81px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:14px;top:105px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
@@ -230,6 +254,18 @@
 			hideLabel: true,
 			name: 'ВидРасчета',
 			style: 'position:absolute;left:102px;top:259px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Начисление:',
+			style: 'position:absolute;left:14px;top:259px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Оплата:',
+			style: 'position:absolute;left:14px;top:283px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -244,10 +280,28 @@
 			style: 'position:absolute;left:102px;top:379px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКодВычета',
+			text: 'Код вычета:',
+			style: 'position:absolute;left:14px;top:379px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Договор',
+			style: 'position:absolute;left:102px;top:180px;width:240px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОписаниеОтраженияВУчета',
 			style: 'position:absolute;left:102px;top:355px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписаниеОтраженияВУчета',
+			text: 'Учет:',
+			style: 'position:absolute;left:14px;top:355px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -256,9 +310,15 @@
 			items:
 			[
 				{
-					title:'СтраницаАвторских',
+					title:'Страница авторских',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВидАвторскогоДоговора',
+			text: 'Вид авторского договора:',
+			style: 'position:absolute;left:0px;top:0px;width:83px;height:28px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -268,9 +328,14 @@
 					]
 				},
 				{
-					title:'СтраницаСтудОтрядов',
+					title:'Страница студ отрядов',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заключен со студентом, работающим в студотряде',
+			style: 'position:absolute;left:0px;top:4px;width:328px;height:19px;',
+		},
 					]
 				},
 			]

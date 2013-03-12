@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЖурналРегистрации.ФормаСобытия',
 	{
 	extend: 'Ext.window.Window',
-	height: 0,width: 100,
+	style: 'position:absolute;width:100px;height:0px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:

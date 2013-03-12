@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ПередачаСЗВ4вПФР.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 554,width: 891,
+	style: 'position:absolute;width:891px;height:554px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Опись сведений, передаваемых страхователем в ПФР',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:502px;width:86px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,52 +27,35 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента1',
+					text:'Структура подчиненности документа1',
 				},
+				'-',
 				{
-					text:'Разделитель8',
-				},
-				{
-					text:'Подменю3',
-				},
-				{
-					text:'Подменю3',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
 					text:'Действие11',
 				},
-				{
-					text:'Разделитель8',
-				},
+				'-',
 				{
 					text:'Действие10',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Подменю',
+					text:'',
 				},
 				{
 					text:'Действие14',
 				},
-				{
-					text:'Разделитель9',
-				},
+				'-',
 				{
 					text:'Действие10',
 				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам1',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие7',
@@ -75,42 +66,27 @@
 				{
 					text:'Действие13',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель9',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
 					text:'Действие9',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие12',
 				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 				{
 					text:'Действие15',
 				},
+				'-',
 				{
-					text:'Подменю2',
+					text:'',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель10',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
@@ -120,15 +96,11 @@
 				{
 					text:'Действие11',
 				},
+				'-',
 				{
-					text:'Разделитель6',
+					text:'',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель11',
-				},
+				'-',
 			]
 		},
 		{
@@ -136,64 +108,49 @@
 			style: 'position:absolute;left:0px;top:529px;width:891px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ВсеФайлы',
-				},
-				{
-					text:'Файл',
+					text:'Все файлы',
 				},
 				{
 					text:'Закрыть',
 				},
 				{
-					text:'АДВ11',
+					text:'АДВ-6-2 (за 2009 г. - АДВ-11)',
 				},
 				{
-					text:'ВсеФайлы',
+					text:'Все файлы',
+				},
+				'-',
+				'-',
+				{
+					text:'СЗВ-6 (за 2009 г. - СЗВ-4)',
 				},
 				{
-					text:'Разделитель1',
+					text:'Проверить в CheckXML',
+				},
+				'-',
+				{
+					text:'АДВ-6-2 (за 2009 г. - АДВ-11)',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'СЗВ4',
-				},
-				{
-					text:'ПроверитьВCheckXML',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'АДВ11',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'НаДискетку',
-				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'СЗВ4',
+					text:'СЗВ-6 (за 2009 г. - СЗВ-4)',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Принято в ПФР',
+			style: 'position:absolute;left:775px;top:502px;width:106px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -217,16 +174,13 @@
 					text:'Действие1',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Действие3',
 				},
 				{
 					text:'Действие',
 				},
 				{
-					text:'ЗадолженностьПередПФР',
+					text:'Заполнить расчетами с ПФР',
 				},
 				{
 					text:'Действие4',
@@ -237,12 +191,8 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -258,22 +208,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТипСтроки',
+					text:'Тип строки',
+					width:'240',
 				},
 				{
 					text:'Год',
+					width:'60',
 				},
 				{
-					text:'СтраховаяЧасть',
+					text:'Страховая часть',
+					width:'100',
 				},
 				{
-					text:'НакопительнаяЧасть',
+					text:'Накопительная часть',
+					width:'119',
 				},
 				{
-					text:'ДополнительныйТариф',
+					text:'Дополнительный тариф',
+					width:'128',
 				},
 			]
 		},
@@ -289,44 +245,33 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьВзносы',
+					text:'Суммы взносов',
 				},
 				{
 					text:'Действие3',
 				},
 				{
-					text:'Провести',
+					text:'Провести пачку',
+				},
+				'-',
+				{
+					text:'Отменить проведение пачки',
 				},
 				{
-					text:'Разделитель1',
+					text:'Провести все пачки',
 				},
-				{
-					text:'ОтменитьПроведение',
-				},
-				{
-					text:'ПровестиПачки',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -339,22 +284,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'ДокументПачка',
+					text:'Документ',
+					width:'120',
 				},
 				{
-					text:'НомерПачки',
+					text:'№ пачки',
+					width:'49',
 				},
 				{
-					text:'ТипФормДокументов',
+					text:'Форма',
+					width:'64',
 				},
 				{
-					text:'КатегорияЗастрахованныхЛиц',
+					text:'Категория ЗЛ',
+					width:'79',
 				},
 				{
-					text:'ТипСведенийСЗВ',
+					text:'Тип сведений',
+					width:'76',
 				},
 			]
 		},
@@ -365,10 +316,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Застрахованное лицо',
+					width:'120',
 				},
 			]
 		},
@@ -380,18 +333,14 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -405,11 +354,9 @@
 					text:'Действие8',
 				},
 				{
-					text:'ДействиеРедактироватьСЗВ_',
+					text:'Открыть данные о стаже',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -419,9 +366,7 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},
@@ -437,6 +382,24 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеПачекДокументов',
+			text: 'Распределение сумм уплаченных взносов производится по коэффициентам текущего периода без учета переданных ранее в ПФР сведений. ',
+			style: 'position:absolute;left:29px;top:22px;width:845px;height:27px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПерейтиПодготовкаДанныхПФР',
+			text: 'Перейти в рабочее место Подготовка данных ПФР',
+			style: 'position:absolute;left:29px;top:49px;width:267px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРасчетСтраховыхВзносов',
+			text: 'Расчет по страховым взносам РСВ-1:',
+			style: 'position:absolute;left:0px;top:0px;width:195px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -460,7 +423,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Пачки',
 					items:
 					[
 		{
@@ -468,14 +431,12 @@
 			style: 'position:absolute;left:6px;top:22px;width:503px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Провести пачку',
 				},
 				{
-					text:'Провести',
-				},
-				{
-					text:'Заполнить',
+					text:'Подготовленными пачками СЗВ-4',
 				},
 				{
 					text:'Действие3',
@@ -486,36 +447,25 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПровестиПачки',
+					text:'Провести пачки',
 				},
 				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Отменить проведение пачки',
 				},
-				{
-					text:'ОтменитьПроведение',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -525,25 +475,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'НомерПачки',
+					text:'№ пачки',
+					width:'49',
 				},
 				{
-					text:'ДокументПачка',
+					text:'Документ',
+					width:'120',
 				},
 				{
-					text:'ТипФормДокументов',
+					text:'Тип форм документов',
+					width:'60',
 				},
 				{
-					text:'ТерриториальныеУсловия',
+					text:'Территориальные условия',
+					width:'60',
 				},
 				{
-					text:'ВидКорректировки',
+					text:'Вид корректировки',
+					width:'60',
 				},
 				{
-					text:'КомментарийПачки',
+					text:'Комментарий',
+					width:'105',
 				},
 			]
 		},
@@ -554,10 +511,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'120',
 				},
 			]
 		},
@@ -575,23 +534,17 @@
 				{
 					text:'Действие9',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ДействиеРедактироватьСЗВ_',
+					text:'Открыть СЗВ-4',
 				},
 				{
 					text:'Действие8',
@@ -605,9 +558,7 @@
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -619,7 +570,7 @@
 					]
 				},
 				{
-					title:'Расчеты',
+					title:'Расчеты с ПФР',
 					items:
 					[
 		{
@@ -636,17 +587,12 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 				{
-					text:'ЗадолженностьПередПФР',
+					text:'Заполнить расчетами с ПФР',
 				},
 				{
 					text:'Действие7',
@@ -654,9 +600,7 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -675,22 +619,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТипСтроки',
+					text:'Тип строки',
+					width:'220',
 				},
 				{
 					text:'Год',
+					width:'74',
 				},
 				{
-					text:'СтраховаяЧасть',
+					text:'Страховая часть',
+					width:'100',
 				},
 				{
-					text:'НакопительнаяЧасть',
+					text:'Накопительная часть',
+					width:'100',
 				},
 				{
-					text:'ДополнительныйТариф',
+					text:'Дополнительный тариф',
+					width:'100',
 				},
 			]
 		},
@@ -705,21 +655,39 @@
 			items:
 			[
 				{
-					title:'СтраницаОбычная',
+					title:'Страница обычная',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаДействия',
+			text: 'Дата действия:',
+			style: 'position:absolute;left:206px;top:0px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаДействия',
 			style: 'position:absolute;left:288px;top:0px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Тип сведений:',
+			style: 'position:absolute;left:0px;top:0px;width:83px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаСпециальная',
+					title:'Страница специальная',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСпециальногоДокумента',
+			text: 'Эта пачка пенсионных форм была сформирована до утверждения документов СЗВ-6. Сейчас эти формы можно только распечатать.',
+			style: 'position:absolute;left:27px;top:0px;width:848px;height:25px;',
+		},
 					]
 				},
 			]
@@ -767,10 +735,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:443px;top:0px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:529px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:611px;top:0px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -779,10 +759,22 @@
 			style: 'position:absolute;left:629px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:0px;width:318px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:443px;top:24px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -791,10 +783,22 @@
 			style: 'position:absolute;left:529px;top:24px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРуководитель',
+			text: 'Руководитель:',
+			style: 'position:absolute;left:0px;top:48px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Руководитель',
 			style: 'position:absolute;left:94px;top:48px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжностьРуководителя',
+			text: 'Должность:',
+			style: 'position:absolute;left:218px;top:48px;width:65px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -803,10 +807,22 @@
 			style: 'position:absolute;left:286px;top:48px;width:126px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Отчетный период:',
+			style: 'position:absolute;left:0px;top:24px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:94px;top:24px;width:318px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПачки',
+			text: 'Номер пачки:',
+			style: 'position:absolute;left:443px;top:48px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -824,6 +840,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Содержит:',
+			style: 'position:absolute;left:6px;top:0px;width:55px;height:19px;',
+		},
 					]
 				},
 			]

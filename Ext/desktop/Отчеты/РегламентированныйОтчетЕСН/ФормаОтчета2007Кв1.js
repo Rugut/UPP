@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЕСН.ФормаОтчета2007Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 721,
+	style: 'position:absolute;width:721px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по ЕСН',
 	
 	items:
@@ -12,89 +14,58 @@
 			style: 'position:absolute;left:0px;top:0px;width:721px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
+				},
+				'-',
+				'-',
+				{
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Разделитель2',
+					text:'Проверить в Интернете',
 				},
+				'-',
 				{
-					text:'РазделительОтправка',
+					text:'Показать отправки',
 				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'РазделительЗаполнить',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Расшифровать',
+					text:'Расшифровка',
 				},
 				{
-					text:'Выгрузка',
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
 				},
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'РазделительРасшифровать',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
 				{
 					text:'Выгрузить',
@@ -106,28 +77,25 @@
 			style: 'position:absolute;left:0px;top:466px;width:721px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюПечати',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:635px;top:6px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -139,10 +107,10 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -174,9 +142,15 @@
 					]
 				},
 				{
-					title:'Раздел21',
+					title:'Раздел 2.1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись33',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:393px;top:265px;width:136px;height:19px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:691px;height:24px;',
@@ -206,10 +180,10 @@
 					]
 				},
 				{
-					title:'Раздел21Продолжение',
+					title:'Раздел 2.1 (продолжение)',
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
 		{
@@ -227,7 +201,7 @@
 					]
 				},
 				{
-					title:'Раздел31',
+					title:'Раздел 3.1',
 				},
 			]
 		},
@@ -254,10 +228,20 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:247px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:559px;top:24px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Внешние данные',
+			style: 'position:absolute;left:270px;top:0px;width:105px;height:19px;',
 		},
 					]
 				},
@@ -273,6 +257,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

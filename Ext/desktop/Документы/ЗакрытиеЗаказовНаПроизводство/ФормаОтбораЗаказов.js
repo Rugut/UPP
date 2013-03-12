@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗакрытиеЗаказовНаПроизводство.ФормаОтбораЗаказов',
 	{
 	extend: 'Ext.window.Window',
-	height: 449,width: 595,
+	style: 'position:absolute;width:595px;height:449px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отобрать заказы на производство',
 	
 	items:
@@ -13,19 +15,15 @@
 			items:
 			[
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеПеренести',
+					text:'Перенести',
 				},
 			]
 		},
@@ -36,7 +34,7 @@
 			items:
 			[
 				{
-					title:'СтраницаНастройки',
+					title:'Настройки',
 					items:
 					[
 		{
@@ -46,15 +44,51 @@
 			style: 'position:absolute;left:258px;top:128px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСрокОтргузки',
+			text: 'Дата исполнения:',
+			style: 'position:absolute;left:16px;top:128px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаличиеРезервов',
+			text: 'Наличие резервов:',
+			style: 'position:absolute;left:16px;top:8px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеОтгрузки',
+			text: 'Состояние исполнения:',
+			style: 'position:absolute;left:16px;top:104px;width:132px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеПросроченоДнейОтгрузки',
 			style: 'position:absolute;left:318px;top:128px;width:42px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеПотребностей',
+			text: 'Наличие потребностей:',
+			style: 'position:absolute;left:16px;top:32px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеНЗП',
+			text: 'Наличие затрат в НЗП:',
+			style: 'position:absolute;left:16px;top:56px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наличие размещения в заказе на производство:',
+			style: 'position:absolute;left:16px;top:76px;width:132px;height:27px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаДополнительно',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -64,22 +98,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -89,6 +129,11 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:352px;top:4px;width:219px;height:17px;',
 		},
 					]
 				},
@@ -100,47 +145,37 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'По возрастанию',
+				},
+				'-',
+				{
+					text:'Настройка списка',
+				},
+				'-',
+				{
+					text:'Вниз',
 				},
 				{
-					text:'Разделитель',
+					text:'Выключить все',
 				},
 				{
-					text:'Действие6',
+					text:'Вверх',
 				},
 				{
-					text:'Разделитель2',
+					text:'Включить все',
 				},
 				{
-					text:'Действие1',
+					text:'Заполнить',
 				},
 				{
-					text:'ДействиеВыключитьВсе',
+					text:'Анализ',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие',
+					text:'По убыванию',
 				},
-				{
-					text:'ДействиеВключитьВсе',
-				},
-				{
-					text:'ДействиеЗаполнить',
-				},
-				{
-					text:'ДействиеАнализ',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -150,57 +185,80 @@
 			columns:
 			[
 				{
-					text:'Переносить',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Ссылка',
+					width:'23',
 				},
 				{
 					text:'Дата',
+					width:'110',
 				},
 				{
 					text:'Номер',
+					width:'85',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ЗаказыОстаток',
+					text:'Ост. исп.',
+					width:'80',
 				},
 				{
-					text:'ЗаказыКоличество',
+					text:'Кол.',
+					width:'35',
 				},
 				{
-					text:'РезервыКоличество',
+					text:'Рез.',
+					width:'35',
 				},
 				{
-					text:'РазмещенияКоличество',
+					text:'Разм.',
+					width:'38',
 				},
 				{
-					text:'КолПотребность',
+					text:'Потр.',
+					width:'40',
 				},
 				{
-					text:'ЕстьНЗП',
+					text:'НЗП',
+					width:'39',
 				},
 				{
-					text:'ЕстьРазмещения',
+					text:'Разм. потр.',
+					width:'39',
 				},
 				{
-					text:'ДатаИсполнения',
+					text:'Дата исполнения',
+					width:'95',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Проведен',
+					width:'70',
 				},
 				{
-					text:'ПричинаЗакрытияЗаказа',
+					text:'Причина закрытия',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособЗаполнения',
+			text: 'Вариант отбора:',
+			style: 'position:absolute;left:320px;top:6px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -215,6 +273,18 @@
 			style: 'position:absolute;left:180px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'За период с:',
+			style: 'position:absolute;left:8px;top:6px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:160px;top:6px;width:15px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -225,6 +295,12 @@
 			hideLabel: true,
 			name: 'ПолеВводаПричинаЗакрытия',
 			style: 'position:absolute;left:159px;top:221px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПричинаЗакрытия',
+			text: 'Причина закрытия заказов:',
+			style: 'position:absolute;left:8px;top:221px;width:148px;height:19px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 645,
+	style: 'position:absolute;width:645px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Настройки формирования документов отработанного времени',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -41,11 +47,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 85,width: 463,
+	style: 'position:absolute;width:463px;height:85px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:359px;top:33px;width:25px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:388px;top:33px;width:67px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование группы:',
+			style: 'position:absolute;left:8px;top:33px;width:121px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,20 +46,16 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

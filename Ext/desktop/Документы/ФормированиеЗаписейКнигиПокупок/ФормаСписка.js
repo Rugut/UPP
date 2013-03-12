@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ФормированиеЗаписейКнигиПокупок.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 780,
+	style: 'position:absolute;width:780px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Формирование записей книги покупок',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'ПредъявленНДСКВычету0',
+					text:'К вычету 0%',
+					width:'80',
 				},
 				{
-					text:'ИмеетсяРешениеОВозмещенииНДС',
+					text:'Имеется решение о возмещении НДС',
+					width:'70',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -44,23 +54,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель6',
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.СправкаРасчетНормированияРасходов.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 259,width: 413,
+	style: 'position:absolute;width:413px;height:259px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -16,11 +18,9 @@
 					text:'ОК',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,9 +30,15 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:30px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -42,6 +48,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период:',
+			style: 'position:absolute;left:17px;top:36px;width:57px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

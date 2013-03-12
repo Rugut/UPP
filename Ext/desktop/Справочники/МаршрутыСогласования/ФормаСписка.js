@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.МаршрутыСогласования.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 702,
+	style: 'position:absolute;width:702px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Маршруты согласования',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -36,6 +40,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ДоговорЗаймаСРаботником.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 432,width: 534,
+	style: 'position:absolute;width:534px;height:432px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Договор займа с сотрудником',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:14px;top:230px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:230px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:380px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:94px;top:380px;width:432px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ФизЛицо',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Сумма:',
+			style: 'position:absolute;left:14px;top:129px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,22 @@
 			style: 'position:absolute;left:94px;top:129px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Валюта:',
+			style: 'position:absolute;left:14px;top:155px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:94px;top:155px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Курс:',
+			style: 'position:absolute;left:221px;top:155px;width:55px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,10 +82,27 @@
 			style: 'position:absolute;left:278px;top:155px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Проценты:',
+			style: 'position:absolute;left:221px;top:129px;width:55px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентЗаПользованиеЗаймом',
 			style: 'position:absolute;left:278px;top:129px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Начислять материальную выгоду по ставке:',
+			style: 'position:absolute;left:14px;top:254px;width:252px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Погашать с:',
+			style: 'position:absolute;left:14px;top:182px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -60,9 +115,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
@@ -70,17 +123,13 @@
 					text:'Действие5',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -93,56 +142,35 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
 					text:'Действие3',
@@ -150,42 +178,23 @@
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Действие5',
 				},
+				'-',
 				{
-					text:'Подменю',
+					text:'',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -194,21 +203,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -217,10 +228,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -229,10 +252,34 @@
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'месяцев',
+			style: 'position:absolute;left:447px;top:182px;width:47px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьКурса',
+			text: '(10000 TRL = 6500 руб.)',
+			style: 'position:absolute;left:360px;top:155px;width:166px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись16',
+			text: 'Счет учета %%:',
+			style: 'position:absolute;left:14px;top:281px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаПроцентовПоЗайму',
 			style: 'position:absolute;left:94px;top:281px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконто1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:14px;top:305px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -241,10 +288,22 @@
 			style: 'position:absolute;left:94px;top:305px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконто2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:14px;top:329px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Субконто2',
 			style: 'position:absolute;left:94px;top:329px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконто3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:14px;top:353px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ЗаданиеНаПроизводство.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 381,width: 644,
+	style: 'position:absolute;width:644px;height:381px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Задание на производство',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаЗадания',
+			text: 'Дата задания:',
+			style: 'position:absolute;left:334px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,31 +51,19 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Подменю3',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ПодменюВидаЗадания',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -64,26 +72,20 @@
 			style: 'position:absolute;left:0px;top:356px;width:644px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},
@@ -94,7 +96,7 @@
 			items:
 			[
 				{
-					title:'ВыпускТехПроцесс',
+					title:'Выпуск/Тех. процесс',
 					items:
 					[
 		{
@@ -102,21 +104,14 @@
 			style: 'position:absolute;left:6px;top:0px;width:614px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 			]
 		},
 		{
@@ -126,55 +121,72 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Период',
+					text:'Дата начала',
+					width:'120',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'120',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'100',
 				},
 				{
 					text:'Смена',
+					width:'100',
 				},
 				{
-					text:'ТехОперация',
+					text:'Тех. операция',
+					width:'200',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'200',
 				},
 				{
 					text:'Количество',
+					width:'68',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'45',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Спецификация',
+					width:'200',
 				},
 				{
-					text:'КонечнаяПродукция',
+					text:'Конечная продукция',
+					width:'200',
 				},
 				{
 					text:'Заказ',
+					width:'200',
 				},
 				{
 					text:'Проект',
+					width:'200',
 				},
 			]
 		},
@@ -184,6 +196,12 @@
 					title:'Дополнительно',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -195,16 +213,34 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:329px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:329px;width:538px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСмена',
+			text: 'Смена:',
+			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

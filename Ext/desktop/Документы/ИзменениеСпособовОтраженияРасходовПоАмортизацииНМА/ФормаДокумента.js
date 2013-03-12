@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 459,width: 392,
+	style: 'position:absolute;width:392px;height:459px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение способа отражения расходов по амортизации НМА',
 	
 	items:
@@ -12,26 +14,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:392px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель4',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 			]
 		},
@@ -40,28 +35,28 @@
 			style: 'position:absolute;left:0px;top:434px;width:392px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,10 +65,22 @@
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:383px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,10 +89,22 @@
 			style: 'position:absolute;left:98px;top:383px;width:286px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:407px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:407px;width:286px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,9 +120,7 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -113,15 +130,29 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'61',
 				},
 				{
-					text:'НематериальныйАктив',
+					text:'Нематериальный актив',
+					width:'267',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражать',
+			text: 'Отражать в:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:180px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -130,10 +161,27 @@
 			style: 'position:absolute;left:120px;top:129px;width:264px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСпособОтраженияРасходовБУ',
+			text: 'Способ (бух. учет):',
+			style: 'position:absolute;left:8px;top:129px;width:109px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:98px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СпособОтраженияРасходовНУ',
 			style: 'position:absolute;left:120px;top:152px;width:264px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособОтраженияРасходовНУ',
+			text: 'Способ (налог. учет):',
+			style: 'position:absolute;left:8px;top:152px;width:109px;height:19px;',
 		},
 	]
 });

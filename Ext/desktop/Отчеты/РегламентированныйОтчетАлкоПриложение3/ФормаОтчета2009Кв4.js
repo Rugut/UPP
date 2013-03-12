@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение3.ФормаОтчета2009Кв4',
 	{
 	extend: 'Ext.window.Window',
-	height: 448,width: 800,
+	style: 'position:absolute;width:800px;height:448px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация об объемах производства и оборота алкогольной и спиртосодержащий продукции',
 	
 	items:
@@ -12,20 +14,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
 				},
 				{
 					text:'Выгрузить',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
 					text:'Поиск',
@@ -33,33 +31,19 @@
 				{
 					text:'Справка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель6',
+					text:'Расширить поле бланка',
 				},
 				{
-					text:'Выгрузка',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Обновить',
 				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -70,23 +54,14 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 			]
 		},
@@ -140,6 +115,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись42',
+			text: 'Представляется:',
+			style: 'position:absolute;left:0px;top:2px;width:98px;height:19px;',
+		},
 					]
 				},
 			]
@@ -147,7 +128,7 @@
 					]
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -233,6 +214,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:715px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:784px;height:46px;',
 			height: 46,width: 784,
@@ -247,6 +234,11 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:103px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:0px;top:0px;width:246px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -268,6 +260,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

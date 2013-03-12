@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ТОНастройка.ФормаПомощникаНастроек',
 	{
 	extend: 'Ext.window.Window',
-	height: 393,width: 653,
+	style: 'position:absolute;width:653px;height:393px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Помощник подключения и настройки торгового оборудования',
 	
 	items:
@@ -17,18 +19,72 @@
 					title:'Приветствие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Вас приветствует помощник подключения и настройки торгового оборудования!',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:56px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись124',
+			text: 'Помощник поможет Вам выбрать драйвер устройства, модель, а также настроить параметры устройства и проверить корректность настроенных параметров, проведя пробное подключение.',
+			style: 'position:absolute;left:166px;top:97px;width:460px;height:51px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись53',
+			text: 'Использование помощника облегчит подключение нового оборудования в конфигурации и позволит не задумываться о последовательности выполняемых действий.',
+			style: 'position:absolute;left:166px;top:169px;width:460px;height:49px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись150',
+			text: 'С дополнительной информацией по подключению, настройке и использованию торгового оборудования можно ознакомиться на диске ИТС в разделе «1С. Методическая поддержка 1С:Предприятия 8.1» - «Работа с торговым оборудованием».',
+			style: 'position:absolute;left:166px;top:239px;width:465px;height:66px;',
+		},
 					]
 				},
 				{
-					title:'ВыборВидаТО',
+					title:'Выбор вида ТО',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись54',
+			text: 'Выбор торгового оборудования',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоддерживаемоеТО',
+			text: 'Со списком поддерживаемого ТО можно ознакомиться на сайте:',
+			style: 'position:absolute;left:203px;top:307px;width:423px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСсылкаПоддерживаемоеТО',
+			text: '',
+			style: 'position:absolute;left:203px;top:326px;width:423px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ВыборДрайвера',
+					title:'Выбор драйвера',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись126',
+			text: 'Выбор обработки обслуживания драйвера',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись130',
+			text: 'Если необходимая обработка обслуживания драйвера отсутствует в списке или список пуст, то Вы можете самостоятельно добавить новую обработку обслуживания драйвера, выбрав место расположения на диске и указав ее имя',
+			style: 'position:absolute;left:203px;top:271px;width:423px;height:41px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:183px;top:114px;width:443px;height:130px;',
@@ -37,13 +93,25 @@
 			[
 				{
 					text:'Наименование',
+					width:'427',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись149',
+			text: 'Обработки обслуживания отмеченные красным цветом являются устаревшими. При выборе такие обработки необходимо будет обновить.',
+			style: 'position:absolute;left:203px;top:317px;width:423px;height:28px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Обновить обработку обслуживания',
+			style: 'position:absolute;left:183px;top:89px;width:202px;height:19px;',
 		},
 					]
 				},
 				{
-					title:'ДобавлениеОбработкиОбслуживания',
+					title:'Добавление обработки обслуживания',
 					items:
 					[
 		{
@@ -60,11 +128,39 @@
 			[
 				{
 					text:'Наименование',
+					width:'390',
 				},
 				{
 					text:'Версия',
+					width:'50',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись133',
+			text: 'Если список пуст, то это значит, что: 
+- В указанном каталоге не обнаружены обработки обслуживания, совместимые с текущей версией конфигурации - выберите другой каталог;
+- Последние версии данных обработок уже загружены - вернитесь назад и выберите обработку из списка добавленных.',
+			style: 'position:absolute;left:203px;top:235px;width:423px;height:67px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись136',
+			text: 'Добавление обработки обслуживания драйвера',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись151',
+			text: 'По умолчанию обработки обслуживания расположены в каталоге:',
+			style: 'position:absolute;left:203px;top:307px;width:428px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКаталогПоУмолчанию',
+			text: '',
+			style: 'position:absolute;left:203px;top:326px;width:428px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -75,9 +171,21 @@
 					]
 				},
 				{
-					title:'ВыборУстройства',
+					title:'Выбор устройства',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись128',
+			text: 'Выбор устройства',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись131',
+			text: 'Если необходимое устройство отсутствует в списке уже созданных или список пуст, то Вы можете самостоятельно добавить новое устройство, выбрав его из списка поддерживаемых моделей',
+			style: 'position:absolute;left:203px;top:304px;width:423px;height:41px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:183px;top:88px;width:443px;height:166px;',
@@ -86,11 +194,19 @@
 			[
 				{
 					text:'Наименование',
+					width:'250',
 				},
 				{
 					text:'Модель',
+					width:'190',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКассаККМ',
+			text: 'Касса ККМ:',
+			style: 'position:absolute;left:166px;top:259px;width:61px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,7 +217,7 @@
 					]
 				},
 				{
-					title:'ДобавлениеНовогоУстройства',
+					title:'Добавление нового устройства',
 					items:
 					[
 		{
@@ -112,14 +228,33 @@
 			[
 				{
 					text:'Модель',
+					width:'440',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:166px;top:302px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:251px;top:302px;width:375px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись137',
+			text: 'Добавление нового устройства',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКассаККМДобавлениеНовогоУстройства',
+			text: 'Касса ККМ:',
+			style: 'position:absolute;left:166px;top:326px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -145,9 +280,7 @@
 				{
 					text:'Назад',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

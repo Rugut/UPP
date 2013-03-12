@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиБюджета.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 324,
+	style: 'position:absolute;width:324px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Статьи бюджета',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -23,11 +26,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:324px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПомощникНастройкиОбменаДаннымиССайтом.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 424,width: 740,
+	style: 'position:absolute;width:740px;height:424px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка обмена данными с WEB - сайтом',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Далее',
 				},
@@ -33,12 +33,54 @@
 					title:'Главная',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия',
+			text: 'Настройка обмена данными с WEB сайтом',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия1',
+			text: 'Настройка обмена данными с WEB-сайтом',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки2',
+			text: 'Настройки выгрузки товаров на WEB - сайт',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки3',
+			text: 'Настройки обмена заказами с WEB - сайта',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки4',
+			text: 'Действия с поступившими с WEB-сайта документами',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки5',
+			text: 'Режим обмена данными с WEB - сайтом',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
 					]
 				},
 				{
-					title:'НастройкаОбменаСWEBСайтом',
+					title:'Настройка обмена с WEB - сайтом',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьРасписаниеРегламентногоЗаданияНастройки',
+			text: 'Расписание регламентного задания',
+			style: 'position:absolute;left:112px;top:222px;width:440px;height:39px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:170px;width:545px;height:116px;',
@@ -46,7 +88,7 @@
 			items:
 			[
 				{
-					title:'СтраницаКаталог',
+					title:'Страница каталог',
 					items:
 					[
 		{
@@ -55,10 +97,58 @@
 			name: 'КаталогВыгрузки',
 			style: 'position:absolute;left:84px;top:0px;width:461px;height:20px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьКаталогНаДиске',
+			text: 'Каталог:',
+			style: 'position:absolute;left:0px;top:1px;width:46px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАдресСайта',
+			text: 'Адрес сайта:',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПароль',
+			text: 'Пароль:',
+			style: 'position:absolute;left:330px;top:26px;width:44px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяПользователя',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:0px;top:26px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяПользователяПрокси',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:0px;top:97px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПортПрокси',
+			text: 'Порт:',
+			style: 'position:absolute;left:330px;top:74px;width:44px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСерверПрокси',
+			text: 'Сервер:',
+			style: 'position:absolute;left:0px;top:74px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПарольПрокси',
+			text: 'Пароль:',
+			style: 'position:absolute;left:330px;top:97px;width:44px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаСайт',
+					title:'Страница сайт',
 					items:
 					[
 		{
@@ -78,6 +168,11 @@
 			hideLabel: true,
 			name: 'HTTPОбменАдресСкрипта',
 			style: 'position:absolute;left:84px;top:0px;width:461px;height:20px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать прокси-сервер',
+			style: 'position:absolute;left:0px;top:50px;width:172px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -113,12 +208,51 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипОбменаДанными',
+			text: 'Укажите тип обмена данными:',
+			style: 'position:absolute;left:6px;top:121px;width:162px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выгрузка товаров',
+			style: 'position:absolute;left:16px;top:74px;width:117px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Обмен заказами',
+			style: 'position:absolute;left:16px;top:98px;width:117px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Укажите данные, которыми вы хотите организовать обмен:',
+			style: 'position:absolute;left:6px;top:50px;width:311px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'НастройкиТовары',
+					title:'Настройки товары',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки1',
+			text: 'Периодический обмен данными',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выгружать картинки',
+			style: 'position:absolute;left:6px;top:50px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтбор',
+			text: 'Укажите отбор для выгрузки товаров на сайт:',
+			style: 'position:absolute;left:6px;top:73px;width:245px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:125px;width:545px;height:268px;',
@@ -126,22 +260,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -155,9 +295,57 @@
 					]
 				},
 				{
-					title:'НастройкиЗаказы',
+					title:'Настройки заказы',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки2',
+			text: 'Настройка обмена данными успешно завершена',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособИдентификацииКонтрагентов',
+			text: 'Способ идентификации контрагентов:',
+			style: 'position:absolute;left:6px;top:50px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:95px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГруппаДляНовыхКонтрагентов',
+			text: 'Группа для новых контрагентов:',
+			style: 'position:absolute;left:6px;top:188px;width:171px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГруппаДляНовойНоменклатуры',
+			text: 'Группа для новой номенклатуры:',
+			style: 'position:absolute;left:6px;top:212px;width:171px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмеренияНовойНоменклатуры',
+			text: 'Единица новой номенклатуры:',
+			style: 'position:absolute;left:6px;top:236px;width:171px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:119px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:6px;top:143px;width:83px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -197,20 +385,50 @@
 					]
 				},
 				{
-					title:'ДействияСЗаказами',
+					title:'Действия с заказами',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьУстановкаДаты',
+			text: 'Установка даты:',
+			style: 'position:absolute;left:6px;top:50px;width:91px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроведениеДокумента',
+			text: 'Проведение документа:',
+			style: 'position:absolute;left:6px;top:120px;width:124px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'НастройкиТипаВыполненияОбменаДанными',
+					title:'Настройки типа выполнения обмена данными',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьРежимОбмена',
+			text: 'Укажите режим обмена данными:',
+			style: 'position:absolute;left:8px;top:50px;width:181px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьУзелОбменаЗаказами',
+			text: 'Узел для обмена заказами:',
+			style: 'position:absolute;left:6px;top:187px;width:147px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'УзелОбменаЗаказами',
 			style: 'position:absolute;left:26px;top:211px;width:271px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснение',
+			text: 'При первом обмене данными будут выгружены все объекты',
+			style: 'position:absolute;left:26px;top:118px;width:316px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -222,6 +440,12 @@
 					title:'Главная',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьУзелОбменаТоварами',
+			text: 'Узел для обмена товарами:',
+			style: 'position:absolute;left:0px;top:0px;width:147px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -235,15 +459,26 @@
 					]
 				},
 				{
-					title:'НастройкиАвтоматическогоОбменаДанными',
+					title:'Настройки автоматического обмена данными',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выполнять обмен данными периодически:',
+			style: 'position:absolute;left:6px;top:55px;width:279px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ИтоговаяСтраницаЗавершенияОбмена',
+					title:'Итоговая страница завершения обмена',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСозданнаяНастройкаCOM',
+			text: 'Настройка для обмена данными:',
+			style: 'position:absolute;left:6px;top:50px;width:173px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -267,7 +502,7 @@
 			items:
 			[
 				{
-					title:'СтраницаНастройки',
+					title:'Страница настройки',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КлючевыеРесурсыПредприятия.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 712,
+	style: 'position:absolute;width:712px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ключевые ресурсы предприятия',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'БазоваяЕдиницаИзмерения',
+					text:'Базовая единица',
+					width:'96',
 				},
 				{
-					text:'БазаЗаданияПотребности',
+					text:'База задания потребности',
+					width:'142',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},

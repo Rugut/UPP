@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТСДФорматыДанных.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 413,
+	style: 'position:absolute;width:413px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Форматы выгрузки для терминалов сбора данных',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 			]
 		},

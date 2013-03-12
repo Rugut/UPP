@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПакетныйВводДокументов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 243,width: 364,
+	style: 'position:absolute;width:364px;height:243px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отбор по номенклатуре',
 	
 	items:
@@ -14,7 +16,8 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеПоля',
+					text:'Представление поля',
+					width:'197',
 				},
 			]
 		},
@@ -32,12 +35,8 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

@@ -1,17 +1,31 @@
 ﻿Ext.define('Обработки.КурсыВалютРБК.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 344,width: 492,
+	style: 'position:absolute;width:492px;height:344px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Загрузка курсов валют с РБК',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьПериодС',
+			text: 'Период загрузки с:',
+			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачДата',
 			style: 'position:absolute;left:114px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодПо',
+			text: 'по:',
+			style: 'position:absolute;left:196px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,52 +39,46 @@
 			items:
 			[
 				{
-					text:'Действие7',
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'&Скопировать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Очистить',
 				},
 				{
-					text:'Действие5',
+					text:'&Изменить',
+				},
+				'-',
+				'-',
+				{
+					text:'&Удалить',
 				},
 				{
-					text:'ДействиеОчистить',
+					text:'Подбор',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Разделитель',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Разделитель2',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Заполнить',
 				},
 				{
-					text:'Действие4',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'ДействиеЗаполнить',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'ДействиеЗагрузить',
+					text:'Загрузить',
 				},
 			]
 		},
@@ -82,18 +90,23 @@
 			[
 				{
 					text:'Валюта',
+					width:'120',
 				},
 				{
-					text:'КодВалюты',
+					text:'Код валюты',
+					width:'80',
 				},
 				{
-					text:'ДатаКурса',
+					text:'Дата курса',
+					width:'80',
 				},
 				{
 					text:'Курс',
+					width:'80',
 				},
 				{
 					text:'Кратность',
+					width:'80',
 				},
 			]
 		},
@@ -104,12 +117,18 @@
 			style: 'position:absolute;left:296px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ТекстЗавершения',
+			text: 'Загрузка курсов валют завершена',
+			style: 'position:absolute;left:8px;top:321px;width:476px;height:15px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'Справка',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыИмущество.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет по авансовым платежам по налогу на имущество',
 	
 	items:
@@ -16,83 +18,54 @@
 					text:'Выгрузить',
 				},
 				{
-					text:'Отправка',
+					text:'Настройка...',
 				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'РазделительОтправка',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
 					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Проверить выгрузку',
+				},
+				'-',
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
 				},
 				{
-					text:'Проверить',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'РазделительЗаполнить',
+					text:'Показать отправки',
+				},
+				'-',
+				'-',
+				{
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'ВыбратьВариантОчисткиОтчета',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'ПодменюОчистить',
+					text:'Очистить',
 				},
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 			]
 		},
 		{
@@ -103,24 +76,15 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'ПодменюПечати',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -133,7 +97,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -175,7 +139,7 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -211,9 +175,15 @@
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел3',
@@ -225,6 +195,12 @@
 			name: 'КнопкаУдалитьДопСтраницуРаздел3',
 			text: 'Удалить',
 			style: 'position:absolute;left:481px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись30',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -244,9 +220,21 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:563px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -271,6 +259,11 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -290,6 +283,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

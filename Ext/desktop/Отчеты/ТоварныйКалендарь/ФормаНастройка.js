@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ТоварныйКалендарь.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 399,width: 620,
+	style: 'position:absolute;width:620px;height:399px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -12,11 +14,9 @@
 			style: 'position:absolute;left:0px;top:374px;width:620px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
@@ -30,7 +30,7 @@
 			items:
 			[
 				{
-					title:'ОсновныеПараметры',
+					title:'Основные параметры',
 					items:
 					[
 		{
@@ -40,13 +40,16 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеГруппировки',
+					text:'Группировка',
+					width:'158',
 				},
 				{
-					text:'ТипИтога',
+					text:'Тип итога',
+					width:'59',
 				},
 				{
-					text:'ДополнительныеПоля',
+					text:'Дополнительные поля',
+					width:'147',
 				},
 			]
 		},
@@ -56,27 +59,38 @@
 			items:
 			[
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'КнопкаВыбораГруппировокИзСписка',
+					text:'Из списка',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'На дату:',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:65px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:434px;top:9px;width:162px;height:16px;',
 		},
 					]
 				},
@@ -90,16 +104,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие4',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие7',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вверх',
 				},
 			]
 		},
@@ -110,16 +124,20 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Поле',
+					width:'103',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Вид сравнения',
+					width:'76',
 				},
 				{
 					text:'Значение',
+					width:'163',
 				},
 			]
 		},

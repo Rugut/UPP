@@ -1,12 +1,20 @@
 ﻿Ext.define('Обработки.ВводРегламентированныхКадровыхДокументовНаОсновании.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 262,width: 400,
+	style: 'position:absolute;width:400px;height:262px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод на основании',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:',
+			style: 'position:absolute;left:8px;top:4px;width:61px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,16 +27,14 @@
 			items:
 			[
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
 					text:'Обновить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 			]
 		},
@@ -39,10 +45,12 @@
 			columns:
 			[
 				{
-					text:'Отметка',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Организация',
+					width:'210',
 				},
 			]
 		},
@@ -51,15 +59,11 @@
 			style: 'position:absolute;left:0px;top:237px;width:400px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Выполнить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаСоответствияСчетовБУиНУ.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установить соответствие счетов БУ и НУ',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'350',
 				},
 			]
 		},
@@ -35,14 +42,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

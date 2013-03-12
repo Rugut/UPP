@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Резервы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 105,width: 438,
+	style: 'position:absolute;width:438px;height:105px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оценочные обязательства и резервы',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:318px;top:33px;width:30px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:350px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,14 +38,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:438px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
 			]
 		},
@@ -41,21 +50,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоказатьБазу',
+			text: 'Показать расчетную базу…',
+			style: 'position:absolute;left:8px;top:57px;width:254px;height:15px;',
 		},
 	]
 });

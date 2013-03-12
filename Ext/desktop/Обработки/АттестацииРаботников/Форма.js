@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.АттестацииРаботников.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 393,width: 627,
+	style: 'position:absolute;width:627px;height:393px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Аттестации сотрудников',
 	
 	items:
@@ -12,14 +14,12 @@
 			style: 'position:absolute;left:0px;top:368px;width:627px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -30,7 +30,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Сотрудники',
 					items:
 					[
 		{
@@ -41,6 +41,7 @@
 			[
 				{
 					text:'Сотрудник',
+					width:'100',
 				},
 			]
 		},
@@ -50,16 +51,14 @@
 			items:
 			[
 				{
-					text:'НазначитьАттестацию',
+					text:'Назначить аттестацию',
 				},
 				{
-					text:'ОткрытьФизЛицо',
+					text:'Подробно',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьРаботниками',
+					text:'Заполнить',
 				},
 			]
 		},
@@ -74,6 +73,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -86,7 +91,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Аттестации',
 					items:
 					[
 		{
@@ -96,22 +101,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'Физлицо',
+					text:'Сотрудник',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -125,7 +136,7 @@
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Анализ оценок',
 					items:
 					[
 		{
@@ -133,6 +144,18 @@
 			hideLabel: true,
 			name: 'Должность',
 			style: 'position:absolute;left:400px;top:36px;width:203px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Должность',
+			style: 'position:absolute;left:309px;top:36px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Компетенция:',
+			style: 'position:absolute;left:6px;top:36px;width:87px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -148,9 +171,7 @@
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -167,7 +188,7 @@
 			items:
 			[
 				{
-					title:'СтраницаПроизвольныйПериод',
+					title:'Произвольный период',
 					items:
 					[
 		{
@@ -187,6 +208,18 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:239px;top:0px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодС',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
 		},
 					]
 				},

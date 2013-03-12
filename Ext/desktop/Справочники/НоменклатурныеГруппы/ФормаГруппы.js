@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.НоменклатурныеГруппы.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 111,width: 398,
+	style: 'position:absolute;width:398px;height:111px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Номенклатурные группы',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:284px;top:59px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:326px;top:59px;width:64px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:59px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:59px;width:189px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Родитель:',
+			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,21 +57,17 @@
 			style: 'position:absolute;left:0px;top:86px;width:398px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'OK',
 				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

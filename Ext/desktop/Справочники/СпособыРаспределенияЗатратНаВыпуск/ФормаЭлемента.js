@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 463,width: 620,
+	style: 'position:absolute;width:620px;height:463px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Способы распределения затрат',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:505px;top:33px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:547px;top:33px;width:65px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:164px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:177px;top:33px;width:326px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:412px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,19 +58,15 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},
@@ -61,14 +77,26 @@
 			items:
 			[
 				{
-					title:'БазаРаспределения',
+					title:'База распределения',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьБазаРаспределенияЗатрат',
+			text: 'База распределения:',
+			style: 'position:absolute;left:6px;top:6px;width:126px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'БазаРаспределенияЗатрат',
 			style: 'position:absolute;left:132px;top:6px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоказательБазыРаспределения',
+			text: 'Показатель базы распределения:',
+			style: 'position:absolute;left:6px;top:25px;width:126px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -77,10 +105,22 @@
 			style: 'position:absolute;left:132px;top:30px;width:180px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТипЦен',
+			text: 'Тип цен:',
+			style: 'position:absolute;left:324px;top:30px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:416px;top:30px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОсновноеСырье',
+			text: 'Основное сырье:',
+			style: 'position:absolute;left:324px;top:6px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -89,10 +129,36 @@
 			style: 'position:absolute;left:416px;top:6px;width:180px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСпособРаспределенияЗатратПоПодразделениям',
+			text: 'Способ распределения по подразделениям:',
+			style: 'position:absolute;left:6px;top:169px;width:126px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СпособРаспределенияЗатратПоПодразделениям',
 			style: 'position:absolute;left:132px;top:173px;width:464px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределять на собственную продукцию',
+			style: 'position:absolute;left:6px;top:54px;width:306px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределять на продукцию стороннего переработчика',
+			style: 'position:absolute;left:6px;top:78px;width:306px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределять на продукцию из давальческого сырья',
+			style: 'position:absolute;left:6px;top:102px;width:306px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределять на подчиненные подразделения',
+			style: 'position:absolute;left:6px;top:150px;width:306px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -112,12 +178,38 @@
 			name: 'ПорядокОкругления',
 			style: 'position:absolute;left:482px;top:102px;width:114px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:324px;top:54px;width:158px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на коэффициент:',
+			style: 'position:absolute;left:324px;top:78px;width:158px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:324px;top:102px;width:158px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределять на наработку',
+			style: 'position:absolute;left:6px;top:126px;width:306px;height:15px;',
+		},
 					]
 				},
 				{
 					title:'Отбор',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьТипФильтраПриРаспределенииЗатратНаВыпуск',
+			text: 'Тип фильтра:',
+			style: 'position:absolute;left:6px;top:6px;width:156px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:590px;height:25px;',
@@ -132,22 +224,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'189',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'200',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -177,16 +275,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'285',
 				},
 				{
 					text:'Продукция',
+					width:'258',
 				},
 				{
 					text:'Коэффициент',
+					width:'78',
 				},
 			]
 		},
@@ -195,10 +297,28 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьКогдаПрименять',
+			text: 'Область, условия применения:',
+			style: 'position:absolute;left:8px;top:58px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'КогдаПрименять',
 			style: 'position:absolute;left:177px;top:58px;width:435px;height:70px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПрименимость',
+			text: 'Для каких расходов применять:',
+			style: 'position:absolute;left:8px;top:133px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаправлениеРаспределения',
+			text: 'Куда распределять:',
+			style: 'position:absolute;left:8px;top:158px;width:164px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

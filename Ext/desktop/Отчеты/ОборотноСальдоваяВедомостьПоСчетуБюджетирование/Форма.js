@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьПоСчетуБюджетирование.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 448,width: 708,
+	style: 'position:absolute;width:708px;height:448px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оборотно-сальдовая ведомость по счету',
 	
 	items:
@@ -13,50 +15,35 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие1',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 				{
-					text:'Действие2',
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Подменю',
+					text:'Восстановить значения...',
 				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -64,7 +51,7 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Заголовок',
@@ -72,10 +59,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:288px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Счет',
 			style: 'position:absolute;left:322px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСценарий',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:422px;top:33px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,6 +93,18 @@
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'button',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.МаршрутыСогласования.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 319,width: 428,
+	style: 'position:absolute;width:428px;height:319px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Этап согласования',
 	
 	items:
@@ -20,27 +22,35 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:108px;top:33px;width:312px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Следующий этап:',
+			style: 'position:absolute;left:8px;top:57px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,10 +65,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Пользователь',
+					width:'242',
 				},
 			]
 		},
@@ -68,25 +80,25 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 			]
 		},

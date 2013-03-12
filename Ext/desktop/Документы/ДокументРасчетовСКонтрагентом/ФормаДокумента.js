@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ДокументРасчетовСКонтрагентом.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 206,width: 317,
+	style: 'position:absolute;width:317px;height:206px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документ расчетов с контрагентом (ручной учет)',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:32px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,6 +28,12 @@
 			style: 'position:absolute;left:190px;top:32px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:154px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
@@ -31,10 +45,7 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -43,22 +54,30 @@
 			style: 'position:absolute;left:0px;top:181px;width:317px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:32px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -67,10 +86,22 @@
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:80px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:90px;top:80px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:8px;top:104px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,10 +110,22 @@
 			style: 'position:absolute;left:90px;top:104px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомерВходящегоДокумента',
+			text: 'Вх. номер:',
+			style: 'position:absolute;left:8px;top:129px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерВходящегоДокумента',
 			style: 'position:absolute;left:90px;top:129px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата1',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:129px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

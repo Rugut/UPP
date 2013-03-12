@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СерииНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 317,width: 604,
+	style: 'position:absolute;width:604px;height:317px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Серии номенклатуры',
 	
 	items:
@@ -12,21 +14,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Печать',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -34,37 +27,28 @@
 					text:'Действие',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие1',
 				},
-				{
-					text:'Действие4',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Действие4',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Анализ серии',
 				},
 				{
-					text:'АнализСерии',
-				},
-				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Действие3',
@@ -75,18 +59,9 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Перейти',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Действие5',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Файлы',
 				},
@@ -98,19 +73,15 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},
@@ -121,14 +92,26 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Основные',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:362px;top:33px;width:34px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:397px;top:33px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:6px;top:33px;width:114px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -137,10 +120,22 @@
 			style: 'position:absolute;left:120px;top:33px;width:238px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВладелец',
+			text: 'Владелец:',
+			style: 'position:absolute;left:6px;top:6px;width:114px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Владелец',
 			style: 'position:absolute;left:120px;top:6px;width:317px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСерийныйНомер',
+			text: 'Номер серии:',
+			style: 'position:absolute;left:6px;top:62px;width:114px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -149,10 +144,22 @@
 			style: 'position:absolute;left:120px;top:61px;width:317px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСрокГодности',
+			text: 'Срок годности:',
+			style: 'position:absolute;left:6px;top:162px;width:114px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СрокГодности',
 			style: 'position:absolute;left:120px;top:162px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерГТД',
+			text: 'Номер ГТД:',
+			style: 'position:absolute;left:6px;top:86px;width:114px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -161,10 +168,22 @@
 			style: 'position:absolute;left:120px;top:86px;width:317px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтрана',
+			text: 'Страна :',
+			style: 'position:absolute;left:6px;top:112px;width:114px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтранаПроисхождения',
 			style: 'position:absolute;left:120px;top:112px;width:317px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:6px;top:137px;width:114px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -175,14 +194,26 @@
 					]
 				},
 				{
-					title:'СтраницаСертификации',
+					title:'Сертификация',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьНомерСертификата',
+			text: 'Сертификат №:',
+			style: 'position:absolute;left:6px;top:27px;width:114px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерСертификата',
 			style: 'position:absolute;left:120px;top:27px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаСертификата',
+			text: 'от',
+			style: 'position:absolute;left:332px;top:27px;width:13px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -197,10 +228,34 @@
 			style: 'position:absolute;left:120px;top:53px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаСертификации',
+			text: 'Дата сертификации:',
+			style: 'position:absolute;left:6px;top:53px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаЗаписьСертификации',
+			text: '',
+			style: 'position:absolute;left:6px;top:77px;width:431px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерСертификатаВнутреннего',
+			text: 'Сертификат №:',
+			style: 'position:absolute;left:6px;top:137px;width:114px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерСертификатаВнутр',
 			style: 'position:absolute;left:120px;top:137px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаСертификатаВнутр',
+			text: 'от',
+			style: 'position:absolute;left:332px;top:137px;width:13px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -213,6 +268,18 @@
 			hideLabel: true,
 			name: 'ДатаСертификацииВнутр',
 			style: 'position:absolute;left:120px;top:162px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаСертификации1',
+			text: 'Дата сертификации:',
+			style: 'position:absolute;left:6px;top:162px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаЗаписьСертификацииВнутр',
+			text: '',
+			style: 'position:absolute;left:6px;top:187px;width:431px;height:19px;',
 		},
 					]
 				},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РасшифровкаОтчетов4ФСС.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 464,width: 694,
+	style: 'position:absolute;width:694px;height:464px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет',
 	
 	items:

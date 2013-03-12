@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТехнологическиеОперации.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 561,
+	style: 'position:absolute;width:561px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы технологических операций',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -24,11 +27,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

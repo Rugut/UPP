@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.УченыеЗвания.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 85,width: 438,
+	style: 'position:absolute;width:438px;height:85px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ученое звание',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:343px;top:33px;width:33px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:378px;top:33px;width:52px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,20 +46,16 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

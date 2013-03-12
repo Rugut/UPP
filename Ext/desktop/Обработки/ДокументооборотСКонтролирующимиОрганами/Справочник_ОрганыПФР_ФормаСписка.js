@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ОрганыПФР_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 628,
+	style: 'position:absolute;width:628px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Органы ПФР',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'74',
 				},
 				{
 					text:'Наименование',
+					width:'483',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие10',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 	]

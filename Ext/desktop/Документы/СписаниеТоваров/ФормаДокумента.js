@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.СписаниеТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 409,width: 652,
+	style: 'position:absolute;width:652px;height:409px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Списание товаров',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:183px;top:32px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:357px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,48 +51,50 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 				{
-					text:'ДействиеЗаполнитьИПровести',
+					text:'Заполнить и провести',
 				},
 				{
-					text:'ПодменюВидаОперации',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю2',
+					text:'',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель9',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ПоказатьСкрытьСчетаУчета',
+					text:'Показать/скрыть счета учета',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:32px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:498px;top:32px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:333px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,10 +103,22 @@
 			style: 'position:absolute;left:96px;top:333px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:333px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:333px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,16 +133,47 @@
 			style: 'position:absolute;left:424px;top:80px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:
+',
+			style: 'position:absolute;left:336px;top:80px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СкладКомпании',
 			style: 'position:absolute;left:424px;top:56px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:492px;top:309px;width:72px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:564px;top:309px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнвентаризацияТоваровНаСкладе',
+			text: 'Инвентаризация:',
+			style: 'position:absolute;left:8px;top:80px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,25 +189,24 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'РазделительЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Закрыть1',
-				},
-				{
-					text:'РазделительЗаписать',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:569px;top:32px;width:69px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -161,70 +225,92 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'59',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'250',
 				},
 				{
-					text:'НомерГТД',
+					text:'Номер ГТД',
+					width:'200',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Собственные, счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'ПринятыеСчетУчетаБУ',
+					text:'Принятые, счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'100',
 				},
 				{
-					text:'ОтражениеВУСН',
+					text:'Расходы в НУ',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 			]
 		},
@@ -234,47 +320,33 @@
 			items:
 			[
 				{
-					text:'ИзТерминалаСбораДанных',
+					text:'Заполнить из терминала сбора данных',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Подбор',
 				},
 				{
-					text:'Проверить',
+					text:'Штрихкоды',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Заполнить по инвентаризации',
 				},
+				'-',
 				{
-					text:'ШтрихКоды',
+					text:'Изменить',
 				},
+				'-',
 				{
-					text:'ЗаполнитьПоИнвентаризации',
+					text:'Поиск по штрихкоду',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ДействиеИзменить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'Тара',
+					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -284,31 +356,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
 					text:'Количество',
+					width:'60',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед. хранения',
+					width:'52',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'100',
 				},
 			]
 		},
@@ -320,14 +401,18 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНДСвСтоимостиТоваров',
+			text: 'НДС в стоим. товаров:',
+			style: 'position:absolute;left:8px;top:99px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ОрганыФСГС_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 628,
+	style: 'position:absolute;width:628px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Органы Федеральной службы государственной статистики',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'Код',
+					text:'Код ОФСГС',
+					width:'78',
 				},
 				{
-					text:'Наименование',
+					text:'Наименование ТОГС',
+					width:'365',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие10',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 	]

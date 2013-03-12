@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РезультатИспытательногоСрока.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 701,
+	style: 'position:absolute;width:701px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Результаты испытательных сроков',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'Сотрудник',
+					text:'Кандидат',
+					width:'100',
 				},
 				{
 					text:'Решение',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -41,21 +50,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:701px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

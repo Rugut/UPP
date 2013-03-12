@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетНалогНаИгорныйБизнес.ФормаОтчета2012Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Налоговая декларация по налогу на игорный бизнес',
 	
 	items:
@@ -13,82 +15,56 @@
 			items:
 			[
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
-					text:'ПодготовитьИПодписать',
+					text:'Подготовить к отправке и подписать',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'ОчиститьВесьОтчет',
+					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Проверить выгрузку',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Проверить',
+					text:'Подготовить к отправке',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Выгрузить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
 				{
 					text:'Отправить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Выгрузка',
+					text:'Проверить в Интернете',
 				},
 			]
 		},
@@ -97,26 +73,17 @@
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -130,13 +97,13 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 				},
 				{
-					title:'Раздел21',
+					title:'Раздел 2.1',
 					items:
 					[
 		{
@@ -150,6 +117,12 @@
 			name: 'КнопкаУдалитьДопСтраницуРаздел21',
 			text: 'Удалить',
 			style: 'position:absolute;left:481px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРаздел21ДополнительныеСтраницы',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -169,15 +142,27 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:566px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьРаздел31ДополнительныеСтраницы',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 				},
 				{
-					title:'Раздел31',
+					title:'Раздел 3.1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел21',
+			text: '999 из 999',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел31',
@@ -197,6 +182,12 @@
 			style: 'position:absolute;left:266px;top:265px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел31',
+			text: '999 из 999',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаСледующаяСтраницаРаздел31',
 			text: '',
@@ -211,6 +202,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -235,6 +232,11 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -254,6 +256,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

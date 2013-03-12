@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаПриложениеКФормеП2.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 395,width: 716,
+	style: 'position:absolute;width:716px;height:395px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Приложение к форме П-2',
 	
 	items:
@@ -16,29 +18,21 @@
 					text:'Поиск',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
+				'-',
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
-					text:'Действие',
+					text:'Действие2',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -47,27 +41,24 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -105,6 +96,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВедомостьВозвратнаяТара.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 260,width: 362,
+	style: 'position:absolute;width:362px;height:260px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группировки отчета',
 	
 	items:
@@ -26,7 +28,8 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеПоля',
+					text:'Представление поля',
+					width:'209',
 				},
 			]
 		},

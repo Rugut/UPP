@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ШифрованиеРасшифровка',
 	{
 	extend: 'Ext.window.Window',
-	height: 530,width: 704,
+	style: 'position:absolute;width:704px;height:530px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Шифрование и расшифровка сообщений',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'Выполнить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,54 +30,76 @@
 			columns:
 			[
 				{
-					text:'ПервичноеСообщение',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПодтверждениеОтправки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ОтветНаПодтверждениеОтправки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПодтверждениеДоставки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПротоколПроверки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПодтверждениеНаПротоколПроверки',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ОтветНаЗапрос',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ОтветНаОтветНаЗапрос',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'Возврат',
+					text:'',
+					width:'35',
 				},
 				{
-					text:'ПодтверждениеВозврата',
+					text:'',
+					width:'35',
 				},
 				{
 					text:'Тип',
+					width:'75',
 				},
 				{
 					text:'Наименование',
+					width:'81',
 				},
 				{
-					text:'ДатаСоздания',
+					text:'Дата создания',
+					width:'126',
 				},
 				{
-					text:'ДатаЗакрытия',
+					text:'Дата завершения',
+					width:'100',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'НалоговыйОрган',
+					text:'Налоговый орган',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:8px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,10 +108,37 @@
 			style: 'position:absolute;left:142px;top:8px;width:554px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОперации',
+			text: 'Фильтр по сообщениям:',
+			style: 'position:absolute;left:8px;top:32px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидыЦикловОбмена',
+			text: 'Типы циклов обмена:',
+			style: 'position:absolute;left:8px;top:57px;width:131px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидЦиклаОбмена',
 			style: 'position:absolute;left:296px;top:57px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Требущие расшифровки',
+			style: 'position:absolute;left:142px;top:34px;width:147px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Требущие шифрования',
+			style: 'position:absolute;left:296px;top:34px;width:140px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Без учета завершенных циклов обмена',
+			style: 'position:absolute;left:142px;top:83px;width:225px;height:15px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -97,18 +146,21 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажкиУВсех',
+					text:'Пометить все',
 				},
 				{
-					text:'СнятьФлажкиУВсех',
+					text:'Снять флажки у всех',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Обновить',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Режим шифрования первичных сообщений',
+			style: 'position:absolute;left:441px;top:34px;width:241px;height:15px;',
 		},
 	]
 });

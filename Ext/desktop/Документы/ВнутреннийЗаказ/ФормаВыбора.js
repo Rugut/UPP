@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВнутреннийЗаказ.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 780,
+	style: 'position:absolute;width:780px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Внутренние заказы',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'ВидЗаказа',
+					text:'Вид заказа',
+					width:'100',
 				},
 				{
 					text:'Заказчик',
+					width:'112',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -48,22 +59,15 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю3',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

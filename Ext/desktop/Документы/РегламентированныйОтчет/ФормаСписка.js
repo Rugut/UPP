@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РегламентированныйОтчет.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 425,width: 688,
+	style: 'position:absolute;width:688px;height:425px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регламентированные отчеты',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'НаименованиеОтчета',
+					text:'Отчет',
+					width:'222',
 				},
 				{
 					text:'Период',
+					width:'98',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'88',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'88',
 				},
 				{
-					text:'КодИМНС',
+					text:'ИФНС',
+					width:'56',
 				},
 			]
 		},
@@ -42,34 +51,28 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'Установить пометку удаления',
 				},
 				{
-					text:'ДействиеОбновить',
+					text:'Обновить',
 				},
 				{
-					text:'ДействиеНовый',
+					text:'Новый',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'&Скопировать',
 				},
 				{
-					text:'Разделитель',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'ДействиеСправка',
-				},
-				{
-					text:'ДействиеЖурналВыгрузки',
+					text:'Журнал выгрузки',
 				},
 			]
 		},
@@ -80,10 +83,36 @@
 			style: 'position:absolute;left:107px;top:36px;width:573px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПолеВвода1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:397px;width:97px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:110px;top:398px;width:570px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:17px;top:36px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Форма:',
+			style: 'position:absolute;left:17px;top:61px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'ИФНС:',
+			style: 'position:absolute;left:372px;top:61px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Период:',
+			style: 'position:absolute;left:17px;top:86px;width:87px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -92,9 +121,15 @@
 			items:
 			[
 				{
-					title:'ПроизвольныйПериод',
+					title:'Произвольный период',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:33px;top:6px;width:190px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода2',
@@ -108,15 +143,27 @@
 			style: 'position:absolute;left:21px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПолеВвода6',
+			text: 'по',
+			style: 'position:absolute;left:111px;top:6px;width:21px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаКонцаПериодаОтчета',
 			style: 'position:absolute;left:134px;top:6px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПолеВвода7',
+			text: 'с',
+			style: 'position:absolute;left:6px;top:6px;width:15px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СтандартныйПериод',
+					title:'Стандартный период',
 					items:
 					[
 		{

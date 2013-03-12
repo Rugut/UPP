@@ -1,23 +1,29 @@
 ﻿Ext.define('Отчеты.ТехнологическийАнализБухгалтерскогоУчета.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 402,width: 670,
+	style: 'position:absolute;width:670px;height:402px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Технологический анализ бухгалтерского учета',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:285px;top:37px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
 				{
-					text:'КнопкаНастройка',
+					text:'Настройка ...',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -27,39 +33,26 @@
 				{
 					text:'Очистить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'Подменю',
+					text:'Сформировать',
+				},
+				'-',
+				'-',
+				{
+					text:'Сравнить',
+				},
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Сравнить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -70,11 +63,9 @@
 			style: 'position:absolute;left:0px;top:377px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -85,7 +76,7 @@
 			items:
 			[
 				{
-					title:'ТехАнализБУ',
+					title:'Технологический анализ',
 				},
 			]
 		},
@@ -100,6 +91,12 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:254px;top:37px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:47px;top:37px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'button',

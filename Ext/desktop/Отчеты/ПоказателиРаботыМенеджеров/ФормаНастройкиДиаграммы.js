@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ПоказателиРаботыМенеджеров.ФормаНастройкиДиаграммы',
 	{
 	extend: 'Ext.window.Window',
-	height: 342,width: 356,
+	style: 'position:absolute;width:356px;height:342px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка диаграммы (Показатели работы менеджеров)',
 	
 	items:
@@ -15,11 +17,9 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -30,10 +30,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Представление',
+					text:'Имя показателя',
+					width:'320',
 				},
 			]
 		},

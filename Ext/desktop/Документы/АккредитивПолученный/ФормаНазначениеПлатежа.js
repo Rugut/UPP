@@ -1,14 +1,22 @@
 ﻿Ext.define('Документы.АккредитивПолученный.ФормаНазначениеПлатежа',
 	{
 	extend: 'Ext.window.Window',
-	height: 185,width: 444,
+	style: 'position:absolute;width:444px;height:185px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Аккредитив полученный: Назначение платежа',
 	
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьНазначениеПлатежа',
+			text: 'Назначение платежа:',
+			style: 'position:absolute;left:8px;top:8px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'НазначениеПлатежа',
 			style: 'position:absolute;left:8px;top:31px;width:428px;height:121px;',

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ОсновноеСырье.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 353,width: 406,
+	style: 'position:absolute;width:406px;height:353px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Основное сырье',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:292px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:334px;top:33px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,9 +38,7 @@
 			style: 'position:absolute;left:8px;top:76px;width:390px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -39,10 +51,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Номенклатура',
+					text:'Основной материал и его аналоги',
+					width:'220',
 				},
 			]
 		},
@@ -58,21 +72,17 @@
 			style: 'position:absolute;left:0px;top:328px;width:406px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,17 +1,31 @@
 ﻿Ext.define('Обработки.ПоказНамеченныхСобытийПоПерсоналу.ФормаОбработки',
 	{
 	extend: 'Ext.window.Window',
-	height: 374,width: 541,
+	style: 'position:absolute;width:541px;height:374px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Запланированные кадровые перестановки',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:91px;top:8px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:173px;top:8px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -26,34 +40,44 @@
 			columns:
 			[
 				{
-					text:'ФормироватьДокумент',
+					text:'',
+					width:'28',
 				},
 				{
-					text:'Период',
+					text:'Дата',
+					width:'80',
 				},
 				{
 					text:'Сотрудник',
+					width:'160',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'109',
 				},
 				{
 					text:'Должность',
+					width:'91',
 				},
 				{
-					text:'ГрафикРаботы',
+					text:'График работы',
+					width:'42',
 				},
 				{
 					text:'Ставка',
+					width:'40',
 				},
 				{
-					text:'ЗаниматьСтавку',
+					text:'Занимать',
+					width:'46',
 				},
 				{
-					text:'ПланируемоеСобытие',
+					text:'Планируемое событие',
+					width:'124',
 				},
 			]
 		},
@@ -69,23 +93,14 @@
 			items:
 			[
 				{
-					text:'Действия',
-				},
-				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Снять',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Снять',
 				},
@@ -98,9 +113,7 @@
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
@@ -113,12 +126,8 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие7',
 				},
@@ -134,18 +143,14 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -168,13 +173,15 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:32px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

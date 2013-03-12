@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыАлкогольнойПродукции.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 350,width: 650,
+	style: 'position:absolute;width:650px;height:350px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды алкогольной продукции',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 				{
-					text:'КодВидаПродукции',
+					text:'Код вида продукции',
+					width:'70',
 				},
 			]
 		},

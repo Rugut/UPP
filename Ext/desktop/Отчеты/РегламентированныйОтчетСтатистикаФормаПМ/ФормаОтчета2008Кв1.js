@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаПМ.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 395,width: 716,
+	style: 'position:absolute;width:716px;height:395px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Форма ПМ',
 	
 	items:
@@ -12,29 +14,21 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Расширить поле бланка',
 				},
+				'-',
 				{
-					text:'РасширитьПолеБланка',
+					text:'Действие2',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Очистить',
@@ -46,28 +40,25 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'ПодменюПечати',
+					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -105,6 +96,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

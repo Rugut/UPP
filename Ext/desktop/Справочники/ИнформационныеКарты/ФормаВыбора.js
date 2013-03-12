@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ИнформационныеКарты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 355,width: 765,
+	style: 'position:absolute;width:765px;height:355px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Информационные карты',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'КодКарты',
+					text:'Код карты',
+					width:'120',
 				},
 				{
-					text:'ВладелецКарты',
+					text:'Владелец карты',
+					width:'120',
 				},
 				{
-					text:'ВидДисконтнойКарты',
+					text:'Вид дисконтной карты',
+					width:'350',
 				},
 				{
-					text:'ВидКарты',
+					text:'Вид карты',
+					width:'120',
 				},
 				{
-					text:'ТипКарты',
+					text:'Тип карты',
+					width:'120',
 				},
 				{
-					text:'ТипШтрихКода',
+					text:'Тип штрих кода',
+					width:'120',
 				},
 			]
 		},
@@ -50,6 +61,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'132',
 				},
 			]
 		},
@@ -59,11 +71,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

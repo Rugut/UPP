@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТорговоеОборудование.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 153,width: 468,
+	style: 'position:absolute;width:468px;height:153px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Торговое оборудование',
 	
 	items:
@@ -12,68 +14,50 @@
 			style: 'position:absolute;left:0px;top:0px;width:468px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие',
+					text:'Найти в списке',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Действие',
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Справка',
 				},
 				{
-					text:'Действие3',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие2',
+					text:'Редактировать код',
 				},
 				{
-					text:'Действие1',
+					text:'',
+				},
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Действие5',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Подменю1',
+					text:'Записать и закрыть',
 				},
 			]
 		},
@@ -83,21 +67,23 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -106,16 +92,34 @@
 			style: 'position:absolute;left:93px;top:33px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:348px;top:33px;width:27px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:380px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОбработкаОбслуживания',
+			text: 'Обработка обслуживания:',
+			style: 'position:absolute;left:8px;top:78px;width:135px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОбработкаОбслуживания',
 			style: 'position:absolute;left:148px;top:78px;width:312px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМодель',
+			text: 'Модель:',
+			style: 'position:absolute;left:8px;top:102px;width:135px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

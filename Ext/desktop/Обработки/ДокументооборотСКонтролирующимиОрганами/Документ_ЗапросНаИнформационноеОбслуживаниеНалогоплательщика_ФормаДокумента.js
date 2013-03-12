@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Документ_ЗапросНаИнформационноеОбслуживаниеНалогоплательщика_ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 606,width: 654,
+	style: 'position:absolute;width:654px;height:606px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -33,12 +35,8 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -46,29 +44,16 @@
 					text:'Действие5',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОтправить',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -77,26 +62,20 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'СохранитьНаДиск',
+					text:'Сохранить запрос на диск',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -137,6 +116,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОтвет',
+			text: 'Ответ:',
+			style: 'position:absolute;left:0px;top:10px;width:77px;height:15px;',
+		},
 					]
 				},
 			]
@@ -152,10 +137,28 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьВидУслуги',
+			text: 'Вид услуги:',
+			style: 'position:absolute;left:0px;top:92px;width:70px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидУслуги',
 			style: 'position:absolute;left:99px;top:92px;width:539px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:0px;top:2px;width:98px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:187px;top:2px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -168,6 +171,12 @@
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:210px;top:2px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:29px;width:98px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -186,16 +195,34 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьФорматОтвета',
+			text: 'Формат ответа:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ФорматОтвета',
 			style: 'position:absolute;left:99px;top:0px;width:539px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период запроса:',
+			style: 'position:absolute;left:0px;top:26px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачПериода',
 			style: 'position:absolute;left:99px;top:26px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: '-',
+			style: 'position:absolute;left:190px;top:26px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -219,6 +246,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Уточните налоги (комбинации КБК и кодов ОКАТО), в разрезе которых Вы хотели бы получить отчет от налогового органа.',
+			style: 'position:absolute;left:0px;top:2px;width:638px;height:16px;',
+		},
 					]
 				},
 			]
@@ -247,13 +280,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'КБК',
+					width:'243',
 				},
 				{
 					text:'ОКАТО',
+					width:'131',
 				},
 			]
 		},
@@ -272,18 +308,35 @@
 			items:
 			[
 				{
-					title:'ПредставлениеВыпискиОперацийИзКарточки',
+					title:'',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'группировать по видам платежей',
+			style: 'position:absolute;left:99px;top:3px;width:195px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыбиратьТолько',
+			text: 'Фильтр по виду:',
+			style: 'position:absolute;left:0px;top:1px;width:96px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ФильтрПоВиду',
+					title:'',
 					items:
 					[
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйОрган',
+			text: 'Получатель:',
+			style: 'position:absolute;left:0px;top:55px;width:98px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

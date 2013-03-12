@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВыработкаНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 401,width: 414,
+	style: 'position:absolute;width:414px;height:401px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выработка НМА',
 	
 	items:
@@ -12,26 +14,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю1',
+					text:'',
 				},
+				'-',
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -41,27 +36,27 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -76,10 +71,22 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:349px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:349px;width:312px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:325px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,22 +95,32 @@
 			style: 'position:absolute;left:94px;top:325px;width:312px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:398px;height:220px;',
 			height: 220,width: 398,
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'62',
 				},
 				{
-					text:'НематериальныйАктив',
+					text:'Нематериальный актив',
+					width:'217',
 				},
 				{
-					text:'Количество',
+					text:'Объем работ',
+					width:'90',
 				},
 			]
 		},
@@ -130,9 +147,7 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},

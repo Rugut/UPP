@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСтадийВзаимоотношенийСПокупателями.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 427,width: 659,
+	style: 'position:absolute;width:659px;height:427px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ стадий взаимоотношений с покупателями',
 	
 	items:
@@ -12,21 +14,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Отбор',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -34,7 +30,7 @@
 					text:'Действие',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
 				{
 					text:'Действие',
@@ -42,52 +38,41 @@
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Отбор',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата отчета:',
+			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -112,6 +97,11 @@
 			style: 'position:absolute;left:396px;top:0px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:0px;width:232px;height:18px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСКонтрагент',
@@ -130,6 +120,11 @@
 			style: 'position:absolute;left:396px;top:24px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Стадия взаимоотношений с покупателем:',
+			style: 'position:absolute;left:0px;top:24px;width:232px;height:18px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиССтадияПокупателя',
@@ -146,6 +141,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиКлассПостоянногоПокупателя',
 			style: 'position:absolute;left:396px;top:48px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'XYZ-класс постоянного покупателя:',
+			style: 'position:absolute;left:0px;top:48px;width:232px;height:18px;',
 		},
 		{
 			xtype: 'textfield',

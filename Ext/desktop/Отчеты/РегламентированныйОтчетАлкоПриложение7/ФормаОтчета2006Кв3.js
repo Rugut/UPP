@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ФормаОтчета2006Кв3',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 800,
+	style: 'position:absolute;width:800px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация об объемах закупки этилового спирта, алкогольной и спиртосодержащей продукции',
 	
 	items:
@@ -15,57 +17,37 @@
 				{
 					text:'Справка',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
+				'-',
+				'-',
 				{
-					text:'РасширитьПолеБланка',
+					text:'Проверить выгрузку',
 				},
-				{
-					text:'ВыбратьВариантОчисткиОтчета',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'ЗаполнитьАвто',
+					text:'Заполнить',
 				},
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 		{
@@ -73,24 +55,15 @@
 			style: 'position:absolute;left:0px;top:425px;width:800px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'ПодменюПечати',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
@@ -146,6 +119,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись43',
+			text: 'Представляется:',
+			style: 'position:absolute;left:0px;top:2px;width:98px;height:19px;',
+		},
 					]
 				},
 			]
@@ -153,7 +132,7 @@
 					]
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -211,6 +190,24 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:246px;top:264px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись40',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:473px;top:264px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись41',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:246px;top:264px;width:148px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтрокиВозвраты',
 			text: 'Добавить',
@@ -222,9 +219,21 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:696px;top:264px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись42',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:473px;top:264px;width:136px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:715px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -243,10 +252,20 @@
 			style: 'position:absolute;left:103px;top:23px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:392px;top:23px;width:252px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:331px;top:23px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'При печати группировать по кодам продукции',
+			style: 'position:absolute;left:0px;top:0px;width:256px;height:19px;',
 		},
 					]
 				},
@@ -262,6 +281,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

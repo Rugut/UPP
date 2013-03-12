@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.СтатьиЗатрат.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 110,width: 469,
+	style: 'position:absolute;width:469px;height:110px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа статей затрат',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:360px;top:58px;width:34px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:397px;top:58px;width:64px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование группы:',
+			style: 'position:absolute;left:8px;top:58px;width:121px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:129px;top:58px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Группа статей затрат:',
+			style: 'position:absolute;left:8px;top:33px;width:121px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,20 +58,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

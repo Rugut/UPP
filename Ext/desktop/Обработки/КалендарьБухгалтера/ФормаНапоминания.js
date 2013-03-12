@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КалендарьБухгалтера.ФормаНапоминания',
 	{
 	extend: 'Ext.window.Window',
-	height: 283,width: 476,
+	style: 'position:absolute;width:476px;height:283px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -30,25 +30,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ТипСообщения',
+					text:'Тип сообщения',
+					width:'111',
 				},
 				{
-					text:'ПоследняяДатаДействия',
+					text:'Срок',
+					width:'80',
 				},
 				{
-					text:'ЗаПериод',
+					text:'За период',
+					width:'100',
 				},
 				{
-					text:'НазваниеОтчетаИлиНалога',
+					text:'Отчет/налог',
+					width:'100',
 				},
 				{
 					text:'Периодичность',
+					width:'100',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 			]
 		},

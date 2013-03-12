@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПереоценкаТоваровОтданныхНаКомиссию.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 648,
+	style: 'position:absolute;width:648px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Переоценка товаров отданных на комиссию',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:369px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,55 +51,35 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
-					text:'ВыгрузитьВФорматеCommerceMLПанель',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'В файл',
+				},
+				'-',
+				{
+					text:'Цены и валюта...',
 				},
 				{
-					text:'ВыгрузитьВФорматеCommerceMLФайл',
+					text:'Отправить по эл. почте',
 				},
 				{
-					text:'Разделитель10',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю2',
+					text:'Выгрузить в файл',
 				},
+				'-',
+				'-',
 				{
-					text:'ВыгрузитьВФорматеCommerceML',
+					text:'Отправить по эл. почте',
 				},
+				'-',
 				{
-					text:'ДействиеЦеныВалюта',
-				},
-				{
-					text:'ВыгрузитьВФорматеCommerceMLЭлПочтаПанель',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ВыгрузитьВФорматеCommerceMLФайлПанель',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ВыгрузитьВФорматеCommerceMLЭлПочта',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -100,49 +100,64 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'64',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'СуммаСтарая',
+					text:'Сумма старая',
+					width:'80',
 				},
 			]
 		},
@@ -151,29 +166,22 @@
 			style: 'position:absolute;left:6px;top:0px;width:618px;height:24px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Заполнить по реализации',
 				},
 				{
-					text:'Разделитель',
+					text:'Заполнить по договору',
 				},
 				{
-					text:'ЗаполнитьПоРеализации',
-				},
-				{
-					text:'ЗаполнитьПоДоговору',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
+					text:'Поиск по штрихкоду',
 				},
 				{
 					text:'Подбор',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ДобавитьИзРеализации',
+					text:'Добавить из реализации',
 				},
 			]
 		},
@@ -206,6 +214,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:334px;top:81px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -218,10 +238,28 @@
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьТоварыИтоги',
+			text: 'Оптовые цены, Скидка 20%',
+			style: 'position:absolute;left:8px;top:347px;width:450px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего:',
+			style: 'position:absolute;left:470px;top:347px;width:60px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -234,12 +272,8 @@
 			style: 'position:absolute;left:0px;top:396px;width:648px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 				{
 					text:'Печать',
 				},
@@ -250,11 +284,9 @@
 					text:'ОК',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 			]
 		},
 		{
@@ -262,6 +294,13 @@
 			hideLabel: true,
 			name: 'Сделка',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСделка',
+			text: 'Сделка:
+',
+			style: 'position:absolute;left:8px;top:101px;width:84px;height:28px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбработкаТабличнойЧастиТовары.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 405,width: 728,
+	style: 'position:absolute;width:728px;height:405px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка табличной части',
 	
 	items:
@@ -13,13 +15,13 @@
 			items:
 			[
 				{
-					text:'ДействиеСнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
-					text:'ДействиеИнвертироватьФлажки',
+					text:'Инвертировать флажки',
 				},
 				{
-					text:'ДействиеУстановитьФлажки',
+					text:'Установить флажки',
 				},
 			]
 		},
@@ -30,85 +32,112 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'220',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'220',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'60',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед. хранения',
+					width:'54',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'% руч.ск',
+					width:'60',
 				},
 				{
-					text:'ПроцентАвтоматическихСкидок',
+					text:'% автоматических скидок',
+					width:'100',
 				},
 				{
-					text:'ПроцентРозничнойНаценки',
+					text:'% наценки',
+					width:'60',
 				},
 				{
-					text:'ЦенаВРознице',
+					text:'Розн. цена (руб.)',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'%НДС',
+					width:'40',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'80',
 				},
 				{
 					text:'Всего',
+					width:'100',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (регл.)',
+					width:'100',
 				},
 				{
-					text:'ЗаказПокупателя',
+					text:'Заказ покупателя',
+					width:'250',
 				},
 				{
 					text:'Качество',
+					width:'61',
 				},
 				{
 					text:'Склад',
+					width:'100',
 				},
 				{
-					text:'ОграничениеСкидкиНаценки',
+					text:'Ограничение скидки наценки',
+					width:'62',
 				},
 			]
 		},
@@ -125,10 +154,22 @@
 			style: 'position:absolute;left:234px;top:4px;width:400px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:558px;top:353px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
 			style: 'position:absolute;left:640px;top:353px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсегоНДС',
+			text: 'НДС ( в т. ч.):',
+			style: 'position:absolute;left:366px;top:353px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -142,21 +183,22 @@
 			items:
 			[
 				{
-					text:'КнопкаОКНажатие',
+					text:'ОК',
 				},
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Переносить в документ только отмеченные позиции',
+			style: 'position:absolute;left:8px;top:353px;width:290px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -165,9 +207,15 @@
 			items:
 			[
 				{
-					title:'УстановитьСериюПоГТД',
+					title:'Установить серию по ГТД',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтранаПроисхождения',
+			text: 'Страна происхождения:',
+			style: 'position:absolute;left:0px;top:0px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -177,7 +225,7 @@
 					]
 				},
 				{
-					title:'УпорядочитьСтроки',
+					title:'Упорядочить строки',
 					items:
 					[
 		{
@@ -187,10 +235,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'60',
 				},
 			]
 		},

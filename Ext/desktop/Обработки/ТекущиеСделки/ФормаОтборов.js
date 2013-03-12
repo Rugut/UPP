@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ТекущиеСделки.ФормаОтборов',
 	{
 	extend: 'Ext.window.Window',
-	height: 260,width: 478,
+	style: 'position:absolute;width:478px;height:260px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отбор',
 	
 	items:
@@ -15,17 +17,13 @@
 				{
 					text:'Отмена',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
 		},
@@ -40,6 +38,11 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент',
+			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидСравненияКонтрагент',
@@ -50,6 +53,11 @@
 			hideLabel: true,
 			name: 'ЗначениеОтбораКонтрагент',
 			style: 'position:absolute;left:234px;top:30px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Ответственный',
+			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -64,6 +72,11 @@
 			style: 'position:absolute;left:234px;top:54px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Сумма',
+			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидСравненияСумма',
@@ -74,6 +87,11 @@
 			hideLabel: true,
 			name: 'ЗначениеОтбораСумма',
 			style: 'position:absolute;left:234px;top:78px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вид документа',
+			style: 'position:absolute;left:6px;top:102px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,10 +106,20 @@
 			style: 'position:absolute;left:234px;top:102px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Договор',
+			style: 'position:absolute;left:6px;top:126px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидСравненияДоговор',
 			style: 'position:absolute;left:111px;top:126px;width:118px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номер',
+			style: 'position:absolute;left:6px;top:150px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -106,6 +134,11 @@
 			style: 'position:absolute;left:234px;top:150px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Вид операции',
+			style: 'position:absolute;left:6px;top:174px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидСравненияВидОперации',
@@ -116,6 +149,11 @@
 			hideLabel: true,
 			name: 'ЗначениеОтбораВидОперации',
 			style: 'position:absolute;left:234px;top:174px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дата',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

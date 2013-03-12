@@ -1,12 +1,26 @@
 ﻿Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 470,width: 638,
+	style: 'position:absolute;width:638px;height:470px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка скидок номенклатуры',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,10 +34,28 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТипСкидки',
+			text: 'Тип скидки:',
+			style: 'position:absolute;left:334px;top:81px;width:67px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:418px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:418px;width:536px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:394px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,28 +69,18 @@
 			items:
 			[
 				{
-					text:'ПодменюВидаОперации',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю3',
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель9',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -73,21 +95,15 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 			]
 		},
 		{
@@ -97,10 +113,22 @@
 			style: 'position:absolute;left:406px;top:81px;width:224px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроцент',
+			text: 'Процент:',
+			style: 'position:absolute;left:294px;top:182px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:352px;top:182px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗначениеУсловия',
+			text: 'Значение условия (USD):',
+			style: 'position:absolute;left:8px;top:103px;width:84px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,16 +137,34 @@
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВалюта',
+			text: 'Валюта:',
+			style: 'position:absolute;left:334px;top:33px;width:67px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Валюта',
 			style: 'position:absolute;left:406px;top:33px;width:224px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОграничение',
+			text: 'Ограничение (USD):',
+			style: 'position:absolute;left:414px;top:182px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОграничениеСкидки',
 			style: 'position:absolute;left:524px;top:182px;width:106px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьУсловие',
+			text: 'Условие:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -141,44 +187,35 @@
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'ПодменюЗаполнить',
+					text:'Добавить по группе',
 				},
 				{
-					text:'Разделитель1',
+					text:'Изменить',
 				},
 				{
-					text:'ДействиеДобавитьПоГруппе',
+					text:'Заполнить по ценовым группам',
 				},
 				{
-					text:'ДействиеИзменить',
-				},
-				{
-					text:'ДействиеЗаполнитьПоЦеновымГруппам',
-				},
-				{
-					text:'ДействиеДобавитьПоЦеновымГруппам',
+					text:'Добавить по ценовым группам',
 				},
 				{
 					text:'Подбор',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Добавить по поставщику',
 				},
 				{
-					text:'ДобавитьПоПоставщику',
+					text:'Поиск по штрихкоду',
+				},
+				'-',
+				{
+					text:'Заполнить по поставщику',
 				},
 				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьПоПоставщику',
-				},
-				{
-					text:'ДействиеЗаполнитьПоГруппе',
+					text:'Заполнить по группе',
 				},
 			]
 		},
@@ -189,35 +226,43 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'22',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Артикул',
+					width:'111',
 				},
 				{
 					text:'Номенклатура',
+					width:'213',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'123',
 				},
 				{
 					text:'Качество',
+					width:'130',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'%',
+					width:'51',
 				},
 				{
-					text:'ОграничениеСкидкиНаценки',
+					text:'Огр.',
+					width:'51',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ЦеновыеГруппы',
+					title:'Ценовые группы',
 					items:
 					[
 		{
@@ -227,19 +272,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ЦеноваяГруппа',
+					text:'Ценовая группа',
+					width:'211',
 				},
 				{
 					text:'Качество',
+					width:'180',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'%',
+					width:'38',
 				},
 				{
-					text:'ОграничениеСкидкиНаценки',
+					text:'Огр.',
+					width:'119',
 				},
 			]
 		},
@@ -251,9 +301,7 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
@@ -269,34 +317,44 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Номенклатура',
+					width:'235',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'235',
 				},
 				{
 					text:'Качество',
+					width:'128',
 				},
 				{
-					text:'Количество',
+					text:'Кол-во',
+					width:'96',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'96',
 				},
 				{
-					text:'СпецПредложение',
+					text:'Спец. предложение',
+					width:'235',
 				},
 				{
-					text:'ХарактеристикаСпецПредложения',
+					text:'Характеристика спец. предложения',
+					width:'235',
 				},
 				{
-					text:'КоличествоСпецПредложения',
+					text:'Кол-во',
+					width:'87',
 				},
 				{
-					text:'ЕдиницаИзмеренияСпецПредложения',
+					text:'Ед.',
+					width:'89',
 				},
 			]
 		},
@@ -306,19 +364,25 @@
 			items:
 			[
 				{
-					text:'КнопкаСоставБонусов',
+					text:'Состав бонусов',
 				},
 				{
-					text:'КнопкаСоставНоменклатуры',
+					text:'Состав номенклатуры',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПолучателиСкидки',
+					title:'Получатели скидки',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДляВсехДней',
+			text: 'Для всех дней с:',
+			style: 'position:absolute;left:323px;top:135px;width:86px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
@@ -326,13 +390,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'22',
 				},
 				{
 					text:'Контрагент',
+					width:'169',
 				},
 				{
 					text:'Получатель',
+					width:'208',
 				},
 			]
 		},
@@ -341,12 +408,8 @@
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -355,7 +418,7 @@
 					]
 				},
 				{
-					title:'ВремяДействияСкидки',
+					title:'Время действия скидки',
 					items:
 					[
 		{
@@ -377,16 +440,20 @@
 			columns:
 			[
 				{
-					text:'Выбран',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ДеньНедели',
+					text:'День недели',
+					width:'210',
 				},
 				{
-					text:'ВремяНачала',
+					text:'Начало',
+					width:'68',
 				},
 				{
-					text:'ВремяОкончания',
+					text:'Окончание',
+					width:'68',
 				},
 			]
 		},
@@ -396,10 +463,10 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Действие снять все',
 				},
 				{
-					text:'Действие',
+					text:'Действие отметить все',
 				},
 			]
 		},
@@ -408,10 +475,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериодСкидки',
+			text: 'Скидка с:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:94px;top:57px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:176px;top:57px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -420,10 +499,37 @@
 			style: 'position:absolute;left:194px;top:57px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидСкидки',
+			text: 'Вид скидки:',
+			style: 'position:absolute;left:334px;top:57px;width:67px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидСкидки',
 			style: 'position:absolute;left:406px;top:57px;width:224px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Для всей номенклатуры',
+			style: 'position:absolute;left:14px;top:138px;width:143px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Для всех получателей',
+			style: 'position:absolute;left:162px;top:138px;width:137px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По дням недели',
+			style: 'position:absolute;left:305px;top:138px;width:100px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКачество',
+			text: 'Качество:',
+			style: 'position:absolute;left:14px;top:182px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

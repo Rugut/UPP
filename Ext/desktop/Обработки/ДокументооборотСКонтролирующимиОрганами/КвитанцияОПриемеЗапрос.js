@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.КвитанцияОПриемеЗапрос',
 	{
 	extend: 'Ext.window.Window',
-	height: 256,width: 563,
+	style: 'position:absolute;width:563px;height:256px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Квитанция о приеме',
 	
 	items:
@@ -18,10 +20,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Имя принятого файла:',
+			style: 'position:absolute;left:8px;top:46px;width:181px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяПринятФайла',
 			style: 'position:absolute;left:193px;top:47px;width:362px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Дата и время представления:',
+			style: 'position:absolute;left:8px;top:72px;width:181px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,10 +44,22 @@
 			style: 'position:absolute;left:193px;top:73px;width:362px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Дата поступления отчета:',
+			style: 'position:absolute;left:8px;top:151px;width:181px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаПост',
 			style: 'position:absolute;left:193px;top:152px;width:362px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Код формы по КНД:',
+			style: 'position:absolute;left:8px;top:98px;width:181px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,10 +68,22 @@
 			style: 'position:absolute;left:193px;top:99px;width:362px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Наименование предст. документа:',
+			style: 'position:absolute;left:8px;top:124px;width:181px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НаимВидДок',
 			style: 'position:absolute;left:193px;top:125px;width:362px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Рег. номер документа в НО:',
+			style: 'position:absolute;left:8px;top:203px;width:181px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,10 +92,22 @@
 			style: 'position:absolute;left:193px;top:204px;width:362px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Дата принятия отчета:',
+			style: 'position:absolute;left:8px;top:177px;width:181px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаПрин',
 			style: 'position:absolute;left:193px;top:178px;width:362px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Налоговый орган:',
+			style: 'position:absolute;left:8px;top:8px;width:181px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

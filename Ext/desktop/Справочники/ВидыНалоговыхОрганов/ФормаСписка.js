@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыНалоговыхОрганов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 554,
+	style: 'position:absolute;width:554px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Виды налоговых органов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Наименование',
+					width:'300',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие10',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 	]

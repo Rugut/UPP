@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВнешниеОбработки.ФормаПараметровОбработки',
 	{
 	extend: 'Ext.window.Window',
-	height: 341,width: 400,
+	style: 'position:absolute;width:400px;height:341px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Дополнительные параметры обработки',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:316px;width:400px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Принять',
 				},
@@ -30,10 +30,12 @@
 			columns:
 			[
 				{
-					text:'ИмяПараметра',
+					text:'Имя',
+					width:'149',
 				},
 				{
-					text:'ЗначениеПараметра',
+					text:'Значение',
+					width:'152',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыЗемля.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 290,width: 276,
+	style: 'position:absolute;width:276px;height:290px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Авансы по земельному налогу',
 	
 	items:
@@ -12,22 +14,24 @@
 			style: 'position:absolute;left:0px;top:265px;width:276px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Справка',
+					text:'Действие1',
 				},
 				{
 					text:'ОК',
 				},
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:42px;top:85px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:222px;top:85px;width:21px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:17px;top:138px;width:244px;height:97px;',
 		},
 		{
 			xtype: 'button',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаДиапазоновБазовыхЦен.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 605,
+	style: 'position:absolute;width:605px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка диапазонов базовых цен',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'100',
 				},
 				{
 					text:'Номер',
+					width:'130',
 				},
 				{
-					text:'ТипЦен',
+					text:'Тип цен',
+					width:'182',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -35,11 +42,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:605px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},

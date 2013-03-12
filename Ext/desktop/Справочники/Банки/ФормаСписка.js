@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Банки.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 401,width: 742,
+	style: 'position:absolute;width:742px;height:401px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Банки',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Код',
+					text:'БИК',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'КоррСчет',
+					text:'Корр. счет',
+					width:'160',
 				},
 				{
 					text:'Город',
+					width:'160',
 				},
 				{
 					text:'Адрес',
+					width:'220',
 				},
 				{
 					text:'Телефоны',
+					width:'160',
 				},
 			]
 		},
@@ -44,6 +53,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -53,12 +63,22 @@
 			items:
 			[
 				{
-					text:'ДействиеЗагрузить1',
+					text:'Добавить из классификатора банков РФ',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ИнформационнаяНадписьТелефоны',
+			text: 'Надпись',
+			style: 'position:absolute;left:8px;top:358px;width:726px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнформационнаяНадписьАдрес',
+			text: 'Надпись',
+			style: 'position:absolute;left:8px;top:378px;width:726px;height:15px;',
 		},
 	]
 });

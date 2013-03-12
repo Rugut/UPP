@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПомощникПланирования.ФормаВыборПоля',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 400,
+	style: 'position:absolute;width:400px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор поля',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОтмена',
+					text:'Отмена',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,22 +30,28 @@
 			columns:
 			[
 				{
-					text:'Представление',
+					text:'Доступные поля',
+					width:'100',
 				},
 				{
-					text:'ПутьКДанным',
+					text:'Путь к данным',
+					width:'100',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ДетальнаяЗапись',
+					text:'Детальная запись',
+					width:'100',
 				},
 				{
 					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'Тип',
+					text:'',
+					width:'30',
 				},
 			]
 		},

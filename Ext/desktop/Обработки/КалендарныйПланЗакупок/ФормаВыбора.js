@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КалендарныйПланЗакупок.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 322,width: 376,
+	style: 'position:absolute;width:376px;height:322px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группировки отчета',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'ПредставлениеФильтра',
+					width:'209',
 				},
 			]
 		},
@@ -23,18 +26,14 @@
 			style: 'position:absolute;left:0px;top:297px;width:376px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'СохранитьЗначения___',
+					text:'ОК',
 				},
-				{
-					text:'КнопкаВыбратьНажатие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},

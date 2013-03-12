@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетПФР.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 721,
+	style: 'position:absolute;width:721px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по взносам в ПФР',
 	
 	items:
@@ -15,18 +17,10 @@
 				{
 					text:'Справка',
 				},
-				{
-					text:'РазделительЗаполнить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Отправить',
 				},
@@ -34,55 +28,37 @@
 					text:'Заполнить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Выгрузка',
+					text:'Настройка...',
 				},
 				{
 					text:'Очистить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'Подготовить',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Обновить',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Выгрузить',
@@ -100,25 +76,22 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:635px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -130,7 +103,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -146,10 +119,22 @@
 			style: 'position:absolute;left:539px;top:265px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:164px;top:265px;width:148px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаФизЛица',
 			text: '',
 			style: 'position:absolute;left:314px;top:265px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницФизЛица',
+			text: '999 из 999',
+			style: 'position:absolute;left:336px;top:265px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -166,10 +151,10 @@
 					]
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -201,7 +186,7 @@
 					]
 				},
 				{
-					title:'Раздел21',
+					title:'Раздел 2.1',
 					items:
 					[
 		{
@@ -233,7 +218,7 @@
 					]
 				},
 				{
-					title:'Раздел22',
+					title:'Раздел 2.2',
 					items:
 					[
 		{
@@ -265,7 +250,7 @@
 					]
 				},
 				{
-					title:'Раздел23',
+					title:'Раздел 2.3',
 					items:
 					[
 		{
@@ -297,7 +282,7 @@
 					]
 				},
 				{
-					title:'Раздел24',
+					title:'Раздел 2.4',
 				},
 			]
 		},
@@ -324,6 +309,11 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:247px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -343,6 +333,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ВводНачальныхОстатковПоВзаиморасчетам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 444,width: 723,
+	style: 'position:absolute;width:723px;height:444px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод начальных остатков по взаиморасчетам',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:104px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:186px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:206px;top:33px;width:118px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:392px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:392px;width:619px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,29 +62,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:723px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПодменюВидаОперации',
+					text:'Дт/кт',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -70,23 +86,17 @@
 				{
 					text:'Печать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -97,7 +107,7 @@
 			items:
 			[
 				{
-					title:'ДанныеПоРасчетам',
+					title:'Расчеты с контрагентами',
 					items:
 					[
 		{
@@ -107,43 +117,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
 					text:'Сделка',
+					width:'150',
 				},
 				{
-					text:'ДокументРасчетовСКонтрагентом',
+					text:'Документ расчетов',
+					width:'150',
 				},
 				{
-					text:'ВалютаВзаиморасчетов',
+					text:'Валюта',
+					width:'60',
 				},
 				{
-					text:'СуммаВзаиморасчетов',
+					text:'Сумма в валюте взаиморасчетов',
+					width:'110',
 				},
 				{
-					text:'КурсВзаиморасчетов',
+					text:'Курс на дату операции',
+					width:'80',
 				},
 				{
-					text:'КратностьВзаиморасчетов',
+					text:'Кратность',
+					width:'80',
 				},
 				{
-					text:'СуммаУпр',
+					text:'Сумма (упр)',
+					width:'110',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (регл)',
+					width:'110',
 				},
 				{
-					text:'СуммаРеглСУчетомПереоценки',
+					text:'Сумма (регл) с учетом переоценки',
+					width:'110',
 				},
 				{
-					text:'СчетУчетаРасчетовСКонтрагентом',
+					text:'Счет расчетов ',
+					width:'60',
 				},
 			]
 		},
@@ -153,35 +176,26 @@
 			items:
 			[
 				{
-					text:'ДействиеЗаполнитьПоВзаиморасчетамУСН',
+					text:'Заполнить по взаиморасчетам УСН',
 				},
 				{
-					text:'ЗаполнитьСуммуСУчетомПереоценки',
+					text:'Заполнить сумму с учетом переоценки',
+				},
+				'-',
+				{
+					text:'Заполнить нулевые значения суммы с учетом переоценки',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить документы расчетов',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьНулевуюСуммуСУчетомПереоценки',
-				},
-				{
-					text:'ЗаполнитьДокументыРасчетов',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'ДанныеПоАвансам',
+					title:'Авансы',
 					items:
 					[
 		{
@@ -189,30 +203,21 @@
 			style: 'position:absolute;left:6px;top:6px;width:694px;height:24px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Заполнить нулевые значения суммы с учетом переоценки',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить сумму с учетом переоценки',
 				},
 				{
-					text:'Разделитель1',
+					text:'Заполнить по взаиморасчетам УСН',
 				},
 				{
-					text:'ЗаполнитьНулевуюСуммуСУчетомПереоценки',
+					text:'Заполнить документы оплаты',
 				},
-				{
-					text:'ЗаполнитьСуммуСУчетомПереоценки',
-				},
-				{
-					text:'ДействиеЗаполнитьПоВзаиморасчетамУСН',
-				},
-				{
-					text:'ЗаполнитьДокументыРасчетов',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -222,50 +227,63 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
 					text:'Сделка',
+					width:'150',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'150',
 				},
 				{
-					text:'ВалютаВзаиморасчетов',
+					text:'Валюта',
+					width:'60',
 				},
 				{
-					text:'СуммаВзаиморасчетов',
+					text:'Сумма в валюте взаиморасчетов',
+					width:'110',
 				},
 				{
-					text:'КурсВзаиморасчетов',
+					text:'Курс на дату операции',
+					width:'80',
 				},
 				{
-					text:'КратностьВзаиморасчетов',
+					text:'Кратность',
+					width:'80',
 				},
 				{
-					text:'СуммаУпр',
+					text:'Сумма (упр)',
+					width:'110',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (регл)',
+					width:'110',
 				},
 				{
-					text:'СуммаРеглСУчетомПереоценки',
+					text:'Сумма (регл) с учетом переоценки',
+					width:'110',
 				},
 				{
-					text:'СчетУчетаРасчетовСКонтрагентом',
+					text:'Счет авансов',
+					width:'60',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'РезервыПоСомнительнымДолгам',
+					title:'Резервы по сомнительным долгам',
 					items:
 					[
 		{
@@ -275,25 +293,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
-					text:'ДокументРасчетовСКонтрагентом',
+					text:'Документ расчетов',
+					width:'150',
 				},
 				{
-					text:'СчетУчетаРасчетовСКонтрагентом',
+					text:'Счет расчетов',
+					width:'100',
 				},
 				{
-					text:'СуммаБУ',
+					text:'Сумма БУ',
+					width:'100',
 				},
 				{
-					text:'СуммаНУ',
+					text:'Сумма НУ',
+					width:'100',
 				},
 			]
 		},
@@ -302,14 +327,9 @@
 			style: 'position:absolute;left:6px;top:41px;width:693px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ЗаполнитьПоСомнительнойЗадолженности',
+					text:'Заполнить по сомнительной задолженности',
 				},
 			]
 		},
@@ -320,7 +340,7 @@
 			items:
 			[
 				{
-					title:'СтраницаНадпись',
+					title:'Страница надпись',
 				},
 			]
 		},
@@ -329,10 +349,53 @@
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:416px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:490px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:350px;top:33px;width:63px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Формировать проводки',
+			style: 'position:absolute;left:104px;top:81px;width:147px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:368px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:368px;width:619px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отразить в регистрах расчетов организации',
+			style: 'position:absolute;left:258px;top:81px;width:251px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражениеВБухучете',
+			text: 'Отражение в БУ:',
+			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отразить в регистре взаиморасчетов по документам',
+			style: 'position:absolute;left:416px;top:57px;width:299px;height:19px;',
 		},
 	]
 });

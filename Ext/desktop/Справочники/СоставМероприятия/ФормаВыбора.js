@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СоставМероприятия.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 508,
+	style: 'position:absolute;width:508px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Состав мероприятия',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Начало',
+					width:'120',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Окончание',
+					width:'120',
 				},
 			]
 		},
@@ -35,9 +41,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ИзменениеДокументовБюджетирования.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 644,
+	style: 'position:absolute;width:644px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение документов бюджетирования',
 	
 	items:
@@ -20,14 +22,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Выполнить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -37,9 +37,15 @@
 			items:
 			[
 				{
-					title:'СтраницаОтбор',
+					title:'Настройка',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Вид документа:',
+			style: 'position:absolute;left:6px;top:30px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:94px;width:614px;height:259px;',
@@ -47,22 +53,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Реквизит',
+					width:'220',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'120',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -73,10 +85,28 @@
 			style: 'position:absolute;left:88px;top:6px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:328px;top:6px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:386px;top:6px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:484px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,23 +126,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'Включить все',
 				},
 				{
-					text:'Действие1',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие3',
+					text:'Выключить все',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаДействия',
+					title:'Обработка',
 					items:
 					[
 		{
@@ -122,16 +152,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Действие',
+					width:'222',
 				},
 				{
-					text:'УточнениеДействия',
+					text:'Уточнение действия',
+					width:'204',
 				},
 				{
-					text:'ПараметрДействия',
+					text:'Параметр действия',
+					width:'239',
 				},
 			]
 		},
@@ -141,25 +175,25 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 			]
 		},
@@ -180,19 +214,19 @@
 					text:'Заполнить',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие8',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие7',
+					text:'Сортировать по возрастанию',
 				},
 			]
 		},

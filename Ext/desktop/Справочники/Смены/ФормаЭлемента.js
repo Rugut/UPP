@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.Смены.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 353,width: 446,
+	style: 'position:absolute;width:446px;height:353px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Смена',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:316px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -33,13 +47,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВремяНачала',
+					text:'Время начала',
+					width:'120',
 				},
 				{
-					text:'ВремяОкончания',
+					text:'Время окончания',
+					width:'120',
 				},
 			]
 		},
@@ -48,14 +65,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:446px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
 			]
 		},
@@ -65,20 +77,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

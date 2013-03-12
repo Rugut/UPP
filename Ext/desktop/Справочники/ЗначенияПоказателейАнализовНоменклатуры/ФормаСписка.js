@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЗначенияПоказателейАнализовНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 347,width: 570,
+	style: 'position:absolute;width:570px;height:347px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Значения показателей анализов номенклатуры',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'62',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

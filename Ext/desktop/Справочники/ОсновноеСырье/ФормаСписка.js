@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОсновноеСырье.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 447,width: 336,
+	style: 'position:absolute;width:336px;height:447px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Основное сырье',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -38,10 +43,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Номенклатура',
+					text:'Основной материал и его аналоги',
+					width:'220',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЕдиницыИзмерения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 322,width: 568,
+	style: 'position:absolute;width:568px;height:322px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Единицы измерения',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Владелец',
+					width:'120',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
-					text:'ЕдиницаПоКлассификатору',
+					text:'По классификатору',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Коэффициент',
+					width:'80',
 				},
 				{
 					text:'Объем',
+					width:'80',
 				},
 				{
 					text:'Вес',
+					width:'80',
 				},
 			]
 		},
@@ -44,9 +54,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПоступлениеОсновныхСредствМеждународный.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 516,
+	style: 'position:absolute;width:516px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поступление основных средств (международный)',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -35,23 +42,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:516px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'Выбрать',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

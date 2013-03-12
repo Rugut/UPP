@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 487,
+	style: 'position:absolute;width:487px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Настройки расчета цены номенклатуры',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -23,11 +26,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:487px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},

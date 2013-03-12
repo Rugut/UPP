@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.ОборотыМеждуСубконтоХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 640,
+	style: 'position:absolute;width:640px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет Обороты между субконто',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:20px;top:33px;width:56px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:80px;top:33px;width:84px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:168px;top:33px;width:28px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:200px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:340px;top:33px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,57 +50,40 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Затвори',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Действие',
+					text:'Възстанови стойностите...',
 				},
 				{
-					text:'Действие2',
+					text:'Помощ',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Съхрани стойностите...',
 				},
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'Възстанови стойностите...',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
@@ -88,7 +91,7 @@
 					text:'Сформировать',
 				},
 				{
-					text:'Действие1',
+					text:'Съхрани стойностите...',
 				},
 			]
 		},

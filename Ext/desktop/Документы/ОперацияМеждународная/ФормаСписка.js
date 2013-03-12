@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОперацияМеждународная.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 470,width: 780,
+	style: 'position:absolute;width:780px;height:470px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Журнал операций (международный учет)',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 			]
 		},
@@ -32,17 +38,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -53,60 +54,83 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'СчетДт',
+					text:'Счет Дт',
+					width:'80',
 				},
 				{
-					text:'СубконтоДт1',
+					text:'Субконто Дт',
+					width:'120',
 				},
 				{
-					text:'СубконтоДт2',
+					text:'',
+					width:'80',
 				},
 				{
-					text:'СубконтоДт3',
+					text:'',
+					width:'80',
 				},
 				{
-					text:'КоличествоДт',
+					text:'Количество Дт',
+					width:'8',
 				},
 				{
-					text:'ВалютаДт',
+					text:'Валюта Дт',
+					width:'54',
 				},
 				{
-					text:'ВалютнаяСуммаДт',
+					text:'Вал. сумма Дт',
+					width:'98',
 				},
 				{
-					text:'СчетКт',
+					text:'Счет Кт',
+					width:'110',
 				},
 				{
-					text:'СубконтоКт1',
+					text:'Субконто Кт',
+					width:'110',
 				},
 				{
-					text:'СубконтоКт2',
+					text:'',
+					width:'115',
 				},
 				{
-					text:'СубконтоКт3',
+					text:'',
+					width:'115',
 				},
 				{
-					text:'КоличествоКт',
+					text:'Количество Кт',
+					width:'95',
 				},
 				{
-					text:'ВалютаКт',
+					text:'Валюта Кт',
+					width:'52',
 				},
 				{
-					text:'ВалютнаяСуммаКт',
+					text:'Вал. сумма Кт',
+					width:'96',
 				},
 				{
 					text:'Сумма',
+					width:'66',
 				},
 				{
 					text:'Содержание',
+					width:'184',
 				},
 				{
-					text:'НомерЖурнала',
+					text:'Номер журнала',
+					width:'45',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

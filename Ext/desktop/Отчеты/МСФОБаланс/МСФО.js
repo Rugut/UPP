@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МСФОБаланс.МСФО',
 	{
 	extend: 'Ext.window.Window',
-	height: 444,width: 736,
+	style: 'position:absolute;width:736px;height:444px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Баланс по МСФО',
 	
 	items:
@@ -12,45 +14,33 @@
 			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка',
 				},
 				{
-					text:'Разделитель7',
+					text:'Режим ввода информации',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'РежимВводаИнформации',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -59,25 +49,16 @@
 			items:
 			[
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Записать',
-				},
-				{
-					text:'ПодменюПечати',
 				},
 			]
 		},
@@ -106,6 +87,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:650px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -147,6 +134,16 @@
 			name: 'Валюта',
 			style: 'position:absolute;left:50px;top:0px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'На английском языке',
+			style: 'position:absolute;left:0px;top:23px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Откл. авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:0px;top:52px;width:213px;height:19px;',
+		},
 					]
 				},
 			]
@@ -161,6 +158,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:0px;top:10px;width:76px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

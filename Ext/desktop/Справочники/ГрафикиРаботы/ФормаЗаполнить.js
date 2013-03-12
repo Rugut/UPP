@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГрафикиРаботы.ФормаЗаполнить',
 	{
 	extend: 'Ext.window.Window',
-	height: 411,width: 561,
+	style: 'position:absolute;width:561px;height:411px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Помощник заполнения графика',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:386px;width:561px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Назад',
 				},
@@ -25,20 +25,14 @@
 					text:'Далее',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Отмена',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Заполнить',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -52,10 +46,28 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Способ заполнения графика',
+			style: 'position:absolute;left:0px;top:6px;width:365px;height:27px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНачала',
+			text: 'Начать с:',
+			style: 'position:absolute;left:16px;top:262px;width:58px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:79px;top:262px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'День начала отсчета периодичности сменного графика',
+			style: 'position:absolute;left:79px;top:282px;width:232px;height:34px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -67,6 +79,16 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести учет вечерних часов',
+			style: 'position:absolute;left:0px;top:23px;width:265px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести учет ночных часов',
+			style: 'position:absolute;left:0px;top:0px;width:265px;height:19px;',
+		},
 					]
 				},
 			]
@@ -78,10 +100,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьВидГрафика',
+			text: 'Тип графика:',
+			style: 'position:absolute;left:0px;top:50px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТипГрафика',
 			style: 'position:absolute;left:92px;top:50px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДлительностьРабочейНедели',
+			text: 'Часов в неделе:',
+			style: 'position:absolute;left:0px;top:76px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,10 +124,47 @@
 			style: 'position:absolute;left:92px;top:76px;width:90px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Суммированный учет рабочего времени',
+			style: 'position:absolute;left:4px;top:103px;width:360px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать праздничные дни',
+			style: 'position:absolute;left:4px;top:171px;width:360px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Параметры графика',
+			style: 'position:absolute;left:0px;top:6px;width:365px;height:27px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести учет вечерних часов',
+			style: 'position:absolute;left:4px;top:149px;width:360px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вести учет ночных часов',
+			style: 'position:absolute;left:4px;top:126px;width:360px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Неполное рабочее время',
+			style: 'position:absolute;left:4px;top:194px;width:360px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГрафикПолногоРабочегоВремени',
 			style: 'position:absolute;left:144px;top:309px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Норма времени рассчитывается',
+			style: 'position:absolute;left:18px;top:263px;width:199px;height:19px;',
 		},
 					]
 				},
@@ -102,10 +173,28 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Расписание работы',
+			style: 'position:absolute;left:3px;top:6px;width:362px;height:27px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНачалоНочныхЧасов',
+			text: 'Начало ночных часов:',
+			style: 'position:absolute;left:3px;top:338px;width:121px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачалоНочных',
 			style: 'position:absolute;left:124px;top:338px;width:59px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНачалоДневныхЧасов',
+			text: 'Начало дневных часов:',
+			style: 'position:absolute;left:3px;top:281px;width:121px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -130,12 +219,20 @@
 			columns:
 			[
 				{
-					text:'ДеньНедели',
+					text:'День недели',
+					width:'97',
 				},
 				{
-					text:'ЧасовЗаДень',
+					text:'Часов за день',
+					width:'80',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПолеВвода1',
+			text: 'Перерывов в день:',
+			style: 'position:absolute;left:0px;top:17px;width:98px;height:19px;',
 		},
 					]
 				},
@@ -150,61 +247,80 @@
 			columns:
 			[
 				{
-					text:'ДеньНедели',
+					text:'День недели',
+					width:'88',
 				},
 				{
 					text:'Начало',
+					width:'60',
 				},
 				{
 					text:'Окончание',
+					width:'57',
 				},
 				{
-					text:'Перерыв1',
+					text:'Перерыв',
+					width:'44',
 				},
 				{
-					text:'НачалоПерерыва1',
+					text:'с',
+					width:'47',
 				},
 				{
-					text:'ОкончаниеПерерыва1',
+					text:'по',
+					width:'47',
 				},
 				{
-					text:'Перерыв2',
+					text:'Перерыв',
+					width:'101',
 				},
 				{
-					text:'НачалоПерерыва2',
+					text:'с',
+					width:'49',
 				},
 				{
-					text:'ОкончаниеПерерыва2',
+					text:'по',
+					width:'49',
 				},
 				{
-					text:'Перерыв3',
+					text:'Перерыв',
+					width:'57',
 				},
 				{
-					text:'НачалоПерерыва3',
+					text:'с',
+					width:'49',
 				},
 				{
-					text:'ОкончаниеПерерыва3',
+					text:'по',
+					width:'49',
 				},
 				{
-					text:'Перерыв4',
+					text:'Перерыв',
+					width:'59',
 				},
 				{
-					text:'НачалоПерерыва4',
+					text:'с',
+					width:'49',
 				},
 				{
-					text:'ОкончаниеПерерыва4',
+					text:'по',
+					width:'49',
 				},
 				{
-					text:'Перерыв5',
+					text:'Перерыв',
+					width:'58',
 				},
 				{
-					text:'НачалоПерерыва5',
+					text:'с',
+					width:'49',
 				},
 				{
-					text:'ОкончаниеПерерыва5',
+					text:'по',
+					width:'49',
 				},
 				{
-					text:'ИтогоЗаДень',
+					text:'Часов за день',
+					width:'43',
 				},
 			]
 		},
@@ -227,15 +343,24 @@
 			columns:
 			[
 				{
-					text:'НомерДня',
+					text:'Номер дня',
+					width:'71',
 				},
 				{
 					text:'Смена',
+					width:'151',
 				},
 				{
-					text:'ЧасовВСмене',
+					text:'Часов в смене',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаОтсчета1',
+			text: 'Начать с:',
+			style: 'position:absolute;left:215px;top:14px;width:51px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -254,9 +379,7 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -280,6 +403,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНачалоВечернихЧасов',
+			text: 'Начало вечерних часов:',
+			style: 'position:absolute;left:0px;top:4px;width:121px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачалоВечерних',
@@ -299,7 +428,7 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Отмена',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ПлатежныйКалендарьЗаказы.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 412,width: 354,
+	style: 'position:absolute;width:354px;height:412px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -18,10 +20,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:96px;top:6px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:194px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,19 +56,28 @@
 			style: 'position:absolute;left:193px;top:30px;width:137px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Детализация по периодам:',
+			style: 'position:absolute;left:6px;top:30px;width:186px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:122px;width:324px;height:83px;',
 			height: 83,width: 324,
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Представление',
+					text:'Группировка',
+					width:'273',
 				},
 			]
 		},
@@ -64,16 +87,16 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
-					text:'Действие3',
+					text:'&Переместить вниз',
 				},
 			]
 		},
@@ -84,13 +107,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Представление',
+					text:'Группировка',
+					width:'275',
 				},
 			]
 		},
@@ -100,23 +126,23 @@
 			items:
 			[
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
-					text:'Действие3',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие2',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -126,22 +152,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -164,12 +196,8 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Справка',
 				},

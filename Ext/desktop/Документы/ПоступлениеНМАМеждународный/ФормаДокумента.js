@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ПоступлениеНМАМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 376,width: 654,
+	style: 'position:absolute;width:654px;height:376px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:324px;width:77px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -18,14 +26,9 @@
 			style: 'position:absolute;left:8px;top:83px;width:638px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьОС',
+					text:'Заполнить за период',
 				},
 			]
 		},
@@ -36,76 +39,100 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'НематериальныйАктив',
+					text:'НМА',
+					width:'108',
 				},
 				{
-					text:'УчитыватьКакНМА',
+					text:'Учитывать как НМА',
+					width:'100',
 				},
 				{
-					text:'ДатаПринятияКУчету',
+					text:'Дата принятия к учету',
+					width:'100',
 				},
 				{
-					text:'СчетУчета',
+					text:'Счет учета',
+					width:'92',
 				},
 				{
-					text:'СрокПолезногоИспользования',
+					text:'Срок полезного использования',
+					width:'92',
 				},
 				{
-					text:'СчетСниженияСтоимости',
+					text:'Счет снижения стоимости',
+					width:'92',
 				},
 				{
-					text:'НачислятьАмортизацию',
+					text:'Начислять амортизацию',
+					width:'100',
 				},
 				{
-					text:'МетодНачисленияАмортизации',
+					text:'Метод начисления амортизации',
+					width:'100',
 				},
 				{
-					text:'СчетНачисленияАмортизации',
+					text:'Счет начисления амортизации',
+					width:'100',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'100',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1',
+					width:'100',
 				},
 				{
-					text:'Субконто2',
+					text:'Субконто 2',
+					width:'100',
 				},
 				{
-					text:'Субконто3',
+					text:'Субконто 3',
+					width:'100',
 				},
 				{
-					text:'ПредполагаемыйОбъемПродукции',
+					text:'Предполагаемый объем продукции',
+					width:'98',
 				},
 				{
-					text:'КоэффициентУскорения',
+					text:'Коэфф. ускорения',
+					width:'100',
 				},
 				{
-					text:'СуммаНачисленнойАмортизации',
+					text:'Сумма начисленной амортизации',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНовый',
+					text:'Новый счет учета',
+					width:'100',
 				},
 				{
-					text:'Субконто1Нов',
+					text:'Субконто 1',
+					width:'100',
 				},
 				{
-					text:'Субконто2Нов',
+					text:'Субконто 2',
+					width:'100',
 				},
 				{
-					text:'Субконто3Нов',
+					text:'Субконто 3',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
-					text:'ПервоначальнаяСтоимость',
+					text:'Первоначальная стоимость',
+					width:'100',
 				},
 				{
-					text:'ЛиквидационнаяСтоимость',
+					text:'Ликвидационная стоимость',
+					width:'100',
 				},
 			]
 		},
@@ -115,25 +142,18 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 			]
 		},
@@ -142,28 +162,28 @@
 			style: 'position:absolute;left:0px;top:351px;width:654px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -172,10 +192,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,16 +216,34 @@
 			style: 'position:absolute;left:94px;top:56px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:426px;top:56px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Период  с:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодНачало',
 			style: 'position:absolute;left:426px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'по:',
+			style: 'position:absolute;left:516px;top:33px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

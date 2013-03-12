@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 594,
+	style: 'position:absolute;width:594px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Профили изменения планов по периодам',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ПериодСмещения',
+					text:'Период смещения',
+					width:'120',
 				},
 			]
 		},
@@ -35,6 +41,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},

@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СправкаРасчетПереоценкаВалютныхСредств.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 604,
+	style: 'position:absolute;width:604px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Переоценка валютных средств',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:177px;top:33px;width:73px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -21,55 +29,46 @@
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Подписи',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Настройка',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Подписи',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.КарточкаСчетаМеждународный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 251,width: 408,
+	style: 'position:absolute;width:408px;height:251px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Карточка счета',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'кнОК',
+					text:'ОК',
 				},
 				{
-					text:'Отмена',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -33,7 +33,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
 		{
@@ -69,7 +69,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -86,24 +86,36 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:116px;height:19px;',
 		},
 					]
 				},

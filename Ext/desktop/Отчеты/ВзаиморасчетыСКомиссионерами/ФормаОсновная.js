@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВзаиморасчетыСКомиссионерами.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 604,
+	style: 'position:absolute;width:604px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -16,16 +18,11 @@
 					text:'Действие',
 				},
 				{
-					text:'Подменю',
+					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Выполнить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 				{
 					text:'Действие1',
@@ -33,36 +30,30 @@
 				{
 					text:'Действие1',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Настройка',
+					text:'Сформировать',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Заголовок',
 				},
 				{
-					text:'Разделитель4',
+					text:'Настройка...',
 				},
+				{
+					text:'Восстановить значения',
+				},
+				'-',
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -81,10 +72,27 @@
 			style: 'position:absolute;left:173px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:149px;top:33px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:258px;top:33px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только просроченные',
+			style: 'position:absolute;left:344px;top:33px;width:134px;height:15px;',
 		},
 	]
 });

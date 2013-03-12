@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетБухОтчетность.НастройкаРасшифровкиОтдельныхПоказателей',
 	{
 	extend: 'Ext.window.Window',
-	height: 484,width: 716,
+	style: 'position:absolute;width:716px;height:484px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка расшифровки отдельных показателей бухгалтерской отчетности',
 	
 	items:
@@ -12,20 +14,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Действие справка',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеСправка',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ОтметкиСнять',
+					text:'Снять все отметки',
 				},
 				{
 					text:'Действие3',
@@ -34,7 +30,7 @@
 					text:'Действие',
 				},
 				{
-					text:'ФлажкиУстановить',
+					text:'Отметить все',
 				},
 				{
 					text:'Сбросить',
@@ -46,9 +42,7 @@
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},

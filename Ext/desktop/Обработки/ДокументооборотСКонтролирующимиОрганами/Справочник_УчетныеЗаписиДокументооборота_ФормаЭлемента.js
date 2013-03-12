@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_УчетныеЗаписиДокументооборота_ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 504,width: 908,
+	style: 'position:absolute;width:908px;height:504px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Учетные записи документооборота',
 	
 	items:
@@ -12,33 +14,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:908px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Расширенные настройки',
 				},
 				{
-					text:'РасширенныеНастройки',
+					text:'Серверы документооборота',
 				},
 				{
-					text:'СерверыДокументооборота',
-				},
-				{
-					text:'ОрганыПФР',
+					text:'Органы ПФР',
 				},
 				{
 					text:'Проверить',
 				},
 				{
-					text:'НалоговыеОрганы',
+					text:'Налоговые органы',
 				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -46,28 +39,35 @@
 			style: 'position:absolute;left:0px;top:479px;width:908px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись21',
+			text: 'Почтовый адрес:',
+			style: 'position:absolute;left:8px;top:84px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'АдресЭлектроннойПочты',
 			style: 'position:absolute;left:155px;top:84px;width:499px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отсутствует',
+			style: 'position:absolute;left:155px;top:60px;width:91px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -89,6 +89,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйОрган',
+			text: 'Налоговый орган:',
+			style: 'position:absolute;left:0px;top:0px;width:95px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -146,6 +152,11 @@
 			style: 'position:absolute;left:458px;top:62px;width:67px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: '',
+			style: 'position:absolute;left:362px;top:31px;width:13px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяПользователяSMTP',
@@ -156,6 +167,12 @@
 			hideLabel: true,
 			name: 'ПарольSMTP',
 			style: 'position:absolute;left:458px;top:28px;width:67px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСертификатРуководителя',
+			text: 'Руководитель:',
+			style: 'position:absolute;left:0px;top:118px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,6 +199,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСертификатДляЦелейШифрования',
+			text: 'Для целей шифрования:',
+			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СертификатДляШифрования',
@@ -201,6 +224,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСертификатГлавногоБухгалтера',
+			text: 'Главный бухгалтер:',
+			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -231,6 +260,12 @@
 			name: 'СерверДокументооборота',
 			style: 'position:absolute;left:147px;top:23px;width:499px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись23',
+			text: 'Сервер документооборота:',
+			style: 'position:absolute;left:0px;top:23px;width:140px;height:19px;',
+		},
 					]
 				},
 			]
@@ -238,6 +273,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Назначение:',
+			style: 'position:absolute;left:8px;top:34px;width:130px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -256,10 +297,12 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Пользователь',
+					width:'144',
 				},
 			]
 		},
@@ -278,10 +321,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьКодАбонента',
+			text: 'Идентификатор абонента:',
+			style: 'position:absolute;left:0px;top:0px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИдентификаторАбонента',
 			style: 'position:absolute;left:147px;top:0px;width:290px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодСпецоператора',
+			text: 'Идентификатор спецоператора:',
+			style: 'position:absolute;left:444px;top:0px;width:169px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -303,6 +358,24 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьАвтоматическийОбмен',
+			text: 'Автоматический обмен:',
+			style: 'position:absolute;left:0px;top:40px;width:130px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнтервалАвтообмена',
+			text: '',
+			style: 'position:absolute;left:147px;top:40px;width:499px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Автонастройка:',
+			style: 'position:absolute;left:0px;top:2px;width:83px;height:15px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:147px;top:2px;width:499px;height:30px;',
@@ -334,10 +407,31 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись38',
+			text: 'Спецоператор связи:',
+			style: 'position:absolute;left:8px;top:57px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СпецоператорСвязи',
 			style: 'position:absolute;left:254px;top:57px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документооборот с ФНС',
+			style: 'position:absolute;left:155px;top:34px;width:151px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документооборот с ПФР',
+			style: 'position:absolute;left:316px;top:34px;width:151px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документооборот с Росстатом',
+			style: 'position:absolute;left:477px;top:34px;width:177px;height:15px;',
 		},
 	]
 });

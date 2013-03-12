@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетПрибыльСколковоРасчетНалоговойБазы.ФормаОтчета2011Кв3',
 	{
 	extend: 'Ext.window.Window',
-	height: 429,width: 670,
+	style: 'position:absolute;width:670px;height:429px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет налоговой базы по налогу на прибыль',
 	
 	items:
@@ -13,35 +15,25 @@
 			items:
 			[
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
@@ -53,27 +45,24 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:586px;top:5px;width:76px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -82,7 +71,7 @@
 			items:
 			[
 				{
-					title:'ФормаОтчета',
+					title:'Расчет',
 				},
 			]
 		},
@@ -109,6 +98,11 @@
 			style: 'position:absolute;left:82px;top:26px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:364px;top:27px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -128,6 +122,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

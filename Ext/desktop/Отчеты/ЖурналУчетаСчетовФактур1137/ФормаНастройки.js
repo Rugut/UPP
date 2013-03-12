@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ЖурналУчетаСчетовФактур1137.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 187,width: 631,
+	style: 'position:absolute;width:631px;height:187px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,15 +15,23 @@
 			items:
 			[
 				{
-					text:'ДействиеОтмена',
+					text:'Отмена',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Группировать по контрагентам',
+			style: 'position:absolute;left:32px;top:115px;width:183px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать по контрагенту:',
+			style: 'position:absolute;left:32px;top:91px;width:149px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -34,6 +44,12 @@
 			hideLabel: true,
 			name: 'Руководитель',
 			style: 'position:absolute;left:89px;top:6px;width:407px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРуководитель',
+			text: 'Руководитель:',
+			style: 'position:absolute;left:8px;top:6px;width:78px;height:19px;',
 		},
 	]
 });

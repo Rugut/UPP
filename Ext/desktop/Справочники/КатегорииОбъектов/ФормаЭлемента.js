@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КатегорииОбъектов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 109,width: 406,
+	style: 'position:absolute;width:406px;height:109px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Элемент Категории объектов',
 	
 	items:
@@ -26,11 +28,29 @@
 			style: 'position:absolute;left:94px;top:57px;width:304px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНазначение',
+			text: 'Назначение:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:316px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -40,15 +60,11 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'РазделительОК',
+					text:'Закрыть',
 				},
-				{
-					text:'Закрыть1',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Записать',
 				},

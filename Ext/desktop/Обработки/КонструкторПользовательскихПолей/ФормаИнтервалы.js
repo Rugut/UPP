@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаИнтервалы',
 	{
 	extend: 'Ext.window.Window',
-	height: 414,width: 307,
+	style: 'position:absolute;width:307px;height:414px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Конструктор пользовательского поля',
 	
 	items:
@@ -12,16 +14,26 @@
 			style: 'position:absolute;left:0px;top:389px;width:307px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗначение',
+			text: 'Поле:',
+			style: 'position:absolute;left:8px;top:8px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:32px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,9 +49,11 @@
 			[
 				{
 					text:'Граница',
+					width:'100',
 				},
 				{
 					text:'Представление',
+					width:'100',
 				},
 			]
 		},
@@ -48,9 +62,7 @@
 			style: 'position:absolute;left:8px;top:72px;width:291px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Добавить',
 				},
@@ -60,9 +72,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{

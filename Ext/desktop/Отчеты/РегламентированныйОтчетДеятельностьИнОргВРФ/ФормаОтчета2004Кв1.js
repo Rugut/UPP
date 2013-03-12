@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетДеятельностьИнОргВРФ.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 670,
+	style: 'position:absolute;width:670px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Годовой отчет о деятельности иностранной организации в РФ',
 	
 	items:
@@ -15,11 +17,9 @@
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Справка',
@@ -28,23 +28,15 @@
 					text:'Поиск',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -52,23 +44,14 @@
 			style: 'position:absolute;left:0px;top:425px;width:670px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
@@ -85,7 +68,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -121,7 +104,7 @@
 					]
 				},
 				{
-					title:'Раздел1_1',
+					title:'Сведения ...',
 					items:
 					[
 		{
@@ -139,9 +122,27 @@
 					]
 				},
 				{
-					title:'Раздел1_2',
+					title:'Описание...',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:101px;top:265px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись42',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись43',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтрокиРаздел1_2',
@@ -154,10 +155,22 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись44',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись45',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел1_3',
+					title:'Расходы',
 					items:
 					[
 		{
@@ -175,9 +188,15 @@
 					]
 				},
 				{
-					title:'Раздел1_4',
+					title:'Финансирование',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницФизЛица',
+			text: '999 из 999',
+			style: 'position:absolute;left:273px;top:265px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтрокиРаздел1_4',
@@ -193,6 +212,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -236,6 +261,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

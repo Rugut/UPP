@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 780,
+	style: 'position:absolute;width:780px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Технологические карты производства',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Состояние',
+					width:'120',
 				},
 				{
-					text:'ДатаУтверждения',
+					text:'Дата утверждения',
+					width:'80',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 			]
 		},
@@ -48,6 +56,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

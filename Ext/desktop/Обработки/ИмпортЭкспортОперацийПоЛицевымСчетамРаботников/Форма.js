@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 482,width: 780,
+	style: 'position:absolute;width:780px;height:482px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Импорт / экспорт операций по лицевым счетам сотрудников',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
 		},
@@ -30,7 +30,7 @@
 			items:
 			[
 				{
-					title:'ЭкспортЗаявок',
+					title:'Экспорт заявок на открытие счетов',
 					items:
 					[
 		{
@@ -40,10 +40,22 @@
 			style: 'position:absolute;left:120px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Дата формирования:',
+			style: 'position:absolute;left:6px;top:30px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КаталогЭкспорта',
 			style: 'position:absolute;left:120px;top:6px;width:442px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Каталог экспорта:',
+			style: 'position:absolute;left:6px;top:6px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -52,28 +64,36 @@
 			columns:
 			[
 				{
-					text:'Выгрузить',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'РасчетныйСчет',
+					text:'Зарплатный счет',
+					width:'160',
 				},
 				{
-					text:'НомерДоговора',
+					text:'№ дог.',
+					width:'60',
 				},
 				{
-					text:'ВидВклада',
+					text:'Вид вклада',
+					width:'80',
 				},
 				{
 					text:'Документ',
+					width:'100',
 				},
 			]
 		},
@@ -86,33 +106,36 @@
 					text:'Выгрузить',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
 					text:'Печать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Снять флажки',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СнятьФлажки',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'УстановитьИнтервал',
+					text:'Установить интервал',
 				},
 				{
 					text:'Обновить',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только неисполненные',
+			style: 'position:absolute;left:568px;top:54px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтделениеБанка',
+			text: 'Отделение:',
+			style: 'position:absolute;left:222px;top:30px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,10 +144,22 @@
 			style: 'position:absolute;left:297px;top:30px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьФилиалОтделенияБанка',
+			text: 'Филиал:',
+			style: 'position:absolute;left:222px;top:54px;width:52px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ФилиалОтделенияБанка',
 			style: 'position:absolute;left:297px;top:54px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтделениеБанка1',
+			text: 'Номер с начала года:',
+			style: 'position:absolute;left:6px;top:54px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -133,10 +168,34 @@
 			style: 'position:absolute;left:120px;top:54px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКодировка1',
+			text: 'Кодировка файла:',
+			style: 'position:absolute;left:568px;top:6px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьФорматФайла1',
+			text: 'Формат файла:',
+			style: 'position:absolute;left:568px;top:34px;width:91px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерРеестра',
+			text: 'Номер реестра:',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерРеестра',
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРеестра',
+			text: 'Дата реестра:',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -145,10 +204,27 @@
 			style: 'position:absolute;left:448px;top:55px;width:103px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Только неисполненные',
+			style: 'position:absolute;left:569px;top:55px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерРеестра1',
+			text: 'Номер реестра:',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерРеестра1',
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРеестра1',
+			text: 'Дата реестра:',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -157,10 +233,27 @@
 			style: 'position:absolute;left:448px;top:55px;width:103px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Только неисполненные',
+			style: 'position:absolute;left:569px;top:55px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерРеестра2',
+			text: 'Номер реестра:',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерРеестра2',
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРеестра2',
+			text: 'Дата реестра:',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,10 +262,27 @@
 			style: 'position:absolute;left:448px;top:55px;width:103px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Только неисполненные',
+			style: 'position:absolute;left:569px;top:55px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерРеестра3',
+			text: 'Номер реестра:',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерРеестра3',
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРеестра3',
+			text: 'Дата реестра:',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,9 +293,15 @@
 					]
 				},
 				{
-					title:'ЭкспортЗачислениеЗарплаты',
+					title:'Экспорт зачисления зарплаты',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НомерДоговора',
+			text: 'Номер договора:',
+			style: 'position:absolute;left:351px;top:54px;width:96px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -199,27 +315,35 @@
 			style: 'position:absolute;left:120px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Дата формирования:',
+			style: 'position:absolute;left:6px;top:30px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КаталогЭкспортаЗачислениеЗарплаты',
 			style: 'position:absolute;left:120px;top:6px;width:442px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Каталог экспорта:',
+			style: 'position:absolute;left:6px;top:6px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:97px;width:752px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Установить интервал',
 				},
+				'-',
 				{
-					text:'УстановитьИнтервал',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
 					text:'Обновить',
@@ -228,17 +352,13 @@
 					text:'Печать',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -248,33 +368,48 @@
 			columns:
 			[
 				{
-					text:'Выгрузить',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'ВидДокумента',
+					text:'Вид документа',
+					width:'100',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'СчетОрганизации',
+					text:'Счет',
+					width:'100',
 				},
 				{
-					text:'РасчетныйСчет',
+					text:'№ счета',
+					width:'160',
 				},
 				{
 					text:'Документ',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтделениеБанка2',
+			text: 'Отделение:',
+			style: 'position:absolute;left:222px;top:30px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -283,16 +418,40 @@
 			style: 'position:absolute;left:297px;top:30px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьФилиалОтделенияБанка1',
+			text: 'Филиал:',
+			style: 'position:absolute;left:222px;top:54px;width:52px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ФилиалОтделенияБанкаЗЗ',
 			style: 'position:absolute;left:297px;top:54px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтделениеБанка3',
+			text: 'Номер с начала года:',
+			style: 'position:absolute;left:6px;top:54px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерСНачалаГодаЗЗ',
 			style: 'position:absolute;left:120px;top:54px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодировка2',
+			text: 'Кодировка файла:',
+			style: 'position:absolute;left:568px;top:6px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьФорматФайла',
+			text: 'Формат файла:',
+			style: 'position:absolute;left:568px;top:30px;width:91px;height:19px;',
 		},
 					]
 				},
@@ -307,34 +466,34 @@
 			style: 'position:absolute;left:103px;top:6px;width:655px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Каталог импорта:',
+			style: 'position:absolute;left:6px;top:7px;width:95px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:48px;width:752px;height:24px;',
 			items:
 			[
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Обновить',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
+				},
+				'-',
+				{
+					text:'Лицевые счета',
 				},
 				{
-					text:'Разделитель1',
+					text:'Установить интервал',
 				},
-				{
-					text:'ЛицевыеСчетаСотрудников',
-				},
-				{
-					text:'УстановитьИнтервал',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Загрузить',
 				},
@@ -347,16 +506,20 @@
 			columns:
 			[
 				{
-					text:'Загрузить',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Файл',
+					width:'320',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
-					text:'ДатаОперации',
+					text:'Дата операции',
+					width:'120',
 				},
 			]
 		},
@@ -367,41 +530,51 @@
 			columns:
 			[
 				{
-					text:'Загрузить',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Документ',
+					width:'220',
 				},
 				{
 					text:'Операция',
+					width:'120',
 				},
 				{
 					text:'Сотрудник',
+					width:'120',
 				},
 				{
-					text:'ЛицевойСчет',
+					text:'Лицевой счет',
+					width:'120',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 				{
 					text:'Результат',
+					width:'120',
 				},
 				{
-					text:'Фамилия1',
+					text:'Фамилия',
+					width:'100',
 				},
 				{
 					text:'Имя',
+					width:'100',
 				},
 				{
-					text:'Отчетство',
+					text:'Отчество',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПротоколыОбмена',
+					title:'Протоколы обмена',
 					items:
 					[
 		{
@@ -411,16 +584,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Документ',
+					width:'100',
 				},
 				{
 					text:'Дата',
+					width:'140',
 				},
 				{
 					text:'Содержание',
+					width:'452',
 				},
 			]
 		},
@@ -429,39 +606,27 @@
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Обновить',
 				},
 				{
-					text:'Действие10',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Подменю1',
+					text:'Установить отбор и сортировку списка...',
+				},
+				'-',
+				{
+					text:'Вывести список...',
 				},
 				{
-					text:'Действие6',
+					text:'Отключить отбор',
 				},
 				{
-					text:'Действие5',
+					text:'Настройка списка...',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 			]
 		},
 					]

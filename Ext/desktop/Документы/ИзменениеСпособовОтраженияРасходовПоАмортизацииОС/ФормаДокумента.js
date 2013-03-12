@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 487,width: 344,
+	style: 'position:absolute;width:344px;height:487px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение способа отражения расходов по амортизации ОС',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:412px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:412px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:435px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,26 @@
 			style: 'position:absolute;left:96px;top:435px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:81px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:94px;top:57px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:170px;top:57px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -43,17 +85,10 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
+					text:'По наименованию',
 				},
-				{
-					text:'ЗаполнитьПоНаименованию',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -66,13 +101,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. №',
+					width:'66',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'194',
 				},
 			]
 		},
@@ -82,26 +120,19 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'Разделитель4',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -109,28 +140,33 @@
 			style: 'position:absolute;left:0px;top:462px;width:344px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражать',
+			text: 'Отражать в:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:246px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -139,10 +175,28 @@
 			style: 'position:absolute;left:94px;top:176px;width:242px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСпособОтраженияРасходовПоАмортизации',
+			text: 'Способ :',
+			style: 'position:absolute;left:8px;top:176px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытие',
+			text: 'Событие:',
+			style: 'position:absolute;left:8px;top:108px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Событие',
 			style: 'position:absolute;left:94px;top:107px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытиеРегл',
+			text: 'Событие (регл.):',
+			style: 'position:absolute;left:8px;top:133px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

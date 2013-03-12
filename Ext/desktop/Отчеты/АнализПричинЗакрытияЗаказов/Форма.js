@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализПричинЗакрытияЗаказов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 820,
+	style: 'position:absolute;width:820px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,91 +15,66 @@
 			items:
 			[
 				{
-					text:'БыстрыеОтборы',
+					text:'Быстрые отборы',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительНастройка',
+					text:'Быстрые отборы',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительСохранитьВосстановитьНастройку',
+					text:'Сохранить настройку...',
 				},
+				'-',
+				'-',
 				{
-					text:'БыстрыеОтборы',
+					text:'Восстановить настройку...',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'РазделительСформировать',
+					text:'Новый отчет',
 				},
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'РазделительСформировать',
-				},
-				{
-					text:'СохранитьНастройку',
-				},
-				{
-					text:'РазделительДействия',
-				},
-				{
-					text:'РазделительСохранитьВосстановитьНастройку',
-				},
-				{
-					text:'ВосстановитьНастройку',
-				},
-				{
-					text:'РазделительНовыйОтчет',
-				},
-				{
-					text:'РазделительНовыйОтчет',
-				},
-				{
-					text:'РазделительБыстрыеОтборыЗаголовокОтчета',
-				},
-				{
-					text:'НовыйОтчет',
-				},
-				{
-					text:'РазделительБыстрыеОтборыЗаголовокОтчета',
-				},
-				{
-					text:'СохранитьНастройку',
+					text:'Сохранить настройку...',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'ДействиеЗакрыть',
+					text:'Действие закрыть',
 				},
 				{
-					text:'ВосстановитьНастройку',
+					text:'Восстановить настройку...',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'ЗаголовокОтчета',
+					text:'Заголовок отчета',
 				},
 				{
-					text:'Настройка',
-				},
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'РазделительНастройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'ЗаголовокОтчета',
+					text:'Сформировать',
 				},
 				{
-					text:'НовыйОтчет',
+					text:'Заголовок отчета',
+				},
+				{
+					text:'Новый отчет',
 				},
 			]
 		},
@@ -108,7 +85,7 @@
 			items:
 			[
 				{
-					title:'СтраницаПроизвольныйПериод',
+					title:'Произвольный период',
 					items:
 					[
 		{
@@ -129,10 +106,40 @@
 			text: '...',
 			style: 'position:absolute;left:239px;top:0px;width:20px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодС',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаДату',
+			text: 'На дату:',
+			style: 'position:absolute;left:122px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Период',
+			text: '',
+			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:28px;top:0px;width:55px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаНаДату',
+					title:'На дату',
 					items:
 					[
 		{
@@ -144,7 +151,7 @@
 					]
 				},
 				{
-					title:'СтраницаПериод',
+					title:'Период',
 					items:
 					[
 		{
@@ -169,6 +176,32 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы покупателей',
+			style: 'position:absolute;left:107px;top:35px;width:133px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы поставщикам',
+			style: 'position:absolute;left:253px;top:35px;width:135px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы на производство',
+			style: 'position:absolute;left:401px;top:35px;width:156px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Анализировать:',
+			style: 'position:absolute;left:8px;top:35px;width:94px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Внутренние заказы',
+			style: 'position:absolute;left:570px;top:35px;width:156px;height:15px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЕСНДляИП.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 490,width: 670,
+	style: 'position:absolute;width:670px;height:490px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по ЕСН для ИП, адвокатов, нотариусов, занимающихся частной практикой',
 	
 	items:
@@ -12,89 +14,58 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Расшифровка',
 				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель7',
+					text:'Проверить в Интернете',
 				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Подготовить',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'ПодготовитьИПодписать',
+					text:'Подготовить к отправке и подписать',
+				},
+				'-',
+				'-',
+				{
+					text:'Расширить поле бланка',
 				},
 				{
-					text:'Разделитель',
+					text:'Проверить выгрузку',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
 					text:'Справка',
@@ -106,24 +77,15 @@
 			style: 'position:absolute;left:0px;top:465px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
+					text:'OK',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -139,10 +101,10 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -160,6 +122,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -184,6 +152,11 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:247px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -203,6 +176,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

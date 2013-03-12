@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НоменклатурныеУзлы.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 528,
+	style: 'position:absolute;width:528px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Номенклатурные узлы',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Состояние',
+					width:'120',
 				},
 				{
-					text:'ДатаУтверждения',
+					text:'Дата утверждения',
+					width:'100',
 				},
 			]
 		},

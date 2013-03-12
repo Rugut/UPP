@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПереоценкаТоваровПринятыхНаКомиссию.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 403,width: 654,
+	style: 'position:absolute;width:654px;height:403px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Переоценка товаров принятых на комиссию',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:32px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:354px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,42 +51,41 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ПараметрыЭлектронногоОбменаДокументами',
+					text:'XML-обмен',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель10',
+					text:'Цены и валюта...',
 				},
-				{
-					text:'ДействиеЦеныВалюта',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:426px;top:32px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:510px;top:32px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -85,55 +104,72 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'67',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ЦенаСтарая',
+					text:'Цена старая',
+					width:'80',
 				},
 				{
-					text:'ЦенаНовая',
+					text:'Цена новая',
+					width:'80',
 				},
 				{
-					text:'СуммаСтарая',
+					text:'Сумма старая',
+					width:'80',
 				},
 				{
-					text:'СуммаНовая',
+					text:'Сумма новая',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'100',
 				},
 			]
 		},
@@ -143,31 +179,24 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить по договору',
 				},
 				{
-					text:'ЗаполнитьПоДоговору',
+					text:'Заполнить по поступлению',
+				},
+				'-',
+				{
+					text:'Поиск по штрихкоду',
+				},
+				'-',
+				{
+					text:'Заполнить по поступлению в НТТ',
 				},
 				{
-					text:'ЗаполнитьПоПоступлению',
+					text:'Добавить из поступления в НТТ',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьПоПоступлениюВНТТ',
-				},
-				{
-					text:'ДобавитьИзПоступленияВНТТ',
-				},
-				{
-					text:'ДобавитьИзПоступления',
+					text:'Добавить из поступления',
 				},
 				{
 					text:'Подбор',
@@ -203,6 +232,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:336px;top:80px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:80px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -215,16 +256,46 @@
 			style: 'position:absolute;left:96px;top:80px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:56px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:426px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьТоварыИтоги',
+			text: 'Оптовые цены, Скидка 20%',
+			style: 'position:absolute;left:8px;top:330px;width:448px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:462px;top:330px;width:72px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -240,9 +311,7 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -250,15 +319,18 @@
 					text:'Записать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСделка',
+			text: 'Сделка:
+',
+			style: 'position:absolute;left:8px;top:100px;width:88px;height:28px;',
 		},
 		{
 			xtype: 'textfield',

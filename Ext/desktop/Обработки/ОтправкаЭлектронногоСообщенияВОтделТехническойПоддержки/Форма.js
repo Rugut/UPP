@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 780,
+	style: 'position:absolute;width:780px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отправка электронного сообщения в отдел технической поддержки',
 	
 	items:
@@ -21,10 +23,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'',
+					width:'28',
 				},
 				{
-					text:'ПутьКФайлу',
+					text:'Путь к файлу',
+					width:'476',
 				},
 			]
 		},
@@ -33,40 +37,43 @@
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'НастройкаПараметров',
+					text:'Настройка параметров',
 				},
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Заполнить текст',
 				},
-				{
-					text:'ЗаполнитьТекст',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
 					text:'Отправить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отправлять слепую копию себе',
+			style: 'position:absolute;left:573px;top:8px;width:199px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТемаСообщения',
 			style: 'position:absolute;left:47px;top:8px;width:520px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Тема:',
+			style: 'position:absolute;left:8px;top:8px;width:36px;height:19px;',
 		},
 	]
 });

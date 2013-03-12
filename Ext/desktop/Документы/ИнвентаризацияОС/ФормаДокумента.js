@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ИнвентаризацияОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 454,width: 664,
+	style: 'position:absolute;width:664px;height:454px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инвентаризация ОС',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:404px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:110px;top:404px;width:549px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:337px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,13 +75,10 @@
 			items:
 			[
 				{
-					text:'Подменю2',
-				},
-				{
 					text:'Действие3',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие',
@@ -57,39 +86,19 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -97,7 +106,7 @@
 					text:'Действие',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Действие1',
@@ -105,12 +114,7 @@
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -122,19 +126,15 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -145,7 +145,7 @@
 			items:
 			[
 				{
-					title:'ОсновныеСредства',
+					title:'Основные средства',
 					items:
 					[
 		{
@@ -154,23 +154,16 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПоОстаткам',
+					text:'По остаткам',
 				},
 				{
-					text:'ЗаполнитьФактическиеДанные',
+					text:'Фактические данные',
 				},
+				'-',
 				{
-					text:'ПодменюЗаполнить',
+					text:'Данные учета',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьДанныеУчета',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -183,40 +176,52 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'220',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. №',
+					width:'80',
 				},
 				{
 					text:'МОЛ',
+					width:'120',
 				},
 				{
-					text:'СтоимостьПоДаннымУчета',
+					text:'Стоимость по данным учета',
+					width:'120',
 				},
 				{
-					text:'НаличиеПоДаннымУчета',
+					text:'Наличие по данным учета',
+					width:'120',
 				},
 				{
-					text:'СтоимостьФактическая',
+					text:'Фактическая стоимость',
+					width:'120',
 				},
 				{
-					text:'НаличиеФактическое',
+					text:'Фактическое наличие',
+					width:'120',
 				},
 				{
-					text:'ИзлишекСумма',
+					text:'Излишек, сумма',
+					width:'120',
 				},
 				{
-					text:'ИзлишекКоличество',
+					text:'Излишек, количество',
+					width:'120',
 				},
 				{
-					text:'НедостачаСумма',
+					text:'Недостача, сумма',
+					width:'120',
 				},
 				{
-					text:'НедостачаКоличество',
+					text:'Недостача, количество',
+					width:'120',
 				},
 			]
 		},
@@ -226,6 +231,12 @@
 					title:'Дополнительно',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:270px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -239,13 +250,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'25',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Члены комиссии',
+					width:'123',
 				},
 				{
 					text:'Председатель',
+					width:'80',
 				},
 			]
 		},
@@ -254,9 +268,7 @@
 			style: 'position:absolute;left:6px;top:117px;width:637px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -281,6 +293,24 @@
 			style: 'position:absolute;left:89px;top:51px;width:115px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДокументОснованиеВид',
+			text: 'Документ:',
+			style: 'position:absolute;left:12px;top:27px;width:67px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Номер:',
+			style: 'position:absolute;left:12px;top:51px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНачалаИнвентаризации',
+			text: 'Дата начала:',
+			style: 'position:absolute;left:328px;top:27px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачалаИнвентаризации',
@@ -291,6 +321,12 @@
 			hideLabel: true,
 			name: 'ДатаОкончанияИнвентаризации',
 			style: 'position:absolute;left:429px;top:51px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПричинаИнвентаризации',
+			text: 'Причина:',
+			style: 'position:absolute;left:12px;top:75px;width:65px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

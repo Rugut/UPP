@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьПоСчетуХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 286,width: 431,
+	style: 'position:absolute;width:431px;height:286px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,20 +15,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -36,9 +34,15 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -58,10 +62,28 @@
 			style: 'position:absolute;left:198px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:30px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:174px;top:30px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:283px;top:30px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:54px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -69,10 +91,25 @@
 			name: 'Организация',
 			style: 'position:absolute;left:89px;top:54px;width:318px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:14px;top:136px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по количеству',
+			style: 'position:absolute;left:14px;top:157px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Развернутое сальдо',
+			style: 'position:absolute;left:14px;top:116px;width:142px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Детализация',
 					items:
 					[
 		{
@@ -83,9 +120,11 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 				{
 					text:'Тип',
+					width:'40',
 				},
 			]
 		},
@@ -96,10 +135,21 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам',
+			style: 'position:absolute;left:6px;top:6px;width:99px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'По субконто:',
+			style: 'position:absolute;left:6px;top:30px;width:102px;height:17px;',
+		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -109,22 +159,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},

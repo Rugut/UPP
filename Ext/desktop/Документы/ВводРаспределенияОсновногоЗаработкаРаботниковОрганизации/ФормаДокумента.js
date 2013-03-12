@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 475,width: 608,
+	style: 'position:absolute;width:608px;height:475px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод распределения основного заработка сотрудников',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,16 +28,34 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:58px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:58px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:423px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:423px;width:506px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:83px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,40 +69,36 @@
 			items:
 			[
 				{
-					text:'Действие15',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие12',
+					text:'&Удалить',
 				},
 				{
-					text:'ВсеРаботники',
+					text:'По работнику',
 				},
 				{
-					text:'Действие16',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие13',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие9',
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Разделитель1',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие14',
+					text:'Сортировать по убыванию',
 				},
+				'-',
 				{
-					text:'Действие11',
-				},
-				{
-					text:'Действие17',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие10',
+					text:'&Скопировать',
 				},
 			]
 		},
@@ -87,37 +109,48 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'68',
 				},
 				{
 					text:'Сотрудник',
+					width:'120',
 				},
 				{
-					text:'СпособОтраженияВБухучете',
+					text:'Бух. учет',
+					width:'120',
 				},
 				{
-					text:'ДоляСпособаОтражения',
+					text:'% доли распределения',
+					width:'88',
 				},
 				{
-					text:'ПодпадаетПодЕНВД',
+					text:'ЕНВД',
+					width:'42',
 				},
 				{
-					text:'СчетДт',
+					text:'Счет ДТ',
+					width:'110',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто',
+					width:'120',
 				},
 				{
 					text:'Субконто2',
+					width:'100',
 				},
 				{
 					text:'Субконто3',
+					width:'100',
 				},
 				{
-					text:'СпособРаспределенияЗатрат',
+					text:'Способ распределения затрат',
+					width:'100',
 				},
 			]
 		},
@@ -126,35 +159,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Разделитель4',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Действие открыть категории',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Действие открыть свойства',
 				},
 				{
-					text:'Подменю',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -164,21 +185,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Месяц:',
+			style: 'position:absolute;left:438px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -187,19 +210,28 @@
 			style: 'position:absolute;left:480px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:145px;width:592px;height:78px;',
 			height: 78,width: 592,
 			columns:
 			[
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'48',
 				},
 				{
 					text:'Сотрудник',
+					width:'223',
 				},
 				{
 					text:'Физлицо',
+					width:'100',
 				},
 			]
 		},
@@ -208,56 +240,43 @@
 			style: 'position:absolute;left:8px;top:121px;width:592px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель4',
+					text:'&Скопировать',
+				},
+				'-',
+				{
+					text:'&Добавить',
 				},
 				{
-					text:'Действие10',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие9',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие17',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие13',
+					text:'Списком работников',
 				},
-				{
-					text:'Действие15',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'СписокРаботников',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие14',
+					text:'&Изменить',
 				},
+				'-',
 				{
-					text:'Действие11',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Действие16',
+					text:'Сортировать по возрастанию',
 				},
 			]
 		},

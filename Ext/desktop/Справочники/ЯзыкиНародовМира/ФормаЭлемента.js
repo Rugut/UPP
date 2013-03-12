@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ЯзыкиНародовМира.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 85,width: 408,
+	style: 'position:absolute;width:408px;height:85px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Языки народов мира',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:318px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:360px;top:33px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,20 +45,16 @@
 			style: 'position:absolute;left:0px;top:60px;width:408px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},

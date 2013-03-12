@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ВидыРаспределенияПоПроектам.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 109,width: 466,
+	style: 'position:absolute;width:466px;height:109px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды распределения по проектам',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:352px;top:33px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:394px;top:33px;width:64px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:128px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМетодРаспределения',
+			text: 'Метод распределения: ',
+			style: 'position:absolute;left:8px;top:57px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,20 +57,16 @@
 			style: 'position:absolute;left:0px;top:84px;width:466px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

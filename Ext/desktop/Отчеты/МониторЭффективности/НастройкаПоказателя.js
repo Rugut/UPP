@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МониторЭффективности.НастройкаПоказателя',
 	{
 	extend: 'Ext.window.Window',
-	height: 296,width: 404,
+	style: 'position:absolute;width:404px;height:296px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка показателя',
 	
 	items:
@@ -13,20 +15,16 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ДействиеСправка',
+					text:'Справка',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'ОК',
 				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -34,6 +32,12 @@
 			hideLabel: true,
 			name: 'ОсновнаяРасшифровка',
 			style: 'position:absolute;left:94px;top:33px;width:302px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИсточникДанных',
+			text: 'Отчет:',
+			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -52,10 +56,12 @@
 			columns:
 			[
 				{
-					text:'ПараметрПредставление',
+					text:'Параметр',
+					width:'175',
 				},
 				{
 					text:'Значение',
+					width:'150',
 				},
 			]
 		},
@@ -76,6 +82,24 @@
 			hideLabel: true,
 			name: 'ТрендВерхняяГраница',
 			style: 'position:absolute;left:243px;top:27px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: '<=',
+			style: 'position:absolute;left:153px;top:27px;width:21px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: '% <=',
+			style: 'position:absolute;left:210px;top:27px;width:27px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Границы динамики',
+			style: 'position:absolute;left:6px;top:6px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -106,6 +130,18 @@
 			hideLabel: true,
 			name: 'СостояниеВерхняяГраница',
 			style: 'position:absolute;left:243px;top:81px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: '<=',
+			style: 'position:absolute;left:153px;top:81px;width:21px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: '<=',
+			style: 'position:absolute;left:210px;top:81px;width:27px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -139,12 +175,15 @@
 			[
 				{
 					text:'Представление',
+					width:'160',
 				},
 				{
-					text:'ПредставлениеРасшифровки',
+					text:'Расшифровка',
+					width:'170',
 				},
 				{
-					text:'НаименованиеНастройкиОтчета',
+					text:'Настройка',
+					width:'170',
 				},
 			]
 		},
@@ -154,25 +193,23 @@
 			items:
 			[
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Изменить',
 				},
 				{
-					text:'Разделитель',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 			]
 		},
@@ -181,10 +218,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:9px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПредставлениеПоказателя',
 			style: 'position:absolute;left:94px;top:9px;width:302px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНастройка',
+			text: 'Настройка:',
+			style: 'position:absolute;left:8px;top:57px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

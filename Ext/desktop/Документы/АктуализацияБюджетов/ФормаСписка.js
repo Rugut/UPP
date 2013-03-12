@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.АктуализацияБюджетов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 640,
+	style: 'position:absolute;width:640px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Актуализации бюджетов',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Начало',
+					width:'80',
 				},
 				{
-					text:'ДатаКонца',
+					text:'Окончание',
+					width:'80',
 				},
 				{
 					text:'Сценарий',
+					width:'220',
 				},
 			]
 		},
@@ -39,17 +47,12 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

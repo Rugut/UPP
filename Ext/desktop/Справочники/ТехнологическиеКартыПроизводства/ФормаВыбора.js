@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 674,
+	style: 'position:absolute;width:674px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Технологические карты производства',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Состояние',
+					width:'120',
 				},
 				{
-					text:'ДатаУтверждения',
+					text:'Дата утверждения',
+					width:'80',
 				},
 				{
 					text:'Подразделение',
+					width:'180',
 				},
 			]
 		},
@@ -38,11 +46,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:674px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},
@@ -54,6 +60,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

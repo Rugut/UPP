@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетПоПроводкамНалоговый.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 324,width: 460,
+	style: 'position:absolute;width:460px;height:324px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Отчет по проводкам',
 	
 	items:
@@ -15,11 +17,9 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -46,10 +46,28 @@
 			style: 'position:absolute;left:204px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:184px;top:6px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:288px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:32px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -64,13 +82,16 @@
 			columns:
 			[
 				{
-					text:'СчетДт',
+					text:'Дебет',
+					width:'45',
 				},
 				{
-					text:'СчетКт',
+					text:'Кредит',
+					width:'47',
 				},
 				{
 					text:'Субконто',
+					width:'240',
 				},
 			]
 		},
@@ -80,14 +101,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие1',
+					text:'&Удалить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
@@ -100,22 +119,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -125,16 +150,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'ВыключитьВсе',
+					text:'Выключить все',
 				},
 				{
-					text:'ВключитьВсе',
+					text:'Включить все',
 				},
 			]
 		},
@@ -151,10 +176,41 @@
 			style: 'position:absolute;left:116px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номер журнала:',
+			style: 'position:absolute;left:6px;top:6px;width:106px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подстрока',
 			style: 'position:absolute;left:72px;top:99px;width:364px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'В субконто',
+			style: 'position:absolute;left:72px;top:146px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'В содержании',
+			style: 'position:absolute;left:72px;top:123px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Без учета регистра',
+			style: 'position:absolute;left:228px;top:123px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Подстрока:',
+			style: 'position:absolute;left:6px;top:99px;width:62px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документ:',
+			style: 'position:absolute;left:6px;top:33px;width:106px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

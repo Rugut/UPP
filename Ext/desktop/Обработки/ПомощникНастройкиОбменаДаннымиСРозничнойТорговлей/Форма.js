@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 424,width: 740,
+	style: 'position:absolute;width:740px;height:424px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка обмена данными',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Назад',
 				},
@@ -33,12 +33,36 @@
 					title:'Главная',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия',
+			text: 'Настройка обмена данными между информационными базами',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеПользователя',
+			text: 'Имя и пароль пользователя для подключения к инф. базе - приемнику',
+			style: 'position:absolute;left:171px;top:170px;width:363px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'ВозможностьПодключенияКоВторойИнформационнойБазе',
+					title:'Возможность подключения ко второй информационной базе',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки',
+			text: 'Передача данных между информационными базами',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнформацияОФайлеСНастройками',
+			text: 'Укажите имя файла с сохраненными настройками обмена, который был выгружен при настройке в первой информационной базе:',
+			style: 'position:absolute;left:6px;top:55px;width:544px;height:42px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:161px;top:111px;width:390px;height:19px;',
@@ -46,19 +70,38 @@
 			items:
 			[
 				{
-					title:'ПодключениеФайловаяИБ',
+					title:'Подключение файловая ИБ',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКаталогИБ1',
+			text: 'Каталог базы:
+',
+			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КаталогИнформационнойБазыДляПодключения1',
 			style: 'position:absolute;left:85px;top:0px;width:305px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСерверПредприятия1',
+			text: 'Имя сервера:',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяИнформационнойБазы1',
+			text: 'Инф. база:',
+			style: 'position:absolute;left:202px;top:0px;width:64px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПодключениеСервернаяИБ',
+					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -78,6 +121,11 @@
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Аутентификация Windows',
+			style: 'position:absolute;left:161px;top:189px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПользовательИнформационнойБазыДляПодключения1',
@@ -95,12 +143,36 @@
 			text: 'Проверить...',
 			style: 'position:absolute;left:431px;top:189px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеПользователя1',
+			text: 'Требуется продолжение настройки обменов на стороне инф. базы - приемника',
+			style: 'position:absolute;left:25px;top:237px;width:417px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеПользователя2',
+			text: 'НЕ требуется продолжение настройки обменов на стороне инф. базы - приемника',
+			style: 'position:absolute;left:25px;top:65px;width:425px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'СозданиеНовогоОбмена',
+					title:'Создание нового обмена',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьТипИнформационнойБазыДляОбмена',
+			text: 'Укажите тип информационной базы-приемника:',
+			style: 'position:absolute;left:6px;top:47px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеИнформационнойБазы',
+			text: 'Укажите ЛЮБОЕ удобное для вас наименование информационной базы-приемника:',
+			style: 'position:absolute;left:6px;top:94px;width:435px;height:18px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -114,9 +186,15 @@
 			items:
 			[
 				{
-					title:'НастройкиОбменаПоОрганизации',
+					title:'Настройки обмена по организации',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеКОбменуПоОрганизациям',
+			text: 'Укажите параметры, информация по которым должна передаваться в информационную базу-приемник:',
+			style: 'position:absolute;left:0px;top:37px;width:546px;height:19px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:61px;width:546px;height:192px;',
@@ -124,7 +202,7 @@
 			items:
 			[
 				{
-					title:'СоответствияМагазиновИСкладов',
+					title:'Соответствия магазинов и складов',
 					items:
 					[
 		{
@@ -134,22 +212,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'КодМагазина',
+					text:'Код магазина',
+					width:'100',
 				},
 				{
-					text:'СкладМагазина',
+					text:'Склад магазина',
+					width:'100',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
-					text:'КассаМагазина',
+					text:'Касса магазина',
+					width:'100',
 				},
 				{
-					text:'КассаККММагазина',
+					text:'Касса ККМ магазина',
+					width:'100',
 				},
 			]
 		},
@@ -163,7 +247,7 @@
 					]
 				},
 				{
-					title:'ТипыЦен',
+					title:'Типы цен, передаваемые в РТ',
 					items:
 					[
 		{
@@ -173,10 +257,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ТипЦеныНоменклатуры',
+					text:'Тип цены номенклатуры',
+					width:'140',
 				},
 			]
 		},
@@ -190,7 +276,7 @@
 					]
 				},
 				{
-					title:'ВыгрузкаСебестоимости',
+					title:'Выгрузка себестоимости',
 					items:
 					[
 		{
@@ -200,10 +286,28 @@
 			style: 'position:absolute;left:232px;top:30px;width:81px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНачалаВыгрузкиСебестоимости',
+			text: 'Дата начала выгрузки себестоимости:',
+			style: 'position:absolute;left:6px;top:30px;width:222px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодичностьПередачиСебестоимости',
 			style: 'position:absolute;left:232px;top:54px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодичностьПередачиСебестоимости',
+			text: 'Периодичность передачи себестоимости:',
+			style: 'position:absolute;left:6px;top:54px;width:222px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособВыгрузкиСебестоимости',
+			text: 'Способ выгрузки себестоимости:',
+			style: 'position:absolute;left:6px;top:6px;width:222px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -218,16 +322,78 @@
 					]
 				},
 				{
-					title:'ПустаяСтраница',
+					title:'Пустая страница',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия1',
+			text: 'Подключение к информационной базе-приемнику',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия5',
+			text: 'Выбор файла настроек обмена',
+			style: 'position:absolute;left:6px;top:6px;width:544px;height:39px;',
 		},
 					]
 				},
 				{
-					title:'ФильтрацияСправочников',
+					title:'Фильтрация справочников',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайлаССохраненнымиНастройкамиДляНастройкиОбмена',
+			text: 'Имя файла с сохраненными настройками обмена для информационной базы - приемника (Этот файл нужно использовать для продолжения настройки обмена в информационной базе - приемнике):',
+			style: 'position:absolute;left:6px;top:98px;width:546px;height:50px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия4',
+			text: 'Сопоставление справочников и документов в информационных базах',
+			style: 'position:absolute;left:6px;top:6px;width:543px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки2',
+			text: 'Настройка обмена данными успешно завершена',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура',
+			style: 'position:absolute;left:19px;top:73px;width:99px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:19px;top:93px;width:99px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Склады',
+			style: 'position:absolute;left:19px;top:113px;width:99px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Кассы',
+			style: 'position:absolute;left:19px;top:133px;width:99px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия6',
+			text: 'Фильтрация справочников при обмене',
+			style: 'position:absolute;left:6px;top:6px;width:543px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипИнформационнойБазыДляОбмена1',
+			text: 'Укажите, какие справочники необходимо фильтровать при обмене',
+			style: 'position:absolute;left:6px;top:49px;width:364px;height:19px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:178px;width:543px;height:215px;',
@@ -239,6 +405,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьПояснениеКОбменуПоОрганизациям1',
+			text: 'Документы по выбранным организациям будут передаваться в базу-приемник.',
+			style: 'position:absolute;left:6px;top:10px;width:529px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:159px;',
 			height: 159,width: 529,
@@ -246,6 +418,7 @@
 			[
 				{
 					text:'Организация',
+					width:'574',
 				},
 			]
 		},
@@ -262,22 +435,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -301,22 +480,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -340,22 +525,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -379,22 +570,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -409,16 +606,33 @@
 				},
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организации',
+			style: 'position:absolute;left:19px;top:152px;width:99px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'ОтветныеПакетыВторойИнформационнойБазы',
+					title:'Ответные пакеты второй информационной базы',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия3',
+			text: 'Взаимодействие информационных баз при обмене',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеКСопоставлению',
+			text: 'При сопоставление в фоновом режиме при каждом обмене данными будет передаваться дополнительная информация о сопоставлении объектов. Рекомендуется для информационных баз с большим объемом данных.',
+			style: 'position:absolute;left:23px;top:118px;width:526px;height:40px;',
+		},
 					]
 				},
 				{
-					title:'РедактированиеСуществующегоОбмена',
+					title:'Редактирование существующего обмена',
 					items:
 					[
 		{
@@ -427,10 +641,40 @@
 			name: 'ИмяФайлаНастроекОбменаПервойИнформационнойБазы',
 			style: 'position:absolute;left:32px;top:101px;width:452px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись121',
+			text: 'Как определить параметры подключения к инф. базе - приемнику',
+			style: 'position:absolute;left:194px;top:130px;width:339px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыборДействия2',
+			text: 'Параметры обмена и возможные ограничения',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеОбменВДвухнаправления',
+			text: 'Изменения, которые произошли в вашей информационной базе, будут отправлены в информационную базу-приемник, а изменения, которые произошли в приемнике, будут направлены в вашу информационную базу',
+			style: 'position:absolute;left:255px;top:68px;width:297px;height:80px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеКСопоставлению1',
+			text: 'Данная операция может потребовать значительного времени. Рекомендуется для информационных баз с маленьким объемом данных',
+			style: 'position:absolute;left:23px;top:63px;width:526px;height:36px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипНастройки2',
+			text: 'Первый этап настройки успешно завершен',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+		},
 					]
 				},
 				{
-					title:'ОсновныеПараметрыНастройкиОбменаДанными',
+					title:'Основные параметры настройки обмена данными',
 					items:
 					[
 		{
@@ -444,10 +688,82 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьКаталогОбменаИнформацией',
+			text: 'Каталог:',
+			style: 'position:absolute;left:5px;top:0px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КаталогОбменаИнформацией',
 			style: 'position:absolute;left:87px;top:0px;width:452px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьFTPАдресОбмена',
+			text: 'Адрес:',
+			style: 'position:absolute;left:6px;top:0px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПользовательFTPСоединения',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:6px;top:24px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПарольFTPСоединения',
+			text: 'Пароль:',
+			style: 'position:absolute;left:372px;top:24px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМаксимальныйРазмерПакетаЧерезFTP',
+			text: 'Максимальный пакет:',
+			style: 'position:absolute;left:177px;top:48px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПользовательПроксиFTP',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:6px;top:139px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПарольПроксиFTP',
+			text: 'Пароль:',
+			style: 'position:absolute;left:372px;top:141px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСерверПроксиFTP',
+			text: 'Сервер:',
+			style: 'position:absolute;left:6px;top:115px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПротоколПроксиFTP',
+			text: 'Протокол:',
+			style: 'position:absolute;left:7px;top:92px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипИнформационнойБазыДляПодключения',
+			text: 'Тип информационной базы:',
+			style: 'position:absolute;left:6px;top:24px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПользовательДляПодключения',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:6px;top:98px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПароль',
+			text: 'Пароль:',
+			style: 'position:absolute;left:339px;top:98px;width:48px;height:19px;',
 		},
 					]
 				},
@@ -516,6 +832,11 @@
 			style: 'position:absolute;left:87px;top:92px;width:111px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Пассивное FTP соединение',
+			style: 'position:absolute;left:6px;top:48px;width:165px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МаксимальныйРазмерОтправляемогоПолучаемогоПакетаЧерезFTP1',
@@ -524,7 +845,7 @@
 					]
 				},
 				{
-					title:'ОбменЧерезCOM',
+					title:'Обмен через COM',
 					items:
 					[
 		{
@@ -534,19 +855,32 @@
 			items:
 			[
 				{
-					title:'ПодключениеФайловаяИБ',
+					title:'Подключение файловая ИБ',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКаталогИБ',
+			text: 'Каталог базы:
+',
+			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КаталогИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:148px;top:0px;width:385px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСерверПредприятия',
+			text: 'Сервер 1С:Предприятия:',
+			style: 'position:absolute;left:0px;top:0px;width:142px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПодключениеСервернаяИБ',
+					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -554,6 +888,12 @@
 			hideLabel: true,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:148px;top:0px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяИнформационнойБазы',
+			text: 'Инф. база:',
+			style: 'position:absolute;left:331px;top:0px;width:64px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -564,6 +904,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Аутентификация Windows',
+			style: 'position:absolute;left:6px;top:74px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -583,12 +928,36 @@
 			text: 'Проверить...',
 			style: 'position:absolute;left:403px;top:74px;width:136px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайлаПравилДляВыгрузкиДанных2',
+			text: 'Укажите параметры подключения к информационной базе для настройки обмена:',
+			style: 'position:absolute;left:6px;top:0px;width:435px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ОбменЧерезПочту',
+					title:'Обмен через почту',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПорт',
+			text: 'Порт:',
+			style: 'position:absolute;left:372px;top:0px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПортПроксиFTP',
+			text: 'Порт:',
+			style: 'position:absolute;left:372px;top:117px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьУчетнаяЗаписьПриемаОтпревкиСообщений',
+			text: 'Учетная запись:',
+			style: 'position:absolute;left:0px;top:72px;width:98px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -596,14 +965,38 @@
 			style: 'position:absolute;left:100px;top:72px;width:304px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПочтовыйАдресПолучателя',
+			text: 'Адрес получателя:',
+			style: 'position:absolute;left:0px;top:24px;width:98px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПочтовыйАдресПолучателя',
 			style: 'position:absolute;left:100px;top:24px;width:304px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайлаПравилДляВыгрузкиДанных3',
+			text: 'Укажите адрес, на который необходимо отсылать сообщения об обмене:',
+			style: 'position:absolute;left:0px;top:0px;width:404px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайлаПравилДляВыгрузкиДанных4',
+			text: 'Укажите учетную запись, от имени которой необходимо формировать сообщения об обмене:',
+			style: 'position:absolute;left:0px;top:48px;width:479px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеКПроцедуреОбмена',
+			text: 'Надпись пояснение к процедуре обмена',
+			style: 'position:absolute;left:224px;top:141px;width:328px;height:60px;',
 		},
 		{
 			xtype: 'button',
@@ -612,32 +1005,38 @@
 			style: 'position:absolute;left:442px;top:375px;width:110px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПояснениеОбменВОдномНаправлении',
+			text: 'Изменения, которые произошли в вашей информационной базе, будут отправлены в информационную базу-приемник',
+			style: 'position:absolute;left:246px;top:235px;width:306px;height:56px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:50px;width:210px;height:150px;',
 			height: 150,width: 210,
 			items:
 			[
 				{
-					title:'СтраницаКаталог',
+					title:'Страница каталог',
 					items:
 					[
 					]
 				},
 				{
-					title:'СтраницаFTP',
+					title:'Страница FTP',
 				},
 				{
-					title:'СтраницаПодключение',
+					title:'Страница подключение',
 				},
 				{
-					title:'СтраницаПочта',
+					title:'Страница почта',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'НастройкиЗнакомстваИнформационныхБаз',
+					title:'Настройки знакомства информационных баз',
 					items:
 					[
 		{
@@ -646,12 +1045,30 @@
 			text: 'Дополнительно ...',
 			style: 'position:absolute;left:427px;top:372px;width:122px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипИнформационнойБазыДляПодключения1',
+			text: 'Тип инф. базы:',
+			style: 'position:absolute;left:161px;top:86px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВажнопервыйЭтап',
+			text: 'Для функционирования обмена необходимо выполнить настройки в информационной базе-приемнике',
+			style: 'position:absolute;left:32px;top:48px;width:520px;height:36px;',
+		},
 					]
 				},
 				{
-					title:'ИтоговаяСтраницаЗавершенияОбмена',
+					title:'Итоговая страница завершения обмена',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСозданнаяНастройкаCOM1',
+			text: 'Настройка для обмена данными:',
+			style: 'position:absolute;left:6px;top:205px;width:173px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -670,12 +1087,36 @@
 			name: 'ИмяФайлаНастроекОбменаПервойИнформационнойБазы1',
 			style: 'position:absolute;left:36px;top:154px;width:516px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбменовПоРасписанию',
+			text: 'Обмен данными по расписанию:',
+			style: 'position:absolute;left:6px;top:275px;width:188px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДобавлениеНастройкиВСуществующееРасписание',
+			text: 'Добавить настройку в существующее расписание',
+			style: 'position:absolute;left:36px;top:299px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДобавлениеНастройкиВНовоеРасписание',
+			text: 'Создать новое расписание для настройки обмена',
+			style: 'position:absolute;left:36px;top:324px;width:281px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ИтоговаяСтраницаЗавершенияОбменаCOM',
+					title:'Итоговая страница завершения обмена COM',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСозданнаяНастройкаCOM',
+			text: 'Настройка для обмена данными:',
+			style: 'position:absolute;left:6px;top:50px;width:173px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -688,12 +1129,42 @@
 			text: 'Выполнить обмен',
 			style: 'position:absolute;left:430px;top:73px;width:122px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбменовПоРасписанию1',
+			text: 'Обмен данными по расписанию:',
+			style: 'position:absolute;left:6px;top:115px;width:188px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДобавлениеНастройкиВСуществующееРасписание1',
+			text: 'Добавить настройку в существующее расписание',
+			style: 'position:absolute;left:36px;top:139px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДобавлениеНастройкиВНовоеРасписание1',
+			text: 'Создать новое расписание для настройки обмена',
+			style: 'position:absolute;left:36px;top:164px;width:281px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПараметрыОбменаДокументами',
+					title:'Параметры обмена документами',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПараметрыОбменаДокументами',
+			text: 'Параметры обмена данными',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНачалаВыгрузкиДокументов',
+			text: 'Укажите начальную дату для выгрузки документов:',
+			style: 'position:absolute;left:6px;top:50px;width:270px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -707,7 +1178,7 @@
 			items:
 			[
 				{
-					title:'НастройкиВыгрузки',
+					title:'Настройки выгрузки',
 					items:
 					[
 		{
@@ -717,28 +1188,36 @@
 			columns:
 			[
 				{
-					text:'ЭтоНастройкаДляВыгрузки',
+					text:'Выгрузка',
+					width:'54',
 				},
 				{
-					text:'НаименованиеПравилаВыгрузки',
+					text:'Наименование объекта',
+					width:'185',
 				},
 				{
-					text:'НастройкаВыгрузки',
+					text:'Настройка выгрузки',
+					width:'157',
 				},
 				{
-					text:'ВыгружатьДанные',
+					text:'Выгружать',
+					width:'44',
 				},
 				{
-					text:'ВыгружатьПоСсылке',
+					text:'Выгружать по ссылке',
+					width:'74',
 				},
 				{
-					text:'КодПравилаВыгрузки',
+					text:'Код правила выгрузки',
+					width:'92',
 				},
 				{
-					text:'КодПравилаОбмена',
+					text:'Код правила обмена',
+					width:'100',
 				},
 				{
-					text:'НастройкаНеПоддерживается',
+					text:'Настройка не поддерживается',
+					width:'100',
 				},
 			]
 		},
@@ -747,24 +1226,22 @@
 			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие4',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'ИзменитьНастройку',
+					text:'Изменить настройку',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СопоставлениеОбъектов',
+					title:'Сопоставление объектов',
 					items:
 					[
 		{
@@ -773,10 +1250,10 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 			]
 		},
@@ -787,28 +1264,36 @@
 			columns:
 			[
 				{
-					text:'ЭтоНастройкаДляВыгрузки',
+					text:'Выгрузка',
+					width:'60',
 				},
 				{
-					text:'НаименованиеПравилаОбмена',
+					text:'Наименование объекта',
+					width:'130',
 				},
 				{
-					text:'ИмяНастройкиДляПользователя',
+					text:'Настройка сопоставления',
+					width:'140',
 				},
 				{
-					text:'ОписаниеНастройкиДляПользователя',
+					text:'Описание',
+					width:'130',
 				},
 				{
-					text:'ИмяНастройкиДляАлгоритма',
+					text:'Имя настройки для алгоритма',
+					width:'100',
 				},
 				{
-					text:'НастройкаНеПоддерживается',
+					text:'Настройка не поддерживается',
+					width:'100',
 				},
 				{
-					text:'ВариантПоискаНеПоддерживается',
+					text:'Вариант поиска не поддерживается',
+					width:'100',
 				},
 				{
-					text:'КодПравилаОбмена',
+					text:'Код правила обмена',
+					width:'100',
 				},
 			]
 		},
@@ -823,10 +1308,22 @@
 			style: 'position:absolute;left:376px;top:73px;width:64px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПрефиксТекущейИБ',
+			text: 'Префикс для загрузки документов в текущую информационную базу:',
+			style: 'position:absolute;left:6px;top:97px;width:366px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПрефиксДляДокументовВТекущейИБ',
 			style: 'position:absolute;left:376px;top:97px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПрефиксТекущейБазыПриемника',
+			text: 'Префикс для загрузки документов в информационную базу приемник:',
+			style: 'position:absolute;left:6px;top:73px;width:366px;height:19px;',
 		},
 					]
 				},
@@ -839,13 +1336,13 @@
 			items:
 			[
 				{
-					title:'СтраницаНастройки',
+					title:'Страница настройки',
 					items:
 					[
 					]
 				},
 				{
-					title:'СтраницаГотово',
+					title:'Страница готово',
 				},
 			]
 		},

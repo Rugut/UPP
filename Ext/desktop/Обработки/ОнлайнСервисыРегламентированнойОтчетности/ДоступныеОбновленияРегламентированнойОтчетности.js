@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.ДоступныеОбновленияРегламентированнойОтчетности',
 	{
 	extend: 'Ext.window.Window',
-	height: 537,width: 439,
+	style: 'position:absolute;width:439px;height:537px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Информация об обновлениях',
 	
 	items:
@@ -15,9 +17,7 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -40,7 +40,7 @@
 			items:
 			[
 				{
-					title:'СписокВнешнихОтчетов',
+					title:'',
 					items:
 					[
 		{
@@ -51,27 +51,38 @@
 			[
 				{
 					text:'Отчет',
+					width:'171',
 				},
 				{
-					text:'ЭтоГруппа',
+					text:'Это группа',
+					width:'100',
 				},
 				{
-					text:'ВнешнийОтчетВерсия',
+					text:'',
+					width:'100',
 				},
 				{
-					text:'ИсточникОтчета',
+					text:'Источник отчета',
+					width:'100',
 				},
 				{
 					text:'URL',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СписокВнешнихОтчетовПуст',
+					title:'',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Доступные для загрузки дополнения отсутствуют.',
+			style: 'position:absolute;left:0px;top:0px;width:423px;height:333px;',
+		},
 					]
 				},
 			]
@@ -86,6 +97,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьWebСтраницу',
+			text: 'Открыть Web-страницу текущей версии',
+			style: 'position:absolute;left:0px;top:0px;width:423px;height:15px;',
+		},
 					]
 				},
 			]
@@ -110,6 +127,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьДополнительнуюИнформацию',
+			text: 'Показать отличия от текущей версии',
+			style: 'position:absolute;left:0px;top:0px;width:423px;height:17px;',
+		},
 					]
 				},
 			]
@@ -121,15 +144,33 @@
 			items:
 			[
 				{
-					title:'ОбновлениеТребуется',
+					title:'',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОбновлениеДоступно',
+			text: 'Доступно обновление до версии:',
+			style: 'position:absolute;left:0px;top:1px;width:175px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбновлениеДоступно1',
+			text: 'Вы используете последнюю версию конфигурации. Обновление не требуется.',
+			style: 'position:absolute;left:0px;top:1px;width:423px;height:17px;',
+		},
 					]
 				},
 				{
-					title:'ОбновлениеНеТребуется',
+					title:'Обновление не требуется',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПоследняяВерсия',
+			text: '',
+			style: 'position:absolute;left:178px;top:1px;width:245px;height:17px;',
+		},
 					]
 				},
 			]

@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.НоменклатурныеГруппы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 452,
+	style: 'position:absolute;width:452px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Номенклатурные группы',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:59px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -26,21 +34,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтавкаНДС',
+			text: 'Ставка НДС:',
+			style: 'position:absolute;left:8px;top:83px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,10 +59,22 @@
 			style: 'position:absolute;left:94px;top:83px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:338px;top:59px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:380px;top:59px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБазоваяЕдиницаИзмерения',
+			text: 'Базовая единица:',
+			style: 'position:absolute;left:16px;top:131px;width:96px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -67,6 +89,30 @@
 			style: 'position:absolute;left:364px;top:131px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаХраненияОстатков',
+			text: 'Единица хранения остатков:',
+			style: 'position:absolute;left:214px;top:131px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнформационнаяНадписьБазовойЕдиницыИзмерения',
+			text: 'Полное наименование базовой единицы измерения',
+			style: 'position:absolute;left:16px;top:153px;width:178px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнформационнаяНадписьЕдиницыХраненияОстатков',
+			text: 'Информация о единице хранения остатков',
+			style: 'position:absolute;left:214px;top:154px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Родитель:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
@@ -79,7 +125,7 @@
 			items:
 			[
 				{
-					title:'СоставГруппы',
+					title:'Состав группы',
 					items:
 					[
 		{
@@ -89,19 +135,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'Вес',
+					text:'Вес вхождения',
+					width:'120',
 				},
 			]
 		},
@@ -111,55 +162,43 @@
 			items:
 			[
 				{
-					text:'Подменю1',
-				},
-				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Подменю2',
+					text:'',
 				},
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
 				{
-					text:'Действие1',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие2',
+					text:'',
 				},
 				{
 					text:'Действие9',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 				{
 					text:'Действие4',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие7',
@@ -167,9 +206,7 @@
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 					]
@@ -185,13 +222,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Свойство',
+					width:'119',
 				},
 				{
 					text:'Значение',
+					width:'220',
 				},
 			]
 		},
@@ -215,13 +255,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Принадлежность',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Категория',
+					width:'220',
 				},
 			]
 		},

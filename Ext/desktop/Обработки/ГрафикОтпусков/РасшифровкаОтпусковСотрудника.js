@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрафикОтпусков.РасшифровкаОтпусковСотрудника',
 	{
 	extend: 'Ext.window.Window',
-	height: 327,width: 641,
+	style: 'position:absolute;width:641px;height:327px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '<ФИО>, <номер года> год',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Текст',
+					width:'179',
 				},
 				{
 					text:'Описание',
+					width:'150',
 				},
 				{
-					text:'СтрокаОформления',
+					text:'Строка оформления',
+					width:'100',
 				},
 				{
 					text:'Документ',
+					width:'100',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'100',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'100',
 				},
 			]
 		},
@@ -42,45 +51,80 @@
 			items:
 			[
 				{
-					text:'ЗапланироватьОтпуск',
+					text:'Запланировать отпуск',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Остатки отпусков сотрудника',
+				},
+				'-',
+				{
+					text:'Запланировать отпуск',
+				},
+				'-',
+				{
+					text:'Зарегистрировать фактический отпуск',
 				},
 				{
-					text:'Разделитель3',
+					text:'Дополнительные дни отпуска',
 				},
 				{
-					text:'Разделитель1',
+					text:'Остатки отпусков сотрудника',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОстаткиОтпусковСотрудника',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ЗапланироватьОтпуск',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ЗарегистрироватьФактическийОтпуск',
-				},
-				{
-					text:'ПравоНаДополнительныеДниОтпуска',
-				},
-				{
-					text:'ОстаткиОтпусковСотрудника',
-				},
-				{
-					text:'ОткрытьДокумент',
+					text:'Открыть документ',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ФИО',
+			text: 'Иванов Иван Иванович',
+			style: 'position:absolute;left:8px;top:25px;width:350px;height:22px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаПриемаНаРаботу',
+			text: 'Дата приема на работу',
+			style: 'position:absolute;left:8px;top:52px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДатаПриемаНаРаботу',
+			text: '',
+			style: 'position:absolute;left:207px;top:52px;width:151px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Сегодня',
+			text: '',
+			style: 'position:absolute;left:8px;top:264px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНеиспользованныйОтпуск',
+			text: 'Неиспользованный отпуск',
+			style: 'position:absolute;left:8px;top:284px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НеиспользованныйОтпуск',
+			text: '',
+			style: 'position:absolute;left:207px;top:284px;width:151px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныйОтпуск',
+			text: 'Из них дополнительного отпуска',
+			style: 'position:absolute;left:8px;top:304px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДополнительныйОтпуск',
+			text: '',
+			style: 'position:absolute;left:207px;top:304px;width:151px;height:15px;',
 		},
 		{
 			xtype: 'button',

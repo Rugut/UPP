@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СобытияОС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 693,
+	style: 'position:absolute;width:693px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник События основного средства',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидСобытияОС',
+					text:'Вид события ОС',
+					width:'100',
 				},
 			]
 		},

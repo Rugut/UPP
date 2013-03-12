@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.СоставНабора.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 340,width: 600,
+	style: 'position:absolute;width:600px;height:340px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Состав набора',
 	
 	items:
@@ -20,15 +22,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатура',
+			text: 'Набор :',
+			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,10 +43,22 @@
 			style: 'position:absolute;left:77px;top:33px;width:515px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоличество',
+			text: 'Количество:',
+			style: 'position:absolute;left:8px;top:57px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Количество',
 			style: 'position:absolute;left:77px;top:57px;width:89px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмерения',
+			text: 'Единица измерения:',
+			style: 'position:absolute;left:175px;top:57px;width:110px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,58 +73,76 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'220',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'220',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
 					text:'Всего',
+					width:'64',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Себестоимость',
+					text:'Себестоимость ',
+					width:'80',
 				},
 				{
 					text:'Качество',
+					width:'65',
 				},
 				{
 					text:'Склад',
+					width:'100',
 				},
 				{
-					text:'СпособСписанияОстаткаТоваров',
+					text:'Способ списания',
+					width:'100',
 				},
 				{
 					text:'Цена',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Собственные, счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'ПринятыеСчетУчетаБУ',
+					text:'Принятые, счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Собственные, счет учета (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПринятыеСчетУчетаНУ',
+					text:'Принятые счет учета (НУ)',
+					width:'100',
 				},
 			]
 		},
@@ -116,11 +152,9 @@
 			items:
 			[
 				{
-					text:'СерийныеНомера',
+					text:'Серийные номера',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

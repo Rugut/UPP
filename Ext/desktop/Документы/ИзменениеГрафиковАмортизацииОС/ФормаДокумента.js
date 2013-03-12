@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ИзменениеГрафиковАмортизацииОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 442,width: 344,
+	style: 'position:absolute;width:344px;height:442px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение графиков амортизации ОС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,16 +28,34 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:81px;width:242px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:390px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:390px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:367px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,20 +69,13 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
+					text:'По наименованию',
 				},
-				{
-					text:'ЗаполнитьПоНаименованию',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -66,13 +85,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. №',
+					width:'70',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'190',
 				},
 			]
 		},
@@ -82,26 +104,19 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'Разделитель5',
+					text:'',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Действие1',
-				},
+				'-',
 			]
 		},
 		{
@@ -109,28 +124,44 @@
 			style: 'position:absolute;left:0px;top:417px;width:344px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:94px;top:57px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:183px;top:57px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -139,10 +170,28 @@
 			style: 'position:absolute;left:94px;top:104px;width:242px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'График:',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Событие:',
+			style: 'position:absolute;left:8px;top:126px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Событие',
 			style: 'position:absolute;left:94px;top:127px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытиеРегл',
+			text: 'Событие регл:',
+			style: 'position:absolute;left:8px;top:151px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

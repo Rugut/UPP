@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.УченыеЗвания.ФормаПодбораИзКлассификатора',
 	{
 	extend: 'Ext.window.Window',
-	height: 396,width: 696,
+	style: 'position:absolute;width:696px;height:396px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ученые звания',
 	
 	items:

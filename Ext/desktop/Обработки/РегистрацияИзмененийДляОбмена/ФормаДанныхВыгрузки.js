@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаДанныхВыгрузки',
 	{
 	extend: 'Ext.window.Window',
-	height: 466,width: 536,
+	style: 'position:absolute;width:536px;height:466px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма просмотра текста',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 			]
 		},

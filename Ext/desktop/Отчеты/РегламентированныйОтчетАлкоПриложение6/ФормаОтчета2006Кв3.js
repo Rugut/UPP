@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение6.ФормаОтчета2006Кв3',
 	{
 	extend: 'Ext.window.Window',
-	height: 449,width: 800,
+	style: 'position:absolute;width:800px;height:449px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация об объемах поставки этилового спирта, алкогольной и спиртосодержащей продукции',
 	
 	items:
@@ -13,59 +15,39 @@
 			items:
 			[
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ЗаполнитьАвто',
+					text:'Заполнить',
 				},
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'Выгрузка',
+					text:'Настройка...',
 				},
+				'-',
+				'-',
 				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -73,27 +55,18 @@
 			style: 'position:absolute;left:0px;top:424px;width:800px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -153,7 +126,7 @@
 					]
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -211,6 +184,24 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:246px;top:264px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись40',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:473px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись41',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:246px;top:264px;width:146px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтрокиВозвраты',
 			text: 'Добавить',
@@ -222,9 +213,21 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:696px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись42',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:473px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:715px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -243,10 +246,20 @@
 			style: 'position:absolute;left:103px;top:23px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:392px;top:23px;width:252px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:331px;top:23px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'При печати группировать по кодам продукции',
+			style: 'position:absolute;left:0px;top:0px;width:257px;height:19px;',
 		},
 					]
 				},
@@ -262,6 +275,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

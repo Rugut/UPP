@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КассыККМ.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 360,width: 529,
+	style: 'position:absolute;width:529px;height:360px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Кассы ККМ',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'261',
 				},
 				{
-					text:'Владелец',
+					text:'Организация',
+					width:'224',
 				},
 				{
-					text:'ФормироватьНефискальныеЧеки',
+					text:'Формировать нефискальные чеки',
+					width:'70',
 				},
 			]
 		},
@@ -35,9 +42,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 	]

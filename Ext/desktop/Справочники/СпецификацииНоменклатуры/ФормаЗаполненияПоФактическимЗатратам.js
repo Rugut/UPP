@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаЗаполненияПоФактическимЗатратам',
 	{
 	extend: 'Ext.window.Window',
-	height: 337,width: 700,
+	style: 'position:absolute;width:700px;height:337px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Спецификации номенклатуры',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -28,6 +28,18 @@
 			hideLabel: true,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:89px;top:32px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Продукция:',
+			style: 'position:absolute;left:8px;top:32px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Характеристика продукции:',
+			style: 'position:absolute;left:325px;top:28px;width:140px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,18 +55,23 @@
 			[
 				{
 					text:'Материал',
+					width:'119',
 				},
 				{
-					text:'ХарактеристикаМатериала',
+					text:'Характеристика материала',
+					width:'132',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'121',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
 					text:'Количество',
+					width:'73',
 				},
 			]
 		},
@@ -66,10 +83,14 @@
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Спецификация:',
+			style: 'position:absolute;left:8px;top:56px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,16 +99,34 @@
 			style: 'position:absolute;left:89px;top:56px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:325px;top:8px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:465px;top:8px;width:227px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:8px;width:81px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачалаПериода',
 			style: 'position:absolute;left:89px;top:8px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодПо',
+			text: 'по:',
+			style: 'position:absolute;left:179px;top:8px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,6 +139,12 @@
 			hideLabel: true,
 			name: 'Количество',
 			style: 'position:absolute;left:325px;top:56px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмерения',
+			text: 'Единица:',
+			style: 'position:absolute;left:409px;top:56px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

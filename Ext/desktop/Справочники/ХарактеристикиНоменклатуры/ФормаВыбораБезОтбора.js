@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 406,width: 488,
+	style: 'position:absolute;width:488px;height:406px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор характеристики номенклатуры',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Свойство',
+					width:'221',
 				},
 				{
 					text:'Значение',
+					width:'132',
 				},
 			]
 		},
@@ -28,16 +32,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Наименование',
+					text:'Характеристика',
+					width:'246',
 				},
 				{
 					text:'ОКП',
+					width:'86',
 				},
 				{
-					text:'Владелец',
+					text:'Номенклатура',
+					width:'198',
 				},
 			]
 		},
@@ -47,12 +55,16 @@
 			items:
 			[
 				{
-					text:'Действие10',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗначенияСвойствТекущейХарактеристикиНоменклатуры',
+			text: 'Значения свойств текущей характеристики номенклатуры',
+			style: 'position:absolute;left:8px;top:209px;width:472px;height:15px;',
 		},
 	]
 });

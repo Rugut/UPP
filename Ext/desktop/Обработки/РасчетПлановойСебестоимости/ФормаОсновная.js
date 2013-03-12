@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РасчетПлановойСебестоимости.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 643,
+	style: 'position:absolute;width:643px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет плановой себестоимости',
 	
 	items:
@@ -20,20 +22,16 @@
 			items:
 			[
 				{
-					text:'Далее',
+					text:'Далее>',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Назад',
+					text:'<Назад',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -47,6 +45,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата основной спецификации:',
+			style: 'position:absolute;left:6px;top:24px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
@@ -59,22 +63,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -84,6 +94,11 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:50px;width:613px;height:19px;',
 		},
 					]
 				},
@@ -98,28 +113,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'150',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'150',
 				},
 				{
-					text:'СпецификацияНоменклатуры',
+					text:'Спецификация',
+					width:'100',
 				},
 				{
-					text:'ВидНоменклатуры',
+					text:'Вид номенклатуры',
+					width:'110',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'130',
 				},
 			]
 		},
@@ -128,18 +151,16 @@
 			style: 'position:absolute;left:6px;top:6px;width:609px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьТаблицу',
+					text:'Заполнить',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'НастройкаРасчета',
+					title:'Настройка расчета',
 					items:
 					[
 		{
@@ -147,6 +168,21 @@
 			hideLabel: true,
 			name: 'МетодРасчета',
 			style: 'position:absolute;left:178px;top:30px;width:231px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить',
+			style: 'position:absolute;left:6px;top:80px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить',
+			style: 'position:absolute;left:6px;top:105px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить',
+			style: 'position:absolute;left:6px;top:130px;width:172px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,17 +220,69 @@
 			text: '...',
 			style: 'position:absolute;left:390px;top:55px;width:19px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по',
+			style: 'position:absolute;left:273px;top:55px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить "Метод расчета:"',
+			style: 'position:absolute;left:6px;top:30px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить "За период с":',
+			style: 'position:absolute;left:6px;top:55px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:178px;top:80px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:178px;top:105px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:178px;top:130px;width:131px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПроизводственныеРасходы',
+					title:'Производственные расходы',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Метод расчета:',
+			style: 'position:absolute;left:6px;top:25px;width:130px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МетодРасчетаМатериальные',
 			style: 'position:absolute;left:136px;top:25px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:382px;top:25px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:382px;top:47px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:382px;top:69px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -227,16 +315,49 @@
 			style: 'position:absolute;left:236px;top:47px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМатериальныеНаПериодС',
+			text: 'За период с',
+			style: 'position:absolute;left:6px;top:47px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаМатериальные',
 			text: '...',
 			style: 'position:absolute;left:322px;top:47px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМатериальныеПо',
+			text: 'по',
+			style: 'position:absolute;left:216px;top:47px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МетодОпределенияСтоимости',
 			style: 'position:absolute;left:136px;top:69px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМетодОпределенияСтоимости',
+			text: 'Определение стоимости:',
+			style: 'position:absolute;left:6px;top:69px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:382px;top:131px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:382px;top:153px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:382px;top:175px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -257,6 +378,21 @@
 			style: 'position:absolute;left:516px;top:175px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:382px;top:213px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:382px;top:235px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:382px;top:257px;width:131px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентАмортизация',
@@ -273,6 +409,21 @@
 			hideLabel: true,
 			name: 'ОкруглитьДоАмортизация',
 			style: 'position:absolute;left:516px;top:257px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:382px;top:295px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:382px;top:317px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:382px;top:339px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -293,6 +444,12 @@
 			style: 'position:absolute;left:516px;top:339px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Метод расчета:',
+			style: 'position:absolute;left:6px;top:131px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МетодРасчетаОплатаТруда',
@@ -311,10 +468,28 @@
 			style: 'position:absolute;left:236px;top:153px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОплатаТрудаНаПериодС',
+			text: 'За период с',
+			style: 'position:absolute;left:6px;top:153px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаОплатаТруда',
 			text: '...',
 			style: 'position:absolute;left:322px;top:153px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОплатаТрудаПо',
+			text: 'по',
+			style: 'position:absolute;left:216px;top:153px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Метод расчета:',
+			style: 'position:absolute;left:6px;top:213px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -335,10 +510,28 @@
 			style: 'position:absolute;left:236px;top:235px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьАмортизацияНаПериодС',
+			text: 'За период с',
+			style: 'position:absolute;left:6px;top:235px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаАмортизация',
 			text: '...',
 			style: 'position:absolute;left:322px;top:235px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАмортизацияПо',
+			text: 'по',
+			style: 'position:absolute;left:216px;top:235px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Метод расчета:',
+			style: 'position:absolute;left:6px;top:295px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -359,10 +552,22 @@
 			style: 'position:absolute;left:236px;top:317px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПрочиеНаПериодС',
+			text: 'За период с',
+			style: 'position:absolute;left:6px;top:317px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПрочие',
 			text: '...',
 			style: 'position:absolute;left:322px;top:317px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПрочиеПо',
+			text: 'по',
+			style: 'position:absolute;left:216px;top:317px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -370,12 +575,33 @@
 			name: 'ТипЦен',
 			style: 'position:absolute;left:136px;top:91px;width:205px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипЦен',
+			text: 'Тип цен номенклатуры:',
+			style: 'position:absolute;left:6px;top:91px;width:130px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'КосвенныеРасходы',
+					title:'Косвенные расходы',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:383px;top:26px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:383px;top:48px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:383px;top:70px;width:131px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -393,6 +619,21 @@
 			hideLabel: true,
 			name: 'ОкруглитьДоОбщепроизводственные',
 			style: 'position:absolute;left:517px;top:70px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:383px;top:109px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:383px;top:131px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:383px;top:153px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -413,6 +654,21 @@
 			style: 'position:absolute;left:517px;top:153px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на процент:',
+			style: 'position:absolute;left:383px;top:192px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить на сумму:',
+			style: 'position:absolute;left:383px;top:214px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Округлить до:',
+			style: 'position:absolute;left:383px;top:236px;width:131px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентБракВПроизводстве',
@@ -429,6 +685,12 @@
 			hideLabel: true,
 			name: 'ОкруглитьДоБракВПроизводстве',
 			style: 'position:absolute;left:517px;top:236px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Метод расчета:',
+			style: 'position:absolute;left:6px;top:26px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -449,10 +711,28 @@
 			style: 'position:absolute;left:236px;top:48px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОбщепроизводственныеНаПериодС',
+			text: 'За период с',
+			style: 'position:absolute;left:6px;top:48px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаОбщепроизводственные',
 			text: '...',
 			style: 'position:absolute;left:321px;top:48px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбщепроизводственныеПо',
+			text: 'по',
+			style: 'position:absolute;left:216px;top:48px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Метод расчета:',
+			style: 'position:absolute;left:6px;top:111px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -473,10 +753,28 @@
 			style: 'position:absolute;left:236px;top:133px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОбщехозяйственныеНаПериодС',
+			text: 'За период с',
+			style: 'position:absolute;left:6px;top:133px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаОбщехозяйственные',
 			text: '...',
 			style: 'position:absolute;left:321px;top:133px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбщехозяйственныеПо',
+			text: 'по',
+			style: 'position:absolute;left:216px;top:133px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Метод расчета:',
+			style: 'position:absolute;left:6px;top:192px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -497,10 +795,22 @@
 			style: 'position:absolute;left:236px;top:214px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьБракВПроизводствеНаПериодС',
+			text: 'За период с',
+			style: 'position:absolute;left:6px;top:214px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаБракВПроизводстве',
 			text: '...',
 			style: 'position:absolute;left:321px;top:214px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБракВПроизводствеПо',
+			text: 'по',
+			style: 'position:absolute;left:216px;top:214px;width:20px;height:19px;',
 		},
 					]
 				},
@@ -516,30 +826,39 @@
 			[
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
-					text:'НоменклатураСтатьяЗатрат',
+					text:'Номенклатура / статья затрат',
+					width:'205',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика / характер затрат',
+					width:'173',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'57',
 				},
 				{
-					text:'ВидЗатрат',
+					text:'Вид затрат',
+					width:'100',
 				},
 				{
 					text:'Затрата',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'112',
 				},
 				{
 					text:'Валюта',
+					width:'60',
 				},
 			]
 		},
@@ -551,18 +870,12 @@
 				{
 					text:'Рассчитать',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Изменить...',
 				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
 		},
 					]
@@ -571,6 +884,26 @@
 					title:'Установить',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить плановую себестоимость',
+			style: 'position:absolute;left:6px;top:13px;width:335px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить цены номенклатуры',
+			style: 'position:absolute;left:6px;top:38px;width:335px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сформировать отчет',
+			style: 'position:absolute;left:6px;top:63px;width:335px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Закрыть форму расчета плановой себестоимости',
+			style: 'position:absolute;left:6px;top:89px;width:335px;height:19px;',
+		},
 					]
 				},
 			]

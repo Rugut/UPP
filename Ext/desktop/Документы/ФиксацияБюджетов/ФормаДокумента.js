@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ФиксацияБюджетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 229,width: 324,
+	style: 'position:absolute;width:324px;height:229px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Фиксация бюджетов',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:77px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Дата:',
+			style: 'position:absolute;left:181px;top:33px;width:33px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:214px;top:33px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Сценарий',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Дата фиксации:',
+			style: 'position:absolute;left:8px;top:129px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,22 @@
 			style: 'position:absolute;left:96px;top:129px;width:97px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'ЦФО:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЦФО',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Проект:',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,10 +82,22 @@
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:153px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:153px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:177px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,17 +111,12 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 			]
 		},
 		{
@@ -79,26 +124,20 @@
 			style: 'position:absolute;left:0px;top:204px;width:324px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},

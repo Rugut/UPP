@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РегистрСведений_СтатусыОтправки_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 359,width: 689,
+	style: 'position:absolute;width:689px;height:359px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статусы отправки',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Объект',
+					width:'465',
 				},
 				{
 					text:'Статус',
+					width:'155',
 				},
 			]
 		},

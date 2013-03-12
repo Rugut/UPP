@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НоменклатурныеГруппы.ФормаПодбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 444,width: 484,
+	style: 'position:absolute;width:484px;height:444px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Номенклатурные группы',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -30,12 +35,15 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Количество',
+			style: 'position:absolute;left:14px;top:417px;width:82px;height:19px;',
 		},
 	]
 });

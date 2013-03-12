@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 377,width: 462,
+	style: 'position:absolute;width:462px;height:377px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Профили изменения планов по периодам',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:34px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:110px;top:34px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСмещения',
+			text: 'Период смещения:',
+			style: 'position:absolute;left:8px;top:57px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,9 +38,7 @@
 			style: 'position:absolute;left:8px;top:100px;width:446px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
@@ -39,13 +51,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерПериода',
+					text:'Номер периода',
+					width:'120',
 				},
 				{
 					text:'Коэффициент',
+					width:'80',
 				},
 			]
 		},
@@ -61,22 +76,24 @@
 			style: 'position:absolute;left:0px;top:352px;width:462px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:332px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

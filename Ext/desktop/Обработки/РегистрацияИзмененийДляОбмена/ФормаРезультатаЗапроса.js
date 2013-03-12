@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаРезультатаЗапроса',
 	{
 	extend: 'Ext.window.Window',
-	height: 510,width: 576,
+	style: 'position:absolute;width:576px;height:510px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Регистрация изменений для обмена',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:576px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Выполнить',
 				},
@@ -31,11 +31,9 @@
 			style: 'position:absolute;left:0px;top:485px;width:576px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',

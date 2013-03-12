@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение5.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 310,width: 275,
+	style: 'position:absolute;width:275px;height:310px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оборот спирта и алкогольной продукции',
 	
 	items:
@@ -15,19 +17,21 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Отмена',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:121px;top:105px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -42,10 +46,28 @@
 			style: 'position:absolute;left:243px;top:105px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:14px;top:158px;width:248px;height:86px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаВыбораФормы',
 			text: 'Выбрать форму',
 			style: 'position:absolute;left:14px;top:251px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодичность',
+			text: 'Периодичность:',
+			style: 'position:absolute;left:14px;top:81px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:14px;top:105px;width:45px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

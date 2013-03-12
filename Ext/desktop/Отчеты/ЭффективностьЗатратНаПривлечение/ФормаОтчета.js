@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ЭффективностьЗатратНаПривлечение.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 538,width: 750,
+	style: 'position:absolute;width:750px;height:538px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет',
 	
 	items:
@@ -16,20 +18,14 @@
 					text:'Действие',
 				},
 				{
-					text:'СохранитьЗначения___',
+					text:'Сохранить настройки',
 				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -37,64 +33,43 @@
 					text:'Печать',
 				},
 				{
-					text:'ВыполнитьПечать',
+					text:'На принтер',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Быстрые отборы',
 				},
 				{
-					text:'Разделитель',
+					text:'Новый отчет',
 				},
 				{
-					text:'Разделитель4',
+					text:'Загрузить настройки отчета',
 				},
 				{
-					text:'Разделитель1',
+					text:'Открыть в новом окне',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Настройки...',
 				},
 				{
-					text:'Разделитель1',
+					text:'Сохранить настройки отчета',
 				},
 				{
-					text:'Подменю',
+					text:'Настройки...',
 				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'ДействиеНовыйОтчет',
-				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'ОткрытьВНовомОкне',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Настройки',
-				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'Настройки',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Отбор',
 				},
 				{
-					text:'ВосстановитьЗначения___',
+					text:'Восстановить настройки',
 				},
 				{
 					text:'Действие',
@@ -105,9 +80,7 @@
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -127,40 +100,52 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'ЛевоеЗначениеДляПодробногоОтображенияЭлемента',
+					text:'Левое значение',
+					width:'100',
 				},
 				{
-					text:'ВидыСравненияДляПодробногоОтображенияЭлемента',
+					text:'Вид сравнения',
+					width:'75',
 				},
 				{
-					text:'ПравоеЗначениеДляПодробногоОтображенияЭлемента',
+					text:'Правое значение',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеДляПодробногоОтображенияЭлемента',
+					text:'Представление',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеДляКраткогоОтображенияЭлемента',
+					text:'Представление',
+					width:'100',
 				},
 				{
-					text:'ЛевоеЗначениеДляКраткогоОтображенияЭлемента',
+					text:'Левое значение',
+					width:'100',
 				},
 				{
-					text:'ВидыСравненияДляКраткогоОтображенияЭлемента',
+					text:'Вид сравнения',
+					width:'75',
 				},
 				{
-					text:'ПравоеЗначениеДляКраткогоОтображенияЭлемента',
+					text:'Правое значение',
+					width:'100',
 				},
 				{
-					text:'ТипДляПодробногоОтображенияГруппы',
+					text:'Тип группы',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеДляПодробногоОтображенияГруппы',
+					text:'Представление',
+					width:'100',
 				},
 				{
-					text:'ТипДляКраткогоОтображенияГруппы',
+					text:'Тип группы',
+					width:'100',
 				},
 			]
 		},
@@ -192,6 +177,12 @@
 			style: 'position:absolute;left:52px;top:0px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:136px;top:0px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаКонецПериода',
@@ -202,6 +193,18 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:238px;top:0px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьС',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:0px;width:50px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:126px;top:0px;width:50px;height:19px;',
 		},
 					]
 				},
@@ -233,10 +236,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период затрат',
+			style: 'position:absolute;left:11px;top:19px;width:106px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаРасходовС',
 			style: 'position:absolute;left:121px;top:19px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:206px;top:19px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -251,10 +266,22 @@
 			style: 'position:absolute;left:310px;top:19px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Период результата ',
+			style: 'position:absolute;left:13px;top:43px;width:105px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаПриходовС',
 			style: 'position:absolute;left:122px;top:43px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'по:',
+			style: 'position:absolute;left:207px;top:43px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -273,6 +300,12 @@
 			hideLabel: true,
 			name: 'Данные',
 			style: 'position:absolute;left:122px;top:67px;width:185px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьФормировать',
+			text: 'Формировать по:',
+			style: 'position:absolute;left:13px;top:67px;width:105px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

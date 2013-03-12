@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_СерверыДокументооборота_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 734,
+	style: 'position:absolute;width:734px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Серверы документооборота',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'48',
 				},
 				{
 					text:'Наименование',
+					width:'195',
 				},
 				{
-					text:'АдресЭлектроннойПочты',
+					text:'Адрес электронной почты (ФНС)',
+					width:'186',
 				},
 				{
-					text:'АдресЭлектроннойПочтыПФР',
+					text:'Адрес электронной почты (ПФР)',
+					width:'186',
 				},
 				{
-					text:'АдресЭлектроннойПочтыФСГС',
+					text:'Адрес электронной почты (Росстат)',
+					width:'186',
 				},
 				{
-					text:'ДлительностьОжиданияСервера',
+					text:'Таймаут',
+					width:'64',
 				},
 			]
 		},
@@ -41,9 +50,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:734px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие10',
 				},

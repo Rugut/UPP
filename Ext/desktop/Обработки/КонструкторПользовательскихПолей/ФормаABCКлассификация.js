@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаABCКлассификация',
 	{
 	extend: 'Ext.window.Window',
-	height: 211,width: 511,
+	style: 'position:absolute;width:511px;height:211px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка ABC-классификации',
 	
 	items:
@@ -15,13 +17,23 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоле',
+			text: 'Анализируемый объект:',
+			style: 'position:absolute;left:8px;top:60px;width:142px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоказатель',
+			text: 'Анализируемый параметр:',
+			style: 'position:absolute;left:8px;top:34px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,16 +42,58 @@
 			style: 'position:absolute;left:157px;top:109px;width:54px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроцент1',
+			text: 'A-класс',
+			style: 'position:absolute;left:8px;top:109px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Процент2',
 			style: 'position:absolute;left:157px;top:134px;width:54px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроцент2',
+			text: 'B-класс',
+			style: 'position:absolute;left:8px;top:134px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Процент3',
 			style: 'position:absolute;left:157px;top:159px;width:54px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцент3',
+			text: 'C-класс',
+			style: 'position:absolute;left:8px;top:159px;width:142px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСимволПроцент1',
+			text: '%',
+			style: 'position:absolute;left:216px;top:109px;width:14px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСимволПроцент2',
+			text: '%',
+			style: 'position:absolute;left:216px;top:134px;width:14px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСимволПроцент3',
+			text: '%',
+			style: 'position:absolute;left:216px;top:159px;width:14px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:8px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

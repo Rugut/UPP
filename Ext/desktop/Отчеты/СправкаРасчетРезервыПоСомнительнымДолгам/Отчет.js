@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СправкаРасчетРезервыПоСомнительнымДолгам.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 604,
+	style: 'position:absolute;width:604px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Резервы по сомнительным долгам',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:176px;top:33px;width:72px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -24,12 +32,7 @@
 				{
 					text:'Подписи',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
@@ -39,37 +42,33 @@
 				{
 					text:'Подписи',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 				{
 					text:'Настройка',
 				},
 				{
-					text:'Действие2',
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

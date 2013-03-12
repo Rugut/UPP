@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетНДС.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 745,
+	style: 'position:absolute;width:745px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по НДС',
 	
 	items:
@@ -15,81 +17,55 @@
 				{
 					text:'Отправить',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'Проверить',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
+				'-',
 				{
-					text:'Отправка',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
 				{
-					text:'РазделительОтправка',
+					text:'Подготовить к отправке',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Показать отправки',
 				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'РазделительЗаполнить',
-				},
+				'-',
 			]
 		},
 		{
@@ -98,22 +74,13 @@
 			items:
 			[
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
@@ -130,7 +97,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -163,23 +130,59 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:642px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:347px;top:265px;width:148px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел1_1',
+					title:'Раздел 1.1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись26',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:417px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел1_2',
+					title:'Раздел 1.2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись19',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:179px;top:265px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись25',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:190px;top:241px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:192px;top:265px;width:148px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаРаздел1_2',
 			text: '',
 			style: 'position:absolute;left:497px;top:265px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел1_2',
+			text: '999 из 999',
+			style: 'position:absolute;left:519px;top:265px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -196,7 +199,7 @@
 					]
 				},
 				{
-					title:'Раздел2_1',
+					title:'Раздел 2.1',
 					items:
 					[
 		{
@@ -244,7 +247,7 @@
 					]
 				},
 				{
-					title:'Раздел2_2',
+					title:'Раздел 2.2',
 					items:
 					[
 		{
@@ -266,6 +269,12 @@
 			style: 'position:absolute;left:325px;top:265px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел2_2',
+			text: '999 из 999',
+			style: 'position:absolute;left:347px;top:265px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаСледующаяСтраницаРаздел2_2',
 			text: '',
@@ -277,21 +286,45 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:641px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел5',
+			text: '999 из 999',
+			style: 'position:absolute;left:363px;top:241px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницФизЛица',
+			text: '999 из 999',
+			style: 'position:absolute;left:364px;top:265px;width:80px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись17',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:175px;top:265px;width:148px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел4',
+					title:'Раздел 4',
 				},
 				{
-					title:'Раздел5',
+					title:'Раздел 5',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел2_1',
+			text: '999 из 999',
+			style: 'position:absolute;left:347px;top:265px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел5',
@@ -337,7 +370,7 @@
 					]
 				},
 				{
-					title:'Раздел6',
+					title:'Раздел 6',
 					items:
 					[
 		{
@@ -355,6 +388,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:6px;width:153px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -379,6 +418,16 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Ввоз товаров из Республики Беларусь',
+			style: 'position:absolute;left:421px;top:24px;width:233px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -398,6 +447,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:9px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

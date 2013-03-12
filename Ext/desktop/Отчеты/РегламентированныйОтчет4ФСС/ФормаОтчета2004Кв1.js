@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 780,
+	style: 'position:absolute;width:780px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '4-ФСС',
 	
 	items:
@@ -12,14 +14,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Справка',
@@ -30,27 +28,19 @@
 				{
 					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Настройка...',
 				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'РазделительЗаполнить',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -58,26 +48,17 @@
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 			]
 		},
@@ -91,7 +72,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1_1',
+					title:'Раздел I (табл. 1, 2)',
 					items:
 					[
 		{
@@ -123,7 +104,7 @@
 					]
 				},
 				{
-					title:'Раздел1_2',
+					title:'Раздел I (табл. 3)',
 					items:
 					[
 		{
@@ -137,6 +118,12 @@
 			name: 'КнопкаУдалитьДопСтрокиРаздел1_2',
 			text: 'Удалить',
 			style: 'position:absolute;left:230px;top:291px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись27',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -167,9 +154,15 @@
 					]
 				},
 				{
-					title:'Раздел2_1',
+					title:'Раздел II (табл. 4, 5)',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись26',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:453px;top:291px;width:132px;height:19px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:284px;width:640px;height:26px;',
@@ -199,7 +192,7 @@
 					]
 				},
 				{
-					title:'Раздел2_2',
+					title:'Раздел II (табл. 6)',
 					items:
 					[
 		{
@@ -213,6 +206,12 @@
 			name: 'КнопкаУдалитьДопСтрокиРаздел2_2',
 			text: 'Удалить',
 			style: 'position:absolute;left:678px;top:291px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись28',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:454px;top:291px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -243,7 +242,7 @@
 					]
 				},
 				{
-					title:'Раздел2_3',
+					title:'Раздел II (табл. 7)',
 					items:
 					[
 		{
@@ -258,10 +257,16 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:230px;top:291px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел2_4',
+					title:'Раздел II (табл. 8)',
 					items:
 					[
 		{
@@ -276,10 +281,16 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:230px;top:291px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись26',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел3_1',
+					title:'Раздел III (табл. 9, 10)',
 					items:
 					[
 		{
@@ -311,7 +322,7 @@
 					]
 				},
 				{
-					title:'Раздел3_2',
+					title:'Раздел III (табл. 11, 12)',
 					items:
 					[
 		{
@@ -357,6 +368,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:712px;top:5px;width:60px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:48px;',
 			height: 48,width: 764,
@@ -366,6 +383,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Ед. измерения:',
+			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

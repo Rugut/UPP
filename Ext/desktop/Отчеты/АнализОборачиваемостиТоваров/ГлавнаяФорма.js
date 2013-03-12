@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализОборачиваемостиТоваров.ГлавнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 568,
+	style: 'position:absolute;width:568px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ оборачиваемости товаров',
 	
 	items:
@@ -15,48 +17,35 @@
 				{
 					text:'Отбор',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Сохранить значения ...',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Настройка ...',
 				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Справка',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -66,7 +55,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -76,16 +65,31 @@
 			style: 'position:absolute;left:272px;top:0px;width:280px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСклад',
 			style: 'position:absolute;left:272px;top:24px;width:280px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Склад:',
+			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиКомиссионер',
 			style: 'position:absolute;left:272px;top:48px;width:280px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Комиссионер:',
+			style: 'position:absolute;left:0px;top:48px;width:108px;height:19px;',
 		},
 					]
 				},
@@ -104,16 +108,40 @@
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериодичность',
+			text: 'Периодичность:',
+			style: 'position:absolute;left:314px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Периодичность',
 			style: 'position:absolute;left:400px;top:33px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатусТоваров',
+			text: 'Статус товаров:',
+			style: 'position:absolute;left:314px;top:57px;width:83px;height:19px;',
 		},
 	]
 });

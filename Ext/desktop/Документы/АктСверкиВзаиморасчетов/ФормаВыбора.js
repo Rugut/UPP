@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.АктСверкиВзаиморасчетов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 420,width: 780,
+	style: 'position:absolute;width:780px;height:420px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Акты сверки взаиморасчетов',
 	
 	items:
@@ -12,11 +14,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},
@@ -27,28 +27,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта',
+					width:'60',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},

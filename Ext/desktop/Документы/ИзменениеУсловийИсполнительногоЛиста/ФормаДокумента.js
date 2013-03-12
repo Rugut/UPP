@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 472,width: 708,
+	style: 'position:absolute;width:708px;height:472px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение условий удержания по исполнительному листу',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:370px;top:33px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,10 +28,22 @@
 			style: 'position:absolute;left:580px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:8px;top:57px;width:90px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Физлицо',
 			style: 'position:absolute;left:100px;top:57px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,10 +58,22 @@
 			style: 'position:absolute;left:100px;top:150px;width:79px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРазмер',
+			text: 'Размер удержания:',
+			style: 'position:absolute;left:16px;top:267px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Размер',
 			style: 'position:absolute;left:121px;top:267px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:420px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,22 +87,17 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие2',
@@ -82,17 +109,10 @@
 					text:'Действие6',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -102,33 +122,16 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -136,28 +139,21 @@
 					text:'Действие3',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
 					text:'Действие5',
@@ -172,22 +168,30 @@
 			style: 'position:absolute;left:0px;top:447px;width:708px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:562px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоВыплаты',
+			text: 'До выплаты:',
+			style: 'position:absolute;left:16px;top:291px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -196,10 +200,22 @@
 			style: 'position:absolute;left:121px;top:291px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:370px;top:57px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВвода5',
 			style: 'position:absolute;left:454px;top:57px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Удерживать по:',
+			style: 'position:absolute;left:16px;top:150px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -214,7 +230,7 @@
 			items:
 			[
 				{
-					title:'БанковскийПеревод',
+					title:'Банковский перевод',
 					items:
 					[
 		{
@@ -226,7 +242,7 @@
 					]
 				},
 				{
-					title:'ПочтовыйПеревод',
+					title:'Почтовый перевод',
 					items:
 					[
 		{
@@ -241,6 +257,18 @@
 			name: 'Тариф',
 			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьБанковскиеИздержки',
+			text: 'Банковские издержки',
+			style: 'position:absolute;left:0px;top:0px;width:123px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПочтовыйСбор',
+			text: 'Почтовый сбор',
+			style: 'position:absolute;left:0px;top:0px;width:135px;height:19px;',
+		},
 					]
 				},
 			]
@@ -250,6 +278,12 @@
 			hideLabel: true,
 			name: 'ПрожиточныйМинимум',
 			style: 'position:absolute;left:265px;top:243px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИсполнительныйЛист',
+			text: 'Исполнительный лист:',
+			style: 'position:absolute;left:8px;top:80px;width:90px;height:31px;',
 		},
 		{
 			xtype: 'textfield',

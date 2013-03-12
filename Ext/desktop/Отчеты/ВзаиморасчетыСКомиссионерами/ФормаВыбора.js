@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВзаиморасчетыСКомиссионерами.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 239,width: 365,
+	style: 'position:absolute;width:365px;height:239px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группировки отчета',
 	
 	items:
@@ -26,7 +28,8 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеПоля',
+					text:'Представление поля',
+					width:'209',
 				},
 			]
 		},

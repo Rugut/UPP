@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПорядокПрисвоенияСерийныхНомеров.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 316,width: 600,
+	style: 'position:absolute;width:600px;height:316px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Порядок присвоения серийных номеров',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:487px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:527px;top:33px;width:65px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -33,19 +47,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'Номер разряда',
+					width:'86',
 				},
 				{
 					text:'Источник',
+					width:'211',
 				},
 				{
-					text:'Значение',
+					text:'Значение / свойство',
+					width:'114',
 				},
 				{
-					text:'ТипРазряда',
+					text:'Тип разряда',
+					width:'75',
 				},
 				{
-					text:'РазмерРазряда',
+					text:'Размер разряда',
+					width:'91',
 				},
 			]
 		},
@@ -62,21 +81,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПримерСерийногоНомера',
+			text: 'Пример серийного номера:',
+			style: 'position:absolute;left:8px;top:240px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,10 +106,22 @@
 			style: 'position:absolute;left:157px;top:240px;width:267px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:264px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:89px;top:264px;width:503px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоЗнаков',
+			text: 'Кол-во знаков:',
+			style: 'position:absolute;left:424px;top:240px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

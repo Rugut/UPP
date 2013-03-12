@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НомераГТД.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 260,width: 428,
+	style: 'position:absolute;width:428px;height:260px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Номера ГТД',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
-					text:'Код',
+					text:'Номер',
+					width:'180',
 				},
 				{
 					text:'Комментарий',
+					width:'220',
 				},
 			]
 		},

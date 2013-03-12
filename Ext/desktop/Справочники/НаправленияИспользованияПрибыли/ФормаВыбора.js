@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НаправленияИспользованияПрибыли.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 436,
+	style: 'position:absolute;width:436px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Направления использования прибыли',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -29,9 +34,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:436px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

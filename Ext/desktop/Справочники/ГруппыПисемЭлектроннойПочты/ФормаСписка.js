@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГруппыПисемЭлектроннойПочты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 482,
+	style: 'position:absolute;width:482px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Группы писем электронной почты',
 	
 	items:
@@ -21,19 +23,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Порядок',
+					width:'120',
 				},
 				{
-					text:'ИспользоватьПредметыПисем',
+					text:'Использовать предметы писем',
+					width:'120',
 				},
 			]
 		},
@@ -45,6 +52,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -53,6 +61,12 @@
 			hideLabel: true,
 			name: 'УчетнаяЗапись',
 			style: 'position:absolute;left:100px;top:33px;width:374px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Учетная запись:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 	]
 });

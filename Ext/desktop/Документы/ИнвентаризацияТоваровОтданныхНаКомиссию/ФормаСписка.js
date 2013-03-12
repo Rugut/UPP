@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИнвентаризацияТоваровОтданныхНаКомиссию.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 740,
+	style: 'position:absolute;width:740px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инвентаризации товаров отданных на комиссию',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Подразделение',
+					width:'125',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -45,11 +55,9 @@
 			items:
 			[
 				{
-					text:'ДействиеПечать',
+					text:'Печать по умолчанию',
 				},
-				{
-					text:'Разделитель13',
-				},
+				'-',
 			]
 		},
 	]

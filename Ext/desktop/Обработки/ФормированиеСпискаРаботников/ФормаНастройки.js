@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеСпискаРаботников.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 404,width: 429,
+	style: 'position:absolute;width:429px;height:404px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Формирование списка сотрудников',
 	
 	items:
@@ -13,15 +15,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Выполнить',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаАктуальности',
+			text: 'По состоянию на:',
+			style: 'position:absolute;left:8px;top:8px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,22 +42,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -61,19 +73,17 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
-					text:'Действие1',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 			]
 		},
@@ -84,7 +94,7 @@
 			items:
 			[
 				{
-					title:'ПремииРаботниковОрганизаций',
+					title:'Премии сотрудников организаций',
 					items:
 					[
 		{
@@ -94,70 +104,101 @@
 			columns:
 			[
 				{
-					text:'Показатели',
+					text:'Показатели для расчета',
+					width:'205',
 				},
 				{
-					text:'НаименованиеПоказатель1',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель1',
+					text:'Размер 1',
+					width:'80',
 				},
 				{
-					text:'Валюта1',
+					text:'Валюта 1',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель2',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель2',
+					text:'Размер 2',
+					width:'80',
 				},
 				{
-					text:'Валюта2',
+					text:'Валюта 2',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель3',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель3',
+					text:'Размер 3',
+					width:'80',
 				},
 				{
-					text:'Валюта3',
+					text:'Валюта 3',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель4',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель4',
+					text:'Размер 4',
+					width:'80',
 				},
 				{
-					text:'Валюта4',
+					text:'Валюта 4',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель5',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель5',
+					text:'Размер 5',
+					width:'80',
 				},
 				{
-					text:'Валюта5',
+					text:'Валюта 5',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель6',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель6',
+					text:'Размер 6',
+					width:'80',
 				},
 				{
-					text:'Валюта6',
+					text:'Валюта 6',
+					width:'45',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВводитьПоказатели',
+			text: 'Введенные ниже показатели будут установлены всем сотрудникам',
+			style: 'position:absolute;left:29px;top:22px;width:384px;height:21px;',
 		},
 					]
 				},
 				{
-					title:'РазовыеРасчеты',
+					title:'Разовые расчеты',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВидРасчета',
+			text: 'Вид расчета:',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -165,10 +206,22 @@
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:200px;top:49px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатыНачала',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -189,70 +242,101 @@
 			columns:
 			[
 				{
-					text:'Показатели',
+					text:'Показатели для расчета',
+					width:'205',
 				},
 				{
-					text:'НаименованиеПоказатель1',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель1',
+					text:'Размер 1',
+					width:'80',
 				},
 				{
-					text:'Валюта1',
+					text:'Валюта 1',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель2',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель2',
+					text:'Размер 2',
+					width:'80',
 				},
 				{
-					text:'Валюта2',
+					text:'Валюта 2',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель3',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель3',
+					text:'Размер 3',
+					width:'80',
 				},
 				{
-					text:'Валюта3',
+					text:'Валюта 3',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель4',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель4',
+					text:'Размер 4',
+					width:'80',
 				},
 				{
-					text:'Валюта4',
+					text:'Валюта 4',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель5',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель5',
+					text:'Размер 5',
+					width:'80',
 				},
 				{
-					text:'Валюта5',
+					text:'Валюта 5',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель6',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель6',
+					text:'Размер 6',
+					width:'80',
 				},
 				{
-					text:'Валюта6',
+					text:'Валюта 6',
+					width:'45',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВводитьПоказатели1',
+			text: 'Введенные ниже показатели будут установлены всем сотрудникам',
+			style: 'position:absolute;left:29px;top:70px;width:384px;height:21px;',
 		},
 					]
 				},
 				{
-					title:'РазовыеРасчетыДляЧастиСмены',
+					title:'Разовые расчеты для части смены',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатыНачала4',
+			text: 'Дата:',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -260,10 +344,22 @@
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОплачиватьЧасов2',
+			text: 'Оплатить часов:',
+			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОплачиватьЧасовНачисления',
 			style: 'position:absolute;left:90px;top:73px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидРасчетаВнутрисменныйНевыход1',
+			text: 'Вид расчета:',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -274,9 +370,15 @@
 					]
 				},
 				{
-					title:'РазовыеДополнительныеНачисления',
+					title:'Разовые дополнительные начисления',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВидРасчета1',
+			text: 'Вид расчета:',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -284,10 +386,22 @@
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'по:',
+			style: 'position:absolute;left:179px;top:49px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончания1',
 			style: 'position:absolute;left:199px;top:49px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатыНачала1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -302,6 +416,12 @@
 			style: 'position:absolute;left:90px;top:74px;width:85px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКодВычета',
+			text: 'Код вычета:',
+			style: 'position:absolute;left:6px;top:77px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаВыбораПериода1',
 			text: '...',
@@ -314,68 +434,93 @@
 			columns:
 			[
 				{
-					text:'Показатели',
+					text:'Показатели для расчета',
+					width:'205',
 				},
 				{
-					text:'НаименованиеПоказатель1',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель1',
+					text:'Размер 1',
+					width:'80',
 				},
 				{
-					text:'Валюта1',
+					text:'Валюта 1',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель2',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель2',
+					text:'Размер 2',
+					width:'80',
 				},
 				{
-					text:'Валюта2',
+					text:'Валюта 2',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель3',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель3',
+					text:'Размер 3',
+					width:'80',
 				},
 				{
-					text:'Валюта3',
+					text:'Валюта 3',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель4',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель4',
+					text:'Размер 4',
+					width:'80',
 				},
 				{
-					text:'Валюта4',
+					text:'Валюта 4',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель5',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель5',
+					text:'Размер 5',
+					width:'80',
 				},
 				{
-					text:'Валюта5',
+					text:'Валюта 5',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель6',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель6',
+					text:'Размер 6',
+					width:'80',
 				},
 				{
-					text:'Валюта6',
+					text:'Валюта 6',
+					width:'45',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВводитьПоказатели2',
+			text: 'Введенные ниже показатели будут установлены всем сотрудникам',
+			style: 'position:absolute;left:29px;top:97px;width:384px;height:21px;',
 		},
 					]
 				},
 				{
-					title:'ВводПроцентаДеятельностиЕНВД',
+					title:'Ввод процента деятельности ЕНВД',
 					items:
 					[
 		{
@@ -385,17 +530,35 @@
 			style: 'position:absolute;left:139px;top:25px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодпадаетПодЕНВД',
+			text: '% ЕНВД-деятельности:',
+			style: 'position:absolute;left:6px;top:25px;width:128px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетДт',
 			style: 'position:absolute;left:139px;top:49px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетДт',
+			text: 'Счет Дт:',
+			style: 'position:absolute;left:6px;top:49px;width:128px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'НевыходыВОрганизацияхДляЦелойСмены',
+					title:'Невыходы в организациях для целой смены',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатыНачала2',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -403,10 +566,22 @@
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'по:',
+			style: 'position:absolute;left:180px;top:49px;width:15px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончания2',
 			style: 'position:absolute;left:200px;top:49px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидРасчетаЦелосменныйНевыход',
+			text: 'Невыход:',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -423,9 +598,15 @@
 					]
 				},
 				{
-					title:'НевыходыВОрганизацияхДляЧастиСмены',
+					title:'Невыходы в организациях для части смены',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатыНачала3',
+			text: 'Дата:',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -433,10 +614,22 @@
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОплачиватьЧасов1',
+			text: 'Часов:',
+			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОплачиватьЧасовНевыхода',
 			style: 'position:absolute;left:90px;top:73px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидРасчетаВнутрисменныйНевыход',
+			text: 'Невыход:',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -447,7 +640,7 @@
 					]
 				},
 				{
-					title:'ОплатаСверхурочныхЧасов',
+					title:'Оплата сверхурочных часов',
 					items:
 					[
 		{
@@ -455,6 +648,12 @@
 			hideLabel: true,
 			name: 'ДатаВыхода',
 			style: 'position:absolute;left:147px;top:25px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаВыхода',
+			text: 'Дата сверхурочных работ:',
+			style: 'position:absolute;left:6px;top:25px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -468,10 +667,22 @@
 			name: 'ЧасовДвойных',
 			style: 'position:absolute;left:147px;top:73px;width:90px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьЧасовПолуторных',
+			text: 'Часы в 1.5-ом размере:',
+			style: 'position:absolute;left:6px;top:49px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЧасовДвойных',
+			text: 'Часы в 2-ом размере:',
+			style: 'position:absolute;left:6px;top:73px;width:140px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ОплатаПраздничныхИВыходныхДнейОрганизаций',
+					title:'Оплата праздничных и выходных дней организаций',
 					items:
 					[
 		{
@@ -486,12 +697,30 @@
 			name: 'ОтработаноЧасов',
 			style: 'position:absolute;left:166px;top:49px;width:90px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаПраздника',
+			text: 'Праздничный (выходной) день:',
+			style: 'position:absolute;left:6px;top:25px;width:159px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтработаноЧасов',
+			text: 'Отработано часов:',
+			style: 'position:absolute;left:6px;top:49px;width:159px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ВводСпособаОтраженияВРеглУчете',
+					title:'Ввод способа отражения в регламентированном учете',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСпособОтраженияВРЕглУчете',
+			text: 'Бух. учет:',
+			style: 'position:absolute;left:6px;top:51px;width:101px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -499,10 +728,22 @@
 			style: 'position:absolute;left:109px;top:51px;width:304px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаИзменения',
+			text: 'Дата изменения:',
+			style: 'position:absolute;left:6px;top:25px;width:101px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаИзменения',
 			style: 'position:absolute;left:109px;top:25px;width:95px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражениеБлЗаСчетРаботодателя',
+			text: 'Отражение б/л за счет работодателя:',
+			style: 'position:absolute;left:6px;top:77px;width:101px;height:31px;',
 		},
 		{
 			xtype: 'textfield',
@@ -513,7 +754,7 @@
 					]
 				},
 				{
-					title:'ВводРаспределенияОсновногоЗаработка',
+					title:'Ввод распределения основного заработка',
 					items:
 					[
 		{
@@ -523,16 +764,20 @@
 			columns:
 			[
 				{
-					text:'СпособОтраженияВБухучете',
+					text:'Бух. учет',
+					width:'180',
 				},
 				{
-					text:'ДоляСпособаОтражения',
+					text:'% доли распределения',
+					width:'98',
 				},
 				{
-					text:'ПодпадаетПодЕНВД',
+					text:'ЕНВД',
+					width:'43',
 				},
 				{
-					text:'СчетДт',
+					text:'Счет ДТ',
+					width:'45',
 				},
 			]
 		},
@@ -542,19 +787,25 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПереносЗадолженности',
+					title:'Перенос задолженности',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПериодВозникновения',
+			text: 'Месяц возникновения задолженности:',
+			style: 'position:absolute;left:6px;top:25px;width:200px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -564,9 +815,15 @@
 					]
 				},
 				{
-					title:'РазовыеУдержания',
+					title:'Разовые удержания',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВидРасчета2',
+			text: 'Вид расчета:',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -574,10 +831,22 @@
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'по:',
+			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончания3',
 			style: 'position:absolute;left:200px;top:49px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатыНачала5',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -598,68 +867,93 @@
 			columns:
 			[
 				{
-					text:'Показатели',
+					text:'Показатели для расчета',
+					width:'205',
 				},
 				{
-					text:'НаименованиеПоказатель1',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель1',
+					text:'Размер 1',
+					width:'80',
 				},
 				{
-					text:'Валюта1',
+					text:'Валюта 1',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель2',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель2',
+					text:'Размер 2',
+					width:'80',
 				},
 				{
-					text:'Валюта2',
+					text:'Валюта 2',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель3',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель3',
+					text:'Размер 3',
+					width:'80',
 				},
 				{
-					text:'Валюта3',
+					text:'Валюта 3',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель4',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель4',
+					text:'Размер 4',
+					width:'80',
 				},
 				{
-					text:'Валюта4',
+					text:'Валюта 4',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель5',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель5',
+					text:'Размер 5',
+					width:'80',
 				},
 				{
-					text:'Валюта5',
+					text:'Валюта 5',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель6',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель6',
+					text:'Размер 6',
+					width:'80',
 				},
 				{
-					text:'Валюта6',
+					text:'Валюта 6',
+					width:'45',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВводитьПоказатели3',
+			text: 'Введенные ниже показатели будут установлены всем сотрудникам',
+			style: 'position:absolute;left:29px;top:72px;width:384px;height:21px;',
 		},
 					]
 				},
 				{
-					title:'ВводРаспределенияЗаработка',
+					title:'Ввод распределения заработка',
 					items:
 					[
 		{
@@ -669,10 +963,12 @@
 			columns:
 			[
 				{
-					text:'СпособОтраженияВУпручете',
+					text:'Упр. учет',
+					width:'180',
 				},
 				{
-					text:'ДоляСпособаОтражения',
+					text:'% доли распределения',
+					width:'98',
 				},
 			]
 		},
@@ -682,17 +978,17 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'РеестрДСВ3',
+					title:'Реестр ДСВ-3',
 					items:
 					[
 		{
@@ -701,10 +997,16 @@
 			name: 'РазмерВзносов',
 			style: 'position:absolute;left:124px;top:36px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьРазмерВзносов',
+			text: 'Взносы работодателя:',
+			style: 'position:absolute;left:6px;top:36px;width:117px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПостоянныеНачисления',
+					title:'Постоянные начисления',
 					items:
 					[
 		{
@@ -714,111 +1016,160 @@
 			columns:
 			[
 				{
-					text:'Показатели',
+					text:'Показатели для расчета',
+					width:'205',
 				},
 				{
-					text:'НаименованиеПоказатель1',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель1',
+					text:'Размер 1',
+					width:'80',
 				},
 				{
-					text:'Валюта1',
+					text:'Валюта 1',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР1',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд1',
+					text:'Тарифный разряд 1',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель2',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель2',
+					text:'Размер 2',
+					width:'80',
 				},
 				{
-					text:'Валюта2',
+					text:'Валюта 2',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР2',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд2',
+					text:'Тарифный разряд 2',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель3',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель3',
+					text:'Размер 3',
+					width:'80',
 				},
 				{
-					text:'Валюта3',
+					text:'Валюта 3',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР3',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд3',
+					text:'Тарифный разряд 3',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель4',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель4',
+					text:'Размер 4',
+					width:'80',
 				},
 				{
-					text:'Валюта4',
+					text:'Валюта 4',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР4',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд4',
+					text:'Тарифный разряд 4',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель5',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель5',
+					text:'Размер 5',
+					width:'80',
 				},
 				{
-					text:'Валюта5',
+					text:'Валюта 5',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР5',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд5',
+					text:'Тарифный разряд 5',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель6',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель6',
+					text:'Размер 6',
+					width:'80',
 				},
 				{
-					text:'Валюта6',
+					text:'Валюта 6',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР6',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд6',
+					text:'Тарифный разряд 6',
+					width:'125',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВводитьПоказатели4',
+			text: 'Введенные ниже показатели будут установлены всем сотрудникам',
+			style: 'position:absolute;left:30px;top:6px;width:377px;height:21px;',
 		},
 					]
 				},
 				{
-					title:'КадровоеПеремещениеОрганизаций',
+					title:'Кадровое перемещение организаций',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатыНачала6',
+			text: 'Период с:',
+			style: 'position:absolute;left:12px;top:30px;width:90px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала6',
 			style: 'position:absolute;left:102px;top:30px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:192px;top:30px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -839,16 +1190,34 @@
 			style: 'position:absolute;left:102px;top:55px;width:195px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:12px;top:55px;width:90px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Должность',
 			style: 'position:absolute;left:102px;top:80px;width:195px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДолжность',
+			text: 'Должность:',
+			style: 'position:absolute;left:12px;top:80px;width:90px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГрафикРаботы',
 			style: 'position:absolute;left:102px;top:105px;width:195px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГрафикРаботы',
+			text: 'График работы:',
+			style: 'position:absolute;left:12px;top:105px;width:90px;height:19px;',
 		},
 					]
 				},
@@ -869,6 +1238,11 @@
 			hideLabel: true,
 			name: 'ДатаУволенных',
 			style: 'position:absolute;left:165px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Включать уволенных после:',
+			style: 'position:absolute;left:0px;top:0px;width:162px;height:19px;',
 		},
 					]
 				},

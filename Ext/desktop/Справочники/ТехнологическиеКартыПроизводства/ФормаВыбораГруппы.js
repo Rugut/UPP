@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 302,
+	style: 'position:absolute;width:302px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы технологических карт производства',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -23,9 +26,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:302px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

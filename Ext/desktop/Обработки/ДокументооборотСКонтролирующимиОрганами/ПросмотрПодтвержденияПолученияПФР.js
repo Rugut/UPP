@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияПФР',
 	{
 	extend: 'Ext.window.Window',
-	height: 453,width: 473,
+	style: 'position:absolute;width:473px;height:453px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Подтверждение получения',
 	
 	items:
@@ -35,9 +37,11 @@
 			[
 				{
 					text:'Имя',
+					width:'100',
 				},
 				{
 					text:'Идентификатор',
+					width:'100',
 				},
 			]
 		},
@@ -55,6 +59,18 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись42',
+			text: 'Отчет считается представленным?',
+			style: 'position:absolute;left:0px;top:0px;width:206px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтчетПредставлен',
+			text: '',
+			style: 'position:absolute;left:210px;top:0px;width:247px;height:16px;',
+		},
 					]
 				},
 			]
@@ -70,7 +86,7 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ПричинаОтказаВПриеме',
 			style: 'position:absolute;left:0px;top:20px;width:457px;height:52px;',
@@ -89,6 +105,18 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата и время получения документов:',
+			style: 'position:absolute;left:0px;top:0px;width:206px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Регистрационный номер организации:',
+			style: 'position:absolute;left:0px;top:24px;width:206px;height:18px;',
+		},
 					]
 				},
 			]
@@ -110,10 +138,12 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'100',
 				},
 				{
 					text:'Идентификатор',
+					width:'100',
 				},
 			]
 		},

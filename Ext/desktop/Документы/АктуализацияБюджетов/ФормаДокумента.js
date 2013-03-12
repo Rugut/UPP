@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.АктуализацияБюджетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 177,width: 661,
+	style: 'position:absolute;width:661px;height:177px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Актуализация бюджетов',
 	
 	items:
@@ -14,16 +16,34 @@
 			style: 'position:absolute;left:194px;top:33px;width:116px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Сценарий',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:330px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:419px;top:57px;width:234px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:125px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,28 +57,21 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 				{
-					text:'ПереносТранзакций',
+					text:'Перенос транзакций',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -67,28 +80,36 @@
 			style: 'position:absolute;left:0px;top:152px;width:661px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:330px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:419px;top:33px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:517px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,10 +130,38 @@
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись23',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Состояние',
 			style: 'position:absolute;left:90px;top:101px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись38',
+			text: 'Состояние:',
+			style: 'position:absolute;left:8px;top:101px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Актуализировать бюджеты',
+			style: 'position:absolute;left:8px;top:81px;width:160px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Перенести транзакции',
+			style: 'position:absolute;left:188px;top:81px;width:145px;height:15px;',
 		},
 	]
 });

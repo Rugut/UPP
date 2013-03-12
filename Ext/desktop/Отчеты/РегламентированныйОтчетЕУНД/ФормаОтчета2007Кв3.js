@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЕУНД.ФормаОтчета2007Кв3',
 	{
 	extend: 'Ext.window.Window',
-	height: 490,width: 670,
+	style: 'position:absolute;width:670px;height:490px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Единая (упрощенная) налоговая декларация',
 	
 	items:
@@ -16,65 +18,41 @@
 					text:'Очистить',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Показать отправки',
+				},
+				'-',
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
+				},
+				'-',
+				'-',
+				{
+					text:'Обновить',
 				},
 				{
-					text:'Выгрузка',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Проверить выгрузку',
+				},
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
-					text:'РазделительОтправка',
+					text:'Проверить в Интернете',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
@@ -91,26 +69,17 @@
 			style: 'position:absolute;left:0px;top:465px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -124,9 +93,15 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лицо',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -143,6 +118,12 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: '/',
+			style: 'position:absolute;left:293px;top:4px;width:7px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -164,6 +145,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

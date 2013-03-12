@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПеремещениеМатериаловВЭксплуатации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 384,width: 652,
+	style: 'position:absolute;width:652px;height:384px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Перемещение материалов в эксплуатации',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:332px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,43 +50,48 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'Разделитель7',
+					text:'',
 				},
+				'-',
 				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ПоказатьСкрытьСчетаУчета',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:498px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -75,10 +100,28 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:82px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:307px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,11 +134,9 @@
 			style: 'position:absolute;left:0px;top:359px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
@@ -103,22 +144,29 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:336px;top:80px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:82px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:571px;top:33px;width:71px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -137,67 +185,88 @@
 			columns:
 			[
 				{
-					text:'НомерCтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
-					text:'Номенклатура',
+					text:'Материал',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика материала',
+					width:'200',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия материала',
+					width:'200',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Работник',
+					width:'100',
 				},
 				{
-					text:'НазначениеИспользования',
+					text:'Назначение использования',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К.мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'67',
 				},
 				{
 					text:'Количество',
+					width:'67',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ТипСтоимости',
+					text:'Тип стоимости',
+					width:'100',
 				},
 				{
 					text:'Цена',
+					width:'62',
 				},
 				{
 					text:'Сумма',
+					width:'76',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (регл.)',
+					width:'78',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'82',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'82',
 				},
 				{
-					text:'ДокументПередачи',
+					text:'Документ передачи',
+					width:'100',
 				},
 			]
 		},
@@ -207,29 +276,22 @@
 			items:
 			[
 				{
-					text:'ДобавитьПоДокументуПередачи',
+					text:'Добавить по документу передачи...',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
 				{
-					text:'ЗаполнитьПоДокументуПередачи',
+					text:'Заполнить по документу передачи...',
 				},
 				{
-					text:'ЗаполнитьПоСрокуЭксплуатации',
+					text:'Заполнить с отбором по сроку эксплуатации...',
 				},
 				{
-					text:'ЗаполнитьПоОстаткам',
+					text:'Заполнить по остаткам',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 			]
 		},
 					]
@@ -245,37 +307,48 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'Номенклатура',
+					text:'Материал',
+					width:'147',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика материала',
+					width:'106',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия материала',
+					width:'111',
 				},
 				{
 					text:'Количество',
+					width:'53',
 				},
 				{
-					text:'ПодразделениеПолучатель',
+					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ПодразделениеОрганизацииПолучатель',
+					text:'Подразделение организации',
+					width:'100',
 				},
 				{
-					text:'ФизЛицоПолучатель',
+					text:'Работник',
+					width:'112',
 				},
 				{
-					text:'НазначениеИспользованияПолучатель',
+					text:'Назначение использования',
+					width:'116',
 				},
 				{
-					text:'СчетУчетаПолучательБУ',
+					text:'Счет учета (БУ)',
+					width:'82',
 				},
 				{
-					text:'СчетУчетаПолучательНУ',
+					text:'Счет учета (НУ)',
+					width:'82',
 				},
 			]
 		},
@@ -285,16 +358,13 @@
 			items:
 			[
 				{
-					text:'Заполнить',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие4',
-				},
-				{
-					text:'ЗаполнитьПоОсновнымДанным',
+					text:'Заполнить основным по данным',
 				},
 			]
 		},

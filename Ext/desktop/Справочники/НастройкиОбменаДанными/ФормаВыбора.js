@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиОбменаДанными.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 411,width: 664,
+	style: 'position:absolute;width:664px;height:411px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Настройки обмена данными',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'277',
 				},
 				{
-					text:'ТипНастройки',
+					text:'Тип настройки',
+					width:'120',
 				},
 				{
-					text:'УзелИнформационнойБазы',
+					text:'Узел информационной базы',
+					width:'140',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

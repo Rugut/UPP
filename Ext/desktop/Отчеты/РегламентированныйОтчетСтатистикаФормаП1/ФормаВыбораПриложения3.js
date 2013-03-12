@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП1.ФормаВыбораПриложения3',
 	{
 	extend: 'Ext.window.Window',
-	height: 164,width: 657,
+	style: 'position:absolute;width:657px;height:164px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выберите сохраненную форму ""П-1 Приложение 3"" для выгрузки',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Открыть',
 				},
@@ -30,25 +30,32 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеФормы',
+					text:'Представление',
+					width:'320',
 				},
 				{
 					text:'Периодичность',
+					width:'85',
 				},
 				{
 					text:'Комментарий',
+					width:'265',
 				},
 				{
 					text:'Период',
+					width:'120',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'90',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'90',
 				},
 				{
-					text:'ТекДок',
+					text:'Текущий документ',
+					width:'142',
 				},
 			]
 		},

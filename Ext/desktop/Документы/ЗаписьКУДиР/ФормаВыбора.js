@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗаписьКУДиР.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 516,
+	style: 'position:absolute;width:516px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Запись книги учета доходов и расходов УСН (ручной учет)',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -35,26 +42,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:516px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Выбрать',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 			]
 		},

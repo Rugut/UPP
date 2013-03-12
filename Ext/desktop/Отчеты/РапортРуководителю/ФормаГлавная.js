@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РапортРуководителю.ФормаГлавная',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 656,
+	style: 'position:absolute;width:656px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Рапорт руководителю',
 	
 	items:
@@ -27,36 +29,23 @@
 				{
 					text:'Настройка',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действия',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Настройка',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

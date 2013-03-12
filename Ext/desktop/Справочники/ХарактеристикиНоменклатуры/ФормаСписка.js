@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ХарактеристикиНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 260,width: 416,
+	style: 'position:absolute;width:416px;height:260px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Характеристики номенклатуры',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Владелец',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'320',
 				},
 				{
 					text:'ОКП',
+					width:'128',
 				},
 			]
 		},

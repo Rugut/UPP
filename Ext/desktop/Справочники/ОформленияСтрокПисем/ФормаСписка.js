@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОформленияСтрокПисем.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 366,
+	style: 'position:absolute;width:366px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оформления строк писем',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'200',
 				},
 			]
 		},

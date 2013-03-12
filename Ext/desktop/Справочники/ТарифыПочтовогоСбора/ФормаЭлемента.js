@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ТарифыПочтовогоСбора.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 305,width: 400,
+	style: 'position:absolute;width:400px;height:305px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Тариф почтового сбора',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -21,15 +29,9 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -43,25 +45,16 @@
 					text:'Действие2',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие',
 				},
 				{
 					text:'Действие3',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'РедактироватьКодНомер1',
+					text:'Редактировать код номер1',
 				},
 				{
 					text:'Действие1',
@@ -80,19 +73,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -103,19 +92,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'60',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'по',
+					width:'60',
 				},
 				{
 					text:'Процент',
+					width:'120',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 			]
 		},
@@ -127,18 +121,14 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -154,10 +144,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:284px;top:33px;width:23px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:309px;top:33px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокРасчетаПоТарифу',
+			text: 'Порядок расчета по тарифу',
+			style: 'position:absolute;left:8px;top:61px;width:384px;height:16px;',
 		},
 	]
 });

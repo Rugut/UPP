@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Проекты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 540,
+	style: 'position:absolute;width:540px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Проекты',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'35',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'163',
 				},
 			]
 		},
@@ -41,7 +47,7 @@
 			items:
 			[
 				{
-					text:'Действие12',
+					text:'Выбрать',
 				},
 			]
 		},

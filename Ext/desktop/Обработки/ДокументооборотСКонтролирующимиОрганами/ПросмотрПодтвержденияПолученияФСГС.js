@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияФСГС',
 	{
 	extend: 'Ext.window.Window',
-	height: 291,width: 473,
+	style: 'position:absolute;width:473px;height:291px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Извещение о получении',
 	
 	items:
@@ -34,13 +36,16 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'100',
 				},
 				{
 					text:'Идентификатор',
+					width:'100',
 				},
 				{
-					text:'ТранспортноеСообщение',
+					text:'Транспортное сообщение',
+					width:'141',
 				},
 			]
 		},
@@ -65,13 +70,16 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'100',
 				},
 				{
 					text:'Идентификатор',
+					width:'100',
 				},
 				{
-					text:'ТранспортноеСообщение',
+					text:'Транспортное сообщение',
+					width:'141',
 				},
 			]
 		},

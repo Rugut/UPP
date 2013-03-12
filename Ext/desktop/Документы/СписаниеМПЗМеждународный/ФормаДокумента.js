@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.СписаниеМПЗМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 187,width: 351,
+	style: 'position:absolute;width:351px;height:187px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Списание МПЗ (международный)',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:89px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:99px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:181px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,26 +39,19 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 			]
 		},
 		{
@@ -53,27 +60,27 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:110px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,10 +89,22 @@
 			style: 'position:absolute;left:99px;top:110px;width:244px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:135px;width:89px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:99px;top:135px;width:244px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:85px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,10 +113,22 @@
 			style: 'position:absolute;left:99px;top:85px;width:244px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:59px;width:89px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодНачало',
 			style: 'position:absolute;left:99px;top:59px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:202px;top:59px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

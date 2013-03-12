@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПодтверждениеНулевойСтавкиНДС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 516,
+	style: 'position:absolute;width:516px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Подтверждения нулевой ставки НДС',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -35,33 +42,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:516px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Выбрать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
 				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Подменю2',
-				},
+				'-',
 			]
 		},
 	]

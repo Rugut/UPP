@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 608,
+	style: 'position:absolute;width:608px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Дополнительная информация',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'ВидДанных',
+					text:'Вид данных',
+					width:'120',
 				},
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'220',
 				},
 				{
-					text:'Наименование',
+					text:'Описание',
+					width:'220',
 				},
 			]
 		},
@@ -35,9 +41,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

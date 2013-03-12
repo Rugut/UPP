@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПечатьСерийныхНомеров.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 462,width: 780,
+	style: 'position:absolute;width:780px;height:462px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Печать серийных номеров',
 	
 	items:
@@ -12,33 +14,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Восстановить значения...',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печатать',
 				},
@@ -46,7 +33,7 @@
 					text:'Печатать',
 				},
 				{
-					text:'Действие',
+					text:'Сохранить значения...',
 				},
 			]
 		},
@@ -58,21 +45,27 @@
 			[
 				{
 					text:'Номенклатура',
+					width:'161',
 				},
 				{
 					text:'Качество',
+					width:'105',
 				},
 				{
 					text:'Характеристика',
+					width:'105',
 				},
 				{
 					text:'Серия',
+					width:'139',
 				},
 				{
-					text:'СерийныйНомер',
+					text:'Серийный номер',
+					width:'145',
 				},
 				{
 					text:'Количество',
+					width:'113',
 				},
 			]
 		},
@@ -83,16 +76,39 @@
 			style: 'position:absolute;left:223px;top:57px;width:143px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Формат:',
+			style: 'position:absolute;left:118px;top:58px;width:101px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ШиринаЭтикетки',
 			style: 'position:absolute;left:450px;top:57px;width:21px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Ширина (мм):',
+			style: 'position:absolute;left:372px;top:57px;width:71px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВысотаЭтикетки',
 			style: 'position:absolute;left:553px;top:57px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Высота (мм):',
+			style: 'position:absolute;left:479px;top:57px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Печатать сразу',
+			style: 'position:absolute;left:8px;top:57px;width:98px;height:18px;',
 		},
 		{
 			xtype: 'button',

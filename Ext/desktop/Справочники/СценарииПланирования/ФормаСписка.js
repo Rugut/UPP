@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СценарииПланирования.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 775,
+	style: 'position:absolute;width:775px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сценарии планирования',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'35',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'180',
 				},
 				{
 					text:'Периодичность',
+					width:'120',
 				},
 				{
-					text:'ОбъектПланирования',
+					text:'Объект планирования',
+					width:'120',
 				},
 				{
-					text:'УчетПоСуммам',
+					text:'Суммы',
+					width:'80',
 				},
 				{
-					text:'УчетПоКоличеству',
+					text:'Количество',
+					width:'80',
 				},
 			]
 		},
@@ -44,6 +53,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

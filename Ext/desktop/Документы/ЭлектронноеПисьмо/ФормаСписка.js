@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЭлектронноеПисьмо.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 334,width: 780,
+	style: 'position:absolute;width:780px;height:334px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Электронные письма',
 	
 	items:
@@ -14,46 +16,60 @@
 			columns:
 			[
 				{
-					text:'НеРассмотрено',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'СостояниеПотомкаПисьма',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ЕстьВложения',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'СтатусПисьма',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Дата',
+					text:'Дата создания',
+					width:'92',
 				},
 				{
-					text:'ДатаОтправления',
+					text:'Дата отправления',
+					width:'128',
 				},
 				{
-					text:'ДатаТранспорта',
+					text:'Дата транспорта',
+					width:'134',
 				},
 				{
-					text:'ОтправительИмя',
+					text:'От кого',
+					width:'142',
 				},
 				{
-					text:'КомуПредставление',
+					text:'Кому',
+					width:'118',
 				},
 				{
 					text:'Тема',
+					width:'129',
 				},
 				{
 					text:'Номер',
+					width:'90',
 				},
 				{
-					text:'УчетнаяЗапись',
+					text:'Учетная запись',
+					width:'157',
 				},
 				{
 					text:'Ответственный',
+					width:'118',
 				},
 				{
 					text:'Основание',
+					width:'100',
 				},
 			]
 		},
@@ -62,14 +78,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю3',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

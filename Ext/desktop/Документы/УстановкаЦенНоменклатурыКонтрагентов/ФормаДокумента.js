@@ -1,12 +1,26 @@
 ﻿Ext.define('Документы.УстановкаЦенНоменклатурыКонтрагентов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 343,width: 514,
+	style: 'position:absolute;width:514px;height:343px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка цен номенклатуры контрагентов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:32px;width:20px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:197px;top:32px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:96px;top:56px;width:410px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:291px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:97px;top:291px;width:409px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:267px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,73 +75,46 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю2',
+					text:'Скопировать',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Провести',
 				},
 				{
-					text:'Действие3',
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель5',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель6',
+					text:'',
 				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель9',
-				},
+				'-',
+				'-',
 				{
 					text:'Настройка',
 				},
 				{
-					text:'Действие5',
+					text:'Отмена проведения',
 				},
 				{
-					text:'Подменю1',
+					text:'Справка',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие6',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -118,23 +123,17 @@
 			style: 'position:absolute;left:0px;top:318px;width:514px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'РазделительЗаписать',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
@@ -148,7 +147,7 @@
 			items:
 			[
 				{
-					title:'ЦеныНоменклатуры',
+					title:'Цены номенклатуры',
 					items:
 					[
 		{
@@ -160,36 +159,33 @@
 					text:'Подбор',
 				},
 				{
-					text:'ЗаполнитьПоЦенамКонтрагента',
+					text:'Заполнить по ценам контрагента',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Поиск по штрихкоду',
+				},
+				'-',
+				{
+					text:'Добавить по поступлению',
 				},
 				{
-					text:'ПоискПоШтрихКоду',
+					text:'Обновить по ценам контрагента',
 				},
 				{
-					text:'Разделитель',
+					text:'Заполнить по поступлению',
 				},
+				'-',
 				{
-					text:'ДобавитьПоПоступлению',
+					text:'Добавить по ценам контрагента',
 				},
-				{
-					text:'ОбновитьПоЦенамКонтрагента',
-				},
-				{
-					text:'ЗаполнитьПоПоступлению',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДобавитьПоЦенамКонтрагента',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Тип цен:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -204,21 +200,31 @@
 			columns:
 			[
 				{
-					text:'ИндексСтрокиТаблицыЦен',
+					text:'№',
+					width:'22',
 				},
 				{
 					text:'Код',
+					width:'62',
 				},
 				{
 					text:'Артикул',
+					width:'130',
 				},
 				{
 					text:'Номенклатура',
+					width:'178',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не регистрировать нулевые цены номенклатуры контрагента',
+			style: 'position:absolute;left:0px;top:25px;width:337px;height:15px;',
 		},
 					]
 				},

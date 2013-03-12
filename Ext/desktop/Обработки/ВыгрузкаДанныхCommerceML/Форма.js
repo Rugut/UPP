@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ВыгрузкаДанныхCommerceML.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 513,width: 611,
+	style: 'position:absolute;width:611px;height:513px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выгрузка данных в формате CommerceML',
 	
 	items:
@@ -15,19 +17,23 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Укажите данные, которые нужно выгрузить:',
+			style: 'position:absolute;left:44px;top:33px;width:274px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:488px;width:611px;height:25px;',
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 				{
-					text:'ВыгрузитьДанные',
+					text:'Выгрузить данные',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -37,7 +43,7 @@
 			items:
 			[
 				{
-					title:'СтраницаДанные',
+					title:'Страница данные',
 					items:
 					[
 		{
@@ -47,7 +53,7 @@
 			items:
 			[
 				{
-					title:'СтраницаВыгрузкиТоваров',
+					title:'Выгрузка информации о товарах',
 					items:
 					[
 		{
@@ -57,22 +63,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -84,6 +96,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Имя выгрузки:',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяКаталога',
@@ -92,9 +110,15 @@
 					]
 				},
 				{
-					title:'СтраницаВыгрузкиПрайса',
+					title:'Выгрузка прайса',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Имя прайс-листа:',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -108,22 +132,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -137,7 +167,7 @@
 					]
 				},
 				{
-					title:'СтраницаВыгрузкиДокументов',
+					title:'Выгрузки документов',
 					items:
 					[
 		{
@@ -146,28 +176,24 @@
 			items:
 			[
 				{
-					text:'СнятьФлажки',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'',
 				},
 			]
 		},
@@ -176,6 +202,18 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиКонтрагент',
 			style: 'position:absolute;left:256px;top:0px;width:201px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:0px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:23px;width:97px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -202,17 +240,19 @@
 			columns:
 			[
 				{
-					text:'Строка',
+					text:'Контрагент/Документ',
+					width:'352',
 				},
 				{
 					text:'Обрабатывать',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВыгрузкаПрайсаCML_1',
+					title:'',
 					items:
 					[
 		{
@@ -222,10 +262,12 @@
 			columns:
 			[
 				{
-					text:'Использовать',
+					text:'',
+					width:'29',
 				},
 				{
 					text:'Свойство',
+					width:'387',
 				},
 			]
 		},
@@ -236,22 +278,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -263,16 +311,50 @@
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Выгружать каталог товаров',
+			style: 'position:absolute;left:0px;top:23px;width:167px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выгружать сведения об организации',
+			style: 'position:absolute;left:171px;top:23px;width:208px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяПрайсаCML_1',
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Имя прайс-листа:',
+			style: 'position:absolute;left:0px;top:0px;width:98px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЕдиницаПоУмолчанию',
 			style: 'position:absolute;left:130px;top:42px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Единица по умолчанию:',
+			style: 'position:absolute;left:0px;top:42px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Действительно с:',
+			style: 'position:absolute;left:0px;top:66px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'по:',
+			style: 'position:absolute;left:227px;top:66px;width:21px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -295,6 +377,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:48px;width:97px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -325,6 +413,18 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьИмяФайла',
+			text: 'Файл выгрузки:',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяКаталога',
+			text: 'Каталог выгрузки:',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяКаталогаВыгрузки',
@@ -337,7 +437,7 @@
 					]
 				},
 				{
-					title:'ПустаяСтраница',
+					title:'Пустая страница',
 				},
 			]
 		},

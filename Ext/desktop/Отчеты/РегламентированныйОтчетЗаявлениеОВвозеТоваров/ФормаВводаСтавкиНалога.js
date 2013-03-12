@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВводаСтавкиНалога',
 	{
 	extend: 'Ext.window.Window',
-	height: 330,width: 304,
+	style: 'position:absolute;width:304px;height:330px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ставки налога',
 	
 	items:
@@ -18,9 +20,7 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{

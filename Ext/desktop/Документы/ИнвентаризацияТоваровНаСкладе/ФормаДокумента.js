@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ИнвентаризацияТоваровНаСкладе.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 472,width: 603,
+	style: 'position:absolute;width:603px;height:472px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инвентаризация товаров на складе',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:420px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,13 +51,11 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель9',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 			]
 		},
@@ -48,64 +66,84 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'202',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'120',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'127',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'74',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'112',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'52',
 				},
 				{
 					text:'Отклонение',
+					width:'65',
 				},
 				{
 					text:'Количество',
+					width:'69',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'57',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'57',
 				},
 				{
-					text:'КоличествоУчет',
+					text:'Учет. количество ',
+					width:'54',
 				},
 				{
 					text:'Цена',
+					width:'93',
 				},
 				{
-					text:'ЦенаВРознице',
+					text:'Цена в рознице',
+					width:'95',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
-					text:'СуммаУчет',
+					text:'Учет. сумма',
+					width:'94',
 				},
 				{
 					text:'Качество',
+					width:'85',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (регл.)',
+					width:'125',
 				},
 			]
 		},
@@ -115,39 +153,38 @@
 			items:
 			[
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 				{
-					text:'ПерезаполнитьУчетныеКоличестваИСуммыУпрУчет',
+					text:'Перезаполнить учетное количество и сумму упр. учета',
 				},
 				{
-					text:'ПерезаполнитьУчетныеКоличестваИСуммыРеглУчет',
+					text:'Перезаполнить сумму регл. учета',
 				},
 				{
-					text:'ИзТерминалаСбораДанных',
+					text:'Заполнить из терминала сбора данных',
 				},
 				{
-					text:'ЗаполнитьПоОстаткамНаСкладе',
+					text:'Заполнить учетные количества',
+				},
+				'-',
+				{
+					text:'Заполнить по остаткам на складе (регл. учет)',
 				},
 				{
-					text:'Разделитель',
+					text:'Поиск по штрихкоду',
 				},
+				'-',
 				{
-					text:'ЗаполнитьПоОстаткамНаСкладеРеглУчет',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьПоОстаткамНаСкладеУпрУчет',
+					text:'Заполнить по остаткам на складе (упр. учет)',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:397px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -156,10 +193,22 @@
 			style: 'position:absolute;left:94px;top:397px;width:502px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:334px;top:57px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -168,10 +217,22 @@
 			style: 'position:absolute;left:376px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Сумма:',
+			style: 'position:absolute;left:360px;top:349px;width:114px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаПоФакту',
 			style: 'position:absolute;left:474px;top:349px;width:122px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсегоПоУчету',
+			text: 'Сумма по учету:',
+			style: 'position:absolute;left:360px;top:373px;width:114px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,24 +245,18 @@
 			style: 'position:absolute;left:0px;top:447px;width:603px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -214,7 +269,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -224,14 +279,29 @@
 			style: 'position:absolute;left:317px;top:0px;width:271px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:0px;top:0px;width:96px;height:18px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатурнаяГруппа',
 			style: 'position:absolute;left:317px;top:24px;width:271px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатурная группа:',
+			style: 'position:absolute;left:0px;top:24px;width:149px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать серии',
+			style: 'position:absolute;left:8px;top:154px;width:109px;height:15px;',
 		},
 	]
 });

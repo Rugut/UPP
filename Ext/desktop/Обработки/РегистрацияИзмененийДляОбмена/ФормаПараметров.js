@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаПараметров',
 	{
 	extend: 'Ext.window.Window',
-	height: 271,width: 396,
+	style: 'position:absolute;width:396px;height:271px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры запроса',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'ПолучитьИзЗапроса',
+					text:'Получить из запроса',
 				},
 				{
 					text:'Действие6',
@@ -39,9 +41,7 @@
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -54,13 +54,16 @@
 			columns:
 			[
 				{
-					text:'ИмяПараметра',
+					text:'Имя параметра',
+					width:'150',
 				},
 				{
-					text:'ЭтоВыражение',
+					text:'В',
+					width:'21',
 				},
 				{
-					text:'ЗначениеПараметра',
+					text:'Значение параметра',
+					width:'192',
 				},
 			]
 		},

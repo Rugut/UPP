@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГруппыДоступностиСкладов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 467,
+	style: 'position:absolute;width:467px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Группы доступности складов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 			]
 		},
@@ -29,11 +34,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:467px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},

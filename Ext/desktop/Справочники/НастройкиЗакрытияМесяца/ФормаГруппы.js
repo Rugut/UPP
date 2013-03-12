@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.НастройкиЗакрытияМесяца.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 110,width: 400,
+	style: 'position:absolute;width:400px;height:110px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Настройки закрытия месяца',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:299px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Родитель:',
+			style: 'position:absolute;left:8px;top:58px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,20 +45,16 @@
 			style: 'position:absolute;left:0px;top:85px;width:400px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

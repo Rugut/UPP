@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ПлатежныйКалендарь.ФормаПлатежныйКалендарь',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 698,
+	style: 'position:absolute;width:698px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,56 +15,41 @@
 			items:
 			[
 				{
-					text:'Выполнить',
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Сформировать',
 				},
 				{
-					text:'Разделитель4',
+					text:'Восстановить значения...',
+				},
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
-					text:'Подменю',
+					text:'Восстановить значения',
 				},
+				'-',
 				{
-					text:'Выполнить',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
@@ -70,21 +57,33 @@
 					text:'Отбор',
 				},
 				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:66px;top:33px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:164px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -105,7 +104,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -115,10 +114,20 @@
 			style: 'position:absolute;left:313px;top:0px;width:369px;height:20px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Вид денежных средств',
+			style: 'position:absolute;left:0px;top:0px;width:145px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиБанковскийСчетКасса',
 			style: 'position:absolute;left:313px;top:24px;width:369px;height:20px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Банковский счет, касса',
+			style: 'position:absolute;left:0px;top:24px;width:146px;height:19px;',
 		},
 					]
 				},
@@ -129,6 +138,12 @@
 			hideLabel: true,
 			name: 'ДетализацияПоПериодам',
 			style: 'position:absolute;left:470px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Детализация по периодам:',
+			style: 'position:absolute;left:322px;top:33px;width:143px;height:19px;',
 		},
 	]
 });

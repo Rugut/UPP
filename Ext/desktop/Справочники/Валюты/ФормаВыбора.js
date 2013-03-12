@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Валюты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 494,
+	style: 'position:absolute;width:494px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Валюты',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Полное наименование',
+					width:'220',
 				},
 				{
-					text:'ПараметрыПрописиНаРусском',
+					text:'Параметры прописи на русском',
+					width:'220',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

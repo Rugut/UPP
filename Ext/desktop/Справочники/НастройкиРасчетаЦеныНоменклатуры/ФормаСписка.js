@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 793,
+	style: 'position:absolute;width:793px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки расчета цены номенклатуры',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Наименование',
+					width:'107',
 				},
 				{
-					text:'ТипЦен',
+					text:'Тип цен',
+					width:'114',
 				},
 				{
-					text:'СоздаватьНовыйДокумент',
+					text:'Новый док.',
+					width:'80',
 				},
 				{
-					text:'ФормироватьДокументыАвтоматически',
+					text:'Автоматич.',
+					width:'75',
 				},
 				{
-					text:'ОтражатьВУправленческомУчете',
+					text:'Упр.',
+					width:'32',
 				},
 				{
-					text:'ОтражатьВРегламентированномУчете',
+					text:'Регл.',
+					width:'33',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -54,6 +64,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'159',
 				},
 			]
 		},

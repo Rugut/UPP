@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ТоварныйКалендарь.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 604,
+	style: 'position:absolute;width:604px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,58 +15,47 @@
 			items:
 			[
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'СохранитьЗначения',
+					text:'Закрыть',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Разделитель5',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие1',
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Подменю',
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Выполнить',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
 			]
 		},
@@ -73,6 +64,12 @@
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:64px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'На дату:',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;',
 		},
 	]
 });

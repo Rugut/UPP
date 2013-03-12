@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.СписокРаботников',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 277,
+	style: 'position:absolute;width:277px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор по сотрудникам',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Работник',
+					text:'Сотрудник',
+					width:'183',
 				},
 			]
 		},
@@ -26,14 +30,12 @@
 			style: 'position:absolute;left:0px;top:267px;width:277px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыВыполнить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Отмена',
 				},
 			]
 		},

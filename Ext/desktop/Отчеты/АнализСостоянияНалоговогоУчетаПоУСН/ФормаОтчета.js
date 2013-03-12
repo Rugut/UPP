@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСостоянияНалоговогоУчетаПоУСН.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 600,width: 1049,
+	style: 'position:absolute;width:1049px;height:600px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ состояния налогового учета по УСН',
 	
 	items:
@@ -17,6 +19,12 @@
 					title:'Основная',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:265px;top:8px;width:70px;height:18px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -34,6 +42,18 @@
 			hideLabel: true,
 			name: 'КонецПериода',
 			style: 'position:absolute;left:155px;top:7px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:4px;top:8px;width:50px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:139px;top:8px;width:15px;height:18px;',
 		},
 		{
 			xtype: 'button',
@@ -75,22 +95,16 @@
 			items:
 			[
 				{
-					text:'Печать',
+					text:'Печать...',
 				},
 				{
-					text:'Действие',
+					text:'Действие1',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ВернутьсяКСхеме',
+					text:'Структура налоговой базы',
 				},
 				{
 					text:'Назад',

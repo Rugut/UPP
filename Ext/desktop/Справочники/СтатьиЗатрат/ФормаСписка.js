@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиЗатрат.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 708,
+	style: 'position:absolute;width:708px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи затрат',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'34',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'173',
 				},
 				{
-					text:'ВидЗатрат',
+					text:'Вид затрат',
+					width:'100',
 				},
 				{
-					text:'СтатусМатериальныхЗатрат',
+					text:'Статус мат. затрат',
+					width:'116',
 				},
 				{
-					text:'ХарактерЗатрат',
+					text:'Характер затрат',
+					width:'126',
 				},
 				{
-					text:'ВидЗатратНалоговогоУчета',
+					text:'Вид расходов (НУ)',
+					width:'140',
 				},
 			]
 		},
@@ -51,6 +60,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},

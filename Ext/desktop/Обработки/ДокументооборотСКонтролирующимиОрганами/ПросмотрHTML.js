@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрHTML',
 	{
 	extend: 'Ext.window.Window',
-	height: 544,width: 684,
+	style: 'position:absolute;width:684px;height:544px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Просмотр HTML',
 	
 	items:

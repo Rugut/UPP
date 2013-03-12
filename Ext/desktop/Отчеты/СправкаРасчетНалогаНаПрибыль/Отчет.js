@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СправкаРасчетНалогаНаПрибыль.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 604,
+	style: 'position:absolute;width:604px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет налога на прибыль',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:284px;top:33px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -21,11 +29,9 @@
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
 					text:'Сформировать',
@@ -36,40 +42,33 @@
 				{
 					text:'Подписи',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Подписи',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:34px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.НастройкиФормированияДокументовВыпускаПродукции.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 110,width: 480,
+	style: 'position:absolute;width:480px;height:110px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки формирования документов',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:92px;top:58px;width:380px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,53 +39,40 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'Справка',
 				},
 				{
-					text:'Действие2',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие1',
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие3',
+					text:'Найти в списке',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -80,20 +81,16 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

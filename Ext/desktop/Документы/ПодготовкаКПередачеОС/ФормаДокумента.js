@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ПодготовкаКПередачеОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 423,width: 723,
+	style: 'position:absolute;width:723px;height:423px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Подготовка к передаче ОС',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:200px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:346px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:346px;width:619px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:371px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,22 @@
 			style: 'position:absolute;left:96px;top:371px;width:619px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:56px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытие',
+			text: 'Событие:',
+			style: 'position:absolute;left:8px;top:80px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,24 +82,27 @@
 			style: 'position:absolute;left:96px;top:80px;width:225px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:432px;top:33px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:506px;top:33px;width:71px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:123px;width:707px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Для списка ОС',
 				},
+				'-',
 				{
-					text:'ЗаполнитьДляСписка',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьПоНаименованию',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'По наименованию',
 				},
 				{
 					text:'Подбор',
@@ -75,52 +116,68 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'216',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. №',
+					width:'63',
 				},
 				{
 					text:'Стоимость',
+					width:'102',
 				},
 				{
-					text:'ОстСтоимость',
+					text:'Ост. стоимость',
+					width:'102',
 				},
 				{
 					text:'Амортизация',
+					width:'91',
 				},
 				{
-					text:'АмортизацияЗаМесяц',
+					text:'Аморт. за месяц',
+					width:'100',
 				},
 				{
-					text:'СтоимостьБУ',
+					text:'Стоимость (БУ)',
+					width:'110',
 				},
 				{
-					text:'ОстСтоимостьБУ',
+					text:'Ост. стоимость (БУ)',
+					width:'116',
 				},
 				{
-					text:'АмортизацияБУ',
+					text:'Амортизация (БУ)',
+					width:'119',
 				},
 				{
-					text:'АмортизацияЗаМесяцБУ',
+					text:'Аморт. за месяц (БУ)',
+					width:'122',
 				},
 				{
-					text:'СтоимостьНУ',
+					text:'Стоимость (НУ)',
+					width:'112',
 				},
 				{
-					text:'ОстСтоимостьНУ',
+					text:'Ост. стоимость (НУ)',
+					width:'102',
 				},
 				{
-					text:'АмортизацияНУ',
+					text:'Амортизация (НУ)',
+					width:'119',
 				},
 				{
-					text:'АмортизацияЗаМесяцНУ',
+					text:'Аморт. за месяц (НУ)',
+					width:'103',
 				},
 				{
-					text:'СуммаКапитальныхВложенийВключаемыхВРасходыНУ',
+					text:'Сумма аморт. премии, вкл. в расходы (НУ)',
+					width:'120',
 				},
 			]
 		},
@@ -130,34 +187,25 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
+				},
+				'-',
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -167,27 +215,38 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражать',
+			text: 'Отражать:',
+			style: 'position:absolute;left:346px;top:33px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:580px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытиеРегл',
+			text: 'Событие (регл.):',
+			style: 'position:absolute;left:344px;top:80px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

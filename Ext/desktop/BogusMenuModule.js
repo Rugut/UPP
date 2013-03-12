@@ -23,7 +23,7 @@ Ext.define('MyDesktop.BogusMenuModule', {
         
             Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
                 enabled: true,  //Загрузчик активен
-                disableCaching: true,   //Не кеширует файоы
+                disableCaching: true,   //Не кеширует файлы
                 paths: {
                     Base: "js/Base", //Путь в пространству данных Base
                     Метаданные: "Метаданные",

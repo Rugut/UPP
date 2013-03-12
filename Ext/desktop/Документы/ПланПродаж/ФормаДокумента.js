@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ПланПродаж.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 380,width: 652,
+	style: 'position:absolute;width:652px;height:380px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'План продаж',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:328px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,32 +27,23 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Цены и валюта...',
 				},
 				{
-					text:'Разделитель10',
+					text:'',
 				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеЦеныВалюта',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -52,20 +51,13 @@
 			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Заполнить план',
 				},
+				'-',
 				{
-					text:'ЗаполнитьПлан',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 			]
 		},
@@ -76,63 +68,88 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Период',
+					width:'80',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'200',
 				},
 				{
 					text:'Количество',
+					width:'68',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'128',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'40',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'80',
 				},
 				{
 					text:'Всего',
+					width:'100',
 				},
 				{
 					text:'Контрагент',
+					width:'200',
 				},
 				{
 					text:'Договор',
+					width:'200',
 				},
 				{
 					text:'Заказ',
+					width:'200',
 				},
 				{
 					text:'Источник',
+					width:'200',
 				},
 				{
-					text:'ВариантРаспределения',
+					text:'Вариант распределения',
+					width:'130',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсего',
+			text: 'Всего,USD:',
+			style: 'position:absolute;left:492px;top:284px;width:72px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -141,10 +158,22 @@
 			style: 'position:absolute;left:564px;top:284px;width:80px;height:17px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВсегоНДС',
+			text: 'НДС ( в т. ч.):',
+			style: 'position:absolute;left:492px;top:306px;width:72px;height:17px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:564px;top:306px;width:80px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьСоставПланаИтоги',
+			text: 'Оптовые цены, Скидка 20%',
+			style: 'position:absolute;left:8px;top:284px;width:472px;height:17px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -152,7 +181,7 @@
 			items:
 			[
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
@@ -160,19 +189,25 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -187,10 +222,22 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаПланирования',
+			text: 'Дата планирования (период-ть: квартал):',
+			style: 'position:absolute;left:336px;top:81px;width:226px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаПланирования',
 			style: 'position:absolute;left:564px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -199,10 +246,22 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСценарий',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:336px;top:33px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -211,10 +270,22 @@
 			style: 'position:absolute;left:424px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроект',
+			text: 'Проект:',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Проект',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодичностьДетализации',
+			text: 'Периодичность детализации:',
+			style: 'position:absolute;left:336px;top:57px;width:155px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

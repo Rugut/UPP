@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РезервированиеПомещений.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 309,width: 378,
+	style: 'position:absolute;width:378px;height:309px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Резервирование помещения',
 	
 	items:
@@ -13,34 +15,22 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель5',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -50,21 +40,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРезервирования',
+			text: 'Начиная с:',
+			style: 'position:absolute;left:8px;top:109px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,10 +65,22 @@
 			style: 'position:absolute;left:96px;top:109px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:163px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:8px;top:182px;width:362px;height:41px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПомещение',
+			text: 'Помещение:',
+			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -95,10 +99,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьДней',
+			text: 'Дней:',
+			style: 'position:absolute;left:0px;top:0px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПродолжительностьДней',
 			style: 'position:absolute;left:88px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЧасов',
+			text: 'Часов и минут:',
+			style: 'position:absolute;left:226px;top:0px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -113,6 +129,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьДатаОкончанияРезервирования',
+			text: 'До:',
+			style: 'position:absolute;left:0px;top:0px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончанияРезервирования',
@@ -123,16 +145,34 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'Дата регистрации:',
+			style: 'position:absolute;left:8px;top:233px;width:98px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:114px;top:233px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Зарегистрировал:',
+			style: 'position:absolute;left:8px;top:257px;width:98px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:114px;top:257px;width:256px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:247px;top:233px;width:39px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

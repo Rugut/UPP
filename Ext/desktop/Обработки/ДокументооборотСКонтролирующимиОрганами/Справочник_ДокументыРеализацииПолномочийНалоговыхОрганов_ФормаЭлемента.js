@@ -1,12 +1,44 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ДокументыРеализацииПолномочийНалоговыхОрганов_ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 404,width: 810,
+	style: 'position:absolute;width:810px;height:404px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документ реализации полномочий налоговых органов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьВидДокумента',
+			text: 'Вид документа:',
+			style: 'position:absolute;left:8px;top:77px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйОрган',
+			text: 'Налоговый орган:',
+			style: 'position:absolute;left:8px;top:153px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:178px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерДокумента',
+			text: 'Номер документа:',
+			style: 'position:absolute;left:8px;top:102px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаДокумента',
+			text: 'Дата документа:',
+			style: 'position:absolute;left:8px;top:127px;width:97px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
@@ -18,15 +50,11 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -35,9 +63,33 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НалоговыйОрган',
+			text: '',
+			style: 'position:absolute;left:111px;top:153px;width:689px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Организация',
+			text: '',
+			style: 'position:absolute;left:111px;top:178px;width:689px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НомерДокумента',
+			text: '',
+			style: 'position:absolute;left:111px;top:102px;width:691px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДатаДокумента',
+			text: '',
+			style: 'position:absolute;left:111px;top:127px;width:691px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -46,13 +98,16 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Имя',
+					width:'533',
 				},
 				{
-					text:'Размер',
+					text:'Размер (в байтах)',
+					width:'108',
 				},
 				{
-					text:'ТипСодержимого',
+					text:'Тип',
+					width:'147',
 				},
 			]
 		},
@@ -62,13 +117,13 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Действие6',
@@ -82,21 +137,12 @@
 				{
 					text:'Открыть',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 		{
@@ -128,7 +174,7 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ВидДокумента',
 			style: 'position:absolute;left:111px;top:77px;width:691px;height:19px;',

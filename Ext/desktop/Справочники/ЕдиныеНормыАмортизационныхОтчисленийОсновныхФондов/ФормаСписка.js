@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 731,
+	style: 'position:absolute;width:731px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'83',
 				},
 				{
 					text:'Наименование',
+					width:'280',
 				},
 				{
-					text:'НормаАмортизационныхОтчислений',
+					text:'Норма ам. отчислений (%)',
+					width:'98',
 				},
 				{
-					text:'ПроцентОтСтоимостиМашины',
+					text:'% от стоимости / 1000 км',
+					width:'100',
 				},
 			]
 		},
@@ -35,11 +42,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:731px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ЗагрузитьКлассификатор',
+					text:'Загрузить классификатор',
 				},
 			]
 		},
@@ -51,6 +56,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},

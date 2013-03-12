@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.НачислениеРасходовМеждународный.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 444,
+	style: 'position:absolute;width:444px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Начисление расходов (международный)',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 			]
 		},
@@ -32,17 +38,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:444px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

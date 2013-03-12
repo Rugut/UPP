@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СерииНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 708,
+	style: 'position:absolute;width:708px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Серии номенклатуры',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'СерийныйНомер',
+					text:'Номер серии',
+					width:'100',
 				},
 				{
-					text:'Сертификат',
+					text:'Номер и дата сертификата',
+					width:'160',
 				},
 				{
-					text:'СрокГодности',
+					text:'Срок годности',
+					width:'80',
 				},
 				{
 					text:'Комментарий',
+					width:'251',
 				},
 			]
 		},
@@ -41,9 +50,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

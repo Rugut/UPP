@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетРасчетПоОплатеЗаВоду.ФормаОтчета2004кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 447,width: 670,
+	style: 'position:absolute;width:670px;height:447px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет по оплате за воду',
 	
 	items:
@@ -16,13 +18,11 @@
 					text:'Очистить',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Справка',
@@ -30,15 +30,9 @@
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -47,27 +41,24 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'ПодменюПечати',
-				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -112,6 +103,11 @@
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:0px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -131,6 +127,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

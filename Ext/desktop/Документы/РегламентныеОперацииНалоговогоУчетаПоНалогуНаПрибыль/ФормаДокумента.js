@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.РегламентныеОперацииНалоговогоУчетаПоНалогуНаПрибыль.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 287,width: 384,
+	style: 'position:absolute;width:384px;height:287px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регламентные операции налогового учета (по налогу на приб.)',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:97px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:182px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,30 +34,46 @@
 			style: 'position:absolute;left:203px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:81px;width:70px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:97px;top:81px;width:279px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Нормирование расходов на рекламу',
+			style: 'position:absolute;left:8px;top:130px;width:368px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Нормирование расходов на добровольное страхование и расходов на возмещение затрат работников по уплате процентов',
+			style: 'position:absolute;left:8px;top:151px;width:368px;height:30px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Нормирование представительских расходов',
+			style: 'position:absolute;left:8px;top:184px;width:368px;height:15px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:384px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю1',
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -53,27 +83,32 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределение расходов по видам деятельности (ЕНВД / не ЕНВД)',
+			style: 'position:absolute;left:8px;top:109px;width:368px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:57px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,10 +117,22 @@
 			style: 'position:absolute;left:97px;top:57px;width:119px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:208px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:97px;top:208px;width:279px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:233px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

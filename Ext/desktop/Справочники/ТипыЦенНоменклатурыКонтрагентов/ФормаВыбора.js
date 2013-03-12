@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТипыЦенНоменклатурыКонтрагентов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 608,
+	style: 'position:absolute;width:608px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Типы цен номенклатуры контрагентов',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'180',
 				},
 				{
-					text:'ВалютаЦены',
+					text:'Валюта',
+					width:'80',
 				},
 				{
-					text:'ЦенаВключаетНДС',
+					text:'Включает НДС',
+					width:'80',
 				},
 				{
 					text:'Комментарий',
+					width:'180',
 				},
 				{
-					text:'ТипЦеныНоменклатуры',
+					text:'Тип цены номенклатуры',
+					width:'175',
 				},
 				{
-					text:'ОписаниеТипаЦеныНоменклатурыКонтрагента',
+					text:'Описание типа цены номенклатуры контрагента',
+					width:'100',
 				},
 			]
 		},
@@ -44,9 +54,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

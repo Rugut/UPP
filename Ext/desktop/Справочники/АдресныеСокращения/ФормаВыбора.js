@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.АдресныеСокращения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 436,
+	style: 'position:absolute;width:436px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Адресные сокращения',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Уровень',
+					width:'80',
 				},
 				{
-					text:'Код',
+					text:'Сокращение',
+					width:'80',
 				},
 				{
-					text:'Наименование',
+					text:'Полностью',
+					width:'220',
 				},
 			]
 		},
@@ -32,9 +38,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:436px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

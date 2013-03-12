@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализПотребностейВНоменклатуре.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 490,
+	style: 'position:absolute;width:490px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка Анализ потребностей в номенклатуре',
 	
 	items:
@@ -15,11 +17,9 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -34,10 +34,21 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Дата анализа потребностей:',
+			style: 'position:absolute;left:6px;top:6px;width:152px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОтчета',
 			style: 'position:absolute;left:160px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:6px;top:30px;width:162px;height:15px;',
 		},
 					]
 				},
@@ -59,10 +70,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Представление',
+					width:'220',
 				},
 			]
 		},
@@ -86,22 +99,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},

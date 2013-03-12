@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.РегламентныеОперацииНалоговогоУчетаПоУСН.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 274,width: 382,
+	style: 'position:absolute;width:382px;height:274px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регламентные операции налогового учета (УСН)',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:96px;top:33px;width:119px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:215px;top:33px;width:19px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:234px;top:33px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:83px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,17 +51,12 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -50,21 +65,28 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределение расходов по видам деятельности (ЕНВД / не ЕНВД)',
+			style: 'position:absolute;left:8px;top:131px;width:366px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,16 +95,43 @@
 			style: 'position:absolute;left:96px;top:58px;width:119px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Признание расходов на приобретение основных с��едств',
+			style: 'position:absolute;left:8px;top:152px;width:366px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:222px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:222px;width:278px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:199px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:199px;width:278px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Признание расходов на приобретение нематериальных активов',
+			style: 'position:absolute;left:8px;top:173px;width:366px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Списание доп. расходов',
+			style: 'position:absolute;left:8px;top:110px;width:366px;height:15px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаВыбораЗначения',
 	{
 	extend: 'Ext.window.Window',
-	height: 60,width: 316,
+	style: 'position:absolute;width:316px;height:60px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выберите значение',
 	
 	items:

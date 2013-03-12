@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.КорректировкаКачестваТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 301,width: 652,
+	style: 'position:absolute;width:652px;height:301px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Корректировка качества товаров',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:249px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,33 +51,34 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель9',
-				},
-				{
-					text:'ПоказатьСкрытьСчетаУчета',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:408px;top:33px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:485px;top:33px;width:71px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -66,58 +87,76 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'220',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'60',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'НомерГТД',
+					text:'Номер ГТД',
+					width:'100',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
-					text:'КачествоНовое',
+					text:'Новое качество',
+					width:'100',
 				},
 			]
 		},
@@ -127,33 +166,32 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
+					text:'Подбор',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Поиск по штрихкоду',
 				},
 				{
-					text:'ПоискПоШтрихКоду',
+					text:'Добавить из поступления',
 				},
 				{
-					text:'ДобавитьИзПоступления',
+					text:'Заполнить по приходному ордеру',
 				},
+				'-',
 				{
-					text:'ЗаполнитьПоПриходномуОрдеру',
+					text:'Заполнить  по поступлению',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьПоПоступлению',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДобавитьИзПриходногоОрдера',
+					text:'Добавить из приходного ордера',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:225px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,10 +200,22 @@
 			style: 'position:absolute;left:96px;top:225px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:225px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:225px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -174,10 +224,22 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:336px;top:57px;width:70px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:408px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -187,11 +249,9 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
@@ -199,13 +259,14 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:561px;top:33px;width:71px;height:19px;',
 		},
 	]
 });

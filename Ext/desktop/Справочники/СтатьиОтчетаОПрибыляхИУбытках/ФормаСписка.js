@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 416,
+	style: 'position:absolute;width:416px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи отчета о прибылях и убытках',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'48',
 				},
 				{
 					text:'Наименование',
+					width:'320',
 				},
 			]
 		},
@@ -30,22 +35,17 @@
 			items:
 			[
 				{
-					text:'Действие13',
+					text:'Справка',
 				},
 				{
-					text:'Действие6',
+					text:'Иерархический просмотр',
 				},
 				{
-					text:'Действие7',
+					text:'Найти в дереве',
 				},
+				'-',
 				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 			]
 		},

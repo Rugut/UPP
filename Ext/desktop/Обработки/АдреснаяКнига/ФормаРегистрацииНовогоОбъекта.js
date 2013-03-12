@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.АдреснаяКнига.ФормаРегистрацииНовогоОбъекта',
 	{
 	extend: 'Ext.window.Window',
-	height: 164,width: 416,
+	style: 'position:absolute;width:416px;height:164px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация нового объекта',
 	
 	items:
@@ -12,22 +14,30 @@
 			style: 'position:absolute;left:0px;top:139px;width:416px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗарегистрироватьИОткрыть',
+					text:'Зарегистрировать и открыть объект',
 				},
 				{
 					text:'Зарегистрировать',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Тип объекта регистрации:',
+			style: 'position:absolute;left:8px;top:8px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование объекта:',
+			style: 'position:absolute;left:8px;top:56px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,10 +46,22 @@
 			style: 'position:absolute;left:150px;top:56px;width:258px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Вид E-mail:',
+			style: 'position:absolute;left:8px;top:88px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидКонтактнойИнформации',
 			style: 'position:absolute;left:150px;top:88px;width:258px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'E-mail:',
+			style: 'position:absolute;left:8px;top:112px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

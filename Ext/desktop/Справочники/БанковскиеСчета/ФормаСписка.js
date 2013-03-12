@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.БанковскиеСчета.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 608,
+	style: 'position:absolute;width:608px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Банковские счета',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Банк',
+					width:'220',
 				},
 				{
-					text:'ВалютаДенежныхСредств',
+					text:'Валюта счета',
+					width:'80',
 				},
 			]
 		},

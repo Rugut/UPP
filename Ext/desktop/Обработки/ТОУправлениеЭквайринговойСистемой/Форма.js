@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ТОУправлениеЭквайринговойСистемой.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 209,width: 274,
+	style: 'position:absolute;width:274px;height:209px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Управление эквайринговой системой',
 	
 	items:
@@ -19,11 +21,9 @@
 			style: 'position:absolute;left:0px;top:184px;width:274px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

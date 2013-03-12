@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПричиныЗакрытияЗаказов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 348,
+	style: 'position:absolute;width:348px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Причины закрытия заказов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.НачислениеЕдиновременныхПособийЗаСчетФСС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 423,width: 651,
+	style: 'position:absolute;width:651px;height:423px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Начисление единовременных пособий за счет ФСС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:371px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -27,60 +35,34 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель8',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель7',
+					text:'Зарплата к выплате',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Редактировать номер',
 				},
 				{
-					text:'Разделитель4',
+					text:'',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СоздатьЗарплатаКВыплате',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -88,19 +70,14 @@
 					text:'Действие4',
 				},
 				{
-					text:'Подменю2',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие6',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
 					text:'Действие2',
@@ -109,55 +86,33 @@
 					text:'Рассчитать',
 				},
 				{
-					text:'Подменю3',
-				},
-				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'СписокРаботников',
+					text:'Списком сотрудников',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 				{
-					text:'Подменю2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -167,19 +122,15 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -190,22 +141,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерСтроки',
+					text:'',
+					width:'28',
 				},
 				{
-					text:'Физлицо',
+					text:'Сотрудник',
+					width:'180',
 				},
 				{
-					text:'ВидПособия',
+					text:'Вид пособия',
+					width:'120',
 				},
 				{
-					text:'ДатаСобытия',
+					text:'Дата события',
+					width:'80',
 				},
 				{
-					text:'Результат',
+					text:'Сумма',
+					width:'60',
 				},
 			]
 		},
@@ -217,15 +174,9 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -253,10 +204,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:57px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:423px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -265,10 +228,22 @@
 			style: 'position:absolute;left:113px;top:33px;width:205px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМесяц',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:9px;top:57px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:113px;top:57px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:336px;top:33px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -277,10 +252,22 @@
 			style: 'position:absolute;left:423px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:505px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:523px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждение',
+			text: '',
+			style: 'position:absolute;left:30px;top:333px;width:401px;height:33px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -292,6 +279,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьИсправление',
+			text: 'Открыть исправления',
+			style: 'position:absolute;left:0px;top:0px;width:71px;height:33px;',
+		},
 					]
 				},
 			]
@@ -306,6 +299,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьИсходный',
+			text: 'Открыть исправленный документ',
+			style: 'position:absolute;left:0px;top:0px;width:129px;height:33px;',
+		},
 					]
 				},
 			]
@@ -315,26 +314,19 @@
 			style: 'position:absolute;left:0px;top:398px;width:246px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Исправить',
+					text:'Расчеты нескольких сотрудников',
+				},
+				'-',
+				{
+					text:'Отменить исправление',
 				},
 				{
-					text:'Разделитель',
+					text:'Расчеты текущего сотрудника',
 				},
 				{
-					text:'СписокСотрудников',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОтменитьИсправление',
-				},
-				{
-					text:'ТекущийСотрудник',
-				},
-				{
-					text:'ВесьДокумент',
+					text:'Весь документ',
 				},
 			]
 		},
@@ -353,23 +345,16 @@
 					text:'Действие1',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Действие5',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},

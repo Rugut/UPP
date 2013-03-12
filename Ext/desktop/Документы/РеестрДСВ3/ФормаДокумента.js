@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РеестрДСВ3.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 498,width: 765,
+	style: 'position:absolute;width:765px;height:498px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Реестр застрахованных лиц (форма ДСВ-3)',
 	
 	items:
@@ -12,36 +14,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:765px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'Разделитель4',
+					text:'Редактировать номер',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -53,36 +43,32 @@
 					text:'Закрыть',
 				},
 				{
-					text:'ПроверитьВCheckXML',
+					text:'Проверить в CheckXML',
 				},
 				{
-					text:'Файл',
+					text:'Показать файл',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'РазделительПечать',
+					text:'Записать документ',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Записать файл на диск',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'НаДискетку',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:446px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -129,10 +115,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:105px;top:0px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:357px;top:25px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -141,10 +139,22 @@
 			style: 'position:absolute;left:446px;top:25px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМесяц',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:0px;top:25px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:105px;top:25px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПлатежногоПоручения',
+			text: 'Номер:',
+			style: 'position:absolute;left:6px;top:97px;width:46px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -153,10 +163,22 @@
 			style: 'position:absolute;left:54px;top:97px;width:271px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаПлатежногоПоручения',
+			text: 'от:',
+			style: 'position:absolute;left:335px;top:97px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаПлатежногоПоручения',
 			style: 'position:absolute;left:357px;top:97px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаИсполненияПлатежногоПоручения',
+			text: 'Дата исполнения:',
+			style: 'position:absolute;left:491px;top:97px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -165,16 +187,34 @@
 			style: 'position:absolute;left:591px;top:97px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:357px;top:0px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:446px;top:0px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:526px;top:0px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:546px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПачки',
+			text: 'Номер пачки:',
+			style: 'position:absolute;left:0px;top:49px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -203,28 +243,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Сотрудник',
+					width:'111',
 				},
 				{
 					text:'Фамилия',
+					width:'80',
 				},
 				{
 					text:'Имя',
+					width:'80',
 				},
 				{
 					text:'Отчество',
+					width:'80',
 				},
 				{
-					text:'СтраховойНомерПФР',
+					text:'Страховой номер',
+					width:'100',
 				},
 				{
-					text:'ВзносовРаботника',
+					text:'Перечислено сотрудником',
+					width:'120',
 				},
 				{
-					text:'ВзносовРаботодателя',
+					text:'Перечислено работодателем',
+					width:'120',
 				},
 			]
 		},
@@ -233,29 +281,20 @@
 			style: 'position:absolute;left:0px;top:16px;width:749px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеЗаполнить',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Сотрудниками, перечисляющими доп.взносы',
 				},
 				{
 					text:'Действие14',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие17',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'УдалитьПустые',
+					text:'Удалить пустые',
 				},
 				{
 					text:'Рассчитать',
@@ -263,15 +302,11 @@
 				{
 					text:'Действие13',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие10',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие16',
 				},
@@ -291,7 +326,7 @@
 					text:'Подбор',
 				},
 				{
-					text:'СписокРаботников',
+					text:'Списком сотрудников',
 				},
 			]
 		},

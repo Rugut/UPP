@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.РегламентированныеОтчеты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 534,width: 470,
+	style: 'position:absolute;width:470px;height:534px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры отчета',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:35px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:35px;width:368px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,24 +38,18 @@
 			style: 'position:absolute;left:0px;top:509px;width:470px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -52,6 +60,12 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:8px;width:368px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Использовать:',
+			style: 'position:absolute;left:8px;top:74px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,10 +84,16 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Описание',
 			style: 'position:absolute;left:0px;top:32px;width:454px;height:268px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: 'Описание:',
+			style: 'position:absolute;left:0px;top:12px;width:84px;height:15px;',
 		},
 					]
 				},
@@ -89,6 +109,18 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Версия внешнего отчета:',
+			style: 'position:absolute;left:85px;top:0px;width:133px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыгрузить',
+			text: 'Выгрузить внешний отчет в файл',
+			style: 'position:absolute;left:84px;top:21px;width:175px;height:15px;',
+		},
 					]
 				},
 			]

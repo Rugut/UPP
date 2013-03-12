@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьМеждународный.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 604,
+	style: 'position:absolute;width:604px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оборотно-сальдовая ведомость',
 	
 	items:
@@ -13,61 +15,48 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Настройка',
+					text:'Справка',
 				},
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Восстановить значения',
+				},
+				{
+					text:'Справка',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Разделитель3',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
-					text:'Действие2',
+					text:'Сформировать',
 				},
 				{
-					text:'Разделитель2',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Настройка',
+					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Подменю',
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Настройка...',
 				},
 			]
 		},
@@ -84,6 +73,18 @@
 			style: 'position:absolute;left:173px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:149px;top:33px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -94,6 +95,12 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:365px;top:33px;width:231px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Организация:',
+			style: 'position:absolute;left:286px;top:33px;width:76px;height:19px;',
 		},
 	]
 });

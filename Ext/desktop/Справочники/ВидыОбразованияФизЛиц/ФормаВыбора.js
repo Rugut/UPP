@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыОбразованияФизЛиц.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 524,
+	style: 'position:absolute;width:524px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды образования физических лиц',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -33,14 +38,10 @@
 					text:'Действие',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор из ОКИН',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.СдельныйНаряд.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 577,width: 692,
+	style: 'position:absolute;width:692px;height:577px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сдельный наряд на выполненные работы',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,10 +28,22 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:336px;top:57px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:525px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,16 +52,34 @@
 			style: 'position:absolute;left:94px;top:525px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:525px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:525px;width:260px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Заказ:',
+			style: 'position:absolute;left:338px;top:81px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,44 +92,33 @@
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'ПоказатьСкрытьСчетаУчета',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ГрафикиРаботыПоВидамВремени',
+					text:'Графики работы по видам времени',
 				},
 			]
 		},
@@ -103,25 +130,25 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -130,7 +157,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Выполненные работы',
 					items:
 					[
 		{
@@ -139,34 +166,32 @@
 			items:
 			[
 				{
-					text:'Действие13',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие12',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие14',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие15',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие9',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие16',
+					text:'Сортировать по возрастанию',
+				},
+				'-',
+				{
+					text:'&Изменить',
 				},
 				{
-					text:'Разделитель',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие11',
-				},
-				{
-					text:'Действие10',
-				},
-				{
-					text:'Действие17',
+					text:'Сортировать по убыванию',
 				},
 			]
 		},
@@ -177,77 +202,99 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТехнологическаяОперация',
+					text:'Технологическая операция',
+					width:'150',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'80',
 				},
 				{
 					text:'Расценка',
+					width:'60',
 				},
 				{
 					text:'Валюта',
+					width:'60',
 				},
 				{
 					text:'Количество',
+					width:'80',
 				},
 				{
-					text:'СуммаЗаРаботуВВалюте',
+					text:'Сумма в валюте расценки',
+					width:'100',
 				},
 				{
-					text:'Сумма',
+					text:'Сумма за работу',
+					width:'100',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма за работу (регл)',
+					width:'100',
 				},
 				{
-					text:'ОтражениеВУСН',
+					text:'Расходы в НУ',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет бух.учета',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет нал. учета',
+					width:'100',
 				},
 				{
 					text:'Аналитика',
+					width:'100',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'130',
 				},
 				{
 					text:'Продукция',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаПродукции',
+					text:'Характеристика продукции',
+					width:'100',
 				},
 				{
-					text:'СерияПродукции',
+					text:'Серия продукции',
+					width:'100',
 				},
 				{
-					text:'ОбъектСтроительства',
+					text:'Объект строительства',
+					width:'100',
 				},
 				{
-					text:'СпособСтроительства',
+					text:'Способ строительства',
+					width:'100',
 				},
 				{
-					text:'СпособРаспределенияЗатратНаВыпуск',
+					text:'Способ распределения затрат на выпуск',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение организации',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Исполнители',
 					items:
 					[
 		{
@@ -256,46 +303,34 @@
 			items:
 			[
 				{
-					text:'Действие16',
+					text:'Сортировать по возрастанию',
+				},
+				'-',
+				{
+					text:'&Удалить',
 				},
 				{
-					text:'Разделитель1',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие12',
+					text:'По всем сотрудникам',
 				},
 				{
-					text:'Действие10',
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Закончить редактирование',
 				},
 				{
-					text:'ДействиеЗаполнитьВсех',
+					text:'Рассчитать с комментарием',
+				},
+				'-',
+				{
+					text:'Списком работников',
 				},
 				{
-					text:'Действие15',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие13',
-				},
-				{
-					text:'РассчитатьСКомментарием',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'СписокРаботников',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ПодменюРассчитать',
+					text:'&Добавить',
 				},
 				{
 					text:'Подбор',
@@ -303,20 +338,16 @@
 				{
 					text:'Рассчитать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Разделитель2',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие14',
-				},
-				{
-					text:'Действие17',
-				},
-				{
-					text:'Действие11',
+					text:'&Изменить',
 				},
 			]
 		},
@@ -327,169 +358,224 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'68',
 				},
 				{
 					text:'Сотрудник',
+					width:'120',
 				},
 				{
 					text:'КТУ',
+					width:'60',
 				},
 				{
 					text:'Тариф',
+					width:'50',
 				},
 				{
-					text:'ОтработаноЧасов',
+					text:'Отработано часов',
+					width:'100',
 				},
 				{
-					text:'ОтработаноДней',
+					text:'Отработано дней',
+					width:'100',
 				},
 				{
-					text:'СуммаКНачислению',
+					text:'Сумма к начислению',
+					width:'100',
 				},
 				{
-					text:'СуммаКНачислениюРегл',
+					text:'Сумма к начислению (регл)',
+					width:'100',
 				},
 				{
-					text:'День1',
+					text:'1',
+					width:'30',
 				},
 				{
-					text:'День2',
+					text:'2',
+					width:'30',
 				},
 				{
-					text:'День3',
+					text:'3',
+					width:'30',
 				},
 				{
-					text:'День4',
+					text:'4',
+					width:'30',
 				},
 				{
-					text:'День5',
+					text:'5',
+					width:'30',
 				},
 				{
-					text:'День6',
+					text:'6',
+					width:'30',
 				},
 				{
-					text:'День7',
+					text:'7',
+					width:'30',
 				},
 				{
-					text:'День8',
+					text:'8',
+					width:'30',
 				},
 				{
-					text:'День9',
+					text:'9',
+					width:'30',
 				},
 				{
-					text:'День10',
+					text:'10',
+					width:'30',
 				},
 				{
-					text:'День11',
+					text:'11',
+					width:'30',
 				},
 				{
-					text:'День12',
+					text:'12',
+					width:'30',
 				},
 				{
-					text:'День13',
+					text:'13',
+					width:'30',
 				},
 				{
-					text:'День14',
+					text:'14',
+					width:'30',
 				},
 				{
-					text:'День15',
+					text:'15',
+					width:'30',
 				},
 				{
-					text:'День16',
+					text:'16',
+					width:'30',
 				},
 				{
-					text:'День17',
+					text:'17',
+					width:'30',
 				},
 				{
-					text:'День18',
+					text:'18',
+					width:'30',
 				},
 				{
-					text:'День19',
+					text:'19',
+					width:'30',
 				},
 				{
-					text:'День20',
+					text:'20',
+					width:'30',
 				},
 				{
-					text:'День21',
+					text:'21',
+					width:'30',
 				},
 				{
-					text:'День22',
+					text:'22',
+					width:'30',
 				},
 				{
-					text:'День23',
+					text:'23',
+					width:'30',
 				},
 				{
-					text:'День24',
+					text:'24',
+					width:'30',
 				},
 				{
-					text:'День25',
+					text:'25',
+					width:'30',
 				},
 				{
-					text:'День26',
+					text:'26',
+					width:'30',
 				},
 				{
-					text:'День27',
+					text:'27',
+					width:'30',
 				},
 				{
-					text:'День28',
+					text:'28',
+					width:'30',
 				},
 				{
-					text:'День29',
+					text:'29',
+					width:'30',
 				},
 				{
-					text:'День30',
+					text:'30',
+					width:'30',
 				},
 				{
-					text:'День31',
+					text:'31',
+					width:'30',
 				},
 				{
-					text:'ВидВремени1',
+					text:'Вид времени',
+					width:'100',
 				},
 				{
-					text:'Дней1',
+					text:'Дней',
+					width:'50',
 				},
 				{
-					text:'Часов1',
+					text:'Часов',
+					width:'50',
 				},
 				{
-					text:'ВидВремени2',
+					text:'Вид времени',
+					width:'100',
 				},
 				{
-					text:'Дней2',
+					text:'Дней',
+					width:'50',
 				},
 				{
-					text:'Часов2',
+					text:'Часов',
+					width:'50',
 				},
 				{
-					text:'ВидВремени3',
+					text:'Вид времени',
+					width:'100',
 				},
 				{
-					text:'Дней3',
+					text:'Дней',
+					width:'50',
 				},
 				{
-					text:'Часов3',
+					text:'Часов',
+					width:'50',
 				},
 				{
-					text:'ВидВремени4',
+					text:'Вид времени',
+					width:'100',
 				},
 				{
-					text:'Дней4',
+					text:'Дней',
+					width:'50',
 				},
 				{
-					text:'Часов4',
+					text:'Часов',
+					width:'50',
 				},
 				{
-					text:'ВидВремени5',
+					text:'Вид времени',
+					width:'100',
 				},
 				{
-					text:'Дней5',
+					text:'Дней',
+					width:'50',
 				},
 				{
-					text:'Часов5',
+					text:'Часов',
+					width:'50',
 				},
 			]
 		},
@@ -503,6 +589,32 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределять только приработок',
+			style: 'position:absolute;left:8px;top:20px;width:193px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать КТУ',
+			style: 'position:absolute;left:8px;top:39px;width:117px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать тариф',
+			style: 'position:absolute;left:8px;top:59px;width:117px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать отработанное время',
+			style: 'position:absolute;left:223px;top:20px;width:193px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособВводаДанных',
+			text: 'Способ ввода времени',
+			style: 'position:absolute;left:450px;top:20px;width:189px;height:19px;',
+		},
 					]
 				},
 			]
@@ -510,6 +622,33 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:499px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:574px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:424px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:8px;top:77px;width:84px;height:27px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ФормаОтчета2006Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 670,
+	style: 'position:absolute;width:670px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация об объемах закупки этилового спирта, алкогольной и спиртосодержащей продукции',
 	
 	items:
@@ -18,32 +20,22 @@
 				{
 					text:'Поиск',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 			]
 		},
@@ -52,26 +44,17 @@
 			style: 'position:absolute;left:0px;top:425px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'ПодменюПечати',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 			]
 		},
@@ -85,7 +68,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -141,6 +124,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:48px;',
 			height: 48,width: 654,
@@ -155,6 +144,11 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:86px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:372px;top:0px;width:243px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -176,6 +170,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

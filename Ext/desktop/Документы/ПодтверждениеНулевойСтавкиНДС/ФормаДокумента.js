@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПодтверждениеНулевойСтавкиНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 371,width: 654,
+	style: 'position:absolute;width:654px;height:371px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,35 +14,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
+					text:'',
 				},
 				{
-					text:'Подменю1',
+					text:'Дт/кт',
+				},
+				'-',
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'Дт/кт',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'',
 				},
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -50,27 +43,27 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:319px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,10 +72,22 @@
 			style: 'position:absolute;left:91px;top:319px;width:555px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,10 +96,22 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:61px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражатьВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:327px;top:33px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -103,7 +120,7 @@
 			items:
 			[
 				{
-					title:'ДокументыРеализации',
+					title:'Документы реализации',
 					items:
 					[
 		{
@@ -113,31 +130,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'100',
 				},
 				{
 					text:'Покупатель',
+					width:'100',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'100',
 				},
 				{
 					text:'Событие',
+					width:'100',
 				},
 				{
-					text:'ПродажиСНДС0',
+					text:'Продажи с НДС 0%',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'54',
 				},
 				{
 					text:'НДС',
+					width:'100',
 				},
 				{
-					text:'КурсоваяРазница',
+					text:'Курсовая разница',
+					width:'120',
 				},
 			]
 		},
@@ -147,14 +173,9 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Заполнить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
@@ -164,10 +185,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:50px;width:153px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:163px;top:50px;width:467px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяПрочихРасходов',
+			text: 'Статья прочих расходов (при неподтверждении экспорта):',
+			style: 'position:absolute;left:6px;top:6px;width:152px;height:38px;',
 		},
 		{
 			xtype: 'textfield',
@@ -178,6 +211,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:404px;top:33px;width:79px;height:19px;',
 		},
 	]
 });

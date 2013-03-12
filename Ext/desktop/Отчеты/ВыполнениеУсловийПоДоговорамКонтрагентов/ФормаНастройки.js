@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВыполнениеУсловийПоДоговорамКонтрагентов.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 490,
+	style: 'position:absolute;width:490px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка Выполнение условий по договорам взаиморасчетов',
 	
 	items:
@@ -12,11 +14,9 @@
 			style: 'position:absolute;left:0px;top:286px;width:490px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
@@ -46,6 +46,36 @@
 			style: 'position:absolute;left:164px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент',
+			style: 'position:absolute;left:12px;top:131px;width:80px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договор контрагента',
+			style: 'position:absolute;left:12px;top:151px;width:136px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документ условий',
+			style: 'position:absolute;left:12px;top:171px;width:116px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура условий',
+			style: 'position:absolute;left:12px;top:191px;width:140px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документы выполнения условий',
+			style: 'position:absolute;left:12px;top:211px;width:192px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:6px;top:29px;width:162px;height:15px;',
+		},
+		{
 			xtype: 'button',
 			name: 'УстановитьФлажки',
 			text: 'Установить все',
@@ -63,6 +93,11 @@
 			text: '...',
 			style: 'position:absolute;left:246px;top:6px;width:19px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Основной менеджер покупателя',
+			style: 'position:absolute;left:12px;top:111px;width:188px;height:15px;',
+		},
 					]
 				},
 				{
@@ -76,22 +111,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -101,6 +142,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
 		},
 					]
 				},

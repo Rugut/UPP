@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПланПроизводстваПоСменам.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 620,
+	style: 'position:absolute;width:620px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'План производства по сменам',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ПодразделениеКомпании',
+					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Проект',
+					width:'120',
 				},
 			]
 		},
@@ -38,24 +46,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Печать по умолчанию',
 				},
 				{
-					text:'Подменю3',
+					text:'Печать по умолчанию',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДействиеПечать',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 			]
 		},
 	]

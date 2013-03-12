@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетФинансовыйРезультатИнвестиционногоТоварищества.ФормаОтчета2012Кв3',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет финансового результата инвестиционного товарищества',
 	
 	items:
@@ -15,77 +17,50 @@
 				{
 					text:'Отправить',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
+				},
+				'-',
+				'-',
+				{
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Разделитель4',
+					text:'Проверить выгрузку',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
 				},
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'Отправка',
+					text:'Показать отправки',
 				},
 			]
 		},
@@ -95,42 +70,37 @@
 			items:
 			[
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
-					text:'ПечататьМашиночитаемыйБланк',
+					text:'Печатать сразу бланк формы с двухмерным штрихкодом PDF417',
 				},
 				{
-					text:'ПоказатьМашиночитаемыйБланк',
+					text:'Показать бланк формы с двухмерным штрихкодом PDF417',
+				},
+				'-',
+				{
+					text:'Печатать сразу',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'ПечататьСразу',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
 				},
 				{
-					text:'ПоказатьБланк',
+					text:'Показать бланк',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -155,6 +125,11 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -174,6 +149,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -200,7 +181,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -216,10 +197,22 @@
 			style: 'position:absolute;left:480px;top:265px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтраницыРаздел1',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:115px;top:265px;width:148px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаРаздел1',
 			text: '',
 			style: 'position:absolute;left:265px;top:265px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел1',
+			text: '999 из 999',
+			style: 'position:absolute;left:288px;top:265px;width:64px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -236,13 +229,19 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДополнительныеСтрокиРаздел3',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
 		{

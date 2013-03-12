@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КодыОКПД.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 400,
+	style: 'position:absolute;width:400px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Коды ОКПД',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Код',
+					width:'100',
 				},
 				{
 					text:'Имя',
+					width:'350',
 				},
 			]
 		},
@@ -29,11 +33,9 @@
 				{
 					text:'Действие5',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
 			]
 		},

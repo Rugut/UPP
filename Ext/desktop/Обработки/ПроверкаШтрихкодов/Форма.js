@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПроверкаШтрихкодов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 500,
+	style: 'position:absolute;width:500px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Проверка штрихкодов',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'ЗагрузитьИзТерминала',
+					text:'Загрузить из терминала',
 				},
 			]
 		},
@@ -22,13 +24,16 @@
 			style: 'position:absolute;left:0px;top:275px;width:500px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не удалять отсканированные позиции из таблицы проверки',
+			style: 'position:absolute;left:8px;top:56px;width:327px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -36,16 +41,16 @@
 			items:
 			[
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
 					text:'Действие1',
 				},
 				{
+					text:'Действие4',
+				},
+				{
 					text:'Действие2',
+				},
+				{
+					text:'Действие3',
 				},
 			]
 		},
@@ -57,32 +62,53 @@
 			[
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'250',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
 					text:'Считано',
+					width:'65',
 				},
 				{
 					text:'Осталось',
+					width:'65',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроверяемыйДокумент',
+			text: 'Проверяемый документ:',
+			style: 'position:absolute;left:8px;top:33px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроверяемыйДокументОбъект',
+			text: '',
+			style: 'position:absolute;left:140px;top:33px;width:352px;height:19px;',
 		},
 	]
 });

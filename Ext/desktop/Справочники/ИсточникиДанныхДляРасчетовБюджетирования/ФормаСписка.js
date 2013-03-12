@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 694,
+	style: 'position:absolute;width:694px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Источники данных для расчетов бюджетирования',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ПредставлениеРегистра',
+					text:'Данные',
+					width:'220',
 				},
 			]
 		},
@@ -35,6 +41,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},

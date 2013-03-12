@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеСпециальногоКоэффициентаОС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 589,
+	style: 'position:absolute;width:589px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменения специального коэффициента для расчета амортизации ОС (налоговый учет)',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'131',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'143',
 				},
 				{
 					text:'Ответственный',
+					width:'144',
 				},
 			]
 		},
@@ -35,24 +42,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:589px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Выбрать',
 				},
 				{
-					text:'Действие',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Подменю2',
-				},
+				'-',
 			]
 		},
 	]

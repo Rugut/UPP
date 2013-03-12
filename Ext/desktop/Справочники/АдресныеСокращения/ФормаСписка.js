@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.АдресныеСокращения.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 436,
+	style: 'position:absolute;width:436px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Адресные сокращения',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Уровень',
+					width:'48',
 				},
 				{
 					text:'Сокращение',
+					width:'80',
 				},
 			]
 		},

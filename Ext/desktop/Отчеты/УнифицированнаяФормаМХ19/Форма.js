@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.УнифицированнаяФормаМХ19.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 418,width: 644,
+	style: 'position:absolute;width:644px;height:418px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма МХ-19',
 	
 	items:
@@ -13,33 +15,39 @@
 			items:
 			[
 				{
-					text:'Подменю1',
-				},
-				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить данные в первую колонку',
+			style: 'position:absolute;left:322px;top:33px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить данные во вторую колонку',
+			style: 'position:absolute;left:322px;top:57px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить данные в третью колонку',
+			style: 'position:absolute;left:322px;top:81px;width:209px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -60,10 +68,22 @@
 			style: 'position:absolute;left:536px;top:81px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:33px;width:219px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

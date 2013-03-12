@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЕСХН.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 490,width: 670,
+	style: 'position:absolute;width:670px;height:490px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по единому сельскохозяйственному налогу',
 	
 	items:
@@ -12,51 +14,36 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Подготовить к отправке и подписать',
 				},
 				{
-					text:'ПодготовитьИПодписать',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
 				},
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
@@ -64,28 +51,16 @@
 					text:'Справка',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Подготовить к отправке',
 				},
+				'-',
 				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 			]
 		},
@@ -94,27 +69,18 @@
 			style: 'position:absolute;left:0px;top:465px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -127,15 +93,21 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 				},
 				{
-					title:'Раздел21',
+					title:'Раздел 2.1',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -160,6 +132,11 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:247px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -179,6 +156,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

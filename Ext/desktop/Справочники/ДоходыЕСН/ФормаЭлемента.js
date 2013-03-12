@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ДоходыЕСН.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 148,width: 406,
+	style: 'position:absolute;width:406px;height:148px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Способы отражения доходов в учете ЕСН',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -18,9 +26,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
 			items:
 			[
-				{
-					text:'Подменю',
-				},
 			]
 		},
 		{
@@ -28,20 +33,16 @@
 			style: 'position:absolute;left:0px;top:123px;width:406px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},
@@ -52,15 +53,36 @@
 			items:
 			[
 				{
-					title:'НеПредопределенный',
+					title:'Не предопределенный',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Входит в базу ФОМС',
+			style: 'position:absolute;left:0px;top:0px;width:128px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Входит в базу ФСС',
+			style: 'position:absolute;left:0px;top:21px;width:120px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Входит в базу взносов в федеральный бюджет',
+			style: 'position:absolute;left:0px;top:40px;width:260px;height:15px;',
+		},
 					]
 				},
 				{
 					title:'Предопределенный',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПредставлениеКодаДоходаПоЕСН',
+			text: '',
+			style: 'position:absolute;left:1px;top:0px;width:389px;height:55px;',
+		},
 					]
 				},
 			]

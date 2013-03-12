@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ГТДИмпорт.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 434,width: 667,
+	style: 'position:absolute;width:667px;height:434px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'ГТД по импорту',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:382px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,49 +50,46 @@
 			style: 'position:absolute;left:0px;top:0px;width:667px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Цены и валюта...',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеЦеныВалюта',
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'ПоказатьСкрытьСчетаУчета',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель12',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:422px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:500px;top:33px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -84,6 +101,12 @@
 					title:'Основные',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьТаможенныйСборВал',
+			text: 'Таможенный сбор (USD):',
+			style: 'position:absolute;left:18px;top:59px;width:148px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -97,16 +120,40 @@
 			style: 'position:absolute;left:168px;top:59px;width:83px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомерГТД',
+			text: 'Номер ГТД:',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТаможенныйШтрафВал',
+			text: 'Таможенный штраф (USD):',
+			style: 'position:absolute;left:18px;top:113px;width:148px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТаможенныйШтрафВал',
 			style: 'position:absolute;left:168px;top:113px;width:83px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТаможенныйСбор',
+			text: 'Таможенный сбор (руб.):',
+			style: 'position:absolute;left:18px;top:86px;width:148px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТаможенныйСбор',
 			style: 'position:absolute;left:168px;top:86px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТаможенныйШтраф',
+			text: 'Таможенный штраф (руб.):',
+			style: 'position:absolute;left:18px;top:137px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -117,52 +164,44 @@
 					]
 				},
 				{
-					title:'РазделыГТД',
+					title:'Разделы ГТД',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:107px;width:636px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Поиск по штрихкоду',
 				},
-				{
-					text:'ПодменюРазделы',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Распределить',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 				{
-					text:'УдалитьРаздел',
+					text:'Удалить',
 				},
 				{
-					text:'ДобавитьИзПоступления',
+					text:'Добавить из поступления',
 				},
 				{
-					text:'ДобавитьИзПоступленияНТТ',
+					text:'Добавить из поступления в НТТ',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДобавитьРаздел',
+					text:'Добавить',
 				},
 			]
 		},
@@ -173,79 +212,104 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'100',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'66',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ФактурнаяСтоимость',
+					text:'Фактурная стоимость',
+					width:'100',
 				},
 				{
-					text:'СуммаПошлины',
+					text:'Сумма пошлины ',
+					width:'100',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'100',
 				},
 				{
-					text:'ДокументПартии',
+					text:'Документ партии',
+					width:'100',
 				},
 				{
-					text:'ЗаказПокупателя',
+					text:'Заказ покупателя',
+					width:'100',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'100',
 				},
 				{
-					text:'НомерРаздела',
+					text:'Номер раздела',
+					width:'103',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'97',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'100',
 				},
 				{
-					text:'СтатьяЗатратНУ',
+					text:'Статья затрат (НУ)',
+					width:'100',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение организации',
+					width:'100',
 				},
 				{
-					text:'СтатусПартии',
+					text:'Статус партии',
+					width:'100',
 				},
 			]
 		},
@@ -274,7 +338,7 @@
 			items:
 			[
 				{
-					title:'НесколькоРазделов',
+					title:'Несколько разделов',
 					items:
 					[
 		{
@@ -284,43 +348,63 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТаможеннаяСтоимостьВВалютеРеглУчета',
+					text:'Валюта таможенной стоимости',
+					width:'100',
 				},
 				{
-					text:'ТаможеннаяСтоимость',
+					text:'Таможенная стоимость',
+					width:'100',
 				},
 				{
-					text:'ПошлинаВВалюте',
+					text:'Валюта пошлины',
+					width:'100',
 				},
 				{
-					text:'СтавкаПошлины',
+					text:'Ставка пошлины',
+					width:'117',
 				},
 				{
-					text:'СуммаПошлины',
+					text:'Сумма пошлины',
+					width:'100',
 				},
 				{
-					text:'НДСВВалюте',
+					text:'Валюта НДС',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'100',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС ',
+					width:'100',
 				},
 				{
-					text:'НДСВВалюте',
+					text:'НДС в валюте',
+					width:'0',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ОдинРаздел',
+					title:'Один раздел',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'НДС в валюте',
+			style: 'position:absolute;left:3px;top:54px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Пошлина в валюте',
+			style: 'position:absolute;left:3px;top:27px;width:120px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -351,6 +435,11 @@
 			name: 'СуммаПошлины',
 			style: 'position:absolute;left:445px;top:27px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Таможенная стоимость в рублях',
+			style: 'position:absolute;left:3px;top:0px;width:191px;height:19px;',
+		},
 					]
 				},
 			]
@@ -368,10 +457,22 @@
 			style: 'position:absolute;left:92px;top:6px;width:210px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:328px;top:6px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:414px;top:6px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаРасчетовСКонтрагентом',
+			text: 'Счет учета расчетов с таможней:',
+			style: 'position:absolute;left:12px;top:27px;width:228px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -379,10 +480,16 @@
 			name: 'Проект',
 			style: 'position:absolute;left:92px;top:30px;width:210px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроект',
+			text: 'Проект:',
+			style: 'position:absolute;left:6px;top:30px;width:86px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СчетаУчета',
+					title:'Счета учета расчетов',
 					items:
 					[
 		{
@@ -410,10 +517,22 @@
 			style: 'position:absolute;left:242px;top:75px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Счет учета расчетов с таможней (вал.):',
+			style: 'position:absolute;left:12px;top:123px;width:228px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаРасчетовСКонтрагентомВал',
 			style: 'position:absolute;left:242px;top:123px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Счет учета расходов по штрафам (БУ) (вал.):',
+			style: 'position:absolute;left:12px;top:147px;width:228px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -422,10 +541,22 @@
 			style: 'position:absolute;left:242px;top:147px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Счет учета расходов по штрафам (НУ) (вал.):',
+			style: 'position:absolute;left:12px;top:171px;width:228px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаРасходовНУВал',
 			style: 'position:absolute;left:242px;top:171px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Статья прочих расходов по штрафам (вал.):',
+			style: 'position:absolute;left:337px;top:171px;width:223px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -436,6 +567,18 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Валютный депозит (EUR):',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:35px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Таможня:',
+			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -450,10 +593,33 @@
 			style: 'position:absolute;left:422px;top:57px;width:237px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:578px;top:33px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговорРегл',
+			text: 'Депозит на таможне (руб.):',
+			style: 'position:absolute;left:336px;top:81px;width:84px;height:35px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -466,20 +632,14 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПрожиточныеМинимумы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 482,
+	style: 'position:absolute;width:482px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Прожиточные минимумы субъектов РФ, в целом по РФ',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -29,11 +34,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:482px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
 			]
 		},

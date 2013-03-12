@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.КарточкаСчетаХозрасчетный.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 445,width: 628,
+	style: 'position:absolute;width:628px;height:445px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет  Карточка счета',
 	
 	items:
@@ -16,61 +18,46 @@
 					text:'Действие1',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Заголовок',
 				},
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Настройка',
+					text:'Сохранить значения',
 				},
+				'-',
+				'-',
 				{
-					text:'Заголовок',
+					text:'Сформировать',
 				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения',
 				},
 				{
 					text:'Действие1',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 			]
 		},
@@ -87,16 +74,40 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Счет:',
+			style: 'position:absolute;left:288px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Счет',
 			style: 'position:absolute;left:322px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Организация:',
+			style: 'position:absolute;left:422px;top:33px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

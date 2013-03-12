@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчете',
 	{
 	extend: 'Ext.window.Window',
-	height: 173,width: 514,
+	style: 'position:absolute;width:514px;height:173px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отражение в учете договора',
 	
 	items:
@@ -13,15 +15,19 @@
 			items:
 			[
 				{
-					text:'ДействиеОК',
+					text:'OK',
 				},
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособОтраженияВБухучете',
+			text: 'Способ отражения в бухучете:',
+			style: 'position:absolute;left:8px;top:8px;width:157px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,10 +36,22 @@
 			style: 'position:absolute;left:8px;top:27px;width:498px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтнесениеРасходовКДеятельностиЕНВД',
+			text: 'Отнесение расходов к деятельности ЕНВД:',
+			style: 'position:absolute;left:8px;top:106px;width:224px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтнесениеРасходовКДеятельностиЕНВД',
 			style: 'position:absolute;left:8px;top:121px;width:498px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРасшифровкаОтражениеВБухучете',
+			text: '',
+			style: 'position:absolute;left:8px;top:46px;width:498px;height:56px;',
 		},
 	]
 });

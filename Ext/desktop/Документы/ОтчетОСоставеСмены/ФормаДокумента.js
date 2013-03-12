@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОтчетОСоставеСмены.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 367,width: 750,
+	style: 'position:absolute;width:750px;height:367px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет о составе смены',
 	
 	items:
@@ -12,93 +14,63 @@
 			style: 'position:absolute;left:0px;top:0px;width:750px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Подменю',
+					text:'',
 				},
 				{
-					text:'Разделитель2',
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель',
+					text:'Отмена проведения',
 				},
 				{
-					text:'Действие1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Действие2',
+					text:'',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Подменю1',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие6',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие',
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Действие5',
+					text:'Записать',
 				},
 				{
-					text:'Действие7',
+					text:'Провести',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю3',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -109,25 +81,25 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:130px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -136,10 +108,22 @@
 			style: 'position:absolute;left:148px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:434px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:522px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСмена',
+			text: 'Смена:',
+			style: 'position:absolute;left:8px;top:57px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,19 +138,26 @@
 			style: 'position:absolute;left:522px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПредыдущаяСмена',
+			text: 'Предыдущая смена:',
+			style: 'position:absolute;left:8px;top:82px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПредыдущаяСмена',
+			text: 'Первая смена 01.01.0001',
+			style: 'position:absolute;left:116px;top:82px;width:626px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:125px;width:734px;height:25px;',
 			items:
 			[
 				{
-					text:'ЗаполнитьСоставомТекущейСмены',
+					text:'Заполнить составом текущей смены',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -176,27 +167,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Сотрудник',
+					width:'120',
 				},
 				{
 					text:'Явка',
+					width:'40',
 				},
 				{
-					text:'ВремяЯвки',
+					text:'Время явки',
+					width:'60',
 				},
 				{
-					text:'ОтработанноеВремя',
+					text:'Отработанное время',
+					width:'80',
 				},
 				{
-					text:'ЗамещающийСотрудник',
+					text:'Замещающий сотрудник',
+					width:'120',
 				},
 				{
 					text:'Примечание',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:315px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -205,10 +209,28 @@
 			style: 'position:absolute;left:84px;top:315px;width:658px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:48px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:434px;top:57px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПериодСмены',
+			text: '01.01.0001 (00:00 - 23:59)',
+			style: 'position:absolute;left:273px;top:57px;width:156px;height:19px;',
 		},
 	]
 });

@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ВыпускПродукции.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 406,width: 672,
+	style: 'position:absolute;width:672px;height:406px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выпуск продукции',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:354px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,138 +51,108 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'Скопировать',
+				},
+				'-',
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель4',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Подменю2',
+					text:'Дт/кт',
 				},
 				{
-					text:'Подменю1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Провести',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Действие1',
+					text:'Перечитать',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
-					text:'Действие5',
+					text:'Отмена проведения',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Провести',
 				},
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель8',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:499px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -171,16 +161,40 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:424px;top:57px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:329px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -196,14 +210,10 @@
 				{
 					text:'ОК',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
@@ -211,16 +221,25 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:336px;top:77px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:81px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:572px;top:33px;width:71px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -239,64 +258,84 @@
 			columns:
 			[
 				{
-					text:'НомерCтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
-					text:'Номенклатура',
+					text:'Продукция',
+					width:'200',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика продукции',
+					width:'200',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия продукции',
+					width:'200',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К.мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'67',
 				},
 				{
 					text:'Количество',
+					width:'67',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'80',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'80',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'223',
 				},
 				{
 					text:'Спецификация',
+					width:'100',
 				},
 				{
 					text:'Заказы',
+					width:'225',
 				},
 				{
-					text:'Заказ',
+					text:'Затраты',
+					width:'113',
 				},
 				{
-					text:'ЗаказРезерв',
+					text:'Резерв',
+					width:'112',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 			]
 		},
@@ -305,9 +344,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:642px;height:26px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -316,7 +353,7 @@
 					]
 				},
 				{
-					title:'СчетаЗатрат',
+					title:'Счета затрат',
 					items:
 					[
 		{
@@ -324,6 +361,12 @@
 			hideLabel: true,
 			name: 'СчетЗатрат',
 			style: 'position:absolute;left:86px;top:6px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетЗатрат',
+			text: 'Счет (БУ):',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

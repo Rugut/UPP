@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.МенеджерКонтактов.ФормаВыбораСтроковогоЗначенияИзТекста',
 	{
 	extend: 'Ext.window.Window',
-	height: 323,width: 640,
+	style: 'position:absolute;width:640px;height:323px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма выбора строковых значений из текста',
 	
 	items:
@@ -16,11 +18,9 @@
 					text:'Обновить',
 				},
 				{
-					text:'Выбрать',
+					text:'Выбрать выделенный текст',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{

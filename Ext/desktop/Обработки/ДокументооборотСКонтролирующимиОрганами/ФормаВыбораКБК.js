@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораКБК',
 	{
 	extend: 'Ext.window.Window',
-	height: 408,width: 597,
+	style: 'position:absolute;width:597px;height:408px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор КБК',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Отмена',
 				},
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -31,9 +31,11 @@
 			[
 				{
 					text:'КБК',
+					width:'171',
 				},
 				{
-					text:'НаименованиеДохода',
+					text:'Наименование дохода',
+					width:'230',
 				},
 			]
 		},

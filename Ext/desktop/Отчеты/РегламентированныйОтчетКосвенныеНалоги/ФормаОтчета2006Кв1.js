@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетКосвенныеНалоги.ФормаОтчета2006Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 491,width: 721,
+	style: 'position:absolute;width:721px;height:491px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Косвенные налоги при ввозе товаров из Республики Беларусь',
 	
 	items:
@@ -13,80 +15,54 @@
 			items:
 			[
 				{
-					text:'Отправка',
-				},
-				{
 					text:'Заполнить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
 					text:'Поиск',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель6',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Выгрузка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Отправить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Разделитель',
+					text:'Обновить',
 				},
 				{
-					text:'Подготовить',
+					text:'Показать отправки',
 				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
@@ -98,26 +74,17 @@
 			items:
 			[
 				{
-					text:'ПодменюПечати',
-				},
-				{
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -130,10 +97,10 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел11',
+					title:'Раздел 1.1',
 				},
 				{
-					title:'Раздел12',
+					title:'Раздел 1.2',
 					items:
 					[
 		{
@@ -169,13 +136,37 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись26',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:396px;top:265px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись27',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:396px;top:265px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись28',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:396px;top:265px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:164px;top:265px;width:148px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
 		{
@@ -193,7 +184,7 @@
 					]
 				},
 				{
-					title:'Раздел4',
+					title:'Раздел 4',
 					items:
 					[
 		{
@@ -208,10 +199,16 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:617px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел12',
+			text: '999 из 999',
+			style: 'position:absolute;left:336px;top:265px;width:80px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел41',
+					title:'Раздел 4.1',
 					items:
 					[
 		{
@@ -239,6 +236,12 @@
 			style: 'position:absolute;left:532px;top:240px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись17',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:151px;top:240px;width:144px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаРаздел41',
 			text: '',
@@ -259,6 +262,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:635px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -283,6 +292,11 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:247px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -302,6 +316,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

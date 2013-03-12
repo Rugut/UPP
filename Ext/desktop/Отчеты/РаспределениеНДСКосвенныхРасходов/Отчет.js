@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.РаспределениеНДСКосвенныхРасходов.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 448,width: 604,
+	style: 'position:absolute;width:604px;height:448px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет по распределению НДС с косвенных расходов по вариантам реализации',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,44 +27,31 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Подменю',
+					text:'Восстановить значения...',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -81,10 +76,33 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить выручку по данным документа',
+			style: 'position:absolute;left:8px;top:61px;width:260px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументРаспределения',
+			text: 'Документ:',
+			style: 'position:absolute;left:288px;top:61px;width:76px;height:15px;',
 		},
 		{
 			xtype: 'textfield',

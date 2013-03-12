@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ABCАнализПокупателей.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 332,width: 486,
+	style: 'position:absolute;width:486px;height:332px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка ABC-анализ покупателей',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -34,10 +34,26 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата отчета:',
+			style: 'position:absolute;left:6px;top:6px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОтчета',
 			style: 'position:absolute;left:77px;top:6px;width:93px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:30px;width:207px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:6px;top:50px;width:165px;height:15px;',
 		},
 					]
 				},
@@ -53,9 +69,11 @@
 			[
 				{
 					text:'Поле',
+					width:'266',
 				},
 				{
 					text:'Тип',
+					width:'170',
 				},
 			]
 		},
@@ -79,22 +97,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'158',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'112',
 				},
 				{
 					text:'Значение',
+					width:'81',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'81',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'81',
 				},
 			]
 		},
@@ -118,10 +142,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'290',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'138',
 				},
 			]
 		},

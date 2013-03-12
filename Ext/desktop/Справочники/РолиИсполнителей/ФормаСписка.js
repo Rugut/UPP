@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.РолиИсполнителей.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 428,
+	style: 'position:absolute;width:428px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Роли исполнителей',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 			]
 		},

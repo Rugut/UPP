@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УчетПоложенийПереходногоПериодаПоНДС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 540,
+	style: 'position:absolute;width:540px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Учет положений переходного периода по НДС',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'226',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -35,29 +42,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:540px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель7',
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

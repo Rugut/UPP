@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеЦен.ФормаВыбораТипаЦен',
 	{
 	extend: 'Ext.window.Window',
-	height: 232,width: 263,
+	style: 'position:absolute;width:263px;height:232px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма выбора типа цен',
 	
 	items:
@@ -13,23 +15,17 @@
 			items:
 			[
 				{
-					text:'КнопкаДобавить',
+					text:'Добавить тип цен',
+				},
+				'-',
+				'-',
+				{
+					text:'Установить все пометки',
 				},
 				{
-					text:'Действие',
+					text:'Снять все пометки',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаВыборатьВсе',
-				},
-				{
-					text:'КнопкаСнятьВсе',
-				},
-				{
-					text:'Действие',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -50,16 +46,12 @@
 			items:
 			[
 				{
-					text:'ОК',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -70,9 +62,15 @@
 			columns:
 			[
 				{
-					text:'ТипЦенСкидокСтрока',
+					text:'Тип цен/скидок',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Перемещать отмеченные элементы наверх',
+			style: 'position:absolute;left:8px;top:180px;width:247px;height:19px;',
 		},
 	]
 });

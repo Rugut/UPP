@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.СведенияОВзносахИСтраховомСтажеСПВ1.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 480,width: 846,
+	style: 'position:absolute;width:846px;height:480px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сведения о взносах и страховом стаже для установления трудовой пенсии (СПВ-1)',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:428px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -18,9 +26,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -28,22 +34,12 @@
 					text:'Действие5',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю',
+					text:'',
 				},
 				{
 					text:'Действие6',
@@ -52,19 +48,15 @@
 					text:'Действие3',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
 					text:'Действие7',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
 					text:'Действие2',
@@ -76,55 +68,35 @@
 					text:'Действие4',
 				},
 				{
-					text:'Подменю1',
-				},
-				{
 					text:'Действие5',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
 					text:'Действие1',
@@ -137,45 +109,37 @@
 			items:
 			[
 				{
-					text:'ПроверитьВCheckXML',
+					text:'Программой CheckXML',
 				},
+				'-',
 				{
-					text:'РазделительПечать1',
+					text:'OK',
 				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Закрыть',
 				},
 				{
-					text:'ПроверитьВCheckUFA',
+					text:'Программой CheckUFA',
 				},
 				{
-					text:'НаДискетку',
+					text:'Записать файл на диск',
 				},
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Показать файл',
 				},
-				{
-					text:'Файл',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Принято в ПФР',
+			style: 'position:absolute;left:732px;top:428px;width:106px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -216,6 +180,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:439px;top:0px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
@@ -228,10 +198,22 @@
 			style: 'position:absolute;left:625px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:0px;width:318px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:439px;top:24px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -240,10 +222,22 @@
 			style: 'position:absolute;left:525px;top:24px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРуководитель',
+			text: 'Руководитель:',
+			style: 'position:absolute;left:0px;top:48px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Руководитель',
 			style: 'position:absolute;left:94px;top:48px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжностьРуководителя',
+			text: 'Должность:',
+			style: 'position:absolute;left:218px;top:48px;width:65px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -252,16 +246,40 @@
 			style: 'position:absolute;left:286px;top:48px;width:126px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКатегорияЗастрахованныхЛиц',
+			text: 'Категория застрахованных лиц:',
+			style: 'position:absolute;left:0px;top:103px;width:177px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КатегорияЗастрахованныхЛиц',
 			style: 'position:absolute;left:182px;top:103px;width:206px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Отчетный период:',
+			style: 'position:absolute;left:0px;top:24px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:94px;top:24px;width:318px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипСведений1',
+			text: 'Тип сведений:',
+			style: 'position:absolute;left:0px;top:79px;width:93px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПачки',
+			text: 'Номер пачки:',
+			style: 'position:absolute;left:439px;top:48px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -294,17 +312,15 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
 				{
-					text:'ЗаполнитьВзносы',
+					text:'Суммы взносов',
 				},
 				{
-					text:'ДействиеРедактироватьСЗВ',
+					text:'Открыть данные о стаже',
 				},
 				{
 					text:'Действие5',
@@ -321,24 +337,15 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
 				{
-					text:'Заполнить',
-				},
-				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -348,43 +355,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Сотрудник',
+					width:'220',
 				},
 				{
-					text:'СтраховойНомерПФР',
+					text:'Страховой номер',
+					width:'120',
 				},
 				{
-					text:'ДатаСоставления',
+					text:'Дата составления',
+					width:'100',
 				},
 				{
 					text:'Фамилия',
+					width:'80',
 				},
 				{
 					text:'Имя',
+					width:'80',
 				},
 				{
 					text:'Отчество',
+					width:'80',
 				},
 				{
-					text:'КолонкаСтраховая',
+					text:'Страховая часть',
+					width:'160',
 				},
 				{
-					text:'НачисленоСтраховая',
+					text:'Начислено',
+					width:'80',
 				},
 				{
-					text:'УплаченоСтраховая',
+					text:'Уплачено',
+					width:'80',
 				},
 				{
-					text:'КолонкаНакопительная',
+					text:'Накопительная часть',
+					width:'160',
 				},
 				{
-					text:'НачисленоНакопительная',
+					text:'Начислено',
+					width:'80',
 				},
 				{
-					text:'УплаченоНакопительная',
+					text:'Уплачено',
+					width:'80',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаУчетаПеремещенияТоваровТС.ФормаОтчета2011Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 420,width: 716,
+	style: 'position:absolute;width:716px;height:420px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Форма учета перемещения товаров',
 	
 	items:
@@ -16,20 +18,11 @@
 					text:'Поиск',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заполнить',
 				},
@@ -42,27 +35,19 @@
 				{
 					text:'Расшифровать',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Действие',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Действие1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -70,28 +55,25 @@
 			style: 'position:absolute;left:0px;top:395px;width:716px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'ОК',
 				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -103,6 +85,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -162,6 +150,18 @@
 			style: 'position:absolute;left:89px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись30',
+			text: '',
+			style: 'position:absolute;left:470px;top:6px;width:198px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись',
+			text: 'Организация:',
+			style: 'position:absolute;left:387px;top:6px;width:75px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -170,6 +170,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:9px;top:343px;width:246px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -182,6 +187,12 @@
 			name: 'КнопкаУдалитьДопСтрокиФормаОтчета',
 			text: 'Удалить',
 			style: 'position:absolute;left:628px;top:343px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДопСтроки',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:408px;top:343px;width:132px;height:19px;',
 		},
 	]
 });

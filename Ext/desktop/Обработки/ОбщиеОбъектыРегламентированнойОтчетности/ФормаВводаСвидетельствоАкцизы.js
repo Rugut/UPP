@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаСвидетельствоАкцизы',
 	{
 	extend: 'Ext.window.Window',
-	height: 83,width: 181,
+	style: 'position:absolute;width:181px;height:83px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Свидетельство',
 	
 	items:
@@ -13,27 +15,35 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Действие1',
 				},
 				{
-					text:'ОсновныеДействияФормыОк',
+					text:'ОК',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Серия:',
+			style: 'position:absolute;left:8px;top:7px;width:42px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СвидСерия',
 			style: 'position:absolute;left:60px;top:7px;width:32px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:31px;width:46px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.БанковскиеСчета.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 780,
+	style: 'position:absolute;width:780px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Банковские счета',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидСчета',
+					text:'Вид счета',
+					width:'120',
 				},
 				{
-					text:'НомерСчета',
+					text:'Номер счета',
+					width:'160',
 				},
 				{
-					text:'ВалютаДенежныхСредств',
+					text:'Валюта',
+					width:'64',
 				},
 				{
 					text:'Банк',
+					width:'220',
 				},
 			]
 		},
@@ -44,9 +53,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

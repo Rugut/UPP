@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЭлектронноеПисьмо.ФормаПечати',
 	{
 	extend: 'Ext.window.Window',
-	height: 403,width: 724,
+	style: 'position:absolute;width:724px;height:403px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма',
 	
 	items:

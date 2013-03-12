@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьМеждународный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 237,width: 428,
+	style: 'position:absolute;width:428px;height:237px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Оборотно-сальдовая ведомость',
 	
 	items:
@@ -13,17 +15,13 @@
 			items:
 			[
 				{
-					text:'Отмена',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Справка',
 				},
@@ -36,14 +34,30 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по забалансовым счетам',
+			style: 'position:absolute;left:16px;top:152px;width:194px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:31px;width:219px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:31px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Детализация по субсчетам и субконто',
+			style: 'position:absolute;left:16px;top:112px;width:214px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,15 +72,37 @@
 			style: 'position:absolute;left:197px;top:4px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:4px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:170px;top:4px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:16px;top:132px;width:128px;height:15px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:284px;top:4px;width:19px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Развернутое сальдо',
+			style: 'position:absolute;left:16px;top:92px;width:126px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Развернутое сальдо',
 					items:
 					[
 		{
@@ -84,19 +120,22 @@
 			[
 				{
 					text:'Счет',
+					width:'100',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'90',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'200',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаДетализацияОтчета',
+					title:'Детализация',
 					items:
 					[
 		{
@@ -114,12 +153,15 @@
 			[
 				{
 					text:'Счет',
+					width:'100',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'90',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'200',
 				},
 			]
 		},

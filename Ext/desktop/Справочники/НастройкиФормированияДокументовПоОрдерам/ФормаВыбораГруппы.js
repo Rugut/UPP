@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиФормированияДокументовПоОрдерам.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 453,
+	style: 'position:absolute;width:453px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы настроек формирования документов по ордерам',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'296',
 				},
 			]
 		},
@@ -23,11 +26,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:453px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
 			]
 		},

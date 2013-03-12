@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.МСФОКонсолидация.ФормаКонсолидацияДанных',
 	{
 	extend: 'Ext.window.Window',
-	height: 392,width: 656,
+	style: 'position:absolute;width:656px;height:392px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Консолидация по информационной базе',
 	
 	items:
@@ -19,20 +21,16 @@
 			style: 'position:absolute;left:0px;top:367px;width:656px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Далее >>',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Далее',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Назад',
+					text:'<< Назад',
 				},
 			]
 		},
@@ -47,10 +45,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период составления отчета:',
+			style: 'position:absolute;left:0px;top:0px;width:155px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Период',
 			style: 'position:absolute;left:164px;top:0px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Консолидируемая группа:',
+			style: 'position:absolute;left:0px;top:24px;width:155px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,57 +76,75 @@
 			[
 				{
 					text:'Организация',
+					width:'220',
 				},
 				{
-					text:'Головная',
+					text:'Головная орг.',
+					width:'80',
 				},
 				{
-					text:'ТоварыПрибыльНаНачало',
+					text:'Товары (на начало)',
+					width:'100',
 				},
 				{
-					text:'ТоварыПрибыльВТеченииГода',
+					text:'Товары (оборот)',
+					width:'100',
 				},
 				{
-					text:'СырьеИМатериалыПрибыльНаНачало',
+					text:'Материалы (на начало)',
+					width:'100',
 				},
 				{
-					text:'СырьеИМатериалыПрибыльВТеченииГода',
+					text:'Материалы (оборот)',
+					width:'100',
 				},
 				{
-					text:'НезавершенноеПроизводствоПрибыльНаНачало',
+					text:'НЗП (на начало)',
+					width:'100',
 				},
 				{
-					text:'НезавершенноеПроизводствоПрибыльВТеченииГода',
+					text:'НЗП (оборот)',
+					width:'100',
 				},
 				{
-					text:'КомплектующиеИПолуфабрикатыПрибыльНаНачало',
+					text:'Полуфабрикаты (на начало)',
+					width:'100',
 				},
 				{
-					text:'КомплектующиеИПолуфабрикатыПрибыльВТеченииГода',
+					text:'Полуфабрикаты (оборот)',
+					width:'100',
 				},
 				{
-					text:'ГотоваяПродукцияПрибыльНаНачало',
+					text:'ГП (на начало)',
+					width:'100',
 				},
 				{
-					text:'ГотоваяПродукцияПрибыльВТеченииГода',
+					text:'ГП (оборот)',
+					width:'100',
 				},
 				{
-					text:'ТоварыОтгруженныеПрибыльНаНачало',
+					text:'Товары отгр. (на начало)',
+					width:'100',
 				},
 				{
-					text:'ТоварыОтгруженныеПрибыльВТеченииГода',
+					text:'Товары отгр. (оборот)',
+					width:'100',
 				},
 				{
-					text:'ОСПрибыльНаНачало',
+					text:'ОС (на начало)',
+					width:'100',
 				},
 				{
-					text:'ОСПрибыльВТеченииГода',
+					text:'ОС (оборот)',
+					width:'100',
 				},
 				{
-					text:'НМАПрибыльНаНачало',
+					text:'НМА (на начало)',
+					width:'100',
 				},
 				{
-					text:'НМАПрибыльВТеченииГода',
+					text:'НМА (оборот)',
+					width:'100',
 				},
 			]
 		},
@@ -125,13 +153,17 @@
 			style: 'position:absolute;left:0px;top:67px;width:640px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Для каждой консолидируемой организации укажите прибыль от внутригрупповых операций в разрезе указанных активов.',
+			style: 'position:absolute;left:0px;top:311px;width:640px;height:15px;',
 		},
 					]
 				},
@@ -139,6 +171,12 @@
 					title:'Страница2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Операция:',
+			style: 'position:absolute;left:0px;top:22px;width:60px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -152,34 +190,44 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'СчетДт',
+					text:'Счет Дт',
+					width:'80',
 				},
 				{
-					text:'СубконтоДт1',
+					text:'Субконто Дт',
+					width:'120',
 				},
 				{
-					text:'СубконтоДт2',
+					text:'',
+					width:'120',
 				},
 				{
-					text:'СубконтоДт3',
+					text:'',
+					width:'120',
 				},
 				{
-					text:'СчетКт',
+					text:'Счет Кт',
+					width:'80',
 				},
 				{
-					text:'СубконтоКт1',
+					text:'Субконто Кт',
+					width:'120',
 				},
 				{
-					text:'СубконтоКт2',
+					text:'',
+					width:'120',
 				},
 				{
-					text:'СубконтоКт3',
+					text:'',
+					width:'120',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 			]
 		},
@@ -197,9 +245,11 @@
 			[
 				{
 					text:'Отчет',
+					width:'300',
 				},
 				{
 					text:'Ссылка',
+					width:'21',
 				},
 			]
 		},

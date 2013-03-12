@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МСФОУчетнаяПолитика.МСФО',
 	{
 	extend: 'Ext.window.Window',
-	height: 428,width: 740,
+	style: 'position:absolute;width:740px;height:428px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'МСФО',
 	
 	items:
@@ -12,45 +14,33 @@
 			style: 'position:absolute;left:0px;top:0px;width:740px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'РежимВводаИнформации',
+					text:'Режим ввода информации',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -62,23 +52,14 @@
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -88,9 +69,15 @@
 			items:
 			[
 				{
-					title:'УчетнаяПолитика',
+					title:'Учетная политика',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:653px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -126,6 +113,11 @@
 			name: 'Валюта',
 			style: 'position:absolute;left:50px;top:0px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'На английском языке',
+			style: 'position:absolute;left:0px;top:27px;width:132px;height:19px;',
+		},
 					]
 				},
 			]
@@ -140,6 +132,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:0px;top:9px;width:76px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

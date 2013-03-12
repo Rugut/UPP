@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаСравнительныйАнализОборотовПоБюджетам',
 	{
 	extend: 'Ext.window.Window',
-	height: 436,width: 604,
+	style: 'position:absolute;width:604px;height:436px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,40 +15,32 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Сформировать',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
 					text:'Отбор',
@@ -55,29 +49,22 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Действие3',
+					text:'Закрыть',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Восстановить значения',
 				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 			]
 		},
 		{
@@ -87,7 +74,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -97,10 +84,20 @@
 			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'ЦФО:',
+			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСтатьяОборотов',
 			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Статья оборотов:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
 		},
 					]
 				},
@@ -111,6 +108,12 @@
 			hideLabel: true,
 			name: 'СтатьяБаланса',
 			style: 'position:absolute;left:98px;top:33px;width:498px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Статья баланса:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 	]
 });

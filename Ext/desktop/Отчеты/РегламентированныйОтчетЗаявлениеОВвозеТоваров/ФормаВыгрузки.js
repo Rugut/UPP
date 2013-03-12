@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВыгрузки',
 	{
 	extend: 'Ext.window.Window',
-	height: 633,width: 554,
+	style: 'position:absolute;width:554px;height:633px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры выгрузки',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'Отмена',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -40,16 +40,34 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьИНН',
+			text: 'ИНН:',
+			style: 'position:absolute;left:6px;top:24px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИННЮЛОтпр',
 			style: 'position:absolute;left:162px;top:24px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКПП1',
+			text: 'КПП:',
+			style: 'position:absolute;left:6px;top:48px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КППОтпр',
 			style: 'position:absolute;left:162px;top:48px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наименование организации:',
+			style: 'position:absolute;left:6px;top:0px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -63,6 +81,18 @@
 					title:'ФЛ',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Наименование1',
+			text: 'Фамилия, имя, отчество:',
+			style: 'position:absolute;left:6px;top:24px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИНН1',
+			text: 'ИНН физического лица:',
+			style: 'position:absolute;left:6px;top:0px;width:150px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -92,10 +122,35 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Должность:',
+			style: 'position:absolute;left:12px;top:246px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДолжностьПодп1',
 			style: 'position:absolute;left:168px;top:246px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Наименование2',
+			text: 'Фамилия, имя, отчество:',
+			style: 'position:absolute;left:12px;top:270px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Наименование3',
+			text: 'Наименование, номер, дата
+доверенности',
+			style: 'position:absolute;left:12px;top:294px;width:150px;height:30px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Должность:',
+			style: 'position:absolute;left:12px;top:378px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -104,10 +159,33 @@
 			style: 'position:absolute;left:168px;top:378px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Наименование4',
+			text: 'Фамилия, имя, отчество:',
+			style: 'position:absolute;left:12px;top:402px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Наименование5',
+			text: 'Фамилия, имя, отчество:',
+			style: 'position:absolute;left:12px;top:546px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИНН2',
+			text: 'ИНН физического лица:',
+			style: 'position:absolute;left:12px;top:522px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИННФЛКурьер',
 			style: 'position:absolute;left:168px;top:522px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Документ направляется  почтовым отправлением или по ТКС.',
+			style: 'position:absolute;left:12px;top:462px;width:342px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,6 +260,13 @@
 			style: 'position:absolute;left:420px;top:546px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Наименование6',
+			text: 'Наименование, номер, дата
+доверенности',
+			style: 'position:absolute;left:12px;top:570px;width:150px;height:30px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НаимДовКурьер',
@@ -200,16 +285,34 @@
 			style: 'position:absolute;left:420px;top:570px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИНН3',
+			text: 'ИНН физического лица:',
+			style: 'position:absolute;left:12px;top:354px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИННФЛПодп2',
 			style: 'position:absolute;left:168px;top:354px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИНН4',
+			text: 'ИНН физического лица:',
+			style: 'position:absolute;left:12px;top:222px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИННФЛПодп1',
 			style: 'position:absolute;left:168px;top:222px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись35',
+			text: 'Код налогового органа, куда передаются данные:',
+			style: 'position:absolute;left:6px;top:6px;width:258px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

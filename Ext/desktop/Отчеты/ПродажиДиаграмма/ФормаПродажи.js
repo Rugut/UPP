@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ПродажиДиаграмма.ФормаПродажи',
 	{
 	extend: 'Ext.window.Window',
-	height: 420,width: 604,
+	style: 'position:absolute;width:604px;height:420px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,66 +14,49 @@
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель2',
+					text:'Справка',
 				},
+				'-',
 				{
-					text:'Подменю',
+					text:'Сохранить значения...',
 				},
+				'-',
+				'-',
 				{
-					text:'Настройка',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
 					text:'Транспонировать',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие3',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Справка',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
@@ -79,7 +64,7 @@
 					text:'Отбор',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Транспонировать',
@@ -99,10 +84,28 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Тип диаграммы:',
+			style: 'position:absolute;left:288px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -111,7 +114,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -121,16 +124,31 @@
 			style: 'position:absolute;left:288px;top:0px;width:300px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Покупатель:',
+			style: 'position:absolute;left:0px;top:0px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатура',
 			style: 'position:absolute;left:288px;top:24px;width:300px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:0px;top:24px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиПодразделение',
 			style: 'position:absolute;left:288px;top:48px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подразделение:',
+			style: 'position:absolute;left:0px;top:48px;width:104px;height:19px;',
 		},
 					]
 				},

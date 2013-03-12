@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ЗаявкаНаОбучение.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 396,width: 415,
+	style: 'position:absolute;width:415px;height:396px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Заявка на курс обучения',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКурсОбучения',
+			text: 'Курс обучения:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КурсОбучения',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:344px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:344px;width:313px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:320px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,12 +77,8 @@
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -66,20 +94,15 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
 				{
-					text:'СписокРаботников',
+					text:'Списком сотрудников',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'подбор',
+					text:'Подбор',
 				},
 				{
 					text:'Действие',
@@ -96,13 +119,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'75',
 				},
 				{
 					text:'Сотрудник',
+					width:'220',
 				},
 			]
 		},
@@ -112,35 +138,23 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель6',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'Редактировать номер',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -148,22 +162,24 @@
 			style: 'position:absolute;left:0px;top:371px;width:415px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКурсОбучения1',
+			text: 'Дата:',
+			style: 'position:absolute;left:8px;top:101px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

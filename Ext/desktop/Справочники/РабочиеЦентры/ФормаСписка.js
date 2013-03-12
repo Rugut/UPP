@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.РабочиеЦентры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 654,
+	style: 'position:absolute;width:654px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Рабочие центры',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Подразделение',
+					width:'180',
 				},
 			]
 		},
@@ -42,6 +48,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

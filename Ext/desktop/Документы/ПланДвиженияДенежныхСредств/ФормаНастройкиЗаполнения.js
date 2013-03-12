@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполнения',
 	{
 	extend: 'Ext.window.Window',
-	height: 413,width: 810,
+	style: 'position:absolute;width:810px;height:413px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка автоматического заполнения',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'кнВидДвижения',
+					text:'Поступления',
 				},
 			]
 		},
@@ -25,15 +27,11 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Выполнить',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -56,9 +54,14 @@
 			items:
 			[
 				{
-					title:'ПоступленияДенежныхСредств',
+					title:'Поступления денежных средств',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Поступления за период с:',
+			style: 'position:absolute;left:13px;top:27px;width:163px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -78,10 +81,27 @@
 			style: 'position:absolute;left:276px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПоступленияПо',
+			text: 'по',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПоступления',
 			text: '...',
 			style: 'position:absolute;left:361px;top:27px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентПоступления',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'План на период с:',
+			style: 'position:absolute;left:407px;top:27px;width:155px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -102,10 +122,52 @@
 			style: 'position:absolute;left:670px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПланПоступленияПо',
+			text: 'по',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПланПоступления',
 			text: '...',
 			style: 'position:absolute;left:755px;top:27px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентПланПоступления',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:20px;top:148px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:20px;top:172px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:20px;top:196px;width:88px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:414px;top:148px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:414px;top:172px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:414px;top:196px;width:88px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
@@ -120,6 +182,16 @@
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:13px;top:99px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить статью:',
+			style: 'position:absolute;left:13px;top:75px;width:163px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяОборотовПланПоступления',
@@ -131,12 +203,32 @@
 			name: 'ПроектПланПоступления',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:407px;top:99px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить статью:',
+			style: 'position:absolute;left:407px;top:75px;width:163px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Продажи',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Объем продаж за период с:',
+			style: 'position:absolute;left:13px;top:27px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Планы продаж на период с:',
+			style: 'position:absolute;left:407px;top:27px;width:161px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -154,6 +246,12 @@
 			hideLabel: true,
 			name: 'ОбъемПродажДатаКон',
 			style: 'position:absolute;left:276px;top:27px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбъемПродажПо',
+			text: 'по',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -174,6 +272,12 @@
 			style: 'position:absolute;left:670px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПланыПродажПо',
+			text: 'по',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПланыПродаж',
 			text: '...',
@@ -186,10 +290,22 @@
 			style: 'position:absolute;left:176px;top:75px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяОбъемПродаж',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:13px;top:75px;width:163px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроектОбъемПродаж',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентОбъемПродаж',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -204,15 +320,52 @@
 			style: 'position:absolute;left:570px;top:75px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяПланыПродаж',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:407px;top:75px;width:162px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроектПланыПродаж',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентПланыПродаж',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:20px;top:148px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:20px;top:172px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:20px;top:196px;width:88px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:13px;top:99px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:407px;top:99px;width:161px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ДебиторскаяЗадолженность',
+					title:'Дебиторская задолженность контрагентов',
 					items:
 					[
 		{
@@ -222,10 +375,27 @@
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяДебиторскаяЗадолженность',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:13px;top:99px;width:163px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроектДебиторскаяЗадолженность',
 			style: 'position:absolute;left:176px;top:123px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроектДебиторскаяЗадолженность',
+			text: 'Проект:',
+			style: 'position:absolute;left:13px;top:123px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дебиторская задолженность на дату:',
+			style: 'position:absolute;left:13px;top:27px;width:212px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -240,6 +410,17 @@
 			style: 'position:absolute;left:176px;top:76px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроцентДебиторскаяЗадолженность',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:13px;top:75px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: '%. Отбор сумм',
+			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГраницаОтбораДебиторскаяЗадолженность',
@@ -252,10 +433,22 @@
 			style: 'position:absolute;left:571px;top:99px;width:203px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяЗаказыПокупателей',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:407px;top:99px;width:162px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроектЗаказыПокупателей',
 			style: 'position:absolute;left:571px;top:123px;width:203px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроектЗаказыПокупателей',
+			text: 'Проект:',
+			style: 'position:absolute;left:407px;top:123px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -264,10 +457,56 @@
 			style: 'position:absolute;left:571px;top:74px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПроцентЗаказыПокупателей',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:407px;top:76px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: '%. Отбор сумм',
+			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГраницаОтбораЗаказыПокупателей',
 			style: 'position:absolute;left:663px;top:51px;width:111px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:20px;top:172px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:20px;top:196px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:20px;top:220px;width:149px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:413px;top:172px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:413px;top:196px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:413px;top:220px;width:149px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дата оплаты в периоде с:',
+			style: 'position:absolute;left:407px;top:27px;width:161px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -282,6 +521,12 @@
 			style: 'position:absolute;left:671px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЗаказыПокупателейПо',
+			text: 'по',
+			style: 'position:absolute;left:651px;top:27px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаЗаказыПокупателей',
 			text: '...',
@@ -290,7 +535,7 @@
 					]
 				},
 				{
-					title:'Отбор',
+					title:'Отборы',
 					items:
 					[
 		{
@@ -300,22 +545,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'167',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'177',
 				},
 				{
 					text:'Значение',
+					width:'189',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'189',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'189',
 				},
 			]
 		},
@@ -338,15 +589,31 @@
 				},
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:217px;width:768px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить результат расчета (%)',
+			style: 'position:absolute;left:13px;top:315px;width:186px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИзменитьРезультатРасчетаСуммыПроцентПоступления',
 			style: 'position:absolute;left:199px;top:315px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо',
+			text: 'округлить до:',
+			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;',
 		},
 					]
 				},
@@ -361,9 +628,86 @@
 			items:
 			[
 				{
-					title:'ПлатежиПериод',
+					title:'Платежи за период',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяКредиторскаяЗадолженность',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:13px;top:99px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроектКредиторскаяЗадолженность',
+			text: 'Проект:',
+			style: 'position:absolute;left:13px;top:123px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентКредиторскаяЗадолженность',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:13px;top:75px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОбъемЗакупокПо',
+			text: 'по',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПланыЗакупокПо',
+			text: 'по',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяОбъемЗакупок',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:13px;top:75px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентОбъемЗакупок',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяПланыЗакупок',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:407px;top:75px;width:162px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентПланыЗакупок',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяЗаказыПоставщикам',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:407px;top:99px;width:162px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроектЗаказыПоставщикам',
+			text: 'Проект:',
+			style: 'position:absolute;left:407px;top:123px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентЗаказыПоставщикам',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:407px;top:76px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Платежи за период с:',
+			style: 'position:absolute;left:13px;top:27px;width:163px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -383,10 +727,27 @@
 			style: 'position:absolute;left:276px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПлатежиПо',
+			text: 'по',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПлатежи',
 			text: '...',
 			style: 'position:absolute;left:361px;top:27px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентПлатежи',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'План платежей на период с:',
+			style: 'position:absolute;left:407px;top:27px;width:163px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -407,10 +768,52 @@
 			style: 'position:absolute;left:671px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПланПлатежиПо',
+			text: 'по',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПланПлатежи',
 			text: '...',
 			style: 'position:absolute;left:755px;top:27px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентПланПлатежи',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:20px;top:148px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:20px;top:172px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:20px;top:196px;width:88px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:414px;top:148px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:414px;top:172px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:414px;top:196px;width:88px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
@@ -425,6 +828,16 @@
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:13px;top:99px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить статью:',
+			style: 'position:absolute;left:13px;top:75px;width:163px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяОборотовПланПлатежи',
@@ -436,12 +849,32 @@
 			name: 'ПроектПланПлатежи',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:407px;top:99px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить статью:',
+			style: 'position:absolute;left:407px;top:75px;width:163px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Закупки',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Объем закупок за период с:',
+			style: 'position:absolute;left:13px;top:27px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Планы закупок на период с:',
+			style: 'position:absolute;left:407px;top:27px;width:161px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -514,10 +947,35 @@
 			name: 'ПроектПланыЗакупок',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:20px;top:148px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:20px;top:172px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:20px;top:196px;width:88px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:13px;top:99px;width:163px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установить проект:',
+			style: 'position:absolute;left:407px;top:99px;width:161px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'КредиторскаяЗадолженность',
+					title:'Кредиторская задолженность контрагентов',
 					items:
 					[
 		{
@@ -533,6 +991,11 @@
 			style: 'position:absolute;left:176px;top:123px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Кредиторская задолженность на дату:',
+			style: 'position:absolute;left:13px;top:27px;width:224px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОстаткаКредиторскаяЗадолженность',
@@ -543,6 +1006,11 @@
 			hideLabel: true,
 			name: 'ПроцентКредиторскаяЗадолженность',
 			style: 'position:absolute;left:176px;top:76px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: '%. Отбор сумм',
+			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -569,10 +1037,50 @@
 			style: 'position:absolute;left:571px;top:74px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: '%. Отбор сумм',
+			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГраницаОтбораЗаказыПоставщикам',
 			style: 'position:absolute;left:663px;top:51px;width:111px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:20px;top:172px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:20px;top:196px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:20px;top:220px;width:149px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагенты',
+			style: 'position:absolute;left:413px;top:172px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договоры контрагентов',
+			style: 'position:absolute;left:413px;top:196px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сделки',
+			style: 'position:absolute;left:413px;top:220px;width:149px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дата оплаты в периоде с:',
+			style: 'position:absolute;left:407px;top:27px;width:161px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -587,6 +1095,12 @@
 			style: 'position:absolute;left:671px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПланыЗакупокПо1',
+			text: 'по',
+			style: 'position:absolute;left:651px;top:27px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаЗаказыПоставщикам',
 			text: '...',
@@ -595,7 +1109,7 @@
 					]
 				},
 				{
-					title:'ЗаработнаяПлата',
+					title:'Задолженность по заработной плате',
 					items:
 					[
 		{
@@ -605,10 +1119,27 @@
 			style: 'position:absolute;left:176px;top:75px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяЗаработнаяПлата',
+			text: 'Статья движения ден. средств:',
+			style: 'position:absolute;left:13px;top:75px;width:163px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроектЗаработнаяПлата',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроектЗаработнаяПлата',
+			text: 'Проект:',
+			style: 'position:absolute;left:13px;top:99px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Задолженность по заработной плате на дату:',
+			style: 'position:absolute;left:13px;top:27px;width:255px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -622,10 +1153,16 @@
 			name: 'ПроцентЗаработнаяПлата',
 			style: 'position:absolute;left:176px;top:52px;width:88px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроцентЗаработнаяПлата',
+			text: 'Процент от суммы:',
+			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Отбор',
+					title:'Отборы',
 					items:
 					[
 		{
@@ -635,22 +1172,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'139',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'115',
 				},
 				{
 					text:'Значение',
+					width:'190',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'190',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'190',
 				},
 			]
 		},
@@ -673,15 +1216,31 @@
 				},
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:217px;width:768px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить результат расчета (%)',
+			style: 'position:absolute;left:13px;top:315px;width:186px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИзменитьРезультатРасчетаСуммыПроцентПлатежи',
 			style: 'position:absolute;left:199px;top:315px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо1',
+			text: 'округлить до:',
+			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;',
 		},
 					]
 				},

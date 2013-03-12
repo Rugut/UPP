@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВыгрузкаРегламентированныхОтчетов.ФормаНавигацииПоОшибкам',
 	{
 	extend: 'Ext.window.Window',
-	height: 148,width: 649,
+	style: 'position:absolute;width:649px;height:148px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Навигация по ошибкам',
 	
 	items:
@@ -15,30 +17,39 @@
 			[
 				{
 					text:'Отчет',
+					width:'100',
 				},
 				{
 					text:'Описание',
+					width:'102',
 				},
 				{
 					text:'Страница',
+					width:'98',
 				},
 				{
 					text:'Строка',
+					width:'100',
 				},
 				{
 					text:'Графа',
+					width:'100',
 				},
 				{
-					text:'ИмяЯчейки',
+					text:'Имя ячейки',
+					width:'100',
 				},
 				{
-					text:'СтрокаПП',
+					text:'Строка п/п',
+					width:'100',
 				},
 				{
-					text:'ОтчетДок',
+					text:'Документ-отчет',
+					width:'100',
 				},
 				{
 					text:'Раздел',
+					width:'100',
 				},
 			]
 		},
@@ -50,13 +61,17 @@
 				{
 					text:'Назад',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Вперед',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВсегоОшибок',
+			text: '',
+			style: 'position:absolute;left:193px;top:5px;width:450px;height:15px;',
 		},
 	]
 });

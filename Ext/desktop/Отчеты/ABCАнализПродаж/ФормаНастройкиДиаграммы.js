@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ABCАнализПродаж.ФормаНастройкиДиаграммы',
 	{
 	extend: 'Ext.window.Window',
-	height: 342,width: 256,
+	style: 'position:absolute;width:256px;height:342px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка диаграммы (ABC-анализ продаж)',
 	
 	items:
@@ -12,14 +14,12 @@
 			style: 'position:absolute;left:0px;top:317px;width:256px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -30,10 +30,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Представление',
+					text:'Имя показателя',
+					width:'220',
 				},
 			]
 		},

@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ПриходныйОрдерНаТовары.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 375,width: 652,
+	style: 'position:absolute;width:652px;height:375px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Приходный ордер на товары',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:188px;top:32px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:323px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,46 +51,29 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Открыть форму настройки бланка товарного наполнения',
 				},
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель7',
+					text:'',
 				},
 				{
-					text:'Разделитель5',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'ОткрытьФормуНастройкиБланкаТоварногоНаполнения',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Подменю3',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -91,52 +94,68 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'70',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
-					text:'НомерГТД',
+					text:'Номер ГТД',
+					width:'100',
 				},
 				{
-					text:'СтранаПроисхождения',
+					text:'Страна происхождения',
+					width:'100',
 				},
 			]
 		},
@@ -146,44 +165,32 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПоСчетуПоставщика',
+					text:'Заполнить по счету поставщика',
 				},
 				{
-					text:'ШтрихКоды',
+					text:'Штрихкоды',
 				},
 				{
-					text:'ЗаполнитьПоЗаказуПоставщику',
+					text:'Заполнить по заказу поставщику',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Заполнить из терминала сбора данных',
 				},
+				'-',
 				{
-					text:'ИзТерминалаСбораДанных',
+					text:'Поиск по штрихкоду',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ПоискПоШтрихКоду',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'Тара',
+					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -192,49 +199,42 @@
 			items:
 			[
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
+				},
+				'-',
+				{
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Разделитель',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие6',
+					text:'Заполнить по заказу поставщику',
 				},
 				{
-					text:'Действие5',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'ЗаполнитьПоЗаказуПоставщику',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие8',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие2',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие4',
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Заполнить по счету поставщика',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьПоСчетуПоставщика',
-				},
-				{
-					text:'Действие7',
+					text:'Сортировать по возрастанию',
 				},
 			]
 		},
@@ -245,25 +245,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед. хранения',
+					width:'52',
 				},
 				{
-					text:'ДокументРезерва',
+					text:'Документ резерва',
+					width:'100',
 				},
 			]
 		},
@@ -274,10 +281,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:12px;top:26px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:98px;top:26px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:328px;top:26px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -290,10 +309,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:108px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -306,28 +337,27 @@
 			style: 'position:absolute;left:0px;top:350px;width:652px;height:25px;',
 			items:
 			[
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Без права продажи',
+			style: 'position:absolute;left:424px;top:34px;width:128px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -340,6 +370,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьДокументПеремещения',
+			text: 'Документ перемещения:',
+			style: 'position:absolute;left:0px;top:0px;width:87px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДокументПеремещения',
@@ -351,6 +387,12 @@
 					title:'Контрагент',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:4px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -372,6 +414,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьФизЛицо',
+			text: 'Физ лицо:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ФизЛицо',
@@ -383,6 +431,12 @@
 					title:'Заказ',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Заказ поставщику:',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:18px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

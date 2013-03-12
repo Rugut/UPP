@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ВводНачальныхОстатковНДСпоПартиям.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 484,width: 780,
+	style: 'position:absolute;width:780px;height:484px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод начальных остатков НДС по партиям',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:429px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:103px;top:429px;width:669px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:338px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,31 +64,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'100',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'100',
 				},
 				{
-					text:'СчетУчета',
+					text:'Счет учета',
+					width:'80',
 				},
 				{
 					text:'Партия',
+					width:'120',
 				},
 				{
 					text:'Склад',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'120',
 				},
 				{
-					text:'Заказ',
+					text:'Заказ покупателя',
+					width:'100',
 				},
 			]
 		},
@@ -71,24 +106,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель4',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
@@ -102,23 +128,17 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},
@@ -129,7 +149,7 @@
 			items:
 			[
 				{
-					title:'ДополнительныеСведения',
+					title:'Дополнительные сведения',
 					items:
 					[
 		{
@@ -139,31 +159,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'80',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'120',
 				},
 				{
-					text:'Стоимость',
+					text:'Стоимость с НДС',
+					width:'120',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
-					text:'НДСВключенВСтоимость',
+					text:'НДС включен в стоимость',
+					width:'60',
 				},
 			]
 		},
@@ -172,12 +201,7 @@
 			style: 'position:absolute;left:0px;top:16px;width:764px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 			]
 		},
 					]
@@ -189,13 +213,14 @@
 			style: 'position:absolute;left:8px;top:79px;width:764px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:405px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

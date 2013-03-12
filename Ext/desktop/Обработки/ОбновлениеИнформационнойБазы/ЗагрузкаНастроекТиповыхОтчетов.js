@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбновлениеИнформационнойБазы.ЗагрузкаНастроекТиповыхОтчетов',
 	{
 	extend: 'Ext.window.Window',
-	height: 90,width: 419,
+	style: 'position:absolute;width:419px;height:90px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Загрузка настроек типовых отчетов',
 	
 	items:
@@ -19,16 +21,20 @@
 			style: 'position:absolute;left:0px;top:65px;width:419px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выполнить',
 				},
 				{
-					text:'ОсновныеДействияФормыВыполнить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Обработка выполняет загрузку предопределенных настроек типовых отчетов',
+			style: 'position:absolute;left:8px;top:33px;width:403px;height:23px;',
 		},
 	]
 });

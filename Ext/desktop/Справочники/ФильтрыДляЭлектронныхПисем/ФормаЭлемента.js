@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 423,width: 714,
+	style: 'position:absolute;width:714px;height:423px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Фильтры для электронных писем',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:608px;top:57px;width:26px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:640px;top:57px;width:66px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:99px;top:33px;width:502px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Учетная запись:',
+			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,16 +59,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'21',
 				},
 				{
-					text:'ОтрицаниеУсловия',
+					text:'НЕ',
+					width:'18',
 				},
 				{
 					text:'Условие',
+					width:'162',
 				},
 				{
-					text:'ЗначениеУсловия',
+					text:'Значение условия',
+					width:'142',
 				},
 			]
 		},
@@ -66,16 +90,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'21',
 				},
 				{
-					text:'ДействиеФильтра',
+					text:'Действие фильтра',
+					width:'120',
 				},
 				{
-					text:'ГруппаПисем',
+					text:'Группа писем',
+					width:'120',
 				},
 				{
 					text:'Оформление',
+					width:'120',
 				},
 			]
 		},
@@ -92,21 +120,28 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Соединение условий по:',
+			style: 'position:absolute;left:8px;top:371px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использование',
+			style: 'position:absolute;left:608px;top:33px;width:98px;height:19px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МониторЭффективности.КонструкторНастройкиПоказателя',
 	{
 	extend: 'Ext.window.Window',
-	height: 366,width: 446,
+	style: 'position:absolute;width:446px;height:366px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка показателя монитора эффективности',
 	
 	items:
@@ -16,19 +18,15 @@
 					text:'Далее',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Назад',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -39,15 +37,51 @@
 			items:
 			[
 				{
-					title:'НастройкаВыборВидаПоказателя',
+					title:'Настройка выбор вида показателя',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись100',
+			text: 'Вид показателя монитора эффективности',
+			style: 'position:absolute;left:6px;top:6px;width:418px;height:36px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Показатель, содержащий поля: "Текущее значение", "Значение предыдущего периода", "Изменение %", "Изменение (абс)"',
+			style: 'position:absolute;left:49px;top:72px;width:375px;height:30px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись103',
+			text: 'Показатель, содержащий, кроме полей стандартного показателя, поля: "План", "% Выполнения", "Отклонение %", "Отклонение (абс)"',
+			style: 'position:absolute;left:49px;top:132px;width:375px;height:33px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись104',
+			text: 'Показатель, содержащий поля: "Текущее значение", "Прогноз"',
+			style: 'position:absolute;left:49px;top:195px;width:335px;height:18px;',
+		},
 					]
 				},
 				{
-					title:'НастройкаФакт',
+					title:'Настройка факт',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Текущее значение:',
+			style: 'position:absolute;left:6px;top:99px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Начало периода:',
+			style: 'position:absolute;left:6px;top:123px;width:102px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -61,10 +95,28 @@
 			style: 'position:absolute;left:129px;top:99px;width:279px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Конец периода:',
+			style: 'position:absolute;left:6px;top:147px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КонецТекущегоПериода',
 			style: 'position:absolute;left:129px;top:147px;width:279px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Предыдущее значение:',
+			style: 'position:absolute;left:6px;top:204px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Начало периода:',
+			style: 'position:absolute;left:6px;top:228px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,10 +131,22 @@
 			style: 'position:absolute;left:129px;top:204px;width:279px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Конец периода:',
+			style: 'position:absolute;left:6px;top:252px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КонецПредыдущегоПериода',
 			style: 'position:absolute;left:129px;top:252px;width:279px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИсточникДанныхЗначениеПоказателя',
+			text: 'Набор данных:',
+			style: 'position:absolute;left:6px;top:48px;width:96px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -93,9 +157,21 @@
 					]
 				},
 				{
-					title:'НастройкаФактПрогноз',
+					title:'Настройка факт прогноз',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись109',
+			text: 'Текущее значение:',
+			style: 'position:absolute;left:6px;top:78px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись110',
+			text: 'Начало периода:',
+			style: 'position:absolute;left:6px;top:102px;width:102px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -109,10 +185,22 @@
 			style: 'position:absolute;left:129px;top:78px;width:279px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись112',
+			text: 'Конец периода:',
+			style: 'position:absolute;left:6px;top:126px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КонецТекущегоПериода1',
 			style: 'position:absolute;left:129px;top:126px;width:279px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИсточникДанныхЗначениеПоказателя1',
+			text: 'Набор данных:',
+			style: 'position:absolute;left:6px;top:48px;width:96px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,14 +211,38 @@
 					]
 				},
 				{
-					title:'НастройкаПлан',
+					title:'Настройка план',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Текущий период',
+			style: 'position:absolute;left:6px;top:75px;width:418px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Значение (план):',
+			style: 'position:absolute;left:6px;top:78px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Начало периода:',
+			style: 'position:absolute;left:6px;top:102px;width:102px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачалоПериодаПлан',
 			style: 'position:absolute;left:129px;top:102px;width:279px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Конец периода:',
+			style: 'position:absolute;left:6px;top:126px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -150,9 +262,21 @@
 			name: 'НаборДанныхЗначениеПлан',
 			style: 'position:absolute;left:129px;top:48px;width:279px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьИсточникДанныхЗначениеПлан',
+			text: 'Набор данных:',
+			style: 'position:absolute;left:6px;top:48px;width:102px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодсказка',
+			text: '',
+			style: 'position:absolute;left:45px;top:8px;width:393px;height:43px;',
 		},
 	]
 });

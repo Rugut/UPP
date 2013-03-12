@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ФормированиеЗаписейКнигиПродаж.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 540,
+	style: 'position:absolute;width:540px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Формирования записей книги продаж',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'ПоРеализации0',
+					text:'По реализации 0%',
+					width:'60',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -38,29 +46,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:540px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				{
+					text:'Выбрать',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Подменю2',
+					text:'Дт/кт',
 				},
 			]
 		},

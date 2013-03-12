@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиЗакрытияМесяца.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 587,width: 850,
+	style: 'position:absolute;width:850px;height:587px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка закрытия месяца',
 	
 	items:
@@ -12,35 +14,28 @@
 			style: 'position:absolute;left:0px;top:0px;width:850px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель',
+					text:'Отчеты регламентных операций',
 				},
 				{
-					text:'Действие1',
+					text:'Скопировать',
 				},
 				{
-					text:'ОтчетыРегламентныхОпераций',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 				{
-					text:'Действие2',
+					text:'Переключить видимость справки формы',
 				},
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'ПереключениеСправкиФормы',
-				},
-				{
-					text:'ДокументыРегламентныхОпераций',
+					text:'Документы регламентных операций',
 				},
 			]
 		},
@@ -49,20 +44,16 @@
 			style: 'position:absolute;left:0px;top:562px;width:850px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
 		},
@@ -77,10 +68,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:2px;top:3px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:4px;width:442px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНачалаДействияНастройки',
+			text: 'Действует с:',
+			style: 'position:absolute;left:2px;top:27px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -89,13 +92,34 @@
 			style: 'position:absolute;left:93px;top:28px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:294px;top:28px;width:73px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:372px;top:28px;width:73px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:450px;top:28px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражениеВУчетах',
+			text: 'Отражать в:',
+			style: 'position:absolute;left:223px;top:28px;width:66px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:55px;width:834px;height:464px;',
 			height: 464,width: 834,
 			items:
 			[
 				{
-					title:'СводныеНастройки',
+					title:'Сводные настройки',
 					items:
 					[
 		{
@@ -105,29 +129,35 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'27',
 				},
 				{
-					text:'РегламентнаяОперация',
+					text:'Регламентная операция',
+					width:'173',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
-					text:'ОтражатьВУправленческомУчете',
+					text:'УУ',
+					width:'37',
 				},
 				{
-					text:'ОтражатьВБухгалтерскомУчете',
+					text:'БУ',
+					width:'31',
 				},
 				{
-					text:'ОтражатьВНалоговомУчете',
+					text:'НУ',
+					width:'31',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'КартаМаршрута',
+					title:'Схема',
 					items:
 					[
 		{
@@ -136,14 +166,14 @@
 			items:
 			[
 				{
-					text:'ИзменитьОтветственного',
+					text:'Изменить ответственного',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СхемаРасчетНДС',
+					title:'Схема расчета НДС',
 					items:
 					[
 		{
@@ -152,7 +182,7 @@
 			items:
 			[
 				{
-					text:'ИзменитьОтветственногоРасчетНДС',
+					text:'Изменить ответственного',
 				},
 			]
 		},
@@ -178,25 +208,21 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Иерархический просмотр',
 				},
 				{
-					text:'Действие1',
+					text:'Установить отбор и сортировку списка...',
+				},
+				'-',
+				'-',
+				{
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Разделитель',
+					text:'Обновить',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
+					text:'Отключить отбор',
 				},
 			]
 		},
@@ -207,17 +233,19 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
-					text:'Наименование',
+					text:'Пользователь',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ГруппыПользователей',
+					title:'Группы пользователей',
 					items:
 					[
 		{
@@ -227,7 +255,8 @@
 			columns:
 			[
 				{
-					text:'Наименование',
+					text:'Группа пользователей',
+					width:'206',
 				},
 			]
 		},
@@ -236,26 +265,22 @@
 			style: 'position:absolute;left:6px;top:6px;width:286px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Отключить отбор',
 				},
 				{
-					text:'Действие3',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Действие2',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Действие1',
+					text:'Обновить',
 				},
+				'-',
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Иерархический просмотр',
 				},
 			]
 		},
@@ -282,17 +307,19 @@
 			columns:
 			[
 				{
-					text:'РегламентнаяОперация',
+					text:'Регламентная операция',
+					width:'173',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'РаспределениеЗатрат',
+					title:'Распределение затрат',
 					items:
 					[
 		{
@@ -302,25 +329,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ХарактерЗатрат',
+					text:'Характер затрат',
+					width:'125',
 				},
 				{
-					text:'ВидПодразделения',
+					text:'Вид подразделения',
+					width:'139',
 				},
 				{
 					text:'Подразделение',
+					width:'140',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'126',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'100',
 				},
 				{
-					text:'СпособРаспределения',
+					text:'Способ распределения',
+					width:'136',
 				},
 			]
 		},
@@ -329,17 +363,21 @@
 			style: 'position:absolute;left:6px;top:6px;width:820px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПроверитьРаспределениеЗатрат',
+					text:'Проверить',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВариант',
+			text: 'Вариант:',
+			style: 'position:absolute;left:545px;top:3px;width:49px;height:19px;',
 		},
 					]
 				},

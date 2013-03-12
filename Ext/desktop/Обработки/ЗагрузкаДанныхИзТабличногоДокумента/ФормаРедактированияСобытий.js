@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаРедактированияСобытий',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 718,
+	style: 'position:absolute;width:718px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма редактирования выражения',
 	
 	items:
@@ -15,16 +17,14 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отмена',
 				},
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'НадписьТекстВыражения',
 			style: 'position:absolute;left:8px;top:8px;width:702px;height:105px;',
@@ -36,13 +36,13 @@
 			items:
 			[
 				{
-					title:'ПередЗаписьюОбъекта',
+					title:'Перед записью объекта',
 				},
 				{
-					title:'ПриЗаписиОбъекта',
+					title:'При записи объекта',
 				},
 				{
-					title:'ПослеДобавленияСтроки',
+					title:'После добавления строки',
 				},
 			]
 		},

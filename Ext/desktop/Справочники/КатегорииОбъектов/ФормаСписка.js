@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КатегорииОбъектов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 482,
+	style: 'position:absolute;width:482px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Категории объектов',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'64',
 				},
 				{
-					text:'Наименование',
+					text:'Наименование категории',
+					width:'214',
 				},
 				{
-					text:'НазначениеКатегории',
+					text:'Назначение категории',
+					width:'120',
 				},
 			]
 		},
@@ -41,7 +47,8 @@
 			columns:
 			[
 				{
-					text:'Наименование',
+					text:'Назначение категории',
+					width:'350',
 				},
 			]
 		},

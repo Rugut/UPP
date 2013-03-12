@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ВыборОрганизацииОбмена',
 	{
 	extend: 'Ext.window.Window',
-	height: 343,width: 491,
+	style: 'position:absolute;width:491px;height:343px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выберите организации',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
 					text:'Открыть',
@@ -35,11 +35,9 @@
 					text:'Выбрать',
 				},
 				{
-					text:'Спарвка',
+					text:'Открыть справку',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

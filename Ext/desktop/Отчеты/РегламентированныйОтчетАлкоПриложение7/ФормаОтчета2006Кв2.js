@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ФормаОтчета2006Кв2',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 670,
+	style: 'position:absolute;width:670px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация об объемах закупки этилового спирта, алкогольной и спиртосодержащей продукции',
 	
 	items:
@@ -12,41 +14,29 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
 					text:'Справка',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель5',
+					text:'Заполнить',
+				},
+				'-',
+				'-',
+				{
+					text:'Расширить поле бланка',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'ЗаполнитьАвто',
-				},
-				{
-					text:'Разделитель7',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Поиск',
@@ -62,22 +52,13 @@
 					text:'Записать',
 				},
 				{
-					text:'ПодменюПечати',
+					text:'OK',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -91,7 +72,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -147,6 +128,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:48px;',
 			height: 48,width: 654,
@@ -163,10 +150,20 @@
 			style: 'position:absolute;left:86px;top:23px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:392px;top:23px;width:252px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:331px;top:23px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'При печати группировать по кодам продукции',
+			style: 'position:absolute;left:0px;top:0px;width:256px;height:19px;',
 		},
 					]
 				},
@@ -182,6 +179,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

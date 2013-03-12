@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЧекККМ.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 760,
+	style: 'position:absolute;width:760px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Чеки ККМ',
 	
 	items:
@@ -14,28 +16,36 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ВидОперации',
+					text:'Вид операции',
+					width:'120',
 				},
 				{
-					text:'СкладКомпании',
+					text:'Склад',
+					width:'120',
 				},
 				{
-					text:'КассаККМ',
+					text:'Касса ККМ',
+					width:'120',
 				},
 				{
-					text:'СуммаДокумента',
+					text:'Сумма',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -45,20 +55,13 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Действие',
 				},
 				{
 					text:'Подменю3',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие',
 				},

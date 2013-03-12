@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РегистрацияОплатыОсновныхСредствДляУСН.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация оплаты ОС и НМА для УСН',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'140',
 				},
 				{
 					text:'Номер',
+					width:'56',
 				},
 				{
 					text:'Организация',
+					width:'350',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -36,14 +43,9 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

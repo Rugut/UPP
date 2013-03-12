@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.Встречи.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 446,width: 675,
+	style: 'position:absolute;width:675px;height:446px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Встреча',
 	
 	items:
@@ -13,34 +15,20 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие5',
@@ -48,26 +36,19 @@
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие4',
@@ -79,7 +60,7 @@
 					text:'Действие6',
 				},
 				{
-					text:'ОткрытьСвойства',
+					text:'Открыть свойства',
 				},
 				{
 					text:'Действие8',
@@ -87,39 +68,29 @@
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Открыть категории',
 				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
-					text:'ОткрытьКатегории',
+					text:'Открыть категории',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'Открыть свойства',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -128,21 +99,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:257px;top:394px;width:43px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,10 +124,22 @@
 			style: 'position:absolute;left:300px;top:394px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'Дата регистрации:',
+			style: 'position:absolute;left:8px;top:394px;width:107px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:116px;top:394px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Зарегистрировал:',
+			style: 'position:absolute;left:395px;top:394px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -185,12 +170,18 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьДатаПланирования',
+			text: '12 октября 2007 г',
+			style: 'position:absolute;left:379px;top:6px;width:130px;height:24px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:245px;top:6px;width:130px;height:24px;',
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Предыдущий день',
 				},
 			]
 		},
@@ -200,7 +191,7 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Следующий день',
 				},
 			]
 		},
@@ -210,7 +201,7 @@
 			items:
 			[
 				{
-					text:'Подбор',
+					text:'Подобрать',
 				},
 			]
 		},
@@ -222,6 +213,7 @@
 			[
 				{
 					text:'Физлицо',
+					width:'100',
 				},
 			]
 		},
@@ -231,7 +223,7 @@
 			items:
 			[
 				{
-					text:'ОтображатьЗанятость',
+					text:'Отображать занятость',
 				},
 			]
 		},
@@ -244,16 +236,20 @@
 					text:'Действие1',
 				},
 				{
-					text:'Действие',
+					text:'Подобрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПомещение',
+			text: 'Место:',
+			style: 'position:absolute;left:8px;top:63px;width:50px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -262,10 +258,22 @@
 			style: 'position:absolute;left:58px;top:63px;width:186px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЧасов1',
+			text: 'Продолж-ть:',
+			style: 'position:absolute;left:257px;top:33px;width:74px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Продолжительность',
 			style: 'position:absolute;left:331px;top:33px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРезервирования1',
+			text: 'Дата:',
+			style: 'position:absolute;left:8px;top:33px;width:50px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -274,10 +282,27 @@
 			style: 'position:absolute;left:58px;top:33px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаРезервирования2',
+			text: 'Начало:',
+			style: 'position:absolute;left:147px;top:33px;width:45px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВремяНачала',
 			style: 'position:absolute;left:192px;top:33px;width:52px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждение',
+			text: 'Встреча назначена на 12 часов в помещении 2204',
+			style: 'position:absolute;left:39px;top:336px;width:628px;height:35px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Это - встреча с кандидатом',
+			style: 'position:absolute;left:495px;top:33px;width:172px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

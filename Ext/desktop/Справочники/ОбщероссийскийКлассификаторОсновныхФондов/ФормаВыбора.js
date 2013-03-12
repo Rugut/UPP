@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОбщероссийскийКлассификаторОсновныхФондов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 684,
+	style: 'position:absolute;width:684px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Общероссийский классификатор основных фондов',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'АмортизационнаяГруппа',
+					text:'Амортизационная группа',
+					width:'100',
 				},
 			]
 		},
@@ -35,9 +41,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -48,6 +52,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'175',
 				},
 			]
 		},

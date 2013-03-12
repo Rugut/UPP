@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РегистрСведений_ФайлыСведенийСпецоператоры_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 741,
+	style: 'position:absolute;width:741px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Список Кэш файлов Спецоператоров',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
-					text:'УчетнаяЗапись',
+					text:'Учетная запись',
+					width:'350',
 				},
 				{
 					text:'Данные',
+					width:'100',
 				},
 				{
-					text:'ДатаФайла',
+					text:'Дата обновления файла на сервере',
+					width:'140',
 				},
 				{
-					text:'Размер',
+					text:'Размер (в байтах)',
+					width:'70',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'Очистить',
+					text:'Очистить кэш',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 	]

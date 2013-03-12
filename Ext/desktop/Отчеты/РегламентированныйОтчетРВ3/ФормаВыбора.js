@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетРВ3.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 287,width: 600,
+	style: 'position:absolute;width:600px;height:287px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор из списка',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Код',
+					width:'130',
 				},
 				{
 					text:'Название',
+					width:'457',
 				},
 			]
 		},
@@ -27,7 +31,7 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'ОК',
 				},
 			]
 		},

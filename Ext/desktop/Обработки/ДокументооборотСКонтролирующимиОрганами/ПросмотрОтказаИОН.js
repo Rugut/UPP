@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрОтказаИОН',
 	{
 	extend: 'Ext.window.Window',
-	height: 603,width: 575,
+	style: 'position:absolute;width:575px;height:603px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -24,10 +26,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ТекстСообщения',
+					text:'Текст сообщения',
+					width:'100',
 				},
 			]
 		},

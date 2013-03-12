@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РезервированиеПомещений.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 781,
+	style: 'position:absolute;width:781px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Резервирования помещений',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Помещение',
+					width:'100',
 				},
 				{
 					text:'Занятость',
+					width:'60',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -47,20 +58,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:781px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие',

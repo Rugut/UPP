@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.СпособыОтраженияРасходовПоАмортизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 616,
+	style: 'position:absolute;width:616px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Способы отражения расходов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:526px;top:33px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:568px;top:33px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:430px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:398px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,21 +57,17 @@
 			style: 'position:absolute;left:0px;top:425px;width:616px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -68,94 +84,124 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение (орг.)',
+					width:'120',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'120',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'80',
 				},
 				{
-					text:'СчетЗатратНУ',
+					text:'Счет затрат (НУ)',
+					width:'80',
 				},
 				{
-					text:'ХарактерЗатрат',
+					text:'Хар-р затрат',
+					width:'80',
 				},
 				{
-					text:'ВидАналитики',
+					text:'Вид аналитики',
+					width:'208',
 				},
 				{
-					text:'ВидАналитикиДоп',
+					text:'Вид аналитики (доп)',
+					width:'208',
 				},
 				{
-					text:'ВидСубконто1',
+					text:'Вид субконто 1',
+					width:'69',
 				},
 				{
-					text:'ВидСубконто2',
+					text:'Вид субконто 2',
+					width:'69',
 				},
 				{
-					text:'ВидСубконто3',
+					text:'Вид субконто 3',
+					width:'69',
 				},
 				{
-					text:'ВидСубконтоНУ1',
+					text:'Вид субконто 1 (НУ)',
+					width:'87',
 				},
 				{
-					text:'ВидСубконтоНУ2',
+					text:'Вид субконто 2 (НУ)',
+					width:'87',
 				},
 				{
-					text:'ВидСубконтоНУ3',
+					text:'Вид субконто 3 (НУ)',
+					width:'87',
 				},
 				{
 					text:'Аналитика',
+					width:'89',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'89',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1',
+					width:'73',
 				},
 				{
-					text:'Субконто2',
+					text:'Субконто 2',
+					width:'73',
 				},
 				{
-					text:'Субконто3',
+					text:'Субконто 3',
+					width:'73',
 				},
 				{
-					text:'СубконтоНУ1',
+					text:'Субконто 1 (НУ)',
+					width:'58',
 				},
 				{
-					text:'СубконтоНУ2',
+					text:'Субконто 2 (НУ)',
+					width:'58',
 				},
 				{
-					text:'СубконтоНУ3',
+					text:'Субконто 3 (НУ)',
+					width:'58',
 				},
 				{
 					text:'Продукция',
+					width:'116',
 				},
 				{
-					text:'ХарактеристикаПродукции',
+					text:'Характеристика продукции',
+					width:'116',
 				},
 				{
-					text:'СерияПродукции',
+					text:'Серия продукции',
+					width:'116',
 				},
 				{
-					text:'ОбъектСтроительства',
+					text:'Объект строительства',
+					width:'88',
 				},
 				{
-					text:'СпособСтроительства',
+					text:'Способ строительства',
+					width:'86',
 				},
 				{
 					text:'Коэффициент',
+					width:'98',
 				},
 			]
 		},
@@ -164,6 +210,18 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:514px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособРаспределенияЗатратНаВыпуск',
+			text: 'Способ распределения затрат на выпуск:',
+			style: 'position:absolute;left:8px;top:80px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

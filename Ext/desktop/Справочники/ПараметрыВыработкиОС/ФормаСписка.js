@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПараметрыВыработкиОС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 362,
+	style: 'position:absolute;width:362px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры выработки ОС',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед. изм.',
+					width:'54',
 				},
 			]
 		},

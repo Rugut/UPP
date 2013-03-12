@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ОтражениеЗарплатыВУпрУчете.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 456,width: 566,
+	style: 'position:absolute;width:566px;height:456px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отражение зарплаты в упр учете',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:252px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,16 +28,34 @@
 			style: 'position:absolute;left:438px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМесяц',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:113px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:252px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:338px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:404px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,35 +69,33 @@
 			items:
 			[
 				{
-					text:'Действие12',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие9',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие16',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие15',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие17',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие14',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие10',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие11',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие13',
+					text:'Закончить редактирование',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -81,31 +105,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'КатегорияЗатраты',
+					text:'Затрата',
+					width:'80',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'120',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'100',
 				},
 				{
-					text:'СпособРаспределенияЗатрат',
+					text:'Способ распределения затрат',
+					width:'100',
 				},
 				{
-					text:'ОбъектСтроительства',
+					text:'Объект строительства',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'63',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 			]
 		},
@@ -115,21 +148,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:418px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -137,34 +172,22 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
+				'-',
 				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 			]
 		},
@@ -185,10 +208,22 @@
 			style: 'position:absolute;left:0px;top:20px;width:80px;height:22px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЗарплата',
+			text: 'Зарплата:',
+			style: 'position:absolute;left:105px;top:20px;width:51px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Зарплата',
 			style: 'position:absolute;left:161px;top:20px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕСН',
+			text: 'ЕСН:',
+			style: 'position:absolute;left:105px;top:44px;width:51px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -197,10 +232,34 @@
 			style: 'position:absolute;left:161px;top:44px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНДФЛ',
+			text: 'НДФЛ:',
+			style: 'position:absolute;left:105px;top:68px;width:51px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НДФЛ',
 			style: 'position:absolute;left:161px;top:68px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнформация',
+			text: 'Затраты, рассчитанные автоматически, можно скорректировать вручную, если это необходимо',
+			style: 'position:absolute;left:302px;top:20px;width:248px;height:28px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнформацияНалоги',
+			text: 'ЕСН и НДФЛ не выделены из общей суммы затрат',
+			style: 'position:absolute;left:302px;top:60px;width:172px;height:28px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСправка',
+			text: 'Справка',
+			style: 'position:absolute;left:479px;top:60px;width:71px;height:28px;',
 		},
 					]
 				},

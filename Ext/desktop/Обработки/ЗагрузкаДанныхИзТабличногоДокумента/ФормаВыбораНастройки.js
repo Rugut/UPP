@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаВыбораНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 241,width: 411,
+	style: 'position:absolute;width:411px;height:241px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор настройки',
 	
 	items:
@@ -33,6 +35,7 @@
 			[
 				{
 					text:'Колонка1',
+					width:'100',
 				},
 			]
 		},

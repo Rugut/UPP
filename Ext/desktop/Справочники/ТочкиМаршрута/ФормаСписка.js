@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТочкиМаршрута.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 560,
+	style: 'position:absolute;width:560px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Точки маршрута',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'168',
 				},
 				{
 					text:'Подразделение',
+					width:'142',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'137',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

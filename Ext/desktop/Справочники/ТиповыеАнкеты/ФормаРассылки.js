@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаРассылки',
 	{
 	extend: 'Ext.window.Window',
-	height: 392,width: 473,
+	style: 'position:absolute;width:473px;height:392px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Рассылка анкеты',
 	
 	items:
@@ -19,20 +21,16 @@
 			style: 'position:absolute;left:0px;top:367px;width:473px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},
@@ -43,11 +41,11 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Письмо',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ТекстПисьма',
 			style: 'position:absolute;left:6px;top:6px;width:443px;height:222px;',
@@ -55,7 +53,7 @@
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Получатели',
 					items:
 					[
 		{
@@ -66,9 +64,7 @@
 				{
 					text:'Скопировать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Удалить',
 				},
@@ -87,17 +83,19 @@
 			columns:
 			[
 				{
-					text:'Объект',
+					text:'Получатель',
+					width:'220',
 				},
 				{
-					text:'Получатель',
+					text:'e-mail',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Вложения',
 					items:
 					[
 		{
@@ -126,7 +124,8 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'320',
 				},
 			]
 		},
@@ -141,6 +140,12 @@
 			style: 'position:absolute;left:90px;top:33px;width:375px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьАнкета',
+			text: 'Анкета:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:457px;height:43px;',
 			height: 43,width: 457,
@@ -150,6 +155,11 @@
 					title:'ВнешнийПочтовыйКлиент',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Уведомлять о получении',
+			style: 'position:absolute;left:0px;top:24px;width:149px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -163,10 +173,28 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьЭлектронныйАдресОтветов',
+			text: 'E-mail ответов:',
+			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'E-mail отправки:',
+			style: 'position:absolute;left:0px;top:0px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЭлектронныйАдресОтветовВстроенныйПочтовыйКлиент',
 			style: 'position:absolute;left:89px;top:24px;width:368px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'E-mail ответов:',
+			style: 'position:absolute;left:0px;top:24px;width:80px;height:19px;',
 		},
 					]
 				},

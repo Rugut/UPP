@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегистрУчетаОперацийВыбытияИмущества.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 352,width: 372,
+	style: 'position:absolute;width:372px;height:352px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Регистр учета операций приобретения имущества, работ, услуг, прав',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -34,6 +36,12 @@
 			style: 'position:absolute;left:84px;top:33px;width:266px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:33px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
@@ -46,6 +54,18 @@
 			style: 'position:absolute;left:184px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:166px;top:6px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -54,7 +74,7 @@
 					]
 				},
 				{
-					title:'УсловияВыбытия',
+					title:'Условия выбытия',
 					items:
 					[
 		{
@@ -63,17 +83,17 @@
 			items:
 			[
 				{
-					text:'СнятьВсеУсловия',
+					text:'Действие2',
 				},
 				{
-					text:'УстановитьВсеУсловия',
+					text:'',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВидыДоходов',
+					title:'Виды Доходов',
 					items:
 					[
 		{
@@ -82,10 +102,10 @@
 			items:
 			[
 				{
-					text:'СнятьВсеВиды',
+					text:'',
 				},
 				{
-					text:'УстановитьВсеВиды',
+					text:'',
 				},
 			]
 		},

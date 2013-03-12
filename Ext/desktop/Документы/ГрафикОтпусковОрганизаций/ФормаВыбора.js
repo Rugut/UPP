@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ГрафикОтпусковОрганизаций.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 620,
+	style: 'position:absolute;width:620px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'График отпусков организации',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -38,23 +46,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Подменю2',
 				},
 				{
 					text:'Действие',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВариантыНастроекФинАнализа.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 488,
+	style: 'position:absolute;width:488px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Варианты настроек финанализа',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -29,9 +34,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:488px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

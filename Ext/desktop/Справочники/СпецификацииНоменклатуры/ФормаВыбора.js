@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 780,
+	style: 'position:absolute;width:780px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Спецификации номенклатуры',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -27,31 +27,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
-					text:'КодВерсии',
+					text:'Версия',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'Активная',
+					text:'А.',
+					width:'20',
 				},
 				{
-					text:'ВидСпецификации',
+					text:'Вид',
+					width:'80',
 				},
 				{
 					text:'Состояние',
+					width:'80',
 				},
 				{
-					text:'ДатаУтверждения',
+					text:'Дата утверждения',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -63,6 +72,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},

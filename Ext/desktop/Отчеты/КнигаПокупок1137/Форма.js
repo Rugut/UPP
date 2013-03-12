@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.КнигаПокупок1137.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 800,
+	style: 'position:absolute;width:800px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Книга покупок по Постановлению № 1137',
 	
 	items:
@@ -12,46 +14,47 @@
 			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Настройка...',
 				},
 				{
-					text:'Подменю',
+					text:'Восстановить значения...',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеНастройка',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'Справка',
 				},
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,10 +69,21 @@
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:364px;top:33px;width:428px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Формировать дополнительные листы',
+			style: 'position:absolute;left:8px;top:57px;width:213px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -84,9 +98,14 @@
 			items:
 			[
 				{
-					title:'ОсновнойРаздел',
+					title:'Основной раздел',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить только доп. листы',
+			style: 'position:absolute;left:394px;top:57px;width:167px;height:19px;',
 		},
 	]
 });

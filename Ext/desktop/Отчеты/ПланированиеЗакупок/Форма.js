@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ПланированиеЗакупок.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 800,
+	style: 'position:absolute;width:800px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Планирование закупок',
 	
 	items:
@@ -16,61 +18,44 @@
 					text:'Сформировать',
 				},
 				{
-					text:'СформироватьЗаказ',
+					text:'Сформировать заказ',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'СохранитьНастройки',
+					text:'Сохранить настройки...',
 				},
 				{
 					text:'Действие3',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительСформироватьЗаказ',
-				},
-				{
-					text:'Восстановитьнастройки',
+					text:'Восстановить настройки...',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'РазделительСформировать',
+					text:'Восстановить настройки...',
 				},
 				{
-					text:'Восстановитьнастройки',
-				},
-				{
-					text:'СформироватьЗаказ',
+					text:'Сформировать заказ',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'ФормированиеВнутреннихЗаказов',
+					text:'Формирование внутренних заказов...',
 				},
 				{
-					text:'ФормированиеВнутреннихЗаказов',
+					text:'Формирование внутренних заказов...',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительДействия',
-				},
-				{
-					text:'РазделительФормированиеВнутреннихЗаказов',
-				},
-				{
-					text:'СохранитьНастройки',
+					text:'Сохранить настройки...',
 				},
 				{
 					text:'Действие2',
@@ -84,7 +69,7 @@
 			items:
 			[
 				{
-					title:'СтраницаПараметры',
+					title:'Параметры',
 					items:
 					[
 		{
@@ -98,6 +83,18 @@
 			hideLabel: true,
 			name: 'ДатаНачПродаж',
 			style: 'position:absolute;left:148px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодПродаж',
+			text: 'Период анализа продаж с:',
+			style: 'position:absolute;left:6px;top:6px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПродажПо',
+			text: 'по:',
+			style: 'position:absolute;left:230px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -118,6 +115,18 @@
 			style: 'position:absolute;left:148px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериодЗакупок',
+			text: 'Период закупок с:',
+			style: 'position:absolute;left:6px;top:30px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗакупокПо',
+			text: 'по:',
+			style: 'position:absolute;left:230px;top:30px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаЗакупок',
 			text: '...',
@@ -130,15 +139,31 @@
 			style: 'position:absolute;left:586px;top:54px;width:190px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Показать только необходимые закупки',
+			style: 'position:absolute;left:6px;top:54px;width:222px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаТипЦенНоменклатуры',
 			style: 'position:absolute;left:148px;top:78px;width:201px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипЦенНоменклатуры',
+			text: 'Тип цен номенклатуры:',
+			style: 'position:absolute;left:6px;top:78px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По всей номенклатуре',
+			style: 'position:absolute;left:238px;top:54px;width:140px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаОтбор',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -148,22 +173,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -177,7 +208,7 @@
 					]
 				},
 				{
-					title:'СтраницаДополнительныеПоля',
+					title:'Дополнительные поля',
 					items:
 					[
 		{
@@ -188,6 +219,7 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 			]
 		},
@@ -201,7 +233,7 @@
 					]
 				},
 				{
-					title:'СтраницаПоказатели',
+					title:'Показатели',
 					items:
 					[
 		{
@@ -211,10 +243,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'23',
 				},
 				{
 					text:'Показатель',
+					width:'100',
 				},
 			]
 		},

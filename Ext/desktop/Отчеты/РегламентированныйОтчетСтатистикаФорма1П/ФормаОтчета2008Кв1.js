@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма1П.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 429,width: 670,
+	style: 'position:absolute;width:670px;height:429px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма № 1-предприятие',
 	
 	items:
@@ -12,41 +14,28 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
 				},
 				{
 					text:'Справка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Обновить',
 				},
 				{
-					text:'Разделитель4',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
 			]
 		},
@@ -58,23 +47,14 @@
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -88,13 +68,13 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел I',
 				},
 				{
-					title:'Раздел2_3',
+					title:'Раздел II-III',
 				},
 				{
-					title:'Раздел4_6',
+					title:'Раздел IV-VI',
 					items:
 					[
 		{
@@ -109,13 +89,37 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись43',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись44',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись25',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:115px;top:241px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись45',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел7',
+					title:'Раздел VII',
 				},
 				{
-					title:'Раздел8',
+					title:'Раздел VIII',
 					items:
 					[
 		{
@@ -130,10 +134,16 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел10',
+			text: '999 из 999',
+			style: 'position:absolute;left:288px;top:241px;width:64px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Раздел9',
+					title:'Раздел IX',
 					items:
 					[
 		{
@@ -151,7 +161,7 @@
 					]
 				},
 				{
-					title:'Раздел10',
+					title:'Терр.-обособ. подразделения',
 					items:
 					[
 		{
@@ -204,6 +214,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:28px;',
 			height: 28,width: 654,
@@ -239,6 +255,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

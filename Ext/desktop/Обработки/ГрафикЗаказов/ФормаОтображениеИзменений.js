@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрафикЗаказов.ФормаОтображениеИзменений',
 	{
 	extend: 'Ext.window.Window',
-	height: 335,width: 747,
+	style: 'position:absolute;width:747px;height:335px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Список изменений',
 	
 	items:
@@ -13,13 +15,13 @@
 			items:
 			[
 				{
-					text:'Сохранить',
+					text:'Сохранить изменения',
 				},
 				{
-					text:'НеСохранять',
+					text:'Не сохранять изменения',
 				},
 				{
-					text:'Закрыть',
+					text:'Отмена',
 				},
 			]
 		},
@@ -31,32 +33,47 @@
 			[
 				{
 					text:'Изменять',
+					width:'59',
 				},
 				{
 					text:'Заказ',
+					width:'21',
 				},
 				{
-					text:'ПредставлениеЗаказа',
+					text:'Заказ',
+					width:'368',
 				},
 				{
-					text:'ДатыЗапуска',
+					text:'Дата запуска',
+					width:'65',
 				},
 				{
-					text:'ДатаЗапускаИсходная',
+					text:'Исходная',
+					width:'80',
 				},
 				{
-					text:'ДатаЗапуска',
+					text:'Новая',
+					width:'65',
 				},
 				{
-					text:'ДатыИсполнения',
+					text:'Дата исполнения',
+					width:'84',
 				},
 				{
-					text:'ДатаИсполненияИсходная',
+					text:'Исходная',
+					width:'73',
 				},
 				{
-					text:'ДатаИсполнения',
+					text:'Новая',
+					width:'76',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнформация',
+			text: '',
+			style: 'position:absolute;left:8px;top:5px;width:731px;height:38px;',
 		},
 	]
 });

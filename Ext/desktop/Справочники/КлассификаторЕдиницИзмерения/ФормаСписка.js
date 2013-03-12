@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КлассификаторЕдиницИзмерения.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 536,
+	style: 'position:absolute;width:536px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Классификатор единиц измерения',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Полное наименование',
+					width:'220',
 				},
 				{
-					text:'МеждународноеСокращение',
+					text:'Международное сокращение',
+					width:'40',
 				},
 			]
 		},
@@ -35,11 +42,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:536px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель7',
-				},
-				{
-					text:'ДействиеПодбор',
+					text:'Подбор из ОКЕИ',
 				},
 			]
 		},

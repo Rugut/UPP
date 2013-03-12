@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.РегламентированнаяФормаСводнаяКарточкаПоЕСН.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 387,width: 651,
+	style: 'position:absolute;width:651px;height:387px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сводная карточка ЕСН',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,55 +27,38 @@
 			items:
 			[
 				{
-					text:'ДействиеНовыйОтчет',
+					text:'Новый отчет',
 				},
 				{
-					text:'СохранитьЗначения___',
+					text:'Сохранить значения',
 				},
 				{
-					text:'ДействиеНовыйОтчет',
+					text:'Новый отчет',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'ВыполнитьПечать',
+					text:'На принтер',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
 				{
-					text:'ВыполнитьПечать',
+					text:'На принтер',
 				},
 				{
-					text:'Подменю',
+					text:'Восстановить значения',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'ВосстановитьЗначения___',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Сформировать1',
+					text:'Сформировать',
 				},
 				{
 					text:'Сформировать',
@@ -79,6 +70,12 @@
 			hideLabel: true,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Налоговый период:',
+			style: 'position:absolute;left:326px;top:33px;width:104px;height:19px;',
 		},
 	]
 });

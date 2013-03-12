@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗакрытиеПланируемыхПоступленийДенежныхСредств.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 780,
+	style: 'position:absolute;width:780px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Закрытие планируемых поступлений денежных средств',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Состояние',
+					width:'120',
 				},
 				{
-					text:'ЦФО',
+					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
-					text:'ОтветственныйПоступление',
+					text:'Ответственный за поступление',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -47,17 +58,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ABCАнализПокупателей.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 430,width: 650,
+	style: 'position:absolute;width:650px;height:430px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'ABC-анализ покупателей',
 	
 	items:
@@ -16,32 +18,21 @@
 					text:'Сформировать',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Заголовок',
 				},
 				{
 					text:'Действие',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
@@ -51,32 +42,22 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Отбор',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
 				{
 					text:'Действие1',
@@ -84,10 +65,14 @@
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата отчета:',
+			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -112,6 +97,11 @@
 			style: 'position:absolute;left:317px;top:0px;width:317px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:0px;width:137px;height:18px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСКонтрагент',
@@ -128,6 +118,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиABCКлассПокупателя',
 			style: 'position:absolute;left:317px;top:25px;width:317px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'АВС-класс покупателя:',
+			style: 'position:absolute;left:0px;top:25px;width:137px;height:18px;',
 		},
 		{
 			xtype: 'textfield',

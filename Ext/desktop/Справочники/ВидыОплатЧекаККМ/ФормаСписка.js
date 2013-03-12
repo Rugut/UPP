@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыОплатЧекаККМ.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 601,
+	style: 'position:absolute;width:601px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Виды оплат чека ККМ',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ТипОплаты',
+					text:'Тип оплаты',
+					width:'115',
 				},
 			]
 		},
@@ -35,6 +41,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'141',
 				},
 			]
 		},

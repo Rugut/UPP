@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ДокументРасчетовСКонтрагентом.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 609,
+	style: 'position:absolute;width:609px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документы расчетов с контрагентом (ручной учет)',
 	
 	items:
@@ -12,45 +14,37 @@
 			style: 'position:absolute;left:8px;top:192px;width:593px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие5',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель2',
+					text:'Новый документ расчетов (ручной учет)',
 				},
 				{
-					text:'Действие4',
+					text:'&Просмотр',
 				},
 				{
-					text:'Действие',
+					text:'Сформировать',
 				},
 				{
-					text:'СоздатьИВыбрать',
-				},
-				{
-					text:'Просмотр',
-				},
-				{
-					text:'ОбновитьСписок',
-				},
-				{
-					text:'Действие3',
+					text:'&Переместить вниз',
 				},
 				{
 					text:'Выбрать',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'&Переместить вверх',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -60,12 +54,20 @@
 			columns:
 			[
 				{
-					text:'РасчетныйДокумент',
+					text:'Документ расчетов',
+					width:'444',
 				},
 				{
-					text:'Остаток',
+					text:'Остаток (сумма)',
+					width:'123',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНачалоПериода',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,10 +76,22 @@
 			style: 'position:absolute;left:94px;top:8px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКонецПериода',
+			text: 'по:',
+			style: 'position:absolute;left:176px;top:8px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КонПериода',
 			style: 'position:absolute;left:194px;top:8px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРежимОтбораДокументов',
+			text: 'Режим отбора:',
+			style: 'position:absolute;left:14px;top:53px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,10 +100,22 @@
 			style: 'position:absolute;left:94px;top:53px;width:150px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:14px;top:77px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:77px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет учета:',
+			style: 'position:absolute;left:14px;top:149px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,10 +136,38 @@
 			style: 'position:absolute;left:94px;top:101px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:14px;top:101px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:94px;top:125px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговорКонтрагента',
+			text: 'Договор:',
+			style: 'position:absolute;left:14px;top:125px;width:78px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОстаткиОбороты',
+			text: 'Остатки:',
+			style: 'position:absolute;left:194px;top:149px;width:54px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сохранять режим отбора документов',
+			style: 'position:absolute;left:250px;top:53px;width:217px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Формировать список при открытии',
+			style: 'position:absolute;left:342px;top:8px;width:204px;height:19px;',
 		},
 	]
 });

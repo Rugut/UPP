@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПереходНаПорядокИсчисленияПособий2010.СписокСотрудников',
 	{
 	extend: 'Ext.window.Window',
-	height: 370,width: 251,
+	style: 'position:absolute;width:251px;height:370px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -24,7 +26,8 @@
 			columns:
 			[
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'146',
 				},
 			]
 		},
@@ -41,7 +44,8 @@
 			columns:
 			[
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'184',
 				},
 			]
 		},

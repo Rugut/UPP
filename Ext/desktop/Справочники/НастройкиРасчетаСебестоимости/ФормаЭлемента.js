@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.НастройкиРасчетаСебестоимости.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 418,width: 394,
+	style: 'position:absolute;width:394px;height:418px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка расчета себестоимости',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:83px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:105px;top:83px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:8px;top:146px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -26,20 +40,16 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -49,7 +59,7 @@
 			items:
 			[
 				{
-					title:'ПараметрыФормируемыхДокументов',
+					title:'Выполняемые действия',
 					items:
 					[
 		{
@@ -59,7 +69,8 @@
 			columns:
 			[
 				{
-					text:'ВыполняемоеДействие',
+					text:'Выполняемое действие',
+					width:'333',
 				},
 			]
 		},
@@ -69,43 +80,72 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Удалить',
 				},
 				{
-					text:'ЗаполнитьВыполняемыеДействия',
+					text:'Список действий',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Заполнить',
+					text:'&Изменить',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'АвтоматическоеФормированиеДокументов',
+					title:'Автоматическое выполнение',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать расписание',
+			style: 'position:absolute;left:6px;top:17px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПредставлениеРасписания',
+			text: '<Ввести расписание>',
+			style: 'position:absolute;left:22px;top:41px;width:348px;height:43px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Задержка',
 			style: 'position:absolute;left:218px;top:89px;width:25px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Рассчитывать за прошлый месяц:',
+			style: 'position:absolute;left:22px;top:89px;width:191px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗадержка',
+			text: 'месяц',
+			style: 'position:absolute;left:246px;top:89px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеЗадержка',
+			text: '',
+			style: 'position:absolute;left:37px;top:113px;width:333px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -114,16 +154,34 @@
 			style: 'position:absolute;left:105px;top:57px;width:281px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:105px;top:33px;width:281px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:366px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:105px;top:366px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНастройкаЗакрытияМесяца',
+			text: 'Настройка закрытия месяца:',
+			style: 'position:absolute;left:8px;top:109px;width:94px;height:30px;',
 		},
 		{
 			xtype: 'textfield',

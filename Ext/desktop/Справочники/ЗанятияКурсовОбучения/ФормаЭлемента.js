@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ЗанятияКурсовОбучения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 406,width: 400,
+	style: 'position:absolute;width:400px;height:406px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Занятия курсов обучения',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,16 @@
 			style: 'position:absolute;left:94px;top:33px;width:298px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ОписаниеЗанятия',
 			style: 'position:absolute;left:8px;top:75px;width:384px;height:82px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДлительностьЗанятия',
+			text: 'Длительность занятия, часов:',
+			style: 'position:absolute;left:8px;top:162px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,11 +44,9 @@
 			style: 'position:absolute;left:8px;top:239px;width:384px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'КоррекцияВесов',
+					text:'Коррекция весов',
 				},
 			]
 		},
@@ -45,13 +57,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Компетенция',
+					width:'244',
 				},
 				{
-					text:'Вес',
+					text:'Вес изучения %',
+					width:'96',
 				},
 			]
 		},
@@ -68,21 +83,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпис��ВидЗанятия',
+			text: 'Форма проведения занятия:',
+			style: 'position:absolute;left:8px;top:186px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

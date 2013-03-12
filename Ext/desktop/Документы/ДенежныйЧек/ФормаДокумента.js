@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ДенежныйЧек.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 370,width: 663,
+	style: 'position:absolute;width:663px;height:370px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Денежный чек',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:102px;top:57px;width:219px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Банковский счет:',
+			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:102px;top:81px;width:219px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Касса:',
+			style: 'position:absolute;left:341px;top:81px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Касса',
 			style: 'position:absolute;left:435px;top:81px;width:219px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Сумма по чеку:',
+			style: 'position:absolute;left:8px;top:105px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:102px;top:105px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,16 +83,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Ведомость',
+					width:'290',
 				},
 				{
 					text:'Сумма',
+					width:'122',
 				},
 				{
-					text:'СтатьяДвиженияДенежныхСредств',
+					text:'Статья движения денежных средств',
+					width:'202',
 				},
 			]
 		},
@@ -69,26 +105,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:663px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель6',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 			]
 		},
@@ -97,28 +126,28 @@
 			style: 'position:absolute;left:0px;top:345px;width:663px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,10 +156,21 @@
 			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:202px;top:33px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Оплачено:',
+			style: 'position:absolute;left:341px;top:33px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -139,10 +179,34 @@
 			style: 'position:absolute;left:435px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИтогоЗП',
+			text: 'Итого на выплату заработной платы: 15000 руб',
+			style: 'position:absolute;left:8px;top:298px;width:364px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалюта',
+			text: 'Руб',
+			style: 'position:absolute;left:224px;top:105px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатья',
+			text: 'Статья движ. ден. средств:',
+			style: 'position:absolute;left:341px;top:105px;width:92px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяДвиженияДенежныхСредств',
 			style: 'position:absolute;left:435px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:318px;width:73px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

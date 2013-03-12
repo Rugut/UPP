@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиАналитическогоБаланса.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 364,
+	style: 'position:absolute;width:364px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Статьи аналитического баланса',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -24,11 +27,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

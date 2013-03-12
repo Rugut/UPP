@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Проекты.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 308,
+	style: 'position:absolute;width:308px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы проектов',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'309',
 				},
 			]
 		},
@@ -26,9 +29,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

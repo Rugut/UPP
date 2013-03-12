@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РасходныйКассовыйОрдер.ФормаВыбораВедомостиПоЗарплате',
 	{
 	extend: 'Ext.window.Window',
-	height: 299,width: 711,
+	style: 'position:absolute;width:711px;height:299px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ведомости на выплату заработной платы',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:274px;width:711px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -24,9 +24,7 @@
 				{
 					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -37,33 +35,43 @@
 			[
 				{
 					text:'Ссылка',
+					width:'100',
 				},
 				{
-					text:'ОрганизацияСсылка',
+					text:'Организация - ссылка',
+					width:'100',
 				},
 				{
-					text:'ФизлицоСсылка',
+					text:'Физлицо - ссылка',
+					width:'100',
 				},
 				{
-					text:'СсылкаПредставление',
+					text:'Документ',
+					width:'100',
 				},
 				{
 					text:'Дата',
+					width:'100',
 				},
 				{
 					text:'Номер',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
 					text:'Физлицо',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},

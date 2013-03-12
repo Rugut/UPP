@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП4.ФормаОтчета2012Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 438,width: 716,
+	style: 'position:absolute;width:716px;height:438px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Форма П-4',
 	
 	items:
@@ -12,62 +14,42 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'Отправка',
+					text:'Проверить в Интернете',
+				},
+				'-',
+				'-',
+				{
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'Проверить',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Выгрузка',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
 					text:'Очистить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'Действие',
+					text:'Действие2',
 				},
 			]
 		},
@@ -76,28 +58,25 @@
 			style: 'position:absolute;left:0px;top:413px;width:716px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюПечати',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -135,6 +114,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

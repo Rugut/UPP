@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПрожиточныеМинимумы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 294,width: 462,
+	style: 'position:absolute;width:462px;height:294px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Прожиточный минимум субъекта РФ, в целом по РФ',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:343px;top:33px;width:29px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:374px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,9 +38,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:462px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -40,26 +52,17 @@
 					text:'Действие',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -69,15 +72,11 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -86,20 +85,16 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -109,13 +104,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Период',
+					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Размер',
+					width:'100',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Отчеты.ПоказателиРаботыМенеджеров.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 412,width: 622,
+	style: 'position:absolute;width:622px;height:412px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Показатели работы менеджеров',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,27 +44,19 @@
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Настройка ...',
 				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -64,14 +70,10 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
@@ -84,24 +86,13 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{
@@ -114,6 +105,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Менеджер:',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

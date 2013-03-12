@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаВыбораПоляИсточника',
 	{
 	extend: 'Ext.window.Window',
-	height: 385,width: 236,
+	style: 'position:absolute;width:236px;height:385px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Поля запроса',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Поле',
+					width:'220',
 				},
 			]
 		},
@@ -43,14 +46,12 @@
 			items:
 			[
 				{
-					text:'КнопкаВыбратьНажатие',
+					text:'ОК',
 				},
 				{
-					text:'СохранитьЗначения___',
+					text:'Сохранить значения',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

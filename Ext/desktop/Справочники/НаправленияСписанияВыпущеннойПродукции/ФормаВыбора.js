@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 281,width: 604,
+	style: 'position:absolute;width:604px;height:281px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Направления списания выпущенной продукции (услуг)',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'200',
 				},
 				{
 					text:'Организация',
+					width:'162',
 				},
 			]
 		},
@@ -33,11 +39,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

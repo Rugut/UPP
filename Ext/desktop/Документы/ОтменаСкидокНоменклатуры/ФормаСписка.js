@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 380,width: 688,
+	style: 'position:absolute;width:688px;height:380px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отмена скидок номенклатуры',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'140',
 				},
 				{
 					text:'Номер',
+					width:'159',
 				},
 			]
 		},
@@ -30,17 +35,12 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю2',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

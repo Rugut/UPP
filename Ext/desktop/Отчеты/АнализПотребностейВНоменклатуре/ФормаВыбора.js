@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализПотребностейВНоменклатуре.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 252,
+	style: 'position:absolute;width:252px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор поля',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Представление',
+					width:'220',
 				},
 			]
 		},

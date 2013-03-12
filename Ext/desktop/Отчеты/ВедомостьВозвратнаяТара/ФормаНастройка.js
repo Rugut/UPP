@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВедомостьВозвратнаяТара.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 370,
+	style: 'position:absolute;width:370px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Лимиты возвратной тары',
 	
 	items:
@@ -15,11 +17,9 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -34,10 +34,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:8px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:64px;top:8px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:146px;top:8px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -52,10 +64,12 @@
 			columns:
 			[
 				{
-					text:'ИспользованиеПоказателя',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'ПредставлениеПоказателя',
+					text:'Показатель',
+					width:'220',
 				},
 			]
 		},
@@ -65,21 +79,24 @@
 			items:
 			[
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать измерения',
+			style: 'position:absolute;left:12px;top:53px;width:160px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -100,13 +117,16 @@
 			columns:
 			[
 				{
-					text:'ПредставлениеГруппировки',
+					text:'Группировки строк',
+					width:'120',
 				},
 				{
-					text:'ТипИтога',
+					text:'Тип',
+					width:'80',
 				},
 				{
-					text:'ДополнительныеПоля',
+					text:'Дополнительные поля',
+					width:'120',
 				},
 			]
 		},
@@ -116,16 +136,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 			]
 		},
@@ -141,16 +161,16 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие7',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вверх',
 				},
 			]
 		},
@@ -161,16 +181,20 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Вид сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'120',
 				},
 			]
 		},

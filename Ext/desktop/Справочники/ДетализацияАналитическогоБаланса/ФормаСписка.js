@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДетализацияАналитическогоБаланса.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 364,
+	style: 'position:absolute;width:364px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Детализация аналитического баланса',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},

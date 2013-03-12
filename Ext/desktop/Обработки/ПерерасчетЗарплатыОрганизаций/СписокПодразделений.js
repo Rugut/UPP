@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.СписокПодразделений',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 277,
+	style: 'position:absolute;width:277px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор по подразделениям',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Подразделение',
+					width:'168',
 				},
 			]
 		},
@@ -26,14 +30,12 @@
 			style: 'position:absolute;left:0px;top:267px;width:277px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Отмена',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'OK',
 				},
 			]
 		},

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.СведенияОДоходахФизлиц.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 630,
+	style: 'position:absolute;width:630px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сведения о доходах физических лиц для ИФНС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,6 +28,12 @@
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -31,39 +45,49 @@
 			items:
 			[
 				{
-					text:'НаДискетку',
+					text:'Получить файл на диск',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОК',
+					text:'OK',
 				},
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'РазделительПечать',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Файл',
+					text:'Получить файл',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:527px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,7 +104,7 @@
 					text:'Действие5',
 				},
 				{
-					text:'ДействиеЗаполнить',
+					text:'физ.лицами, получавшими доходы',
 				},
 				{
 					text:'Действие2',
@@ -94,18 +118,11 @@
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
-				{
-					text:'РазделительПечать',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -115,14 +132,10 @@
 				{
 					text:'Действие7',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ДействиеПронумеровать',
+					text:'Пронумеровать',
 				},
 				{
 					text:'Действие',
@@ -136,27 +149,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Физическое лицо',
+					width:'220',
 				},
 				{
-					text:'НомерСправки',
+					text:'№ справки',
+					width:'60',
 				},
 				{
 					text:'Ставка',
+					width:'40',
 				},
 				{
-					text:'КодПоОКАТО',
+					text:'Код по ОКАТО',
+					width:'80',
 				},
 				{
 					text:'КПП',
+					width:'80',
 				},
 				{
-					text:'ПереданоНаВзыскание',
+					text:'Передано на взыскание',
+					width:'80',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйПериод',
+			text: 'Налоговый период:',
+			style: 'position:absolute;left:336px;top:57px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -165,10 +191,22 @@
 			style: 'position:absolute;left:437px;top:57px;width:82px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТелефон',
+			text: 'Телефон:',
+			style: 'position:absolute;left:336px;top:105px;width:101px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КонтактныйТелефонОтветственного',
 			style: 'position:absolute;left:437px;top:105px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжностьОтветственного',
+			text: 'Должность:',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -194,74 +232,46 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель4',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие5',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'Подменю',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие1',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Действие4',
 				},
 				{
-					text:'Подменю1',
-				},
-				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
@@ -271,9 +281,7 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -284,23 +292,17 @@
 					text:'Действие4',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},

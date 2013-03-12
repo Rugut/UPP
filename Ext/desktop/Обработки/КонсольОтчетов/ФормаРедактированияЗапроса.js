@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонсольОтчетов.ФормаРедактированияЗапроса',
 	{
 	extend: 'Ext.window.Window',
-	height: 309,width: 400,
+	style: 'position:absolute;width:400px;height:309px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Редактирование запроса',
 	
 	items:
@@ -18,10 +20,21 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Имя:',
+			style: 'position:absolute;left:6px;top:6px;width:29px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Имя',
 			style: 'position:absolute;left:40px;top:6px;width:322px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Автоматическое заполнение настроек',
+			style: 'position:absolute;left:6px;top:241px;width:221px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -29,10 +42,10 @@
 			items:
 			[
 				{
-					text:'КонструкторЗапросов',
+					text:'Конструктор',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить запрос',
 				},
 			]
 		},
@@ -48,38 +61,36 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие7',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие8',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'ЗаполнитьПараметры',
+					text:'Заполнить',
 				},
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие9',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие5',
+					text:'&Скопировать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -89,13 +100,16 @@
 			columns:
 			[
 				{
-					text:'ИмяПараметра',
+					text:'Имя параметра',
+					width:'122',
 				},
 				{
-					text:'ЭтоВыражение',
+					text:'Тип',
+					width:'52',
 				},
 				{
-					text:'ЗначениеПараметра',
+					text:'Значение параметра',
+					width:'189',
 				},
 			]
 		},
@@ -113,26 +127,61 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 				{
 					text:'Представление',
+					width:'100',
 				},
 				{
 					text:'Формат',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ВыводОтчета',
+					title:'Вывод отчета',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'в таблицу',
+			style: 'position:absolute;left:18px;top:28px;width:115px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'в диаграмму',
+			style: 'position:absolute;left:18px;top:52px;width:115px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'в сводную таблицу',
+			style: 'position:absolute;left:18px;top:76px;width:115px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'По умолчанию выводить в:',
+			style: 'position:absolute;left:6px;top:132px;width:137px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Отчет расшифровки:',
+			style: 'position:absolute;left:6px;top:156px;width:137px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтчетРасшифровкиРедактор',
 			style: 'position:absolute;left:148px;top:156px;width:145px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'в сводную диаграмму',
+			style: 'position:absolute;left:18px;top:100px;width:134px;height:19px;',
 		},
 					]
 				},
@@ -144,17 +193,13 @@
 			items:
 			[
 				{
-					text:'Подменю',
+					text:'Закрыть',
 				},
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},

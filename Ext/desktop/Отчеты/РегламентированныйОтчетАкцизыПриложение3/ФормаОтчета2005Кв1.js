@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАкцизыПриложение3.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 490,width: 670,
+	style: 'position:absolute;width:670px;height:490px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по акцизам на алкогольную продукцию, реализуемую с акцизных складов оптовых организаций',
 	
 	items:
@@ -15,74 +17,50 @@
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Проверить выгрузку',
 				},
 				{
-					text:'Проверить',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Поиск',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Отправка',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Показать отправки',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Подготовить',
+					text:'Подготовить к отправке',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
 					text:'Выгрузить',
-				},
-				{
-					text:'Выгрузка',
 				},
 			]
 		},
@@ -91,23 +69,14 @@
 			style: 'position:absolute;left:0px;top:465px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
@@ -124,7 +93,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'ФизЛица',
+					title:'Физ. лица',
 					items:
 					[
 		{
@@ -160,7 +129,7 @@
 					]
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -196,9 +165,33 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись25',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:99px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:104px;top:265px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись27',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:99px;top:239px;width:148px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:104px;top:265px;width:144px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'кнЗаполнитьРаздел2',
@@ -208,7 +201,7 @@
 					]
 				},
 				{
-					title:'Приложение1',
+					title:'Приложение 1',
 					items:
 					[
 		{
@@ -256,9 +249,21 @@
 					]
 				},
 				{
-					title:'Приложение2',
+					title:'Приложение 2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение1',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:239px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницФизЛица',
+			text: '999 из 999',
+			style: 'position:absolute;left:276px;top:265px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуПриложение2',
@@ -276,6 +281,12 @@
 			name: 'КнопкаПредыдущаяСтраницаПриложение2',
 			text: '',
 			style: 'position:absolute;left:249px;top:239px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение2',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:239px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -301,9 +312,21 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел1',
+			text: '999 из 999',
+			style: 'position:absolute;left:280px;top:265px;width:72px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -328,6 +351,11 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:171px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -347,6 +375,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

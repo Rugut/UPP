@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыСчетчиковДляЗначенийРазрядов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 571,
+	style: 'position:absolute;width:571px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Виды счетчиков для значений разрядов',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'156',
 				},
 				{
-					text:'РазмерСчетчика',
+					text:'Размер счетчика',
+					width:'92',
 				},
 				{
-					text:'НачальноеЗначение',
+					text:'Начальное значение',
+					width:'110',
 				},
 				{
-					text:'КонечноеЗначение',
+					text:'Конечное значение',
+					width:'110',
 				},
 			]
 		},

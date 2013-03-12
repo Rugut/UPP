@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЗагрузкаПочтовыхСообщений.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 643,
+	style: 'position:absolute;width:643px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Загрузка почтовых сообщений',
 	
 	items:
@@ -20,14 +22,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выполнить',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -37,25 +37,32 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Вложения',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ДатаПолучения',
+					text:'Дата получения',
+					width:'100',
 				},
 				{
 					text:'Копии',
+					width:'117',
 				},
 				{
-					text:'ОтправительПредставление',
+					text:'Отправитель',
+					width:'110',
 				},
 				{
-					text:'Кому',
+					text:'Получатели',
+					width:'106',
 				},
 				{
 					text:'Тема',
+					width:'146',
 				},
 			]
 		},
@@ -65,21 +72,23 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Учетная запись:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

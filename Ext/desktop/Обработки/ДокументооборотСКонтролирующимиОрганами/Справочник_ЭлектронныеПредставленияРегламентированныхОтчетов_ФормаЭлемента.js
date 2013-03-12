@@ -1,12 +1,20 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ЭлектронныеПредставленияРегламентированныхОтчетов_ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 726,width: 758,
+	style: 'position:absolute;width:758px;height:726px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Электронные представления регламентированных отчетов',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:94px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:106px;top:58px;width:644px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:108px;width:95px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:106px;top:108px;width:644px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:674px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,69 +50,51 @@
 			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'РазделительПоказатьОтправки',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Проверить в Интернете',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Проверить',
+					text:'Просмотр печатной формы',
 				},
 				{
-					text:'Отправка',
+					text:'',
 				},
 				{
-					text:'Разделитель4',
+					text:'Показать результат отправки',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Просмотр',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'ПоказатьРезультатНеПринят',
-				},
-				{
-					text:'ПолучитьРезультат',
+					text:'Получить результат отправки',
 				},
 				{
 					text:'Действие3',
 				},
 				{
-					text:'ПоказатьРезультатСдан',
+					text:'Показать результат отправки',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ПоказатьОтправки',
+					text:'История отправок',
 				},
 				{
 					text:'Действие',
 				},
 				{
-					text:'ЦиклыОбмена',
+					text:'Показать отправки',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -101,21 +103,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:187px;width:95px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,10 +128,22 @@
 			style: 'position:absolute;left:106px;top:186px;width:116px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьГод',
+			text: 'Год:',
+			style: 'position:absolute;left:480px;top:186px;width:27px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Год',
 			style: 'position:absolute;left:511px;top:186px;width:59px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:8px;top:33px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -136,10 +152,28 @@
 			style: 'position:absolute;left:106px;top:33px;width:116px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаИмпорта',
+			text: 'Дата импорта:',
+			style: 'position:absolute;left:233px;top:33px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаИмпорта',
 			style: 'position:absolute;left:324px;top:33px;width:138px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПолучатель',
+			text: 'Получатель:',
+			style: 'position:absolute;left:8px;top:134px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидОтчета1',
+			text: 'Вид отчета:',
+			style: 'position:absolute;left:8px;top:160px;width:96px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -157,6 +191,24 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВидДокумента1',
+			text: 'Вид документа:',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: '/',
+			style: 'position:absolute;left:217px;top:3px;width:7px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидДокумента2',
+			text: '(номер корректировки)',
+			style: 'position:absolute;left:281px;top:0px;width:123px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -186,7 +238,7 @@
 			items:
 			[
 				{
-					title:'СтраницаКомплектПФР',
+					title:'',
 					items:
 					[
 		{
@@ -206,9 +258,7 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
@@ -218,9 +268,7 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -233,23 +281,27 @@
 			columns:
 			[
 				{
-					text:'Номер',
+					text:'N',
+					width:'44',
 				},
 				{
 					text:'Имя',
+					width:'444',
 				},
 				{
 					text:'Тип',
+					width:'90',
 				},
 				{
-					text:'Данные',
+					text:'',
+					width:'86',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаПрочаяОтчетность',
+					title:'',
 					items:
 					[
 		{
@@ -259,11 +311,11 @@
 			items:
 			[
 				{
-					title:'СтраницаТекст',
+					title:'',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ПредставлениеТекст',
 			style: 'position:absolute;left:0px;top:0px;width:742px;height:261px;',
@@ -271,9 +323,15 @@
 					]
 				},
 				{
-					title:'СтраницаXML',
+					title:'',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайла',
+			text: 'Имя файла:',
+			style: 'position:absolute;left:0px;top:28px;width:95px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
@@ -308,6 +366,24 @@
 			hideLabel: true,
 			name: 'ФайлЗаявленияРевизионногоСоюза',
 			style: 'position:absolute;left:296px;top:92px;width:446px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Пояснительная записка:',
+			style: 'position:absolute;left:0px;top:36px;width:290px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Аудиторское заключение:',
+			style: 'position:absolute;left:0px;top:64px;width:290px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Заявление ревизионного союза с/х-производителей:',
+			style: 'position:absolute;left:0px;top:92px;width:290px;height:19px;',
 		},
 					]
 				},

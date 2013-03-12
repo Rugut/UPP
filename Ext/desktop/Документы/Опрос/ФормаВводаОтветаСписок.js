@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.Опрос.ФормаВводаОтветаСписок',
 	{
 	extend: 'Ext.window.Window',
-	height: 626,width: 392,
+	style: 'position:absolute;width:392px;height:626px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ответ',
 	
 	items:
@@ -16,12 +18,16 @@
 					text:'ОК',
 				},
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРазвернутыйОтвет',
+			text: 'Развернутый ответ:',
+			style: 'position:absolute;left:8px;top:56px;width:376px;height:19px;',
 		},
 	]
 });

@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ВводСведенийОРеглУчетеПлановыхНачисленийРаботниковОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 366,width: 643,
+	style: 'position:absolute;width:643px;height:366px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод сведений о регламентированном учете плановых начислений сотрудников организации',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:89px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:169px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:189px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:89px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:',
+			style: 'position:absolute;left:329px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,10 +58,22 @@
 			style: 'position:absolute;left:415px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:314px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:89px;top:314px;width:546px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:329px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,18 +89,14 @@
 				{
 					text:'Действие11',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},
 				{
 					text:'Действие13',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие17',
 				},
@@ -93,28 +127,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'68',
 				},
 				{
 					text:'Сотрудник',
+					width:'97',
 				},
 				{
-					text:'ВидРасчета',
+					text:'Начисление',
+					width:'116',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата',
+					width:'84',
 				},
 				{
-					text:'СпособОтраженияВБухучете',
+					text:'Отражение в бухучете',
+					width:'120',
 				},
 				{
-					text:'КодДоходаЕСН',
+					text:'Отражение в ЕСН',
+					width:'120',
 				},
 				{
-					text:'ОтнесениеРасходовКДеятельностиЕНВД',
+					text:'Отнесение расходов к деятельности ЕНВД',
+					width:'100',
 				},
 			]
 		},
@@ -124,59 +166,37 @@
 			items:
 			[
 				{
-					text:'ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций',
+					text:'Ввод сведений о плановых начислениях сотрудников организаций',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель5',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Списком сотрудников',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Прием на работу в организацию',
+				},
+				'-',
+				{
+					text:'Кадровое перемещение организаций',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'СписокРаботников',
+					text:'Редактировать номер',
 				},
 				{
-					text:'ПриемНаРаботуВОрганизацию',
+					text:'',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'КадровоеПеремещениеОрганизаций',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьПоДокументу',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Подменю2',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -185,20 +205,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

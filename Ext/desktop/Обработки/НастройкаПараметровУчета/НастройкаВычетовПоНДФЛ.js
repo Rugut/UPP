@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.НастройкаПараметровУчета.НастройкаВычетовПоНДФЛ',
 	{
 	extend: 'Ext.window.Window',
-	height: 500,width: 508,
+	style: 'position:absolute;width:508px;height:500px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка вычетов по НДФЛ',
 	
 	items:
@@ -13,9 +15,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВычетыНДФЛ',
+			text: 'Вычеты по НДФЛ',
+			style: 'position:absolute;left:8px;top:8px;width:180px;height:25px;',
 		},
 		{
 			xtype: 'grid',
@@ -24,16 +32,20 @@
 			columns:
 			[
 				{
-					text:'КодДохода',
+					text:'Код дохода',
+					width:'100',
 				},
 				{
-					text:'ГодовойВычет',
+					text:'Годовой вычет',
+					width:'100',
 				},
 				{
-					text:'НормативЗатрат',
+					text:'Норматив затрат',
+					width:'100',
 				},
 				{
 					text:'Период',
+					width:'100',
 				},
 			]
 		},
@@ -54,16 +66,20 @@
 			columns:
 			[
 				{
-					text:'КодВычета',
+					text:'Код вычета',
+					width:'100',
 				},
 				{
 					text:'Размер',
+					width:'100',
 				},
 				{
-					text:'ОграничениеПоДоходам',
+					text:'Ограничение по доходам',
+					width:'100',
 				},
 				{
 					text:'Период',
+					width:'100',
 				},
 			]
 		},

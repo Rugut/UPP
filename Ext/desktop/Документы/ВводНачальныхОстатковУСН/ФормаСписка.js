@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ВводНачальныхОстатковУСН.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод начальных остатков УСН',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'85',
 				},
 				{
 					text:'Номер',
+					width:'90',
 				},
 				{
 					text:'Организация',
+					width:'157',
 				},
 				{
 					text:'Комментарий',
+					width:'293',
 				},
 			]
 		},
@@ -36,17 +43,12 @@
 			items:
 			[
 				{
-					text:'Подменю2',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

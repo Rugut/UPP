@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.УдалитьОценочныеОбязательства.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 566,
+	style: 'position:absolute;width:566px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '(не используется) Оценочные обязательства',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'24',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 				{
-					text:'ДатаИсполнения',
+					text:'Дата исполнения',
+					width:'104',
 				},
 			]
 		},
@@ -33,11 +39,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

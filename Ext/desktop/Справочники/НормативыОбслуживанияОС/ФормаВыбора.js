@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НормативыОбслуживанияОС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 506,
+	style: 'position:absolute;width:506px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Нормативы обслуживания ОС',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -40,11 +46,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:506px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

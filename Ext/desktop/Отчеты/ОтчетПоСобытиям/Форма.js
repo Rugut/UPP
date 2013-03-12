@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетПоСобытиям.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 396,width: 604,
+	style: 'position:absolute;width:604px;height:396px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет по событиям',
 	
 	items:
@@ -16,20 +18,14 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
@@ -37,25 +33,20 @@
 					text:'Сформировать',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Отбор',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
-				},
-				{
-					text:'Действие1',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Заголовок',
@@ -63,34 +54,36 @@
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,10 +102,20 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиКонтрагент',
 			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контактное лицо:',
+			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

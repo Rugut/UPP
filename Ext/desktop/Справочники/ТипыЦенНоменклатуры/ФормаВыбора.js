@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТипыЦенНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 496,
+	style: 'position:absolute;width:496px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Типы цен номенклатуры',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВалютаЦены',
+					text:'Валюта',
+					width:'45',
 				},
 				{
-					text:'БазовыйТипЦен',
+					text:'Базовый тип цен',
+					width:'239',
 				},
 				{
 					text:'Рассчитывается',
+					width:'91',
 				},
 				{
-					text:'ПроцентСкидкиНаценки',
+					text:'Процент',
+					width:'50',
 				},
 			]
 		},
@@ -44,9 +53,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

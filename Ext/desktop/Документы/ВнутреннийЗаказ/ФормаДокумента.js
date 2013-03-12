@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ВнутреннийЗаказ.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 395,width: 657,
+	style: 'position:absolute;width:657px;height:395px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документ Внутренний заказ',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:14px;top:32px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:32px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:344px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,44 +51,28 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Заполнить и провести',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель14',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДействиеЗаполнитьИПровести',
+					text:'Движения документа по регистрам',
 				},
+				'-',
 				{
-					text:'Разделитель13',
+					text:'Анализ',
 				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ДействиеАнализ',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -88,40 +92,52 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'251',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'70',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Размещение',
+					width:'184',
 				},
 			]
 		},
@@ -131,26 +147,19 @@
 			items:
 			[
 				{
-					text:'ДействиеОчиститьРазмещение',
+					text:'Очистить размещение',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Подбор',
 				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'Тара',
+					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -159,20 +168,13 @@
 			items:
 			[
 				{
-					text:'ДействиеОчиститьРазмещение',
+					text:'Очистить размещение',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Подбор',
 				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -182,25 +184,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'ЕдиницаХранения',
+					text:'Ед. хранения',
+					width:'52',
 				},
 				{
 					text:'Размещение',
+					width:'250',
 				},
 			]
 		},
@@ -217,10 +226,21 @@
 			style: 'position:absolute;left:98px;top:72px;width:204px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:322px;top:72px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:410px;top:72px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'напомнить',
+			style: 'position:absolute;left:12px;top:117px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -233,6 +253,12 @@
 			hideLabel: true,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:410px;top:27px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеИсполнитель',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -251,6 +277,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:14px;top:56px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -263,6 +295,12 @@
 			style: 'position:absolute;left:487px;top:81px;width:162px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаОтгрузки',
+			text: 'Отгрузка:',
+			style: 'position:absolute;left:14px;top:81px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОтгрузки',
@@ -273,21 +311,15 @@
 			style: 'position:absolute;left:0px;top:370px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -301,6 +333,12 @@
 			hideLabel: true,
 			name: 'ВидЗаказа',
 			style: 'position:absolute;left:391px;top:81px;width:93px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаказчик',
+			text: 'Заказчик:',
+			style: 'position:absolute;left:337px;top:81px;width:54px;height:19px;',
 		},
 	]
 });

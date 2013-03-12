@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ИнформационныеКарты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 110,width: 400,
+	style: 'position:absolute;width:400px;height:110px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа Информационные карты',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:93px;top:33px;width:299px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,20 +46,16 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

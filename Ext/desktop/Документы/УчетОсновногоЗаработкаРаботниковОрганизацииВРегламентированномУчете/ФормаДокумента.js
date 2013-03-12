@@ -1,12 +1,26 @@
 ﻿Ext.define('Документы.УчетОсновногоЗаработкаРаботниковОрганизацииВРегламентированномУчете.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 401,width: 643,
+	style: 'position:absolute;width:643px;height:401px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Учет основного заработка сотрудников организации в регламентированном учете',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:179px;top:33px;width:16px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,46 +39,27 @@
 			items:
 			[
 				{
-					text:'ОткрытьСвойства',
+					text:'Открыть свойства',
 				},
 				{
-					text:'ОткрытьКатегории',
+					text:'Открыть категории',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель8',
+					text:'Движения документа по регистрам',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Списком сотрудников',
 				},
+				'-',
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'СписокРаботников',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
 					text:'Очистить',
@@ -72,10 +67,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:349px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,12 +101,8 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'РазделительОК',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -112,25 +115,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'31',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'80',
 				},
 				{
 					text:'Сотрудник',
+					width:'150',
 				},
 				{
-					text:'ДатаИзменения',
+					text:'Дата изменения',
+					width:'73',
 				},
 				{
-					text:'СпособОтраженияВБухучете',
+					text:'Бух. учет',
+					width:'139',
 				},
 				{
-					text:'ПодпадаетПодЕНВД',
+					text:'ЕНВД',
+					width:'42',
 				},
 				{
-					text:'СпособОтраженияВБухучетеБольничногоЗаСчетРаботодателя',
+					text:'До 2011 года. Отражение б/л за счет работодателя',
+					width:'102',
 				},
 			]
 		},
@@ -139,15 +149,11 @@
 			style: 'position:absolute;left:8px;top:97px;width:627px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие10',
 				},
@@ -178,6 +184,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:327px;top:57px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтветственныйЗаДокумент',
@@ -188,6 +200,12 @@
 			hideLabel: true,
 			name: 'ОтражаемыйДокумент',
 			style: 'position:absolute;left:415px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:',
+			style: 'position:absolute;left:327px;top:33px;width:86px;height:19px;',
 		},
 	]
 });

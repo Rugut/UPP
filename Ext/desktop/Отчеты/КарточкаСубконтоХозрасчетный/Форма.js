@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.КарточкаСубконтоХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 445,width: 628,
+	style: 'position:absolute;width:628px;height:445px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет  Карточка субконто',
 	
 	items:
@@ -12,56 +14,43 @@
 			style: 'position:absolute;left:0px;top:0px;width:628px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
-					text:'Выполнить',
+					text:'Сохранить значения',
 				},
 				{
-					text:'Разделитель4',
+					text:'Сохранить значения',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Действие',
 				},
+				'-',
+				'-',
 				{
-					text:'Подменю',
+					text:'Восстановить значения',
 				},
 				{
-					text:'Разделитель',
+					text:'Сформировать',
 				},
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 				{
 					text:'Действие1',
@@ -81,10 +70,28 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Организация:',
+			style: 'position:absolute;left:276px;top:33px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

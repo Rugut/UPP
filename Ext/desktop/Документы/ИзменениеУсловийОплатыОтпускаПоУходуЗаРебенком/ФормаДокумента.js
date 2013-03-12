@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 529,width: 664,
+	style: 'position:absolute;width:664px;height:529px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение условий оплаты отпуска по уходу за ребенком',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:477px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:477px;width:560px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:350px;top:57px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,22 +51,18 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 				{
-					text:'ОткрытьСвойства',
+					text:'Открыть свойства',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Плановые начисления и удержания',
 				},
+				'-',
 				{
-					text:'ЗаполнитьПлановые',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие1',
@@ -55,11 +71,9 @@
 					text:'Действие7',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
@@ -69,27 +83,16 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
-					text:'Подменю1',
-				},
-				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -97,58 +100,34 @@
 					text:'Действие6',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Подменю1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Редактировать номер',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие4',
-				},
-				{
-					text:'Подменю',
 				},
 			]
 		},
@@ -158,21 +137,23 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРаботник',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -197,10 +178,21 @@
 			style: 'position:absolute;left:110px;top:26px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоличествоДетей',
+			text: 'Количество детей:',
+			style: 'position:absolute;left:6px;top:50px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоДетей',
 			style: 'position:absolute;left:110px;top:50px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Первый/последующий ребенок',
+			style: 'position:absolute;left:207px;top:50px;width:237px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -208,10 +200,20 @@
 			name: 'ДатаОкончанияПособияДоТрехЛет',
 			style: 'position:absolute;left:110px;top:190px;width:88px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выплачивать по:',
+			style: 'position:absolute;left:6px;top:190px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выплачивать по:',
+			style: 'position:absolute;left:6px;top:26px;width:102px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПлановыеНачисления',
+					title:'Плановые начисления',
 					items:
 					[
 		{
@@ -221,118 +223,156 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Сотрудник',
+					text:'Рабочее место',
+					width:'115',
 				},
 				{
-					text:'Подразделение',
+					text:'',
+					width:'58',
 				},
 				{
-					text:'Должность',
+					text:'',
+					width:'58',
 				},
 				{
-					text:'ВидРасчета',
+					text:'Начисление',
+					width:'85',
 				},
 				{
 					text:'Действие',
+					width:'60',
 				},
 				{
-					text:'Показатели',
+					text:'Показатели для расчета начисления',
+					width:'205',
 				},
 				{
-					text:'НаименованиеПоказатель1',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель1',
+					text:'Размер',
+					width:'80',
 				},
 				{
-					text:'Валюта1',
+					text:'Валюта',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР1',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд1',
+					text:'Тарифный разряд',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель2',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель2',
+					text:'Размер 2',
+					width:'80',
 				},
 				{
-					text:'Валюта2',
+					text:'Валюта 2',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР2',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд2',
+					text:'Тарифный разряд 2',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель3',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель3',
+					text:'Размер 3',
+					width:'80',
 				},
 				{
-					text:'Валюта3',
+					text:'Валюта 3',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР3',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд3',
+					text:'Тарифный разряд 3',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель4',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель4',
+					text:'Размер 4',
+					width:'80',
 				},
 				{
-					text:'Валюта4',
+					text:'Валюта 4',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР4',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд4',
+					text:'Тарифный разряд 4',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель5',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель5',
+					text:'Размер 5',
+					width:'80',
 				},
 				{
 					text:'Валюта5',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР5',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд5',
+					text:'Тарифный разряд5',
+					width:'125',
 				},
 				{
-					text:'НаименованиеПоказатель6',
+					text:'Показатель',
+					width:'80',
 				},
 				{
 					text:'Показатель6',
+					width:'80',
 				},
 				{
 					text:'Валюта6',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказательТР6',
+					text:'Показатель для ТР',
+					width:'80',
 				},
 				{
-					text:'ТарифныйРазряд6',
+					text:'Тарифный разряд6',
+					width:'125',
 				},
 				{
 					text:'Сторно',
+					width:'100',
 				},
 			]
 		},
@@ -341,9 +381,7 @@
 			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Добавить',
 				},
@@ -387,35 +425,26 @@
 				{
 					text:'Добавить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
 				{
 					text:'Действие14',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Действие7',
 				},
 				{
 					text:'Скопировать',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Изменить',
@@ -443,7 +472,7 @@
 					]
 				},
 				{
-					title:'ПлановыеУдержания',
+					title:'Плановые удержания',
 					items:
 					[
 		{
@@ -453,76 +482,100 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Действие',
+					width:'100',
 				},
 				{
-					text:'ВидРасчета',
+					text:'Удержание',
+					width:'100',
 				},
 				{
-					text:'Показатели',
+					text:'Показатели для расчета удержания',
+					width:'205',
 				},
 				{
-					text:'НаименованиеПоказатель1',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель1',
+					text:'Размер 1',
+					width:'80',
 				},
 				{
 					text:'Валюта1',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель2',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель2',
+					text:'Размер 2',
+					width:'80',
 				},
 				{
 					text:'Валюта2',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель3',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель3',
+					text:'Размер 3',
+					width:'80',
 				},
 				{
 					text:'Валюта3',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель4',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель4',
+					text:'Размер 4',
+					width:'80',
 				},
 				{
 					text:'Валюта4',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель5',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель5',
+					text:'Размер 5',
+					width:'80',
 				},
 				{
 					text:'Валюта5',
+					width:'45',
 				},
 				{
-					text:'НаименованиеПоказатель6',
+					text:'Показатель',
+					width:'80',
 				},
 				{
-					text:'Показатель6',
+					text:'Размер 6',
+					width:'80',
 				},
 				{
 					text:'Валюта6',
+					width:'45',
 				},
 				{
-					text:'ДокументОснование',
+					text:'Документ основание',
+					width:'100',
 				},
 				{
 					text:'Сторно',
+					width:'100',
 				},
 			]
 		},
@@ -537,9 +590,7 @@
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
@@ -571,27 +622,21 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие14',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Добавить',
 				},
@@ -608,9 +653,6 @@
 					text:'Действие12',
 				},
 				{
-					text:'Подменю',
-				},
-				{
 					text:'Изменить',
 				},
 				{
@@ -623,7 +665,7 @@
 					text:'Действие10',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Удалить',
@@ -641,16 +683,34 @@
 			style: 'position:absolute;left:152px;top:148px;width:90px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДокументОснование',
+			text: 'Приказ на отпуск:',
+			style: 'position:absolute;left:8px;top:101px;width:97px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДокументОснование',
 			style: 'position:absolute;left:118px;top:101px;width:538px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:350px;top:33px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:436px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:520px;top:33px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -665,6 +725,17 @@
 			style: 'position:absolute;left:152px;top:125px;width:90px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Освободить на период отпуска ставку в штатном расписании',
+			style: 'position:absolute;left:255px;top:125px;width:331px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждение',
+			text: '',
+			style: 'position:absolute;left:30px;top:438px;width:414px;height:33px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:444px;top:438px;width:83px;height:33px;',
 			height: 33,width: 83,
@@ -674,6 +745,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьИсправление',
+			text: 'Открыть исправления',
+			style: 'position:absolute;left:0px;top:0px;width:71px;height:33px;',
+		},
 					]
 				},
 			]
@@ -688,6 +765,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОткрытьИсходный',
+			text: 'Открыть исправленный документ',
+			style: 'position:absolute;left:0px;top:0px;width:129px;height:33px;',
+		},
 					]
 				},
 			]
@@ -698,7 +781,7 @@
 			items:
 			[
 				{
-					text:'ОтменитьИсправление',
+					text:'Отменить исправление',
 				},
 				{
 					text:'Исправить',

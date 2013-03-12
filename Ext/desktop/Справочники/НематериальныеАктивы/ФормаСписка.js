@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НематериальныеАктивы.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 780,
+	style: 'position:absolute;width:780px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Нематериальные активы и расходы на НИОКР',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Полное наименование',
+					width:'220',
 				},
 				{
-					text:'ВидНМА',
+					text:'Вид НМА',
+					width:'120',
 				},
 				{
-					text:'АмортизационнаяГруппа',
+					text:'Амортизационная группа',
+					width:'120',
 				},
 			]
 		},
@@ -41,6 +49,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -49,14 +58,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Категории',
 				},
 				{
-					text:'ДействиеКатегории',
-				},
-				{
-					text:'ДействиеСвойства',
+					text:'Свойства',
 				},
 			]
 		},

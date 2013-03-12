@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДополнительнаяИнформация.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 554,width: 730,
+	style: 'position:absolute;width:730px;height:554px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Информация',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:730px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -31,10 +31,13 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Показывать при начале работы',
+			style: 'position:absolute;left:12px;top:534px;width:191px;height:15px;',
 		},
 	]
 });

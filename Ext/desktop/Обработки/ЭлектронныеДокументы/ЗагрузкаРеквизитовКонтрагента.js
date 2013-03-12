@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЭлектронныеДокументы.ЗагрузкаРеквизитовКонтрагента',
 	{
 	extend: 'Ext.window.Window',
-	height: 0,width: 1000,
+	style: 'position:absolute;width:1000px;height:0px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:

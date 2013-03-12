@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализЗаказа.ФормаГлавная',
 	{
 	extend: 'Ext.window.Window',
-	height: 415,width: 640,
+	style: 'position:absolute;width:640px;height:415px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ заказа покупателя',
 	
 	items:
@@ -12,38 +14,27 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действия',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель',
+					text:'Новое окно',
 				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'НовоеОкно',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'НовоеОкно',
+					text:'Новое окно',
 				},
 			]
 		},
@@ -52,6 +43,18 @@
 			hideLabel: true,
 			name: 'ЗаказПокупателя',
 			style: 'position:absolute;left:50px;top:33px;width:320px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ТекстЗаказ',
+			text: 'Заказ:',
+			style: 'position:absolute;left:8px;top:33px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДатаАнализа',
+			text: 'Дата и время анализа:',
+			style: 'position:absolute;left:390px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

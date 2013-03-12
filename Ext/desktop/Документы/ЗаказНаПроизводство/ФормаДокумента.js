@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.ЗаказНаПроизводство.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 424,width: 657,
+	style: 'position:absolute;width:657px;height:424px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документ Заказ на производство',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:13px;top:32px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:32px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:371px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,51 +50,33 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель7',
+					text:'',
+				},
+				'-',
+				{
+					text:'Анализ',
 				},
 				{
-					text:'Разделитель5',
+					text:'Заполнить и провести',
+				},
+				'-',
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Файлы',
 				},
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'ДействиеАнализ',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'ДействиеЗаполнитьИПровести',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель14',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Файлы1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель13',
-				},
+				'-',
 			]
 		},
 		{
@@ -94,43 +96,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'170',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'170',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'70',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
 					text:'Спецификация',
+					width:'150',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 			]
 		},
@@ -139,55 +154,46 @@
 			style: 'position:absolute;left:6px;top:0px;width:627px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Добавить по заказу покупателя',
 				},
 				{
-					text:'ДобавитьПоЗаказуПокупателя',
+					text:'Заполнить по заказу на производство',
+				},
+				'-',
+				{
+					text:'Добавить по внутреннему заказу',
 				},
 				{
-					text:'ЗаполнитьПоЗаказуНаПроизводство',
+					text:'Добавить по заказу на производство',
+				},
+				'-',
+				'-',
+				{
+					text:'Изменить',
 				},
 				{
-					text:'Разделитель1',
+					text:'Подбор',
 				},
 				{
-					text:'ДобавитьПоВнутреннемуЗаказу',
+					text:'Заполнить по заказу покупателя',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить по внутреннему заказу',
 				},
+				'-',
+				'-',
 				{
-					text:'ДобавитьПоЗаказуНаПроизводство',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеИзменить',
-				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'ЗаполнитьПоЗаказуПокупателя',
-				},
-				{
-					text:'ЗаполнитьПоВнутреннемуЗаказу',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПараметрыВыпуска',
+					text:'Параметры',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:35px;width:88px;height:19px;',
 		},
 					]
 				},
@@ -200,20 +206,13 @@
 			style: 'position:absolute;left:6px;top:0px;width:627px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Заполнить по спецификации',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьПоСпецификации',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
 			]
 		},
@@ -224,55 +223,72 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'170',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'170',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'70',
 				},
 				{
 					text:'Количество',
+					width:'65',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'ВидВоспроизводства',
+					text:'Вид воспроизводства',
+					width:'118',
 				},
 				{
 					text:'Размещение',
+					width:'100',
 				},
 				{
 					text:'Спецификация',
+					width:'150',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Продукция',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаПродукции',
+					text:'Характеристика продукции',
+					width:'143',
 				},
 			]
 		},
@@ -287,6 +303,11 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:35px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'напомнить',
+			style: 'position:absolute;left:9px;top:60px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -305,16 +326,34 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:330px;top:56px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:450px;top:56px;width:199px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:13px;top:56px;width:71px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаИсполнения',
+			text: 'Исполнение:',
+			style: 'position:absolute;left:13px;top:106px;width:71px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -334,27 +373,33 @@
 					text:'Печать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаказНаПроизводство',
+			text: 'Основной заказ на производство:',
+			style: 'position:absolute;left:330px;top:77px;width:120px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОсновнойЗаказНаПроизводство',
 			style: 'position:absolute;left:450px;top:81px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаЗапуска',
+			text: 'Запуск:',
+			style: 'position:absolute;left:13px;top:82px;width:71px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетИмущество.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Декларация по налогу на имущество',
 	
 	items:
@@ -13,16 +15,14 @@
 			items:
 			[
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Поиск',
@@ -30,68 +30,41 @@
 				{
 					text:'Отправить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Очистить',
 				},
 				{
-					text:'Разделитель2',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'Отправка',
+					text:'Показать отправки',
 				},
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
+				},
+				'-',
+				'-',
+				{
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'РазделительЗаполнить',
-				},
-				{
-					text:'Подготовить',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 			]
 		},
@@ -104,23 +77,14 @@
 					text:'Записать',
 				},
 				{
-					text:'ПодменюПечати',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие2',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -133,7 +97,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -175,9 +139,15 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись30',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел2',
@@ -211,9 +181,15 @@
 					]
 				},
 				{
-					title:'Раздел3',
+					title:'Раздел 3',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись29',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтраницуРаздел3',
@@ -244,9 +220,21 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:563px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Дополнительные страницы:',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -271,6 +259,11 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -290,6 +283,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

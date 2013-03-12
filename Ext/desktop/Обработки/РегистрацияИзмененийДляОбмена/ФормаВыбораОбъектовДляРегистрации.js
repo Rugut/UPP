@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаВыбораОбъектовДляРегистрации',
 	{
 	extend: 'Ext.window.Window',
-	height: 81,width: 413,
+	style: 'position:absolute;width:413px;height:81px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Регистрация изменений для обмена',
 	
 	items:
@@ -18,10 +20,14 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСписокОбъектовДляРегистрации',
+			text: 'Список объектов для регистрации:',
+			style: 'position:absolute;left:8px;top:6px;width:182px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

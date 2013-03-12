@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализНачисленногоНДС.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 124,width: 312,
+	style: 'position:absolute;width:312px;height:124px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Анализ входящего НДС',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -22,6 +24,12 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:35px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:35px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,10 +44,27 @@
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:8px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:166px;top:8px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:266px;top:8px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Показывать только сводные итоги ',
+			style: 'position:absolute;left:8px;top:63px;width:296px;height:19px;',
 		},
 	]
 });

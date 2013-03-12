@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализЦен.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 377,width: 512,
+	style: 'position:absolute;width:512px;height:377px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ цен',
 	
 	items:
@@ -13,22 +15,20 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
 				{
 					text:'Отбор',
@@ -37,47 +37,32 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Отбор',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 				{
 					text:'Заголовок',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Сформировать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -87,13 +72,19 @@
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'На дату:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:496px;height:48px;',
 			height: 48,width: 496,
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -103,14 +94,30 @@
 			style: 'position:absolute;left:264px;top:0px;width:232px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиТипЦен',
 			style: 'position:absolute;left:264px;top:24px;width:232px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Тип цен:',
+			style: 'position:absolute;left:0px;top:24px;width:100px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ВВалюте',
+			text: 'в валюте',
+			style: 'position:absolute;left:148px;top:33px;width:64px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

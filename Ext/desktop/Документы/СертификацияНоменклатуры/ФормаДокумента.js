@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.СертификацияНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 398,width: 666,
+	style: 'position:absolute;width:666px;height:398px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сертификация номенклатуры',
 	
 	items:
@@ -18,12 +20,7 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -34,59 +31,34 @@
 					text:'Действие2',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие4',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие3',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 				{
 					text:'Действие3',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие',
 				},
@@ -102,17 +74,15 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 			]
 		},
@@ -122,27 +92,27 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатура',
+			text: 'Номенклатура:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,10 +121,22 @@
 			style: 'position:absolute;left:96px;top:81px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСерияНоменклатуры',
+			text: 'Серия:',
+			style: 'position:absolute;left:336px;top:81px;width:109px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СерияНоменклатуры',
 			style: 'position:absolute;left:445px;top:81px;width:213px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -163,10 +145,22 @@
 			style: 'position:absolute;left:96px;top:57px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:322px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:322px;width:562px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -175,10 +169,22 @@
 			style: 'position:absolute;left:96px;top:33px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'от:',
+			style: 'position:absolute;left:175px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:336px;top:57px;width:109px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -187,10 +193,22 @@
 			style: 'position:absolute;left:445px;top:57px;width:213px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:346px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:346px;width:562px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРезультатСертификации',
+			text: 'Результат сертификации:',
+			style: 'position:absolute;left:8px;top:101px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -199,10 +217,22 @@
 			style: 'position:absolute;left:96px;top:105px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНормативныйДокумент',
+			text: 'Нормативный документ:',
+			style: 'position:absolute;left:336px;top:101px;width:109px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НормативныйДокумент',
 			style: 'position:absolute;left:445px;top:105px;width:213px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерСертификата',
+			text: 'Сертификат №:',
+			style: 'position:absolute;left:8px;top:129px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -211,10 +241,22 @@
 			style: 'position:absolute;left:96px;top:129px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаСертификата',
+			text: 'Срок действия с:',
+			style: 'position:absolute;left:336px;top:129px;width:109px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаСертификата',
 			style: 'position:absolute;left:445px;top:129px;width:95px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'по:',
+			style: 'position:absolute;left:544px;top:129px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -239,25 +281,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ПоказательАнализа',
+					text:'Показатель анализа',
+					width:'232',
 				},
 				{
-					text:'ЗначениеПоказателя',
+					text:'Значение',
+					width:'230',
 				},
 				{
-					text:'МинЗначениеПоказателя',
+					text:'Значение (начало диапазона)',
+					width:'121',
 				},
 				{
-					text:'МаксЗначениеПоказателя',
+					text:'Конец диапазона',
+					width:'103',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица измерения',
+					width:'76',
 				},
 				{
-					text:'СоответствуетНормативу',
+					text:'Соответствует нормативу',
+					width:'53',
 				},
 			]
 		},
@@ -266,17 +315,12 @@
 			style: 'position:absolute;left:6px;top:0px;width:636px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Добавить из типового анализа',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ДобавитьИзТиповогоАнализа',
-				},
-				{
-					text:'ЗаполнитьПоТиповомуАнализу',
+					text:'Заполнить по типовому анализу',
 				},
 			]
 		},
@@ -287,13 +331,25 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьДокументОснование',
+			text: 'Документ - основание:',
+			style: 'position:absolute;left:6px;top:31px;width:79px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДокументОснование',
 			style: 'position:absolute;left:85px;top:35px;width:557px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Заключение:',
+			style: 'position:absolute;left:6px;top:59px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Заключение',
 			style: 'position:absolute;left:85px;top:59px;width:557px;height:73px;',
@@ -303,6 +359,12 @@
 			hideLabel: true,
 			name: 'ДатаНачалаИспытаний',
 			style: 'position:absolute;left:438px;top:10px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаОкончанияИспытаний',
+			text: 'по:',
+			style: 'position:absolute;left:536px;top:10px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -315,6 +377,12 @@
 			hideLabel: true,
 			name: 'ОрганПоСертификации',
 			style: 'position:absolute;left:85px;top:10px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганСертификации',
+			text: 'Орган по сертификации:',
+			style: 'position:absolute;left:6px;top:6px;width:79px;height:27px;',
 		},
 					]
 				},

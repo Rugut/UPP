@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетСписокКроссТаблица.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 359,width: 490,
+	style: 'position:absolute;width:490px;height:359px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -42,10 +44,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'23',
 				},
 				{
-					text:'Представление',
+					text:'Показатель',
+					width:'177',
 				},
 			]
 		},
@@ -55,18 +59,33 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
-					text:'Действие2',
+					text:'&Переместить вверх',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать измерения',
+			style: 'position:absolute;left:14px;top:100px;width:160px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить итоги по всем уровням',
+			style: 'position:absolute;left:14px;top:120px;width:196px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить в разных колонках',
+			style: 'position:absolute;left:290px;top:164px;width:176px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -78,6 +97,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьИмяРегистра',
+			text: 'Раздел учета:',
+			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
+		},
 					]
 				},
 			]
@@ -92,9 +117,20 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:0px;top:5px;width:212px;height:15px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Период',
+			text: '',
+			style: 'position:absolute;left:102px;top:8px;width:115px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -121,10 +157,12 @@
 			columns:
 			[
 				{
-					text:'Поле',
+					text:'Группировки строк',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'80',
 				},
 			]
 		},
@@ -149,10 +187,12 @@
 			columns:
 			[
 				{
-					text:'Поле',
+					text:'Группировки колонок',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'80',
 				},
 			]
 		},
@@ -162,38 +202,50 @@
 			items:
 			[
 				{
-					text:'ПеренестиВКолонки',
+					text:' >',
 				},
 				{
-					text:'ПеренестиВСтроки',
+					text:' <',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ИнтервалыГруппировок',
+					title:'Интервалы группировок',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:8px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наименование:',
+			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:32px;width:460px;height:24px;',
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 			]
 		},
@@ -204,19 +256,27 @@
 			columns:
 			[
 				{
-					text:'ВГраница',
+					text:'Граница интервала',
+					width:'120',
 				},
 				{
 					text:'Название',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Отбор',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:164px;top:8px;width:20px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:265px;',
@@ -224,22 +284,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -257,6 +323,11 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить дополнительные поля в отдельной колонке',
+			style: 'position:absolute;left:6px;top:6px;width:300px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:50px;width:460px;height:239px;',
 			height: 239,width: 460,
@@ -264,6 +335,7 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 			]
 		},
@@ -287,10 +359,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'60',
 				},
 			]
 		},
@@ -316,12 +390,8 @@
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},

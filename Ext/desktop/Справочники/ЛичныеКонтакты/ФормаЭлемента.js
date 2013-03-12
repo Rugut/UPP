@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ЛичныеКонтакты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 387,width: 595,
+	style: 'position:absolute;width:595px;height:387px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Личные контакты',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:505px;top:57px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:547px;top:57px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Представление:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,21 +38,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Написать письмо',
 				},
 				{
-					text:'НаписатьПисьмо',
+					text:'Электронные письма',
 				},
-				{
-					text:'ЭлектронныеПисьма',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -47,19 +54,15 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},
@@ -70,7 +73,7 @@
 			items:
 			[
 				{
-					title:'АдресаИТелефоны',
+					title:'Адреса и телефоны',
 					items:
 					[
 		{
@@ -80,19 +83,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Тип',
+					width:'100',
 				},
 				{
 					text:'Вид',
+					width:'173',
 				},
 				{
 					text:'Представление',
+					width:'244',
 				},
 				{
 					text:'Комментарий',
+					width:'133',
 				},
 			]
 		},
@@ -102,92 +110,74 @@
 			items:
 			[
 				{
-					text:'Действие10',
+					text:'Вывести список...',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Подменю',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Командная панель контактной информации редактировать в диалоге',
 				},
 				{
-					text:'РедактироватьВДиалоге',
+					text:'Настройка списка...',
+				},
+				'-',
+				{
+					text:'&Изменить',
 				},
 				{
-					text:'Действие11',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'Действие2',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие7',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Действие',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие',
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Отключить отбор',
 				},
 				{
-					text:'Подменю',
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие8',
+					text:'Основная',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'УстановитьОсновным',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'ДополнительнаяИнформация',
+					title:'Дополнительная информация',
 					items:
 					[
 		{
@@ -201,7 +191,7 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Описание',
 			style: 'position:absolute;left:0px;top:48px;width:565px;height:190px;',
@@ -211,6 +201,11 @@
 			hideLabel: true,
 			name: 'ДатаРождения',
 			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Напоминать о дне рождения за:',
+			style: 'position:absolute;left:186px;top:0px;width:184px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -235,13 +230,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Свойство',
+					width:'146',
 				},
 				{
 					text:'Значение',
+					width:'246',
 				},
 			]
 		},
@@ -265,13 +263,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Принадлежность',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Категория',
+					width:'360',
 				},
 			]
 		},
@@ -281,22 +282,28 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьФИО',
+			text: 'Фамилия И.О.:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.КомплектацияОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 367,width: 493,
+	style: 'position:absolute;width:493px;height:367px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Комплектация ОС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:103px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:117px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:201px;top:33px;width:22px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:227px;top:33px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Входят в состав ОС:',
+			style: 'position:absolute;left:8px;top:56px;width:103px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,18 +50,11 @@
 			style: 'position:absolute;left:8px;top:124px;width:477px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'По наименованию',
 				},
-				{
-					text:'ЗаполнитьПоНаименованию',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -54,13 +67,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. №',
+					width:'77',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'369',
 				},
 			]
 		},
@@ -70,26 +86,19 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Структура��одчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -98,27 +107,27 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:292px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,10 +136,22 @@
 			style: 'position:absolute;left:92px;top:292px;width:393px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:315px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:92px;top:315px;width:393px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Событие:',
+			style: 'position:absolute;left:8px;top:80px;width:103px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

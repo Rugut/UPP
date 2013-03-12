@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИнвентаризацияБракаВПроизводстве.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 458,width: 652,
+	style: 'position:absolute;width:652px;height:458px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инвентаризация брака в производстве',
 	
 	items:
@@ -13,19 +15,15 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ПоказатьСкрытьСчетаУчета',
+					text:'Показать/скрыть счета учета',
 				},
 			]
 		},
@@ -34,28 +32,28 @@
 			style: 'position:absolute;left:0px;top:433px;width:652px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -64,10 +62,26 @@
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:496px;top:33px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -76,10 +90,28 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:406px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -92,14 +124,9 @@
 			style: 'position:absolute;left:8px;top:130px;width:636px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ПоОстаткам',
+					text:'Заполнить по остаткам',
 				},
 			]
 		},
@@ -110,48 +137,83 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'100',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'152',
 				},
 				{
 					text:'Заказ',
+					width:'68',
 				},
 				{
 					text:'Продукция',
+					width:'142',
 				},
 				{
-					text:'ХарактеристикаПродукции',
+					text:'Характеристика продукции',
+					width:'107',
 				},
 				{
-					text:'СерияПродукции',
+					text:'Серия продукции',
+					width:'118',
 				},
 				{
-					text:'Сумма',
+					text:'Сумма остатка',
+					width:'88',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (БУ)',
+					width:'103',
 				},
 				{
-					text:'СуммаНал',
+					text:'Сумма (НУ)',
+					width:'100',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат (БУ)',
+					width:'90',
 				},
 				{
-					text:'СчетЗатратНУ',
+					text:'Счет затрат (НУ)',
+					width:'90',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:336px;top:79px;width:88px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:574px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:382px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

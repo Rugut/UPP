@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РасчетЛимитовОтпускаМатериалов.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 769,
+	style: 'position:absolute;width:769px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет лимитов отпуска материалов',
 	
 	items:
@@ -19,26 +21,20 @@
 			style: 'position:absolute;left:0px;top:425px;width:769px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Далее>',
 				},
 				{
-					text:'Далее',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Назад',
+					text:'<Назад',
 				},
 			]
 		},
@@ -49,9 +45,19 @@
 			items:
 			[
 				{
-					title:'СтратегияРасчета',
+					title:'Стратегия расчета',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Планы производства в размере (%)',
+			style: 'position:absolute;left:13px;top:26px;width:215px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Планы продаж в размере (%)',
+			style: 'position:absolute;left:13px;top:50px;width:215px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -77,6 +83,18 @@
 			style: 'position:absolute;left:498px;top:26px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПланыПроизводстваНаПериодС',
+			text: 'на период с',
+			style: 'position:absolute;left:318px;top:26px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПланыПроизводстваПо',
+			text: 'по',
+			style: 'position:absolute;left:478px;top:26px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПланыПроизводства',
 			text: '...',
@@ -95,10 +113,37 @@
 			style: 'position:absolute;left:498px;top:50px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПланыПродажНаПериодС',
+			text: 'на период с',
+			style: 'position:absolute;left:318px;top:50px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПланыПродажПо',
+			text: 'по',
+			style: 'position:absolute;left:478px;top:50px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаПланыПродаж',
 			text: '...',
 			style: 'position:absolute;left:583px;top:50px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Исключить',
+			style: 'position:absolute;left:618px;top:26px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Исключить',
+			style: 'position:absolute;left:618px;top:50px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказы покупателей в размере (%)',
+			style: 'position:absolute;left:13px;top:97px;width:215px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -119,10 +164,32 @@
 			style: 'position:absolute;left:498px;top:97px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЗаказыПокупателейНаПериодС',
+			text: 'на период с',
+			style: 'position:absolute;left:318px;top:97px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаказыПокупателейПо',
+			text: 'по',
+			style: 'position:absolute;left:478px;top:97px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаЗаказыПокупателей',
 			text: '...',
 			style: 'position:absolute;left:583px;top:97px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Исключить',
+			style: 'position:absolute;left:618px;top:97px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Внутренние заказы в размере (%)',
+			style: 'position:absolute;left:13px;top:121px;width:215px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -143,10 +210,37 @@
 			style: 'position:absolute;left:498px;top:121px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВнутренниеЗаказыНаПериодС',
+			text: 'на период с',
+			style: 'position:absolute;left:318px;top:121px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВнутренниеЗаказыПо',
+			text: 'по',
+			style: 'position:absolute;left:478px;top:121px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаВнутренниеЗаказы',
 			text: '...',
 			style: 'position:absolute;left:583px;top:121px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Исключить',
+			style: 'position:absolute;left:618px;top:121px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Расход со склада в размере (%)',
+			style: 'position:absolute;left:13px;top:167px;width:215px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Расход на выпуск в размере (%)',
+			style: 'position:absolute;left:13px;top:191px;width:215px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -173,6 +267,18 @@
 			style: 'position:absolute;left:498px;top:167px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРасходСоСкладаНаПериодС',
+			text: 'на период с',
+			style: 'position:absolute;left:318px;top:167px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРасходСоСкладаПо',
+			text: 'по',
+			style: 'position:absolute;left:478px;top:167px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаРасходСоСклада',
 			text: '...',
@@ -191,16 +297,49 @@
 			style: 'position:absolute;left:498px;top:191px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРасходНаВыпускНаПериодС',
+			text: 'на период с',
+			style: 'position:absolute;left:318px;top:191px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРасходНаВыпускПо',
+			text: 'по',
+			style: 'position:absolute;left:478px;top:191px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериодаРасходНаВыпуск',
 			text: '...',
 			style: 'position:absolute;left:583px;top:191px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Исключить',
+			style: 'position:absolute;left:618px;top:167px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Исключить',
+			style: 'position:absolute;left:618px;top:191px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Изменить результат расчета (%)',
+			style: 'position:absolute;left:13px;top:238px;width:195px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИзменитьРезультатРасчетаПроцент',
 			style: 'position:absolute;left:228px;top:238px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРезультатРасчетаОкруглитьДо',
+			text: 'округлить до:',
+			style: 'position:absolute;left:318px;top:238px;width:80px;height:19px;',
 		},
 					]
 				},
@@ -215,22 +354,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -242,10 +387,27 @@
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:339px;width:739px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:6px;top:6px;width:89px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:95px;top:6px;width:650px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:6px;top:30px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -268,14 +430,10 @@
 					text:'Рассчитать',
 				},
 				{
-					text:'Изменить',
+					text:'Изменить...',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -285,28 +443,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'39',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'100',
 				},
 				{
 					text:'Периодичность',
+					width:'100',
 				},
 				{
-					text:'ЛимитОтпуска',
+					text:'Лимит отпуска',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'54',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'КонтролироватьЛимит',
+					text:'Контролировать лимит',
+					width:'68',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыОбразованияФизЛиц.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 524,
+	style: 'position:absolute;width:524px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды образования физических лиц',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -29,12 +34,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:524px;height:25px;',
 			items:
 			[
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю',
-				},
 				{
 					text:'Действие10',
 				},
@@ -51,9 +50,6 @@
 					text:'Действие9',
 				},
 				{
-					text:'Подменю1',
-				},
-				{
 					text:'Действие3',
 				},
 				{
@@ -66,29 +62,17 @@
 					text:'Действие1',
 				},
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор из ОКИН',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 	]

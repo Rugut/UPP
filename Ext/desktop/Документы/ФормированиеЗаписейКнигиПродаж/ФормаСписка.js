@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ФормированиеЗаписейКнигиПродаж.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 780,
+	style: 'position:absolute;width:780px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Формирования записей книги продаж',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ПоРеализации0',
+					text:'По реализации 0%',
+					width:'60',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'НачалоПериода',
+					text:'Начало периода',
+					width:'80',
 				},
 				{
-					text:'КонецПериода',
+					text:'Конец периода',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -47,24 +58,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 			]
 		},
 	]

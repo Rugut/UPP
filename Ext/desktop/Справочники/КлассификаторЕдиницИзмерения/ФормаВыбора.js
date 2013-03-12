@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КлассификаторЕдиницИзмерения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 496,
+	style: 'position:absolute;width:496px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Классификатор единиц измерения',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Полное наименование',
+					width:'220',
 				},
 				{
-					text:'МеждународноеСокращение',
+					text:'Международное сокращение',
+					width:'40',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

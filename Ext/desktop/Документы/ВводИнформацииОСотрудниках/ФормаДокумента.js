@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ВводИнформацииОСотрудниках.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 374,width: 400,
+	style: 'position:absolute;width:400px;height:374px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ввод информации о сотрудниках',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:271px;top:322px;width:39px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:312px;top:322px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'Дата регистрации:',
+			style: 'position:absolute;left:8px;top:322px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:107px;top:322px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Зарегистрировал:',
+			style: 'position:absolute;left:8px;top:298px;width:100px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:107px;top:298px;width:285px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:228px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,16 +64,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'Сотрудник',
+					text:'Работник',
+					width:'100',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Должность',
+					width:'100',
 				},
 			]
 		},
@@ -56,26 +86,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Редактировать номер',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Редактировать номер',
 				},
+				'-',
 				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -85,19 +105,15 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},

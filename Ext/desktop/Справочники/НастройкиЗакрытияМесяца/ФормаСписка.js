@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиЗакрытияМесяца.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 868,
+	style: 'position:absolute;width:868px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Настройки закрытия месяца',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'39',
 				},
 				{
 					text:'Наименование',
+					width:'284',
 				},
 				{
-					text:'ДатаНачалаДействияНастройки',
+					text:'Дата начала действия настройки',
+					width:'204',
 				},
 				{
-					text:'ОтражатьВУправленческомУчете',
+					text:'УУ',
+					width:'49',
 				},
 				{
-					text:'ОтражатьВБухгалтерскомУчете',
+					text:'БУ',
+					width:'36',
 				},
 				{
-					text:'ОтражатьВНалоговомУчете',
+					text:'НУ',
+					width:'31',
 				},
 			]
 		},
@@ -41,6 +49,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

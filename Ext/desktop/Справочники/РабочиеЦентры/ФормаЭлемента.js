@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.РабочиеЦентры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 318,width: 439,
+	style: 'position:absolute;width:439px;height:318px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Рабочие центры',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:325px;top:33px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:367px;top:33px;width:64px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:98px;top:33px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеКомпании',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,20 +58,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -61,7 +77,7 @@
 			items:
 			[
 				{
-					title:'СтраницаПодчиненныхРабочихЦентров',
+					title:'Подчиненные рабочие центры',
 					items:
 					[
 		{
@@ -71,10 +87,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'100',
 				},
 			]
 		},
@@ -85,14 +103,19 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Требуется загрузка подчиненных рабочих центров',
+			style: 'position:absolute;left:6px;top:6px;width:409px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'СтраницаОписание',
+					title:'Описание',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Описание',
 			style: 'position:absolute;left:6px;top:6px;width:409px;height:169px;',

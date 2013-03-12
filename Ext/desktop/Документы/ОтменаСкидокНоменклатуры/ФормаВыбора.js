@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 314,width: 626,
+	style: 'position:absolute;width:626px;height:314px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отмена скидок номенклатуры',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Дата',
+					width:'140',
 				},
 				{
 					text:'Номер',
+					width:'123',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -33,23 +39,16 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Выбрать',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Выбрать',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю2',
-				},
+				'-',
 			]
 		},
 	]

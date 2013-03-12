@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Кассы.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 345,width: 554,
+	style: 'position:absolute;width:554px;height:345px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Кассы',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВалютаДенежныхСредств',
+					text:'Валюта',
+					width:'80',
 				},
 				{
-					text:'Владелец',
+					text:'Организация',
+					width:'236',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -46,10 +54,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:554px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

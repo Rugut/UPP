@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.XYZABCАнализПродаж.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 350,width: 522,
+	style: 'position:absolute;width:522px;height:350px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка XYZ/ABC-анализ продаж',
 	
 	items:
@@ -12,11 +14,9 @@
 			style: 'position:absolute;left:0px;top:325px;width:522px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
@@ -40,10 +40,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Представление',
+					width:'339',
 				},
 			]
 		},
@@ -55,28 +57,52 @@
 				{
 					text:'Действие7',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
 					text:'Действие5',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:54px;width:207px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:218px;top:53px;width:163px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Анализируемый параметр:',
+			style: 'position:absolute;left:6px;top:76px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Анализируемый объект:',
+			style: 'position:absolute;left:6px;top:100px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:171px;top:30px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,10 +111,22 @@
 			style: 'position:absolute;left:189px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Количество периодов:',
+			style: 'position:absolute;left:6px;top:30px;width:115px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоПериодовАнализа',
 			style: 'position:absolute;left:121px;top:30px;width:48px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодичность',
+			text: 'Периодичность:',
+			style: 'position:absolute;left:6px;top:6px;width:115px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,9 +148,11 @@
 			[
 				{
 					text:'Поле',
+					width:'266',
 				},
 				{
 					text:'Тип',
+					width:'170',
 				},
 			]
 		},
@@ -130,10 +170,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Группировка',
+					width:'100',
 				},
 			]
 		},
@@ -163,22 +205,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'157',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'112',
 				},
 				{
 					text:'Значение',
+					width:'81',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'81',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'81',
 				},
 			]
 		},
@@ -190,10 +238,20 @@
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'XYZ-класс:',
+			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОтборЗначениеКласс',
 			style: 'position:absolute;left:254px;top:6px;width:244px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'АВС-класс',
+			style: 'position:absolute;left:6px;top:29px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -214,10 +272,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'290',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'138',
 				},
 			]
 		},
@@ -235,10 +295,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:154px;top:30px;width:17px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПараметрXКлассаНач',
 			style: 'position:absolute;left:68px;top:30px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Y-класс c: ',
+			style: 'position:absolute;left:6px;top:55px;width:57px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -247,10 +319,28 @@
 			style: 'position:absolute;left:68px;top:55px;width:81px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Z-класс c:',
+			style: 'position:absolute;left:6px;top:80px;width:57px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПараметрZКлассаНач',
 			style: 'position:absolute;left:68px;top:80px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'по:',
+			style: 'position:absolute;left:154px;top:55px;width:17px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'по:',
+			style: 'position:absolute;left:154px;top:80px;width:17px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -271,10 +361,28 @@
 			style: 'position:absolute;left:176px;top:80px;width:81px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'X-класс c: ',
+			style: 'position:absolute;left:6px;top:30px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись18',
+			text: 'А-класс:',
+			style: 'position:absolute;left:6px;top:144px;width:48px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентAКласса',
 			style: 'position:absolute;left:68px;top:144px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись19',
+			text: 'B-класс:',
+			style: 'position:absolute;left:6px;top:168px;width:48px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -283,10 +391,34 @@
 			style: 'position:absolute;left:68px;top:168px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись20',
+			text: 'С-класс:',
+			style: 'position:absolute;left:6px;top:192px;width:48px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентCКласса',
 			style: 'position:absolute;left:68px;top:192px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись21',
+			text: '%',
+			style: 'position:absolute;left:150px;top:168px;width:13px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись22',
+			text: '%',
+			style: 'position:absolute;left:150px;top:144px;width:13px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись23',
+			text: '%',
+			style: 'position:absolute;left:150px;top:192px;width:13px;height:19px;',
 		},
 					]
 				},

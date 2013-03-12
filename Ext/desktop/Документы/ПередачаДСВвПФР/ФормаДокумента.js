@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПередачаДСВвПФР.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 449,width: 778,
+	style: 'position:absolute;width:778px;height:449px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Передача в ПФР Заявлений о добровольном вступлении в правоотношения (ДСВ-1)',
 	
 	items:
@@ -13,35 +15,23 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель5',
+					text:'',
 				},
 				{
-					text:'Разделитель4',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'РедактироватьКодНомер',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -49,40 +39,36 @@
 			style: 'position:absolute;left:0px;top:424px;width:778px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Записать файл на диск',
 				},
+				'-',
+				'-',
 				{
-					text:'НаДискетку',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'РазделительПечать',
+					text:'Проверить в CheckXML',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПроверитьВCheckXML',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
 				{
-					text:'Записать',
+					text:'Записать документ',
 				},
 				{
-					text:'Файл',
+					text:'Показать файл',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:397px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -129,6 +115,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:0px;top:0px;width:110px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
@@ -141,10 +133,28 @@
 			style: 'position:absolute;left:213px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:24px;width:110px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:113px;top:24px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:195px;top:0px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:360px;top:24px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -157,6 +167,18 @@
 			hideLabel: true,
 			name: 'НаименованиеПФР',
 			style: 'position:absolute;left:113px;top:49px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеПФР',
+			text: 'Наименование ПФР:',
+			style: 'position:absolute;left:0px;top:49px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПачки',
+			text: 'Номер пачки:',
+			style: 'position:absolute;left:360px;top:0px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -185,28 +207,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Сотрудник',
+					width:'111',
 				},
 				{
 					text:'Фамилия',
+					width:'80',
 				},
 				{
 					text:'Имя',
+					width:'80',
 				},
 				{
 					text:'Отчество',
+					width:'80',
 				},
 				{
-					text:'АдресДляИнформирования',
+					text:'Адрес для информирования',
+					width:'160',
 				},
 				{
-					text:'СтраховойНомерПФР',
+					text:'Страховой номер',
+					width:'100',
 				},
 				{
-					text:'ДатаЗаполнения',
+					text:'Дата заполнения',
+					width:'104',
 				},
 			]
 		},
@@ -218,15 +248,11 @@
 				{
 					text:'Действие13',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие11',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие12',
 				},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.СтруктураЗависимостейОборотов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 434,width: 519,
+	style: 'position:absolute;width:519px;height:434px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Структура зависимостей оборотов',
 	
 	items:
@@ -19,11 +21,9 @@
 			style: 'position:absolute;left:0px;top:409px;width:519px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -42,6 +42,18 @@
 			style: 'position:absolute;left:90px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'На дату:',
+			style: 'position:absolute;left:330px;top:33px;width:48px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
@@ -56,19 +68,17 @@
 					text:'Заполнить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'&Изменить',
 				},
 				{
-					text:'Разделитель',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 			]
 		},

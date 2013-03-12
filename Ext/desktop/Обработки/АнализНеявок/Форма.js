@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.АнализНеявок.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 413,width: 619,
+	style: 'position:absolute;width:619px;height:413px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ неявок',
 	
 	items:
@@ -14,36 +16,56 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Отметка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Сотрудник',
+					width:'120',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'87',
 				},
 				{
 					text:'Неявка',
+					width:'95',
 				},
 				{
-					text:'КадровыйДокумент',
+					text:'Кадровый документ',
+					width:'105',
 				},
 				{
-					text:'РасчетныйДокумент',
+					text:'Расчетный документ',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:6px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:99px;top:6px;width:202px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:304px;top:6px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -56,6 +78,12 @@
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:99px;top:30px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:182px;top:30px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,9 +102,7 @@
 			style: 'position:absolute;left:8px;top:94px;width:603px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -89,44 +115,31 @@
 				{
 					text:'Действие5',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Снять флаги',
 				},
 				{
-					text:'Снятьфлаги',
+					text:'Открыть кадровый',
 				},
+				'-',
+				'-',
 				{
-					text:'КадровыйДокумент',
+					text:'Открыть расчетный',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'РасчетныйДокумент',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Перейти',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
 				{
-					text:'СостоянияРаботников',
+					text:'Состояния сотрудников',
 				},
 				{
-					text:'УстановитьФлаги',
+					text:'Установить флаги',
 				},
 			]
 		},
@@ -135,11 +148,9 @@
 			style: 'position:absolute;left:0px;top:388px;width:619px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'Действие',
@@ -157,6 +168,12 @@
 			hideLabel: true,
 			name: 'ТипДокумента',
 			style: 'position:absolute;left:99px;top:54px;width:202px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМесяц',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:8px;top:361px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

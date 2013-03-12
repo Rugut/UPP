@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТипыСкидокНаценок.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 493,
+	style: 'position:absolute;width:493px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Типы скидок и наценок',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,9 +37,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

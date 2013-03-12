@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияСчетовФактурНаАванс.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 435,width: 736,
+	style: 'position:absolute;width:736px;height:435px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация счетов-фактур на аванс',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'СписокСчетовФактур',
+					text:'Список счетов-фактур (выд.)',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -25,22 +25,32 @@
 			style: 'position:absolute;left:0px;top:410px;width:736px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выполнить',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:70px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:152px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -59,13 +69,17 @@
 			style: 'position:absolute;left:8px;top:98px;width:720px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:293px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,45 +94,64 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'СФсформирован',
+					text:'',
+					width:'21',
 				},
 				{
 					text:'Контрагент',
+					width:'100',
 				},
 				{
 					text:'Договор',
+					width:'100',
 				},
 				{
-					text:'Сумма',
+					text:'Сумма аванса',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'Ставка НДС',
+					width:'100',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'100',
 				},
 				{
-					text:'ДокументОснование',
+					text:'Документ основание',
+					width:'100',
 				},
 				{
-					text:'СчетНаОплату',
+					text:'Счет на оплату',
+					width:'120',
 				},
 				{
 					text:'Дата',
+					width:'100',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта документа',
+					width:'100',
 				},
 				{
-					text:'ВалютнаяСумма',
+					text:'Валютная сумма',
+					width:'100',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокРегистрацииСчетовФактурНаАванс',
+			text: 'Регистрировать счета-фактуры всегда при получении аванса',
+			style: 'position:absolute;left:8px;top:58px;width:720px;height:19px;',
 		},
 	]
 });

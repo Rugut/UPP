@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МСФОПрибылиИУбытки.МСФО',
 	{
 	extend: 'Ext.window.Window',
-	height: 433,width: 780,
+	style: 'position:absolute;width:780px;height:433px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'МСФО',
 	
 	items:
@@ -12,51 +14,37 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
 					text:'Очистить',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'РежимВводаИнформации',
+					text:'Режим ввода информации',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'Доп_Параметры',
+					text:'Доп. параметры',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Настройка',
 				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 			]
 		},
 		{
@@ -64,27 +52,18 @@
 			style: 'position:absolute;left:0px;top:408px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 				{
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -94,7 +73,7 @@
 			items:
 			[
 				{
-					title:'ПрибыляИУбытки',
+					title:'Отчет о прибылях и убытках',
 					items:
 					[
 		{
@@ -112,6 +91,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:695px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -148,10 +133,25 @@
 			style: 'position:absolute;left:547px;top:24px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'По характеру затрат',
+			style: 'position:absolute;left:0px;top:24px;width:123px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Валюта',
 			style: 'position:absolute;left:46px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'На английском языке',
+			style: 'position:absolute;left:0px;top:50px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:146px;top:50px;width:243px;height:19px;',
 		},
 					]
 				},
@@ -167,6 +167,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:0px;top:7px;width:76px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

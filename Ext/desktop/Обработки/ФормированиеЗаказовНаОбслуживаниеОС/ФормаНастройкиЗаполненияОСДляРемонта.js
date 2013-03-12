@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеЗаказовНаОбслуживаниеОС.ФормаНастройкиЗаполненияОСДляРемонта',
 	{
 	extend: 'Ext.window.Window',
-	height: 374,width: 608,
+	style: 'position:absolute;width:608px;height:374px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка заполнения основных средств для обслуживания',
 	
 	items:
@@ -15,17 +17,10 @@
 				{
 					text:'Подбор',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьПоНаименованию',
+					text:'По наименованию',
 				},
 			]
 		},
@@ -36,10 +31,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'ОС',
+					text:'Основные средства',
+					width:'261',
 				},
 			]
 		},
@@ -51,9 +48,7 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -63,10 +58,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'',
+					width:'30',
 				},
 				{
-					text:'Номенклатура',
+					text:'Услуги по обслуживанию ОС',
+					width:'260',
 				},
 			]
 		},
@@ -75,16 +72,20 @@
 			style: 'position:absolute;left:0px;top:349px;width:608px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выполнить',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата окончания интервала планирования:',
+			style: 'position:absolute;left:8px;top:8px;width:221px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаМПм.ФормаОтчета2011Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 472,width: 670,
+	style: 'position:absolute;width:670px;height:472px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма МП (микро)',
 	
 	items:
@@ -12,72 +14,47 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'ВыбратьВариантОчисткиОтчета',
+					text:'Очистить',
 				},
 				{
 					text:'Выгрузить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Расширить поле бланка',
 				},
 				{
-					text:'Разделитель4',
+					text:'Проверить в Интернете',
 				},
+				'-',
 				{
-					text:'РасширитьПолеБланка',
+					text:'Проверить выгрузку',
 				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'РазделительОтправка',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаНастройкаСтраниц',
+					text:'Настройка...',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Отправка',
-				},
-				{
-					text:'ПодменюОчистить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Показать отправки',
 				},
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -86,23 +63,14 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'ПодменюПечати',
+					text:'OK',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -115,13 +83,13 @@
 			items:
 			[
 				{
-					title:'МПм',
+					title:'МП(микро)',
 				},
 				{
-					title:'Приложение1',
+					title:'Приложение № 1 к форме МП(микро) ',
 				},
 				{
-					title:'Приложение2',
+					title:'Приложение № 2 к форме МП(микро)',
 					items:
 					[
 		{
@@ -139,9 +107,15 @@
 					]
 				},
 				{
-					title:'Приложение3',
+					title:'Приложение № 3 к форме МП(микро)',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись45',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопСтрокиПриложение3',
@@ -154,9 +128,21 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись51',
+			text: 'Дополнительные строки:',
+			style: 'position:absolute;left:342px;top:265px;width:136px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:582px;top:5px;width:80px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -194,6 +180,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.СведенияОТрудовомСтажеЗастрахованногоЛицаСЗВК.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 413,width: 583,
+	style: 'position:absolute;width:583px;height:413px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сведения о трудовом стаже застрахованного лица (СЗВ-К)',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:361px;width:86px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -19,34 +27,22 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю',
+					text:'Редактировать номер',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -58,35 +54,25 @@
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Проверить в CheckXML',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'ПроверитьВCheckXML',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Получить файл',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Файл',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'НаДискетку',
+					text:'Получить файл на диск',
 				},
 			]
 		},
@@ -129,6 +115,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
@@ -141,16 +133,52 @@
 			style: 'position:absolute;left:188px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:24px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:24px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:170px;top:0px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:0px;top:48px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:88px;top:48px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Тип сведений:',
+			style: 'position:absolute;left:315px;top:24px;width:78px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Комплектация:',
+			style: 'position:absolute;left:0px;top:74px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПачки',
+			text: 'Номер пачки:',
+			style: 'position:absolute;left:315px;top:48px;width:78px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -195,9 +223,7 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -208,17 +234,13 @@
 					text:'Действие4',
 				},
 				{
-					text:'ДействиеРедактироватьСЗВ_К',
+					text:'Редактировать СЗВ-К',
 				},
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -228,10 +250,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Сотрудник',
+					width:'220',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ДетализацияОтчетаОПрибыляхИУбытках.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 336,width: 406,
+	style: 'position:absolute;width:406px;height:336px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Детализация отчета о прибылях и убытках',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:179px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Код:',
+			style: 'position:absolute;left:276px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,19 +39,15 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
 		},
@@ -80,21 +90,30 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'220',
 				},
 				{
 					text:'Знак',
+					width:'40',
 				},
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'НаименованиеДляОтчета',
 			style: 'position:absolute;left:94px;top:55px;width:304px;height:40px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеДляОтчета',
+			text: 'Наименование для отчета:',
+			style: 'position:absolute;left:8px;top:55px;width:84px;height:27px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетДиаграмма.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 449,width: 586,
+	style: 'position:absolute;width:586px;height:449px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:586px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Транспонировать',
 				},
@@ -22,65 +22,52 @@
 					text:'Транспонировать',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Справка',
 				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'Действие2',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
-					text:'Выполнить',
-				},
-				{
-					text:'Подменю',
+					text:'Сформировать',
 				},
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -96,10 +83,34 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Тип диаграммы:',
+			style: 'position:absolute;left:288px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяРегистра',
+			text: 'Раздел учета:',
+			style: 'position:absolute;left:288px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -108,7 +119,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -116,6 +127,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки1',
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -150,6 +166,11 @@
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиС5',
@@ -180,6 +201,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки4',
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -214,6 +240,11 @@
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиС3',
@@ -244,6 +275,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки2',
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

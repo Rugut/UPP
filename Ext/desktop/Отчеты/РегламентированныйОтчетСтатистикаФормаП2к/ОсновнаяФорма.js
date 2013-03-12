@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП2к.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 259,width: 278,
+	style: 'position:absolute;width:278px;height:259px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Форма П-2 (краткая)',
 	
 	items:
@@ -19,15 +21,17 @@
 					text:'Справка',
 				},
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:42px;top:85px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:222px;top:85px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:17px;top:139px;width:244px;height:58px;',
 		},
 		{
 			xtype: 'button',

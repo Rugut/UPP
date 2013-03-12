@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаПараметровУчетаНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 388,width: 800,
+	style: 'position:absolute;width:800px;height:388px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка параметров учета номенклатуры',
 	
 	items:
@@ -12,84 +14,59 @@
 			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Действие6',
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель1',
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Отмена проведения',
 				},
 				{
-					text:'Подменю1',
+					text:'Записать',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
+					text:'Провести',
 				},
 				{
-					text:'Действие2',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие1',
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель3',
+					text:'Справка',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'ДействиеПровести',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -101,24 +78,30 @@
 					text:'Печать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:130px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -133,16 +116,40 @@
 			style: 'position:absolute;left:148px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:312px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:312px;width:696px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:336px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:336px;width:696px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:272px;top:33px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаОкончанияДействия',
+			text: '',
+			style: 'position:absolute;left:288px;top:33px;width:504px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -161,34 +168,44 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 				{
-					text:'ПринадлежностьНоменклатуры',
+					text:'Принадлежность номенклатуры',
+					width:'92',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Учет запасов',
+					width:'76',
 				},
 				{
-					text:'СчетДоходовБУ',
+					text:'Учет доходов',
+					width:'76',
 				},
 				{
-					text:'СчетРасходовБУ',
+					text:'Учет расходов',
+					width:'76',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Учет запасов (НУ)',
+					width:'76',
 				},
 				{
-					text:'СчетДоходовНУ',
+					text:'Учет доходов (НУ)',
+					width:'76',
 				},
 				{
-					text:'СчетРасходовНУ',
+					text:'Учет расходов (НУ)',
+					width:'76',
 				},
 			]
 		},
@@ -198,31 +215,31 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие8',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 				{
-					text:'Действие7',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 			]
 		},
@@ -239,43 +256,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'СчетДоходовБУ',
+					text:'Учет доходов',
+					width:'76',
 				},
 				{
-					text:'СчетРасходовБУ',
+					text:'Учет расходов',
+					width:'76',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'76',
 				},
 				{
-					text:'СчетДоходовНУ',
+					text:'Учет доходов (НУ)',
+					width:'76',
 				},
 				{
-					text:'СчетРасходовНУ',
+					text:'Учет расходов (НУ)',
+					width:'76',
 				},
 				{
-					text:'СчетЗатратНУ',
+					text:'Счет затрат (НУ)',
+					width:'76',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
-					text:'ПодразделениеОрганизации',
+					text:'Подразделение организации',
+					width:'100',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'100',
 				},
 				{
-					text:'ВестиУчетЗатратПоЗаказам',
+					text:'Учет затрат по заказам',
+					width:'70',
 				},
 			]
 		},
@@ -289,7 +319,7 @@
 					]
 				},
 				{
-					title:'ПорядокУчетаВДокументах',
+					title:'Документы',
 					items:
 					[
 		{
@@ -299,15 +329,23 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Организация',
+					width:'140',
 				},
 				{
-					text:'СпособРасчета',
+					text:'Способ суммовой оценки',
+					width:'140',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать параметры учета при заполнении реквизитов документов',
+			style: 'position:absolute;left:6px;top:6px;width:392px;height:19px;',
 		},
 					]
 				},

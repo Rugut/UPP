@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистика1Квотирование.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 237,width: 275,
+	style: 'position:absolute;width:275px;height:237px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма 1-квотирование (Москва)',
 	
 	items:
@@ -16,18 +18,20 @@
 					text:'Справка',
 				},
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:42px;top:85px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:222px;top:85px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:17px;top:139px;width:244px;height:40px;',
 		},
 		{
 			xtype: 'button',

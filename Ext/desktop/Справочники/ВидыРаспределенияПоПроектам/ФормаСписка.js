@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыРаспределенияПоПроектам.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 548,
+	style: 'position:absolute;width:548px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Виды распределения по проектам',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'МетодРаспределения',
+					text:'Метод распределения',
+					width:'120',
 				},
 			]
 		},

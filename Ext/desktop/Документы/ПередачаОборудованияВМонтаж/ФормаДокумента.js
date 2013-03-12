@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ПередачаОборудованияВМонтаж.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 413,width: 660,
+	style: 'position:absolute;width:660px;height:413px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Передача оборудования в монтаж',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -33,9 +53,7 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -45,40 +63,52 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'20',
 				},
 				{
-					text:'Оборудование',
+					text:'Номенклатура',
+					width:'175',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика',
+					width:'100',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия',
+					width:'101',
 				},
 				{
-					text:'ЕдиницаИзмеренияМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К. мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'59',
 				},
 				{
-					text:'СчетУчетаБУ',
+					text:'Счет учета (БУ)',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаНУ',
+					text:'Счет учета (НУ)',
+					width:'111',
 				},
 			]
 		},
@@ -87,42 +117,31 @@
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Разделитель7',
+					text:'Дт/кт',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Показать/скрыть счета учета',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ПоказатьСкрытьСчетаУчета',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 			]
 		},
 		{
@@ -131,27 +150,27 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Объект строительства:',
+			style: 'position:absolute;left:8px;top:78px;width:84px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -160,10 +179,22 @@
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Статья затрат:',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяЗатрат',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Склад:',
+			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -172,10 +203,43 @@
 			style: 'position:absolute;left:416px;top:57px;width:236px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Отражать:',
+			style: 'position:absolute;left:334px;top:33px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:416px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:494px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:572px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаБУОбъектаСтроительства',
+			text: 'Счет БУ:',
+			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаБУОбъектаСтроительства',
 			style: 'position:absolute;left:416px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаНУОбъектаСтроительства',
+			text: 'Счет НУ:',
+			style: 'position:absolute;left:334px;top:105px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,10 +248,22 @@
 			style: 'position:absolute;left:416px;top:105px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:337px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:337px;width:558px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментари��:',
+			style: 'position:absolute;left:8px;top:361px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

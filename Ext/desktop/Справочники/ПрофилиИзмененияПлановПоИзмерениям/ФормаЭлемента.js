@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 474,
+	style: 'position:absolute;width:474px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Профили изменения планов по измерениям',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:122px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипРаспределения',
+			text: 'Тип распределения:',
+			style: 'position:absolute;left:8px;top:84px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:122px;top:84px;width:344px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИзмерение',
+			text: 'Измерение:',
+			style: 'position:absolute;left:8px;top:57px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИзмерениеБюджетирования',
 			style: 'position:absolute;left:122px;top:57px;width:344px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИсточникДанных',
+			text: 'Источник данных:',
+			style: 'position:absolute;left:8px;top:108px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИсточникДанных',
 			style: 'position:absolute;left:122px;top:108px;width:344px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоказатель',
+			text: 'Показатель:',
+			style: 'position:absolute;left:8px;top:132px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,9 +77,7 @@
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -62,22 +92,28 @@
 			style: 'position:absolute;left:0px;top:412px;width:474px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Рассчитывать проценты автоматически',
+			style: 'position:absolute;left:8px;top:179px;width:230px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределять значение по всем элементам',
+			style: 'position:absolute;left:8px;top:159px;width:250px;height:15px;',
 		},
 		{
 			xtype: 'grid',
@@ -86,15 +122,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ЭлементУправленческойАналитики',
+					text:'Элемент',
+					width:'220',
 				},
 				{
-					text:'ПроцентДляРаспределения',
+					text:'Процент',
+					width:'80',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:344px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

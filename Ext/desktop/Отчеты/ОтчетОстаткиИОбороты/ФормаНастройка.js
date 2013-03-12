@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетОстаткиИОбороты.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 326,width: 488,
+	style: 'position:absolute;width:488px;height:326px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -30,6 +32,18 @@
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:6px;top:8px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:166px;top:8px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода1',
 			text: '...',
@@ -42,10 +56,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'23',
 				},
 				{
-					text:'Представление',
+					text:'Показатель',
+					width:'177',
 				},
 			]
 		},
@@ -58,15 +74,30 @@
 					text:'Действие3',
 				},
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать измерения',
+			style: 'position:absolute;left:12px;top:96px;width:160px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить итоги по всем уровням',
+			style: 'position:absolute;left:12px;top:116px;width:196px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить в разных колонках',
+			style: 'position:absolute;left:294px;top:157px;width:172px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -78,6 +109,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьИмяРегистра1',
+			text: 'Раздел учета:',
+			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
+		},
 					]
 				},
 			]
@@ -92,6 +129,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:0px;top:0px;width:208px;height:15px;',
+		},
 					]
 				},
 			]
@@ -109,10 +151,12 @@
 			columns:
 			[
 				{
-					text:'Поле',
+					text:'Группировки строк',
+					width:'135',
 				},
 				{
 					text:'Тип',
+					width:'61',
 				},
 			]
 		},
@@ -126,7 +170,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -136,22 +180,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -169,6 +219,11 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить дополнительные поля в отдельной колонке',
+			style: 'position:absolute;left:6px;top:6px;width:296px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:50px;width:460px;height:206px;',
 			height: 206,width: 460,
@@ -176,6 +231,7 @@
 			[
 				{
 					text:'Поле',
+					width:'100',
 				},
 			]
 		},
@@ -199,10 +255,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'60',
 				},
 			]
 		},
@@ -222,15 +280,11 @@
 			style: 'position:absolute;left:0px;top:300px;width:488px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'ОК',
 				},

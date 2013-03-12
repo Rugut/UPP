@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВизитныеКарточкиРаботников.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 412,width: 720,
+	style: 'position:absolute;width:720px;height:412px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Визитные карточки сотрудников',
 	
 	items:
@@ -12,65 +14,49 @@
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
+				'-',
 				{
-					text:'Разделитель3',
+					text:'На принтер',
 				},
+				'-',
 				{
-					text:'ВыполнитьПечать',
+					text:'На принтер',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ВыполнитьПечать',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Сформировать1',
+					text:'Cформировать',
 				},
 				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ДействиеНовыйОтчет',
+					text:'Новый отчет',
 				},
 				{
 					text:'Действие1',
 				},
 				{
-					text:'Заголовок',
+					text:'Заголовок отчета',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Отбор',
+					text:'Быстрые отборы',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'НовыйОтчет',
+					text:'Новый отчет',
 				},
 				{
 					text:'Действие',
@@ -79,31 +65,22 @@
 					text:'Действие1',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Подменю',
+					text:'Быстрые отборы',
+				},
+				'-',
+				{
+					text:'Настройка ...',
 				},
 				{
-					text:'Отбор',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Заголовок',
+					text:'Заголовок отчета',
 				},
 			]
 		},
@@ -118,10 +95,20 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Должность',
+			style: 'position:absolute;left:0px;top:28px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиДолжность',
 			style: 'position:absolute;left:218px;top:28px;width:486px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подразделение',
+			style: 'position:absolute;left:0px;top:4px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,6 +119,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись',
+			text: 'На дату:',
+			style: 'position:absolute;left:578px;top:2px;width:49px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

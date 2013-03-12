@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВизитныеКарточкиРаботников.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 397,width: 490,
+	style: 'position:absolute;width:490px;height:397px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка ""Визитные карточки сотрудников""',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -40,13 +40,16 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 				{
-					text:'ВидКонтактнойИнформации',
+					text:'Вид',
+					width:'220',
 				},
 			]
 		},
@@ -55,17 +58,13 @@
 			style: 'position:absolute;left:6px;top:24px;width:250px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'',
 				},
+				'-',
 				{
-					text:'КнопкаСнятьФлажки',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'КнопкаУстановитьФлажки',
+					text:'',
 				},
 			]
 		},
@@ -83,9 +82,11 @@
 			[
 				{
 					text:'Поле',
+					width:'305',
 				},
 				{
 					text:'Тип',
+					width:'122',
 				},
 			]
 		},
@@ -109,22 +110,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'122',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'82',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -148,10 +155,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'331',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление',
+					width:'94',
 				},
 			]
 		},

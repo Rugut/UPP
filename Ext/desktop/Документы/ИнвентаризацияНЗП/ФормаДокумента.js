@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИнвентаризацияНЗП.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 435,width: 652,
+	style: 'position:absolute;width:652px;height:435px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инвентаризация незавершенного производства',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 			]
 		},
@@ -31,25 +31,25 @@
 				{
 					text:'Печать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,10 +58,26 @@
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:496px;top:33px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,16 +86,62 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:383px;width:89px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:97px;top:383px;width:547px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаказ',
+			text: 'Заказ:',
+			style: 'position:absolute;left:336px;top:130px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вводить заказы по строкам',
+			style: 'position:absolute;left:336px;top:110px;width:167px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вводить номенклатурные группы по строкам',
+			style: 'position:absolute;left:8px;top:110px;width:259px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНоменклатурнаяГруппа',
+			text: 'Номенклатурная группа:',
+			style: 'position:absolute;left:8px;top:130px;width:131px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,10 +156,27 @@
 			style: 'position:absolute;left:424px;top:130px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:336px;top:79px;width:88px;height:27px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:574px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:359px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,28 +200,21 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить остатками затрат (регл. учет)',
+				},
+				'-',
+				{
+					text:'Заполнить остатками материалов в производстве',
 				},
 				{
-					text:'ЗаполнитьПоОстаткамРегл',
+					text:'Заполнить по нормативам (упр. учет)',
+				},
+				'-',
+				{
+					text:'Заполнить остатками затрат (упр. учет)',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗаполнитьОстаткамиМатериаловВПроизводстве',
-				},
-				{
-					text:'ЗаполнитьПоНормативамУпр',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ЗаполнитьПоОстаткамУпр',
-				},
-				{
-					text:'ЗаполнитьПоНормативамРегл',
+					text:'Заполнить по нормативам (регл. учет)',
 				},
 				{
 					text:'Подбор',
@@ -156,65 +228,83 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'60',
 				},
 				{
 					text:'Артикул',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'142',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'107',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'118',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'128',
 				},
 				{
-					text:'ЕдиницаМест',
+					text:'Ед. мест',
+					width:'50',
 				},
 				{
-					text:'КоэффициентМест',
+					text:'К.мест',
+					width:'45',
 				},
 				{
-					text:'КоличествоМест',
+					text:'Мест',
+					width:'67',
 				},
 				{
-					text:'Количество',
+					text:'Факт. количество',
+					width:'67',
 				},
 				{
-					text:'Единица',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'Коэффициент',
+					text:'К.',
+					width:'45',
 				},
 				{
-					text:'КоличествоНеИспользованноеВПроизводстве',
+					text:'Количество не использованное в производстве',
+					width:'80',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'152',
 				},
 				{
 					text:'Заказ',
+					width:'68',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат (БУ)',
+					width:'90',
 				},
 				{
-					text:'СчетЗатратНУ',
+					text:'Счет затрат (НУ)',
+					width:'90',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'ПрочиеЗатраты',
+					title:'Прочие затраты',
 					items:
 					[
 		{
@@ -224,34 +314,44 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'125',
 				},
 				{
-					text:'СпособРаспределенияЗатратНаВыпуск',
+					text:'Способ распределения затрат на выпуск',
+					width:'100',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'81',
 				},
 				{
-					text:'СуммаРегл',
+					text:'Сумма (БУ)',
+					width:'86',
 				},
 				{
-					text:'СуммаНал',
+					text:'Сумма (НУ)',
+					width:'85',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат (БУ)',
+					width:'100',
 				},
 				{
-					text:'СчетЗатратНУ',
+					text:'Счет затрат (НУ)',
+					width:'100',
 				},
 			]
 		},
@@ -261,25 +361,18 @@
 			items:
 			[
 				{
-					text:'КоманднаяПанельПрочиеЗатратыЗаполнитьУпр',
+					text:'Заполнить по остаткам (упр. учет)',
 				},
 				{
-					text:'КоманднаяПанельПрочиеЗатратыЗаполнитьРегл',
+					text:'Заполнить по остаткам (регл. учет)',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Заполнить',
+					text:'Заполнить по остаткам (упр. и регл. учет)',
 				},
 			]
 		},

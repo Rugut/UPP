@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОбъектыСтроительства.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 677,
+	style: 'position:absolute;width:677px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Объекты строительства',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -39,6 +44,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'120',
 				},
 			]
 		},

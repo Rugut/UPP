@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализЦен.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 310,width: 490,
+	style: 'position:absolute;width:490px;height:310px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -14,7 +16,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Основные параметры',
 					items:
 					[
 		{
@@ -24,16 +26,34 @@
 			style: 'position:absolute;left:60px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'На дату:',
+			style: 'position:absolute;left:6px;top:6px;width:52px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать измерения',
+			style: 'position:absolute;left:6px;top:30px;width:160px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:50px;width:212px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:113px;width:460px;height:131px;',
 			height: 131,width: 460,
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Представление',
+					text:'Показатель',
+					width:'439',
 				},
 			]
 		},
@@ -43,13 +63,13 @@
 			items:
 			[
 				{
-					text:'СнятьВсе',
+					text:'Снять все',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'УстановитьВсе',
+					text:'Установить все',
 				},
 				{
 					text:'Действие3',
@@ -76,9 +96,11 @@
 			[
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -97,9 +119,11 @@
 			[
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -124,6 +148,7 @@
 			[
 				{
 					text:'Поле',
+					width:'549',
 				},
 			]
 		},
@@ -137,7 +162,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -147,22 +172,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -172,6 +203,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'ВВалюте',
+			text: 'в валюте:',
+			style: 'position:absolute;left:142px;top:6px;width:64px;height:19px;',
 		},
 					]
 				},
@@ -186,14 +223,10 @@
 					text:'ОК',
 				},
 				{
-					text:'Отмена',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Справка',
 				},

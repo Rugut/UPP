@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.УслугиСобственнымПодразделениям.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 404,width: 672,
+	style: 'position:absolute;width:672px;height:404px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Услуги собственным подразделениям',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:352px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,129 +51,121 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель2',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				'-',
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Подменю',
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'Действие',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Действие4',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель6',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Действие4',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель4',
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Перечитать',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель2',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель8',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие6',
+					text:'Отмена проведения',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:424px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:503px;top:33px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:328px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,14 +181,10 @@
 				{
 					text:'Записать',
 				},
+				'-',
+				'-',
 				{
-					text:'РазделительОК',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
@@ -185,6 +193,17 @@
 					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:580px;top:33px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПроект',
+			text: 'Проект:',
+			style: 'position:absolute;left:336px;top:328px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -199,7 +218,7 @@
 			items:
 			[
 				{
-					title:'Затраты',
+					title:'Получатели',
 					items:
 					[
 		{
@@ -209,52 +228,68 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ПодразделениеПолучатель',
+					text:'Подразделение',
+					width:'210',
 				},
 				{
-					text:'ПодразделениеОрганизацииПолучатель',
+					text:'Подразделение организации',
+					width:'206',
 				},
 				{
-					text:'СтатьяЗатрат',
+					text:'Статья затрат',
+					width:'182',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
-					text:'Счет',
+					text:'Счет (БУ)',
+					width:'82',
 				},
 				{
-					text:'СчетНУ',
+					text:'Счет (НУ)',
+					width:'80',
 				},
 				{
-					text:'ВидАналитики',
+					text:'Вид аналитики',
+					width:'172',
 				},
 				{
-					text:'ВидАналитикиДоп',
+					text:'Вид аналитики (доп)',
+					width:'172',
 				},
 				{
 					text:'Аналитика',
+					width:'308',
 				},
 				{
-					text:'НоменклатурнаяГруппа',
+					text:'Номенклатурная группа',
+					width:'308',
 				},
 				{
 					text:'Продукция',
+					width:'103',
 				},
 				{
-					text:'ХарактеристикаПродукции',
+					text:'Характеристика продукции',
+					width:'103',
 				},
 				{
-					text:'СерияПродукции',
+					text:'Серия продукции',
+					width:'103',
 				},
 				{
 					text:'Заказ',
+					width:'113',
 				},
 				{
 					text:'Проект',
+					width:'102',
 				},
 			]
 		},
@@ -263,10 +298,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:641px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:329px;top:6px;width:88px;height:27px;',
 		},
 					]
 				},
@@ -285,6 +324,12 @@
 			hideLabel: true,
 			name: 'СчетЗатрат',
 			style: 'position:absolute;left:94px;top:54px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетЗатрат',
+			text: 'Счет (БУ):',
+			style: 'position:absolute;left:6px;top:54px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -309,10 +354,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьУслуга',
+			text: 'Услуга (работа):',
+			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:424px;top:57px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаИзмерения',
+			text: '',
+			style: 'position:absolute;left:424px;top:79px;width:240px;height:15px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Вакансии.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 729,
+	style: 'position:absolute;width:729px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Вакансии',
 	
 	items:
@@ -14,25 +16,32 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Должность',
+					width:'100',
 				},
 				{
-					text:'ПлановаяДатаЗакрытия',
+					text:'Закрыть до',
+					width:'80',
 				},
 			]
 		},
@@ -43,6 +52,11 @@
 			style: 'position:absolute;left:268px;top:33px;width:453px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:178px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:729px;height:24px;',
 			items:
@@ -51,17 +65,12 @@
 					text:'Действие2',
 				},
 				{
-					text:'Подменю1',
-				},
-				{
 					text:'Действие2',
 				},
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -71,14 +80,9 @@
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие6',
@@ -89,27 +93,16 @@
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие9',
 				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -117,19 +110,14 @@
 					text:'Действие5',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Действие4',
@@ -137,15 +125,11 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},

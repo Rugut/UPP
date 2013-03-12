@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ГруппыПользователей.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 417,width: 500,
+	style: 'position:absolute;width:500px;height:417px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группа пользователей',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код:',
+			style: 'position:absolute;left:386px;top:33px;width:25px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:412px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,53 +38,40 @@
 			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Действие3',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель',
+					text:'Записать и закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Скопировать',
 				},
 				{
-					text:'Подменю',
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие5',
+					text:'Найти в списке',
 				},
 				{
-					text:'ДействиеСправка',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Перечитать',
 				},
 			]
 		},
@@ -80,21 +81,23 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Родитель:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,16 +114,14 @@
 					text:'Подбор',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Удалить',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 			]
 		},
@@ -131,10 +132,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'38',
 				},
 				{
-					text:'Пользователь',
+					text:'Пользователь группы',
+					width:'148',
 				},
 			]
 		},
@@ -145,10 +148,12 @@
 			columns:
 			[
 				{
-					text:'ВидОбъектаДоступа',
+					text:'Вид объекта доступа',
+					width:'164',
 				},
 				{
-					text:'ДоступноОбъектов',
+					text:'Чтение',
+					width:'48',
 				},
 			]
 		},
@@ -158,18 +163,40 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
+				},
+				'-',
+				{
+					text:'Снять флажки',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'СнятьФлажки',
-				},
-				{
-					text:'Права',
+					text:'Настройка доступа',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьRLS',
+			text: 'Ограничение доступа',
+			style: 'position:absolute;left:8px;top:90px;width:249px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСоставГруппы',
+			text: 'Состав группы',
+			style: 'position:absolute;left:266px;top:90px;width:226px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Перед включением пользователей в группу проверьте настройки доступа',
+			style: 'position:absolute;left:266px;top:355px;width:226px;height:29px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждениеОграниченияДоступа',
+			text: '',
+			style: 'position:absolute;left:8px;top:355px;width:249px;height:29px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 780,
+	style: 'position:absolute;width:780px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Переоценка валютных статей при бюджетировании',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Сценарий',
+					width:'120',
 				},
 				{
-					text:'ДатаПереоценки',
+					text:'Дата переоценки',
+					width:'80',
 				},
 				{
-					text:'СчетОтнесенияКурсовыхРазниц',
+					text:'Счет курсовых разниц',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -47,21 +58,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Выбрать',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

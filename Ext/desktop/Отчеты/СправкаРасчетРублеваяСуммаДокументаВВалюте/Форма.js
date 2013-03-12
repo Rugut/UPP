@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 87,width: 430,
+	style: 'position:absolute;width:430px;height:87px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справка-расчет ""Рублевая сумма документа в иностранной валюте""',
 	
 	items:
@@ -13,10 +15,10 @@
 			items:
 			[
 				{
-					text:'СохранитьЗначения___',
+					text:'Сохранить значения',
 				},
 				{
-					text:'ВосстановитьЗначения___',
+					text:'Восстановить значения',
 				},
 			]
 		},
@@ -26,14 +28,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Сформировать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -41,6 +41,12 @@
 			hideLabel: true,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:81px;top:33px;width:341px;height:21px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Документ:',
+			style: 'position:absolute;left:8px;top:33px;width:71px;height:21px;',
 		},
 	]
 });

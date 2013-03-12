@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.УдалитьКорректировочныйСчетФактураПолученный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 445,width: 675,
+	style: 'position:absolute;width:675px;height:445px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Корректировочный счет-фактура полученный',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:32px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:183px;top:32px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:393px;width:92px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,124 +51,118 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Действие6',
+					text:'Скопировать',
 				},
 				{
-					text:'Разделитель3',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Провести',
 				},
 				{
-					text:'Действие2',
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель2',
+					text:'Записать и закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'ПодменюПерейти',
+					text:'Справка',
 				},
 				{
-					text:'Подменю',
+					text:'Записать',
 				},
 				{
-					text:'Действие7',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие3',
+					text:'Провести',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетФактура',
+			text: 'Счет-фактура:
+',
+			style: 'position:absolute;left:8px;top:104px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:420px;width:675px;height:25px;',
 			items:
 			[
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент1',
+			text: 'Контрагент:
+',
+			style: 'position:absolute;left:8px;top:80px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговорКонтрагента',
+			text: 'Договор:
+',
+			style: 'position:absolute;left:355px;top:80px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,6 +183,12 @@
 			style: 'position:absolute;left:447px;top:80px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:369px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
@@ -187,7 +207,7 @@
 			items:
 			[
 				{
-					title:'РеквизитыСчетаФактуры',
+					title:'Реквизиты счета-фактуры',
 					items:
 					[
 		{
@@ -203,10 +223,34 @@
 			style: 'position:absolute;left:278px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСчетФактураНомер',
+			text: 'К счету-фактуре номер:',
+			style: 'position:absolute;left:6px;top:30px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВходящаяДата',
+			text: 'от:',
+			style: 'position:absolute;left:257px;top:30px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВходящийНомер',
+			text: 'Входящий номер:',
+			style: 'position:absolute;left:6px;top:6px;width:132px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерВходящегоДокумента',
 			style: 'position:absolute;left:138px;top:6px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаИсправления',
+			text: 'от:',
+			style: 'position:absolute;left:257px;top:6px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -215,10 +259,22 @@
 			style: 'position:absolute;left:278px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРазницаСНДСКУменьшению',
+			text: 'Разница к уменьшению:',
+			style: 'position:absolute;left:6px;top:128px;width:132px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'РазницаСНДСКУменьшению',
 			style: 'position:absolute;left:138px;top:128px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСуммаНДС',
+			text: 'В т.ч. НДС к уменьшению:',
+			style: 'position:absolute;left:278px;top:128px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -227,10 +283,22 @@
 			style: 'position:absolute;left:418px;top:128px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименованиеПродавца',
+			text: 'Наименование продавца:',
+			style: 'position:absolute;left:6px;top:54px;width:132px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НаименованиеПродавца',
 			style: 'position:absolute;left:138px;top:54px;width:513px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИННПродавца',
+			text: 'ИНН / КПП продавца:',
+			style: 'position:absolute;left:6px;top:79px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -245,10 +313,28 @@
 			style: 'position:absolute;left:138px;top:104px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКПППродавца',
+			text: '/',
+			style: 'position:absolute;left:258px;top:79px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КПППродавца',
 			style: 'position:absolute;left:278px;top:79px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумента',
+			text: 'Валюта:',
+			style: 'position:absolute;left:6px;top:104px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРазницаСНДСКДоплате',
+			text: 'Разница к доплате:',
+			style: 'position:absolute;left:6px;top:152px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -257,15 +343,27 @@
 			style: 'position:absolute;left:138px;top:152px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРазницаНДСКДоплате',
+			text: 'В т.ч. НДС к доплате:',
+			style: 'position:absolute;left:278px;top:152px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'РазницаНДСКДоплате',
 			style: 'position:absolute;left:418px;top:152px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтогиКУменьшению',
+			text: 'К уменьшению по счету-фактуре: 118 000 руб., в том числе НДС: 18 000 руб. ',
+			style: 'position:absolute;left:198px;top:6px;width:453px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ВосстановлениеНДС',
+					title:'Восстановление НДС',
 					items:
 					[
 		{
@@ -275,19 +373,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
-					text:'Сумма',
+					text:'Сумма с НДС',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'Ставка НДС',
+					width:'100',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'100',
 				},
 			]
 		},
@@ -301,7 +404,7 @@
 					]
 				},
 				{
-					title:'ВычетНДС',
+					title:'Вычет НДС',
 					items:
 					[
 		{
@@ -311,22 +414,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
-					text:'Сумма',
+					text:'Сумма с НДС',
+					width:'100',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'Ставка НДС',
+					width:'100',
 				},
 				{
-					text:'СуммаНДС',
+					text:'Сумма НДС',
+					width:'100',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'100',
 				},
 			]
 		},
@@ -336,6 +445,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтогиКДоплате',
+			text: 'К доплате по счету-фактуре: 118 000 руб., в том числе НДС: 18 000 руб. ',
+			style: 'position:absolute;left:198px;top:6px;width:453px;height:19px;',
 		},
 					]
 				},

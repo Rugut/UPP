@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СводныеПроводкиМеждународный.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 640,
+	style: 'position:absolute;width:640px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет Сводные проводки',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:20px;top:33px;width:56px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:80px;top:33px;width:84px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:168px;top:33px;width:28px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:200px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:340px;top:33px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -34,61 +54,44 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Подменю',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Справка',
 				},
 				{
-					text:'Действие2',
+					text:'Настройка...',
 				},
 				{
-					text:'Настройка',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 			]
 		},

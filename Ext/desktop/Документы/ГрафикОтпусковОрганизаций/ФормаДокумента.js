@@ -1,12 +1,26 @@
 ﻿Ext.define('Документы.ГрафикОтпусковОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 425,width: 430,
+	style: 'position:absolute;width:430px;height:425px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'График отпусков',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,42 +39,42 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Подменю1',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:373px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -75,22 +89,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ТабельныйНомерСтрока',
+					text:'Таб. №',
+					width:'68',
 				},
 				{
 					text:'Сотрудник',
+					width:'120',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Начало',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Окончание',
+					width:'80',
 				},
 				{
 					text:'Примечание',
+					width:'200',
 				},
 			]
 		},
@@ -100,11 +120,9 @@
 			items:
 			[
 				{
-					text:'СписокРаботников',
+					text:'Списком сотрудников',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -113,9 +131,6 @@
 				},
 				{
 					text:'Действие8',
-				},
-				{
-					text:'ПодменюЗаполнить',
 				},
 				{
 					text:'Действие6',
@@ -138,12 +153,8 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -154,12 +165,8 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительЗакрыть',
-				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
+				'-',
 				{
 					text:'ОК',
 				},
@@ -167,6 +174,12 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

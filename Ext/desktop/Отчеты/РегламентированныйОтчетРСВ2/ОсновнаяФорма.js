@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетРСВ2.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 258,width: 276,
+	style: 'position:absolute;width:276px;height:258px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'РСВ-2 ПФР',
 	
 	items:
@@ -12,22 +14,24 @@
 			style: 'position:absolute;left:0px;top:233px;width:276px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Действие1',
 				},
 				{
-					text:'Справка',
-				},
-				{
-					text:'Действие',
+					text:'Отмена',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:42px;top:85px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:222px;top:85px;width:21px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:17px;top:139px;width:244px;height:56px;',
 		},
 		{
 			xtype: 'button',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.МСФОУчетнаяПолитика.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
-	height: 269,width: 276,
+	style: 'position:absolute;width:276px;height:269px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Учетная политика по МСФО',
 	
 	items:
@@ -12,22 +14,24 @@
 			style: 'position:absolute;left:0px;top:244px;width:276px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
-					text:'Действие',
+					text:'Отмена',
 				},
 				{
 					text:'ОК',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:42px;top:124px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -40,6 +44,12 @@
 			name: 'КнопкаСледующийПериод',
 			text: '',
 			style: 'position:absolute;left:224px;top:124px;width:21px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ОписаниеНормативДок',
+			text: '',
+			style: 'position:absolute;left:14px;top:173px;width:254px;height:40px;',
 		},
 		{
 			xtype: 'textfield',

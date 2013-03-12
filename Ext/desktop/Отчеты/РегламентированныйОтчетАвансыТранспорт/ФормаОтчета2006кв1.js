@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыТранспорт.ФормаОтчета2006кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Налоговый расчет по авансовым платежам по транспортному налогу',
 	
 	items:
@@ -13,83 +15,57 @@
 			items:
 			[
 				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
+				'-',
 				{
-					text:'РазделительОтправка',
+					text:'Настройка...',
 				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'Проверить',
+					text:'Показать отправки',
 				},
+				'-',
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Подготовить к отправке и подписать',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'ПодготовитьИПодписать',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
 				{
-					text:'Отправка',
-				},
-				{
-					text:'Подготовить',
+					text:'Подготовить к отправке',
 				},
 				{
 					text:'Расшифровка',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Отправить',
 				},
 				{
-					text:'Выгрузка',
+					text:'Расширить поле бланка',
 				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 			]
 		},
 		{
@@ -97,26 +73,17 @@
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -130,7 +97,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел1',
+					title:'Раздел 1',
 					items:
 					[
 		{
@@ -166,7 +133,7 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -216,6 +183,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:48px;',
 			height: 48,width: 654,
@@ -243,6 +216,11 @@
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:562px;top:24px;width:49px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:168px;top:24px;width:247px;height:19px;',
+		},
 					]
 				},
 			]
@@ -257,6 +235,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ВыработкаОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 401,width: 584,
+	style: 'position:absolute;width:584px;height:401px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выработка ОС',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -20,10 +28,22 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:349px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:349px;width:482px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:325px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,53 +57,46 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:376px;width:584px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Действие1',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -94,22 +107,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ИнвНомер',
+					text:'Инв. №',
+					width:'80',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'220',
 				},
 				{
-					text:'ПараметрВыработкиОС',
+					text:'Параметр выработки',
+					width:'120',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 				{
 					text:'Единица',
+					width:'54',
 				},
 			]
 		},
@@ -128,17 +147,12 @@
 					text:'Действие8',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Действие6',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -155,11 +169,9 @@
 					text:'Действие7',
 				},
 				{
-					text:'ЗаполнитьПоНаименованию',
+					text:'По наименованию',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

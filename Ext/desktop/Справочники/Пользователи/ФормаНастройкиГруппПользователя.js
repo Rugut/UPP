@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Пользователи.ФормаНастройкиГруппПользователя',
 	{
 	extend: 'Ext.window.Window',
-	height: 425,width: 326,
+	style: 'position:absolute;width:326px;height:425px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы, в которые входит пользователь',
 	
 	items:
@@ -12,9 +14,7 @@
 			style: 'position:absolute;left:0px;top:400px;width:326px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отмена',
 				},
@@ -24,13 +24,20 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПользователь',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:8px;top:8px;width:310px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:28px;width:310px;height:364px;',
 			height: 364,width: 310,
 			columns:
 			[
 				{
-					text:'ГруппаПользователей',
+					text:'Группа пользователей',
+					width:'172',
 				},
 			]
 		},
@@ -40,17 +47,15 @@
 			items:
 			[
 				{
-					text:'ПраваДоступа',
+					text:'Настройка доступа',
 				},
 				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 				{
-					text:'Действие',
+					text:'Настройка списка...',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПечатьЦенников.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 461,width: 780,
+	style: 'position:absolute;width:780px;height:461px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Печать ценников',
 	
 	items:
@@ -21,27 +23,40 @@
 			columns:
 			[
 				{
-					text:'Печать',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'31',
 				},
 				{
 					text:'Номенклатура',
+					width:'224',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'189',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед. изм.',
+					width:'58',
 				},
 				{
 					text:'Цена',
+					width:'89',
 				},
 				{
 					text:'Количество',
+					width:'66',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипЦен',
+			text: 'Тип цен:',
+			style: 'position:absolute;left:341px;top:33px;width:44px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -56,22 +71,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -83,39 +104,35 @@
 			]
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Только имеющиеся в наличии',
+			style: 'position:absolute;left:8px;top:72px;width:233px;height:15px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:186px;width:764px;height:24px;',
 			items:
 			[
 				{
-					text:'ИнвертироватьВыделение',
+					text:'Инвертировать выделение',
+				},
+				'-',
+				'-',
+				{
+					text:'Подбор',
 				},
 				{
-					text:'Заполнить',
+					text:'Очистить выделение',
 				},
 				{
-					text:'Разделитель2',
+					text:'Выделить все',
 				},
 				{
-					text:'Разделитель1',
+					text:'Заполнить по установленным отборам',
 				},
+				'-',
 				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'ОчиститьВыделение',
-				},
-				{
-					text:'ВыделитьВсе',
-				},
-				{
-					text:'ЗаполнитьПоУстановленнымОтборам',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПерезаполнитьЦены',
+					text:'Перезаполнить цены',
 				},
 			]
 		},
@@ -125,13 +142,11 @@
 			items:
 			[
 				{
-					text:'ДействиеПечать',
+					text:'Печать',
 				},
+				'-',
 				{
-					text:'РазделительОК',
-				},
-				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -142,10 +157,22 @@
 			style: 'position:absolute;left:680px;top:33px;width:92px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВалюта',
+			text: 'Валюта:',
+			style: 'position:absolute;left:632px;top:33px;width:43px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:83px;top:33px;width:244px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:70px;height:19px;',
 		},
 	]
 });

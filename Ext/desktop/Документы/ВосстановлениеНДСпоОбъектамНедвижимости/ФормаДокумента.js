@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ВосстановлениеНДСпоОбъектамНедвижимости.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 459,width: 644,
+	style: 'position:absolute;width:644px;height:459px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Восстановление НДС по объектам недвижимости',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:181px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:203px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:58px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:58px;width:227px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:407px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,31 +58,29 @@
 			style: 'position:absolute;left:96px;top:407px;width:540px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отражать восстановление в книге продаж',
+			style: 'position:absolute;left:331px;top:58px;width:242px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Дт/кт',
 				},
+				'-',
 				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -68,24 +92,29 @@
 					text:'Печать',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражатьВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:331px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:419px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -94,7 +123,7 @@
 			items:
 			[
 				{
-					title:'ОбъектыНедвижимости',
+					title:'Объекты недвижимости',
 					items:
 					[
 		{
@@ -102,33 +131,24 @@
 			style: 'position:absolute;left:6px;top:6px;width:614px;height:24px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Подбор объектов недвижимости',
 				},
 				{
-					text:'Разделитель1',
+					text:'Заполнить суммы НДС по данным счетов-фактур',
 				},
 				{
-					text:'ПодборОбъектыНедвижимости',
+					text:'Заполнить долю выручки',
 				},
 				{
-					text:'ЗаполнитьСуммыНДСПоСФ',
+					text:'Заполнить параметры объектов недвижимости',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить суммы НДС по счетам-фактурам в текущей строке',
 				},
-				{
-					text:'ЗаполнитьДолюВыручки',
-				},
-				{
-					text:'ЗаполнитьПараметрыОбъектовНедвижимости',
-				},
-				{
-					text:'ЗаполнитьСуммыНДСПоСФвСтроке',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -138,46 +158,60 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ОбъектНедвижимости',
+					text:'Объект недвижимости',
+					width:'120',
 				},
 				{
-					text:'ИспользуетсяДляОперацийНеОблагаемыхНДС',
+					text:'Используется для операций не облагаемых НДС',
+					width:'100',
 				},
 				{
-					text:'ДатаНачалаИспользованияДляОпераций',
+					text:'Дата начала использования для операций, не облагаемых НДС',
+					width:'80',
 				},
 				{
-					text:'ДатаВводаВЭксплуатациюБУ',
+					text:'Дата ввода в эксплуатацию (БУ)',
+					width:'80',
 				},
 				{
-					text:'ДатаНачисленияАмортизацииНУ',
+					text:'Дата начала начисления амортизации (НУ)',
+					width:'79',
 				},
 				{
-					text:'СтоимостьОбъектаНедвижимости',
+					text:'Стоимость объекта недвижимости (БУ)',
+					width:'121',
 				},
 				{
-					text:'СуммаНДСПоПодряднымРаботам',
+					text:'НДС по подрядным работам',
+					width:'120',
 				},
 				{
-					text:'СуммаНДСПоСМРДляСобственногоПотребления',
+					text:'НДС по СМР хозспособом',
+					width:'120',
 				},
 				{
-					text:'СуммаНДСПоОбъектуНедвижимости',
+					text:'НДС по объекту недвижимости',
+					width:'120',
 				},
 				{
-					text:'ДоляВыручкиНеОблагаемаяНДС',
+					text:'Доля выручки, не облагаемая НДС (%)',
+					width:'120',
 				},
 				{
-					text:'СуммаНДСПоПодряднымРаботамВосстановлена',
+					text:'НДС по подрядным работам, восстановленная',
+					width:'120',
 				},
 				{
-					text:'СуммаНДСПоСМРДляСобственногоПотребленияВосстановлена',
+					text:'НДС по СМР хозспособом восстановлена',
+					width:'120',
 				},
 				{
-					text:'СуммаНДСПоОбъектуНедвижимостиВосстановлена',
+					text:'НДС по объекту недвижимости, восстановлена',
+					width:'120',
 				},
 			]
 		},
@@ -186,14 +220,9 @@
 			style: 'position:absolute;left:6px;top:164px;width:614px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'ПодборСчетовфактур',
+					text:'Подбор счетов-фактур',
 				},
 			]
 		},
@@ -204,54 +233,90 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
-					text:'КодОперацииДляДекларации',
+					text:'Код операции (для декларации)',
+					width:'120',
 				},
 				{
 					text:'Поставщик',
+					width:'100',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'120',
 				},
 				{
-					text:'СуммаБезНДС',
+					text:'Сумма без НДС',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'80',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
-					text:'СуммаБезНДСВосстановлена',
+					text:'Сумма без НДС, восстановлена',
+					width:'120',
 				},
 				{
-					text:'НДСВосстановлен',
+					text:'НДС, восстановлен',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СчетаСписанияНДС',
+					title:'Счета списания НДС',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДС',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:83px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетСписанияНДС',
 			style: 'position:absolute;left:105px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:6px;top:35px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:6px;top:59px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДС3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:6px;top:82px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -272,10 +337,22 @@
 			style: 'position:absolute;left:105px;top:82px;width:199px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНДСНУ',
+			text: 'Счет (НУ):',
+			style: 'position:absolute;left:322px;top:6px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетСписанияНДСНУ',
 			style: 'position:absolute;left:421px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ1',
+			text: 'Субконто 1 (НУ):',
+			style: 'position:absolute;left:322px;top:35px;width:93px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -284,10 +361,22 @@
 			style: 'position:absolute;left:420px;top:35px;width:200px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ2',
+			text: 'Субконто 2 (НУ):',
+			style: 'position:absolute;left:322px;top:59px;width:93px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СубконтоСписанияНДСНУ2',
 			style: 'position:absolute;left:420px;top:59px;width:200px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоСписанияНДСНУ3',
+			text: 'Субконто 3 (НУ):',
+			style: 'position:absolute;left:322px;top:82px;width:93px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -301,6 +390,12 @@
 					title:'Дополнительно',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

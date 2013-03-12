@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 780,
+	style: 'position:absolute;width:780px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установки зависимостей оборотов по статьям',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Сценарий',
+					width:'120',
 				},
 				{
-					text:'СтатьяОборотовВлияющая',
+					text:'Статья оборотов',
+					width:'120',
 				},
 				{
 					text:'ЦФО',
+					width:'120',
 				},
 				{
 					text:'Проект',
+					width:'120',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'120',
 				},
 			]
 		},
@@ -47,17 +58,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

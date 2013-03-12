@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ИнформационныеКарты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 352,width: 680,
+	style: 'position:absolute;width:680px;height:352px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Информационные карты',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'34',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'225',
 				},
 				{
-					text:'КодКарты',
+					text:'Код карты',
+					width:'147',
 				},
 				{
-					text:'ВладелецКарты',
+					text:'Владелец карты',
+					width:'151',
 				},
 				{
-					text:'ВидДисконтнойКарты',
+					text:'Вид дисконтной карты',
+					width:'152',
 				},
 				{
-					text:'ВидКарты',
+					text:'Вид карты',
+					width:'120',
 				},
 				{
-					text:'ТипКарты',
+					text:'Тип карты',
+					width:'120',
 				},
 				{
-					text:'ТипШтрихКода',
+					text:'Тип штрих кода',
+					width:'120',
 				},
 			]
 		},
@@ -50,6 +61,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'120',
 				},
 			]
 		},

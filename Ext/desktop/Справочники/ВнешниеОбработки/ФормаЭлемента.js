@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВнешниеОбработки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 386,width: 618,
+	style: 'position:absolute;width:618px;height:386px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрация внешней обработки, печатной формы,  обработки по заполнению табличных частей',
 	
 	items:
@@ -13,12 +15,16 @@
 			items:
 			[
 				{
-					text:'Права',
+					text:'Настройка доступа',
 				},
-				{
-					text:'РазделительПрава',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наименование:',
+			style: 'position:absolute;left:232px;top:33px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -27,10 +33,22 @@
 			style: 'position:absolute;left:325px;top:33px;width:285px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Вид:',
+			style: 'position:absolute;left:8px;top:57px;width:31px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидОбработки',
 			style: 'position:absolute;left:39px;top:57px;width:185px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:8px;top:33px;width:31px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,7 +63,7 @@
 			items:
 			[
 				{
-					title:'СтраницаПринадлежность',
+					title:'Принадлежность печатной формы',
 					items:
 					[
 		{
@@ -54,40 +72,34 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Удалить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьФайлНаДиск',
+					text:'Сохранить файл на диск',
 				},
 				{
 					text:'Подбор',
 				},
 				{
-					text:'Действие3',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'ЗаменитьФайл',
+					text:'Заменить файл',
 				},
 				{
-					text:'Действие4',
+					text:'Сортировать по убыванию',
 				},
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 			]
 		},
@@ -98,46 +110,64 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ПредставлениеОбъекта',
+					text:'Представление объекта',
+					width:'129',
 				},
 				{
-					text:'ТабличнаяЧасть',
+					text:'Табличная часть',
+					width:'104',
 				},
 				{
-					text:'ПредставлениеКнопки',
+					text:'Представление кнопки',
+					width:'199',
 				},
 				{
-					text:'ПредставлениеОтбораПостроителя',
+					text:'Отбор',
+					width:'82',
 				},
 				{
-					text:'ИмяФайлаПечатнойФормы',
+					text:'Файл печатной формы',
+					width:'126',
 				},
 				{
-					text:'ЗаменяемаяПечатнаяФорма',
+					text:'Заменяемая печатная форма',
+					width:'132',
 				},
 				{
 					text:'НастройкиПостроителяДляОтбора',
+					width:'48',
 				},
 				{
-					text:'ТабличнаяЧастьИмя',
+					text:'Табличная часть имя',
+					width:'21',
 				},
 				{
-					text:'ХранилищеВнешнейОбработки',
+					text:'Хранилище внешней обработки',
+					width:'103',
 				},
 				{
-					text:'ПредставлениеНастроекОбработки',
+					text:'Параметры обработки',
+					width:'169',
 				},
 				{
-					text:'СпособЗапуска',
+					text:'Способ запуска',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:232px;top:57px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,21 +181,23 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'КомментарийКФайлуИсточнику',
+			text: '',
+			style: 'position:absolute;left:8px;top:81px;width:514px;height:27px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -173,13 +205,13 @@
 			items:
 			[
 				{
-					text:'ЗаменитьФайл',
+					text:'Заменить файл',
 				},
 				{
-					text:'УдалитьФайл',
+					text:'Удалить файл',
 				},
 				{
-					text:'СохранитьФайлНаДиск',
+					text:'Сохранить файл на диск',
 				},
 			]
 		},

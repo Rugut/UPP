@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.АнкетаЗастрахованногоЛица.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 470,width: 645,
+	style: 'position:absolute;width:645px;height:470px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анкета застрахованного лица (АДВ-1)',
 	
 	items:
@@ -13,16 +15,14 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
 					text:'Действие4',
@@ -30,26 +30,16 @@
 				{
 					text:'Действие3',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Действие2',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие1',
@@ -60,63 +50,41 @@
 				{
 					text:'Действие',
 				},
+				'-',
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Действие3',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -124,46 +92,39 @@
 			style: 'position:absolute;left:0px;top:445px;width:645px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать документ',
+				},
+				'-',
+				{
+					text:'Программой CheckUFA',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Записать',
+					text:'Записать файл на диск',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'ПроверитьВCheckUFA',
-				},
-				{
-					text:'РазделительПечать',
-				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'НаДискетку',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Показать файл',
 				},
 				{
-					text:'Файл',
-				},
-				{
-					text:'ПроверитьВCheckXML',
+					text:'Программой CheckXML',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:418px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,6 +143,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
@@ -194,16 +161,40 @@
 			style: 'position:absolute;left:186px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:24px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:86px;top:24px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:168px;top:0px;width:16px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:324px;top:24px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:409px;top:24px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПачки',
+			text: 'Номер пачки:',
+			style: 'position:absolute;left:324px;top:0px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -230,9 +221,7 @@
 			style: 'position:absolute;left:0px;top:16px;width:629px;height:24px;',
 			items:
 			[
-				{
-					text:'РазделительПечать1',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -246,26 +235,19 @@
 					text:'Действие3',
 				},
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Действие6',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'ДействиеЗаполнить',
+					text:'Сотрудниками без страховых номеров',
 				},
 				{
 					text:'Действие5',
 				},
-				{
-					text:'РазделительПодбор',
-				},
-				{
-					text:'РазделительЗаполнить',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие9',
 				},
@@ -284,40 +266,52 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Сотрудник',
+					width:'220',
 				},
 				{
 					text:'Пол',
+					width:'120',
 				},
 				{
-					text:'ДатаРождения',
+					text:'Дата рождения',
+					width:'100',
 				},
 				{
 					text:'Фамилия',
+					width:'160',
 				},
 				{
 					text:'Имя',
+					width:'80',
 				},
 				{
 					text:'Отчество',
+					width:'80',
 				},
 				{
-					text:'МестоРождения',
+					text:'Место рождения',
+					width:'160',
 				},
 				{
-					text:'АдресРегистрации',
+					text:'Адрес регистрации',
+					width:'80',
 				},
 				{
-					text:'АдресФактический',
+					text:'Адрес фактический',
+					width:'80',
 				},
 				{
 					text:'Гражданство',
+					width:'80',
 				},
 				{
 					text:'Телефоны',
+					width:'80',
 				},
 			]
 		},
@@ -352,6 +346,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заменять букву "ё"',
+			style: 'position:absolute;left:8px;top:396px;width:629px;height:15px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГруппыЗаменяемостиРабочихЦентров.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 484,
+	style: 'position:absolute;width:484px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы заменяемости рабочих центров',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -29,11 +34,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:484px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

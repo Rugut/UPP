@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ДенежныйЧек.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 760,
+	style: 'position:absolute;width:760px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Денежные чеки',
 	
 	items:
@@ -14,37 +16,48 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'СчетОрганизации',
+					text:'Счет организации',
+					width:'120',
 				},
 				{
 					text:'Касса',
+					width:'120',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта ',
+					width:'60',
 				},
 				{
-					text:'СуммаДокумента',
+					text:'Сумма',
+					width:'80',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 				{
 					text:'Оплачено',
+					width:'60',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 			]
 		},
@@ -53,20 +66,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:760px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Подменю3',
 				},
+				'-',
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие',

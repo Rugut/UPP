@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.КорректировкаСтоимостиСписанияТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 203,width: 399,
+	style: 'position:absolute;width:399px;height:203px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Корректировка стоимости списания товаров',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:73px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:111px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:209px;top:33px;width:37px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,25 +39,18 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -53,27 +60,33 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:8px;top:103px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:80px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,16 +95,34 @@
 			style: 'position:absolute;left:96px;top:80px;width:295px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:57px;width:73px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:96px;top:57px;width:295px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:151px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:151px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:126px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

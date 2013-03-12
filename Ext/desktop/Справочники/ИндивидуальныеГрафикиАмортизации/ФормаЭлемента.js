@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.ИндивидуальныеГрафикиАмортизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 377,width: 405,
+	style: 'position:absolute;width:405px;height:377px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Индивидуальные графики амортизации',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:316px;top:33px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:358px;top:33px;width:39px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:325px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,13 +59,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Месяц',
+					width:'120',
 				},
 				{
 					text:'Коэффициент',
+					width:'120',
 				},
 			]
 		},
@@ -61,20 +84,16 @@
 			style: 'position:absolute;left:0px;top:352px;width:405px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},

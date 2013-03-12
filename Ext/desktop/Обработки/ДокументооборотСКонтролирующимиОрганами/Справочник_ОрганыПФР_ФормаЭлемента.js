@@ -1,17 +1,31 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ОрганыПФР_ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 144,width: 535,
+	style: 'position:absolute;width:535px;height:144px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Органы ПФР',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:8px;top:33px;width:139px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:152px;top:33px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:58px;width:139px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,22 +45,24 @@
 			style: 'position:absolute;left:0px;top:119px;width:535px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'OK',
 				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСертификат',
+			text: 'Сертификат:',
+			style: 'position:absolute;left:8px;top:92px;width:139px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

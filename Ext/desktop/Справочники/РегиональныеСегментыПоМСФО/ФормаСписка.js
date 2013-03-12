@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.РегиональныеСегментыПоМСФО.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 348,
+	style: 'position:absolute;width:348px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Региональные сегменты по МСФО',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},

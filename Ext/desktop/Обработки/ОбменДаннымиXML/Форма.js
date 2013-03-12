@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбменДаннымиXML.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 626,
+	style: 'position:absolute;width:626px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -16,23 +18,17 @@
 					text:'Справка',
 				},
 				{
-					text:'СохранитьЗначения___',
+					text:'Сохранить значения',
 				},
 				{
-					text:'ВосстановитьЗначения___',
+					text:'Восстановить значения',
 				},
 				{
 					text:'Настройки',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Выполнить',
 				},
@@ -45,14 +41,32 @@
 			items:
 			[
 				{
-					title:'Выгрузка',
+					title:'Выгрузка данных',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Имя файла правил:',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяФайлаПравил',
 			style: 'position:absolute;left:111px;top:6px;width:323px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Версия:',
+			style: 'position:absolute;left:443px;top:6px;width:45px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ВерсияПравилОбмена',
+			text: 'Надпись6',
+			style: 'position:absolute;left:493px;top:6px;width:117px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -61,7 +75,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Правила выгрузки данных',
 					items:
 					[
 		{
@@ -71,10 +85,12 @@
 			columns:
 			[
 				{
-					text:'ПВД',
+					text:'Правила выгрузки данных',
+					width:'204',
 				},
 				{
-					text:'СсылкаНаУзелОбмена',
+					text:'Узел обмена',
+					width:'126',
 				},
 			]
 		},
@@ -83,36 +99,27 @@
 			style: 'position:absolute;left:6px;top:6px;width:273px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Очистить отборы',
 				},
 				{
-					text:'ОчиститьОтбор',
+					text:'Снять для правил',
 				},
 				{
-					text:'СнятьПометки',
+					text:'Очистить узлы обмена',
 				},
 				{
-					text:'ОчиститьУзлыОбмена',
+					text:'Установить текущий узел обмена у всех',
 				},
 				{
-					text:'УстановитьУзелОбмена',
+					text:'Установить для правил',
 				},
 				{
-					text:'УстановитьПометки',
+					text:'Загрузить правила',
 				},
-				{
-					text:'ЗагрузитьПравилаОбмена',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'УзлыОбмена',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -122,22 +129,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -146,18 +159,16 @@
 			style: 'position:absolute;left:285px;top:6px;width:311px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоказатьРезультатаОтбора',
+					text:'Показать выбранные записи',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Параметры',
+					title:'Параметры выгрузки',
 					items:
 					[
 		{
@@ -168,20 +179,22 @@
 			[
 				{
 					text:'Наименование',
+					width:'286',
 				},
 				{
 					text:'Значение',
+					width:'301',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Комментарий',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:6px;top:6px;width:590px;height:218px;',
@@ -191,10 +204,21 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьУзелДляОбмена',
+			text: 'Узел для обмена:',
+			style: 'position:absolute;left:6px;top:151px;width:146px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'УзелДляОбмена',
 			style: 'position:absolute;left:158px;top:151px;width:322px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не выгружать объекты по ссылкам',
+			style: 'position:absolute;left:6px;top:223px;width:206px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -203,19 +227,54 @@
 			items:
 			[
 				{
-					title:'ВыгрузкаВФайл',
+					title:'Выгрузка в файл',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Имя файла данных:',
+			style: 'position:absolute;left:0px;top:1px;width:100px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяФайлаДанных',
 			style: 'position:absolute;left:105px;top:0px;width:322px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Архивировать файл данных',
+			style: 'position:absolute;left:0px;top:24px;width:161px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипИнформационнойБазыДляПодключения',
+			text: 'Тип информационной базы:',
+			style: 'position:absolute;left:0px;top:0px;width:167px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПлатформа',
+			text: 'Платформа:',
+			style: 'position:absolute;left:381px;top:0px;width:66px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПользовательДляПодключения',
+			text: 'Пользователь:',
+			style: 'position:absolute;left:0px;top:73px;width:155px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПароль',
+			text: 'Пароль:',
+			style: 'position:absolute;left:383px;top:73px;width:62px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ВыгрузкаВИБПриемник',
+					title:'Выгрузка в ИБ приемник',
 					items:
 					[
 		{
@@ -225,19 +284,38 @@
 			items:
 			[
 				{
-					title:'ПодключениеФайловаяИБ',
+					title:'Подключение файловая ИБ',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКаталогИБ',
+			text: 'Каталог информационной базы:
+',
+			style: 'position:absolute;left:0px;top:0px;width:167px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КаталогИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:172px;top:0px;width:432px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСерверПредприятия',
+			text: 'Имя сервера 1С:Предприятия:',
+			style: 'position:absolute;left:0px;top:0px;width:167px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИмяИнформационнойБазы',
+			text: 'Информационная база:',
+			style: 'position:absolute;left:325px;top:0px;width:123px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ПодключениеСервернаяИБ',
+					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -255,6 +333,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Аутентификация Windows',
+			style: 'position:absolute;left:0px;top:49px;width:155px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -279,16 +362,39 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьУзелДляФоновогоОбмена',
+			text: 'Узел для фонового обмена:',
+			style: 'position:absolute;left:6px;top:175px;width:146px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'УзелДляФоновогоОбмена',
 			style: 'position:absolute;left:158px;top:175px;width:322px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТипДобавленияДанныхИзФоновогоОбмена',
+			text: 'Фоновый обмен:',
+			style: 'position:absolute;left:6px;top:199px;width:146px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоДополняемыхОбъектов',
+			text: 'Количество объектов:',
+			style: 'position:absolute;left:350px;top:199px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоОбъектовДляФоновогоОбмена',
 			style: 'position:absolute;left:485px;top:199px;width:125px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Режим отладки обработчиков выгрузки',
+			style: 'position:absolute;left:6px;top:500px;width:232px;height:15px;',
 		},
 		{
 			xtype: 'button',
@@ -299,9 +405,15 @@
 					]
 				},
 				{
-					title:'Загрузка',
+					title:'Загрузка данных',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Имя файла для загрузки:',
+			style: 'position:absolute;left:6px;top:6px;width:136px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -309,10 +421,65 @@
 			style: 'position:absolute;left:146px;top:6px;width:464px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Дата выгрузки данных:',
+			style: 'position:absolute;left:6px;top:216px;width:150px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Надпись5',
+			style: 'position:absolute;left:166px;top:216px;width:342px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Версия правил обмена:',
+			style: 'position:absolute;left:6px;top:194px;width:150px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ВерсияПравилОбмена1',
+			text: 'Надпись6',
+			style: 'position:absolute;left:166px;top:194px;width:342px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать транзакции',
+			style: 'position:absolute;left:6px;top:30px;width:157px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоОбъектовНаТранзакцию',
 			style: 'position:absolute;left:304px;top:54px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоЭлементовВТранзакции',
+			text: 'Количество элементов в транзакции:',
+			style: 'position:absolute;left:29px;top:54px;width:267px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Задавать вопрос при автоматической загрузке данных при открытии обработки',
+			style: 'position:absolute;left:6px;top:170px;width:433px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отслеживать коллизии при загрузке данных',
+			style: 'position:absolute;left:6px;top:78px;width:251px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Оптимизированная запись объектов',
+			style: 'position:absolute;left:6px;top:102px;width:405px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Режим отладки обработчиков загрузки',
+			style: 'position:absolute;left:6px;top:499px;width:228px;height:15px;',
 		},
 		{
 			xtype: 'button',
@@ -323,14 +490,51 @@
 					]
 				},
 				{
-					title:'НастройкиОбменаДанными',
+					title:'Дополнительные настройки',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьИмяФайлаПротокола',
+			text: 'Имя файла, протокола обмена:',
+			style: 'position:absolute;left:6px;top:211px;width:198px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИмяФайлаПротоколаОбмена',
 			style: 'position:absolute;left:209px;top:211px;width:401px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дописывать данные в протокол обмена',
+			style: 'position:absolute;left:6px;top:235px;width:227px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вывод в протокол информационных сообщений',
+			style: 'position:absolute;left:6px;top:258px;width:266px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вывод информационных сообщений в окно сообщений',
+			style: 'position:absolute;left:6px;top:187px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Режим отладки',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать транзакции при выгрузке для планов обмена',
+			style: 'position:absolute;left:6px;top:74px;width:329px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоЭлементовВТранзакцииДляПлановОбмена',
+			text: 'Количество элементов в транзакции:',
+			style: 'position:absolute;left:25px;top:98px;width:317px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -339,10 +543,26 @@
 			style: 'position:absolute;left:352px;top:98px;width:137px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоличествоОбъектовЗагрузкиДляОбновленияСтатуса',
+			text: 'Количество обработанных объектов для обновления статуса:',
+			style: 'position:absolute;left:6px;top:30px;width:337px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоОбъектовЗагрузкиДляОбновленияСтатуса',
 			style: 'position:absolute;left:352px;top:30px;width:137px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выгружать только объекты на которые есть права доступа',
+			style: 'position:absolute;left:6px;top:122px;width:604px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Автоматически удалять недопустимые символы из строк для записи в XML',
+			style: 'position:absolute;left:6px;top:143px;width:413px;height:19px;',
 		},
 					]
 				},

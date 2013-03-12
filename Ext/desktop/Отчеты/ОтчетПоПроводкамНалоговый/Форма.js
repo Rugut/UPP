@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.ОтчетПоПроводкамНалоговый.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 452,width: 780,
+	style: 'position:absolute;width:780px;height:452px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет по проводкам',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:68px;top:33px;width:84px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:156px;top:33px;width:24px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:320px;top:33px;width:70px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -40,16 +60,11 @@
 					text:'Действие1',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Подменю',
+					text:'Настройка...',
 				},
 				{
 					text:'Действие1',
@@ -60,15 +75,11 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -78,12 +89,8 @@
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{

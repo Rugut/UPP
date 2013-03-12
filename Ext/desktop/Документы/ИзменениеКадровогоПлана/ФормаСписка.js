@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеКадровогоПлана.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 420,width: 620,
+	style: 'position:absolute;width:620px;height:420px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменения кадрового плана',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'147',
 				},
 				{
 					text:'Комментарий',
+					width:'108',
 				},
 			]
 		},
@@ -38,17 +46,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Действие6',
@@ -63,11 +63,9 @@
 					text:'Действие4',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие10',
 				},
@@ -77,33 +75,14 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие9',
 				},
@@ -113,9 +92,7 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -128,6 +105,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

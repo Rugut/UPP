@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.Опрос.ФормаВводаОтветаТекст',
 	{
 	extend: 'Ext.window.Window',
-	height: 153,width: 341,
+	style: 'position:absolute;width:341px;height:153px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ответ',
 	
 	items:
@@ -13,12 +15,12 @@
 			items:
 			[
 				{
-					text:'ОК',
+					text:'OK',
 				},
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ПолеВводаТекст',
 			style: 'position:absolute;left:8px;top:29px;width:325px;height:91px;',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ФормированиеЦен.ФормаНастройкиКолонок',
 	{
 	extend: 'Ext.window.Window',
-	height: 208,width: 425,
+	style: 'position:absolute;width:425px;height:208px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма настройки показа колонок',
 	
 	items:
@@ -12,17 +14,13 @@
 			style: 'position:absolute;left:0px;top:183px;width:425px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -33,10 +31,12 @@
 			columns:
 			[
 				{
-					text:'КолонкаСтрока',
+					text:'Колонка',
+					width:'225',
 				},
 				{
-					text:'ПоложениеКолонки',
+					text:'Положение',
+					width:'168',
 				},
 			]
 		},

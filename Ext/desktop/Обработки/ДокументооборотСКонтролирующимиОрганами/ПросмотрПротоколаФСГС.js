@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрПротоколаФСГС',
 	{
 	extend: 'Ext.window.Window',
-	height: 298,width: 403,
+	style: 'position:absolute;width:403px;height:298px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Протокол',
 	
 	items:
@@ -18,7 +20,31 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата и время отправки:',
+			style: 'position:absolute;left:8px;top:8px;width:150px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Протокол положительный?',
+			style: 'position:absolute;left:8px;top:33px;width:150px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись40',
+			text: '',
+			style: 'position:absolute;left:165px;top:8px;width:230px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПротоколЯвляетсяПоложительным',
+			text: '',
+			style: 'position:absolute;left:165px;top:35px;width:230px;height:16px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ТекстПротокола',
 			style: 'position:absolute;left:8px;top:80px;width:387px;height:185px;',

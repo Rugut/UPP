@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВидыНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 416,
+	style: 'position:absolute;width:416px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Виды номенклатуры',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'200',
 				},
 				{
-					text:'ТипНоменклатуры',
+					text:'Тип номенклатуры',
+					width:'120',
 				},
 			]
 		},

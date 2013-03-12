@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 600,
+	style: 'position:absolute;width:600px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Обработки обслуживания торгового оборудования',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
-					text:'Вид',
+					text:'Вид торгового оборудования',
+					width:'200',
 				},
 				{
 					text:'Наименование',
+					width:'300',
 				},
 			]
 		},
@@ -33,20 +39,13 @@
 			items:
 			[
 				{
-					text:'Подменю3',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'ДействияФормыВыбрать',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

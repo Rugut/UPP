@@ -1,12 +1,32 @@
 ﻿Ext.define('Документы.Доверенность.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 385,width: 652,
+	style: 'position:absolute;width:652px;height:385px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Документ Доверенность',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:170px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:333px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -31,13 +51,11 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 			]
 		},
@@ -57,20 +75,13 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПоЗаказу',
+					text:'Заполнить по остаткам заказа',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Подбор',
 				},
-				{
-					text:'ДействиеПодбор',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -80,16 +91,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
-					text:'НаименованиеТовара',
+					text:'Наименование товара',
+					width:'220',
 				},
 				{
-					text:'ЕдиницаПоКлассификатору',
+					text:'Единица',
+					width:'54',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 			]
 		},
@@ -104,6 +119,12 @@
 			hideLabel: true,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:98px;top:99px;width:202px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:327px;top:99px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -128,6 +149,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДоговор',
+			text: 'Договор:',
+			style: 'position:absolute;left:330px;top:105px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:8px;top:105px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДоговорКонтрагента',
@@ -140,6 +173,12 @@
 			style: 'position:absolute;left:90px;top:105px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -150,6 +189,19 @@
 			hideLabel: true,
 			name: 'Сделка',
 			style: 'position:absolute;left:90px;top:129px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСделка',
+			text: 'Заказ:
+',
+			style: 'position:absolute;left:8px;top:129px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьДолга',
+			text: 'По договору 250 USD, 1 USD = 30 руб.',
+			style: 'position:absolute;left:330px;top:129px;width:291px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -176,6 +228,30 @@
 			style: 'position:absolute;left:558px;top:33px;width:84px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКонтрагент1',
+			text: 'Физ. лицо:',
+			style: 'position:absolute;left:8px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоговор1',
+			text: 'Дата действия:',
+			style: 'position:absolute;left:474px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБанковскийСчетОрганизации',
+			text: 'Банк. счет:',
+			style: 'position:absolute;left:330px;top:57px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ИнфНадписьУдЛичностиФизЛица',
+			text: 'Паспорт  номер 33 - 345678',
+			style: 'position:absolute;left:330px;top:81px;width:312px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:360px;width:652px;height:25px;',
 			items:
@@ -186,21 +262,15 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Раздел��тельОК',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Закрыть1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
+				'-',
 			]
 		},
 	]

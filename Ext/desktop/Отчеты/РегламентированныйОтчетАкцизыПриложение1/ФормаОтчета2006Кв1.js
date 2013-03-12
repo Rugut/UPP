@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетАкцизыПриложение1.ФормаОтчета2006Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 488,width: 670,
+	style: 'position:absolute;width:670px;height:488px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Акцизы (Приложение 1)',
 	
 	items:
@@ -12,23 +14,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Подготовить к отправке и подписать',
 				},
+				'-',
 				{
-					text:'ПодготовитьИПодписать',
+					text:'Показать отправки',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ПоказатьЦиклыОбмена',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Поиск',
@@ -42,54 +38,34 @@
 				{
 					text:'Выгрузить',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Настройка...',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'РазделительОтправка',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'КнопкаНастройкаСтраниц',
-				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
 				{
-					text:'Подготовить',
+					text:'Подготовить к отправке',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить в Интернете',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
+					text:'Обновить',
 				},
 				{
-					text:'Отправка',
+					text:'Проверить выгрузку',
 				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
 		},
 		{
@@ -101,22 +77,13 @@
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
 			]
 		},
@@ -130,7 +97,7 @@
 					title:'Титульный',
 				},
 				{
-					title:'Раздел11',
+					title:'Раздел 1.1',
 					items:
 					[
 		{
@@ -146,10 +113,22 @@
 			style: 'position:absolute;left:480px;top:265px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:99px;top:265px;width:144px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаРаздел11',
 			text: '',
 			style: 'position:absolute;left:249px;top:265px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел11',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:265px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -166,7 +145,7 @@
 					]
 				},
 				{
-					title:'Раздел12',
+					title:'Раздел 1.2',
 					items:
 					[
 		{
@@ -202,7 +181,7 @@
 					]
 				},
 				{
-					title:'Раздел2',
+					title:'Раздел 2',
 					items:
 					[
 		{
@@ -217,10 +196,28 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:76px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись16',
+			text: 'Дополнительные строки',
+			style: 'position:absolute;left:337px;top:265px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:99px;top:265px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись32',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:99px;top:239px;width:144px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Приложение1',
+					title:'Приложение 1',
 					items:
 					[
 		{
@@ -236,10 +233,22 @@
 			style: 'position:absolute;left:480px;top:239px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись17',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:99px;top:239px;width:144px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаПриложение1',
 			text: '',
 			style: 'position:absolute;left:249px;top:239px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение1',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:239px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -265,10 +274,16 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:76px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись18',
+			text: 'Дополнительные строки',
+			style: 'position:absolute;left:343px;top:265px;width:132px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Приложение2',
+					title:'Приложение 2',
 					items:
 					[
 		{
@@ -284,10 +299,22 @@
 			style: 'position:absolute;left:480px;top:239px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись19',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:99px;top:239px;width:144px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаПриложение2',
 			text: '',
 			style: 'position:absolute;left:249px;top:239px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение2',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:239px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -313,10 +340,28 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:76px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись20',
+			text: 'Дополнительные строки',
+			style: 'position:absolute;left:343px;top:265px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницРаздел12',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:265px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение5',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:239px;width:80px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Приложение3',
+					title:'Приложение 3',
 					items:
 					[
 		{
@@ -332,10 +377,22 @@
 			style: 'position:absolute;left:480px;top:265px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись21',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:99px;top:265px;width:144px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПредыдущаяСтраницаПриложение3',
 			text: '',
 			style: 'position:absolute;left:249px;top:265px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение3',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:265px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -349,10 +406,16 @@
 			text: 'Перейти',
 			style: 'position:absolute;left:566px;top:265px;width:76px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись34',
+			text: 'Дополнительные страницы',
+			style: 'position:absolute;left:99px;top:239px;width:144px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Приложение4',
+					title:'Приложение 4',
 					items:
 					[
 		{
@@ -366,6 +429,12 @@
 			name: 'КнопкаУдалитьДопСтрокиПриложение4',
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись24',
+			text: 'Дополнительные строки',
+			style: 'position:absolute;left:343px;top:265px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -400,7 +469,7 @@
 					]
 				},
 				{
-					title:'Приложение5',
+					title:'Приложение 5',
 					items:
 					[
 		{
@@ -445,9 +514,21 @@
 			text: 'Удалить',
 			style: 'position:absolute;left:566px;top:265px;width:76px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатикСтраницПриложение4',
+			text: '999 из 999',
+			style: 'position:absolute;left:271px;top:239px;width:80px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -470,6 +551,11 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

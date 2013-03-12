@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 629,
+	style: 'position:absolute;width:629px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Профили изменения планов по измерениям',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 				{
 					text:'Наименование',
+					width:'161',
 				},
 				{
-					text:'ИзмерениеБюджетирования',
+					text:'Измерение',
+					width:'100',
 				},
 				{
-					text:'ИсточникДанных',
+					text:'Источник данных',
+					width:'205',
 				},
 				{
-					text:'ПоказательИсточника',
+					text:'Показатель источника',
+					width:'124',
 				},
 			]
 		},
@@ -41,6 +49,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'120',
 				},
 			]
 		},

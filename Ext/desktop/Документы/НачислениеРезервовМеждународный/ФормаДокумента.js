@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.НачислениеРезервовМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 409,width: 569,
+	style: 'position:absolute;width:569px;height:409px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -33,31 +47,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВидРезерва',
+					text:'Вид резерва',
+					width:'120',
 				},
 				{
-					text:'СчетОтнесенияРасходов',
+					text:'Счет отнесения расходов',
+					width:'100',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1...3',
+					width:'100',
 				},
 				{
-					text:'Субконто2',
+					text:'',
+					width:'100',
 				},
 				{
-					text:'Субконто3',
+					text:'',
+					width:'100',
 				},
 				{
 					text:'Валюта',
+					width:'90',
 				},
 				{
-					text:'ВалютнаяСумма',
+					text:'Валютная сумма',
+					width:'90',
 				},
 				{
 					text:'Сумма',
+					width:'109',
 				},
 			]
 		},
@@ -67,25 +90,18 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Подменю1',
+					text:'',
 				},
 			]
 		},
@@ -95,27 +111,27 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:357px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,10 +140,22 @@
 			style: 'position:absolute;left:94px;top:357px;width:467px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:81px;width:467px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

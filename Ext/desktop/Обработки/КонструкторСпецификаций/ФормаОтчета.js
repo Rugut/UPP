@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонструкторСпецификаций.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 418,width: 604,
+	style: 'position:absolute;width:604px;height:418px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,71 +14,56 @@
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
+					text:'Восстановить значения...',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Подменю',
+					text:'Сформировать',
 				},
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'Действие3',
+					text:'Закрыть',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие1',
+					text:'Справка',
 				},
 			]
 		},
@@ -87,7 +74,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -97,16 +84,31 @@
 			style: 'position:absolute;left:308px;top:0px;width:280px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:0px;top:0px;width:144px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСтатьяЗатрат',
 			style: 'position:absolute;left:308px;top:24px;width:280px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Статья затрат:',
+			style: 'position:absolute;left:0px;top:24px;width:144px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатурнаяГруппа',
 			style: 'position:absolute;left:308px;top:48px;width:280px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатурная группа:',
+			style: 'position:absolute;left:0px;top:48px;width:144px;height:19px;',
 		},
 					]
 				},

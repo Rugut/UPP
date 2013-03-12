@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КалендарьБухгалтера.ФормаКалендаря',
 	{
 	extend: 'Ext.window.Window',
-	height: 571,width: 669,
+	style: 'position:absolute;width:669px;height:571px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Календарь бухгалтера',
 	
 	items:
@@ -12,24 +14,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Обновить',
 				},
 				{
-					text:'Действие',
+					text:'Действие1',
 				},
 				{
 					text:'Неделя',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'День',
 				},
@@ -40,22 +36,29 @@
 			style: 'position:absolute;left:0px;top:546px;width:669px;height:25px;',
 			items:
 			[
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДляОрганизации',
+			text: 'Для организации:',
+			style: 'position:absolute;left:8px;top:33px;width:99px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДляОрганизации',
 			style: 'position:absolute;left:110px;top:33px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГод',
+			text: 'Год:',
+			style: 'position:absolute;left:533px;top:66px;width:23px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,19 +83,24 @@
 			columns:
 			[
 				{
-					text:'КартинкаОповещение',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Срок',
+					text:'В срок до',
+					width:'63',
 				},
 				{
 					text:'Период',
+					width:'85',
 				},
 				{
-					text:'НазваниеОтчетаИлиНалога',
+					text:'Название отчета/налога',
+					width:'250',
 				},
 				{
-					text:'Кто',
+					text:'Налогоплательщик',
+					width:'250',
 				},
 			]
 		},
@@ -109,7 +117,7 @@
 			items:
 			[
 				{
-					text:'ПерейтиКДате',
+					text:'Перейти к дате',
 				},
 				{
 					text:'Открыть',
@@ -118,6 +126,30 @@
 					text:'Оповещение',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: '  Сдача отчетности',
+			style: 'position:absolute;left:522px;top:450px;width:140px;height:21px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: '  Уплата налога',
+			style: 'position:absolute;left:522px;top:474px;width:140px;height:21px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: '  Ближайшее событие',
+			style: 'position:absolute;left:522px;top:498px;width:140px;height:21px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: '  Напомнить',
+			style: 'position:absolute;left:522px;top:522px;width:140px;height:21px;',
 		},
 	]
 });

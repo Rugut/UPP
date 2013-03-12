@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСтадийВзаимоотношенийСПокупателями.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 490,
+	style: 'position:absolute;width:490px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка анализ стадий взаимоотношений с покупателями',
 	
 	items:
@@ -12,14 +14,12 @@
 			style: 'position:absolute;left:0px;top:286px;width:490px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -34,10 +34,26 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата отчета:',
+			style: 'position:absolute;left:6px;top:6px;width:68px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОтчета',
 			style: 'position:absolute;left:76px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:34px;width:212px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:6px;top:54px;width:164px;height:15px;',
 		},
 					]
 				},
@@ -53,9 +69,11 @@
 			[
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -79,22 +97,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},
@@ -118,10 +142,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'120',
 				},
 			]
 		},

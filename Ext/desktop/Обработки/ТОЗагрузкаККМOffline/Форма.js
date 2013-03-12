@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ТОЗагрузкаККМOffline.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 442,width: 780,
+	style: 'position:absolute;width:780px;height:442px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Загрузка ККМ Off-Line',
 	
 	items:
@@ -12,57 +14,40 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Заполнить',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Загрузить в ККМ',
 				},
 				{
-					text:'Разделитель1',
+					text:'Редактировать список выгрузки',
 				},
 				{
-					text:'Разделитель',
+					text:'Редактировать список выгрузки',
 				},
+				'-',
 				{
-					text:'Загрузить',
-				},
-				{
-					text:'РедактироватьСписокВыгрузки',
-				},
-				{
-					text:'РедактироватьСписокВыгрузки',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действия',
-				},
-				{
-					text:'Загрузить',
+					text:'Загрузить в ККМ',
 				},
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие4',
 				},
@@ -81,10 +66,27 @@
 			style: 'position:absolute;left:115px;top:33px;width:404px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСклад',
+			text: 'Склад:',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьККМ',
+			text: 'ККМ Offline:',
+			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ККМOffline',
 			style: 'position:absolute;left:115px;top:57px;width:404px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Только имеющиеся на складе',
+			style: 'position:absolute;left:8px;top:105px;width:188px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -100,33 +102,52 @@
 			columns:
 			[
 				{
-					text:'КодТовараККМ',
+					text:'Код ККМ',
+					width:'56',
 				},
 				{
-					text:'КодТовара',
+					text:'Код товара',
+					width:'120',
 				},
 				{
 					text:'Номенклатура',
+					width:'250',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Ед.',
+					width:'50',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'250',
 				},
 				{
-					text:'Серия',
+					text:'Серия номенклатуры',
+					width:'250',
 				},
 				{
 					text:'Цена',
+					width:'80',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипЦен',
+			text: 'Тип цен:',
+			style: 'position:absolute;left:8px;top:81px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:115px;top:81px;width:404px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИнформацияОККМ',
+			text: 'Информация о ККМ',
+			style: 'position:absolute;left:523px;top:33px;width:249px;height:97px;',
 		},
 	]
 });

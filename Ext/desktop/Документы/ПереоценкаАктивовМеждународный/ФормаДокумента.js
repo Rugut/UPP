@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ПереоценкаАктивовМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 446,width: 460,
+	style: 'position:absolute;width:460px;height:446px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,26 +39,19 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель5',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -53,26 +60,20 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -82,7 +83,7 @@
 			items:
 			[
 				{
-					title:'СтраницаОС',
+					title:'ОС и Инвестиционная собственность',
 					items:
 					[
 		{
@@ -99,23 +100,27 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'ОС',
+					width:'100',
 				},
 				{
-					text:'Сумма',
+					text:'Справедливая стоимость',
+					width:'100',
 				},
 				{
-					text:'ЛиквидационнаяСтоимость',
+					text:'Ликвидационная стоимость',
+					width:'101',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаНМА',
+					title:'НМА',
 					items:
 					[
 		{
@@ -132,20 +137,23 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'НМА',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаФА',
+					title:'Финансовые активы',
 					items:
 					[
 		{
@@ -162,25 +170,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Контрагент',
+					width:'120',
 				},
 				{
 					text:'Договор',
+					width:'120',
 				},
 				{
-					text:'СчетУчета',
+					text:'Счет учета',
+					width:'80',
 				},
 				{
 					text:'Сумма',
+					width:'80',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -189,10 +208,22 @@
 			style: 'position:absolute;left:94px;top:57px;width:358px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:394px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:394px;width:356px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -201,10 +232,22 @@
 			style: 'position:absolute;left:94px;top:81px;width:358px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтатьяПрочихДоходов',
+			text: 'Статья прочих доходов:',
+			style: 'position:absolute;left:8px;top:105px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяПрочихДоходов',
 			style: 'position:absolute;left:139px;top:105px;width:313px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатьяПрочихРасходов',
+			text: 'Статья прочих расходов:',
+			style: 'position:absolute;left:8px;top:130px;width:125px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

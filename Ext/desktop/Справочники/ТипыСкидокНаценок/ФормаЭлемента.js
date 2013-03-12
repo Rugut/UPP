@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТипыСкидокНаценок.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 483,
+	style: 'position:absolute;width:483px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Типы скидок и наценок',
 	
 	items:
@@ -20,20 +22,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -43,14 +41,26 @@
 			items:
 			[
 				{
-					title:'ПараметрыСкидки',
+					title:'Параметры скидки',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПроцент',
+			text: 'Процент:',
+			style: 'position:absolute;left:6px;top:85px;width:99px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:115px;top:85px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗначениеУсловия',
+			text: 'Значение условия:',
+			style: 'position:absolute;left:6px;top:153px;width:99px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -59,10 +69,22 @@
 			style: 'position:absolute;left:115px;top:153px;width:226px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВалюта',
+			text: 'Валюта:',
+			style: 'position:absolute;left:345px;top:6px;width:41px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Валюта',
 			style: 'position:absolute;left:391px;top:6px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОграничение',
+			text: 'Ограничение:',
+			style: 'position:absolute;left:191px;top:85px;width:73px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -71,16 +93,55 @@
 			style: 'position:absolute;left:269px;top:85px;width:65px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьУсловие',
+			text: 'Условие:',
+			style: 'position:absolute;left:6px;top:128px;width:99px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Условие',
 			style: 'position:absolute;left:115px;top:129px;width:344px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЕдиницаУсловия',
+			text: '<валюта не выбрана>',
+			style: 'position:absolute;left:348px;top:153px;width:111px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКачество',
+			text: 'Качество:',
+			style: 'position:absolute;left:6px;top:61px;width:99px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Качество',
 			style: 'position:absolute;left:115px;top:61px;width:344px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Для всей номенклатуры',
+			style: 'position:absolute;left:6px;top:36px;width:144px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Для всех получателей',
+			style: 'position:absolute;left:188px;top:36px;width:131px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По дням недели',
+			style: 'position:absolute;left:359px;top:36px;width:100px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидСкидки',
+			text: 'Вид скидки:',
+			style: 'position:absolute;left:6px;top:6px;width:99px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,7 +152,7 @@
 					]
 				},
 				{
-					title:'ВремяДействия',
+					title:'Время действия',
 					items:
 					[
 		{
@@ -113,16 +174,20 @@
 			columns:
 			[
 				{
-					text:'Выбран',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ДеньНедели',
+					text:'День недели',
+					width:'202',
 				},
 				{
-					text:'ВремяНачала',
+					text:'Начало',
+					width:'68',
 				},
 				{
-					text:'ВремяОкончания',
+					text:'Окончание',
+					width:'68',
 				},
 			]
 		},
@@ -144,10 +209,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:407px;top:33px;width:23px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:435px;top:33px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

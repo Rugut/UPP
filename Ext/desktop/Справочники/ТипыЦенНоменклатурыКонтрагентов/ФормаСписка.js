@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТипыЦенНоменклатурыКонтрагентов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 550,
+	style: 'position:absolute;width:550px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Типы цен номенклатуры контрагентов',
 	
 	items:
@@ -14,31 +16,40 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
-					text:'Владелец',
+					text:'Контрагент',
+					width:'176',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВалютаЦены',
+					text:'Валюта',
+					width:'60',
 				},
 				{
-					text:'ТипЦеныНоменклатуры',
+					text:'Тип цены номенклатуры',
+					width:'180',
 				},
 				{
-					text:'ЦенаВключаетНДС',
+					text:'Включает НДС',
+					width:'80',
 				},
 				{
-					text:'ОписаниеТипаЦеныНоменклатурыКонтрагента',
+					text:'Описание',
+					width:'220',
 				},
 				{
 					text:'Комментарий',
+					width:'220',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ФильтрыДляЭлектронныхПисем.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Фильтры для электронных писем',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 				{
-					text:'ОперацияУсловия',
+					text:'Операция условия',
+					width:'70',
 				},
 				{
 					text:'Порядок',
+					width:'49',
 				},
 				{
 					text:'Использование',
+					width:'70',
 				},
 			]
 		},

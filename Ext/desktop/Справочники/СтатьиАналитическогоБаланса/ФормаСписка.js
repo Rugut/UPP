@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиАналитическогоБаланса.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 474,
+	style: 'position:absolute;width:474px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи аналитического баланса',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -32,6 +37,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -40,23 +46,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:474px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю2',
+					text:'Иерархический просмотр',
 				},
 				{
-					text:'Разделитель4',
+					text:'',
 				},
 				{
-					text:'Действие6',
+					text:'Справка',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие13',
-				},
-				{
-					text:'Действие7',
+					text:'Найти в дереве',
 				},
 			]
 		},

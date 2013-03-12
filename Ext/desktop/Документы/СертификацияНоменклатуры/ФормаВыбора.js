@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.СертификацияНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 500,
+	style: 'position:absolute;width:500px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сертификации номенклатуры',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -35,9 +42,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

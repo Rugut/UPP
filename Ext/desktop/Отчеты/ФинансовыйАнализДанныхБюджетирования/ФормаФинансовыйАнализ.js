@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализ',
 	{
 	extend: 'Ext.window.Window',
-	height: 412,width: 654,
+	style: 'position:absolute;width:654px;height:412px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -13,52 +15,41 @@
 			items:
 			[
 				{
-					text:'Выполнить',
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Разделитель',
+					text:'Заполнить',
 				},
 				{
-					text:'Действие',
+					text:'Справка',
+				},
+				'-',
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Выполнить',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Разделитель4',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель3',
+					text:'Восстановить значения',
 				},
 				{
-					text:'Действие1',
+					text:'Настройка...',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 			]
 		},
@@ -69,16 +60,40 @@
 			style: 'position:absolute;left:114px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВариантНастройки',
 			style: 'position:absolute;left:114px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Вариант настройки:',
+			style: 'position:absolute;left:8px;top:57px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:354px;top:33px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:412px;top:33px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:510px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

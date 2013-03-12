@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Документ_НеформализованныйДокументНалоговогоОргана_ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 438,width: 640,
+	style: 'position:absolute;width:640px;height:438px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Неформализованный документ налогового органа',
 	
 	items:
@@ -12,26 +14,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Ответить',
@@ -40,10 +34,7 @@
 					text:'Действие',
 				},
 				{
-					text:'ЦиклыОбмена',
-				},
-				{
-					text:'Подменю1',
+					text:'Показать цикл обмена, связанный с документом',
 				},
 			]
 		},
@@ -53,9 +44,21 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйОрган',
+			text: 'Налоговый орган:',
+			style: 'position:absolute;left:8px;top:53px;width:123px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НалоговыйОрган',
+			text: '',
+			style: 'position:absolute;left:134px;top:53px;width:498px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -68,7 +71,7 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Содержание',
 			style: 'position:absolute;left:0px;top:18px;width:624px;height:271px;',
@@ -88,6 +91,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'ВложенныйДокумент',
+			text: 'Вложенные документы:',
+			style: 'position:absolute;left:1px;top:6px;width:122px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПредставлениеВложенныеДокументы',
@@ -96,6 +105,36 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:73px;width:123px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Организация',
+			text: '',
+			style: 'position:absolute;left:134px;top:73px;width:498px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСоздан',
+			text: '',
+			style: 'position:absolute;left:270px;top:33px;width:362px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:123px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Номер',
+			text: '',
+			style: 'position:absolute;left:134px;top:33px;width:132px;height:15px;',
 		},
 	]
 });

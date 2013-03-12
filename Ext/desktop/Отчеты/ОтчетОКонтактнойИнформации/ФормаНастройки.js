@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетОКонтактнойИнформации.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 397,width: 490,
+	style: 'position:absolute;width:490px;height:397px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка ""Отчет о контактной информации""',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -34,19 +34,27 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:30px;width:210px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:113px;width:460px;height:160px;',
 			height: 160,width: 460,
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 				{
-					text:'ВидКонтактнойИнформации',
+					text:'Вид',
+					width:'220',
 				},
 			]
 		},
@@ -65,27 +73,33 @@
 					text:'Действие5',
 				},
 				{
-					text:'КнопкаУстановитьФлажки',
+					text:'',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'КнопкаСнятьФлажки',
+					text:'',
 				},
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить персональные значения видов контактной информации для объектов, содержащие строку:',
+			style: 'position:absolute;left:7px;top:278px;width:436px;height:28px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтрокаПерсональныхВидовКИ',
 			style: 'position:absolute;left:7px;top:311px;width:459px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать группировки',
+			style: 'position:absolute;left:6px;top:50px;width:164px;height:15px;',
 		},
 					]
 				},
@@ -101,9 +115,11 @@
 			[
 				{
 					text:'Поле',
+					width:'305',
 				},
 				{
 					text:'Тип',
+					width:'122',
 				},
 			]
 		},
@@ -127,22 +143,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'18',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'125',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'82',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -152,6 +174,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Объект отчета:',
+			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
 		},
 					]
 				},
@@ -166,10 +194,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'331',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление',
+					width:'94',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ВосстановлениеНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 709,
+	style: 'position:absolute;width:709px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,33 +38,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю1',
+					text:'',
 				},
 				{
-					text:'Разделитель6',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Дт/кт',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -59,33 +64,39 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:369px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:369px;width:607px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,7 +111,7 @@
 			items:
 			[
 				{
-					title:'НДСкВосстановлению',
+					title:'НДС к восстановлению',
 					items:
 					[
 		{
@@ -110,43 +121,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ВидЦенности',
+					text:'Вид ценности',
+					width:'120',
 				},
 				{
 					text:'Поставщик',
+					width:'120',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор контрагента',
+					width:'120',
 				},
 				{
-					text:'СчетФактура',
+					text:'Счет-фактура',
+					width:'120',
 				},
 				{
-					text:'СчетУчетаНДС',
+					text:'Счет учета НДС',
+					width:'80',
 				},
 				{
-					text:'ДокументОплаты',
+					text:'Документ оплаты',
+					width:'120',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
-					text:'СуммаБезНДС',
+					text:'Сумма без НДС',
+					width:'120',
 				},
 				{
-					text:'СтавкаНДС',
+					text:'% НДС',
+					width:'90',
 				},
 				{
 					text:'НДС',
+					width:'120',
 				},
 				{
-					text:'ЗаписьДополнительногоЛиста',
+					text:'Запись доп. листа',
+					width:'60',
 				},
 				{
-					text:'КорректируемыйПериод',
+					text:'Корректируемый период',
+					width:'80',
 				},
 			]
 		},
@@ -155,27 +179,18 @@
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'ПодменюЗаполнить',
+					text:'Снять признак доп.листа',
+				},
+				'-',
+				{
+					text:'Установить признак доп.листа',
 				},
 				{
-					text:'Разделитель1',
+					text:'Заполнить суммы к восстановлению',
 				},
-				{
-					text:'СнятьПризнакДопЛиста',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'УстановитьПризнакДопЛиста',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 					]
@@ -185,6 +200,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
@@ -193,6 +214,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтразитьВКнигеПродаж',
+			text: 'Отразить восстановление:',
+			style: 'position:absolute;left:329px;top:57px;width:141px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

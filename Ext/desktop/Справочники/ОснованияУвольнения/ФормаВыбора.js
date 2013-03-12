@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОснованияУвольнения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 425,
+	style: 'position:absolute;width:425px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Причины увольнения',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -29,9 +33,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

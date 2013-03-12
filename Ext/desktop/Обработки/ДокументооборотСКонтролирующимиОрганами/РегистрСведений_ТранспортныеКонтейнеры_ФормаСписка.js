@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РегистрСведений_ТранспортныеКонтейнеры_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 697,
+	style: 'position:absolute;width:697px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Список Транспортные контейнеры',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'ТранспортноеСообщение',
+					text:'Транспортное сообщение',
+					width:'225',
 				},
 				{
-					text:'ИмяФайла1',
+					text:'Имя',
+					width:'222',
 				},
 				{
-					text:'Размер',
+					text:'Размер (в байтах)',
+					width:'149',
 				},
 			]
 		},
@@ -33,11 +39,9 @@
 			items:
 			[
 				{
-					text:'ВыгрузитьВФайл',
+					text:'Выгрузить',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 	]

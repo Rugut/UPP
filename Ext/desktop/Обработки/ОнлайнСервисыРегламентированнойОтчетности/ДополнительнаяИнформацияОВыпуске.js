@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.ДополнительнаяИнформацияОВыпуске',
 	{
 	extend: 'Ext.window.Window',
-	height: 569,width: 532,
+	style: 'position:absolute;width:532px;height:569px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отличия обновления от текущей версии',
 	
 	items:
@@ -16,15 +18,13 @@
 					text:'Справка',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ДополнительнаяИнформация',
 			style: 'position:absolute;left:8px;top:8px;width:516px;height:528px;',

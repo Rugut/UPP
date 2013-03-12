@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЕдиницыИзмерения.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 688,
+	style: 'position:absolute;width:688px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Единицы измерения',
 	
 	items:
@@ -14,37 +16,48 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Владелец',
+					width:'120',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
-					text:'ЕдиницаПоКлассификатору',
+					text:'По классификатору',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Коэффициент',
+					width:'80',
 				},
 				{
 					text:'Вес',
+					width:'80',
 				},
 				{
 					text:'Объем',
+					width:'80',
 				},
 				{
-					text:'ШтрихКод',
+					text:'Штрихкод',
+					width:'120',
 				},
 				{
-					text:'ПорогОкругления',
+					text:'Порог округления',
+					width:'70',
 				},
 				{
-					text:'ПредупреждатьОНецелыхМестах',
+					text:'Предупреждать',
+					width:'70',
 				},
 			]
 		},

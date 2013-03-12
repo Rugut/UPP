@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.НачислениеНДСпоСМРхозспособом.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 540,
+	style: 'position:absolute;width:540px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Начисление НДС по СМР (хозспособ)',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'120',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'226',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -35,30 +42,21 @@
 			style: 'position:absolute;left:0px;top:0px;width:540px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ПроводкиДтКт',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Подменю3',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель7',
-				},
+				'-',
 			]
 		},
 	]

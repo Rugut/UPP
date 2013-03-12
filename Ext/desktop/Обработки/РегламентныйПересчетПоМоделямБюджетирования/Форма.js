@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегламентныйПересчетПоМоделямБюджетирования.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 328,width: 457,
+	style: 'position:absolute;width:457px;height:328px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Регламентный пересчет по моделям бюджетирования',
 	
 	items:
@@ -20,21 +22,31 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выполнить',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:57px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:70px;top:57px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:168px;top:57px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,6 +61,12 @@
 			style: 'position:absolute;left:284px;top:57px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:8px;top:33px;width:60px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВвода1',
@@ -61,13 +79,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'РасчетПоМоделиБюджетирования',
+					text:'Расчет по модели бюджетирования',
+					width:'220',
 				},
 				{
 					text:'Сценарий',
+					width:'171',
 				},
 			]
 		},
@@ -77,34 +98,32 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
 					text:'Заполнить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие7',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
+				},
+				'-',
+				{
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Разделитель',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие6',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие8',
+					text:'Сортировать по убыванию',
 				},
 			]
 		},

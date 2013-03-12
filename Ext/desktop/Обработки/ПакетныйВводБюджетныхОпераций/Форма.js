@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПакетныйВводБюджетныхОпераций.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 780,
+	style: 'position:absolute;width:780px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка  Пакетный ввод бюджетных операций',
 	
 	items:
@@ -20,15 +22,19 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Выполнить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +49,7 @@
 			items:
 			[
 				{
-					title:'БюджетныеОперации',
+					title:'Бюджетные операции',
 					items:
 					[
 		{
@@ -53,46 +59,60 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ПериодПланирования',
+					text:'Период',
+					width:'100',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
 					text:'Цена',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта',
+					width:'100',
 				},
 				{
 					text:'ЦФО',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Контрагент',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
 					text:'Состояние',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Комментарий',
+					width:'100',
 				},
 			]
 		},
@@ -102,31 +122,31 @@
 			items:
 			[
 				{
-					text:'Действие8',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие7',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
 				},
 			]
 		},
@@ -141,9 +161,19 @@
 					]
 				},
 				{
-					title:'ОбщиеРеквизиты',
+					title:'Общие реквизиты бюджетных операций',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Период планирования:',
+			style: 'position:absolute;left:6px;top:6px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Статья оборотов:',
+			style: 'position:absolute;left:6px;top:30px;width:136px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -157,10 +187,25 @@
 			style: 'position:absolute;left:520px;top:30px;width:236px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Валюта операции:',
+			style: 'position:absolute;left:408px;top:30px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'ЦФО:',
+			style: 'position:absolute;left:6px;top:54px;width:136px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЦФО',
 			style: 'position:absolute;left:142px;top:54px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Проект:',
+			style: 'position:absolute;left:408px;top:54px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,10 +214,20 @@
 			style: 'position:absolute;left:520px;top:54px;width:236px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент:',
+			style: 'position:absolute;left:6px;top:78px;width:136px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Контрагент',
 			style: 'position:absolute;left:142px;top:78px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:408px;top:78px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -181,16 +236,31 @@
 			style: 'position:absolute;left:520px;top:78px;width:236px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:102px;width:136px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:142px;top:102px;width:236px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Состояние:',
+			style: 'position:absolute;left:408px;top:102px;width:112px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Состояние',
 			style: 'position:absolute;left:520px;top:102px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Комментарий:',
+			style: 'position:absolute;left:6px;top:126px;width:136px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -203,6 +273,12 @@
 			hideLabel: true,
 			name: 'ПериодПланирования',
 			style: 'position:absolute;left:142px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Период',
+			text: '',
+			style: 'position:absolute;left:160px;top:6px;width:115px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -225,7 +301,7 @@
 					]
 				},
 				{
-					title:'Документы',
+					title:'Сформированные документы',
 					items:
 					[
 		{
@@ -235,19 +311,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ДокументОперация',
+					text:'Бюджетная операция',
+					width:'265',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'183',
 				},
 				{
 					text:'Валюта',
+					width:'124',
 				},
 				{
 					text:'Сумма',
+					width:'143',
 				},
 			]
 		},
@@ -259,24 +340,20 @@
 				{
 					text:'Очистить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Провести',
 				},
 				{
-					text:'Удалить',
+					text:'&Удалить',
 				},
 				{
-					text:'УстановитьПометки',
+					text:'Установить пометки',
 				},
 				{
-					text:'СнятьПометки',
+					text:'Снять пометки',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 					]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.НастройкиПрограммы.НастройкаРолейИсполнителей',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 664,
+	style: 'position:absolute;width:664px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка задач пользователей',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'ПрименитьИзменения',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -31,17 +31,27 @@
 			[
 				{
 					text:'Организация',
+					width:'180',
 				},
 				{
-					text:'Роль',
+					text:'Роль исполнителя задач',
+					width:'140',
 				},
 				{
-					text:'Использование',
+					text:'Задачи ...',
+					width:'100',
 				},
 				{
 					text:'Исполнитель',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСотрудник',
+			text: '',
+			style: 'position:absolute;left:194px;top:8px;width:462px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -49,7 +59,7 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
 			]
 		},

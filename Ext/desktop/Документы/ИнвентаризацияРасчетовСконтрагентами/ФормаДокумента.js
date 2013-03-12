@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.ИнвентаризацияРасчетовСконтрагентами.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 450,width: 728,
+	style: 'position:absolute;width:728px;height:450px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инвентаризация расчетов с контрагентами',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:197px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:411px;top:33px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,18 +50,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:728px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -69,24 +80,16 @@
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -94,23 +97,17 @@
 			style: 'position:absolute;left:0px;top:424px;width:728px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
 		},
@@ -121,7 +118,7 @@
 			items:
 			[
 				{
-					title:'ДебиторскаяЗадолженность',
+					title:'Дебиторская задолженность',
 					items:
 					[
 		{
@@ -130,7 +127,29 @@
 			items:
 			[
 				{
+					text:'Действие8',
+				},
+				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие2',
+				},
+				{
 					text:'Действие7',
+				},
+				{
+					text:'Заполнить дебиторскую задолженность',
+				},
+				'-',
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие6',
+				},
+				{
+					text:'Действие9',
 				},
 				{
 					text:'Действие4',
@@ -138,36 +157,7 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'ЗаполнитьАктИзДт',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -178,31 +168,50 @@
 			[
 				{
 					text:'Контрагент',
+					width:'158',
 				},
 				{
-					text:'СчетРасчетов',
+					text:'Счет расчетов',
+					width:'79',
 				},
 				{
 					text:'Всего',
+					width:'109',
 				},
 				{
 					text:'Подтверждено',
+					width:'104',
 				},
 				{
-					text:'НеПодтверждено',
+					text:'Не подтверждено',
+					width:'100',
 				},
 				{
-					text:'ИстекСрокДавности',
+					text:'В т.ч. истек срок давности',
+					width:'141',
 				},
 				{
-					text:'ВидЗадолженности',
+					text:'Вид задолженности',
+					width:'107',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтогиДт',
+			text: '',
+			style: 'position:absolute;left:6px;top:257px;width:699px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументОснованиеНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:228px;top:26px;width:49px;height:19px;',
 		},
 					]
 				},
 				{
-					title:'КредиторскаяЗадолженность',
+					title:'Кредиторская задолженность',
 					items:
 					[
 		{
@@ -211,34 +220,10 @@
 			items:
 			[
 				{
-					text:'Действие4',
-				},
-				{
-					text:'ЗаполнитьАктИзКт',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Действие5',
 				},
 				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
+					text:'Заполнить кредиторскую задолженность',
 				},
 				{
 					text:'Действие6',
@@ -247,8 +232,25 @@
 					text:'Действие8',
 				},
 				{
-					text:'Разделитель',
+					text:'Действие3',
 				},
+				'-',
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие7',
+				},
+				{
+					text:'Действие10',
+				},
+				'-',
 			]
 		},
 		{
@@ -259,31 +261,44 @@
 			[
 				{
 					text:'Контрагент',
+					width:'148',
 				},
 				{
-					text:'СчетРасчетов',
+					text:'Счет расчетов',
+					width:'78',
 				},
 				{
 					text:'Всего',
+					width:'110',
 				},
 				{
 					text:'Подтверждено',
+					width:'100',
 				},
 				{
-					text:'НеПодтверждено',
+					text:'Не подтверждено',
+					width:'100',
 				},
 				{
-					text:'ИстекСрокДавности',
+					text:'В т.ч. истек срок давности',
+					width:'141',
 				},
 				{
-					text:'ВидЗадолженности',
+					text:'Вид задолженности',
+					width:'106',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтогиКт',
+			text: '',
+			style: 'position:absolute;left:6px;top:258px;width:699px;height:19px;',
 		},
 					]
 				},
 				{
-					title:'СчетаРасчетов',
+					title:'Счета расчетов',
 					items:
 					[
 		{
@@ -294,9 +309,11 @@
 			[
 				{
 					text:'Счет',
+					width:'124',
 				},
 				{
 					text:'Наименование',
+					width:'360',
 				},
 			]
 		},
@@ -305,43 +322,45 @@
 			style: 'position:absolute;left:6px;top:22px;width:699px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'КнопкаЗаполнить',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие7',
+					text:'Заполнить',
 				},
 				{
 					text:'Действие2',
 				},
 				{
+					text:'Действие5',
+				},
+				{
+					text:'Действие6',
+				},
+				'-',
+				{
+					text:'Действие4',
+				},
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие7',
+				},
+				{
 					text:'Действие8',
 				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие9',
+				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДокументОснованиеВид',
+			text: 'Основание:',
+			style: 'position:absolute;left:6px;top:26px;width:80px;height:19px;',
 		},
 					]
 				},
@@ -356,13 +375,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ФизЛицо',
+					text:'Члены комиссии',
+					width:'265',
 				},
 				{
 					text:'Председатель',
+					width:'92',
 				},
 			]
 		},
@@ -371,15 +393,11 @@
 			style: 'position:absolute;left:6px;top:122px;width:699px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -401,10 +419,22 @@
 			style: 'position:absolute;left:285px;top:26px;width:115px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДокументОснованиеДата',
+			text: 'от:',
+			style: 'position:absolute;left:409px;top:26px;width:18px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачалаИнвентаризации',
 			style: 'position:absolute;left:88px;top:50px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаОкончанияИнвентаризации',
+			text: 'Дата окончания:',
+			style: 'position:absolute;left:188px;top:50px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -427,6 +457,18 @@
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:105px;top:395px;width:616px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:395px;width:89px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:371px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

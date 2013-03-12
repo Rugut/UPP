@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 376,width: 725,
+	style: 'position:absolute;width:725px;height:376px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:67px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Дата:',
+			style: 'position:absolute;left:183px;top:33px;width:32px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:218px;top:33px;width:132px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:380px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:466px;top:33px;width:251px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:324px;width:77px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,16 +58,34 @@
 			style: 'position:absolute;left:87px;top:324px;width:630px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:380px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:466px;top:57px;width:251px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:57px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодНачало',
 			style: 'position:absolute;left:67px;top:58px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:201px;top:57px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,14 +99,9 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить ОС',
 				},
-				{
-					text:'ЗаполнитьОС',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -72,61 +111,80 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'ОС',
+					width:'87',
 				},
 				{
-					text:'НаправлениеПереводаОСиИС',
+					text:'Напр. перевода',
+					width:'114',
 				},
 				{
-					text:'МестонахождениеОбъекта',
+					text:'Местонахождение',
+					width:'117',
 				},
 				{
 					text:'МОЛ',
+					width:'117',
 				},
 				{
-					text:'СчетУчета',
+					text:'Счет учета ОС',
+					width:'100',
 				},
 				{
-					text:'СрокПолезногоИспользования',
+					text:'Срок полезного использования',
+					width:'100',
 				},
 				{
-					text:'СчетСниженияСтоимости',
+					text:'Счет снижения стоимости',
+					width:'100',
 				},
 				{
-					text:'НачислятьАмортизацию',
+					text:'Начислять амортизацию',
+					width:'100',
 				},
 				{
-					text:'МетодНачисленияАмортизации',
+					text:'Метод начисления амортизации',
+					width:'100',
 				},
 				{
-					text:'СчетНачисленияАмортизации',
+					text:'Счет начисления амортизации ОС',
+					width:'100',
 				},
 				{
-					text:'ЛиквидационнаяСтоимость',
+					text:'Ликвидационная стоимость',
+					width:'100',
 				},
 				{
-					text:'КоэффициентУскорения',
+					text:'Коэфф.ускорения',
+					width:'100',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'100',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1',
+					width:'100',
 				},
 				{
-					text:'Субконто2',
+					text:'Субконто 2',
+					width:'100',
 				},
 				{
-					text:'Субконто3',
+					text:'Субконто 3',
+					width:'100',
 				},
 				{
-					text:'ПредполагаемыйОбъемПродукции',
+					text:'Предполагаемый объем продукции',
+					width:'78',
 				},
 				{
-					text:'СуммаНачисленнойАмортизации',
+					text:'Сумма начисленной амортизации',
+					width:'80',
 				},
 			]
 		},
@@ -136,25 +194,18 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 			]
 		},
@@ -163,23 +214,17 @@
 			style: 'position:absolute;left:0px;top:351px;width:725px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',

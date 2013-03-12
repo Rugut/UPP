@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаВыбораТаблицыИсточника',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 236,
+	style: 'position:absolute;width:236px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Таблицы источника',
 	
 	items:
@@ -14,7 +16,8 @@
 			columns:
 			[
 				{
-					text:'ОписаниеПоля',
+					text:'Описание поля',
+					width:'220',
 				},
 			]
 		},
@@ -24,14 +27,12 @@
 			items:
 			[
 				{
-					text:'СохранитьЗначения___',
+					text:'Закрыть',
 				},
 				{
-					text:'КнопкаВыбратьНажатие',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

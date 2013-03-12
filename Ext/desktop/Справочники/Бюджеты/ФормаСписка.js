@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Бюджеты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 780,
+	style: 'position:absolute;width:780px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Бюджеты',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Заголовок',
+					width:'120',
 				},
 				{
-					text:'ВидБюджета',
+					text:'Вид бюджета',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'220',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},

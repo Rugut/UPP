@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеКадровогоПлана.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 423,width: 549,
+	style: 'position:absolute;width:549px;height:423px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение кадрового плана',
 	
 	items:
@@ -13,46 +15,39 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПоРасхождениям',
+					text:'По расхождениям',
 				},
 				{
-					text:'Действие1',
+					text:'&Скопировать',
+				},
+				'-',
+				{
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Заполнить',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'По текущему состоянию',
 				},
 				{
-					text:'Действие6',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Действие5',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Действие4',
+					text:'&Изменить',
 				},
 				{
-					text:'Разделитель',
+					text:'&Удалить',
 				},
 				{
-					text:'ЗаполнитьПоТекущемуСостоянию',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 			]
 		},
@@ -63,18 +58,34 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Подразделение',
+					width:'120',
 				},
 				{
 					text:'Должность',
+					width:'93',
 				},
 				{
 					text:'Количество',
+					width:'64',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:173px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,36 +105,30 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 				{
-					text:'Подменю',
+					text:'',
 				},
+				'-',
+				'-',
 				{
-					text:'Подменю1',
+					text:'',
 				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:371px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -136,9 +141,7 @@
 			style: 'position:absolute;left:0px;top:398px;width:549px;height:25px;',
 			items:
 			[
-				{
-					text:'РазделительЗакрыть',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -148,10 +151,14 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'РазделительОК',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:347px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -166,6 +173,12 @@
 			style: 'position:absolute;left:421px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный1',
+			text: 'Дата изменений:',
+			style: 'position:absolute;left:331px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:533px;height:25px;',
 			height: 25,width: 533,
@@ -175,6 +188,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.СообщениеОПроверке',
 	{
 	extend: 'Ext.window.Window',
-	height: 288,width: 513,
+	style: 'position:absolute;width:513px;height:288px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сообщение о проверке заявления',
 	
 	items:
@@ -18,10 +20,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись18',
+			text: 'Рег. номер заявления в НО:',
+			style: 'position:absolute;left:10px;top:165px;width:181px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'РегНомДок',
 			style: 'position:absolute;left:202px;top:165px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись21',
+			text: 'Результат проверки:',
+			style: 'position:absolute;left:10px;top:10px;width:181px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,10 +44,22 @@
 			style: 'position:absolute;left:202px;top:10px;width:303px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись22',
+			text: 'Дата регистрации в НО в электронном виде:',
+			style: 'position:absolute;left:10px;top:190px;width:181px;height:30px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаРегЭл',
 			style: 'position:absolute;left:202px;top:195px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись23',
+			text: 'Дата регистрации в НО на бумажном носителе:',
+			style: 'position:absolute;left:10px;top:225px;width:181px;height:30px;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,10 +68,22 @@
 			style: 'position:absolute;left:202px;top:230px;width:303px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись24',
+			text: 'Номер заявления:',
+			style: 'position:absolute;left:10px;top:115px;width:181px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерДокНП',
 			style: 'position:absolute;left:202px;top:115px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись25',
+			text: 'Дата заявления:',
+			style: 'position:absolute;left:10px;top:140px;width:181px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -64,10 +102,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись19',
+			text: 'Номер:',
+			style: 'position:absolute;left:0px;top:25px;width:185px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерУведОткз',
 			style: 'position:absolute;left:194px;top:25px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись20',
+			text: 'Дата:',
+			style: 'position:absolute;left:0px;top:50px;width:185px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

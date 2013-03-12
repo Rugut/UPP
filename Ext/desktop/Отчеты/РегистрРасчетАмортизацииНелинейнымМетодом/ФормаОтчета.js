@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегистрРасчетАмортизацииНелинейнымМетодом.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 580,width: 600,
+	style: 'position:absolute;width:600px;height:580px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистр-расчет амортизации нелинейным методом',
 	
 	items:
@@ -20,10 +22,28 @@
 			style: 'position:absolute;left:174px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:150px;top:33px;width:19px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:258px;top:33px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:291px;top:33px;width:74px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,53 +56,38 @@
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Подменю',
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Разделитель1',
+					text:'Справка',
 				},
 				{
-					text:'Разделитель',
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Сформировать',
@@ -119,6 +124,12 @@
 			style: 'position:absolute;left:52px;top:0px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:136px;top:0px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаКонецПериода',
@@ -129,6 +140,18 @@
 			name: 'КнопкаНастройкаПериода1',
 			text: '...',
 			style: 'position:absolute;left:238px;top:0px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьС',
+			text: 'Период с:',
+			style: 'position:absolute;left:0px;top:0px;width:50px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:126px;top:0px;width:50px;height:19px;',
 		},
 					]
 				},

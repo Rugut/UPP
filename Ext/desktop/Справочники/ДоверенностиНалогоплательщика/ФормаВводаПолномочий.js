@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДоверенностиНалогоплательщика.ФормаВводаПолномочий',
 	{
 	extend: 'Ext.window.Window',
-	height: 478,width: 863,
+	style: 'position:absolute;width:863px;height:478px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Редактирование полномочий представителя',
 	
 	items:
@@ -13,21 +15,31 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'ОКАТО:',
+			style: 'position:absolute;left:8px;top:10px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОКАТО',
 			style: 'position:absolute;left:54px;top:10px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКПП',
+			text: 'КПП:',
+			style: 'position:absolute;left:163px;top:10px;width:26px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -41,10 +53,10 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажки',
+					text:'',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'',
 				},
 			]
 		},
@@ -56,12 +68,15 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 				{
 					text:'',
+					width:'0',
 				},
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},

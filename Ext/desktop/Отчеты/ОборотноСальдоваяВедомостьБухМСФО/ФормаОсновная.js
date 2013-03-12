@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьБухМСФО.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 445,width: 604,
+	style: 'position:absolute;width:604px;height:445px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оборотно-сальдовая ведомость',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
@@ -28,46 +28,35 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель4',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -84,6 +73,18 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -94,6 +95,12 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:366px;top:33px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Организация:',
+			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;',
 		},
 	]
 });

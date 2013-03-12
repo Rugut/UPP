@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РасчетПоМоделиБюджетирования.ФормаПросмотрОпераций',
 	{
 	extend: 'Ext.window.Window',
-	height: 371,width: 653,
+	style: 'position:absolute;width:653px;height:371px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сформированные бюджетные операции',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Изменение',
+					text:'Включить возможность изменения',
 				},
 			]
 		},
@@ -34,37 +36,48 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Период',
+					width:'100',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'100',
 				},
 				{
 					text:'Валюта',
+					width:'100',
 				},
 				{
 					text:'ЦФО',
+					width:'100',
 				},
 				{
 					text:'Проект',
+					width:'100',
 				},
 				{
 					text:'Контрагент',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
 					text:'Сумма',
+					width:'100',
 				},
 				{
-					text:'ВлияющаяОперация',
+					text:'Влияющая операция',
+					width:'109',
 				},
 			]
 		},

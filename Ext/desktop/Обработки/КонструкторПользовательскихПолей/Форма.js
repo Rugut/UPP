@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонструкторПользовательскихПолей.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 400,
+	style: 'position:absolute;width:400px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Пользовательские поля',
 	
 	items:
@@ -24,7 +26,8 @@
 			columns:
 			[
 				{
-					text:'Заголовок',
+					text:'Пользовательские поля',
+					width:'100',
 				},
 			]
 		},
@@ -33,23 +36,16 @@
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Формула',
 				},
 				{
 					text:'Действие1',
-				},
-				{
-					text:'Добавить',
 				},
 			]
 		},

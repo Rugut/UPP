@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.УстановкаНаценокПоУсловиямПродаж.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 406,width: 656,
+	style: 'position:absolute;width:656px;height:406px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка наценок по условиям продаж',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -24,32 +38,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю2',
+					text:'',
+				},
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель5',
+					text:'Движения документа по регистрам',
 				},
+				'-',
 				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ПодменюВидаОперации',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 			]
 		},
@@ -62,22 +64,16 @@
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
+					text:'Записать',
 				},
 			]
 		},
@@ -88,16 +84,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'20',
 				},
 				{
-					text:'НоменклатурнаяЦеноваяГруппа',
+					text:'Номенклатурная или ценовая группа',
+					width:'209',
 				},
 				{
-					text:'УсловиеПродаж',
+					text:'Условие продаж',
+					width:'247',
 				},
 				{
-					text:'ПроцентНаценки',
+					text:'% наценки',
+					width:'100',
 				},
 			]
 		},
@@ -106,10 +106,14 @@
 			style: 'position:absolute;left:8px;top:56px;width:640px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:354px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,6 +126,12 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:331px;width:552px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:331px;width:88px;height:19px;',
 		},
 	]
 });

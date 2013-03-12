@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПринятиеКУчетуОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 559,width: 706,
+	style: 'position:absolute;width:706px;height:559px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Принятие к учету ОС',
 	
 	items:
@@ -12,38 +14,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:706px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПодменюВидаОперации',
+					text:'',
 				},
 				{
-					text:'Разделитель7',
+					text:'Дт/кт',
 				},
 				{
-					text:'Подменю3',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'',
 				},
+				'-',
 				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -52,28 +42,28 @@
 			style: 'position:absolute;left:0px;top:534px;width:706px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,16 +72,50 @@
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтражатьВ',
+			text: 'Отражать в:',
+			style: 'position:absolute;left:330px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:416px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:494px;top:33px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:507px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -106,7 +130,7 @@
 			items:
 			[
 				{
-					title:'ОсновныеСредства',
+					title:'Основные средства',
 					items:
 					[
 		{
@@ -116,16 +140,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'366',
 				},
 				{
-					text:'ИнвНомер',
+					text:'Инв. №',
+					width:'100',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. № (Орг)',
+					width:'112',
 				},
 			]
 		},
@@ -135,21 +163,26 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьПоНаименованию',
+					text:'По наименованию',
 				},
 				{
 					text:'Подбор',
 				},
-				{
-					text:'ПодменюЗаполнить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСоставОС',
+			text: 'Входит в состав основного средства:',
+			style: 'position:absolute;left:6px;top:30px;width:193px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМОЛБУ',
+			text: 'Материально-ответственное лицо:',
+			style: 'position:absolute;left:6px;top:30px;width:202px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -158,7 +191,7 @@
 			items:
 			[
 				{
-					title:'ОССоСклада',
+					title:'Основные средства со склада',
 					items:
 					[
 		{
@@ -166,6 +199,12 @@
 			hideLabel: true,
 			name: 'Склад',
 			style: 'position:absolute;left:402px;top:0px;width:274px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьХарактеристика',
+			text: 'Характеристика:',
+			style: 'position:absolute;left:0px;top:23px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -178,6 +217,12 @@
 			hideLabel: true,
 			name: 'СерияНоменклатуры',
 			style: 'position:absolute;left:90px;top:46px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОборудование',
+			text: 'Оборудование:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -200,14 +245,26 @@
 					]
 				},
 				{
-					title:'ОбъектыСтроительства',
+					title:'Объекты строительства',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОбъектСтроительства',
+			text: 'Объект:',
+			style: 'position:absolute;left:389px;top:0px;width:60px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОбъектСтроительства',
 			style: 'position:absolute;left:451px;top:0px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимость',
+			text: 'Сумма (УУ):',
+			style: 'position:absolute;left:162px;top:0px;width:64px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -216,10 +273,22 @@
 			style: 'position:absolute;left:228px;top:0px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаБУВнеоборотногоАктива1',
+			text: 'Счет (БУ):',
+			style: 'position:absolute;left:0px;top:24px;width:60px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаБУВнеоборотногоАктива1',
 			style: 'position:absolute;left:62px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаНУВнеоборотногоАктива1',
+			text: 'Счет (НУ):',
+			style: 'position:absolute;left:0px;top:48px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -228,10 +297,28 @@
 			style: 'position:absolute;left:62px;top:48px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьБУ',
+			text: 'Сумма (БУ):',
+			style: 'position:absolute;left:162px;top:24px;width:64px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьБУ',
 			style: 'position:absolute;left:228px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'УпрВалюта',
+			text: 'УпрВалюта',
+			style: 'position:absolute;left:310px;top:0px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта1',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:310px;top:24px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -240,10 +327,28 @@
 			style: 'position:absolute;left:0px;top:0px;width:142px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьНУ',
+			text: 'Сумма (НУ):',
+			style: 'position:absolute;left:162px;top:48px;width:64px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьНУ',
 			style: 'position:absolute;left:228px;top:48px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта3',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:310px;top:48px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьБУХоз',
+			text: 'В том числе хоз. способом:',
+			style: 'position:absolute;left:389px;top:24px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -252,10 +357,28 @@
 			style: 'position:absolute;left:534px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'РеглВалюта2',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:616px;top:24px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьНУХоз',
+			text: 'В том числе хоз. способом:',
+			style: 'position:absolute;left:389px;top:48px;width:143px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьНУХоз',
 			style: 'position:absolute;left:534px;top:48px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта4',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:616px;top:48px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -270,10 +393,45 @@
 			style: 'position:absolute;left:596px;top:120px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтавкаНДС',
+			text: 'Ставка НДС:',
+			style: 'position:absolute;left:389px;top:120px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНДС',
+			text: 'НДС:',
+			style: 'position:absolute;left:562px;top:120px;width:30px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'НДС включен в стоимость',
+			style: 'position:absolute;left:162px;top:120px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьПР',
+			text: 'Сумма (ПР):',
+			style: 'position:absolute;left:162px;top:72px;width:64px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьПР',
 			style: 'position:absolute;left:228px;top:72px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта5',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:310px;top:72px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьПРХоз',
+			text: 'В том числе хоз. способом:',
+			style: 'position:absolute;left:389px;top:72px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -282,10 +440,34 @@
 			style: 'position:absolute;left:534px;top:72px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'РеглВалюта6',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:616px;top:72px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьВР',
+			text: 'Сумма (ВР):',
+			style: 'position:absolute;left:162px;top:96px;width:64px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьВР',
 			style: 'position:absolute;left:228px;top:96px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта7',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:310px;top:96px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьВРХоз',
+			text: 'В том числе хоз. способом:',
+			style: 'position:absolute;left:389px;top:96px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -293,26 +475,57 @@
 			name: 'СтоимостьВРХоз',
 			style: 'position:absolute;left:534px;top:96px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта8',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:616px;top:96px;width:60px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Прочее',
+					title:'Источник не указан',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСерия',
+			text: 'Серия:',
+			style: 'position:absolute;left:0px;top:46px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьУУ',
+			text: 'Стоимость (упр. учет):',
+			style: 'position:absolute;left:0px;top:1px;width:116px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьУУ',
 			style: 'position:absolute;left:118px;top:0px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'УпрВалюта1',
+			text: 'УпрВалюта',
+			style: 'position:absolute;left:204px;top:0px;width:60px;height:19px;',
+		},
 					]
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособыОтраженияРасходовПоАмортизации',
+			text: 'Способы отражения расходов
+по амортизации (погашению стоимости):',
+			style: 'position:absolute;left:6px;top:33px;width:225px;height:32px;',
+		},
 					]
 				},
 				{
-					title:'ОбщиеСведения',
+					title:'Общие сведения',
 					items:
 					[
 		{
@@ -330,7 +543,7 @@
 					]
 				},
 				{
-					title:'УпрУчет',
+					title:'Управленческий учет',
 					items:
 					[
 		{
@@ -340,16 +553,38 @@
 			style: 'position:absolute;left:210px;top:30px;width:186px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение предприятия:',
+			style: 'position:absolute;left:6px;top:6px;width:155px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:210px;top:6px;width:186px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьМОЛУУ',
+			text: 'Материально- ответственное лицо:',
+			style: 'position:absolute;left:406px;top:6px;width:83px;height:44px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МОЛУУ',
 			style: 'position:absolute;left:494px;top:18px;width:188px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Начислять амортизацию',
+			style: 'position:absolute;left:450px;top:219px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Начислять в текущем месяце',
+			style: 'position:absolute;left:450px;top:243px;width:175px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -388,10 +623,22 @@
 			style: 'position:absolute;left:585px;top:195px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьИндивидуальныйГрафикАмортизацииУУ',
+			text: 'Индивидуальный график:',
+			style: 'position:absolute;left:353px;top:267px;width:133px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИндивидуальныйГрафикАмортизации',
 			style: 'position:absolute;left:495px;top:267px;width:187px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделениеОрганизации',
+			text: 'Подразделение организации:',
+			style: 'position:absolute;left:6px;top:6px;width:202px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -400,10 +647,22 @@
 			style: 'position:absolute;left:210px;top:171px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьШифрПоЕНАОФ',
+			text: 'ЕНАОФ:',
+			style: 'position:absolute;left:6px;top:6px;width:74px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'ЗаполнитьУУ',
 			text: 'Заполнить по данным бух. учета',
 			style: 'position:absolute;left:480px;top:147px;width:196px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеПринятоКУчету',
+			text: 'Принятие к учету:',
+			style: 'position:absolute;left:12px;top:74px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -412,15 +671,32 @@
 			style: 'position:absolute;left:210px;top:74px;width:186px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Принятие к учету с вводом в эксплуатацию',
+			style: 'position:absolute;left:438px;top:74px;width:244px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВводВЭксплуатацию',
+			text: 'Ввод в эксплуатацию:',
+			style: 'position:absolute;left:12px;top:98px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СобытиеВводаВЭксплуатацию',
 			style: 'position:absolute;left:210px;top:98px;width:186px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'РасшифровкаСрокаПолезногоИспользованияУУ',
+			text: '',
+			style: 'position:absolute;left:295px;top:219px;width:135px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'БухУчет',
+					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -436,6 +712,12 @@
 			style: 'position:absolute;left:210px;top:6px;width:186px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСпособПоступления',
+			text: 'Способ поступления в организацию:',
+			style: 'position:absolute;left:406px;top:6px;width:83px;height:44px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СпособПоступления',
@@ -446,6 +728,11 @@
 			hideLabel: true,
 			name: 'СрокПолезногоИспользованияБУ',
 			style: 'position:absolute;left:210px;top:219px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Начислять амортизацию',
+			style: 'position:absolute;left:450px;top:219px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -502,10 +789,27 @@
 			style: 'position:absolute;left:210px;top:171px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСостояниеПринятоКУчетуРегл',
+			text: 'Принятие к учету:',
+			style: 'position:absolute;left:12px;top:74px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СобытиеПринятиеКУчетуРегл',
 			style: 'position:absolute;left:210px;top:74px;width:186px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Принятие к учету с вводом в эксплуатацию',
+			style: 'position:absolute;left:438px;top:74px;width:244px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВводВЭксплуатациюРегл',
+			text: 'Ввод в эксплуатацию:',
+			style: 'position:absolute;left:12px;top:98px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -513,17 +817,36 @@
 			name: 'СобытиеВводаВЭксплуатациюРегл',
 			style: 'position:absolute;left:210px;top:98px;width:186px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'РасшифровкаСрокаПолезногоИспользованияБУ',
+			text: '',
+			style: 'position:absolute;left:295px;top:219px;width:135px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'НалУчет',
+					title:'Налоговый учет',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаНУ',
+			text: 'Счет учета:',
+			style: 'position:absolute;left:12px;top:29px;width:226px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаНУ',
 			style: 'position:absolute;left:243px;top:29px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокВключенияСтоимостиВСоставРасходовНУ',
+			text: 'Порядок включения стоимости
+в состав расходов:',
+			style: 'position:absolute;left:12px;top:53px;width:226px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -538,14 +861,31 @@
 			items:
 			[
 				{
-					title:'НачислениеАмортизации',
+					title:'Начисление амортизации',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Начислять амортизацию',
+			style: 'position:absolute;left:327px;top:23px;width:155px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетНачисленияАмортизацииНУ',
+			text: 'Счет начисления амортизации:',
+			style: 'position:absolute;left:6px;top:23px;width:226px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетНачисленияАмортизацииНУ',
 			style: 'position:absolute;left:241px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСрокПолезногоИспользованияНУ',
+			text: 'Срок полезного использования (в месяцах):',
+			style: 'position:absolute;left:6px;top:71px;width:226px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -554,10 +894,27 @@
 			style: 'position:absolute;left:241px;top:71px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСпециальныйКоэффициентНУ',
+			text: 'Специальный коэффициент:',
+			style: 'position:absolute;left:6px;top:95px;width:226px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СпециальныйКоэффициентНУ',
 			style: 'position:absolute;left:241px;top:95px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Включить амортизационную премию в состав расходов',
+			style: 'position:absolute;left:6px;top:144px;width:427px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РасшифровкаСрокаПолезногоИспользованияНУ',
+			text: '',
+			style: 'position:absolute;left:326px;top:71px;width:155px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -570,6 +927,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьВПроцентахОтПервоначальнойСтоимости',
+			text: 'В процентах от первоначальной стоимости:',
+			style: 'position:absolute;left:6px;top:0px;width:226px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПроцентКапитальныхВложенийВключаемыхВРасходыНУ',
@@ -580,6 +943,30 @@
 			hideLabel: true,
 			name: 'СчетУчетаЗатратПоАмортизационнойПремии',
 			style: 'position:absolute;left:241px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаЗатратПоАмортизационнойПремии',
+			text: 'Счет учета затрат:',
+			style: 'position:absolute;left:6px;top:24px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоПоАмортизационнойПремии1',
+			text: 'Субконто НУ 1:',
+			style: 'position:absolute;left:6px;top:48px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоПоАмортизационнойПремии2',
+			text: 'Субконто НУ 2:',
+			style: 'position:absolute;left:6px;top:72px;width:228px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоПоАмортизационнойПремии3',
+			text: 'Субконто НУ 3:',
+			style: 'position:absolute;left:6px;top:96px;width:228px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -614,6 +1001,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьСпособНачисленияАмортизацииНУ',
+			text: 'Способ начисления амортизации (до 2009 г.):',
+			style: 'position:absolute;left:0px;top:0px;width:232px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СпособНачисленияАмортизацииНУ',
@@ -626,7 +1019,7 @@
 					]
 				},
 				{
-					title:'ВключениеВРасходыПриПринятииКУчету',
+					title:'Включение в расходы при принятии к учету',
 					items:
 					[
 		{
@@ -646,14 +1039,32 @@
 			style: 'position:absolute;left:237px;top:21px;width:142px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтоимостьНУ1',
+			text: 'Сумма (НУ):',
+			style: 'position:absolute;left:6px;top:21px;width:64px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтоимостьНУ1',
 			style: 'position:absolute;left:72px;top:21px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта9',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:154px;top:21px;width:60px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособОтраженияРасходовПриВключенииВСтоимость',
+			text: 'Способ отражения расходов:',
+			style: 'position:absolute;left:6px;top:0px;width:226px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -664,16 +1075,22 @@
 					]
 				},
 				{
-					title:'СтоимостьНеВключаетсяВРасходы',
+					title:'Стоимость не включается в расходы',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'УСНУчет',
+					title:'Налоговый учет (УСН)',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Стоимость (сумма расходов УСН):',
+			style: 'position:absolute;left:6px;top:6px;width:226px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -681,10 +1098,22 @@
 			style: 'position:absolute;left:304px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Срок полезного использования (УСН), мес.:',
+			style: 'position:absolute;left:6px;top:31px;width:226px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СрокПолезногоИспользованияУСН',
 			style: 'position:absolute;left:304px;top:31px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Дата приобретения:',
+			style: 'position:absolute;left:437px;top:6px;width:114px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -699,16 +1128,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'100',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'100',
 				},
 				{
-					text:'СуммаОплаты',
+					text:'Сумма оплаты',
+					width:'100',
 				},
 			]
 		},
@@ -719,13 +1152,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'100',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инвентарный номер',
+					width:'100',
 				},
 			]
 		},
@@ -735,6 +1171,12 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокВключенияСтоимостиВСоставРасходовУСН',
+			text: 'Порядок включения стоимости в состав расходов (УСН):',
+			style: 'position:absolute;left:6px;top:56px;width:294px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -749,14 +1191,43 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:7px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:92px;top:7px;width:210px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСрокПолезногоИспользованияБУ',
+			text: 'Полезный срок использования, мес.:',
+			style: 'position:absolute;left:12px;top:219px;width:196px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:570px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетФактура',
+			text: 'Счет-фактура:',
+			style: 'position:absolute;left:8px;top:485px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаСчетФактура',
+			text: 'Ввести счет-фактуру',
+			style: 'position:absolute;left:90px;top:485px;width:608px;height:19px;',
 		},
 	]
 });

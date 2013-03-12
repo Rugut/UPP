@@ -1,12 +1,20 @@
 ﻿Ext.define('Документы.УстановкаДиапазоновБазовыхЦен.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 364,width: 506,
+	style: 'position:absolute;width:506px;height:364px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установки диапазонов базовых цен',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:101px;top:33px;width:116px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:223px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:244px;top:33px;width:254px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипЦен',
+			text: 'Тип цен:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,10 +51,7 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьТекущейШкалой',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить текущей шкалой диапазонов',
 				},
 			]
 		},
@@ -45,19 +62,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВерхняяГраница',
+					text:'Верхняя граница',
+					width:'100',
 				},
 				{
-					text:'ПредставлениеИнтервала',
+					text:'Представление интервала',
+					width:'199',
 				},
 				{
 					text:'Цена',
+					width:'81',
 				},
 				{
 					text:'Валюта',
+					width:'62',
 				},
 			]
 		},
@@ -67,14 +89,9 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -82,28 +99,28 @@
 			style: 'position:absolute;left:0px;top:339px;width:506px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:312px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -112,10 +129,22 @@
 			style: 'position:absolute;left:101px;top:312px;width:397px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:288px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:101px;top:288px;width:397px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБазовыйТипЦен',
+			text: 'Надпись базовый тип цен',
+			style: 'position:absolute;left:101px;top:81px;width:397px;height:19px;',
 		},
 	]
 });

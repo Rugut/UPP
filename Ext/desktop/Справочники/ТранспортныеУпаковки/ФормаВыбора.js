@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТранспортныеУпаковки.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 376,width: 624,
+	style: 'position:absolute;width:624px;height:376px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Транспортные упаковки',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'НомерУпаковки',
+					text:'Номер',
+					width:'42',
 				},
 				{
 					text:'Наименование',
+					width:'365',
 				},
 				{
 					text:'Коэффициент',
+					width:'80',
 				},
 				{
 					text:'Владелец',
+					width:'350',
 				},
 			]
 		},
@@ -36,11 +43,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

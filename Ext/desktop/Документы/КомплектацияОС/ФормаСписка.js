@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.КомплектацияОС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 500,
+	style: 'position:absolute;width:500px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Комплектация ОС',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'120',
 				},
 			]
 		},
@@ -36,16 +43,11 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю2',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 			]
 		},

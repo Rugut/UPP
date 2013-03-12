@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиДопроведенияДокументов.ФормаИзменениеИнтервалаДопроведения',
 	{
 	extend: 'Ext.window.Window',
-	height: 140,width: 513,
+	style: 'position:absolute;width:513px;height:140px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка периода допроведения',
 	
 	items:
@@ -13,21 +15,23 @@
 			items:
 			[
 				{
-					text:'ИзменитьИнтервал',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Действие закрыть',
 				},
+				'-',
 				{
-					text:'ДействиеЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеСправка',
+					text:'Действие справка',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоТекущейДатыКонец',
+			text: 'до текущей даты',
+			style: 'position:absolute;left:406px;top:77px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -40,6 +44,12 @@
 			hideLabel: true,
 			name: 'КоличествоПериодовОтставанияКонецИнтервала',
 			style: 'position:absolute;left:290px;top:77px;width:32px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьУстановленПериод',
+			text: '',
+			style: 'position:absolute;left:8px;top:8px;width:497px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,6 +68,12 @@
 			hideLabel: true,
 			name: 'ПериодичностьОтставанияНачалоИнтервала',
 			style: 'position:absolute;left:73px;top:77px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДоТекущейДатыНачало',
+			text: 'до текущей даты',
+			style: 'position:absolute;left:156px;top:77px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

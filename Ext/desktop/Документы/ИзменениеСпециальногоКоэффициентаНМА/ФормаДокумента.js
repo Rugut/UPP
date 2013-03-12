@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ИзменениеСпециальногоКоэффициентаНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 417,width: 476,
+	style: 'position:absolute;width:476px;height:417px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение понижающего коэффициента для расчета амортизации НМА (налоговый учет)',
 	
 	items:
@@ -13,25 +15,18 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 			]
 		},
@@ -41,27 +36,27 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
+					text:'OK',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,10 +65,22 @@
 			style: 'position:absolute;left:99px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:181px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:199px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:342px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,10 +89,33 @@
 			style: 'position:absolute;left:99px;top:342px;width:369px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:365px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:99px;top:365px;width:369px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:389px;top:33px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтражатьВ',
+			text: 'Отражать в:',
+			style: 'position:absolute;left:322px;top:33px;width:65px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:55px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,16 +130,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Код',
+					width:'55',
 				},
 				{
-					text:'НематериальныйАктив',
+					text:'Нематериальный актив',
+					width:'183',
 				},
 				{
-					text:'СпециальныйКоэффициент',
+					text:'Понижающий коэффициент',
+					width:'172',
 				},
 			]
 		},
@@ -122,7 +156,7 @@
 					text:'Подбор',
 				},
 				{
-					text:'ЗаполнитьДляСписка',
+					text:'Заполнить для списка НМА',
 				},
 				{
 					text:'Действие1',
@@ -133,17 +167,10 @@
 				{
 					text:'Действие4',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие',
-				},
-				{
-					text:'ПодменюЗаполнить',
 				},
 				{
 					text:'Действие6',

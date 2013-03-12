@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиВыполненияОбмена.ВыборДействий',
 	{
 	extend: 'Ext.window.Window',
-	height: 266,width: 256,
+	style: 'position:absolute;width:256px;height:266px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор действий',
 	
 	items:
@@ -13,10 +15,10 @@
 			items:
 			[
 				{
-					text:'КнопкаОК',
+					text:'ОК',
 				},
 				{
-					text:'КнопкаОтмена',
+					text:'Отмена',
 				},
 			]
 		},
@@ -28,6 +30,7 @@
 			[
 				{
 					text:'Действие',
+					width:'241',
 				},
 			]
 		},

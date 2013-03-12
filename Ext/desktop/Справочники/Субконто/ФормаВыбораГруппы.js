@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Субконто.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 361,width: 312,
+	style: 'position:absolute;width:312px;height:361px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы субконто',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -24,11 +27,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

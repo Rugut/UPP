@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СохраненныеНастройки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 336,width: 343,
+	style: 'position:absolute;width:343px;height:336px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Вариант отчета',
 	
 	items:
@@ -13,31 +15,25 @@
 			items:
 			[
 				{
-					text:'ВернутьсяКЗаводскимНастройкам',
+					text:'Настройка по умолчанию',
 				},
 				{
-					text:'ЗагрузитьНастройкуИзФайла',
+					text:'Загрузить настройку из файла',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель2',
+					text:'Сохранить настройку в файл',
 				},
+				'-',
+				'-',
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'СохранитьНастройку',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
 		},
@@ -48,13 +44,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'21',
 				},
 				{
 					text:'Пользователь',
+					width:'222',
 				},
 				{
-					text:'ПравоИзменения',
+					text:'Право изменения',
+					width:'63',
 				},
 			]
 		},
@@ -65,7 +64,19 @@
 			style: 'position:absolute;left:95px;top:6px;width:240px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'label',
+			name: 'НадписьНаименованиеНастройки',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:6px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: 'Описание:',
+			style: 'position:absolute;left:8px;top:30px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Описание',
 			style: 'position:absolute;left:95px;top:30px;width:240px;height:72px;',
@@ -76,20 +87,15 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'Пользователя',
 				},
 				{
-					text:'ДобавитьГруппу',
+					text:'Группу пользователей',
 				},
 				{
-					text:'ДобавитьПользователя',
+					text:'Пользователя',
 				},
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},

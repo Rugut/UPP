@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрупповаяОбработкаОбъектов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 328,width: 500,
+	style: 'position:absolute;width:500px;height:328px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Групповая обработка объектов',
 	
 	items:
@@ -19,14 +21,12 @@
 			style: 'position:absolute;left:0px;top:303px;width:500px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выполнить',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -41,15 +41,36 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОписаниеТипаОбъектов',
+			text: 'Тип объектов:',
+			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОписаниеТипаОбъектов',
 			style: 'position:absolute;left:88px;top:8px;width:386px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выполнять обработку в одной транзакции',
+			style: 'position:absolute;left:88px;top:32px;width:386px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Снимать пометку с обработанных объектов',
+			style: 'position:absolute;left:88px;top:56px;width:386px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить сообщения об обработанных объектах',
+			style: 'position:absolute;left:88px;top:80px;width:386px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'ОбрабатываемыеОбъекты',
+					title:'Обрабатываемые объекты',
 					items:
 					[
 		{
@@ -58,23 +79,19 @@
 			items:
 			[
 				{
-					text:'УстановитьВсеПометки',
+					text:'Установить все пометки',
 				},
 				{
-					text:'ИнвертироватьПометки',
+					text:'Инвертировать пометки',
+				},
+				'-',
+				{
+					text:'Снять все пометки',
 				},
 				{
-					text:'Разделитель1',
+					text:'Подбор',
 				},
-				{
-					text:'СнятьВсеПометки',
-				},
-				{
-					text:'ПодборОбъектов',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -84,20 +101,28 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
-					text:'Пометка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Объект',
+					width:'400',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Обрабатывать элементы выбранных групп',
+			style: 'position:absolute;left:8px;top:220px;width:252px;height:15px;',
 		},
 					]
 				},
 				{
-					title:'УстанавливаемыеСвойства',
+					title:'Устанавливаемые свойства',
 					items:
 					[
 		{
@@ -106,17 +131,15 @@
 			items:
 			[
 				{
-					text:'УстановитьВсеПометки',
+					text:'Установить все пометки',
 				},
 				{
-					text:'ИнвертироватьПометки',
+					text:'Инвертировать пометки',
 				},
 				{
-					text:'СнятьВсеПометки',
+					text:'Снять все пометки',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -126,16 +149,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'30',
 				},
 				{
 					text:'Свойство',
+					width:'200',
 				},
 				{
-					text:'Пометка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Значение',
+					width:'200',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетов',
 	{
 	extend: 'Ext.window.Window',
-	height: 418,width: 637,
+	style: 'position:absolute;width:637px;height:418px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,68 +14,53 @@
 			style: 'position:absolute;left:0px;top:0px;width:637px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю',
+					text:'Сформировать',
 				},
 				{
-					text:'Разделитель3',
+					text:'Настройка...',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Отбор',
+				},
+				'-',
+				'-',
+				{
+					text:'Справка',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Настройка...',
 				},
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Разделитель4',
+					text:'Восстановить значения',
 				},
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'СохранитьЗначения',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
 					text:'Заголовок',
@@ -87,7 +74,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -97,10 +84,20 @@
 			style: 'position:absolute;left:272px;top:0px;width:349px;height:20px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'ЦФО',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиПроект',
 			style: 'position:absolute;left:272px;top:24px;width:349px;height:20px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Проект',
+			style: 'position:absolute;left:0px;top:24px;width:88px;height:19px;',
 		},
 					]
 				},
@@ -113,16 +110,40 @@
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сценарий:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СтатьяБаланса',
 			style: 'position:absolute;left:492px;top:57px;width:137px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Статья баланса:',
+			style: 'position:absolute;left:338px;top:57px;width:153px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись36',
+			text: 'Период с:',
+			style: 'position:absolute;left:338px;top:33px;width:56px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:396px;top:33px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись37',
+			text: 'по:',
+			style: 'position:absolute;left:494px;top:33px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -141,6 +162,12 @@
 			hideLabel: true,
 			name: 'ВидДанныхОтчета',
 			style: 'position:absolute;left:98px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись38',
+			text: 'Вид данных:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 	]
 });

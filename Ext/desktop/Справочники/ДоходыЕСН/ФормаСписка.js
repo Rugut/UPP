@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДоходыЕСН.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 508,
+	style: 'position:absolute;width:508px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Способы отражения доходов в учете ЕСН',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВходитВБазуФедеральныйБюджет',
+					text:'ФБ, ПФР',
+					width:'58',
 				},
 				{
-					text:'ВходитВБазуФОМС',
+					text:'ФОМС',
+					width:'40',
 				},
 				{
-					text:'ВходитВБазуФСС',
+					text:'ФСС',
+					width:'40',
 				},
 			]
 		},

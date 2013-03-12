@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РасширенныеНастройкиУчетнойЗаписи',
 	{
 	extend: 'Ext.window.Window',
-	height: 473,width: 468,
+	style: 'position:absolute;width:468px;height:473px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расширенные настройки учетной записи',
 	
 	items:
@@ -12,28 +14,27 @@
 			style: 'position:absolute;left:0px;top:448px;width:468px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Справка',
+					text:'Открыть справку',
 				},
 				{
 					text:'Отмена',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПоУмолчанию',
+					text:'По умолчанию',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не формировать автоматически подтверждения на входящие сообщения',
+			style: 'position:absolute;left:14px;top:33px;width:397px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -45,9 +46,25 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать сервис онлайн-проверки отчетности',
+			style: 'position:absolute;left:6px;top:22px;width:283px;height:15px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Сервис доступен только абонентам спец. оператора связи ООО "Такском".',
+			style: 'position:absolute;left:30px;top:254px;width:430px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не обращаться к ключевому контейнеру при автоматическом обмене',
+			style: 'position:absolute;left:14px;top:56px;width:379px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -60,6 +77,11 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Особый идентификатор системы отправителя (при обмене с ПФР):',
+			style: 'position:absolute;left:6px;top:3px;width:363px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИдентификаторСистемыОтправителяПФР',
@@ -68,6 +90,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Является учетной записью уполномоченного представителя (УП)',
+			style: 'position:absolute;left:14px;top:79px;width:358px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -80,16 +107,34 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование УП (для ИП - ФИО):',
+			style: 'position:absolute;left:0px;top:10px;width:182px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолноеНаименованиеУполномоченногоПредставителя',
 			style: 'position:absolute;left:184px;top:6px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'ИНН/КПП:',
+			style: 'position:absolute;left:0px;top:35px;width:182px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИННУполномоченногоПредставителя',
 			style: 'position:absolute;left:184px;top:31px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: '/',
+			style: 'position:absolute;left:318px;top:31px;width:9px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,6 +156,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Особый идентификатор системы отпр. (при обмене с Росстатом):',
+			style: 'position:absolute;left:6px;top:3px;width:363px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

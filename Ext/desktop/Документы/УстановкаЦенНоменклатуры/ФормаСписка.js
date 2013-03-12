@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.УстановкаЦенНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 500,
+	style: 'position:absolute;width:500px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установки цен номенклатуры',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:' ',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Информация',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'120',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 			]
 		},
@@ -38,24 +46,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Печать по умолчанию',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Печать по умолчанию',
 				},
-				{
-					text:'ДействиеПечать1',
-				},
-				{
-					text:'Разделитель13',
-				},
-				{
-					text:'Подменю2',
-				},
+				'-',
 			]
 		},
 	]

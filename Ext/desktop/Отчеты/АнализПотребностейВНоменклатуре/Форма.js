@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализПотребностейВНоменклатуре.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 426,width: 611,
+	style: 'position:absolute;width:611px;height:426px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ потребностей в номенклатуре',
 	
 	items:
@@ -12,69 +14,46 @@
 			style: 'position:absolute;left:0px;top:0px;width:611px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -106,6 +85,11 @@
 			style: 'position:absolute;left:328px;top:0px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура потребности:',
+			style: 'position:absolute;left:0px;top:0px;width:164px;height:18px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСНоменклатура',
@@ -122,6 +106,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиДатаПотребности',
 			style: 'position:absolute;left:328px;top:25px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дата потребности:',
+			style: 'position:absolute;left:0px;top:25px;width:164px;height:18px;',
 		},
 		{
 			xtype: 'textfield',

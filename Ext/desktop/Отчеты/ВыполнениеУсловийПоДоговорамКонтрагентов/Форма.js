@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ВыполнениеУсловийПоДоговорамКонтрагентов.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 395,width: 634,
+	style: 'position:absolute;width:634px;height:395px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выполнение условий по договорам контрагентов',
 	
 	items:
@@ -13,13 +15,13 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Сформировать',
@@ -28,72 +30,61 @@
 					text:'Заголовок',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заголовок',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Настройка ...',
 				},
 				{
-					text:'Разделитель4',
+					text:'Настройка ...',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -118,6 +109,11 @@
 			style: 'position:absolute;left:296px;top:0px;width:322px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент:',
+			style: 'position:absolute;left:0px;top:0px;width:132px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСКонтрагент',
@@ -134,6 +130,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиДоговорКонтрагента',
 			style: 'position:absolute;left:296px;top:24px;width:322px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Договор контрагента:',
+			style: 'position:absolute;left:0px;top:24px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

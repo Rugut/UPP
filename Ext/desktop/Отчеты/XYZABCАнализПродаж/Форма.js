@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.XYZABCАнализПродаж.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 430,width: 660,
+	style: 'position:absolute;width:660px;height:430px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'XYZ/ABC-анализ продаж',
 	
 	items:
@@ -12,94 +14,87 @@
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Диаграмма1',
+					text:'Диаграмма',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие1',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель6',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Сохранить значения...',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие1',
+					text:'Отбор',
 				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Отбор',
 				},
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка ...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:519px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:539px;top:33px;width:113px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАнализируемыйПараметр',
+			text: 'Анализируемый параметр:',
+			style: 'position:absolute;left:8px;top:58px;width:145px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Анализируемый объект:',
+			style: 'position:absolute;left:333px;top:58px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -118,6 +113,11 @@
 			style: 'position:absolute;left:326px;top:0px;width:318px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'XYZ-класс',
+			style: 'position:absolute;left:0px;top:0px;width:144px;height:18px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:644px;height:19px;',
 			height: 19,width: 644,
@@ -133,6 +133,11 @@
 			name: 'ОтборЗначениеКлассABC',
 			style: 'position:absolute;left:326px;top:0px;width:318px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'ABC-класс',
+			style: 'position:absolute;left:0px;top:0px;width:144px;height:18px;',
+		},
 					]
 				},
 			]
@@ -142,10 +147,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Количество периодов:',
+			style: 'position:absolute;left:333px;top:33px;width:130px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоПериодовАнализа',
 			style: 'position:absolute;left:467px;top:33px;width:47px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодичность',
+			text: 'Периодичность:',
+			style: 'position:absolute;left:8px;top:33px;width:145px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

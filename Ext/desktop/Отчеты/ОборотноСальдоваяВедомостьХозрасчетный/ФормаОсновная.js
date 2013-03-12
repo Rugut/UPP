@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьХозрасчетный.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 556,width: 922,
+	style: 'position:absolute;width:922px;height:556px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Оборотно-сальдовая ведомость',
 	
 	items:
@@ -21,11 +23,9 @@
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'СохранитьЗначения',
+					text:'Сохранить значения...',
 				},
 				{
 					text:'Действие2',
@@ -34,41 +34,30 @@
 					text:'Действие3',
 				},
 				{
-					text:'ВосстановитьЗначения',
+					text:'Восстановить значения',
+				},
+				'-',
+				{
+					text:'Сформировать',
 				},
 				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Действие',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -84,6 +73,18 @@
 			style: 'position:absolute;left:173px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'по:',
+			style: 'position:absolute;left:149px;top:33px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -94,6 +95,12 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:365px;top:33px;width:549px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Организация:',
+			style: 'position:absolute;left:286px;top:33px;width:76px;height:19px;',
 		},
 	]
 });

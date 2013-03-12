@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.УстановкаГраницыПоследовательностиПартионногоУчета.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 144,width: 400,
+	style: 'position:absolute;width:400px;height:144px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка границы последовательности партионного учета',
 	
 	items:
@@ -13,21 +15,27 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Справка',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Установить',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:24px;top:24px;width:138px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:24px;top:44px;width:188px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,10 +44,28 @@
 			style: 'position:absolute;left:152px;top:68px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата / документ',
+			style: 'position:absolute;left:8px;top:68px;width:138px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Организация',
+			style: 'position:absolute;left:8px;top:92px;width:138px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:152px;top:92px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'По видам учета:',
+			style: 'position:absolute;left:8px;top:4px;width:138px;height:19px;',
 		},
 	]
 });

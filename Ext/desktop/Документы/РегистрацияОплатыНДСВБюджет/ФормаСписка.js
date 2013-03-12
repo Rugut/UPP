@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РегистрацияОплатыНДСВБюджет.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 337,width: 627,
+	style: 'position:absolute;width:627px;height:337px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистрации оплаты НДС в бюджет',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Ответственный',
+					width:'130',
 				},
 				{
 					text:'Комментарий',
+					width:'167',
 				},
 			]
 		},
@@ -38,17 +46,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:627px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю2',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

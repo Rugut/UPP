@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РегистрСведений_ФайлыСведенийРОКИ_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 741,
+	style: 'position:absolute;width:741px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Список Кэш файлов с ресурса общей ключевой информации ""Такском""',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'УчетнаяЗапись',
+					text:'Учетная запись',
+					width:'145',
 				},
 				{
-					text:'ИмяРесурса',
+					text:'Ресурс',
+					width:'191',
 				},
 				{
-					text:'ДатаФайла',
+					text:'Дата обновления файла на сервере',
+					width:'206',
 				},
 				{
-					text:'Размер',
+					text:'Размер (в байтах)',
+					width:'115',
 				},
 				{
 					text:'Расшифрован',
+					width:'21',
 				},
 			]
 		},
@@ -38,11 +46,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:741px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Очистить',
+					text:'Очистить кэш',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов.ФормаОтчета2004Кв2',
 	{
 	extend: 'Ext.window.Window',
-	height: 429,width: 670,
+	style: 'position:absolute;width:670px;height:429px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Форма',
 	
 	items:
@@ -18,50 +20,30 @@
 				{
 					text:'Очистить',
 				},
+				'-',
 				{
-					text:'ПодменюРасшифровка',
+					text:'Расширить поле бланка',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'',
 				},
-				{
-					text:'РасширитьПолеБланка',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПодменюНастройка',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заполнить',
 				},
 				{
 					text:'Расшифровка',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Обновить',
 				},
 				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'КнопкаСохранятьРасшифровку',
+					text:'Сохранять',
 				},
 			]
 		},
@@ -70,28 +52,25 @@
 			style: 'position:absolute;left:0px;top:404px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'СохранитьИЗакрыть',
+					text:'OK',
 				},
-				{
-					text:'ПодменюПечати',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:586px;top:5px;width:76px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -100,7 +79,7 @@
 			items:
 			[
 				{
-					title:'ФормаОтчета',
+					title:'Расчет',
 					items:
 					[
 		{
@@ -147,6 +126,11 @@
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:302px;top:24px;width:49px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
+			style: 'position:absolute;left:364px;top:24px;width:246px;height:19px;',
+		},
 					]
 				},
 			]
@@ -161,6 +145,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись31',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

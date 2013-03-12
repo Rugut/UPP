@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ЛегальностьПолученияОбновлений.ПроверкаЛегальностиПолученияОбновления',
 	{
 	extend: 'Ext.window.Window',
-	height: 0,width: 75,
+	style: 'position:absolute;width:75px;height:0px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:

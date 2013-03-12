@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПечатьПрайсЛиста.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
-	height: 326,width: 624,
+	style: 'position:absolute;width:624px;height:326px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка прайс-листа',
 	
 	items:
@@ -24,16 +26,54 @@
 			style: 'position:absolute;left:80px;top:6px;width:377px;height:20px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Организация:',
+			style: 'position:absolute;left:6px;top:6px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Валюта:',
+			style: 'position:absolute;left:249px;top:50px;width:43px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Валюта',
 			style: 'position:absolute;left:297px;top:50px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отсутствующие на складах предприятия',
+			style: 'position:absolute;left:6px;top:115px;width:224px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По которым не заданы цены',
+			style: 'position:absolute;left:6px;top:92px;width:167px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:524px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'На дату:',
+			style: 'position:absolute;left:471px;top:6px;width:48px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:6px;top:180px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Цены которых не изменились с:',
+			style: 'position:absolute;left:6px;top:138px;width:182px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,10 +94,12 @@
 			columns:
 			[
 				{
-					text:'Поле',
+					text:'Группировки строк',
+					width:'196',
 				},
 				{
 					text:'Тип',
+					width:'87',
 				},
 			]
 		},
@@ -81,22 +123,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -121,6 +169,7 @@
 			[
 				{
 					text:'Поле',
+					width:'237',
 				},
 			]
 		},
@@ -144,10 +193,12 @@
 			columns:
 			[
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'393',
 				},
 				{
-					text:'НаправлениеСортировки',
+					text:'Направление сортировки',
+					width:'173',
 				},
 			]
 		},
@@ -172,15 +223,19 @@
 			[
 				{
 					text:'Поле',
+					width:'198',
 				},
 				{
-					text:'Псевдоним',
+					text:'Представление поля',
+					width:'111',
 				},
 				{
-					text:'ВыводитьНаПечать',
+					text:'Печать',
+					width:'41',
 				},
 				{
 					text:'Положение',
+					width:'211',
 				},
 			]
 		},
@@ -191,6 +246,16 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Раскрашивать иерархию групп',
+			style: 'position:absolute;left:6px;top:239px;width:175px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Показывать в отчете строку отбора',
+			style: 'position:absolute;left:194px;top:239px;width:200px;height:19px;',
+		},
 					]
 				},
 			]
@@ -200,18 +265,14 @@
 			style: 'position:absolute;left:0px;top:300px;width:624px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Справка',
 				},
 				{
-					text:'Действие',
+					text:'ОК',
 				},
-				{
-					text:'СохранитьИСформировать',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},

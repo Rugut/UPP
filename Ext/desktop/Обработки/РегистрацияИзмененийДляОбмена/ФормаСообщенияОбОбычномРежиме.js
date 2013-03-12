@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаСообщенияОбОбычномРежиме',
 	{
 	extend: 'Ext.window.Window',
-	height: 0,width: 48,
+	style: 'position:absolute;width:48px;height:0px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:

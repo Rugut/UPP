@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьБюджетирование.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 303,width: 310,
+	style: 'position:absolute;width:310px;height:303px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Оборотно-сальдовая ведомость',
 	
 	items:
@@ -13,20 +15,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
 				{
 					text:'Справка',
 				},
 				{
-					text:'Отмена',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -36,14 +34,24 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по забалансовым счетам',
+			style: 'position:absolute;left:12px;top:158px;width:196px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:64px;top:30px;width:222px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Детализация по субсчетам и субконто',
+			style: 'position:absolute;left:12px;top:118px;width:220px;height:15px;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,15 +66,30 @@
 			style: 'position:absolute;left:164px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:12px;top:138px;width:128px;height:15px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:246px;top:6px;width:20px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Развернутое сальдо',
+			style: 'position:absolute;left:12px;top:98px;width:128px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'В валюте сценария',
+			style: 'position:absolute;left:12px;top:78px;width:124px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Развернутое сальдо',
 					items:
 					[
 		{
@@ -84,19 +107,22 @@
 			[
 				{
 					text:'Счет',
+					width:'80',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'80',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаДетализацияОтчета',
+					title:'Детализация',
 					items:
 					[
 		{
@@ -114,12 +140,15 @@
 			[
 				{
 					text:'Счет',
+					width:'80',
 				},
 				{
-					text:'Субсчета',
+					text:'По субсчетам',
+					width:'80',
 				},
 				{
-					text:'ПредставлениеРазворотПоСубконто',
+					text:'По субконто',
+					width:'120',
 				},
 			]
 		},

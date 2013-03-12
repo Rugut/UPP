@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ПоказателиРаботыМенеджеров.ФормаДополнительно',
 	{
 	extend: 'Ext.window.Window',
-	height: 371,width: 486,
+	style: 'position:absolute;width:486px;height:371px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -12,22 +14,32 @@
 			style: 'position:absolute;left:0px;top:346px;width:486px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Отчет за период с:',
+			style: 'position:absolute;left:8px;top:6px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:113px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:196px;top:6px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,10 +54,12 @@
 			columns:
 			[
 				{
-					text:'ИспользованиеПоказателя',
+					text:'Использование показателя',
+					width:'21',
 				},
 				{
-					text:'ПредставлениеПоказателя',
+					text:'Показатель',
+					width:'469',
 				},
 			]
 		},
@@ -55,21 +69,24 @@
 			items:
 			[
 				{
-					text:'УстановитьФлажки1',
+					text:'Установить флажки',
 				},
 				{
-					text:'СнятьФлажки1',
+					text:'Снять флажки',
 				},
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Менеджер:',
+			style: 'position:absolute;left:14px;top:50px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСчетаНалоговый.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 738,
+	style: 'position:absolute;width:738px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ счета',
 	
 	items:
@@ -15,9 +17,7 @@
 				{
 					text:'Действие2',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
@@ -28,54 +28,53 @@
 					text:'Действие',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:272px;top:33px;width:32px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Счет',
 			style: 'position:absolute;left:306px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:390px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,10 +95,28 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидУчета',
+			text: 'Вид учета:',
+			style: 'position:absolute;left:607px;top:33px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

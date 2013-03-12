@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 600,
+	style: 'position:absolute;width:600px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Параметры выпуска продукции',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'72',
 				},
 				{
 					text:'Наименование',
+					width:'200',
 				},
 				{
 					text:'Комментарий',
+					width:'150',
 				},
 			]
 		},
@@ -35,6 +41,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},

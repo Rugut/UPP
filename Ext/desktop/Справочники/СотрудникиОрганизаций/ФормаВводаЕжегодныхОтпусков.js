@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СотрудникиОрганизаций.ФормаВводаЕжегодныхОтпусков',
 	{
 	extend: 'Ext.window.Window',
-	height: 266,width: 400,
+	style: 'position:absolute;width:400px;height:266px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Ежегодные отпуска сотрудника',
 	
 	items:
@@ -27,10 +29,12 @@
 			columns:
 			[
 				{
-					text:'ВидЕжегодногоОтпуска',
+					text:'Вид ежегодного отпуска',
+					width:'140',
 				},
 				{
-					text:'КоличествоДнейОтпускаВГод',
+					text:'Количество дней отпуска в год',
+					width:'170',
 				},
 			]
 		},
@@ -43,11 +47,9 @@
 					text:'Закрыть',
 				},
 				{
-					text:'ОК',
+					text:'OK',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Должности.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 486,
+	style: 'position:absolute;width:486px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Должности',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Код',
+					width:'80',
 				},
 			]
 		},
@@ -29,9 +34,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:486px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},

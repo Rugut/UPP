@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 261,width: 716,
+	style: 'position:absolute;width:716px;height:261px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Дополнительная информация',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Объект',
+					width:'120',
 				},
 				{
-					text:'ВидДанных',
+					text:'Вид данных',
+					width:'120',
 				},
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'220',
 				},
 				{
-					text:'Наименование',
+					text:'Описание',
+					width:'220',
 				},
 			]
 		},

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ГруппыЗаменяемостиРабочихЦентров.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 353,width: 430,
+	style: 'position:absolute;width:430px;height:353px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы заменяемости рабочих центров',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:316px;top:33px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:33px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,19 +46,15 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -55,7 +65,7 @@
 			items:
 			[
 				{
-					title:'СтраницаСоставГруппы',
+					title:'Состав группы',
 					items:
 					[
 		{
@@ -72,22 +82,30 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'200',
 				},
 				{
-					text:'Приоритет',
+					text:'Приоритет применение рабочего центра',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СтраницаПодчиненныеРабочиеЦентры',
+					title:'Подчиненные рабочие центры',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Требуется загрузка подчиненных рабочих центров',
+			style: 'position:absolute;left:6px;top:6px;width:400px;height:15px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:53px;width:400px;height:181px;',
@@ -95,10 +113,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'200',
 				},
 			]
 		},

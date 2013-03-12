@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.МСФОКонсолидация.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 122,width: 254,
+	style: 'position:absolute;width:254px;height:122px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Консолидация МСФО',
 	
 	items:
@@ -20,13 +22,11 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Отмена',
 				},
 			]
 		},

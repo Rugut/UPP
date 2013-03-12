@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.КарточкаСубконтоМеждународный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 309,width: 364,
+	style: 'position:absolute;width:364px;height:309px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка: Карточка субконто',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'кнОК',
+					text:'ОК',
 				},
 				{
-					text:'Отмена',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -33,7 +33,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
 		{
@@ -61,6 +61,11 @@
 			style: 'position:absolute;left:124px;top:30px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Все периоды',
+			style: 'position:absolute;left:251px;top:54px;width:91px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:104px;width:336px;height:24px;',
 			items:
@@ -74,10 +79,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидСубконто',
+					text:'Вид субконто',
+					width:'288',
 				},
 			]
 		},
@@ -101,22 +108,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'94',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'43',
 				},
 				{
 					text:'Значение',
+					width:'65',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'65',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'65',
 				},
 			]
 		},

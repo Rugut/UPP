@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработки',
 	{
 	extend: 'Ext.window.Window',
-	height: 376,width: 638,
+	style: 'position:absolute;width:638px;height:376px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Проверка настройки списков ведущих и вытесняющих видов расчета',
 	
 	items:
@@ -14,9 +16,15 @@
 			items:
 			[
 				{
-					title:'НачальнаяСтраница',
+					title:'Начальная страница',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Проверка настройки списков ведущих и вытесняющих видов расчета',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:27px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:40px;width:610px;height:60px;',
@@ -27,6 +35,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьРезультатПроверки',
+			text: 'Надпись результат проверки',
+			style: 'position:absolute;left:61px;top:6px;width:512px;height:48px;',
+		},
 					]
 				},
 			]
@@ -34,7 +48,7 @@
 					]
 				},
 				{
-					title:'ОбязательныеКУдалению',
+					title:'Обязательные к удалению',
 					items:
 					[
 		{
@@ -44,12 +58,20 @@
 			columns:
 			[
 				{
-					text:'Ссылка',
+					text:'Вид расчет',
+					width:'164',
 				},
 				{
-					text:'ВидРасчетаУдалить',
+					text:'Вид расчета удалить',
+					width:'150',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаголовокОбязательныеКУдалению',
+			text: 'Удаление циклических ссылок в списках вытесняющих видов расчета',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:27px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -61,16 +83,38 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьВРЦиклическаяССылка',
+			text: 'Вид расчета: "Районный коэффициент"',
+			style: 'position:absolute;left:6px;top:6px;width:597px;height:15px;',
+		},
 					]
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Порядок исправления ошибок:
+- в левом списке выберите вид расчета; 
+- выберите действие для исправления ошибки;
+- нажмите кнопку «Исправить».
+Выполните эти действия для всего списка.',
+			style: 'position:absolute;left:337px;top:40px;width:279px;height:80px;',
+		},
 					]
 				},
 				{
-					title:'РедактированиеСписка',
+					title:'Редактирование списка',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'ЗаголовокРедактированиеСписка',
+			text: 'Исправление ошибок в списке вытесняющих расчетов',
+			style: 'position:absolute;left:6px;top:6px;width:568px;height:27px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:43px;width:308px;height:130px;',
@@ -79,8 +123,20 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Порядок исправления ошибок:
+- в левом списке выберите вид расчета; 
+- выберите действие для исправления ошибки «удалить из списка…» или «добавить в список…»;
+- нажмите кнопку «Исправить».
+Выполните эти действия для всего списка «Виды расчет с ошибками настройки».
+',
+			style: 'position:absolute;left:329px;top:43px;width:287px;height:130px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -93,6 +149,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьВариантДействия',
+			text: 'Вид расчета: "Районный коэффициент"',
+			style: 'position:absolute;left:6px;top:6px;width:597px;height:15px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:5px;top:43px;width:301px;height:91px;',
 			height: 91,width: 301,
@@ -100,6 +162,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},
@@ -111,6 +174,7 @@
 			[
 				{
 					text:'',
+					width:'0',
 				},
 			]
 		},
@@ -121,9 +185,15 @@
 					]
 				},
 				{
-					title:'СохранениеНастроек',
+					title:'Сохранение настроек',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Проверка настройки списков ведущих и вытесняющих видов расчета',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:27px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:40px;width:610px;height:60px;',
@@ -134,6 +204,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьРезультатПроверки1',
+			text: 'Ошибки в настройках исправлены. Необходимо записать результаты исправления.',
+			style: 'position:absolute;left:60px;top:6px;width:510px;height:48px;',
+		},
 					]
 				},
 			]

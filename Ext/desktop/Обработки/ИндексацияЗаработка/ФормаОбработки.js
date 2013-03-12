@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ИндексацияЗаработка.ФормаОбработки',
 	{
 	extend: 'Ext.window.Window',
-	height: 420,width: 675,
+	style: 'position:absolute;width:675px;height:420px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Помощник повышения зарплаты',
 	
 	items:
@@ -32,9 +34,15 @@
 			items:
 			[
 				{
-					title:'ПерваяСтраница',
+					title:'Первая страница',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьПерваяСтраница',
+			text: 'Помощник используется для регистрации повышения должностных окладов, тарифных разрядов. Можно отменить последнее повышение.  ',
+			style: 'position:absolute;left:22px;top:0px;width:589px;height:29px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:143px;',
@@ -45,6 +53,18 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Выберите действие, которое необходимо выполнить и нажмите кнопку «Далее»',
+			style: 'position:absolute;left:20px;top:6px;width:448px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Выберите действие, которое необходимо выполнить и нажмите кнопку «Далее»',
+			style: 'position:absolute;left:20px;top:6px;width:448px;height:19px;',
+		},
 					]
 				},
 				{
@@ -57,6 +77,12 @@
 					title:'Страница3',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Выберите действие, которое необходимо выполнить и нажмите кнопку «Далее»',
+			style: 'position:absolute;left:20px;top:6px;width:448px;height:19px;',
+		},
 					]
 				},
 			]
@@ -78,24 +104,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ДатаПовышения',
+					text:'Дата повышения',
+					width:'100',
 				},
 				{
-					text:'ДолжностныеОклады',
+					text:'Должностные оклады',
+					width:'100',
 				},
 				{
-					text:'ШтатноеРасписание',
+					text:'Штатное расписание',
+					width:'100',
 				},
 				{
-					text:'ТарифныеРазряды',
+					text:'Тарифные разряды',
+					width:'100',
 				},
 				{
-					text:'ДопТарифныеРазряды',
+					text:'Доп тарифные разряды',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписаниеИсторииИндексации',
+			text: 'Надпись описание истории индексации',
+			style: 'position:absolute;left:211px;top:32px;width:442px;height:81px;',
 		},
 					]
 				},
@@ -104,7 +142,7 @@
 					]
 				},
 				{
-					title:'ИсторияПовышения',
+					title:'История повышения',
 					items:
 					[
 		{
@@ -118,14 +156,32 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация1',
+			text: 'Организация:',
+			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация1',
 			style: 'position:absolute;left:114px;top:6px;width:351px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтменаПовышенияОкладов',
+			text: 'Надпись отмена повышения окладов',
+			style: 'position:absolute;left:37px;top:29px;width:516px;height:33px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжностныеОкладыЗаголовок1',
+			text: 'История повышения окладов. Можно отменить последнее повышение.',
+			style: 'position:absolute;left:22px;top:0px;width:589px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -134,24 +190,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ДатаПовышения',
+					text:'Дата повышения',
+					width:'100',
 				},
 				{
-					text:'ДолжностныеОклады',
+					text:'Должностные оклады',
+					width:'100',
 				},
 				{
-					text:'ШтатноеРасписание',
+					text:'Штатное расписание',
+					width:'100',
 				},
 				{
-					text:'ТарифныеРазряды',
+					text:'Тарифные разряды',
+					width:'100',
 				},
 				{
-					text:'ДопТарифныеРазряды',
+					text:'Доп тарифные разряды',
+					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписаниеИсторииИндексации1',
+			text: 'Надпись описание истории индексации',
+			style: 'position:absolute;left:228px;top:182px;width:431px;height:112px;',
 		},
 					]
 				},
@@ -166,14 +234,31 @@
 			items:
 			[
 				{
-					title:'ДолжностныеОклады',
+					title:'Должностные оклады',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Окладов сотрудников',
+			style: 'position:absolute;left:114px;top:76px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:114px;top:6px;width:351px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаПовышения',
+			text: 'Дата повышения:',
+			style: 'position:absolute;left:20px;top:30px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,17 +267,46 @@
 			style: 'position:absolute;left:114px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Окладов штатного расписания',
+			style: 'position:absolute;left:114px;top:95px;width:183px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоэффициентПовышения',
+			text: 'Коэффициент повышения:',
+			style: 'position:absolute;left:243px;top:30px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоэффициентПовышения',
 			style: 'position:absolute;left:385px;top:30px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьЧтоИндексировать',
+			text: 'Выполнить повышение (индексацию)',
+			style: 'position:absolute;left:20px;top:54px;width:203px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНеобходимостьИндексацииШтатногоРасписания',
+			text: 'В организации не включен контроль штатного расписания. При повышении окладов сотрудников можно не регистрировать повышение окладов в штатном расписании.',
+			style: 'position:absolute;left:130px;top:118px;width:475px;height:29px;',
+		},
 					]
 				},
 				{
-					title:'ОкладыПоРазрядам',
+					title:'Оклады по разрядам',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаПовышения1',
+			text: 'Дата повышения:',
+			style: 'position:absolute;left:22px;top:14px;width:92px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -200,19 +314,43 @@
 			style: 'position:absolute;left:116px;top:14px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоэффициентПовышения1',
+			text: 'Коэффициент повышения:',
+			style: 'position:absolute;left:245px;top:14px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоэффициентПовышения1',
 			style: 'position:absolute;left:387px;top:14px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОкладыПоРазрядам',
+			text: 'Повышение окладов по тарифным разрядам можно зарегистрировать только на первое число месяца.',
+			style: 'position:absolute;left:32px;top:38px;width:317px;height:33px;',
+		},
 					]
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОкладыЗаголовок',
+			text: 'Помощник используется для регистрации повышения должностных окладов, тарифных разрядов. Можно отменить последнее повышение.  ',
+			style: 'position:absolute;left:28px;top:0px;width:589px;height:29px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокОкругления',
+			text: 'При расчете новые оклады округлять:',
+			style: 'position:absolute;left:12px;top:199px;width:204px;height:16px;',
+		},
 					]
 				},
 				{
-					title:'РезультатИндексации',
+					title:'Результат индексации',
 					items:
 					[
 		{
@@ -222,7 +360,7 @@
 			items:
 			[
 				{
-					title:'ОкладыСотрудников',
+					title:'Оклады сотрудников',
 					items:
 					[
 		{
@@ -232,28 +370,36 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Сотрудник',
+					width:'180',
 				},
 				{
-					text:'ВидРасчета',
+					text:'Вид расчета',
+					width:'180',
 				},
 				{
-					text:'СтарыйОклад',
+					text:'Старый оклад',
+					width:'100',
 				},
 				{
-					text:'НовыйОклад',
+					text:'Новый оклад',
+					width:'100',
 				},
 				{
-					text:'ПодразделениеОрганизация',
+					text:'Подразделение организация',
+					width:'100',
 				},
 				{
 					text:'Должность',
+					width:'100',
 				},
 				{
-					text:'НомерПоказателяОклада',
+					text:'Номер показателя оклада',
+					width:'100',
 				},
 			]
 		},
@@ -281,17 +427,13 @@
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Обновить',
 				},
 				{
-					text:'Проверить',
+					text:'Проверить по штатному расписанию',
 				},
 				{
 					text:'Действие8',
@@ -301,7 +443,7 @@
 					]
 				},
 				{
-					title:'ШтатноеРасписание',
+					title:'Штатное расписание',
 					items:
 					[
 		{
@@ -311,25 +453,32 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ПодразделениеОрганизация',
+					text:'Подразделение организация',
+					width:'100',
 				},
 				{
 					text:'Должность',
+					width:'100',
 				},
 				{
-					text:'МесячнаяСтавка1',
+					text:'Месячная ставка1',
+					width:'100',
 				},
 				{
-					text:'НоваяМесячнаяСтавка1',
+					text:'Новая месячная ставка1',
+					width:'100',
 				},
 				{
-					text:'МесячнаяСтавка2',
+					text:'Месячная ставка2',
+					width:'100',
 				},
 				{
-					text:'НоваяМесячнаяСтавка2',
+					text:'Новая месячная ставка2',
+					width:'100',
 				},
 			]
 		},
@@ -344,9 +493,7 @@
 				{
 					text:'Обновить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
@@ -371,7 +518,7 @@
 					]
 				},
 				{
-					title:'ТарифныеРазряды',
+					title:'Тарифные разряды',
 					items:
 					[
 		{
@@ -381,19 +528,24 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ТарифныйРазряд',
+					text:'Тарифный разряд',
+					width:'100',
 				},
 				{
-					text:'Размер',
+					text:'Старый оклад',
+					width:'100',
 				},
 				{
-					text:'НовыйРазмер',
+					text:'Новый оклад',
+					width:'100',
 				},
 				{
 					text:'Валюта',
+					width:'100',
 				},
 			]
 		},
@@ -402,9 +554,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Обновить',
 				},
@@ -435,7 +585,7 @@
 					]
 				},
 				{
-					title:'ДопТарифныеРазряды',
+					title:'Доп тарифные разряды',
 					items:
 					[
 		{
@@ -451,9 +601,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие8',
 				},
@@ -485,15 +633,39 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьРезультатИндексацииЗаголовок',
+			text: 'Дата повышения 01.08.2011, Коэффициент повышения = 1.2',
+			style: 'position:absolute;left:22px;top:0px;width:589px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВыполнитьИндексациюЗаголовок',
+			text: 'Для записи результатов индексации нажмите кнопку "Готово"',
+			style: 'position:absolute;left:30px;top:320px;width:451px;height:16px;',
+		},
 					]
 				},
 				{
-					title:'ПоследняяСтраница',
+					title:'Последняя страница',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьЧтоСделано',
+			text: 'Выполнена отмена повышения на дату',
+			style: 'position:absolute;left:59px;top:21px;width:546px;height:135px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаголовокФормы',
+			text: 'Помощник повышения зарплаты',
+			style: 'position:absolute;left:8px;top:8px;width:659px;height:28px;',
 		},
 	]
 });

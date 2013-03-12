@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КалендарныйПланЗакупок.ФормаОтбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 319,width: 652,
+	style: 'position:absolute;width:652px;height:319px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отбор',
 	
 	items:
@@ -18,10 +20,20 @@
 					items:
 					[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Контрагент:',
+			style: 'position:absolute;left:6px;top:56px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЗначениеКонтрагент',
 			style: 'position:absolute;left:382px;top:56px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -48,10 +60,20 @@
 			style: 'position:absolute;left:382px;top:6px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказ поставщику:',
+			style: 'position:absolute;left:6px;top:81px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЗначениеЗаказПоставщику',
 			style: 'position:absolute;left:382px;top:81px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Дата потребности:',
+			style: 'position:absolute;left:6px;top:106px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -72,6 +94,11 @@
 			style: 'position:absolute;left:508px;top:131px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Необходимое количество:',
+			style: 'position:absolute;left:6px;top:131px;width:156px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЗначениеЗаказанноеКоличество',
@@ -88,6 +115,11 @@
 			hideLabel: true,
 			name: 'ЗначениеЗаказанноеКоличествоКон',
 			style: 'position:absolute;left:508px;top:156px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Заказанное количество:',
+			style: 'position:absolute;left:6px;top:156px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -108,6 +140,11 @@
 			style: 'position:absolute;left:508px;top:181px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Цена в валюте упр.учета:',
+			style: 'position:absolute;left:6px;top:181px;width:152px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЗначениеСуммаУпрУчета',
@@ -124,6 +161,11 @@
 			hideLabel: true,
 			name: 'ЗначениеСуммаУпрУчетаКон',
 			style: 'position:absolute;left:508px;top:206px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сумма в валюте упр.учета:',
+			style: 'position:absolute;left:6px;top:206px;width:156px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,6 +186,16 @@
 			style: 'position:absolute;left:508px;top:231px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Сумма в валюте взаиморасчетов:',
+			style: 'position:absolute;left:6px;top:231px;width:192px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Характеристика номенклатуры:',
+			style: 'position:absolute;left:6px;top:31px;width:184px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ЗначениеХарактеристикаНоменклатуры',
@@ -155,6 +207,36 @@
 					title:'Дополнительно',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать не заказанные товары',
+			style: 'position:absolute;left:6px;top:6px;width:192px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать даты поставки заказов не заявленные в плане потребности',
+			style: 'position:absolute;left:6px;top:46px;width:384px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать не выполненные даты потребности',
+			style: 'position:absolute;left:6px;top:26px;width:256px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать измененные заказы',
+			style: 'position:absolute;left:6px;top:94px;width:180px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать новые заказы',
+			style: 'position:absolute;left:6px;top:114px;width:148px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать новые и измененные заказы',
+			style: 'position:absolute;left:6px;top:74px;width:224px;height:15px;',
+		},
 					]
 				},
 			]

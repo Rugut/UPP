@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РабочийСтол.ФормаУдержаний',
 	{
 	extend: 'Ext.window.Window',
-	height: 538,width: 745,
+	style: 'position:absolute;width:745px;height:538px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Удержания',
 	
 	items:
@@ -12,11 +14,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПоказыватьПоОрганизациям',
+					text:'Данные по организациям',
 				},
 			]
 		},
@@ -37,16 +37,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'245',
 				},
 				{
-					text:'СпособРасчета',
+					text:'Способ расчета',
+					width:'100',
 				},
 			]
 		},
@@ -71,13 +75,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'293',
 				},
 			]
 		},

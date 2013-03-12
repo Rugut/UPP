@@ -1,12 +1,20 @@
 ﻿Ext.define('Справочники.МедицинскиеОрганизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 136,width: 565,
+	style: 'position:absolute;width:565px;height:136px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Медицинские организации',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'НадписьОГРН',
+			text: 'ОГРН:',
+			style: 'position:absolute;left:8px;top:84px;width:40px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:55px;top:84px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьАдрес',
+			text: 'Адрес:',
+			style: 'position:absolute;left:8px;top:59px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Адрес',
 			style: 'position:absolute;left:55px;top:59px;width:326px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАдресКодПоКЛАДР',
+			text: 'Код по КЛАДР:',
+			style: 'position:absolute;left:387px;top:59px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,14 +50,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать код',
 				},
 			]
 		},
@@ -47,27 +62,35 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:477px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

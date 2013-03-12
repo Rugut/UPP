@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЦеновыеГруппы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 592,
+	style: 'position:absolute;width:592px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Ценовые группы',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 				{
 					text:'Порядок',
+					width:'81',
 				},
 			]
 		},
@@ -35,6 +41,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -43,11 +50,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:592px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
 			]
 		},

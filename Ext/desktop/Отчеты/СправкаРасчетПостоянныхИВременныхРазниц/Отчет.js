@@ -1,12 +1,20 @@
 ﻿Ext.define('Отчеты.СправкаРасчетПостоянныхИВременныхРазниц.Отчет',
 	{
 	extend: 'Ext.window.Window',
-	height: 416,width: 604,
+	style: 'position:absolute;width:604px;height:416px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Постоянные и временные разницы',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Организация:',
+			style: 'position:absolute;left:210px;top:33px;width:76px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -24,41 +32,29 @@
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Восстановить значения...',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Подписи',
 				},
 				{
 					text:'Настройка',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
 					text:'Заголовок',
@@ -66,10 +62,13 @@
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Подменю',
-				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:34px;width:63px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

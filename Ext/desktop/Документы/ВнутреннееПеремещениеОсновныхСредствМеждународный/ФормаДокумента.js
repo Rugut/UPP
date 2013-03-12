@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ВнутреннееПеремещениеОсновныхСредствМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 401,width: 626,
+	style: 'position:absolute;width:626px;height:401px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Внутреннее перемещение основных средств (международный)',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:349px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,16 +58,34 @@
 			style: 'position:absolute;left:90px;top:349px;width:528px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:330px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:416px;top:57px;width:202px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:330px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодНачало',
 			style: 'position:absolute;left:416px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:498px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,12 +98,7 @@
 			style: 'position:absolute;left:8px;top:100px;width:610px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ПодменюЗаполнить',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
@@ -72,46 +111,60 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'220',
 				},
 				{
-					text:'МестонахождениеОбъекта',
+					text:'Местонахождение',
+					width:'120',
 				},
 				{
-					text:'МестонахождениеОбъектаНов',
+					text:'Местонахождение (нов.)',
+					width:'120',
 				},
 				{
 					text:'МОЛ',
+					width:'100',
 				},
 				{
-					text:'МОЛНов',
+					text:'МОЛ (нов.)',
+					width:'100',
 				},
 				{
-					text:'СчетЗатрат',
+					text:'Счет затрат',
+					width:'96',
 				},
 				{
-					text:'СчетЗатратНов',
+					text:'Счет затрат (нов.)',
+					width:'92',
 				},
 				{
-					text:'Субконто1',
+					text:'Субконто 1',
+					width:'120',
 				},
 				{
-					text:'Субконто1Нов',
+					text:'Субконто 1 (новое)',
+					width:'120',
 				},
 				{
-					text:'Субконто2',
+					text:'Субконто 2',
+					width:'100',
 				},
 				{
-					text:'Субконто2Нов',
+					text:'Субконто 2 (новое)',
+					width:'100',
 				},
 				{
-					text:'Субконто3',
+					text:'Субконто 3',
+					width:'100',
 				},
 				{
-					text:'Субконто3Нов',
+					text:'Субконто 3 (новое)',
+					width:'100',
 				},
 			]
 		},
@@ -121,25 +174,18 @@
 			items:
 			[
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
+				'-',
 				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -149,26 +195,20 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 			]
 		},
 		{

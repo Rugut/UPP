@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ЦеновыеГруппы.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 627,
+	style: 'position:absolute;width:627px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Ценовые группы',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'35',
 				},
 				{
 					text:'Наименование',
+					width:'175',
 				},
 				{
 					text:'Порядок',
+					width:'175',
 				},
 			]
 		},
@@ -35,6 +41,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -44,10 +51,10 @@
 			items:
 			[
 				{
-					text:'ПереместитьВверх',
+					text:'Переместить вверх',
 				},
 				{
-					text:'ПереместитьВниз',
+					text:'Переместить вниз',
 				},
 			]
 		},

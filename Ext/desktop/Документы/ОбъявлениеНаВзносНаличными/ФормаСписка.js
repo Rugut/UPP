@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОбъявлениеНаВзносНаличными.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 780,
+	style: 'position:absolute;width:780px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Объявления на взнос наличными',
 	
 	items:
@@ -14,34 +16,44 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Оплачено',
+					text:'Опл',
+					width:'27',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
-					text:'СчетОрганизации',
+					text:'Счет организации',
+					width:'120',
 				},
 				{
 					text:'Касса',
+					width:'120',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта',
+					width:'60',
 				},
 				{
-					text:'СуммаДокумента',
+					text:'Сумма',
+					width:'80',
 				},
 			]
 		},
@@ -50,17 +62,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю3',
+					text:'Движения документа по регистрам',
 				},
 			]
 		},

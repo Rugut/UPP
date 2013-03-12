@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПогашениеЗадолженностиПодотчетныхЛиц.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 379,width: 600,
+	style: 'position:absolute;width:600px;height:379px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Погашение задолженности подотчетных лиц',
 	
 	items:
@@ -14,10 +16,28 @@
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМесяц',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:336px;top:33px;width:105px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -26,10 +46,22 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:327px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:327px;width:496px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:57px;width:105px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,29 +75,20 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Очистить',
 				},
@@ -77,27 +100,27 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -106,7 +129,7 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Начисления',
 					items:
 					[
 		{
@@ -114,14 +137,9 @@
 			style: 'position:absolute;left:6px;top:0px;width:570px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеЗаполнитьДолгамиПодотчетныхЛиц',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить долгами подотчетных лиц',
 				},
 			]
 		},
@@ -132,38 +150,47 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Сотрудник',
+					text:'Работник',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Результат',
+					width:'100',
 				},
 				{
-					text:'РасчетныйДокумент',
+					text:'Расчетный документ',
+					width:'100',
 				},
 				{
-					text:'ВалютаВзаиморасчетов',
+					text:'Валюта',
+					width:'100',
 				},
 				{
-					text:'СуммаВзаиморасчетов',
+					text:'Сумма в валюте',
+					width:'100',
 				},
 				{
-					text:'КурсВзаиморасчетов',
+					text:'Курс',
+					width:'100',
 				},
 				{
-					text:'КратностьВзаиморасчетов',
+					text:'Кратность',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Удержания',
 					items:
 					[
 		{
@@ -173,31 +200,40 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Физлицо',
+					text:'Работник',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Результат',
+					width:'100',
 				},
 				{
-					text:'РасчетныйДокумент',
+					text:'Расчетный документ',
+					width:'100',
 				},
 				{
-					text:'ВалютаВзаиморасчетов',
+					text:'Валюта',
+					width:'100',
 				},
 				{
-					text:'СуммаВзаиморасчетов',
+					text:'Сумма в валюте',
+					width:'100',
 				},
 				{
-					text:'КурсВзаиморасчетов',
+					text:'Курс',
+					width:'100',
 				},
 				{
-					text:'КратностьВзаиморасчетов',
+					text:'Кратность',
+					width:'100',
 				},
 			]
 		},
@@ -206,14 +242,9 @@
 			style: 'position:absolute;left:6px;top:0px;width:570px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеЗаполнитьДолгамиПодотчетныхЛиц',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Заполнить долгами подотчетных лиц',
 				},
 			]
 		},

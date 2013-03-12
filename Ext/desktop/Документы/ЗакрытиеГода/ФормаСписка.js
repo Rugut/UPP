@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ЗакрытиеГода.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 499,
+	style: 'position:absolute;width:499px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Закрытие года',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Дата',
+					width:'132',
 				},
 				{
 					text:'Номер',
+					width:'80',
 				},
 				{
-					text:'ПериодРегистрации',
+					text:'Период',
+					width:'115',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 			]
 		},
@@ -35,26 +42,21 @@
 			style: 'position:absolute;left:0px;top:0px;width:499px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Печать по умолчанию',
 				},
 				{
-					text:'ДействиеПечать',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Дт/кт',
 				},
 				{
-					text:'Подменю2',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'ПроводкиДтКт',
+					text:'Дт/кт',
 				},
 			]
 		},

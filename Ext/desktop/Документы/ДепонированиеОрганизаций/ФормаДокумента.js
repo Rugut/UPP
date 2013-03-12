@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ДепонированиеОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 374,width: 502,
+	style: 'position:absolute;width:502px;height:374px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Депонирование организаций',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:322px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:322px;width:396px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,44 +39,30 @@
 			items:
 			[
 				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Дт/кт',
 				},
 				{
-					text:'Подменю',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				'-',
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДействиеОткрытьСвойства1',
+					text:'Дт/кт',
 				},
 				{
-					text:'ПроводкиДтКтНУ',
+					text:'',
 				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -71,21 +71,29 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
 				},
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,6 +108,12 @@
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -112,7 +126,7 @@
 			items:
 			[
 				{
-					title:'Ведомости',
+					title:'Неполученная зарплата',
 					items:
 					[
 		{
@@ -121,49 +135,40 @@
 			items:
 			[
 				{
-					text:'Действие15',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие12',
+					text:'&Удалить',
 				},
+				'-',
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Заполнить',
+					text:'Платежными ведомостями',
 				},
 				{
 					text:'Обновить',
 				},
 				{
-					text:'ПодменюЗаполнить',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие13',
+					text:'&Изменить',
+				},
+				'-',
+				{
+					text:'&Добавить',
 				},
 				{
-					text:'Действие11',
+					text:'Сортировать по возрастанию',
+				},
+				'-',
+				{
+					text:'&Скопировать',
 				},
 				{
-					text:'Разделитель1',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие16',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие10',
-				},
-				{
-					text:'Действие14',
-				},
-				{
-					text:'Действие17',
+					text:'Сортировать по убыванию',
 				},
 			]
 		},
@@ -174,20 +179,23 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Ведомость',
+					width:'220',
 				},
 				{
-					text:'Сумма',
+					text:'Сумма к депонированию',
+					width:'140',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Работники',
+					title:'Сотрудники',
 					items:
 					[
 		{
@@ -197,27 +205,42 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'Физлицо',
+					text:'Сотрудник',
+					width:'220',
 				},
 				{
 					text:'Сумма',
+					width:'120',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СчетаУчета',
+					title:'Счета затрат на компенсацию за задержку зарплаты',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчетЗатрат',
+			text: 'Счет учета (БУ):',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетУчетаРасходов',
 			style: 'position:absolute;left:90px;top:6px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконто1',
+			text: 'Субконто 1:',
+			style: 'position:absolute;left:6px;top:31px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -226,10 +249,22 @@
 			style: 'position:absolute;left:90px;top:31px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСубконто2',
+			text: 'Субконто 2:',
+			style: 'position:absolute;left:6px;top:56px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Субконто2',
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконто3',
+			text: 'Субконто 3:',
+			style: 'position:absolute;left:6px;top:81px;width:82px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -240,6 +275,17 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтразить',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:347px;top:33px;width:65px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:414px;top:33px;width:80px;height:19px;',
 		},
 	]
 });

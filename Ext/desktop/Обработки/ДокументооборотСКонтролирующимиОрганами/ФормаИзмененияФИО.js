@@ -1,12 +1,20 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаИзмененияФИО',
 	{
 	extend: 'Ext.window.Window',
-	height: 108,width: 310,
+	style: 'position:absolute;width:310px;height:108px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Фамилия, имя, отчество сотрудника',
 	
 	items:
 	[
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Фамилия:',
+			style: 'position:absolute;left:8px;top:8px;width:72px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -14,10 +22,22 @@
 			style: 'position:absolute;left:82px;top:8px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Имя:',
+			style: 'position:absolute;left:8px;top:32px;width:72px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Имя',
 			style: 'position:absolute;left:82px;top:32px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Отчество:',
+			style: 'position:absolute;left:8px;top:56px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,14 +51,12 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 				{
-					text:'КнопкаОК',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

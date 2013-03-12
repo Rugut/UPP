@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НастройкиФормированияДокументовВыпускаПродукции.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 339,width: 658,
+	style: 'position:absolute;width:658px;height:339px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройки формирования документов выпуска продукции',
 	
 	items:
@@ -12,27 +14,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие6',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие5',
 				},
@@ -45,12 +39,7 @@
 				{
 					text:'Действие1',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие2',
 				},
@@ -60,9 +49,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -71,21 +58,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
-				{
-					text:'ОсновныеДействияФормыОК',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,16 +83,34 @@
 			style: 'position:absolute;left:96px;top:57px;width:554px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:287px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:287px;width:554px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -118,7 +125,7 @@
 			items:
 			[
 				{
-					title:'ПараметрыФормируемыхДокументов',
+					title:'Создавать документы',
 					items:
 					[
 		{
@@ -140,15 +147,52 @@
 			style: 'position:absolute;left:414px;top:30px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:414px;top:6px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:490px;top:6px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:566px;top:6px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодДетализации',
+			text: 'Детализация: ',
+			style: 'position:absolute;left:6px;top:30px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодДетализации',
 			style: 'position:absolute;left:86px;top:30px;width:140px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выпуск',
+			style: 'position:absolute;left:86px;top:78px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Материалы',
+			style: 'position:absolute;left:168px;top:78px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидРегулярногоДокумента',
+			text: 'Вид:',
+			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'АвтоматическоеФормированиеДокументов',
+					title:'Расписание',
 					items:
 					[
 		{
@@ -157,15 +201,48 @@
 			name: 'Задержка',
 			style: 'position:absolute;left:278px;top:78px;width:40px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗадержка',
+			text: 'дней',
+			style: 'position:absolute;left:322px;top:78px;width:29px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать расписание',
+			style: 'position:absolute;left:6px;top:6px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не обрабатывать документы за предыдущие: ',
+			style: 'position:absolute;left:22px;top:78px;width:256px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПояснениеЗадержка',
+			text: '',
+			style: 'position:absolute;left:39px;top:102px;width:595px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГраницаФормирования',
+			text: 'Начиная с: ',
+			style: 'position:absolute;left:510px;top:81px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачалаОбработки',
 			style: 'position:absolute;left:570px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не обрабатывать период до завершения смен ',
+			style: 'position:absolute;left:8px;top:105px;width:260px;height:19px;',
 		},
 	]
 });

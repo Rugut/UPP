@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.СтатьиДвиженияДенежныхСредств.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 323,width: 625,
+	style: 'position:absolute;width:625px;height:323px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи движения денежных средств',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидДвиженияДенежныхСредств',
+					text:'Вид движения денежных средств',
+					width:'120',
 				},
 			]
 		},
@@ -32,9 +38,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:625px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
@@ -48,6 +52,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ВопросПриИзмененииВидаДокументаНомераКорректировки',
 	{
 	extend: 'Ext.window.Window',
-	height: 141,width: 415,
+	style: 'position:absolute;width:415px;height:141px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменен вид документа и(или) номер корректировки',
 	
 	items:
@@ -26,7 +28,7 @@
 			style: 'position:absolute;left:299px;top:101px;width:96px;height:22px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ТекстСообщения',
 			style: 'position:absolute;left:16px;top:18px;width:383px;height:77px;',

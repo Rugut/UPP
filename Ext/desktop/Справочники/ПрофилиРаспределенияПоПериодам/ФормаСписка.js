@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ПрофилиРаспределенияПоПериодам.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 682,
+	style: 'position:absolute;width:682px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Профили распределения по периодам',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'40',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
 					text:'Период',
+					width:'80',
 				},
 				{
 					text:'Подпериод',
+					width:'80',
 				},
 			]
 		},
@@ -44,13 +51,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'НомерПодпериода',
+					text:'№ подпериода',
+					width:'80',
 				},
 				{
-					text:'ДоляПодпериода',
+					text:'Доля подпериода',
+					width:'100',
 				},
 			]
 		},

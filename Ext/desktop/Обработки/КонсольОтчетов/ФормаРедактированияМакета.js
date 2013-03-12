@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.КонсольОтчетов.ФормаРедактированияМакета',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 400,
+	style: 'position:absolute;width:400px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Редактирование макета',
 	
 	items:
@@ -12,14 +14,12 @@
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'ОК',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
+					text:'Отмена',
 				},
 			]
 		},
@@ -41,17 +41,13 @@
 				{
 					text:'Справка',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Получить макет',
 				},
+				'-',
 				{
-					text:'МакетПоУмолчанию',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'МакетСОформлением',
+					text:'Получить макет с оформлением',
 				},
 			]
 		},
@@ -61,6 +57,16 @@
 					title:'Параметры',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Установленный заголовок',
+			style: 'position:absolute;left:15px;top:14px;width:171px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Макет с оформлением',
+			style: 'position:absolute;left:15px;top:34px;width:171px;height:15px;',
+		},
 					]
 				},
 			]

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ГруппыПочтовойРассылки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 406,
+	style: 'position:absolute;width:406px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы почтовой рассылки',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:288px;top:33px;width:31px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:324px;top:33px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,22 +45,24 @@
 			style: 'position:absolute;left:0px;top:412px;width:406px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +77,7 @@
 			items:
 			[
 				{
-					title:'СоставГруппы',
+					title:'Состав группы',
 					items:
 					[
 		{
@@ -72,9 +88,11 @@
 			[
 				{
 					text:'Объект',
+					width:'250',
 				},
 				{
 					text:'Владелец',
+					width:'116',
 				},
 			]
 		},
@@ -83,27 +101,21 @@
 			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
+				'-',
 				{
 					text:'Очистить',
 				},
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие9',
-				},
+				'-',
+				'-',
 			]
 		},
 					]
 				},
 				{
-					title:'ИспользованиеВУчетныхЗаписях',
+					title:'Использование в учетных записях',
 					items:
 					[
 		{
@@ -113,10 +125,12 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'УчетнаяЗапись',
+					text:'Учетная запись',
+					width:'331',
 				},
 			]
 		},
@@ -125,23 +139,17 @@
 			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
 			items:
 			[
-				{
-					text:'Действие1',
-				},
+				'-',
 				{
 					text:'Действие7',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие9',
-				},
+				'-',
+				'-',
 				{
 					text:'Действие6',
 				},
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
 				{
 					text:'Действие8',
@@ -150,7 +158,7 @@
 					text:'Действие5',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
 					text:'Действие2',

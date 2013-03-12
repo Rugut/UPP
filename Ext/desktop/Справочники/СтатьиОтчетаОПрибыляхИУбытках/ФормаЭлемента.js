@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 336,width: 324,
+	style: 'position:absolute;width:324px;height:336px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статьи отчета о прибылях и убытках',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Код:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -26,13 +40,16 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'СтатьяОборотов',
+					text:'Статья оборотов',
+					width:'241',
 				},
 				{
 					text:'Знак',
+					width:'35',
 				},
 			]
 		},
@@ -41,21 +58,17 @@
 			style: 'position:absolute;left:0px;top:311px;width:324px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -64,22 +77,22 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие5',
+					text:'&Переместить вверх',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 				{
-					text:'Действие6',
+					text:'&Переместить вниз',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 			]
 		},
@@ -88,61 +101,51 @@
 			style: 'position:absolute;left:0px;top:0px;width:324px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'Подменю1',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель',
+					text:'Справка',
 				},
 				{
-					text:'Действие',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие5',
+					text:'Найти в списке',
 				},
 				{
-					text:'Разделитель2',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Найти в списке',
 				},
 				{
-					text:'Подменю',
+					text:'Записать и закрыть',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'НаименованиеДляОтчета',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:38px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наименование для отчета:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:38px;',
 		},
 	]
 });

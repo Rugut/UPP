@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораРеквизита',
 	{
 	extend: 'Ext.window.Window',
-	height: 457,width: 355,
+	style: 'position:absolute;width:355px;height:457px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выбор реквизита',
 	
 	items:
@@ -13,14 +15,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -30,7 +30,8 @@
 			columns:
 			[
 				{
-					text:'Реквизиит',
+					text:'Реквизиты',
+					width:'145',
 				},
 			]
 		},

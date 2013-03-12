@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ИзменениеНомеровСообщений',
 	{
 	extend: 'Ext.window.Window',
-	height: 87,width: 278,
+	style: 'position:absolute;width:278px;height:87px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Изменение номеров сообщений',
 	
 	items:
@@ -13,21 +15,31 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыВыполнить',
+					text:'Изменить',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерОтправленного',
+			text: 'Номер отправленного сообщения:',
+			style: 'position:absolute;left:8px;top:10px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерОтправленного',
 			style: 'position:absolute;left:190px;top:10px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПринятого',
+			text: 'Номер принятого сообщения:',
+			style: 'position:absolute;left:8px;top:35px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

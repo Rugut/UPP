@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОбщероссийскийКлассификаторПродукции.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 400,
+	style: 'position:absolute;width:400px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Общероссийский классификатор продукции',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Код',
+					width:'92',
 				},
 				{
 					text:'Наименование',
+					width:'286',
 				},
 			]
 		},
@@ -26,11 +30,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействияФормыВыбрать',
+					text:'Выбрать',
 				},
 			]
 		},

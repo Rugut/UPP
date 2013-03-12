@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДоходыПоСтраховымВзносам.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 426,width: 766,
+	style: 'position:absolute;width:766px;height:426px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Способы учета доходов сотрудников при исчислении страховых взносов',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -29,10 +33,14 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидаДохода',
+			text: '',
+			style: 'position:absolute;left:8px;top:379px;width:750px;height:39px;',
 		},
 	]
 });

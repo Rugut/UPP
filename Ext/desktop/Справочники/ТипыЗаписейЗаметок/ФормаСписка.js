@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТипыЗаписейЗаметок.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 534,
+	style: 'position:absolute;width:534px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Типы записей заметок',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 			]
 		},
@@ -26,17 +30,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'РазделительПрава',
+					text:'Доступ к справочнику в целом',
 				},
 				{
-					text:'Права',
-				},
-				{
-					text:'ПраваДоступаПользователейКоВсемуСправочнику',
-				},
-				{
-					text:'ПраваДоступаПользователейКТекущемуЭлементу',
+					text:'Доступ к текущему элементу',
 				},
 			]
 		},

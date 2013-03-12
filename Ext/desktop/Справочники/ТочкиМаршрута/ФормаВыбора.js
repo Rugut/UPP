@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ТочкиМаршрута.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 620,
+	style: 'position:absolute;width:620px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Точки маршрута',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'33',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'350',
 				},
 				{
 					text:'Подразделение',
+					width:'350',
 				},
 				{
-					text:'РабочийЦентр',
+					text:'Рабочий центр',
+					width:'350',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'100',
 				},
 			]
 		},
@@ -47,11 +55,9 @@
 			items:
 			[
 				{
-					text:'ДействияФормыВыбрать',
+					text:'Действия формы выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаОтображенияИнструкцииHTML',
 	{
 	extend: 'Ext.window.Window',
-	height: 544,width: 1000,
+	style: 'position:absolute;width:1000px;height:544px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Инструкция',
 	
 	items:
@@ -24,6 +26,17 @@
 			name: 'КнопкаОтмена',
 			text: 'Отмена',
 			style: 'position:absolute;left:892px;top:515px;width:99px;height:22px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'С инструкцией ознакомлен',
+			style: 'position:absolute;left:8px;top:515px;width:166px;height:22px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаголовок',
+			text: 'Перед отправкой заявления необходимо создать ключевой контейнер. Ниже приведена инструкция по его созданию. Ознакомьтесь с инструкцией и, при необходимости, распечатайте ее. Обратите внимание, в момент создания ключевого контейнера инструкция будет недоступна.',
+			style: 'position:absolute;left:8px;top:4px;width:984px;height:36px;',
 		},
 	]
 });

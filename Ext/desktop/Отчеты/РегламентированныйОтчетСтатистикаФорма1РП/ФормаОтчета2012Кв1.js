@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма1РП.ФормаОтчета2012Кв1',
 	{
 	extend: 'Ext.window.Window',
-	height: 438,width: 716,
+	style: 'position:absolute;width:716px;height:438px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Статистика: Форма 1-РП (срочная)',
 	
 	items:
@@ -13,62 +15,42 @@
 			items:
 			[
 				{
-					text:'РасширитьПолеБланка',
+					text:'Расширить поле бланка',
 				},
 				{
 					text:'Поиск',
 				},
 				{
-					text:'Отправка',
-				},
-				{
-					text:'Проверить',
+					text:'Проверить выгрузку',
 				},
 				{
 					text:'Очистить',
 				},
-				{
-					text:'РазделительОтправка',
-				},
+				'-',
 				{
 					text:'Выгрузить',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Показать отправки',
 				},
 				{
-					text:'Разделитель',
+					text:'Проверить в Интернете',
+				},
+				'-',
+				{
+					text:'Обновить',
 				},
 				{
-					text:'ПоказатьЦиклыОбмена',
+					text:'Действие2',
 				},
-				{
-					text:'Проверить',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'КнопкаЗаполнитьСведенияОбОрганизации',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Выгрузка',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
+				'-',
 				{
 					text:'Отправить',
 				},
-				{
-					text:'Разделитель3',
-				},
+				'-',
 			]
 		},
 		{
@@ -76,28 +58,25 @@
 			style: 'position:absolute;left:0px;top:413px;width:716px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'ПодменюПечати',
+					text:'ОК',
 				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'СохранитьИЗакрыть',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: '_ИндикаторВнешнегоОтчета',
+			text: 'Внешний отчет',
+			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -135,6 +114,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

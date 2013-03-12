@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РегистрСведений_СчетчикиНеформализованныхДокументовНалогоплательщика_ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 359,width: 689,
+	style: 'position:absolute;width:689px;height:359px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Счетчики неформализованных документов налогоплательщика',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Период',
+					width:'140',
 				},
 				{
 					text:'Организация',
+					width:'339',
 				},
 				{
 					text:'ИФНС',
+					width:'76',
 				},
 				{
 					text:'Счетчик',
+					width:'74',
 				},
 			]
 		},

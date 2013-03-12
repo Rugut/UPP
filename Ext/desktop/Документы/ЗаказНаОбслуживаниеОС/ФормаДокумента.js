@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ЗаказНаОбслуживаниеОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 421,width: 386,
+	style: 'position:absolute;width:386px;height:421px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Заказ на обслуживание ОС',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:136px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:146px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:228px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,10 +34,22 @@
 			style: 'position:absolute;left:246px;top:33px;width:132px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:369px;width:86px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:369px;width:282px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:346px;width:86px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -32,16 +58,34 @@
 			style: 'position:absolute;left:96px;top:346px;width:282px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Работа по обслуживанию:',
+			style: 'position:absolute;left:8px;top:57px;width:136px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Услуга',
 			style: 'position:absolute;left:146px;top:57px;width:232px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Причина:',
+			style: 'position:absolute;left:8px;top:81px;width:136px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПричинаЗаказаНаОбслуживаниеОС',
 			style: 'position:absolute;left:146px;top:81px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Дата обслуживания:',
+			style: 'position:absolute;left:8px;top:129px;width:136px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,20 +99,13 @@
 			items:
 			[
 				{
-					text:'ПодменюЗаполнить',
-				},
-				{
 					text:'Подбор',
 				},
 				{
-					text:'ЗаполнитьПоНаименованию',
+					text:'По наименованию',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -78,16 +115,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
-					text:'ИнвентарныйНомер',
+					text:'Инв. №',
+					width:'67',
 				},
 				{
-					text:'ОсновноеСредство',
+					text:'Основное средство',
+					width:'193',
 				},
 				{
-					text:'Количество',
+					text:'Кол. услуги',
+					width:'80',
 				},
 			]
 		},
@@ -96,27 +137,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:386px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Открыть категории',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'Открыть свойства',
 				},
 				{
-					text:'Подменю1',
+					text:'Структура подчиненности документа',
 				},
-				{
-					text:'ДействиеОткрытьСвойства',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -125,26 +159,20 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'OK',
 				},
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Печать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -152,6 +180,12 @@
 			hideLabel: true,
 			name: 'ВидОбслуживанияОС',
 			style: 'position:absolute;left:146px;top:105px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Вид обслуживания:',
+			style: 'position:absolute;left:8px;top:105px;width:136px;height:19px;',
 		},
 	]
 });

@@ -1,17 +1,31 @@
 ﻿Ext.define('Справочники.ОсновныеСредства.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 495,width: 764,
+	style: 'position:absolute;width:764px;height:495px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Основные средства',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Инв. №:',
+			style: 'position:absolute;left:591px;top:33px;width:73px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:666px;top:33px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,7 +34,7 @@
 			style: 'position:absolute;left:94px;top:33px;width:484px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'ПрочиеСведения',
 			style: 'position:absolute;left:94px;top:443px;width:662px;height:19px;',
@@ -31,20 +45,13 @@
 			items:
 			[
 				{
-					text:'ДокументыКомплектацииОС',
+					text:'Документы комплектации ОС',
 				},
 				{
-					text:'Подменю2',
+					text:'Зарегистрированные оплаты основных средств (УСН)',
 				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
 			]
 		},
 		{
@@ -52,21 +59,17 @@
 			style: 'position:absolute;left:0px;top:470px;width:764px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'OK',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -76,14 +79,26 @@
 			items:
 			[
 				{
-					title:'ОсновныеСведения',
+					title:'Основные сведения',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Группа ОС:',
+			style: 'position:absolute;left:6px;top:6px;width:140px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:148px;top:6px;width:592px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Полное наименование:',
+			style: 'position:absolute;left:6px;top:30px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,10 +149,27 @@
 			style: 'position:absolute;left:148px;top:240px;width:592px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Автотранспорт',
+			style: 'position:absolute;left:6px;top:266px;width:101px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАдресМестонахождения',
+			text: 'Адрес местонахождения:',
+			style: 'position:absolute;left:6px;top:289px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'АдресМестонахождения',
 			style: 'position:absolute;left:148px;top:289px;width:467px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодРегиона',
+			text: 'Код региона:',
+			style: 'position:absolute;left:625px;top:289px;width:69px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -145,10 +177,22 @@
 			name: 'КодРегиона',
 			style: 'position:absolute;left:698px;top:289px;width:42px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись118',
+			text: 'Сведения о недвижимости заполняются для группы "Здания", "Сооружения"',
+			style: 'position:absolute;left:6px;top:6px;width:734px;height:20px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНазначениеПомещения',
+			text: 'Назначение помещения:',
+			style: 'position:absolute;left:14px;top:118px;width:126px;height:20px;',
+		},
 					]
 				},
 				{
-					title:'Страница1',
+					title:'Управленческий учет',
 					items:
 					[
 		{
@@ -268,7 +312,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -385,12 +429,30 @@
 			name: 'ПараметрВыработкиБУ',
 			style: 'position:absolute;left:492px;top:264px;width:248px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПомещение',
+			text: 'Помещение',
+			style: 'position:absolute;left:14px;top:92px;width:125px;height:20px;',
+		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Налоговый учет',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись20',
+			text: 'Первоначальная стоимость:',
+			style: 'position:absolute;left:12px;top:27px;width:168px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись75',
+			text: 'Первоначальная стоимость:',
+			style: 'position:absolute;left:12px;top:27px;width:168px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -469,12 +531,48 @@
 			name: 'ПорядокВключенияСтоимостиВСоставРасходовНУ',
 			style: 'position:absolute;left:69px;top:121px;width:255px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись117',
+			text: 'Порядок:',
+			style: 'position:absolute;left:12px;top:121px;width:54px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НалогНаИмущество',
+			text: 'Ставки налога на имущество',
+			style: 'position:absolute;left:350px;top:240px;width:192px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ТранспортныйНалог',
+			text: 'Регистрация транспортных средств',
+			style: 'position:absolute;left:350px;top:264px;width:192px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ЗемельныйНалог',
+			text: 'Регистрация земельных участков',
+			style: 'position:absolute;left:350px;top:288px;width:192px;height:19px;',
+		},
 					]
 				},
 				{
-					title:'Страница4',
+					title:'Налоговый учет (УСН)',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись95',
+			text: 'Принято к учету:',
+			style: 'position:absolute;left:6px;top:30px;width:152px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись96',
+			text: 'Снято с учета:',
+			style: 'position:absolute;left:6px;top:78px;width:152px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -488,10 +586,40 @@
 			style: 'position:absolute;left:176px;top:78px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ГиперссылкаДокументПринятияКУчетуУСН',
+			text: 'Документ принятия к учету',
+			style: 'position:absolute;left:262px;top:30px;width:476px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаДокументСнятияСУчетаУСН',
+			text: 'Документ снятия с учета',
+			style: 'position:absolute;left:262px;top:78px;width:476px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись97',
+			text: 'Введено в эксплуатацию:',
+			style: 'position:absolute;left:6px;top:54px;width:152px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВведеноВЭксплуатациюУСН',
 			style: 'position:absolute;left:176px;top:54px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ГиперссылкаДокументВводаВЭксплуатациюУСН',
+			text: 'Документ ввода в эксплуатацию',
+			style: 'position:absolute;left:262px;top:54px;width:476px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись98',
+			text: 'Первоначальная стоимость:',
+			style: 'position:absolute;left:6px;top:102px;width:152px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -500,16 +628,46 @@
 			style: 'position:absolute;left:176px;top:102px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'РеглВалюта6',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:262px;top:102px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись99',
+			text: 'Срок полез. использования:',
+			style: 'position:absolute;left:6px;top:126px;width:152px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СрокИспользованияУСН',
 			style: 'position:absolute;left:176px;top:126px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'мес2',
+			text: 'мес.',
+			style: 'position:absolute;left:262px;top:126px;width:28px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись100',
+			text: 'Дата приобретения:',
+			style: 'position:absolute;left:6px;top:6px;width:152px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаПриобретения',
 			style: 'position:absolute;left:176px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокВключенияСтоимостиВСоставРасходовУСН',
+			text: 'Порядок включения стоимости в состав расходов (УСН):',
+			style: 'position:absolute;left:6px;top:151px;width:162px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
@@ -520,9 +678,27 @@
 					]
 				},
 				{
-					title:'СвойстваИЗначения',
+					title:'Свойства',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'УпрВалюта',
+			text: 'УпрВалюта',
+			style: 'position:absolute;left:264px;top:27px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:264px;top:27px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'РеглВалюта3',
+			text: 'РеглВалюта',
+			style: 'position:absolute;left:264px;top:27px;width:60px;height:19px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:733px;height:259px;',
@@ -530,13 +706,16 @@
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'22',
 				},
 				{
 					text:'Свойство',
+					width:'139',
 				},
 				{
 					text:'Значение',
+					width:'239',
 				},
 			]
 		},
@@ -554,19 +733,52 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Изготовитель:',
+			style: 'position:absolute;left:6px;top:75px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись24',
+			text: 'Принято к учету:',
+			style: 'position:absolute;left:350px;top:27px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись35',
+			text: 'Счет учета стоимости:',
+			style: 'position:absolute;left:12px;top:240px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись63',
+			text: 'Принято к учету:',
+			style: 'position:absolute;left:350px;top:27px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись89',
+			text: 'Принято к учету:',
+			style: 'position:absolute;left:350px;top:27px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:733px;height:259px;',
 			height: 259,width: 733,
 			columns:
 			[
 				{
-					text:'ПометкаУдаления',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Принадлежность',
+					text:'',
+					width:'20',
 				},
 				{
 					text:'Категория',
+					width:'220',
 				},
 			]
 		},
@@ -576,25 +788,36 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Изменить',
 				},
 				{
-					text:'Действие4',
+					text:'Закончить редактирование',
 				},
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'&Удалить',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'СведенияОНедвижимости',
+					title:'Сведения о недвижимости',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'Надпись39',
+			text: 'Первоначальная стоимость:',
+			style: 'position:absolute;left:12px;top:27px;width:168px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Является помещением или составной частью здания (сооружения)',
+			style: 'position:absolute;left:145px;top:92px;width:595px;height:20px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -646,6 +869,18 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись13',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:443px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
@@ -658,10 +893,22 @@
 			style: 'position:absolute;left:666px;top:57px;width:90px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись15',
+			text: 'Инв. № (Орг):',
+			style: 'position:absolute;left:591px;top:57px;width:73px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаСведений',
 			style: 'position:absolute;left:94px;top:81px;width:122px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДатаВыводаСведений',
+			text: 'Дата сведений:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
 	]
 });

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбновлениеИнформационнойБазы.ОписаниеОбновлений',
 	{
 	extend: 'Ext.window.Window',
-	height: 400,width: 696,
+	style: 'position:absolute;width:696px;height:400px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обновление информационной базы',
 	
 	items:
@@ -12,17 +14,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:696px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Справка',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 			]
 		},

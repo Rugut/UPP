@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ПередачаТоваров.ФормаОтбораЗаказов',
 	{
 	extend: 'Ext.window.Window',
-	height: 415,width: 660,
+	style: 'position:absolute;width:660px;height:415px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отобрать заказы покупателей',
 	
 	items:
@@ -13,11 +15,9 @@
 			items:
 			[
 				{
-					text:'ДействиеДалее',
+					text:'Далее>>',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -30,7 +30,7 @@
 			items:
 			[
 				{
-					title:'СтраницаНастройки',
+					title:'Настройки',
 					items:
 					[
 		{
@@ -38,6 +38,24 @@
 			hideLabel: true,
 			name: 'ПолеДатаОтгрузки',
 			style: 'position:absolute;left:258px;top:64px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСрокОтргузки',
+			text: 'Дата отгрузки:',
+			style: 'position:absolute;left:16px;top:64px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаличиеРезервов',
+			text: 'Наличие резервов:',
+			style: 'position:absolute;left:16px;top:8px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеОтгрузки',
+			text: 'Состояние отгрузки:',
+			style: 'position:absolute;left:16px;top:40px;width:132px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -52,6 +70,18 @@
 			style: 'position:absolute;left:318px;top:120px;width:42px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСостояниеОплаты',
+			text: 'Состояние оплаты:',
+			style: 'position:absolute;left:16px;top:96px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСрокОплаты',
+			text: 'Дата оплаты:',
+			style: 'position:absolute;left:16px;top:120px;width:132px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеДатаОплаты',
@@ -60,7 +90,7 @@
 					]
 				},
 				{
-					title:'СтраницаДополнительно',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -70,22 +100,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'22',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -96,9 +132,20 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использовать свойства и категории',
+			style: 'position:absolute;left:406px;top:4px;width:219px;height:17px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВариантОтбора',
+			text: 'Вариант отбора:',
+			style: 'position:absolute;left:325px;top:17px;width:84px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -113,6 +160,18 @@
 			style: 'position:absolute;left:188px;top:17px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'За период с:',
+			style: 'position:absolute;left:16px;top:17px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:168px;top:17px;width:15px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -124,49 +183,39 @@
 			items:
 			[
 				{
-					text:'ДействиеЗаполнить',
+					text:'Заполнить',
 				},
 				{
-					text:'Действие2',
+					text:'По возрастанию',
+				},
+				'-',
+				{
+					text:'По убыванию',
 				},
 				{
-					text:'Разделитель3',
+					text:'Анализ',
 				},
 				{
-					text:'Действие3',
+					text:'Выключить все',
+				},
+				'-',
+				{
+					text:'Инвертировать',
+				},
+				'-',
+				'-',
+				{
+					text:'Вверх',
 				},
 				{
-					text:'ДействиеАнализ',
+					text:'Вниз',
 				},
 				{
-					text:'ДействиеВыключитьВсе',
+					text:'Настройка списка',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеИнвертировать',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ДействиеВключитьВсе',
+					text:'Включить все',
 				},
 			]
 		},
@@ -177,85 +226,112 @@
 			columns:
 			[
 				{
-					text:'НеЗаполнять',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'Переносить',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'ОтражатьВБухгалтерскомУчете',
+					text:'БУ',
+					width:'20',
 				},
 				{
-					text:'ОтражатьВНалоговомУчете',
+					text:'НУ',
+					width:'20',
 				},
 				{
 					text:'Ссылка',
+					width:'23',
 				},
 				{
 					text:'Дата',
+					width:'110',
 				},
 				{
 					text:'Номер',
+					width:'90',
 				},
 				{
-					text:'ВидОперации',
+					text:'Вид операции',
+					width:'80',
 				},
 				{
 					text:'Контрагент',
+					width:'110',
 				},
 				{
-					text:'ДоговорКонтрагента',
+					text:'Договор',
+					width:'100',
 				},
 				{
-					text:'КонтактноеЛицоКонтрагента',
+					text:'Контактное лицо',
+					width:'100',
 				},
 				{
-					text:'СуммаДокумента',
+					text:'Сумма',
+					width:'80',
 				},
 				{
-					text:'ВалютаДокумента',
+					text:'Валюта',
+					width:'30',
 				},
 				{
-					text:'ЗаказыОстаток',
+					text:'Ост. отгр.',
+					width:'80',
 				},
 				{
-					text:'ЗаказыКоличество',
+					text:'Кол.',
+					width:'30',
 				},
 				{
-					text:'РасчетыОстаток',
+					text:'Ост. опл.',
+					width:'80',
 				},
 				{
-					text:'РезервыКоличество',
+					text:'Рез.',
+					width:'35',
 				},
 				{
-					text:'РазмещенияКоличество',
+					text:'Разм.',
+					width:'35',
 				},
 				{
-					text:'ТипЦен',
+					text:'Тип цен',
+					width:'80',
 				},
 				{
-					text:'ТипСкидкиНаценки',
+					text:'Тип скидки',
+					width:'80',
 				},
 				{
-					text:'ДатаОплаты',
+					text:'Дата оплаты',
+					width:'80',
 				},
 				{
-					text:'ДатаОтгрузки',
+					text:'Дата отгрузки',
+					width:'80',
 				},
 				{
 					text:'Организация',
+					width:'100',
 				},
 				{
-					text:'СкладГруппа',
+					text:'Склад/группа',
+					width:'100',
 				},
 				{
 					text:'Подразделение',
+					width:'100',
 				},
 				{
 					text:'Ответственный',
+					width:'100',
 				},
 				{
 					text:'Проведен',
+					width:'70',
 				},
 			]
 		},
@@ -264,22 +340,24 @@
 			style: 'position:absolute;left:0px;top:390px;width:660px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель2',
+					text:'<<Назад',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'ДействиеНазад',
-				},
-				{
-					text:'ДействиеПеренести',
+					text:'Перенести',
 				},
 				{
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособЗаполнения',
+			text: 'Способ заполнения:',
+			style: 'position:absolute;left:311px;top:36px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -297,52 +375,41 @@
 			items:
 			[
 				{
-					text:'ДействиеИнвертировать',
+					text:'Инвертировать',
+				},
+				'-',
+				'-',
+				{
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Разделитель1',
+					text:'Снять все флажки',
 				},
 				{
-					text:'Разделитель2',
+					text:'Обнулить столбец добавляемых в документ',
 				},
 				{
-					text:'Действие7',
+					text:'Заполнить столбец добавляемых в документ',
+				},
+				'-',
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Анализ',
 				},
 				{
-					text:'ДействиеСнятьФлажки',
+					text:'Установить все флажки',
 				},
 				{
-					text:'Обнулить',
+					text:'Настройка списка...',
 				},
 				{
-					text:'Заполнить',
+					text:'Сортировать по убыванию',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ДействиеАнализ',
-				},
-				{
-					text:'ДействиеУстановитьФлажки',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Изменить',
+					text:'&Переместить вверх',
 				},
 			]
 		},
@@ -353,67 +420,97 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ЗаказПокупателя',
+					text:'Заказ покупателя',
+					width:'100',
 				},
 				{
 					text:'Код',
+					width:'47',
 				},
 				{
 					text:'Артикул',
+					width:'77',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'100',
 				},
 				{
-					text:'Склад',
+					text:'Склад/Склад заказа',
+					width:'100',
 				},
 				{
-					text:'ЕдиницаИзмерения',
+					text:'Единица измерения',
+					width:'54',
 				},
 				{
-					text:'ДобавитьВДокумент',
+					text:'Добавить в документ',
+					width:'86',
 				},
 				{
 					text:'Запланировано',
+					width:'71',
 				},
 				{
-					text:'ОсталосьОтгрузить',
+					text:'Осталось отгрузить',
+					width:'73',
 				},
 				{
 					text:'Заполнено',
+					width:'71',
 				},
 				{
-					text:'РезервПоЗаказу',
+					text:'Резерв по заказу',
+					width:'100',
 				},
 				{
-					text:'СвободныйОстаток',
+					text:'Свободный остаток',
+					width:'100',
 				},
 				{
-					text:'ОстатокПоОрганизации',
+					text:'Остаток по организации',
+					width:'100',
 				},
 				{
-					text:'МожноОтгрузить',
+					text:'Можно отгрузить',
+					width:'100',
 				},
 				{
-					text:'МеткаОстаткиПоСкладу',
+					text:'Метка остатки по складу',
+					width:'104',
 				},
 				{
-					text:'ПриоритетПоСкладам',
+					text:'Приоритет по складам',
+					width:'96',
 				},
 				{
-					text:'ФлагЗаполнено',
+					text:'Флаг заполнено',
+					width:'100',
 				},
 			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Товары',
+			style: 'position:absolute;left:23px;top:38px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗаполнениеСкладов',
+			text: 'Приоритет складов:',
+			style: 'position:absolute;left:311px;top:61px;width:104px;height:19px;',
 		},
 	]
 });

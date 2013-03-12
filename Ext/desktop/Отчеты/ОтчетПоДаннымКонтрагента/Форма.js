@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОтчетПоДаннымКонтрагента.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 486,width: 810,
+	style: 'position:absolute;width:810px;height:486px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отчет по данным контрагента',
 	
 	items:
@@ -13,27 +15,35 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Разделитель1',
+					text:'Сформировать',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НачОтчета',
+			text: 'На дату:',
+			style: 'position:absolute;left:8px;top:7px;width:52px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОтчета',
 			style: 'position:absolute;left:62px;top:7px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'по контрагенту:',
+			style: 'position:absolute;left:144px;top:7px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,25 +61,28 @@
 					title:'Отчет',
 				},
 				{
-					title:'Настройка',
+					title:'Настройка формы',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Выводить конт.инф. контактных лиц',
+			style: 'position:absolute;left:6px;top:377px;width:205px;height:15px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:780px;height:24px;',
 			items:
 			[
 				{
-					text:'СнятьФлажки',
+					text:'Снять флажки',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Вниз',
 				},
 				{
-					text:'УстановитьФлажки',
+					text:'Установить флажки',
 				},
 				{
 					text:'Вверх',

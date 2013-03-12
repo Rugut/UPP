@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.РасчетСебестоимостиВыпуска.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 464,width: 363,
+	style: 'position:absolute;width:363px;height:464px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Расчет себестоимости',
 	
 	items:
@@ -13,118 +15,82 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Найти в списке',
 				},
 				{
-					text:'Действие1',
+					text:'',
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Разделитель',
+					text:'',
+				},
+				'-',
+				{
+					text:'Скопировать',
+				},
+				'-',
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Провести вне транзакции',
 				},
 				{
-					text:'Подменю',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие',
+					text:'Дт/кт',
 				},
 				{
-					text:'Разделитель4',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Действие5',
+					text:'Закрыть',
+				},
+				'-',
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
-					text:'Подменю1',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие',
+					text:'Отмена проведения',
 				},
 				{
-					text:'Разделитель3',
+					text:'Отмена проведения',
 				},
 				{
-					text:'Действие2',
+					text:'Провести',
 				},
 				{
-					text:'Разделитель2',
+					text:'Провести',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Разделитель3',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Действие',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ПровестиВнеТранзакции',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ПроводкиДтКтНУ',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ПроводкиДтКт',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Действие4',
+					text:'Записать и закрыть',
 				},
 			]
 		},
@@ -134,27 +100,33 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:187px;top:33px;width:20px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,16 +141,34 @@
 			style: 'position:absolute;left:207px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:109px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:107px;top:109px;width:248px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:412px;width:77px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:412px;width:265px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Месяц расчета:',
+			style: 'position:absolute;left:8px;top:58px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -193,7 +183,7 @@
 			items:
 			[
 				{
-					title:'ВыполняемыеДействия',
+					title:'Выполняемые действия',
 					items:
 					[
 		{
@@ -203,10 +193,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'Порядок',
+					width:'49',
 				},
 				{
-					text:'ВыполняемоеДействие',
+					text:'Выполняемое действие',
+					width:'244',
 				},
 			]
 		},
@@ -216,10 +208,7 @@
 			items:
 			[
 				{
-					text:'ЗаполнитьВыполняемыеДействие',
-				},
-				{
-					text:'ПодменюЗаполнить',
+					text:'Список действий',
 				},
 			]
 		},
@@ -230,10 +219,21 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:89px;top:6px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать общепроизводственные расходы при распределении по переделам',
+			style: 'position:absolute;left:6px;top:47px;width:333px;height:29px;',
 		},
 					]
 				},
@@ -246,18 +246,36 @@
 			items:
 			[
 				{
-					title:'РасширеннаяАналитика',
+					title:'Расширенная аналитика',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчетеРасширеннаяАналитика',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Основная',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНастройкаЗакрытияМесяца',
+			text: 'Настройка закрытия месяца:',
+			style: 'position:absolute;left:8px;top:137px;width:94px;height:30px;',
 		},
 		{
 			xtype: 'textfield',

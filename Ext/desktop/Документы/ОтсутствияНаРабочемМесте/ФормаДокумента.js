@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.ОтсутствияНаРабочемМесте.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 313,width: 378,
+	style: 'position:absolute;width:378px;height:313px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Отсутствие на рабочем месте',
 	
 	items:
@@ -13,110 +15,79 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'Открыть свойства',
 				},
 				{
-					text:'Действие3',
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				'-',
+				{
+					text:'Редактировать номер',
 				},
 				{
-					text:'Разделитель2',
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Действие3',
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Отмена проведения',
+				},
+				'-',
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Разделитель1',
+					text:'Провести',
 				},
 				{
-					text:'РедактироватьКодНомер',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Открыть свойства',
 				},
 				{
-					text:'Действие',
+					text:'Открыть категории',
 				},
 				{
-					text:'Разделитель',
+					text:'Открыть категории',
 				},
 				{
-					text:'Действие7',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель3',
+					text:'Отмена проведения',
 				},
 				{
-					text:'Разделитель5',
+					text:'Записать и закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Найти в списке',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Подменю1',
+					text:'Перечитать',
 				},
+				'-',
 				{
-					text:'Действие6',
+					text:'',
 				},
+				'-',
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Закрыть',
 				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'ОткрытьСвойства',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
-				},
-				{
-					text:'ОткрытьКатегории',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 			]
 		},
 		{
@@ -125,21 +96,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'Дата регистрации:',
+			style: 'position:absolute;left:8px;top:237px;width:98px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -148,10 +121,22 @@
 			style: 'position:absolute;left:114px;top:237px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:163px;width:83px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:8px;top:182px;width:362px;height:41px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Зарегистрировал:',
+			style: 'position:absolute;left:8px;top:261px;width:98px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -160,10 +145,22 @@
 			style: 'position:absolute;left:114px;top:261px;width:256px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПричинаОтсутствия',
+			text: 'Причина:',
+			style: 'position:absolute;left:8px;top:131px;width:61px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПричинаОтсутствия',
 			style: 'position:absolute;left:74px;top:131px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСотрудник',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:8px;top:33px;width:61px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -178,6 +175,12 @@
 			style: 'position:absolute;left:169px;top:83px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНесколькоДнейДатаОкончания',
+			text: 'По:',
+			style: 'position:absolute;left:8px;top:107px;width:61px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаНесколькоДнейДатаОкончания',
@@ -190,10 +193,28 @@
 			style: 'position:absolute;left:169px;top:107px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНесколькоДнейДатаНачала',
+			text: 'С:',
+			style: 'position:absolute;left:8px;top:83px;width:61px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаНесколькоДнейДатаНачала',
 			style: 'position:absolute;left:74px;top:83px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтсутствует',
+			text: 'Отсутствует',
+			style: 'position:absolute;left:8px;top:61px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:247px;top:237px;width:39px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСчетаНалоговый.ФормаНастройкаПоСубконто',
 	{
 	extend: 'Ext.window.Window',
-	height: 290,width: 236,
+	style: 'position:absolute;width:236px;height:290px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Субконто',
 	
 	items:
@@ -39,15 +41,11 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ДиаграммаГанта.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
-	height: 457,width: 586,
+	style: 'position:absolute;width:586px;height:457px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -20,6 +22,18 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:586px;height:25px;',
 			items:
@@ -28,58 +42,40 @@
 					text:'Отбор',
 				},
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 				{
-					text:'Выполнить',
+					text:'Сформировать',
 				},
 				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Действие1',
+					text:'Справка',
 				},
 				{
 					text:'Печать',
 				},
 				{
-					text:'Печать1',
-				},
-				{
-					text:'СписокНастроек1',
+					text:'Печать',
 				},
 				{
 					text:'Отбор',
 				},
+				'-',
 				{
-					text:'Разделитель4',
+					text:'Сформировать',
 				},
 				{
-					text:'Выполнить',
+					text:'Справка',
 				},
+				'-',
+				'-',
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Подменю',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 			]
 		},
@@ -96,7 +92,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -104,6 +100,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки1',
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:18px;',
 		},
 		{
 			xtype: 'textfield',
@@ -138,6 +139,11 @@
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:18px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиС2',
@@ -154,6 +160,12 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидаДиаграммы',
+			text: 'Раздел учета:',
+			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:105px;width:570px;height:24px;',
 			height: 24,width: 570,
@@ -168,6 +180,11 @@
 			hideLabel: true,
 			name: 'ПолеНастройки3',
 			style: 'position:absolute;left:324px;top:0px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Настройка',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:18px;',
 		},
 		{
 			xtype: 'textfield',

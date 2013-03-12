@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.РегистрУчетаРасходовБудущихПериодов.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 328,width: 372,
+	style: 'position:absolute;width:372px;height:328px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Регистр учета расходов будущих периодов (настройка)',
 	
 	items:
@@ -13,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -34,6 +36,12 @@
 			style: 'position:absolute;left:94px;top:41px;width:219px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:16px;top:41px;width:72px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНач',
@@ -46,6 +54,18 @@
 			style: 'position:absolute;left:207px;top:14px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Период с:',
+			style: 'position:absolute;left:16px;top:14px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'по:',
+			style: 'position:absolute;left:180px;top:14px;width:20px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
@@ -54,7 +74,7 @@
 					]
 				},
 				{
-					title:'ВидыРасходов',
+					title:'Виды расходов',
 					items:
 					[
 		{
@@ -63,10 +83,10 @@
 			items:
 			[
 				{
-					text:'УстановитьВсеВиды',
+					text:'',
 				},
 				{
-					text:'СнятьВсеВиды',
+					text:'',
 				},
 			]
 		},

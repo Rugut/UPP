@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ВыборСертификатаИзСистемногоХранилища',
 	{
 	extend: 'Ext.window.Window',
-	height: 414,width: 745,
+	style: 'position:absolute;width:745px;height:414px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Цифровые сертификаты',
 	
 	items:
@@ -12,21 +14,17 @@
 			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
 			items:
 			[
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Выбрать',
 				},
 				{
-					text:'ПоказыватьПросроченные',
+					text:'Показывать просроченные',
 				},
 				{
-					text:'Спарвка',
+					text:'Открыть справку',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 		{
@@ -36,51 +34,150 @@
 			columns:
 			[
 				{
-					text:'Пометка',
+					text:'',
+					width:'21',
 				},
 				{
-					text:'ИмяВладельца',
+					text:'Имя владельца',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'ИНН',
+					width:'114',
 				},
 				{
 					text:'Должность',
+					width:'100',
 				},
 				{
-					text:'ДействителенС',
+					text:'Начало действия',
+					width:'116',
 				},
 				{
-					text:'ДействителенПо',
+					text:'Конец действия',
+					width:'116',
 				},
 				{
-					text:'EMail',
+					text:'E-mail',
+					width:'100',
 				},
 				{
 					text:'Отпечаток',
+					width:'240',
 				},
 				{
-					text:'ПригоденДляШифрования',
+					text:'Пригоден для шифрования',
+					width:'21',
 				},
 				{
-					text:'ПригоденДляПодписания',
+					text:'Пригоден для подписания',
+					width:'21',
 				},
 				{
 					text:'Поставщик',
+					width:'120',
 				},
 				{
-					text:'СерийныйНомер',
+					text:'Серийный номер',
+					width:'120',
 				},
 				{
 					text:'Наименование',
+					width:'120',
 				},
 				{
 					text:'Владелец',
+					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:349px;width:82px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Наименование',
+			text: '',
+			style: 'position:absolute;left:91px;top:350px;width:275px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВладелец',
+			text: 'Владелец:',
+			style: 'position:absolute;left:369px;top:349px;width:92px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Владелец',
+			text: '',
+			style: 'position:absolute;left:462px;top:350px;width:275px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДействителенС',
+			text: 'Действует с:',
+			style: 'position:absolute;left:369px;top:389px;width:92px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДействуетС',
+			text: '',
+			style: 'position:absolute;left:462px;top:390px;width:121px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПо',
+			text: 'по:',
+			style: 'position:absolute;left:591px;top:389px;width:19px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ДействуетПо',
+			text: '',
+			style: 'position:absolute;left:616px;top:390px;width:121px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоставщик',
+			text: 'Поставщик:',
+			style: 'position:absolute;left:8px;top:369px;width:82px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСерийныйНомер',
+			text: 'Серийный номер:',
+			style: 'position:absolute;left:369px;top:369px;width:92px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Поставщик',
+			text: '',
+			style: 'position:absolute;left:91px;top:370px;width:275px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'СерийныйНомер',
+			text: '',
+			style: 'position:absolute;left:462px;top:370px;width:275px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтпечаток',
+			text: 'Отпечаток:',
+			style: 'position:absolute;left:8px;top:389px;width:82px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Отпечаток',
+			text: '',
+			style: 'position:absolute;left:91px;top:390px;width:275px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -88,29 +185,25 @@
 			items:
 			[
 				{
-					text:'СортироватьПоВозрастанию',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'МножественныйВыбор',
+					text:'Множественный выбор',
 				},
 				{
-					text:'СнятьВсеФлажки',
+					text:'Снять все флажки',
 				},
 				{
-					text:'СортироватьПоУбыванию',
+					text:'Сортировать по убыванию',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'УстановитьВсеФлажки',
+					text:'Установить все флажки',
 				},
 				{
 					text:'Открыть',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 			]
 		},
 	]

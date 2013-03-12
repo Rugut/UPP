@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДетализацияОтчетаОПрибыляхИУбытках.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 436,
+	style: 'position:absolute;width:436px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Детализация отчета о прибылях и убытках',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'81',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},
@@ -30,11 +35,9 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

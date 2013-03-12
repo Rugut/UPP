@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ГруппыДоступностиСкладов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 396,
+	style: 'position:absolute;width:396px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Справочник Группы доступности складов',
 	
 	items:
@@ -14,13 +16,16 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Код',
+					width:'63',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 			]
 		},

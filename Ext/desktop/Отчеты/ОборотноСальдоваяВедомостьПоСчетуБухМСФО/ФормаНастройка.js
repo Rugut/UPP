@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьПоСчетуБухМСФО.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 490,
+	style: 'position:absolute;width:490px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'ОК',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -30,9 +30,15 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет РСБУ:',
+			style: 'position:absolute;left:6px;top:7px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -64,6 +70,16 @@
 			style: 'position:absolute;left:88px;top:54px;width:378px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:14px;top:107px;width:128px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по количеству',
+			style: 'position:absolute;left:14px;top:127px;width:140px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'СчетМеждународный',
@@ -72,7 +88,7 @@
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Детализация',
 					items:
 					[
 		{
@@ -83,9 +99,11 @@
 			[
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -96,10 +114,15 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам счета РСБУ',
+			style: 'position:absolute;left:6px;top:6px;width:160px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -109,22 +132,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},

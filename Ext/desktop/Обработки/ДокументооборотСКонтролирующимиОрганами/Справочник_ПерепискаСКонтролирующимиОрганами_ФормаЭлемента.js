@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Справочник_ПерепискаСКонтролирующимиОрганами_ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 543,width: 654,
+	style: 'position:absolute;width:654px;height:543px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Переписка с контролирующими органами',
 	
 	items:
@@ -12,15 +14,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
 			items:
 			[
-				{
-					text:'РазделительОтветить',
-				},
+				'-',
 				{
 					text:'Отправить',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Действие1',
 				},
@@ -33,9 +31,7 @@
 				{
 					text:'Скопировать',
 				},
-				{
-					text:'РазделительОтправка',
-				},
+				'-',
 			]
 		},
 		{
@@ -43,20 +39,16 @@
 			style: 'position:absolute;left:0px;top:518px;width:654px;height:25px;',
 			items:
 			[
+				'-',
+				'-',
 				{
-					text:'Разделитель',
+					text:'Записать',
 				},
 				{
-					text:'Разделитель1',
+					text:'Закрыть',
 				},
 				{
-					text:'ОсновныеДействияФормыСохранить',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
 		},
@@ -67,11 +59,11 @@
 			items:
 			[
 				{
-					title:'СтраницаСодержание',
+					title:'Содержание',
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'textarea',
 			hideLabel: true,
 			name: 'Содержание',
 			style: 'position:absolute;left:6px;top:6px;width:624px;height:321px;',
@@ -87,15 +79,9 @@
 			style: 'position:absolute;left:6px;top:28px;width:626px;height:24px;',
 			items:
 			[
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Действие7',
 				},
@@ -105,17 +91,12 @@
 				{
 					text:'Действие8',
 				},
-				{
-					text:'Разделитель4',
-				},
+				'-',
 				{
 					text:'Действие3',
 				},
 				{
-					text:'Подменю1',
-				},
-				{
-					text:'Действие1',
+					text:'',
 				},
 				{
 					text:'Действие6',
@@ -127,7 +108,7 @@
 					text:'Действие',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
 					text:'Действие5',
@@ -141,13 +122,16 @@
 			columns:
 			[
 				{
-					text:'ИмяФайла',
+					text:'Имя',
+					width:'350',
 				},
 				{
-					text:'Размер',
+					text:'Размер (в байтах)',
+					width:'113',
 				},
 				{
 					text:'Тип',
+					width:'88',
 				},
 			]
 		},
@@ -177,16 +161,34 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Тема:',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Наименование',
 			style: 'position:absolute;left:85px;top:0px;width:553px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтправитель',
+			text: 'От кого:',
+			style: 'position:absolute;left:0px;top:26px;width:79px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Отправитель',
 			style: 'position:absolute;left:85px;top:26px;width:553px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПолучатель',
+			text: 'Кому:',
+			style: 'position:absolute;left:0px;top:52px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

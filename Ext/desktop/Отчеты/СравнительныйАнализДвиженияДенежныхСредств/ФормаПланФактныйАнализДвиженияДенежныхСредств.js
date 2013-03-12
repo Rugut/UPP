@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.СравнительныйАнализДвиженияДенежныхСредств.ФормаПланФактныйАнализДвиженияДенежныхСредств',
 	{
 	extend: 'Ext.window.Window',
-	height: 436,width: 604,
+	style: 'position:absolute;width:604px;height:436px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
@@ -12,71 +14,56 @@
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'СохранитьЗначения',
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				'-',
+				{
+					text:'Восстановить значения',
+				},
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Настройка...',
 				},
 				{
 					text:'Заголовок',
 				},
 				{
-					text:'Подменю',
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 				{
-					text:'Разделитель3',
-				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Разделитель4',
-				},
-				{
-					text:'ВосстановитьЗначения',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 			]
 		},
@@ -87,7 +74,7 @@
 			items:
 			[
 				{
-					title:'Страница2',
+					title:'Поля',
 					items:
 					[
 		{
@@ -97,10 +84,20 @@
 			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Подразделение:',
+			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиВидДенежныхСредств',
 			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Форма оплаты:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
 		},
 					]
 				},

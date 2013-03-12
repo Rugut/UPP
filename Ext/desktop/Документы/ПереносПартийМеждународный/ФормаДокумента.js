@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.ПереносПартийМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 402,width: 654,
+	style: 'position:absolute;width:654px;height:402px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: '',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -20,16 +34,34 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:56px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:350px;width:84px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:350px;width:552px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,25 +75,18 @@
 			items:
 			[
 				{
-					text:'ДвиженияДокументаПоРегистрам',
+					text:'Движения документа по регистрам',
+				},
+				'-',
+				'-',
+				{
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'Разделитель1',
+					text:'',
 				},
 				{
-					text:'Разделитель5',
-				},
-				{
-					text:'СтруктураПодчиненностиДокумента',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'ДействиеОткрытьСвойства1',
-				},
-				{
-					text:'ДействиеОткрытьКатегории1',
+					text:'',
 				},
 			]
 		},
@@ -71,22 +96,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
+					text:'Закрыть',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Действие',
+					text:'OK',
 				},
 				{
 					text:'Печать',
@@ -94,10 +113,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Период  с:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодНачало',
 			style: 'position:absolute;left:426px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'по:',
+			style: 'position:absolute;left:516px;top:33px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -118,43 +149,56 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидДвижения',
+					text:'Вид движения',
+					width:'100',
 				},
 				{
 					text:'Период',
+					width:'100',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'100',
 				},
 				{
 					text:'Склад',
+					width:'100',
 				},
 				{
-					text:'ДокументОприходования',
+					text:'Документ оприходования',
+					width:'100',
 				},
 				{
-					text:'СерияНоменклатуры',
+					text:'Серия номенклатуры',
+					width:'100',
 				},
 				{
 					text:'Заказ',
+					width:'100',
 				},
 				{
 					text:'Качество',
+					width:'100',
 				},
 				{
-					text:'СчетУчета',
+					text:'Счет учета',
+					width:'100',
 				},
 				{
 					text:'Количество',
+					width:'100',
 				},
 				{
 					text:'Стоимость',
+					width:'100',
 				},
 			]
 		},
@@ -163,26 +207,20 @@
 			style: 'position:absolute;left:8px;top:79px;width:638px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'Выполнить перенос',
+				},
+				'-',
+				{
+					text:'Отключить отбор',
 				},
 				{
-					text:'ВыполнитьПеренос',
+					text:'Установить отбор и сортировку списка',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОтключитьОтбор',
-				},
-				{
-					text:'УстановитьОтборИСортировкуСписка___',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ВывестиСписок',
+					text:'Вывести список',
 				},
 			]
 		},

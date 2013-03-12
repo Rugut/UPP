@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ДоговорыКонтрагентов.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
-	height: 312,width: 376,
+	style: 'position:absolute;width:376px;height:312px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Группы договоров взаиморасчетов',
 	
 	items:
@@ -15,6 +17,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'282',
 				},
 			]
 		},
@@ -23,11 +26,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель8',
-				},
-				{
-					text:'Действие14',
+					text:'Выбрать',
 				},
 			]
 		},

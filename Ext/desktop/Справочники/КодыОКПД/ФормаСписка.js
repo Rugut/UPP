@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.КодыОКПД.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
-	height: 292,width: 555,
+	style: 'position:absolute;width:555px;height:292px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Коды ОКПД',
 	
 	items:
@@ -15,9 +17,11 @@
 			[
 				{
 					text:'Код',
+					width:'100',
 				},
 				{
 					text:'Имя',
+					width:'350',
 				},
 			]
 		},
@@ -26,11 +30,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:555px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Загрузка',
+					text:'Загрузить из файла',
 				},
 			]
 		},

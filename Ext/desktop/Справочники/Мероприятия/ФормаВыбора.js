@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Мероприятия.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 470,
+	style: 'position:absolute;width:470px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Мероприятия предприятия',
 	
 	items:
@@ -14,16 +16,20 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'80',
 				},
 			]
 		},
@@ -35,9 +41,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

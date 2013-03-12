@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.Бюджеты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 320,width: 594,
+	style: 'position:absolute;width:594px;height:320px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Бюджеты',
 	
 	items:
@@ -14,19 +16,24 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
 					text:'Наименование',
+					width:'220',
 				},
 				{
-					text:'ВидБюджета',
+					text:'Вид бюджета',
+					width:'120',
 				},
 				{
-					text:'НаименованиеПолное',
+					text:'Наименование полное',
+					width:'220',
 				},
 				{
 					text:'Комментарий',
+					width:'220',
 				},
 			]
 		},
@@ -38,6 +45,7 @@
 			[
 				{
 					text:'Наименование',
+					width:'160',
 				},
 			]
 		},
@@ -46,11 +54,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:594px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 			]
 		},

@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.РасчетЛимитовОтпускаМатериалов.ФормаОбработкаРезультата',
 	{
 	extend: 'Ext.window.Window',
-	height: 89,width: 362,
+	style: 'position:absolute;width:362px;height:89px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обработка результата',
 	
 	items:
@@ -12,16 +14,17 @@
 			style: 'position:absolute;left:0px;top:64px;width:362px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'КнопкаВыполнить',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Действие:',
+			style: 'position:absolute;left:8px;top:6px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -34,6 +37,12 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Периодичность:',
+			style: 'position:absolute;left:0px;top:4px;width:81px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Периодичность',
@@ -42,9 +51,14 @@
 					]
 				},
 				{
-					title:'КонтролироватьЛимит',
+					title:'Контролировать лимит',
 					items:
 					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Контролировать лимит',
+			style: 'position:absolute;left:81px;top:4px;width:265px;height:15px;',
+		},
 					]
 				},
 			]

@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.АнализСубконтоНалоговый.Форма',
 	{
 	extend: 'Ext.window.Window',
-	height: 437,width: 731,
+	style: 'position:absolute;width:731px;height:437px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Анализ субконто',
 	
 	items:
@@ -13,28 +15,19 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие2',
+					text:'Справка',
 				},
 				{
 					text:'Субконто',
 				},
-				{
-					text:'Разделитель6',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'Разделитель',
-				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Заголовок',
-				},
-				{
-					text:'Подменю',
 				},
 				{
 					text:'Субконто',
@@ -42,23 +35,19 @@
 				{
 					text:'Сформировать',
 				},
+				'-',
+				'-',
 				{
-					text:'Разделитель3',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Разделитель',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие',
+					text:'Сохранить значения...',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Настройка',
+					text:'Настройка...',
 				},
 				{
 					text:'Заголовок',
@@ -66,22 +55,22 @@
 				{
 					text:'Сформировать',
 				},
+				'-',
+				'-',
+				'-',
 				{
-					text:'Разделитель1',
+					text:'Настройка...',
 				},
 				{
-					text:'Разделитель4',
-				},
-				{
-					text:'Разделитель5',
-				},
-				{
-					text:'Настройка',
-				},
-				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:324px;top:32px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,6 +89,18 @@
 			hideLabel: true,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:166px;top:32px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:32px;width:56px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:32px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -124,10 +125,12 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
-					text:'ВидСубконто',
+					text:'Вид субконто',
+					width:'278',
 				},
 			]
 		},
@@ -145,22 +148,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'100',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'60',
 				},
 				{
 					text:'Значение',
+					width:'100',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'100',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'100',
 				},
 			]
 		},
@@ -174,6 +183,12 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидУчета',
+			text: 'Вид учета:',
+			style: 'position:absolute;left:604px;top:32px;width:55px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

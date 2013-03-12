@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПодтверждениеВыходаВИнтернетДляЦелейОбновленияМодуля',
 	{
 	extend: 'Ext.window.Window',
-	height: 232,width: 545,
+	style: 'position:absolute;width:545px;height:232px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Обновление модуля документооборота с контролирующими органами',
 	
 	items:
@@ -14,7 +16,7 @@
 			items:
 			[
 				{
-					title:'ЖесткаяБлокировка',
+					title:'Жесткая блокировка',
 					items:
 					[
 		{

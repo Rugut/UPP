@@ -1,17 +1,31 @@
 ﻿Ext.define('Документы.УстановкаЗначенийТочкиЗаказа.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 341,width: 652,
+	style: 'position:absolute;width:652px;height:341px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Установка значений точки заказа',
 	
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,11 +39,9 @@
 			items:
 			[
 				{
-					text:'ДействиеПодбор',
+					text:'Подбор',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -39,37 +51,48 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'N',
+					width:'28',
 				},
 				{
 					text:'Номенклатура',
+					width:'100',
 				},
 				{
-					text:'ХарактеристикаНоменклатуры',
+					text:'Характеристика номенклатуры',
+					width:'169',
 				},
 				{
-					text:'СпособОпределенияЗначенияТочкиЗаказа',
+					text:'Способ определения',
+					width:'175',
 				},
 				{
-					text:'ЗначениеТочкиЗаказа',
+					text:'Значение точки заказа',
+					width:'156',
 				},
 				{
-					text:'МинимальныйСтраховойЗапас',
+					text:'Страховой запас',
+					width:'156',
 				},
 				{
-					text:'ПроцентнаяСтавкаЗначенияТочкиЗаказа',
+					text:'% значения точки заказа',
+					width:'100',
 				},
 				{
-					text:'ПроцентнаяСтавкаМинимальногоСтраховогоЗапаса',
+					text:'% страхового запаса',
+					width:'100',
 				},
 				{
-					text:'ДатаНач',
+					text:'Дата нач.',
+					width:'80',
 				},
 				{
-					text:'ДатаКон',
+					text:'Дата кон.',
+					width:'80',
 				},
 				{
 					text:'Склад',
+					width:'100',
 				},
 			]
 		},
@@ -78,27 +101,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Разделитель',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьКатегории',
+					text:'',
 				},
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'Структура подчиненности документа',
 				},
 				{
-					text:'СтруктураПодчиненностиДокумента',
+					text:'Движения документа по регистрам',
 				},
-				{
-					text:'ДвиженияДокументаПоРегистрам',
-				},
-				{
-					text:'Подменю1',
-				},
-				{
-					text:'Разделитель5',
-				},
+				'-',
 			]
 		},
 		{
@@ -109,25 +125,25 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Разделитель2',
+					text:'Закрыть',
 				},
 				{
-					text:'Действие2',
+					text:'Записать',
 				},
 				{
-					text:'Действие1',
+					text:'OK',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:289px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -136,10 +152,22 @@
 			style: 'position:absolute;left:96px;top:289px;width:548px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделение',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:334px;top:57px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

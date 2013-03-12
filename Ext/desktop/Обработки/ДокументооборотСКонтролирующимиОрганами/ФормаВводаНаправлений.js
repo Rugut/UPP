@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаВводаНаправлений',
 	{
 	extend: 'Ext.window.Window',
-	height: 116,width: 348,
+	style: 'position:absolute;width:348px;height:116px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Сведения о контролирующем органе (направление документооборота)',
 	
 	items:
@@ -13,15 +15,19 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыДобавить',
+					text:'ОК',
 				},
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Отмена',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код органа:',
+			style: 'position:absolute;left:8px;top:36px;width:124px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -34,6 +40,18 @@
 			hideLabel: true,
 			name: 'ТипПолучателя',
 			style: 'position:absolute;left:152px;top:8px;width:188px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипПолучателя',
+			text: 'Тип органа:',
+			style: 'position:absolute;left:8px;top:8px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод1',
+			text: 'КПП (только для ФНС):',
+			style: 'position:absolute;left:8px;top:64px;width:124px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

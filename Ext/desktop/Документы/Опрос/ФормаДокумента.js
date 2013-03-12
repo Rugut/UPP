@@ -1,8 +1,10 @@
 ﻿Ext.define('Документы.Опрос.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
-	height: 524,width: 426,
+	style: 'position:absolute;width:426px;height:524px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Опрос',
 	
 	items:
@@ -13,25 +15,18 @@
 			items:
 			[
 				{
-					text:'ДействиеОткрытьСвойства',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Обновить состав вопросов',
 				},
 				{
-					text:'Подменю',
-				},
-				{
-					text:'Разделитель2',
-				},
-				{
-					text:'ДействиеОткрытьКатегории',
-				},
-				{
-					text:'Разделитель3',
-				},
-				{
-					text:'ОбновитьСоставВопросов',
-				},
-				{
-					text:'РедактироватьКодНомер',
+					text:'Редактировать номер',
 				},
 			]
 		},
@@ -41,26 +36,20 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыЗакрыть',
+					text:'Закрыть',
 				},
-				{
-					text:'Разделитель2',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ЗавершитьОпрос',
+					text:'Опрос завершен',
 				},
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 		{
@@ -74,10 +63,22 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьОпрашиваемоеЛицо',
+			text: 'Анкетируемый:',
+			style: 'position:absolute;left:0px;top:1px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ОпрашиваемоеЛицо',
 			style: 'position:absolute;left:114px;top:1px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТиповаяАнкета',
+			text: 'Типовая анкета:',
+			style: 'position:absolute;left:0px;top:26px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,10 +91,22 @@
 			]
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:268px;top:399px;width:38px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Номер',
 			style: 'position:absolute;left:312px;top:399px;width:106px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'Дата регистрации:',
+			style: 'position:absolute;left:8px;top:399px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -102,16 +115,34 @@
 			style: 'position:absolute;left:122px;top:399px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Зарегистрировал:',
+			style: 'position:absolute;left:8px;top:424px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:122px;top:424px;width:296px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:472px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Комментарий',
 			style: 'position:absolute;left:122px;top:472px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПредупреждение',
+			text: 'Опрос не завершен',
+			style: 'position:absolute;left:30px;top:351px;width:388px;height:17px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -130,16 +161,20 @@
 			columns:
 			[
 				{
-					text:'НомерСтроки',
+					text:'№',
+					width:'28',
 				},
 				{
 					text:'Раздел',
+					width:'80',
 				},
 				{
 					text:'Вопрос',
+					width:'160',
 				},
 				{
-					text:'ТиповойОтвет',
+					text:'Ответ',
+					width:'120',
 				},
 			]
 		},
@@ -149,6 +184,12 @@
 					title:'Тестирование',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьТестирование',
+			text: 'Тестирование',
+			style: 'position:absolute;left:169px;top:102px;width:73px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаНачатьТестирование',
@@ -169,6 +210,12 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьРассылка',
+			text: 'Рассылка:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

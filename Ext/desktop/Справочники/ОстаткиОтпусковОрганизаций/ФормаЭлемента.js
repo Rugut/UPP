@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ОстаткиОтпусковОрганизаций.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
-	height: 406,width: 346,
+	style: 'position:absolute;width:346px;height:406px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Остатки отпусков сотрудника',
 	
 	items:
@@ -20,21 +22,23 @@
 			items:
 			[
 				{
-					text:'ОсновныеДействияФормыСохранить',
+					text:'Записать',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
-				{
-					text:'ОсновныеДействияФормыЗакрыть',
-				},
-				{
-					text:'ОсновныеДействияФормыОК',
+					text:'OK',
 				},
 			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСотрудник',
+			text: '',
+			style: 'position:absolute;left:8px;top:33px;width:330px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -43,14 +47,32 @@
 			items:
 			[
 				{
-					title:'ОдинОтпуск',
+					title:'Один отпуск',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьДатаОстатков',
+			text: 'Дата остатков:',
+			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОстатков',
 			style: 'position:absolute;left:96px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПодсказкаДатаОстатков1',
+			text: 'Дата, на которую вводятся остатки. С даты, следующей после даты остатков, начнется новый рабочий год. Введенные остатки будут учитываться для всех отпусков, заканчивающихся после даты остатков.',
+			style: 'position:absolute;left:10px;top:25px;width:320px;height:52px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоДней',
+			text: 'Количество дней:',
+			style: 'position:absolute;left:0px;top:84px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +95,7 @@
 					]
 				},
 				{
-					title:'НесколькоОтпусков',
+					title:'Несколько отпусков',
 					items:
 					[
 		{
@@ -83,10 +105,22 @@
 			style: 'position:absolute;left:155px;top:294px;width:175px;height:21px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДатаОстатков1',
+			text: 'Дата остатков:',
+			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаОстатковПоВидамОтпусков',
 			style: 'position:absolute;left:96px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПодсказкаДатаОстатков3',
+			text: 'Дата, на которую вводятся остатки. С даты, следующей после даты остатков, начнется новый рабочий год. Введенные остатки будут учитываться для всех отпусков, заканчивающихся после даты остатков.',
+			style: 'position:absolute;left:10px;top:25px;width:320px;height:52px;',
 		},
 		{
 			xtype: 'grid',
@@ -95,10 +129,12 @@
 			columns:
 			[
 				{
-					text:'ВидЕжегодногоОтпуска',
+					text:'Вид ежегодного отпуска',
+					width:'180',
 				},
 				{
-					text:'Количество',
+					text:'Количество дней',
+					width:'100',
 				},
 			]
 		},
@@ -115,7 +151,7 @@
 					]
 				},
 				{
-					title:'ОтпускаСРабочимиГодами',
+					title:'Отпуска с рабочими годами',
 					items:
 					[
 		{
@@ -125,19 +161,24 @@
 			columns:
 			[
 				{
-					text:'ВидЕжегодногоОтпуска',
+					text:'Вид ежегодного отпуска',
+					width:'100',
 				},
 				{
-					text:'ГодРаботы',
+					text:'Год работы',
+					width:'100',
 				},
 				{
-					text:'ДатаНачалаРабочегоГода',
+					text:'С',
+					width:'80',
 				},
 				{
-					text:'ДатаОкончанияРабочегоГода',
+					text:'По',
+					width:'80',
 				},
 				{
-					text:'Количество',
+					text:'Количество дней',
+					width:'70',
 				},
 			]
 		},
@@ -149,15 +190,11 @@
 				{
 					text:'Удалить',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 				{
 					text:'Рассчитать',
 				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
 				{
 					text:'Добавить',
 				},
@@ -168,6 +205,12 @@
 			name: 'ПростойВвод',
 			text: '<< Простой ввод остатков',
 			style: 'position:absolute;left:155px;top:294px;width:175px;height:21px;',
+		},
+		{
+			xtype: 'label',
+			name: 'ПодсказкаДатаОстатков2',
+			text: 'В табличной части указываются остатки в разрезе рабочих лет. Введенные остатки будут учитываться для всех отпусков, заканчивающихся после даты окончания САМОГО ПОСЛЕДНЕГО рабочего года.',
+			style: 'position:absolute;left:10px;top:236px;width:320px;height:53px;',
 		},
 					]
 				},

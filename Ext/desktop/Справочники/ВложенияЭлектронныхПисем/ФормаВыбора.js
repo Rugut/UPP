@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.ВложенияЭлектронныхПисем.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 321,width: 504,
+	style: 'position:absolute;width:504px;height:321px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Вложения электронных писем',
 	
 	items:
@@ -14,22 +16,28 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Объект',
+					text:'Электронное письмо',
+					width:'120',
 				},
 				{
-					text:'ИмяФайла',
+					text:'Имя файла',
+					width:'120',
 				},
 				{
-					text:'Наименование',
+					text:'Описание',
+					width:'220',
 				},
 				{
-					text:'ИДФайлаПочтовогоПисьма',
+					text:'ИДФайла почтового письма',
+					width:'120',
 				},
 				{
 					text:'Предмет',
+					width:'120',
 				},
 			]
 		},
@@ -41,9 +49,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

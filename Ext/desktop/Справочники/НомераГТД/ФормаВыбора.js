@@ -1,8 +1,10 @@
 ﻿Ext.define('Справочники.НомераГТД.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
-	height: 300,width: 434,
+	style: 'position:absolute;width:434px;height:300px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Номера ГТД',
 	
 	items:
@@ -14,10 +16,12 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'Код',
+					text:'Номер',
+					width:'180',
 				},
 			]
 		},
@@ -29,9 +33,7 @@
 				{
 					text:'Действие',
 				},
-				{
-					text:'Разделитель',
-				},
+				'-',
 			]
 		},
 	]

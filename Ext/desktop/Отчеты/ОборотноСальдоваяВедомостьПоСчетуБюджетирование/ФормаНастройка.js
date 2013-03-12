@@ -1,8 +1,10 @@
 ﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьПоСчетуБюджетирование.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
-	height: 311,width: 490,
+	style: 'position:absolute;width:490px;height:311px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Настройка',
 	
 	items:
@@ -13,13 +15,11 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Разделитель',
-				},
-				{
-					text:'Действие',
+					text:'ОК',
 				},
 			]
 		},
@@ -30,9 +30,15 @@
 			items:
 			[
 				{
-					title:'Страница1',
+					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -63,10 +69,25 @@
 			name: 'Сценарий',
 			style: 'position:absolute;left:68px;top:54px;width:398px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по валютам',
+			style: 'position:absolute;left:12px;top:107px;width:124px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Данные по количеству',
+			style: 'position:absolute;left:12px;top:127px;width:140px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'В валюте сценария',
+			style: 'position:absolute;left:12px;top:147px;width:124px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница2',
+					title:'Детализация',
 					items:
 					[
 		{
@@ -77,9 +98,11 @@
 			[
 				{
 					text:'Поле',
+					width:'120',
 				},
 				{
 					text:'Тип',
+					width:'120',
 				},
 			]
 		},
@@ -90,10 +113,15 @@
 			[
 			]
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'По субсчетам',
+			style: 'position:absolute;left:6px;top:6px;width:92px;height:15px;',
+		},
 					]
 				},
 				{
-					title:'Страница3',
+					title:'Отбор',
 					items:
 					[
 		{
@@ -103,22 +131,28 @@
 			columns:
 			[
 				{
-					text:'Использование',
+					text:'',
+					width:'20',
 				},
 				{
-					text:'Имя',
+					text:'Поле',
+					width:'120',
 				},
 				{
-					text:'ВидСравнения',
+					text:'Тип сравнения',
+					width:'80',
 				},
 				{
 					text:'Значение',
+					width:'240',
 				},
 				{
-					text:'ЗначениеС',
+					text:'С',
+					width:'120',
 				},
 				{
-					text:'ЗначениеПо',
+					text:'По',
+					width:'120',
 				},
 			]
 		},

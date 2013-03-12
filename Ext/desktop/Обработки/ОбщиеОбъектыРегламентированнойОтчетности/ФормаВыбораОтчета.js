@@ -1,8 +1,10 @@
 ﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбораОтчета',
 	{
 	extend: 'Ext.window.Window',
-	height: 386,width: 700,
+	style: 'position:absolute;width:700px;height:386px;',
 	iconCls: 'bogus',
+	minimizable: true,
+	maximizable: true,
 	title: 'Выберите отчет',
 	
 	items:
@@ -18,12 +20,8 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Разделитель',
-				},
-				{
-					text:'Разделитель1',
-				},
+				'-',
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -36,37 +34,48 @@
 			columns:
 			[
 				{
-					text:'Картинка',
+					text:'',
+					width:'32',
 				},
 				{
-					text:'НаименованиеОтчета',
+					text:'Наименование отчета',
+					width:'120',
 				},
 				{
 					text:'Организация',
+					width:'120',
 				},
 				{
 					text:'Период',
+					width:'120',
 				},
 				{
-					text:'КодИМНС',
+					text:'ИФНС',
+					width:'48',
 				},
 				{
 					text:'Вид',
+					width:'36',
 				},
 				{
 					text:'Комментарий',
+					width:'120',
 				},
 				{
-					text:'ДатаНачала',
+					text:'Дата начала',
+					width:'84',
 				},
 				{
-					text:'ДатаОкончания',
+					text:'Дата окончания',
+					width:'84',
 				},
 				{
 					text:'Периодичность',
+					width:'100',
 				},
 				{
-					text:'ИсточникОтчета',
+					text:'Источник отчета',
+					width:'350',
 				},
 			]
 		},
