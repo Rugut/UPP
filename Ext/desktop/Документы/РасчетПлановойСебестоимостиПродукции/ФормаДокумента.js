@@ -79,13 +79,13 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:44px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:44px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:134px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:134px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -113,7 +113,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентСкидкиНаценки',
 			text: 'Процент накладных расходов:',
-			style: 'position:absolute;left:6px;top:154px;width:160px;height:19px;',
+			style: 'position:absolute;left:6px;top:154px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -125,7 +125,7 @@
 			xtype: 'label',
 			name: 'НадписьТипЦен',
 			text: 'Тип цен для оценки затрат:',
-			style: 'position:absolute;left:6px;top:130px;width:160px;height:19px;',
+			style: 'position:absolute;left:6px;top:130px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -539,7 +539,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:318px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:318px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

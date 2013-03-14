@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьКаталог',
 			text: 'Каталог:',
-			style: 'position:absolute;left:8px;top:12px;width:56px;height:15px;',
+			style: 'position:absolute;left:8px;top:12px;width:56px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

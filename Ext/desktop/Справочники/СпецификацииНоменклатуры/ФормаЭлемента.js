@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:426px;top:58px;width:40px;height:19px;',
+			style: 'position:absolute;left:426px;top:58px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:58px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -65,7 +65,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -77,7 +77,7 @@
 			xtype: 'label',
 			name: 'НадписьКодВерсии',
 			text: 'Код версии:',
-			style: 'position:absolute;left:534px;top:58px;width:68px;height:19px;',
+			style: 'position:absolute;left:534px;top:58px;width:68px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,7 +94,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:392px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:392px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -117,7 +117,7 @@
 			xtype: 'label',
 			name: 'ГиперссылкаТехнологическаяКартаСпецификацииПланирования',
 			text: 'Выбрать технологическую карту',
-			style: 'position:absolute;left:86px;top:270px;width:550px;height:15px;',
+			style: 'position:absolute;left:86px;top:270px;width:550px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -133,7 +133,7 @@
 			xtype: 'label',
 			name: 'НадписьСостояние',
 			text: 'Состояние:',
-			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -335,7 +335,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаУтверждения',
 			text: 'Дата утверждения:',
-			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -428,7 +428,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -440,7 +440,7 @@
 			xtype: 'label',
 			name: 'НадписьНазначение',
 			text: 'Назначение:',
-			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -467,7 +467,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:6px;top:22px;width:78px;height:19px;',
+			style: 'position:absolute;left:6px;top:22px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -479,7 +479,7 @@
 			xtype: 'label',
 			name: 'НадписьХарактеристикаНоменклатуры',
 			text: 'Характеристика:',
-			style: 'position:absolute;left:326px;top:22px;width:88px;height:19px;',
+			style: 'position:absolute;left:326px;top:22px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -515,7 +515,7 @@
 			xtype: 'label',
 			name: 'НадписьТочкаМаршрута',
 			text: 'Точка маршрута:',
-			style: 'position:absolute;left:326px;top:46px;width:88px;height:19px;',
+			style: 'position:absolute;left:326px;top:46px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -533,13 +533,13 @@
 			xtype: 'label',
 			name: 'НадписьМинимальнаяПартияИзделия',
 			text: 'Кратность:',
-			style: 'position:absolute;left:168px;top:70px;width:56px;height:19px;',
+			style: 'position:absolute;left:168px;top:70px;width:56px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьМинимальнаяПартия',
 			text: 'Мин. партия:',
-			style: 'position:absolute;left:326px;top:70px;width:88px;height:19px;',
+			style: 'position:absolute;left:326px;top:70px;width:88px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -622,7 +622,7 @@
 			xtype: 'label',
 			name: 'НадписьТехКарта',
 			text: 'Тех. карта:',
-			style: 'position:absolute;left:0px;top:270px;width:84px;height:15px;',
+			style: 'position:absolute;left:0px;top:270px;width:84px;height:15px;text-align:left;',
 		},
 					]
 				},
@@ -738,7 +738,7 @@
 			xtype: 'label',
 			name: 'НадписьСостояниеУзел',
 			text: 'Состояние:',
-			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -750,7 +750,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаУтвержденияУзел',
 			text: 'Дата утверждения:',
-			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -762,7 +762,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственныйУзел',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -774,7 +774,7 @@
 			xtype: 'label',
 			name: 'НадписьНазначение1',
 			text: 'Назначение:',
-			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -794,7 +794,7 @@
 			xtype: 'label',
 			name: 'ТекстОсновнаяСпецификация',
 			text: '',
-			style: 'position:absolute;left:164px;top:82px;width:480px;height:15px;',
+			style: 'position:absolute;left:164px;top:82px;width:480px;height:15px;text-align:right;',
 		},
 	]
 });

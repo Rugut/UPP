@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:8px;width:79px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -495,7 +495,7 @@
 			xtype: 'label',
 			name: 'СсылкаИзменитьПараметрыЗаполнения',
 			text: 'Изменить параметры заполнения графика...',
-			style: 'position:absolute;left:628px;top:34px;width:177px;height:34px;',
+			style: 'position:absolute;left:628px;top:34px;width:177px;height:34px;text-align:left;',
 		},
 	]
 });

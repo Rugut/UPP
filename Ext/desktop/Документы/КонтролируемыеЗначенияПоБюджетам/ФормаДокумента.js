@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Сценарий:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Вид контр. значений:',
-			style: 'position:absolute;left:8px;top:85px;width:172px;height:19px;',
+			style: 'position:absolute;left:8px;top:85px;width:172px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Использование контр. значений:',
-			style: 'position:absolute;left:8px;top:109px;width:172px;height:19px;',
+			style: 'position:absolute;left:8px;top:109px;width:172px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Вид ограничения оборотов:',
-			style: 'position:absolute;left:8px;top:133px;width:172px;height:19px;',
+			style: 'position:absolute;left:8px;top:133px;width:172px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Контролирующий сценарий:',
-			style: 'position:absolute;left:8px;top:157px;width:172px;height:19px;',
+			style: 'position:absolute;left:8px;top:157px;width:172px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -231,7 +231,7 @@
 			xtype: 'label',
 			name: 'НадписьОтклонение',
 			text: 'Отклонение, %:',
-			style: 'position:absolute;left:0px;top:77px;width:172px;height:19px;',
+			style: 'position:absolute;left:0px;top:77px;width:172px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -263,7 +263,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Вид отклонения:',
-			style: 'position:absolute;left:0px;top:53px;width:172px;height:19px;',
+			style: 'position:absolute;left:0px;top:53px;width:172px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -279,7 +279,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:382px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:382px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -291,7 +291,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Состояние:',
-			style: 'position:absolute;left:8px;top:358px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:358px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

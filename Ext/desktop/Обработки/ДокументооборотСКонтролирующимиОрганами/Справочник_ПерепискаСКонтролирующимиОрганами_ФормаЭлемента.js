@@ -172,7 +172,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Тема:',
-			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,7 +184,7 @@
 			xtype: 'label',
 			name: 'НадписьОтправитель',
 			text: 'От кого:',
-			style: 'position:absolute;left:0px;top:26px;width:79px;height:19px;',
+			style: 'position:absolute;left:0px;top:26px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -196,7 +196,7 @@
 			xtype: 'label',
 			name: 'НадписьПолучатель',
 			text: 'Кому:',
-			style: 'position:absolute;left:0px;top:52px;width:79px;height:19px;',
+			style: 'position:absolute;left:0px;top:52px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

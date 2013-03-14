@@ -95,7 +95,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -107,7 +107,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:348px;top:33px;width:27px;height:19px;',
+			style: 'position:absolute;left:348px;top:33px;width:27px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -119,7 +119,7 @@
 			xtype: 'label',
 			name: 'НадписьОбработкаОбслуживания',
 			text: 'Обработка обслуживания:',
-			style: 'position:absolute;left:8px;top:78px;width:135px;height:19px;',
+			style: 'position:absolute;left:8px;top:78px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -131,7 +131,7 @@
 			xtype: 'label',
 			name: 'НадписьМодель',
 			text: 'Модель:',
-			style: 'position:absolute;left:8px;top:102px;width:135px;height:19px;',
+			style: 'position:absolute;left:8px;top:102px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

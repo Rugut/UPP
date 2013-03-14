@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНастройка',
 			text: 'Настройка:',
-			style: 'position:absolute;left:8px;top:8px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьГраницаНачала',
 			text: 'На дату: ',
-			style: 'position:absolute;left:8px;top:32px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

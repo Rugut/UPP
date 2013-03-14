@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:70px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:169px;top:33px;width:15px;height:19px;',
+			style: 'position:absolute;left:169px;top:33px;width:15px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:70px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -892,7 +892,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:401px;width:73px;height:19px;',
+			style: 'position:absolute;left:8px;top:401px;width:73px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -910,7 +910,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:377px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:377px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

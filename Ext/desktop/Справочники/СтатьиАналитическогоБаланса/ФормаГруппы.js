@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Код для отчета:',
-			style: 'position:absolute;left:305px;top:8px;width:88px;height:19px;',
+			style: 'position:absolute;left:305px;top:8px;width:88px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

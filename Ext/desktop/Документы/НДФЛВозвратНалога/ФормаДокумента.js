@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:322px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:322px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:490px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:490px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:314px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:314px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:322px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:322px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьВозврат',
 			text: 'Возврат за:',
-			style: 'position:absolute;left:8px;top:57px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

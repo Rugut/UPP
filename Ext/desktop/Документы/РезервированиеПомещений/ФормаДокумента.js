@@ -68,7 +68,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРезервирования',
 			text: 'Начиная с:',
-			style: 'position:absolute;left:8px;top:109px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:109px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,7 +80,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:163px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:163px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -102,7 +102,7 @@
 			xtype: 'label',
 			name: 'НадписьПомещение',
 			text: 'Помещение:',
-			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -125,7 +125,7 @@
 			xtype: 'label',
 			name: 'НадписьДней',
 			text: 'Дней:',
-			style: 'position:absolute;left:0px;top:0px;width:85px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'НадписьЧасов',
 			text: 'Часов и минут:',
-			style: 'position:absolute;left:226px;top:0px;width:84px;height:19px;',
+			style: 'position:absolute;left:226px;top:0px;width:84px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -155,7 +155,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончанияРезервирования',
 			text: 'До:',
-			style: 'position:absolute;left:0px;top:0px;width:85px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -171,7 +171,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'Дата регистрации:',
-			style: 'position:absolute;left:8px;top:233px;width:98px;height:19px;',
+			style: 'position:absolute;left:8px;top:233px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Зарегистрировал:',
-			style: 'position:absolute;left:8px;top:257px;width:98px;height:19px;',
+			style: 'position:absolute;left:8px;top:257px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -195,7 +195,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:247px;top:233px;width:39px;height:19px;',
+			style: 'position:absolute;left:247px;top:233px;width:39px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

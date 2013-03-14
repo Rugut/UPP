@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьДлительностьКурса',
 			text: 'Объем курса*, часов:',
-			style: 'position:absolute;left:8px;top:175px;width:180px;height:19px;',
+			style: 'position:absolute;left:8px;top:175px;width:180px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьЗатратыНаОдногоОбучающегося',
 			text: 'Затраты на одного обучающегося:',
-			style: 'position:absolute;left:8px;top:200px;width:180px;height:19px;',
+			style: 'position:absolute;left:8px;top:200px;width:180px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,7 +55,7 @@
 			xtype: 'label',
 			name: 'НадписьВидДокументаОбОбразовании',
 			text: 'При прохождении курса может быть выдан документ:',
-			style: 'position:absolute;left:8px;top:224px;width:398px;height:19px;',
+			style: 'position:absolute;left:8px;top:224px;width:398px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -67,7 +67,7 @@
 			xtype: 'label',
 			name: 'НадписьВалюта',
 			text: 'Валюта:',
-			style: 'position:absolute;left:267px;top:200px;width:45px;height:19px;',
+			style: 'position:absolute;left:267px;top:200px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -197,7 +197,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -60,7 +60,7 @@
 			xtype: 'label',
 			name: 'Надпись100',
 			text: 'Вид показателя монитора эффективности',
-			style: 'position:absolute;left:6px;top:6px;width:418px;height:36px;',
+			style: 'position:absolute;left:6px;top:6px;width:418px;height:36px;text-align:center;',
 		},
 		{
 			xtype: 'label',

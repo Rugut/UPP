@@ -46,19 +46,19 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование :',
-			style: 'position:absolute;left:8px;top:105px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:393px;top:105px;width:30px;height:19px;',
+			style: 'position:absolute;left:393px;top:105px;width:30px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:526px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:526px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,7 +70,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа договоров:',
-			style: 'position:absolute;left:8px;top:81px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьВалютаВзаиморасчетов',
 			text: 'Валюта :',
-			style: 'position:absolute;left:341px;top:25px;width:62px;height:19px;',
+			style: 'position:absolute;left:341px;top:25px;width:62px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентПредоплаты',
 			text: 'Размер предоплаты по заказу покупателя, процентов, не менее:',
-			style: 'position:absolute;left:14px;top:185px;width:356px;height:19px;',
+			style: 'position:absolute;left:14px;top:185px;width:356px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'НадписьВидВзаиморасчетов',
 			text: 'Вид взаиморасчетов:',
-			style: 'position:absolute;left:14px;top:88px;width:132px;height:19px;',
+			style: 'position:absolute;left:14px;top:88px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -168,7 +168,7 @@
 			xtype: 'label',
 			name: 'НадписьВедениеВзаиморасчетов',
 			text: 'Взаиморасчеты ведутся:',
-			style: 'position:absolute;left:14px;top:25px;width:132px;height:19px;',
+			style: 'position:absolute;left:14px;top:25px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -228,7 +228,7 @@
 			xtype: 'label',
 			name: 'НадписьТипЦенПокупки',
 			text: 'Тип цен :',
-			style: 'position:absolute;left:12px;top:26px;width:108px;height:19px;',
+			style: 'position:absolute;left:12px;top:26px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -240,7 +240,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентКомиссионногоВознаграждения',
 			text: 'Процент:',
-			style: 'position:absolute;left:371px;top:98px;width:52px;height:19px;',
+			style: 'position:absolute;left:371px;top:98px;width:52px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -252,7 +252,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособРасчетаКомиссионногоВознаграждения',
 			text: 'Способ расчета:',
-			style: 'position:absolute;left:12px;top:98px;width:108px;height:19px;',
+			style: 'position:absolute;left:12px;top:98px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -281,7 +281,7 @@
 			xtype: 'label',
 			name: 'НадписьОсновнаяСтатьяДвиженияДенежныхСредств',
 			text: 'Основная статья:',
-			style: 'position:absolute;left:12px;top:50px;width:108px;height:19px;',
+			style: 'position:absolute;left:12px;top:50px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -310,7 +310,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеДляСчетаФактурыНаАванс',
 			text: 'Обобщенное наименование товаров для счета-фактуры на аванс:',
-			style: 'position:absolute;left:7px;top:89px;width:478px;height:19px;',
+			style: 'position:absolute;left:7px;top:89px;width:478px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -333,7 +333,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокРегистрацииСчетовФактурНаАвансПоДоговору',
 			text: 'Порядок регистрации счетов-фактур на аванс по договору:',
-			style: 'position:absolute;left:0px;top:0px;width:478px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:478px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -383,7 +383,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеДляСчетаФактурыНаАванс1',
 			text: 'Обобщенное наименование товаров для счета-фактуры на аванс:',
-			style: 'position:absolute;left:7px;top:65px;width:478px;height:19px;',
+			style: 'position:absolute;left:7px;top:65px;width:478px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -460,7 +460,7 @@
 			xtype: 'label',
 			name: 'НадписьВидУсловийДоговора',
 			text: 'Условия договора:',
-			style: 'position:absolute;left:6px;top:6px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -658,13 +658,13 @@
 			xtype: 'label',
 			name: 'НадписьВидДоговора',
 			text: 'Вид договора:',
-			style: 'position:absolute;left:8px;top:129px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВладелец',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:57px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -676,7 +676,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -700,19 +700,19 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:208px;top:153px;width:20px;height:19px;',
+			style: 'position:absolute;left:208px;top:153px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:153px;width:40px;height:19px;',
+			style: 'position:absolute;left:8px;top:153px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСрокДействия',
 			text: 'Срок действия:',
-			style: 'position:absolute;left:338px;top:153px;width:83px;height:19px;',
+			style: 'position:absolute;left:338px;top:153px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

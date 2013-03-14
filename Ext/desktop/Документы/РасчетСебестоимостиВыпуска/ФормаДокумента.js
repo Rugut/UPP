@@ -42,13 +42,13 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:187px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:187px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:109px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:109px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:412px;width:77px;height:19px;',
+			style: 'position:absolute;left:8px;top:412px;width:77px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Месяц расчета:',
-			style: 'position:absolute;left:8px;top:58px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,7 +144,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -176,7 +176,7 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчетеРасширеннаяАналитика',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -198,7 +198,7 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -228,7 +228,7 @@
 			xtype: 'label',
 			name: 'НадписьНастройкаЗакрытияМесяца',
 			text: 'Настройка закрытия месяца:',
-			style: 'position:absolute;left:8px;top:137px;width:94px;height:30px;',
+			style: 'position:absolute;left:8px;top:137px;width:94px;height:30px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

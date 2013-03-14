@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:350px;top:33px;width:32px;height:19px;',
+			style: 'position:absolute;left:350px;top:33px;width:32px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -117,7 +117,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоДнейОтпускаВГод',
 			text: 'количество дней отпуска в год:',
-			style: 'position:absolute;left:254px;top:131px;width:160px;height:19px;',
+			style: 'position:absolute;left:254px;top:131px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

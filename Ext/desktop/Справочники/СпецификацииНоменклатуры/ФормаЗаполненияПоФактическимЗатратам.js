@@ -126,7 +126,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодПо',
 			text: 'по:',
-			style: 'position:absolute;left:179px;top:8px;width:16px;height:19px;',
+			style: 'position:absolute;left:179px;top:8px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,7 +144,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаИзмерения',
 			text: 'Единица:',
-			style: 'position:absolute;left:409px;top:56px;width:56px;height:19px;',
+			style: 'position:absolute;left:409px;top:56px;width:56px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

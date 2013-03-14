@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'НадписьОтделениеБанка',
 			text: 'Отделение:',
-			style: 'position:absolute;left:222px;top:30px;width:68px;height:19px;',
+			style: 'position:absolute;left:222px;top:30px;width:68px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,7 +147,7 @@
 			xtype: 'label',
 			name: 'НадписьФилиалОтделенияБанка',
 			text: 'Филиал:',
-			style: 'position:absolute;left:222px;top:54px;width:52px;height:19px;',
+			style: 'position:absolute;left:222px;top:54px;width:52px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -159,7 +159,7 @@
 			xtype: 'label',
 			name: 'НадписьОтделениеБанка1',
 			text: 'Номер с начала года:',
-			style: 'position:absolute;left:6px;top:54px;width:112px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерРеестра',
 			text: 'Номер реестра:',
-			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -195,7 +195,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРеестра',
 			text: 'Дата реестра:',
-			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,7 +212,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерРеестра1',
 			text: 'Номер реестра:',
-			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -224,7 +224,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРеестра1',
 			text: 'Дата реестра:',
-			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -241,7 +241,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерРеестра2',
 			text: 'Номер реестра:',
-			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -253,7 +253,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРеестра2',
 			text: 'Дата реестра:',
-			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -270,7 +270,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерРеестра3',
 			text: 'Номер реестра:',
-			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:31px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -282,7 +282,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРеестра3',
 			text: 'Дата реестра:',
-			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;',
+			style: 'position:absolute;left:360px;top:55px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -409,7 +409,7 @@
 			xtype: 'label',
 			name: 'НадписьОтделениеБанка2',
 			text: 'Отделение:',
-			style: 'position:absolute;left:222px;top:30px;width:68px;height:19px;',
+			style: 'position:absolute;left:222px;top:30px;width:68px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -421,7 +421,7 @@
 			xtype: 'label',
 			name: 'НадписьФилиалОтделенияБанка1',
 			text: 'Филиал:',
-			style: 'position:absolute;left:222px;top:54px;width:52px;height:19px;',
+			style: 'position:absolute;left:222px;top:54px;width:52px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -433,7 +433,7 @@
 			xtype: 'label',
 			name: 'НадписьОтделениеБанка3',
 			text: 'Номер с начала года:',
-			style: 'position:absolute;left:6px;top:54px;width:112px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

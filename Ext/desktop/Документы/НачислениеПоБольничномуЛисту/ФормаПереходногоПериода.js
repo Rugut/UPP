@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'НадписьПричинаНетрудоспособностиПереходногоПериода',
 			text: 'Причина нетрудоспособности:',
-			style: 'position:absolute;left:8px;top:8px;width:154px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:154px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'НадписьСлучайУходаЗаБольнымРебенкомПереходногоПериода1',
 			text: 'В случае ухода за ребенком:',
-			style: 'position:absolute;left:8px;top:36px;width:154px;height:19px;',
+			style: 'position:absolute;left:8px;top:36px;width:154px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентОплатыПереходногоПериода1',
 			text: 'Процент среднего заработка:',
-			style: 'position:absolute;left:8px;top:62px;width:154px;height:19px;',
+			style: 'position:absolute;left:8px;top:62px;width:154px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -63,7 +63,7 @@
 			xtype: 'label',
 			name: 'НадписьОграничениеПособияПереходногоПериода',
 			text: 'Ограничение:',
-			style: 'position:absolute;left:8px;top:90px;width:154px;height:19px;',
+			style: 'position:absolute;left:8px;top:90px;width:154px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

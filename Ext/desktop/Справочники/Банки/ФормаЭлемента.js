@@ -13,7 +13,8 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'БИК:',
-			style: 'position:absolute;left:232px;top:85px;width:40px;height:19px;',
+			layout:'absolute',
+			style: 'position:absolute;left:232px;top:85px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +26,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьКоррСчет',
 			text: 'Корр. счет:',
-			style: 'position:absolute;left:8px;top:85px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:85px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьГород',
 			text: 'Город:',
-			style: 'position:absolute;left:8px;top:117px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:117px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьАдрес',
 			text: 'Адрес:',
-			style: 'position:absolute;left:8px;top:142px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:142px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьТелефоны',
 			text: 'Телефоны:',
-			style: 'position:absolute;left:8px;top:167px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:167px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -102,19 +103,20 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:194px;width:362px;height:25px;',
+			style: 'position:absolute;left:0px;top:194px;width:362px;height:25px;padding-left:0px;',
 			items:
 			[
 				{
-					text:'OK',
+				    text: 'OK',
+				    
 				},
 				'-',
 				{
-					text:'Записать',
+				    text: 'Записать',
 				},
 				'-',
 				{
-					text:'Закрыть',
+				    text: 'Закрыть',
 				},
 			]
 		},

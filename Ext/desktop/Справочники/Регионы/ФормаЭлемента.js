@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код:',
-			style: 'position:absolute;left:8px;top:58px;width:27px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:27px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:106px;width:79px;height:19px;',
+			style: 'position:absolute;left:8px;top:106px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Входит в:',
-			style: 'position:absolute;left:8px;top:34px;width:79px;height:19px;',
+			style: 'position:absolute;left:8px;top:34px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:154px;width:79px;height:17px;',
+			style: 'position:absolute;left:8px;top:154px;width:79px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Код региона:',
-			style: 'position:absolute;left:8px;top:82px;width:79px;height:19px;',
+			style: 'position:absolute;left:8px;top:82px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Код адресного элемента:',
-			style: 'position:absolute;left:149px;top:58px;width:134px;height:19px;',
+			style: 'position:absolute;left:149px;top:58px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьЖДСтанцияНазначения',
 			text: 'Ж/Д станция:',
-			style: 'position:absolute;left:8px;top:130px;width:79px;height:19px;',
+			style: 'position:absolute;left:8px;top:130px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

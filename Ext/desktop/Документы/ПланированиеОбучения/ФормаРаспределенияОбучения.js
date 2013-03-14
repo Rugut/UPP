@@ -51,7 +51,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Период с:',
-			style: 'position:absolute;left:186px;top:36px;width:50px;height:19px;',
+			style: 'position:absolute;left:186px;top:36px;width:50px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -63,7 +63,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'по:',
-			style: 'position:absolute;left:329px;top:36px;width:15px;height:19px;',
+			style: 'position:absolute;left:329px;top:36px;width:15px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',

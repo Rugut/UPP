@@ -164,7 +164,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Наименование:',
-			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

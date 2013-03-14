@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'НадписьВремяНаСервере',
 			text: 'Время на сервере:',
-			style: 'position:absolute;left:8px;top:36px;width:156px;height:19px;',
+			style: 'position:absolute;left:8px;top:36px;width:156px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'НадписьВремяНаКлиенте',
 			text: 'Время на этом компьютере:',
-			style: 'position:absolute;left:8px;top:61px;width:156px;height:19px;',
+			style: 'position:absolute;left:8px;top:61px;width:156px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

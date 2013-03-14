@@ -38,19 +38,19 @@
 			xtype: 'label',
 			name: 'НадписьНомерСчета',
 			text: 'Номер счета:',
-			style: 'position:absolute;left:8px;top:35px;width:92px;height:15px;',
+			style: 'position:absolute;left:8px;top:35px;width:92px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидСчета',
 			text: 'Вид счета:',
-			style: 'position:absolute;left:273px;top:35px;width:57px;height:15px;',
+			style: 'position:absolute;left:273px;top:35px;width:57px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВалютаДенежныхСредств',
 			text: 'Валюта:',
-			style: 'position:absolute;left:447px;top:35px;width:45px;height:15px;',
+			style: 'position:absolute;left:447px;top:35px;width:45px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Представление:',
-			style: 'position:absolute;left:8px;top:471px;width:92px;height:15px;',
+			style: 'position:absolute;left:8px;top:471px;width:92px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,13 +86,13 @@
 			xtype: 'label',
 			name: 'НадписьБИКБанка',
 			text: 'БИК:',
-			style: 'position:absolute;left:8px;top:84px;width:46px;height:15px;',
+			style: 'position:absolute;left:8px;top:84px;width:46px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКоррСчетБанка',
 			text: 'Корр. счет:',
-			style: 'position:absolute;left:273px;top:84px;width:57px;height:15px;',
+			style: 'position:absolute;left:273px;top:84px;width:57px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,13 +132,13 @@
 			xtype: 'label',
 			name: 'НадписьБИКБанкаДляРасчетов',
 			text: 'БИК:',
-			style: 'position:absolute;left:0px;top:21px;width:40px;height:19px;',
+			style: 'position:absolute;left:0px;top:21px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКоррСчетБанкаДляРасчетов',
 			text: 'Корр. счет:',
-			style: 'position:absolute;left:265px;top:21px;width:57px;height:19px;',
+			style: 'position:absolute;left:265px;top:21px;width:57px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -190,7 +190,7 @@
 			name: 'НадписьНомерИДатаРазрешения',
 			text: 'Номер и дата разрешения ЦБ
 на открытие валютного счета:',
-			style: 'position:absolute;left:205px;top:170px;width:327px;height:19px;',
+			style: 'position:absolute;left:205px;top:170px;width:327px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -213,19 +213,19 @@
 			xtype: 'label',
 			name: 'НадписьТекстПлательщика',
 			text: 'Текст наименования организации в поле "Плательщик" :',
-			style: 'position:absolute;left:0px;top:0px;width:299px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:299px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьТекстНазначения',
 			text: 'Текст назначения платежа:',
-			style: 'position:absolute;left:0px;top:57px;width:270px;height:19px;',
+			style: 'position:absolute;left:0px;top:57px;width:270px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаОткрытия',
 			text: 'Дата открытия:',
-			style: 'position:absolute;left:0px;top:170px;width:92px;height:19px;',
+			style: 'position:absolute;left:0px;top:170px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -237,7 +237,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаЗакрытия',
 			text: 'Дата закрытия:',
-			style: 'position:absolute;left:0px;top:194px;width:92px;height:19px;',
+			style: 'position:absolute;left:0px;top:194px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -254,7 +254,7 @@
 			xtype: 'label',
 			name: 'НадписьТекстПолучателя',
 			text: 'Текст наименования контрагента в поле "Получатель" :',
-			style: 'position:absolute;left:0px;top:0px;width:320px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:320px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -309,7 +309,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:482px;top:471px;width:37px;height:15px;',
+			style: 'position:absolute;left:482px;top:471px;width:37px;height:15px;text-align:center;',
 		},
 	]
 });

@@ -89,7 +89,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровРеализации',
 			text: 'Количество экземпляров:',
-			style: 'position:absolute;left:126px;top:48px;width:136px;height:19px;',
+			style: 'position:absolute;left:126px;top:48px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровСчетаФактуры',
 			text: 'Количество экземпляров:',
-			style: 'position:absolute;left:126px;top:247px;width:136px;height:19px;',
+			style: 'position:absolute;left:126px;top:247px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -128,7 +128,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровПКО',
 			text: 'Количество экземпляров:',
-			style: 'position:absolute;left:126px;top:369px;width:136px;height:19px;',
+			style: 'position:absolute;left:126px;top:369px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -140,7 +140,7 @@
 			xtype: 'label',
 			name: 'НадписьОснованиеПКО',
 			text: 'Основание платежа:',
-			style: 'position:absolute;left:14px;top:321px;width:107px;height:19px;',
+			style: 'position:absolute;left:14px;top:321px;width:107px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -190,7 +190,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровРасходныйОрдерНаТовары',
 			text: 'Количество экземпляров:',
-			style: 'position:absolute;left:126px;top:147px;width:136px;height:19px;',
+			style: 'position:absolute;left:126px;top:147px;width:136px;height:19px;text-align:left;',
 		},
 	]
 });

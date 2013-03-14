@@ -38,13 +38,13 @@
 			text: 'Электронный документооборот с контролирующими органами по организации #Организация успешно настроен.
 Создана учетная запись: #УчетнаяЗапись
 Выберите пользователей, имеющих право использовать эту учетную запись:',
-			style: 'position:absolute;left:8px;top:8px;width:440px;height:56px;',
+			style: 'position:absolute;left:8px;top:8px;width:440px;height:56px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Позже список пользователей можно будет изменить на вкладке "Документооборот" формы организации.',
-			style: 'position:absolute;left:8px;top:384px;width:440px;height:28px;',
+			style: 'position:absolute;left:8px;top:384px;width:440px;height:28px;text-align:left;',
 		},
 	]
 });

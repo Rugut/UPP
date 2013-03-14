@@ -223,7 +223,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация1',
 			text: 'Организация:',
-			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;',
+			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -311,7 +311,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;',
+			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -323,7 +323,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПовышения',
 			text: 'Дата повышения:',
-			style: 'position:absolute;left:20px;top:30px;width:92px;height:19px;',
+			style: 'position:absolute;left:20px;top:30px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -340,7 +340,7 @@
 			xtype: 'label',
 			name: 'НадписьКоэффициентПовышения',
 			text: 'Коэффициент повышения:',
-			style: 'position:absolute;left:243px;top:30px;width:140px;height:19px;',
+			style: 'position:absolute;left:243px;top:30px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -370,7 +370,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПовышения1',
 			text: 'Дата повышения:',
-			style: 'position:absolute;left:22px;top:14px;width:92px;height:19px;',
+			style: 'position:absolute;left:22px;top:14px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -382,7 +382,7 @@
 			xtype: 'label',
 			name: 'НадписьКоэффициентПовышения1',
 			text: 'Коэффициент повышения:',
-			style: 'position:absolute;left:245px;top:14px;width:140px;height:19px;',
+			style: 'position:absolute;left:245px;top:14px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

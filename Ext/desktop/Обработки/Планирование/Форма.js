@@ -64,7 +64,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по',
-			style: 'position:absolute;left:872px;top:2px;width:16px;height:19px;',
+			style: 'position:absolute;left:872px;top:2px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'tabpanel',

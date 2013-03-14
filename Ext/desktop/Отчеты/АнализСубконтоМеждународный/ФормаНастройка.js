@@ -150,7 +150,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:7px;width:80px;height:19px;',
+			style: 'position:absolute;left:6px;top:7px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',

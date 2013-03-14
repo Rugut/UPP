@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:405px;top:84px;width:40px;height:19px;',
+			style: 'position:absolute;left:405px;top:84px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:84px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа касс:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьВалютаДенежныхСредств',
 			text: 'Валюта:',
-			style: 'position:absolute;left:8px;top:108px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -87,7 +87,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственноеЛицо',
 			text: 'Ответственное лицо:',
-			style: 'position:absolute;left:8px;top:129px;width:84px;height:27px;',
+			style: 'position:absolute;left:8px;top:129px;width:84px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -105,7 +105,7 @@
 			xtype: 'label',
 			name: 'НадписьВладелец',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

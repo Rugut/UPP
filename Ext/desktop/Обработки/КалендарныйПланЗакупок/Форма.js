@@ -96,7 +96,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
 			text: 'Период планирования, с:',
-			style: 'position:absolute;left:8px;top:33px;width:132px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -108,7 +108,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончания',
 			text: 'по:',
-			style: 'position:absolute;left:225px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:225px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,7 +162,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокОтображения',
 			text: 'Порядок отображения:',
-			style: 'position:absolute;left:8px;top:57px;width:132px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',

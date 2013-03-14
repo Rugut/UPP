@@ -34,7 +34,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:8px;top:81px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -46,7 +46,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличество',
 			text: 'Количество:',
-			style: 'position:absolute;left:8px;top:129px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -64,7 +64,7 @@
 			xtype: 'label',
 			name: 'НадписьВидНорматива',
 			text: 'Вид норматива:',
-			style: 'position:absolute;left:8px;top:57px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -76,7 +76,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатьяЗатрат',
 			text: 'Статья затрат:',
-			style: 'position:absolute;left:8px;top:153px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:153px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,7 +100,7 @@
 			xtype: 'label',
 			name: 'НадписьМинимальнаяПартия',
 			text: 'Мин. партия:',
-			style: 'position:absolute;left:8px;top:177px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:177px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -112,7 +112,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерОперацииМаршрута',
 			text: '№ операции:',
-			style: 'position:absolute;left:8px;top:33px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,7 +124,7 @@
 			xtype: 'label',
 			name: 'НадписьСпецификация',
 			text: 'Спецификация:',
-			style: 'position:absolute;left:8px;top:225px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:225px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -136,13 +136,13 @@
 			xtype: 'label',
 			name: 'НадписьЕдиница',
 			text: 'Единица:',
-			style: 'position:absolute;left:240px;top:129px;width:48px;height:19px;',
+			style: 'position:absolute;left:240px;top:129px;width:48px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Позиция:',
-			style: 'position:absolute;left:240px;top:33px;width:47px;height:19px;',
+			style: 'position:absolute;left:240px;top:33px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,7 +154,7 @@
 			xtype: 'label',
 			name: 'НадписьВидВоспроизводства',
 			text: 'Вид воспроизводства:',
-			style: 'position:absolute;left:8px;top:201px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:201px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -166,7 +166,7 @@
 			xtype: 'label',
 			name: 'НадписьУказаниеНорматива',
 			text: 'Указание норматива:',
-			style: 'position:absolute;left:8px;top:249px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:249px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -178,7 +178,7 @@
 			xtype: 'label',
 			name: 'НадписьФормула',
 			text: 'Формула:',
-			style: 'position:absolute;left:8px;top:273px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:273px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -190,7 +190,7 @@
 			xtype: 'label',
 			name: 'НадписьСписаниеКомплектующей',
 			text: 'Списание комплектующей:',
-			style: 'position:absolute;left:8px;top:297px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:297px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -202,7 +202,7 @@
 			xtype: 'label',
 			name: 'НадписьСвойствоДляСписания',
 			text: 'Свойство:',
-			style: 'position:absolute;left:8px;top:321px;width:140px;height:19px;',
+			style: 'position:absolute;left:8px;top:321px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

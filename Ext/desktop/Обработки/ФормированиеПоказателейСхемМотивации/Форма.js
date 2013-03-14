@@ -44,7 +44,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Период:',
-			style: 'position:absolute;left:8px;top:33px;width:78px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

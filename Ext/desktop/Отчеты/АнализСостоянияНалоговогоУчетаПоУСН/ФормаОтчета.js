@@ -24,7 +24,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:265px;top:8px;width:70px;height:18px;',
+			style: 'position:absolute;left:265px;top:8px;width:70px;height:18px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -48,13 +48,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'Период с:',
-			style: 'position:absolute;left:4px;top:8px;width:50px;height:18px;',
+			style: 'position:absolute;left:4px;top:8px;width:50px;height:18px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаКон',
 			text: 'по:',
-			style: 'position:absolute;left:139px;top:8px;width:15px;height:18px;',
+			style: 'position:absolute;left:139px;top:8px;width:15px;height:18px;text-align:center;',
 		},
 		{
 			xtype: 'button',

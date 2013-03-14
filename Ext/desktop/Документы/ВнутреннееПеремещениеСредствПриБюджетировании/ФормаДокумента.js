@@ -75,7 +75,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -87,7 +87,7 @@
 			xtype: 'label',
 			name: 'Надпись23',
 			text: 'от:',
-			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'Надпись24',
 			text: 'Сценарий:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,7 +111,7 @@
 			xtype: 'label',
 			name: 'Надпись25',
 			text: 'Период планирования:',
-			style: 'position:absolute;left:336px;top:33px;width:120px;height:19px;',
+			style: 'position:absolute;left:336px;top:33px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,7 +123,7 @@
 			xtype: 'label',
 			name: 'Надпись26',
 			text: 'Статья оборотов:',
-			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'Надпись27',
 			text: 'Ед. измерения:',
-			style: 'position:absolute;left:164px;top:226px;width:88px;height:19px;',
+			style: 'position:absolute;left:164px;top:226px;width:88px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,7 +147,7 @@
 			xtype: 'label',
 			name: 'Надпись32',
 			text: 'Количество:',
-			style: 'position:absolute;left:14px;top:226px;width:82px;height:19px;',
+			style: 'position:absolute;left:14px;top:226px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -159,7 +159,7 @@
 			xtype: 'label',
 			name: 'Надпись34',
 			text: 'Валюта:',
-			style: 'position:absolute;left:14px;top:201px;width:82px;height:19px;',
+			style: 'position:absolute;left:14px;top:201px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -171,7 +171,7 @@
 			xtype: 'label',
 			name: 'Надпись35',
 			text: 'Курс :',
-			style: 'position:absolute;left:180px;top:201px;width:56px;height:19px;',
+			style: 'position:absolute;left:180px;top:201px;width:56px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'Надпись38',
 			text: 'Сумма:',
-			style: 'position:absolute;left:14px;top:250px;width:82px;height:19px;',
+			style: 'position:absolute;left:14px;top:250px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -195,7 +195,7 @@
 			xtype: 'label',
 			name: 'Надпись40',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:277px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:277px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -207,7 +207,7 @@
 			xtype: 'label',
 			name: 'Надпись41',
 			text: 'Текущий статус:',
-			style: 'position:absolute;left:336px;top:277px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:277px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -285,7 +285,7 @@
 			xtype: 'label',
 			name: 'Надпись47',
 			text: 'Валюта:',
-			style: 'position:absolute;left:340px;top:202px;width:84px;height:19px;',
+			style: 'position:absolute;left:340px;top:202px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -297,7 +297,7 @@
 			xtype: 'label',
 			name: 'Надпись48',
 			text: 'Курс :',
-			style: 'position:absolute;left:508px;top:202px;width:56px;height:19px;',
+			style: 'position:absolute;left:508px;top:202px;width:56px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -363,7 +363,7 @@
 			xtype: 'label',
 			name: 'Надпись53',
 			text: 'Ед. измерения:',
-			style: 'position:absolute;left:492px;top:226px;width:88px;height:19px;',
+			style: 'position:absolute;left:492px;top:226px;width:88px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -375,7 +375,7 @@
 			xtype: 'label',
 			name: 'Надпись54',
 			text: 'Количество:',
-			style: 'position:absolute;left:340px;top:226px;width:81px;height:19px;',
+			style: 'position:absolute;left:340px;top:226px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -387,7 +387,7 @@
 			xtype: 'label',
 			name: 'Период',
 			text: '',
-			style: 'position:absolute;left:480px;top:33px;width:115px;height:19px;',
+			style: 'position:absolute;left:480px;top:33px;width:115px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

@@ -503,7 +503,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Имя файла данных:',
-			style: 'position:absolute;left:0px;top:0px;width:110px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:110px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -521,7 +521,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Обрабатывать письма за период с:',
-			style: 'position:absolute;left:0px;top:0px;width:187px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:187px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -533,7 +533,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'по:',
-			style: 'position:absolute;left:310px;top:0px;width:16px;height:19px;',
+			style: 'position:absolute;left:310px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

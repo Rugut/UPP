@@ -129,7 +129,7 @@
 			xtype: 'label',
 			name: 'НадписьОтправительРФ_КПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:224px;top:168px;width:55px;height:19px;',
+			style: 'position:absolute;left:224px;top:168px;width:55px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -153,7 +153,7 @@
 			xtype: 'label',
 			name: 'НадписьОтправительРК_БИН',
 			text: 'БИН:',
-			style: 'position:absolute;left:224px;top:168px;width:55px;height:19px;',
+			style: 'position:absolute;left:224px;top:168px;width:55px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

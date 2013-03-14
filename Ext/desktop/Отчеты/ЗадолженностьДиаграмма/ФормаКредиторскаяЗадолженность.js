@@ -85,13 +85,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:33px;width:52px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:52px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Тип диаграммы:',
-			style: 'position:absolute;left:326px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:326px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',

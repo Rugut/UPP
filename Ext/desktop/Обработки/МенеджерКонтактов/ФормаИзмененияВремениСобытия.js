@@ -26,7 +26,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Начало:',
-			style: 'position:absolute;left:80px;top:36px;width:46px;height:19px;',
+			style: 'position:absolute;left:80px;top:36px;width:46px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьОкончание',
 			text: 'Окончание:',
-			style: 'position:absolute;left:80px;top:60px;width:61px;height:19px;',
+			style: 'position:absolute;left:80px;top:60px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'ТекстПродолжительность',
 			text: 'Продолжительность:',
-			style: 'position:absolute;left:80px;top:84px;width:112px;height:19px;',
+			style: 'position:absolute;left:80px;top:84px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',

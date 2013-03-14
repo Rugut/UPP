@@ -84,7 +84,7 @@
 			text: 'Укажите регистрационный номер программы "1С:Предприятия 8".
 
 Обратите внимание! Наличие договора информационно-технологического сопровождения (1С:ИТС) уровня ПРОФ позволяет сдавать отчетность для одного юридического лица или индивидуального предпринимателя без дополнительной оплаты.',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:84px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:84px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -132,7 +132,7 @@
 			xtype: 'label',
 			name: 'Надпись52',
 			text: 'Выберите организацию-посредника, которая будет осуществлять функции удостоверяющего центра, издающего сертификат ключа электронно-цифровой подписи, и осуществлять поддержку электронного документооборота',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:48px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:48px;text-align:left;',
 		},
 					]
 				},
@@ -174,7 +174,7 @@
 			xtype: 'label',
 			name: 'Надпись53',
 			text: 'Выберите криптопровайдер (средство криптографической защиты информации), используемый для защиты и обеспечения юридической значимости передаваемой информации. Более подробную информацию, например, об условиях приобретения и использования криптопровайдера, можно получить на сайте разработчика',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:76px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:76px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -225,7 +225,7 @@
 			xtype: 'label',
 			name: 'Надпись54',
 			text: 'Ознакомьтесь с соглашением о присоединении к регламенту удостоверяющего центра',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:20px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:20px;text-align:left;',
 		},
 					]
 				},
@@ -249,7 +249,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:116px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:116px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -261,7 +261,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:204px;width:128px;height:15px;',
+			style: 'position:absolute;left:8px;top:204px;width:128px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -273,7 +273,7 @@
 			xtype: 'label',
 			name: 'НадписьКраткоеНаименование',
 			text: 'Краткое наименование:',
-			style: 'position:absolute;left:8px;top:180px;width:128px;height:15px;',
+			style: 'position:absolute;left:8px;top:180px;width:128px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -285,7 +285,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН',
 			text: 'ИНН:',
-			style: 'position:absolute;left:8px;top:248px;width:54px;height:19px;',
+			style: 'position:absolute;left:8px;top:248px;width:54px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -297,7 +297,7 @@
 			xtype: 'label',
 			name: 'НадписьКПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:8px;top:276px;width:54px;height:15px;',
+			style: 'position:absolute;left:8px;top:276px;width:54px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -309,7 +309,7 @@
 			xtype: 'label',
 			name: 'НадписьРегистрационныйНомерПФР',
 			text: 'Регистрационный номер ПФР:',
-			style: 'position:absolute;left:376px;top:248px;width:164px;height:19px;',
+			style: 'position:absolute;left:376px;top:248px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -321,7 +321,7 @@
 			xtype: 'label',
 			name: 'НадписьРегистрационныйНомерФСС',
 			text: 'Регистрационный номер ФСС:',
-			style: 'position:absolute;left:376px;top:276px;width:167px;height:19px;',
+			style: 'position:absolute;left:376px;top:276px;width:167px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -333,7 +333,7 @@
 			xtype: 'label',
 			name: 'НадписьЮрАдрес',
 			text: 'Юридический адрес:',
-			style: 'position:absolute;left:8px;top:364px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:364px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -345,7 +345,7 @@
 			xtype: 'label',
 			name: 'НадписьФактАдрес',
 			text: 'Фактический адрес:',
-			style: 'position:absolute;left:8px;top:388px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:388px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -357,7 +357,7 @@
 			xtype: 'label',
 			name: 'НадписьЭлектАдрес',
 			text: 'Электронная почта:',
-			style: 'position:absolute;left:8px;top:436px;width:112px;height:19px;',
+			style: 'position:absolute;left:8px;top:436px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -369,7 +369,7 @@
 			xtype: 'label',
 			name: 'НадписьТелефон',
 			text: 'Телефон:',
-			style: 'position:absolute;left:8px;top:412px;width:72px;height:19px;',
+			style: 'position:absolute;left:8px;top:412px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -381,7 +381,7 @@
 			xtype: 'label',
 			name: 'НадписьТелефонМобильный',
 			text: 'Дополнительный телефон:',
-			style: 'position:absolute;left:324px;top:412px;width:163px;height:19px;',
+			style: 'position:absolute;left:324px;top:412px;width:163px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -403,7 +403,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное1',
 			text: 'Организация является:',
-			style: 'position:absolute;left:8px;top:300px;width:124px;height:15px;',
+			style: 'position:absolute;left:8px;top:300px;width:124px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -415,7 +415,7 @@
 			xtype: 'label',
 			name: 'Надпись55',
 			text: 'Выберите организацию, по которой предполагается осуществлять документооборот (сдавать отчетность), проверьте ее реквизиты и контактную информацию',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:40px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:40px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -445,7 +445,7 @@
 			xtype: 'label',
 			name: 'Надпись20',
 			text: 'Вид документа:',
-			style: 'position:absolute;left:8px;top:327px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:327px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -457,7 +457,7 @@
 			xtype: 'label',
 			name: 'Надпись21',
 			text: 'Серия:',
-			style: 'position:absolute;left:8px;top:352px;width:44px;height:19px;',
+			style: 'position:absolute;left:8px;top:352px;width:44px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -469,7 +469,7 @@
 			xtype: 'label',
 			name: 'Надпись22',
 			text: 'Номер:',
-			style: 'position:absolute;left:264px;top:352px;width:40px;height:19px;',
+			style: 'position:absolute;left:264px;top:352px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -481,7 +481,7 @@
 			xtype: 'label',
 			name: 'Надпись23',
 			text: 'Дата выдачи:',
-			style: 'position:absolute;left:448px;top:353px;width:72px;height:19px;',
+			style: 'position:absolute;left:448px;top:353px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -493,7 +493,7 @@
 			xtype: 'label',
 			name: 'Надпись24',
 			text: 'Кем выдан :',
-			style: 'position:absolute;left:8px;top:379px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:379px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -505,7 +505,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение2',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:344px;top:270px;width:84px;height:19px;',
+			style: 'position:absolute;left:344px;top:270px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -517,7 +517,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжность2',
 			text: 'Должность:',
-			style: 'position:absolute;left:8px;top:269px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:269px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -574,31 +574,31 @@
 			xtype: 'label',
 			name: 'НадписьДолжность3',
 			text: 'Фамилия:',
-			style: 'position:absolute;left:8px;top:211px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:211px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДолжность4',
 			text: 'Имя:',
-			style: 'position:absolute;left:264px;top:211px;width:28px;height:19px;',
+			style: 'position:absolute;left:264px;top:211px;width:28px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДолжность5',
 			text: 'Отчество:',
-			style: 'position:absolute;left:416px;top:211px;width:56px;height:19px;',
+			style: 'position:absolute;left:416px;top:211px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДолжность6',
 			text: 'Сотрудник:',
-			style: 'position:absolute;left:8px;top:116px;width:84px;height:16px;',
+			style: 'position:absolute;left:8px;top:116px;width:84px;height:16px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись56',
 			text: 'Укажите сведения о сотруднике организации, на имя которого будет издан сертификат ключа электронно-цифровой подписи',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:40px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:40px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -675,7 +675,7 @@
 			xtype: 'label',
 			name: 'Надпись57',
 			text: 'Укажите все контролирующие органы, с которыми будет осуществляться документооборот',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:24px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:24px;text-align:left;',
 		},
 					]
 				},
@@ -715,7 +715,7 @@
 			xtype: 'label',
 			name: 'Надпись58',
 			text: 'Заявление на подключение сформировано. Его необходимо отправить на сервер удостоверяющего центра для обработки и создания учетной записи электронного документооборота',
-			style: 'position:absolute;left:8px;top:68px;width:652px;height:56px;',
+			style: 'position:absolute;left:8px;top:68px;width:652px;height:56px;text-align:left;',
 		},
 					]
 				},

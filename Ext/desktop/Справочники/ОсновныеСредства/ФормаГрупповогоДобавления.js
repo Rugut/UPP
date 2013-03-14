@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:14px;top:125px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:125px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:14px;top:149px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:149px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,7 +55,7 @@
 			xtype: 'label',
 			name: 'НадписьИзготовитель',
 			text: 'Изготовитель:',
-			style: 'position:absolute;left:14px;top:173px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:173px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -67,7 +67,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыпуска',
 			text: 'Дата выпуска (постройки):',
-			style: 'position:absolute;left:14px;top:245px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:245px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,7 +79,7 @@
 			xtype: 'label',
 			name: 'НадписьКодПоОКОФ',
 			text: 'ОКОФ:',
-			style: 'position:absolute;left:14px;top:293px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:293px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,7 +91,7 @@
 			xtype: 'label',
 			name: 'НадписьАмортизационнаяГруппа',
 			text: 'Амортизационная группа:',
-			style: 'position:absolute;left:14px;top:341px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:341px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -103,7 +103,7 @@
 			xtype: 'label',
 			name: 'НадписьГруппаОС',
 			text: 'Группа учета ОС:',
-			style: 'position:absolute;left:14px;top:317px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:317px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -120,7 +120,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаводскойНомер',
 			text: 'Заводской номер:',
-			style: 'position:absolute;left:14px;top:197px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:197px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,7 +132,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПаспорта',
 			text: 'Номер паспорта:',
-			style: 'position:absolute;left:14px;top:221px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:221px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,7 +144,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Присваивать коды с:',
-			style: 'position:absolute;left:14px;top:53px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:53px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -156,7 +156,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоСоздаваемыхОбъектов',
 			text: 'Количество элементов:',
-			style: 'position:absolute;left:14px;top:77px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:77px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -168,7 +168,7 @@
 			xtype: 'label',
 			name: 'НадписьГруппа',
 			text: 'Добавлять в группу:',
-			style: 'position:absolute;left:14px;top:29px;width:138px;height:19px;',
+			style: 'position:absolute;left:14px;top:29px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

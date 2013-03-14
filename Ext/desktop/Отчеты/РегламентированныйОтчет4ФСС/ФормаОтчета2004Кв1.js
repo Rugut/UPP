@@ -112,7 +112,7 @@
 			xtype: 'label',
 			name: 'Надпись27',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'Надпись26',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:453px;top:291px;width:132px;height:19px;',
+			style: 'position:absolute;left:453px;top:291px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -202,7 +202,7 @@
 			xtype: 'label',
 			name: 'Надпись28',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:454px;top:291px;width:132px;height:19px;',
+			style: 'position:absolute;left:454px;top:291px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -253,7 +253,7 @@
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -277,7 +277,7 @@
 			xtype: 'label',
 			name: 'Надпись26',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:291px;width:132px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -382,7 +382,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Ед. измерения:',
-			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

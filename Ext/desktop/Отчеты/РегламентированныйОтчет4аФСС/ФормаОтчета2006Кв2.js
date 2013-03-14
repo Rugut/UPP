@@ -224,7 +224,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:7px;width:79px;height:19px;',
+			style: 'position:absolute;left:183px;top:7px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

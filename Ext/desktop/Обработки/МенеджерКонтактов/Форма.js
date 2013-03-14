@@ -180,13 +180,13 @@
 			xtype: 'label',
 			name: 'НадписьМесяца',
 			text: '',
-			style: 'position:absolute;left:0px;top:0px;width:513px;height:22px;',
+			style: 'position:absolute;left:0px;top:0px;width:513px;height:22px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНедели',
 			text: '',
-			style: 'position:absolute;left:0px;top:0px;width:623px;height:22px;',
+			style: 'position:absolute;left:0px;top:0px;width:623px;height:22px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -246,7 +246,7 @@
 			xtype: 'label',
 			name: 'НадписьДня',
 			text: '',
-			style: 'position:absolute;left:0px;top:0px;width:200px;height:22px;',
+			style: 'position:absolute;left:0px;top:0px;width:200px;height:22px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

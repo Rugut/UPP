@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Запись действует с:',
-			style: 'position:absolute;left:8px;top:147px;width:114px;height:19px;',
+			style: 'position:absolute;left:8px;top:147px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -30,7 +30,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Серия справки:',
-			style: 'position:absolute;left:8px;top:32px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -42,7 +42,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Номер справки:',
-			style: 'position:absolute;left:8px;top:56px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Дата выдачи:',
-			style: 'position:absolute;left:8px;top:80px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:80px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Срок действия справки:',
-			style: 'position:absolute;left:8px;top:104px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:104px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

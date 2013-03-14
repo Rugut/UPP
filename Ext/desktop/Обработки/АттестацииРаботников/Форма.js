@@ -77,7 +77,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -221,7 +221,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по',
-			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 					]
 				},

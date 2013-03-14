@@ -70,7 +70,7 @@
 			xtype: 'label',
 			name: 'НадписьСохранить1',
 			text: 'Выгрузить',
-			style: 'position:absolute;left:791px;top:1px;width:56px;height:15px;',
+			style: 'position:absolute;left:791px;top:1px;width:56px;height:15px;text-align:right;',
 		},
 					]
 				},

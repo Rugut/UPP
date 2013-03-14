@@ -58,7 +58,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Укажите, как должна вести себя программа при возникновении ситуаций, требующих внимания пользователя, например таких, как предупреждение о наличии незавершенных циклов обмена, связанных с отправляемым отчетом, или о наличии аналогичных уже отправленных отчетов.',
-			style: 'position:absolute;left:14px;top:120px;width:512px;height:43px;',
+			style: 'position:absolute;left:14px;top:120px;width:512px;height:43px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -70,7 +70,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Объекты групповой обработки:',
-			style: 'position:absolute;left:8px;top:35px;width:247px;height:15px;',
+			style: 'position:absolute;left:8px;top:35px;width:247px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -82,7 +82,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Количество объектов:',
-			style: 'position:absolute;left:8px;top:55px;width:247px;height:15px;',
+			style: 'position:absolute;left:8px;top:55px;width:247px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -94,7 +94,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Действие:',
-			style: 'position:absolute;left:8px;top:75px;width:247px;height:15px;',
+			style: 'position:absolute;left:8px;top:75px;width:247px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',

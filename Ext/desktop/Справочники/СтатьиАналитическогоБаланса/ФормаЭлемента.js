@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьКодДляОтчета',
 			text: 'Код для отчета:',
-			style: 'position:absolute;left:275px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:275px;top:33px;width:88px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -165,7 +165,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеДляОтчета',
 			text: 'Наименование для отчета:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:38px;',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:38px;text-align:left;',
 		},
 	]
 });

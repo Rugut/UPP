@@ -24,7 +24,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Статья затрат:',
-			style: 'position:absolute;left:8px;top:31px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:31px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -36,7 +36,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Действие:',
-			style: 'position:absolute;left:8px;top:6px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:6px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -53,7 +53,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Сумма:',
-			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Новая статья:',
-			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:354px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:354px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьОт',
 			text: 'от:',
-			style: 'position:absolute;left:522px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:522px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:354px;top:58px;width:88px;height:19px;',
+			style: 'position:absolute;left:354px;top:58px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:354px;top:83px;width:88px;height:19px;',
+			style: 'position:absolute;left:354px;top:83px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:458px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:458px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРСтраховая',
 			text: 'Сумма:',
-			style: 'position:absolute;left:6px;top:79px;width:43px;height:19px;',
+			style: 'position:absolute;left:6px;top:79px;width:43px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,7 +121,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРНакопительная',
 			text: 'Сумма:',
-			style: 'position:absolute;left:0px;top:161px;width:43px;height:19px;',
+			style: 'position:absolute;left:0px;top:161px;width:43px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -150,7 +150,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа',
 			text: 'Вид платежа:',
-			style: 'position:absolute;left:6px;top:23px;width:73px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:73px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,7 +162,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа',
 			text: 'Дата платежа:',
-			style: 'position:absolute;left:303px;top:23px;width:75px;height:19px;',
+			style: 'position:absolute;left:303px;top:23px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -195,7 +195,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРНаДоплатуКПенсииШахтерам',
 			text: 'На доплату к пенсии в угольной промышленности:',
-			style: 'position:absolute;left:6px;top:48px;width:262px;height:19px;',
+			style: 'position:absolute;left:6px;top:48px;width:262px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -218,7 +218,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРПоДополнительномуТарифу',
 			text: 'По дополнительному тарифу для членов летных экипажей:',
-			style: 'position:absolute;left:6px;top:6px;width:302px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:302px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -250,7 +250,7 @@
 			xtype: 'label',
 			name: 'НадписьФСС',
 			text: 'Сумма:',
-			style: 'position:absolute;left:6px;top:79px;width:45px;height:19px;',
+			style: 'position:absolute;left:6px;top:79px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -262,7 +262,7 @@
 			xtype: 'label',
 			name: 'НадписьФССНесчастныеСлучаи',
 			text: 'Сумма:',
-			style: 'position:absolute;left:6px;top:161px;width:45px;height:19px;',
+			style: 'position:absolute;left:6px;top:161px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -274,7 +274,7 @@
 			xtype: 'label',
 			name: 'НадписьПлатежноеПоручениеФСС',
 			text: 'Реквизиты платежного поручения: №',
-			style: 'position:absolute;left:6px;top:107px;width:193px;height:19px;',
+			style: 'position:absolute;left:6px;top:107px;width:193px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -286,7 +286,7 @@
 			xtype: 'label',
 			name: 'НадписьПлатежноеПоручениеФСС_НС_ПЗ',
 			text: 'Реквизиты платежного поручения: №',
-			style: 'position:absolute;left:6px;top:188px;width:193px;height:19px;',
+			style: 'position:absolute;left:6px;top:188px;width:193px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -310,13 +310,13 @@
 			xtype: 'label',
 			name: 'НадписьОт1',
 			text: 'от:',
-			style: 'position:absolute;left:304px;top:107px;width:20px;height:19px;',
+			style: 'position:absolute;left:304px;top:107px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОт2',
 			text: 'от:',
-			style: 'position:absolute;left:304px;top:188px;width:20px;height:19px;',
+			style: 'position:absolute;left:304px;top:188px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -333,7 +333,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа4',
 			text: 'Вид платежа:',
-			style: 'position:absolute;left:6px;top:23px;width:71px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:71px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -345,7 +345,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа4',
 			text: 'Дата платежа:',
-			style: 'position:absolute;left:303px;top:23px;width:75px;height:19px;',
+			style: 'position:absolute;left:303px;top:23px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -379,7 +379,7 @@
 			xtype: 'label',
 			name: 'НадписьФФОМС',
 			text: 'Федеральный фонд:',
-			style: 'position:absolute;left:6px;top:67px;width:106px;height:19px;',
+			style: 'position:absolute;left:6px;top:67px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -391,7 +391,7 @@
 			xtype: 'label',
 			name: 'НадписьТФОМС',
 			text: 'Территориальный фонд:',
-			style: 'position:absolute;left:6px;top:95px;width:129px;height:19px;',
+			style: 'position:absolute;left:6px;top:95px;width:129px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -414,7 +414,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа5',
 			text: 'Вид платежа:',
-			style: 'position:absolute;left:6px;top:23px;width:70px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -426,7 +426,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа5',
 			text: 'Дата платежа:',
-			style: 'position:absolute;left:303px;top:23px;width:75px;height:19px;',
+			style: 'position:absolute;left:303px;top:23px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -460,7 +460,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРСтраховая1',
 			text: 'На страховую часть:',
-			style: 'position:absolute;left:6px;top:79px;width:129px;height:19px;',
+			style: 'position:absolute;left:6px;top:79px;width:129px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -472,7 +472,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРНакопительная1',
 			text: 'На накопительную часть:',
-			style: 'position:absolute;left:6px;top:107px;width:129px;height:19px;',
+			style: 'position:absolute;left:6px;top:107px;width:129px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -484,7 +484,7 @@
 			xtype: 'label',
 			name: 'НадписьФСС1',
 			text: 'Страхование на случай временной нетрудоспособности:',
-			style: 'position:absolute;left:6px;top:159px;width:294px;height:19px;',
+			style: 'position:absolute;left:6px;top:159px;width:294px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -496,7 +496,7 @@
 			xtype: 'label',
 			name: 'НадписьФФОМС1',
 			text: 'Федеральный:',
-			style: 'position:absolute;left:6px;top:240px;width:88px;height:19px;',
+			style: 'position:absolute;left:6px;top:240px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -508,7 +508,7 @@
 			xtype: 'label',
 			name: 'НадписьТФОМС1',
 			text: 'Территориальный:',
-			style: 'position:absolute;left:202px;top:240px;width:106px;height:19px;',
+			style: 'position:absolute;left:202px;top:240px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -520,7 +520,7 @@
 			xtype: 'label',
 			name: 'НадписьФССНесчастныеСлучаи1',
 			text: 'Страхование от несчастных случаев на производстве:',
-			style: 'position:absolute;left:6px;top:187px;width:294px;height:19px;',
+			style: 'position:absolute;left:6px;top:187px;width:294px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -532,7 +532,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРПоДополнительномуТарифу1',
 			text: 'По дополнительному тарифу:',
-			style: 'position:absolute;left:240px;top:79px;width:165px;height:19px;',
+			style: 'position:absolute;left:240px;top:79px;width:165px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -544,7 +544,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРНаДоплатуКПенсииШахтерам1',
 			text: 'На доплату к пенсии в угольной промышленности:',
-			style: 'position:absolute;left:240px;top:102px;width:165px;height:28px;',
+			style: 'position:absolute;left:240px;top:102px;width:165px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -567,7 +567,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа1',
 			text: 'Вид начисления:',
-			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -579,7 +579,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа1',
 			text: 'Дата начисления:',
-			style: 'position:absolute;left:315px;top:23px;width:91px;height:19px;',
+			style: 'position:absolute;left:315px;top:23px;width:91px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -591,7 +591,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц1',
 			text: 'за:',
-			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;',
+			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -603,7 +603,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц10',
 			text: 'год',
-			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;',
+			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -666,7 +666,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа2',
 			text: 'Вид расчетов:',
-			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -678,7 +678,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа2',
 			text: 'Дата операции:',
-			style: 'position:absolute;left:326px;top:23px;width:80px;height:19px;',
+			style: 'position:absolute;left:326px;top:23px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -690,7 +690,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц2',
 			text: 'за:',
-			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;',
+			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -702,7 +702,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц11',
 			text: 'год',
-			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;',
+			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -753,7 +753,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа3',
 			text: 'Вид расчетов:',
-			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -765,7 +765,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа3',
 			text: 'Дата операции:',
-			style: 'position:absolute;left:324px;top:23px;width:82px;height:19px;',
+			style: 'position:absolute;left:324px;top:23px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -777,7 +777,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц3',
 			text: 'за:',
-			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;',
+			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -789,7 +789,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц12',
 			text: 'год',
-			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;',
+			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -811,7 +811,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРСтраховая2',
 			text: 'На страховую часть:',
-			style: 'position:absolute;left:6px;top:79px;width:105px;height:19px;',
+			style: 'position:absolute;left:6px;top:79px;width:105px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -823,7 +823,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРНакопительная2',
 			text: 'На накопительную часть:',
-			style: 'position:absolute;left:6px;top:107px;width:129px;height:19px;',
+			style: 'position:absolute;left:6px;top:107px;width:129px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -835,7 +835,7 @@
 			xtype: 'label',
 			name: 'НадписьФСС2',
 			text: 'Соц. страхование:',
-			style: 'position:absolute;left:9px;top:159px;width:102px;height:19px;',
+			style: 'position:absolute;left:9px;top:159px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -847,7 +847,7 @@
 			xtype: 'label',
 			name: 'НадписьФФОМС2',
 			text: 'Федеральный фонд:',
-			style: 'position:absolute;left:5px;top:244px;width:106px;height:19px;',
+			style: 'position:absolute;left:5px;top:244px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -859,7 +859,7 @@
 			xtype: 'label',
 			name: 'НадписьТФОМС2',
 			text: 'Территориальный фонд:',
-			style: 'position:absolute;left:202px;top:244px;width:129px;height:19px;',
+			style: 'position:absolute;left:202px;top:244px;width:129px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -871,7 +871,7 @@
 			xtype: 'label',
 			name: 'НадписьФССНесчастныеСлучаи2',
 			text: 'Несчастные случаи:',
-			style: 'position:absolute;left:9px;top:187px;width:102px;height:19px;',
+			style: 'position:absolute;left:9px;top:187px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -883,7 +883,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРПоДополнительномуТарифу2',
 			text: 'По дополнительному тарифу:',
-			style: 'position:absolute;left:240px;top:79px;width:165px;height:19px;',
+			style: 'position:absolute;left:240px;top:79px;width:165px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -895,7 +895,7 @@
 			xtype: 'label',
 			name: 'НадписьПлатежноеПоручениеФСС1',
 			text: 'Реквизиты платежного поручения: №',
-			style: 'position:absolute;left:202px;top:159px;width:193px;height:19px;',
+			style: 'position:absolute;left:202px;top:159px;width:193px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -907,7 +907,7 @@
 			xtype: 'label',
 			name: 'НадписьПлатежноеПоручениеФСС_НС_ПЗ1',
 			text: 'Реквизиты платежного поручения: №',
-			style: 'position:absolute;left:202px;top:187px;width:193px;height:19px;',
+			style: 'position:absolute;left:202px;top:187px;width:193px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -931,19 +931,19 @@
 			xtype: 'label',
 			name: 'НадписьОт3',
 			text: 'от:',
-			style: 'position:absolute;left:500px;top:159px;width:20px;height:19px;',
+			style: 'position:absolute;left:500px;top:159px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОт4',
 			text: 'от:',
-			style: 'position:absolute;left:500px;top:187px;width:20px;height:19px;',
+			style: 'position:absolute;left:500px;top:187px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПФРНаДоплатуКПенсииШахтерам2',
 			text: 'На доплату к пенсии в угольной промышленности:',
-			style: 'position:absolute;left:240px;top:98px;width:165px;height:28px;',
+			style: 'position:absolute;left:240px;top:98px;width:165px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -966,7 +966,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа6',
 			text: 'Вид платежа:',
-			style: 'position:absolute;left:6px;top:23px;width:81px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -978,7 +978,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа6',
 			text: 'Дата платежа:',
-			style: 'position:absolute;left:331px;top:23px;width:75px;height:19px;',
+			style: 'position:absolute;left:331px;top:23px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -990,7 +990,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц6',
 			text: 'за:',
-			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;',
+			style: 'position:absolute;left:500px;top:23px;width:19px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1002,7 +1002,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц13',
 			text: 'год',
-			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;',
+			style: 'position:absolute;left:593px;top:23px;width:47px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -1018,7 +1018,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРСтраховая3',
 			text: 'На страховую часть:',
-			style: 'position:absolute;left:6px;top:79px;width:129px;height:19px;',
+			style: 'position:absolute;left:6px;top:79px;width:129px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1030,7 +1030,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРНакопительная3',
 			text: 'На накопительную часть:',
-			style: 'position:absolute;left:6px;top:107px;width:129px;height:19px;',
+			style: 'position:absolute;left:6px;top:107px;width:129px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1042,7 +1042,7 @@
 			xtype: 'label',
 			name: 'НадписьФСС3',
 			text: 'Страхование на случай временной нетрудоспособности:',
-			style: 'position:absolute;left:6px;top:159px;width:294px;height:19px;',
+			style: 'position:absolute;left:6px;top:159px;width:294px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1054,7 +1054,7 @@
 			xtype: 'label',
 			name: 'НадписьФФОМС3',
 			text: 'Федеральный:',
-			style: 'position:absolute;left:6px;top:240px;width:88px;height:19px;',
+			style: 'position:absolute;left:6px;top:240px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1066,7 +1066,7 @@
 			xtype: 'label',
 			name: 'НадписьТФОМС3',
 			text: 'Территориальный:',
-			style: 'position:absolute;left:202px;top:240px;width:106px;height:19px;',
+			style: 'position:absolute;left:202px;top:240px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1078,7 +1078,7 @@
 			xtype: 'label',
 			name: 'НадписьФССНесчастныеСлучаи3',
 			text: 'Страхование от несчастных случаев на производстве:',
-			style: 'position:absolute;left:6px;top:187px;width:294px;height:19px;',
+			style: 'position:absolute;left:6px;top:187px;width:294px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1090,7 +1090,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРПоДополнительномуТарифу3',
 			text: 'По дополнительному тарифу:',
-			style: 'position:absolute;left:240px;top:79px;width:165px;height:19px;',
+			style: 'position:absolute;left:240px;top:79px;width:165px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1102,7 +1102,7 @@
 			xtype: 'label',
 			name: 'НадписьПФРНаДоплатуКПенсииШахтерам3',
 			text: 'На доплату к пенсии в угольной промышленности:',
-			style: 'position:absolute;left:240px;top:102px;width:165px;height:28px;',
+			style: 'position:absolute;left:240px;top:102px;width:165px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1125,7 +1125,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПлатежа7',
 			text: 'Доначислено:',
-			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1137,7 +1137,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПлатежа7',
 			text: 'Дата начисления:',
-			style: 'position:absolute;left:315px;top:23px;width:91px;height:19px;',
+			style: 'position:absolute;left:315px;top:23px;width:91px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1149,7 +1149,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц14',
 			text: 'за:',
-			style: 'position:absolute;left:498px;top:23px;width:19px;height:19px;',
+			style: 'position:absolute;left:498px;top:23px;width:19px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1175,7 +1175,7 @@
 			xtype: 'label',
 			name: 'НадписьВидОперации',
 			text: 'Уплата/начисление:',
-			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

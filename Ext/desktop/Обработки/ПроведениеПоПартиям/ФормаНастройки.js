@@ -47,7 +47,7 @@
 			xtype: 'label',
 			name: 'НадписьМаксимальноеКоличествоСтрокВТранзакции',
 			text: 'Количество строк в транзакции:',
-			style: 'position:absolute;left:65px;top:112px;width:213px;height:19px;',
+			style: 'position:absolute;left:65px;top:112px;width:213px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -59,7 +59,7 @@
 			xtype: 'label',
 			name: 'НадписьМаксимальноеКоличествоДокументовВВыборке',
 			text: 'Количество документов в выборке:',
-			style: 'position:absolute;left:65px;top:135px;width:213px;height:19px;',
+			style: 'position:absolute;left:65px;top:135px;width:213px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

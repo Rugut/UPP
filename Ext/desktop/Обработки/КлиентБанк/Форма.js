@@ -391,7 +391,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:87px;width:65px;height:19px;',
+			style: 'position:absolute;left:8px;top:87px;width:65px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -403,7 +403,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'по:',
-			style: 'position:absolute;left:222px;top:87px;width:16px;height:19px;',
+			style: 'position:absolute;left:222px;top:87px;width:16px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -439,7 +439,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетОрганизации',
 			text: 'Банковский счет:',
-			style: 'position:absolute;left:8px;top:37px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:37px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -662,7 +662,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетОрганизации1',
 			text: 'Банковский счет:',
-			style: 'position:absolute;left:8px;top:37px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:37px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

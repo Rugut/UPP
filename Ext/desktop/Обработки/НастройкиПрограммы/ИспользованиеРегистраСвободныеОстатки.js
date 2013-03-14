@@ -42,7 +42,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
 			text: '',
-			style: 'position:absolute;left:8px;top:33px;width:164px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:164px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',

@@ -306,7 +306,7 @@
 			xtype: 'label',
 			name: 'НадписьВидОтраженияВУчете',
 			text: 'Использовать данные:',
-			style: 'position:absolute;left:6px;top:30px;width:121px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:121px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -349,7 +349,7 @@
 			xtype: 'label',
 			name: 'НадписьТипЦен',
 			text: 'Записать по типу цен:',
-			style: 'position:absolute;left:6px;top:206px;width:121px;height:19px;',
+			style: 'position:absolute;left:6px;top:206px;width:121px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -392,7 +392,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -404,7 +404,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -416,7 +416,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:367px;width:73px;height:19px;',
+			style: 'position:absolute;left:8px;top:367px;width:73px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

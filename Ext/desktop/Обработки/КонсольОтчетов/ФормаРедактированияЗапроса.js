@@ -23,7 +23,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Имя:',
-			style: 'position:absolute;left:6px;top:6px;width:29px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:29px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -164,13 +164,13 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'По умолчанию выводить в:',
-			style: 'position:absolute;left:6px;top:132px;width:137px;height:19px;',
+			style: 'position:absolute;left:6px;top:132px;width:137px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Отчет расшифровки:',
-			style: 'position:absolute;left:6px;top:156px;width:137px;height:19px;',
+			style: 'position:absolute;left:6px;top:156px;width:137px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

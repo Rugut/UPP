@@ -24,7 +24,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Данная форма используется в регламентных операциях и не предназначена для визуального показа.',
-			style: 'position:absolute;left:8px;top:9px;width:384px;height:40px;',
+			style: 'position:absolute;left:8px;top:9px;width:384px;height:40px;text-align:left;',
 		},
 	]
 });

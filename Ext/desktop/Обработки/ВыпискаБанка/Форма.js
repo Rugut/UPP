@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:32px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Банковский счет:',
-			style: 'position:absolute;left:8px;top:56px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

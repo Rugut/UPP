@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:112px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьТипРаспределения',
 			text: 'Тип распределения:',
-			style: 'position:absolute;left:8px;top:84px;width:112px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьИзмерение',
 			text: 'Измерение:',
-			style: 'position:absolute;left:8px;top:57px;width:112px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьИсточникДанных',
 			text: 'Источник данных:',
-			style: 'position:absolute;left:8px;top:108px;width:112px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьПоказатель',
 			text: 'Показатель:',
-			style: 'position:absolute;left:8px;top:132px;width:112px;height:19px;',
+			style: 'position:absolute;left:8px;top:132px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -139,7 +139,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:344px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:344px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

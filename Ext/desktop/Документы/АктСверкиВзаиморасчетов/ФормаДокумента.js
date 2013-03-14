@@ -42,13 +42,13 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,13 +66,13 @@
 			xtype: 'label',
 			name: 'НадписьДоговор',
 			text: 'Договор:',
-			style: 'position:absolute;left:328px;top:82px;width:83px;height:19px;',
+			style: 'position:absolute;left:328px;top:82px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:82px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:82px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:58px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -133,7 +133,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:13px;top:389px;width:80px;height:19px;',
+			style: 'position:absolute;left:13px;top:389px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -368,13 +368,13 @@
 			xtype: 'label',
 			name: 'НадписьОстатки',
 			text: 'Остатки ():',
-			style: 'position:absolute;left:4px;top:207px;width:76px;height:19px;',
+			style: 'position:absolute;left:4px;top:207px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОстаткиКонтрагент',
 			text: 'Остатки ():',
-			style: 'position:absolute;left:5px;top:207px;width:76px;height:19px;',
+			style: 'position:absolute;left:5px;top:207px;width:76px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -396,7 +396,7 @@
 			xtype: 'label',
 			name: 'НадписьВалютаДокумента',
 			text: 'Валюта сверки:',
-			style: 'position:absolute;left:328px;top:58px;width:83px;height:19px;',
+			style: 'position:absolute;left:328px;top:58px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',

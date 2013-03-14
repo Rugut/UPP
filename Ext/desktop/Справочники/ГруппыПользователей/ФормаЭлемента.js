@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код:',
-			style: 'position:absolute;left:386px;top:33px;width:25px;height:19px;',
+			style: 'position:absolute;left:386px;top:33px;width:25px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -103,7 +103,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Родитель:',
-			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,13 +184,13 @@
 			xtype: 'label',
 			name: 'НадписьRLS',
 			text: 'Ограничение доступа',
-			style: 'position:absolute;left:8px;top:90px;width:249px;height:19px;',
+			style: 'position:absolute;left:8px;top:90px;width:249px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСоставГруппы',
 			text: 'Состав группы',
-			style: 'position:absolute;left:266px;top:90px;width:226px;height:19px;',
+			style: 'position:absolute;left:266px;top:90px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',

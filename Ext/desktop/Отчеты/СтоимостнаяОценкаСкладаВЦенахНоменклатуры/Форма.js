@@ -123,7 +123,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по',
-			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'Период',
 			text: '',
-			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -194,13 +194,13 @@
 			xtype: 'label',
 			name: 'НадписьТипЦен',
 			text: 'Тип цен:',
-			style: 'position:absolute;left:8px;top:33px;width:52px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:52px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРежим',
 			text: 'Режим:',
-			style: 'position:absolute;left:341px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:341px;top:33px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',

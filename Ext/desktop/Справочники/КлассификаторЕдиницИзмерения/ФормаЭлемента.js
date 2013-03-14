@@ -31,19 +31,19 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:204px;top:57px;width:32px;height:19px;',
+			style: 'position:absolute;left:204px;top:57px;width:32px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Краткое наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:152px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:152px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:84px;width:152px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:152px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -80,7 +80,7 @@
 			xtype: 'label',
 			name: 'НадписьМеждународноеСокращенеие',
 			text: 'Международное сокращение:',
-			style: 'position:absolute;left:8px;top:57px;width:152px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:152px;height:19px;text-align:left;',
 		},
 	]
 });

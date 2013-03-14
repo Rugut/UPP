@@ -35,19 +35,19 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Ограничивать серии:',
-			style: 'position:absolute;left:14px;top:54px;width:112px;height:19px;',
+			style: 'position:absolute;left:14px;top:54px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДоЗначенияКоличествоОграничения',
 			text: 'Значение:',
-			style: 'position:absolute;left:310px;top:54px;width:60px;height:19px;',
+			style: 'position:absolute;left:310px;top:54px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПослеЗначенияКоличествоОграничения',
 			text: 'единиц',
-			style: 'position:absolute;left:434px;top:54px;width:44px;height:19px;',
+			style: 'position:absolute;left:434px;top:54px;width:44px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -64,7 +64,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПодписи',
 			text: 'Вид подписи:',
-			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -87,7 +87,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПодписи1',
 			text: 'Вид подписи:',
-			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -115,7 +115,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,7 +127,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Режим пробелов:',
-			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -154,7 +154,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -193,7 +193,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:6px;top:48px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:48px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -205,7 +205,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Ориентация:',
-			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -238,7 +238,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -261,7 +261,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

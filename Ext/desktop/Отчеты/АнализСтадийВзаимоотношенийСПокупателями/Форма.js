@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Дата отчета:',
-			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

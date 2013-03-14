@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:369px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:369px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,13 +183,13 @@
 			xtype: 'label',
 			name: 'НадписьДоговор',
 			text: 'Договор:',
-			style: 'position:absolute;left:334px;top:81px;width:84px;height:19px;',
+			style: 'position:absolute;left:334px;top:81px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -207,7 +207,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -219,13 +219,13 @@
 			xtype: 'label',
 			name: 'ИнфНадписьТоварыИтоги',
 			text: 'Оптовые цены, Скидка 20%',
-			style: 'position:absolute;left:8px;top:347px;width:450px;height:17px;',
+			style: 'position:absolute;left:8px;top:347px;width:450px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего:',
-			style: 'position:absolute;left:470px;top:347px;width:60px;height:17px;',
+			style: 'position:absolute;left:470px;top:347px;width:60px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

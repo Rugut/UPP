@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:14px;top:408px;width:80px;height:19px;',
+			style: 'position:absolute;left:14px;top:408px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -56,7 +56,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -68,7 +68,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:14px;top:384px;width:84px;height:19px;',
+			style: 'position:absolute;left:14px;top:384px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,7 +132,7 @@
 			xtype: 'label',
 			name: 'Надпись32',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:330px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:330px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -164,7 +164,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -187,13 +187,13 @@
 			xtype: 'label',
 			name: 'НадписьСуммаВзаиморасчетов',
 			text: 'Сумма:',
-			style: 'position:absolute;left:322px;top:48px;width:86px;height:19px;',
+			style: 'position:absolute;left:322px;top:48px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДоговор',
 			text: 'Договор:',
-			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -278,13 +278,13 @@
 			xtype: 'label',
 			name: 'НадписьСчетРасчетов',
 			text: 'Счет расчетов:',
-			style: 'position:absolute;left:322px;top:72px;width:80px;height:19px;',
+			style: 'position:absolute;left:322px;top:72px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСчетАвансов',
 			text: 'Счет авансов:',
-			style: 'position:absolute;left:322px;top:96px;width:80px;height:19px;',
+			style: 'position:absolute;left:322px;top:96px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -410,7 +410,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаДокумент',
 			text: 'Сумма:',
-			style: 'position:absolute;left:6px;top:6px;width:73px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:73px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -428,7 +428,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговорВзаиморасчетовЭквайрера',
 			text: 'Договор взаиморасчетов:',
-			style: 'position:absolute;left:286px;top:29px;width:134px;height:19px;',
+			style: 'position:absolute;left:286px;top:29px;width:134px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -440,7 +440,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговорЭквайринга',
 			text: 'Договор эквайринга:',
-			style: 'position:absolute;left:6px;top:6px;width:110px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:110px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -452,7 +452,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаРасчетовСЭквайрером',
 			text: 'Счет расчетов:',
-			style: 'position:absolute;left:6px;top:105px;width:110px;height:19px;',
+			style: 'position:absolute;left:6px;top:105px;width:110px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -464,7 +464,7 @@
 			xtype: 'label',
 			name: 'НадписьЭквайрер',
 			text: 'Эквайрер:',
-			style: 'position:absolute;left:6px;top:29px;width:110px;height:19px;',
+			style: 'position:absolute;left:6px;top:29px;width:110px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -476,7 +476,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентТорговойУступки',
 			text: '% торговой уступки:',
-			style: 'position:absolute;left:6px;top:75px;width:110px;height:19px;',
+			style: 'position:absolute;left:6px;top:75px;width:110px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -494,7 +494,7 @@
 			xtype: 'label',
 			name: 'НадписьВидОплаты',
 			text: 'Вид оплаты:',
-			style: 'position:absolute;left:6px;top:52px;width:110px;height:19px;',
+			style: 'position:absolute;left:6px;top:52px;width:110px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

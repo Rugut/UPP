@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:6px;top:32px;width:76px;height:19px;',
+			style: 'position:absolute;left:6px;top:32px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -59,7 +59,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'За период:',
-			style: 'position:absolute;left:6px;top:6px;width:65px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:65px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

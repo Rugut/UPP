@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатьяЗатрат',
 			text: 'Статья затрат:',
-			style: 'position:absolute;left:8px;top:57px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьЗатрата',
 			text: 'Затрата:',
-			style: 'position:absolute;left:8px;top:82px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:82px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьХарактеристикаЗатраты',
 			text: 'Характеристика затраты:',
-			style: 'position:absolute;left:8px;top:106px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:106px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьСерияЗатраты',
 			text: 'Серия затраты:',
-			style: 'position:absolute;left:8px;top:130px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:130px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособРаспределенияЗатрат',
 			text: 'Способ распределения затрат:',
-			style: 'position:absolute;left:8px;top:150px;width:133px;height:27px;',
+			style: 'position:absolute;left:8px;top:150px;width:133px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьХарактерЗатрат',
 			text: 'Характер затрат:',
-			style: 'position:absolute;left:8px;top:178px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:178px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьКачество',
 			text: 'Качество:',
-			style: 'position:absolute;left:8px;top:202px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:202px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

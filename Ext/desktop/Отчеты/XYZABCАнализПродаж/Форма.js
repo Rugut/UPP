@@ -82,7 +82,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'по:',
-			style: 'position:absolute;left:519px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:519px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,13 +94,13 @@
 			xtype: 'label',
 			name: 'НадписьАнализируемыйПараметр',
 			text: 'Анализируемый параметр:',
-			style: 'position:absolute;left:8px;top:58px;width:145px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:145px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Анализируемый объект:',
-			style: 'position:absolute;left:333px;top:58px;width:130px;height:19px;',
+			style: 'position:absolute;left:333px;top:58px;width:130px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -158,7 +158,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Количество периодов:',
-			style: 'position:absolute;left:333px;top:33px;width:130px;height:19px;',
+			style: 'position:absolute;left:333px;top:33px;width:130px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -170,7 +170,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодичность',
 			text: 'Периодичность:',
-			style: 'position:absolute;left:8px;top:33px;width:145px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:145px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

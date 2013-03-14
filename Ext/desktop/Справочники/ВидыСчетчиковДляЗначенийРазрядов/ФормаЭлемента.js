@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:311px;top:33px;width:24px;height:19px;',
+			style: 'position:absolute;left:311px;top:33px;width:24px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьРазмерСчетчика',
 			text: 'Размер счетчика:',
-			style: 'position:absolute;left:8px;top:56px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -69,7 +69,7 @@
 			xtype: 'label',
 			name: 'НадписьНачальноеЗначение',
 			text: 'Начальное значение:',
-			style: 'position:absolute;left:8px;top:79px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:79px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,7 +81,7 @@
 			xtype: 'label',
 			name: 'НадписьКонечноеЗначение',
 			text: 'Конечное значение:',
-			style: 'position:absolute;left:202px;top:79px;width:108px;height:19px;',
+			style: 'position:absolute;left:202px;top:79px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

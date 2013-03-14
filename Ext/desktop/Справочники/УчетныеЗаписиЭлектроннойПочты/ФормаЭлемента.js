@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:476px;top:33px;width:37px;height:19px;',
+			style: 'position:absolute;left:476px;top:33px;width:37px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Представление:',
-			style: 'position:absolute;left:8px;top:57px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'E-mail:',
-			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -84,7 +84,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'SMTP-сервер:',
-			style: 'position:absolute;left:6px;top:26px;width:87px;height:19px;',
+			style: 'position:absolute;left:6px;top:26px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,7 +96,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'POP3-сервер:',
-			style: 'position:absolute;left:6px;top:120px;width:87px;height:19px;',
+			style: 'position:absolute;left:6px;top:120px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -108,7 +108,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Порт:',
-			style: 'position:absolute;left:455px;top:26px;width:33px;height:19px;',
+			style: 'position:absolute;left:455px;top:26px;width:33px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -120,7 +120,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Порт:',
-			style: 'position:absolute;left:455px;top:120px;width:33px;height:19px;',
+			style: 'position:absolute;left:455px;top:120px;width:33px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,7 +132,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Пользователь:',
-			style: 'position:absolute;left:6px;top:144px;width:87px;height:19px;',
+			style: 'position:absolute;left:6px;top:144px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,7 +144,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Пароль:',
-			style: 'position:absolute;left:302px;top:144px;width:47px;height:19px;',
+			style: 'position:absolute;left:302px;top:144px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -161,7 +161,7 @@
 			xtype: 'label',
 			name: 'Надпись19',
 			text: 'Пользователь:',
-			style: 'position:absolute;left:15px;top:70px;width:79px;height:19px;',
+			style: 'position:absolute;left:15px;top:70px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -173,7 +173,7 @@
 			xtype: 'label',
 			name: 'Надпись20',
 			text: 'Пароль:',
-			style: 'position:absolute;left:302px;top:70px;width:47px;height:19px;',
+			style: 'position:absolute;left:302px;top:70px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -185,7 +185,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Время ожидания сервера:',
-			style: 'position:absolute;left:6px;top:178px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:178px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -197,7 +197,7 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'сек',
-			style: 'position:absolute;left:206px;top:178px;width:20px;height:19px;',
+			style: 'position:absolute;left:206px;top:178px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -225,7 +225,7 @@
 			xtype: 'label',
 			name: 'НадписьДней',
 			text: 'дней',
-			style: 'position:absolute;left:262px;top:25px;width:28px;height:19px;',
+			style: 'position:absolute;left:262px;top:25px;width:28px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -242,7 +242,7 @@
 			xtype: 'label',
 			name: 'НадписьИнтервалАвтоПолученияОтправкиСообщенийДо',
 			text: 'каждые',
-			style: 'position:absolute;left:18px;top:71px;width:42px;height:19px;',
+			style: 'position:absolute;left:18px;top:71px;width:42px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -254,7 +254,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственныйЗаАвтоПолучениеОтправкуСообщений',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:341px;top:71px;width:84px;height:19px;',
+			style: 'position:absolute;left:341px;top:71px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -266,13 +266,13 @@
 			xtype: 'label',
 			name: 'НадписьИнтервалАвтоПолученияОтправкиСообщенийПосле',
 			text: 'минут',
-			style: 'position:absolute;left:110px;top:71px;width:32px;height:19px;',
+			style: 'position:absolute;left:110px;top:71px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДействиеАвтополученияОтправкиСообщений',
 			text: 'Действие:',
-			style: 'position:absolute;left:154px;top:71px;width:55px;height:19px;',
+			style: 'position:absolute;left:154px;top:71px;width:55px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -483,7 +483,7 @@
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Группа писем "Входящие":',
-			style: 'position:absolute;left:6px;top:27px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:27px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -495,7 +495,7 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Группа писем "Исходящие":',
-			style: 'position:absolute;left:6px;top:51px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:51px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -507,7 +507,7 @@
 			xtype: 'label',
 			name: 'Надпись17',
 			text: 'Группа писем "Удаленные":',
-			style: 'position:absolute;left:6px;top:75px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:75px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -519,7 +519,7 @@
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Формат текста письма:',
-			style: 'position:absolute;left:6px;top:175px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:175px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -530,7 +530,7 @@
 			xtype: 'label',
 			name: 'Надпись21',
 			text: 'Группа писем "Черновики":',
-			style: 'position:absolute;left:6px;top:99px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:99px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -548,7 +548,7 @@
 			xtype: 'label',
 			name: 'Надпись22',
 			text: 'Кодировка (для исходящих):',
-			style: 'position:absolute;left:6px;top:128px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:128px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -636,7 +636,7 @@
 			xtype: 'label',
 			name: 'НадписьНазначениеУчетнойЗаписи',
 			text: 'Назначение:',
-			style: 'position:absolute;left:8px;top:81px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

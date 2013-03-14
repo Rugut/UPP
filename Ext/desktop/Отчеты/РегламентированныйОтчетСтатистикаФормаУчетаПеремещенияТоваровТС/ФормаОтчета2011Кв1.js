@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,7 +134,7 @@
 			xtype: 'label',
 			name: 'Надпись',
 			text: 'Организация:',
-			style: 'position:absolute;left:387px;top:6px;width:75px;height:19px;',
+			style: 'position:absolute;left:387px;top:6px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -167,7 +167,7 @@
 			xtype: 'label',
 			name: 'НадписьДопСтроки',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:408px;top:343px;width:132px;height:19px;',
+			style: 'position:absolute;left:408px;top:343px;width:132px;height:19px;text-align:left;',
 		},
 	]
 });

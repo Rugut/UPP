@@ -24,7 +24,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Вас приветствует помощник подключения и настройки торгового оборудования!',
-			style: 'position:absolute;left:166px;top:0px;width:460px;height:56px;',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:56px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'Надпись54',
 			text: 'Выбор торгового оборудования',
-			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;text-align:center;',
 		},
 		{
 			xtype: 'radio',
@@ -133,7 +133,7 @@
 			xtype: 'label',
 			name: 'Надпись126',
 			text: 'Выбор обработки обслуживания драйвера',
-			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;text-align:center;',
 		},
 		{
 			xtype: 'radio',
@@ -224,7 +224,7 @@
 			xtype: 'label',
 			name: 'Надпись136',
 			text: 'Добавление обработки обслуживания драйвера',
-			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -264,7 +264,7 @@
 			xtype: 'label',
 			name: 'Надпись128',
 			text: 'Выбор устройства',
-			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;text-align:center;',
 		},
 		{
 			xtype: 'radio',
@@ -302,7 +302,7 @@
 			xtype: 'label',
 			name: 'НадписьКассаККМ',
 			text: 'Касса ККМ:',
-			style: 'position:absolute;left:166px;top:259px;width:61px;height:19px;',
+			style: 'position:absolute;left:166px;top:259px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -332,7 +332,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:166px;top:302px;width:80px;height:19px;',
+			style: 'position:absolute;left:166px;top:302px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -344,13 +344,13 @@
 			xtype: 'label',
 			name: 'Надпись137',
 			text: 'Добавление нового устройства',
-			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКассаККМДобавлениеНовогоУстройства',
 			text: 'Касса ККМ:',
-			style: 'position:absolute;left:166px;top:326px;width:80px;height:19px;',
+			style: 'position:absolute;left:166px;top:326px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

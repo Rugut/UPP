@@ -77,7 +77,7 @@
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -89,7 +89,7 @@
 			xtype: 'label',
 			name: 'Надпись37',
 			text: 'по:',
-			style: 'position:absolute;left:164px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:164px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

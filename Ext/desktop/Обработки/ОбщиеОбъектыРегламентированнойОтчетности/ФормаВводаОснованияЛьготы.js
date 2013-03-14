@@ -33,7 +33,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерСтатьи',
 			text: 'Номер статьи:',
-			style: 'position:absolute;left:8px;top:54px;width:75px;height:19px;',
+			style: 'position:absolute;left:8px;top:54px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -45,7 +45,7 @@
 			xtype: 'label',
 			name: 'НадписьПункт',
 			text: 'Пункт:',
-			style: 'position:absolute;left:8px;top:78px;width:39px;height:19px;',
+			style: 'position:absolute;left:8px;top:78px;width:39px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -57,7 +57,7 @@
 			xtype: 'label',
 			name: 'НадписьПодпункт',
 			text: 'Подпункт:',
-			style: 'position:absolute;left:8px;top:102px;width:75px;height:19px;',
+			style: 'position:absolute;left:8px;top:102px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

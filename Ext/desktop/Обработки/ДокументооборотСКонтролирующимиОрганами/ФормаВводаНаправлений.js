@@ -20,7 +20,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код органа:',
-			style: 'position:absolute;left:8px;top:36px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:36px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,7 +44,7 @@
 			xtype: 'label',
 			name: 'НадписьКод1',
 			text: 'КПП (только для ФНС):',
-			style: 'position:absolute;left:8px;top:64px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:64px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -46,7 +46,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Надпись1',
-			style: 'position:absolute;left:25px;top:109px;width:261px;height:27px;',
+			style: 'position:absolute;left:25px;top:109px;width:261px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

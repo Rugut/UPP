@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:91px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:91px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:172px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:172px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:354px;width:91px;height:19px;',
+			style: 'position:absolute;left:8px;top:354px;width:91px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:378px;width:91px;height:19px;',
+			style: 'position:absolute;left:8px;top:378px;width:91px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,7 +96,7 @@
 			xtype: 'label',
 			name: 'Надпись22',
 			text: 'Вид объекта:',
-			style: 'position:absolute;left:332px;top:33px;width:90px;height:19px;',
+			style: 'position:absolute;left:332px;top:33px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -152,7 +152,7 @@
 			xtype: 'label',
 			name: 'Надпись20',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -164,7 +164,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтактноеЛицо1',
 			text: 'Контак. лицо:',
-			style: 'position:absolute;left:0px;top:48px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -206,7 +206,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтактноеЛицо',
 			text: 'Контак. лицо:',
-			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -230,7 +230,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтактноеЛицо2',
 			text: 'Кандидат:',
-			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -251,7 +251,7 @@
 			xtype: 'label',
 			name: 'НадписьИсточникИнформации',
 			text: 'Источник :',
-			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -273,13 +273,13 @@
 			xtype: 'label',
 			name: 'НадписьОснование',
 			text: 'Основание:',
-			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Важность:',
-			style: 'position:absolute;left:6px;top:81px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:81px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -297,7 +297,7 @@
 			xtype: 'label',
 			name: 'Надпись19',
 			text: 'Помещение:',
-			style: 'position:absolute;left:330px;top:56px;width:84px;height:19px;',
+			style: 'position:absolute;left:330px;top:56px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -309,7 +309,7 @@
 			xtype: 'label',
 			name: 'Надпись23',
 			text: 'Территория:',
-			style: 'position:absolute;left:6px;top:56px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:56px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -321,7 +321,7 @@
 			xtype: 'label',
 			name: 'НадписьПроект',
 			text: 'Проект:',
-			style: 'position:absolute;left:330px;top:81px;width:84px;height:19px;',
+			style: 'position:absolute;left:330px;top:81px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -333,7 +333,7 @@
 			xtype: 'label',
 			name: 'НадписьПредмет',
 			text: 'Предмет:',
-			style: 'position:absolute;left:6px;top:31px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:31px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -405,7 +405,7 @@
 			xtype: 'label',
 			name: 'НадписьСостояниеСобытия',
 			text: 'Состояние :',
-			style: 'position:absolute;left:332px;top:58px;width:90px;height:19px;',
+			style: 'position:absolute;left:332px;top:58px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -417,7 +417,7 @@
 			xtype: 'label',
 			name: 'НадписьГруппаСобытия',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:58px;width:91px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:91px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

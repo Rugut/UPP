@@ -40,7 +40,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументы',
 			text: 'Документы:',
-			style: 'position:absolute;left:8px;top:54px;width:63px;height:19px;',
+			style: 'position:absolute;left:8px;top:54px;width:63px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

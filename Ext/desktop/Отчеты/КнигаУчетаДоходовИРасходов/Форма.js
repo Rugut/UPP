@@ -55,13 +55,13 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период составления отчета:',
-			style: 'position:absolute;left:8px;top:33px;width:152px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:152px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
-			style: 'position:absolute;left:346px;top:33px;width:76px;height:19px;',
+			style: 'position:absolute;left:346px;top:33px;width:76px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -93,7 +93,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
 			text: '',
-			style: 'position:absolute;left:184px;top:33px;width:120px;height:19px;',
+			style: 'position:absolute;left:184px;top:33px;width:120px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -111,13 +111,13 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Включение граф 4 "Доходы всего" и 6 "Расходы всего":',
-			style: 'position:absolute;left:132px;top:57px;width:290px;height:19px;',
+			style: 'position:absolute;left:132px;top:57px;width:290px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРежимПечатиНДС',
 			text: 'Режим печати НДС:',
-			style: 'position:absolute;left:320px;top:81px;width:102px;height:19px;',
+			style: 'position:absolute;left:320px;top:81px;width:102px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'checkbox',

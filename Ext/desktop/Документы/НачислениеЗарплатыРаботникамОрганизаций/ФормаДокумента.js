@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:416px;top:33px;width:92px;height:19px;',
+			style: 'position:absolute;left:416px;top:33px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'Месяц начисления:',
-			style: 'position:absolute;left:8px;top:56px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:416px;top:56px;width:92px;height:19px;',
+			style: 'position:absolute;left:416px;top:56px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,7 +55,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:526px;width:75px;height:19px;',
+			style: 'position:absolute;left:8px;top:526px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1368,13 +1368,13 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:590px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:590px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1386,7 +1386,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:416px;top:79px;width:92px;height:19px;',
+			style: 'position:absolute;left:416px;top:79px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1410,7 +1410,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодНачисления',
 			text: 'Режим начисления:',
-			style: 'position:absolute;left:8px;top:79px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:79px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1464,7 +1464,7 @@
 			xtype: 'label',
 			name: 'НадписьПоказыватьРасчетныйЛисток',
 			text: 'Надпись показывать расчетный листок',
-			style: 'position:absolute;left:8px;top:395px;width:704px;height:19px;',
+			style: 'position:absolute;left:8px;top:395px;width:704px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -1487,7 +1487,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
 			text: '',
-			style: 'position:absolute;left:30px;top:492px;width:466px;height:33px;',
+			style: 'position:absolute;left:30px;top:492px;width:466px;height:33px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',

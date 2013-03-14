@@ -44,7 +44,7 @@
 			text: 'Нажмите кнопку "Продолжить" для того, чтобы сохранить файлы 
 на диске и передать управление программному комплексу 
 "Спринтер" компании "Такском".',
-			style: 'position:absolute;left:0px;top:0px;width:362px;height:74px;',
+			style: 'position:absolute;left:0px;top:0px;width:362px;height:74px;text-align:center;',
 		},
 					]
 				},

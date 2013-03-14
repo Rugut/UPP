@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:252px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:252px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц',
 			text: 'Месяц начисления:',
-			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:252px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:252px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,7 +55,7 @@
 			xtype: 'label',
 			name: 'НадписьКоментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:404px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:404px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -164,7 +164,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:418px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:418px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',
@@ -224,7 +224,7 @@
 			xtype: 'label',
 			name: 'НадписьЗарплата',
 			text: 'Зарплата:',
-			style: 'position:absolute;left:105px;top:20px;width:51px;height:19px;',
+			style: 'position:absolute;left:105px;top:20px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -236,7 +236,7 @@
 			xtype: 'label',
 			name: 'НадписьЕСН',
 			text: 'ЕСН:',
-			style: 'position:absolute;left:105px;top:44px;width:51px;height:19px;',
+			style: 'position:absolute;left:105px;top:44px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -248,7 +248,7 @@
 			xtype: 'label',
 			name: 'НадписьНДФЛ',
 			text: 'НДФЛ:',
-			style: 'position:absolute;left:105px;top:68px;width:51px;height:19px;',
+			style: 'position:absolute;left:105px;top:68px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -260,19 +260,19 @@
 			xtype: 'label',
 			name: 'НадписьИнформация',
 			text: 'Затраты, рассчитанные автоматически, можно скорректировать вручную, если это необходимо',
-			style: 'position:absolute;left:302px;top:20px;width:248px;height:28px;',
+			style: 'position:absolute;left:302px;top:20px;width:248px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИнформацияНалоги',
 			text: 'ЕСН и НДФЛ не выделены из общей суммы затрат',
-			style: 'position:absolute;left:302px;top:60px;width:172px;height:28px;',
+			style: 'position:absolute;left:302px;top:60px;width:172px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСправка',
 			text: 'Справка',
-			style: 'position:absolute;left:479px;top:60px;width:71px;height:28px;',
+			style: 'position:absolute;left:479px;top:60px;width:71px;height:28px;text-align:center;',
 		},
 					]
 				},

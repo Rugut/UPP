@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОГРН',
 			text: 'ОГРН:',
-			style: 'position:absolute;left:8px;top:84px;width:40px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьАдрес',
 			text: 'Адрес:',
-			style: 'position:absolute;left:8px;top:59px;width:40px;height:19px;',
+			style: 'position:absolute;left:8px;top:59px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресКодПоКЛАДР',
 			text: 'Код по КЛАДР:',
-			style: 'position:absolute;left:387px;top:59px;width:88px;height:19px;',
+			style: 'position:absolute;left:387px;top:59px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -84,7 +84,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;',
+			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,7 +96,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

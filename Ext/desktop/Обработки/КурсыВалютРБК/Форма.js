@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодС',
 			text: 'Период загрузки с:',
-			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодПо',
 			text: 'по:',
-			style: 'position:absolute;left:196px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:196px;top:33px;width:16px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',

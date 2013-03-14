@@ -38,13 +38,13 @@
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты2',
 			text: 'Процент оплаты от среднего заработка:',
-			style: 'position:absolute;left:0px;top:48px;width:208px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:208px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОграничениеПособия2',
 			text: 'Ограничение заработка (пособия):',
-			style: 'position:absolute;left:0px;top:73px;width:178px;height:19px;',
+			style: 'position:absolute;left:0px;top:73px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -68,7 +68,7 @@
 			xtype: 'label',
 			name: 'НадписьСтажЛет',
 			text: 'Страховой стаж без нестраховых периодов:',
-			style: 'position:absolute;left:0px;top:23px;width:225px;height:19px;',
+			style: 'position:absolute;left:0px;top:23px;width:225px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -92,7 +92,7 @@
 			xtype: 'label',
 			name: 'НадписьСтажЛет1',
 			text: 'лет',
-			style: 'position:absolute;left:292px;top:23px;width:21px;height:19px;',
+			style: 'position:absolute;left:292px;top:23px;width:21px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты3',
 			text: 'Процент оплаты от среднего заработка:',
-			style: 'position:absolute;left:0px;top:23px;width:208px;height:19px;',
+			style: 'position:absolute;left:0px;top:23px;width:208px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,7 +121,7 @@
 			xtype: 'label',
 			name: 'НадписьОграничениеПособия3',
 			text: 'Ограничение заработка (пособия):',
-			style: 'position:absolute;left:0px;top:48px;width:178px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

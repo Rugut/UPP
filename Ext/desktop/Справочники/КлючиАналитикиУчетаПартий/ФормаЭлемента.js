@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатусПартии',
 			text: 'Статус партии:',
-			style: 'position:absolute;left:8px;top:226px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:226px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,7 +55,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаказ',
 			text: 'Заказ:',
-			style: 'position:absolute;left:8px;top:57px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -67,7 +67,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаказ1',
 			text: 'Договор комитента:',
-			style: 'position:absolute;left:8px;top:81px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,7 +79,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговорКомиссионера',
 			text: 'Договор комиссионера:',
-			style: 'position:absolute;left:8px;top:130px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:130px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -91,7 +91,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаказ3',
 			text: 'Документ передачи:',
-			style: 'position:absolute;left:8px;top:154px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:154px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -103,7 +103,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаказ4',
 			text: 'Физ лицо:',
-			style: 'position:absolute;left:8px;top:178px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:178px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -115,7 +115,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаказ5',
 			text: 'Назначение использования:',
-			style: 'position:absolute;left:8px;top:198px;width:138px;height:27px;',
+			style: 'position:absolute;left:8px;top:198px;width:138px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,7 +127,7 @@
 			xtype: 'label',
 			name: 'НадписьКомиссионер',
 			text: 'Комиссионер:',
-			style: 'position:absolute;left:8px;top:105px;width:138px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -193,7 +193,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:0px;top:0px;width:70px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьМаксимальноеЗначение',
 			text: 'Максимальное значение:',
-			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'НадписьИнтервал',
 			text: 'Интервал:',
-			style: 'position:absolute;left:0px;top:24px;width:130px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -115,7 +115,7 @@
 			xtype: 'label',
 			name: 'НадписьВысота',
 			text: 'Высота:',
-			style: 'position:absolute;left:0px;top:48px;width:130px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

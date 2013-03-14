@@ -214,7 +214,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:19px;top:51px;width:83px;height:19px;',
+			style: 'position:absolute;left:19px;top:51px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -312,7 +312,7 @@
 			xtype: 'label',
 			name: 'НадписьГод',
 			text: 'Год:',
-			style: 'position:absolute;left:362px;top:6px;width:40px;height:19px;',
+			style: 'position:absolute;left:362px;top:6px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',

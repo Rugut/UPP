@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Адрес эл.почты:',
-			style: 'position:absolute;left:14px;top:105px;width:86px;height:19px;',
+			style: 'position:absolute;left:14px;top:105px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись16',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Вид эл. почты:',
-			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

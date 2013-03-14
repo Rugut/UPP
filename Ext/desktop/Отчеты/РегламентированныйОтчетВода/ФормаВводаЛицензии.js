@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеВводаСерия',
 			text: 'Серия:',
-			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -55,7 +55,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеВводаНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -67,7 +67,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеВводаВид',
 			text: 'Вид:',
-			style: 'position:absolute;left:8px;top:81px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,7 +79,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеВводаПредставление',
 			text: 'Представление:',
-			style: 'position:absolute;left:8px;top:108px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',

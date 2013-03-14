@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: '/',
-			style: 'position:absolute;left:318px;top:31px;width:9px;height:19px;',
+			style: 'position:absolute;left:318px;top:31px;width:9px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

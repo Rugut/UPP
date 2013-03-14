@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:434px;top:33px;width:82px;height:19px;',
+			style: 'position:absolute;left:434px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:603px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:603px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:434px;top:56px;width:82px;height:19px;',
+			style: 'position:absolute;left:434px;top:56px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьКоментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:472px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:472px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -248,7 +248,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:56px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -310,7 +310,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц',
 			text: 'Месяц начисления:',
-			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

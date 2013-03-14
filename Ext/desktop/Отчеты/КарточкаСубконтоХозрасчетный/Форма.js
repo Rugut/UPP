@@ -79,13 +79,13 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:56px;height:18px;',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:18px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'по:',
-			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -97,7 +97,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Организация:',
-			style: 'position:absolute;left:276px;top:33px;width:76px;height:19px;',
+			style: 'position:absolute;left:276px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

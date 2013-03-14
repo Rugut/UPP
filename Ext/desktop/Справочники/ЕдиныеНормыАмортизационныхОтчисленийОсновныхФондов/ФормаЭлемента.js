@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код:',
-			style: 'position:absolute;left:8px;top:33px;width:31px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:31px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:58px;width:91px;height:84px;',
+			style: 'position:absolute;left:8px;top:58px;width:91px;height:84px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Норма амортизационных отчислений:',
-			style: 'position:absolute;left:8px;top:154px;width:199px;height:19px;',
+			style: 'position:absolute;left:8px;top:154px;width:199px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Процент от стоимости машины на 1000 км пробега:',
-			style: 'position:absolute;left:8px;top:179px;width:288px;height:19px;',
+			style: 'position:absolute;left:8px;top:179px;width:288px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

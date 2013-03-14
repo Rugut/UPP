@@ -42,7 +42,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'от:',
-			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:348px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:348px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Заявка на сертификацию:',
-			style: 'position:absolute;left:336px;top:101px;width:88px;height:27px;',
+			style: 'position:absolute;left:336px;top:101px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -102,7 +102,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -114,7 +114,7 @@
 			xtype: 'label',
 			name: 'Надпись16',
 			text: 'Серия:',
-			style: 'position:absolute;left:336px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -213,7 +213,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоВскрытыхУпаковок',
 			text: 'Количество вскрытых упаковок:',
-			style: 'position:absolute;left:6px;top:162px;width:166px;height:19px;',
+			style: 'position:absolute;left:6px;top:162px;width:166px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -243,7 +243,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:324px;top:27px;width:88px;height:19px;',
+			style: 'position:absolute;left:324px;top:27px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -255,7 +255,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:6px;top:27px;width:88px;height:19px;',
+			style: 'position:absolute;left:6px;top:27px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -267,7 +267,7 @@
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Количество образцов, отобранных для испытаний:',
-			style: 'position:absolute;left:6px;top:27px;width:145px;height:27px;',
+			style: 'position:absolute;left:6px;top:27px;width:145px;height:27px;text-align:left;',
 		},
 					]
 				},
@@ -277,7 +277,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Нормативный документ:',
-			style: 'position:absolute;left:8px;top:101px;width:88px;height:27px;',
+			style: 'position:absolute;left:8px;top:101px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -289,7 +289,7 @@
 			xtype: 'label',
 			name: 'Надпись17',
 			text: 'Склад:',
-			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

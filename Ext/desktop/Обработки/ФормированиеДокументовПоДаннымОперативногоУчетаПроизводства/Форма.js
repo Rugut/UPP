@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'по:',
-			style: 'position:absolute;left:158px;top:32px;width:18px;height:19px;',
+			style: 'position:absolute;left:158px;top:32px;width:18px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНастройка',
 			text: 'Настройка:',
-			style: 'position:absolute;left:8px;top:8px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьГраницаНачала',
 			text: 'За период с: ',
-			style: 'position:absolute;left:8px;top:32px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

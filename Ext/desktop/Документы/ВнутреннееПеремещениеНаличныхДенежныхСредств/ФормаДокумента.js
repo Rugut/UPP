@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Касса',
-			style: 'position:absolute;left:8px;top:91px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:91px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Касса  - получатель:',
-			style: 'position:absolute;left:8px;top:156px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:156px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Сумма документа:',
-			style: 'position:absolute;left:8px;top:187px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:187px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Статья движения денежных средств:',
-			style: 'position:absolute;left:8px;top:211px;width:108px;height:33px;',
+			style: 'position:absolute;left:8px;top:211px;width:108px;height:33px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:249px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:249px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:276px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:276px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -138,13 +138,13 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:201px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:201px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -168,7 +168,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация - отправитель:',
-			style: 'position:absolute;left:8px;top:57px;width:108px;height:33px;',
+			style: 'position:absolute;left:8px;top:57px;width:108px;height:33px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -180,7 +180,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизацияПолучатель',
 			text: 'Организация - получатель:',
-			style: 'position:absolute;left:8px;top:122px;width:108px;height:30px;',
+			style: 'position:absolute;left:8px;top:122px;width:108px;height:30px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

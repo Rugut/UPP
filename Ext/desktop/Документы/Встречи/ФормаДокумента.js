@@ -38,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:257px;top:394px;width:43px;height:19px;',
+			style: 'position:absolute;left:257px;top:394px;width:43px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'Дата регистрации:',
-			style: 'position:absolute;left:8px;top:394px;width:107px;height:19px;',
+			style: 'position:absolute;left:8px;top:394px;width:107px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Зарегистрировал:',
-			style: 'position:absolute;left:395px;top:394px;width:100px;height:19px;',
+			style: 'position:absolute;left:395px;top:394px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,7 +96,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПланирования',
 			text: '12 октября 2007 г',
-			style: 'position:absolute;left:379px;top:6px;width:130px;height:24px;',
+			style: 'position:absolute;left:379px;top:6px;width:130px;height:24px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',
@@ -172,7 +172,7 @@
 			xtype: 'label',
 			name: 'НадписьПомещение',
 			text: 'Место:',
-			style: 'position:absolute;left:8px;top:63px;width:50px;height:19px;',
+			style: 'position:absolute;left:8px;top:63px;width:50px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,7 +184,7 @@
 			xtype: 'label',
 			name: 'НадписьЧасов1',
 			text: 'Продолж-ть:',
-			style: 'position:absolute;left:257px;top:33px;width:74px;height:19px;',
+			style: 'position:absolute;left:257px;top:33px;width:74px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -196,7 +196,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРезервирования1',
 			text: 'Дата:',
-			style: 'position:absolute;left:8px;top:33px;width:50px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:50px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -208,7 +208,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРезервирования2',
 			text: 'Начало:',
-			style: 'position:absolute;left:147px;top:33px;width:45px;height:19px;',
+			style: 'position:absolute;left:147px;top:33px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -220,7 +220,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
 			text: 'Встреча назначена на 12 часов в помещении 2204',
-			style: 'position:absolute;left:39px;top:336px;width:628px;height:35px;',
+			style: 'position:absolute;left:39px;top:336px;width:628px;height:35px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',

@@ -29,7 +29,7 @@
 			xtype: 'label',
 			name: 'НадписьИмяФайлаВнешнейОбработкиОбработчиковСобытий',
 			text: 'Имя файла внешней обработки с модулем отладки:',
-			style: 'position:absolute;left:8px;top:286px;width:290px;height:19px;',
+			style: 'position:absolute;left:8px;top:286px;width:290px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -58,7 +58,7 @@
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
 			text: 'Налоговый орган:',
-			style: 'position:absolute;left:8px;top:53px;width:123px;height:15px;',
+			style: 'position:absolute;left:8px;top:53px;width:123px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -118,7 +118,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:73px;width:123px;height:15px;',
+			style: 'position:absolute;left:8px;top:73px;width:123px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -130,13 +130,13 @@
 			xtype: 'label',
 			name: 'НадписьСоздан',
 			text: '',
-			style: 'position:absolute;left:270px;top:33px;width:362px;height:15px;',
+			style: 'position:absolute;left:270px;top:33px;width:362px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:123px;height:15px;',
+			style: 'position:absolute;left:8px;top:33px;width:123px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',

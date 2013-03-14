@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Дата анализа потребностей:',
-			style: 'position:absolute;left:6px;top:6px;width:152px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:152px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

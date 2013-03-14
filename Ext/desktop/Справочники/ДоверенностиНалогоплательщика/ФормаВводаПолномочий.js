@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'ОКАТО:',
-			style: 'position:absolute;left:8px;top:10px;width:40px;height:19px;',
+			style: 'position:absolute;left:8px;top:10px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьКПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:163px;top:10px;width:26px;height:19px;',
+			style: 'position:absolute;left:163px;top:10px;width:26px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОснование',
 			text: 'Основание:',
-			style: 'position:absolute;left:8px;top:4px;width:61px;height:19px;',
+			style: 'position:absolute;left:8px;top:4px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

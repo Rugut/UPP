@@ -25,13 +25,13 @@
 			xtype: 'label',
 			name: 'НадписьПериодНач',
 			text: 'Период с:',
-			style: 'position:absolute;left:136px;top:3px;width:51px;height:19px;',
+			style: 'position:absolute;left:136px;top:3px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по:',
-			style: 'position:absolute;left:290px;top:3px;width:20px;height:19px;',
+			style: 'position:absolute;left:290px;top:3px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

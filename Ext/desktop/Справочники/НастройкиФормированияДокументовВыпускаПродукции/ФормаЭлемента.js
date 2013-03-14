@@ -69,7 +69,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,7 +81,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -93,7 +93,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:287px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:287px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -105,7 +105,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -160,7 +160,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодДетализации',
 			text: 'Детализация: ',
-			style: 'position:absolute;left:6px;top:30px;width:80px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,7 +182,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРегулярногоДокумента',
 			text: 'Вид:',
-			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -226,7 +226,7 @@
 			xtype: 'label',
 			name: 'НадписьГраницаФормирования',
 			text: 'Начиная с: ',
-			style: 'position:absolute;left:510px;top:81px;width:60px;height:19px;',
+			style: 'position:absolute;left:510px;top:81px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

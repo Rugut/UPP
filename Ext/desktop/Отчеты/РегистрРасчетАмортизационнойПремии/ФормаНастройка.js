@@ -47,13 +47,13 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:8px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'по:',
-			style: 'position:absolute;left:168px;top:8px;width:16px;height:19px;',
+			style: 'position:absolute;left:168px;top:8px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -65,7 +65,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Аморт. группа:',
-			style: 'position:absolute;left:8px;top:56px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

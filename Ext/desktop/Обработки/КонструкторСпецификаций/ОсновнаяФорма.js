@@ -482,7 +482,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Выводить спецификации на дату:',
-			style: 'position:absolute;left:6px;top:6px;width:177px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:177px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -534,7 +534,7 @@
 			xtype: 'label',
 			name: 'НадписьВыводитьДляНоменклатуры',
 			text: 'Выводить в доп. информацию для номенклатуры:',
-			style: 'position:absolute;left:6px;top:120px;width:258px;height:19px;',
+			style: 'position:absolute;left:6px;top:120px;width:258px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -551,7 +551,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Конечная продукция:',
-			style: 'position:absolute;left:6px;top:303px;width:108px;height:19px;',
+			style: 'position:absolute;left:6px;top:303px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -563,7 +563,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Конечная характеристика продукции:',
-			style: 'position:absolute;left:6px;top:327px;width:108px;height:19px;',
+			style: 'position:absolute;left:6px;top:327px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -575,7 +575,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоУровней',
 			text: 'Количество уровней разворота дерева:',
-			style: 'position:absolute;left:6px;top:144px;width:258px;height:19px;',
+			style: 'position:absolute;left:6px;top:144px;width:258px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

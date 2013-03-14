@@ -72,7 +72,7 @@
 			xtype: 'label',
 			name: 'Найдено',
 			text: 'Введите строку поиска',
-			style: 'position:absolute;left:20px;top:0px;width:142px;height:19px;',
+			style: 'position:absolute;left:20px;top:0px;width:142px;height:19px;text-align:center;',
 		},
 					]
 				},

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,7 +124,7 @@
 			xtype: 'label',
 			name: 'НадписьОКП',
 			text: 'ОКП:',
-			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -47,7 +47,7 @@
 			xtype: 'label',
 			name: 'НадписьИнформация1',
 			text: 'Если данные по сотруднику ранее не были зарегистрированы, а в списке показаны однофамильцы, выберите команду «Создать новое физлицо»',
-			style: 'position:absolute;left:8px;top:130px;width:506px;height:33px;',
+			style: 'position:absolute;left:8px;top:130px;width:506px;height:33px;text-align:center;',
 		},
 		{
 			xtype: 'button',

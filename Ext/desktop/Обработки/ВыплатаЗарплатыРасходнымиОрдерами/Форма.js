@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:6px;width:72px;height:19px;',
+			style: 'position:absolute;left:8px;top:6px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьПлатежнаяВедомость',
 			text: 'Платежная ведомость:',
-			style: 'position:absolute;left:280px;top:6px;width:118px;height:19px;',
+			style: 'position:absolute;left:280px;top:6px;width:118px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -104,7 +104,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРКО',
 			text: 'Проставить дату:',
-			style: 'position:absolute;left:170px;top:299px;width:93px;height:19px;',
+			style: 'position:absolute;left:170px;top:299px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -116,7 +116,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПервогоРКО',
 			text: 'Нумеровать с:',
-			style: 'position:absolute;left:8px;top:299px;width:78px;height:19px;',
+			style: 'position:absolute;left:8px;top:299px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

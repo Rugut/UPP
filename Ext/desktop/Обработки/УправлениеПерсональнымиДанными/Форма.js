@@ -24,7 +24,7 @@
 			xtype: 'label',
 			name: 'НадписьСубъект',
 			text: 'Субъект:',
-			style: 'position:absolute;left:280px;top:541px;width:45px;height:19px;',
+			style: 'position:absolute;left:280px;top:541px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,7 +162,7 @@
 			xtype: 'label',
 			name: 'НадписьОтборСубъект',
 			text: 'Отбор:',
-			style: 'position:absolute;left:94px;top:27px;width:39px;height:19px;',
+			style: 'position:absolute;left:94px;top:27px;width:39px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

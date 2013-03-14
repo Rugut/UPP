@@ -134,13 +134,13 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:104px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:104px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:104px;top:265px;width:144px;height:19px;',
+			style: 'position:absolute;left:104px;top:265px;width:144px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -205,7 +205,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -38,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьВыборДействия',
 			text: 'Настройка обмена данными между информационными базами',
-			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'radio',
@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'НадписьТипНастройки',
 			text: 'Передача данных между информационными базами',
-			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -335,7 +335,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособВыгрузкиСебестоимости',
 			text: 'Способ выгрузки себестоимости:',
-			style: 'position:absolute;left:6px;top:6px;width:222px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:222px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -358,13 +358,13 @@
 			xtype: 'label',
 			name: 'НадписьВыборДействия1',
 			text: 'Подключение к информационной базе-приемнику',
-			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВыборДействия5',
 			text: 'Выбор файла настроек обмена',
-			style: 'position:absolute;left:6px;top:6px;width:544px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:544px;height:39px;text-align:center;',
 		},
 					]
 				},
@@ -382,13 +382,13 @@
 			xtype: 'label',
 			name: 'НадписьВыборДействия4',
 			text: 'Сопоставление справочников и документов в информационных базах',
-			style: 'position:absolute;left:6px;top:6px;width:543px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:543px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьТипНастройки2',
 			text: 'Настройка обмена данными успешно завершена',
-			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'checkbox',
@@ -414,7 +414,7 @@
 			xtype: 'label',
 			name: 'НадписьВыборДействия6',
 			text: 'Фильтрация справочников при обмене',
-			style: 'position:absolute;left:6px;top:6px;width:543px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:543px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -659,7 +659,7 @@
 			xtype: 'label',
 			name: 'НадписьВыборДействия3',
 			text: 'Взаимодействие информационных баз при обмене',
-			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -689,7 +689,7 @@
 			xtype: 'label',
 			name: 'НадписьВыборДействия2',
 			text: 'Параметры обмена и возможные ограничения',
-			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -707,7 +707,7 @@
 			xtype: 'label',
 			name: 'НадписьТипНастройки2',
 			text: 'Первый этап настройки успешно завершен',
-			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;text-align:center;',
 		},
 					]
 				},
@@ -984,7 +984,7 @@
 			xtype: 'label',
 			name: 'НадписьПорт',
 			text: 'Порт:',
-			style: 'position:absolute;left:372px;top:0px;width:42px;height:19px;',
+			style: 'position:absolute;left:372px;top:0px;width:42px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1233,7 +1233,7 @@
 			xtype: 'label',
 			name: 'НадписьПараметрыОбменаДокументами',
 			text: 'Параметры обмена данными',
-			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;text-align:center;',
 		},
 		{
 			xtype: 'label',

@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьВведитеКодОКВЭД',
 			text: 'Код по ОКВЭД:',
-			style: 'position:absolute;left:8px;top:7px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:7px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

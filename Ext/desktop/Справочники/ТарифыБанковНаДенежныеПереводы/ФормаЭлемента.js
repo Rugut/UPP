@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:283px;top:33px;width:25px;height:19px;',
+			style: 'position:absolute;left:283px;top:33px;width:25px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьМинимальныйТариф',
 			text: 'Минимальный тариф:',
-			style: 'position:absolute;left:8px;top:91px;width:116px;height:19px;',
+			style: 'position:absolute;left:8px;top:91px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьМаксимальныйТариф',
 			text: 'Максимальный тариф:',
-			style: 'position:absolute;left:8px;top:116px;width:116px;height:19px;',
+			style: 'position:absolute;left:8px;top:116px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцент',
 			text: 'Процент:',
-			style: 'position:absolute;left:8px;top:62px;width:116px;height:19px;',
+			style: 'position:absolute;left:8px;top:62px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

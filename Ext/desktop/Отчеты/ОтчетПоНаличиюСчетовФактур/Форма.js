@@ -57,7 +57,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -69,7 +69,7 @@
 			xtype: 'label',
 			name: 'НадписьНаличиеСчетаФактуры',
 			text: 'Наличие счета-фактуры:',
-			style: 'position:absolute;left:8px;top:81px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -112,13 +112,13 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:50px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:50px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'по:',
-			style: 'position:absolute;left:228px;top:33px;width:15px;height:19px;',
+			style: 'position:absolute;left:228px;top:33px;width:15px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'button',

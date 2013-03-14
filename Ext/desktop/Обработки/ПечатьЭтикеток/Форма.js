@@ -290,7 +290,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоКопий',
 			text: 'Количество копий:',
-			style: 'position:absolute;left:474px;top:206px;width:96px;height:19px;',
+			style: 'position:absolute;left:474px;top:206px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьСчет',
 			text: 'Счет:',
-			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

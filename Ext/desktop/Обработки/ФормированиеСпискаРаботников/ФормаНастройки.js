@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаАктуальности',
 			text: 'По состоянию на:',
-			style: 'position:absolute;left:8px;top:8px;width:101px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:101px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -198,7 +198,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчета',
 			text: 'Вид расчета:',
-			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -210,7 +210,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'по:',
-			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;',
+			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -222,7 +222,7 @@
 			xtype: 'label',
 			name: 'НадписьДатыНачала',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -336,7 +336,7 @@
 			xtype: 'label',
 			name: 'НадписьДатыНачала4',
 			text: 'Дата:',
-			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -348,7 +348,7 @@
 			xtype: 'label',
 			name: 'НадписьОплачиватьЧасов2',
 			text: 'Оплатить часов:',
-			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -360,7 +360,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчетаВнутрисменныйНевыход1',
 			text: 'Вид расчета:',
-			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -378,7 +378,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчета1',
 			text: 'Вид расчета:',
-			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -390,7 +390,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'по:',
-			style: 'position:absolute;left:179px;top:49px;width:16px;height:19px;',
+			style: 'position:absolute;left:179px;top:49px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -402,7 +402,7 @@
 			xtype: 'label',
 			name: 'НадписьДатыНачала1',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -558,7 +558,7 @@
 			xtype: 'label',
 			name: 'НадписьДатыНачала2',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -570,7 +570,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'по:',
-			style: 'position:absolute;left:180px;top:49px;width:15px;height:19px;',
+			style: 'position:absolute;left:180px;top:49px;width:15px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -582,7 +582,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчетаЦелосменныйНевыход',
 			text: 'Невыход:',
-			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -606,7 +606,7 @@
 			xtype: 'label',
 			name: 'НадписьДатыНачала3',
 			text: 'Дата:',
-			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -618,7 +618,7 @@
 			xtype: 'label',
 			name: 'НадписьОплачиватьЧасов1',
 			text: 'Часов:',
-			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -630,7 +630,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчетаВнутрисменныйНевыход',
 			text: 'Невыход:',
-			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -654,7 +654,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыхода',
 			text: 'Дата сверхурочных работ:',
-			style: 'position:absolute;left:6px;top:25px;width:140px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -672,13 +672,13 @@
 			xtype: 'label',
 			name: 'НадписьЧасовПолуторных',
 			text: 'Часы в 1.5-ом размере:',
-			style: 'position:absolute;left:6px;top:49px;width:140px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьЧасовДвойных',
 			text: 'Часы в 2-ом размере:',
-			style: 'position:absolute;left:6px;top:73px;width:140px;height:19px;',
+			style: 'position:absolute;left:6px;top:73px;width:140px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -702,13 +702,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаПраздника',
 			text: 'Праздничный (выходной) день:',
-			style: 'position:absolute;left:6px;top:25px;width:159px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:159px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОтработаноЧасов',
 			text: 'Отработано часов:',
-			style: 'position:absolute;left:6px;top:49px;width:159px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:159px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -720,7 +720,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособОтраженияВРЕглУчете',
 			text: 'Бух. учет:',
-			style: 'position:absolute;left:6px;top:51px;width:101px;height:19px;',
+			style: 'position:absolute;left:6px;top:51px;width:101px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -732,7 +732,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИзменения',
 			text: 'Дата изменения:',
-			style: 'position:absolute;left:6px;top:25px;width:101px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:101px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -744,7 +744,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражениеБлЗаСчетРаботодателя',
 			text: 'Отражение б/л за счет работодателя:',
-			style: 'position:absolute;left:6px;top:77px;width:101px;height:31px;',
+			style: 'position:absolute;left:6px;top:77px;width:101px;height:31px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -823,7 +823,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчета2',
 			text: 'Вид расчета:',
-			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -835,7 +835,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'по:',
-			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;',
+			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -847,7 +847,7 @@
 			xtype: 'label',
 			name: 'НадписьДатыНачала5',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1158,7 +1158,7 @@
 			xtype: 'label',
 			name: 'НадписьДатыНачала6',
 			text: 'Период с:',
-			style: 'position:absolute;left:12px;top:30px;width:90px;height:19px;',
+			style: 'position:absolute;left:12px;top:30px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1170,7 +1170,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по:',
-			style: 'position:absolute;left:192px;top:30px;width:15px;height:19px;',
+			style: 'position:absolute;left:192px;top:30px;width:15px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

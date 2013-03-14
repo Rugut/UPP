@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

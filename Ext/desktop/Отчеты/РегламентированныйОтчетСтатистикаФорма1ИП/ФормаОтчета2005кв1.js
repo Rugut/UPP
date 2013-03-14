@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:3px;width:80px;height:21px;',
+			style: 'position:absolute;left:183px;top:3px;width:80px;height:21px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

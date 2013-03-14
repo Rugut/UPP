@@ -76,7 +76,7 @@
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:118px;top:251px;width:148px;height:19px;',
+			style: 'position:absolute;left:118px;top:251px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -88,7 +88,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРаздел1',
 			text: '999 из 999',
-			style: 'position:absolute;left:290px;top:251px;width:80px;height:19px;',
+			style: 'position:absolute;left:290px;top:251px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -118,7 +118,7 @@
 			xtype: 'label',
 			name: 'Надпись26',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:349px;top:275px;width:132px;height:19px;',
+			style: 'position:absolute;left:349px;top:275px;width:132px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -170,7 +170,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;',
+			style: 'position:absolute;left:183px;top:5px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -44,7 +44,7 @@
 			xtype: 'label',
 			name: 'НадписьОписаниеТипаОбъектов',
 			text: 'Тип объектов:',
-			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

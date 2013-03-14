@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Имя выгрузки:',
-			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -119,7 +119,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Имя прайс-листа:',
-			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -215,7 +215,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Период с:',
-			style: 'position:absolute;left:0px;top:23px;width:97px;height:19px;',
+			style: 'position:absolute;left:0px;top:23px;width:97px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -332,7 +332,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Имя прайс-листа:',
-			style: 'position:absolute;left:0px;top:0px;width:98px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -344,19 +344,19 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Единица по умолчанию:',
-			style: 'position:absolute;left:0px;top:42px;width:127px;height:19px;',
+			style: 'position:absolute;left:0px;top:42px;width:127px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Действительно с:',
-			style: 'position:absolute;left:0px;top:66px;width:127px;height:19px;',
+			style: 'position:absolute;left:0px;top:66px;width:127px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'по:',
-			style: 'position:absolute;left:227px;top:66px;width:21px;height:19px;',
+			style: 'position:absolute;left:227px;top:66px;width:21px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -384,7 +384,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:6px;top:48px;width:97px;height:19px;',
+			style: 'position:absolute;left:6px;top:48px;width:97px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -429,13 +429,13 @@
 			xtype: 'label',
 			name: 'НадписьИмяФайла',
 			text: 'Файл выгрузки:',
-			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИмяКаталога',
 			text: 'Каталог выгрузки:',
-			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:99px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

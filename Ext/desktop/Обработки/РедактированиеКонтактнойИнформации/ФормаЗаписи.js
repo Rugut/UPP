@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись16',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:193px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:193px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьНачения',
 			text: 'Значение:',
-			style: 'position:absolute;left:14px;top:105px;width:88px;height:19px;',
+			style: 'position:absolute;left:14px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -68,7 +68,7 @@
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Вид прочего:',
-			style: 'position:absolute;left:8px;top:61px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:61px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

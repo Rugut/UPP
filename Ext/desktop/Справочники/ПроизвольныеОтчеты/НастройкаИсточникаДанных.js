@@ -53,7 +53,7 @@
 			xtype: 'label',
 			name: 'НадписьТипИсточникаДанныхОтчета',
 			text: 'Тип источника:',
-			style: 'position:absolute;left:8px;top:32px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -70,7 +70,7 @@
 			xtype: 'label',
 			name: 'НадписьИмяИсточника',
 			text: 'Отчет:',
-			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,7 +100,7 @@
 			xtype: 'label',
 			name: 'НадписьИмяИсточника1',
 			text: 'Отчет:',
-			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;text-align:left;',
 		},
 					]
 				},

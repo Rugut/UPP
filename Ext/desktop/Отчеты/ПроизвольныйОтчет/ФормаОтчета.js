@@ -412,7 +412,7 @@
 			xtype: 'label',
 			name: 'НадписьВыполняетсяПерерисовкаПанели',
 			text: 'Выполняется перерисовка панели...',
-			style: 'position:absolute;left:0px;top:42px;width:306px;height:36px;',
+			style: 'position:absolute;left:0px;top:42px;width:306px;height:36px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',

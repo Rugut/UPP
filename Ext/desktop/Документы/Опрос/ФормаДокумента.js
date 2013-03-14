@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьОпрашиваемоеЛицо',
 			text: 'Анкетируемый:',
-			style: 'position:absolute;left:0px;top:1px;width:108px;height:19px;',
+			style: 'position:absolute;left:0px;top:1px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'НадписьТиповаяАнкета',
 			text: 'Типовая анкета:',
-			style: 'position:absolute;left:0px;top:26px;width:108px;height:19px;',
+			style: 'position:absolute;left:0px;top:26px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:268px;top:399px;width:38px;height:19px;',
+			style: 'position:absolute;left:268px;top:399px;width:38px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -113,7 +113,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'Дата регистрации:',
-			style: 'position:absolute;left:8px;top:399px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:399px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -125,7 +125,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Зарегистрировал:',
-			style: 'position:absolute;left:8px;top:424px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:424px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:472px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:472px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -149,7 +149,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
 			text: 'Опрос не завершен',
-			style: 'position:absolute;left:30px;top:351px;width:388px;height:17px;',
+			style: 'position:absolute;left:30px;top:351px;width:388px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -223,7 +223,7 @@
 			xtype: 'label',
 			name: 'НадписьРассылка',
 			text: 'Рассылка:',
-			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -48,7 +48,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Имя файла правил:',
-			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -60,7 +60,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Версия:',
-			style: 'position:absolute;left:443px;top:6px;width:45px;height:19px;',
+			style: 'position:absolute;left:443px;top:6px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -229,7 +229,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Имя файла данных:',
-			style: 'position:absolute;left:0px;top:1px;width:100px;height:19px;',
+			style: 'position:absolute;left:0px;top:1px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -418,7 +418,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Имя файла для загрузки:',
-			style: 'position:absolute;left:6px;top:6px;width:136px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:136px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -430,7 +430,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Дата выгрузки данных:',
-			style: 'position:absolute;left:6px;top:216px;width:150px;height:15px;',
+			style: 'position:absolute;left:6px;top:216px;width:150px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -442,7 +442,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Версия правил обмена:',
-			style: 'position:absolute;left:6px;top:194px;width:150px;height:15px;',
+			style: 'position:absolute;left:6px;top:194px;width:150px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',

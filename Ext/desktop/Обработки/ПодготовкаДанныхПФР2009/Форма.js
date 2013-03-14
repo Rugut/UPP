@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Учреждение:',
-			style: 'position:absolute;left:8px;top:8px;width:70px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Год',
 			text: 'Год:',
-			style: 'position:absolute;left:364px;top:8px;width:25px;height:19px;',
+			style: 'position:absolute;left:364px;top:8px;width:25px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -156,13 +156,13 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:0px;top:24px;width:93px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОтветственный1',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:0px;top:24px;width:96px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -247,7 +247,7 @@
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Данные о уплате взносов доступны только расчетчику!',
-			style: 'position:absolute;left:25px;top:9px;width:291px;height:18px;',
+			style: 'position:absolute;left:25px;top:9px;width:291px;height:18px;text-align:left;',
 		},
 					]
 				},
@@ -634,7 +634,7 @@
 			xtype: 'label',
 			name: 'НадписьОтпускВН',
 			text: 'Отпуск по временной нетрудоспособности:',
-			style: 'position:absolute;left:0px;top:66px;width:225px;height:19px;',
+			style: 'position:absolute;left:0px;top:66px;width:225px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -646,13 +646,13 @@
 			xtype: 'label',
 			name: 'НадписьОтпускБСЗП',
 			text: 'Отпуск без сохранения заработной платы:',
-			style: 'position:absolute;left:0px;top:89px;width:225px;height:19px;',
+			style: 'position:absolute;left:0px;top:89px;width:225px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСЗПДней',
 			text: 'дней',
-			style: 'position:absolute;left:375px;top:89px;width:32px;height:19px;',
+			style: 'position:absolute;left:375px;top:89px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -664,19 +664,19 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'месяцев',
-			style: 'position:absolute;left:270px;top:89px;width:54px;height:19px;',
+			style: 'position:absolute;left:270px;top:89px;width:54px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВНДней',
 			text: 'дней',
-			style: 'position:absolute;left:375px;top:66px;width:32px;height:19px;',
+			style: 'position:absolute;left:375px;top:66px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'месяцев',
-			style: 'position:absolute;left:270px;top:66px;width:54px;height:19px;',
+			style: 'position:absolute;left:270px;top:66px;width:54px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -729,7 +729,7 @@
 			xtype: 'label',
 			name: 'Надпись31',
 			text: 'Данные о начисленных взносах доступны только расчетчику!',
-			style: 'position:absolute;left:24px;top:0px;width:443px;height:19px;',
+			style: 'position:absolute;left:24px;top:0px;width:443px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -820,7 +820,7 @@
 			xtype: 'label',
 			name: 'НадписьОтпускВН1',
 			text: 'Отпуск по временной нетрудоспособности:',
-			style: 'position:absolute;left:0px;top:66px;width:225px;height:19px;',
+			style: 'position:absolute;left:0px;top:66px;width:225px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -832,13 +832,13 @@
 			xtype: 'label',
 			name: 'НадписьОтпускБСЗП1',
 			text: 'Отпуск без сохранения заработной платы:',
-			style: 'position:absolute;left:0px;top:89px;width:225px;height:19px;',
+			style: 'position:absolute;left:0px;top:89px;width:225px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСЗПДней1',
 			text: 'дней',
-			style: 'position:absolute;left:375px;top:89px;width:32px;height:19px;',
+			style: 'position:absolute;left:375px;top:89px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -850,19 +850,19 @@
 			xtype: 'label',
 			name: 'Надпись32',
 			text: 'месяцев',
-			style: 'position:absolute;left:270px;top:89px;width:54px;height:19px;',
+			style: 'position:absolute;left:270px;top:89px;width:54px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВНДней1',
 			text: 'дней',
-			style: 'position:absolute;left:375px;top:66px;width:32px;height:19px;',
+			style: 'position:absolute;left:375px;top:66px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись33',
 			text: 'месяцев',
-			style: 'position:absolute;left:270px;top:66px;width:54px;height:19px;',
+			style: 'position:absolute;left:270px;top:66px;width:54px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -948,7 +948,7 @@
 			xtype: 'label',
 			name: 'Надпись34',
 			text: 'Данные о начисленных взносах доступны только расчетчику!',
-			style: 'position:absolute;left:24px;top:0px;width:640px;height:19px;',
+			style: 'position:absolute;left:24px;top:0px;width:640px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -1014,7 +1014,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументы2010',
 			text: 'Данные за 2010 год формируются в документе "Опись сведений АДВ-6-2"!',
-			style: 'position:absolute;left:93px;top:32px;width:478px;height:21px;',
+			style: 'position:absolute;left:93px;top:32px;width:478px;height:21px;text-align:right;',
 		},
 		{
 			xtype: 'label',

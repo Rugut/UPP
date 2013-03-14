@@ -42,7 +42,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:409px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:409px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -104,7 +104,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Пользователь:',
-			style: 'position:absolute;left:6px;top:26px;width:81px;height:19px;',
+			style: 'position:absolute;left:6px;top:26px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -310,7 +310,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:528px;width:90px;height:19px;',
+			style: 'position:absolute;left:8px;top:528px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

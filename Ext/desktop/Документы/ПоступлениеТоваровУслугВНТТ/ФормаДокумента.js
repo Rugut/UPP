@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:32px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:174px;top:32px;width:20px;height:19px;',
+			style: 'position:absolute;left:174px;top:32px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:428px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:428px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -415,7 +415,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаРасчетовСКонтрагентом',
 			text: 'Счет учета расчетов с контрагентом:',
-			style: 'position:absolute;left:6px;top:6px;width:192px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:192px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -427,7 +427,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаВзаиморасчетов',
 			text: 'Сумма <нет валюты>:',
-			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;',
+			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -508,7 +508,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:12px;top:96px;width:84px;height:19px;',
+			style: 'position:absolute;left:12px;top:96px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -520,7 +520,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаРасчетовПоАвансам',
 			text: 'Счет учета расчетов по авансам:',
-			style: 'position:absolute;left:6px;top:30px;width:192px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:192px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -544,7 +544,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаВходящегоДокумента',
 			text: 'Вх. дата:',
-			style: 'position:absolute;left:326px;top:72px;width:86px;height:19px;',
+			style: 'position:absolute;left:326px;top:72px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -580,13 +580,13 @@
 			xtype: 'label',
 			name: 'ИнфНадписьКурса',
 			text: '(10000 TRL = 6500 руб.)',
-			style: 'position:absolute;left:183px;top:27px;width:457px;height:19px;',
+			style: 'position:absolute;left:183px;top:27px;width:457px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
-			style: 'position:absolute;left:12px;top:118px;width:84px;height:27px;',
+			style: 'position:absolute;left:12px;top:118px;width:84px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -622,7 +622,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаРасчетовПоТаре',
 			text: 'Счет учета расчетов по таре:',
-			style: 'position:absolute;left:6px;top:54px;width:192px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:192px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -728,13 +728,13 @@
 			xtype: 'label',
 			name: 'НадписьДоговор',
 			text: 'Договор:',
-			style: 'position:absolute;left:334px;top:80px;width:84px;height:19px;',
+			style: 'position:absolute;left:334px;top:80px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:80px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:80px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -752,7 +752,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -783,25 +783,25 @@
 			xtype: 'label',
 			name: 'ИнфНадписьТоварыИтоги',
 			text: 'Оптовые цены, Скидка 20%',
-			style: 'position:absolute;left:8px;top:384px;width:475px;height:17px;',
+			style: 'position:absolute;left:8px;top:384px;width:475px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОтражатьВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:334px;top:32px;width:84px;height:19px;',
+			style: 'position:absolute;left:334px;top:32px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСчетФактура',
 			text: 'Счет-фактура:',
-			style: 'position:absolute;left:8px;top:406px;width:84px;height:17px;',
+			style: 'position:absolute;left:8px;top:406px;width:84px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнфНадписьДолга',
 			text: 'По договору 250 USD, 1 USD = 30 руб.',
-			style: 'position:absolute;left:334px;top:104px;width:305px;height:19px;',
+			style: 'position:absolute;left:334px;top:104px;width:305px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -819,7 +819,7 @@
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего,USD:',
-			style: 'position:absolute;left:486px;top:384px;width:72px;height:17px;',
+			style: 'position:absolute;left:486px;top:384px;width:72px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -831,7 +831,7 @@
 			xtype: 'label',
 			name: 'НадписьВсегоНДС',
 			text: 'НДС ( в т. ч.):',
-			style: 'position:absolute;left:486px;top:406px;width:72px;height:17px;',
+			style: 'position:absolute;left:486px;top:406px;width:72px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -876,7 +876,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументПеремещения',
 			text: 'Документ перемещения:',
-			style: 'position:absolute;left:8px;top:72px;width:84px;height:30px;',
+			style: 'position:absolute;left:8px;top:72px;width:84px;height:30px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

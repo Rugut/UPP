@@ -190,13 +190,13 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Единица измерения:',
-			style: 'position:absolute;left:18px;top:127px;width:132px;height:19px;',
+			style: 'position:absolute;left:18px;top:127px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Источник для получения фактических данных:',
-			style: 'position:absolute;left:9px;top:6px;width:240px;height:19px;',
+			style: 'position:absolute;left:9px;top:6px;width:240px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -208,13 +208,13 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Показатель источника для суммы:',
-			style: 'position:absolute;left:9px;top:30px;width:240px;height:19px;',
+			style: 'position:absolute;left:9px;top:30px;width:240px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись16',
 			text: 'Показатель источника для количества:',
-			style: 'position:absolute;left:9px;top:102px;width:240px;height:19px;',
+			style: 'position:absolute;left:9px;top:102px;width:240px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -272,7 +272,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код:',
-			style: 'position:absolute;left:365px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:365px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -284,7 +284,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:120px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -296,7 +296,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:120px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -308,7 +308,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:405px;width:120px;height:19px;',
+			style: 'position:absolute;left:8px;top:405px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

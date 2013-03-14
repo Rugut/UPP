@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'НадписьДополнительныеСтроки',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:0px;top:294px;width:136px;height:19px;',
+			style: 'position:absolute;left:0px;top:294px;width:136px;height:19px;text-align:left;',
 		},
 					]
 				},

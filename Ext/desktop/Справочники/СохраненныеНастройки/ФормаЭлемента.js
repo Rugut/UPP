@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьОписание',
 			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:30px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:30px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',

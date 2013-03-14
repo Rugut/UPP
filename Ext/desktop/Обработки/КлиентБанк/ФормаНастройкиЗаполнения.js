@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьКодировка',
 			text: 'Кодировка:',
-			style: 'position:absolute;left:353px;top:154px;width:61px;height:19px;',
+			style: 'position:absolute;left:353px;top:154px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -94,7 +94,7 @@
 			xtype: 'label',
 			name: 'НадписьБанковскийСчет',
 			text: 'Обслуживаемый банковский счет:',
-			style: 'position:absolute;left:6px;top:6px;width:120px;height:32px;',
+			style: 'position:absolute;left:6px;top:6px;width:120px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -29,7 +29,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'На дату:',
-			style: 'position:absolute;left:6px;top:6px;width:52px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:52px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -208,7 +208,7 @@
 			xtype: 'label',
 			name: 'ВВалюте',
 			text: 'в валюте:',
-			style: 'position:absolute;left:142px;top:6px;width:64px;height:19px;',
+			style: 'position:absolute;left:142px;top:6px;width:64px;height:19px;text-align:center;',
 		},
 					]
 				},

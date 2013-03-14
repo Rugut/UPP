@@ -75,7 +75,7 @@
 			xtype: 'label',
 			name: 'Надпись25',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:99px;top:241px;width:148px;height:19px;',
+			style: 'position:absolute;left:99px;top:241px;width:148px;height:19px;text-align:left;',
 		},
 					]
 				},

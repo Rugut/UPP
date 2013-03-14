@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьДлительностьЗанятия',
 			text: 'Длительность занятия, часов:',
-			style: 'position:absolute;left:8px;top:162px;width:160px;height:19px;',
+			style: 'position:absolute;left:8px;top:162px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'Надпис��ВидЗанятия',
 			text: 'Форма проведения занятия:',
-			style: 'position:absolute;left:8px;top:186px;width:160px;height:19px;',
+			style: 'position:absolute;left:8px;top:186px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:346px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:346px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:371px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:371px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:56px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьСобытие',
 			text: 'Событие:',
-			style: 'position:absolute;left:8px;top:80px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:80px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -236,7 +236,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражать',
 			text: 'Отражать:',
-			style: 'position:absolute;left:346px;top:33px;width:79px;height:19px;',
+			style: 'position:absolute;left:346px;top:33px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -247,7 +247,7 @@
 			xtype: 'label',
 			name: 'НадписьСобытиеРегл',
 			text: 'Событие (регл.):',
-			style: 'position:absolute;left:344px;top:80px;width:82px;height:19px;',
+			style: 'position:absolute;left:344px;top:80px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

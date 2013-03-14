@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'НадписьРезультатРасчетаКоличестваОкруглитьДо',
 			text: 'округлить до:',
-			style: 'position:absolute;left:280px;top:430px;width:80px;height:19px;',
+			style: 'position:absolute;left:280px;top:430px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -218,7 +218,7 @@
 			xtype: 'label',
 			name: 'НадписьРежим',
 			text: 'Режим:',
-			style: 'position:absolute;left:462px;top:430px;width:40px;height:19px;',
+			style: 'position:absolute;left:462px;top:430px;width:40px;height:19px;text-align:right;',
 		},
 					]
 				},
@@ -241,7 +241,7 @@
 			xtype: 'label',
 			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо',
 			text: 'округлить до:',
-			style: 'position:absolute;left:280px;top:430px;width:80px;height:19px;',
+			style: 'position:absolute;left:280px;top:430px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',

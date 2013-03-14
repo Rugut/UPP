@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерДовер',
 			text: 'Доверенность №',
-			style: 'position:absolute;left:8px;top:58px;width:93px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыдачи',
 			text: 'от',
-			style: 'position:absolute;left:203px;top:58px;width:13px;height:19px;',
+			style: 'position:absolute;left:203px;top:58px;width:13px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьПризнакДоверителя',
 			text: 'Доверителем является:',
-			style: 'position:absolute;left:8px;top:85px;width:126px;height:19px;',
+			style: 'position:absolute;left:8px;top:85px;width:126px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,7 +80,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговор1',
 			text: 'действительна по',
-			style: 'position:absolute;left:310px;top:58px;width:93px;height:19px;',
+			style: 'position:absolute;left:310px;top:58px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -118,7 +118,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование организации:',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -130,7 +130,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ИНН',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -142,7 +142,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_КПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:0px;top:141px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:141px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,7 +154,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ОГРН',
 			text: 'ОГРН:',
-			style: 'position:absolute;left:0px;top:168px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:168px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -166,7 +166,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛАдрес',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,7 +184,7 @@
 			xtype: 'label',
 			name: 'Наименование2',
 			text: 'Фамилия, имя, отчество',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -196,7 +196,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ИНН2',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:185px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:185px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -214,7 +214,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительФЛ_Гражданство1',
 			text: 'Гражданство:',
-			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;',
+			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -226,7 +226,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительФЛ_ДатаРождения1',
 			text: 'Дата рождения:',
-			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -238,7 +238,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -250,7 +250,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Документ, удостоверяющий личность:',
-			style: 'position:absolute;left:0px;top:112px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:112px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -262,7 +262,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительФЛ_ОГРН',
 			text: 'ОГРНИП:',
-			style: 'position:absolute;left:0px;top:239px;width:80px;height:19px;',
+			style: 'position:absolute;left:0px;top:239px;width:80px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -283,7 +283,7 @@
 			xtype: 'label',
 			name: 'Наименование1',
 			text: 'Фамилия, имя, отчество',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -295,7 +295,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ИНН1',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:185px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:185px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -307,7 +307,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительФЛ_Гражданство',
 			text: 'Гражданство:',
-			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;',
+			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -319,7 +319,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительФЛ_ДатаРождения',
 			text: 'Дата рождения:',
-			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -331,7 +331,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:228px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -343,7 +343,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Документ, удостоверяющий личность:',
-			style: 'position:absolute;left:0px;top:112px;width:228px;height:19px;',
+			style: 'position:absolute;left:0px;top:112px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -387,7 +387,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Наименование организации:',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -399,7 +399,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ИНН3',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -411,7 +411,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_КПП1',
 			text: 'КПП:',
-			style: 'position:absolute;left:0px;top:141px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:141px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -423,7 +423,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ОГРН3',
 			text: 'ОГРН:',
-			style: 'position:absolute;left:0px;top:168px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:168px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -435,7 +435,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛАдрес1',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -447,49 +447,49 @@
 			xtype: 'label',
 			name: 'Наименование5',
 			text: 'Фамилия, имя, отчество',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:185px;width:56px;height:19px;',
+			style: 'position:absolute;left:0px;top:185px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись34',
 			text: 'Гражданство:',
-			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;',
+			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись37',
 			text: 'Дата рождения:',
-			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Документ, удостоверяющий личность:',
-			style: 'position:absolute;left:0px;top:112px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:112px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись35',
 			text: 'ОГРНИП:',
-			style: 'position:absolute;left:0px;top:239px;width:56px;height:19px;',
+			style: 'position:absolute;left:0px;top:239px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Наименование8',
 			text: 'Фамилия, имя, отчество руководителя:',
-			style: 'position:absolute;left:0px;top:193px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:193px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -501,7 +501,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ИНН5',
 			text: 'ИНН руководителя:',
-			style: 'position:absolute;left:0px;top:239px;width:100px;height:19px;',
+			style: 'position:absolute;left:0px;top:239px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -581,7 +581,7 @@
 			xtype: 'label',
 			name: 'Наименование4',
 			text: 'Фамилия, имя, отчество:',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -593,7 +593,7 @@
 			xtype: 'label',
 			name: 'Надпись40',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:185px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:185px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -605,7 +605,7 @@
 			xtype: 'label',
 			name: 'Надпись38',
 			text: 'Гражданство:',
-			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;',
+			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -617,7 +617,7 @@
 			xtype: 'label',
 			name: 'Надпись41',
 			text: 'Дата рождения:',
-			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:212px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -629,7 +629,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:228px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -641,7 +641,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Документ, удостоверяющий личность:',
-			style: 'position:absolute;left:0px;top:112px;width:228px;height:19px;',
+			style: 'position:absolute;left:0px;top:112px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -680,7 +680,7 @@
 			xtype: 'label',
 			name: 'Надпись42',
 			text: 'Наименование организации:',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -692,7 +692,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ИНН4',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:70px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:70px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -704,7 +704,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_КПП2',
 			text: 'КПП:',
-			style: 'position:absolute;left:0px;top:97px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:97px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -716,7 +716,7 @@
 			xtype: 'label',
 			name: 'НадписьПредставительЮЛ_ОГРН4',
 			text: 'ОГРН:',
-			style: 'position:absolute;left:0px;top:124px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:124px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -728,19 +728,19 @@
 			xtype: 'label',
 			name: 'Наименование6',
 			text: 'Фамилия, имя, отчество',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись43',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись46',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:234px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -785,7 +785,7 @@
 			xtype: 'label',
 			name: 'Наименование7',
 			text: 'Фамилия, имя, отчество:',
-			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -797,7 +797,7 @@
 			xtype: 'label',
 			name: 'Надпись49',
 			text: 'ИНН:',
-			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;',
+			style: 'position:absolute;left:0px;top:114px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -809,7 +809,7 @@
 			xtype: 'label',
 			name: 'Надпись53',
 			text: 'Адрес в Российской Федерации:',
-			style: 'position:absolute;left:0px;top:68px;width:228px;height:19px;',
+			style: 'position:absolute;left:0px;top:68px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -829,7 +829,7 @@
 			xtype: 'label',
 			name: 'Надпись45',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

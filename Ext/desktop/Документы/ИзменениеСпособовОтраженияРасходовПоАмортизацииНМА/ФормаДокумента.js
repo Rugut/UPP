@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:383px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:383px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:407px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:407px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -153,7 +153,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражать',
 			text: 'Отражать в:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -170,7 +170,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособОтраженияРасходовБУ',
 			text: 'Способ (бух. учет):',
-			style: 'position:absolute;left:8px;top:129px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -187,7 +187,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособОтраженияРасходовНУ',
 			text: 'Способ (налог. учет):',
-			style: 'position:absolute;left:8px;top:152px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:152px;width:109px;height:19px;text-align:left;',
 		},
 	]
 });

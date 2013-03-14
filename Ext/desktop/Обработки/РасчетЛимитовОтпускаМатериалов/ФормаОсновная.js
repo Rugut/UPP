@@ -86,13 +86,13 @@
 			xtype: 'label',
 			name: 'НадписьПланыПроизводстваНаПериодС',
 			text: 'на период с',
-			style: 'position:absolute;left:318px;top:26px;width:80px;height:19px;',
+			style: 'position:absolute;left:318px;top:26px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПланыПроизводстваПо',
 			text: 'по',
-			style: 'position:absolute;left:478px;top:26px;width:20px;height:19px;',
+			style: 'position:absolute;left:478px;top:26px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -116,13 +116,13 @@
 			xtype: 'label',
 			name: 'НадписьПланыПродажНаПериодС',
 			text: 'на период с',
-			style: 'position:absolute;left:318px;top:50px;width:80px;height:19px;',
+			style: 'position:absolute;left:318px;top:50px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПланыПродажПо',
 			text: 'по',
-			style: 'position:absolute;left:478px;top:50px;width:20px;height:19px;',
+			style: 'position:absolute;left:478px;top:50px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -167,13 +167,13 @@
 			xtype: 'label',
 			name: 'НадписьЗаказыПокупателейНаПериодС',
 			text: 'на период с',
-			style: 'position:absolute;left:318px;top:97px;width:80px;height:19px;',
+			style: 'position:absolute;left:318px;top:97px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьЗаказыПокупателейПо',
 			text: 'по',
-			style: 'position:absolute;left:478px;top:97px;width:20px;height:19px;',
+			style: 'position:absolute;left:478px;top:97px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -213,13 +213,13 @@
 			xtype: 'label',
 			name: 'НадписьВнутренниеЗаказыНаПериодС',
 			text: 'на период с',
-			style: 'position:absolute;left:318px;top:121px;width:80px;height:19px;',
+			style: 'position:absolute;left:318px;top:121px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВнутренниеЗаказыПо',
 			text: 'по',
-			style: 'position:absolute;left:478px;top:121px;width:20px;height:19px;',
+			style: 'position:absolute;left:478px;top:121px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -270,13 +270,13 @@
 			xtype: 'label',
 			name: 'НадписьРасходСоСкладаНаПериодС',
 			text: 'на период с',
-			style: 'position:absolute;left:318px;top:167px;width:80px;height:19px;',
+			style: 'position:absolute;left:318px;top:167px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРасходСоСкладаПо',
 			text: 'по',
-			style: 'position:absolute;left:478px;top:167px;width:20px;height:19px;',
+			style: 'position:absolute;left:478px;top:167px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -300,13 +300,13 @@
 			xtype: 'label',
 			name: 'НадписьРасходНаВыпускНаПериодС',
 			text: 'на период с',
-			style: 'position:absolute;left:318px;top:191px;width:80px;height:19px;',
+			style: 'position:absolute;left:318px;top:191px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРасходНаВыпускПо',
 			text: 'по',
-			style: 'position:absolute;left:478px;top:191px;width:20px;height:19px;',
+			style: 'position:absolute;left:478px;top:191px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -339,7 +339,7 @@
 			xtype: 'label',
 			name: 'НадписьРезультатРасчетаОкруглитьДо',
 			text: 'округлить до:',
-			style: 'position:absolute;left:318px;top:238px;width:80px;height:19px;',
+			style: 'position:absolute;left:318px;top:238px;width:80px;height:19px;text-align:center;',
 		},
 					]
 				},
@@ -395,7 +395,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:6px;top:6px;width:89px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -407,7 +407,7 @@
 			xtype: 'label',
 			name: 'НадписьСклад',
 			text: 'Склад:',
-			style: 'position:absolute;left:6px;top:30px;width:89px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

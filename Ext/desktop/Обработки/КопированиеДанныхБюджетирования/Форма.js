@@ -67,7 +67,7 @@
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'Период с:',
-			style: 'position:absolute;left:14px;top:121px;width:62px;height:19px;',
+			style: 'position:absolute;left:14px;top:121px;width:62px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -79,7 +79,7 @@
 			xtype: 'label',
 			name: 'Надпись37',
 			text: 'по:',
-			style: 'position:absolute;left:176px;top:121px;width:16px;height:19px;',
+			style: 'position:absolute;left:176px;top:121px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'Надпись43',
 			text: 'Период с:',
-			style: 'position:absolute;left:378px;top:123px;width:71px;height:19px;',
+			style: 'position:absolute;left:378px;top:123px;width:71px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,7 +121,7 @@
 			xtype: 'label',
 			name: 'Надпись44',
 			text: 'по:',
-			style: 'position:absolute;left:549px;top:123px;width:16px;height:19px;',
+			style: 'position:absolute;left:549px;top:123px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -509,7 +509,7 @@
 			xtype: 'label',
 			name: 'Надпись59',
 			text: 'Установить ответственного:',
-			style: 'position:absolute;left:8px;top:413px;width:152px;height:19px;',
+			style: 'position:absolute;left:8px;top:413px;width:152px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -521,7 +521,7 @@
 			xtype: 'label',
 			name: 'Надпись60',
 			text: 'Установить статус:',
-			style: 'position:absolute;left:380px;top:413px;width:116px;height:19px;',
+			style: 'position:absolute;left:380px;top:413px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

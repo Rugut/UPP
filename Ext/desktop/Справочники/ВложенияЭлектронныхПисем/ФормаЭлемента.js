@@ -38,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:85px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:85px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьИмяФайла',
 			text: 'Имя файла:',
-			style: 'position:absolute;left:8px;top:60px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:60px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьОбъект',
 			text: 'Объект:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

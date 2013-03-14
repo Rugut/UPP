@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьОт',
 			text: 'от:',
-			style: 'position:absolute;left:174px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:174px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -198,7 +198,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -210,7 +210,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:343px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:343px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -232,7 +232,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражатьВ',
 			text: 'Отражать в:',
-			style: 'position:absolute;left:336px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:336px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -243,7 +243,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -260,7 +260,7 @@
 			xtype: 'label',
 			name: 'НадписьСобытие',
 			text: 'Событие:',
-			style: 'position:absolute;left:8px;top:83px;width:73px;height:19px;',
+			style: 'position:absolute;left:8px;top:83px;width:73px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -272,7 +272,7 @@
 			xtype: 'label',
 			name: 'НадписьСобытиеРегл',
 			text: 'Событие регл.:',
-			style: 'position:absolute;left:8px;top:108px;width:76px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

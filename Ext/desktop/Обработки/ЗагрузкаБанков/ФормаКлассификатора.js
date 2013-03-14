@@ -180,7 +180,7 @@
 			name: 'НадписьКонфликты',
 			text: 'Список банков, уже имеющихся в базе, но отличающихся от классификатора некоторыми параметрами. 
 Пометьте те банки, изменения для которых необходимо принять.',
-			style: 'position:absolute;left:6px;top:6px;width:449px;height:43px;',
+			style: 'position:absolute;left:6px;top:6px;width:449px;height:43px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

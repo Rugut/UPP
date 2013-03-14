@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьПарольНаПрием',
 			text: 'Пароль распаковки:',
-			style: 'position:absolute;left:25px;top:89px;width:130px;height:19px;',
+			style: 'position:absolute;left:25px;top:89px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьПарольНаЗапись',
 			text: 'Пароль сжатия:',
-			style: 'position:absolute;left:73px;top:192px;width:87px;height:19px;',
+			style: 'position:absolute;left:73px;top:192px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',

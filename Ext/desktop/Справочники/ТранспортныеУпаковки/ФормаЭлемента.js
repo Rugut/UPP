@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьВладелец',
 			text: 'Владелец:',
-			style: 'position:absolute;left:8px;top:81px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКоэффициент',
 			text: 'Коэффициент:',
-			style: 'position:absolute;left:140px;top:33px;width:76px;height:19px;',
+			style: 'position:absolute;left:140px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерУпаковки',
 			text: 'Номер упаковки:',
-			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

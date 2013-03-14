@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:5px;width:64px;height:19px;',
+			style: 'position:absolute;left:8px;top:5px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Имя файла:',
-			style: 'position:absolute;left:8px;top:29px;width:64px;height:19px;',
+			style: 'position:absolute;left:8px;top:29px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

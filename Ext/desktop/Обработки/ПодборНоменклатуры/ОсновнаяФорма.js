@@ -326,7 +326,7 @@
 			xtype: 'label',
 			name: 'НадписьТипРасчета',
 			text: 'Валюта цены:',
-			style: 'position:absolute;left:107px;top:74px;width:70px;height:19px;',
+			style: 'position:absolute;left:107px;top:74px;width:70px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -423,7 +423,7 @@
 			xtype: 'label',
 			name: 'ИнфНадписьПараметрыПодбора',
 			text: 'Здесь будет отображаться информация о способе подбора',
-			style: 'position:absolute;left:97px;top:79px;width:358px;height:24px;',
+			style: 'position:absolute;left:97px;top:79px;width:358px;height:24px;text-align:right;',
 		},
 		{
 			xtype: 'toolbar',

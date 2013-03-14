@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:344px;top:33px;width:23px;height:19px;',
+			style: 'position:absolute;left:344px;top:33px;width:23px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКодКарты',
 			text: 'Код карты:',
-			style: 'position:absolute;left:8px;top:81px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьВладелецКарты',
 			text: 'Владелец карты:',
-			style: 'position:absolute;left:8px;top:129px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,25 +86,25 @@
 			xtype: 'label',
 			name: 'НадписьВидКарты',
 			text: 'Вид карты:',
-			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьТипКарты',
 			text: 'Тип карты:',
-			style: 'position:absolute;left:8px;top:105px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьТипШтрихКода',
 			text: 'Тип штрихкода:',
-			style: 'position:absolute;left:284px;top:57px;width:83px;height:19px;',
+			style: 'position:absolute;left:284px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидДисконтнойКарты',
 			text: 'Вид диск. карты:',
-			style: 'position:absolute;left:8px;top:153px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:153px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

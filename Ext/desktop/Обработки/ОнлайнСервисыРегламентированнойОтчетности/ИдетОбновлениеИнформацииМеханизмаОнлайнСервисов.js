@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: '  Производится обновление служебной информации из Интернет...',
-			style: 'position:absolute;left:14px;top:8px;width:391px;height:36px;',
+			style: 'position:absolute;left:14px;top:8px;width:391px;height:36px;text-align:center;',
 		},
 	]
 });

@@ -324,7 +324,7 @@
 			xtype: 'label',
 			name: 'НадписьТерриториальныеУсловияДляСЗВК',
 			text: 'Территориальные условия:',
-			style: 'position:absolute;left:8px;top:8px;width:143px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:143px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -336,7 +336,7 @@
 			xtype: 'label',
 			name: 'НадписьРайонныйКоэффициентДляСЗВК',
 			text: 'Районный коэффициент:',
-			style: 'position:absolute;left:255px;top:8px;width:132px;height:19px;',
+			style: 'position:absolute;left:255px;top:8px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

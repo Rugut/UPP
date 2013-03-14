@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:410px;top:56px;width:40px;height:19px;',
+			style: 'position:absolute;left:410px;top:56px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:83px;width:84px;height:27px;',
+			style: 'position:absolute;left:8px;top:83px;width:84px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьВидНМА',
 			text: 'Вид НМА:',
-			style: 'position:absolute;left:14px;top:176px;width:136px;height:19px;',
+			style: 'position:absolute;left:14px;top:176px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьАмортизационнаяГруппа',
 			text: 'Амортизационная группа:',
-			style: 'position:absolute;left:14px;top:199px;width:136px;height:19px;',
+			style: 'position:absolute;left:14px;top:199px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьВидОбъектаУчета',
 			text: 'Вид объекта учета:',
-			style: 'position:absolute;left:14px;top:153px;width:136px;height:19px;',
+			style: 'position:absolute;left:14px;top:153px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

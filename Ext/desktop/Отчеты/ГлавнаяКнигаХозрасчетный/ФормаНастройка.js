@@ -53,7 +53,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -65,7 +65,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:6px;top:30px;width:76px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

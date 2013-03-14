@@ -256,7 +256,7 @@
 			xtype: 'label',
 			name: 'ЗаголовокРасчета',
 			text: 'Расчет сумм к выплате',
-			style: 'position:absolute;left:8px;top:8px;width:336px;height:27px;',
+			style: 'position:absolute;left:8px;top:8px;width:336px;height:27px;text-align:left;',
 		},
 	]
 });

@@ -28,7 +28,7 @@
 			xtype: 'label',
 			name: 'ТекстПутьКФайлуВыгрузки',
 			text: 'Путь к файлу выгрузки:',
-			style: 'position:absolute;left:8px;top:9px;width:181px;height:19px;',
+			style: 'position:absolute;left:8px;top:9px;width:181px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -46,7 +46,7 @@
 			xtype: 'label',
 			name: 'ТекстВыгружено',
 			text: 'Выгружено:',
-			style: 'position:absolute;left:8px;top:57px;width:160px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:160px;height:19px;text-align:left;',
 		},
 	]
 });

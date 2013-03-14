@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:404px;top:33px;width:32px;height:19px;',
+			style: 'position:absolute;left:404px;top:33px;width:32px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,7 +111,7 @@
 			xtype: 'label',
 			name: 'НадписьКодПоОКАТО',
 			text: 'Код по ОКАТО:',
-			style: 'position:absolute;left:22px;top:39px;width:78px;height:19px;',
+			style: 'position:absolute;left:22px;top:39px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,7 +123,7 @@
 			xtype: 'label',
 			name: 'НадписьКПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:219px;top:39px;width:27px;height:19px;',
+			style: 'position:absolute;left:219px;top:39px;width:27px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -153,19 +153,19 @@
 			xtype: 'label',
 			name: 'НадписьРайонныйКоэффициент2',
 			text: 'Районный коэффициент (местный):',
-			style: 'position:absolute;left:38px;top:89px;width:209px;height:19px;',
+			style: 'position:absolute;left:38px;top:89px;width:209px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРайонныйКоэффициентРФ2',
 			text: 'Районный коэффициент (федеральный):',
-			style: 'position:absolute;left:38px;top:113px;width:209px;height:19px;',
+			style: 'position:absolute;left:38px;top:113px;width:209px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьТерриториальныеУсловияПФР2',
 			text: 'Территориальные условия ПФР:',
-			style: 'position:absolute;left:38px;top:137px;width:209px;height:19px;',
+			style: 'position:absolute;left:38px;top:137px;width:209px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -310,13 +310,13 @@
 			xtype: 'label',
 			name: 'НадписьРуководитель',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:8px;top:59px;width:81px;height:15px;',
+			style: 'position:absolute;left:8px;top:59px;width:81px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРуководительТекст',
 			text: '',
-			style: 'position:absolute;left:91px;top:59px;width:427px;height:33px;',
+			style: 'position:absolute;left:91px;top:59px;width:427px;height:33px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

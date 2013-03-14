@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Банковский счет:',
-			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Касса:',
-			style: 'position:absolute;left:341px;top:81px;width:92px;height:19px;',
+			style: 'position:absolute;left:341px;top:81px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Сумма по чеку:',
-			style: 'position:absolute;left:8px;top:105px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -153,7 +153,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -165,7 +165,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от:',
-			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -200,7 +200,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатья',
 			text: 'Статья движ. ден. средств:',
-			style: 'position:absolute;left:341px;top:105px;width:92px;height:27px;',
+			style: 'position:absolute;left:341px;top:105px;width:92px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,7 +212,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:318px;width:73px;height:19px;',
+			style: 'position:absolute;left:8px;top:318px;width:73px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

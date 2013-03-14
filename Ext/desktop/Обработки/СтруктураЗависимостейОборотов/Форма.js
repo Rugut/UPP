@@ -51,7 +51,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'На дату:',
-			style: 'position:absolute;left:330px;top:33px;width:48px;height:19px;',
+			style: 'position:absolute;left:330px;top:33px;width:48px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

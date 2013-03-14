@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Организация:',
-			style: 'position:absolute;left:319px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:319px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -60,7 +60,7 @@
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -72,7 +72,7 @@
 			xtype: 'label',
 			name: 'Надпись37',
 			text: 'по:',
-			style: 'position:absolute;left:173px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:173px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -126,7 +126,7 @@
 			xtype: 'label',
 			name: 'НадписьПоследнийЛист',
 			text: 'Последний лист:',
-			style: 'position:absolute;left:0px;top:0px;width:88px;height:16px;',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:16px;text-align:left;',
 		},
 					]
 				},

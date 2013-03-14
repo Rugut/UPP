@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -176,7 +176,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Объект строительства:',
-			style: 'position:absolute;left:8px;top:78px;width:84px;height:27px;',
+			style: 'position:absolute;left:8px;top:78px;width:84px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -188,7 +188,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Статья затрат:',
-			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -200,7 +200,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Склад:',
-			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;',
+			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,7 +212,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Отражать:',
-			style: 'position:absolute;left:334px;top:33px;width:79px;height:19px;',
+			style: 'position:absolute;left:334px;top:33px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -233,7 +233,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаБУОбъектаСтроительства',
 			text: 'Счет БУ:',
-			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;',
+			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -245,7 +245,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаНУОбъектаСтроительства',
 			text: 'Счет НУ:',
-			style: 'position:absolute;left:334px;top:105px;width:80px;height:19px;',
+			style: 'position:absolute;left:334px;top:105px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -257,7 +257,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:337px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:337px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -269,7 +269,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментари��:',
-			style: 'position:absolute;left:8px;top:361px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:361px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

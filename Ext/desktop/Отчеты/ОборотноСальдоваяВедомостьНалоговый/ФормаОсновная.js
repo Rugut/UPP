@@ -82,13 +82,13 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'по:',
-			style: 'position:absolute;left:149px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:149px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -112,7 +112,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Вид учета:',
-			style: 'position:absolute;left:792px;top:33px;width:57px;height:19px;',
+			style: 'position:absolute;left:792px;top:33px;width:57px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:32px;width:75px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:198px;top:32px;width:16px;height:19px;',
+			style: 'position:absolute;left:198px;top:32px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:437px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:437px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -89,7 +89,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:413px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:413px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -145,7 +145,7 @@
 			xtype: 'label',
 			name: 'НадписьСтавкаНДС',
 			text: 'Ставка НДС:',
-			style: 'position:absolute;left:206px;top:32px;width:66px;height:19px;',
+			style: 'position:absolute;left:206px;top:32px;width:66px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -157,7 +157,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаНДС',
 			text: 'Сумма НДС:',
-			style: 'position:absolute;left:0px;top:57px;width:66px;height:19px;',
+			style: 'position:absolute;left:0px;top:57px;width:66px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,7 +169,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаСНДС',
 			text: 'Сумма с НДС:',
-			style: 'position:absolute;left:0px;top:32px;width:75px;height:19px;',
+			style: 'position:absolute;left:0px;top:32px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -186,7 +186,7 @@
 			xtype: 'label',
 			name: 'НадписьУвеличение',
 			text: 'Увеличение:',
-			style: 'position:absolute;left:0px;top:33px;width:76px;height:19px;',
+			style: 'position:absolute;left:0px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -198,7 +198,7 @@
 			xtype: 'label',
 			name: 'НадписьНДСУвеличение',
 			text: 'НДС (в т.ч.):',
-			style: 'position:absolute;left:185px;top:33px;width:76px;height:19px;',
+			style: 'position:absolute;left:185px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -210,7 +210,7 @@
 			xtype: 'label',
 			name: 'НадписьУменьшение',
 			text: 'Уменьшение:',
-			style: 'position:absolute;left:0px;top:58px;width:76px;height:19px;',
+			style: 'position:absolute;left:0px;top:58px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -222,7 +222,7 @@
 			xtype: 'label',
 			name: 'НадписьНДСУменьшение',
 			text: 'НДС (в т.ч.):',
-			style: 'position:absolute;left:185px;top:58px;width:76px;height:19px;',
+			style: 'position:absolute;left:185px;top:58px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -325,7 +325,7 @@
 			xtype: 'label',
 			name: 'НадписьКодВидаОперации',
 			text: 'Код вида операции:',
-			style: 'position:absolute;left:0px;top:19px;width:105px;height:19px;',
+			style: 'position:absolute;left:0px;top:19px;width:105px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -337,7 +337,7 @@
 			xtype: 'label',
 			name: 'НадписьКодСпособаПолучения',
 			text: 'Способ получения:',
-			style: 'position:absolute;left:166px;top:19px;width:98px;height:19px;',
+			style: 'position:absolute;left:166px;top:19px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -381,7 +381,7 @@
 			xtype: 'label',
 			name: 'ВалютаДокумента',
 			text: '',
-			style: 'position:absolute;left:148px;top:1px;width:47px;height:19px;',
+			style: 'position:absolute;left:148px;top:1px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -393,7 +393,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаНДСДокумента',
 			text: 'НДС (в т.ч.):',
-			style: 'position:absolute;left:265px;top:1px;width:66px;height:19px;',
+			style: 'position:absolute;left:265px;top:1px;width:66px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -411,7 +411,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаУвеличение',
 			text: 'Увеличение:',
-			style: 'position:absolute;left:0px;top:0px;width:69px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:69px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -423,7 +423,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаУменьшение',
 			text: 'Уменьшение:',
-			style: 'position:absolute;left:389px;top:0px;width:81px;height:19px;',
+			style: 'position:absolute;left:389px;top:0px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -435,19 +435,19 @@
 			xtype: 'label',
 			name: 'ВалютаДокумента1',
 			text: '',
-			style: 'position:absolute;left:173px;top:0px;width:47px;height:19px;',
+			style: 'position:absolute;left:173px;top:0px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ВалютаДокумента2',
 			text: '',
-			style: 'position:absolute;left:576px;top:0px;width:47px;height:19px;',
+			style: 'position:absolute;left:576px;top:0px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСуммаНДСУменьшение',
 			text: 'НДС (в т.ч.):',
-			style: 'position:absolute;left:628px;top:0px;width:65px;height:19px;',
+			style: 'position:absolute;left:628px;top:0px;width:65px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -459,7 +459,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаНДСКДоплате',
 			text: 'НДС (в т.ч.):',
-			style: 'position:absolute;left:225px;top:0px;width:65px;height:19px;',
+			style: 'position:absolute;left:225px;top:0px;width:65px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -500,7 +500,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:0px;top:0px;width:75px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -524,7 +524,7 @@
 			xtype: 'label',
 			name: 'НадписьВидСчетаФактуры',
 			text: 'Вид счета-фактуры:',
-			style: 'position:absolute;left:0px;top:73px;width:100px;height:19px;',
+			style: 'position:absolute;left:0px;top:73px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -557,7 +557,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИсходногоДокумента',
 			text: 'от:',
-			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;',
+			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -575,7 +575,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИсправленияИсходногоДокумента',
 			text: 'от:',
-			style: 'position:absolute;left:265px;top:25px;width:20px;height:19px;',
+			style: 'position:absolute;left:265px;top:25px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -634,7 +634,7 @@
 			xtype: 'label',
 			name: 'НадписьВходящаяДата',
 			text: 'от:',
-			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;',
+			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -666,7 +666,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИсправления',
 			text: 'от:',
-			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;',
+			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -690,7 +690,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИсходногоДокумента3',
 			text: 'от',
-			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;',
+			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

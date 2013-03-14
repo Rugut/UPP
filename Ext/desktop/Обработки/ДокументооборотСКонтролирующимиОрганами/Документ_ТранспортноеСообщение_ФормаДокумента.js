@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'НадписьРедактироватьТекстВыгрузки',
 			text: 'Редактировать',
-			style: 'position:absolute;left:486px;top:8px;width:80px;height:15px;',
+			style: 'position:absolute;left:486px;top:8px;width:80px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр2',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -109,7 +109,7 @@
 			text: '
 ВНИМАНИЕ!
 Вероятно, содержимое этого сообщения не было распаковано при получении!',
-			style: 'position:absolute;left:0px;top:0px;width:566px;height:111px;',
+			style: 'position:absolute;left:0px;top:0px;width:566px;height:111px;text-align:center;',
 		},
 					]
 				},
@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр3',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -199,7 +199,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр4',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -355,7 +355,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр21',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -385,7 +385,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверить1Стр22',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -403,7 +403,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверить2Стр22',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -432,7 +432,7 @@
 			xtype: 'label',
 			name: 'НадписьВложенияСтр7',
 			text: 'Просмотреть вложения',
-			style: 'position:absolute;left:79px;top:5px;width:487px;height:15px;',
+			style: 'position:absolute;left:79px;top:5px;width:487px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -466,7 +466,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверить1Стр7',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:33px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:33px;width:59px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -501,7 +501,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверить2Стр7',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:27px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:27px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -634,7 +634,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр10',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -730,7 +730,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр12',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -760,7 +760,7 @@
 			xtype: 'label',
 			name: 'НадписьРедактироватьЗапрос',
 			text: 'Редактировать',
-			style: 'position:absolute;left:486px;top:8px;width:80px;height:15px;',
+			style: 'position:absolute;left:486px;top:8px;width:80px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -796,7 +796,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр14',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -820,7 +820,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр15',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:35px;width:59px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -868,7 +868,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр16',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:87px;width:59px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -1012,7 +1012,7 @@
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр19',
 			text: 'Проверить',
-			style: 'position:absolute;left:507px;top:61px;width:59px;height:15px;',
+			style: 'position:absolute;left:507px;top:61px;width:59px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -1103,7 +1103,7 @@
 			name: 'НадписьЗашифровано1',
 			text: 'Содержимое этого сообщения зашифровано.
 Вы можете изменить содержимое сообщения и затем зашифровать его заново.',
-			style: 'position:absolute;left:0px;top:0px;width:566px;height:111px;',
+			style: 'position:absolute;left:0px;top:0px;width:566px;height:111px;text-align:center;',
 		},
 		{
 			xtype: 'button',

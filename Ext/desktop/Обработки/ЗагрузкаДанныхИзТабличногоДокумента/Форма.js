@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'НадписьПерваяСтрокаДанныхТабличногоДокумента',
 			text: 'Первая строка данных табличного документа:',
-			style: 'position:absolute;left:6px;top:6px;width:239px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:239px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -226,7 +226,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Ссылка:',
-			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -244,13 +244,13 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Вид справочника:',
-			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Вид регистра:',
-			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -266,7 +266,7 @@
 			xtype: 'label',
 			name: 'НадписьРежимЗагрузки',
 			text: 'Режим загрузки:',
-			style: 'position:absolute;left:8px;top:8px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:87px;height:19px;text-align:left;',
 		},
 	]
 });

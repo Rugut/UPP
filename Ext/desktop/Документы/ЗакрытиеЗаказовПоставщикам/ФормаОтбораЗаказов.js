@@ -47,19 +47,19 @@
 			xtype: 'label',
 			name: 'НадписьСрокОтргузки',
 			text: 'Дата поступления:',
-			style: 'position:absolute;left:16px;top:64px;width:124px;height:19px;',
+			style: 'position:absolute;left:16px;top:64px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаличиеРазмещений',
 			text: 'Наличие размещений:',
-			style: 'position:absolute;left:16px;top:8px;width:124px;height:19px;',
+			style: 'position:absolute;left:16px;top:8px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеОтгрузки',
 			text: 'Поступление товара:',
-			style: 'position:absolute;left:16px;top:40px;width:124px;height:19px;',
+			style: 'position:absolute;left:16px;top:40px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -77,13 +77,13 @@
 			xtype: 'label',
 			name: 'НадписьСостояниеОплаты',
 			text: 'Состояние оплаты:',
-			style: 'position:absolute;left:16px;top:96px;width:124px;height:19px;',
+			style: 'position:absolute;left:16px;top:96px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСрокОплаты',
 			text: 'Дата оплаты:',
-			style: 'position:absolute;left:16px;top:120px;width:124px;height:19px;',
+			style: 'position:absolute;left:16px;top:120px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -292,7 +292,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособЗаполнения',
 			text: 'Вариант отбора:',
-			style: 'position:absolute;left:320px;top:6px;width:84px;height:19px;',
+			style: 'position:absolute;left:320px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -310,13 +310,13 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'За период с:',
-			style: 'position:absolute;left:8px;top:6px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:6px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по:',
-			style: 'position:absolute;left:160px;top:6px;width:15px;height:19px;',
+			style: 'position:absolute;left:160px;top:6px;width:15px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

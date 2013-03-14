@@ -53,7 +53,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:6px;width:90px;height:19px;',
+			style: 'position:absolute;left:8px;top:6px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -65,7 +65,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:304px;top:6px;width:86px;height:19px;',
+			style: 'position:absolute;left:304px;top:6px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'по:',
-			style: 'position:absolute;left:182px;top:30px;width:15px;height:19px;',
+			style: 'position:absolute;left:182px;top:30px;width:15px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,7 +147,7 @@
 			xtype: 'label',
 			name: 'НадписьМесяц',
 			text: 'Месяц начисления:',
-			style: 'position:absolute;left:8px;top:361px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:361px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

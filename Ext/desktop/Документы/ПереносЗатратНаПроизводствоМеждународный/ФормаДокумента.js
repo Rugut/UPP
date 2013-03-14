@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от:',
-			style: 'position:absolute;left:180px;top:33px;width:15px;height:19px;',
+			style: 'position:absolute;left:180px;top:33px;width:15px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:133px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:133px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,7 +134,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'по:',
-			style: 'position:absolute;left:198px;top:57px;width:16px;height:19px;',
+			style: 'position:absolute;left:198px;top:57px;width:16px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',

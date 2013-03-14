@@ -87,13 +87,13 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: '<=',
-			style: 'position:absolute;left:153px;top:27px;width:21px;height:19px;',
+			style: 'position:absolute;left:153px;top:27px;width:21px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: '% <=',
-			style: 'position:absolute;left:210px;top:27px;width:27px;height:19px;',
+			style: 'position:absolute;left:210px;top:27px;width:27px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -135,13 +135,13 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: '<=',
-			style: 'position:absolute;left:153px;top:81px;width:21px;height:19px;',
+			style: 'position:absolute;left:153px;top:81px;width:21px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: '<=',
-			style: 'position:absolute;left:210px;top:81px;width:27px;height:19px;',
+			style: 'position:absolute;left:210px;top:81px;width:27px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

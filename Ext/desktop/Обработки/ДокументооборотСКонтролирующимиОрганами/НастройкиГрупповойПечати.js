@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: '',
-			style: 'position:absolute;left:149px;top:8px;width:73px;height:15px;',
+			style: 'position:absolute;left:149px;top:8px;width:73px;height:15px;text-align:center;',
 		},
 		{
 			xtype: 'checkbox',

@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'СуммаДокумента',
 			text: '1000000.00',
-			style: 'position:absolute;left:458px;top:354px;width:311px;height:57px;',
+			style: 'position:absolute;left:458px;top:354px;width:311px;height:57px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьТекущийПользователь',
 			text: '',
-			style: 'position:absolute;left:267px;top:5px;width:507px;height:15px;',
+			style: 'position:absolute;left:267px;top:5px;width:507px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'ДисконтнаяКарта',
 			text: '',
-			style: 'position:absolute;left:160px;top:349px;width:129px;height:18px;',
+			style: 'position:absolute;left:160px;top:349px;width:129px;height:18px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -129,13 +129,13 @@
 			xtype: 'label',
 			name: 'СкидкиИтогоСумма',
 			text: '',
-			style: 'position:absolute;left:175px;top:395px;width:114px;height:19px;',
+			style: 'position:absolute;left:175px;top:395px;width:114px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДисконтнаяКарта',
 			text: 'Дисконтная карта:',
-			style: 'position:absolute;left:13px;top:349px;width:142px;height:18px;',
+			style: 'position:absolute;left:13px;top:349px;width:142px;height:18px;text-align:left;',
 		},
 		{
 			xtype: 'label',

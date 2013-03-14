@@ -227,13 +227,13 @@
 			xtype: 'label',
 			name: 'НадписьПодпадаетПодЕНВД4',
 			text: 'Доля ЕНВД:',
-			style: 'position:absolute;left:0px;top:0px;width:68px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПроцент4',
 			text: '%',
-			style: 'position:absolute;left:230px;top:37px;width:19px;height:19px;',
+			style: 'position:absolute;left:230px;top:37px;width:19px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',

@@ -69,7 +69,7 @@
 			xtype: 'label',
 			name: 'НадписьСчет',
 			text: 'Счет:',
-			style: 'position:absolute;left:290px;top:33px;width:32px;height:19px;',
+			style: 'position:absolute;left:290px;top:33px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,7 +81,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:410px;top:33px;width:70px;height:19px;',
+			style: 'position:absolute;left:410px;top:33px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -105,13 +105,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаКон',
 			text: 'по:',
-			style: 'position:absolute;left:143px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:143px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

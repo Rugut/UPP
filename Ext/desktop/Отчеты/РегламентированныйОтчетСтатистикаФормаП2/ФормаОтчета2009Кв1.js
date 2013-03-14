@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Дата подписи:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:343px;width:80px;height:19px;',
+			style: 'position:absolute;left:183px;top:343px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'Надпись',
 			text: 'Организация:',
-			style: 'position:absolute;left:369px;top:33px;width:75px;height:19px;',
+			style: 'position:absolute;left:369px;top:33px;width:75px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -108,7 +108,7 @@
 			xtype: 'label',
 			name: 'Надпись50',
 			text: 'Статус:',
-			style: 'position:absolute;left:8px;top:343px;width:46px;height:19px;',
+			style: 'position:absolute;left:8px;top:343px;width:46px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

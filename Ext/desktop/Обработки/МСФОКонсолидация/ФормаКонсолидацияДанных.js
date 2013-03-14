@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Консолидируемая группа:',
-			style: 'position:absolute;left:0px;top:24px;width:155px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:155px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -176,7 +176,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Операция:',
-			style: 'position:absolute;left:0px;top:22px;width:60px;height:19px;',
+			style: 'position:absolute;left:0px;top:22px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:439px;top:58px;width:40px;height:19px;',
+			style: 'position:absolute;left:439px;top:58px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:267px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:267px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,7 +88,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьТипЦенРозничнойТорговли',
 			text: 'Тип цен:',
-			style: 'position:absolute;left:6px;top:62px;width:86px;height:19px;',
+			style: 'position:absolute;left:6px;top:62px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:6px;top:110px;width:86px;height:19px;',
+			style: 'position:absolute;left:6px;top:110px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,7 +134,7 @@
 			xtype: 'label',
 			name: 'НадписьВидСклада',
 			text: 'Вид склада:',
-			style: 'position:absolute;left:6px;top:38px;width:86px;height:19px;',
+			style: 'position:absolute;left:6px;top:38px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -146,7 +146,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерСекции',
 			text: 'Номер секции:',
-			style: 'position:absolute;left:6px;top:86px;width:86px;height:19px;',
+			style: 'position:absolute;left:6px;top:86px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -163,7 +163,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственноеЛицо',
 			text: 'Ответственное лицо:',
-			style: 'position:absolute;left:6px;top:6px;width:86px;height:27px;',
+			style: 'position:absolute;left:6px;top:6px;width:86px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

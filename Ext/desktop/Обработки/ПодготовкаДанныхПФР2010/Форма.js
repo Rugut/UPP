@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:205px;top:8px;width:70px;height:19px;',
+			style: 'position:absolute;left:205px;top:8px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -41,7 +41,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод3',
 			text: 'Отчетный период:',
-			style: 'position:absolute;left:385px;top:8px;width:92px;height:19px;',
+			style: 'position:absolute;left:385px;top:8px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -242,7 +242,7 @@
 			xtype: 'label',
 			name: 'НадписьКатегорияЗастрахованныхЛиц',
 			text: 'Категория ЗЛ:',
-			style: 'position:absolute;left:121px;top:94px;width:93px;height:19px;',
+			style: 'position:absolute;left:121px;top:94px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -254,7 +254,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный1',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:326px;top:94px;width:83px;height:19px;',
+			style: 'position:absolute;left:326px;top:94px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -266,7 +266,7 @@
 			xtype: 'label',
 			name: 'НадписьРуководитель',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:326px;top:46px;width:83px;height:19px;',
+			style: 'position:absolute;left:326px;top:46px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -278,7 +278,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжностьРуководителя',
 			text: 'Должность:',
-			style: 'position:absolute;left:326px;top:70px;width:83px;height:19px;',
+			style: 'position:absolute;left:326px;top:70px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -290,7 +290,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПачки2',
 			text: 'Номер пачки:',
-			style: 'position:absolute;left:121px;top:70px;width:93px;height:19px;',
+			style: 'position:absolute;left:121px;top:70px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -302,7 +302,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод2',
 			text: 'Корректируемый период:',
-			style: 'position:absolute;left:344px;top:2px;width:130px;height:19px;',
+			style: 'position:absolute;left:344px;top:2px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -347,7 +347,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:121px;top:118px;width:93px;height:19px;',
+			style: 'position:absolute;left:121px;top:118px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -442,7 +442,7 @@
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Данные о уплате взносов доступны только расчетчику!',
-			style: 'position:absolute;left:25px;top:9px;width:291px;height:18px;',
+			style: 'position:absolute;left:25px;top:9px;width:291px;height:18px;text-align:left;',
 		},
 					]
 				},
@@ -718,7 +718,7 @@
 			xtype: 'label',
 			name: 'Надпись38',
 			text: 'Накопит. часть. Начислено:',
-			style: 'position:absolute;left:0px;top:23px;width:148px;height:19px;',
+			style: 'position:absolute;left:0px;top:23px;width:148px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -730,7 +730,7 @@
 			xtype: 'label',
 			name: 'НадписьСтраховаяЧасть',
 			text: 'Страховая часть. Начислено:',
-			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -881,7 +881,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный3',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:179px;top:24px;width:93px;height:19px;',
+			style: 'position:absolute;left:179px;top:24px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -893,7 +893,7 @@
 			xtype: 'label',
 			name: 'НадписьРуководитель2',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:380px;top:0px;width:75px;height:19px;',
+			style: 'position:absolute;left:380px;top:0px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -905,7 +905,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжностьРуководителя2',
 			text: 'Должность:',
-			style: 'position:absolute;left:380px;top:24px;width:75px;height:19px;',
+			style: 'position:absolute;left:380px;top:24px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -917,7 +917,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПачки',
 			text: 'Номер пачки:',
-			style: 'position:absolute;left:6px;top:0px;width:73px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:73px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -950,7 +950,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий3',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:179px;top:48px;width:93px;height:19px;',
+			style: 'position:absolute;left:179px;top:48px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1210,7 +1210,7 @@
 			xtype: 'label',
 			name: 'НадписьКатегорияЗастрахованныхЛиц1',
 			text: 'Категория ЗЛ:',
-			style: 'position:absolute;left:109px;top:81px;width:93px;height:19px;',
+			style: 'position:absolute;left:109px;top:81px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1222,7 +1222,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный4',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:321px;top:81px;width:83px;height:19px;',
+			style: 'position:absolute;left:321px;top:81px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1234,7 +1234,7 @@
 			xtype: 'label',
 			name: 'НадписьРуководитель3',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:321px;top:31px;width:83px;height:19px;',
+			style: 'position:absolute;left:321px;top:31px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1246,7 +1246,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжностьРуководителя3',
 			text: 'Должность:',
-			style: 'position:absolute;left:321px;top:56px;width:83px;height:19px;',
+			style: 'position:absolute;left:321px;top:56px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1258,7 +1258,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПачки3',
 			text: 'Номер пачки:',
-			style: 'position:absolute;left:109px;top:56px;width:93px;height:19px;',
+			style: 'position:absolute;left:109px;top:56px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1315,7 +1315,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий1',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:109px;top:106px;width:93px;height:19px;',
+			style: 'position:absolute;left:109px;top:106px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1589,7 +1589,7 @@
 			xtype: 'label',
 			name: 'Надпись44',
 			text: 'Накопительная часть взносов. Начислено:',
-			style: 'position:absolute;left:0px;top:23px;width:219px;height:19px;',
+			style: 'position:absolute;left:0px;top:23px;width:219px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -1601,7 +1601,7 @@
 			xtype: 'label',
 			name: 'НадписьСтраховаяЧасть1',
 			text: 'Страховая часть взносов. Начислено:',
-			style: 'position:absolute;left:24px;top:0px;width:195px;height:19px;',
+			style: 'position:absolute;left:24px;top:0px;width:195px;height:19px;text-align:right;',
 		},
 					]
 				},
@@ -1737,7 +1737,7 @@
 			xtype: 'label',
 			name: 'НадписьКатегорияЗастрахованныхЛиц2',
 			text: 'Категория ЗЛ:',
-			style: 'position:absolute;left:0px;top:96px;width:77px;height:19px;',
+			style: 'position:absolute;left:0px;top:96px;width:77px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1749,7 +1749,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный5',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:0px;top:145px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:145px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1761,7 +1761,7 @@
 			xtype: 'label',
 			name: 'НадписьРуководитель4',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:0px;top:121px;width:82px;height:19px;',
+			style: 'position:absolute;left:0px;top:121px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1773,7 +1773,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжностьРуководителя4',
 			text: 'Должность:',
-			style: 'position:absolute;left:307px;top:121px;width:75px;height:19px;',
+			style: 'position:absolute;left:307px;top:121px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1785,7 +1785,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПачки4',
 			text: 'Номер пачки:',
-			style: 'position:absolute;left:205px;top:71px;width:70px;height:19px;',
+			style: 'position:absolute;left:205px;top:71px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1809,7 +1809,7 @@
 			xtype: 'label',
 			name: 'НадписьТипДоговора',
 			text: 'Тип договора:',
-			style: 'position:absolute;left:307px;top:96px;width:77px;height:19px;',
+			style: 'position:absolute;left:307px;top:96px;width:77px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1821,7 +1821,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий2',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:307px;top:145px;width:75px;height:19px;',
+			style: 'position:absolute;left:307px;top:145px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1839,7 +1839,7 @@
 			xtype: 'label',
 			name: 'НадписьОписьАДВ62',
 			text: 'Опись АДВ-6-2:',
-			style: 'position:absolute;left:389px;top:71px;width:80px;height:19px;',
+			style: 'position:absolute;left:389px;top:71px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1943,7 +1943,7 @@
 			xtype: 'label',
 			name: 'НадписьФамилия',
 			text: 'Фамилия:',
-			style: 'position:absolute;left:702px;top:24px;width:72px;height:19px;',
+			style: 'position:absolute;left:702px;top:24px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1955,7 +1955,7 @@
 			xtype: 'label',
 			name: 'НадписьИмя',
 			text: 'Имя:',
-			style: 'position:absolute;left:702px;top:48px;width:72px;height:19px;',
+			style: 'position:absolute;left:702px;top:48px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1967,7 +1967,7 @@
 			xtype: 'label',
 			name: 'НадписьОтчество',
 			text: 'Отчество:',
-			style: 'position:absolute;left:702px;top:72px;width:72px;height:19px;',
+			style: 'position:absolute;left:702px;top:72px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1979,7 +1979,7 @@
 			xtype: 'label',
 			name: 'НадписьСтраховойНомерПФР3',
 			text: 'Страховой №:',
-			style: 'position:absolute;left:702px;top:96px;width:72px;height:19px;',
+			style: 'position:absolute;left:702px;top:96px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

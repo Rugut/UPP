@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Доступные для загрузки дополнения отсутствуют.',
-			style: 'position:absolute;left:0px;top:0px;width:423px;height:333px;',
+			style: 'position:absolute;left:0px;top:0px;width:423px;height:333px;text-align:center;',
 		},
 					]
 				},
@@ -104,7 +104,7 @@
 			xtype: 'label',
 			name: 'НадписьОткрытьWebСтраницу',
 			text: 'Открыть Web-страницу текущей версии',
-			style: 'position:absolute;left:0px;top:0px;width:423px;height:15px;',
+			style: 'position:absolute;left:0px;top:0px;width:423px;height:15px;text-align:left;',
 		},
 					]
 				},
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'НадписьОткрытьДополнительнуюИнформацию',
 			text: 'Показать отличия от текущей версии',
-			style: 'position:absolute;left:0px;top:0px;width:423px;height:17px;',
+			style: 'position:absolute;left:0px;top:0px;width:423px;height:17px;text-align:left;',
 		},
 					]
 				},
@@ -174,7 +174,7 @@
 			xtype: 'label',
 			name: 'НадписьПоследняяВерсия',
 			text: '',
-			style: 'position:absolute;left:178px;top:1px;width:245px;height:17px;',
+			style: 'position:absolute;left:178px;top:1px;width:245px;height:17px;text-align:left;',
 		},
 					]
 				},

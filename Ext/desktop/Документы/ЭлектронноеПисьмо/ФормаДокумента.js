@@ -174,7 +174,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Тема:',
-			style: 'position:absolute;left:7px;top:129px;width:85px;height:19px;',
+			style: 'position:absolute;left:7px;top:129px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -202,7 +202,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Группа:',
-			style: 'position:absolute;left:6px;top:6px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -248,13 +248,13 @@
 			xtype: 'label',
 			name: 'НадписьКодировкаПисьма',
 			text: 'Кодировка:',
-			style: 'position:absolute;left:6px;top:59px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:59px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПредмет',
 			text: 'Предмет:',
-			style: 'position:absolute;left:6px;top:31px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:31px;width:90px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -272,7 +272,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:6px;top:212px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:212px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -284,7 +284,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:6px;top:190px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:190px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -314,7 +314,7 @@
 			xtype: 'label',
 			name: 'НадписьОснование',
 			text: 'Основание:',
-			style: 'position:absolute;left:6px;top:166px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:166px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Вид документа:',
-			style: 'position:absolute;left:8px;top:8px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Серия:',
-			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Номер:',
-			style: 'position:absolute;left:202px;top:33px;width:38px;height:19px;',
+			style: 'position:absolute;left:202px;top:33px;width:38px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Дата выдачи :',
-			style: 'position:absolute;left:8px;top:58px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Кем выдан :',
-			style: 'position:absolute;left:8px;top:83px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:83px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Код подразделения:',
-			style: 'position:absolute;left:8px;top:108px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

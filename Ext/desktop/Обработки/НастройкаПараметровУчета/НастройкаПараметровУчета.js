@@ -47,7 +47,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокПересчетаМесячнойСтавкиВЧасовую',
 			text: 'При пересчёте месячного оклада в часовую ставку использовать:',
-			style: 'position:absolute;left:10px;top:175px;width:342px;height:19px;',
+			style: 'position:absolute;left:10px;top:175px;width:342px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -64,13 +64,13 @@
 			name: 'НадписьПорядокРасчетаЧасовойСтавки',
 			text: 'Пересчет месячного оклада в часовую ставку применяется для расчета оплаты сверхурочных часов.
 Часовая ставка будет рассчитана путем деления оклада на количество рабочих часов в месяце по графику работы сотрудника.',
-			style: 'position:absolute;left:42px;top:277px;width:438px;height:76px;',
+			style: 'position:absolute;left:42px;top:277px;width:438px;height:76px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьУдержаниеЗаОтпускУменьшаетНалоги',
 			text: 'Удержание за неотработанный отпуск при увольнении:',
-			style: 'position:absolute;left:10px;top:52px;width:287px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:287px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьУдержаниеЗаОтпускУменьшаетНалогиИнформация',
 			text: 'Удержание за неотработанный отпуск при увольнении будет регистрироваться как сторно начисление',
-			style: 'position:absolute;left:42px;top:125px;width:438px;height:32px;',
+			style: 'position:absolute;left:42px;top:125px;width:438px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация3',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -245,7 +245,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация2',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -257,7 +257,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'При проведении документов будет проверяться пересечение периодов начислений, для которых установлен вид времени «Начисление за работу полную смену в пределах нормы времени» или «Неотработанные полные смены, а также командировки»',
-			style: 'position:absolute;left:35px;top:98px;width:466px;height:42px;',
+			style: 'position:absolute;left:35px;top:98px;width:466px;height:42px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -268,7 +268,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентДоплатыЗаРаботуВНочноеВремя',
 			text: 'за работу в ночное время, %:',
-			style: 'position:absolute;left:40px;top:383px;width:154px;height:19px;',
+			style: 'position:absolute;left:40px;top:383px;width:154px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -280,7 +280,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентДоплатыЗаРаботуВНочноеВремя1',
 			text: 'за работу в вечернее время, %:',
-			style: 'position:absolute;left:282px;top:383px;width:164px;height:19px;',
+			style: 'position:absolute;left:282px;top:383px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -321,7 +321,7 @@
 			xtype: 'label',
 			name: 'Надпись90',
 			text: 'При выборе этой настройки при расчете пособий по временной нетрудоспособности, по беременности и родам, по уходу за ребенком в расчетный период не будут включаться праздничные дни, приходящиеся на период ежегодных отпусков.',
-			style: 'position:absolute;left:35px;top:234px;width:466px;height:41px;',
+			style: 'position:absolute;left:35px;top:234px;width:466px;height:41px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -332,7 +332,7 @@
 			xtype: 'label',
 			name: 'Надпись96',
 			text: 'При выборе этой настройки при расчете среднего заработка для отпуска и командировок премии, начисленные пропорционально отработанному времени, будут учитываться в полных суммах независимо от соотношения их базового периода и расчетного периода среднего заработка',
-			style: 'position:absolute;left:35px;top:297px;width:466px;height:53px;',
+			style: 'position:absolute;left:35px;top:297px;width:466px;height:53px;text-align:left;',
 		},
 					]
 				},
@@ -355,7 +355,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРасчетаПлановогоАванса',
 			text: 'Расчетная дата планового аванса:',
-			style: 'position:absolute;left:42px;top:342px;width:178px;height:19px;',
+			style: 'position:absolute;left:42px;top:342px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -367,7 +367,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация6',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -383,7 +383,7 @@
 - невыходы по не выясненной причине, прогул
 - болезнь, карантин, долечивание и т.д.
 - исполнение государственных или др. общественных обязанностей',
-			style: 'position:absolute;left:62px;top:228px;width:444px;height:111px;',
+			style: 'position:absolute;left:62px;top:228px;width:444px;height:111px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -399,7 +399,7 @@
 			xtype: 'label',
 			name: 'НадписьУпрощенныйУчетВзаиморасчетов',
 			text: 'Заработная плата будет считаться выплаченной при проведении документов «Зарплата к выплате организаций», без создания платежных документов',
-			style: 'position:absolute;left:42px;top:143px;width:438px;height:40px;',
+			style: 'position:absolute;left:42px;top:143px;width:438px;height:40px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -423,7 +423,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация8',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -441,7 +441,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия10',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:41px;top:263px;width:82px;height:19px;',
+			style: 'position:absolute;left:41px;top:263px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -530,7 +530,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатьяОООтпуск',
 			text: 'Оценочное обязательство по ежегодным отпускам:',
-			style: 'position:absolute;left:46px;top:143px;width:267px;height:15px;',
+			style: 'position:absolute;left:46px;top:143px;width:267px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -542,7 +542,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация10',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -560,7 +560,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия11',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:30px;top:300px;width:82px;height:19px;',
+			style: 'position:absolute;left:30px;top:300px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -598,7 +598,7 @@
 			xtype: 'label',
 			name: 'НадписьГод',
 			text: 'год',
-			style: 'position:absolute;left:473px;top:337px;width:22px;height:19px;',
+			style: 'position:absolute;left:473px;top:337px;width:22px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -672,7 +672,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия7',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:26px;top:284px;width:82px;height:19px;',
+			style: 'position:absolute;left:26px;top:284px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -690,7 +690,7 @@
 			xtype: 'label',
 			name: 'НадписьПредельнаяВеличинаБазыСтраховыхВзносов',
 			text: 'Предельная величина базы страховых взносов',
-			style: 'position:absolute;left:10px;top:238px;width:246px;height:19px;',
+			style: 'position:absolute;left:10px;top:238px;width:246px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -738,7 +738,7 @@
 			xtype: 'label',
 			name: 'НадписьТарифСтраховыхВзносов',
 			text: 'Тариф страховых взносов:',
-			style: 'position:absolute;left:10px;top:34px;width:138px;height:19px;',
+			style: 'position:absolute;left:10px;top:34px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -770,7 +770,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия8',
 			text: 'Размер: ',
-			style: 'position:absolute;left:26px;top:260px;width:82px;height:19px;',
+			style: 'position:absolute;left:26px;top:260px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -826,13 +826,13 @@
 			xtype: 'label',
 			name: 'НадписьСтавкиВзносовФСС_НС',
 			text: 'Ставка взносов в ФСС НС и ПЗ',
-			style: 'position:absolute;left:10px;top:328px;width:246px;height:15px;',
+			style: 'position:absolute;left:10px;top:328px;width:246px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация4',
 			text: 'Организация:',
-			style: 'position:absolute;left:26px;top:347px;width:75px;height:19px;',
+			style: 'position:absolute;left:26px;top:347px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -923,7 +923,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация5',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -941,7 +941,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия5',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:26px;top:231px;width:82px;height:19px;',
+			style: 'position:absolute;left:26px;top:231px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1041,7 +1041,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация9',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1076,7 +1076,7 @@
 			xtype: 'label',
 			name: 'НадписьМинимальнаяОплатаТрудаРФ1',
 			text: 'По временной нетрудоспособности:',
-			style: 'position:absolute;left:16px;top:27px;width:186px;height:19px;',
+			style: 'position:absolute;left:16px;top:27px;width:186px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1088,7 +1088,7 @@
 			xtype: 'label',
 			name: 'НадписьМинимальнаяОплатаТрудаРФ2',
 			text: 'По беременности и родам:',
-			style: 'position:absolute;left:16px;top:52px;width:186px;height:19px;',
+			style: 'position:absolute;left:16px;top:52px;width:186px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1118,7 +1118,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия2',
 			text: 'Применяются с:',
-			style: 'position:absolute;left:16px;top:74px;width:85px;height:19px;',
+			style: 'position:absolute;left:16px;top:74px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1140,7 +1140,7 @@
 			xtype: 'label',
 			name: 'НадписьСтавкаРефинансированияЦБ',
 			text: 'Размер, %:',
-			style: 'position:absolute;left:26px;top:73px;width:58px;height:19px;',
+			style: 'position:absolute;left:26px;top:73px;width:58px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1188,13 +1188,13 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия3',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:26px;top:98px;width:82px;height:19px;',
+			style: 'position:absolute;left:26px;top:98px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтавкаРефинансированияЦБ1',
 			text: 'Размер: ',
-			style: 'position:absolute;left:26px;top:157px;width:58px;height:19px;',
+			style: 'position:absolute;left:26px;top:157px;width:58px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1212,7 +1212,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия4',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:26px;top:181px;width:82px;height:19px;',
+			style: 'position:absolute;left:26px;top:181px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1242,7 +1242,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;',
+			style: 'position:absolute;left:10px;top:52px;width:75px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1265,7 +1265,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалаДействия6',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:26px;top:133px;width:82px;height:19px;',
+			style: 'position:absolute;left:26px;top:133px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1323,7 +1323,7 @@
 			xtype: 'label',
 			name: 'НадписьМетодПланированияУчетаЗатратНаПерсонал',
 			text: 'Планирование и учет затрат:',
-			style: 'position:absolute;left:26px;top:43px;width:162px;height:19px;',
+			style: 'position:absolute;left:26px;top:43px;width:162px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1363,7 +1363,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоДнейОтпускаВГод',
 			text: 'Количество рабочих дней отпуска в год:',
-			style: 'position:absolute;left:26px;top:277px;width:247px;height:19px;',
+			style: 'position:absolute;left:26px;top:277px;width:247px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1386,7 +1386,7 @@
 			xtype: 'label',
 			name: 'НадписьУпрощенныйУчетВзаиморасчетов1',
 			text: 'Заработная плата будет считаться выплаченной при проведении документов «Зарплата к выплате», без создания платежных документов',
-			style: 'position:absolute;left:42px;top:214px;width:438px;height:29px;',
+			style: 'position:absolute;left:42px;top:214px;width:438px;height:29px;text-align:left;',
 		},
 					]
 				},

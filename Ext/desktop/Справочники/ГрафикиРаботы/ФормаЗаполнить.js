@@ -50,13 +50,13 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Способ заполнения графика',
-			style: 'position:absolute;left:0px;top:6px;width:365px;height:27px;',
+			style: 'position:absolute;left:0px;top:6px;width:365px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
 			text: 'Начать с:',
-			style: 'position:absolute;left:16px;top:262px;width:58px;height:19px;',
+			style: 'position:absolute;left:16px;top:262px;width:58px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -120,7 +120,7 @@
 			xtype: 'label',
 			name: 'НадписьВидГрафика',
 			text: 'Тип графика:',
-			style: 'position:absolute;left:0px;top:50px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:50px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,7 +132,7 @@
 			xtype: 'label',
 			name: 'НадписьДлительностьРабочейНедели',
 			text: 'Часов в неделе:',
-			style: 'position:absolute;left:0px;top:76px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:76px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,7 +154,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Параметры графика',
-			style: 'position:absolute;left:0px;top:6px;width:365px;height:27px;',
+			style: 'position:absolute;left:0px;top:6px;width:365px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -213,13 +213,13 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Расписание работы',
-			style: 'position:absolute;left:3px;top:6px;width:362px;height:27px;',
+			style: 'position:absolute;left:3px;top:6px;width:362px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНачалоНочныхЧасов',
 			text: 'Начало ночных часов:',
-			style: 'position:absolute;left:3px;top:338px;width:121px;height:19px;',
+			style: 'position:absolute;left:3px;top:338px;width:121px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -231,7 +231,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалоДневныхЧасов',
 			text: 'Начало дневных часов:',
-			style: 'position:absolute;left:3px;top:281px;width:121px;height:19px;',
+			style: 'position:absolute;left:3px;top:281px;width:121px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -270,7 +270,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеВвода1',
 			text: 'Перерывов в день:',
-			style: 'position:absolute;left:0px;top:17px;width:98px;height:19px;',
+			style: 'position:absolute;left:0px;top:17px;width:98px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -398,7 +398,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОтсчета1',
 			text: 'Начать с:',
-			style: 'position:absolute;left:215px;top:14px;width:51px;height:19px;',
+			style: 'position:absolute;left:215px;top:14px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -432,7 +432,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалоВечернихЧасов',
 			text: 'Начало вечерних часов:',
-			style: 'position:absolute;left:0px;top:4px;width:121px;height:19px;',
+			style: 'position:absolute;left:0px;top:4px;width:121px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

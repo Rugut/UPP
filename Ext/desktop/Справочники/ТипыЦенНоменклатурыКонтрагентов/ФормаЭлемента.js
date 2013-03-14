@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -38,7 +38,7 @@
 			name: 'Надпись4',
 			text: 'Тип цены
 номенклатуры:',
-			style: 'position:absolute;left:8px;top:87px;width:88px;height:27px;',
+			style: 'position:absolute;left:8px;top:87px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Описание :',
-			style: 'position:absolute;left:8px;top:141px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:141px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -93,7 +93,7 @@
 			xtype: 'label',
 			name: 'НадписьВалютаЦены',
 			text: 'Валюта:',
-			style: 'position:absolute;left:8px;top:117px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:117px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,19 +110,19 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:186px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:186px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:61px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:61px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:319px;top:61px;width:40px;height:19px;',
+			style: 'position:absolute;left:319px;top:61px;width:40px;height:19px;text-align:center;',
 		},
 	]
 });

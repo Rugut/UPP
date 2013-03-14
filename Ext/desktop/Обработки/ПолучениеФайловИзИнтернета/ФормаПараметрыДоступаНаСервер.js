@@ -56,13 +56,13 @@
 			xtype: 'label',
 			name: 'НадписьУкажитеПараметры',
 			text: 'Укажите логин/код и пароль для доступа к серверу',
-			style: 'position:absolute;left:8px;top:53px;width:309px;height:40px;',
+			style: 'position:absolute;left:8px;top:53px;width:309px;height:40px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьЗаголовок',
 			text: 'Авторизация на сервере',
-			style: 'position:absolute;left:8px;top:8px;width:309px;height:40px;',
+			style: 'position:absolute;left:8px;top:8px;width:309px;height:40px;text-align:center;',
 		},
 	]
 });

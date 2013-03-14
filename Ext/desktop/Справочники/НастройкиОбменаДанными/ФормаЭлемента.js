@@ -116,7 +116,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:418px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:418px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -128,7 +128,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -140,7 +140,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:500px;width:90px;height:19px;',
+			style: 'position:absolute;left:8px;top:500px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,7 +162,7 @@
 			xtype: 'label',
 			name: 'НадписьУзелИнформационнойБазы',
 			text: 'Узел:',
-			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -174,7 +174,7 @@
 			xtype: 'label',
 			name: 'НадписьТипНастройки',
 			text: 'Тип обмена:',
-			style: 'position:absolute;left:6px;top:160px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:160px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -209,7 +209,7 @@
 			xtype: 'label',
 			name: 'НадписьПорт',
 			text: 'Порт:',
-			style: 'position:absolute;left:274px;top:0px;width:79px;height:19px;',
+			style: 'position:absolute;left:274px;top:0px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -453,7 +453,7 @@
 			xtype: 'label',
 			name: 'НадписьУзелФоновогоОбмена',
 			text: 'Узел фон:',
-			style: 'position:absolute;left:6px;top:116px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:116px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -518,7 +518,7 @@
 			xtype: 'label',
 			name: 'НадписьПарольНаПрием',
 			text: 'Пароль распаковки (при загрузке данных):',
-			style: 'position:absolute;left:14px;top:317px;width:228px;height:19px;',
+			style: 'position:absolute;left:14px;top:317px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -535,7 +535,7 @@
 			xtype: 'label',
 			name: 'НадписьПарольНаЗапись',
 			text: 'Пароль сжатия (при выгрузке данных):',
-			style: 'position:absolute;left:35px;top:363px;width:207px;height:19px;',
+			style: 'position:absolute;left:35px;top:363px;width:207px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',

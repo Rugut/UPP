@@ -92,7 +92,7 @@
 			name: 'НадписьВнимание',
 			text: 'Внимание!
 Настройки криптографии действительны для всех учетных записей, зарегистрированных в информационной базе!',
-			style: 'position:absolute;left:8px;top:9px;width:590px;height:28px;',
+			style: 'position:absolute;left:8px;top:9px;width:590px;height:28px;text-align:left;',
 		},
 	]
 });

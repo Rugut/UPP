@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
-			style: 'position:absolute;left:8px;top:28px;width:113px;height:27px;',
+			style: 'position:absolute;left:8px;top:28px;width:113px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

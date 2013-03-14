@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:32px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:183px;top:32px;width:16px;height:19px;',
+			style: 'position:absolute;left:183px;top:32px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:393px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:393px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -95,7 +95,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:56px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -119,7 +119,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:369px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:369px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -165,13 +165,13 @@
 			xtype: 'label',
 			name: 'НадписьВходящаяДата',
 			text: 'от:',
-			style: 'position:absolute;left:257px;top:30px;width:20px;height:19px;',
+			style: 'position:absolute;left:257px;top:30px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВходящийНомер',
 			text: 'Входящий номер:',
-			style: 'position:absolute;left:6px;top:6px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИсправления',
 			text: 'от:',
-			style: 'position:absolute;left:257px;top:6px;width:20px;height:19px;',
+			style: 'position:absolute;left:257px;top:6px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -195,7 +195,7 @@
 			xtype: 'label',
 			name: 'НадписьРазницаСНДСКУменьшению',
 			text: 'Разница к уменьшению:',
-			style: 'position:absolute;left:6px;top:128px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:128px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -207,7 +207,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаНДС',
 			text: 'В т.ч. НДС к уменьшению:',
-			style: 'position:absolute;left:278px;top:128px;width:140px;height:19px;',
+			style: 'position:absolute;left:278px;top:128px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -219,7 +219,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПродавца',
 			text: 'Наименование продавца:',
-			style: 'position:absolute;left:6px;top:54px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -231,7 +231,7 @@
 			xtype: 'label',
 			name: 'НадписьИННПродавца',
 			text: 'ИНН / КПП продавца:',
-			style: 'position:absolute;left:6px;top:79px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:79px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -249,7 +249,7 @@
 			xtype: 'label',
 			name: 'НадписьКПППродавца',
 			text: '/',
-			style: 'position:absolute;left:258px;top:79px;width:20px;height:19px;',
+			style: 'position:absolute;left:258px;top:79px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -261,13 +261,13 @@
 			xtype: 'label',
 			name: 'НадписьВалютаДокумента',
 			text: 'Валюта:',
-			style: 'position:absolute;left:6px;top:104px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:104px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРазницаСНДСКДоплате',
 			text: 'Разница к доплате:',
-			style: 'position:absolute;left:6px;top:152px;width:132px;height:19px;',
+			style: 'position:absolute;left:6px;top:152px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -279,7 +279,7 @@
 			xtype: 'label',
 			name: 'НадписьРазницаНДСКДоплате',
 			text: 'В т.ч. НДС к доплате:',
-			style: 'position:absolute;left:278px;top:152px;width:140px;height:19px;',
+			style: 'position:absolute;left:278px;top:152px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

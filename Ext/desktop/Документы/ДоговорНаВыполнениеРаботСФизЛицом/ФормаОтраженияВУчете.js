@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособОтраженияВБухучете',
 			text: 'Способ отражения в бухучете:',
-			style: 'position:absolute;left:8px;top:8px;width:157px;height:15px;',
+			style: 'position:absolute;left:8px;top:8px;width:157px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'НадписьОтнесениеРасходовКДеятельностиЕНВД',
 			text: 'Отнесение расходов к деятельности ЕНВД:',
-			style: 'position:absolute;left:8px;top:106px;width:224px;height:15px;',
+			style: 'position:absolute;left:8px;top:106px;width:224px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			name: 'НадписьРасшифровкаОтражениеВБухучете',
 			text: '',
-			style: 'position:absolute;left:8px;top:46px;width:498px;height:56px;',
+			style: 'position:absolute;left:8px;top:46px;width:498px;height:56px;text-align:left;',
 		},
 	]
 });

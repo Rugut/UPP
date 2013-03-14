@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:58px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:454px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:454px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -89,7 +89,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:83px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:83px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,13 +123,13 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Откуда:',
-			style: 'position:absolute;left:0px;top:50px;width:53px;height:19px;',
+			style: 'position:absolute;left:0px;top:50px;width:53px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Куда:',
-			style: 'position:absolute;left:0px;top:73px;width:53px;height:19px;',
+			style: 'position:absolute;left:0px;top:73px;width:53px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -593,7 +593,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
 			text: '',
-			style: 'position:absolute;left:30px;top:415px;width:381px;height:33px;',
+			style: 'position:absolute;left:30px;top:415px;width:381px;height:33px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',

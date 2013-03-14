@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:186px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:186px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:392px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:392px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -322,7 +322,7 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:350px;top:33px;width:63px;height:19px;',
+			style: 'position:absolute;left:350px;top:33px;width:63px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -333,7 +333,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:368px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:368px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -350,7 +350,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражениеВБухучете',
 			text: 'Отражение в БУ:',
-			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',

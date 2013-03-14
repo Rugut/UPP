@@ -19,7 +19,7 @@
 			xtype: 'label',
 			name: 'НадписьКвартал',
 			text: '<НадписьКвартал>',
-			style: 'position:absolute;left:35px;top:28px;width:108px;height:19px;',
+			style: 'position:absolute;left:35px;top:28px;width:108px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:182px;top:28px;width:74px;height:19px;',
+			style: 'position:absolute;left:182px;top:28px;width:74px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

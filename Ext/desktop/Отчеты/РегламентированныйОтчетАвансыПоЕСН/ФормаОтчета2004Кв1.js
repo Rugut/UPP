@@ -73,13 +73,13 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Дополнительные страницы',
-			style: 'position:absolute;left:234px;top:302px;width:144px;height:19px;',
+			style: 'position:absolute;left:234px;top:302px;width:144px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Дополнительные строки',
-			style: 'position:absolute;left:462px;top:303px;width:132px;height:19px;',
+			style: 'position:absolute;left:462px;top:303px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРаздел3',
 			text: '999 из 999',
-			style: 'position:absolute;left:417px;top:302px;width:64px;height:19px;',
+			style: 'position:absolute;left:417px;top:302px;width:64px;height:19px;text-align:center;',
 		},
 					]
 				},

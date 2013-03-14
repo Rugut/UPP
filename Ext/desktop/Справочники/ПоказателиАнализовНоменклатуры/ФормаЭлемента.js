@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:442px;top:57px;width:24px;height:19px;',
+			style: 'position:absolute;left:442px;top:57px;width:24px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРезультатаАнализа',
 			text: 'Вид результата анализа:',
-			style: 'position:absolute;left:8px;top:81px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -97,7 +97,7 @@
 			xtype: 'label',
 			name: 'НадписьМинЗначение',
 			text: 'Минимальное значение:',
-			style: 'position:absolute;left:0px;top:6px;width:131px;height:19px;',
+			style: 'position:absolute;left:0px;top:6px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'НадписьМаксЗначение',
 			text: 'Максимальное значение:',
-			style: 'position:absolute;left:0px;top:31px;width:131px;height:19px;',
+			style: 'position:absolute;left:0px;top:31px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,7 +121,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаИзмерения',
 			text: 'Единица измерения:',
-			style: 'position:absolute;left:0px;top:56px;width:131px;height:19px;',
+			style: 'position:absolute;left:0px;top:56px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -166,7 +166,7 @@
 			xtype: 'label',
 			name: 'НадписьТекстПояснение',
 			text: '',
-			style: 'position:absolute;left:10px;top:258px;width:513px;height:29px;',
+			style: 'position:absolute;left:10px;top:258px;width:513px;height:29px;text-align:left;',
 		},
 	]
 });

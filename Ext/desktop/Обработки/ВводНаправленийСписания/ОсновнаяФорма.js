@@ -34,7 +34,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура (характеристика, серия):',
-			style: 'position:absolute;left:8px;top:59px;width:134px;height:27px;',
+			style: 'position:absolute;left:8px;top:59px;width:134px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,7 +58,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличество',
 			text: 'Количество:',
-			style: 'position:absolute;left:8px;top:86px;width:134px;height:19px;',
+			style: 'position:absolute;left:8px;top:86px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,7 +70,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаИзмерения',
 			text: 'Единица:',
-			style: 'position:absolute;left:239px;top:86px;width:63px;height:19px;',
+			style: 'position:absolute;left:239px;top:86px;width:63px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -82,7 +82,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерСтрокиТабличнойЧасти',
 			text: 'Номер строки документа:',
-			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

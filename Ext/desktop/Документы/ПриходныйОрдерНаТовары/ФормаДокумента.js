@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:188px;top:32px;width:20px;height:19px;',
+			style: 'position:absolute;left:188px;top:32px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:323px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:323px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -241,7 +241,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:12px;top:26px;width:84px;height:19px;',
+			style: 'position:absolute;left:12px;top:26px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -269,7 +269,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -281,7 +281,7 @@
 			xtype: 'label',
 			name: 'НадписьСклад',
 			text: 'Склад:',
-			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -331,7 +331,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументПеремещения',
 			text: 'Документ перемещения:',
-			style: 'position:absolute;left:0px;top:0px;width:87px;height:27px;',
+			style: 'position:absolute;left:0px;top:0px;width:87px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -349,7 +349,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:0px;top:4px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:4px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -394,7 +394,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Заказ поставщику:',
-			style: 'position:absolute;left:0px;top:0px;width:100px;height:18px;',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:18px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

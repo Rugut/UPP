@@ -33,7 +33,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Значительно отличаются',
-			style: 'position:absolute;left:174px;top:72px;width:157px;height:30px;',
+			style: 'position:absolute;left:174px;top:72px;width:157px;height:30px;text-align:right;',
 		},
 		{
 			xtype: 'checkbox',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Запись действует с:',
-			style: 'position:absolute;left:8px;top:89px;width:210px;height:19px;',
+			style: 'position:absolute;left:8px;top:89px;width:210px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Фамилия:',
-			style: 'position:absolute;left:8px;top:8px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Имя:',
-			style: 'position:absolute;left:8px;top:30px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:30px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Отчество:',
-			style: 'position:absolute;left:8px;top:54px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:54px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

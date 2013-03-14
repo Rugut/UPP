@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:191px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:191px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'НадписьОбрабатыватьДокументы',
 			text: 'Допроводить документы:',
-			style: 'position:absolute;left:6px;top:8px;width:185px;height:19px;',
+			style: 'position:absolute;left:6px;top:8px;width:185px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -94,7 +94,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'Период:',
-			style: 'position:absolute;left:6px;top:79px;width:44px;height:19px;',
+			style: 'position:absolute;left:6px;top:79px;width:44px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -140,7 +140,7 @@
 			xtype: 'label',
 			name: 'НадписьС',
 			text: 'с',
-			style: 'position:absolute;left:133px;top:78px;width:10px;height:19px;',
+			style: 'position:absolute;left:133px;top:78px;width:10px;height:19px;text-align:right;',
 		},
 					]
 				},

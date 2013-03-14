@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН',
 			text: 'ИНН:',
-			style: 'position:absolute;left:6px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:6px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьКПП1',
 			text: 'КПП:',
-			style: 'position:absolute;left:6px;top:48px;width:150px;height:19px;',
+			style: 'position:absolute;left:6px;top:48px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Наименование организации:',
-			style: 'position:absolute;left:6px;top:0px;width:150px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,13 +96,13 @@
 			xtype: 'label',
 			name: 'Наименование1',
 			text: 'Фамилия, имя, отчество:',
-			style: 'position:absolute;left:6px;top:24px;width:150px;height:19px;',
+			style: 'position:absolute;left:6px;top:24px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИНН1',
 			text: 'ИНН физического лица:',
-			style: 'position:absolute;left:6px;top:0px;width:150px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Должность:',
-			style: 'position:absolute;left:12px;top:246px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:246px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -163,20 +163,20 @@
 			xtype: 'label',
 			name: 'Наименование2',
 			text: 'Фамилия, имя, отчество:',
-			style: 'position:absolute;left:12px;top:270px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:270px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Наименование3',
 			text: 'Наименование, номер, дата
 доверенности',
-			style: 'position:absolute;left:12px;top:294px;width:150px;height:30px;',
+			style: 'position:absolute;left:12px;top:294px;width:150px;height:30px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Должность:',
-			style: 'position:absolute;left:12px;top:378px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:378px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -188,7 +188,7 @@
 			xtype: 'label',
 			name: 'Наименование4',
 			text: 'Фамилия, имя, отчество:',
-			style: 'position:absolute;left:12px;top:402px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:402px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -209,13 +209,13 @@
 			xtype: 'label',
 			name: 'Наименование5',
 			text: 'Фамилия, имя, отчество:',
-			style: 'position:absolute;left:12px;top:546px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:546px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИНН2',
 			text: 'ИНН физического лица:',
-			style: 'position:absolute;left:12px;top:522px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:522px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -305,7 +305,7 @@
 			name: 'Наименование6',
 			text: 'Наименование, номер, дата
 доверенности',
-			style: 'position:absolute;left:12px;top:570px;width:150px;height:30px;',
+			style: 'position:absolute;left:12px;top:570px;width:150px;height:30px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -329,7 +329,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН3',
 			text: 'ИНН физического лица:',
-			style: 'position:absolute;left:12px;top:354px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:354px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -341,7 +341,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН4',
 			text: 'ИНН физического лица:',
-			style: 'position:absolute;left:12px;top:222px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:222px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -353,7 +353,7 @@
 			xtype: 'label',
 			name: 'Надпись35',
 			text: 'Код налогового органа, куда передаются данные:',
-			style: 'position:absolute;left:6px;top:6px;width:258px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:258px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

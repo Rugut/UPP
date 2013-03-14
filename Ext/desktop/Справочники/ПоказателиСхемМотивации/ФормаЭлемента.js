@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:39px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:39px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Вид показателя:',
-			style: 'position:absolute;left:16px;top:104px;width:89px;height:19px;',
+			style: 'position:absolute;left:16px;top:104px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокВводаПоказателя',
 			text: 'Порядок ввода показателя:',
-			style: 'position:absolute;left:16px;top:161px;width:143px;height:19px;',
+			style: 'position:absolute;left:16px;top:161px;width:143px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -160,7 +160,7 @@
 			xtype: 'label',
 			name: 'НадписьРасшифровкаПоказательЭффективности',
 			text: '',
-			style: 'position:absolute;left:34px;top:30px;width:355px;height:21px;',
+			style: 'position:absolute;left:34px;top:30px;width:355px;height:21px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -176,7 +176,7 @@
 			xtype: 'label',
 			name: 'НадписьРасшифровкаТарифнаяСтавка',
 			text: '',
-			style: 'position:absolute;left:33px;top:31px;width:356px;height:110px;',
+			style: 'position:absolute;left:33px;top:31px;width:356px;height:110px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -199,7 +199,7 @@
 			xtype: 'label',
 			name: 'НадписьРасшифровкаТарифнаяСтавкаВалюта',
 			text: '',
-			style: 'position:absolute;left:33px;top:50px;width:356px;height:91px;',
+			style: 'position:absolute;left:33px;top:50px;width:356px;height:91px;text-align:left;',
 		},
 					]
 				},
@@ -248,7 +248,7 @@
 			xtype: 'label',
 			name: 'НадписьПояснение',
 			text: '',
-			style: 'position:absolute;left:33px;top:6px;width:356px;height:135px;',
+			style: 'position:absolute;left:33px;top:6px;width:356px;height:135px;text-align:left;',
 		},
 					]
 				},
@@ -265,7 +265,7 @@
 			xtype: 'label',
 			name: 'НадписьВалюта',
 			text: 'Валюта:',
-			style: 'position:absolute;left:6px;top:6px;width:41px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:41px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -283,7 +283,7 @@
 			xtype: 'label',
 			name: 'НадписьРасшифровкаСтажа',
 			text: '',
-			style: 'position:absolute;left:33px;top:6px;width:356px;height:135px;',
+			style: 'position:absolute;left:33px;top:6px;width:356px;height:135px;text-align:left;',
 		},
 					]
 				},
@@ -293,7 +293,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособРасчетаСуммы',
 			text: 'Способ расчета суммы:',
-			style: 'position:absolute;left:16px;top:132px;width:138px;height:19px;',
+			style: 'position:absolute;left:16px;top:132px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -305,7 +305,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммируемыйПоказатель',
 			text: 'Суммируемый показатель :',
-			style: 'position:absolute;left:16px;top:161px;width:138px;height:19px;',
+			style: 'position:absolute;left:16px;top:161px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -317,7 +317,7 @@
 			xtype: 'label',
 			name: 'НадписьВидСтажа',
 			text: 'Вид стажа:',
-			style: 'position:absolute;left:16px;top:161px;width:143px;height:19px;',
+			style: 'position:absolute;left:16px;top:161px;width:143px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -329,7 +329,7 @@
 			xtype: 'label',
 			name: 'НадписьСтажРаботы',
 			text: 'Стаж работы с момента приема на работу',
-			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
+			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;text-align:left;',
 		},
 	]
 });

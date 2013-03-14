@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:322px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:322px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -44,7 +44,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полностью:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -97,7 +97,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеПрописи1наРусском',
 			text: 'один:',
-			style: 'position:absolute;left:126px;top:105px;width:36px;height:19px;',
+			style: 'position:absolute;left:126px;top:105px;width:36px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеПрописи2наРусском',
 			text: 'два:',
-			style: 'position:absolute;left:226px;top:105px;width:36px;height:19px;',
+			style: 'position:absolute;left:226px;top:105px;width:36px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,7 +121,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеПрописи3наРусском',
 			text: 'пять:',
-			style: 'position:absolute;left:326px;top:105px;width:36px;height:19px;',
+			style: 'position:absolute;left:326px;top:105px;width:36px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -139,7 +139,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеПрописи5наРусском',
 			text: 'один:',
-			style: 'position:absolute;left:126px;top:153px;width:36px;height:19px;',
+			style: 'position:absolute;left:126px;top:153px;width:36px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеПрописи6наРусском',
 			text: 'два:',
-			style: 'position:absolute;left:226px;top:153px;width:36px;height:19px;',
+			style: 'position:absolute;left:226px;top:153px;width:36px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -163,7 +163,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеПрописи7наРусском',
 			text: 'пять:',
-			style: 'position:absolute;left:326px;top:153px;width:36px;height:19px;',
+			style: 'position:absolute;left:326px;top:153px;width:36px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -175,7 +175,7 @@
 			xtype: 'label',
 			name: 'НадписьПолеПрописиДлинаДробнойЧасти',
 			text: 'Количество разрядов при выводе дробной части в виде числа:',
-			style: 'position:absolute;left:20px;top:177px;width:342px;height:19px;',
+			style: 'position:absolute;left:20px;top:177px;width:342px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

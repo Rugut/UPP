@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомера',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДаты',
 			text: 'от',
-			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:368px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:368px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -556,7 +556,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветсвенный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:336px;top:234px;width:90px;height:19px;',
+			style: 'position:absolute;left:336px;top:234px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -568,7 +568,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:6px;top:234px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:234px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -596,7 +596,7 @@
 			xtype: 'label',
 			name: 'НадписьМоментЗапасов',
 			text: 'Момент определения запасов:',
-			style: 'position:absolute;left:6px;top:30px;width:205px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:205px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -608,7 +608,7 @@
 			xtype: 'label',
 			name: 'НадписьНачальнаяГраница',
 			text: 'Начальная граница перепланирования:',
-			style: 'position:absolute;left:6px;top:6px;width:205px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:205px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -627,7 +627,7 @@
 			xtype: 'label',
 			name: 'НадписьПроект',
 			text: 'Проект:',
-			style: 'position:absolute;left:6px;top:258px;width:90px;height:19px;',
+			style: 'position:absolute;left:6px;top:258px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

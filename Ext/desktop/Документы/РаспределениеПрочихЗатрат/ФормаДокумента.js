@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:187px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:187px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,13 +111,13 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -129,7 +129,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаказ',
 			text: 'Заказ:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -141,7 +141,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:353px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:353px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -437,13 +437,13 @@
 			xtype: 'label',
 			name: 'НадписьПериодПо',
 			text: 'по:',
-			style: 'position:absolute;left:187px;top:57px;width:20px;height:19px;',
+			style: 'position:absolute;left:187px;top:57px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
-			style: 'position:absolute;left:336px;top:102px;width:88px;height:27px;',
+			style: 'position:absolute;left:336px;top:102px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -460,7 +460,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:329px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:329px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -472,7 +472,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументИнвентаризация',
 			text: 'Инвентаризация:',
-			style: 'position:absolute;left:336px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

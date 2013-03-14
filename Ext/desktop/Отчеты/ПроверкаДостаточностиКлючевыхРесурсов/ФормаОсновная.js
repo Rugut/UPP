@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Вид планирования:',
-			style: 'position:absolute;left:8px;top:60px;width:106px;height:19px;',
+			style: 'position:absolute;left:8px;top:60px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Сценарий плана:',
-			style: 'position:absolute;left:8px;top:85px;width:106px;height:19px;',
+			style: 'position:absolute;left:8px;top:85px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,7 +58,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:106px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -70,7 +70,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'по:',
-			style: 'position:absolute;left:208px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:208px;top:33px;width:16px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,7 +88,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Сценарий ресурсов:',
-			style: 'position:absolute;left:8px;top:110px;width:106px;height:19px;',
+			style: 'position:absolute;left:8px;top:110px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

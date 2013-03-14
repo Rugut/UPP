@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНарушенияРежима1',
 			text: 'Снизить пособие за нарушение режима с:',
-			style: 'position:absolute;left:6px;top:6px;width:224px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:224px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчета',
 			text: 'Для пособия:',
-			style: 'position:absolute;left:6px;top:78px;width:74px;height:19px;',
+			style: 'position:absolute;left:6px;top:78px;width:74px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -108,7 +108,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчетаДоплаты',
 			text: 'Для доплаты:',
-			style: 'position:absolute;left:0px;top:0px;width:75px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:75px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -129,13 +129,13 @@
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты2',
 			text: 'Процент оплаты от среднего заработка:',
-			style: 'position:absolute;left:6px;top:59px;width:208px;height:19px;',
+			style: 'position:absolute;left:6px;top:59px;width:208px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОграничениеПособия2',
 			text: 'Ограничение заработка (пособия):',
-			style: 'position:absolute;left:6px;top:84px;width:178px;height:19px;',
+			style: 'position:absolute;left:6px;top:84px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -159,7 +159,7 @@
 			xtype: 'label',
 			name: 'НадписьСтажЛет',
 			text: 'Страховой стаж без нестраховых периодов:',
-			style: 'position:absolute;left:6px;top:34px;width:225px;height:19px;',
+			style: 'position:absolute;left:6px;top:34px;width:225px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'НадписьСтажЛет1',
 			text: 'лет',
-			style: 'position:absolute;left:299px;top:34px;width:21px;height:19px;',
+			style: 'position:absolute;left:299px;top:34px;width:21px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -200,7 +200,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты3',
 			text: 'Процент оплаты от среднего заработка:',
-			style: 'position:absolute;left:6px;top:29px;width:208px;height:19px;',
+			style: 'position:absolute;left:6px;top:29px;width:208px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,7 +212,7 @@
 			xtype: 'label',
 			name: 'НадписьОграничениеПособия3',
 			text: 'Ограничение размера пособия:',
-			style: 'position:absolute;left:6px;top:54px;width:178px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

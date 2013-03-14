@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НачОтчета',
 			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:7px;width:52px;height:19px;',
+			style: 'position:absolute;left:8px;top:7px;width:52px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'по контрагенту:',
-			style: 'position:absolute;left:144px;top:7px;width:88px;height:19px;',
+			style: 'position:absolute;left:144px;top:7px;width:88px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

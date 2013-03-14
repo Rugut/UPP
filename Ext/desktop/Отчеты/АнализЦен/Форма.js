@@ -81,7 +81,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -124,7 +124,7 @@
 			xtype: 'label',
 			name: 'ВВалюте',
 			text: 'в валюте',
-			style: 'position:absolute;left:148px;top:33px;width:64px;height:19px;',
+			style: 'position:absolute;left:148px;top:33px;width:64px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

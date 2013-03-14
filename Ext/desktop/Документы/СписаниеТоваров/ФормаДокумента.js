@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:183px;top:32px;width:20px;height:19px;',
+			style: 'position:absolute;left:183px;top:32px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:357px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:357px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:333px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:333px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -115,7 +115,7 @@
 			xtype: 'label',
 			name: 'НадписьСклад',
 			text: 'Склад:',
-			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,13 +127,13 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего,USD:',
-			style: 'position:absolute;left:492px;top:309px;width:72px;height:17px;',
+			style: 'position:absolute;left:492px;top:309px;width:72px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -145,7 +145,7 @@
 			xtype: 'label',
 			name: 'НадписьИнвентаризацияТоваровНаСкладе',
 			text: 'Инвентаризация:',
-			style: 'position:absolute;left:8px;top:80px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:80px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -375,7 +375,7 @@
 			xtype: 'label',
 			name: 'НадписьНДСвСтоимостиТоваров',
 			text: 'НДС в стоим. товаров:',
-			style: 'position:absolute;left:8px;top:99px;width:88px;height:27px;',
+			style: 'position:absolute;left:8px;top:99px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

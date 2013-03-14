@@ -75,13 +75,13 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:4px;width:72px;height:19px;',
+			style: 'position:absolute;left:6px;top:4px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'по:',
-			style: 'position:absolute;left:170px;top:4px;width:20px;height:19px;',
+			style: 'position:absolute;left:170px;top:4px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'checkbox',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:103px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:103px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от:',
-			style: 'position:absolute;left:201px;top:33px;width:22px;height:19px;',
+			style: 'position:absolute;left:201px;top:33px;width:22px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Входят в состав ОС:',
-			style: 'position:absolute;left:8px;top:56px;width:103px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:103px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -130,7 +130,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:292px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:292px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -142,7 +142,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:315px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:315px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,7 +154,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Событие:',
-			style: 'position:absolute;left:8px;top:80px;width:103px;height:19px;',
+			style: 'position:absolute;left:8px;top:80px;width:103px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

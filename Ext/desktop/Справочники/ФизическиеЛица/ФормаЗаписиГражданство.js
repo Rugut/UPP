@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Запись о гражданстве действует с:',
-			style: 'position:absolute;left:8px;top:365px;width:187px;height:19px;',
+			style: 'position:absolute;left:8px;top:365px;width:187px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

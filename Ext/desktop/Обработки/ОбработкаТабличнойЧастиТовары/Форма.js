@@ -157,7 +157,7 @@
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего,USD:',
-			style: 'position:absolute;left:558px;top:353px;width:80px;height:19px;',
+			style: 'position:absolute;left:558px;top:353px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,7 +169,7 @@
 			xtype: 'label',
 			name: 'НадписьВсегоНДС',
 			text: 'НДС ( в т. ч.):',
-			style: 'position:absolute;left:366px;top:353px;width:80px;height:19px;',
+			style: 'position:absolute;left:366px;top:353px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -215,7 +215,7 @@
 			xtype: 'label',
 			name: 'НадписьСтранаПроисхождения',
 			text: 'Страна происхождения:',
-			style: 'position:absolute;left:0px;top:0px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

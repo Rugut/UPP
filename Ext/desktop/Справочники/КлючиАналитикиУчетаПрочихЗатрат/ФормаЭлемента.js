@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчета',
 			text: 'Счет учета:',
-			style: 'position:absolute;left:8px;top:212px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:212px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаНУ',
 			text: 'Счет учета (НУ):',
-			style: 'position:absolute;left:309px;top:212px;width:92px;height:19px;',
+			style: 'position:absolute;left:309px;top:212px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -146,7 +146,7 @@
 			xtype: 'label',
 			name: 'НадписьОбъектСтроительства',
 			text: 'Объект строительства:',
-			style: 'position:absolute;left:8px;top:130px;width:86px;height:27px;',
+			style: 'position:absolute;left:8px;top:130px;width:86px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -158,7 +158,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособСтроительства',
 			text: 'Способ строительства:',
-			style: 'position:absolute;left:8px;top:158px;width:86px;height:27px;',
+			style: 'position:absolute;left:8px;top:158px;width:86px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -170,7 +170,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:59px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:59px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,7 +182,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИсправительнойЗаписи',
 			text: 'Дата исправительной записи:',
-			style: 'position:absolute;left:120px;top:84px;width:160px;height:19px;',
+			style: 'position:absolute;left:120px;top:84px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

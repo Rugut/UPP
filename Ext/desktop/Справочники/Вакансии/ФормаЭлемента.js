@@ -76,7 +76,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:656px;top:33px;width:45px;height:19px;',
+			style: 'position:absolute;left:656px;top:33px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,7 +88,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:105px;width:135px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,7 +100,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжность',
 			text: 'Должность:',
-			style: 'position:absolute;left:8px;top:33px;width:135px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -128,7 +128,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:0px;top:0px;width:135px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,7 +144,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:81px;width:135px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -156,7 +156,7 @@
 			xtype: 'label',
 			name: 'НадписьПлановаяДатаЗакрытия',
 			text: 'Плановая дата закрытия:',
-			style: 'position:absolute;left:415px;top:57px;width:135px;height:19px;',
+			style: 'position:absolute;left:415px;top:57px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -168,7 +168,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:415px;top:81px;width:135px;height:19px;',
+			style: 'position:absolute;left:415px;top:81px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -180,7 +180,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаявитель',
 			text: 'Заявитель:',
-			style: 'position:absolute;left:415px;top:106px;width:135px;height:19px;',
+			style: 'position:absolute;left:415px;top:106px;width:135px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

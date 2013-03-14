@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНазначениеПлатежа',
 			text: 'Назначение платежа:',
-			style: 'position:absolute;left:8px;top:8px;width:110px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:110px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',

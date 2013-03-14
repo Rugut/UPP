@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокНазначенияPLU',
 			text: 'Порядок назначения кодов товаров (PLU):',
-			style: 'position:absolute;left:12px;top:49px;width:222px;height:19px;',
+			style: 'position:absolute;left:12px;top:49px;width:222px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -95,7 +95,7 @@
 			xtype: 'label',
 			name: 'Надпись21',
 			text: 'Используется при заполнении списка товаров, выгружаемых в ККМ в режиме Offline.',
-			style: 'position:absolute;left:12px;top:70px;width:444px;height:19px;',
+			style: 'position:absolute;left:12px;top:70px;width:444px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -113,13 +113,13 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Префикс штрихкода штучного товара:',
-			style: 'position:absolute;left:12px;top:48px;width:199px;height:19px;',
+			style: 'position:absolute;left:12px;top:48px;width:199px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Префикс штрихкода весового товара:',
-			style: 'position:absolute;left:12px;top:108px;width:199px;height:19px;',
+			style: 'position:absolute;left:12px;top:108px;width:199px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -142,25 +142,25 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Необходимо указать, если предполагается печать этикеток с изображением штрихкодов для штучных товаров.',
-			style: 'position:absolute;left:12px;top:72px;width:440px;height:32px;',
+			style: 'position:absolute;left:12px;top:72px;width:440px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Необходимо указать, если предполагается печать этикеток с изображением штрихкодов для весовых товаров.',
-			style: 'position:absolute;left:12px;top:129px;width:440px;height:32px;',
+			style: 'position:absolute;left:12px;top:129px;width:440px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Установить, если на торговом предприятии допускается назначать разным товарам или товарам с разными единицами измерения один и тот же штрихкод.',
-			style: 'position:absolute;left:28px;top:239px;width:424px;height:32px;',
+			style: 'position:absolute;left:28px;top:239px;width:424px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись19',
 			text: 'Длина кода весового товара:',
-			style: 'position:absolute;left:12px;top:165px;width:199px;height:19px;',
+			style: 'position:absolute;left:12px;top:165px;width:199px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -172,7 +172,7 @@
 			xtype: 'label',
 			name: 'Надпись20',
 			text: 'Необходимо указать в соответствии с установками имеющегося торгового оборудования.',
-			style: 'position:absolute;left:12px;top:186px;width:440px;height:28px;',
+			style: 'position:absolute;left:12px;top:186px;width:440px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'label',

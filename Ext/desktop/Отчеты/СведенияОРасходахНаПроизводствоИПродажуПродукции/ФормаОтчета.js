@@ -36,13 +36,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'Период:',
-			style: 'position:absolute;left:8px;top:0px;width:57px;height:19px;',
+			style: 'position:absolute;left:8px;top:0px;width:57px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаКон',
 			text: '—',
-			style: 'position:absolute;left:88px;top:20px;width:10px;height:19px;',
+			style: 'position:absolute;left:88px;top:20px;width:10px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:212px;top:0px;width:74px;height:19px;',
+			style: 'position:absolute;left:212px;top:0px;width:74px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -465,7 +465,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Панель настроек',
-			style: 'position:absolute;left:6px;top:5px;width:91px;height:18px;',
+			style: 'position:absolute;left:6px;top:5px;width:91px;height:18px;text-align:left;',
 		},
 					]
 				},

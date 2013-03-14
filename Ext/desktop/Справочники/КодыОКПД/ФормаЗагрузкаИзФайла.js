@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'ТекстПутьКФайлу',
 			text: 'Путь к файлу :',
-			style: 'position:absolute;left:8px;top:9px;width:304px;height:19px;',
+			style: 'position:absolute;left:8px;top:9px;width:304px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

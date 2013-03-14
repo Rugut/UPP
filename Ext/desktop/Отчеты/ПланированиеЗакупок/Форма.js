@@ -94,13 +94,13 @@
 			xtype: 'label',
 			name: 'НадписьПериодПродаж',
 			text: 'Период анализа продаж с:',
-			style: 'position:absolute;left:6px;top:6px;width:140px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПродажПо',
 			text: 'по:',
-			style: 'position:absolute;left:230px;top:6px;width:16px;height:19px;',
+			style: 'position:absolute;left:230px;top:6px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -124,13 +124,13 @@
 			xtype: 'label',
 			name: 'НадписьПериодЗакупок',
 			text: 'Период закупок с:',
-			style: 'position:absolute;left:6px;top:30px;width:140px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьЗакупокПо',
 			text: 'по:',
-			style: 'position:absolute;left:230px;top:30px;width:16px;height:19px;',
+			style: 'position:absolute;left:230px;top:30px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

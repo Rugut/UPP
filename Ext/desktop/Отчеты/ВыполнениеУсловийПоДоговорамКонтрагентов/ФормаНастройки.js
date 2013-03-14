@@ -147,7 +147,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;text-align:left;',
 		},
 					]
 				},

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код налогового органа:',
-			style: 'position:absolute;left:8px;top:60px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:60px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -156,7 +156,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументПредставителя',
 			text: 'Документ, подтверждающий полномочия представителя:',
-			style: 'position:absolute;left:0px;top:33px;width:128px;height:82px;',
+			style: 'position:absolute;left:0px;top:33px;width:128px;height:82px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -186,7 +186,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументПредставителя1',
 			text: 'Документ, подтверждающий полномочия представителя:',
-			style: 'position:absolute;left:0px;top:9px;width:128px;height:106px;',
+			style: 'position:absolute;left:0px;top:9px;width:128px;height:106px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -220,7 +220,7 @@
 			xtype: 'label',
 			name: 'НадписьДоверенность',
 			text: 'Доверенность:',
-			style: 'position:absolute;left:14px;top:330px;width:125px;height:19px;',
+			style: 'position:absolute;left:14px;top:330px;width:125px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

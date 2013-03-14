@@ -25,13 +25,13 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование группы:',
-			style: 'position:absolute;left:8px;top:84px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:354px;top:84px;width:40px;height:19px;',
+			style: 'position:absolute;left:354px;top:84px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,13 +43,13 @@
 			xtype: 'label',
 			name: 'НадписьВладелец',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:32px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа договоров:',
-			style: 'position:absolute;left:8px;top:56px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

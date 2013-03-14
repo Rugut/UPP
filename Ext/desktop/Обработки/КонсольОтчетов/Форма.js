@@ -69,7 +69,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Вид:',
-			style: 'position:absolute;left:4px;top:0px;width:24px;height:20px;',
+			style: 'position:absolute;left:4px;top:0px;width:24px;height:20px;text-align:left;',
 		},
 					]
 				},
@@ -84,7 +84,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Вид:',
-			style: 'position:absolute;left:4px;top:0px;width:24px;height:20px;',
+			style: 'position:absolute;left:4px;top:0px;width:24px;height:20px;text-align:left;',
 		},
 					]
 				},
@@ -223,7 +223,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Для создания нового отчета необходимо нажать правой клавишей мыши на списке отчетов и выбрать в появившемся меню пункт "Добавить".',
-			style: 'position:absolute;left:8px;top:4px;width:499px;height:69px;',
+			style: 'position:absolute;left:8px;top:4px;width:499px;height:69px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',
@@ -451,7 +451,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Размещение итогов',
-			style: 'position:absolute;left:7px;top:71px;width:107px;height:19px;',
+			style: 'position:absolute;left:7px;top:71px;width:107px;height:19px;text-align:left;',
 		},
 					]
 				},

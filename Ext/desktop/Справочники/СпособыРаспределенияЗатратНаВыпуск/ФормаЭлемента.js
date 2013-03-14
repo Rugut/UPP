@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:505px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:505px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:164px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:412px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:412px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -84,7 +84,7 @@
 			xtype: 'label',
 			name: 'НадписьБазаРаспределенияЗатрат',
 			text: 'База распределения:',
-			style: 'position:absolute;left:6px;top:6px;width:126px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:126px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,7 +96,7 @@
 			xtype: 'label',
 			name: 'НадписьПоказательБазыРаспределения',
 			text: 'Показатель базы распределения:',
-			style: 'position:absolute;left:6px;top:25px;width:126px;height:27px;',
+			style: 'position:absolute;left:6px;top:25px;width:126px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -108,7 +108,7 @@
 			xtype: 'label',
 			name: 'НадписьТипЦен',
 			text: 'Тип цен:',
-			style: 'position:absolute;left:324px;top:30px;width:92px;height:19px;',
+			style: 'position:absolute;left:324px;top:30px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -120,7 +120,7 @@
 			xtype: 'label',
 			name: 'НадписьОсновноеСырье',
 			text: 'Основное сырье:',
-			style: 'position:absolute;left:324px;top:6px;width:92px;height:19px;',
+			style: 'position:absolute;left:324px;top:6px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,7 +132,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособРаспределенияЗатратПоПодразделениям',
 			text: 'Способ распределения по подразделениям:',
-			style: 'position:absolute;left:6px;top:169px;width:126px;height:27px;',
+			style: 'position:absolute;left:6px;top:169px;width:126px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -208,7 +208,7 @@
 			xtype: 'label',
 			name: 'НадписьТипФильтраПриРаспределенииЗатратНаВыпуск',
 			text: 'Тип фильтра:',
-			style: 'position:absolute;left:6px;top:6px;width:156px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:156px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -300,7 +300,7 @@
 			xtype: 'label',
 			name: 'НадписьКогдаПрименять',
 			text: 'Область, условия применения:',
-			style: 'position:absolute;left:8px;top:58px;width:164px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -312,13 +312,13 @@
 			xtype: 'label',
 			name: 'НадписьПрименимость',
 			text: 'Для каких расходов применять:',
-			style: 'position:absolute;left:8px;top:133px;width:164px;height:19px;',
+			style: 'position:absolute;left:8px;top:133px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаправлениеРаспределения',
 			text: 'Куда распределять:',
-			style: 'position:absolute;left:8px;top:158px;width:164px;height:19px;',
+			style: 'position:absolute;left:8px;top:158px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

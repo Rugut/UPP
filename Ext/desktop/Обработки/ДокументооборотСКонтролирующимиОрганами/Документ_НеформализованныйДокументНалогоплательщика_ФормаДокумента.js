@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:95px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -106,7 +106,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:95px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -124,7 +124,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:220px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:220px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'radio',
@@ -223,7 +223,7 @@
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
 			text: 'Получатель:',
-			style: 'position:absolute;left:8px;top:81px;width:95px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

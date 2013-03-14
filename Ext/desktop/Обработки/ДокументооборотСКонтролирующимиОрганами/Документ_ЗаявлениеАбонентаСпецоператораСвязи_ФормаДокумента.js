@@ -23,7 +23,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:61px;width:128px;height:15px;',
+			style: 'position:absolute;left:8px;top:61px;width:128px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -204,7 +204,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжность6',
 			text: 'Сотрудник:',
-			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -222,7 +222,7 @@
 			xtype: 'label',
 			name: 'НадписьКраткоеНаименование',
 			text: 'Краткое наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:128px;height:15px;',
+			style: 'position:absolute;left:8px;top:33px;width:128px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -311,7 +311,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН',
 			text: 'ИНН:',
-			style: 'position:absolute;left:8px;top:108px;width:54px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:54px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -329,7 +329,7 @@
 			xtype: 'label',
 			name: 'Надпись55',
 			text: 'Криптопровайдер:',
-			style: 'position:absolute;left:12px;top:8px;width:100px;height:19px;',
+			style: 'position:absolute;left:12px;top:8px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -351,7 +351,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН1',
 			text: 'Путь к контейнеру закрытого ключа:',
-			style: 'position:absolute;left:8px;top:8px;width:192px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:192px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -363,7 +363,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН2',
 			text: 'Идентификатор заявления:',
-			style: 'position:absolute;left:8px;top:36px;width:192px;height:19px;',
+			style: 'position:absolute;left:8px;top:36px;width:192px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -375,7 +375,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН3',
 			text: 'Учетная запись - результат:',
-			style: 'position:absolute;left:8px;top:64px;width:192px;height:19px;',
+			style: 'position:absolute;left:8px;top:64px;width:192px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -447,13 +447,13 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:80px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:80px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:196px;top:80px;width:20px;height:19px;',
+			style: 'position:absolute;left:196px;top:80px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -471,7 +471,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:107px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:107px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

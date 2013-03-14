@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Серия:',
-			style: 'position:absolute;left:8px;top:7px;width:42px;height:19px;',
+			style: 'position:absolute;left:8px;top:7px;width:42px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:31px;width:46px;height:19px;',
+			style: 'position:absolute;left:8px;top:31px;width:46px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

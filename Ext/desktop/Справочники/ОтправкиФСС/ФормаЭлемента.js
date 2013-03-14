@@ -19,7 +19,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:14px;top:76px;width:71px;height:15px;',
+			style: 'position:absolute;left:14px;top:76px;width:71px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганФСС',
 			text: 'Орган ФСС:',
-			style: 'position:absolute;left:14px;top:95px;width:71px;height:15px;',
+			style: 'position:absolute;left:14px;top:95px;width:71px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -99,13 +99,13 @@
 			xtype: 'label',
 			name: 'НадписьПомеченНаУдаление',
 			text: 'Отправка помечена на удаление',
-			style: 'position:absolute;left:173px;top:53px;width:171px;height:15px;',
+			style: 'position:absolute;left:173px;top:53px;width:171px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование1',
 			text: 'Идентификатор:',
-			style: 'position:absolute;left:8px;top:33px;width:83px;height:15px;',
+			style: 'position:absolute;left:8px;top:33px;width:83px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -117,13 +117,13 @@
 			xtype: 'label',
 			name: 'ДатаОтправки',
 			text: '',
-			style: 'position:absolute;left:64px;top:180px;width:103px;height:15px;',
+			style: 'position:absolute;left:64px;top:180px;width:103px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаОбновления',
 			text: '<не определено>',
-			style: 'position:absolute;left:238px;top:200px;width:106px;height:15px;',
+			style: 'position:absolute;left:238px;top:200px;width:106px;height:15px;text-align:left;',
 		},
 	]
 });

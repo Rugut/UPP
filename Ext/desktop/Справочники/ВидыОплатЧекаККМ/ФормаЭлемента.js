@@ -38,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:358px;top:33px;width:23px;height:19px;',
+			style: 'position:absolute;left:358px;top:33px;width:23px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьТипОплаты',
 			text: 'Тип оплаты:',
-			style: 'position:absolute;left:8px;top:57px;width:134px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'НадписьБанкКредитор',
 			text: 'Банк-кредитор:',
-			style: 'position:absolute;left:0px;top:0px;width:134px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -97,7 +97,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговорВзаиморасчетовБанкаКредитора',
 			text: 'Договор взаиморасчетов:',
-			style: 'position:absolute;left:0px;top:24px;width:134px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентБанковскойКомиссии',
 			text: '% банковской комиссии:',
-			style: 'position:absolute;left:0px;top:48px;width:134px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

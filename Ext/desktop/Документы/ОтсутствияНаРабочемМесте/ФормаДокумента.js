@@ -38,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'Дата регистрации:',
-			style: 'position:absolute;left:8px;top:237px;width:98px;height:19px;',
+			style: 'position:absolute;left:8px;top:237px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:163px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:163px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Зарегистрировал:',
-			style: 'position:absolute;left:8px;top:261px;width:98px;height:19px;',
+			style: 'position:absolute;left:8px;top:261px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьПричинаОтсутствия',
 			text: 'Причина:',
-			style: 'position:absolute;left:8px;top:131px;width:61px;height:19px;',
+			style: 'position:absolute;left:8px;top:131px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьСотрудник',
 			text: 'Сотрудник:',
-			style: 'position:absolute;left:8px;top:33px;width:61px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -104,7 +104,7 @@
 			xtype: 'label',
 			name: 'НадписьНесколькоДнейДатаОкончания',
 			text: 'По:',
-			style: 'position:absolute;left:8px;top:107px;width:61px;height:19px;',
+			style: 'position:absolute;left:8px;top:107px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьНесколькоДнейДатаНачала',
 			text: 'С:',
-			style: 'position:absolute;left:8px;top:83px;width:61px;height:19px;',
+			style: 'position:absolute;left:8px;top:83px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -140,7 +140,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:247px;top:237px;width:39px;height:19px;',
+			style: 'position:absolute;left:247px;top:237px;width:39px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

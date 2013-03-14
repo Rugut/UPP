@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:486px;top:85px;width:30px;height:19px;',
+			style: 'position:absolute;left:486px;top:85px;width:30px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Представление:',
-			style: 'position:absolute;left:8px;top:84px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьВладелец',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:58px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтактноеЛицо',
 			text: 'Контактное лицо:',
-			style: 'position:absolute;left:8px;top:33px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -511,7 +511,7 @@
 			xtype: 'label',
 			name: 'НадписьРольКонтактногоЛица',
 			text: 'Роль контактного лица:',
-			style: 'position:absolute;left:6px;top:33px;width:121px;height:19px;',
+			style: 'position:absolute;left:6px;top:33px;width:121px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -523,7 +523,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжность',
 			text: 'Должность:',
-			style: 'position:absolute;left:6px;top:7px;width:89px;height:19px;',
+			style: 'position:absolute;left:6px;top:7px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -629,7 +629,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарийПросмотр',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:361px;width:74px;height:19px;',
+			style: 'position:absolute;left:8px;top:361px;width:74px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

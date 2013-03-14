@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'Надпись37',
 			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:33px;width:48px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:48px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -161,7 +161,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Вид:',
-			style: 'position:absolute;left:14px;top:78px;width:42px;height:19px;',
+			style: 'position:absolute;left:14px;top:78px;width:42px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -173,7 +173,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Использование:',
-			style: 'position:absolute;left:259px;top:78px;width:88px;height:19px;',
+			style: 'position:absolute;left:259px;top:78px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

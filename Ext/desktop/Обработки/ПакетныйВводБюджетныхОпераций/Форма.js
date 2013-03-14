@@ -278,7 +278,7 @@
 			xtype: 'label',
 			name: 'Период',
 			text: '',
-			style: 'position:absolute;left:160px;top:6px;width:115px;height:19px;',
+			style: 'position:absolute;left:160px;top:6px;width:115px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

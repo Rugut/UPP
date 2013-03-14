@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:33px;width:54px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:54px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодичность',
 			text: 'Периодичность лимитов:',
-			style: 'position:absolute;left:144px;top:33px;width:128px;height:19px;',
+			style: 'position:absolute;left:144px;top:33px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -149,7 +149,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:371px;top:33px;width:72px;height:19px;',
+			style: 'position:absolute;left:371px;top:33px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

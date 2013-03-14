@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьШкалаОценок',
 			text: 'Шкала оценок:',
-			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,7 +134,7 @@
 			xtype: 'label',
 			name: 'НадписьТиповаяАнкета',
 			text: 'Типовая анкета:',
-			style: 'position:absolute;left:6px;top:30px;width:88px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -174,7 +174,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа компетенций:',
-			style: 'position:absolute;left:8px;top:58px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

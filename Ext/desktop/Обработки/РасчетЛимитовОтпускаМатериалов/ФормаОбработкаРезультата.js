@@ -24,7 +24,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Действие:',
-			style: 'position:absolute;left:8px;top:6px;width:81px;height:19px;',
+			style: 'position:absolute;left:8px;top:6px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -41,7 +41,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Периодичность:',
-			style: 'position:absolute;left:0px;top:4px;width:81px;height:19px;',
+			style: 'position:absolute;left:0px;top:4px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

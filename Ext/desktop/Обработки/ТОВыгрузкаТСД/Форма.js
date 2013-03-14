@@ -178,7 +178,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Терминал сбора данных:',
-			style: 'position:absolute;left:8px;top:28px;width:128px;height:15px;',
+			style: 'position:absolute;left:8px;top:28px;width:128px;height:15px;text-align:left;',
 		},
 	]
 });

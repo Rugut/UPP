@@ -48,7 +48,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Имя файла правил:',
-			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -254,7 +254,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Имя файла данных:',
-			style: 'position:absolute;left:0px;top:1px;width:100px;height:19px;',
+			style: 'position:absolute;left:0px;top:1px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -277,7 +277,7 @@
 			xtype: 'label',
 			name: 'НадписьПарольНаЗапись',
 			text: 'Пароль сжатия:',
-			style: 'position:absolute;left:12px;top:48px;width:87px;height:19px;',
+			style: 'position:absolute;left:12px;top:48px;width:87px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -427,7 +427,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Имя файла для загрузки:',
-			style: 'position:absolute;left:6px;top:6px;width:136px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:136px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -504,7 +504,7 @@
 			xtype: 'label',
 			name: 'НадписьПарольНаЧтение',
 			text: 'Пароль распаковки:',
-			style: 'position:absolute;left:6px;top:30px;width:136px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -542,7 +542,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Дата выгрузки данных:',
-			style: 'position:absolute;left:6px;top:359px;width:150px;height:15px;',
+			style: 'position:absolute;left:6px;top:359px;width:150px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',

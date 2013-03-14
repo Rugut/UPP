@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:411px;top:33px;width:83px;height:19px;',
+			style: 'position:absolute;left:411px;top:33px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументОснованиеНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:228px;top:26px;width:49px;height:19px;',
+			style: 'position:absolute;left:228px;top:26px;width:49px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -334,7 +334,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументОснованиеВид',
 			text: 'Основание:',
-			style: 'position:absolute;left:6px;top:26px;width:80px;height:19px;',
+			style: 'position:absolute;left:6px;top:26px;width:80px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -396,7 +396,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументОснованиеДата',
 			text: 'от:',
-			style: 'position:absolute;left:409px;top:26px;width:18px;height:19px;',
+			style: 'position:absolute;left:409px;top:26px;width:18px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -408,7 +408,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончанияИнвентаризации',
 			text: 'Дата окончания:',
-			style: 'position:absolute;left:188px;top:50px;width:89px;height:19px;',
+			style: 'position:absolute;left:188px;top:50px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -442,7 +442,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:371px;width:89px;height:19px;',
+			style: 'position:absolute;left:8px;top:371px;width:89px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

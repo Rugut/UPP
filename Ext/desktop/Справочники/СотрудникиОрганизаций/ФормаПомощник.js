@@ -45,7 +45,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРождения',
 			text: 'Дата рождения:',
-			style: 'position:absolute;left:20px;top:116px;width:83px;height:19px;',
+			style: 'position:absolute;left:20px;top:116px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -63,13 +63,13 @@
 			xtype: 'label',
 			name: 'НадписьФамилия',
 			text: 'Фамилия:',
-			style: 'position:absolute;left:20px;top:44px;width:83px;height:19px;',
+			style: 'position:absolute;left:20px;top:44px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПол',
 			text: 'Пол:',
-			style: 'position:absolute;left:20px;top:140px;width:83px;height:19px;',
+			style: 'position:absolute;left:20px;top:140px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -93,13 +93,13 @@
 			xtype: 'label',
 			name: 'НадписьИмя',
 			text: 'Имя:',
-			style: 'position:absolute;left:20px;top:68px;width:83px;height:19px;',
+			style: 'position:absolute;left:20px;top:68px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОтчество',
 			text: 'Отчество:',
-			style: 'position:absolute;left:20px;top:92px;width:83px;height:19px;',
+			style: 'position:absolute;left:20px;top:92px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -115,7 +115,7 @@
 			xtype: 'label',
 			name: 'НадписьТабельныйНомер',
 			text: 'Таб. номер:',
-			style: 'position:absolute;left:20px;top:280px;width:83px;height:19px;',
+			style: 'position:absolute;left:20px;top:280px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -182,13 +182,13 @@
 			xtype: 'label',
 			name: 'НадписьВидЗанятости',
 			text: 'Вид занятости',
-			style: 'position:absolute;left:10px;top:35px;width:94px;height:19px;',
+			style: 'position:absolute;left:10px;top:35px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:27px;top:303px;width:68px;height:19px;',
+			style: 'position:absolute;left:27px;top:303px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -200,7 +200,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаДоговора',
 			text: 'от:',
-			style: 'position:absolute;left:188px;top:303px;width:23px;height:19px;',
+			style: 'position:absolute;left:188px;top:303px;width:23px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,7 +212,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
 			text: 'Принять с:',
-			style: 'position:absolute;left:11px;top:250px;width:84px;height:19px;',
+			style: 'position:absolute;left:11px;top:250px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -224,7 +224,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончания',
 			text: 'Для срочного договора дата оконч.:',
-			style: 'position:absolute;left:27px;top:328px;width:184px;height:19px;',
+			style: 'position:absolute;left:27px;top:328px;width:184px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -236,7 +236,7 @@
 			xtype: 'label',
 			name: 'НадписьИспытательныйСрок',
 			text: 'Испытательный срок, месяцев:',
-			style: 'position:absolute;left:192px;top:226px;width:165px;height:19px;',
+			style: 'position:absolute;left:192px;top:226px;width:165px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -248,7 +248,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:10px;top:154px;width:85px;height:19px;',
+			style: 'position:absolute;left:10px;top:154px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -260,7 +260,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжность',
 			text: 'Должность:',
-			style: 'position:absolute;left:11px;top:178px;width:84px;height:19px;',
+			style: 'position:absolute;left:11px;top:178px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -272,7 +272,7 @@
 			xtype: 'label',
 			name: 'НадписьГрафикРаботы',
 			text: 'График работы:',
-			style: 'position:absolute;left:11px;top:202px;width:84px;height:19px;',
+			style: 'position:absolute;left:11px;top:202px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -284,7 +284,7 @@
 			xtype: 'label',
 			name: 'НадписьЗанимаемыхСтавок',
 			text: 'Кол. ставок:',
-			style: 'position:absolute;left:11px;top:226px;width:84px;height:19px;',
+			style: 'position:absolute;left:11px;top:226px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -322,7 +322,7 @@
 			xtype: 'label',
 			name: 'НадписьОбособленноеПодразделение',
 			text: 'Обособл. подр.:',
-			style: 'position:absolute;left:10px;top:5px;width:85px;height:19px;',
+			style: 'position:absolute;left:10px;top:5px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -338,7 +338,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговорКонтракт',
 			text: 'Трудовой договор',
-			style: 'position:absolute;left:10px;top:279px;width:141px;height:19px;',
+			style: 'position:absolute;left:10px;top:279px;width:141px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -375,7 +375,7 @@
 			xtype: 'label',
 			name: 'НадписьВидЗанятости1',
 			text: 'Вид договора гражданско-правового характера',
-			style: 'position:absolute;left:10px;top:0px;width:305px;height:19px;',
+			style: 'position:absolute;left:10px;top:0px;width:305px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -413,7 +413,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Сроки, с:',
-			style: 'position:absolute;left:20px;top:74px;width:85px;height:19px;',
+			style: 'position:absolute;left:20px;top:74px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -425,7 +425,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'по:',
-			style: 'position:absolute;left:204px;top:74px;width:41px;height:19px;',
+			style: 'position:absolute;left:204px;top:74px;width:41px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -437,7 +437,7 @@
 			xtype: 'label',
 			name: 'НадписьВалютаДоговораГПХ',
 			text: 'Валюта:',
-			style: 'position:absolute;left:218px;top:146px;width:41px;height:19px;',
+			style: 'position:absolute;left:218px;top:146px;width:41px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -449,7 +449,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Стоимость:',
-			style: 'position:absolute;left:20px;top:146px;width:85px;height:19px;',
+			style: 'position:absolute;left:20px;top:146px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -467,13 +467,13 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Начисление:',
-			style: 'position:absolute;left:20px;top:98px;width:85px;height:19px;',
+			style: 'position:absolute;left:20px;top:98px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Оплата:',
-			style: 'position:absolute;left:20px;top:122px;width:85px;height:19px;',
+			style: 'position:absolute;left:20px;top:122px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -509,7 +509,7 @@
 			xtype: 'label',
 			name: 'НадписьОтнесениеРасходовКДеятельностиЕНВД',
 			text: 'Отнесение расходов к деятельности ЕНВД:',
-			style: 'position:absolute;left:10px;top:232px;width:224px;height:15px;',
+			style: 'position:absolute;left:10px;top:232px;width:224px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -532,7 +532,7 @@
 			xtype: 'label',
 			name: 'НадписьОбособленноеПодразделение1',
 			text: 'Обособл. подр.:',
-			style: 'position:absolute;left:10px;top:5px;width:85px;height:19px;',
+			style: 'position:absolute;left:10px;top:5px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -554,7 +554,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации2',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:10px;top:29px;width:85px;height:19px;',
+			style: 'position:absolute;left:10px;top:29px;width:85px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -668,7 +668,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчета',
 			text: 'Основной вид начисления:',
-			style: 'position:absolute;left:10px;top:10px;width:137px;height:19px;',
+			style: 'position:absolute;left:10px;top:10px;width:137px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -837,7 +837,7 @@
 			xtype: 'label',
 			name: 'НадписьВалютаТарифнойСтавки',
 			text: 'Валюта:',
-			style: 'position:absolute;left:280px;top:5px;width:43px;height:19px;',
+			style: 'position:absolute;left:280px;top:5px;width:43px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -849,7 +849,7 @@
 			xtype: 'label',
 			name: 'НадписьОклад',
 			text: 'Размер:',
-			style: 'position:absolute;left:10px;top:5px;width:137px;height:19px;',
+			style: 'position:absolute;left:10px;top:5px;width:137px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -861,7 +861,7 @@
 			xtype: 'label',
 			name: 'НадписьТарифныйРазряд',
 			text: 'Тарифный разряд:',
-			style: 'position:absolute;left:10px;top:5px;width:137px;height:19px;',
+			style: 'position:absolute;left:10px;top:5px;width:137px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -877,7 +877,7 @@
 			xtype: 'label',
 			name: 'НадписьСписокНадбавок',
 			text: 'Надбавки по трудовому договору',
-			style: 'position:absolute;left:0px;top:63px;width:402px;height:19px;',
+			style: 'position:absolute;left:0px;top:63px;width:402px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -919,7 +919,7 @@
 			xtype: 'label',
 			name: 'НадписьНачисления',
 			text: 'Начисления',
-			style: 'position:absolute;left:0px;top:0px;width:348px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:348px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -1061,7 +1061,7 @@
 			xtype: 'label',
 			name: 'НадписьВзыскания',
 			text: 'Взыскания',
-			style: 'position:absolute;left:0px;top:203px;width:348px;height:19px;',
+			style: 'position:absolute;left:0px;top:203px;width:348px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -1242,7 +1242,7 @@
 			xtype: 'label',
 			name: 'НадписьГруппаДоступа',
 			text: 'В настройках программы задано ограничение доступа к данным сотрудников. Вам необходимо указать группу, в которую входит новый сотрудник.',
-			style: 'position:absolute;left:10px;top:9px;width:392px;height:39px;',
+			style: 'position:absolute;left:10px;top:9px;width:392px;height:39px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1356,13 +1356,13 @@
 			xtype: 'label',
 			name: 'НадписьСтраховойНомерПФР',
 			text: 'Номер ПФР:',
-			style: 'position:absolute;left:10px;top:27px;width:72px;height:19px;',
+			style: 'position:absolute;left:10px;top:27px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИНН',
 			text: 'ИНН:',
-			style: 'position:absolute;left:10px;top:5px;width:72px;height:19px;',
+			style: 'position:absolute;left:10px;top:5px;width:72px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -1396,7 +1396,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеСотрудника',
 			text: 'Отображать в программе как:',
-			style: 'position:absolute;left:10px;top:42px;width:155px;height:19px;',
+			style: 'position:absolute;left:10px;top:42px;width:155px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1408,7 +1408,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеСотрудника1',
 			text: 'Уточнение:',
-			style: 'position:absolute;left:10px;top:121px;width:60px;height:19px;',
+			style: 'position:absolute;left:10px;top:121px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',

@@ -81,7 +81,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по',
-			style: 'position:absolute;left:889px;top:2px;width:16px;height:19px;',
+			style: 'position:absolute;left:889px;top:2px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',

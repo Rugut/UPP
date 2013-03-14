@@ -134,7 +134,7 @@
 			xtype: 'label',
 			name: 'НадписьДробь',
 			text: '/',
-			style: 'position:absolute;left:323px;top:104px;width:12px;height:19px;',
+			style: 'position:absolute;left:323px;top:104px;width:12px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'radio',

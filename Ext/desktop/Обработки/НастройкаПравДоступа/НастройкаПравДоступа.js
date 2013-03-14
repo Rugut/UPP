@@ -112,7 +112,7 @@
 			xtype: 'label',
 			name: 'НадписьСлужебная',
 			text: 'НадписьСлужебная',
-			style: 'position:absolute;left:6px;top:112px;width:602px;height:45px;',
+			style: 'position:absolute;left:6px;top:112px;width:602px;height:45px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',

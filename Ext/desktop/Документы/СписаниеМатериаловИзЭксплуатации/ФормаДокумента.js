@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:19px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:19px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:314px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:314px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -209,7 +209,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Способ списания расходов:',
-			style: 'position:absolute;left:6px;top:6px;width:94px;height:27px;',
+			style: 'position:absolute;left:6px;top:6px;width:94px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -280,7 +280,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетДтНУ',
 			text: 'Счет (НУ):',
-			style: 'position:absolute;left:312px;top:26px;width:100px;height:19px;',
+			style: 'position:absolute;left:312px;top:26px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -292,7 +292,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоДтНУ1',
 			text: 'Субконто 1 (НУ):',
-			style: 'position:absolute;left:312px;top:50px;width:100px;height:19px;',
+			style: 'position:absolute;left:312px;top:50px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -304,7 +304,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоДтНУ2',
 			text: 'Субконто 2 (НУ):',
-			style: 'position:absolute;left:312px;top:74px;width:100px;height:19px;',
+			style: 'position:absolute;left:312px;top:74px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -316,7 +316,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоДтНУ3',
 			text: 'Субконто 3 (НУ):',
-			style: 'position:absolute;left:312px;top:97px;width:100px;height:19px;',
+			style: 'position:absolute;left:312px;top:97px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -328,7 +328,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Статья затрат:',
-			style: 'position:absolute;left:0px;top:2px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:2px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -340,7 +340,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Ном. группа:',
-			style: 'position:absolute;left:312px;top:0px;width:100px;height:19px;',
+			style: 'position:absolute;left:312px;top:0px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -356,7 +356,7 @@
 			xtype: 'label',
 			name: 'НадписьПричинаСписания',
 			text: 'Причина списания:',
-			style: 'position:absolute;left:319px;top:6px;width:97px;height:19px;',
+			style: 'position:absolute;left:319px;top:6px;width:97px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -372,7 +372,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -384,13 +384,13 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -448,7 +448,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
-			style: 'position:absolute;left:336px;top:78px;width:88px;height:27px;',
+			style: 'position:absolute;left:336px;top:78px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

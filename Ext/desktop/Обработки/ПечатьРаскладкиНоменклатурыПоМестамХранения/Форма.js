@@ -56,7 +56,7 @@
 			xtype: 'label',
 			name: 'НадписьСписокДокументов',
 			text: 'Документ:',
-			style: 'position:absolute;left:8px;top:33px;width:55px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:55px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -159,7 +159,7 @@
 			xtype: 'label',
 			name: 'НадписьСписокСкладов',
 			text: 'Дополнительные склады:',
-			style: 'position:absolute;left:393px;top:33px;width:132px;height:19px;',
+			style: 'position:absolute;left:393px;top:33px;width:132px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -186,7 +186,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоУровнейМестХранения',
 			text: 'Количество уровней мест хранения:',
-			style: 'position:absolute;left:397px;top:338px;width:186px;height:19px;',
+			style: 'position:absolute;left:397px;top:338px;width:186px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

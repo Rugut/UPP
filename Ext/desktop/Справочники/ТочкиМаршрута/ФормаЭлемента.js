@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:319px;top:57px;width:40px;height:19px;',
+			style: 'position:absolute;left:319px;top:57px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьГруппа',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:81px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьРабочийЦентр',
 			text: 'Рабочий центр:',
-			style: 'position:absolute;left:8px;top:105px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

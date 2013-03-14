@@ -29,13 +29,13 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Организация:',
-			style: 'position:absolute;left:6px;top:6px;width:70px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Валюта:',
-			style: 'position:absolute;left:249px;top:50px;width:43px;height:19px;',
+			style: 'position:absolute;left:249px;top:50px;width:43px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -63,7 +63,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'На дату:',
-			style: 'position:absolute;left:471px;top:6px;width:48px;height:19px;',
+			style: 'position:absolute;left:471px;top:6px;width:48px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',

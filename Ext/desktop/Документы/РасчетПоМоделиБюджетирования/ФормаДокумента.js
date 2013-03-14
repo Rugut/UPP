@@ -19,7 +19,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Сценарий:',
-			style: 'position:absolute;left:8px;top:84px;width:113px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:113px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -274,7 +274,7 @@
 			xtype: 'label',
 			name: 'ТекстНомерСтрокиОбороты',
 			text: 'Строка 1 из 5',
-			style: 'position:absolute;left:546px;top:0px;width:180px;height:24px;',
+			style: 'position:absolute;left:546px;top:0px;width:180px;height:24px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -425,7 +425,7 @@
 			xtype: 'label',
 			name: 'Надпись28',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:109px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -443,7 +443,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от',
-			style: 'position:absolute;left:203px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:203px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'tabpanel',

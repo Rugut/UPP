@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:8px;top:33px;width:33px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:33px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:58px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтрольноеЧисло',
 			text: 'Контрольное число:',
-			style: 'position:absolute;left:254px;top:33px;width:107px;height:19px;',
+			style: 'position:absolute;left:254px;top:33px;width:107px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеГруппировки',
 			text: 'Наименование полное:',
-			style: 'position:absolute;left:8px;top:108px;width:123px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:123px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьАмортизационнаяГруппа',
 			text: 'Амортизационная группа:',
-			style: 'position:absolute;left:8px;top:167px;width:133px;height:19px;',
+			style: 'position:absolute;left:8px;top:167px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

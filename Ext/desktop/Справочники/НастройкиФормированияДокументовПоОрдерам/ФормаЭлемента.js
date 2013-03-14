@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:265px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:265px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -357,7 +357,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодДетализации',
 			text: 'Периодичность:',
-			style: 'position:absolute;left:7px;top:54px;width:86px;height:19px;',
+			style: 'position:absolute;left:7px;top:54px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -384,7 +384,7 @@
 			xtype: 'label',
 			name: 'НадписьШаблонРегулярногоДокумента',
 			text: 'Шаблон:',
-			style: 'position:absolute;left:6px;top:30px;width:86px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -396,7 +396,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРегулярногоДокумента',
 			text: 'Вид:',
-			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -414,7 +414,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачалаОбработкиОрдеров',
 			text: 'Начиная с:',
-			style: 'position:absolute;left:396px;top:8px;width:57px;height:19px;',
+			style: 'position:absolute;left:396px;top:8px;width:57px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',

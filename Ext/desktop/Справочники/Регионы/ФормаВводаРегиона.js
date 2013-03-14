@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьРегион',
 			text: 'Регион:',
-			style: 'position:absolute;left:8px;top:79px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:79px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьРайон',
 			text: 'Район:',
-			style: 'position:absolute;left:8px;top:103px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:103px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьГород',
 			text: 'Город:',
-			style: 'position:absolute;left:8px;top:127px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:127px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьНаселенныйПункт',
 			text: 'Нас. пункт:',
-			style: 'position:absolute;left:8px;top:151px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:151px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

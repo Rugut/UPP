@@ -136,13 +136,13 @@
 			xtype: 'label',
 			name: 'Надпись32',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись33',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -160,7 +160,7 @@
 			xtype: 'label',
 			name: 'Надпись34',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -184,13 +184,13 @@
 			xtype: 'label',
 			name: 'Надпись35',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -238,25 +238,25 @@
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРасчет',
 			text: '999 из 999',
-			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРаздел1',
 			text: '999 из 999',
-			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРаздел2',
 			text: '999 из 999',
-			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРаздел3',
 			text: '999 из 999',
-			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -280,7 +280,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРаздел4',
 			text: '999 из 999',
-			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -357,7 +357,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

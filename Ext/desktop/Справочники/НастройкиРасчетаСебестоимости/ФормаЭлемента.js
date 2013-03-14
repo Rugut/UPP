@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:83px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:83px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьВидОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:8px;top:146px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:146px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -142,7 +142,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,7 +154,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -176,7 +176,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:366px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:366px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -188,7 +188,7 @@
 			xtype: 'label',
 			name: 'НадписьНастройкаЗакрытияМесяца',
 			text: 'Настройка закрытия месяца:',
-			style: 'position:absolute;left:8px;top:109px;width:94px;height:30px;',
+			style: 'position:absolute;left:8px;top:109px;width:94px;height:30px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

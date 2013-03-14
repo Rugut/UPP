@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;',
+			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -77,7 +77,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код по ОКПДТР:',
-			style: 'position:absolute;left:8px;top:59px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:59px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'НадписьКодПозицииСписка',
 			text: 'Код позиции списка:',
-			style: 'position:absolute;left:12px;top:124px;width:126px;height:19px;',
+			style: 'position:absolute;left:12px;top:124px;width:126px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,7 +111,7 @@
 			xtype: 'label',
 			name: 'НадписьОснованиеВыслугиЛет',
 			text: 'Основание выслуги лет:',
-			style: 'position:absolute;left:12px;top:148px;width:126px;height:19px;',
+			style: 'position:absolute;left:12px;top:148px;width:126px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,7 +123,7 @@
 			xtype: 'label',
 			name: 'НадписьКатегорияВоинскогоУчета',
 			text: 'Воинский учет (до 2011 года):',
-			style: 'position:absolute;left:12px;top:51px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:51px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжность',
 			text: 'Описание:',
-			style: 'position:absolute;left:12px;top:295px;width:126px;height:19px;',
+			style: 'position:absolute;left:12px;top:295px;width:126px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,7 +147,7 @@
 			xtype: 'label',
 			name: 'НадписьКатегорияСтатистическогоУчета',
 			text: 'Статистический учет:',
-			style: 'position:absolute;left:12px;top:27px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:27px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -159,7 +159,7 @@
 			xtype: 'label',
 			name: 'НадписьКатегорияВоинскогоУчета1',
 			text: 'Воинский учет (с 2011 года):',
-			style: 'position:absolute;left:12px;top:75px;width:150px;height:19px;',
+			style: 'position:absolute;left:12px;top:75px;width:150px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

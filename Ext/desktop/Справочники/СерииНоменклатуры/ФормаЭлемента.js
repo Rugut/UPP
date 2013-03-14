@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:362px;top:33px;width:34px;height:19px;',
+			style: 'position:absolute;left:362px;top:33px;width:34px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,7 +111,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:6px;top:33px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:33px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,7 +123,7 @@
 			xtype: 'label',
 			name: 'НадписьВладелец',
 			text: 'Владелец:',
-			style: 'position:absolute;left:6px;top:6px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'НадписьСерийныйНомер',
 			text: 'Номер серии:',
-			style: 'position:absolute;left:6px;top:62px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:62px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,7 +147,7 @@
 			xtype: 'label',
 			name: 'НадписьСрокГодности',
 			text: 'Срок годности:',
-			style: 'position:absolute;left:6px;top:162px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:162px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -159,7 +159,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерГТД',
 			text: 'Номер ГТД:',
-			style: 'position:absolute;left:6px;top:86px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:86px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -171,7 +171,7 @@
 			xtype: 'label',
 			name: 'НадписьСтрана',
 			text: 'Страна :',
-			style: 'position:absolute;left:6px;top:112px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:112px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:6px;top:137px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:137px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -201,7 +201,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерСертификата',
 			text: 'Сертификат №:',
-			style: 'position:absolute;left:6px;top:27px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:27px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -213,7 +213,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаСертификата',
 			text: 'от',
-			style: 'position:absolute;left:332px;top:27px;width:13px;height:19px;',
+			style: 'position:absolute;left:332px;top:27px;width:13px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -231,13 +231,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаСертификации',
 			text: 'Дата сертификации:',
-			style: 'position:absolute;left:6px;top:53px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:53px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ГиперссылкаЗаписьСертификации',
 			text: '',
-			style: 'position:absolute;left:6px;top:77px;width:431px;height:19px;',
+			style: 'position:absolute;left:6px;top:77px;width:431px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -273,13 +273,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаСертификации1',
 			text: 'Дата сертификации:',
-			style: 'position:absolute;left:6px;top:162px;width:114px;height:19px;',
+			style: 'position:absolute;left:6px;top:162px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ГиперссылкаЗаписьСертификацииВнутр',
 			text: '',
-			style: 'position:absolute;left:6px;top:187px;width:431px;height:19px;',
+			style: 'position:absolute;left:6px;top:187px;width:431px;height:19px;text-align:left;',
 		},
 					]
 				},

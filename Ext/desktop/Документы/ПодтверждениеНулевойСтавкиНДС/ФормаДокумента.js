@@ -69,7 +69,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:319px;width:81px;height:19px;',
+			style: 'position:absolute;left:8px;top:319px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,7 +81,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -93,7 +93,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -105,7 +105,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -117,7 +117,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражатьВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:327px;top:33px;width:72px;height:19px;',
+			style: 'position:absolute;left:327px;top:33px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -193,7 +193,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:6px;top:50px;width:153px;height:19px;',
+			style: 'position:absolute;left:6px;top:50px;width:153px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -205,7 +205,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатьяПрочихРасходов',
 			text: 'Статья прочих расходов (при неподтверждении экспорта):',
-			style: 'position:absolute;left:6px;top:6px;width:152px;height:38px;',
+			style: 'position:absolute;left:6px;top:6px;width:152px;height:38px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

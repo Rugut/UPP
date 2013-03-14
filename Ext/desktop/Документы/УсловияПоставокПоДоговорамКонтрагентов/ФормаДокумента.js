@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговорКонтрагента',
 			text: 'Договор :',
-			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончания',
 			text: 'по:',
-			style: 'position:absolute;left:180px;top:81px;width:16px;height:19px;',
+			style: 'position:absolute;left:180px;top:81px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодичность',
 			text: 'Периодичность:',
-			style: 'position:absolute;left:338px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:338px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -229,7 +229,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаУсловийПоДоговору',
 			text: 'Сумма:',
-			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -241,13 +241,13 @@
 			xtype: 'label',
 			name: 'ВалютаВзаиморасчетов',
 			text: '',
-			style: 'position:absolute;left:180px;top:105px;width:138px;height:19px;',
+			style: 'position:absolute;left:180px;top:105px;width:138px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:331px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:331px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -259,7 +259,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:338px;top:105px;width:88px;height:19px;',
+			style: 'position:absolute;left:338px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -271,7 +271,7 @@
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего,USD:',
-			style: 'position:absolute;left:265px;top:309px;width:300px;height:17px;',
+			style: 'position:absolute;left:265px;top:309px;width:300px;height:17px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',

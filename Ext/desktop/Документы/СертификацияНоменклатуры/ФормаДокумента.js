@@ -42,7 +42,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -54,7 +54,7 @@
 			xtype: 'label',
 			name: 'НадписьСерияНоменклатуры',
 			text: 'Серия:',
-			style: 'position:absolute;left:336px;top:81px;width:109px;height:19px;',
+			style: 'position:absolute;left:336px;top:81px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:322px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:322px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -102,7 +102,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'от:',
-			style: 'position:absolute;left:175px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:175px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -114,7 +114,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:336px;top:57px;width:109px;height:19px;',
+			style: 'position:absolute;left:336px;top:57px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -126,7 +126,7 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:346px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:346px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -138,7 +138,7 @@
 			xtype: 'label',
 			name: 'НадписьРезультатСертификации',
 			text: 'Результат сертификации:',
-			style: 'position:absolute;left:8px;top:101px;width:88px;height:27px;',
+			style: 'position:absolute;left:8px;top:101px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -150,7 +150,7 @@
 			xtype: 'label',
 			name: 'НадписьНормативныйДокумент',
 			text: 'Нормативный документ:',
-			style: 'position:absolute;left:336px;top:101px;width:109px;height:27px;',
+			style: 'position:absolute;left:336px;top:101px;width:109px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,7 +162,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерСертификата',
 			text: 'Сертификат №:',
-			style: 'position:absolute;left:8px;top:129px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -174,7 +174,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаСертификата',
 			text: 'Срок действия с:',
-			style: 'position:absolute;left:336px;top:129px;width:109px;height:19px;',
+			style: 'position:absolute;left:336px;top:129px;width:109px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -186,7 +186,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'по:',
-			style: 'position:absolute;left:544px;top:129px;width:16px;height:19px;',
+			style: 'position:absolute;left:544px;top:129px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -263,7 +263,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументОснование',
 			text: 'Документ - основание:',
-			style: 'position:absolute;left:6px;top:31px;width:79px;height:27px;',
+			style: 'position:absolute;left:6px;top:31px;width:79px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -275,7 +275,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Заключение:',
-			style: 'position:absolute;left:6px;top:59px;width:79px;height:19px;',
+			style: 'position:absolute;left:6px;top:59px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -293,7 +293,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончанияИспытаний',
 			text: 'по:',
-			style: 'position:absolute;left:536px;top:10px;width:16px;height:19px;',
+			style: 'position:absolute;left:536px;top:10px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -311,7 +311,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганСертификации',
 			text: 'Орган по сертификации:',
-			style: 'position:absolute;left:6px;top:6px;width:79px;height:27px;',
+			style: 'position:absolute;left:6px;top:6px;width:79px;height:27px;text-align:left;',
 		},
 					]
 				},

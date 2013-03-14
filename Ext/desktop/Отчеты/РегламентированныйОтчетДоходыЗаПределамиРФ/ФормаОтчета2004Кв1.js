@@ -77,7 +77,7 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:101px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:101px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -89,7 +89,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницФизЛица',
 			text: '999 из 999',
-			style: 'position:absolute;left:273px;top:265px;width:80px;height:19px;',
+			style: 'position:absolute;left:273px;top:265px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -125,7 +125,7 @@
 			xtype: 'label',
 			name: 'Надпись28',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;',
+			style: 'position:absolute;left:116px;top:265px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатикСтраницРаздел1',
 			text: '999 из 999',
-			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;',
+			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -187,7 +187,7 @@
 			xtype: 'label',
 			name: 'Надпись19',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:343px;top:265px;width:136px;height:19px;',
+			style: 'position:absolute;left:343px;top:265px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -241,7 +241,7 @@
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:343px;top:265px;width:136px;height:19px;',
+			style: 'position:absolute;left:343px;top:265px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -339,7 +339,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;',
+			style: 'position:absolute;left:183px;top:6px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

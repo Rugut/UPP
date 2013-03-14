@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:310px;top:59px;width:23px;height:19px;',
+			style: 'position:absolute;left:310px;top:59px;width:23px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:59px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:59px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Родитель:',
-			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

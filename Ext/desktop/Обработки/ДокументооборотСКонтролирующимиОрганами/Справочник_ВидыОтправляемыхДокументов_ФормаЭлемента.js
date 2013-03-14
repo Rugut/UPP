@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:59px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:59px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:32px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'НадписьТипПолучателя',
 			text: 'Тип получателя:',
-			style: 'position:absolute;left:8px;top:399px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:399px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'НадписьТипДокумента',
 			text: 'Тип документа:',
-			style: 'position:absolute;left:8px;top:423px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:423px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'НадписьОписание',
 			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:86px;width:84px;height:15px;',
+			style: 'position:absolute;left:8px;top:86px;width:84px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

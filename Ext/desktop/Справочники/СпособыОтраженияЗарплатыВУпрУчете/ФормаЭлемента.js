@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатьяЗатрат',
 			text: 'Статья затрат:',
-			style: 'position:absolute;left:14px;top:82px;width:160px;height:19px;',
+			style: 'position:absolute;left:14px;top:82px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатурнаяГруппа',
 			text: 'Номенклатурная группа:',
-			style: 'position:absolute;left:14px;top:106px;width:160px;height:19px;',
+			style: 'position:absolute;left:14px;top:106px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьОбъектСтроительства',
 			text: 'Объект строительства:',
-			style: 'position:absolute;left:14px;top:154px;width:160px;height:19px;',
+			style: 'position:absolute;left:14px;top:154px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособРаспределенияЗатрат',
 			text: 'Способ распределения затрат:',
-			style: 'position:absolute;left:14px;top:130px;width:160px;height:19px;',
+			style: 'position:absolute;left:14px;top:130px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -546,13 +546,13 @@
 			xtype: 'label',
 			name: 'НадписьПодключениеИНастройкаТорговогоОборудования',
 			text: 'Подключение и настройка торгового оборудования',
-			style: 'position:absolute;left:8px;top:6px;width:850px;height:26px;',
+			style: 'position:absolute;left:8px;top:6px;width:850px;height:26px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'ДляКомпьютера',
 			text: 'для компьютера ""',
-			style: 'position:absolute;left:8px;top:32px;width:850px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:850px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

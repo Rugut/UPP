@@ -105,7 +105,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Подразделения организации',
-			style: 'position:absolute;left:8px;top:33px;width:223px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:223px;height:19px;text-align:left;',
 		},
 	]
 });

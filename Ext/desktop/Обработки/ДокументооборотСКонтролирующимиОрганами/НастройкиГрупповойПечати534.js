@@ -48,7 +48,7 @@
 			xtype: 'label',
 			name: 'НадписьЧислоЦикловОбмена',
 			text: '',
-			style: 'position:absolute;left:199px;top:9px;width:68px;height:15px;',
+			style: 'position:absolute;left:199px;top:9px;width:68px;height:15px;text-align:center;',
 		},
 		{
 			xtype: 'checkbox',

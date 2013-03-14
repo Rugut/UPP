@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:5px;top:33px;width:95px;height:19px;',
+			style: 'position:absolute;left:5px;top:33px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:202px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:202px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:441px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:441px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -280,7 +280,7 @@
 			xtype: 'label',
 			name: 'НадписьСуммаВзаиморасчетов',
 			text: 'Сумма <нет валюты>:',
-			style: 'position:absolute;left:6px;top:24px;width:103px;height:19px;',
+			style: 'position:absolute;left:6px;top:24px;width:103px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -502,7 +502,7 @@
 			xtype: 'label',
 			name: 'ИнфНадписьКурса',
 			text: '(10000 TRL = 6500 руб.)',
-			style: 'position:absolute;left:208px;top:24px;width:591px;height:19px;',
+			style: 'position:absolute;left:208px;top:24px;width:591px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -571,13 +571,13 @@
 			xtype: 'label',
 			name: 'НадписьДоговор',
 			text: 'Договор:',
-			style: 'position:absolute;left:431px;top:81px;width:96px;height:19px;',
+			style: 'position:absolute;left:431px;top:81px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
-			style: 'position:absolute;left:5px;top:81px;width:95px;height:19px;',
+			style: 'position:absolute;left:5px;top:81px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -595,7 +595,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:5px;top:57px;width:95px;height:19px;',
+			style: 'position:absolute;left:5px;top:57px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -607,7 +607,7 @@
 			xtype: 'label',
 			name: 'НадписьСклад',
 			text: 'Склад:',
-			style: 'position:absolute;left:5px;top:129px;width:95px;height:19px;',
+			style: 'position:absolute;left:5px;top:129px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -619,13 +619,13 @@
 			xtype: 'label',
 			name: 'ИнфНадписьТоварыИтоги',
 			text: 'Оптовые цены, Скидка 20%',
-			style: 'position:absolute;left:8px;top:399px;width:636px;height:17px;',
+			style: 'position:absolute;left:8px;top:399px;width:636px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнфНадписьДолга',
 			text: 'По договору 250 USD, 1 USD = 30 руб.',
-			style: 'position:absolute;left:431px;top:105px;width:363px;height:19px;',
+			style: 'position:absolute;left:431px;top:105px;width:363px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'button',
@@ -637,7 +637,7 @@
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего,USD:',
-			style: 'position:absolute;left:652px;top:399px;width:72px;height:17px;',
+			style: 'position:absolute;left:652px;top:399px;width:72px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -649,7 +649,7 @@
 			xtype: 'label',
 			name: 'НадписьВсегоНДС',
 			text: 'НДС ( в т. ч.):',
-			style: 'position:absolute;left:652px;top:420px;width:72px;height:17px;',
+			style: 'position:absolute;left:652px;top:420px;width:72px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -685,13 +685,13 @@
 			xtype: 'label',
 			name: 'НадписьДатыОплаты',
 			text: 'Оплата:',
-			style: 'position:absolute;left:214px;top:105px;width:49px;height:19px;',
+			style: 'position:absolute;left:214px;top:105px;width:49px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатыОтгрузки',
 			text: 'Поступление:',
-			style: 'position:absolute;left:5px;top:105px;width:95px;height:19px;',
+			style: 'position:absolute;left:5px;top:105px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -744,7 +744,7 @@
 			xtype: 'label',
 			name: 'ИнфНадписьИтоговоеОтклонениеОтПлановойСебестоимости',
 			text: 'Отклонение от плановой себестоимости',
-			style: 'position:absolute;left:8px;top:420px;width:636px;height:17px;',
+			style: 'position:absolute;left:8px;top:420px;width:636px;height:17px;text-align:left;',
 		},
 	]
 });

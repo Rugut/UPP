@@ -42,7 +42,7 @@
 			xtype: 'label',
 			name: 'НадписьДляОрганизации',
 			text: 'Для организации:',
-			style: 'position:absolute;left:8px;top:33px;width:99px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:99px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

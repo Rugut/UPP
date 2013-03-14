@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьДоТекущейДатыКонец',
 			text: 'до текущей даты',
-			style: 'position:absolute;left:406px;top:77px;width:90px;height:19px;',
+			style: 'position:absolute;left:406px;top:77px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

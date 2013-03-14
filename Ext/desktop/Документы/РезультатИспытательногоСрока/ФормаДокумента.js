@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:375px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:375px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:553px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:553px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'toolbar',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:375px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:375px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьСотрудник',
 			text: 'Кандидат:',
-			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаИзменения',
 			text: 'Дата изменения:',
-			style: 'position:absolute;left:260px;top:104px;width:94px;height:19px;',
+			style: 'position:absolute;left:260px;top:104px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

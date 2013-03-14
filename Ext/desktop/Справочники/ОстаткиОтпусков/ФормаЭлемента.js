@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОстатков',
 			text: 'Дата остатков:',
-			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -67,7 +67,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоДней',
 			text: 'Количество дней:',
-			style: 'position:absolute;left:0px;top:96px;width:90px;height:19px;',
+			style: 'position:absolute;left:0px;top:96px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

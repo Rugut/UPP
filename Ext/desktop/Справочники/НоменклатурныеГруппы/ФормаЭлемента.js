@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:59px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:59px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьСтавкаНДС',
 			text: 'Ставка НДС:',
-			style: 'position:absolute;left:8px;top:83px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:83px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:338px;top:59px;width:40px;height:19px;',
+			style: 'position:absolute;left:338px;top:59px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьБазоваяЕдиницаИзмерения',
 			text: 'Базовая единица:',
-			style: 'position:absolute;left:16px;top:131px;width:96px;height:19px;',
+			style: 'position:absolute;left:16px;top:131px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -92,25 +92,25 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаХраненияОстатков',
 			text: 'Единица хранения остатков:',
-			style: 'position:absolute;left:214px;top:131px;width:148px;height:19px;',
+			style: 'position:absolute;left:214px;top:131px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьБазовойЕдиницыИзмерения',
 			text: 'Полное наименование базовой единицы измерения',
-			style: 'position:absolute;left:16px;top:153px;width:178px;height:19px;',
+			style: 'position:absolute;left:16px;top:153px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьЕдиницыХраненияОстатков',
 			text: 'Информация о единице хранения остатков',
-			style: 'position:absolute;left:214px;top:154px;width:230px;height:19px;',
+			style: 'position:absolute;left:214px;top:154px;width:230px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Родитель:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

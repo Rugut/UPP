@@ -48,7 +48,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Дата основной спецификации:',
-			style: 'position:absolute;left:6px;top:24px;width:160px;height:19px;',
+			style: 'position:absolute;left:6px;top:24px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -224,7 +224,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по',
-			style: 'position:absolute;left:273px;top:55px;width:20px;height:19px;',
+			style: 'position:absolute;left:273px;top:55px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'checkbox',
@@ -261,7 +261,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Метод расчета:',
-			style: 'position:absolute;left:6px;top:25px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:25px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -318,7 +318,7 @@
 			xtype: 'label',
 			name: 'НадписьМатериальныеНаПериодС',
 			text: 'За период с',
-			style: 'position:absolute;left:6px;top:47px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:47px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -330,7 +330,7 @@
 			xtype: 'label',
 			name: 'НадписьМатериальныеПо',
 			text: 'по',
-			style: 'position:absolute;left:216px;top:47px;width:20px;height:19px;',
+			style: 'position:absolute;left:216px;top:47px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -342,7 +342,7 @@
 			xtype: 'label',
 			name: 'НадписьМетодОпределенияСтоимости',
 			text: 'Определение стоимости:',
-			style: 'position:absolute;left:6px;top:69px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:69px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -447,7 +447,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Метод расчета:',
-			style: 'position:absolute;left:6px;top:131px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:131px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -471,7 +471,7 @@
 			xtype: 'label',
 			name: 'НадписьОплатаТрудаНаПериодС',
 			text: 'За период с',
-			style: 'position:absolute;left:6px;top:153px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:153px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -483,13 +483,13 @@
 			xtype: 'label',
 			name: 'НадписьОплатаТрудаПо',
 			text: 'по',
-			style: 'position:absolute;left:216px;top:153px;width:20px;height:19px;',
+			style: 'position:absolute;left:216px;top:153px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Метод расчета:',
-			style: 'position:absolute;left:6px;top:213px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:213px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -513,7 +513,7 @@
 			xtype: 'label',
 			name: 'НадписьАмортизацияНаПериодС',
 			text: 'За период с',
-			style: 'position:absolute;left:6px;top:235px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:235px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -525,13 +525,13 @@
 			xtype: 'label',
 			name: 'НадписьАмортизацияПо',
 			text: 'по',
-			style: 'position:absolute;left:216px;top:235px;width:20px;height:19px;',
+			style: 'position:absolute;left:216px;top:235px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Метод расчета:',
-			style: 'position:absolute;left:6px;top:295px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:295px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -555,7 +555,7 @@
 			xtype: 'label',
 			name: 'НадписьПрочиеНаПериодС',
 			text: 'За период с',
-			style: 'position:absolute;left:6px;top:317px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:317px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -567,7 +567,7 @@
 			xtype: 'label',
 			name: 'НадписьПрочиеПо',
 			text: 'по',
-			style: 'position:absolute;left:216px;top:317px;width:20px;height:19px;',
+			style: 'position:absolute;left:216px;top:317px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -579,7 +579,7 @@
 			xtype: 'label',
 			name: 'НадписьТипЦен',
 			text: 'Тип цен номенклатуры:',
-			style: 'position:absolute;left:6px;top:91px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:91px;width:130px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -690,7 +690,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Метод расчета:',
-			style: 'position:absolute;left:6px;top:26px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:26px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -714,7 +714,7 @@
 			xtype: 'label',
 			name: 'НадписьОбщепроизводственныеНаПериодС',
 			text: 'За период с',
-			style: 'position:absolute;left:6px;top:48px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:48px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -726,13 +726,13 @@
 			xtype: 'label',
 			name: 'НадписьОбщепроизводственныеПо',
 			text: 'по',
-			style: 'position:absolute;left:216px;top:48px;width:20px;height:19px;',
+			style: 'position:absolute;left:216px;top:48px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Метод расчета:',
-			style: 'position:absolute;left:6px;top:111px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:111px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -756,7 +756,7 @@
 			xtype: 'label',
 			name: 'НадписьОбщехозяйственныеНаПериодС',
 			text: 'За период с',
-			style: 'position:absolute;left:6px;top:133px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:133px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -768,13 +768,13 @@
 			xtype: 'label',
 			name: 'НадписьОбщехозяйственныеПо',
 			text: 'по',
-			style: 'position:absolute;left:216px;top:133px;width:20px;height:19px;',
+			style: 'position:absolute;left:216px;top:133px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Метод расчета:',
-			style: 'position:absolute;left:6px;top:192px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:192px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -798,7 +798,7 @@
 			xtype: 'label',
 			name: 'НадписьБракВПроизводствеНаПериодС',
 			text: 'За период с',
-			style: 'position:absolute;left:6px;top:214px;width:130px;height:19px;',
+			style: 'position:absolute;left:6px;top:214px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -810,7 +810,7 @@
 			xtype: 'label',
 			name: 'НадписьБракВПроизводствеПо',
 			text: 'по',
-			style: 'position:absolute;left:216px;top:214px;width:20px;height:19px;',
+			style: 'position:absolute;left:216px;top:214px;width:20px;height:19px;text-align:center;',
 		},
 					]
 				},

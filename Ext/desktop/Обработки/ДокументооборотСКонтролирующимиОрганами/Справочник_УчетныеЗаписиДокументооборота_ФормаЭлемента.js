@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'Надпись21',
 			text: 'Почтовый адрес:',
-			style: 'position:absolute;left:8px;top:84px;width:130px;height:19px;',
+			style: 'position:absolute;left:8px;top:84px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
 			text: 'Налоговый орган:',
-			style: 'position:absolute;left:0px;top:0px;width:95px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -181,7 +181,7 @@
 			xtype: 'label',
 			name: 'НадписьСертификатРуководителя',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:0px;top:118px;width:130px;height:19px;',
+			style: 'position:absolute;left:0px;top:118px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,7 +212,7 @@
 			xtype: 'label',
 			name: 'НадписьСертификатДляЦелейШифрования',
 			text: 'Для целей шифрования:',
-			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -239,7 +239,7 @@
 			xtype: 'label',
 			name: 'НадписьСертификатГлавногоБухгалтера',
 			text: 'Главный бухгалтер:',
-			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -276,7 +276,7 @@
 			xtype: 'label',
 			name: 'Надпись23',
 			text: 'Сервер документооборота:',
-			style: 'position:absolute;left:0px;top:23px;width:140px;height:19px;',
+			style: 'position:absolute;left:0px;top:23px;width:140px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -290,7 +290,7 @@
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'Назначение:',
-			style: 'position:absolute;left:8px;top:34px;width:130px;height:15px;',
+			style: 'position:absolute;left:8px;top:34px;width:130px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -338,7 +338,7 @@
 			xtype: 'label',
 			name: 'НадписьКодАбонента',
 			text: 'Идентификатор абонента:',
-			style: 'position:absolute;left:0px;top:0px;width:142px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -350,7 +350,7 @@
 			xtype: 'label',
 			name: 'НадписьКодСпецоператора',
 			text: 'Идентификатор спецоператора:',
-			style: 'position:absolute;left:444px;top:0px;width:169px;height:19px;',
+			style: 'position:absolute;left:444px;top:0px;width:169px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -383,7 +383,7 @@
 			xtype: 'label',
 			name: 'НадписьИнтервалАвтообмена',
 			text: '',
-			style: 'position:absolute;left:147px;top:40px;width:499px;height:15px;',
+			style: 'position:absolute;left:147px;top:40px;width:499px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -426,7 +426,7 @@
 			xtype: 'label',
 			name: 'Надпись38',
 			text: 'Спецоператор связи:',
-			style: 'position:absolute;left:8px;top:57px;width:130px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

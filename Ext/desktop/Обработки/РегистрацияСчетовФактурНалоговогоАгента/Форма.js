@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:349px;top:33px;width:85px;height:19px;',
+			style: 'position:absolute;left:349px;top:33px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалоПериода',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКонецПериода',
 			text: 'по:',
-			style: 'position:absolute;left:148px;top:33px;width:15px;height:19px;',
+			style: 'position:absolute;left:148px;top:33px;width:15px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -138,7 +138,7 @@
 			xtype: 'label',
 			name: 'Сумма',
 			text: '1180,00',
-			style: 'position:absolute;left:613px;top:349px;width:120px;height:19px;',
+			style: 'position:absolute;left:613px;top:349px;width:120px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -150,7 +150,7 @@
 			xtype: 'label',
 			name: 'НДС',
 			text: '180,00',
-			style: 'position:absolute;left:613px;top:373px;width:120px;height:19px;',
+			style: 'position:absolute;left:613px;top:373px;width:120px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'button',

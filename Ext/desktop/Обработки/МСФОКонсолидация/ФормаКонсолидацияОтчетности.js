@@ -42,7 +42,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период консолидации отчетности:',
-			style: 'position:absolute;left:0px;top:21px;width:180px;height:19px;',
+			style: 'position:absolute;left:0px;top:21px;width:180px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -234,7 +234,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон5',
 			text: 'Итого сумма взаимных займов за :',
-			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -254,7 +254,7 @@
 			xtype: 'label',
 			name: 'ИтогоПред5',
 			text: 'Итого сумма взаимных займов за :',
-			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -286,7 +286,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон6',
 			text: 'Итого сумма взаимных займов за ',
-			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -306,7 +306,7 @@
 			xtype: 'label',
 			name: 'ИтогоПред6',
 			text: 'Итого сумма взаимных займов за ',
-			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -344,7 +344,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон7',
 			text: 'Итого сумма взаимных авансов за ',
-			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -364,7 +364,7 @@
 			xtype: 'label',
 			name: 'ИтогоПред7',
 			text: 'Итого сумма взаимных авансов за ',
-			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -390,7 +390,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон8',
 			text: 'Итого сумма взаимных авансов за ',
-			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -410,7 +410,7 @@
 			xtype: 'label',
 			name: 'ИтогоПред8',
 			text: 'Итого сумма взаимных авансов за ',
-			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -442,7 +442,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон11',
 			text: 'Итого сумма взаимной выручки за ',
-			style: 'position:absolute;left:0px;top:197px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:197px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -462,7 +462,7 @@
 			xtype: 'label',
 			name: 'ИтогоПред11',
 			text: 'Итого сумма взаимной выручки за ',
-			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -494,7 +494,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон12',
 			text: 'Итого сумма взаимной себест. за ',
-			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -514,7 +514,7 @@
 			xtype: 'label',
 			name: 'ИтогоПред12',
 			text: 'Итого сумма взаимной себест. за ',
-			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:375px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -546,7 +546,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон21',
 			text: 'Итого сумма взаимных дивидендов за ',
-			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:186px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -566,7 +566,7 @@
 			xtype: 'label',
 			name: 'ИтогоПред21',
 			text: 'Итого сумма взаимных дивидендов за ',
-			style: 'position:absolute;left:0px;top:374px;width:220px;height:19px;',
+			style: 'position:absolute;left:0px;top:374px;width:220px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -584,7 +584,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон41',
 			text: 'Текущая дебиторская задолженность:',
-			style: 'position:absolute;left:0px;top:22px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:22px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -596,7 +596,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон42',
 			text: 'Текущая кредиторская задолженность:',
-			style: 'position:absolute;left:0px;top:46px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:46px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -608,7 +608,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон43',
 			text: 'Долгосрочная дебиторская задолженность:',
-			style: 'position:absolute;left:0px;top:70px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:70px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -620,7 +620,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон44',
 			text: 'Долгосрочная кредиторская задолженность:',
-			style: 'position:absolute;left:0px;top:94px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:94px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -632,7 +632,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон45',
 			text: 'Текущая дебиторская задолженность:',
-			style: 'position:absolute;left:0px;top:174px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:174px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -644,7 +644,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон46',
 			text: 'Текущая кредиторская задолженность:',
-			style: 'position:absolute;left:0px;top:198px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:198px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -656,7 +656,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон47',
 			text: 'Долгосрочная дебиторская задолженность:',
-			style: 'position:absolute;left:0px;top:222px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:222px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -668,7 +668,7 @@
 			xtype: 'label',
 			name: 'ИтогоКон48',
 			text: 'Долгосрочная кредиторская задолженность:',
-			style: 'position:absolute;left:0px;top:246px;width:237px;height:19px;',
+			style: 'position:absolute;left:0px;top:246px;width:237px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:526px;top:56px;width:24px;height:19px;',
+			style: 'position:absolute;left:526px;top:56px;width:24px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:139px;top:56px;width:80px;height:19px;',
+			style: 'position:absolute;left:139px;top:56px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:196px;width:124px;height:19px;',
+			style: 'position:absolute;left:8px;top:196px;width:124px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьАртикул',
 			text: 'Артикул:',
-			style: 'position:absolute;left:139px;top:79px;width:80px;height:19px;',
+			style: 'position:absolute;left:139px;top:79px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:424px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:424px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -172,13 +172,13 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:139px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:139px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьБазоваяЕдиницаИзмерения',
 			text: 'Базовая ед.:',
-			style: 'position:absolute;left:139px;top:102px;width:80px;height:19px;',
+			style: 'position:absolute;left:139px;top:102px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -225,7 +225,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерГТД',
 			text: 'Номер ГТД:',
-			style: 'position:absolute;left:302px;top:30px;width:125px;height:19px;',
+			style: 'position:absolute;left:302px;top:30px;width:125px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -237,7 +237,7 @@
 			xtype: 'label',
 			name: 'НадписьСтранаПроисхождения',
 			text: 'Страна :',
-			style: 'position:absolute;left:6px;top:30px;width:125px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:125px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -249,7 +249,7 @@
 			xtype: 'label',
 			name: 'НадписьСтавкаНДС',
 			text: 'НДС:',
-			style: 'position:absolute;left:6px;top:6px;width:125px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:125px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -273,7 +273,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатурнаяГруппаЗатрат',
 			text: 'Номенклатурная группа затрат:',
-			style: 'position:absolute;left:299px;top:70px;width:125px;height:27px;',
+			style: 'position:absolute;left:299px;top:70px;width:125px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -285,7 +285,7 @@
 			xtype: 'label',
 			name: 'НадписьНазначениеИспользования',
 			text: 'Назначение использования:',
-			style: 'position:absolute;left:6px;top:146px;width:124px;height:27px;',
+			style: 'position:absolute;left:6px;top:146px;width:124px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -297,7 +297,7 @@
 			xtype: 'label',
 			name: 'НадписьНаправлениеВыпуска',
 			text: 'Направление выпуска:',
-			style: 'position:absolute;left:6px;top:98px;width:125px;height:19px;',
+			style: 'position:absolute;left:6px;top:98px;width:125px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -309,7 +309,7 @@
 			xtype: 'label',
 			name: 'НадписьНаправлениеСписанияВыпущеннойПродукции',
 			text: 'Направление списания выпущенной продукции:',
-			style: 'position:absolute;left:299px;top:97px;width:126px;height:29px;',
+			style: 'position:absolute;left:299px;top:97px;width:126px;height:29px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -321,7 +321,7 @@
 			xtype: 'label',
 			name: 'НадписьИмпортер',
 			text: 'Импортер:',
-			style: 'position:absolute;left:302px;top:6px;width:125px;height:19px;',
+			style: 'position:absolute;left:302px;top:6px;width:125px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -375,7 +375,7 @@
 			xtype: 'label',
 			name: 'НадписьВесовойКоэффициентВхождения',
 			text: 'Вес вхождения в группу:',
-			style: 'position:absolute;left:378px;top:154px;width:132px;height:19px;',
+			style: 'position:absolute;left:378px;top:154px;width:132px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -454,7 +454,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокПрисвоенияСерийногоНомера',
 			text: 'Порядок присвоения серийного номера:',
-			style: 'position:absolute;left:6px;top:109px;width:209px;height:19px;',
+			style: 'position:absolute;left:6px;top:109px;width:209px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1566,7 +1566,7 @@
 			xtype: 'label',
 			name: 'НадписьПроизводитель',
 			text: 'Производитель:',
-			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1626,13 +1626,13 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаХраненияОстатков',
 			text: 'Ед. хран. ост.:',
-			style: 'position:absolute;left:139px;top:127px;width:80px;height:19px;',
+			style: 'position:absolute;left:139px;top:127px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьЕдиницаДляОтчетов',
 			text: 'Ед. для отчетов:',
-			style: 'position:absolute;left:139px;top:148px;width:82px;height:19px;',
+			style: 'position:absolute;left:139px;top:148px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -1648,7 +1648,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаИзмеренияМест',
 			text: ' Ед. мест:',
-			style: 'position:absolute;left:137px;top:172px;width:82px;height:19px;',
+			style: 'position:absolute;left:137px;top:172px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

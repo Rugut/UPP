@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:340px;top:79px;width:40px;height:19px;',
+			style: 'position:absolute;left:340px;top:79px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:79px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:79px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьВладелец',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаПоКлассификатору',
 			text: 'По классификатору:',
-			style: 'position:absolute;left:8px;top:56px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьВес',
 			text: 'Вес:',
-			style: 'position:absolute;left:8px;top:102px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:102px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьКоэффициент',
 			text: 'Содержит:',
-			style: 'position:absolute;left:8px;top:148px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:148px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьОбъем',
 			text: 'Объем:',
-			style: 'position:absolute;left:8px;top:125px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:125px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьПорогОкругления',
 			text: 'Округлять с:',
-			style: 'position:absolute;left:8px;top:171px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:171px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

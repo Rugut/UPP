@@ -607,7 +607,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодичностьПродаж',
 			text: 'Периодичность продаж:',
-			style: 'position:absolute;left:203px;top:27px;width:125px;height:19px;',
+			style: 'position:absolute;left:203px;top:27px;width:125px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -619,7 +619,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодов',
 			text: 'Периодов:',
-			style: 'position:absolute;left:425px;top:27px;width:55px;height:19px;',
+			style: 'position:absolute;left:425px;top:27px;width:55px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -643,7 +643,7 @@
 			xtype: 'label',
 			name: 'НадписьГрафик',
 			text: 'График:',
-			style: 'position:absolute;left:649px;top:27px;width:45px;height:19px;',
+			style: 'position:absolute;left:649px;top:27px;width:45px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

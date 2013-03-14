@@ -187,7 +187,7 @@
 			xtype: 'label',
 			name: 'Надпись33',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:353px;top:265px;width:132px;height:19px;',
+			style: 'position:absolute;left:353px;top:265px;width:132px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -257,7 +257,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:183px;top:7px;width:80px;height:19px;',
+			style: 'position:absolute;left:183px;top:7px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

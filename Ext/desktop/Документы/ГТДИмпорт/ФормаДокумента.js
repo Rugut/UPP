@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:382px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:382px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -129,7 +129,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерГТД',
 			text: 'Номер ГТД:',
-			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -177,7 +177,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -467,7 +467,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаРасчетовСКонтрагентом',
 			text: 'Счет учета расчетов с таможней:',
-			style: 'position:absolute;left:12px;top:27px;width:228px;height:19px;',
+			style: 'position:absolute;left:12px;top:27px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -515,7 +515,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Счет учета расчетов с таможней (вал.):',
-			style: 'position:absolute;left:12px;top:123px;width:228px;height:19px;',
+			style: 'position:absolute;left:12px;top:123px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -527,7 +527,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Счет учета расходов по штрафам (БУ) (вал.):',
-			style: 'position:absolute;left:12px;top:147px;width:228px;height:19px;',
+			style: 'position:absolute;left:12px;top:147px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -539,7 +539,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Счет учета расходов по штрафам (НУ) (вал.):',
-			style: 'position:absolute;left:12px;top:171px;width:228px;height:19px;',
+			style: 'position:absolute;left:12px;top:171px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -551,7 +551,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Статья прочих расходов по штрафам (вал.):',
-			style: 'position:absolute;left:337px;top:171px;width:223px;height:19px;',
+			style: 'position:absolute;left:337px;top:171px;width:223px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -567,13 +567,13 @@
 			xtype: 'label',
 			name: 'НадписьДоговор',
 			text: 'Валютный депозит (EUR):',
-			style: 'position:absolute;left:8px;top:81px;width:84px;height:35px;',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:35px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Таможня:',
-			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -591,7 +591,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -603,7 +603,7 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:336px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:336px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -614,7 +614,7 @@
 			xtype: 'label',
 			name: 'НадписьДоговорРегл',
 			text: 'Депозит на таможне (руб.):',
-			style: 'position:absolute;left:336px;top:81px;width:84px;height:35px;',
+			style: 'position:absolute;left:336px;top:81px;width:84px;height:35px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

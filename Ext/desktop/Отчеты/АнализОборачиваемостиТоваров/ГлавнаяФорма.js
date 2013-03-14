@@ -118,13 +118,13 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'по:',
-			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -148,7 +148,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатусТоваров',
 			text: 'Статус товаров:',
-			style: 'position:absolute;left:314px;top:57px;width:83px;height:19px;',
+			style: 'position:absolute;left:314px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 	]
 });

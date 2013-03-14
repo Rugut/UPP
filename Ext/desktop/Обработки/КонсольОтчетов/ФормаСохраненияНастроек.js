@@ -19,7 +19,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Наименование настройки:',
-			style: 'position:absolute;left:8px;top:8px;width:144px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:144px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

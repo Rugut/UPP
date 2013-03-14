@@ -69,13 +69,13 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Распределить:',
-			style: 'position:absolute;left:6px;top:6px;width:79px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Тип цен:',
-			style: 'position:absolute;left:11px;top:199px;width:61px;height:19px;',
+			style: 'position:absolute;left:11px;top:199px;width:61px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -163,7 +163,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Процент скидки:',
-			style: 'position:absolute;left:11px;top:223px;width:100px;height:19px;',
+			style: 'position:absolute;left:11px;top:223px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

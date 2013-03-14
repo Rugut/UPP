@@ -87,7 +87,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:366px;top:35px;width:24px;height:19px;',
+			style: 'position:absolute;left:366px;top:35px;width:24px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:35px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:35px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -128,7 +128,7 @@
 			xtype: 'label',
 			name: 'НадписьФизЛицо',
 			text: 'Физическое лицо:',
-			style: 'position:absolute;left:366px;top:438px;width:118px;height:19px;',
+			style: 'position:absolute;left:366px;top:438px;width:118px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -140,7 +140,7 @@
 			xtype: 'label',
 			name: 'НадписьГруппаЗадач',
 			text: 'Группа кандидатов:',
-			style: 'position:absolute;left:366px;top:414px;width:118px;height:19px;',
+			style: 'position:absolute;left:366px;top:414px;width:118px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -152,7 +152,7 @@
 			xtype: 'label',
 			name: 'НадписьИсточникИнформации',
 			text: 'Источник информации:',
-			style: 'position:absolute;left:366px;top:390px;width:118px;height:19px;',
+			style: 'position:absolute;left:366px;top:390px;width:118px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -175,7 +175,7 @@
 			xtype: 'label',
 			name: 'НадписьСостояние',
 			text: 'Результат:',
-			style: 'position:absolute;left:359px;top:28px;width:57px;height:19px;',
+			style: 'position:absolute;left:359px;top:28px;width:57px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -187,7 +187,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОткрытия',
 			text: 'Дата поступления кандидата:',
-			style: 'position:absolute;left:359px;top:76px;width:155px;height:19px;',
+			style: 'position:absolute;left:359px;top:76px;width:155px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -199,7 +199,7 @@
 			xtype: 'label',
 			name: 'НадписьВажность',
 			text: 'Важность:',
-			style: 'position:absolute;left:359px;top:52px;width:57px;height:19px;',
+			style: 'position:absolute;left:359px;top:52px;width:57px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -211,7 +211,7 @@
 			xtype: 'label',
 			name: 'НадписьВакансия',
 			text: 'Вакансия:',
-			style: 'position:absolute;left:6px;top:28px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:28px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -223,7 +223,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжность',
 			text: 'Должность:',
-			style: 'position:absolute;left:6px;top:52px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:52px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -246,7 +246,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -262,7 +262,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:6px;top:100px;width:100px;height:19px;',
+			style: 'position:absolute;left:6px;top:100px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -318,7 +318,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:366px;top:462px;width:118px;height:19px;',
+			style: 'position:absolute;left:366px;top:462px;width:118px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

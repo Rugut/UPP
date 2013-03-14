@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:404px;top:33px;width:24px;height:19px;',
+			style: 'position:absolute;left:404px;top:33px;width:24px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -104,19 +104,19 @@
 			xtype: 'label',
 			name: 'НадписьРуководитель',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:8px;top:57px;width:81px;height:15px;',
+			style: 'position:absolute;left:8px;top:57px;width:81px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРуководительТекст',
 			text: '',
-			style: 'position:absolute;left:91px;top:57px;width:427px;height:34px;',
+			style: 'position:absolute;left:91px;top:57px;width:427px;height:34px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидПодразделения',
 			text: 'Вид:',
-			style: 'position:absolute;left:8px;top:93px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:93px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -128,7 +128,7 @@
 			xtype: 'label',
 			name: 'НадписьВидЦФО',
 			text: 'Вид ЦФО:',
-			style: 'position:absolute;left:8px;top:120px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:120px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -140,7 +140,7 @@
 			xtype: 'label',
 			name: 'НадписьОсновнойПроект',
 			text: 'Основной проект:',
-			style: 'position:absolute;left:8px;top:143px;width:84px;height:27px;',
+			style: 'position:absolute;left:8px;top:143px;width:84px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

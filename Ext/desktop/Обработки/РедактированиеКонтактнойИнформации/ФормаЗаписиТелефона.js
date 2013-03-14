@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Код страны:',
-			style: 'position:absolute;left:14px;top:129px;width:88px;height:19px;',
+			style: 'position:absolute;left:14px;top:129px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Код города:',
-			style: 'position:absolute;left:14px;top:153px;width:88px;height:19px;',
+			style: 'position:absolute;left:14px;top:153px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Номер :',
-			style: 'position:absolute;left:14px;top:105px;width:88px;height:19px;',
+			style: 'position:absolute;left:14px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Внутренний:',
-			style: 'position:absolute;left:182px;top:105px;width:80px;height:19px;',
+			style: 'position:absolute;left:182px;top:105px;width:80px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -92,7 +92,7 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:205px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:205px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -104,7 +104,7 @@
 			xtype: 'label',
 			name: 'Надпись17',
 			text: 'Вид телефона:',
-			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

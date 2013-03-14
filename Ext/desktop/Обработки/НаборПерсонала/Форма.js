@@ -176,7 +176,7 @@
 			xtype: 'label',
 			name: 'НадписьИнформацияОПисьме',
 			text: 'С данным отправителем ранее уже велась переписка',
-			style: 'position:absolute;left:302px;top:31px;width:180px;height:33px;',
+			style: 'position:absolute;left:302px;top:31px;width:180px;height:33px;text-align:left;',
 		},
 					]
 				},

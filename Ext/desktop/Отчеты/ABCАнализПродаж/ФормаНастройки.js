@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -59,7 +59,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'по:',
-			style: 'position:absolute;left:150px;top:6px;width:16px;height:19px;',
+			style: 'position:absolute;left:150px;top:6px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -114,13 +114,13 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Анализируемый параметр:',
-			style: 'position:absolute;left:6px;top:74px;width:140px;height:19px;',
+			style: 'position:absolute;left:6px;top:74px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Анализируемый объект:',
-			style: 'position:absolute;left:6px;top:97px;width:140px;height:19px;',
+			style: 'position:absolute;left:6px;top:97px;width:140px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -252,7 +252,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'А-класс:',
-			style: 'position:absolute;left:12px;top:27px;width:48px;height:19px;',
+			style: 'position:absolute;left:12px;top:27px;width:48px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -264,7 +264,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'B-класс:',
-			style: 'position:absolute;left:12px;top:51px;width:48px;height:19px;',
+			style: 'position:absolute;left:12px;top:51px;width:48px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -276,7 +276,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'С-класс:',
-			style: 'position:absolute;left:12px;top:75px;width:48px;height:19px;',
+			style: 'position:absolute;left:12px;top:75px;width:48px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -288,19 +288,19 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: '%',
-			style: 'position:absolute;left:147px;top:51px;width:13px;height:19px;',
+			style: 'position:absolute;left:147px;top:51px;width:13px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись10',
 			text: '%',
-			style: 'position:absolute;left:147px;top:27px;width:13px;height:19px;',
+			style: 'position:absolute;left:147px;top:27px;width:13px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись11',
 			text: '%',
-			style: 'position:absolute;left:147px;top:75px;width:13px;height:19px;',
+			style: 'position:absolute;left:147px;top:75px;width:13px;height:19px;text-align:left;',
 		},
 					]
 				},

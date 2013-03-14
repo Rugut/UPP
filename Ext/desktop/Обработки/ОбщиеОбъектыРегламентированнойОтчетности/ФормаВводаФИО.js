@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьФИО',
 			text: 'ФИО:',
-			style: 'position:absolute;left:8px;top:7px;width:36px;height:19px;',
+			style: 'position:absolute;left:8px;top:7px;width:36px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

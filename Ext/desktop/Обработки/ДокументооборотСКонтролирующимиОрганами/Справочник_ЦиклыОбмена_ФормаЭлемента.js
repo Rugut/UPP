@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:8px;top:52px;width:108px;height:15px;',
+			style: 'position:absolute;left:8px;top:52px;width:108px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:71px;width:108px;height:15px;',
+			style: 'position:absolute;left:8px;top:71px;width:108px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -43,7 +43,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:14px;top:133px;width:102px;height:15px;',
+			style: 'position:absolute;left:14px;top:133px;width:102px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'НадписьПомеченНаУдаление',
 			text: 'Цикл обмена помечен на удаление',
-			style: 'position:absolute;left:529px;top:33px;width:181px;height:15px;',
+			style: 'position:absolute;left:529px;top:33px;width:181px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -246,7 +246,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьПротоколКвитанцияПФР',
 			text: 'Сформировать квитанцию',
-			style: 'position:absolute;left:564px;top:29px;width:138px;height:15px;',
+			style: 'position:absolute;left:564px;top:29px;width:138px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -274,7 +274,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьПодтверждениеполученияНеформализованногоСообщенияПФР',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -328,7 +328,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьПодтверждениеНаНеформализованныйДокумент',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -370,13 +370,13 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатПриемаНП',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПодтверждениеНП',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -405,7 +405,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатОбработкиНП',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -457,13 +457,13 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатПриемаНП2НДФЛ',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПодтверждениеНП2НДФЛ',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -517,7 +517,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПодтверждениеНПОбращение',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -546,7 +546,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатПриемаНПОбращение',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:29px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:29px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -562,19 +562,19 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьПодтверждениеНаПодтверждениеОтправки',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьПереподписанноеПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьПодтверждениеНаПодтверждениеОтправкиЗапроса',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -592,7 +592,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПисьмоНП',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -628,7 +628,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРассылкаНП',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -694,13 +694,13 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатПриемаНПЗапрос',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПодтверждениеНПЗапрос',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -729,7 +729,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатОбработкиНПЗапрос',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -781,13 +781,13 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатПриемаНПЗаявление',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПодтверждениеНПЗаявление',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -816,7 +816,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатОбработкиРФНП',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -849,7 +849,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеОбОтзывеЗаявлениеРФНП',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -882,7 +882,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеРезультатОбработкиТСНП',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:27px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -922,13 +922,13 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеДокументНП',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьРезультатПриемаДокументНП',
 			text: 'Сформировать результат приема',
-			style: 'position:absolute;left:524px;top:45px;width:178px;height:15px;',
+			style: 'position:absolute;left:524px;top:45px;width:178px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -988,13 +988,13 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПротоколФСГС',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:108px;width:139px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПодтверждениеДатыОтправкиФСГС',
 			text: 'Сформировать извещение',
-			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;',
+			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -1030,7 +1030,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПодтверждениеДатыОтправкиПисьмаФСГС',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:45px;width:161px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -1054,7 +1054,7 @@
 			xtype: 'label',
 			name: 'НадписьСформироватьИзвещениеПисьмоВходящееФСГС',
 			text: 'Сформировать подтверждение',
-			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;',
+			style: 'position:absolute;left:541px;top:24px;width:161px;height:15px;text-align:right;',
 		},
 					]
 				},
@@ -1074,7 +1074,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование1',
 			text: 'Идентификатор:',
-			style: 'position:absolute;left:8px;top:90px;width:108px;height:15px;',
+			style: 'position:absolute;left:8px;top:90px;width:108px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -1091,7 +1091,7 @@
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
 			text: 'Налоговый орган:',
-			style: 'position:absolute;left:6px;top:0px;width:102px;height:15px;',
+			style: 'position:absolute;left:6px;top:0px;width:102px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1109,7 +1109,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганПФР',
 			text: 'Орган ПФР:',
-			style: 'position:absolute;left:6px;top:0px;width:102px;height:15px;',
+			style: 'position:absolute;left:6px;top:0px;width:102px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1127,7 +1127,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганФСГС',
 			text: 'Орган ФСГС:',
-			style: 'position:absolute;left:6px;top:0px;width:102px;height:15px;',
+			style: 'position:absolute;left:6px;top:0px;width:102px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -1143,7 +1143,7 @@
 			xtype: 'label',
 			name: 'НадписьВид',
 			text: 'Вид:',
-			style: 'position:absolute;left:8px;top:33px;width:108px;height:15px;',
+			style: 'position:absolute;left:8px;top:33px;width:108px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',

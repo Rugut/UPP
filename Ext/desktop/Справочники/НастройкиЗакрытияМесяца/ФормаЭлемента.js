@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:2px;top:3px;width:86px;height:19px;',
+			style: 'position:absolute;left:2px;top:3px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачалаДействияНастройки',
 			text: 'Действует с:',
-			style: 'position:absolute;left:2px;top:27px;width:86px;height:19px;',
+			style: 'position:absolute;left:2px;top:27px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -117,7 +117,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражениеВУчетах',
 			text: 'Отражать в:',
-			style: 'position:absolute;left:223px;top:28px;width:66px;height:19px;',
+			style: 'position:absolute;left:223px;top:28px;width:66px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',

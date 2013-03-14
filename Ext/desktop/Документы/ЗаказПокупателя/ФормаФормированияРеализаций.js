@@ -217,7 +217,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровРеализации',
 			text: 'количество экземпляров:',
-			style: 'position:absolute;left:112px;top:149px;width:136px;height:19px;',
+			style: 'position:absolute;left:112px;top:149px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -229,7 +229,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровДокументаОрдер',
 			text: 'количество экземпляров:',
-			style: 'position:absolute;left:487px;top:149px;width:136px;height:19px;',
+			style: 'position:absolute;left:487px;top:149px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -241,7 +241,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровСФ',
 			text: 'количество экземпляров:',
-			style: 'position:absolute;left:112px;top:319px;width:136px;height:19px;',
+			style: 'position:absolute;left:112px;top:319px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -253,7 +253,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличествоЭкземпляровПКО',
 			text: 'количество экземпляров:',
-			style: 'position:absolute;left:487px;top:319px;width:136px;height:19px;',
+			style: 'position:absolute;left:487px;top:319px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

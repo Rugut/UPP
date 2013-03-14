@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Вид МПЗ:',
-			style: 'position:absolute;left:6px;top:57px;width:77px;height:19px;',
+			style: 'position:absolute;left:6px;top:57px;width:77px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'radio',
@@ -53,7 +53,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:6px;top:32px;width:76px;height:19px;',
+			style: 'position:absolute;left:6px;top:32px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -65,7 +65,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:6px;width:57px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:57px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -77,7 +77,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаКон',
 			text: 'по:',
-			style: 'position:absolute;left:186px;top:6px;width:20px;height:19px;',
+			style: 'position:absolute;left:186px;top:6px;width:20px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

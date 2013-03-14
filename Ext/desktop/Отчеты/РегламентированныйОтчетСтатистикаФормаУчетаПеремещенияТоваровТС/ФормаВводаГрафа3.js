@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'НадписьОтвЛицоФинУрРФ_КПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:229px;top:197px;width:55px;height:19px;',
+			style: 'position:absolute;left:229px;top:197px;width:55px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'tabpanel',

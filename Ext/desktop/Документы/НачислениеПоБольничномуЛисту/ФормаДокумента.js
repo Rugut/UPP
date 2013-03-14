@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер документа:',
-			style: 'position:absolute;left:643px;top:33px;width:98px;height:19px;',
+			style: 'position:absolute;left:643px;top:33px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьОт',
 			text: 'от:',
-			style: 'position:absolute;left:831px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:831px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:339px;top:56px;width:98px;height:19px;',
+			style: 'position:absolute;left:339px;top:56px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:643px;top:56px;width:98px;height:19px;',
+			style: 'position:absolute;left:643px;top:56px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'Месяц начисления:',
-			style: 'position:absolute;left:339px;top:33px;width:101px;height:19px;',
+			style: 'position:absolute;left:339px;top:33px;width:101px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'НадписьРаботник',
 			text: 'Сотрудник:',
-			style: 'position:absolute;left:8px;top:79px;width:101px;height:19px;',
+			style: 'position:absolute;left:8px;top:79px;width:101px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -169,7 +169,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:0px;top:346px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:346px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -181,7 +181,7 @@
 			xtype: 'label',
 			name: 'НадписьПричинаНетрудоспособности',
 			text: 'Причина нетрудоспособности:',
-			style: 'position:absolute;left:0px;top:13px;width:159px;height:19px;',
+			style: 'position:absolute;left:0px;top:13px;width:159px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -199,7 +199,7 @@
 			xtype: 'label',
 			name: 'НадписьСлучайУходаЗаБольнымРебенком',
 			text: 'В случае ухода за ребенком:',
-			style: 'position:absolute;left:401px;top:13px;width:149px;height:19px;',
+			style: 'position:absolute;left:401px;top:13px;width:149px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -217,7 +217,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончания',
 			text: 'по:',
-			style: 'position:absolute;left:270px;top:63px;width:16px;height:19px;',
+			style: 'position:absolute;left:270px;top:63px;width:16px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -241,7 +241,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНарушенияРежима',
 			text: 'Снизить пособие за нарушение режима с:',
-			style: 'position:absolute;left:410px;top:113px;width:217px;height:19px;',
+			style: 'position:absolute;left:410px;top:113px;width:217px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -301,7 +301,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
 			text: 'Дата начала нетрудоспособности:',
-			style: 'position:absolute;left:0px;top:38px;width:175px;height:19px;',
+			style: 'position:absolute;left:0px;top:38px;width:175px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -313,7 +313,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНачала2',
 			text: 'Освобождение от работы с:',
-			style: 'position:absolute;left:0px;top:63px;width:146px;height:19px;',
+			style: 'position:absolute;left:0px;top:63px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -359,7 +359,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты',
 			text: 'Процент оплаты от заработка:',
-			style: 'position:absolute;left:178px;top:0px;width:160px;height:19px;',
+			style: 'position:absolute;left:178px;top:0px;width:160px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -371,7 +371,7 @@
 			xtype: 'label',
 			name: 'НадписьОграничениеПособия',
 			text: 'Ограничение заработка (пособия):',
-			style: 'position:absolute;left:410px;top:0px;width:178px;height:19px;',
+			style: 'position:absolute;left:410px;top:0px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -383,7 +383,7 @@
 			xtype: 'label',
 			name: 'НадписьСтажЛет',
 			text: 'Стаж: лет',
-			style: 'position:absolute;left:0px;top:0px;width:53px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:53px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -413,7 +413,7 @@
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты1',
 			text: 'Процент оплаты от заработка:',
-			style: 'position:absolute;left:184px;top:0px;width:162px;height:19px;',
+			style: 'position:absolute;left:184px;top:0px;width:162px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -425,7 +425,7 @@
 			xtype: 'label',
 			name: 'НадписьОграничениеПособия1',
 			text: 'Ограничение заработка (пособия):',
-			style: 'position:absolute;left:410px;top:0px;width:178px;height:19px;',
+			style: 'position:absolute;left:410px;top:0px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -437,7 +437,7 @@
 			xtype: 'label',
 			name: 'НадписьСтажЛет1',
 			text: 'Стаж: лет',
-			style: 'position:absolute;left:0px;top:0px;width:53px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:53px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -504,7 +504,7 @@
 			xtype: 'label',
 			name: 'НадписьКодПричиныПерерасчета',
 			text: 'Код причины перерасчета:',
-			style: 'position:absolute;left:410px;top:162px;width:141px;height:19px;',
+			style: 'position:absolute;left:410px;top:162px;width:141px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -806,7 +806,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчета',
 			text: 'Для пособия ФСС:',
-			style: 'position:absolute;left:14px;top:28px;width:116px;height:19px;',
+			style: 'position:absolute;left:14px;top:28px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -829,7 +829,7 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчетаДоплаты',
 			text: 'Для доплаты:',
-			style: 'position:absolute;left:0px;top:0px;width:75px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:75px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -856,13 +856,13 @@
 			xtype: 'label',
 			name: 'НадписьВидРасчетаЗаСчетРаботодателя',
 			text: 'За счет работодателя:',
-			style: 'position:absolute;left:8px;top:6px;width:115px;height:15px;',
+			style: 'position:absolute;left:8px;top:6px;width:115px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДнейОплатыРаботодателем',
 			text: 'Оплачиваемых дней:',
-			style: 'position:absolute;left:355px;top:6px;width:112px;height:19px;',
+			style: 'position:absolute;left:355px;top:6px;width:112px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1039,7 +1039,7 @@
 			xtype: 'label',
 			name: 'НадписьИ',
 			text: ' и ',
-			style: 'position:absolute;left:161px;top:8px;width:20px;height:19px;',
+			style: 'position:absolute;left:161px;top:8px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -1133,7 +1133,7 @@
 			xtype: 'label',
 			name: 'НадписьИ1',
 			text: ' и ',
-			style: 'position:absolute;left:161px;top:165px;width:20px;height:19px;',
+			style: 'position:absolute;left:161px;top:165px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -1371,7 +1371,7 @@
 			xtype: 'label',
 			name: 'НадписьФамилия',
 			text: 'Фамилия:',
-			style: 'position:absolute;left:6px;top:6px;width:55px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:55px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1383,7 +1383,7 @@
 			xtype: 'label',
 			name: 'НадписьИмя',
 			text: 'Имя:',
-			style: 'position:absolute;left:232px;top:6px;width:32px;height:19px;',
+			style: 'position:absolute;left:232px;top:6px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1395,7 +1395,7 @@
 			xtype: 'label',
 			name: 'НадписьОтчество',
 			text: 'Отчество:',
-			style: 'position:absolute;left:430px;top:6px;width:54px;height:19px;',
+			style: 'position:absolute;left:430px;top:6px;width:54px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1407,7 +1407,7 @@
 			xtype: 'label',
 			name: 'НадписьВидДокумента',
 			text: 'Вид документа:',
-			style: 'position:absolute;left:14px;top:50px;width:85px;height:19px;',
+			style: 'position:absolute;left:14px;top:50px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1419,7 +1419,7 @@
 			xtype: 'label',
 			name: 'НадписьСерияДокумента',
 			text: 'Серия:',
-			style: 'position:absolute;left:351px;top:50px;width:37px;height:19px;',
+			style: 'position:absolute;left:351px;top:50px;width:37px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1431,7 +1431,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерДокумента',
 			text: 'Номер:',
-			style: 'position:absolute;left:486px;top:50px;width:40px;height:19px;',
+			style: 'position:absolute;left:486px;top:50px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1467,19 +1467,19 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыдачиДокумента',
 			text: 'Выдан:',
-			style: 'position:absolute;left:621px;top:50px;width:40px;height:19px;',
+			style: 'position:absolute;left:621px;top:50px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаВыдачиДокумента1',
 			text: 'Действует до:',
-			style: 'position:absolute;left:757px;top:50px;width:76px;height:19px;',
+			style: 'position:absolute;left:757px;top:50px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПериодПростояС',
 			text: 'Простой с:',
-			style: 'position:absolute;left:14px;top:291px;width:59px;height:19px;',
+			style: 'position:absolute;left:14px;top:291px;width:59px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1491,7 +1491,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодПростояПо',
 			text: 'по:',
-			style: 'position:absolute;left:165px;top:291px;width:21px;height:19px;',
+			style: 'position:absolute;left:165px;top:291px;width:21px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1509,7 +1509,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерЛицевогоСчета',
 			text: '№ счета:',
-			style: 'position:absolute;left:559px;top:136px;width:49px;height:19px;',
+			style: 'position:absolute;left:559px;top:136px;width:49px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1521,7 +1521,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеБанка',
 			text: 'Наименование банка:',
-			style: 'position:absolute;left:14px;top:158px;width:114px;height:19px;',
+			style: 'position:absolute;left:14px;top:158px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1533,7 +1533,7 @@
 			xtype: 'label',
 			name: 'НадписьБИКБанка',
 			text: 'БИК:',
-			style: 'position:absolute;left:804px;top:158px;width:29px;height:19px;',
+			style: 'position:absolute;left:804px;top:158px;width:29px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1567,7 +1567,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжностьУполномоченного',
 			text: 'Должность:',
-			style: 'position:absolute;left:325px;top:314px;width:62px;height:19px;',
+			style: 'position:absolute;left:325px;top:314px;width:62px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1579,7 +1579,7 @@
 			xtype: 'label',
 			name: 'НадписьУполномоченный',
 			text: 'Уполномоченный страхователя:',
-			style: 'position:absolute;left:14px;top:314px;width:166px;height:19px;',
+			style: 'position:absolute;left:14px;top:314px;width:166px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1597,7 +1597,7 @@
 			xtype: 'label',
 			name: 'НадписьКемВыданДокумент',
 			text: 'Кем выдан:',
-			style: 'position:absolute;left:13px;top:72px;width:60px;height:19px;',
+			style: 'position:absolute;left:13px;top:72px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1615,13 +1615,13 @@
 			xtype: 'label',
 			name: 'НадписьНомерСправкиБеременной',
 			text: 'номер:',
-			style: 'position:absolute;left:460px;top:268px;width:40px;height:19px;',
+			style: 'position:absolute;left:460px;top:268px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКоррСчет',
 			text: 'Корр. счет:',
-			style: 'position:absolute;left:597px;top:158px;width:58px;height:19px;',
+			style: 'position:absolute;left:597px;top:158px;width:58px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1633,7 +1633,7 @@
 			xtype: 'label',
 			name: 'НадписьВидДокумента1',
 			text: 'Для иностранных граждан:',
-			style: 'position:absolute;left:450px;top:72px;width:141px;height:19px;',
+			style: 'position:absolute;left:450px;top:72px;width:141px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1645,7 +1645,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресРегистрации',
 			text: 'Адрес по регистрации:',
-			style: 'position:absolute;left:14px;top:94px;width:117px;height:19px;',
+			style: 'position:absolute;left:14px;top:94px;width:117px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1657,7 +1657,7 @@
 			xtype: 'label',
 			name: 'НадписьТелефон',
 			text: 'Телефон:',
-			style: 'position:absolute;left:757px;top:94px;width:52px;height:19px;',
+			style: 'position:absolute;left:757px;top:94px;width:52px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1675,7 +1675,7 @@
 			xtype: 'label',
 			name: 'НадписьСреднедневнойЗаработокНаПериодПростоя',
 			text: 'Среднедневной заработок на период простоя:',
-			style: 'position:absolute;left:281px;top:291px;width:236px;height:19px;',
+			style: 'position:absolute;left:281px;top:291px;width:236px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1693,7 +1693,7 @@
 			xtype: 'label',
 			name: 'НадписьТелефон1',
 			text: 'Телефон:',
-			style: 'position:absolute;left:530px;top:314px;width:52px;height:19px;',
+			style: 'position:absolute;left:530px;top:314px;width:52px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1705,7 +1705,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресПочтовыйКодПоКЛАДР',
 			text: 'Код по КЛАДР:',
-			style: 'position:absolute;left:707px;top:180px;width:80px;height:19px;',
+			style: 'position:absolute;left:707px;top:180px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1717,7 +1717,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресРегистрацииКодПоКЛАДР',
 			text: 'Код по КЛАДР:',
-			style: 'position:absolute;left:536px;top:94px;width:80px;height:19px;',
+			style: 'position:absolute;left:536px;top:94px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1735,7 +1735,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыдачиБольничного',
 			text: 'Дата выдачи листка нетрудоспособности:',
-			style: 'position:absolute;left:6px;top:6px;width:221px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:221px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1747,7 +1747,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение1',
 			text: 'Остальные поля этой закладки заполняются только в том случае, когда страхователь будет представлять в территориальный орган ФСС "Реестр сведений, необходимых для назначения и выплаты пособий по временной нетрудоспособности, по беременности и родам ..."',
-			style: 'position:absolute;left:27px;top:35px;width:896px;height:28px;',
+			style: 'position:absolute;left:27px;top:35px;width:896px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1844,7 +1844,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресЛПУ',
 			text: 'Адрес:',
-			style: 'position:absolute;left:310px;top:115px;width:37px;height:19px;',
+			style: 'position:absolute;left:310px;top:115px;width:37px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1856,7 +1856,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеЛПУ',
 			text: 'Наименование:',
-			style: 'position:absolute;left:6px;top:115px;width:82px;height:19px;',
+			style: 'position:absolute;left:6px;top:115px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1868,7 +1868,7 @@
 			xtype: 'label',
 			name: 'НадписьОГРН_ЛПУ',
 			text: 'ОГРН:',
-			style: 'position:absolute;left:795px;top:115px;width:35px;height:19px;',
+			style: 'position:absolute;left:795px;top:115px;width:35px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1880,7 +1880,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерЛисткаПоОсновномуМестуРаботы',
 			text: 'Номер б/л, выданного для основного места работы:',
-			style: 'position:absolute;left:6px;top:168px;width:271px;height:19px;',
+			style: 'position:absolute;left:6px;top:168px;width:271px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1904,7 +1904,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПутевки',
 			text: 'Номер путевки:',
-			style: 'position:absolute;left:283px;top:192px;width:82px;height:19px;',
+			style: 'position:absolute;left:283px;top:192px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1916,7 +1916,7 @@
 			xtype: 'label',
 			name: 'НадписьОГРН_Санатория',
 			text: 'ОГРН санатория:',
-			style: 'position:absolute;left:452px;top:192px;width:88px;height:19px;',
+			style: 'position:absolute;left:452px;top:192px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1934,7 +1934,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресЛПУКодПоКЛАДР',
 			text: 'Код по КЛАДР:',
-			style: 'position:absolute;left:576px;top:115px;width:79px;height:19px;',
+			style: 'position:absolute;left:576px;top:115px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1958,7 +1958,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодНахожденияВСтационареСРебенкомС',
 			text: 'Находился(ась) в стационаре с ребенком: с',
-			style: 'position:absolute;left:6px;top:62px;width:228px;height:19px;',
+			style: 'position:absolute;left:6px;top:62px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1982,7 +1982,7 @@
 			xtype: 'label',
 			name: 'НадписьКодНарушенияРежима',
 			text: 'Отметка о нарушении режима: код',
-			style: 'position:absolute;left:6px;top:38px;width:180px;height:19px;',
+			style: 'position:absolute;left:6px;top:38px;width:180px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1999,7 +1999,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРегистрацииДокументовМСЭ',
 			text: 'Дата регистрации документов:',
-			style: 'position:absolute;left:277px;top:112px;width:170px;height:19px;',
+			style: 'position:absolute;left:277px;top:112px;width:170px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -2017,7 +2017,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение2',
 			text: 'Поля этой закладки заполняются только в том случае, когда страхователь будет представлять в территориальный орган ФСС "Реестр сведений, необходимых для назначения и выплаты пособий по временной нетрудоспособности, по беременности и родам ..."',
-			style: 'position:absolute;left:27px;top:6px;width:896px;height:28px;',
+			style: 'position:absolute;left:27px;top:6px;width:896px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -2029,7 +2029,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерЛисткаПродолжения',
 			text: '№ б/л-продолжения:',
-			style: 'position:absolute;left:466px;top:314px;width:108px;height:19px;',
+			style: 'position:absolute;left:466px;top:314px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -2041,7 +2041,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаНаправленияВБюроМСЭ',
 			text: 'Дата направления в бюро МСЭ:',
-			style: 'position:absolute;left:14px;top:112px;width:164px;height:19px;',
+			style: 'position:absolute;left:14px;top:112px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -2053,7 +2053,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОсвидетельствованияМСЭ',
 			text: 'Освидетельствован:',
-			style: 'position:absolute;left:14px;top:136px;width:164px;height:19px;',
+			style: 'position:absolute;left:14px;top:136px;width:164px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -2155,7 +2155,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
 			text: 'Этот больничный имеет продолжение. Документ был исправлен в Июне 2008 г, редактирование документа запрещено. Документ является исправлением документа прошлого периода.',
-			style: 'position:absolute;left:28px;top:515px;width:697px;height:33px;',
+			style: 'position:absolute;left:28px;top:515px;width:697px;height:33px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

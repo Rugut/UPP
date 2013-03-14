@@ -69,7 +69,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,7 +81,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,7 +121,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:507px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:507px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -179,13 +179,13 @@
 			xtype: 'label',
 			name: 'НадписьСоставОС',
 			text: 'Входит в состав основного средства:',
-			style: 'position:absolute;left:6px;top:30px;width:193px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:193px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьМОЛБУ',
 			text: 'Материально-ответственное лицо:',
-			style: 'position:absolute;left:6px;top:30px;width:202px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:202px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -208,7 +208,7 @@
 			xtype: 'label',
 			name: 'НадписьХарактеристика',
 			text: 'Характеристика:',
-			style: 'position:absolute;left:0px;top:23px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:23px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -226,7 +226,7 @@
 			xtype: 'label',
 			name: 'НадписьОборудование',
 			text: 'Оборудование:',
-			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -256,7 +256,7 @@
 			xtype: 'label',
 			name: 'НадписьОбъектСтроительства',
 			text: 'Объект:',
-			style: 'position:absolute;left:389px;top:0px;width:60px;height:19px;',
+			style: 'position:absolute;left:389px;top:0px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -268,7 +268,7 @@
 			xtype: 'label',
 			name: 'НадписьСтоимость',
 			text: 'Сумма (УУ):',
-			style: 'position:absolute;left:162px;top:0px;width:64px;height:19px;',
+			style: 'position:absolute;left:162px;top:0px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -280,7 +280,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаБУВнеоборотногоАктива1',
 			text: 'Счет (БУ):',
-			style: 'position:absolute;left:0px;top:24px;width:60px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -292,7 +292,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаНУВнеоборотногоАктива1',
 			text: 'Счет (НУ):',
-			style: 'position:absolute;left:0px;top:48px;width:60px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -304,7 +304,7 @@
 			xtype: 'label',
 			name: 'НадписьСтоимостьБУ',
 			text: 'Сумма (БУ):',
-			style: 'position:absolute;left:162px;top:24px;width:64px;height:19px;',
+			style: 'position:absolute;left:162px;top:24px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -316,13 +316,13 @@
 			xtype: 'label',
 			name: 'УпрВалюта',
 			text: 'УпрВалюта',
-			style: 'position:absolute;left:310px;top:0px;width:60px;height:19px;',
+			style: 'position:absolute;left:310px;top:0px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'РеглВалюта1',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:310px;top:24px;width:60px;height:19px;',
+			style: 'position:absolute;left:310px;top:24px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -334,7 +334,7 @@
 			xtype: 'label',
 			name: 'НадписьСтоимостьНУ',
 			text: 'Сумма (НУ):',
-			style: 'position:absolute;left:162px;top:48px;width:64px;height:19px;',
+			style: 'position:absolute;left:162px;top:48px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -346,13 +346,13 @@
 			xtype: 'label',
 			name: 'РеглВалюта3',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:310px;top:48px;width:60px;height:19px;',
+			style: 'position:absolute;left:310px;top:48px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтоимостьБУХоз',
 			text: 'В том числе хоз. способом:',
-			style: 'position:absolute;left:389px;top:24px;width:143px;height:19px;',
+			style: 'position:absolute;left:389px;top:24px;width:143px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -364,13 +364,13 @@
 			xtype: 'label',
 			name: 'РеглВалюта2',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:616px;top:24px;width:60px;height:19px;',
+			style: 'position:absolute;left:616px;top:24px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтоимостьНУХоз',
 			text: 'В том числе хоз. способом:',
-			style: 'position:absolute;left:389px;top:48px;width:143px;height:19px;',
+			style: 'position:absolute;left:389px;top:48px;width:143px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -382,7 +382,7 @@
 			xtype: 'label',
 			name: 'РеглВалюта4',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:616px;top:48px;width:60px;height:19px;',
+			style: 'position:absolute;left:616px;top:48px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -417,7 +417,7 @@
 			xtype: 'label',
 			name: 'НадписьСтоимостьПР',
 			text: 'Сумма (ПР):',
-			style: 'position:absolute;left:162px;top:72px;width:64px;height:19px;',
+			style: 'position:absolute;left:162px;top:72px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -429,13 +429,13 @@
 			xtype: 'label',
 			name: 'РеглВалюта5',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:310px;top:72px;width:60px;height:19px;',
+			style: 'position:absolute;left:310px;top:72px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтоимостьПРХоз',
 			text: 'В том числе хоз. способом:',
-			style: 'position:absolute;left:389px;top:72px;width:143px;height:19px;',
+			style: 'position:absolute;left:389px;top:72px;width:143px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -447,13 +447,13 @@
 			xtype: 'label',
 			name: 'РеглВалюта6',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:616px;top:72px;width:60px;height:19px;',
+			style: 'position:absolute;left:616px;top:72px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтоимостьВР',
 			text: 'Сумма (ВР):',
-			style: 'position:absolute;left:162px;top:96px;width:64px;height:19px;',
+			style: 'position:absolute;left:162px;top:96px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -465,13 +465,13 @@
 			xtype: 'label',
 			name: 'РеглВалюта7',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:310px;top:96px;width:60px;height:19px;',
+			style: 'position:absolute;left:310px;top:96px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтоимостьВРХоз',
 			text: 'В том числе хоз. способом:',
-			style: 'position:absolute;left:389px;top:96px;width:143px;height:19px;',
+			style: 'position:absolute;left:389px;top:96px;width:143px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -483,7 +483,7 @@
 			xtype: 'label',
 			name: 'РеглВалюта8',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:616px;top:96px;width:60px;height:19px;',
+			style: 'position:absolute;left:616px;top:96px;width:60px;height:19px;text-align:center;',
 		},
 					]
 				},
@@ -495,13 +495,13 @@
 			xtype: 'label',
 			name: 'НадписьСерия',
 			text: 'Серия:',
-			style: 'position:absolute;left:0px;top:46px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:46px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтоимостьУУ',
 			text: 'Стоимость (упр. учет):',
-			style: 'position:absolute;left:0px;top:1px;width:116px;height:19px;',
+			style: 'position:absolute;left:0px;top:1px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -513,7 +513,7 @@
 			xtype: 'label',
 			name: 'УпрВалюта1',
 			text: 'УпрВалюта',
-			style: 'position:absolute;left:204px;top:0px;width:60px;height:19px;',
+			style: 'position:absolute;left:204px;top:0px;width:60px;height:19px;text-align:center;',
 		},
 					]
 				},
@@ -524,7 +524,7 @@
 			name: 'НадписьСпособыОтраженияРасходовПоАмортизации',
 			text: 'Способы отражения расходов
 по амортизации (погашению стоимости):',
-			style: 'position:absolute;left:6px;top:33px;width:225px;height:32px;',
+			style: 'position:absolute;left:6px;top:33px;width:225px;height:32px;text-align:left;',
 		},
 					]
 				},
@@ -560,7 +560,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение предприятия:',
-			style: 'position:absolute;left:6px;top:6px;width:155px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:155px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -572,7 +572,7 @@
 			xtype: 'label',
 			name: 'НадписьМОЛУУ',
 			text: 'Материально- ответственное лицо:',
-			style: 'position:absolute;left:406px;top:6px;width:83px;height:44px;',
+			style: 'position:absolute;left:406px;top:6px;width:83px;height:44px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -630,7 +630,7 @@
 			xtype: 'label',
 			name: 'НадписьИндивидуальныйГрафикАмортизацииУУ',
 			text: 'Индивидуальный график:',
-			style: 'position:absolute;left:353px;top:267px;width:133px;height:19px;',
+			style: 'position:absolute;left:353px;top:267px;width:133px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -642,7 +642,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
-			style: 'position:absolute;left:6px;top:6px;width:202px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:202px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -654,7 +654,7 @@
 			xtype: 'label',
 			name: 'НадписьШифрПоЕНАОФ',
 			text: 'ЕНАОФ:',
-			style: 'position:absolute;left:6px;top:6px;width:74px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:74px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -666,7 +666,7 @@
 			xtype: 'label',
 			name: 'НадписьСостояниеПринятоКУчету',
 			text: 'Принятие к учету:',
-			style: 'position:absolute;left:12px;top:74px;width:120px;height:19px;',
+			style: 'position:absolute;left:12px;top:74px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -683,7 +683,7 @@
 			xtype: 'label',
 			name: 'НадписьВводВЭксплуатацию',
 			text: 'Ввод в эксплуатацию:',
-			style: 'position:absolute;left:12px;top:98px;width:120px;height:19px;',
+			style: 'position:absolute;left:12px;top:98px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -719,7 +719,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособПоступления',
 			text: 'Способ поступления в организацию:',
-			style: 'position:absolute;left:406px;top:6px;width:83px;height:44px;',
+			style: 'position:absolute;left:406px;top:6px;width:83px;height:44px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -796,7 +796,7 @@
 			xtype: 'label',
 			name: 'НадписьСостояниеПринятоКУчетуРегл',
 			text: 'Принятие к учету:',
-			style: 'position:absolute;left:12px;top:74px;width:120px;height:19px;',
+			style: 'position:absolute;left:12px;top:74px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -813,7 +813,7 @@
 			xtype: 'label',
 			name: 'НадписьВводВЭксплуатациюРегл',
 			text: 'Ввод в эксплуатацию:',
-			style: 'position:absolute;left:12px;top:98px;width:120px;height:19px;',
+			style: 'position:absolute;left:12px;top:98px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -837,7 +837,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаНУ',
 			text: 'Счет учета:',
-			style: 'position:absolute;left:12px;top:29px;width:226px;height:19px;',
+			style: 'position:absolute;left:12px;top:29px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -850,7 +850,7 @@
 			name: 'НадписьПорядокВключенияСтоимостиВСоставРасходовНУ',
 			text: 'Порядок включения стоимости
 в состав расходов:',
-			style: 'position:absolute;left:12px;top:53px;width:226px;height:27px;',
+			style: 'position:absolute;left:12px;top:53px;width:226px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -878,7 +878,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетНачисленияАмортизацииНУ',
 			text: 'Счет начисления амортизации:',
-			style: 'position:absolute;left:6px;top:23px;width:226px;height:19px;',
+			style: 'position:absolute;left:6px;top:23px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -890,7 +890,7 @@
 			xtype: 'label',
 			name: 'НадписьСрокПолезногоИспользованияНУ',
 			text: 'Срок полезного использования (в месяцах):',
-			style: 'position:absolute;left:6px;top:71px;width:226px;height:19px;',
+			style: 'position:absolute;left:6px;top:71px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -902,7 +902,7 @@
 			xtype: 'label',
 			name: 'НадписьСпециальныйКоэффициентНУ',
 			text: 'Специальный коэффициент:',
-			style: 'position:absolute;left:6px;top:95px;width:226px;height:19px;',
+			style: 'position:absolute;left:6px;top:95px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -936,7 +936,7 @@
 			xtype: 'label',
 			name: 'НадписьВПроцентахОтПервоначальнойСтоимости',
 			text: 'В процентах от первоначальной стоимости:',
-			style: 'position:absolute;left:6px;top:0px;width:226px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -954,25 +954,25 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаЗатратПоАмортизационнойПремии',
 			text: 'Счет учета затрат:',
-			style: 'position:absolute;left:6px;top:24px;width:228px;height:19px;',
+			style: 'position:absolute;left:6px;top:24px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСубконтоПоАмортизационнойПремии1',
 			text: 'Субконто НУ 1:',
-			style: 'position:absolute;left:6px;top:48px;width:228px;height:19px;',
+			style: 'position:absolute;left:6px;top:48px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСубконтоПоАмортизационнойПремии2',
 			text: 'Субконто НУ 2:',
-			style: 'position:absolute;left:6px;top:72px;width:228px;height:19px;',
+			style: 'position:absolute;left:6px;top:72px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСубконтоПоАмортизационнойПремии3',
 			text: 'Субконто НУ 3:',
-			style: 'position:absolute;left:6px;top:96px;width:228px;height:19px;',
+			style: 'position:absolute;left:6px;top:96px;width:228px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1011,7 +1011,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособНачисленияАмортизацииНУ',
 			text: 'Способ начисления амортизации (до 2009 г.):',
-			style: 'position:absolute;left:0px;top:0px;width:232px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:232px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1050,7 +1050,7 @@
 			xtype: 'label',
 			name: 'НадписьСтоимостьНУ1',
 			text: 'Сумма (НУ):',
-			style: 'position:absolute;left:6px;top:21px;width:64px;height:19px;',
+			style: 'position:absolute;left:6px;top:21px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1062,7 +1062,7 @@
 			xtype: 'label',
 			name: 'РеглВалюта9',
 			text: 'РеглВалюта',
-			style: 'position:absolute;left:154px;top:21px;width:60px;height:19px;',
+			style: 'position:absolute;left:154px;top:21px;width:60px;height:19px;text-align:center;',
 		},
 					]
 				},
@@ -1072,7 +1072,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособОтраженияРасходовПриВключенииВСтоимость',
 			text: 'Способ отражения расходов:',
-			style: 'position:absolute;left:6px;top:0px;width:226px;height:19px;',
+			style: 'position:absolute;left:6px;top:0px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1097,7 +1097,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Стоимость (сумма расходов УСН):',
-			style: 'position:absolute;left:6px;top:6px;width:226px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1109,7 +1109,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Срок полезного использования (УСН), мес.:',
-			style: 'position:absolute;left:6px;top:31px;width:226px;height:19px;',
+			style: 'position:absolute;left:6px;top:31px;width:226px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1121,7 +1121,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Дата приобретения:',
-			style: 'position:absolute;left:437px;top:6px;width:114px;height:19px;',
+			style: 'position:absolute;left:437px;top:6px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1184,7 +1184,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокВключенияСтоимостиВСоставРасходовУСН',
 			text: 'Порядок включения стоимости в состав расходов (УСН):',
-			style: 'position:absolute;left:6px;top:56px;width:294px;height:19px;',
+			style: 'position:absolute;left:6px;top:56px;width:294px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1202,7 +1202,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:6px;top:7px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:7px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1214,7 +1214,7 @@
 			xtype: 'label',
 			name: 'НадписьСрокПолезногоИспользованияБУ',
 			text: 'Полезный срок использования, мес.:',
-			style: 'position:absolute;left:12px;top:219px;width:196px;height:19px;',
+			style: 'position:absolute;left:12px;top:219px;width:196px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -1229,7 +1229,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетФактура',
 			text: 'Счет-фактура:',
-			style: 'position:absolute;left:8px;top:485px;width:80px;height:19px;',
+			style: 'position:absolute;left:8px;top:485px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',

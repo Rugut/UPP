@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:58px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:108px;width:95px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:674px;width:95px;height:19px;',
+			style: 'position:absolute;left:8px;top:674px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,7 +127,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:8px;top:33px;width:95px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:95px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,13 +151,13 @@
 			xtype: 'label',
 			name: 'НадписьПолучатель',
 			text: 'Получатель:',
-			style: 'position:absolute;left:8px;top:134px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:134px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидОтчета1',
 			text: 'Вид отчета:',
-			style: 'position:absolute;left:8px;top:160px;width:96px;height:19px;',
+			style: 'position:absolute;left:8px;top:160px;width:96px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -180,7 +180,7 @@
 			xtype: 'label',
 			name: 'НадписьВидДокумента1',
 			text: 'Вид документа:',
-			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -192,7 +192,7 @@
 			xtype: 'label',
 			name: 'НадписьВидДокумента2',
 			text: '(номер корректировки)',
-			style: 'position:absolute;left:281px;top:0px;width:123px;height:19px;',
+			style: 'position:absolute;left:281px;top:0px;width:123px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Веб-страница:',
-			style: 'position:absolute;left:14px;top:109px;width:92px;height:19px;',
+			style: 'position:absolute;left:14px;top:109px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись16',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:137px;width:98px;height:19px;',
+			style: 'position:absolute;left:8px;top:137px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Вид веб-страницы:',
-			style: 'position:absolute;left:8px;top:61px;width:98px;height:19px;',
+			style: 'position:absolute;left:8px;top:61px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

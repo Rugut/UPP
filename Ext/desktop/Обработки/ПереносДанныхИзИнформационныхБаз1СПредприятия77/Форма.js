@@ -49,7 +49,7 @@
 			name: 'НадписьЗаголовок',
 			text: 'Выберите вариант загрузки данных из информационной базы
 на платформе 1С:Предприятие 7.7',
-			style: 'position:absolute;left:0px;top:0px;width:594px;height:60px;',
+			style: 'position:absolute;left:0px;top:0px;width:594px;height:60px;text-align:center;',
 		},
 					]
 				},
@@ -62,7 +62,7 @@
 			name: 'НадписьЗаголовок1',
 			text: 'Укажите информационную базу, из которой
 требуется загрузить данные',
-			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;',
+			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;text-align:center;',
 		},
 		{
 			xtype: 'grid',
@@ -92,7 +92,7 @@
 			xtype: 'label',
 			name: 'НадписьИнформацияОПути',
 			text: '',
-			style: 'position:absolute;left:138px;top:177px;width:456px;height:19px;',
+			style: 'position:absolute;left:138px;top:177px;width:456px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -165,7 +165,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаголовок3',
 			text: 'Укажите файл из которого требуется загрузить данные',
-			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;',
+			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -249,7 +249,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: '',
-			style: 'position:absolute;left:294px;top:209px;width:292px;height:28px;',
+			style: 'position:absolute;left:294px;top:209px;width:292px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -267,7 +267,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаголовок2',
 			text: 'Перенос данных',
-			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;',
+			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -338,7 +338,7 @@
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаОшибка',
 			text: '',
-			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
 				},
@@ -380,7 +380,7 @@
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаУспешно',
 			text: '',
-			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
 				},
@@ -398,7 +398,7 @@
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаБазовая',
 			text: '',
-			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -422,7 +422,7 @@
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаПроцесс',
 			text: '',
-			style: 'position:absolute;left:1px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:1px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -450,7 +450,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаголовок4',
 			text: 'Перенос данных',
-			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;',
+			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -509,7 +509,7 @@
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаОшибка',
 			text: '',
-			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
 				},
@@ -551,7 +551,7 @@
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаПроф',
 			text: '',
-			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
 				},
@@ -569,7 +569,7 @@
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаБазовая',
 			text: '',
-			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -593,7 +593,7 @@
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаПроцесс',
 			text: '',
-			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;',
+			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -615,7 +615,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаголовок5',
 			text: 'Копирование помощника перехода для 1С:Предприятия 7.7',
-			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;',
+			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;text-align:center;',
 		},
 		{
 			xtype: 'label',

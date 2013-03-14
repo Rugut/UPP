@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'Утверждена',
 			text: 'Утверждена',
-			style: 'position:absolute;left:6px;top:189px;width:505px;height:67px;',
+			style: 'position:absolute;left:6px;top:189px;width:505px;height:67px;text-align:left;',
 		},
 					]
 				},
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьИнформацияОтсутствует',
 			text: 'Для выбранного вида отчета информация о формах недоступна',
-			style: 'position:absolute;left:6px;top:6px;width:499px;height:235px;',
+			style: 'position:absolute;left:6px;top:6px;width:499px;height:235px;text-align:center;',
 		},
 					]
 				},
@@ -84,7 +84,7 @@
 			xtype: 'label',
 			name: 'НадписьВозможныеПериоды',
 			text: '',
-			style: 'position:absolute;left:14px;top:304px;width:505px;height:66px;',
+			style: 'position:absolute;left:14px;top:304px;width:505px;height:66px;text-align:left;',
 		},
 	]
 });

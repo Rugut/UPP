@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'НадписьВариантАвтоподбора',
 			text: 'Вариант автоподбора:',
-			style: 'position:absolute;left:8px;top:6px;width:142px;height:19px;',
+			style: 'position:absolute;left:8px;top:6px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'НадписьСвойство',
 			text: 'Свойство характеристики выходного изделия:',
-			style: 'position:absolute;left:8px;top:28px;width:142px;height:27px;',
+			style: 'position:absolute;left:8px;top:28px;width:142px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

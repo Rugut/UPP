@@ -89,7 +89,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Регион:',
-			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Район:',
-			style: 'position:absolute;left:0px;top:24px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -113,7 +113,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Город:',
-			style: 'position:absolute;left:0px;top:48px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -125,7 +125,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Нас. пункт:',
-			style: 'position:absolute;left:0px;top:72px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:72px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Улица:',
-			style: 'position:absolute;left:0px;top:96px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:96px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -149,7 +149,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Дом:',
-			style: 'position:absolute;left:0px;top:120px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:120px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -161,7 +161,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Корпус:',
-			style: 'position:absolute;left:140px;top:120px;width:52px;height:19px;',
+			style: 'position:absolute;left:140px;top:120px;width:52px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -173,7 +173,7 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Квартира:',
-			style: 'position:absolute;left:249px;top:120px;width:60px;height:19px;',
+			style: 'position:absolute;left:249px;top:120px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -191,13 +191,13 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:0px;top:168px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:168px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Индекс:',
-			style: 'position:absolute;left:0px;top:144px;width:94px;height:19px;',
+			style: 'position:absolute;left:0px;top:144px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -215,7 +215,7 @@
 			xtype: 'label',
 			name: 'Надпись16',
 			text: 'Код страны:',
-			style: 'position:absolute;left:0px;top:24px;width:79px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -227,7 +227,7 @@
 			xtype: 'label',
 			name: 'Надпись17',
 			text: 'Код города:',
-			style: 'position:absolute;left:0px;top:48px;width:79px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -239,7 +239,7 @@
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Номер :',
-			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -251,7 +251,7 @@
 			xtype: 'label',
 			name: 'Надпись19',
 			text: 'Добавочный:',
-			style: 'position:absolute;left:209px;top:0px;width:75px;height:19px;',
+			style: 'position:absolute;left:209px;top:0px;width:75px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -269,7 +269,7 @@
 			xtype: 'label',
 			name: 'Надпись20',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:0px;top:72px;width:79px;height:19px;',
+			style: 'position:absolute;left:0px;top:72px;width:79px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -314,7 +314,7 @@
 			xtype: 'label',
 			name: 'Вопрос',
 			text: '',
-			style: 'position:absolute;left:8px;top:195px;width:350px;height:38px;',
+			style: 'position:absolute;left:8px;top:195px;width:350px;height:38px;text-align:left;',
 		},
 		{
 			xtype: 'label',

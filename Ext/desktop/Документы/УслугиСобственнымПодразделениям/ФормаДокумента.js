@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:352px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:352px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьПроект',
 			text: 'Проект:',
-			style: 'position:absolute;left:336px;top:328px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:328px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -276,7 +276,7 @@
 			xtype: 'label',
 			name: 'НадписьУслуга',
 			text: 'Услуга (работа):',
-			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -288,7 +288,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаИзмерения',
 			text: '',
-			style: 'position:absolute;left:424px;top:79px;width:240px;height:15px;',
+			style: 'position:absolute;left:424px;top:79px;width:240px;height:15px;text-align:right;',
 		},
 	]
 });

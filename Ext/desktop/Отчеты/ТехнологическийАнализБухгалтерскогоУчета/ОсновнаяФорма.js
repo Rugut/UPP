@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Организация:',
-			style: 'position:absolute;left:285px;top:37px;width:76px;height:19px;',
+			style: 'position:absolute;left:285px;top:37px;width:76px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -102,7 +102,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
 			text: '',
-			style: 'position:absolute;left:47px;top:37px;width:180px;height:19px;',
+			style: 'position:absolute;left:47px;top:37px;width:180px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

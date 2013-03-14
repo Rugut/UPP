@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Серия полиса:',
-			style: 'position:absolute;left:8px;top:133px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:133px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Номер полиса:',
-			style: 'position:absolute;left:235px;top:133px;width:131px;height:19px;',
+			style: 'position:absolute;left:235px;top:133px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьФизлицо',
 			text: 'Физическое лицо:',
-			style: 'position:absolute;left:8px;top:33px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьВидСтрахования',
 			text: 'Вид страхования:',
-			style: 'position:absolute;left:8px;top:83px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:83px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыдачиПолиса',
 			text: 'Дата выдачи полиса:',
-			style: 'position:absolute;left:8px;top:158px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:158px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаОкончанияПолиса',
 			text: 'Дата окончания полиса:',
-			style: 'position:absolute;left:235px;top:158px;width:131px;height:19px;',
+			style: 'position:absolute;left:235px;top:158px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'НадписьПрограммаСтрахования',
 			text: 'Программа страхования:',
-			style: 'position:absolute;left:8px;top:108px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:108px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -97,7 +97,7 @@
 			xtype: 'label',
 			name: 'НадписьРодственник',
 			text: 'Родственник:',
-			style: 'position:absolute;left:8px;top:205px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:205px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			name: 'НадписьПол',
 			text: 'Пол:',
-			style: 'position:absolute;left:8px;top:256px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:256px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -121,7 +121,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРождения',
 			text: 'Дата рождения:',
-			style: 'position:absolute;left:235px;top:256px;width:131px;height:19px;',
+			style: 'position:absolute;left:235px;top:256px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -133,7 +133,7 @@
 			xtype: 'label',
 			name: 'НадписьУдостоверениеЛичности',
 			text: 'Удостоверение личности:',
-			style: 'position:absolute;left:8px;top:281px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:281px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -145,7 +145,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресФактический',
 			text: 'Адрес фактический:',
-			style: 'position:absolute;left:8px;top:306px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:306px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -157,7 +157,7 @@
 			xtype: 'label',
 			name: 'НадписьТелефонДомашний',
 			text: 'Телефон домашний:',
-			style: 'position:absolute;left:8px;top:331px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:331px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -220,7 +220,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:58px;width:131px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:131px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

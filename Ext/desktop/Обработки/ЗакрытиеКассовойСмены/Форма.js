@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКассаККМ',
 			text: 'Касса ККМ:',
-			style: 'position:absolute;left:8px;top:32px;width:64px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'Дата:',
-			style: 'position:absolute;left:8px;top:8px;width:64px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			name: 'НадписьСклад',
 			text: 'Склад:',
-			style: 'position:absolute;left:8px;top:56px;width:64px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:64px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

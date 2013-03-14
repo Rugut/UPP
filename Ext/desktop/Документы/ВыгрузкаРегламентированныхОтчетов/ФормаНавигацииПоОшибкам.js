@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'НадписьВсегоОшибок',
 			text: '',
-			style: 'position:absolute;left:193px;top:5px;width:450px;height:15px;',
+			style: 'position:absolute;left:193px;top:5px;width:450px;height:15px;text-align:right;',
 		},
 	]
 });

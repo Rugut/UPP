@@ -47,7 +47,7 @@
 			xtype: 'label',
 			name: 'НадписьСертификат',
 			text: '* Печать сертификата пользователя доступна после одобрения заявления',
-			style: 'position:absolute;left:24px;top:124px;width:184px;height:44px;',
+			style: 'position:absolute;left:24px;top:124px;width:184px;height:44px;text-align:left;',
 		},
 	]
 });

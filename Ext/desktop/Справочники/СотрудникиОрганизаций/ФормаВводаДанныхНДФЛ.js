@@ -162,7 +162,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:30px;top:62px;width:83px;height:19px;',
+			style: 'position:absolute;left:30px;top:62px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',

@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'НадписьПрефиксВнутреннегоШтрихкода',
 			text: 'Префикс внутреннего штрихкода:',
-			style: 'position:absolute;left:12px;top:88px;width:248px;height:19px;',
+			style: 'position:absolute;left:12px;top:88px;width:248px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,7 +100,7 @@
 			xtype: 'label',
 			name: 'Надпись61',
 			text: 'При выполнении обменов данными будет регистрироваться информация о месте создания объектов.',
-			style: 'position:absolute;left:28px;top:177px;width:527px;height:19px;',
+			style: 'position:absolute;left:28px;top:177px;width:527px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -118,7 +118,7 @@
 			xtype: 'label',
 			name: 'Надпись22',
 			text: 'GLN Предприятия:',
-			style: 'position:absolute;left:12px;top:48px;width:100px;height:19px;',
+			style: 'position:absolute;left:12px;top:48px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -130,7 +130,7 @@
 			xtype: 'label',
 			name: 'Надпись23',
 			text: 'GCP Международный номер (префикс) предприятия:',
-			style: 'position:absolute;left:12px;top:96px;width:272px;height:19px;',
+			style: 'position:absolute;left:12px;top:96px;width:272px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -142,7 +142,7 @@
 			xtype: 'label',
 			name: 'Надпись24',
 			text: 'Пароль регистрации в ЮНИСКАН:',
-			style: 'position:absolute;left:12px;top:72px;width:176px;height:19px;',
+			style: 'position:absolute;left:12px;top:72px;width:176px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

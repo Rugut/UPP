@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьТекстОснования',
 			text: 'Текст основания:',
-			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',

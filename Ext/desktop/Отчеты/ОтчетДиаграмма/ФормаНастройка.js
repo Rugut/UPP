@@ -35,13 +35,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаНач',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаКон',
 			text: 'по:',
-			style: 'position:absolute;left:146px;top:6px;width:16px;height:19px;',
+			style: 'position:absolute;left:146px;top:6px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -156,7 +156,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПодписей',
 			text: 'Вид подписей:',
-			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -179,7 +179,7 @@
 			xtype: 'label',
 			name: 'НадписьВидПодписей1',
 			text: 'Вид подписей:',
-			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -223,7 +223,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -256,7 +256,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -290,7 +290,7 @@
 			xtype: 'label',
 			name: 'Надпись17',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -308,7 +308,7 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -348,7 +348,7 @@
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Базовое значение:',
-			style: 'position:absolute;left:0px;top:48px;width:128px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

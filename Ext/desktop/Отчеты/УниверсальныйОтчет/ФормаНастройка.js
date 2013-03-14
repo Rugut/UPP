@@ -141,7 +141,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по',
-			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 					]
 				},
@@ -171,7 +171,7 @@
 			xtype: 'label',
 			name: 'Период',
 			text: '',
-			style: 'position:absolute;left:79px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:79px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -270,7 +270,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -458,7 +458,7 @@
 			xtype: 'label',
 			name: 'НадписьВариантОформления',
 			text: 'Вариант оформления:',
-			style: 'position:absolute;left:6px;top:27px;width:120px;height:19px;',
+			style: 'position:absolute;left:6px;top:27px;width:120px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -831,7 +831,7 @@
 			xtype: 'label',
 			name: 'НадписьПо1',
 			text: 'по',
-			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -843,7 +843,7 @@
 			xtype: 'label',
 			name: 'Период1',
 			text: '',
-			style: 'position:absolute;left:79px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:79px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -924,7 +924,7 @@
 			xtype: 'label',
 			name: 'НадписьПо2',
 			text: 'по',
-			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -936,7 +936,7 @@
 			xtype: 'label',
 			name: 'Период2',
 			text: '',
-			style: 'position:absolute;left:79px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:79px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',

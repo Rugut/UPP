@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Вид строки:',
-			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьИзмерение',
 			text: 'Измерение:',
-			style: 'position:absolute;left:8px;top:85px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:85px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьФормула',
 			text: 'Формула:',
-			style: 'position:absolute;left:8px;top:109px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:109px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -92,7 +92,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код:',
-			style: 'position:absolute;left:277px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:277px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 	]
 });

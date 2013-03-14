@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:368px;top:33px;width:85px;height:19px;',
+			style: 'position:absolute;left:368px;top:33px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьОт',
 			text: 'от:',
-			style: 'position:absolute;left:534px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:534px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:368px;top:58px;width:85px;height:19px;',
+			style: 'position:absolute;left:368px;top:58px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'Месяц начисления:',
-			style: 'position:absolute;left:8px;top:57px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -98,7 +98,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:528px;width:86px;height:19px;',
+			style: 'position:absolute;left:8px;top:528px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -110,7 +110,7 @@
 			xtype: 'label',
 			name: 'НадписьРаботник',
 			text: 'Сотрудник:',
-			style: 'position:absolute;left:8px;top:81px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -132,7 +132,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Дата:',
-			style: 'position:absolute;left:14px;top:52px;width:50px;height:19px;',
+			style: 'position:absolute;left:14px;top:52px;width:50px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -144,7 +144,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Выходное пособие за:',
-			style: 'position:absolute;left:14px;top:207px;width:212px;height:19px;',
+			style: 'position:absolute;left:14px;top:207px;width:212px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,7 +162,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Заработок на время трудоустройства за:',
-			style: 'position:absolute;left:14px;top:232px;width:213px;height:19px;',
+			style: 'position:absolute;left:14px;top:232px;width:213px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -184,7 +184,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Приказ:',
-			style: 'position:absolute;left:14px;top:28px;width:50px;height:19px;',
+			style: 'position:absolute;left:14px;top:28px;width:50px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -196,7 +196,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокРасчета',
 			text: 'Порядок расчета:',
-			style: 'position:absolute;left:422px;top:106px;width:93px;height:19px;',
+			style: 'position:absolute;left:422px;top:106px;width:93px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -208,7 +208,7 @@
 			xtype: 'label',
 			name: 'НадписьВремя3',
 			text: 'Дней:',
-			style: 'position:absolute;left:321px;top:106px;width:31px;height:19px;',
+			style: 'position:absolute;left:321px;top:106px;width:31px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -942,7 +942,7 @@
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
 			text: '',
-			style: 'position:absolute;left:32px;top:490px;width:398px;height:33px;',
+			style: 'position:absolute;left:32px;top:490px;width:398px;height:33px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',

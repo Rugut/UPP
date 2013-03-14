@@ -80,7 +80,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Дата окончания интервала планирования:',
-			style: 'position:absolute;left:8px;top:8px;width:221px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:221px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

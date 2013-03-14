@@ -89,7 +89,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:6px;top:6px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -101,7 +101,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Периодичность:',
-			style: 'position:absolute;left:6px;top:58px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:58px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -113,7 +113,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Детализация планирования:',
-			style: 'position:absolute;left:6px;top:32px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:32px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Валюта планирования:',
-			style: 'position:absolute;left:6px;top:84px;width:146px;height:19px;',
+			style: 'position:absolute;left:6px;top:84px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -152,7 +152,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:399px;top:6px;width:40px;height:19px;',
+			style: 'position:absolute;left:399px;top:6px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',

@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'НадписьПоступленияПо',
 			text: 'по',
-			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -126,7 +126,7 @@
 			xtype: 'label',
 			name: 'НадписьПланПоступленияПо',
 			text: 'по',
-			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -252,7 +252,7 @@
 			xtype: 'label',
 			name: 'НадписьОбъемПродажПо',
 			text: 'по',
-			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -276,7 +276,7 @@
 			xtype: 'label',
 			name: 'НадписьПланыПродажПо',
 			text: 'по',
-			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -525,7 +525,7 @@
 			xtype: 'label',
 			name: 'НадписьЗаказыПокупателейПо',
 			text: 'по',
-			style: 'position:absolute;left:651px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:651px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -614,7 +614,7 @@
 			xtype: 'label',
 			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо',
 			text: 'округлить до:',
-			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;',
+			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;text-align:center;',
 		},
 					]
 				},
@@ -654,13 +654,13 @@
 			xtype: 'label',
 			name: 'НадписьОбъемЗакупокПо',
 			text: 'по',
-			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПланыЗакупокПо',
 			text: 'по',
-			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -731,7 +731,7 @@
 			xtype: 'label',
 			name: 'НадписьПлатежиПо',
 			text: 'по',
-			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:256px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -772,7 +772,7 @@
 			xtype: 'label',
 			name: 'НадписьПланПлатежиПо',
 			text: 'по',
-			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:650px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -1099,7 +1099,7 @@
 			xtype: 'label',
 			name: 'НадписьПланыЗакупокПо1',
 			text: 'по',
-			style: 'position:absolute;left:651px;top:27px;width:20px;height:19px;',
+			style: 'position:absolute;left:651px;top:27px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -1241,7 +1241,7 @@
 			xtype: 'label',
 			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо1',
 			text: 'округлить до:',
-			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;',
+			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;text-align:center;',
 		},
 					]
 				},

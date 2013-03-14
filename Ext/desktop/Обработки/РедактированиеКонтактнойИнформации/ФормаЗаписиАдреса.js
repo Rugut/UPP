@@ -59,7 +59,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Регион:',
-			style: 'position:absolute;left:0px;top:0px;width:86px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Район:',
-			style: 'position:absolute;left:0px;top:24px;width:86px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Город:',
-			style: 'position:absolute;left:0px;top:48px;width:86px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -95,7 +95,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Нас. пункт:',
-			style: 'position:absolute;left:0px;top:72px;width:86px;height:19px;',
+			style: 'position:absolute;left:0px;top:72px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -107,7 +107,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Улица:',
-			style: 'position:absolute;left:0px;top:96px;width:86px;height:19px;',
+			style: 'position:absolute;left:0px;top:96px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -137,7 +137,7 @@
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Индекс:',
-			style: 'position:absolute;left:0px;top:144px;width:86px;height:19px;',
+			style: 'position:absolute;left:0px;top:144px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -230,7 +230,7 @@
 			xtype: 'label',
 			name: 'Надпись17',
 			text: 'Вид адреса:',
-			style: 'position:absolute;left:0px;top:27px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:27px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -264,7 +264,7 @@
 			xtype: 'label',
 			name: 'НадписьКодРегиона',
 			text: 'Код региона:',
-			style: 'position:absolute;left:6px;top:27px;width:80px;height:19px;',
+			style: 'position:absolute;left:6px;top:27px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -276,7 +276,7 @@
 			xtype: 'label',
 			name: 'НадписьКодСтраны',
 			text: 'Код страны:',
-			style: 'position:absolute;left:6px;top:51px;width:80px;height:19px;',
+			style: 'position:absolute;left:6px;top:51px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -309,7 +309,7 @@
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;text-align:left;',
 		},
 					]
 				},

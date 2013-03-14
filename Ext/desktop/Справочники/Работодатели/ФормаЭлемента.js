@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:401px;top:33px;width:28px;height:19px;',
+			style: 'position:absolute;left:401px;top:33px;width:28px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:118px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:118px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Наименование полное:',
-			style: 'position:absolute;left:8px;top:58px;width:118px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:118px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН',
 			text: 'ИНН:',
-			style: 'position:absolute;left:8px;top:137px;width:56px;height:19px;',
+			style: 'position:absolute;left:8px;top:137px;width:56px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -86,7 +86,7 @@
 			xtype: 'label',
 			name: 'НадписьКПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:190px;top:137px;width:32px;height:19px;',
+			style: 'position:absolute;left:190px;top:137px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -104,13 +104,13 @@
 			xtype: 'label',
 			name: 'Надпись19',
 			text: '№ в ФСС:',
-			style: 'position:absolute;left:8px;top:162px;width:56px;height:19px;',
+			style: 'position:absolute;left:8px;top:162px;width:56px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДополнительныйКодФСС',
 			text: 'Доп. код ФСС:',
-			style: 'position:absolute;left:190px;top:162px;width:79px;height:19px;',
+			style: 'position:absolute;left:190px;top:162px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -122,7 +122,7 @@
 			xtype: 'label',
 			name: 'НадписьКодПодчиненностиФСС',
 			text: 'Код подч-ти:',
-			style: 'position:absolute;left:390px;top:162px;width:68px;height:19px;',
+			style: 'position:absolute;left:390px;top:162px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,7 +134,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеТерриториальногоОрганаФСС',
 			text: 'Наименование территориального органа ФСС:',
-			style: 'position:absolute;left:8px;top:188px;width:118px;height:43px;',
+			style: 'position:absolute;left:8px;top:188px;width:118px;height:43px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

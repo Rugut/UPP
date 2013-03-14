@@ -167,19 +167,19 @@
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Дополнительные страницы',
-			style: 'position:absolute;left:246px;top:264px;width:144px;height:19px;',
+			style: 'position:absolute;left:246px;top:264px;width:144px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись40',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:473px;top:265px;width:136px;height:19px;',
+			style: 'position:absolute;left:473px;top:265px;width:136px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись41',
 			text: 'Дополнительные страницы:',
-			style: 'position:absolute;left:246px;top:264px;width:146px;height:19px;',
+			style: 'position:absolute;left:246px;top:264px;width:146px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'button',
@@ -197,7 +197,7 @@
 			xtype: 'label',
 			name: 'Надпись42',
 			text: 'Дополнительные строки:',
-			style: 'position:absolute;left:473px;top:265px;width:136px;height:19px;',
+			style: 'position:absolute;left:473px;top:265px;width:136px;height:19px;text-align:left;',
 		},
 					]
 				},

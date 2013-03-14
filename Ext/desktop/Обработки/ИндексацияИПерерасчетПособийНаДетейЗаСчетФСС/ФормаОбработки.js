@@ -293,7 +293,7 @@
 			xtype: 'label',
 			name: 'НадписьСсылкаОтрытиеСписка',
 			text: 'Показать список документов-исправлений',
-			style: 'position:absolute;left:0px;top:255px;width:630px;height:16px;',
+			style: 'position:absolute;left:0px;top:255px;width:630px;height:16px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',

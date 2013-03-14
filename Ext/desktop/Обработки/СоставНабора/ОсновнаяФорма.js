@@ -34,7 +34,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Набор :',
-			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -46,7 +46,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличество',
 			text: 'Количество:',
-			style: 'position:absolute;left:8px;top:57px;width:68px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:68px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -58,7 +58,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиницаИзмерения',
 			text: 'Единица измерения:',
-			style: 'position:absolute;left:175px;top:57px;width:110px;height:19px;',
+			style: 'position:absolute;left:175px;top:57px;width:110px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',

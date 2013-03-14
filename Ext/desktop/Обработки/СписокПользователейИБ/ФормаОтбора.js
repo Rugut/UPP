@@ -27,13 +27,13 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Аутентификация Windows:',
-			style: 'position:absolute;left:8px;top:267px;width:178px;height:19px;',
+			style: 'position:absolute;left:8px;top:267px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Аутентификация 1С:Предприятия:',
-			style: 'position:absolute;left:8px;top:243px;width:178px;height:19px;',
+			style: 'position:absolute;left:8px;top:243px;width:178px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',

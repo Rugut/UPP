@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:332px;top:60px;width:23px;height:19px;',
+			style: 'position:absolute;left:332px;top:60px;width:23px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:60px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:60px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Родитель:',
-			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -78,7 +78,7 @@
 			xtype: 'label',
 			name: 'НадписьВидНоменклатуры',
 			text: 'Вид номенклатуры:',
-			style: 'position:absolute;left:8px;top:87px;width:108px;height:19px;',
+			style: 'position:absolute;left:8px;top:87px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'НадписьПорядокПрисвоенияСерийногоНомера',
 			text: 'Порядок присвоения серийного номера:',
-			style: 'position:absolute;left:8px;top:109px;width:108px;height:27px;',
+			style: 'position:absolute;left:8px;top:109px;width:108px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

@@ -17,7 +17,7 @@ label
 	font-size: 8pt;
 	font-family: "MS Shell Dlg";
 	color:#413003;
-	background-color:#FCFAEB;
+	/*background-color:#FCFAEB;*/
 	display:inline-block;
 	vertical-align:middle;
 	padding-top:4px;
@@ -40,7 +40,7 @@ input
 	font-size: 8pt;
 	font-family: "MS Shell Dlg";
 	padding-left:2px;
-	border-color:#B3AC86;
+	/*border-color:#B3AC86;*/
 	border-radius:3px;
 	border-style:solid;
 	border-width:thin;
@@ -74,10 +74,10 @@ button.КнопкаКоманднойПанели:hover
 }
 table
 {
-	background-color:#F5F2DD;
+	/*background-color:#F5F2DD;
 	border-color:#B3AC86;
 	border-style:solid;
-	border-width:thin;
+	border-width:thin;*/
 }
 table.ТабличноеПоле
 {
@@ -118,7 +118,7 @@ table.ТабличноеПоле tbody tr td
 	outline: none;
 	border:none;
 }
-ul
+/*ul
 {
 	width: 180px;
 	list-style: none;
@@ -135,4 +135,4 @@ li ul
 li:hover ul
 {
 	display: block;
-}
+}*/

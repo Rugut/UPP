@@ -56,7 +56,7 @@
 			xtype: 'label',
 			name: 'НадписьФомулаСумма',
 			text: 'Надпись',
-			style: 'position:absolute;left:78px;top:82px;width:82px;height:19px;',
+			style: 'position:absolute;left:78px;top:82px;width:82px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',

@@ -66,38 +66,38 @@
 			xtype: 'label',
 			name: 'ИнфНадписьЕдиницаИзмеренияВеса',
 			text: 'Единица измерения, в которой указываются весовые характеристики товарно-материальных ценностей.',
-			style: 'position:absolute;left:12px;top:132px;width:385px;height:32px;',
+			style: 'position:absolute;left:12px;top:132px;width:385px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнфНадписьЕдиницаИзмеренияОбъема',
 			text: 'Единица измерения, в которой указываются характеристики объема товарно-материальных ценностей.',
-			style: 'position:absolute;left:12px;top:196px;width:385px;height:32px;',
+			style: 'position:absolute;left:12px;top:196px;width:385px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнфНадписьДополнительнаяКолонкаПечатныхФормДокументов',
 			text: 'Определяет, нужно ли при печати документов выводить дополнительную колонку, содержащую код или артикул товаров.',
-			style: 'position:absolute;left:12px;top:68px;width:385px;height:32px;',
+			style: 'position:absolute;left:12px;top:68px;width:385px;height:32px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВалютаРегУчета',
 			text: 'По отношению к этой валюте указываются курсы других валют.
 Для РФ валюта регламентированного учета - рубль.',
-			style: 'position:absolute;left:12px;top:68px;width:336px;height:31px;',
+			style: 'position:absolute;left:12px;top:68px;width:336px;height:31px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ТекстВажнойНадписи',
 			text: '',
-			style: 'position:absolute;left:52px;top:195px;width:332px;height:20px;',
+			style: 'position:absolute;left:52px;top:195px;width:332px;height:20px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВалютаМеждУчета',
 			text: 'Обычно валюта международного учета в РФ - рубль.',
-			style: 'position:absolute;left:12px;top:164px;width:276px;height:18px;',
+			style: 'position:absolute;left:12px;top:164px;width:276px;height:18px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -118,7 +118,7 @@
 			xtype: 'label',
 			name: 'НадписьСтратегияАвторезервированияПоЗаказам',
 			text: 'Стратегия авторезервирования по заказам:',
-			style: 'position:absolute;left:12px;top:48px;width:232px;height:19px;',
+			style: 'position:absolute;left:12px;top:48px;width:232px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -129,7 +129,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодичностьДоступностиКлючевыхРесурсовПредприятия',
 			text: 'Периодичность доступности ключевых ресурсов предприятия:',
-			style: 'position:absolute;left:12px;top:48px;width:327px;height:19px;',
+			style: 'position:absolute;left:12px;top:48px;width:327px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -213,13 +213,13 @@
 			xtype: 'label',
 			name: 'Надпись16',
 			text: 'Указывать склады в табличной части документов:',
-			style: 'position:absolute;left:12px;top:152px;width:260px;height:19px;',
+			style: 'position:absolute;left:12px;top:152px;width:260px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись50',
 			text: 'Указывать заказы в табличной части документов:',
-			style: 'position:absolute;left:12px;top:144px;width:260px;height:19px;',
+			style: 'position:absolute;left:12px;top:144px;width:260px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -231,7 +231,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособЗакрытияПотребностейЗаказовНаПроизводство',
 			text: 'Способ закрытия потребностей заказов на производство:',
-			style: 'position:absolute;left:44px;top:96px;width:302px;height:19px;',
+			style: 'position:absolute;left:44px;top:96px;width:302px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -273,7 +273,7 @@
 			xtype: 'label',
 			name: 'НадписьСпособКонтроляДнейЗадолженности',
 			text: 'Способ контроля дней задолженности:',
-			style: 'position:absolute;left:12px;top:48px;width:208px;height:19px;',
+			style: 'position:absolute;left:12px;top:48px;width:208px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -300,19 +300,19 @@
 70      "Расчеты с персоналом по оплате труда"
 76.04 "Расчеты по депонированным суммам"
 97.01 "Расходы на оплату труда будущих периодов"',
-			style: 'position:absolute;left:12px;top:108px;width:333px;height:62px;',
+			style: 'position:absolute;left:12px;top:108px;width:333px;height:62px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРасширеннаяАналитикаДатаНачала',
 			text: '',
-			style: 'position:absolute;left:320px;top:48px;width:202px;height:19px;',
+			style: 'position:absolute;left:320px;top:48px;width:202px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'РежимИспользованияРасширеннойАналитики',
 			text: '',
-			style: 'position:absolute;left:32px;top:72px;width:308px;height:19px;',
+			style: 'position:absolute;left:32px;top:72px;width:308px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -749,7 +749,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалоОценкиДоходовИРасходовВНУПоКурсуАвансов',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:36px;top:123px;width:85px;height:19px;',
+			style: 'position:absolute;left:36px;top:123px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -783,7 +783,7 @@
 			xtype: 'label',
 			name: 'НадписьНачалоОценкиДоходовИРасходовВНУПоКурсуАвансов1',
 			text: 'Применяется с:',
-			style: 'position:absolute;left:46px;top:273px;width:85px;height:19px;',
+			style: 'position:absolute;left:46px;top:273px;width:85px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -868,7 +868,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Тип цен плановой себестоимости номенклатуры:',
-			style: 'position:absolute;left:12px;top:48px;width:260px;height:19px;',
+			style: 'position:absolute;left:12px;top:48px;width:260px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

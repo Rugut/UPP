@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьГраницаФормирования',
 			text: 'Формировать документы начиная с: ',
-			style: 'position:absolute;left:8px;top:82px;width:190px;height:19px;',
+			style: 'position:absolute;left:8px;top:82px;width:190px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -118,7 +118,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
-			style: 'position:absolute;left:6px;top:26px;width:88px;height:27px;',
+			style: 'position:absolute;left:6px;top:26px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

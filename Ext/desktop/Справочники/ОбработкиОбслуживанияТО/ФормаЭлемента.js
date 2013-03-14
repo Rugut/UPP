@@ -87,7 +87,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:362px;top:33px;width:22px;height:19px;',
+			style: 'position:absolute;left:362px;top:33px;width:22px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,7 +111,7 @@
 			xtype: 'label',
 			name: 'НадписьОбработка',
 			text: 'Обработка:',
-			style: 'position:absolute;left:8px;top:78px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:78px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,7 +123,7 @@
 			xtype: 'label',
 			name: 'НадписьВид',
 			text: 'Вид:',
-			style: 'position:absolute;left:8px;top:102px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:102px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'НадписьОписание',
 			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:126px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:126px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -163,7 +163,7 @@
 			xtype: 'label',
 			name: 'НадписьВерсия',
 			text: 'Версия обработки:',
-			style: 'position:absolute;left:8px;top:201px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:201px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -175,7 +175,7 @@
 			xtype: 'label',
 			name: 'НадписьИдентификатор',
 			text: 'ID:',
-			style: 'position:absolute;left:8px;top:225px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:225px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -187,7 +187,7 @@
 			xtype: 'label',
 			name: 'НадписьВерсияAPI',
 			text: 'Версия API:',
-			style: 'position:absolute;left:8px;top:177px;width:100px;height:19px;',
+			style: 'position:absolute;left:8px;top:177px;width:100px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

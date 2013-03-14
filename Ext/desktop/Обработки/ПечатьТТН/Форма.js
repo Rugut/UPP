@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'По накладной:',
-			style: 'position:absolute;left:3px;top:4px;width:80px;height:19px;',
+			style: 'position:absolute;left:3px;top:4px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -35,7 +35,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Марка автомобиля:',
-			style: 'position:absolute;left:6px;top:21px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:21px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -47,7 +47,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Марка прицепа:',
-			style: 'position:absolute;left:6px;top:45px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:45px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -59,7 +59,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Гос номер:',
-			style: 'position:absolute;left:314px;top:21px;width:60px;height:19px;',
+			style: 'position:absolute;left:314px;top:21px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Гос номер:',
-			style: 'position:absolute;left:314px;top:45px;width:60px;height:19px;',
+			style: 'position:absolute;left:314px;top:45px;width:60px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -83,7 +83,7 @@
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Пункт погрузки:',
-			style: 'position:absolute;left:6px;top:252px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:252px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -95,7 +95,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Перевозчик:',
-			style: 'position:absolute;left:6px;top:159px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:159px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -107,7 +107,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Заказчик:',
-			style: 'position:absolute;left:6px;top:183px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:183px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -119,7 +119,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Пункт разгрузки:',
-			style: 'position:absolute;left:6px;top:228px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:228px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -131,7 +131,7 @@
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Срок доставки:',
-			style: 'position:absolute;left:6px;top:297px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:297px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -143,7 +143,7 @@
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Водитель:',
-			style: 'position:absolute;left:6px;top:90px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:90px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -155,7 +155,7 @@
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Вид перевозки:',
-			style: 'position:absolute;left:6px;top:321px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:321px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -167,13 +167,13 @@
 			xtype: 'label',
 			name: 'Надпись13',
 			text: 'Лицензионная карточка:',
-			style: 'position:absolute;left:220px;top:297px;width:130px;height:19px;',
+			style: 'position:absolute;left:220px;top:297px;width:130px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Удостоверение №:',
-			style: 'position:absolute;left:6px;top:114px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:114px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -191,7 +191,7 @@
 			xtype: 'label',
 			name: 'НадписьТипЦен',
 			text: 'Тип цен:',
-			style: 'position:absolute;left:6px;top:366px;width:104px;height:19px;',
+			style: 'position:absolute;left:6px;top:366px;width:104px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

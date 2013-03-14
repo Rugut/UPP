@@ -31,19 +31,19 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
-			style: 'position:absolute;left:302px;top:33px;width:40px;height:19px;',
+			style: 'position:absolute;left:302px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Краткое наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименованиеПолное',
 			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:56px;width:128px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:128px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'toolbar',
@@ -74,7 +74,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код Альфа-2:',
-			style: 'position:absolute;left:393px;top:33px;width:72px;height:19px;',
+			style: 'position:absolute;left:393px;top:33px;width:72px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

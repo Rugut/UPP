@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'НадписьНастройкаДопроведения',
 			text: 'Настройка:',
-			style: 'position:absolute;left:8px;top:33px;width:63px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:63px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'НадписьОбрабатыватьДокументы',
 			text: 'Документы:',
-			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'по:',
-			style: 'position:absolute;left:163px;top:126px;width:15px;height:19px;',
+			style: 'position:absolute;left:163px;top:126px;width:15px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -96,7 +96,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'За период с:',
-			style: 'position:absolute;left:8px;top:126px;width:69px;height:19px;',
+			style: 'position:absolute;left:8px;top:126px;width:69px;height:19px;text-align:left;',
 		},
 	]
 });

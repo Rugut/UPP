@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:366px;top:33px;width:47px;height:19px;',
+			style: 'position:absolute;left:366px;top:33px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:497px;top:33px;width:18px;height:19px;',
+			style: 'position:absolute;left:497px;top:33px;width:18px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:528px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:528px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -164,7 +164,7 @@
 			xtype: 'label',
 			name: 'НадписьФамилия',
 			text: 'Фамилия:',
-			style: 'position:absolute;left:6px;top:6px;width:55px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:55px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -176,7 +176,7 @@
 			xtype: 'label',
 			name: 'НадписьИмя',
 			text: 'Имя:',
-			style: 'position:absolute;left:215px;top:6px;width:27px;height:19px;',
+			style: 'position:absolute;left:215px;top:6px;width:27px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -188,7 +188,7 @@
 			xtype: 'label',
 			name: 'НадписьОтчество',
 			text: 'Отчество:',
-			style: 'position:absolute;left:402px;top:6px;width:51px;height:19px;',
+			style: 'position:absolute;left:402px;top:6px;width:51px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -200,7 +200,7 @@
 			xtype: 'label',
 			name: 'НадписьСтраховойНомерПФР',
 			text: 'СНИЛС:',
-			style: 'position:absolute;left:6px;top:30px;width:55px;height:19px;',
+			style: 'position:absolute;left:6px;top:30px;width:55px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -212,7 +212,7 @@
 			xtype: 'label',
 			name: 'НадписьАдрес',
 			text: 'Адрес по регистрации:',
-			style: 'position:absolute;left:6px;top:210px;width:120px;height:19px;',
+			style: 'position:absolute;left:6px;top:210px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -230,7 +230,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН',
 			text: 'ИНН:',
-			style: 'position:absolute;left:6px;top:78px;width:32px;height:19px;',
+			style: 'position:absolute;left:6px;top:78px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -242,7 +242,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаРождения',
 			text: 'Дата рождения:',
-			style: 'position:absolute;left:215px;top:30px;width:84px;height:19px;',
+			style: 'position:absolute;left:215px;top:30px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -254,7 +254,7 @@
 			xtype: 'label',
 			name: 'НадписьПол',
 			text: 'Пол:',
-			style: 'position:absolute;left:402px;top:30px;width:28px;height:19px;',
+			style: 'position:absolute;left:402px;top:30px;width:28px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -266,7 +266,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатусНалогоплательщика',
 			text: 'Статус налогоплательщика:',
-			style: 'position:absolute;left:215px;top:78px;width:148px;height:19px;',
+			style: 'position:absolute;left:215px;top:78px;width:148px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -278,7 +278,7 @@
 			xtype: 'label',
 			name: 'НадписьСерияДокумента',
 			text: 'Серия:',
-			style: 'position:absolute;left:294px;top:162px;width:37px;height:19px;',
+			style: 'position:absolute;left:294px;top:162px;width:37px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -290,7 +290,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерДокумента1',
 			text: 'Номер:',
-			style: 'position:absolute;left:441px;top:162px;width:40px;height:19px;',
+			style: 'position:absolute;left:441px;top:162px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -314,13 +314,13 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыдачиДокумента',
 			text: 'Выдан:',
-			style: 'position:absolute;left:6px;top:186px;width:38px;height:19px;',
+			style: 'position:absolute;left:6px;top:186px;width:38px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидДокумента1',
 			text: 'Вид документа:',
-			style: 'position:absolute;left:6px;top:162px;width:79px;height:19px;',
+			style: 'position:absolute;left:6px;top:162px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -332,7 +332,7 @@
 			xtype: 'label',
 			name: 'НадписьКемВыданДокумент',
 			text: 'Кем выдан:',
-			style: 'position:absolute;left:138px;top:186px;width:60px;height:19px;',
+			style: 'position:absolute;left:138px;top:186px;width:60px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -354,7 +354,7 @@
 			xtype: 'label',
 			name: 'НадписьВидДокумента2',
 			text: 'Вид занятости:',
-			style: 'position:absolute;left:6px;top:102px;width:81px;height:19px;',
+			style: 'position:absolute;left:6px;top:102px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -366,13 +366,13 @@
 			xtype: 'label',
 			name: 'НадписьСтатус',
 			text: 'Статус получателя (родственные отношения):',
-			style: 'position:absolute;left:6px;top:54px;width:234px;height:19px;',
+			style: 'position:absolute;left:6px;top:54px;width:234px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидДокумента3',
 			text: 'Для иностранных граждан:',
-			style: 'position:absolute;left:6px;top:234px;width:139px;height:19px;',
+			style: 'position:absolute;left:6px;top:234px;width:139px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -412,7 +412,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерЛицевогоСчета',
 			text: '№ счета:',
-			style: 'position:absolute;left:387px;top:64px;width:47px;height:19px;',
+			style: 'position:absolute;left:387px;top:64px;width:47px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -424,7 +424,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеБанка',
 			text: 'Наименование банка:',
-			style: 'position:absolute;left:14px;top:88px;width:114px;height:19px;',
+			style: 'position:absolute;left:14px;top:88px;width:114px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -436,7 +436,7 @@
 			xtype: 'label',
 			name: 'НадписьБИКБанка',
 			text: 'БИК:',
-			style: 'position:absolute;left:450px;top:88px;width:29px;height:19px;',
+			style: 'position:absolute;left:450px;top:88px;width:29px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -496,13 +496,13 @@
 			xtype: 'label',
 			name: 'НадписьВидДокумента',
 			text: 'Вид документа:',
-			style: 'position:absolute;left:6px;top:244px;width:79px;height:19px;',
+			style: 'position:absolute;left:6px;top:244px;width:79px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомерДокумента',
 			text: 'Номер:',
-			style: 'position:absolute;left:439px;top:244px;width:40px;height:19px;',
+			style: 'position:absolute;left:439px;top:244px;width:40px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -514,7 +514,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаВыдачиБольничного',
 			text: 'Дата:',
-			style: 'position:absolute;left:310px;top:244px;width:33px;height:19px;',
+			style: 'position:absolute;left:310px;top:244px;width:33px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -526,7 +526,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПредставленияПакетаДокументов',
 			text: 'Дата представления пакета документов:',
-			style: 'position:absolute;left:6px;top:6px;width:213px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:213px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -538,7 +538,7 @@
 			xtype: 'label',
 			name: 'НадписьКоррСчет',
 			text: 'Корр. счет:',
-			style: 'position:absolute;left:247px;top:88px;width:58px;height:19px;',
+			style: 'position:absolute;left:247px;top:88px;width:58px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -550,7 +550,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресПочтовыйКодПоКЛАДР',
 			text: 'Код по КЛАДР:',
-			style: 'position:absolute;left:354px;top:112px;width:80px;height:19px;',
+			style: 'position:absolute;left:354px;top:112px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -574,7 +574,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаСправкиОНеполученииПособияОтОтца',
 			text: 'отцом от:',
-			style: 'position:absolute;left:14px;top:285px;width:156px;height:19px;',
+			style: 'position:absolute;left:14px;top:285px;width:156px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -592,7 +592,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаСправкиОНеполученииПособияОтМатери',
 			text: 'матерью от:',
-			style: 'position:absolute;left:14px;top:310px;width:156px;height:19px;',
+			style: 'position:absolute;left:14px;top:310px;width:156px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -610,13 +610,13 @@
 			xtype: 'label',
 			name: 'НадписьНомерСправкиОтДругогоРодителя',
 			text: '№',
-			style: 'position:absolute;left:263px;top:285px;width:25px;height:19px;',
+			style: 'position:absolute;left:263px;top:285px;width:25px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомерСправкиОтДругогоРодителя1',
 			text: '№',
-			style: 'position:absolute;left:263px;top:310px;width:25px;height:19px;',
+			style: 'position:absolute;left:263px;top:310px;width:25px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'label',
@@ -628,7 +628,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаСправкиПоДругимМестамРаботы',
 			text: 'по другим местам работы от:',
-			style: 'position:absolute;left:14px;top:335px;width:156px;height:19px;',
+			style: 'position:absolute;left:14px;top:335px;width:156px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -646,7 +646,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерСправкиОтДругогоРодителя2',
 			text: '№',
-			style: 'position:absolute;left:263px;top:335px;width:25px;height:19px;',
+			style: 'position:absolute;left:263px;top:335px;width:25px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'grid',
@@ -771,7 +771,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПриказаНаОтпускПоУходуЗаРебенком',
 			text: 'На отпуск по уходу за ребенком от:',
-			style: 'position:absolute;left:14px;top:29px;width:185px;height:19px;',
+			style: 'position:absolute;left:14px;top:29px;width:185px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -801,7 +801,7 @@
 			xtype: 'label',
 			name: 'НадписьДатаПриказаОЗаменеПослеродовогоОтпуска',
 			text: 'О замене послеродового отпуска на отпуск по уходу от:',
-			style: 'position:absolute;left:14px;top:53px;width:290px;height:19px;',
+			style: 'position:absolute;left:14px;top:53px;width:290px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -837,7 +837,7 @@
 			xtype: 'label',
 			name: 'НадписьИ',
 			text: ' и ',
-			style: 'position:absolute;left:339px;top:54px;width:20px;height:19px;',
+			style: 'position:absolute;left:339px;top:54px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -1007,7 +1007,7 @@
 			xtype: 'label',
 			name: 'НадписьИ1',
 			text: ' № ',
-			style: 'position:absolute;left:339px;top:101px;width:20px;height:19px;',
+			style: 'position:absolute;left:339px;top:101px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -1037,7 +1037,7 @@
 			xtype: 'label',
 			name: 'НадписьИнаяПолезнаяИнформация',
 			text: 'Иная информация, имеющая значение:',
-			style: 'position:absolute;left:6px;top:178px;width:290px;height:19px;',
+			style: 'position:absolute;left:6px;top:178px;width:290px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -1061,7 +1061,7 @@
 			xtype: 'label',
 			name: 'НадписьДокументыОснования',
 			text: 'Наименование и реквизиты представленных документов:',
-			style: 'position:absolute;left:6px;top:40px;width:316px;height:19px;',
+			style: 'position:absolute;left:6px;top:40px;width:316px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textarea',
@@ -1089,7 +1089,7 @@
 			xtype: 'label',
 			name: 'НадписьРуководитель',
 			text: 'Руководитель:',
-			style: 'position:absolute;left:14px;top:162px;width:106px;height:19px;',
+			style: 'position:absolute;left:14px;top:162px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1101,7 +1101,7 @@
 			xtype: 'label',
 			name: 'НадписьДолжностьРуководителя',
 			text: 'Должность:',
-			style: 'position:absolute;left:358px;top:162px;width:81px;height:19px;',
+			style: 'position:absolute;left:358px;top:162px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1113,7 +1113,7 @@
 			xtype: 'label',
 			name: 'НадписьРегистрационныйНомерФСС',
 			text: 'Регистрационный номер:',
-			style: 'position:absolute;left:14px;top:108px;width:134px;height:19px;',
+			style: 'position:absolute;left:14px;top:108px;width:134px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1125,7 +1125,7 @@
 			xtype: 'label',
 			name: 'НадписьДополнительныйКодФСС',
 			text: 'Дополнительный код:',
-			style: 'position:absolute;left:264px;top:108px;width:116px;height:19px;',
+			style: 'position:absolute;left:264px;top:108px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1137,7 +1137,7 @@
 			xtype: 'label',
 			name: 'НадписьКодПодчиненностиФСС',
 			text: 'Код подчиненности:',
-			style: 'position:absolute;left:497px;top:108px;width:102px;height:19px;',
+			style: 'position:absolute;left:497px;top:108px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1149,7 +1149,7 @@
 			xtype: 'label',
 			name: 'НадписьНаименованиеТерриториальногоОрганаФСС',
 			text: 'Наименование территориального органа ФСС:',
-			style: 'position:absolute;left:14px;top:84px;width:241px;height:19px;',
+			style: 'position:absolute;left:14px;top:84px;width:241px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1185,7 +1185,7 @@
 			xtype: 'label',
 			name: 'НадписьИНН1',
 			text: 'ИНН:',
-			style: 'position:absolute;left:14px;top:30px;width:31px;height:19px;',
+			style: 'position:absolute;left:14px;top:30px;width:31px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1197,7 +1197,7 @@
 			xtype: 'label',
 			name: 'НадписьКПП',
 			text: 'КПП:',
-			style: 'position:absolute;left:186px;top:30px;width:32px;height:19px;',
+			style: 'position:absolute;left:186px;top:30px;width:32px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1221,7 +1221,7 @@
 			xtype: 'label',
 			name: 'НадписьГлавныйБухгалтер',
 			text: 'Главный бухгалтер:',
-			style: 'position:absolute;left:14px;top:186px;width:106px;height:19px;',
+			style: 'position:absolute;left:14px;top:186px;width:106px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1248,7 +1248,7 @@
 			xtype: 'label',
 			name: 'НадписьТелефон',
 			text: 'Телефон:',
-			style: 'position:absolute;left:650px;top:57px;width:52px;height:19px;',
+			style: 'position:absolute;left:650px;top:57px;width:52px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -1260,7 +1260,7 @@
 			xtype: 'label',
 			name: 'НадписьАдресЭлектроннойПочтыСоставителя',
 			text: 'Адрес э.п.:',
-			style: 'position:absolute;left:800px;top:57px;width:59px;height:19px;',
+			style: 'position:absolute;left:800px;top:57px;width:59px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

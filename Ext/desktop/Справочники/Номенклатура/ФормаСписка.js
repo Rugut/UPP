@@ -233,7 +233,7 @@
 			xtype: 'label',
 			name: 'НадписьТипРасчета',
 			text: 'Валюта цены:',
-			style: 'position:absolute;left:150px;top:125px;width:73px;height:19px;',
+			style: 'position:absolute;left:150px;top:125px;width:73px;height:19px;text-align:left;',
 		},
 					]
 				},

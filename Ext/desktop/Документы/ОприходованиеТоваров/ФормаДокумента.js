@@ -13,19 +13,19 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:383px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:383px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -66,7 +66,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:335px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:335px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -90,7 +90,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -115,7 +115,7 @@
 			xtype: 'label',
 			name: 'НадписьСклад',
 			text: 'Склад:',
-			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;',
+			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -127,19 +127,19 @@
 			xtype: 'label',
 			name: 'ИнфНадписьТоварыИтоги',
 			text: 'Оптовые цены, Скидка 20%',
-			style: 'position:absolute;left:8px;top:313px;width:476px;height:17px;',
+			style: 'position:absolute;left:8px;top:313px;width:476px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:338px;top:33px;width:88px;height:19px;',
+			style: 'position:absolute;left:338px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего,USD:',
-			style: 'position:absolute;left:490px;top:313px;width:68px;height:17px;',
+			style: 'position:absolute;left:490px;top:313px;width:68px;height:17px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -151,7 +151,7 @@
 			xtype: 'label',
 			name: 'НадписьИнвентаризацияТоваровНаСкладе',
 			text: 'Инвентаризация:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -336,7 +336,7 @@
 			xtype: 'label',
 			name: 'НадписьКоррСчетНУ',
 			text: 'Корр. счет (НУ):',
-			style: 'position:absolute;left:333px;top:6px;width:142px;height:19px;',
+			style: 'position:absolute;left:333px;top:6px;width:142px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -348,7 +348,7 @@
 			xtype: 'label',
 			name: 'НадписьКоррСчет',
 			text: 'Корр. счет:',
-			style: 'position:absolute;left:6px;top:6px;width:142px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -360,7 +360,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконто1',
 			text: 'Субконто 1:',
-			style: 'position:absolute;left:6px;top:29px;width:142px;height:19px;',
+			style: 'position:absolute;left:6px;top:29px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -372,7 +372,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконто2',
 			text: 'Субконто 2:',
-			style: 'position:absolute;left:6px;top:52px;width:142px;height:19px;',
+			style: 'position:absolute;left:6px;top:52px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -384,7 +384,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконто3',
 			text: 'Субконто 3:',
-			style: 'position:absolute;left:6px;top:75px;width:142px;height:19px;',
+			style: 'position:absolute;left:6px;top:75px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -402,7 +402,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоНУ1',
 			text: 'Субконто 1:',
-			style: 'position:absolute;left:333px;top:29px;width:142px;height:19px;',
+			style: 'position:absolute;left:333px;top:29px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -414,7 +414,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоНУ2',
 			text: 'Субконто 2:',
-			style: 'position:absolute;left:333px;top:52px;width:142px;height:19px;',
+			style: 'position:absolute;left:333px;top:52px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -426,7 +426,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоНУ3',
 			text: 'Субконто 3:',
-			style: 'position:absolute;left:333px;top:75px;width:142px;height:19px;',
+			style: 'position:absolute;left:333px;top:75px;width:142px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

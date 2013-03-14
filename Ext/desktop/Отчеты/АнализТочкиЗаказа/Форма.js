@@ -127,7 +127,7 @@
 			xtype: 'label',
 			name: 'НадписьПо',
 			text: 'по',
-			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;',
+			style: 'position:absolute;left:139px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
@@ -139,7 +139,7 @@
 			xtype: 'label',
 			name: 'Период',
 			text: '',
-			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;',
+			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',

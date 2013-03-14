@@ -34,7 +34,7 @@
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:8px;top:57px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -46,7 +46,7 @@
 			xtype: 'label',
 			name: 'НадписьКоличество',
 			text: 'Количество:',
-			style: 'position:absolute;left:8px;top:105px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -64,7 +64,7 @@
 			xtype: 'label',
 			name: 'НадписьДоляСтоимости',
 			text: 'Доля стоимости:',
-			style: 'position:absolute;left:8px;top:129px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -88,7 +88,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерОперацииМаршрута',
 			text: '№ операции:',
-			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -100,7 +100,7 @@
 			xtype: 'label',
 			name: 'НадписьЕдиница',
 			text: 'Единица:',
-			style: 'position:absolute;left:185px;top:105px;width:53px;height:19px;',
+			style: 'position:absolute;left:185px;top:105px;width:53px;height:19px;text-align:left;',
 		},
 	]
 });

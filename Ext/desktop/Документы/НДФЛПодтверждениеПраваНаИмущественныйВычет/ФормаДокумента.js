@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:82px;width:102px;height:19px;',
+			style: 'position:absolute;left:8px;top:82px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:340px;width:102px;height:19px;',
+			style: 'position:absolute;left:8px;top:340px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -175,7 +175,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -193,13 +193,13 @@
 			xtype: 'label',
 			name: 'НадписьОт',
 			text: 'от:',
-			style: 'position:absolute;left:195px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:195px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Учреждение:',
-			style: 'position:absolute;left:8px;top:57px;width:102px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -211,7 +211,7 @@
 			xtype: 'label',
 			name: 'НадписьНалоговыйПериод',
 			text: 'Вычет по налогу за:',
-			style: 'position:absolute;left:8px;top:107px;width:102px;height:19px;',
+			style: 'position:absolute;left:8px;top:107px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

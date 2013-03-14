@@ -150,7 +150,7 @@
 			xtype: 'label',
 			name: 'НадписьВидУслуги',
 			text: 'Вид услуги:',
-			style: 'position:absolute;left:0px;top:92px;width:70px;height:19px;',
+			style: 'position:absolute;left:0px;top:92px;width:70px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -162,13 +162,13 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:0px;top:2px;width:98px;height:19px;',
+			style: 'position:absolute;left:0px;top:2px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:187px;top:2px;width:20px;height:19px;',
+			style: 'position:absolute;left:187px;top:2px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -186,7 +186,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:0px;top:29px;width:98px;height:19px;',
+			style: 'position:absolute;left:0px;top:29px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -209,7 +209,7 @@
 			xtype: 'label',
 			name: 'НадписьФорматОтвета',
 			text: 'Формат ответа:',
-			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -221,7 +221,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период запроса:',
-			style: 'position:absolute;left:0px;top:26px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:26px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -233,7 +233,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: '-',
-			style: 'position:absolute;left:190px;top:26px;width:15px;height:19px;',
+			style: 'position:absolute;left:190px;top:26px;width:15px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -334,7 +334,7 @@
 			xtype: 'label',
 			name: 'НадписьВыбиратьТолько',
 			text: 'Фильтр по виду:',
-			style: 'position:absolute;left:0px;top:1px;width:96px;height:19px;',
+			style: 'position:absolute;left:0px;top:1px;width:96px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -365,7 +365,7 @@
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
 			text: 'Получатель:',
-			style: 'position:absolute;left:0px;top:55px;width:98px;height:19px;',
+			style: 'position:absolute;left:0px;top:55px;width:98px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

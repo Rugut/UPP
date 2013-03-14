@@ -59,7 +59,7 @@
 			xtype: 'label',
 			name: 'НадписьНайдено',
 			text: '',
-			style: 'position:absolute;left:100px;top:5px;width:622px;height:15px;',
+			style: 'position:absolute;left:100px;top:5px;width:622px;height:15px;text-align:right;',
 		},
 	]
 });

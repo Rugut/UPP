@@ -27,7 +27,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерОтправленного',
 			text: 'Номер отправленного сообщения:',
-			style: 'position:absolute;left:8px;top:10px;width:176px;height:19px;',
+			style: 'position:absolute;left:8px;top:10px;width:176px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -39,7 +39,7 @@
 			xtype: 'label',
 			name: 'НадписьНомерПринятого',
 			text: 'Номер принятого сообщения:',
-			style: 'position:absolute;left:8px;top:35px;width:176px;height:19px;',
+			style: 'position:absolute;left:8px;top:35px;width:176px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

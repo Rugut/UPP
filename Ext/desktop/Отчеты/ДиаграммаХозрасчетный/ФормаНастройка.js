@@ -41,7 +41,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период с:',
-			style: 'position:absolute;left:6px;top:32px;width:78px;height:19px;',
+			style: 'position:absolute;left:6px;top:32px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -53,7 +53,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'по:',
-			style: 'position:absolute;left:172px;top:32px;width:16px;height:19px;',
+			style: 'position:absolute;left:172px;top:32px;width:16px;height:19px;text-align:right;',
 		},
 		{
 			xtype: 'textfield',
@@ -71,7 +71,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:6px;top:58px;width:78px;height:19px;',
+			style: 'position:absolute;left:6px;top:58px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -128,7 +128,7 @@
 			xtype: 'label',
 			name: 'НадписьСчет',
 			text: 'Счет:',
-			style: 'position:absolute;left:6px;top:6px;width:78px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -140,7 +140,7 @@
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'Период:',
-			style: 'position:absolute;left:6px;top:82px;width:78px;height:19px;',
+			style: 'position:absolute;left:6px;top:82px;width:78px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -222,7 +222,7 @@
 			xtype: 'label',
 			name: 'НадписьТипДиаграммы',
 			text: 'Тип диаграммы:',
-			style: 'position:absolute;left:6px;top:6px;width:102px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:102px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',

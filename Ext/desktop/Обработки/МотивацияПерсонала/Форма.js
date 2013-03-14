@@ -522,7 +522,7 @@
 			xtype: 'label',
 			name: 'НадписьСМ',
 			text: 'Редактируется схема мотивации:',
-			style: 'position:absolute;left:29px;top:2px;width:176px;height:19px;',
+			style: 'position:absolute;left:29px;top:2px;width:176px;height:19px;text-align:left;',
 		},
 					]
 				},

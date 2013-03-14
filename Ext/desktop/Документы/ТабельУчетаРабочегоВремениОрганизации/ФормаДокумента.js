@@ -38,7 +38,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:243px;top:0px;width:44px;height:19px;',
+			style: 'position:absolute;left:243px;top:0px;width:44px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -50,7 +50,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:0px;top:1px;width:83px;height:19px;',
+			style: 'position:absolute;left:0px;top:1px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -62,7 +62,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:0px;top:25px;width:83px;height:19px;',
+			style: 'position:absolute;left:0px;top:25px;width:83px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -80,7 +80,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:0px;top:463px;width:86px;height:19px;',
+			style: 'position:absolute;left:0px;top:463px;width:86px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -501,7 +501,7 @@
 			xtype: 'label',
 			name: 'НадписьЗакрытьСправкуФормы',
 			text: 'Скрыть эту информацию о Табеле',
-			style: 'position:absolute;left:0px;top:445px;width:200px;height:35px;',
+			style: 'position:absolute;left:0px;top:445px;width:200px;height:35px;text-align:right;',
 		},
 					]
 				},

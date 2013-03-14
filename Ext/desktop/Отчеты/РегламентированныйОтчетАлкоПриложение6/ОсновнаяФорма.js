@@ -31,7 +31,7 @@
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
 			text: '',
-			style: 'position:absolute;left:122px;top:105px;width:124px;height:19px;',
+			style: 'position:absolute;left:122px;top:105px;width:124px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'ОписаниеНормативДок',
 			text: '',
-			style: 'position:absolute;left:14px;top:158px;width:248px;height:86px;',
+			style: 'position:absolute;left:14px;top:158px;width:248px;height:86px;text-align:left;',
 		},
 		{
 			xtype: 'button',

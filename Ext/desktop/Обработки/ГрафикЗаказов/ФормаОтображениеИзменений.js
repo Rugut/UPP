@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьИнформация',
 			text: '',
-			style: 'position:absolute;left:8px;top:5px;width:731px;height:38px;',
+			style: 'position:absolute;left:8px;top:5px;width:731px;height:38px;text-align:left;',
 		},
 	]
 });

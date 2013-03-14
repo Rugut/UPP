@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Код:',
-			style: 'position:absolute;left:343px;top:57px;width:25px;height:19px;',
+			style: 'position:absolute;left:343px;top:57px;width:25px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:81px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:81px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Способ погашения стоимости:',
-			style: 'position:absolute;left:8px;top:105px;width:177px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:177px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Срок полезного использования:',
-			style: 'position:absolute;left:8px;top:129px;width:177px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:177px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Количество по нормативу выдачи:',
-			style: 'position:absolute;left:8px;top:81px;width:177px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:177px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Единица:',
-			style: 'position:absolute;left:286px;top:81px;width:50px;height:19px;',
+			style: 'position:absolute;left:286px;top:81px;width:50px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -97,7 +97,7 @@
 			xtype: 'label',
 			name: 'Надпись9',
 			text: 'Способ отражения расходов:',
-			style: 'position:absolute;left:8px;top:153px;width:177px;height:19px;',
+			style: 'position:absolute;left:8px;top:153px;width:177px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

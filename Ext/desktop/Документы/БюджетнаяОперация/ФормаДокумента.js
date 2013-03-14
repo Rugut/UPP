@@ -75,7 +75,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -87,7 +87,7 @@
 			xtype: 'label',
 			name: 'Надпись23',
 			text: 'от:',
-			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;',
+			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -99,7 +99,7 @@
 			xtype: 'label',
 			name: 'Надпись24',
 			text: 'Сценарий:',
-			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -111,7 +111,7 @@
 			xtype: 'label',
 			name: 'Надпись25',
 			text: 'Период планирования:',
-			style: 'position:absolute;left:342px;top:33px;width:120px;height:19px;',
+			style: 'position:absolute;left:342px;top:33px;width:120px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -123,7 +123,7 @@
 			xtype: 'label',
 			name: 'Надпись26',
 			text: 'Статья оборотов:',
-			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:81px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -135,7 +135,7 @@
 			xtype: 'label',
 			name: 'Надпись27',
 			text: 'Ед. измерения:',
-			style: 'position:absolute;left:176px;top:105px;width:84px;height:19px;',
+			style: 'position:absolute;left:176px;top:105px;width:84px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -147,7 +147,7 @@
 			xtype: 'label',
 			name: 'Надпись32',
 			text: 'Количество:',
-			style: 'position:absolute;left:8px;top:105px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:105px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -159,7 +159,7 @@
 			xtype: 'label',
 			name: 'Надпись34',
 			text: 'Валюта:',
-			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;',
+			style: 'position:absolute;left:8px;top:129px;width:92px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -171,7 +171,7 @@
 			xtype: 'label',
 			name: 'Надпись35',
 			text: 'Курс :',
-			style: 'position:absolute;left:184px;top:129px;width:56px;height:19px;',
+			style: 'position:absolute;left:184px;top:129px;width:56px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -183,7 +183,7 @@
 			xtype: 'label',
 			name: 'Надпись38',
 			text: 'Сумма:',
-			style: 'position:absolute;left:342px;top:129px;width:88px;height:19px;',
+			style: 'position:absolute;left:342px;top:129px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -201,7 +201,7 @@
 			xtype: 'label',
 			name: 'НадписьЦена',
 			text: 'Цена:',
-			style: 'position:absolute;left:342px;top:105px;width:88px;height:19px;',
+			style: 'position:absolute;left:342px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -229,7 +229,7 @@
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'Проект:',
-			style: 'position:absolute;left:334px;top:6px;width:80px;height:19px;',
+			style: 'position:absolute;left:334px;top:6px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -247,7 +247,7 @@
 			xtype: 'label',
 			name: 'Надпись31',
 			text: 'Номенклатура:',
-			style: 'position:absolute;left:334px;top:31px;width:80px;height:19px;',
+			style: 'position:absolute;left:334px;top:31px;width:80px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -277,7 +277,7 @@
 			xtype: 'label',
 			name: 'Надпись28',
 			text: 'ЦФО:',
-			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;',
+			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'grid',
@@ -365,7 +365,7 @@
 			xtype: 'label',
 			name: 'Период',
 			text: '',
-			style: 'position:absolute;left:482px;top:33px;width:115px;height:19px;',
+			style: 'position:absolute;left:482px;top:33px;width:115px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'button',

@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
-			style: 'position:absolute;left:179px;top:33px;width:20px;height:19px;',
+			style: 'position:absolute;left:179px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:178px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:178px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:201px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:201px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:56px;width:82px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:82px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -134,7 +134,7 @@
 			xtype: 'label',
 			name: 'НадписьОтражать',
 			text: 'Отражать в:',
-			style: 'position:absolute;left:335px;top:33px;width:63px;height:19px;',
+			style: 'position:absolute;left:335px;top:33px;width:63px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'checkbox',
@@ -145,7 +145,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетСписанияБУ',
 			text: 'Счет (БУ):',
-			style: 'position:absolute;left:8px;top:132px;width:54px;height:19px;',
+			style: 'position:absolute;left:8px;top:132px;width:54px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -157,7 +157,7 @@
 			xtype: 'label',
 			name: 'НадписьСчетСписанияНУ',
 			text: 'Счет (НУ):',
-			style: 'position:absolute;left:8px;top:155px;width:54px;height:19px;',
+			style: 'position:absolute;left:8px;top:155px;width:54px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -193,7 +193,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Нематериаль- ный актив:',
-			style: 'position:absolute;left:8px;top:76px;width:82px;height:28px;',
+			style: 'position:absolute;left:8px;top:76px;width:82px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

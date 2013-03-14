@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Рег. номер:',
-			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:32px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'НадписьОТ',
 			text: 'от',
-			style: 'position:absolute;left:178px;top:32px;width:16px;height:19px;',
+			style: 'position:absolute;left:178px;top:32px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'textfield',
@@ -37,7 +37,7 @@
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:80px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:80px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -49,7 +49,7 @@
 			xtype: 'label',
 			name: 'НадписьБанковскийСчет',
 			text: 'Банковский счет:',
-			style: 'position:absolute;left:336px;top:80px;width:90px;height:19px;',
+			style: 'position:absolute;left:336px;top:80px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,7 +61,7 @@
 			xtype: 'label',
 			name: 'НадписьПолучатель',
 			text: 'Получатель:',
-			style: 'position:absolute;left:8px;top:104px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:104px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -73,7 +73,7 @@
 			xtype: 'label',
 			name: 'НадписьБанковскийСчетПолучатель',
 			text: 'Банковский счет:',
-			style: 'position:absolute;left:336px;top:104px;width:90px;height:19px;',
+			style: 'position:absolute;left:336px;top:104px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -114,7 +114,7 @@
 			xtype: 'label',
 			name: 'НадписьОтразитьВ',
 			text: 'Отразить в:',
-			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;',
+			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -131,19 +131,19 @@
 			xtype: 'label',
 			name: 'НадписьДоговор',
 			text: 'Договор:',
-			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСтавкаНДС',
 			text: '% НДС:',
-			style: 'position:absolute;left:0px;top:48px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:48px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСуммаНДС',
 			text: 'Сумма НДС:',
-			style: 'position:absolute;left:0px;top:72px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:72px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
@@ -155,19 +155,19 @@
 			xtype: 'label',
 			name: 'НадписьСуммаВзаиморасчетов',
 			text: 'Сумма <нет валюты>:',
-			style: 'position:absolute;left:329px;top:48px;width:90px;height:19px;',
+			style: 'position:absolute;left:329px;top:48px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКурсВзаиморасчетов',
 			text: 'Курс:',
-			style: 'position:absolute;left:0px;top:24px;width:88px;height:19px;',
+			style: 'position:absolute;left:0px;top:24px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнфНадписьКурса',
 			text: '(10000 TRL = 6500 руб.)',
-			style: 'position:absolute;left:192px;top:24px;width:116px;height:19px;',
+			style: 'position:absolute;left:192px;top:24px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -203,7 +203,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатья',
 			text: 'Статья движ. ден. средств:',
-			style: 'position:absolute;left:0px;top:120px;width:88px;height:27px;',
+			style: 'position:absolute;left:0px;top:120px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -215,7 +215,7 @@
 			xtype: 'label',
 			name: 'НадписьСтатья1',
 			text: 'Статья движ. ден. средств:',
-			style: 'position:absolute;left:0px;top:0px;width:82px;height:27px;',
+			style: 'position:absolute;left:0px;top:0px;width:82px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -293,19 +293,19 @@
 			xtype: 'label',
 			name: 'ИнфНадписьКурсаЗаявки',
 			text: '(10000 TRL = 6500 руб.)',
-			style: 'position:absolute;left:533px;top:144px;width:108px;height:19px;',
+			style: 'position:absolute;left:533px;top:144px;width:108px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСчетРасчетов',
 			text: 'Счет расчетов:',
-			style: 'position:absolute;left:329px;top:72px;width:90px;height:19px;',
+			style: 'position:absolute;left:329px;top:72px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСчетАвансов',
 			text: 'Счет авансов:',
-			style: 'position:absolute;left:329px;top:96px;width:90px;height:19px;',
+			style: 'position:absolute;left:329px;top:96px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -335,25 +335,25 @@
 			xtype: 'label',
 			name: 'НадписьСчетУчетаРасчетовСКонтрагентомНУ',
 			text: 'Счет НУ:',
-			style: 'position:absolute;left:329px;top:65px;width:71px;height:19px;',
+			style: 'position:absolute;left:329px;top:65px;width:71px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСубконтоНУДт1',
 			text: 'Субконто НУ Дт1:',
-			style: 'position:absolute;left:329px;top:89px;width:90px;height:19px;',
+			style: 'position:absolute;left:329px;top:89px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСубконтоНУДт2',
 			text: 'Субконто НУ Дт2:',
-			style: 'position:absolute;left:329px;top:113px;width:90px;height:19px;',
+			style: 'position:absolute;left:329px;top:113px;width:90px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСубконтоНУДт3',
 			text: 'Субконто НУ Дт3:',
-			style: 'position:absolute;left:329px;top:137px;width:90px;height:19px;',
+			style: 'position:absolute;left:329px;top:137px;width:90px;height:19px;text-align:left;',
 		},
 					]
 				},
@@ -489,7 +489,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоДт1',
 			text: 'Субконто Дт1:',
-			style: 'position:absolute;left:0px;top:89px;width:78px;height:19px;',
+			style: 'position:absolute;left:0px;top:89px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -501,7 +501,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоДт2',
 			text: 'Субконто Дт2:',
-			style: 'position:absolute;left:0px;top:113px;width:78px;height:19px;',
+			style: 'position:absolute;left:0px;top:113px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -513,7 +513,7 @@
 			xtype: 'label',
 			name: 'НадписьСубконтоДт3',
 			text: 'Субконто Дт3:',
-			style: 'position:absolute;left:0px;top:137px;width:78px;height:19px;',
+			style: 'position:absolute;left:0px;top:137px;width:78px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -553,7 +553,7 @@
 			xtype: 'label',
 			name: 'НадписьСумма',
 			text: 'Сумма:',
-			style: 'position:absolute;left:8px;top:128px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:128px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -615,13 +615,13 @@
 			xtype: 'label',
 			name: 'НадписьВходящийДокументОт',
 			text: 'от:',
-			style: 'position:absolute;left:179px;top:56px;width:16px;height:19px;',
+			style: 'position:absolute;left:179px;top:56px;width:16px;height:19px;text-align:center;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВходящийНомер',
 			text: 'Вх. номер:',
-			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;',
+			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -664,7 +664,7 @@
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
-			style: 'position:absolute;left:8px;top:374px;width:84px;height:19px;',
+			style: 'position:absolute;left:8px;top:374px;width:84px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',

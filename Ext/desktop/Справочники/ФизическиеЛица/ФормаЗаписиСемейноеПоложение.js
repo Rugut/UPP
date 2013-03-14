@@ -13,7 +13,7 @@
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Запись о семейном положении действует с:',
-			style: 'position:absolute;left:8px;top:43px;width:258px;height:19px;',
+			style: 'position:absolute;left:8px;top:43px;width:258px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
@@ -25,7 +25,7 @@
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Семейное положение:',
-			style: 'position:absolute;left:8px;top:8px;width:116px;height:19px;',
+			style: 'position:absolute;left:8px;top:8px;width:116px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
