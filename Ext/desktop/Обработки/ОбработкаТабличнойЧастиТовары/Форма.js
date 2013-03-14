@@ -15,13 +15,13 @@
 			items:
 			[
 				{
+					text:'Установить флажки',
+				},
+				{
 					text:'Снять флажки',
 				},
 				{
 					text:'Инвертировать флажки',
-				},
-				{
-					text:'Установить флажки',
 				},
 			]
 		},
@@ -185,13 +185,13 @@
 				{
 					text:'ОК',
 				},
-				{
-					text:'Справка',
-				},
-				'-',
 				'-',
 				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -204,6 +204,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:25px;width:712px;height:60px;',
 			height: 60,width: 712,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

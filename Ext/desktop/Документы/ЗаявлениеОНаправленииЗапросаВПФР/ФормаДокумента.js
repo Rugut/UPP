@@ -14,64 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Открыть категории',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Открыть свойства',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Ввести запрос в ПФР',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
 			]
 		},
 		{
@@ -82,6 +24,7 @@
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -89,7 +32,6 @@
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -339,10 +281,20 @@
 			style: 'position:absolute;left:96px;top:108px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Страхователь прекратил деятельность',
+			style: 'position:absolute;left:14px;top:158px;width:221px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСтраховательПрекратилДеятельность',
 			text: 'Причина отсутствия справки о сумме заработной платы',
 			style: 'position:absolute;left:8px;top:133px;width:308px;height:20px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Иная причина:',
+			style: 'position:absolute;left:14px;top:183px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

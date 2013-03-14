@@ -24,12 +24,12 @@
 			style: 'position:absolute;left:0px;top:389px;width:573px;height:25px;',
 			items:
 			[
+				{
+					text:'Отобрать',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'Отобрать',
 				},
 			]
 		},
@@ -103,16 +103,16 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 			]
 		},
@@ -139,13 +139,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:543px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Установить все флажки',
 				},
 				{
 					text:'Снять все флажки',
 				},
-				'-',
 			]
 		},
 		{

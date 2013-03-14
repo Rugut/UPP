@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:668px;height:460px;',
 			height: 460,width: 668,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -174,6 +175,16 @@
 			name: 'Надпись53',
 			text: 'Выберите криптопровайдер (средство криптографической защиты информации), используемый для защиты и обеспечения юридической значимости передаваемой информации. Более подробную информацию, например, об условиях приобретения и использования криптопровайдера, можно получить на сайте разработчика',
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:76px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'VipNet CSP',
+			style: 'position:absolute;left:16px;top:188px;width:644px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'CryptoPro CSP',
+			style: 'position:absolute;left:16px;top:244px;width:644px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -545,6 +556,21 @@
 			style: 'position:absolute;left:8px;top:5px;width:652px;height:50px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Руководитель',
+			style: 'position:absolute;left:116px;top:116px;width:120px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Главный бухгалтер',
+			style: 'position:absolute;left:116px;top:139px;width:120px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Другой сотрудник:',
+			style: 'position:absolute;left:116px;top:162px;width:112px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДолжность3',
 			text: 'Фамилия:',
@@ -619,17 +645,17 @@
 					text:'Добавить',
 				},
 				{
-					text:'Изменить',
+					text:'Скопировать',
 				},
 				{
-					text:'Востановить',
+					text:'Изменить',
 				},
 				{
 					text:'Удалить',
 				},
 				'-',
 				{
-					text:'Скопировать',
+					text:'Востановить',
 				},
 			]
 		},
@@ -657,6 +683,16 @@
 					title:'Подтверждение',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Отправить заявление сейчас',
+			style: 'position:absolute;left:8px;top:180px;width:172px;height:20px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не отправлять (сохранить черновик)',
+			style: 'position:absolute;left:8px;top:156px;width:204px;height:20px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись35',
@@ -690,15 +726,15 @@
 			style: 'position:absolute;left:0px;top:460px;width:668px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'< Назад',
 				},
 				{
-					text:'Отмена',
-				},
-				{
 					text:'Далее >',
+				},
+				'-',
+				{
+					text:'Отмена',
 				},
 			]
 		},

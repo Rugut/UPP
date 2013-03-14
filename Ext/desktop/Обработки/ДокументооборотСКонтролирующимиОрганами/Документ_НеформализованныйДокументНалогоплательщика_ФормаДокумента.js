@@ -27,62 +27,60 @@
 			items:
 			[
 				{
-					text:'Действие2',
-				},
-				{
+					xtype: 'splitbutton',
 					text:'',
-				},
+					menu: [
 				{
-					text:'Подготовить к отправке и подписать',
+					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Отправить',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие2',
+					text:'Скопировать',
 				},
 				{
-					text:'',
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
 				},
 				'-',
 				{
-					text:'Действие4',
+					text:'Закрыть',
 				},
+				'-',
 				{
 					text:'Редактировать номер',
 				},
-				'-',
-				{
-					text:'Действие',
+					]
 				},
 				'-',
 				{
-					text:'Действие5',
-				},
-				{
-					text:'Показать циклы обмена, связанные с документом',
+					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Действие3',
+					text:'Скопировать',
+				},
+				'-',
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
 				},
 				'-',
 				{
-					text:'Подготовить к отправке',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Действие3',
+					text:'Справка',
 				},
 			]
 		},
@@ -91,17 +89,17 @@
 			style: 'position:absolute;left:0px;top:451px;width:591px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'OK',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -129,6 +127,16 @@
 			style: 'position:absolute;left:220px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'обычный текст',
+			style: 'position:absolute;left:106px;top:134px;width:101px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'внешний документ (doc-, rtf- или xls-файл)',
+			style: 'position:absolute;left:220px;top:134px;width:233px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Тип:',
@@ -138,6 +146,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:575px;height:291px;',
 			height: 291,width: 575,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

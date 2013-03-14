@@ -74,7 +74,6 @@
 			style: 'position:absolute;left:8px;top:100px;width:690px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить',
 				},
@@ -117,17 +116,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:706px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Структура подчиненности документа',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'',
 				},
-				{
-					text:'Движения документа по регистрам',
+				'-',
+					]
 				},
 				'-',
+				{
+					text:'',
+				},
 				{
 					text:'',
 				},
@@ -139,20 +144,20 @@
 			items:
 			[
 				{
+					text:'Печать',
+				},
+				'-',
+				{
 					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Печать',
-				},
-				{
-					text:'Записать',
-				},
-				'-',
-				'-',
 			]
 		},
 		{

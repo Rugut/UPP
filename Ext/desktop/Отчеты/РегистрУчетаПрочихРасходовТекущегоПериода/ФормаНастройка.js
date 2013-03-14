@@ -71,6 +71,16 @@
 			text: '...',
 			style: 'position:absolute;left:266px;top:6px;width:20px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прочие расходы, связанные с производством и (или) реализацией (ст. 264 НК РФ)',
+			style: 'position:absolute;left:14px;top:73px;width:462px;height:32px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Косвенные расходы',
+			style: 'position:absolute;left:14px;top:106px;width:336px;height:16px;',
+		},
 					]
 				},
 				{

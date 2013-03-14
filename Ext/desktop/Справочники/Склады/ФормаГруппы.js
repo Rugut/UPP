@@ -51,10 +51,10 @@
 			items:
 			[
 				'-',
-				'-',
 				{
 					text:'Настройка доступа',
 				},
+				'-',
 			]
 		},
 		{
@@ -62,12 +62,12 @@
 			style: 'position:absolute;left:0px;top:84px;width:546px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
-				},
-				{
-					text:'OK',
 				},
 				'-',
 				{

@@ -36,20 +36,45 @@
 					text:'История...',
 				},
 				'-',
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
 			]
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Гражданин страны:',
+			style: 'position:absolute;left:8px;top:8px;width:135px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Лицо без гражданства',
+			style: 'position:absolute;left:8px;top:31px;width:135px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПФР',
 			text: 'На физическое лицо распространяется обязательное пенсионное страхование в РФ. Таковыми являются граждане РФ, а также постоянно или временно проживающие на территории РФ иностранные граждане и лица без гражданства.',
 			style: 'position:absolute;left:8px;top:144px;width:402px;height:65px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Постоянно проживает на территории РФ',
+			style: 'position:absolute;left:14px;top:78px;width:260px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Временно проживает на территории РФ',
+			style: 'position:absolute;left:14px;top:98px;width:260px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Временно пребывает на территории РФ',
+			style: 'position:absolute;left:14px;top:118px;width:260px;height:15px;',
 		},
 		{
 			xtype: 'grid',

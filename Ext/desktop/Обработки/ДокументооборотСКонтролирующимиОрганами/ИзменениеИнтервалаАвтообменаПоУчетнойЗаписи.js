@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'ОК',
+					text:'',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
-				'-',
 			]
 		},
 		{
@@ -54,10 +54,20 @@
 			style: 'position:absolute;left:106px;top:71px;width:290px;height:15px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'выключен',
+			style: 'position:absolute;left:106px;top:100px;width:290px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПользователь1',
 			text: 'Автообмен:',
 			style: 'position:absolute;left:8px;top:100px;width:93px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'обмениваться каждые ',
+			style: 'position:absolute;left:106px;top:123px;width:138px;height:15px;',
 		},
 		{
 			xtype: 'textfield',

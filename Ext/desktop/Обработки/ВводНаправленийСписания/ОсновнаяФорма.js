@@ -235,7 +235,6 @@
 			style: 'position:absolute;left:8px;top:125px;width:584px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить из шаблона',
 				},

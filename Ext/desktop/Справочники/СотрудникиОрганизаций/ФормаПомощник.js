@@ -15,10 +15,10 @@
 			items:
 			[
 				'-',
-				'-',
 				{
 					text:'Далее',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
@@ -28,6 +28,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:182px;top:0px;width:418px;height:425px;',
 			height: 425,width: 418,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -101,6 +102,16 @@
 			style: 'position:absolute;left:20px;top:92px;width:83px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Штатный сотрудник',
+			style: 'position:absolute;left:20px;top:174px;width:118px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Работник по договору гражданско-правового характера',
+			style: 'position:absolute;left:20px;top:198px;width:314px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьТабельныйНомер',
 			text: 'Таб. номер:',
@@ -113,9 +124,15 @@
 			style: 'position:absolute;left:105px;top:280px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Без договора',
+			style: 'position:absolute;left:20px;top:222px;width:96px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:254px;width:402px;height:26px;',
 			height: 26,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -154,6 +171,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:384px;',
 			height: 384,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -275,9 +293,25 @@
 			style: 'position:absolute;left:97px;top:226px;width:43px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Основное место работы',
+			style: 'position:absolute;left:21px;top:59px;width:146px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Совместительство',
+			style: 'position:absolute;left:21px;top:83px;width:117px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внутреннее совместительство',
+			style: 'position:absolute;left:21px;top:106px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:1px;top:125px;width:401px;height:24px;',
 			height: 24,width: 401,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -310,6 +344,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:348px;height:25px;',
 			height: 25,width: 348,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -343,6 +378,16 @@
 			style: 'position:absolute;left:10px;top:0px;width:305px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Договор подряда (выполнение работ, оказание услуг)',
+			style: 'position:absolute;left:20px;top:24px;width:305px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Авторский',
+			style: 'position:absolute;left:20px;top:48px;width:78px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Создать договор на выполнение работ с физлицом',
 			style: 'position:absolute;left:10px;top:77px;width:315px;height:15px;',
@@ -351,6 +396,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:92px;width:402px;height:292px;',
 			height: 292,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -475,6 +521,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:402px;height:24px;',
 			height: 24,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -529,6 +576,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:348px;height:25px;',
 			height: 25,width: 348,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -548,6 +596,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:35px;width:402px;height:173px;',
 			height: 173,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -608,6 +657,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:384px;',
 			height: 384,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -770,6 +820,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:29px;width:402px;height:24px;',
 			height: 24,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -834,10 +885,10 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие',
+					text:'Удалить',
 				},
 			]
 		},
@@ -847,15 +898,15 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
+					text:'Удалить',
 				},
 				'-',
+				{
+					text:'Вывести список...',
+				},
 			]
 		},
 					]
@@ -1106,10 +1157,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'Удалить',
 				},
 			]
 		},
@@ -1119,14 +1170,14 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
 				},
 				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -1136,10 +1187,10 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие',
+					text:'Удалить',
 				},
 			]
 		},
@@ -1149,14 +1200,14 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
 				},
 				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -1180,6 +1231,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:197px;width:402px;height:165px;',
 			height: 165,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1212,6 +1264,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:91px;width:402px;height:106px;',
 			height: 106,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1280,6 +1333,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:56px;',
 			height: 56,width: 402,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1399,6 +1453,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:425px;',
 			height: 425,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

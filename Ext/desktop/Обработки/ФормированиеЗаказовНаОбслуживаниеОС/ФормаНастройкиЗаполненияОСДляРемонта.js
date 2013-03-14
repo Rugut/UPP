@@ -15,11 +15,6 @@
 			items:
 			[
 				{
-					text:'Подбор',
-				},
-				'-',
-				'-',
-				{
 					text:'По наименованию',
 				},
 			]
@@ -45,10 +40,10 @@
 			style: 'position:absolute;left:306px;top:54px;width:294px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Подбор',
 				},
-				'-',
 			]
 		},
 		{
@@ -72,10 +67,10 @@
 			style: 'position:absolute;left:0px;top:349px;width:608px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

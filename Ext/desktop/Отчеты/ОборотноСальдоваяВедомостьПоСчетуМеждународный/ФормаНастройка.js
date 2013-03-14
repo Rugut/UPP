@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:261px;width:431px;height:25px;',
 			items:
 			[
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'ОК',
 				},
 			]
 		},

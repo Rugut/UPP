@@ -73,25 +73,31 @@
 			items:
 			[
 				{
-					text:'Дт/кт',
-				},
-				{
+					xtype: 'splitbutton',
 					text:'',
-				},
-				'-',
-				'-',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
 				'-',
 				{
 					text:'',
 				},
 				{
+					text:'',
+				},
+				'-',
+				{
 					text:'Дт/кт',
 				},
 				{
-					text:'Структура подчиненности документа',
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -100,20 +106,20 @@
 			style: 'position:absolute;left:0px;top:395px;width:654px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -167,21 +173,12 @@
 			style: 'position:absolute;left:6px;top:6px;width:624px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Видимость колонок',
-				},
 				{
 					text:'По группе ОС',
 				},
 				{
 					text:'По наименованию',
 				},
-				{
-					text:'Подбор',
-				},
-				'-',
 			]
 		},
 		{

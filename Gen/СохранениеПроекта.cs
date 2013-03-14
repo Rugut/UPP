@@ -52,6 +52,7 @@ namespace Gen
         public long КоличествоФайловВсего = 0;
         public long КоличествоФайловКЗаписи = 0;
         public long КоличествоФайловЗаписано = 0;
+        public long КоличествоОшибокЗаписи = 0;
         public readonly Ожидания Ожидания = new Ожидания();
 
         private static byte[] СложитьДваПотока(byte[] Поток1, byte[] Поток2)
@@ -89,11 +90,23 @@ namespace Gen
                 //File.WriteAllBytes(ИмяФайла, НовыйПоток);
                 //Interlocked.Increment(ref КоличествоФайловЗаписано);
                 ИзменитьАтрибутЧтенияФайла(ИмяФайла, false);
-                using (var ПотокФайла = new FileStream(ИмяФайла, FileMode.Create, FileAccess.Write, FileShare.Write, 4096, true))
+                try
                 {
-                    var МаркерВызова = ПотокФайла.BeginWrite(НовыйПоток, 0, НовыйПоток.Length, ОбратныйВызовСохраненияФайла, ИмяФайла);
-                    Ожидания.Add(МаркерВызова.AsyncWaitHandle);
+                    using (var ПотокФайла = new FileStream(ИмяФайла, FileMode.Create, FileAccess.Write, FileShare.Write, 4096, true))
+                    {
+                        var МаркерВызова = ПотокФайла.BeginWrite(НовыйПоток, 0, НовыйПоток.Length, ОбратныйВызовСохраненияФайла, ИмяФайла);
+                        Ожидания.Add(МаркерВызова.AsyncWaitHandle);
+                    }
                 }
+                catch (Exception Исключение)
+                {
+                    if (Interlocked.Increment(ref КоличествоОшибокЗаписи) < 10)
+                    {
+                        var Сообщение = ((Исключение.InnerException == null)? Исключение.Message: Исключение.InnerException.Message);
+                        Console.WriteLine(Сообщение);
+                    }
+                }
+
 
             }
         }

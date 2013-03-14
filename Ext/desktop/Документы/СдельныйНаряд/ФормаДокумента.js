@@ -92,33 +92,39 @@
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Показать/скрыть счета учета',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
-				'-',
 				{
 					text:'Структура подчиненности документа',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'',
 				},
 				'-',
 				{
 					text:'Графики работы по видам времени',
+				},
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Показать/скрыть счета учета',
 				},
 			]
 		},
@@ -132,16 +138,16 @@
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
-				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -166,10 +172,20 @@
 			items:
 			[
 				{
-					text:'Закончить редактирование',
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
 				},
 				{
 					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
 				},
 				{
 					text:'&Переместить вверх',
@@ -178,17 +194,7 @@
 					text:'&Переместить вниз',
 				},
 				{
-					text:'&Добавить',
-				},
-				{
 					text:'Сортировать по возрастанию',
-				},
-				'-',
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Скопировать',
 				},
 				{
 					text:'Сортировать по убыванию',
@@ -303,51 +309,10 @@
 			items:
 			[
 				{
-					text:'Сортировать по возрастанию',
-				},
-				'-',
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'По всем сотрудникам',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				{
-					text:'Закончить редактирование',
+					text:'Рассчитать',
 				},
 				{
 					text:'Рассчитать с комментарием',
-				},
-				'-',
-				{
-					text:'Списком работников',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Рассчитать',
-				},
-				'-',
-				'-',
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				{
-					text:'&Изменить',
 				},
 			]
 		},
@@ -583,6 +548,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:35px;width:668px;height:105px;',
 			height: 105,width: 668,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -610,10 +576,30 @@
 			style: 'position:absolute;left:223px;top:20px;width:193px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Сводно, в целом за период',
+			style: 'position:absolute;left:458px;top:59px;width:166px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По дням периода',
+			style: 'position:absolute;left:458px;top:39px;width:166px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСпособВводаДанных',
 			text: 'Способ ввода времени',
 			style: 'position:absolute;left:450px;top:20px;width:189px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только при расчете',
+			style: 'position:absolute;left:231px;top:59px;width:153px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'При расчете и в табеле',
+			style: 'position:absolute;left:231px;top:39px;width:153px;height:19px;',
 		},
 					]
 				},
@@ -660,12 +646,18 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:106px;width:676px;height:78px;',
 			height: 78,width: 676,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'По результатам работы за один день',
+			style: 'position:absolute;left:6px;top:27px;width:216px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -677,6 +669,11 @@
 			hideLabel: true,
 			name: 'ДатаНачалаПериода',
 			style: 'position:absolute;left:228px;top:27px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По результатам работы за месяц',
+			style: 'position:absolute;left:6px;top:51px;width:216px;height:19px;',
 		},
 					]
 				},

@@ -15,7 +15,13 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
 					text:'Очистить',
+				},
+					]
 				},
 			]
 		},
@@ -25,11 +31,11 @@
 			items:
 			[
 				{
-					text:'Отмена',
+					text:'ОК',
 				},
 				'-',
 				{
-					text:'ОК',
+					text:'Отмена',
 				},
 			]
 		},

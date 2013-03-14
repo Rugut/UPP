@@ -15,18 +15,19 @@
 			items:
 			[
 				{
-					text:'Действие',
-				},
-				{
 					text:'Закрыть',
 				},
 				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:464px;height:243px;',
 			height: 243,width: 464,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

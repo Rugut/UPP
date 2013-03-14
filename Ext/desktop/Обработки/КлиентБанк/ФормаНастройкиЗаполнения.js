@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:261px;width:670px;height:25px;',
 			items:
 			[
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'ОК',
 				},
 				'-',
 			]
@@ -79,6 +79,16 @@
 			hideLabel: true,
 			name: 'ФайлВыгрузки',
 			style: 'position:absolute;left:353px;top:135px;width:293px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'DOS',
+			style: 'position:absolute;left:418px;top:154px;width:51px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Windows',
+			style: 'position:absolute;left:418px;top:174px;width:66px;height:19px;',
 		},
 		{
 			xtype: 'label',

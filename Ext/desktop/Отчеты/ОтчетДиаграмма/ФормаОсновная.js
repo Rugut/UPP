@@ -14,47 +14,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:586px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Транспонировать',
-				},
-				{
-					text:'Транспонировать',
-				},
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				{
-					text:'Восстановить значения',
-				},
-				{
-					text:'Справка',
-				},
-				{
-					text:'Настройка...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				{
 					text:'Сформировать',
 				},
 				{
-					text:'Сформировать',
+					text:'Настройка...',
 				},
 				{
 					text:'Отбор',
@@ -62,12 +30,50 @@
 				{
 					text:'Восстановить значения...',
 				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Справка',
+				},
+				{
+					text:'Транспонировать',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
 				'-',
 				{
 					text:'Отбор',
 				},
 				'-',
+				{
+					text:'Настройка...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения',
+				},
 				'-',
+				{
+					text:'Транспонировать',
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -116,6 +122,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -153,6 +160,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:177px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -190,6 +198,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:153px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -227,6 +236,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:129px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -264,6 +274,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:105px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

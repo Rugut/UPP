@@ -34,10 +34,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действия формы выбрать',
+					text:'Выбрать',
 				},
+				'-',
 			]
 		},
 	]

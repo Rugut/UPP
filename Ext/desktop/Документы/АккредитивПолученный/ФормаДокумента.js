@@ -86,38 +86,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				{
-					text:'Клиент-Банк: Создать контрагента',
-				},
-				'-',
-				{
-					text:'КУД и Р...',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Показать/скрыть счета учета',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
 			]
 		},
 		{
@@ -126,20 +94,20 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				'-',
-				{
 					text:'Печать',
-				},
-				{
-					text:'Записать',
 				},
 				'-',
 				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -176,6 +144,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:636px;height:202px;',
 			height: 202,width: 636,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -464,34 +433,31 @@
 			items:
 			[
 				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
 					text:'Подбор',
 				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
 				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
 			]
 		},
 		{
@@ -604,6 +570,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:336px;top:56px;width:308px;height:19px;',
 			height: 19,width: 308,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -651,6 +618,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:572px;top:32px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:426px;top:128px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:536px;top:128px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'label',

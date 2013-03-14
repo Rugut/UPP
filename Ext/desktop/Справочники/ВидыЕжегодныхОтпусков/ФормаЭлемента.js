@@ -38,16 +38,25 @@
 			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
 				'-',
 				{
-					text:'Действие3',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие5',
+					text:'Скопировать',
 				},
-				'-',
 				{
-					text:'Действие1',
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
 				},
 				'-',
 				{
@@ -55,27 +64,24 @@
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
+					]
 				},
 				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
+					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -85,17 +91,27 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
-				'-',
+				{
+					text:'Закрыть',
+				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По календарным дням',
+			style: 'position:absolute;left:8px;top:80px;width:454px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По рабочим дням',
+			style: 'position:absolute;left:8px;top:104px;width:454px;height:18px;',
 		},
 		{
 			xtype: 'label',

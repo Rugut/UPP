@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:266px;width:427px;height:25px;',
 			items:
 			[
+				{
+					text:'Выполнить допроведение',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'Выполнить допроведение',
 				},
 			]
 		},
@@ -66,6 +66,16 @@
 			style: 'position:absolute;left:268px;top:126px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'только требующие допроведения',
+			style: 'position:absolute;left:31px;top:81px;width:194px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'все',
+			style: 'position:absolute;left:31px;top:102px;width:40px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:427px;height:25px;',
 			items:
@@ -73,9 +83,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-				{
-					text:'Диаграмма отложенного проведения',
 				},
 			]
 		},

@@ -14,12 +14,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:684px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				{
 					text:'Отбор по менеджеру',
 				},
-				{
-					text:'Выбрать',
+					]
 				},
 			]
 		},
@@ -27,6 +33,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:668px;height:280px;',
 			height: 280,width: 668,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

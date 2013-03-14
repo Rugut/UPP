@@ -98,14 +98,11 @@
 			style: 'position:absolute;left:8px;top:172px;width:370px;height:24px;',
 			items:
 			[
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
-				{
-					text:'По наименованию',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -137,20 +134,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:386px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 				'-',
-				{
-					text:'Движения документа по регистрам',
+					]
 				},
-				{
-					text:'Открыть категории',
-				},
+				'-',
 				{
 					text:'Открыть свойства',
 				},
 				{
-					text:'Структура подчиненности документа',
+					text:'Открыть категории',
 				},
-				'-',
 			]
 		},
 		{
@@ -158,6 +161,10 @@
 			style: 'position:absolute;left:0px;top:396px;width:386px;height:25px;',
 			items:
 			[
+				{
+					text:'Печать',
+				},
+				'-',
 				{
 					text:'OK',
 				},
@@ -167,12 +174,8 @@
 				},
 				'-',
 				{
-					text:'Печать',
-				},
-				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{

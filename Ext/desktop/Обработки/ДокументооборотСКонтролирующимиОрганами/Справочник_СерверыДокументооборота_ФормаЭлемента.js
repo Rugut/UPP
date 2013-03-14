@@ -69,16 +69,16 @@
 			style: 'position:absolute;left:0px;top:241px;width:554px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

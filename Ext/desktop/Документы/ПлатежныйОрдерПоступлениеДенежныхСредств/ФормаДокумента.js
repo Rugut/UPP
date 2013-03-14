@@ -86,38 +86,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Клиент-Банк: Создать контрагента',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Показать/скрыть счета учета',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'КУД и Р...',
-				},
-				{
-					text:'',
-				},
 			]
 		},
 		{
@@ -126,19 +94,19 @@
 			items:
 			[
 				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'Печать',
-				},
-				{
 					text:'Закрыть',
-				},
-				'-',
-				'-',
-				{
-					text:'ОК',
 				},
 			]
 		},
@@ -146,6 +114,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:641px;height:201px;',
 			height: 201,width: 641,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -464,32 +433,29 @@
 			items:
 			[
 				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
 					text:'&Добавить',
 				},
 				{
-					text:'Подбор',
+					text:'&Скопировать',
 				},
 				{
 					text:'&Изменить',
 				},
 				{
-					text:'Заполнить',
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
 				},
 				'-',
 				{
-					text:'&Скопировать',
+					text:'Подбор',
 				},
 				'-',
 			]
@@ -1021,6 +987,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:576px;top:32px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:430px;top:128px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:540px;top:128px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'label',

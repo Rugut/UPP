@@ -21,12 +21,12 @@
 			style: 'position:absolute;left:0px;top:111px;width:396px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
-				},
-				{
-					text:'OK',
 				},
 				'-',
 				{

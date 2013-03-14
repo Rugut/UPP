@@ -73,6 +73,16 @@
 			style: 'position:absolute;left:70px;top:33px;width:233px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Автоматически по указанным параметрам',
+			style: 'position:absolute;left:14px;top:102px;width:268px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Вручную',
+			style: 'position:absolute;left:14px;top:123px;width:268px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:189px;width:441px;height:106px;',
 			height: 106,width: 441,
@@ -101,29 +111,29 @@
 					text:'&Добавить',
 				},
 				{
-					text:'Заполнить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
 					text:'&Изменить',
-				},
-				'-',
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Закончить редактирование',
 				},
 				{
 					text:'&Удалить',
 				},
 				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
 					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Заполнить',
 				},
 			]
 		},

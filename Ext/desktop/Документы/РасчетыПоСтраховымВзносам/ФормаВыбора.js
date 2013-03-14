@@ -59,15 +59,33 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
 				'-',
 				{
-					text:'Подменю1',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Структура подчиненности документа',
+					]
 				},
 			]
 		},

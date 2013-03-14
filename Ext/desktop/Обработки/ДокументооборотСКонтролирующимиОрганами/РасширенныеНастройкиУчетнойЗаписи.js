@@ -14,21 +14,21 @@
 			style: 'position:absolute;left:0px;top:448px;width:468px;height:25px;',
 			items:
 			[
+				{
+					text:'По умолчанию',
+				},
 				'-',
 				{
-					text:'Открыть справку',
+					text:'ОК',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
 				'-',
 				{
-					text:'По умолчанию',
+					text:'Открыть справку',
 				},
-				{
-					text:'ОК',
-				},
-				'-',
 			]
 		},
 		{
@@ -40,6 +40,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:216px;width:452px;height:37px;',
 			height: 37,width: 452,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -70,6 +71,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:154px;width:452px;height:31px;',
 			height: 31,width: 452,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -100,6 +102,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:30px;top:96px;width:430px;height:50px;',
 			height: 50,width: 430,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -150,6 +153,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:185px;width:452px;height:31px;',
 			height: 31,width: 452,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

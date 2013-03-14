@@ -50,9 +50,6 @@
 			style: 'position:absolute;left:8px;top:105px;width:490px;height:24px;',
 			items:
 			[
-				{
-					text:'Заполнить текущей шкалой диапазонов',
-				},
 			]
 		},
 		{
@@ -89,9 +86,15 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
 					text:'Движения документа по регистрам',
 				},
 				'-',
+					]
+				},
 			]
 		},
 		{
@@ -99,21 +102,21 @@
 			style: 'position:absolute;left:0px;top:339px;width:506px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'Печать',
 				},
+				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{

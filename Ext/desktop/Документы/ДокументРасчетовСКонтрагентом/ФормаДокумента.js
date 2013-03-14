@@ -45,7 +45,13 @@
 			items:
 			[
 				{
-					text:'Структура подчиненности документа',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+					]
 				},
 			]
 		},
@@ -54,16 +60,16 @@
 			style: 'position:absolute;left:0px;top:181px;width:317px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'Закрыть',
-				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},

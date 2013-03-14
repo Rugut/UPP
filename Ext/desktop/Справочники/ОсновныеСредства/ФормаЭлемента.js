@@ -45,13 +45,19 @@
 			items:
 			[
 				{
-					text:'Документы комплектации ОС',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Зарегистрированные оплаты основных средств (УСН)',
 				},
 				'-',
+				{
+					text:'Документы комплектации ОС',
+				},
 				'-',
+					]
+				},
 			]
 		},
 		{
@@ -59,17 +65,17 @@
 			style: 'position:absolute;left:0px;top:470px;width:764px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -788,16 +794,16 @@
 			items:
 			[
 				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
 					text:'&Добавить',
 				},
 				{
+					text:'&Изменить',
+				},
+				{
 					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
 				},
 			]
 		},
@@ -828,12 +834,23 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:134px;height:59px;',
 			height: 59,width: 134,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Кадастровый номер',
+			style: 'position:absolute;left:8px;top:6px;width:120px;height:20px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Условный номер',
+			style: 'position:absolute;left:8px;top:33px;width:120px;height:20px;',
+		},
 					]
 				},
 			]
@@ -842,6 +859,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:141px;top:30px;width:599px;height:59px;',
 			height: 59,width: 599,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -14,11 +14,11 @@
 			style: 'position:absolute;left:0px;top:183px;width:425px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
+				'-',
 				{
 					text:'Закрыть',
 				},

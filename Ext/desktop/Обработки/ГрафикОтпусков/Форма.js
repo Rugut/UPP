@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:777px;top:33px;width:215px;height:539px;',
 			height: 539,width: 215,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -24,6 +25,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:33px;width:764px;height:539px;',
 			height: 539,width: 764,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -34,6 +36,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:107px;top:3px;width:322px;height:19px;',
 			height: 19,width: 322,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -114,7 +117,7 @@
 			items:
 			[
 				{
-					text:'Переключение справки формы',
+					text:'',
 				},
 			]
 		},
@@ -124,12 +127,16 @@
 			items:
 			[
 				'-',
+				{
+					text:'Запланировать отпуск',
+				},
 				'-',
 				{
-					text:'Структуре юридических лиц',
+					text:'',
 				},
+				'-',
 				{
-					text:'Отчет по отпускам',
+					text:'Остатки отпусков',
 				},
 				'-',
 				{
@@ -137,46 +144,12 @@
 				},
 				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Остатки отпусков',
-				},
-				{
-					text:'Обновить',
+					text:'',
 				},
 				'-',
 				{
-					text:'Остатки отпусков',
+					text:'Справка',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Зарегистрировать фактический отпуск',
-				},
-				{
-					text:'Запланировать отпуск',
-				},
-				{
-					text:'Дополнительные дни отпуска',
-				},
-				{
-					text:'Центрам ответственности',
-				},
-				{
-					text:'Отчет по отпускам',
-				},
-				'-',
-				'-',
-				{
-					text:'Показывать только руководителей',
-				},
-				{
-					text:'Запланировать отпуск',
-				},
-				'-',
-				'-',
 			]
 		},
 	]

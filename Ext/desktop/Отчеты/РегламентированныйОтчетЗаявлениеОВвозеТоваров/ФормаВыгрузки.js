@@ -15,13 +15,23 @@
 			items:
 			[
 				{
-					text:'Отмена',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Отмена',
+				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'НП-заявитель',
+			style: 'position:absolute;left:12px;top:48px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уполномоченный представитель НП',
+			style: 'position:absolute;left:108px;top:48px;width:204px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -33,6 +43,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:72px;width:540px;height:72px;',
 			height: 72,width: 540,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -122,6 +133,21 @@
 			]
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'лично - ИП-покупатель',
+			style: 'position:absolute;left:12px;top:186px;width:108px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уполномоченный представитель',
+			style: 'position:absolute;left:282px;top:186px;width:126px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Законный представитель организации',
+			style: 'position:absolute;left:126px;top:186px;width:150px;height:30px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Должность:',
@@ -163,6 +189,21 @@
 			name: 'Наименование4',
 			text: 'Фамилия, имя, отчество:',
 			style: 'position:absolute;left:12px;top:402px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'лично - ИП-покупатель',
+			style: 'position:absolute;left:12px;top:486px;width:108px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уполномоченный представитель',
+			style: 'position:absolute;left:282px;top:486px;width:126px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Законный представитель организации',
+			style: 'position:absolute;left:126px;top:486px;width:150px;height:30px;',
 		},
 		{
 			xtype: 'label',

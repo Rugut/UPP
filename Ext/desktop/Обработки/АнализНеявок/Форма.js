@@ -102,44 +102,8 @@
 			style: 'position:absolute;left:8px;top:94px;width:603px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Инвертировать',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Снять флаги',
-				},
-				{
-					text:'Открыть кадровый',
-				},
-				'-',
-				'-',
-				{
-					text:'Открыть расчетный',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
 				{
 					text:'Состояния сотрудников',
-				},
-				{
-					text:'Установить флаги',
 				},
 			]
 		},
@@ -148,14 +112,24 @@
 			style: 'position:absolute;left:0px;top:388px;width:619px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'За период с:',
+			style: 'position:absolute;left:8px;top:30px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По документу:',
+			style: 'position:absolute;left:8px;top:54px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

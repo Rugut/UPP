@@ -50,16 +50,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -69,15 +75,15 @@
 			items:
 			[
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
-				},
-				'-',
-				'-',
-				{
-					text:'OK',
 				},
 			]
 		},

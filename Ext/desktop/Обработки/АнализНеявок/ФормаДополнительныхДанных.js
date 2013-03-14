@@ -19,7 +19,7 @@
 				},
 				'-',
 				{
-					text:'Действие6',
+					text:'Справка',
 				},
 			]
 		},
@@ -91,6 +91,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:294px;top:78px;width:281px;height:19px;',
 			height: 19,width: 281,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

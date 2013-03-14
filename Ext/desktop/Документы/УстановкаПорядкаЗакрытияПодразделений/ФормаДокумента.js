@@ -38,16 +38,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Структура подчиненности документа',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
 				},
 				'-',
 				{
 					text:'',
-				},
-				{
-					text:'Движения документа по регистрам',
 				},
 				{
 					text:'',
@@ -62,9 +68,7 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'OK',
 				},
@@ -73,7 +77,9 @@
 					text:'Записать',
 				},
 				'-',
-				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -137,9 +143,6 @@
 			style: 'position:absolute;left:8px;top:98px;width:619px;height:24px;',
 			items:
 			[
-				{
-					text:'Заполнить подразделения',
-				},
 			]
 		},
 		{
@@ -147,6 +150,16 @@
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
 			style: 'position:absolute;left:328px;top:33px;width:62px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:390px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'регл. учете',
+			style: 'position:absolute;left:459px;top:33px;width:79px;height:19px;',
 		},
 	]
 });

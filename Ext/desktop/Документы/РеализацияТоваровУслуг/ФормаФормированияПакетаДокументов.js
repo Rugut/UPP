@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Выполнить',
-				},
-				{
 					text:'Восстановить значения по умолчанию',
 				},
 				'-',
+				{
+					text:'Выполнить',
+				},
 				'-',
 				{
 					text:'Закрыть',
@@ -63,6 +63,16 @@
 			name: 'НадписьПечататьНаПринтер',
 			text: 'Печатать на:',
 			style: 'position:absolute;left:14px;top:421px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'принтер',
+			style: 'position:absolute;left:90px;top:421px;width:65px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'экран',
+			style: 'position:absolute;left:161px;top:421px;width:55px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

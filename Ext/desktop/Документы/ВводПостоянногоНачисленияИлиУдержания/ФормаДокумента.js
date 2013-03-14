@@ -14,80 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Провести',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Записать и закрыть',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Отмена проведения',
-				},
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Отмена проведения',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Провести',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				'-',
-				{
-					text:'Справка',
-				},
 			]
 		},
 		{
@@ -96,16 +22,16 @@
 			items:
 			[
 				{
-					text:'Записать',
-				},
-				{
 					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -164,39 +90,6 @@
 				{
 					text:'Списком сотрудников',
 				},
-				'-',
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				'-',
 			]
 		},
 		{
@@ -343,6 +236,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:85px;width:624px;height:127px;',
 			height: 127,width: 624,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -378,6 +272,26 @@
 			name: 'НадписьДатаДействияКонец',
 			text: 'по:',
 			style: 'position:absolute;left:397px;top:78px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внести или изменить начисление ',
+			style: 'position:absolute;left:18px;top:31px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прекратить начисление',
+			style: 'position:absolute;left:18px;top:54px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внести или изменить удержание ',
+			style: 'position:absolute;left:18px;top:77px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прекратить удержание',
+			style: 'position:absolute;left:18px;top:100px;width:221px;height:19px;',
 		},
 					]
 				},

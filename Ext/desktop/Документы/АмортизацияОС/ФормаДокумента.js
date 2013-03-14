@@ -74,26 +74,32 @@
 			style: 'position:absolute;left:0px;top:0px;width:596px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
 				'-',
 				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Структура подчиненности документа',
+					text:'',
 				},
 				{
 					text:'',
 				},
 				'-',
 				{
-					text:'',
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -102,7 +108,6 @@
 			style: 'position:absolute;left:0px;top:160px;width:596px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Печать',
 				},
@@ -114,6 +119,7 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

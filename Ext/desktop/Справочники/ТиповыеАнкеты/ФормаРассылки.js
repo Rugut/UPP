@@ -21,16 +21,16 @@
 			style: 'position:absolute;left:0px;top:367px;width:473px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
+				'-',
 				{
 					text:'Отправить',
 				},
+				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -62,18 +62,18 @@
 			items:
 			[
 				{
-					text:'Скопировать',
+					text:'&Добавить',
 				},
-				'-',
 				{
-					text:'Удалить',
+					text:'',
 				},
 				{
 					text:'Изменить',
 				},
 				{
-					text:'Добавить',
+					text:'Удалить',
 				},
+				'-',
 			]
 		},
 		{
@@ -104,16 +104,16 @@
 			items:
 			[
 				{
-					text:'Добавить',
+					text:'&Добавить',
+				},
+				{
+					text:'',
 				},
 				{
 					text:'Изменить',
 				},
 				{
 					text:'Удалить',
-				},
-				{
-					text:'Скопировать',
 				},
 			]
 		},
@@ -149,6 +149,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:457px;height:43px;',
 			height: 43,width: 457,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

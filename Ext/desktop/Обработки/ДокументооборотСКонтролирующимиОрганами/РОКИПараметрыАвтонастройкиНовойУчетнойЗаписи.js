@@ -14,14 +14,19 @@
 			style: 'position:absolute;left:0px;top:311px;width:456px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Продолжить',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:8px;top:177px;width:93px;height:15px;',
 		},
 		{
 			xtype: 'label',
@@ -37,9 +42,15 @@
 			style: 'position:absolute;left:23px;top:200px;width:425px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Параметры:',
+			style: 'position:absolute;left:8px;top:227px;width:93px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:25px;top:251px;width:171px;height:44px;',
 			height: 44,width: 171,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

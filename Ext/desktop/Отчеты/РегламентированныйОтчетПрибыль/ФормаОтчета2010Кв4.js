@@ -15,68 +15,36 @@
 			items:
 			[
 				{
+					text:'Заполнить',
+				},
+				'-',
+				'-',
+				{
 					text:'Загрузка',
 				},
-				{
-					text:'Расширить поле бланка',
-				},
-				{
-					text:'Настройки отчета...',
-				},
 				'-',
 				'-',
-				{
-					text:'Подготовить к отправке',
-				},
 				'-',
 				'-',
-				{
-					text:'Проверить в Интернете',
-				},
-				'-',
-				{
-					text:'Выгрузить',
-				},
-				'-',
-				{
-					text:'Проверить выгрузку',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
 				{
 					text:'Расшифровка',
 				},
 				'-',
 				{
-					text:'Подготовить к отправке и подписать',
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
 				},
 				'-',
 				{
 					text:'Справка',
 				},
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-				{
-					text:'Сохранять',
-				},
-				{
-					text:'Показать отправки',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Поиск',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -84,30 +52,18 @@
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'OK',
-				},
-				{
-					text:'Показать бланк',
-				},
 				{
 					text:'Печатать сразу бланк формы с двухмерным штрихкодом PDF417',
 				},
-				'-',
+				{
+					text:'Показать бланк формы с двухмерным штрихкодом PDF417',
+				},
 				'-',
 				{
 					text:'Печатать сразу',
 				},
 				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Показать бланк формы с двухмерным штрихкодом PDF417',
+					text:'Показать бланк',
 				},
 			]
 		},
@@ -121,6 +77,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:48px;',
 			height: 48,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -158,6 +115,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:433px;width:654px;height:24px;',
 			height: 24,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -923,6 +881,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:37px;',
 			height: 37,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -933,6 +892,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:35px;',
 			height: 35,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

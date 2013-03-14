@@ -84,16 +84,16 @@
 			style: 'position:absolute;left:0px;top:352px;width:405px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'OK',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

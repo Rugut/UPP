@@ -74,10 +74,10 @@
 			style: 'position:absolute;left:8px;top:220px;width:458px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Подбор',
 				},
-				'-',
 			]
 		},
 		{
@@ -92,17 +92,17 @@
 			style: 'position:absolute;left:0px;top:412px;width:474px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
 				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{

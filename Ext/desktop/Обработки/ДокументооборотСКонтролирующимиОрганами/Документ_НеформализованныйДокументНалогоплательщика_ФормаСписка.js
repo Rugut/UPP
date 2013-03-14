@@ -46,13 +46,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Показать циклы обмена, связанные с документом',
 				},
-				{
-					text:'Действие11',
+					]
 				},
 			]
 		},

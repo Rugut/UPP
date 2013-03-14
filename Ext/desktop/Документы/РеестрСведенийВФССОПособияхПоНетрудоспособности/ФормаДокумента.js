@@ -74,62 +74,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Редактировать код номер',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Открыть категории',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
 			]
 		},
 		{
@@ -138,24 +82,24 @@
 			items:
 			[
 				{
-					text:'Записать',
-				},
-				{
 					text:'Показать файл',
-				},
-				'-',
-				{
-					text:'Закрыть',
 				},
 				'-',
 				{
 					text:'Записать файл на диск',
 				},
+				'-',
 				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -174,40 +118,7 @@
 			items:
 			[
 				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				{
 					text:'Заполнить по листкам нетрудоспособности',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие4',
 				},
 			]
 		},
@@ -241,6 +152,16 @@
 					title:'Застрахованное лицо',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Перечислением на счет в банке:',
+			style: 'position:absolute;left:14px;top:284px;width:183px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Почтовым переводом по адресу:',
+			style: 'position:absolute;left:14px;top:330px;width:183px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьФамилия',
@@ -488,6 +409,16 @@
 			style: 'position:absolute;left:6px;top:261px;width:129px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Основное место работы',
+			style: 'position:absolute;left:253px;top:52px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Совместительство',
+			style: 'position:absolute;left:404px;top:52px;width:115px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВидДокумента',
 			text: 'Вид занятости:',
@@ -570,6 +501,16 @@
 			hideLabel: true,
 			name: 'КодПричиныПерерасчета',
 			style: 'position:absolute;left:398px;top:237px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Первичная информация',
+			style: 'position:absolute;left:14px;top:237px;width:147px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Перерасчет',
+			style: 'position:absolute;left:166px;top:237px;width:82px;height:19px;',
 		},
 					]
 				},
@@ -1583,6 +1524,21 @@
 			style: 'position:absolute;left:148px;top:60px;width:21px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Заработок рассчитан по правилам 2011 года за расчетные годы:',
+			style: 'position:absolute;left:6px;top:162px;width:351px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заработок для пособия по беременности и родам рассчитан по правилам 2010 года',
+			style: 'position:absolute;left:6px;top:234px;width:451px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Пособие по беременности и родам рассчитывается из оклада (тарифной ставки)',
+			style: 'position:absolute;left:6px;top:306px;width:439px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись29',
 			text: 'За расчетный период с:',
@@ -1593,6 +1549,11 @@
 			hideLabel: true,
 			name: 'ТарифнаяСтавкаОклад',
 			style: 'position:absolute;left:451px;top:359px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Пособие по беременности и родам определяется исходя из МРОТ:',
+			style: 'position:absolute;left:6px;top:330px;width:363px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -44,9 +44,15 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
 					text:'Редактировать код',
 				},
-				'-',
+					]
+				},
 			]
 		},
 		{
@@ -61,10 +67,10 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -165,6 +171,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:171px;width:535px;height:98px;',
 			height: 98,width: 535,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -175,6 +182,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:535px;height:21px;',
 			height: 21,width: 535,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -194,6 +202,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:48px;width:535px;height:21px;',
 			height: 21,width: 535,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -213,6 +222,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:71px;width:535px;height:21px;',
 			height: 21,width: 535,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -279,7 +289,7 @@
 					text:'&Добавить новую категорию',
 				},
 				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -288,12 +298,6 @@
 			style: 'position:absolute;left:6px;top:89px;width:263px;height:24px;',
 			items:
 			[
-				{
-					text:'&Добавить новое свойство',
-				},
-				{
-					text:'Действие1',
-				},
 			]
 		},
 					]
@@ -324,10 +328,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'Удалить',
 				},
 			]
 		},
@@ -339,6 +343,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:549px;height:16px;',
 			height: 16,width: 549,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

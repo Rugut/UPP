@@ -15,28 +15,34 @@
 			items:
 			[
 				{
-					text:'Действие3',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
+					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				'-',
 				{
 					text:'Редактировать код',
 				},
-				{
-					text:'Действие4',
+					]
 				},
 				'-',
 				{
@@ -44,7 +50,7 @@
 				},
 				'-',
 				{
-					text:'Действие3',
+					text:'Справка',
 				},
 			]
 		},
@@ -53,16 +59,16 @@
 			style: 'position:absolute;left:0px;top:383px;width:811px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -111,6 +117,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:388px;height:24px;',
 			height: 24,width: 388,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -216,6 +223,16 @@
 			name: 'НадписьУсловия',
 			text: 'Условия:',
 			style: 'position:absolute;left:415px;top:286px;width:388px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Произвольное',
+			style: 'position:absolute;left:8px;top:171px;width:795px;height:20px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Соответствует описанию должности',
+			style: 'position:absolute;left:8px;top:150px;width:795px;height:20px;',
 		},
 		{
 			xtype: 'label',

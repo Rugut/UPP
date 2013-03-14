@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:63px;width:458px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Распределить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

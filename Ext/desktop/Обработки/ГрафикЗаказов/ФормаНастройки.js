@@ -158,6 +158,16 @@
 			style: 'position:absolute;left:340px;top:90px;width:43px;height:21px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'По регламентированному производственному календарю',
+			style: 'position:absolute;left:8px;top:68px;width:317px;height:21px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По графику',
+			style: 'position:absolute;left:8px;top:90px;width:317px;height:21px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОтображениеРабочихДней',
 			text: 'Отображение рабочих и выходных дней',
@@ -180,10 +190,10 @@
 			style: 'position:absolute;left:0px;top:387px;width:840px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},

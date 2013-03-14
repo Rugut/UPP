@@ -14,21 +14,16 @@
 			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Настройка',
-				},
-				'-',
-				'-',
 				{
 					text:'Заполнить',
 				},
-				{
-					text:'',
-				},
+				'-',
 				{
 					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Настройка',
 				},
 				'-',
 				{
@@ -36,10 +31,15 @@
 				},
 				'-',
 				{
+					text:'Обновить',
+				},
+				'-',
+				{
 					text:'Режим ввода информации',
 				},
+				'-',
 				{
-					text:'Обновить',
+					text:'Справка',
 				},
 			]
 		},
@@ -48,18 +48,6 @@
 			style: 'position:absolute;left:0px;top:391px;width:732px;height:25px;',
 			items:
 			[
-				{
-					text:'Записать',
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
 			]
 		},
 		{
@@ -98,6 +86,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:5px;top:362px;width:719px;height:23px;',
 			height: 23,width: 719,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -124,6 +113,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:5px;top:33px;width:719px;height:75px;',
 			height: 75,width: 719,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

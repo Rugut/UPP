@@ -15,45 +15,51 @@
 			items:
 			[
 				{
-					text:'Отправить',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Действие2',
+					text:'Найти в списке',
 				},
 				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
 				'-',
 				{
-					text:'Действие4',
+					text:'Закрыть',
 				},
-				{
-					text:'Действие5',
-				},
+				'-',
 				{
 					text:'Редактировать номер',
 				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие3',
+					]
 				},
 				'-',
+				{
+					text:'Отправить',
+				},
 				'-',
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -62,26 +68,27 @@
 			items:
 			[
 				{
-					text:'Записать',
-				},
-				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Сохранить запрос на диск',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:638px;height:44px;',
 			height: 44,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -92,6 +99,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:638px;height:36px;',
 			height: 36,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -110,6 +118,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:77px;width:638px;height:39px;',
 			height: 39,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -130,6 +139,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:119px;width:638px;height:454px;',
 			height: 454,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -188,6 +198,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:140px;width:638px;height:314px;',
 			height: 314,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -240,6 +251,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:67px;width:638px;height:20px;',
 			height: 20,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -260,6 +272,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:86px;width:638px;height:228px;',
 			height: 228,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -305,6 +318,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:115px;width:638px;height:23px;',
 			height: 23,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -328,6 +342,21 @@
 					title:'',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'первичные',
+			style: 'position:absolute;left:99px;top:1px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'корректирующие',
+			style: 'position:absolute;left:190px;top:1px;width:111px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'все',
+			style: 'position:absolute;left:314px;top:1px;width:40px;height:19px;',
+		},
 					]
 				},
 			]

@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
 			items:
 			[
+				{
+					text:'Назад',
+				},
 				'-',
 				{
 					text:'Далее',
-				},
-				{
-					text:'Назад',
 				},
 			]
 		},
@@ -27,6 +27,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:183px;top:0px;width:557px;height:399px;',
 			height: 399,width: 557,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -40,10 +41,20 @@
 			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Создать новую настройку обмена с WEB-сайтом',
+			style: 'position:absolute;left:6px;top:53px;width:272px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВыборДействия1',
 			text: 'Настройка обмена данными с WEB-сайтом',
 			style: 'position:absolute;left:6px;top:6px;width:545px;height:39px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Изменить существующую настройку обмена с WEB-сайтом',
+			style: 'position:absolute;left:6px;top:77px;width:326px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -82,9 +93,20 @@
 			style: 'position:absolute;left:112px;top:222px;width:440px;height:39px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка на сайт',
+			style: 'position:absolute;left:16px;top:145px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка в каталог',
+			style: 'position:absolute;left:160px;top:145px;width:124px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:170px;width:545px;height:116px;',
 			height: 116,width: 545,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -389,6 +411,36 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'По информации документа с сайта',
+			style: 'position:absolute;left:16px;top:73px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Устанавливать у документов текущую дату',
+			style: 'position:absolute;left:16px;top:97px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только записывать документы',
+			style: 'position:absolute;left:16px;top:143px;width:181px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Записывать и проводить документы',
+			style: 'position:absolute;left:16px;top:166px;width:207px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Проводить оперативно',
+			style: 'position:absolute;left:38px;top:190px;width:159px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Проводить НЕ оперативно',
+			style: 'position:absolute;left:40px;top:215px;width:157px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьУстановкаДаты',
 			text: 'Установка даты:',
@@ -406,6 +458,16 @@
 					title:'Настройки типа выполнения обмена данными',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Полная выгрузка данных',
+			style: 'position:absolute;left:16px;top:74px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгружать только измененные объекты с момента последнего обмена',
+			style: 'position:absolute;left:16px;top:98px;width:393px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьРежимОбмена',
@@ -434,6 +496,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:139px;width:545px;height:43px;',
 			height: 43,width: 545,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -467,6 +530,36 @@
 			boxLabel: 'Выполнять обмен данными периодически:',
 			style: 'position:absolute;left:6px;top:55px;width:279px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Каждые 30 минут',
+			style: 'position:absolute;left:95px;top:81px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Каждый час',
+			style: 'position:absolute;left:95px;top:104px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Каждый два часа',
+			style: 'position:absolute;left:95px;top:128px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Каждые восемь часов',
+			style: 'position:absolute;left:95px;top:151px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Произвольная настройка периода:',
+			style: 'position:absolute;left:95px;top:199px;width:197px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Каждый день',
+			style: 'position:absolute;left:95px;top:175px;width:90px;height:19px;',
+		},
 					]
 				},
 				{
@@ -499,6 +592,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:399px;',
 			height: 399,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

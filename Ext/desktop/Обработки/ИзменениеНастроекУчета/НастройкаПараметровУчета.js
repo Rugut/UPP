@@ -14,22 +14,22 @@
 			style: 'position:absolute;left:0px;top:443px;width:765px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'Печать',
 				},
-				'-',
 				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'Печать',
+					text:'Закрыть',
 				},
+				'-',
 				{
 					text:'Справка',
 				},
@@ -55,6 +55,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:209px;top:8px;width:548px;height:427px;',
 			height: 427,width: 548,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -336,6 +337,21 @@
 			style: 'position:absolute;left:12px;top:228px;width:224px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Не указана',
+			style: 'position:absolute;left:28px;top:68px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала в заказах поставщикам, потом на складах',
+			style: 'position:absolute;left:28px;top:108px;width:291px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала на складах, потом в заказах поставщикам',
+			style: 'position:absolute;left:28px;top:88px;width:291px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Для документов поступления',
 			style: 'position:absolute;left:28px;top:168px;width:172px;height:19px;',
@@ -365,6 +381,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'Вести учет потребностей заказов на производство в материалах и полуфабрикатах',
 			style: 'position:absolute;left:28px;top:72px;width:450px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Явно (с помощью документа "Корректировка заказа на производство")',
+			style: 'position:absolute;left:60px;top:116px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Автоматически при распределении материалов на выпуск продукции',
+			style: 'position:absolute;left:60px;top:140px;width:400px;height:19px;',
 		},
 					]
 				},
@@ -490,6 +516,16 @@
 			style: 'position:absolute;left:344px;top:272px;width:178px;height:22px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Сначала принятые, потом собственные',
+			style: 'position:absolute;left:48px;top:204px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала собственные, потом принятые',
+			style: 'position:absolute;left:48px;top:224px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'ДетализацияРасширеннойАналитикиУчетаНоменклатурыИЗатрат',
 			text: 'Детализация учета ...',
@@ -499,6 +535,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'Списывать партии расходным ордером',
 			style: 'position:absolute;left:32px;top:248px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать расширенную аналитику учета затрат с:',
+			style: 'position:absolute;left:12px;top:48px;width:304px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать партионный учет',
+			style: 'position:absolute;left:12px;top:96px;width:248px;height:19px;',
 		},
 					]
 				},
@@ -538,12 +584,32 @@
 			name: 'СпособКонтроляДнейЗадолженности',
 			style: 'position:absolute;left:224px;top:48px;width:190px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По времени регистрации документа',
+			style: 'position:absolute;left:28px;top:96px;width:224px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В конце дня даты регистрации документа',
+			style: 'position:absolute;left:28px;top:116px;width:240px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Расчеты с персоналом',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'По каждому работнику',
+			style: 'position:absolute;left:28px;top:68px;width:166px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сводно по всем работникам',
+			style: 'position:absolute;left:28px;top:88px;width:166px;height:19px;',
+		},
 					]
 				},
 				{
@@ -557,10 +623,20 @@
 			style: 'position:absolute;left:12px;top:6px;width:354px;height:25px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Только полное наименование',
+			style: 'position:absolute;left:23px;top:72px;width:406px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись88',
 			text: 'Указание наименования продавца в счете-фактуре:',
 			style: 'position:absolute;left:12px;top:48px;width:354px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Полное и сокращенное наименование',
+			style: 'position:absolute;left:23px;top:96px;width:406px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -618,10 +694,20 @@
 			style: 'position:absolute;left:12px;top:6px;width:354px;height:25px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'По рублевой сумме документа (рекомендуется)',
+			style: 'position:absolute;left:29px;top:73px;width:390px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачалаПересчетаСуммыНДСвРубляхПоДокументамВИностраннойВалютеПоСтавкеНДС',
 			style: 'position:absolute;left:131px;top:148px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По валютной сумме НДС',
+			style: 'position:absolute;left:29px;top:180px;width:343px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -684,6 +770,16 @@
 			style: 'position:absolute;left:6px;top:42px;width:375px;height:30px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Получения или выдачи аванса',
+			style: 'position:absolute;left:22px;top:100px;width:387px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Поступления или реализации имущества и услуг',
+			style: 'position:absolute;left:22px;top:77px;width:387px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьНачалоОценкиДоходовИРасходовВНУПоКурсуАвансов1',
 			text: 'Применяется с:',
@@ -707,6 +803,16 @@
 			name: 'Надпись93',
 			text: 'Порядок поддержки ПБУ18/02 при учете суммовых разниц',
 			style: 'position:absolute;left:6px;top:198px;width:375px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Признавать постоянные разницы',
+			style: 'position:absolute;left:22px;top:250px;width:387px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Признавать временные разницы',
+			style: 'position:absolute;left:22px;top:227px;width:387px;height:19px;',
 		},
 					]
 				},
@@ -786,6 +892,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:12px;top:48px;width:528px;height:371px;',
 			height: 371,width: 528,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -85,6 +85,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:637px;height:25px;',
 			height: 25,width: 637,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -97,31 +98,31 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие5',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'Изменить',
 				},
 				{
-					text:'Действие7',
+					text:'Удалить',
 				},
 				{
-					text:'Действие8',
+					text:'',
 				},
 				{
-					text:'Действие6',
+					text:'',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие2',
+					text:'',
 				},
 			]
 		},

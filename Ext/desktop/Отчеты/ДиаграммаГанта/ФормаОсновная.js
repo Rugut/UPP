@@ -39,43 +39,49 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
 					text:'Отбор',
 				},
+				{
+					text:'Настройка...',
+				},
+				'-',
 				{
 					text:'Закрыть',
 				},
 				{
-					text:'Сформировать',
-				},
-				{
-					text:'Настройка...',
-				},
-				'-',
-				'-',
-				'-',
-				{
 					text:'Справка',
 				},
-				{
-					text:'Печать',
+					]
 				},
+				'-',
 				{
-					text:'Печать',
+					text:'Сформировать',
 				},
+				'-',
 				{
 					text:'Отбор',
 				},
 				'-',
 				{
-					text:'Сформировать',
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Печать',
 				},
 				{
 					text:'Справка',
-				},
-				'-',
-				'-',
-				{
-					text:'Настройка...',
 				},
 			]
 		},
@@ -89,6 +95,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -126,6 +133,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -169,6 +177,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:105px;width:570px;height:24px;',
 			height: 24,width: 570,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

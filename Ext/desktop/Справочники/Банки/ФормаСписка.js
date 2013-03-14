@@ -62,10 +62,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
 			items:
 			[
+				'-',
 				{
 					text:'Добавить из классификатора банков РФ',
 				},
-				'-',
 			]
 		},
 		{

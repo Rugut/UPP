@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -38,6 +38,16 @@
 			name: 'Надпись7',
 			text: 'Вид МПЗ:',
 			style: 'position:absolute;left:6px;top:57px;width:77px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Регистр информации по МПЗ на складе',
+			style: 'position:absolute;left:6px;top:81px;width:248px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Регистр информации по МПЗ отгруженным',
+			style: 'position:absolute;left:6px;top:98px;width:246px;height:18px;',
 		},
 		{
 			xtype: 'label',

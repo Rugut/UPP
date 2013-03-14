@@ -26,6 +26,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
 			]
 		},
 		{
@@ -33,16 +39,16 @@
 			style: 'position:absolute;left:0px;top:123px;width:406px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
-				},
-				{
-					text:'Закрыть',
 				},
 				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -50,6 +56,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:390px;height:55px;',
 			height: 55,width: 390,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

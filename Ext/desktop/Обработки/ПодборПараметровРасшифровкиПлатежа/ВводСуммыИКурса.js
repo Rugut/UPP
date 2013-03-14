@@ -33,6 +33,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:32px;width:244px;height:73px;',
 			height: 73,width: 244,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

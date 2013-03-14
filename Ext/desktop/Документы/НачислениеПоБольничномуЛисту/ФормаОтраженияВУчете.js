@@ -14,14 +14,24 @@
 			style: 'position:absolute;left:0px;top:319px;width:644px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Справка',
 				},
-				{
-					text:'OK',
-				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'документом Отражение в учете, в конце месяца',
+			style: 'position:absolute;left:107px;top:8px;width:296px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по данным текущего документа',
+			style: 'position:absolute;left:107px;top:29px;width:296px;height:18px;',
 		},
 		{
 			xtype: 'label',
@@ -163,27 +173,14 @@
 			items:
 			[
 				{
-					text:'&Изменить',
+					text:'&Добавить',
 				},
 				'-',
 				{
 					text:'&Скопировать',
 				},
 				{
-					text:'Сформировать',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Сортировать по убыванию',
+					text:'&Изменить',
 				},
 				{
 					text:'&Удалить',
@@ -192,7 +189,20 @@
 					text:'Закончить редактирование',
 				},
 				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
 					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Сформировать',
 				},
 			]
 		},
@@ -200,6 +210,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:54px;width:628px;height:62px;',
 			height: 62,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -223,6 +234,21 @@
 			name: 'НадписьПроцент4',
 			text: '%',
 			style: 'position:absolute;left:230px;top:37px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'определяется по состоянию на дату события',
+			style: 'position:absolute;left:71px;top:19px;width:258px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'определяется по базовым начислениям',
+			style: 'position:absolute;left:71px;top:1px;width:258px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'составляет',
+			style: 'position:absolute;left:71px;top:38px;width:80px;height:18px;',
 		},
 					]
 				},

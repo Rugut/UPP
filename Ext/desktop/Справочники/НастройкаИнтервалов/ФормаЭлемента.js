@@ -60,14 +60,14 @@
 			style: 'position:absolute;left:0px;top:348px;width:384px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'OK',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},

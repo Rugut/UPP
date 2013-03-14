@@ -14,24 +14,36 @@
 			style: 'position:absolute;left:0px;top:0px;width:765px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				{
+					xtype: 'splitbutton',
 					text:'',
-				},
-				{
-					text:'',
-				},
+					menu: [
+				'-',
 				{
 					text:'Редактировать номер',
 				},
+					]
+				},
 				{
-					text:'Структура подчиненности документа',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
 				},
 				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 			]
 		},
 		{
@@ -40,28 +52,28 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Проверить в CheckXML',
 				},
+				'-',
 				{
 					text:'Показать файл',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'OK',
-				},
-				{
-					text:'Записать документ',
 				},
 				'-',
 				{
 					text:'Записать файл на диск',
 				},
 				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать документ',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -80,6 +92,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:749px;height:41px;',
 			height: 41,width: 749,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -90,6 +103,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:749px;height:35px;',
 			height: 35,width: 749,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -108,6 +122,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:749px;height:123px;',
 			height: 123,width: 749,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -230,6 +245,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:197px;width:749px;height:244px;',
 			height: 244,width: 749,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -281,52 +297,46 @@
 			style: 'position:absolute;left:0px;top:16px;width:749px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Сотрудниками, перечисляющими доп.взносы',
-				},
-				{
-					text:'Действие14',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие17',
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'',
 				},
 				'-',
 				{
 					text:'Удалить пустые',
-				},
-				{
-					text:'Рассчитать',
-				},
-				{
-					text:'Действие13',
-				},
-				'-',
-				{
-					text:'Действие10',
-				},
-				'-',
-				{
-					text:'Действие16',
-				},
-				{
-					text:'Действие15',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Действие11',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Списком сотрудников',
 				},
 			]
 		},

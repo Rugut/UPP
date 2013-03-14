@@ -21,14 +21,14 @@
 			style: 'position:absolute;left:0px;top:496px;width:568px;height:25px;',
 			items:
 			[
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
 				'-',
-				{
-					text:'ОК',
-				},
 				{
 					text:'Закрыть',
 				},
@@ -121,6 +121,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:157px;width:552px;height:65px;',
 			height: 65,width: 552,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -177,6 +178,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:246px;width:552px;height:213px;',
 			height: 213,width: 552,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -259,6 +261,16 @@
 			name: 'НадписьВыводитьМесяцВДатеДокумента',
 			text: 'Выводить месяц в дате документа:',
 			style: 'position:absolute;left:0px;top:57px;width:205px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Числом',
+			style: 'position:absolute;left:13px;top:75px;width:166px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прописью',
+			style: 'position:absolute;left:12px;top:94px;width:183px;height:16px;',
 		},
 					]
 				},

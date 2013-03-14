@@ -99,12 +99,18 @@
 			items:
 			[
 				{
-					text:'Структура подчиненности документа',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'Структура подчиненности документа',
+				},
 				'-',
+					]
+				},
 			]
 		},
 		{
@@ -112,27 +118,28 @@
 			style: 'position:absolute;left:0px;top:433px;width:410px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
 				{
 					text:'Печать',
 				},
+				'-',
 				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:176px;width:394px;height:177px;',
 			height: 177,width: 394,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

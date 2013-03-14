@@ -15,20 +15,20 @@
 			items:
 			[
 				{
-					text:'Сформировать',
+					text:'Справка',
 				},
 				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Закрыть',
+					text:'',
 				},
 				'-',
 				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -185,6 +185,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:365px;height:384px;',
 			height: 384,width: 365,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -201,15 +202,15 @@
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Удалить',
 				},
 				{
-					text:'Действие1',
+					text:'',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие2',
-				},
 			]
 		},
 		{
@@ -254,39 +255,39 @@
 			items:
 			[
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие7',
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие9',
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие3',
+					text:'Удалить',
 				},
 				{
-					text:'Действие5',
+					text:'',
 				},
-				'-',
 				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'Действие8',
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -304,6 +305,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:365px;height:384px;',
 			height: 384,width: 365,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -372,26 +374,26 @@
 			items:
 			[
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
 					text:'Добавить поле',
 				},
+				'-',
 				{
 					text:'Добавить группу',
 				},
 				'-',
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 				{
-					text:'Действие',
+					text:'',
+				},
+				{
+					text:'',
 				},
 				'-',
+				{
+					text:'',
+				},
 			]
 		},
 		{
@@ -419,20 +421,20 @@
 			style: 'position:absolute;left:0px;top:214px;width:365px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Добавить поле',
 				},
-				{
-					text:'Действие',
-				},
 				'-',
 				{
-					text:'Действие1',
+					text:'Удалить',
 				},
 				{
-					text:'Действие2',
+					text:'',
 				},
+				{
+					text:'',
+				},
+				'-',
 			]
 		},
 					]
@@ -449,6 +451,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:365px;height:385px;',
 			height: 385,width: 365,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -510,22 +513,22 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 				{
-					text:'Действие3',
+					text:'',
+				},
+				{
+					text:'',
 				},
 				'-',
+				{
+					text:'',
+				},
 			]
 		},
 					]
@@ -540,6 +543,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:235px;top:6px;width:16px;height:420px;',
 			height: 420,width: 16,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -600,10 +604,10 @@
 			style: 'position:absolute;left:21px;top:107px;width:203px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
+				'-',
 			]
 		},
 	]

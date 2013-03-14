@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:114px;width:596px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие6',
-				},
 				{
 					text:'OK',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -27,6 +27,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:580px;height:98px;',
 			height: 98,width: 580,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

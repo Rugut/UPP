@@ -86,16 +86,41 @@
 			style: 'position:absolute;left:301px;top:154px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Уменьшение налоговой базы:',
+			style: 'position:absolute;left:14px;top:129px;width:398px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Освобождение от налогообложения по ст. 395 НК РФ, код льготы:',
+			style: 'position:absolute;left:14px;top:79px;width:363px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Освобождение от налогообложения в соответствии с местным нормативным актом',
+			style: 'position:absolute;left:14px;top:54px;width:466px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Доля не облагаемой налогом площади:',
+			style: 'position:absolute;left:14px;top:104px;width:222px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не применяется',
+			style: 'position:absolute;left:14px;top:30px;width:398px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:417px;width:508px;height:25px;',
 			items:
 			[
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Отмена',
-				},
-				{
-					text:'ОК',
 				},
 			]
 		},
@@ -112,16 +137,41 @@
 			style: 'position:absolute;left:323px;top:104px;width:12px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'в процентах, на:',
+			style: 'position:absolute;left:22px;top:285px;width:101px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в размере:',
+			style: 'position:absolute;left:22px;top:310px;width:74px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Уменьшение суммы налога:',
 			style: 'position:absolute;left:14px;top:236px;width:182px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'не применяется',
+			style: 'position:absolute;left:22px;top:260px;width:101px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Снижение налоговой ставки:',
 			style: 'position:absolute;left:8px;top:337px;width:153px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'до:',
+			style: 'position:absolute;left:22px;top:385px;width:36px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'не применяется',
+			style: 'position:absolute;left:22px;top:360px;width:101px;height:19px;',
 		},
 	]
 });

@@ -50,51 +50,35 @@
 			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие2',
+					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Отправить',
+					text:'Скопировать',
 				},
 				'-',
 				{
-					text:'Проверить в Интернете',
-				},
-				'-',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'',
 				},
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				'-',
 				{
 					text:'Просмотр печатной формы',
 				},
-				{
-					text:'',
-				},
-				{
-					text:'Показать результат отправки',
-				},
-				{
-					text:'Получить результат отправки',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Показать результат отправки',
-				},
 				'-',
 				{
-					text:'История отправок',
+					text:'Справка',
 				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Показать отправки',
-				},
-				'-',
 			]
 		},
 		{
@@ -103,13 +87,13 @@
 			items:
 			[
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
-				'-',
-				{
-					text:'OK',
-				},
 				{
 					text:'Закрыть',
 				},
@@ -185,6 +169,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:212px;width:742px;height:28px;',
 			height: 28,width: 742,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -235,6 +220,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:240px;width:742px;height:423px;',
 			height: 423,width: 742,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -247,30 +233,30 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие6',
+					text:'Изменить',
 				},
 				{
-					text:'Действие4',
+					text:'Удалить',
 				},
 				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие2',
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие5',
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -308,6 +294,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:51px;width:742px;height:261px;',
 			height: 261,width: 742,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -343,6 +330,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:312px;width:742px;height:111px;',
 			height: 111,width: 742,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

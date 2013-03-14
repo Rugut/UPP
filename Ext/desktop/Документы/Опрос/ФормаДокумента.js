@@ -15,18 +15,24 @@
 			items:
 			[
 				{
-					text:'',
-				},
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
 				{
-					text:'',
+					text:'Редактировать номер',
 				},
-				'-',
 				{
 					text:'Обновить состав вопросов',
 				},
+					]
+				},
+				'-',
 				{
-					text:'Редактировать номер',
+					text:'',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -36,7 +42,11 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'Опрос завершен',
+				},
+				'-',
+				{
+					text:'ОК',
 				},
 				'-',
 				{
@@ -44,18 +54,15 @@
 				},
 				'-',
 				{
-					text:'Опрос завершен',
+					text:'Закрыть',
 				},
-				{
-					text:'ОК',
-				},
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:410px;height:52px;',
 			height: 52,width: 410,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -148,6 +155,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:85px;width:410px;height:258px;',
 			height: 258,width: 410,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -204,6 +212,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:448px;width:410px;height:24px;',
 			height: 24,width: 410,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

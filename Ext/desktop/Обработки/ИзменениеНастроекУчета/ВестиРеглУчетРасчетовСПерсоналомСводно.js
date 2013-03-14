@@ -14,16 +14,16 @@
 			style: 'position:absolute;left:0px;top:144px;width:400px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Изменить настройку',
 				},
 				'-',
 				{
-					text:'Справка',
-				},
-				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -35,6 +35,16 @@
 76.04 "Расчеты по депонированным суммам"
 97.01 "Расходы на оплату труда будущих периодов" ',
 			style: 'position:absolute;left:8px;top:80px;width:384px;height:56px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По каждому работнику',
+			style: 'position:absolute;left:31px;top:32px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сводно по всем работникам',
+			style: 'position:absolute;left:31px;top:54px;width:281px;height:19px;',
 		},
 		{
 			xtype: 'label',

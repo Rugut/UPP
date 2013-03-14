@@ -54,10 +54,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:740px;height:25px;',
 			items:
 			[
+				'-',
 				{
 					text:'Печать по умолчанию',
 				},
-				'-',
 			]
 		},
 	]

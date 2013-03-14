@@ -66,10 +66,10 @@
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
-				'-',
 				'-',
 				{
 					text:'Закрыть',
@@ -107,6 +107,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -271,6 +272,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -374,6 +376,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -567,6 +570,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -665,6 +669,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -769,6 +774,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

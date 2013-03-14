@@ -21,12 +21,12 @@
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'Выбрать',
 				},
 			]
 		},

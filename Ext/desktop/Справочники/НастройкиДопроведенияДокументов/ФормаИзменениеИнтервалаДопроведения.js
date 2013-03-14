@@ -19,11 +19,11 @@
 				},
 				'-',
 				{
-					text:'Действие закрыть',
+					text:'Закрыть',
 				},
 				'-',
 				{
-					text:'Действие справка',
+					text:'Справка',
 				},
 			]
 		},
@@ -52,6 +52,16 @@
 			style: 'position:absolute;left:8px;top:8px;width:497px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:16px;top:53px;width:15px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:16px;top:77px;width:15px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачалаДопроведения',
@@ -74,6 +84,16 @@
 			name: 'НадписьДоТекущейДатыНачало',
 			text: 'до текущей даты',
 			style: 'position:absolute;left:156px;top:77px;width:89px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:269px;top:53px;width:15px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:269px;top:77px;width:15px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:525px;top:134px;width:306px;height:398px;',
 			height: 398,width: 306,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -108,6 +109,16 @@
 			style: 'position:absolute;left:8px;top:224px;width:202px;height:18px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Отображать индикаторы',
+			style: 'position:absolute;left:8px;top:202px;width:145px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выделять цветом',
+			style: 'position:absolute;left:160px;top:202px;width:114px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПериодичностьПоУмолчанию',
@@ -117,6 +128,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:5px;top:53px;width:295px;height:49px;',
 			height: 49,width: 295,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -549,34 +561,14 @@
 			items:
 			[
 				{
-					text:'Описание и Пользователи',
+					text:'Показать сформированный отчет в отдельном окне',
 				},
 				'-',
-				{
-					text:'Заголовок',
-				},
 				{
 					text:'Сохранить сформированный отчет для сравнения',
 				},
 				{
-					text:'Список вариантов отчетов',
-				},
-				'-',
-				{
-					text:'Настройка структуры',
-				},
-				{
 					text:'Сравнить сформированный отчет с сохраненным',
-				},
-				'-',
-				{
-					text:'Сохранить вариант как...',
-				},
-				{
-					text:'Сохранить вариант',
-				},
-				{
-					text:'Показать сформированный отчет в отдельном окне',
 				},
 			]
 		},
@@ -588,6 +580,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:838px;height:57px;',
 			height: 57,width: 838,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -624,6 +617,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:9px;top:63px;width:821px;height:31px;',
 			height: 31,width: 821,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -647,13 +641,13 @@
 			items:
 			[
 				{
-					text:'Справка',
+					text:'Командная панель панель вариантов',
 				},
 				{
 					text:'Настройки',
 				},
 				{
-					text:'Командная панель панель вариантов',
+					text:'Справка',
 				},
 			]
 		},

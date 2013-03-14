@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
 			items:
 			[
+				'-',
 				{
 					text:'Список счетов-фактур (выд.)',
 				},
-				'-',
 			]
 		},
 		{
@@ -25,10 +25,10 @@
 			style: 'position:absolute;left:0px;top:365px;width:736px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

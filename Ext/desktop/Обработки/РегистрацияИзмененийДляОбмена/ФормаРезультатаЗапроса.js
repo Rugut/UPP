@@ -14,15 +14,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:576px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выполнить',
 				},
 				{
-					text:'Очистить',
+					text:'',
 				},
+				'-',
 				{
-					text:'Параметры',
+					text:'Очистить',
 				},
 			]
 		},
@@ -31,12 +31,12 @@
 			style: 'position:absolute;left:0px;top:485px;width:576px;height:25px;',
 			items:
 			[
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'ОК',
 				},
 			]
 		},

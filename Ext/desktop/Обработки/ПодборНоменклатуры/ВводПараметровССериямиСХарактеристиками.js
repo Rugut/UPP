@@ -40,12 +40,12 @@
 			style: 'position:absolute;left:0px;top:230px;width:394px;height:25px;',
 			items:
 			[
+				{
+					text:'Получить вес',
+				},
 				'-',
 				{
 					text:'ОК',
-				},
-				{
-					text:'Получить вес',
 				},
 				'-',
 				{

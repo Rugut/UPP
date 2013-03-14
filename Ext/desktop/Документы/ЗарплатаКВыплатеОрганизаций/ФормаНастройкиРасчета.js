@@ -17,20 +17,21 @@
 				{
 					text:'Рассчитать',
 				},
-				{
-					text:'Отмена',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 				'-',
-				'-',
+				{
+					text:'Отмена',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:45px;width:336px;height:93px;',
 			height: 93,width: 336,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

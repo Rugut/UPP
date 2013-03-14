@@ -26,81 +26,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:891px;height:25px;',
 			items:
 			[
-				{
-					text:'Структура подчиненности документа1',
-				},
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Действие11',
-				},
-				'-',
-				{
-					text:'Действие10',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие14',
-				},
-				'-',
-				{
-					text:'Действие10',
-				},
-				'-',
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие13',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие9',
-				},
-				'-',
-				{
-					text:'Действие12',
-				},
-				'-',
-				{
-					text:'Действие15',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Действие11',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
 			]
 		},
 		{
@@ -108,43 +33,23 @@
 			style: 'position:absolute;left:0px;top:529px;width:891px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Все файлы',
-				},
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'АДВ-6-2 (за 2009 г. - АДВ-11)',
-				},
-				{
-					text:'Все файлы',
-				},
-				'-',
-				'-',
-				{
-					text:'СЗВ-6 (за 2009 г. - СЗВ-4)',
-				},
 				{
 					text:'Проверить в CheckXML',
 				},
 				'-',
-				{
-					text:'АДВ-6-2 (за 2009 г. - АДВ-11)',
-				},
+				'-',
 				'-',
 				{
 					text:'OK',
 				},
-				{
-					text:'СЗВ-6 (за 2009 г. - СЗВ-4)',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -156,6 +61,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:149px;width:875px;height:347px;',
 			height: 347,width: 875,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -168,36 +74,7 @@
 			items:
 			[
 				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
 					text:'Заполнить расчетами с ПФР',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие7',
 				},
 			]
 		},
@@ -245,36 +122,33 @@
 			items:
 			[
 				{
-					text:'Суммы взносов',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Провести пачку',
+					text:'&Добавить',
 				},
 				'-',
 				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Провести пачку',
+				},
+				{
 					text:'Отменить проведение пачки',
 				},
+				'-',
 				{
 					text:'Провести все пачки',
 				},
 				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
 			]
 		},
 		{
@@ -331,44 +205,44 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие7',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'',
 				},
-				{
-					text:'Перенести',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие8',
-				},
+				'-',
 				{
 					text:'Открыть данные о стаже',
 				},
 				'-',
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие9',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -376,6 +250,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:68px;',
 			height: 68,width: 875,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -431,41 +306,38 @@
 			style: 'position:absolute;left:6px;top:22px;width:503px;height:24px;',
 			items:
 			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 				'-',
 				{
 					text:'Провести пачку',
 				},
 				{
-					text:'Подготовленными пачками СЗВ-4',
+					text:'Отменить проведение пачки',
 				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие5',
-				},
+				'-',
 				'-',
 				{
 					text:'Сформировать',
 				},
-				{
-					text:'Действие',
-				},
 				'-',
 				{
-					text:'Провести пачки',
+					text:'',
 				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Отменить проведение пачки',
-				},
-				'-',
 			]
 		},
 		{
@@ -526,44 +398,44 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Перенести',
-				},
-				{
-					text:'Действие9',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие2',
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие3',
+					text:'',
 				},
 				'-',
 				{
 					text:'Открыть СЗВ-4',
 				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие6',
-				},
 				'-',
 				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -579,36 +451,7 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
 					text:'Заполнить расчетами с ПФР',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие8',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
 				},
 			]
 		},
@@ -652,6 +495,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:25px;',
 			height: 25,width: 875,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -669,6 +513,16 @@
 			hideLabel: true,
 			name: 'ДатаДействия',
 			style: 'position:absolute;left:288px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'ИСХД',
+			style: 'position:absolute;left:89px;top:0px;width:53px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'ПЕНС',
+			style: 'position:absolute;left:146px;top:0px;width:53px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -700,6 +554,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:875px;height:41px;',
 			height: 41,width: 875,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -710,6 +565,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:35px;',
 			height: 35,width: 875,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -728,6 +584,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:875px;height:75px;',
 			height: 75,width: 875,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -834,6 +691,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:611px;top:48px;width:243px;height:19px;',
 			height: 19,width: 243,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -845,6 +703,16 @@
 			name: 'Надпись2',
 			text: 'Содержит:',
 			style: 'position:absolute;left:6px;top:0px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сведения СЗВ-6',
+			style: 'position:absolute;left:66px;top:0px;width:106px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'АДВ-11',
+			style: 'position:absolute;left:178px;top:0px;width:59px;height:19px;',
 		},
 					]
 				},

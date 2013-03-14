@@ -74,24 +74,36 @@
 			style: 'position:absolute;left:0px;top:0px;width:341px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
 				{
-					text:'',
+					text:'Редактировать номер',
 				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Редактировать номер',
-				},
-				{
 					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
 					text:'',
 				},
-				'-',
 			]
 		},
 		{
@@ -99,6 +111,9 @@
 			style: 'position:absolute;left:0px;top:132px;width:341px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
@@ -106,9 +121,6 @@
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'OK',
 				},
 			]
 		},

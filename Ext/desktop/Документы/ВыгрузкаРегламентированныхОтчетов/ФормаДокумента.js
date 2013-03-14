@@ -14,9 +14,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Редактировать номер',
+				},
+					]
 				},
 			]
 		},
@@ -25,15 +31,18 @@
 			style: 'position:absolute;left:0px;top:425px;width:720px;height:25px;',
 			items:
 			[
+				{
+					text:'Зашифровать и отправить',
+				},
+				'-',
+				{
+					text:'Сформировать тексты выгрузки',
+				},
 				'-',
 				{
 					text:'Проверить',
 				},
 				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'Сохранить',
 				},
@@ -45,12 +54,9 @@
 				{
 					text:'Записать',
 				},
-				{
-					text:'Зашифровать и отправить',
-				},
 				'-',
 				{
-					text:'Сформировать тексты выгрузки',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -100,6 +106,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:138px;width:704px;height:258px;',
 			height: 258,width: 704,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -147,20 +154,20 @@
 			style: 'position:absolute;left:0px;top:19px;width:704px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Заполнить',
+					text:'Пометить все',
 				},
 				{
 					text:'Снять пометки у всех',
 				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
 				{
 					text:'Текст',
 				},
-				{
-					text:'Пометить все',
-				},
-				'-',
 			]
 		},
 					]

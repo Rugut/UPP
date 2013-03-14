@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:1049px;height:28px;',
 			height: 28,width: 1049,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -95,19 +96,19 @@
 			items:
 			[
 				{
-					text:'Печать...',
+					text:'Назад',
 				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
 				'-',
 				{
 					text:'Структура налоговой базы',
 				},
+				'-',
 				{
-					text:'Назад',
+					text:'Печать...',
+				},
+				'-',
+				{
+					text:'Действие1',
 				},
 			]
 		},

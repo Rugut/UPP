@@ -14,23 +14,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:632px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Восстановить значения',
-				},
-				'-',
-				{
-					text:'Выполнить',
-				},
 				{
 					text:'Справка',
 				},
 				'-',
 				{
-					text:'Настройки',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Сохранить значения',
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Настройки',
 				},
 			]
 		},
@@ -87,23 +87,17 @@
 			style: 'position:absolute;left:6px;top:30px;width:273px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'Установить для правил',
+				},
 				{
 					text:'Снять для правил',
 				},
 				'-',
 				{
-					text:'Очистить узлы обмена',
-				},
-				{
-					text:'Установить для правил',
-				},
-				{
 					text:'Очистить отборы',
 				},
-				{
-					text:'Установить текущий узел обмена у всех',
-				},
+				'-',
 			]
 		},
 		{
@@ -236,9 +230,20 @@
 			]
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка в файл обмена',
+			style: 'position:absolute;left:6px;top:30px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Подключение и выгрузка данных в ИБ приемник',
+			style: 'position:absolute;left:167px;top:30px;width:272px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:54px;width:604px;height:92px;',
 			height: 92,width: 604,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -296,6 +301,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:604px;height:19px;',
 			height: 19,width: 604,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -501,6 +507,21 @@
 			style: 'position:absolute;left:6px;top:30px;width:136px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Не использовать автоматическую загрузку при открытии',
+			style: 'position:absolute;left:18px;top:258px;width:400px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Перед автоматической загрузкой задать вопрос о выполнении операции',
+			style: 'position:absolute;left:18px;top:278px;width:400px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать автоматическую загрузку данных',
+			style: 'position:absolute;left:18px;top:298px;width:400px;height:16px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаНастройкаОтладкиЗагрузки',
 			text: 'Настройка отладки загрузки...',
@@ -657,10 +678,10 @@
 				{
 					text:'ОтменитьВсе',
 				},
+				'-',
 				{
 					text:'Удалить',
 				},
-				'-',
 			]
 		},
 		{

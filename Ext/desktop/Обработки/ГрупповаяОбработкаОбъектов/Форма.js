@@ -21,10 +21,10 @@
 			style: 'position:absolute;left:0px;top:303px;width:500px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -78,20 +78,20 @@
 			style: 'position:absolute;left:8px;top:8px;width:466px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Установить все пометки',
+				},
+				{
+					text:'Снять все пометки',
 				},
 				{
 					text:'Инвертировать пометки',
 				},
 				'-',
 				{
-					text:'Снять все пометки',
-				},
-				{
 					text:'Подбор',
 				},
-				'-',
 			]
 		},
 		{
@@ -130,16 +130,16 @@
 			style: 'position:absolute;left:8px;top:8px;width:466px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Установить все пометки',
 				},
 				{
-					text:'Инвертировать пометки',
-				},
-				{
 					text:'Снять все пометки',
 				},
-				'-',
+				{
+					text:'Инвертировать пометки',
+				},
 			]
 		},
 		{

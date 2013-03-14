@@ -15,53 +15,39 @@
 			items:
 			[
 				{
-					text:'Режим одной учетной записи',
+					text:'Заявления на подключение',
+				},
+				'-',
+				{
+					text:'Учетные записи документооборота',
 				},
 				{
-					text:'Внешние электронные представления отчетов',
+					text:'Серверы документооборота',
+				},
+				'-',
+				{
+					text:'Налоговые органы',
 				},
 				{
 					text:'Органы ПФР',
 				},
 				{
-					text:'Налоговые органы',
+					text:'Органы ФСГС',
 				},
+				'-',
 				{
-					text:'Получить',
-				},
-				{
-					text:'Обменяться',
+					text:'Регламентированные отчеты',
 				},
 				{
 					text:'Виды отправляемых документов',
 				},
 				{
-					text:'Регламентированные отчеты',
+					text:'Внешние электронные представления отчетов',
 				},
+				'-',
 				{
 					text:'Архив документооборота с ФНС',
 				},
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Заявления на подключение',
-				},
-				'-',
-				'-',
-				{
-					text:'Учетные записи документооборота',
-				},
-				'-',
-				'-',
-				{
-					text:'Серверы документооборота',
-				},
-				{
-					text:'Органы ФСГС',
-				},
-				'-',
 			]
 		},
 		{
@@ -70,49 +56,50 @@
 			items:
 			[
 				{
-					text:'Предыдущий год',
-				},
-				{
-					text:'Предыдущая неделя',
-				},
-				{
-					text:'Произвольный период',
-				},
-				{
-					text:'Текущий месяц',
-				},
-				{
-					text:'Без ограничений',
-				},
-				'-',
-				{
-					text:'Текущий год',
-				},
-				{
-					text:'Предыдущий квартал',
-				},
-				{
-					text:'Предыдущий месяц',
-				},
-				{
 					text:'Сегодня',
-				},
-				{
-					text:'Текущий квартал',
 				},
 				{
 					text:'Текущая неделя',
 				},
 				{
-					text:'Вчера',
+					text:'Текущий месяц',
+				},
+				{
+					text:'Текущий квартал',
+				},
+				{
+					text:'Текущий год',
 				},
 				'-',
+				{
+					text:'Вчера',
+				},
+				{
+					text:'Предыдущая неделя',
+				},
+				{
+					text:'Предыдущий месяц',
+				},
+				{
+					text:'Предыдущий квартал',
+				},
+				{
+					text:'Предыдущий год',
+				},
+				'-',
+				{
+					text:'Произвольный период',
+				},
+				{
+					text:'Без ограничений',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
 			height: 23,width: 778,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -139,6 +126,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:778px;height:456px;',
 			height: 456,width: 778,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -249,6 +237,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			height: 22,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -265,6 +254,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			height: 21,width: 376,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -305,6 +295,16 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'первичный',
+			style: 'position:absolute;left:2px;top:2px;width:74px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'корректирующий',
+			style: 'position:absolute;left:81px;top:2px;width:106px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -339,6 +339,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:52px;width:529px;height:33px;',
 			height: 33,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -360,55 +361,19 @@
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
 			items:
 			[
+				{
+					text:'Подписать',
+				},
+				'-',
+				{
+					text:'Сформировать подтверждения',
+				},
 				'-',
 				{
 					text:'Зашифровать',
 				},
 				{
 					text:'Расшифровать',
-				},
-				{
-					text:'Подписать',
-				},
-				{
-					text:'Снять все флажки',
-				},
-				'-',
-				{
-					text:'Показать документы',
-				},
-				{
-					text:'Выгрузить контейнеры и их содержимое',
-				},
-				{
-					text:'Показать отчеты о состоянии',
-				},
-				{
-					text:'Выгрузить контейнеры',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Сформировать подтверждения',
-				},
-				{
-					text:'Выгрузить содержимое',
-				},
-				{
-					text:'Открыть исходный отчет',
-				},
-				'-',
-				'-',
-				{
-					text:'Установить все флажки',
-				},
-				{
-					text:'Найти исходный отчет в списке',
-				},
-				'-',
-				{
-					text:'Отобрать',
 				},
 			]
 		},
@@ -506,6 +471,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			height: 22,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -522,6 +488,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			height: 21,width: 376,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -639,6 +606,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:52px;width:529px;height:33px;',
 			height: 33,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -667,40 +635,15 @@
 			items:
 			[
 				{
-					text:'Открыть исходный отчет',
-				},
-				{
-					text:'Снять все флажки',
-				},
-				'-',
-				'-',
-				{
-					text:'Найти исходный отчет в списке',
-				},
-				'-',
-				{
-					text:'Установить все флажки',
-				},
-				{
-					text:'Показать документы',
-				},
-				'-',
-				{
 					text:'Выгрузить контейнеры и их содержимое',
 				},
-				{
-					text:'Отобрать',
-				},
-				{
-					text:'Выгрузить содержимое',
-				},
+				'-',
 				{
 					text:'Выгрузить контейнеры',
 				},
 				{
-					text:'Показать отчеты о состоянии',
+					text:'Выгрузить содержимое',
 				},
-				'-',
 			]
 		},
 					]
@@ -713,6 +656,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -756,33 +700,39 @@
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Отображать панель обмена',
-				},
-				'-',
 				{
 					text:'Открыть',
 				},
 				'-',
 				{
-					text:'Действие6',
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
 				},
 				'-',
 				{
-					text:'',
+					text:'(История отборов)',
+				},
+					]
 				},
 				{
-					text:'Действие5',
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
 				},
 			]
 		},
@@ -794,6 +744,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -850,6 +801,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -890,42 +842,48 @@
 			items:
 			[
 				{
-					text:'',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
 					text:'&Новый',
 				},
 				{
-					text:'Отображать панель обмена',
-				},
-				'-',
-				'-',
-				{
 					text:'',
 				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
 				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
+				},
 			]
 		},
 					]
@@ -936,6 +894,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1004,6 +963,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1044,36 +1004,42 @@
 			items:
 			[
 				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Отображать панель обмена',
-				},
-				'-',
-				{
 					text:'Открыть',
-				},
-				{
-					text:'',
 				},
 				{
 					text:'Ответить',
 				},
 				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
+				},
 			]
 		},
 					]
@@ -1084,6 +1050,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1132,6 +1099,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1202,6 +1170,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1214,41 +1183,47 @@
 			items:
 			[
 				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'',
-				},
-				{
 					text:'&Новый',
 				},
 				{
-					text:'Отображать панель обмена',
+					text:'',
 				},
 				{
-					text:'Действие4',
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
 				},
 			]
 		},
@@ -1388,6 +1363,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			height: 22,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1404,6 +1380,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			height: 21,width: 376,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1460,40 +1437,10 @@
 			items:
 			[
 				{
-					text:'Показать отчеты о состоянии',
-				},
-				{
-					text:'Выгрузить контейнеры',
-				},
-				{
-					text:'Установить все флажки',
-				},
-				{
-					text:'Журнал документов персонифицированного учета',
-				},
-				'-',
-				'-',
-				{
-					text:'Открыть исходный отчет',
-				},
-				{
-					text:'Снять все флажки',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				{
 					text:'Показать документы',
 				},
 				{
-					text:'Выгрузить содержимое',
-				},
-				{
-					text:'Отобрать',
-				},
-				{
-					text:'Выгрузить контейнеры и их содержимое',
+					text:'Показать отчеты о состоянии',
 				},
 			]
 		},
@@ -1507,6 +1454,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1547,41 +1495,47 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Отображать панель обмена',
-				},
-				{
 					text:'&Новый',
 				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
 				'-',
 				{
-					text:'Действие6',
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
 				},
 			]
 		},
@@ -1593,6 +1547,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1645,6 +1600,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1685,35 +1641,41 @@
 			items:
 			[
 				{
-					text:'Действие4',
-				},
-				'-',
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие7',
-				},
-				{
 					text:'Открыть',
-				},
-				{
-					text:'',
 				},
 				{
 					text:'Ответить',
 				},
 				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
 				'-',
 				{
-					text:'Действие6',
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
 				},
 			]
 		},
@@ -1725,6 +1687,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1859,6 +1822,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			height: 22,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1875,6 +1839,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			height: 21,width: 376,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1930,38 +1895,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Выгрузить контейнеры и их содержимое',
-				},
-				'-',
-				{
-					text:'Показать отчеты о состоянии',
-				},
-				{
-					text:'Установить все флажки',
-				},
-				{
-					text:'Выгрузить содержимое',
-				},
-				'-',
-				'-',
-				{
-					text:'Открыть исходный отчет',
-				},
-				{
-					text:'Отобрать',
-				},
-				{
-					text:'Выгрузить контейнеры',
-				},
-				{
-					text:'Снять все флажки',
-				},
-				'-',
 				{
 					text:'Показать документы',
+				},
+				{
+					text:'Показать отчеты о состоянии',
 				},
 			]
 		},
@@ -1975,6 +1913,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -2014,42 +1953,48 @@
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
 				{
 					text:'&Новый',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 				{
-					text:'',
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'Установить отбор и сортировку списка...',
 				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
 				{
 					text:'Отображать панель обмена',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие4',
 				},
 			]
 		},
@@ -2061,6 +2006,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -2121,6 +2067,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			height: 276,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -2161,35 +2108,41 @@
 			items:
 			[
 				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
 					text:'Открыть',
 				},
-				{
-					text:'Отображать панель обмена',
-				},
-				'-',
 				{
 					text:'Ответить',
 				},
 				'-',
 				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
 					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
 				},
 			]
 		},
@@ -2201,6 +2154,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			height: 128,width: 529,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -2253,6 +2207,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:543px;height:442px;',
 			height: 442,width: 543,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -2321,6 +2276,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:195px;height:456px;',
 			height: 456,width: 195,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -2348,12 +2304,6 @@
 			style: 'position:absolute;left:0px;top:23px;width:195px;height:24px;',
 			items:
 			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
 			]
 		},
 					]

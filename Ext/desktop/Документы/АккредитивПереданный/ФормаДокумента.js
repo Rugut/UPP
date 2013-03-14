@@ -95,6 +95,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:627px;height:188px;',
 			height: 188,width: 627,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -395,33 +396,7 @@
 			items:
 			[
 				{
-					text:'&Скопировать',
-				},
-				{
 					text:'Заполнить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'Подбор',
 				},
 			]
 		},
@@ -536,6 +511,16 @@
 			name: 'НадписьВидАккредитива',
 			text: 'Вид аккредитива:',
 			style: 'position:absolute;left:326px;top:6px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:420px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:525px;top:6px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -690,38 +675,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Показать/скрыть счета учета',
-				},
-				'-',
-				{
-					text:'Клиент-Банк: Создать контрагента',
-				},
-				{
-					text:'КУД и Р...',
-				},
 			]
 		},
 		{
@@ -742,19 +695,19 @@
 			items:
 			[
 				{
-					text:'ОК',
-				},
-				{
-					text:'Закрыть',
-				},
-				{
 					text:'Печать',
 				},
 				'-',
-				'-',
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -790,6 +743,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
 			height: 19,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

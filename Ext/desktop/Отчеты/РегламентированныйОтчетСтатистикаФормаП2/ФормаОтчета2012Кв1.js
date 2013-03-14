@@ -14,38 +14,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
+				{
+					text:'Проверить в Интернете',
+				},
 				{
 					text:'Отправить',
 				},
 				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Выгрузить',
-				},
-				{
 					text:'Показать отправки',
-				},
-				'-',
-				{
-					text:'Проверить выгрузку',
-				},
-				{
-					text:'Очистить',
-				},
-				{
-					text:'Поиск',
-				},
-				{
-					text:'Обновить',
-				},
-				'-',
-				'-',
-				{
-					text:'Проверить в Интернете',
 				},
 			]
 		},
@@ -54,17 +31,17 @@
 			style: 'position:absolute;left:0px;top:413px;width:716px;height:25px;',
 			items:
 			[
+				'-',
 				{
 					text:'ОК',
 				},
 				'-',
 				{
-					text:'Закрыть',
+					text:'Записать',
 				},
 				'-',
-				'-',
 				{
-					text:'Записать',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -138,6 +115,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:700px;height:43px;',
 			height: 43,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -148,6 +126,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:35px;',
 			height: 35,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

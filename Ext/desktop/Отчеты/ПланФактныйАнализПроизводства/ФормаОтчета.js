@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:525px;top:134px;width:306px;height:398px;',
 			height: 398,width: 306,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -427,27 +428,27 @@
 			style: 'position:absolute;left:0px;top:0px;width:304px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'&Добавить',
 				},
 				{
-					text:'&Переместить вверх',
-				},
-				'-',
-				{
 					text:'&Скопировать',
-				},
-				{
-					text:'&Переместить вниз',
 				},
 				{
 					text:'&Изменить',
 				},
 				{
-					text:'Выбирать даты периодом',
+					text:'&Удалить',
 				},
 				{
-					text:'&Удалить',
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Выбирать даты периодом',
 				},
 			]
 		},
@@ -467,37 +468,14 @@
 			items:
 			[
 				{
-					text:'Описание и Пользователи',
-				},
-				{
 					text:'Показать сформированный отчет в отдельном окне',
 				},
 				'-',
 				{
-					text:'Список вариантов отчетов',
-				},
-				{
 					text:'Сохранить сформированный отчет для сравнения',
 				},
 				{
-					text:'Заголовок',
-				},
-				{
 					text:'Сравнить сформированный отчет с сохраненным',
-				},
-				{
-					text:'Настройка структуры',
-				},
-				'-',
-				'-',
-				{
-					text:'Сохранить вариант',
-				},
-				{
-					text:'Панель пользователя',
-				},
-				{
-					text:'Сохранить вариант как...',
 				},
 			]
 		},
@@ -509,6 +487,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:838px;height:57px;',
 			height: 57,width: 838,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -545,6 +524,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:9px;top:63px;width:821px;height:31px;',
 			height: 31,width: 821,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -568,13 +548,13 @@
 			items:
 			[
 				{
+					text:'Командная панель панель вариантов',
+				},
+				{
 					text:'Настройки',
 				},
 				{
 					text:'Справка',
-				},
-				{
-					text:'Командная панель панель вариантов',
 				},
 			]
 		},

@@ -40,16 +40,16 @@
 			style: 'position:absolute;left:0px;top:228px;width:394px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'Получить вес',
 				},
+				'-',
 				{
 					text:'ОК',
 				},
 				'-',
 				{
-					text:'Получить вес',
+					text:'Закрыть',
 				},
 			]
 		},

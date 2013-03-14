@@ -22,10 +22,10 @@
 					text:'ОК',
 				},
 				'-',
-				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -55,6 +55,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:179px;top:8px;width:562px;height:286px;',
 			height: 286,width: 562,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

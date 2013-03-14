@@ -14,13 +14,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:730px;height:25px;',
 			items:
 			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
 			]
 		},
 		{
@@ -28,10 +28,10 @@
 			style: 'position:absolute;left:0px;top:529px;width:730px;height:25px;',
 			items:
 			[
-				{
-					text:'Действие',
-				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{

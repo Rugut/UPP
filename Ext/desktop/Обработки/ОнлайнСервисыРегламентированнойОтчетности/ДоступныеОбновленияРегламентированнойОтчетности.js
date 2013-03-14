@@ -27,6 +27,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:109px;width:423px;height:395px;',
 			height: 395,width: 423,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -37,6 +38,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:62px;width:423px;height:333px;',
 			height: 333,width: 423,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -91,6 +93,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:38px;width:423px;height:24px;',
 			height: 24,width: 423,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -121,6 +124,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:58px;width:423px;height:25px;',
 			height: 25,width: 423,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -141,6 +145,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:423px;height:18px;',
 			height: 18,width: 423,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -15,22 +15,34 @@
 			items:
 			[
 				{
-					text:'',
-				},
-				'-',
-				'-',
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
 				{
-					text:'',
+					text:'Редактировать номер',
 				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Редактировать номер',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Структура подчиненности документа',
+					text:'',
 				},
 			]
 		},
@@ -42,14 +54,14 @@
 				{
 					text:'OK',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
-				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -77,6 +89,16 @@
 			style: 'position:absolute;left:8px;top:182px;width:362px;height:41px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Занято',
+			style: 'position:absolute;left:8px;top:61px;width:362px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Недоступно',
+			style: 'position:absolute;left:8px;top:81px;width:362px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПомещение',
 			text: 'Помещение:',
@@ -92,6 +114,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:134px;width:362px;height:19px;',
 			height: 19,width: 362,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

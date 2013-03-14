@@ -36,16 +36,8 @@
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие',
-				},
-				'-',
 				{
 					text:'Формула',
-				},
-				{
-					text:'Действие1',
 				},
 			]
 		},

@@ -14,61 +14,67 @@
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
+				{
+					text:'Сформировать',
+				},
 				'-',
+				{
+					text:'Отбор',
+				},
 				'-',
 				{
 					text:'Заголовок',
 				},
+				'-',
 				{
-					text:'Диаграмма',
+					text:'Настройка ...',
 				},
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Восстановить значения...',
+					]
 				},
+				'-',
 				{
 					text:'Сформировать',
 				},
 				'-',
 				{
-					text:'Сохранить значения...',
+					text:'Отбор',
 				},
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Справка',
-				},
+				'-',
 				{
 					text:'Заголовок',
 				},
 				'-',
-				'-',
-				'-',
-				{
-					text:'Сформировать',
-				},
 				{
 					text:'Настройка ...',
 				},
-				'-',
+				{
+					text:'Восстановить значения...',
+				},
 				{
 					text:'Сохранить значения...',
 				},
 				'-',
-				'-',
 				{
-					text:'Отбор',
+					text:'Диаграмма',
 				},
 				'-',
 				{
-					text:'Отбор',
-				},
-				{
-					text:'Настройка ...',
+					text:'Справка',
 				},
 			]
 		},
@@ -100,6 +106,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:83px;width:644px;height:44px;',
 			height: 44,width: 644,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -121,6 +128,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:644px;height:19px;',
 			height: 19,width: 644,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

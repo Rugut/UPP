@@ -14,16 +14,16 @@
 			style: 'position:absolute;left:0px;top:236px;width:432px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'ОК',
-				},
-				{
-					text:'Действие2',
+					text:'Справка',
 				},
 			]
 		},
@@ -203,12 +203,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие1',
-				},
 				{
 					text:'Направление',
 				},

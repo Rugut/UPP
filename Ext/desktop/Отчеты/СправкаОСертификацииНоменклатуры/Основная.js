@@ -14,20 +14,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:554px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'Справка',
-				},
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				{
 					text:'Новый отчет',
 				},
+				'-',
 				{
 					text:'Закрыть',
+				},
+					]
 				},
 				'-',
 				{
 					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

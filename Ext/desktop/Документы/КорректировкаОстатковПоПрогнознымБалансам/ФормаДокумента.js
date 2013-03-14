@@ -145,19 +145,25 @@
 			items:
 			[
 				{
-					text:'Движения документа по регистрам',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
-					text:'',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Структура подчиненности документа',
 				},
+				'-',
+					]
+				},
+				'-',
 				{
 					text:'',
 				},
-				'-',
-				'-',
+				{
+					text:'',
+				},
 			]
 		},
 		{
@@ -165,16 +171,16 @@
 			style: 'position:absolute;left:0px;top:468px;width:530px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -201,6 +207,16 @@
 			name: 'Надпись9',
 			text: 'Состояние:',
 			style: 'position:absolute;left:8px;top:417px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только по счетам, указанным в табличной части',
+			style: 'position:absolute;left:13px;top:102px;width:271px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По всем счетам',
+			style: 'position:absolute;left:291px;top:102px;width:110px;height:15px;',
 		},
 	]
 });

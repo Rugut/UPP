@@ -39,37 +39,43 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				'-',
-				'-',
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
 				{
-					text:'Записать и закрыть',
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
 				},
 				{
 					text:'Записать',
 				},
+				{
+					text:'Записать и закрыть',
+				},
 				'-',
 				{
-					text:'Справка',
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
 				},
 				'-',
 				{
 					text:'Настройка доступа',
 				},
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Скопировать',
-				},
 				'-',
 				{
-					text:'Перечитать',
+					text:'Справка',
 				},
 			]
 		},
@@ -85,10 +91,10 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -200,6 +206,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:496px;height:81px;',
 			height: 81,width: 496,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -281,10 +288,10 @@
 			items:
 			[
 				{
-					text:'Вывести список...',
+					text:'&Добавить новую категорию',
 				},
 				{
-					text:'&Добавить новую категорию',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -293,12 +300,6 @@
 			style: 'position:absolute;left:6px;top:61px;width:245px;height:24px;',
 			items:
 			[
-				{
-					text:'&Добавить новое свойство',
-				},
-				{
-					text:'Вывести список...',
-				},
 			]
 		},
 					]
@@ -333,6 +334,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:115px;width:510px;height:16px;',
 			height: 16,width: 510,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

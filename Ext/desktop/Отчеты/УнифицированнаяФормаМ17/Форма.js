@@ -15,9 +15,15 @@
 			items:
 			[
 				{
-					text:'Сформировать',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
 				},
 				'-',
+				{
+					text:'Сформировать',
+				},
 				'-',
 			]
 		},

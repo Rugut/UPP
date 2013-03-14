@@ -21,20 +21,20 @@
 			style: 'position:absolute;left:0px;top:425px;width:769px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'ОК',
+					text:'<Назад',
 				},
 				'-',
 				{
 					text:'Далее>',
 				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'<Назад',
 				},
 			]
 		},
@@ -426,14 +426,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:733px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Рассчитать',
+					text:'',
 				},
+				'-',
 				{
 					text:'Изменить...',
 				},
-				'-',
-				'-',
 			]
 		},
 		{

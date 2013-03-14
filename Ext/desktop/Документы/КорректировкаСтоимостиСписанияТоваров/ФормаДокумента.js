@@ -39,18 +39,24 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
 					text:'Структура подчиненности документа',
 				},
 				'-',
-				{
-					text:'Дт/кт',
+					]
 				},
 				'-',
 				{
 					text:'Дт/кт',
 				},
 				{
-					text:'Движения документа по регистрам',
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -60,19 +66,19 @@
 			items:
 			[
 				{
-					text:'Записать',
+					text:'Печать',
 				},
 				'-',
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'OK',
 				},
+				'-',
 				{
-					text:'Печать',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -129,6 +135,26 @@
 			hideLabel: true,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:126px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:86px;top:103px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:161px;top:103px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:236px;top:103px;width:70px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'меж. учете',
+			style: 'position:absolute;left:311px;top:103px;width:80px;height:19px;',
 		},
 	]
 });

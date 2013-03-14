@@ -15,18 +15,18 @@
 			items:
 			[
 				{
-					text:'Далее',
-				},
-				{
-					text:'Справка',
-				},
-				'-',
-				'-',
-				{
 					text:'Назад',
 				},
 				{
+					text:'Далее',
+				},
+				'-',
+				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -34,12 +34,28 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:54px;width:430px;height:279px;',
 			height: 279,width: 430,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Настройка выбор вида показателя',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Стандартный показатель',
+			style: 'position:absolute;left:34px;top:51px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'План-факт',
+			style: 'position:absolute;left:34px;top:111px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'План (прогноз)',
+			style: 'position:absolute;left:34px;top:174px;width:282px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись100',

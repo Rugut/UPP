@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:346px;width:486px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -69,17 +69,17 @@
 			items:
 			[
 				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
 					text:'Установить флажки',
 				},
 				{
 					text:'Снять флажки',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие6',
 				},
 			]
 		},

@@ -50,6 +50,12 @@
 					text:'Выбрать',
 				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+					]
+				},
 			]
 		},
 	]

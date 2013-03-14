@@ -70,23 +70,29 @@
 			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
 			items:
 			[
-				'-',
 				{
+					xtype: 'splitbutton',
 					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
 				'-',
 				{
 					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
 				},
 				{
 					text:'Дт/кт',
@@ -99,20 +105,20 @@
 			items:
 			[
 				{
+					text:'Печать',
+				},
+				'-',
+				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'Печать',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
-				'-',
-				'-',
 			]
 		},
 		{
@@ -155,6 +161,16 @@
 			name: 'Надпись5',
 			text: 'Организация:',
 			style: 'position:absolute;left:8px;top:228px;width:77px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отражать в управленческом учете',
+			style: 'position:absolute;left:8px;top:78px;width:200px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отражать в бухгалтерском учете',
+			style: 'position:absolute;left:8px;top:207px;width:189px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',

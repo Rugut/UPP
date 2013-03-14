@@ -10,6 +10,16 @@
 	items:
 	[
 		{
+			xtype: 'radio',
+			boxLabel: 'без отладки алгоритмов',
+			style: 'position:absolute;left:8px;top:29px;width:279px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'подставлять код алгоритмов по месту вызова',
+			style: 'position:absolute;left:8px;top:69px;width:279px;height:15px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаВыгрузитьКодОбработчиков',
 			text: 'Сформировать модуль отладки выгрузки',
@@ -32,12 +42,12 @@
 			style: 'position:absolute;left:0px;top:336px;width:567px;height:24px;',
 			items:
 			[
+				{
+					text:'Готово',
+				},
 				'-',
 				{
 					text:'Отмена',
-				},
-				{
-					text:'Готово',
 				},
 			]
 		},
@@ -45,6 +55,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:290px;top:25px;width:269px;height:67px;',
 			height: 67,width: 269,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -99,6 +110,11 @@
 3. На завершающем четвертом шаге указать вновь созданную обработку как обработку с экспортными процедурами обработчиков.
 ',
 			style: 'position:absolute;left:8px;top:179px;width:489px;height:80px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'вызывать алгоритмы как процедуры',
+			style: 'position:absolute;left:8px;top:49px;width:279px;height:15px;',
 		},
 	]
 });

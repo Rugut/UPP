@@ -15,16 +15,16 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Применить',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				'-',
 				{
 					text:'Действие1',
 				},
-				'-',
 			]
 		},
 		{
@@ -50,6 +50,16 @@
 			style: 'position:absolute;left:10px;top:175px;width:342px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Месячную норму времени по графику сотрудника',
+			style: 'position:absolute;left:26px;top:199px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Среднее за год количество часов в месяце',
+			style: 'position:absolute;left:26px;top:223px;width:281px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПорядокРасчетаЧасовойСтавки',
 			text: 'Пересчет месячного оклада в часовую ставку применяется для расчета оплаты сверхурочных часов.
@@ -63,10 +73,25 @@
 			style: 'position:absolute;left:10px;top:52px;width:287px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Не уменьшает налоги и взносы (НДФЛ, страховые взносы и пр.)',
+			style: 'position:absolute;left:26px;top:76px;width:357px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уменьшает налоги и взносы',
+			style: 'position:absolute;left:26px;top:100px;width:281px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьУдержаниеЗаОтпускУменьшаетНалогиИнформация',
 			text: 'Удержание за неотработанный отпуск при увольнении будет регистрироваться как сторно начисление',
 			style: 'position:absolute;left:42px;top:125px;width:438px;height:32px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Месячную норму по производственному календарю',
+			style: 'position:absolute;left:26px;top:247px;width:281px;height:19px;',
 		},
 					]
 				},
@@ -144,6 +169,16 @@
 			name: 'НадписьПорядокСписанияФактическихОтпусков',
 			text: 'Остатки отпусков будут уменьшаться при регистрации фактических отпусков',
 			style: 'position:absolute;left:26px;top:412px;width:424px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Кадровыми приказами',
+			style: 'position:absolute;left:42px;top:430px;width:158px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Расчетными документами',
+			style: 'position:absolute;left:42px;top:449px;width:158px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -432,6 +467,21 @@
 			text: 'В бухгалтерском и налоговом учете расходы признаются в месяце начисления отпускных',
 			style: 'position:absolute;left:58px;top:183px;width:428px;height:73px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в месяце начисления',
+			style: 'position:absolute;left:42px;top:119px;width:391px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'БУ в месяце начисления, НУ в месяце, на который приходится отпуск',
+			style: 'position:absolute;left:42px;top:139px;width:391px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в месяце, на который приходится отпуск',
+			style: 'position:absolute;left:42px;top:159px;width:391px;height:19px;',
+		},
 					]
 				},
 				{
@@ -465,6 +515,16 @@
 			name: 'Надпись93',
 			text: 'Базой для расчета оценочных обязательств и резервов являются',
 			style: 'position:absolute;left:46px;top:231px;width:438px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: ' Суммы начислений по оплате труда и исчисленные страховые взносы',
+			style: 'position:absolute;left:62px;top:252px;width:382px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: ' Суммы начислений по оплате труда',
+			style: 'position:absolute;left:62px;top:272px;width:207px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -565,12 +625,12 @@
 			style: 'position:absolute;left:10px;top:356px;width:496px;height:24px;',
 			items:
 			[
+				{
+					text:'&Добавить',
+				},
 				'-',
 				{
 					text:'&Удалить',
-				},
-				{
-					text:'&Добавить',
 				},
 			]
 		},
@@ -580,13 +640,13 @@
 			items:
 			[
 				{
-					text:'Вывести список...',
+					text:'&Добавить',
 				},
 				{
 					text:'&Удалить',
 				},
 				{
-					text:'&Добавить',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -691,16 +751,16 @@
 			style: 'position:absolute;left:281px;top:193px;width:192px;height:27px;',
 			items:
 			[
-				'-',
 				{
 					text:'&Добавить',
 				},
 				{
-					text:'&Удалить',
-				},
-				{
 					text:'&Скопировать',
 				},
+				{
+					text:'&Удалить',
+				},
+				'-',
 				{
 					text:'Вывести список...',
 				},
@@ -738,13 +798,13 @@
 			items:
 			[
 				{
+					text:'&Добавить',
+				},
+				{
 					text:'&Удалить',
 				},
 				{
 					text:'Вывести список...',
-				},
-				{
-					text:'&Добавить',
 				},
 			]
 		},
@@ -753,12 +813,12 @@
 			style: 'position:absolute;left:10px;top:371px;width:496px;height:24px;',
 			items:
 			[
+				{
+					text:'&Добавить',
+				},
 				'-',
 				{
 					text:'&Удалить',
-				},
-				{
-					text:'&Добавить',
 				},
 			]
 		},
@@ -896,6 +956,16 @@
 			style: 'position:absolute;left:366px;top:231px;width:114px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'нарастающим итогом в течение налогового периода',
+			style: 'position:absolute;left:26px;top:108px;width:298px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в пределах месячного дохода налогоплательщика',
+			style: 'position:absolute;left:26px;top:128px;width:298px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Стандартные вычеты применяются',
@@ -995,6 +1065,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:362px;width:496px;height:105px;',
 			height: 105,width: 496,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1233,6 +1304,16 @@
 			style: 'position:absolute;left:10px;top:8px;width:470px;height:25px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'по структуре юридических лиц',
+			style: 'position:absolute;left:42px;top:327px;width:179px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по центрам ответственности',
+			style: 'position:absolute;left:42px;top:348px;width:179px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись81',
 			text: 'Набор персонала ведется:',
@@ -1315,6 +1396,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:522px;width:421px;height:25px;',
 			height: 25,width: 421,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

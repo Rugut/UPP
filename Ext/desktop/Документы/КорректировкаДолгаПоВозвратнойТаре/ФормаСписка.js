@@ -66,16 +66,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Печать по умолчанию',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
 				'-',
 				{
-					text:'Структура подчиненности документа',
+					text:'Печать по умолчанию',
 				},
 			]
 		},

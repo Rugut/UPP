@@ -21,10 +21,10 @@
 			style: 'position:absolute;left:0px;top:292px;width:426px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -67,11 +67,11 @@
 					text:'&Добавить',
 				},
 				{
-					text:'Подбор',
+					text:'&Удалить',
 				},
 				'-',
 				{
-					text:'&Удалить',
+					text:'Подбор',
 				},
 			]
 		},

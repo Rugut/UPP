@@ -15,63 +15,21 @@
 			items:
 			[
 				{
-					text:'Настройки отчета...',
+					text:'Проверить в Интернете',
+				},
+				{
+					text:'Отправить',
 				},
 				'-',
 				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Расшифровка',
-				},
-				{
-					text:'Поиск',
+					text:'Подготовить к отправке и подписать',
 				},
 				{
 					text:'Подготовить к отправке',
 				},
-				{
-					text:'Проверить выгрузку',
-				},
 				'-',
-				'-',
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Расширить поле бланка',
-				},
-				{
-					text:'Обновить',
-				},
-				{
-					text:'Проверить в Интернете',
-				},
-				'-',
-				'-',
-				{
-					text:'Кнопка сохранять расшифровку',
-				},
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				'-',
-				'-',
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Выгрузить',
-				},
 				{
 					text:'Показать отправки',
-				},
-				'-',
-				{
-					text:'Отправить',
 				},
 			]
 		},
@@ -80,18 +38,6 @@
 			style: 'position:absolute;left:0px;top:466px;width:720px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				{
-					text:'Закрыть',
-				},
 			]
 		},
 		{
@@ -104,6 +50,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:704px;height:48px;',
 			height: 48,width: 704,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -136,6 +83,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:436px;width:704px;height:22px;',
 			height: 22,width: 704,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -168,6 +116,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:122px;width:704px;height:314px;',
 			height: 314,width: 704,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -212,6 +161,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:704px;height:37px;',
 			height: 37,width: 704,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -222,6 +172,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:704px;height:35px;',
 			height: 35,width: 704,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

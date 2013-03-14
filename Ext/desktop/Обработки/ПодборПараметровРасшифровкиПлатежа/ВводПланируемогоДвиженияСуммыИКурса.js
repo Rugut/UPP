@@ -17,10 +17,10 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -36,6 +36,26 @@
 			style: 'position:absolute;left:8px;top:151px;width:283px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Ручной выбор',
+			style: 'position:absolute;left:8px;top:130px;width:93px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Автоподбор',
+			style: 'position:absolute;left:136px;top:130px;width:98px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По сумме платежа',
+			style: 'position:absolute;left:8px;top:151px;width:118px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По сумме взаиморасчетов',
+			style: 'position:absolute;left:136px;top:151px;width:158px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Только включенные в платежный календарь',
 			style: 'position:absolute;left:8px;top:176px;width:256px;height:19px;',
@@ -44,6 +64,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:244px;height:73px;',
 			height: 73,width: 244,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

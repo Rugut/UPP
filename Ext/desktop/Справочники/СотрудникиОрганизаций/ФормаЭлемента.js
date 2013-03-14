@@ -15,23 +15,35 @@
 			items:
 			[
 				{
-					text:'Действие',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
 				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Данные сотрудника',
+				},
+				'-',
 				{
 					text:'Медицинские страховые полисы',
 				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
+					]
 				},
 				'-',
 				{
-					text:'Данные сотрудника',
+					text:'Справка',
 				},
 			]
 		},
@@ -44,10 +56,10 @@
 					text:'OK',
 				},
 				'-',
-				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -57,6 +69,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:480px;top:33px;width:212px;height:440px;',
 			height: 440,width: 212,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -77,6 +90,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:466px;height:440px;',
 			height: 440,width: 466,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -87,12 +101,23 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:2px;top:0px;width:464px;height:69px;',
 			height: 69,width: 464,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Создать нового сотрудника, выбрав его из справочника физических лиц',
+			style: 'position:absolute;left:3px;top:36px;width:242px;height:28px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Создать нового сотрудника и ввести его личные данные в справочник физических лиц',
+			style: 'position:absolute;left:3px;top:3px;width:267px;height:28px;',
+		},
 					]
 				},
 			]
@@ -445,12 +470,6 @@
 			style: 'position:absolute;left:23px;top:101px;width:77px;height:24px;',
 			items:
 			[
-				{
-					text:'Действие1',
-				},
-				{
-					text:'&Добавить новое свойство',
-				},
 			]
 		},
 		{
@@ -484,7 +503,7 @@
 					text:'&Добавить новую категорию',
 				},
 				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -807,23 +826,35 @@
 			items:
 			[
 				{
-					text:'Действие12',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
 				},
 				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
 				'-',
+				{
+					text:'Изменить',
+				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'',
 				},
-				{
-					text:'Действие13',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие14',
+					]
 				},
 				'-',
 			]
@@ -1308,10 +1339,10 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'Настройка списка...',
 				},
 				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -1321,10 +1352,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Настройка списка...',
 				},
 				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -1682,65 +1713,83 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				{
+					xtype: 'splitbutton',
 					text:'',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Действие8',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие12',
-				},
-				'-',
-				'-',
+					menu: [
 				{
 					text:'&Добавить',
 				},
 				{
 					text:'',
 				},
-				'-',
-				'-',
-				'-',
 				{
-					text:'Действие6',
+					text:'Изменить',
 				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
 				{
 					text:'',
 				},
 				'-',
 				{
-					text:'Действие14',
+					text:'Провести',
 				},
 				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие7',
+					text:'Отмена проведения',
 				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Ввести на основании)',
+				},
+					]
+				},
+				'-',
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
 			]
 		},
 		{
@@ -1806,12 +1855,6 @@
 			style: 'position:absolute;left:21px;top:112px;width:95px;height:24px;',
 			items:
 			[
-				{
-					text:'Действие1',
-				},
-				{
-					text:'&Добавить новое свойство',
-				},
 			]
 		},
 		{
@@ -1845,7 +1888,7 @@
 					text:'&Добавить новую категорию',
 				},
 				{
-					text:'Действие1',
+					text:'Вывести список...',
 				},
 			]
 		},

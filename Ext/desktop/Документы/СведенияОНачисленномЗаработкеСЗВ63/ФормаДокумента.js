@@ -26,81 +26,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
 			items:
 			[
-				{
-					text:'',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Редактировать номер',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -111,26 +36,26 @@
 				{
 					text:'Проверить в CheckXML',
 				},
-				{
-					text:'Записать',
-				},
 				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'OK',
-				},
-				{
-					text:'Записать файл на диск',
-				},
 				{
 					text:'Показать файл',
 				},
 				'-',
+				{
+					text:'Записать файл на диск',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -142,6 +67,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:830px;height:41px;',
 			height: 41,width: 830,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -152,6 +78,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:830px;height:35px;',
 			height: 35,width: 830,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -170,6 +97,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:830px;height:96px;',
 			height: 96,width: 830,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -267,10 +195,25 @@
 			style: 'position:absolute;left:94px;top:24px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:525px;top:48px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:605px;top:48px;width:109px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьТипСведений1',
 			text: 'Тип сведений:',
 			style: 'position:absolute;left:439px;top:48px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющие',
+			style: 'position:absolute;left:714px;top:48px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -316,6 +259,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:170px;width:830px;height:251px;',
 			height: 251,width: 830,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -330,37 +274,6 @@
 				{
 					text:'Начисленные суммы',
 				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие8',
-				},
-				'-',
 			]
 		},
 		{

@@ -21,10 +21,10 @@
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Действие',
-				},
 				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -78,6 +78,51 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:58px;width:288px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Остаток на начало',
+			style: 'position:absolute;left:6px;top:162px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Остаток на конец',
+			style: 'position:absolute;left:6px;top:186px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Оборот',
+			style: 'position:absolute;left:6px;top:210px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Дебет',
+			style: 'position:absolute;left:134px;top:162px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Кредит',
+			style: 'position:absolute;left:134px;top:186px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Дебет - Кредит',
+			style: 'position:absolute;left:134px;top:210px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сумма',
+			style: 'position:absolute;left:262px;top:162px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Количество',
+			style: 'position:absolute;left:262px;top:186px;width:114px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Валютная сумма',
+			style: 'position:absolute;left:262px;top:210px;width:114px;height:15px;',
 		},
 		{
 			xtype: 'label',
@@ -204,6 +249,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:184px;width:150px;height:28px;',
 			height: 28,width: 150,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

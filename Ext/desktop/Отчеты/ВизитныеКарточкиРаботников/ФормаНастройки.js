@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -58,14 +58,14 @@
 			style: 'position:absolute;left:6px;top:24px;width:250px;height:24px;',
 			items:
 			[
-				'-',
+				{
+					text:'',
+				},
 				{
 					text:'',
 				},
 				'-',
-				{
-					text:'',
-				},
+				'-',
 			]
 		},
 					]

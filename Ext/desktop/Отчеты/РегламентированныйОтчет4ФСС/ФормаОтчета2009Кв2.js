@@ -14,40 +14,31 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Обновить',
-				},
-				{
-					text:'Вывести реестр пособий',
-				},
-				{
-					text:'Расширить поле бланка',
-				},
-				{
-					text:'Настройка...',
-				},
-				{
-					text:'Справка',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Расшифровать ячейку',
-				},
-				{
-					text:'Очистить',
-				},
-				'-',
 				{
 					text:'Заполнить',
 				},
+				'-',
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
 				{
 					text:'Поиск',
 				},
 				'-',
+				{
+					text:'Обновить',
+				},
 				'-',
+				{
+					text:'Расширить поле бланка',
+				},
+				'-',
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -55,18 +46,6 @@
 			style: 'position:absolute;left:0px;top:425px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
 			]
 		},
 		{
@@ -86,6 +65,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			height: 24,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -118,6 +98,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			height: 24,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -192,6 +173,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:236px;width:640px;height:26px;',
 			height: 26,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -254,6 +236,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:242px;width:640px;height:22px;',
 			height: 22,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -304,6 +287,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			height: 24,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -336,6 +320,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			height: 24,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -372,6 +357,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:47px;',
 			height: 47,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -414,6 +400,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:391px;width:654px;height:26px;',
 			height: 26,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

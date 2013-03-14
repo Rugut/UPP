@@ -93,17 +93,17 @@
 			style: 'position:absolute;left:0px;top:156px;width:500px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{

@@ -15,20 +15,20 @@
 			items:
 			[
 				{
+					text:'Показать файл',
+				},
+				'-',
+				{
 					text:'Записать файл на диск',
 				},
+				'-',
 				{
 					text:'OK',
 				},
-				{
-					text:'Показать файл',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
-				'-',
-				'-',
-				'-',
 				'-',
 				{
 					text:'Закрыть',
@@ -40,87 +40,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:805px;height:25px;',
 			items:
 			[
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Редактировать номер',
-				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:789px;height:43px;',
 			height: 43,width: 789,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -131,6 +57,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:789px;height:35px;',
 			height: 35,width: 789,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -149,6 +76,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:76px;width:789px;height:513px;',
 			height: 513,width: 789,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -220,46 +148,9 @@
 			style: 'position:absolute;left:0px;top:123px;width:789px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'физ.лицами, получавшими доходы',
 				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Пронумеровать',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -494,6 +385,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:156px;width:513px;height:87px;',
 			height: 87,width: 513,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -654,6 +546,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:363px;top:8px;width:150px;height:57px;',
 			height: 57,width: 150,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -692,6 +585,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:226px;top:46px;width:132px;height:22px;',
 			height: 22,width: 132,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

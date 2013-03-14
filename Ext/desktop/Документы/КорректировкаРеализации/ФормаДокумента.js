@@ -50,28 +50,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
 			items:
 			[
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
 			]
 		},
 		{
@@ -305,15 +283,15 @@
 			[
 				'-',
 				{
+					text:'Подбор',
+				},
+				'-',
+				{
 					text:'Серийные номера',
 				},
+				'-',
 				{
 					text:'Состав набора',
-				},
-				'-',
-				'-',
-				{
-					text:'Подбор',
 				},
 				'-',
 			]
@@ -449,10 +427,10 @@
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Подбор',
 				},
-				'-',
 				'-',
 			]
 		},
@@ -582,24 +560,34 @@
 				{
 					text:'Печать',
 				},
-				{
-					text:'Записать',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:584px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Упр. и регл. учет',
+			style: 'position:absolute;left:428px;top:57px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только НДС',
+			style: 'position:absolute;left:428px;top:81px;width:236px;height:19px;',
 		},
 		{
 			xtype: 'label',

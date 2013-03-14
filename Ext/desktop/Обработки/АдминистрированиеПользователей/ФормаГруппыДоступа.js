@@ -14,13 +14,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:627px;height:25px;',
 			items:
 			[
-				{
-					text:'Доступ к справочнику в целом',
-				},
 				'-',
-				{
-					text:'Доступ к текущему элементу',
-				},
 			]
 		},
 		{
@@ -37,6 +31,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:597px;height:259px;',
 			height: 259,width: 597,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -110,6 +105,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:603px;height:259px;',
 			height: 259,width: 603,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -183,6 +179,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:6px;width:603px;height:261px;',
 			height: 261,width: 603,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

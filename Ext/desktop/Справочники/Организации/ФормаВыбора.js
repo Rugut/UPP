@@ -102,10 +102,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:503px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выбрать',
 				},
+				'-',
 			]
 		},
 	]

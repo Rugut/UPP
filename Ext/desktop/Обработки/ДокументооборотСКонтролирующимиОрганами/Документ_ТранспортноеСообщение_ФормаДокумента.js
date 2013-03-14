@@ -14,70 +14,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Отправить',
-				},
-				{
-					text:'Содержимое транспортных контейнеров',
-				},
-				{
-					text:'Действие',
-				},
 				{
 					text:'Содержимое контейнера',
 				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Зашифровать',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				'-',
-				{
-					text:'Цикл обмена',
-				},
-				{
-					text:'Зашифровать',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Распознать',
-				},
-				'-',
-				{
-					text:'Дополнительно...',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Транспортные контейнеры',
-				},
 				{
 					text:'Контейнер',
-				},
-				{
-					text:'Отправить',
 				},
 			]
 		},
@@ -131,6 +72,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:142px;width:566px;height:191px;',
 			height: 191,width: 566,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -479,6 +421,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:171px;width:566px;height:20px;',
 			height: 20,width: 566,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -529,6 +472,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:58px;width:566px;height:93px;',
 			height: 93,width: 566,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -597,6 +541,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:58px;width:566px;height:93px;',
 			height: 93,width: 566,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

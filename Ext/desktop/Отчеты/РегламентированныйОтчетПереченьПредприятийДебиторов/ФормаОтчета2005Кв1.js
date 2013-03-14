@@ -14,6 +14,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
 				'-',
 				{
 					text:'Поиск',
@@ -24,19 +31,12 @@
 				},
 				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Очистить',
-				},
-				{
 					text:'Расширить поле бланка',
 				},
 				'-',
-				'-',
+				{
+					text:'Действие2',
+				},
 			]
 		},
 		{
@@ -45,16 +45,16 @@
 			items:
 			[
 				'-',
-				'-',
 				{
 					text:'ОК',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -68,6 +68,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:700px;height:52px;',
 			height: 52,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -106,6 +107,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:85px;width:700px;height:254px;',
 			height: 254,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -132,6 +134,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:339px;width:700px;height:23px;',
 			height: 23,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

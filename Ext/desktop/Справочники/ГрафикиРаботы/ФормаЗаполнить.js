@@ -14,31 +14,32 @@
 			style: 'position:absolute;left:0px;top:386px;width:561px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Назад',
 				},
-				{
-					text:'Действие',
-				},
+				'-',
 				{
 					text:'Далее',
 				},
-				{
-					text:'Отмена',
-				},
-				'-',
 				'-',
 				{
 					text:'Заполнить',
 				},
 				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:190px;top:0px;width:365px;height:386px;',
 			height: 386,width: 365,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -58,6 +59,16 @@
 			style: 'position:absolute;left:16px;top:262px;width:58px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Настроить вручную',
+			style: 'position:absolute;left:0px;top:345px;width:364px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заполнить по шаблону:',
+			style: 'position:absolute;left:0px;top:48px;width:364px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ДатаНачала',
@@ -73,6 +84,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:16px;top:209px;width:265px;height:43px;',
 			height: 43,width: 265,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -92,6 +104,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'ДополнительныйСпособЗаполнения',
+			style: 'position:absolute;left:0px;top:321px;width:365px;height:19px;',
 		},
 					]
 				},
@@ -155,6 +172,16 @@
 			style: 'position:absolute;left:4px;top:194px;width:360px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Сокращенная рабочая неделя',
+			style: 'position:absolute;left:18px;top:238px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Неполный рабочий день',
+			style: 'position:absolute;left:18px;top:216px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГрафикПолногоРабочегоВремени',
@@ -165,6 +192,16 @@
 			name: 'Надпись6',
 			text: 'Норма времени рассчитывается',
 			style: 'position:absolute;left:18px;top:263px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По этому графику',
+			style: 'position:absolute;left:18px;top:288px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По другому графику:',
+			style: 'position:absolute;left:18px;top:309px;width:124px;height:19px;',
 		},
 					]
 				},
@@ -206,6 +243,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:3px;top:41px;width:360px;height:219px;',
 			height: 219,width: 360,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -367,19 +405,6 @@
 			style: 'position:absolute;left:0px;top:9px;width:132px;height:24px;',
 			items:
 			[
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
 			]
 		},
 		{
@@ -396,6 +421,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:3px;top:306px;width:190px;height:23px;',
 			height: 23,width: 190,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -436,6 +462,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:12px;width:181px;height:374px;',
 			height: 374,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

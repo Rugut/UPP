@@ -38,20 +38,20 @@
 			style: 'position:absolute;left:0px;top:500px;width:470px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'Записать',
+					text:'Справка',
 				},
 			]
 		},

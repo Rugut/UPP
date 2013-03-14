@@ -66,14 +66,14 @@
 			items:
 			[
 				{
-					text:'Значения по умолчанию',
+					text:'',
 				},
 				'-',
 				{
-					text:'Показывать форму настройки при формировании документов',
+					text:'Справка',
 				},
 				{
-					text:'Действие',
+					text:'Показывать форму настройки при формировании документов',
 				},
 			]
 		},
@@ -93,6 +93,26 @@
 			name: 'НадписьПечататьСФНаПринтер',
 			text: 'печатать на:',
 			style: 'position:absolute;left:112px;top:342px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'принтер',
+			style: 'position:absolute;left:220px;top:174px;width:65px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'экран',
+			style: 'position:absolute;left:303px;top:174px;width:48px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'принтер',
+			style: 'position:absolute;left:220px;top:342px;width:65px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'экран',
+			style: 'position:absolute;left:303px;top:342px;width:48px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -121,9 +141,29 @@
 			style: 'position:absolute;left:487px;top:342px;width:71px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'принтер',
+			style: 'position:absolute;left:595px;top:342px;width:65px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'экран',
+			style: 'position:absolute;left:678px;top:342px;width:48px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Установить флаг "Оплачено"',
 			style: 'position:absolute;left:387px;top:280px;width:170px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по складу',
+			style: 'position:absolute;left:282px;top:67px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по ордеру',
+			style: 'position:absolute;left:282px;top:85px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -141,6 +181,16 @@
 			name: 'НадписьПечататьРасходныйОрдерНаТоварыНаПринтер',
 			text: 'печатать на:',
 			style: 'position:absolute;left:487px;top:174px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'принтер',
+			style: 'position:absolute;left:595px;top:174px;width:63px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'экран',
+			style: 'position:absolute;left:678px;top:174px;width:48px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

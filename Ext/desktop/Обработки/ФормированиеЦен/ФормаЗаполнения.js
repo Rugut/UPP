@@ -25,10 +25,10 @@
 			items:
 			[
 				{
-					text:'&Удалить',
+					text:'&Добавить',
 				},
 				{
-					text:'&Добавить',
+					text:'&Удалить',
 				},
 				{
 					text:'Включить все',
@@ -79,10 +79,10 @@
 			style: 'position:absolute;left:0px;top:313px;width:676px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -92,6 +92,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:284px;width:660px;height:21px;',
 			height: 21,width: 660,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

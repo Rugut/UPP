@@ -44,17 +44,8 @@
 			style: 'position:absolute;left:0px;top:0px;width:352px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
 				{
 					text:'Выгрузить отправленный пакет',
-				},
-				'-',
-				{
-					text:'Обновить',
 				},
 			]
 		},

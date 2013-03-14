@@ -57,52 +57,11 @@
 			items:
 			[
 				{
-					text:'Показать отчет о состоянии',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Выгрузить содержимое',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				{
 					text:'Показать документы',
 				},
 				{
-					text:'Выгрузить контейнеры',
+					text:'Показать отчет о состоянии',
 				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Выгрузить контейнеры и их содержимое',
-				},
-				'-',
 			]
 		},
 		{
@@ -131,6 +90,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:236px;width:702px;height:357px;',
 			height: 357,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -177,6 +137,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:75px;width:702px;height:249px;',
 			height: 249,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -187,6 +148,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:128px;width:702px;height:16px;',
 			height: 16,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -261,6 +223,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:37px;width:702px;height:44px;',
 			height: 44,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -419,6 +382,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			height: 42,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -559,6 +523,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:80px;width:702px;height:44px;',
 			height: 44,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -741,6 +706,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			height: 42,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -827,6 +793,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			height: 42,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -859,6 +826,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:165px;width:702px;height:42px;',
 			height: 42,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -891,6 +859,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:207px;width:702px;height:42px;',
 			height: 42,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1111,6 +1080,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:702px;height:19px;',
 			height: 19,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1191,6 +1161,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:213px;width:702px;height:23px;',
 			height: 23,width: 702,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

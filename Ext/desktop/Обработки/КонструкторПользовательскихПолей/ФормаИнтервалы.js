@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:389px;width:307px;height:25px;',
 			items:
 			[
+				{
+					text:'',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'ОК',
 				},
 			]
 		},
@@ -62,17 +62,17 @@
 			style: 'position:absolute;left:8px;top:72px;width:291px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Добавить',
-				},
-				{
-					text:'Очистить',
-				},
-				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				'-',
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'',
+				},
 			]
 		},
 		{

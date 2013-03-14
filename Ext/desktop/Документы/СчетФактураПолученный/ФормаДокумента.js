@@ -51,29 +51,15 @@
 			items:
 			[
 				{
-					text:'',
-				},
-				{
 					text:'Открыть актуальный электронный документ',
-				},
-				{
-					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Перезаполнить данными из электронного документа',
 				},
+				'-',
 				{
 					text:'Список электронных документов',
 				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
 			]
 		},
 		{
@@ -81,16 +67,16 @@
 			style: 'position:absolute;left:0px;top:464px;width:792px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'ОК',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -115,6 +101,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:175px;width:776px;height:143px;',
 			height: 143,width: 776,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -138,6 +125,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:41px;width:776px;height:97px;',
 			height: 97,width: 776,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -326,6 +314,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:317px;width:776px;height:67px;',
 			height: 67,width: 776,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -351,6 +340,16 @@
 			style: 'position:absolute;left:166px;top:19px;width:98px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'На бумажном носителе',
+			style: 'position:absolute;left:272px;top:19px;width:139px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В электронном виде',
+			style: 'position:absolute;left:413px;top:19px;width:124px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеЭД',
 			text: 'Состояние ЭД:',
@@ -364,6 +363,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:387px;width:776px;height:24px;',
 			height: 24,width: 776,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -475,6 +475,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:364px;height:92px;',
 			height: 92,width: 364,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -539,6 +540,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:379px;top:82px;width:376px;height:44px;',
 			height: 44,width: 376,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -603,6 +605,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:379px;top:32px;width:376px;height:19px;',
 			height: 19,width: 376,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -641,6 +644,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:379px;top:57px;width:376px;height:19px;',
 			height: 19,width: 376,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

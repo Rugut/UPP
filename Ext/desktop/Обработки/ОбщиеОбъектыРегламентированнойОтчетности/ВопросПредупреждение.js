@@ -17,10 +17,10 @@
 				{
 					text:'Продолжить',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
-				'-',
 			]
 		},
 		{
@@ -28,6 +28,16 @@
 			name: 'НадписьОсновнойТекст',
 			text: '',
 			style: 'position:absolute;left:92px;top:14px;width:551px;height:92px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:92px;top:132px;width:551px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:92px;top:158px;width:551px;height:16px;',
 		},
 	]
 });

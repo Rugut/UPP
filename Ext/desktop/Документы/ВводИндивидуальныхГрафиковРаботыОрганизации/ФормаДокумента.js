@@ -86,86 +86,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
 			items:
 			[
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Действие4',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Графики работы по видам времени',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'',
-				},
 			]
 		},
 		{
@@ -173,12 +93,12 @@
 			style: 'position:absolute;left:0px;top:461px;width:1000px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
-				},
-				{
-					text:'OK',
 				},
 				'-',
 				{
@@ -191,53 +111,46 @@
 			style: 'position:absolute;left:8px;top:196px;width:984px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Действие8',
+					text:'Подбор',
 				},
 				'-',
+				{
+					text:'&Добавить',
+				},
 				'-',
 				{
-					text:'Вечерние',
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
 				{
 					text:'Ночные',
 				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
-				},
 				'-',
 				{
-					text:'Действие5',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'По списку сотрудников',
-				},
-				'-',
-				{
-					text:'По всем сотрудникам',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие7',
+					text:'Вечерние',
 				},
 			]
 		},
@@ -686,6 +599,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:92px;width:984px;height:82px;',
 			height: 82,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -703,6 +617,16 @@
 			hideLabel: true,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:52px;top:9px;width:162px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Ввод времени по каждому дню периода',
+			style: 'position:absolute;left:254px;top:31px;width:275px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сводный ввод времени в целом за период',
+			style: 'position:absolute;left:254px;top:53px;width:275px;height:19px;',
 		},
 					]
 				},

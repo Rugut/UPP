@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:476px;width:465px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
@@ -34,6 +34,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:128px;width:449px;height:340px;',
 			height: 340,width: 449,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -41,9 +42,25 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'Подтвердить все сведения',
+			style: 'position:absolute;left:0px;top:6px;width:164px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отклонить все сведения',
+			style: 'position:absolute;left:0px;top:28px;width:150px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Подтвердить только выбранные сведения:',
+			style: 'position:absolute;left:0px;top:50px;width:240px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:69px;width:449px;height:271px;',
 			height: 271,width: 449,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -58,15 +75,15 @@
 				{
 					text:'Установить флажки у всех',
 				},
-				'-',
 				{
 					text:'Снять флажки у всех',
 				},
-				{
-					text:'Выгрузить',
-				},
+				'-',
 				{
 					text:'Открыть',
+				},
+				{
+					text:'Выгрузить',
 				},
 			]
 		},

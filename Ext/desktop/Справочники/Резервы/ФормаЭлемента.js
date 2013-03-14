@@ -38,9 +38,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:438px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
 				{
 					text:'Редактировать код',
+				},
+					]
 				},
 			]
 		},

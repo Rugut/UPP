@@ -23,6 +23,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:258px;width:457px;height:162px;',
 			height: 162,width: 457,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -53,6 +54,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:457px;height:25px;',
 			height: 25,width: 457,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -79,6 +81,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:457px;height:82px;',
 			height: 82,width: 457,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -99,6 +102,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:206px;width:457px;height:52px;',
 			height: 52,width: 457,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -125,6 +129,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:115px;width:457px;height:86px;',
 			height: 86,width: 457,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

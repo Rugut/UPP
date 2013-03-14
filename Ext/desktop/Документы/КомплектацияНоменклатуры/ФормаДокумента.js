@@ -50,35 +50,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
-				{
-					text:'Показать/скрыть счета учета',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Заполнить и провести',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
 			]
 		},
 		{
@@ -329,20 +300,11 @@
 			style: 'position:absolute;left:4px;top:0px;width:626px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Заполнить по потребностям',
-				},
-				{
-					text:'Заполнить по спецификации',
-				},
 				{
 					text:'Поиск по штрихкоду',
 				},
-				{
-					text:'Заполнить комплектующими',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
@@ -382,6 +344,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -453,6 +416,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:324px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -721,21 +685,21 @@
 			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'Печать',
 				},
+				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{

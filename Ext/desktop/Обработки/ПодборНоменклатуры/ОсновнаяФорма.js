@@ -40,6 +40,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:215px;width:447px;height:161px;',
 			height: 161,width: 447,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -234,6 +235,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:1px;top:66px;width:445px;height:95px;',
 			height: 95,width: 445,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -428,60 +430,13 @@
 			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Остатки и цены товаров',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие10',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие9',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие8',
-				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:108px;width:448px;height:102px;',
 			height: 102,width: 448,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -509,17 +464,17 @@
 					text:'Пометить все типы цен',
 				},
 				{
-					text:'Переместить вверх',
-				},
-				{
 					text:'Отменить пометку всех типов цен',
 				},
-				'-',
 				{
 					text:'Обновить',
 				},
+				'-',
 				{
-					text:'Переместить вниз',
+					text:'',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -527,6 +482,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:100px;height:100px;',
 			height: 100,width: 100,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

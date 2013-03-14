@@ -14,14 +14,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:767px;height:25px;',
 			items:
 			[
-				{
-					text:'Справка',
-				},
 				'-',
 				{
 					text:'Сформировать',
 				},
 				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -40,6 +40,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:623px;top:0px;width:144px;height:24px;',
 			height: 24,width: 144,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

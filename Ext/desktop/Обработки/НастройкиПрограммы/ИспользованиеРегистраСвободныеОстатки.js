@@ -14,16 +14,16 @@
 			style: 'position:absolute;left:0px;top:163px;width:533px;height:25px;',
 			items:
 			[
+				{
+					text:'Изменить настройку',
+				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Действие',
-				},
 				'-',
 				{
-					text:'Изменить настройку',
+					text:'Справка',
 				},
 			]
 		},

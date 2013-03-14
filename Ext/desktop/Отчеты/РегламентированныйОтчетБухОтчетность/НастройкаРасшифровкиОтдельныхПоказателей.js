@@ -14,26 +14,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'Действие справка',
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
 				},
 				'-',
-				{
-					text:'Снять все отметки',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
 				{
 					text:'Отметить все',
 				},
 				{
+					text:'Снять все отметки',
+				},
+				'-',
+				{
 					text:'Сбросить',
+				},
+				'-',
+				{
+					text:'',
 				},
 			]
 		},
@@ -42,12 +42,12 @@
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Отмена',
+					text:'',
 				},
 			]
 		},

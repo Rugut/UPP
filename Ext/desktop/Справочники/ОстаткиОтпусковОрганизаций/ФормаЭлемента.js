@@ -22,15 +22,15 @@
 			items:
 			[
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
-				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'OK',
 				},
 			]
 		},
@@ -44,6 +44,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:58px;width:330px;height:315px;',
 			height: 315,width: 330,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -188,15 +189,15 @@
 			items:
 			[
 				{
+					text:'&Добавить',
+				},
+				'-',
+				{
 					text:'Удалить',
 				},
 				'-',
 				{
 					text:'Рассчитать',
-				},
-				'-',
-				{
-					text:'Добавить',
 				},
 			]
 		},

@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:33px;width:627px;height:407px;',
 			height: 407,width: 627,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -69,7 +70,10 @@
 			items:
 			[
 				{
-					text:'Дополнительно...',
+					text:'Включить все',
+				},
+				{
+					text:'Выключить все',
 				},
 				{
 					text:'&Переместить вверх',
@@ -79,10 +83,7 @@
 				},
 				'-',
 				{
-					text:'Выключить все',
-				},
-				{
-					text:'Включить все',
+					text:'Дополнительно...',
 				},
 			]
 		},
@@ -96,6 +97,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:210px;width:627px;height:197px;',
 			height: 197,width: 627,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -116,25 +118,25 @@
 			items:
 			[
 				{
-					text:'&Переместить вниз',
+					text:'Раскрыть',
+				},
+				{
+					text:'Свернуть',
+				},
+				'-',
+				{
+					text:'Показать детально',
 				},
 				'-',
 				{
 					text:'&Переместить вверх',
 				},
 				{
-					text:'Свернуть',
+					text:'&Переместить вниз',
 				},
+				'-',
 				{
 					text:'Сортировать по возрастанию',
-				},
-				'-',
-				'-',
-				{
-					text:'Показать детально',
-				},
-				{
-					text:'Раскрыть',
 				},
 				{
 					text:'Сортировать по убыванию',
@@ -174,12 +176,12 @@
 				{
 					text:'Загрузить настройку поиска',
 				},
+				{
+					text:'Сохранить настройки поиска',
+				},
 				'-',
 				{
 					text:'Справка',
-				},
-				{
-					text:'Сохранить настройки поиска',
 				},
 			]
 		},
@@ -187,6 +189,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:448px;width:639px;height:25px;',
 			height: 25,width: 639,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

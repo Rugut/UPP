@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:261px;width:350px;height:249px;',
 			height: 249,width: 350,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -37,6 +38,11 @@
 					title:'Один из вариантов ответа',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Переключатель',
+			style: 'position:absolute;left:8px;top:0px;width:342px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьРазвернутыйОтвет',
@@ -322,10 +328,10 @@
 			items:
 			[
 				{
-					text:'Далее',
+					text:'Назад',
 				},
 				{
-					text:'Назад',
+					text:'Далее',
 				},
 				{
 					text:'ОК',
@@ -342,6 +348,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:29px;width:350px;height:162px;',
 			height: 162,width: 350,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

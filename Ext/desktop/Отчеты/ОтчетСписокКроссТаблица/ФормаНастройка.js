@@ -59,6 +59,9 @@
 			items:
 			[
 				{
+					text:'&Переместить вверх',
+				},
+				{
 					text:'&Переместить вниз',
 				},
 				{
@@ -66,9 +69,6 @@
 				},
 				{
 					text:'Снять все',
-				},
-				{
-					text:'&Переместить вверх',
 				},
 			]
 		},
@@ -91,6 +91,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:32px;width:460px;height:24px;',
 			height: 24,width: 460,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -111,6 +112,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:14px;top:75px;width:452px;height:20px;',
 			height: 20,width: 452,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -236,13 +238,13 @@
 					text:'&Добавить',
 				},
 				{
-					text:'&Удалить',
-				},
-				{
 					text:'&Скопировать',
 				},
 				{
 					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
 				},
 				{
 					text:'Закончить редактирование',
@@ -385,15 +387,15 @@
 			items:
 			[
 				{
+					text:'ОК',
+				},
+				'-',
+				{
 					text:'Закрыть',
 				},
+				'-',
 				{
 					text:'Справка',
-				},
-				'-',
-				'-',
-				{
-					text:'ОК',
 				},
 			]
 		},

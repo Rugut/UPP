@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Записать вычеты и закрыть',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -144,18 +144,18 @@
 			style: 'position:absolute;left:226px;top:411px;width:762px;height:24px;',
 			items:
 			[
+				{
+					text:'&Добавить',
+				},
 				'-',
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие2',
+					text:'Изменить',
 				},
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
+					text:'Удалить',
 				},
 			]
 		},
@@ -182,6 +182,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:226px;top:246px;width:762px;height:140px;',
 			height: 140,width: 762,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -198,6 +199,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:254px;height:110px;',
 			height: 110,width: 254,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -214,18 +216,54 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница многих детей',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычет только на второго ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычеты на первого и второго детей',
+			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетами на третьего ребенка',
+			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не заменять вычеты',
+			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Страница одного ребенка',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычет на первого ребенка',
+			style: 'position:absolute;left:0px;top:0px;width:233px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетом на второго ребенка',
+			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетом на третьего ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:251px;height:19px;',
+		},
 					]
 				},
 			]
@@ -238,6 +276,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:254px;top:0px;width:254px;height:110px;',
 			height: 110,width: 254,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -254,18 +293,54 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница многих детей',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычет только на второго ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:249px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычеты на первого и второго детей',
+			style: 'position:absolute;left:0px;top:22px;width:249px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетами на третьего ребенка',
+			style: 'position:absolute;left:0px;top:66px;width:249px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не заменять вычеты',
+			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Страница одного ребенка',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычет на первого ребенка',
+			style: 'position:absolute;left:0px;top:0px;width:215px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетом на второго ребенка',
+			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетом на третьего ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:251px;height:19px;',
+		},
 					]
 				},
 			]
@@ -278,6 +353,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:508px;top:0px;width:254px;height:110px;',
 			height: 110,width: 254,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -294,18 +370,54 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница многих детей',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычет только на второго ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычеты на первого и второго детей',
+			style: 'position:absolute;left:0px;top:22px;width:249px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетами на третьего ребенка',
+			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не заменять вычеты',
+			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Страница одного ребенка',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Оставить вычет на первого ребенка',
+			style: 'position:absolute;left:0px;top:0px;width:213px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетом на второго ребенка',
+			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заменить вычетом на третьего ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:251px;height:19px;',
+		},
 					]
 				},
 			]

@@ -14,44 +14,50 @@
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Отбор',
+				},
 				'-',
 				{
 					text:'Восстановить значения...',
 				},
 				{
-					text:'Отбор',
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				{
 					text:'Справка',
 				},
+					]
+				},
+				'-',
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
 					text:'Отбор',
 				},
-				{
-					text:'Справка',
-				},
-				{
-					text:'Сохранить значения...',
-				},
+				'-',
 				{
 					text:'Восстановить значения',
 				},
 				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				{
 					text:'Сохранить значения...',
 				},
-				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -88,6 +94,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:588px;height:96px;',
 			height: 96,width: 588,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

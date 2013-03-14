@@ -14,37 +14,37 @@
 			style: 'position:absolute;left:8px;top:192px;width:593px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Справка',
-				},
-				{
-					text:'Новый документ расчетов (ручной учет)',
-				},
 				{
 					text:'&Просмотр',
 				},
 				{
-					text:'Сформировать',
+					text:'&Переместить вверх',
 				},
 				{
 					text:'&Переместить вниз',
 				},
 				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
 					text:'Выбрать',
 				},
 				'-',
 				{
-					text:'&Переместить вверх',
+					text:'Новый документ расчетов (ручной учет)',
 				},
 				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -152,6 +152,16 @@
 			name: 'НадписьДоговорКонтрагента',
 			text: 'Договор:',
 			style: 'position:absolute;left:14px;top:125px;width:78px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по дебету',
+			style: 'position:absolute;left:250px;top:149px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по кредиту',
+			style: 'position:absolute;left:336px;top:149px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'label',

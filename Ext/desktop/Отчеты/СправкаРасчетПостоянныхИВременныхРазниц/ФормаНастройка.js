@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -44,6 +44,16 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:30px;width:306px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Постоянные налоговые активы и обязательства',
+			style: 'position:absolute;left:6px;top:80px;width:384px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отложенные налоговые активы и обязательства',
+			style: 'position:absolute;left:6px;top:99px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'label',

@@ -26,27 +26,33 @@
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
 				'-',
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
+				},
 				{
 					text:'Восстановить значения...',
 				},
 				'-',
 				{
-					text:'Сформировать',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
 					text:'Справка',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'Сформировать',
 				},
 			]
 		},
@@ -94,12 +100,28 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:319px;top:60px;width:312px;height:58px;',
 			height: 58,width: 312,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Обычный',
+			style: 'position:absolute;left:92px;top:0px;width:72px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Последний в месяце',
+			style: 'position:absolute;left:92px;top:21px;width:128px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Последний в году',
+			style: 'position:absolute;left:92px;top:42px;width:112px;height:16px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьПоследнийЛист',

@@ -28,18 +28,19 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Выгрузить данные',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:80px;width:603px;height:405px;',
 			height: 405,width: 603,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -50,6 +51,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:71px;width:591px;height:334px;',
 			height: 334,width: 591,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -179,21 +181,21 @@
 					text:'',
 				},
 				{
-					text:'&Удалить',
+					text:'',
 				},
 				'-',
-				{
-					text:'Очистить',
-				},
 				{
 					text:'Подбор',
 				},
-				'-',
 				{
 					text:'Заполнить',
 				},
+				'-',
 				{
-					text:'',
+					text:'&Удалить',
+				},
+				{
+					text:'Очистить',
 				},
 			]
 		},
@@ -391,9 +393,20 @@
 			style: 'position:absolute;left:107px;top:48px;width:355px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузить данные в файл',
+			style: 'position:absolute;left:6px;top:0px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузить данные по электронной почте',
+			style: 'position:absolute;left:175px;top:0px;width:234px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:24px;width:591px;height:21px;',
 			height: 21,width: 591,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

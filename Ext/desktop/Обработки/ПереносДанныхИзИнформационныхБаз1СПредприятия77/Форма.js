@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:594px;height:394px;',
 			height: 394,width: 594,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -104,6 +105,21 @@
 			name: 'ВНачало',
 			text: 'В начало',
 			style: 'position:absolute;left:382px;top:372px;width:103px;height:22px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '2007 года',
+			style: 'position:absolute;left:158px;top:262px;width:295px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '2008 года',
+			style: 'position:absolute;left:158px;top:281px;width:295px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '2006 года',
+			style: 'position:absolute;left:158px;top:243px;width:295px;height:15px;',
 		},
 		{
 			xtype: 'label',
@@ -281,6 +297,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:138px;top:269px;width:456px;height:125px;',
 			height: 125,width: 456,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -451,6 +468,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:138px;top:269px;width:456px;height:125px;',
 			height: 125,width: 456,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -15,7 +15,7 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'ОК',
 				},
 				'-',
 				{
@@ -23,7 +23,7 @@
 				},
 				'-',
 				{
-					text:'ОК',
+					text:'Действие1',
 				},
 			]
 		},
@@ -50,6 +50,16 @@
 			name: 'ОписаниеНормативДок',
 			text: '',
 			style: 'position:absolute;left:14px;top:173px;width:254px;height:40px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Годовая отчетность',
+			style: 'position:absolute;left:8px;top:76px;width:124px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Промежуточная отчетность',
+			style: 'position:absolute;left:8px;top:98px;width:164px;height:15px;',
 		},
 		{
 			xtype: 'textfield',

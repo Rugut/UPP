@@ -17,10 +17,10 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -33,6 +33,41 @@
 					title:'Общее',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: '5 дней (Понедельник, ..., Пятница)',
+			style: 'position:absolute;left:18px;top:200px;width:200px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '6 дней (Понедельник, ..., Суббота)',
+			style: 'position:absolute;left:18px;top:220px;width:200px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '7 дней (Полная неделя)',
+			style: 'position:absolute;left:18px;top:240px;width:144px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Все события',
+			style: 'position:absolute;left:18px;top:283px;width:94px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только запланированные',
+			style: 'position:absolute;left:18px;top:303px;width:160px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только входящие',
+			style: 'position:absolute;left:18px;top:368px;width:116px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только исходящие',
+			style: 'position:absolute;left:18px;top:389px;width:120px;height:16px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись2',
@@ -50,6 +85,11 @@
 			name: 'Надпись4',
 			text: 'Количество отображаемых дней недели:',
 			style: 'position:absolute;left:12px;top:180px;width:213px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Все типы',
+			style: 'position:absolute;left:18px;top:347px;width:76px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
@@ -81,6 +121,16 @@
 			style: 'position:absolute;left:12px;top:94px;width:213px;height:15px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: '1 день',
+			style: 'position:absolute;left:18px;top:115px;width:200px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '2 дня',
+			style: 'position:absolute;left:18px;top:136px;width:200px;height:15px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Занятость помещений',
 			style: 'position:absolute;left:18px;top:156px;width:136px;height:15px;',
@@ -97,6 +147,21 @@
 					title:'Заказы',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Отображать заказы покупателей',
+			style: 'position:absolute;left:26px;top:68px;width:192px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отображать заказы поставщикам',
+			style: 'position:absolute;left:26px;top:89px;width:200px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отображать все заказы',
+			style: 'position:absolute;left:26px;top:110px;width:148px;height:16px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись6',

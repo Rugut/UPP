@@ -21,16 +21,16 @@
 			style: 'position:absolute;left:0px;top:367px;width:656px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'<< Назад',
+				},
 				'-',
 				{
 					text:'Далее >>',
 				},
+				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'<< Назад',
 				},
 			]
 		},
@@ -38,6 +38,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:640px;height:326px;',
 			height: 326,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -22,12 +22,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -151,10 +151,10 @@
 			style: 'position:absolute;left:8px;top:100px;width:584px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Серийные номера',
 				},
-				'-',
 			]
 		},
 	]

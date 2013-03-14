@@ -62,6 +62,21 @@
 			style: 'position:absolute;left:266px;top:8px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Авансы по обычным ставкам НДС ',
+			style: 'position:absolute;left:8px;top:134px;width:296px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Авансы по ставке НДС 0%',
+			style: 'position:absolute;left:8px;top:157px;width:296px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Авансы по всем ставкам НДС ',
+			style: 'position:absolute;left:8px;top:180px;width:296px;height:18px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',

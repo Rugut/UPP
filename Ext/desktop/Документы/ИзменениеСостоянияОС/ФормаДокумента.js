@@ -111,14 +111,9 @@
 			style: 'position:absolute;left:8px;top:182px;width:646px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'По наименованию',
 				},
-				{
-					text:'Подбор',
-				},
-				'-',
 			]
 		},
 		{
@@ -146,17 +141,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
 				},
 				{
 					text:'',
 				},
 				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
 				{
 					text:'',
 				},
@@ -170,9 +171,11 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -180,8 +183,6 @@
 				{
 					text:'Закрыть',
 				},
-				'-',
-				'-',
 			]
 		},
 		{

@@ -74,6 +74,11 @@
 			style: 'position:absolute;left:8px;top:122px;width:284px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'По месяцу, за который производится начисление',
+			style: 'position:absolute;left:16px;top:147px;width:276px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:471px;height:25px;',
 			items:
@@ -85,10 +90,10 @@
 			style: 'position:absolute;left:0px;top:222px;width:471px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -97,6 +102,11 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По месяцу начисления',
+			style: 'position:absolute;left:16px;top:169px;width:276px;height:19px;',
 		},
 	]
 });

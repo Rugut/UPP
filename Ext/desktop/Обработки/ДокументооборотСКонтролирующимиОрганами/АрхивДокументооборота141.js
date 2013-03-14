@@ -14,21 +14,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Одна учетная запись',
-				},
-				{
-					text:'Несколько учетных записей',
-				},
-				{
-					text:'Запросы на информационное обслуживание',
-				},
 				{
 					text:'Исходящие документы',
 				},
 				{
 					text:'Входящие документы',
+				},
+				{
+					text:'Запросы на информационное обслуживание',
 				},
 			]
 		},
@@ -38,42 +31,42 @@
 			items:
 			[
 				{
-					text:'Предыдущая неделя',
+					text:'Сегодня',
 				},
 				{
 					text:'Текущая неделя',
 				},
 				{
-					text:'Вчера',
-				},
-				'-',
-				{
-					text:'Без ограничений',
-				},
-				'-',
-				{
-					text:'Предыдущий квартал',
-				},
-				{
 					text:'Текущий месяц',
 				},
 				{
-					text:'Произвольный период',
-				},
-				{
-					text:'Предыдущий год',
+					text:'Текущий квартал',
 				},
 				{
 					text:'Текущий год',
+				},
+				'-',
+				{
+					text:'Вчера',
+				},
+				{
+					text:'Предыдущая неделя',
 				},
 				{
 					text:'Предыдущий месяц',
 				},
 				{
-					text:'Сегодня',
+					text:'Предыдущий квартал',
 				},
 				{
-					text:'Текущий квартал',
+					text:'Предыдущий год',
+				},
+				'-',
+				{
+					text:'Произвольный период',
+				},
+				{
+					text:'Без ограничений',
 				},
 			]
 		},
@@ -81,6 +74,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
 			height: 23,width: 778,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -107,6 +101,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:778px;height:456px;',
 			height: 456,width: 778,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -117,6 +112,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:201px;top:0px;width:577px;height:456px;',
 			height: 456,width: 577,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -213,6 +209,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:562px;height:22px;',
 			height: 22,width: 562,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -229,6 +226,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:152px;top:0px;width:410px;height:21px;',
 			height: 21,width: 410,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -269,6 +267,16 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'первичный',
+			style: 'position:absolute;left:2px;top:2px;width:74px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'корректирующий',
+			style: 'position:absolute;left:81px;top:2px;width:106px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'НомерКорректировки',
@@ -303,6 +311,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:52px;width:562px;height:33px;',
 			height: 33,width: 562,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -325,39 +334,14 @@
 			items:
 			[
 				{
-					text:'Открыть исходный отчет',
-				},
-				{
-					text:'Установить все флажки',
-				},
-				{
-					text:'Показать отчеты о состоянии',
+					text:'Выгрузить контейнеры и их содержимое',
 				},
 				'-',
-				{
-					text:'Выгрузить содержимое',
-				},
 				{
 					text:'Выгрузить контейнеры',
 				},
-				'-',
 				{
-					text:'Выгрузить контейнеры и их содержимое',
-				},
-				{
-					text:'Отобрать',
-				},
-				'-',
-				{
-					text:'Показать документы',
-				},
-				{
-					text:'Найти исходный отчет в списке',
-				},
-				'-',
-				'-',
-				{
-					text:'Снять все флажки',
+					text:'Выгрузить содержимое',
 				},
 			]
 		},
@@ -417,15 +401,7 @@
 				},
 				'-',
 				{
-					text:'Отобрать',
-				},
-				'-',
-				'-',
-				{
 					text:'Журнал документов налогоплательщика',
-				},
-				{
-					text:'Новый',
 				},
 			]
 		},
@@ -433,6 +409,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:563px;height:22px;',
 			height: 22,width: 563,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -498,23 +475,20 @@
 			style: 'position:absolute;left:6px;top:6px;width:563px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Журнал документов налогового органа',
-				},
 				{
 					text:'Открыть основание',
 				},
+				'-',
 				{
 					text:'Журнал документов налогового органа',
 				},
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:563px;height:22px;',
 			height: 22,width: 563,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -548,14 +522,6 @@
 			style: 'position:absolute;left:6px;top:6px;width:563px;height:24px;',
 			items:
 			[
-				{
-					text:'Новый',
-				},
-				'-',
-				{
-					text:'Отобрать',
-				},
-				'-',
 				{
 					text:'Открыть основание',
 				},
@@ -645,6 +611,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:563px;height:22px;',
 			height: 22,width: 563,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -661,6 +628,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:1px;width:410px;height:21px;',
 			height: 21,width: 410,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -705,6 +673,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:195px;height:456px;',
 			height: 456,width: 195,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -732,12 +701,6 @@
 			style: 'position:absolute;left:0px;top:23px;width:195px;height:24px;',
 			items:
 			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
 			]
 		},
 					]

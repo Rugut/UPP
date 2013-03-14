@@ -14,16 +14,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:580px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Закрыть',
+				},
+					]
+				},
 				'-',
 				{
 					text:'Обновить',
 				},
-				{
-					text:'Закрыть',
-				},
 				'-',
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
 		},
@@ -35,10 +41,10 @@
 				{
 					text:'Активизировать родительский отчет',
 				},
+				'-',
 				{
 					text:'Сохранить',
 				},
-				'-',
 				'-',
 				{
 					text:'Закрыть',

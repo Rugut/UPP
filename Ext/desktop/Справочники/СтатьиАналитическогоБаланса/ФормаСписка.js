@@ -46,18 +46,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:474px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Иерархический просмотр',
 				},
 				{
+					text:'Найти в дереве',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
 					text:'',
 				},
+					]
+				},
+				'-',
 				{
 					text:'Справка',
-				},
-				{
-					text:'Найти в дереве',
 				},
 			]
 		},

@@ -50,12 +50,8 @@
 			style: 'position:absolute;left:8px;top:69px;width:365px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Добавить',
-				},
-				{
-					text:'Обновить',
 				},
 				'-',
 				{
@@ -63,6 +59,10 @@
 				},
 				{
 					text:'Принято налоговым органом',
+				},
+				'-',
+				{
+					text:'Обновить',
 				},
 				'-',
 			]
@@ -95,6 +95,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:381px;top:69px;width:611px;height:155px;',
 			height: 155,width: 611,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -256,6 +257,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:251px;width:984px;height:292px;',
 			height: 292,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -292,7 +294,19 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
 				},
 				'-',
 				{
@@ -300,19 +314,7 @@
 				},
 				'-',
 				{
-					text:'Действие2',
-				},
-				{
 					text:'Перенести',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
 				},
 			]
 		},
@@ -506,6 +508,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:166px;width:612px;height:100px;',
 			height: 100,width: 612,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -672,6 +675,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:389px;top:9px;width:150px;height:57px;',
 			height: 57,width: 150,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -710,6 +714,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:247px;top:47px;width:132px;height:22px;',
 			height: 22,width: 132,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

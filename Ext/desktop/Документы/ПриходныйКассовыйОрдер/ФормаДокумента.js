@@ -50,36 +50,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Показать/скрыть счета учета',
-				},
-				'-',
-				{
-					text:'КУД и Р...',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
 			]
 		},
 		{
@@ -135,25 +105,25 @@
 			style: 'position:absolute;left:0px;top:435px;width:658px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Печать',
 				},
 				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'ОК',
-				},
 				{
 					text:'Чек',
 				},
 				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -191,6 +161,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:26px;width:628px;height:221px;',
 			height: 221,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -231,6 +202,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:24px;width:628px;height:197px;',
 			height: 197,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -333,34 +305,8 @@
 			style: 'position:absolute;left:0px;top:21px;width:300px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-				{
-					text:'&Скопировать',
-				},
 				{
 					text:'Заполнить платежи',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Добавить',
 				},
 			]
 		},
@@ -535,6 +481,16 @@
 			name: 'НадписьПроектПрочие',
 			text: 'Проект:',
 			style: 'position:absolute;left:313px;top:50px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:408px;top:0px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:518px;top:0px;width:64px;height:19px;',
 		},
 		{
 			xtype: 'label',

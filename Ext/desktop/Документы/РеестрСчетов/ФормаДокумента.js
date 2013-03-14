@@ -207,21 +207,21 @@
 			style: 'position:absolute;left:0px;top:342px;width:652px;height:25px;',
 			items:
 			[
+				{
+					text:'Печать',
+				},
 				'-',
 				{
 					text:'ОК',
 				},
 				'-',
 				{
-					text:'Печать',
-				},
-				{
-					text:'Закрыть',
-				},
-				{
 					text:'Записать',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{

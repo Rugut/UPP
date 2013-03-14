@@ -30,5 +30,15 @@
 				},
 			]
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Консолидация по отчетности',
+			style: 'position:absolute;left:14px;top:54px;width:172px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Консолидация по информационной базе',
+			style: 'position:absolute;left:14px;top:74px;width:232px;height:15px;',
+		},
 	]
 });

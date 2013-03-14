@@ -24,10 +24,10 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -94,6 +94,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:105px;width:765px;height:194px;',
 			height: 194,width: 765,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -126,9 +127,6 @@
 			items:
 			[
 				'-',
-				{
-					text:'Сформировать серийные номера',
-				},
 			]
 		},
 		{
@@ -169,9 +167,6 @@
 			items:
 			[
 				'-',
-				{
-					text:'Заполнить по порядку присвоения',
-				},
 			]
 		},
 		{

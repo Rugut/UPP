@@ -14,77 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
 			items:
 			[
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				'-',
 			]
 		},
 		{
@@ -92,31 +21,11 @@
 			style: 'position:absolute;left:0px;top:439px;width:644px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Записать',
-				},
-				{
-					text:'Показать файл',
-				},
-				'-',
-				{
-					text:'Записать файл на диск',
-				},
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Программой CheckUFA',
-				},
-				{
-					text:'OK',
-				},
 				{
 					text:'Программой CheckXML',
+				},
+				{
+					text:'Программой CheckUFA',
 				},
 			]
 		},
@@ -136,6 +45,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:628px;height:115px;',
 			height: 115,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -179,6 +89,16 @@
 			style: 'position:absolute;left:82px;top:24px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Об обмене страхового свидетельства (АДВ-2)',
+			style: 'position:absolute;left:6px;top:72px;width:252px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'О выдаче дубликата страхового свидетельства (АДВ-3)',
+			style: 'position:absolute;left:6px;top:92px;width:300px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
@@ -210,6 +130,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:189px;width:628px;height:197px;',
 			height: 197,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -232,38 +153,35 @@
 			items:
 			[
 				{
-					text:'Действие13',
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Действие12',
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
 				'-',
-				'-',
-				{
-					text:'Заполнить заявления',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие11',
-				},
-				{
-					text:'Действие16',
-				},
-				{
-					text:'Действие17',
-				},
-				{
-					text:'Действие15',
-				},
-				{
-					text:'Действие14',
-				},
-				{
-					text:'Действие10',
-				},
 				{
 					text:'Подбор',
 				},
@@ -349,24 +267,24 @@
 			items:
 			[
 				{
-					text:'Действие8',
+					text:'Изменить',
 				},
 				{
-					text:'Действие6',
+					text:'',
 				},
 				{
-					text:'Действие4',
+					text:'',
 				},
 				{
-					text:'Действие7',
+					text:'',
 				},
 				{
-					text:'Действие2',
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие5',
-				},
 			]
 		},
 					]
@@ -445,24 +363,24 @@
 			items:
 			[
 				{
-					text:'Действие8',
+					text:'Изменить',
 				},
 				{
-					text:'Действие7',
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие5',
-				},
 			]
 		},
 					]
@@ -477,6 +395,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:628px;height:41px;',
 			height: 41,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -487,6 +406,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:628px;height:35px;',
 			height: 35,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -17,10 +17,10 @@
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
-				'-',
 			]
 		},
 		{
@@ -58,29 +58,13 @@
 			style: 'position:absolute;left:151px;top:9px;width:270px;height:24px;',
 			items:
 			[
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Отбор по текущему значению',
-				},
-				{
-					text:'Настройка отбора',
-				},
-				'-',
-				{
-					text:'Автокорректировка',
-				},
-				{
-					text:'Отключить отбор',
-				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:138px;height:388px;',
 			height: 388,width: 138,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -64,9 +64,25 @@
 			style: 'position:absolute;left:246px;top:6px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Час, день',
+			style: 'position:absolute;left:92px;top:54px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'День, неделя, месяц',
+			style: 'position:absolute;left:178px;top:54px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Неделя, месяц, год',
+			style: 'position:absolute;left:316px;top:54px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:24px;',
 			height: 24,width: 460,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

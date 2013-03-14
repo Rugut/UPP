@@ -14,13 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Обновить',
-				},
 				{
 					text:'Очистить',
 				},
@@ -29,6 +22,13 @@
 					text:'Поиск',
 				},
 				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Действие2',
+				},
 			]
 		},
 		{
@@ -36,17 +36,17 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				'-',
 				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

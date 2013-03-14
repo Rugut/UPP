@@ -14,7 +14,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
+					]
+				},
 			]
 		},
 		{
@@ -22,14 +28,14 @@
 			style: 'position:absolute;left:0px;top:83px;width:442px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'OK',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},

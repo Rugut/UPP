@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:486px;width:618px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Произвести автоматическую настройку',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},

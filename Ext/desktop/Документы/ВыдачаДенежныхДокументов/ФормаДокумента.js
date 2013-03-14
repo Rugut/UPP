@@ -50,32 +50,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				{
-					text:'КУД и Р...',
-				},
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'',
-				},
 			]
 		},
 		{
@@ -92,6 +66,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:126px;',
 			height: 126,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -388,15 +363,15 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
-				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

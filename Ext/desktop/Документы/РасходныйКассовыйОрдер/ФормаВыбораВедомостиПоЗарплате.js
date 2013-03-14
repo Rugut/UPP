@@ -14,17 +14,17 @@
 			style: 'position:absolute;left:0px;top:274px;width:711px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Выбрать',
+					text:'',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{

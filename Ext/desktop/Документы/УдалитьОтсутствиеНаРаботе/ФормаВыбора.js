@@ -50,16 +50,28 @@
 			style: 'position:absolute;left:0px;top:0px;width:721px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Подменю2',
+					text:'Выбрать',
 				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
 				},
 			]
 		},

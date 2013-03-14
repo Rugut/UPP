@@ -74,62 +74,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
 			items:
 			[
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Открыть категории',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Редактировать код номер',
-				},
 			]
 		},
 		{
@@ -137,14 +81,6 @@
 			style: 'position:absolute;left:0px;top:551px;width:900px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'OK',
-				},
-				'-',
 				{
 					text:'Показать файл',
 				},
@@ -154,7 +90,15 @@
 				},
 				'-',
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -174,40 +118,7 @@
 			items:
 			[
 				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Подбор',
-				},
-				'-',
-				'-',
-				{
 					text:'Заполнить детьми',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие6',
 				},
 			]
 		},
@@ -412,6 +323,16 @@
 			style: 'position:absolute;left:555px;top:280px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Перечислением на счет в банке:',
+			style: 'position:absolute;left:6px;top:256px;width:184px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Почтовым переводом по адресу:',
+			style: 'position:absolute;left:6px;top:303px;width:184px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'АдресПочтовыйВФорме',
@@ -482,6 +403,16 @@
 			name: 'ОбновитьДанныеСотрудника',
 			text: 'Обновить',
 			style: 'position:absolute;left:6px;top:328px;width:82px;height:21px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Основное место работы',
+			style: 'position:absolute;left:96px;top:78px;width:142px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Совместительство',
+			style: 'position:absolute;left:245px;top:78px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -77,16 +77,16 @@
 			style: 'position:absolute;left:0px;top:184px;width:400px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'OK',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

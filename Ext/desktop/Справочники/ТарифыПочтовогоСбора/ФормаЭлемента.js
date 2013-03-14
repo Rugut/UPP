@@ -27,43 +27,49 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
 				},
 				'-',
-				'-',
-				'-',
 				{
-					text:'Действие5',
+					text:'Перечитать',
 				},
 				{
-					text:'Действие',
+					text:'Скопировать',
 				},
 				{
-					text:'Действие3',
+					text:'Записать',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
+					text:'Записать и закрыть',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 				'-',
+				{
+					text:'',
+				},
+					]
+				},
 				'-',
 				{
-					text:'Редактировать код номер1',
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
 				},
 				{
-					text:'Действие1',
+					text:'Скопировать',
 				},
+				'-',
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
+					text:'Справка',
 				},
 			]
 		},
@@ -73,13 +79,13 @@
 			items:
 			[
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
-				'-',
-				{
-					text:'OK',
-				},
 				{
 					text:'Закрыть',
 				},
@@ -118,28 +124,28 @@
 			style: 'position:absolute;left:8px;top:142px;width:384px;height:24px;',
 			items:
 			[
+				'-',
 				{
-					text:'Действие',
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие5',
+					text:'',
 				},
 			]
 		},
@@ -154,6 +160,16 @@
 			hideLabel: true,
 			name: 'Код',
 			style: 'position:absolute;left:309px;top:33px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Процент исчисляется с суммы превышения',
+			style: 'position:absolute;left:20px;top:82px;width:372px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Процент исчисляется со всей пересылаемой суммы',
+			style: 'position:absolute;left:20px;top:102px;width:372px;height:15px;',
 		},
 		{
 			xtype: 'label',

@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Назад',
 				},
+				'-',
 				{
 					text:'Далее',
 				},
@@ -27,6 +27,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:183px;top:0px;width:557px;height:399px;',
 			height: 399,width: 557,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -40,10 +41,25 @@
 			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Создать новую настройку обмена данными',
+			style: 'position:absolute;left:6px;top:50px;width:244px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Продолжить настройку обмена данными (для второй инф. базы)',
+			style: 'position:absolute;left:6px;top:70px;width:352px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПояснениеПользователя',
 			text: 'Имя и пароль пользователя для подключения к инф. базе - приемнику',
 			style: 'position:absolute;left:171px;top:170px;width:363px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Изменить существующую настройку обмена',
+			style: 'position:absolute;left:7px;top:90px;width:250px;height:16px;',
 		},
 					]
 				},
@@ -64,9 +80,20 @@
 			style: 'position:absolute;left:6px;top:55px;width:544px;height:42px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Есть возможность подключиться к информационной базе - приемнику',
+			style: 'position:absolute;left:6px;top:50px;width:442px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Нет возможности подключиться к информационной базе - приемнику',
+			style: 'position:absolute;left:6px;top:222px;width:436px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:161px;top:111px;width:390px;height:19px;',
 			height: 19,width: 390,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -183,6 +210,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:141px;width:546px;height:253px;',
 			height: 253,width: 546,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -618,6 +646,16 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'Обмен в ДВУХ направлениях',
+			style: 'position:absolute;left:6px;top:47px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Обмен в ОДНОМ направлении',
+			style: 'position:absolute;left:6px;top:219px;width:207px;height:18px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВыборДействия3',
 			text: 'Взаимодействие информационных баз при обмене',
@@ -681,6 +719,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:13px;top:206px;width:539px;height:160px;',
 			height: 160,width: 539,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -852,6 +891,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:49px;width:533px;height:19px;',
 			height: 19,width: 533,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -999,6 +1039,21 @@
 			style: 'position:absolute;left:224px;top:141px;width:328px;height:60px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Единый файловый ресурс (каталог обмена)',
+			style: 'position:absolute;left:224px;top:72px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Единый FTP ресурс',
+			style: 'position:absolute;left:224px;top:94px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Подключение к информационной базе - приемнику',
+			style: 'position:absolute;left:224px;top:50px;width:278px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'ДополнительныеНастройкиОбменаДанными',
 			text: 'Дополнительно ...',
@@ -1014,6 +1069,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:50px;width:210px;height:150px;',
 			height: 150,width: 210,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1033,12 +1089,27 @@
 				},
 			]
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Электронная почта',
+			style: 'position:absolute;left:223px;top:117px;width:119px;height:21px;',
+		},
 					]
 				},
 				{
 					title:'Настройки знакомства информационных баз',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Выполнить сопоставление объектов в фоновом режиме',
+			style: 'position:absolute;left:6px;top:99px;width:363px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выполнить сопоставление объектов при первом обмене',
+			style: 'position:absolute;left:6px;top:45px;width:363px;height:19px;',
+		},
 		{
 			xtype: 'button',
 			name: 'ДополнитеьльныеНастройкиФоновогоЗнакомства',
@@ -1056,6 +1127,11 @@
 			name: 'НадписьВажнопервыйЭтап',
 			text: 'Для функционирования обмена необходимо выполнить настройки в информационной базе-приемнике',
 			style: 'position:absolute;left:32px;top:48px;width:520px;height:36px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не выполнять первоначального сопоставления объектов',
+			style: 'position:absolute;left:6px;top:159px;width:363px;height:19px;',
 		},
 					]
 				},
@@ -1226,13 +1302,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закончить редактирование',
-				},
 				{
 					text:'&Изменить',
 				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
 				{
 					text:'Изменить настройку',
 				},
@@ -1250,10 +1326,10 @@
 			items:
 			[
 				{
-					text:'Закончить редактирование',
+					text:'&Изменить',
 				},
 				{
-					text:'&Изменить',
+					text:'Закончить редактирование',
 				},
 			]
 		},
@@ -1333,6 +1409,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:399px;',
 			height: 399,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

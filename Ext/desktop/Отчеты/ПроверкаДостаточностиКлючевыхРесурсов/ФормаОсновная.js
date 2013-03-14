@@ -45,10 +45,10 @@
 			style: 'position:absolute;left:0px;top:137px;width:349px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

@@ -75,22 +75,28 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
 					text:'',
-				},
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Структура подчиненности документа',
-				},
-				{
 					text:'',
 				},
 				'-',
-				'-',
+					]
+				},
 				'-',
 				{
 					text:'Очистить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -100,15 +106,15 @@
 			items:
 			[
 				{
-					text:'Записать',
-				},
-				'-',
-				{
 					text:'Печать',
 				},
 				'-',
 				{
 					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
 				},
 				'-',
 				{
@@ -137,7 +143,6 @@
 			style: 'position:absolute;left:6px;top:0px;width:570px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить долгами подотчетных лиц',
 				},
@@ -242,7 +247,6 @@
 			style: 'position:absolute;left:6px;top:0px;width:570px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить долгами подотчетных лиц',
 				},

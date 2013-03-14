@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:438px;width:344px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'Выбрать',
 				},
 			]
 		},
@@ -29,10 +29,10 @@
 			items:
 			[
 				{
-					text:'Снять флажки',
+					text:'Установить флажки',
 				},
 				{
-					text:'Установить флажки',
+					text:'Снять флажки',
 				},
 			]
 		},

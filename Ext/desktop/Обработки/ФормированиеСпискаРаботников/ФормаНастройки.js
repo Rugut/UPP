@@ -17,10 +17,10 @@
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -73,15 +73,15 @@
 			items:
 			[
 				{
-					text:'Установить флажки',
+					text:'&Добавить',
 				},
 				{
 					text:'&Удалить',
 				},
-				{
-					text:'&Добавить',
-				},
 				'-',
+				{
+					text:'Установить флажки',
+				},
 				{
 					text:'Снять флажки',
 				},
@@ -91,6 +91,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:204px;width:413px;height:167px;',
 			height: 167,width: 413,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -978,10 +979,10 @@
 			items:
 			[
 				{
-					text:'&Удалить',
+					text:'&Добавить',
 				},
 				{
-					text:'&Добавить',
+					text:'&Удалить',
 				},
 			]
 		},
@@ -1227,6 +1228,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:32px;width:413px;height:19px;',
 			height: 19,width: 413,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

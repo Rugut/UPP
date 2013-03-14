@@ -113,6 +113,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:627px;height:201px;',
 			height: 201,width: 627,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -479,34 +480,8 @@
 			items:
 			[
 				{
-					text:'Подбор',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				'-',
-				{
 					text:'Заполнить',
 				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
 			]
 		},
 		{
@@ -559,31 +534,31 @@
 			items:
 			[
 				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
 					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Изменить',
 				},
 				{
 					text:'&Скопировать',
 				},
 				{
-					text:'Сортировать по убыванию',
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
 				},
 				{
 					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
 				},
 			]
 		},
@@ -964,6 +939,16 @@
 			style: 'position:absolute;left:190px;top:6px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:420px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:525px;top:6px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРедактировать',
 			text: 'Редактировать:',
@@ -1081,6 +1066,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:79px;width:629px;height:100px;',
 			height: 100,width: 629,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1193,6 +1179,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:322px;top:27px;width:307px;height:24px;',
 			height: 24,width: 307,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1365,38 +1352,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
 			items:
 			[
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'КУД и Р...',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Клиент-Банк: Создать контрагента',
-				},
-				{
-					text:'Показать/скрыть счета учета',
-				},
 			]
 		},
 		{
@@ -1410,16 +1365,16 @@
 			style: 'position:absolute;left:0px;top:460px;width:658px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Записать',
+					text:'Печать',
 				},
 				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Печать',
+					text:'Записать',
 				},
 				'-',
 				{
@@ -1437,6 +1392,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
 			height: 19,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

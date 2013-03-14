@@ -25,15 +25,15 @@
 			items:
 			[
 				{
-					text:'Действие',
-				},
-				'-',
-				{
 					text:'Выполнить',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -41,6 +41,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:794px;height:351px;',
 			height: 351,width: 794,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -576,16 +577,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие1',
+					text:'Удалить',
 				},
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 			]
 		},
@@ -1203,16 +1204,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 			]
 		},

@@ -33,48 +33,11 @@
 			items:
 			[
 				{
-					text:'',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Выгрузить в файл',
-				},
-				{
-					text:'Сформировать, подписать и отправить',
-				},
-				'-',
-				{
-					text:'Отправить по эл. почте',
-				},
-				{
-					text:'Открыть актуальный электронный документ',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Список электронных документов',
-				},
-				{
-					text:'Отправить по эл. почте',
-				},
-				'-',
-				{
-					text:'Сформировать новый электронный документ',
-				},
-				{
-					text:'',
-				},
-				{
 					text:'В файл',
 				},
 				{
-					text:'Движения документа по регистрам',
+					text:'Отправить по эл. почте',
 				},
-				'-',
 			]
 		},
 		{
@@ -91,11 +54,11 @@
 				},
 				'-',
 				{
-					text:'Закрыть',
+					text:'Записать',
 				},
 				'-',
 				{
-					text:'Записать',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -109,6 +72,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:461px;top:55px;width:337px;height:85px;',
 			height: 85,width: 337,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -284,6 +248,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:461px;top:32px;width:337px;height:19px;',
 			height: 19,width: 337,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -309,6 +274,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:55px;width:433px;height:85px;',
 			height: 85,width: 433,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -383,6 +349,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:776px;height:241px;',
 			height: 241,width: 776,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -513,21 +480,6 @@
 			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
 			items:
 			[
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Заполнить суммы по основанию',
-				},
-				{
-					text:'Заполнить номенклатуру по заказу покупателя...',
-				},
-				{
-					text:'Добавить номенклатуру из заказа покупателя...',
-				},
-				{
-					text:'Добавить номенклатуру из счета на оплату...',
-				},
 			]
 		},
 					]
@@ -722,6 +674,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:351px;width:776px;height:24px;',
 			height: 24,width: 776,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -833,6 +786,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:252px;width:776px;height:92px;',
 			height: 92,width: 776,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -861,6 +815,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'Выставлен:',
 			style: 'position:absolute;left:201px;top:47px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'На бумажном носителе',
+			style: 'position:absolute;left:416px;top:47px;width:139px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В электронном виде',
+			style: 'position:absolute;left:565px;top:47px;width:124px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

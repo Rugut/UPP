@@ -14,81 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
 				{
 					text:'Списком сотрудников',
 				},
@@ -99,10 +24,10 @@
 			style: 'position:absolute;left:0px;top:548px;width:643px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -164,6 +89,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:208px;width:627px;height:309px;',
 			height: 309,width: 627,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -176,34 +102,34 @@
 			items:
 			[
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие6',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие8',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие1',
-				},
 				{
 					text:'Подбор',
 				},
@@ -373,6 +299,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:83px;width:624px;height:119px;',
 			height: 119,width: 624,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -408,6 +335,26 @@
 			name: 'НадписьДатаДействияКонец',
 			text: 'по:',
 			style: 'position:absolute;left:397px;top:72px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внести или изменить начисление ',
+			style: 'position:absolute;left:18px;top:25px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прекратить начисление',
+			style: 'position:absolute;left:18px;top:48px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внести или изменить удержание ',
+			style: 'position:absolute;left:18px;top:71px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прекратить удержание',
+			style: 'position:absolute;left:18px;top:94px;width:221px;height:19px;',
 		},
 					]
 				},

@@ -14,28 +14,34 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'Выгрузить в весы',
-				},
-				{
-					text:'Справка',
-				},
-				{
-					text:'Справка',
-				},
-				{
-					text:'Заполнить',
-				},
-				'-',
-				'-',
-				'-',
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				{
 					text:'Заполнить',
 				},
 				{
 					text:'Выгрузить в весы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Выгрузить в весы',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -43,6 +49,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:52px;width:684px;height:21px;',
 			height: 21,width: 684,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -63,6 +70,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:97px;width:684px;height:108px;',
 			height: 108,width: 684,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

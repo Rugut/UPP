@@ -17,10 +17,10 @@
 				{
 					text:'Выполнить',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -28,26 +28,32 @@
 			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				{
 					text:'Восстановить значения...',
 				},
-				'-',
-				'-',
 				{
 					text:'Сохранить значения...',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
+					]
+				},
+				'-',
 				{
 					text:'Восстановить значения...',
 				},
 				{
-					text:'Справка',
-				},
-				{
 					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -65,12 +71,23 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:60px;width:323px;height:302px;',
 			height: 302,width: 323,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'ПоЗаявкам',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'По возрастанию даты планируемого поступления',
+			style: 'position:absolute;left:12px;top:27px;width:276px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По убыванию даты планируемого поступления',
+			style: 'position:absolute;left:12px;top:47px;width:273px;height:15px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Подбирать сумму:',
@@ -94,6 +111,21 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'Сначала ранние задолженности',
+			style: 'position:absolute;left:12px;top:85px;width:184px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала поздние задолженности',
+			style: 'position:absolute;left:12px;top:105px;width:192px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По табличной части документа',
+			style: 'position:absolute;left:12px;top:125px;width:180px;height:15px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Подбирать сумму:',
 			style: 'position:absolute;left:12px;top:144px;width:116px;height:19px;',
@@ -115,6 +147,16 @@
 			style: 'position:absolute;left:12px;top:212px;width:297px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'По сумме платежа',
+			style: 'position:absolute;left:12px;top:253px;width:118px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По сумме взаиморасчетов',
+			style: 'position:absolute;left:146px;top:253px;width:158px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Только включенные в платежный календарь',
 			style: 'position:absolute;left:12px;top:277px;width:256px;height:19px;',
@@ -132,6 +174,16 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По текущей задолженности',
+			style: 'position:absolute;left:18px;top:23px;width:163px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По планируемым поступлениям денежных средств',
+			style: 'position:absolute;left:18px;top:42px;width:286px;height:15px;',
 		},
 					]
 				},

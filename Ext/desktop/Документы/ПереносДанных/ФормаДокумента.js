@@ -38,24 +38,36 @@
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
 				{
 					text:'',
+				},
+				'-',
+					]
 				},
 				'-',
 				{
 					text:'Настройка состава регистров',
 				},
+				'-',
 				{
 					text:'',
 				},
 				{
-					text:'Структура подчиненности документа',
+					text:'',
 				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
 			]
 		},
 		{
@@ -67,10 +79,10 @@
 					text:'OK',
 				},
 				'-',
-				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -212,19 +224,9 @@
 			style: 'position:absolute;left:0px;top:377px;width:239px;height:25px;',
 			items:
 			[
-				{
-					text:'Расчеты текущего сотрудника',
-				},
-				{
-					text:'Весь документ',
-				},
 				'-',
 				{
 					text:'Отменить исправление',
-				},
-				'-',
-				{
-					text:'Расчеты нескольких сотрудников',
 				},
 			]
 		},
@@ -232,6 +234,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:559px;top:312px;width:83px;height:33px;',
 			height: 33,width: 83,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

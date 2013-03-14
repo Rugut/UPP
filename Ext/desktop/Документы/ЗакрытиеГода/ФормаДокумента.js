@@ -45,12 +45,18 @@
 			items:
 			[
 				{
-					text:'Подменю1',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Дт/кт',
+					text:'',
 				},
 				'-',
+					]
+				},
 				{
 					text:'Дт/кт',
 				},
@@ -64,21 +70,21 @@
 			style: 'position:absolute;left:0px;top:212px;width:345px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Записать',
-				},
 				{
 					text:'Печать',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{

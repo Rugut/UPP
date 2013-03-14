@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:1px;width:820px;height:46px;',
 			height: 46,width: 820,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -64,20 +65,20 @@
 			style: 'position:absolute;left:2px;top:47px;width:490px;height:26px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Выгрузить в файл',
-				},
 				{
 					text:'Сформировать отчет',
 				},
 				'-',
 				{
+					text:'Печать...',
+				},
+				'-',
+				{
 					text:'Сохранить как...',
 				},
+				'-',
 				{
-					text:'Печать...',
+					text:'Выгрузить в файл',
 				},
 			]
 		},
@@ -87,32 +88,33 @@
 			items:
 			[
 				{
-					text:'Сохранить настройки отчета',
-				},
-				{
-					text:'Идентификация по ОКПД',
-				},
-				{
 					text:'Настройка',
 				},
-				{
-					text:'Действие1',
-				},
+				'-',
 				{
 					text:'Загрузить настройки отчета',
+				},
+				{
+					text:'Сохранить настройки отчета',
 				},
 				'-',
 				{
 					text:'Коды ОКПД',
 				},
+				{
+					text:'Идентификация по ОКПД',
+				},
 				'-',
-				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:514px;top:73px;width:306px;height:485px;',
 			height: 485,width: 306,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -383,10 +385,10 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 			]
 		},

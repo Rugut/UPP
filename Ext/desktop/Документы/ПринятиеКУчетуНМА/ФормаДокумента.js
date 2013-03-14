@@ -14,32 +14,32 @@
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'Дт/кт',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
-				'-',
 				{
-					text:'Принятие к учету нематериального актива',
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
 				},
 				{
 					text:'',
 				},
 				{
-					text:'Принятие к учету результатов НИОКР',
+					text:'',
 				},
 				'-',
 				{
 					text:'Дт/кт',
 				},
 				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -48,21 +48,21 @@
 			style: 'position:absolute;left:0px;top:387px;width:644px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'Печать',
 				},
 				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'Печать',
-				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -239,6 +239,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:171px;width:426px;height:24px;',
 			height: 24,width: 426,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -357,6 +358,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:145px;width:614px;height:99px;',
 			height: 99,width: 614,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -391,6 +393,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:47px;width:458px;height:24px;',
 			height: 24,width: 458,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

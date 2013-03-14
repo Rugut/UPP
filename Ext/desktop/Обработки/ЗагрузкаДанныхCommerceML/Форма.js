@@ -14,9 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
 			items:
 			[
-				{
-					text:'Настройки',
-				},
 				'-',
 				{
 					text:'Загрузить данные',
@@ -25,12 +22,16 @@
 				{
 					text:'Соответствия объектов',
 				},
+				{
+					text:'Настройки',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:210px;width:648px;height:250px;',
 			height: 250,width: 648,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -75,10 +76,10 @@
 			items:
 			[
 				{
-					text:'Сортировать по убыванию',
+					text:'Сортировать по возрастанию',
 				},
 				{
-					text:'Сортировать по возрастанию',
+					text:'Сортировать по убыванию',
 				},
 			]
 		},
@@ -145,21 +146,21 @@
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Действие1',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'Сортировать по убыванию',
-				},
-				{
 					text:'Действие3',
-				},
-				{
-					text:'Действие1',
 				},
 			]
 		},
@@ -254,21 +255,21 @@
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие3',
+					text:'Сортировать по возрастанию',
 				},
 				{
 					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Действие1',
 				},
 				{
 					text:'Действие2',
 				},
 				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Действие1',
+					text:'Действие3',
 				},
 			]
 		},
@@ -304,20 +305,20 @@
 			items:
 			[
 				{
+					text:'Сортировать по возрастанию',
+				},
+				{
 					text:'Сортировать по убыванию',
 				},
 				'-',
+				{
+					text:'Действие1',
+				},
 				{
 					text:'Действие2',
 				},
 				{
 					text:'Действие3',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Действие1',
 				},
 			]
 		},
@@ -463,10 +464,14 @@
 			items:
 			[
 				{
-					text:'Сортировать по возрастанию',
+					text:'',
 				},
 				{
 					text:'Установить флажки',
+				},
+				'-',
+				{
+					text:'Сортировать по возрастанию',
 				},
 				{
 					text:'Сортировать по убыванию',
@@ -475,15 +480,11 @@
 				{
 					text:'Действие1',
 				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'',
-				},
 				{
 					text:'Действие2',
+				},
+				{
+					text:'Действие3',
 				},
 			]
 		},
@@ -491,6 +492,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:648px;height:19px;',
 			height: 19,width: 648,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -556,17 +558,27 @@
 			]
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Загрузить данные из файла',
+			style: 'position:absolute;left:8px;top:33px;width:170px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Загрузить данные из электронной почты',
+			style: 'position:absolute;left:183px;top:33px;width:232px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:466px;width:664px;height:25px;',
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Сохранить данные',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 	]

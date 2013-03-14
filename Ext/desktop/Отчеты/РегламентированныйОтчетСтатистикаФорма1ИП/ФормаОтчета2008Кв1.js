@@ -15,9 +15,12 @@
 			items:
 			[
 				{
-					text:'Справка',
+					text:'Очистить',
 				},
 				'-',
+				{
+					text:'Поиск',
+				},
 				'-',
 				{
 					text:'Обновить',
@@ -28,10 +31,7 @@
 				},
 				'-',
 				{
-					text:'Очистить',
-				},
-				{
-					text:'Поиск',
+					text:'Справка',
 				},
 			]
 		},
@@ -40,18 +40,6 @@
 			style: 'position:absolute;left:0px;top:398px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'OK',
-				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
 			]
 		},
 		{
@@ -64,6 +52,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:47px;',
 			height: 47,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -90,6 +79,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:368px;width:654px;height:24px;',
 			height: 24,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

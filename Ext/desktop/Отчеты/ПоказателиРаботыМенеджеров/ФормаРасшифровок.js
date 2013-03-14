@@ -14,14 +14,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:569px;height:24px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Заголовок',
 				},
-				{
-					text:'Заголовок',
+				'-',
+					]
 				},
 				'-',
+				{
+					text:'',
+				},
 			]
 		},
 	]

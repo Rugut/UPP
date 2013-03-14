@@ -14,25 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Цены и валюта...',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'',
-				},
-				'-',
 			]
 		},
 		{
@@ -41,24 +22,24 @@
 			items:
 			[
 				{
-					text:'Записать',
+					text:'Печать',
 				},
-				{
-					text:'ОК',
-				},
+				'-',
 				{
 					text:'Чек ККМ',
 				},
 				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Печать',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -262,41 +243,36 @@
 			items:
 			[
 				{
-					text:'Состав набора',
-				},
-				'-',
-				{
-					text:'Штрихкоды',
-				},
-				'-',
-				{
 					text:'Поиск по штрихкоду',
 				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
+				'-',
 				{
 					text:'Серийные номера',
 				},
 				'-',
 				{
-					text:'Оплатить картой',
+					text:'Состав набора',
 				},
+				'-',
 				{
 					text:'Вес',
 				},
-				'-',
 				{
-					text:'Заполнить из терминала сбора данных',
+					text:'Оплатить картой',
 				},
-				'-',
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:110px;width:622px;height:90px;',
 			height: 90,width: 622,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -403,6 +379,16 @@
 			name: 'НадписьОплата',
 			text: 'Оплата:',
 			style: 'position:absolute;left:337px;top:80px;width:61px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:402px;top:80px;width:13px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:581px;top:80px;width:63px;height:19px;',
 		},
 		{
 			xtype: 'label',

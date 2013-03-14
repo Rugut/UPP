@@ -21,12 +21,12 @@
 			style: 'position:absolute;left:0px;top:295px;width:600px;height:25px;',
 			items:
 			[
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'ОК',
 				},
 			]
 		},
@@ -115,7 +115,6 @@
 			style: 'position:absolute;left:8px;top:124px;width:584px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить по спецификации',
 				},

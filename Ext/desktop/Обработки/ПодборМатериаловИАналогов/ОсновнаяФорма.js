@@ -83,15 +83,15 @@
 			items:
 			[
 				{
-					text:'ОК',
+					text:'',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 				'-',
 				{
 					text:'Справка',
-				},
-				{
-					text:'Закрыть',
 				},
 			]
 		},
@@ -100,12 +100,12 @@
 			style: 'position:absolute;left:8px;top:30px;width:706px;height:24px;',
 			items:
 			[
-				{
-					text:'Автозамена',
-				},
 				'-',
 				{
-					text:'Обновить',
+					text:'',
+				},
+				{
+					text:'Автозамена',
 				},
 			]
 		},

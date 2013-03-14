@@ -14,13 +14,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
 				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 				'-',
 				{
 					text:'Показать/скрыть счета учета',
@@ -32,18 +32,18 @@
 			style: 'position:absolute;left:0px;top:433px;width:652px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Записать',
-				},
+				'-',
 				{
 					text:'OK',
 				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -124,7 +124,6 @@
 			style: 'position:absolute;left:8px;top:130px;width:636px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить по остаткам',
 				},

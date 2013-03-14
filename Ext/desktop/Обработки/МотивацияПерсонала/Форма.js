@@ -15,24 +15,30 @@
 			items:
 			[
 				{
-					text:'Действие',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Печать мотиваций',
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Закрыть',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'Справка',
 				},
+					]
+				},
+				'-',
 				{
 					text:'Печать всех начислений',
 				},
 				'-',
-				'-',
-				'-',
 				{
-					text:'Печать мотиваций',
+					text:'Справка',
 				},
 			]
 		},
@@ -40,6 +46,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:703px;top:33px;width:225px;height:521px;',
 			height: 521,width: 225,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -51,6 +58,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:689px;height:528px;',
 			height: 528,width: 689,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -61,6 +69,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:24px;width:689px;height:159px;',
 			height: 159,width: 689,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -225,29 +234,25 @@
 			items:
 			[
 				{
-					text:'Действие7',
+					text:'&Добавить вид расчета',
 				},
-				'-',
+				{
+					text:'',
+				},
 				{
 					text:'Удалить',
 				},
 				{
-					text:'&Добавить вид расчета',
+					text:'Изменить',
 				},
-				{
-					text:'Печать по выбранной должности',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
+				'-',
 				{
 					text:'Печать мотивации',
 				},
 				'-',
-				'-',
+				{
+					text:'Обновить',
+				},
 			]
 		},
 					]
@@ -258,6 +263,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:187px;width:689px;height:333px;',
 			height: 333,width: 689,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -269,26 +275,9 @@
 			style: 'position:absolute;left:0px;top:27px;width:689px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Печать по подразделению',
-				},
-				'-',
-				'-',
-				{
-					text:'&Добавить вид расчета',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Печать мотивации',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
 				},
 				'-',
 			]
@@ -441,6 +430,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:59px;width:221px;height:274px;',
 			height: 274,width: 221,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -513,7 +503,7 @@
 			items:
 			[
 				{
-					text:'Переключение справки формы',
+					text:'',
 				},
 			]
 		},
@@ -521,6 +511,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:471px;top:0px;width:410px;height:25px;',
 			height: 25,width: 410,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

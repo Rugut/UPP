@@ -122,17 +122,17 @@
 			style: 'position:absolute;left:0px;top:310px;width:492px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
 				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{

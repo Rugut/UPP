@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:712px;height:25px;',
 			items:
 			[
+				{
+					text:'Сформировать',
+				},
 				'-',
 				{
 					text:'Сохранить значения...',
-				},
-				{
-					text:'Сформировать',
 				},
 				{
 					text:'Восстановить значения...',

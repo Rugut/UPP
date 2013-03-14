@@ -45,16 +45,16 @@
 			style: 'position:absolute;left:0px;top:164px;width:334px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'Закрыть',
-				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},

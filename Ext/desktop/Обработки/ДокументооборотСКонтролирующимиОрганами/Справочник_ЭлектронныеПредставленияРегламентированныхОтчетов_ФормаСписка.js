@@ -71,52 +71,59 @@
 			items:
 			[
 				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'&Загрузить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Дополнительный отбор',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
 					text:'',
 				},
 				'-',
 				{
 					text:'Журнал обмена',
 				},
-				{
-					text:'Действие8',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Дополнительный отбор',
-				},
-				{
-					text:'Отображать панель обмена',
+					]
 				},
 				'-',
 				{
-					text:'Действие3',
+					text:'Справка',
 				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'&Загрузить',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:832px;height:25px;',
 			height: 25,width: 832,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -127,6 +134,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:236px;top:1px;width:596px;height:21px;',
 			height: 21,width: 596,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -148,6 +156,16 @@
 					title:'По виду документа',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'первичный',
+			style: 'position:absolute;left:2px;top:3px;width:74px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'корректирующий',
+			style: 'position:absolute;left:81px;top:3px;width:106px;height:15px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -183,6 +201,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:832px;height:30px;',
 			height: 30,width: 832,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -203,6 +222,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:832px;height:20px;',
 			height: 20,width: 832,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -241,6 +261,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:309px;width:832px;height:126px;',
 			height: 126,width: 832,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

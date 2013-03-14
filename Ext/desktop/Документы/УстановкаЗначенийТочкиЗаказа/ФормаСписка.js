@@ -46,12 +46,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
 				{
 					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Движения документа по регистрам',
+				'-',
+					]
 				},
 			]
 		},

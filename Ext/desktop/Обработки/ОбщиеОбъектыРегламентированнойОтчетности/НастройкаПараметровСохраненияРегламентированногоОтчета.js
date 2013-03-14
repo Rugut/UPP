@@ -29,5 +29,15 @@
 			name: 'ПутьДляВыгрузки',
 			style: 'position:absolute;left:148px;top:33px;width:448px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сохранить на дискету:',
+			style: 'position:absolute;left:11px;top:7px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сохранить в каталог:',
+			style: 'position:absolute;left:11px;top:33px;width:136px;height:19px;',
+		},
 	]
 });

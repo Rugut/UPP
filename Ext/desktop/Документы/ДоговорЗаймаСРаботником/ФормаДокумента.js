@@ -115,86 +115,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
 			]
 		},
 		{
@@ -205,14 +125,14 @@
 				{
 					text:'OK',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
-				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -256,6 +176,16 @@
 			name: 'Надпись15',
 			text: 'месяцев',
 			style: 'position:absolute;left:447px;top:182px;width:47px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Ежемесячно',
+			style: 'position:absolute;left:221px;top:182px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По истечении',
+			style: 'position:absolute;left:308px;top:182px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -327,12 +257,23 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:334px;top:33px;width:192px;height:67px;',
 			height: 67,width: 192,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Управленческий',
+			style: 'position:absolute;left:8px;top:48px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Бухгалтерский',
+			style: 'position:absolute;left:8px;top:24px;width:112px;height:19px;',
+		},
 					]
 				},
 			]

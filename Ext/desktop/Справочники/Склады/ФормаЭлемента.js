@@ -50,6 +50,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+					]
+				},
 				'-',
 				{
 					text:'Настройка доступа',
@@ -65,16 +71,16 @@
 			style: 'position:absolute;left:0px;top:295px;width:529px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
 				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -219,13 +225,13 @@
 					text:'&Добавить',
 				},
 				{
-					text:'Закончить редактирование',
-				},
-				{
 					text:'&Изменить',
 				},
 				{
 					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
 				},
 			]
 		},

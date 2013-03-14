@@ -40,16 +40,16 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
-				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -80,19 +80,16 @@
 			items:
 			[
 				{
-					text:'&Удалить',
-				},
-				{
-					text:'Список действий',
-				},
-				{
 					text:'&Добавить',
 				},
 				{
-					text:'Закончить редактирование',
+					text:'&Изменить',
 				},
 				{
-					text:'&Изменить',
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
 				},
 				'-',
 			]
@@ -164,6 +161,16 @@
 			hideLabel: true,
 			name: 'Родитель',
 			style: 'position:absolute;left:105px;top:33px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:105px;top:146px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'регл. учете',
+			style: 'position:absolute;left:190px;top:146px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'label',

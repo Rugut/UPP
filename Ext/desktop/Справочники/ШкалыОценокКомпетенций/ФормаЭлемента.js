@@ -38,9 +38,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Редактировать код',
+				},
+					]
 				},
 			]
 		},
@@ -49,16 +55,16 @@
 			style: 'position:absolute;left:0px;top:273px;width:442px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -88,18 +94,18 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
 			]
 		},
 	]

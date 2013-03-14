@@ -15,11 +15,11 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'Выполнить',
 				},
 				'-',
 				{
-					text:'Выполнить',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -114,6 +114,16 @@
 			style: 'position:absolute;left:8px;top:35px;width:131px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Все',
+			style: 'position:absolute;left:142px;top:35px;width:41px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заданный:',
+			style: 'position:absolute;left:214px;top:35px;width:75px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВидЦиклаОбмена',
@@ -129,13 +139,13 @@
 			style: 'position:absolute;left:8px;top:82px;width:726px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Пометить все',
 				},
 				{
 					text:'Снять флажки у всех',
 				},
+				'-',
 				{
 					text:'Обновить',
 				},

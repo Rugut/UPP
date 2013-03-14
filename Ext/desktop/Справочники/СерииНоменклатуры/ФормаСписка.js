@@ -63,13 +63,25 @@
 			items:
 			[
 				{
-					text:'Файлы',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
 				},
 				'-',
 				{
-					text:'Файлы',
+					text:'',
 				},
-				'-',
 			]
 		},
 	]

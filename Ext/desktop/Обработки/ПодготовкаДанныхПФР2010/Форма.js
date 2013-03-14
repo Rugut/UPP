@@ -22,6 +22,16 @@
 			style: 'position:absolute;left:278px;top:8px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Квартальная отчетность (СЗВ)',
+			style: 'position:absolute;left:665px;top:8px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Оформление пенсии (СПВ)',
+			style: 'position:absolute;left:839px;top:8px;width:153px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Состав форм:',
@@ -37,6 +47,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:45px;width:984px;height:563px;',
 			height: 563,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -58,21 +69,14 @@
 				{
 					text:'Удалить',
 				},
-				{
-					text:'Перенести',
-				},
-				{
-					text:'Принятые в ПФР комплекты прошлых периодов',
-				},
+				'-',
 				{
 					text:'Обновить',
 				},
+				'-',
 				{
-					text:'АДВ-11',
+					text:'Перенести',
 				},
-				'-',
-				'-',
-				'-',
 			]
 		},
 		{
@@ -95,6 +99,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:168px;width:984px;height:137px;',
 			height: 137,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -105,6 +110,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:343px;height:137px;',
 			height: 137,width: 343,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -160,7 +166,7 @@
 					text:'Добавить',
 				},
 				{
-					text:'Удалить',
+					text:'',
 				},
 				'-',
 				{
@@ -176,12 +182,38 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:344px;top:0px;width:640px;height:137px;',
 			height: 137,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-6-1',
+			style: 'position:absolute;left:177px;top:24px;width:63px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-6-2',
+			style: 'position:absolute;left:246px;top:24px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:56px;top:2px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:132px;top:2px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющие',
+			style: 'position:absolute;left:246px;top:2px;width:89px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьТипФормы',
@@ -288,6 +320,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:121px;height:112px;',
 			height: 112,width: 121,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -336,6 +369,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:20px;width:984px;height:116px;',
 			height: 116,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -379,22 +413,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:984px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Заполнить расчетами с ПФР',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
 				{
 					text:'&Добавить строку',
 				},
+				'-',
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие1',
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Заполнить расчетами с ПФР',
 				},
 			]
 		},
@@ -425,6 +459,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:333px;width:984px;height:207px;',
 			height: 207,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -497,38 +532,14 @@
 			items:
 			[
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Очистить',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
-				{
-					text:'Заполнить все',
+					text:'',
 				},
 				{
 					text:'Только изменившиеся (рекомендуется)',
 				},
 				{
-					text:'Действие4',
+					text:'',
 				},
-				{
-					text:'Перенести',
-				},
-				{
-					text:'Комментировать',
-				},
-				'-',
 			]
 		},
 		{
@@ -536,35 +547,35 @@
 			style: 'position:absolute;left:347px;top:93px;width:637px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие10',
-				},
-				{
-					text:'Действие12',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие14',
+					text:'',
 				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
 				{
 					text:'Перечитать',
 				},
-				{
-					text:'Действие16',
-				},
 				'-',
 				{
-					text:'Действие15',
-				},
-				{
-					text:'Действие11',
-				},
-				{
-					text:'Действие13',
-				},
-				{
-					text:'Перезаполнить',
+					text:'',
 				},
 			]
 		},
@@ -666,6 +677,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:347px;top:27px;width:637px;height:50px;',
 			height: 50,width: 637,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -724,6 +736,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:370px;top:0px;width:267px;height:42px;',
 			height: 42,width: 267,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -827,6 +840,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:254px;top:22px;width:730px;height:120px;',
 			height: 120,width: 730,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -915,6 +929,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:77px;width:591px;height:43px;',
 			height: 43,width: 591,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -965,6 +980,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:24px;width:173px;height:51px;',
 			height: 51,width: 173,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1044,19 +1060,19 @@
 			style: 'position:absolute;left:0px;top:155px;width:293px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'Обновить',
+					text:'Добавить',
 				},
+				'-',
 				{
 					text:'Удалить',
 				},
 				{
-					text:'Добавить',
-				},
-				{
 					text:'Принято ПФР',
+				},
+				'-',
+				{
+					text:'Обновить',
 				},
 				'-',
 			]
@@ -1123,20 +1139,20 @@
 			items:
 			[
 				{
-					text:'Действие5',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие3',
+					text:'Удалить',
 				},
 				{
-					text:'Действие6',
+					text:'',
 				},
 				{
-					text:'Действие7',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'Конструктор настроек...',
 				},
 			]
 		},
@@ -1150,12 +1166,28 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:300px;top:154px;width:684px;height:127px;',
 			height: 127,width: 684,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница данных',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:62px;top:6px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:138px;top:6px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющие',
+			style: 'position:absolute;left:252px;top:6px;width:89px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидКорректировки1',
@@ -1262,6 +1294,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:31px;width:101px;height:77px;',
 			height: 77,width: 101,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1301,6 +1334,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:310px;width:984px;height:224px;',
 			height: 224,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1365,23 +1399,23 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Перенести в другую пачку',
+					text:'Удалить',
 				},
 				{
-					text:'Действие2',
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
 				},
 				'-',
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
+					text:'Перенести в другую пачку',
 				},
 			]
 		},
@@ -1391,34 +1425,34 @@
 			items:
 			[
 				{
-					text:'Действие12',
-				},
-				{
-					text:'Действие11',
-				},
-				{
-					text:'Действие14',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие13',
+					text:'',
 				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
 				{
 					text:'Перечитать',
 				},
 				'-',
 				{
-					text:'Действие10',
-				},
-				'-',
-				{
-					text:'Действие15',
-				},
-				{
-					text:'Перезаполнить',
-				},
-				{
-					text:'Действие16',
+					text:'',
 				},
 			]
 		},
@@ -1514,6 +1548,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:347px;top:24px;width:637px;height:50px;',
 			height: 50,width: 637,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1627,10 +1662,10 @@
 				{
 					text:'Удалить',
 				},
+				'-',
 				{
 					text:'Обновить',
 				},
-				'-',
 				'-',
 			]
 		},
@@ -1658,12 +1693,28 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:305px;top:25px;width:679px;height:206px;',
 			height: 206,width: 679,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница данных',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:99px;top:47px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:177px;top:47px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющие',
+			style: 'position:absolute;left:292px;top:47px;width:89px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидКорректировки2',
@@ -1807,6 +1858,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:264px;width:984px;height:270px;',
 			height: 270,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1835,23 +1887,23 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Перенести в другую пачку',
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
 				},
 				'-',
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие4',
+					text:'Перенести в другую пачку',
 				},
 			]
 		},
@@ -1974,6 +2026,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:197px;height:34px;',
 			height: 34,width: 197,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1991,9 +2044,15 @@
 			]
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Сведения о заработке (СЗВ-6-3)',
+			style: 'position:absolute;left:665px;top:27px;width:181px;height:18px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:479px;top:8px;width:112px;height:34px;',
 			height: 34,width: 112,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

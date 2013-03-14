@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:316px;width:400px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Принять',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},

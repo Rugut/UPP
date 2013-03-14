@@ -50,31 +50,37 @@
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
 			items:
 			[
+				'-',
 				{
-					text:'',
+					text:'Цены и валюта...',
 				},
 				'-',
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Цены и валюта...',
-				},
-				{
-					text:'Дт/кт',
+					text:'',
 				},
 				'-',
-				'-',
-				'-',
-				{
-					text:'Структура подчиненности документа',
+					]
 				},
 				{
 					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -154,21 +160,21 @@
 			style: 'position:absolute;left:0px;top:371px;width:650px;height:25px;',
 			items:
 			[
+				{
+					text:'Печать',
+				},
 				'-',
 				{
-					text:'Закрыть',
+					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'Печать',
+					text:'Закрыть',
 				},
-				{
-					text:'ОК',
-				},
-				'-',
 			]
 		},
 		{

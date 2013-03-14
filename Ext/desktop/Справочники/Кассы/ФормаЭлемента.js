@@ -70,16 +70,16 @@
 			style: 'position:absolute;left:0px;top:164px;width:515px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'Закрыть',
-				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},

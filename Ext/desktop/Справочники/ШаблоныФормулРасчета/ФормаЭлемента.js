@@ -81,10 +81,10 @@
 			style: 'position:absolute;left:0px;top:132px;width:500px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},

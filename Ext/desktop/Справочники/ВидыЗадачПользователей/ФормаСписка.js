@@ -39,9 +39,15 @@
 			items:
 			[
 				{
-					text:'Редактировать код номер',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
+				{
+					text:'',
+				},
+					]
+				},
 			]
 		},
 	]

@@ -38,16 +38,16 @@
 			style: 'position:absolute;left:0px;top:509px;width:470px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 				'-',
 				{
@@ -68,6 +68,16 @@
 			style: 'position:absolute;left:8px;top:74px;width:84px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'объект',
+			style: 'position:absolute;left:8px;top:101px;width:84px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'файл',
+			style: 'position:absolute;left:8px;top:128px;width:84px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ИсточникОтчетаФайл',
@@ -77,6 +87,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:199px;width:454px;height:300px;',
 			height: 300,width: 454,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -103,6 +114,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:454px;height:41px;',
 			height: 41,width: 454,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

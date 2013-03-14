@@ -14,21 +14,21 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
-				{
-					text:'Оформить счет на оплату (F12)',
-				},
-				{
-					text:'Изображение',
-				},
-				'-',
-				'-',
-				'-',
 				'-',
 				{
 					text:'Оформить новый заказ (F11)',
 				},
+				'-',
+				{
+					text:'Оформить счет на оплату (F12)',
+				},
+				'-',
 				{
 					text:'Оформить реализацию (Ctrl+F12)',
+				},
+				'-',
+				{
+					text:'Изображение',
 				},
 			]
 		},
@@ -371,21 +371,21 @@
 			style: 'position:absolute;left:66px;top:54px;width:157px;height:24px;',
 			items:
 			[
+				{
+					text:'Пометить все типы цен',
+				},
+				{
+					text:'Отменить пометку всех типов цен',
+				},
+				{
+					text:'Обновить',
+				},
 				'-',
 				{
 					text:'Переместить вверх',
 				},
 				{
-					text:'Пометить все типы цен',
-				},
-				{
-					text:'Обновить',
-				},
-				{
 					text:'Переместить вниз',
-				},
-				{
-					text:'Отменить пометку всех типов цен',
 				},
 			]
 		},
@@ -479,6 +479,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:266px;width:328px;height:131px;',
 			height: 131,width: 328,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

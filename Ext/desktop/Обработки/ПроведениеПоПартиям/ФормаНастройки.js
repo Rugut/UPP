@@ -20,13 +20,28 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Работа в фоновом режиме',
+			style: 'position:absolute;left:18px;top:30px;width:360px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Настройки по умолчанию',
+			style: 'position:absolute;left:18px;top:50px;width:360px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Все операции в одной транзакции',
+			style: 'position:absolute;left:18px;top:70px;width:360px;height:15px;',
 		},
 		{
 			xtype: 'label',
@@ -56,6 +71,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Выполнять на сервере',
 			style: 'position:absolute;left:65px;top:158px;width:313px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Ручная настройка',
+			style: 'position:absolute;left:18px;top:90px;width:360px;height:15px;',
 		},
 	]
 });

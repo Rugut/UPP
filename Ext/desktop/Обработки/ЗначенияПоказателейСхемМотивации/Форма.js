@@ -14,39 +14,45 @@
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'Действие1',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Справочник показателей',
 				},
 				'-',
+				{
+					text:'Плановые начисления',
+				},
+				{
+					text:'Плановые удержания',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Справочник показателей',
+				},
 				'-',
 				{
 					text:'Плановые начисления',
 				},
 				'-',
-				'-',
-				{
-					text:'Плановые начисления',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Справочник показателей',
-				},
-				{
-					text:'Справочник показателей',
-				},
-				{
-					text:'Действие справка',
-				},
 				{
 					text:'Плановые удержания',
 				},
+				'-',
 				{
-					text:'Плановые удержания',
+					text:'Справка',
 				},
 			]
 		},
@@ -100,12 +106,33 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:662px;height:73px;',
 			height: 73,width: 662,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Данные по сотрудникам',
+			style: 'position:absolute;left:6px;top:27px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Данные по организациям и подразделениям',
+			style: 'position:absolute;left:6px;top:51px;width:259px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По показателям',
+			style: 'position:absolute;left:320px;top:27px;width:126px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:320px;top:51px;width:126px;height:16px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -120,6 +147,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:87px;width:234px;height:209px;',
 			height: 209,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -154,6 +182,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:234px;height:19px;',
 			height: 19,width: 234,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -247,22 +276,22 @@
 			style: 'position:absolute;left:246px;top:87px;width:422px;height:24px;',
 			items:
 			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Заполнить по плановым начислениям (удержаниям)',
+				},
 				'-',
 				{
 					text:'Вывести список...',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Заполнить по плановым начислениям (удержаниям)',
 				},
 			]
 		},
@@ -272,22 +301,22 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Заполнить по плановым начислениям (удержаниям)',
 				},
 				'-',
 				{
 					text:'Вывести список...',
 				},
-				{
-					text:'Заполнить по плановым начислениям (удержаниям)',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
 			]
 		},
 					]
@@ -300,12 +329,23 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:662px;height:73px;',
 			height: 73,width: 662,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Общие данные',
+			style: 'position:absolute;left:6px;top:51px;width:148px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Данные по организации:',
+			style: 'position:absolute;left:6px;top:27px;width:155px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -320,6 +360,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:85px;width:662px;height:211px;',
 			height: 211,width: 662,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -356,17 +397,17 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Добавить',
 				},
 				{
-					text:'Вывести список...',
+					text:'Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -374,6 +415,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:233px;height:211px;',
 			height: 211,width: 233,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -450,17 +492,17 @@
 			items:
 			[
 				{
-					text:'Вывести список...',
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
 				},
 				'-',
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
 			]
 		},

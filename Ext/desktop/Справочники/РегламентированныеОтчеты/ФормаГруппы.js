@@ -32,16 +32,16 @@
 			style: 'position:absolute;left:0px;top:281px;width:322px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'OK',
 				},
 			]
 		},

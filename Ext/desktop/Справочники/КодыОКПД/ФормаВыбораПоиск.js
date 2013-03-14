@@ -31,12 +31,12 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
+				'-',
 				{
 					text:'Иерархический просмотр',
 				},
-				'-',
 			]
 		},
 		{
@@ -50,6 +50,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:466px;top:33px;width:314px;height:407px;',
 			height: 407,width: 314,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -60,6 +61,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:56px;top:54px;width:220px;height:19px;',
 			height: 19,width: 220,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -80,6 +82,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:0px;width:308px;height:53px;',
 			height: 53,width: 308,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

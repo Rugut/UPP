@@ -38,13 +38,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Редактировать код',
 				},
-				'-',
-				{
-					text:'Действия формы выбрать',
+					]
 				},
 			]
 		},

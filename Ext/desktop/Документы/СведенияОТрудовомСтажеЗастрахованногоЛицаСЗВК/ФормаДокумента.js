@@ -27,22 +27,34 @@
 			items:
 			[
 				{
-					text:'Структура подчиненности документа',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
 				{
 					text:'Редактировать номер',
 				},
-				{
-					text:'',
+					]
 				},
 				{
+					xtype: 'splitbutton',
 					text:'',
-				},
-				'-',
-				'-',
-				'-',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -52,27 +64,27 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				'-',
-				{
 					text:'Проверить в CheckXML',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				{
-					text:'OK',
 				},
 				'-',
 				{
 					text:'Получить файл',
 				},
 				'-',
-				'-',
 				{
 					text:'Получить файл на диск',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -80,6 +92,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:567px;height:41px;',
 			height: 41,width: 567,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -90,6 +103,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:567px;height:35px;',
 			height: 35,width: 567,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -108,6 +122,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:567px;height:97px;',
 			height: 97,width: 567,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -194,6 +209,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:171px;width:567px;height:185px;',
 			height: 185,width: 567,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -206,41 +222,41 @@
 			items:
 			[
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'Действие6',
+					text:'Изменить',
 				},
 				{
-					text:'Действие4',
+					text:'Удалить',
 				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
 				{
 					text:'Редактировать СЗВ-К',
 				},
+				'-',
 				{
-					text:'Действие8',
+					text:'Подбор',
 				},
-				'-',
-				'-',
 			]
 		},
 		{

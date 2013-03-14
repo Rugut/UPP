@@ -17,10 +17,10 @@
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -80,10 +80,10 @@
 			style: 'position:absolute;left:8px;top:112px;width:684px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Заполнить',
 				},
-				'-',
 			]
 		},
 		{

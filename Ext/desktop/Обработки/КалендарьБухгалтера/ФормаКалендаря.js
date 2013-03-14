@@ -14,20 +14,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'Обновить',
 				},
+				'-',
 				{
-					text:'Действие1',
+					text:'День',
 				},
+				'-',
 				{
 					text:'Неделя',
 				},
 				'-',
 				{
-					text:'День',
+					text:'Действие1',
 				},
 			]
 		},
@@ -36,10 +36,6 @@
 			style: 'position:absolute;left:0px;top:546px;width:669px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
 			]
 		},
 		{
@@ -70,6 +66,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:63px;width:514px;height:480px;',
 			height: 480,width: 514,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -117,13 +114,13 @@
 			items:
 			[
 				{
-					text:'Перейти к дате',
-				},
-				{
 					text:'Открыть',
 				},
 				{
 					text:'Оповещение',
+				},
+				{
+					text:'Перейти к дате',
 				},
 			]
 		},

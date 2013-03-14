@@ -66,6 +66,16 @@
 			style: 'position:absolute;left:471px;top:6px;width:48px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'В валютах цен',
+			style: 'position:absolute;left:6px;top:50px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В выбранной валюте',
+			style: 'position:absolute;left:119px;top:50px;width:124px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:6px;top:180px;width:205px;height:19px;',
@@ -265,16 +275,16 @@
 			style: 'position:absolute;left:0px;top:300px;width:624px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Справка',
-				},
 				{
 					text:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

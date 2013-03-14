@@ -14,6 +14,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
 				{
 					text:'Монитор обменов',
@@ -21,13 +25,15 @@
 				{
 					text:'Выполнить обмен',
 				},
-				{
-					text:'Выполнить обмен',
+					]
 				},
-				'-',
 				'-',
 				{
 					text:'Монитор обменов',
+				},
+				'-',
+				{
+					text:'Выполнить обмен',
 				},
 			]
 		},
@@ -37,15 +43,15 @@
 			items:
 			[
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'OK',
 				},
 			]
 		},
@@ -60,9 +66,20 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка на сайт',
+			style: 'position:absolute;left:126px;top:54px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка в каталог',
+			style: 'position:absolute;left:270px;top:54px;width:124px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:79px;width:478px;height:116px;',
 			height: 116,width: 478,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -187,6 +204,16 @@
 			]
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Полная выгрузка',
+			style: 'position:absolute;left:126px;top:201px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только изменения',
+			style: 'position:absolute;left:270px;top:201px;width:116px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьТипОбменаДанными',
 			text: 'Тип обмена данными:',
@@ -229,6 +256,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:14px;top:225px;width:468px;height:24px;',
 			height: 24,width: 468,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -249,6 +277,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:14px;top:249px;width:468px;height:25px;',
 			height: 25,width: 468,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -404,6 +433,36 @@
 			hideLabel: true,
 			name: 'ЕдиницаИзмеренияНовойНоменклатуры',
 			style: 'position:absolute;left:185px;top:192px;width:299px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По информации документа с сайта',
+			style: 'position:absolute;left:16px;top:260px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Устанавливать у документов текущую дату',
+			style: 'position:absolute;left:16px;top:284px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только записывать документы',
+			style: 'position:absolute;left:16px;top:330px;width:181px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Записывать и проводить документы',
+			style: 'position:absolute;left:16px;top:353px;width:207px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Проводить оперативно',
+			style: 'position:absolute;left:38px;top:376px;width:159px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Проводить НЕ оперативно',
+			style: 'position:absolute;left:40px;top:399px;width:157px;height:19px;',
 		},
 		{
 			xtype: 'label',

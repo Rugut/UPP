@@ -52,6 +52,21 @@
 			style: 'position:absolute;left:6px;top:6px;width:57px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Бухгалтерского учета',
+			style: 'position:absolute;left:6px;top:78px;width:384px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Налогового учета',
+			style: 'position:absolute;left:6px;top:97px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Бухгалтерского учета с постоянными и временными разницами',
+			style: 'position:absolute;left:6px;top:117px;width:384px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПредставлениеПериодаРегистрации',

@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:622px;height:327px;',
 			height: 327,width: 622,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -29,6 +30,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:40px;width:610px;height:60px;',
 			height: 60,width: 610,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -77,12 +79,23 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:191px;width:610px;height:130px;',
 			height: 130,width: 610,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Переключатель1',
+			style: 'position:absolute;left:11px;top:21px;width:563px;height:37px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Переключатель2',
+			style: 'position:absolute;left:11px;top:58px;width:563px;height:65px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьВРЦиклическаяССылка',
@@ -142,6 +155,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:179px;width:610px;height:142px;',
 			height: 142,width: 610,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -178,6 +192,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'удалить из списка вытесняющих',
+			style: 'position:absolute;left:10px;top:24px;width:202px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'добавить в список вытесняющих',
+			style: 'position:absolute;left:317px;top:24px;width:200px;height:15px;',
+		},
 					]
 				},
 			]
@@ -198,6 +222,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:40px;width:610px;height:60px;',
 			height: 60,width: 610,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

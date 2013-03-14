@@ -14,14 +14,14 @@
 			style: 'position:absolute;left:0px;top:325px;width:700px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -111,9 +111,6 @@
 			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
 			items:
 			[
-				{
-					text:'Заполнить по составу плана',
-				},
 				'-',
 			]
 		},

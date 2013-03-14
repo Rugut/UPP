@@ -70,16 +70,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Подменю2',
+					text:'Выбрать',
 				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Действие',
+					text:'',
+				},
+				'-',
+					]
 				},
 			]
 		},

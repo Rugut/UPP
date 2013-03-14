@@ -39,9 +39,15 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
 					text:'Редактировать код',
 				},
-				'-',
+					]
+				},
 			]
 		},
 		{

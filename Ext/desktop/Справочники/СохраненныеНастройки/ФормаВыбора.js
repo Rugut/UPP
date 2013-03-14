@@ -42,23 +42,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:551px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
 				'-',
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Выбрать настройку',
-				},
 				{
 					text:'Сохранить',
 				},
 				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:29px;width:535px;height:27px;',
 			height: 27,width: 535,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

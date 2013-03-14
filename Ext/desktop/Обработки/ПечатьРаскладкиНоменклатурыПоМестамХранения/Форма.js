@@ -27,12 +27,12 @@
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
 			items:
 			[
+				{
+					text:'',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'Печать',
 				},
 			]
 		},
@@ -119,7 +119,7 @@
 			items:
 			[
 				{
-					text:'Обновить настройки печати',
+					text:'',
 				},
 			]
 		},

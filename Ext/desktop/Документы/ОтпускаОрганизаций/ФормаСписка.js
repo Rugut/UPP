@@ -15,59 +15,101 @@
 			items:
 			[
 				{
-					text:'Действие2',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
 				},
 				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие9',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Документы-начисления',
 				},
+					]
+				},
 				{
-					text:'Действие1',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+					]
 				},
 				'-',
 				{
-					text:'Действие3',
+					text:'&Добавить',
 				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				{
 					text:'Печать',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие10',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие6',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Структура подчиненности документа',
 				},
 			]
 		},
@@ -111,6 +153,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:984px;height:19px;',
 			height: 19,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

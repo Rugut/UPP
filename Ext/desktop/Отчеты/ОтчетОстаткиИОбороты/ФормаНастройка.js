@@ -71,16 +71,16 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'',
 				},
 				{
-					text:'Снять все',
+					text:'',
 				},
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Установить все',
+					text:'',
 				},
 			]
 		},
@@ -103,6 +103,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:25px;',
 			height: 25,width: 460,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -123,6 +124,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:12px;top:76px;width:433px;height:20px;',
 			height: 20,width: 433,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -280,16 +282,16 @@
 			style: 'position:absolute;left:0px;top:300px;width:488px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

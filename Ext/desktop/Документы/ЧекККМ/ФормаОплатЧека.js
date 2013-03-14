@@ -46,6 +46,16 @@
 			style: 'position:absolute;left:8px;top:33px;width:111px;height:22px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:121px;top:33px;width:20px;height:22px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:390px;top:33px;width:82px;height:22px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Всего',
@@ -85,6 +95,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:59px;width:464px;height:116px;',
 			height: 116,width: 464,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

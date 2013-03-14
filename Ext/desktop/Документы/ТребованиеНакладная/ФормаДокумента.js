@@ -50,34 +50,40 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
 				{
 					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
 					text:'',
 				},
-				'-',
 				'-',
 				{
 					text:'Заполнить и провести',
 				},
+				'-',
 				{
 					text:'Дт/кт',
 				},
-				'-',
+				{
+					text:'Дт/кт',
+				},
 				'-',
 				{
 					text:'Показать/скрыть счета учета',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Движения документа по регистрам',
 				},
 			]
 		},
@@ -138,21 +144,21 @@
 			style: 'position:absolute;left:0px;top:436px;width:652px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Записать',
+					text:'Печать',
 				},
+				'-',
 				{
 					text:'ОК',
 				},
 				'-',
 				{
-					text:'Печать',
+					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -400,29 +406,14 @@
 			items:
 			[
 				{
-					text:'Заполнить по заданию на производство',
+					text:'Поиск по штрихкоду',
 				},
 				'-',
-				{
-					text:'Добавить из поступления',
-				},
+				'-',
 				{
 					text:'Подбор',
 				},
 				'-',
-				{
-					text:'Поиск по штрихкоду',
-				},
-				{
-					text:'Заполнить по потребностям',
-				},
-				'-',
-				{
-					text:'Заполнить по заказу покупателя (переработка)',
-				},
-				{
-					text:'Заполнить по внутреннему заказу',
-				},
 				{
 					text:'Изменить',
 				},
@@ -484,6 +475,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -558,6 +550,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:324px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

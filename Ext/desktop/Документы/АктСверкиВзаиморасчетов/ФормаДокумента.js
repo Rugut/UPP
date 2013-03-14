@@ -21,20 +21,20 @@
 			style: 'position:absolute;left:0px;top:416px;width:657px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'OK',
 				},
 				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -162,7 +162,6 @@
 			style: 'position:absolute;left:4px;top:0px;width:630px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить по данным управленческого учета',
 				},
@@ -281,9 +280,6 @@
 			items:
 			[
 				'-',
-				{
-					text:'Заполнить по данным организации',
-				},
 			]
 		},
 		{
@@ -342,9 +338,6 @@
 			items:
 			[
 				'-',
-				{
-					text:'По умолчанию',
-				},
 			]
 		},
 					]

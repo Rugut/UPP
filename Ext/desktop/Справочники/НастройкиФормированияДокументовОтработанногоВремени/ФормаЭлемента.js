@@ -46,16 +46,16 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -91,6 +91,16 @@
 			hideLabel: true,
 			name: 'ПолеВвода4',
 			style: 'position:absolute;left:99px;top:6px;width:293px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По дням периода',
+			style: 'position:absolute;left:6px;top:103px;width:168px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сводно, в целом за период',
+			style: 'position:absolute;left:6px;top:127px;width:168px;height:19px;',
 		},
 		{
 			xtype: 'label',

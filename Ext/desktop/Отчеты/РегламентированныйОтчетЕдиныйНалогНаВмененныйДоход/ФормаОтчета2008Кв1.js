@@ -14,62 +14,36 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
+				{
+					text:'Заполнить',
+				},
 				'-',
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				{
-					text:'Справка',
-				},
-				{
-					text:'Показать отправки',
-				},
-				{
-					text:'Проверка',
-				},
+				'-',
+				'-',
 				'-',
 				{
 					text:'Настройка...',
 				},
 				'-',
-				'-',
-				'-',
-				{
-					text:'Заполнить',
-				},
 				{
 					text:'Поиск',
 				},
 				'-',
 				{
-					text:'Очистить',
+					text:'Обновить',
 				},
+				'-',
 				{
-					text:'Отправить',
-				},
-				{
-					text:'Подготовить к отправке',
-				},
-				{
-					text:'Проверить в Интернете',
+					text:'Проверка',
 				},
 				'-',
 				{
 					text:'Расширить поле бланка',
 				},
-				{
-					text:'Выгрузить',
-				},
-				'-',
-				'-',
 				'-',
 				{
-					text:'Проверить выгрузку',
+					text:'Справка',
 				},
-				{
-					text:'Обновить',
-				},
-				'-',
 			]
 		},
 		{
@@ -77,18 +51,6 @@
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Записать',
-				},
 			]
 		},
 		{
@@ -253,6 +215,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:47px;',
 			height: 47,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -290,6 +253,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:434px;width:654px;height:24px;',
 			height: 24,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -322,6 +286,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:37px;',
 			height: 37,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -332,6 +297,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:2px;top:0px;width:652px;height:35px;',
 			height: 35,width: 652,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

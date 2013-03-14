@@ -15,23 +15,35 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
 					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
 				},
-				'-',
-				'-',
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
 					text:'',
 				},
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Структура подчиненности документа',
+				'-',
+					]
 				},
 				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 			]
 		},
 		{
@@ -39,28 +51,28 @@
 			style: 'position:absolute;left:0px;top:424px;width:778px;height:25px;',
 			items:
 			[
+				{
+					text:'Проверить в CheckXML',
+				},
+				'-',
+				{
+					text:'Показать файл',
+				},
 				'-',
 				{
 					text:'Записать файл на диск',
 				},
-				'-',
 				'-',
 				{
 					text:'OK',
 				},
 				'-',
 				{
-					text:'Проверить в CheckXML',
+					text:'Записать документ',
 				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'Записать документ',
-				},
-				{
-					text:'Показать файл',
 				},
 			]
 		},
@@ -80,6 +92,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:762px;height:41px;',
 			height: 41,width: 762,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -90,6 +103,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:35px;',
 			height: 35,width: 762,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -108,6 +122,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:762px;height:74px;',
 			height: 74,width: 762,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -194,6 +209,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:148px;width:762px;height:244px;',
 			height: 244,width: 762,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -246,36 +262,36 @@
 			items:
 			[
 				{
-					text:'Действие13',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие11',
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Действие15',
-				},
-				{
-					text:'Действие17',
-				},
-				{
-					text:'Действие14',
-				},
 				{
 					text:'Подбор',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие16',
-				},
-				{
-					text:'Действие10',
 				},
 			]
 		},

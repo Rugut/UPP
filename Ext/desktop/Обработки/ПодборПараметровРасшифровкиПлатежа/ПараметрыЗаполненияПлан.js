@@ -14,14 +14,39 @@
 			style: 'position:absolute;left:0px;top:212px;width:314px;height:25px;',
 			items:
 			[
+				{
+					text:'Выполнить',
+				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'Выполнить',
-				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По фактической задолженности',
+			style: 'position:absolute;left:14px;top:46px;width:214px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По оперативной задолженности (с учетом заказов)',
+			style: 'position:absolute;left:14px;top:67px;width:280px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала ранние задолженности',
+			style: 'position:absolute;left:14px;top:116px;width:184px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала поздние задолженности',
+			style: 'position:absolute;left:14px;top:136px;width:192px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По табличной части документа',
+			style: 'position:absolute;left:14px;top:156px;width:180px;height:15px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -39,26 +64,32 @@
 			style: 'position:absolute;left:0px;top:0px;width:314px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие2',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие',
+					text:'Сохранить значения...',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
 				'-',
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Действие1',
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

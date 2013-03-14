@@ -15,11 +15,11 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'ОК',
 				},
 				'-',
 				{
-					text:'ОК',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -27,6 +27,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:97px;width:384px;height:237px;',
 			height: 237,width: 384,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -234,6 +235,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:165px;width:384px;height:51px;',
 			height: 51,width: 384,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

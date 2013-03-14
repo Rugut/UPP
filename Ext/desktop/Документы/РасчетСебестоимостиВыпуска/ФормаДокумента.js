@@ -14,84 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:363px;height:25px;',
 			items:
 			[
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Провести вне транзакции',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Отмена проведения',
-				},
-				{
-					text:'Отмена проведения',
-				},
-				{
-					text:'Провести',
-				},
-				{
-					text:'Провести',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Записать и закрыть',
-				},
 			]
 		},
 		{
@@ -100,20 +22,20 @@
 			items:
 			[
 				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
-				{
-					text:'OK',
-				},
-				{
-					text:'Печать',
-				},
-				'-',
 			]
 		},
 		{
@@ -243,6 +165,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:83px;width:347px;height:19px;',
 			height: 19,width: 347,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -255,6 +178,16 @@
 			text: 'Отразить в:',
 			style: 'position:absolute;left:0px;top:0px;width:94px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:99px;top:0px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'бух. и нал. учете',
+			style: 'position:absolute;left:168px;top:0px;width:157px;height:19px;',
+		},
 					]
 				},
 				{
@@ -266,6 +199,26 @@
 			name: 'НадписьОтраженияВУчете',
 			text: 'Отразить в:',
 			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:82px;top:0px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:151px;top:0px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:220px;top:0px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'МСФО',
+			style: 'position:absolute;left:289px;top:0px;width:57px;height:19px;',
 		},
 					]
 				},

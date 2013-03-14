@@ -32,50 +32,6 @@
 			style: 'position:absolute;left:0px;top:425px;width:782px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
-				{
-					text:'Чек возврата',
-				},
-				{
-					text:'Заполнить из терминала сбора данных',
-				},
-				'-',
-				{
-					text:'Z отчет',
-				},
-				{
-					text:'Отчет о смене без гашения',
-				},
-				{
-					text:'Авторизация',
-				},
-				'-',
-				{
-					text:'Аннулирование чека',
-				},
-				{
-					text:'&Товарный чек',
-				},
-				{
-					text:'&Выход из программы',
-				},
-				'-',
-				'-',
-				{
-					text:'Внесение денег',
-				},
-				{
-					text:'Назначить скидку',
-				},
-				'-',
-				{
-					text:'Изъятие денег',
-				},
-				{
-					text:'Закрытие чека',
-				},
 			]
 		},
 		{
@@ -94,6 +50,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:5px;width:766px;height:336px;',
 			height: 336,width: 766,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

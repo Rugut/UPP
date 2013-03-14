@@ -38,10 +38,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:464px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выбрать',
 				},
+				'-',
 			]
 		},
 	]

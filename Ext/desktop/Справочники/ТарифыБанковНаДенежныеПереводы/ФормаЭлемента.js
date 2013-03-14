@@ -74,9 +74,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Редактировать код',
+				},
+					]
 				},
 			]
 		},
@@ -86,16 +92,16 @@
 			items:
 			[
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'OK',
-				},
-				'-',
 			]
 		},
 	]

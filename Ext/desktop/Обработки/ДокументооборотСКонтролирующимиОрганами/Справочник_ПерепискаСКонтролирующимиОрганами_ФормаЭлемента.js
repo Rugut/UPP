@@ -14,24 +14,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Отправить',
 				},
 				'-',
 				{
-					text:'Действие1',
-				},
-				{
 					text:'Ответить',
 				},
-				{
-					text:'Действие3',
-				},
+				'-',
 				{
 					text:'Скопировать',
 				},
+				{
+					text:'Перечитать',
+				},
 				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -39,16 +39,16 @@
 			style: 'position:absolute;left:0px;top:518px;width:654px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'OK',
 				},
 			]
 		},
@@ -79,39 +79,45 @@
 			style: 'position:absolute;left:6px;top:28px;width:626px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
 				{
-					text:'Действие7',
+					text:'&Добавить',
 				},
 				{
-					text:'Выгрузить',
-				},
-				{
-					text:'Действие8',
+					text:'Удалить',
 				},
 				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие6',
-				},
 				{
 					text:'Открыть',
 				},
 				{
-					text:'Действие',
+					text:'Выгрузить',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
 					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
 				},
 				{
-					text:'Действие5',
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
 				},
 			]
 		},
@@ -139,6 +145,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:626px;height:22px;',
 			height: 22,width: 626,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -154,6 +161,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:77px;width:638px;height:80px;',
 			height: 80,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -204,6 +212,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:638px;height:44px;',
 			height: 44,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -214,6 +223,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:638px;height:36px;',
 			height: 36,width: 638,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -170,10 +170,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
 			items:
 			[
+				'-',
 				{
 					text:'Файлы',
 				},
-				'-',
 			]
 		},
 		{
@@ -181,18 +181,28 @@
 			style: 'position:absolute;left:0px;top:490px;width:460px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'сотрудника',
+			style: 'position:absolute;left:145px;top:181px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'родственника',
+			style: 'position:absolute;left:235px;top:181px;width:217px;height:19px;',
 		},
 		{
 			xtype: 'label',

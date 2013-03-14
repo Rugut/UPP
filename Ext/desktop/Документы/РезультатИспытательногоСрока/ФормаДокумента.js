@@ -38,18 +38,30 @@
 			style: 'position:absolute;left:0px;top:0px;width:699px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Редактировать номер',
 				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
 				{
 					text:'',
 				},
@@ -69,16 +81,16 @@
 			style: 'position:absolute;left:0px;top:287px;width:699px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -119,9 +131,25 @@
 			style: 'position:absolute;left:356px;top:104px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Прошел испытательный срок',
+			style: 'position:absolute;left:8px;top:108px;width:192px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не прошел испытательный срок',
+			style: 'position:absolute;left:8px;top:132px;width:192px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Испытательный срок продлен',
+			style: 'position:absolute;left:8px;top:156px;width:192px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:260px;top:132px;width:431px;height:19px;',
 			height: 19,width: 431,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

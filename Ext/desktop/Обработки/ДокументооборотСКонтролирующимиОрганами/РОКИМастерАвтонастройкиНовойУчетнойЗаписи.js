@@ -17,12 +17,12 @@
 				{
 					text:'<  Назад',
 				},
+				{
+					text:'Далее  >',
+				},
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'Далее  >',
 				},
 			]
 		},
@@ -30,6 +30,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:375px;',
 			height: 375,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -40,6 +41,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			height: 64,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -60,6 +62,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -94,6 +97,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			height: 64,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -114,6 +118,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -134,15 +139,26 @@
 			]
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:13px;top:119px;width:93px;height:15px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:28px;top:141px;width:560px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Параметры:',
+			style: 'position:absolute;left:13px;top:169px;width:93px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:29px;top:192px;width:372px;height:20px;',
 			height: 20,width: 372,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -187,6 +203,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			height: 64,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -207,6 +224,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -282,6 +300,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			height: 64,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -302,6 +321,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -354,6 +374,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			height: 64,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -365,6 +386,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -393,6 +415,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			height: 64,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -413,6 +436,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

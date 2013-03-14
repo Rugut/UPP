@@ -17,16 +17,17 @@
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
 					text:'Справка',
 				},
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:28px;width:511px;height:256px;',
 			height: 256,width: 511,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

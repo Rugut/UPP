@@ -17,20 +17,20 @@
 				{
 					text:'Справка',
 				},
-				{
-					text:'Сохранить значения',
-				},
-				{
-					text:'Восстановить значения',
-				},
-				{
-					text:'Настройки',
-				},
 				'-',
-				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
 				'-',
 				{
 					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Настройки',
 				},
 			]
 		},
@@ -99,26 +99,20 @@
 			style: 'position:absolute;left:6px;top:6px;width:273px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Очистить отборы',
-				},
-				{
-					text:'Снять для правил',
-				},
-				{
-					text:'Очистить узлы обмена',
-				},
-				{
-					text:'Установить текущий узел обмена у всех',
-				},
 				{
 					text:'Установить для правил',
 				},
 				{
+					text:'Снять для правил',
+				},
+				'-',
+				{
 					text:'Загрузить правила',
 				},
 				'-',
+				{
+					text:'Очистить отборы',
+				},
 				'-',
 			]
 		},
@@ -224,6 +218,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:55px;width:604px;height:92px;',
 			height: 92,width: 604,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -281,6 +276,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:604px;height:19px;',
 			height: 19,width: 604,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -360,6 +356,16 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка в файл обмена',
+			style: 'position:absolute;left:6px;top:30px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Подключение и выгрузка данных в ИБ приемник',
+			style: 'position:absolute;left:167px;top:30px;width:272px;height:19px;',
 		},
 		{
 			xtype: 'label',

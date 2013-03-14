@@ -95,6 +95,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:627px;height:195px;',
 			height: 195,width: 627,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -389,33 +390,7 @@
 			items:
 			[
 				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				'-',
-				{
 					text:'Заполнить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Закончить редактирование',
 				},
 			]
 		},
@@ -568,6 +543,16 @@
 			style: 'position:absolute;left:186px;top:6px;width:40px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:420px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:525px;top:6px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРедактировать',
 			text: 'Редактировать:',
@@ -684,38 +669,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'Клиент-Банк: Создать контрагента',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'КУД и Р...',
-				},
-				'-',
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Показать/скрыть счета учета',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
 			]
 		},
 		{
@@ -723,21 +676,21 @@
 			style: 'position:absolute;left:0px;top:456px;width:657px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
 				{
 					text:'Печать',
 				},
-				{
-					text:'Записать',
-				},
+				'-',
 				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -750,6 +703,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
 			height: 19,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

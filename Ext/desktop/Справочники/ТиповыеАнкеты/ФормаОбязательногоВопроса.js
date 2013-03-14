@@ -14,18 +14,33 @@
 			style: 'position:absolute;left:0px;top:278px;width:294px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не обязателен к заполнению',
+			style: 'position:absolute;left:8px;top:28px;width:168px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Всегда обязателен к заполнению',
+			style: 'position:absolute;left:8px;top:47px;width:189px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Обязателен к заполнению при условии...',
+			style: 'position:absolute;left:8px;top:66px;width:229px;height:15px;',
 		},
 		{
 			xtype: 'label',
@@ -68,6 +83,11 @@
 					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не заполнять при условии...',
+			style: 'position:absolute;left:8px;top:86px;width:229px;height:15px;',
 		},
 		{
 			xtype: 'textfield',

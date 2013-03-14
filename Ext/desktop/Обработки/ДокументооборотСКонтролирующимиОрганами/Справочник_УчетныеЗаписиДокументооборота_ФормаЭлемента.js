@@ -14,24 +14,30 @@
 			style: 'position:absolute;left:0px;top:0px;width:908px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Расширенные настройки',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Серверы документооборота',
 				},
 				{
+					text:'Налоговые органы',
+				},
+				{
 					text:'Органы ПФР',
 				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Расширенные настройки',
+				},
+				'-',
 				{
 					text:'Проверить',
 				},
-				{
-					text:'Налоговые органы',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -39,7 +45,6 @@
 			style: 'position:absolute;left:0px;top:479px;width:908px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
@@ -47,6 +52,7 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -73,6 +79,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:200px;width:646px;height:271px;',
 			height: 271,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -83,6 +90,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:49px;width:646px;height:27px;',
 			height: 27,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -109,6 +117,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:80px;width:646px;height:191px;',
 			height: 191,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -192,6 +201,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:172px;width:646px;height:19px;',
 			height: 19,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -218,6 +228,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:145px;width:646px;height:27px;',
 			height: 27,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -248,6 +259,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:646px;height:49px;',
 			height: 49,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -284,6 +296,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:661px;top:33px;width:239px;height:438px;',
 			height: 438,width: 239,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -314,6 +327,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:111px;width:646px;height:24px;',
 			height: 24,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -352,6 +366,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:136px;width:646px;height:64px;',
 			height: 64,width: 646,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -380,6 +395,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:147px;top:2px;width:499px;height:30px;',
 			height: 30,width: 499,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

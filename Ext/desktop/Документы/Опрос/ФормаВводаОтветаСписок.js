@@ -17,11 +17,16 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
-				'-',
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Переключатель',
+			style: 'position:absolute;left:8px;top:8px;width:376px;height:19px;',
 		},
 		{
 			xtype: 'label',

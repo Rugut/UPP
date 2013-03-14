@@ -15,21 +15,21 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'Изменить настройку',
 				},
 				{
 					text:'Назад',
 				},
 				{
-					text:'Справка',
-				},
-				'-',
-				{
 					text:'Далее',
 				},
 				'-',
 				{
-					text:'Изменить настройку',
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -37,6 +37,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:1px;width:498px;height:416px;',
 			height: 416,width: 498,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -49,6 +50,16 @@
 			text: 'Выберите вариант заполнения регистров, необходимых для использования расширенной аналитики учета затрат.
 После этого нажмите кнопку "Далее".',
 			style: 'position:absolute;left:6px;top:7px;width:487px;height:43px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Полный',
+			style: 'position:absolute;left:6px;top:70px;width:117px;height:34px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выборочный',
+			style: 'position:absolute;left:6px;top:118px;width:117px;height:34px;',
 		},
 		{
 			xtype: 'label',
@@ -127,6 +138,9 @@
 			items:
 			[
 				{
+					text:'Установить флажки',
+				},
+				{
 					text:'Снять флажки',
 				},
 				'-',
@@ -136,9 +150,6 @@
 				'-',
 				{
 					text:'Обновить статусы',
-				},
-				{
-					text:'Установить флажки',
 				},
 			]
 		},
@@ -172,18 +183,18 @@
 			items:
 			[
 				{
+					text:'Установить флажки',
+				},
+				{
 					text:'Снять флажки',
 				},
 				'-',
-				'-',
-				{
-					text:'Отбор по разделу учета',
-				},
 				{
 					text:'Установить пометку удаления',
 				},
+				'-',
 				{
-					text:'Установить флажки',
+					text:'Отбор по разделу учета',
 				},
 			]
 		},
@@ -220,6 +231,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:53px;width:488px;height:89px;',
 			height: 89,width: 488,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -257,6 +269,21 @@
 					title:'Режим использования расширенной аналитики',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Регламентированный учет',
+			style: 'position:absolute;left:24px;top:26px;width:468px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Регламентированный учет с дополнительной аналитикой',
+			style: 'position:absolute;left:24px;top:89px;width:468px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Управленческий и регламентированный учет',
+			style: 'position:absolute;left:24px;top:150px;width:468px;height:15px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись27',

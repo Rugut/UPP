@@ -46,9 +46,6 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
 				},
 				'-',
@@ -56,6 +53,9 @@
 					text:'Записать',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -79,6 +79,16 @@
 			name: 'НадписьОбрабатыватьДокументы',
 			text: 'Допроводить документы:',
 			style: 'position:absolute;left:6px;top:8px;width:185px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'только требующие допроведения',
+			style: 'position:absolute;left:20px;top:32px;width:194px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'все',
+			style: 'position:absolute;left:20px;top:55px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'label',

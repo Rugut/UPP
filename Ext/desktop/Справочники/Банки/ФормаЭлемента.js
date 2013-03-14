@@ -105,14 +105,14 @@
 			style: 'position:absolute;left:0px;top:194px;width:362px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
-				{
-					text:'OK',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},

@@ -14,9 +14,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				'-',
 				{
 					text:'Выполнить расчет',
+				},
+					]
 				},
 			]
 		},
@@ -26,16 +32,16 @@
 			items:
 			[
 				{
-					text:'Записать',
-				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -303,10 +309,30 @@
 			style: 'position:absolute;left:6px;top:30px;width:121px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'упр. учета',
+			style: 'position:absolute;left:133px;top:30px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'регл. учета',
+			style: 'position:absolute;left:267px;top:30px;width:106px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Рассчитывать цены:',
 			style: 'position:absolute;left:6px;top:181px;width:121px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по поступлению',
+			style: 'position:absolute;left:133px;top:181px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по списанию',
+			style: 'position:absolute;left:267px;top:181px;width:106px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -330,6 +356,16 @@
 			hideLabel: true,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:133px;top:206px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в новый документ',
+			style: 'position:absolute;left:133px;top:234px;width:115px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в существующий',
+			style: 'position:absolute;left:267px;top:234px;width:106px;height:15px;',
 		},
 					]
 				},

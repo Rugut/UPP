@@ -62,78 +62,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Открыть категории',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
 			]
 		},
 		{
@@ -142,16 +70,16 @@
 			items:
 			[
 				{
-					text:'Записать',
-				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -170,6 +98,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:110px;width:654px;height:340px;',
 			height: 340,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -210,6 +139,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -254,6 +184,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:223px;width:654px;height:75px;',
 			height: 75,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -276,6 +207,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:15px;width:414px;height:25px;',
 			height: 25,width: 414,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -390,6 +322,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -470,6 +403,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -622,6 +556,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -720,6 +655,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -806,6 +742,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1018,6 +955,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1176,6 +1114,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

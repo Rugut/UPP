@@ -50,6 +50,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:561px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
 			]
 		},
 		{
@@ -57,16 +63,16 @@
 			style: 'position:absolute;left:0px;top:292px;width:561px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'OK',
 				},
 				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

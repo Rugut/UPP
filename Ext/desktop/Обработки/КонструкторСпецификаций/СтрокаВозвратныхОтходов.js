@@ -21,10 +21,10 @@
 			style: 'position:absolute;left:0px;top:300px;width:406px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

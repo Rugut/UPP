@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:95px;width:584px;height:25px;',
 			items:
 			[
+				{
+					text:'Сформировать',
+				},
 				'-',
 				{
 					text:'Отмена',
-				},
-				{
-					text:'Сформировать',
 				},
 			]
 		},

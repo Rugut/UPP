@@ -42,14 +42,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Показать цикл обмена, связанный с документом',
 				},
-				{
-					text:'Действие11',
+					]
 				},
-				'-',
 			]
 		},
 	]

@@ -67,63 +67,94 @@
 			items:
 			[
 				{
-					text:'Действие8',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+					]
 				},
 				'-',
 				{
-					text:'Действие7',
+					text:'&Добавить',
 				},
 				'-',
-				{
-					text:'Действие9',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие',
-				},
 				{
 					text:'',
 				},
 				{
-					text:'Действие6',
+					text:'Изменить',
 				},
 				{
-					text:'Действие4',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Действие10',
+					text:'Установить пометку удаления',
 				},
 				'-',
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Действие1',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Движения документа по регистрам',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
 				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
 				{
 					text:'Лицевые счета сотрудников организации',
 				},
 				{
-					text:'Действие5',
+					text:'',
 				},
-				'-',
-				'-',
+					]
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:984px;height:19px;',
 			height: 19,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

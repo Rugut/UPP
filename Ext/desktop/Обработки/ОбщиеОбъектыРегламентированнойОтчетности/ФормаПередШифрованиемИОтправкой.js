@@ -14,16 +14,16 @@
 			style: 'position:absolute;left:0px;top:91px;width:378px;height:25px;',
 			items:
 			[
+				{
+					text:'Продолжить',
+				},
 				'-',
 				{
 					text:'Отмена',
 				},
 				'-',
 				{
-					text:'Продолжить',
-				},
-				{
-					text:'Действие',
+					text:'Справка',
 				},
 			]
 		},
@@ -31,6 +31,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:362px;height:74px;',
 			height: 74,width: 362,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

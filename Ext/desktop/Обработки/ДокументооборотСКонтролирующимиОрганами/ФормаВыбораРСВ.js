@@ -15,15 +15,15 @@
 			items:
 			[
 				{
+					text:'Удалить привязку',
+				},
+				'-',
+				{
 					text:'Выбрать',
 				},
 				'-',
 				{
 					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Удалить привязку',
 				},
 			]
 		},
@@ -31,6 +31,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:572px;height:369px;',
 			height: 369,width: 572,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

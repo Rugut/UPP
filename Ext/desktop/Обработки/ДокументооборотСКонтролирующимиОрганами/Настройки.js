@@ -15,13 +15,13 @@
 			items:
 			[
 				{
+					text:'ОК',
+				},
+				'-',
+				{
 					text:'Закрыть',
 				},
 				'-',
-				'-',
-				{
-					text:'ОК',
-				},
 				{
 					text:'Справка',
 				},
@@ -42,6 +42,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:252px;width:382px;height:124px;',
 			height: 124,width: 382,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -57,6 +58,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:61px;top:71px;width:258px;height:45px;',
 			height: 45,width: 258,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -105,12 +107,23 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:10px;width:382px;height:162px;',
 			height: 162,width: 382,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать встроенный модуль документооборота',
+			style: 'position:absolute;left:8px;top:45px;width:296px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать внешний модуль:',
+			style: 'position:absolute;left:8px;top:69px;width:182px;height:16px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

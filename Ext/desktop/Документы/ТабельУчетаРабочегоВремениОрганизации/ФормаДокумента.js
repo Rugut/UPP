@@ -14,85 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
 			items:
 			[
-				{
-					text:'Действие7',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Графики работы по видам времени',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -100,23 +21,13 @@
 			style: 'position:absolute;left:0px;top:525px;width:726px;height:25px;',
 			items:
 			[
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				'-',
-				{
-					text:'Записать',
-				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:502px;height:482px;',
 			height: 482,width: 502,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -181,6 +92,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:210px;width:502px;height:245px;',
 			height: 245,width: 502,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -340,39 +252,32 @@
 			style: 'position:absolute;left:0px;top:0px;width:502px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие5',
-				},
-				'-',
 				{
 					text:'Подбор',
 				},
+				'-',
+				'-',
 				{
-					text:'Добавить',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'По всем сотрудникам',
+					text:'Удалить',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
-				'-',
 				{
-					text:'По списку сотрудников',
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -480,30 +385,12 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Добавить',
-				},
-				'-',
-				{
 					text:'По всем сотрудникам',
 				},
 				'-',
 				{
-					text:'Подбор',
-				},
-				{
-					text:'Действие',
-				},
-				{
 					text:'По списку сотрудников',
 				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -530,6 +417,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:60px;width:502px;height:128px;',
 			height: 128,width: 502,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -541,6 +429,31 @@
 			hideLabel: true,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:46px;top:8px;width:183px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По дням периода',
+			style: 'position:absolute;left:255px;top:35px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сводно, в целом за период',
+			style: 'position:absolute;left:255px;top:56px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Первая половина месяца (1-15 мая)',
+			style: 'position:absolute;left:8px;top:56px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Вторая половина месяца (16-31 мая)',
+			style: 'position:absolute;left:8px;top:77px;width:221px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'с:',
+			style: 'position:absolute;left:8px;top:98px;width:29px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -560,6 +473,11 @@
 			text: 'по:',
 			style: 'position:absolute;left:130px;top:98px;width:15px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Весь месяц (Май 2007 г)',
+			style: 'position:absolute;left:8px;top:35px;width:221px;height:19px;',
+		},
 					]
 				},
 			]
@@ -572,6 +490,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:516px;top:33px;width:202px;height:482px;',
 			height: 482,width: 202,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -594,7 +513,7 @@
 			items:
 			[
 				{
-					text:'Переключение справки формы',
+					text:'',
 				},
 			]
 		},

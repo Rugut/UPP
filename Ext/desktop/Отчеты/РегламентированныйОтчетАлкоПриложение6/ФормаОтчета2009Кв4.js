@@ -15,19 +15,13 @@
 			items:
 			[
 				{
-					text:'Очистить',
+					text:'Заполнить',
 				},
+				'-',
+				'-',
+				'-',
 				{
 					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Проверить выгрузку',
-				},
-				'-',
-				'-',
-				{
-					text:'Расширить поле бланка',
 				},
 				'-',
 				{
@@ -39,14 +33,11 @@
 				},
 				'-',
 				{
-					text:'Заполнить',
-				},
-				{
-					text:'Справка',
+					text:'Расширить поле бланка',
 				},
 				'-',
 				{
-					text:'Выгрузить',
+					text:'Справка',
 				},
 			]
 		},
@@ -55,18 +46,6 @@
 			style: 'position:absolute;left:0px;top:424px;width:800px;height:25px;',
 			items:
 			[
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'OK',
-				},
 			]
 		},
 		{
@@ -113,6 +92,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:239px;width:770px;height:21px;',
 			height: 21,width: 770,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -233,6 +213,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:784px;height:47px;',
 			height: 47,width: 784,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -269,6 +250,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:392px;width:784px;height:24px;',
 			height: 24,width: 784,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

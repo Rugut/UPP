@@ -74,52 +74,15 @@
 			style: 'position:absolute;left:8px;top:262px;width:984px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие4',
+					text:'Все адреса',
 				},
 				{
 					text:'Изменившиеся адреса',
 				},
+				'-',
 				{
 					text:'Суммы взносов',
-				},
-				{
-					text:'Открыть данные о стаже',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Все адреса',
 				},
 			]
 		},
@@ -204,81 +167,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие4',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
 			]
 		},
 		{
@@ -286,29 +174,29 @@
 			style: 'position:absolute;left:0px;top:495px;width:1000px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
-					text:'Закрыть',
-				},
-				{
-					text:'OK',
+					text:'Проверить в CheckXML',
 				},
 				'-',
 				{
 					text:'Показать файл',
 				},
-				{
-					text:'Проверить в CheckXML',
-				},
+				'-',
 				{
 					text:'Записать файл на диск',
+				},
+				'-',
+				{
+					text:'OK',
 				},
 				'-',
 				{
 					text:'Записать',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -356,6 +244,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:107px;width:984px;height:69px;',
 			height: 69,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -393,10 +282,35 @@
 			style: 'position:absolute;left:0px;top:0px;width:93px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-6-1',
+			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-6-2',
+			style: 'position:absolute;left:182px;top:0px;width:109px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:182px;top:25px;width:109px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьТипСведений1',
 			text: 'Тип сведений:',
 			style: 'position:absolute;left:0px;top:25px;width:93px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющие',
+			style: 'position:absolute;left:299px;top:25px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -432,6 +346,41 @@
 			hideLabel: true,
 			name: 'ТерриториальныеУсловия',
 			style: 'position:absolute;left:415px;top:0px;width:66px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Назначение пенсии',
+			style: 'position:absolute;left:182px;top:25px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-4-1',
+			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-4-2',
+			style: 'position:absolute;left:182px;top:0px;width:59px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отсутствует',
+			style: 'position:absolute;left:94px;top:50px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующая',
+			style: 'position:absolute;left:182px;top:50px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющая',
+			style: 'position:absolute;left:308px;top:50px;width:87px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -471,6 +420,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:176px;width:984px;height:65px;',
 			height: 65,width: 984,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

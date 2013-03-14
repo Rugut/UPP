@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Выполнить',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -118,6 +118,16 @@
 			name: 'НадписьВидыЦикловОбмена',
 			text: 'Типы циклов обмена:',
 			style: 'position:absolute;left:8px;top:57px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Все',
+			style: 'position:absolute;left:142px;top:57px;width:41px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заданный:',
+			style: 'position:absolute;left:214px;top:57px;width:75px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

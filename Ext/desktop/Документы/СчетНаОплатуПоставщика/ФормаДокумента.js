@@ -50,17 +50,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'',
-				},
-				'-',
 				{
 					text:'Цены и валюта...',
 				},
 				'-',
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				{
+					text:'',
 				},
 				{
 					text:'',
@@ -170,17 +176,17 @@
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
 			items:
 			[
+				{
+					text:'Поиск по штрихкоду',
+				},
 				'-',
 				{
 					text:'Подбор',
 				},
-				{
-					text:'Поиск по штрихкоду',
-				},
+				'-',
 				{
 					text:'Изменить',
 				},
-				'-',
 			]
 		},
 		{
@@ -331,10 +337,10 @@
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Подбор',
 				},
-				'-',
 			]
 		},
 					]
@@ -603,6 +609,7 @@
 				{
 					text:'Печать',
 				},
+				'-',
 				{
 					text:'ОК',
 				},
@@ -610,11 +617,10 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
-				'-',
 			]
 		},
 		{

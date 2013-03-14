@@ -50,28 +50,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
 			items:
 			[
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
 			]
 		},
 		{
@@ -119,25 +97,25 @@
 					text:'Печать',
 				},
 				'-',
-				'-',
-				{
-					text:'Записать',
-				},
 				{
 					text:'Оплатить картой',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
-					text:'ОК',
-				},
-				{
 					text:'Чек',
 				},
 				'-',
+				{
+					text:'ОК',
+				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -175,6 +153,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:31px;width:628px;height:220px;',
 			height: 220,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -197,6 +176,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:23px;width:628px;height:197px;',
 			height: 197,width: 628,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -284,33 +264,7 @@
 			items:
 			[
 				{
-					text:'Заполнить платежи',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
 					text:'По задолженностям',
-				},
-				'-',
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				'-',
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'&Добавить',
 				},
 			]
 		},
@@ -425,6 +379,16 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:408px;top:0px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:518px;top:0px;width:64px;height:19px;',
 		},
 		{
 			xtype: 'label',

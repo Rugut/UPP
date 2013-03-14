@@ -14,6 +14,12 @@
 			style: 'position:absolute;left:0px;top:0px;width:330px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+					]
+				},
 				'-',
 				{
 					text:'Классификатор',
@@ -28,10 +34,10 @@
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
-				'-',
 				'-',
 				{
 					text:'Закрыть',
@@ -42,6 +48,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:314px;height:228px;',
 			height: 228,width: 314,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -206,6 +213,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:314px;height:92px;',
 			height: 92,width: 314,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -235,6 +243,16 @@
 			hideLabel: true,
 			name: 'Объект',
 			style: 'position:absolute;left:88px;top:0px;width:226px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Российский адрес',
+			style: 'position:absolute;left:0px;top:54px;width:116px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Адрес за пределами РФ',
+			style: 'position:absolute;left:0px;top:77px;width:147px;height:15px;',
 		},
 					]
 				},
@@ -274,6 +292,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:384px;width:314px;height:20px;',
 			height: 20,width: 314,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

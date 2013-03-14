@@ -15,13 +15,23 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Полномочия по списку',
+			style: 'position:absolute;left:136px;top:35px;width:133px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Полные полномочия',
+			style: 'position:absolute;left:8px;top:35px;width:122px;height:15px;',
 		},
 		{
 			xtype: 'label',

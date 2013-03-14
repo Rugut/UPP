@@ -39,19 +39,37 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
 					text:'',
-				},
+					menu: [
+				'-',
 				{
 					text:'Редактировать номер',
 				},
-				'-',
-				'-',
+					]
+				},
 				{
-					text:'Структура подчиненности документа',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
 				},
 				'-',
 				{
-					text:'Движения документа по регистрам',
+					text:'',
 				},
 				{
 					text:'',
@@ -115,17 +133,12 @@
 			style: 'position:absolute;left:8px;top:73px;width:431px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
+				{
+					text:'Заполнить по графику отпусков',
+				},
 				'-',
 				{
 					text:'Списком работников',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Заполнить по графику отпусков',
 				},
 			]
 		},
@@ -134,16 +147,16 @@
 			style: 'position:absolute;left:0px;top:273px;width:447px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

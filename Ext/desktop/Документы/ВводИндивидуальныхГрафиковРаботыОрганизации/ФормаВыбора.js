@@ -58,20 +58,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
+				{
+					text:'Выбрать',
+				},
 				'-',
 				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Печать',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Действия формы выбрать',
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Печать',
 				},
 			]
 		},

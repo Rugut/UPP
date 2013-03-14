@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Отмена',
-				},
-				{
 					text:'Повторить',
 				},
 				'-',
+				{
+					text:'Отмена',
+				},
 			]
 		},
 		{
@@ -48,6 +48,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:64px;top:299px;width:263px;height:47px;',
 			height: 47,width: 263,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

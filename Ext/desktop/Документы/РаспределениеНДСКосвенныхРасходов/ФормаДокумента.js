@@ -14,24 +14,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:715px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
 				{
 					text:'Заполнить документ',
 				},
-				'-',
 			]
 		},
 		{
@@ -39,20 +24,20 @@
 			style: 'position:absolute;left:0px;top:445px;width:715px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'Печать',
 				},
+				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -180,12 +165,8 @@
 			items:
 			[
 				{
-					text:'Распределить',
-				},
-				{
 					text:'Заполнить',
 				},
-				'-',
 			]
 		},
 		{
@@ -443,6 +424,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:128px;width:333px;height:91px;',
 			height: 91,width: 333,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -514,6 +496,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:359px;top:128px;width:332px;height:91px;',
 			height: 91,width: 332,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

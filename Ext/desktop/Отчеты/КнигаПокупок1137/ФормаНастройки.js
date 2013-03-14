@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:194px;width:575px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
@@ -43,6 +43,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'Скрыть колонки по ставке 20%',
 			style: 'position:absolute;left:8px;top:6px;width:178px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Формировать отчет в соответствии с правилами ведения книги покупок',
+			style: 'position:absolute;left:8px;top:59px;width:405px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать дополнительные настройки',
+			style: 'position:absolute;left:8px;top:83px;width:405px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

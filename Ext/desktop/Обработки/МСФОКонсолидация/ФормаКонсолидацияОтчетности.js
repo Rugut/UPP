@@ -14,23 +14,24 @@
 			style: 'position:absolute;left:0px;top:430px;width:778px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Далее >>',
-				},
 				{
 					text:'<< Назад',
 				},
 				'-',
+				{
+					text:'Далее >>',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:762px;height:414px;',
 			height: 414,width: 762,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

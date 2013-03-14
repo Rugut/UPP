@@ -33,43 +33,49 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
 					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Скопировать',
-				},
-				'-',
-				'-',
-				{
-					text:'Заполнить',
+					text:'Перечитать',
 				},
 				{
 					text:'Скопировать',
 				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
 				{
 					text:'Закрыть',
 				},
+					]
+				},
+				'-',
 				{
 					text:'Найти в списке',
+				},
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Заполнить',
 				},
 				'-',
 				{
 					text:'Справка',
 				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Записать',
-				},
-				'-',
 			]
 		},
 		{
@@ -77,16 +83,16 @@
 			style: 'position:absolute;left:0px;top:357px;width:480px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -94,6 +100,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:218px;top:60px;width:198px;height:19px;',
 			height: 19,width: 198,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -138,6 +145,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:14px;top:210px;width:458px;height:115px;',
 			height: 115,width: 458,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

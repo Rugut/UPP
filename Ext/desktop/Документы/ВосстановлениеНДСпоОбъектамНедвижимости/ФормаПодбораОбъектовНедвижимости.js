@@ -68,20 +68,20 @@
 			style: 'position:absolute;left:8px;top:55px;width:522px;height:24px;',
 			items:
 			[
-				{
-					text:'Заполнить',
-				},
-				'-',
 				'-',
 				{
-					text:'Очистить',
+					text:'Выделить все',
 				},
 				{
 					text:'Снять выделение всех',
 				},
 				'-',
 				{
-					text:'Выделить все',
+					text:'',
+				},
+				'-',
+				{
+					text:'Очистить',
 				},
 			]
 		},

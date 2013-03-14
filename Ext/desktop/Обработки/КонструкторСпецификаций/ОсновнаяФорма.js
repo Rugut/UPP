@@ -107,30 +107,18 @@
 			style: 'position:absolute;left:6px;top:22px;width:374px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Обновить',
-				},
-				{
-					text:'Полуфабрикаты',
-				},
-				{
-					text:'Дерево спецификаций',
-				},
-				{
-					text:'Покупные изделия',
-				},
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Отчет по дереву спецификаций',
+					text:'Вывести список...',
 				},
 				{
 					text:'Настройка списка...',
 				},
+				'-',
 				{
-					text:'Вывести список...',
+					text:'Найти в списке',
+				},
+				{
+					text:'Обновить',
 				},
 			]
 		},
@@ -138,6 +126,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:386px;top:207px;width:370px;height:175px;',
 			height: 175,width: 370,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -210,20 +199,10 @@
 			items:
 			[
 				{
-					text:'Печать спецификации',
-				},
-				{
-					text:'Создать версию',
-				},
-				{
-					text:'Версии спецификации',
+					text:'Установить основную спецификацию на выбранную дату',
 				},
 				{
 					text:'Установить основную спецификацию на рабочую дату',
-				},
-				'-',
-				{
-					text:'Установить основную спецификацию на выбранную дату',
 				},
 			]
 		},
@@ -238,83 +217,107 @@
 			style: 'position:absolute;left:0px;top:0px;width:369px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'&Скопировать',
-				},
-				'-',
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
 				{
 					text:'&Добавить',
 				},
 				{
-					text:'',
+					text:'Новая группа',
 				},
 				{
-					text:'Печать спецификации',
-				},
-				{
-					text:'Уровень вниз',
+					text:'&Скопировать',
 				},
 				{
 					text:'&Изменить',
 				},
 				{
-					text:'Установить пометку удаления',
-				},
-				{
 					text:'&Удалить',
 				},
 				{
-					text:'Обновить',
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Иерархический просмотр',
 				},
 				{
-					text:'Установить основную спецификацию на рабочую дату',
+					text:'Переместить в группу',
 				},
 				{
-					text:'Отбор по значению в текущей колонке',
+					text:'Уровень вверх',
+				},
+				{
+					text:'Уровень вниз',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Уровень вверх',
+					text:'Отбор по значению в текущей колонке',
 				},
 				{
-					text:'Установить основную спецификацию на выбранную дату',
-				},
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
 				{
-					text:'Версии спецификации',
-				},
-				{
-					text:'Вывести список...',
+					text:'(Список отборов)',
 				},
 				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
 				{
 					text:'Отключить отбор',
 				},
 				{
-					text:'',
-				},
+					xtype: 'splitbutton',
+					text:'Сортировка',
+					menu: [
 				{
-					text:'Создать версию',
+					text:'(Поля сортировки)',
 				},
-				{
-					text:'Новая группа',
-				},
-				'-',
-				{
-					text:'Переместить в группу',
+					]
 				},
 				'-',
 				{
-					text:'',
+					text:'Вывести список...',
 				},
 				{
 					text:'Настройка списка...',
 				},
+				'-',
 				{
-					text:'Иерархический просмотр',
+					text:'Обновить',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Версии спецификации',
+				},
+					]
+				},
+				{
+					text:'Создать версию',
+				},
+				'-',
+				{
+					text:'Печать спецификации',
 				},
 			]
 		},
@@ -370,6 +373,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:386px;top:22px;width:370px;height:179px;',
 			height: 179,width: 370,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -517,6 +521,16 @@
 			style: 'position:absolute;left:384px;top:73px;width:372px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Добавлять новую строку спецификации',
+			style: 'position:absolute;left:6px;top:192px;width:378px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выводить меню',
+			style: 'position:absolute;left:6px;top:212px;width:378px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВыводитьДляНоменклатуры',
 			text: 'Выводить в доп. информацию для номенклатуры:',
@@ -573,6 +587,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'Устанавливать спецификацию как основную',
 			style: 'position:absolute;left:6px;top:257px;width:378px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'На количество выходных изделий по спецификации',
+			style: 'position:absolute;left:384px;top:192px;width:372px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'На единицу выходного изделия',
+			style: 'position:absolute;left:384px;top:212px;width:372px;height:15px;',
 		},
 					]
 				},

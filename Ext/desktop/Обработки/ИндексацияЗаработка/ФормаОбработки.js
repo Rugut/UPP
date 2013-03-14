@@ -31,6 +31,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:39px;width:659px;height:342px;',
 			height: 342,width: 659,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -47,6 +48,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:143px;',
 			height: 143,width: 659,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -65,12 +67,52 @@
 			text: 'Выберите действие, которое необходимо выполнить и нажмите кнопку «Далее»',
 			style: 'position:absolute;left:20px;top:6px;width:448px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение должностных окладов',
+			style: 'position:absolute;left:40px;top:28px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение тарифных разрядов (окладов по тарифным сеткам)',
+			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Просмотр истории, отмена последнего повышения',
+			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
+		},
 					]
 				},
 				{
 					title:'Страница2',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение должностных окладов сотрудников доп. категории',
+			style: 'position:absolute;left:40px;top:28px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение тарифных разрядов (окладов по тарифным сеткам)',
+			style: 'position:absolute;left:40px;top:94px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Просмотр истории, отмена последнего повышения',
+			style: 'position:absolute;left:40px;top:116px;width:284px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение окладов сотрудников доп. категории',
+			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение окладов сотрудникам по трудовым договорам',
+			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
+		},
 					]
 				},
 				{
@@ -83,6 +125,26 @@
 			text: 'Выберите действие, которое необходимо выполнить и нажмите кнопку «Далее»',
 			style: 'position:absolute;left:20px;top:6px;width:448px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение должностных окладов муниципальных служащих',
+			style: 'position:absolute;left:40px;top:28px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Просмотр истории, отмена последнего повышения',
+			style: 'position:absolute;left:40px;top:94px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение окладов сотрудникам по трудовым договорам',
+			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение тарифных разрядов (окладов по тарифным сеткам)',
+			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
+		},
 					]
 				},
 			]
@@ -91,6 +153,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:177px;width:653px;height:164px;',
 			height: 164,width: 653,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -149,6 +212,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:115px;',
 			height: 115,width: 659,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -231,6 +295,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:155px;',
 			height: 155,width: 659,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -347,6 +412,26 @@
 			text: 'При расчете новые оклады округлять:',
 			style: 'position:absolute;left:12px;top:199px;width:204px;height:16px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'до рубля',
+			style: 'position:absolute;left:216px;top:199px;width:71px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'не округлять новые оклады',
+			style: 'position:absolute;left:216px;top:262px;width:173px;height:17px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в сторону увеличения',
+			style: 'position:absolute;left:235px;top:218px;width:160px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по правилам математики',
+			style: 'position:absolute;left:235px;top:235px;width:160px;height:15px;',
+		},
 					]
 				},
 				{
@@ -409,13 +494,13 @@
 			items:
 			[
 				{
-					text:'Действие8',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие9',
+					text:'',
 				},
 				{
-					text:'Действие7',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -425,18 +510,18 @@
 			items:
 			[
 				{
-					text:'Действие7',
-				},
-				'-',
-				'-',
-				{
 					text:'Обновить',
 				},
+				'-',
 				{
 					text:'Проверить по штатному расписанию',
 				},
+				'-',
 				{
-					text:'Действие8',
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -488,14 +573,14 @@
 			items:
 			[
 				{
-					text:'Действие7',
-				},
-				{
-					text:'Обновить',
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие8',
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -505,13 +590,13 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие5',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -554,15 +639,15 @@
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
 			items:
 			[
+				{
+					text:'',
+				},
 				'-',
 				{
-					text:'Обновить',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие8',
+					text:'',
 				},
 			]
 		},
@@ -572,13 +657,13 @@
 			items:
 			[
 				{
-					text:'Действие7',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие8',
+					text:'',
 				},
 				{
-					text:'Действие',
+					text:'Вывести список...',
 				},
 			]
 		},
@@ -601,15 +686,15 @@
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
 			items:
 			[
+				{
+					text:'',
+				},
 				'-',
 				{
-					text:'Действие8',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Обновить',
-				},
-				{
-					text:'Действие7',
+					text:'',
 				},
 			]
 		},
@@ -619,13 +704,13 @@
 			items:
 			[
 				{
-					text:'Действие7',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие8',
+					text:'Вывести список...',
 				},
 			]
 		},

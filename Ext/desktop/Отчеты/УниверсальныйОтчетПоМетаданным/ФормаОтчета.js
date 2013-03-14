@@ -17,35 +17,35 @@
 				{
 					text:'Сформировать',
 				},
+				'-',
 				{
-					text:'Справка',
+					text:'Настройки...',
 				},
 				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Открыть в новом окне',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
 				{
 					text:'Заголовок',
 				},
 				'-',
 				{
-					text:'Открыть в новом окне',
+					text:'Загрузить настройки отчета',
 				},
 				{
 					text:'Сохранить настройки отчета',
 				},
 				'-',
 				{
-					text:'Отбор',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Настройки...',
-				},
-				{
-					text:'Печать',
-				},
-				{
-					text:'Загрузить настройки отчета',
+					text:'Справка',
 				},
 				'-',
 			]
@@ -54,6 +54,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:678px;height:103px;',
 			height: 103,width: 678,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -131,6 +132,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:427px;top:2px;width:258px;height:19px;',
 			height: 19,width: 258,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

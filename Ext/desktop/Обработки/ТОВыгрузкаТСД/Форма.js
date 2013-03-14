@@ -15,10 +15,10 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'Выгрузить',
 				},
 				{
-					text:'Выгрузить',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -104,14 +104,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:24px;',
 			items:
 			[
-				{
-					text:'Отбор',
-				},
+				'-',
 				{
 					text:'Заполнить',
 				},
 				'-',
-				'-',
+				{
+					text:'Отбор',
+				},
 				'-',
 			]
 		},
@@ -119,6 +119,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:71px;width:684px;height:107px;',
 			height: 107,width: 684,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -50,9 +50,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				'-',
 				{
 					text:'Редактировать код',
+				},
+					]
 				},
 			]
 		},
@@ -62,15 +68,15 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
 				},
 				'-',
-				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -14,12 +14,12 @@
 			style: 'position:absolute;left:0px;top:368px;width:627px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Действие',
-				},
 				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -66,6 +66,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:597px;height:25px;',
 			height: 25,width: 597,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -169,7 +170,7 @@
 			items:
 			[
 				{
-					text:'Сформировать',
+					text:'',
 				},
 				'-',
 			]
@@ -185,6 +186,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:344px;top:8px;width:259px;height:19px;',
 			height: 19,width: 259,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

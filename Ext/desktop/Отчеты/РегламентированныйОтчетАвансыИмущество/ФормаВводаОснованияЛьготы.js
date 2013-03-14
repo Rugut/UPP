@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:129px;width:349px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},

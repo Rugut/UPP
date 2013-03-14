@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:284px;width:490px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

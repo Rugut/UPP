@@ -21,9 +21,15 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
 					text:'Файлы',
 				},
-				'-',
+					]
+				},
 				'-',
 				{
 					text:'Файлы',
@@ -84,10 +90,10 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -287,6 +293,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:149px;width:485px;height:127px;',
 			height: 127,width: 485,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -315,6 +322,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:41px;width:478px;height:43px;',
 			height: 43,width: 478,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -442,10 +450,10 @@
 			style: 'position:absolute;left:6px;top:30px;width:481px;height:24px;',
 			items:
 			[
-				{
-					text:'Анализ',
-				},
 				'-',
+				{
+					text:'',
+				},
 			]
 		},
 		{
@@ -629,16 +637,16 @@
 			items:
 			[
 				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие',
+					text:'Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 			]
 		},

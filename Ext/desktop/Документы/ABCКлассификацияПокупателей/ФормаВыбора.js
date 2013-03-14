@@ -58,16 +58,22 @@
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'Выбрать',
+				},
 				'-',
 				{
-					text:'Подменю2',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Структура подчиненности документа',
+					text:'',
 				},
-				{
-					text:'Действие',
+				'-',
+					]
 				},
 			]
 		},

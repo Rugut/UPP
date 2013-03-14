@@ -66,17 +66,23 @@
 			style: 'position:absolute;left:0px;top:0px;width:558px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Структура подчиненности документа',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Дт/кт',
+					text:'Структура подчиненности документа',
 				},
 				'-',
+					]
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
 				{
 					text:'Дт/кт',
 				},

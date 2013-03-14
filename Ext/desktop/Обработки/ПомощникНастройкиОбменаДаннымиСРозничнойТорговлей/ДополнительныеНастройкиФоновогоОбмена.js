@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Отмена',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Отмена',
+				},
 			]
 		},
 		{
@@ -40,6 +40,16 @@
 			name: 'НадписьКоличествоОбъектовДляСопоставления',
 			text: 'Количество объектов для сопоставления: ???',
 			style: 'position:absolute;left:8px;top:157px;width:315px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Добавлять фиксированное количество объектов для сопоставление при каждом обмене',
+			style: 'position:absolute;left:8px;top:77px;width:478px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Дополнять пакет обмена до фиксированного числа объектов',
+			style: 'position:absolute;left:8px;top:101px;width:478px;height:19px;',
 		},
 		{
 			xtype: 'label',

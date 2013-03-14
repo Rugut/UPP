@@ -26,7 +26,6 @@
 			style: 'position:absolute;left:8px;top:83px;width:638px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить за период',
 				},
@@ -142,13 +141,19 @@
 			items:
 			[
 				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				'-',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
 				{
 					text:'',
 				},
@@ -162,21 +167,21 @@
 			style: 'position:absolute;left:0px;top:351px;width:654px;height:25px;',
 			items:
 			[
+				{
+					text:'Печать',
+				},
 				'-',
 				{
 					text:'OK',
 				},
-				{
-					text:'Печать',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
-				'-',
 			]
 		},
 		{

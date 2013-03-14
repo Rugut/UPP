@@ -50,7 +50,6 @@
 			style: 'position:absolute;left:8px;top:57px;width:725px;height:24px;',
 			items:
 			[
-				'-',
 				{
 					text:'Заполнить по данным учета',
 				},

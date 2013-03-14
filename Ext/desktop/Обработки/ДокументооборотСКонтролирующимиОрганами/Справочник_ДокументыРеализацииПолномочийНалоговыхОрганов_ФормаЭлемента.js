@@ -45,16 +45,16 @@
 			items:
 			[
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие3',
+					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'Перечитать',
 				},
 				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -117,38 +117,45 @@
 			items:
 			[
 				{
-					text:'',
+					text:'Открыть',
 				},
 				{
 					text:'Выгрузить',
 				},
+				'-',
 				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
 					text:'',
-				},
+					menu: [
 				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Открыть',
+					text:'(Список отборов)',
 				},
 				'-',
-				'-',
 				{
-					text:'Действие8',
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
 				},
 				'-',
+				{
+					text:'Обновить',
+				},
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:794px;height:44px;',
 			height: 44,width: 794,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -159,6 +166,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:794px;height:36px;',
 			height: 36,width: 794,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

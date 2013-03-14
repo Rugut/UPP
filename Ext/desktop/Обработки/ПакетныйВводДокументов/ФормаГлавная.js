@@ -145,6 +145,16 @@
 			style: 'position:absolute;left:113px;top:350px;width:315px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Без просмотра',
+			style: 'position:absolute;left:229px;top:374px;width:101px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'С просмотром',
+			style: 'position:absolute;left:113px;top:374px;width:101px;height:15px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'По значениям по умолчанию из договора',
 			style: 'position:absolute;left:113px;top:175px;width:233px;height:19px;',
@@ -277,25 +287,22 @@
 			items:
 			[
 				{
-					text:'Номенклатура',
-				},
-				{
-					text:'&Удалить',
+					text:'&Добавить',
 				},
 				{
 					text:'&Изменить',
 				},
 				{
-					text:'Заполнить по заказам',
+					text:'&Удалить',
 				},
 				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить колонку',
+					text:'Номенклатура',
 				},
 				{
 					text:'Добавить...',
+				},
+				{
+					text:'Удалить колонку',
 				},
 			]
 		},
@@ -308,16 +315,16 @@
 			style: 'position:absolute;left:0px;top:449px;width:698px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выполнить',
 				},
 				'-',
 				{
-					text:'Справка',
-				},
-				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

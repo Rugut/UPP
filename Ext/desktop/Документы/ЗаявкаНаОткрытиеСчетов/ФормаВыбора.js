@@ -74,22 +74,40 @@
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
 				'-',
 				{
-					text:'Структура подчиненности документа',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Лицевые счета сотрудников организации',
+					text:'',
 				},
 				'-',
 				{
-					text:'',
+					text:'Лицевые счета сотрудников организации',
 				},
 				{
-					text:'Действия формы выбрать',
+					text:'',
+				},
+					]
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
 				},
 			]
 		},

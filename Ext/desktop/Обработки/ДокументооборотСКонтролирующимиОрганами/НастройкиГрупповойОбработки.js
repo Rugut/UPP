@@ -14,14 +14,39 @@
 			style: 'position:absolute;left:0px;top:370px;width:534px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Приступить к обработке',
 				},
+				'-',
 				{
 					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Игнорировать и продолжать групповую обработку',
+			style: 'position:absolute;left:14px;top:171px;width:278px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прерывать текущее действие, но продолжать групповую обработку',
+			style: 'position:absolute;left:14px;top:195px;width:367px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прерывать групповую обработку',
+			style: 'position:absolute;left:14px;top:219px;width:191px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прерывать групповую обработку',
+			style: 'position:absolute;left:14px;top:337px;width:197px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Продолжать групповую обработку',
+			style: 'position:absolute;left:14px;top:314px;width:197px;height:15px;',
 		},
 		{
 			xtype: 'label',

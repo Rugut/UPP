@@ -95,6 +95,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:627px;height:195px;',
 			height: 195,width: 627,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -395,34 +396,8 @@
 			items:
 			[
 				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Закончить редактирование',
-				},
-				{
 					text:'Заполнить',
 				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'Подбор',
-				},
-				'-',
 			]
 		},
 		{
@@ -550,6 +525,16 @@
 			style: 'position:absolute;left:6px;top:55px;width:90px;height:43px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:420px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:525px;top:6px;width:108px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРедактировать',
 			text: 'Редактировать:',
@@ -666,34 +651,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				{
-					text:'КУД и Р...',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Клиент-Банк: Создать контрагента',
-				},
 			]
 		},
 		{
@@ -701,7 +658,6 @@
 			style: 'position:absolute;left:0px;top:452px;width:657px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Печать',
 				},
@@ -709,6 +665,7 @@
 				{
 					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -728,6 +685,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
 			height: 19,width: 304,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

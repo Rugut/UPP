@@ -46,12 +46,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:623px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Доступ к справочнику в целом',
-				},
 				{
 					text:'Доступ к текущему элементу',
+				},
+				{
+					text:'Доступ к справочнику в целом',
 				},
 			]
 		},

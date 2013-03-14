@@ -14,34 +14,40 @@
 			style: 'position:absolute;left:0px;top:0px;width:671px;height:25px;',
 			items:
 			[
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Отбор',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие1',
 				},
 				{
 					text:'Сформировать',
 				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Отбор',
+				},
+				'-',
 				{
 					text:'Настройка...',
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Восстановить значения...',
 				},
 				{
-					text:'Отбор',
+					text:'Сохранить значения...',
 				},
-				'-',
-				'-',
 				{
-					text:'Сформировать',
+					text:'Справка',
 				},
 			]
 		},
@@ -49,6 +55,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:57px;width:657px;height:46px;',
 			height: 46,width: 657,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

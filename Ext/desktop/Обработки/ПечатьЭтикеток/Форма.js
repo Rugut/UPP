@@ -15,41 +15,47 @@
 			items:
 			[
 				{
-					text:'Справка',
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Печатать',
+				},
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Заполнить',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Печатать',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
 				},
 				{
 					text:'Сохранить значения...',
 				},
+				'-',
 				{
-					text:'Отбор',
+					text:'Справка',
 				},
 				{
 					text:'Перезаполнить цены',
 				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Печатать',
-				},
-				{
-					text:'Печатать',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				'-',
-				'-',
 			]
 		},
 		{
@@ -158,6 +164,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:130px;',
 			height: 130,width: 764,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -206,9 +213,29 @@
 			style: 'position:absolute;left:473px;top:37px;width:107px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'заполненные',
+			style: 'position:absolute;left:584px;top:13px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'пустые',
+			style: 'position:absolute;left:675px;top:13px;width:55px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Характеристики:',
 			style: 'position:absolute;left:472px;top:13px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'заполненные',
+			style: 'position:absolute;left:584px;top:37px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'пустые',
+			style: 'position:absolute;left:675px;top:37px;width:57px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -233,6 +260,16 @@
 			hideLabel: true,
 			name: 'Валюта',
 			style: 'position:absolute;left:631px;top:105px;width:126px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В валютах цен',
+			style: 'position:absolute;left:469px;top:105px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Валюта:',
+			style: 'position:absolute;left:570px;top:105px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -27,9 +27,15 @@
 			items:
 			[
 				{
-					text:'Действия формы выбрать',
+					text:'Выбрать',
 				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
 			]
 		},
 	]

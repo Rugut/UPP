@@ -14,54 +14,31 @@
 			style: 'position:absolute;left:0px;top:0px;width:750px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Обновить',
+					text:'Очистить',
 				},
 				'-',
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				{
-					text:'Выгрузить',
-				},
+				'-',
 				'-',
 				{
 					text:'Настройка...',
 				},
 				'-',
 				{
-					text:'Справка',
+					text:'Поиск',
 				},
+				'-',
 				{
-					text:'Подготовить к отправке',
+					text:'Обновить',
 				},
+				'-',
 				{
 					text:'Расширить поле бланка',
 				},
-				{
-					text:'Поиск',
-				},
-				{
-					text:'Очистить',
-				},
 				'-',
 				{
-					text:'Проверить в Интернете',
+					text:'Справка',
 				},
-				{
-					text:'Показать отправки',
-				},
-				{
-					text:'Отправить',
-				},
-				{
-					text:'Проверить выгрузку',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
 			]
 		},
 		{
@@ -69,18 +46,6 @@
 			style: 'position:absolute;left:0px;top:465px;width:750px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				{
-					text:'Записать',
-				},
-				'-',
 			]
 		},
 		{
@@ -545,6 +510,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:734px;height:51px;',
 			height: 51,width: 734,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -587,6 +553,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:435px;width:734px;height:22px;',
 			height: 22,width: 734,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -619,6 +586,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:734px;height:37px;',
 			height: 37,width: 734,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -629,6 +597,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:2px;top:0px;width:732px;height:35px;',
 			height: 35,width: 732,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

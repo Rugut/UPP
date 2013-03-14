@@ -46,7 +46,6 @@
 			style: 'position:absolute;left:0px;top:191px;width:452px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
@@ -54,6 +53,7 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},

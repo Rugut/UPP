@@ -14,27 +14,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
 				{
 					text:'Выгрузить',
 				},
-				'-',
-				{
-					text:'Очистить',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Поиск',
-				},
 				{
 					text:'Проверить выгрузку',
-				},
-				{
-					text:'Обновить',
 				},
 			]
 		},
@@ -43,18 +27,18 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'ОК',
-				},
-				{
 					text:'Закрыть',
 				},
-				'-',
-				'-',
 			]
 		},
 		{

@@ -45,7 +45,6 @@
 			style: 'position:absolute;left:0px;top:383px;width:585px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
@@ -53,6 +52,7 @@
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -62,6 +62,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:79px;width:569px;height:296px;',
 			height: 296,width: 569,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

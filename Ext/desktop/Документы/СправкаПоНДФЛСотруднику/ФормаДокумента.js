@@ -44,16 +44,16 @@
 			style: 'position:absolute;left:0px;top:575px;width:742px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
 				},
+				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'OK',
 				},
 			]
 		},
@@ -128,61 +128,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
 			]
 		},
 		{
@@ -333,6 +278,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:172px;width:712px;height:94px;',
 			height: 94,width: 712,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -732,6 +678,16 @@
 			style: 'position:absolute;left:114px;top:83px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'сводно (например, в банк)',
+			style: 'position:absolute;left:14px;top:128px;width:353px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'для декларирования в ИФНС - в разрезе ставок и кодов по ОКАТО:',
+			style: 'position:absolute;left:14px;top:147px;width:367px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись17',
 			text: 'Справка формируется ...',
@@ -741,6 +697,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:383px;top:136px;width:141px;height:30px;',
 			height: 30,width: 141,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

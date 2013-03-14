@@ -14,20 +14,20 @@
 			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Отмена',
-				},
 				{
 					text:'<< Назад',
 				},
 				'-',
+				{
+					text:'Далее >>',
+				},
 				'-',
 				{
 					text:'Готово',
 				},
+				'-',
 				{
-					text:'Далее >>',
+					text:'Отмена',
 				},
 			]
 		},
@@ -35,6 +35,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:8px;width:619px;height:389px;',
 			height: 389,width: 619,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -75,23 +76,23 @@
 			items:
 			[
 				{
-					text:'Действие6',
+					text:'',
 				},
 				{
-					text:'Снять флажки',
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
 				{
-					text:'Действие7',
+					text:'',
 				},
 				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Установить флажки',
+					text:'',
 				},
 			]
 		},
@@ -206,15 +207,15 @@
 					text:'Открыть договор',
 				},
 				{
+					text:'',
+				},
+				'-',
+				{
 					text:'Открыть условия поставки',
 				},
 				{
-					text:'История покупок',
+					text:'',
 				},
-				{
-					text:'Анализ условий поставки',
-				},
-				'-',
 			]
 		},
 					]
@@ -225,6 +226,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:138px;height:389px;',
 			height: 389,width: 138,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

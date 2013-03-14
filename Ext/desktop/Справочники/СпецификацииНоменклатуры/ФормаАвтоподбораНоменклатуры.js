@@ -14,10 +14,10 @@
 			style: 'position:absolute;left:0px;top:237px;width:500px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Закрыть',
 				},
@@ -51,6 +51,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:484px;height:169px;',
 			height: 169,width: 484,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

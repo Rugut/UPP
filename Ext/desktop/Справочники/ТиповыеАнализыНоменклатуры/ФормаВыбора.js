@@ -46,10 +46,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:550px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действия формы выбрать',
+					text:'Выбрать',
 				},
+				'-',
 			]
 		},
 	]

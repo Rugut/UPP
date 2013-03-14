@@ -74,62 +74,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:991px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Открыть свойства',
-				},
-				'-',
-				{
-					text:'Открыть категории',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				{
-					text:'Редактировать код номер',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
 			]
 		},
 		{
@@ -137,24 +81,24 @@
 			style: 'position:absolute;left:0px;top:555px;width:991px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				'-',
 				{
-					text:'Записать',
+					text:'Показать файл',
 				},
+				'-',
 				{
 					text:'Записать файл на диск',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
 				},
+				'-',
 				{
-					text:'Показать файл',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -174,40 +118,7 @@
 			items:
 			[
 				{
-					text:'Действие3',
-				},
-				{
 					text:'Заполнить по приказам на отпуск',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'Действие8',
 				},
 			]
 		},
@@ -430,6 +341,16 @@
 			style: 'position:absolute;left:200px;top:186px;width:371px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Основное место работы',
+			style: 'position:absolute;left:96px;top:102px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Совместительство',
+			style: 'position:absolute;left:247px;top:102px;width:115px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВидДокумента2',
 			text: 'Вид занятости:',
@@ -465,6 +386,16 @@
 					title:'Выплата пособия',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Перечислением на счет в банке:',
+			style: 'position:absolute;left:14px;top:64px;width:183px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Почтовым переводом по адресу:',
+			style: 'position:absolute;left:14px;top:112px;width:183px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -524,6 +455,31 @@
 			name: 'Надпись20',
 			text: 'Льготы при выплате пособия',
 			style: 'position:absolute;left:6px;top:148px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Постоянное проживание',
+			style: 'position:absolute;left:14px;top:196px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Работа',
+			style: 'position:absolute;left:197px;top:196px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В зоне с правом на отселение',
+			style: 'position:absolute;left:14px;top:220px;width:174px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В зоне отселения',
+			style: 'position:absolute;left:197px;top:220px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В зоне с льготным социально-экон. статусом',
+			style: 'position:absolute;left:310px;top:220px;width:261px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -764,32 +720,32 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие6',
+					text:'',
 				},
 				{
-					text:'Действие7',
+					text:'Изменить',
 				},
 				{
-					text:'Действие',
+					text:'Удалить',
 				},
 				{
-					text:'Действие8',
+					text:'',
 				},
 				{
-					text:'Действие4',
+					text:'',
 				},
 				{
-					text:'Действие5',
+					text:'',
 				},
 				{
-					text:'Действие2',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 			]
 		},
@@ -896,10 +852,30 @@
 			style: 'position:absolute;left:32px;top:101px;width:210px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Заработок рассчитан по правилам 2011 года за расчетные годы:',
+			style: 'position:absolute;left:14px;top:30px;width:351px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заработок по правилам 2010 года за расчетный период с:',
+			style: 'position:absolute;left:14px;top:125px;width:321px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Пособие рассчитывается из оклада (тарифной ставки):',
+			style: 'position:absolute;left:14px;top:173px;width:321px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ТарифнаяСтавкаОклад',
 			style: 'position:absolute;left:340px;top:173px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Пособие определяется исходя из МРОТ:',
+			style: 'position:absolute;left:14px;top:197px;width:321px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -20,32 +20,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Файлы',
-				},
-				'-',
-				{
-					text:'Действие открыть свойства',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие открыть категории',
-				},
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:641px;height:127px;',
 			height: 127,width: 641,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -62,6 +43,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:24px;width:641px;height:103px;',
 			height: 103,width: 641,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -239,33 +221,7 @@
 			items:
 			[
 				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
 					text:'Заполнить',
-				},
-				'-',
-				'-',
-				{
-					text:'&Скопировать',
 				},
 			]
 		},
@@ -314,6 +270,16 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:417px;top:0px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:522px;top:0px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -408,17 +374,17 @@
 			style: 'position:absolute;left:0px;top:336px;width:657px;height:25px;',
 			items:
 			[
+				{
+					text:'Печать',
+				},
 				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Печать',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
-				'-',
 				'-',
 				{
 					text:'Закрыть',

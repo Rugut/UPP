@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -44,6 +44,21 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:30px;width:306px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Бухгалтерского учета',
+			style: 'position:absolute;left:6px;top:80px;width:384px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Налогового учета',
+			style: 'position:absolute;left:6px;top:99px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Бухгалтерского учета с постоянными и временными разницами',
+			style: 'position:absolute;left:7px;top:118px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'label',

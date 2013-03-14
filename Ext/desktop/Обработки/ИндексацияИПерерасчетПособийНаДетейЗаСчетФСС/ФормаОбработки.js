@@ -15,11 +15,11 @@
 			items:
 			[
 				{
-					text:'Закрыть',
+					text:'',
 				},
 				'-',
 				{
-					text:'Выполнить',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -27,6 +27,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:630px;height:377px;',
 			height: 377,width: 630,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -77,7 +78,7 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 			]
 		},
@@ -93,10 +94,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'Удалить',
 				},
 			]
 		},
@@ -134,6 +135,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:89px;width:630px;height:160px;',
 			height: 160,width: 630,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -193,10 +195,10 @@
 			items:
 			[
 				{
-					text:'Пометить все',
+					text:'',
 				},
 				{
-					text:'Снять пометки',
+					text:'',
 				},
 			]
 		},
@@ -220,6 +222,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:277px;width:630px;height:76px;',
 			height: 76,width: 630,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -252,27 +255,33 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Провести',
-				},
-				{
-					text:'Открыть',
+					text:'',
 				},
 				'-',
-				'-',
 				{
-					text:'Действие',
+					text:'Установить отбор и сортировку списка...',
 				},
 				{
-					text:'Действие4',
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
 				},
 			]
 		},

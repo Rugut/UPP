@@ -74,19 +74,25 @@
 			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Дт/кт',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
 				'-',
 				{
 					text:'Дт/кт',
 				},
 				{
-					text:'Структура подчиненности документа',
+					text:'Дт/кт',
 				},
 			]
 		},
@@ -95,20 +101,20 @@
 			style: 'position:absolute;left:0px;top:289px;width:431px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'Печать',
 				},
+				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
-				'-',
 				{
-					text:'Печать',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -123,6 +129,26 @@
 			hideLabel: true,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:96px;top:58px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:8px;top:109px;width:415px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 000 "Вспомогательный"',
+			style: 'position:absolute;left:8px;top:144px;width:415px;height:35px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 84 "Нераспределенная прибыль (непокрытый убыток)"',
+			style: 'position:absolute;left:8px;top:179px;width:415px;height:43px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам по расчетам в у.е.',
+			style: 'position:absolute;left:8px;top:183px;width:415px;height:39px;',
 		},
 	]
 });

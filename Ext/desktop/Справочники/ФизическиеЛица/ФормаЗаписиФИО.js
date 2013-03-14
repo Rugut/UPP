@@ -62,16 +62,16 @@
 			style: 'position:absolute;left:0px;top:116px;width:306px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'История...',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

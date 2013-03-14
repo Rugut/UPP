@@ -50,66 +50,90 @@
 			style: 'position:absolute;left:0px;top:0px;width:579px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Файлы',
+				},
 				'-',
+				{
+					text:'Найти в списке',
+				},
 				'-',
 				{
 					text:'Перечитать',
 				},
 				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
 					text:'Скопировать',
 				},
 				{
-					text:'',
-				},
-				{
-					text:'Файлы',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Настройка доступа',
+					text:'Записать',
 				},
 				{
 					text:'Записать и закрыть',
 				},
 				'-',
 				{
-					text:'Файлы',
+					xtype: 'splitbutton',
+					text:'На основании',
+					menu: [
+				{
+					text:'(Ввести на основании)',
 				},
-				'-',
+					]
+				},
 				'-',
 				{
-					text:'Записать',
+					text:'Закрыть',
 				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
 				{
 					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'На основании',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Файлы',
 				},
 				'-',
 				{
 					text:'Справка',
+				},
+				'-',
+				{
+					text:'Настройка доступа',
 				},
 			]
 		},
@@ -118,17 +142,17 @@
 			style: 'position:absolute;left:0px;top:644px;width:579px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Записать',
-				},
-				{
-					text:'Закрыть',
-				},
 				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
@@ -348,25 +372,8 @@
 			style: 'position:absolute;left:6px;top:7px;width:549px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Командная панель контактной информации редактировать в диалоге',
-				},
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Основная',
-				},
-				'-',
 				{
 					text:'&Добавить',
-				},
-				{
-					text:'Отключить отбор',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
 				},
 				{
 					text:'&Скопировать',
@@ -378,6 +385,29 @@
 					text:'&Удалить',
 				},
 				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Командная панель контактной информации редактировать в диалоге',
+				},
+				'-',
+				{
+					text:'Основная',
+				},
 			]
 		},
 					]
@@ -660,6 +690,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:40px;width:555px;height:130px;',
 			height: 130,width: 555,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -809,9 +840,25 @@
 					items:
 					[
 		{
+			xtype: 'radio',
+			boxLabel: 'Возможность взаимодействия с ФНС, ПФР и Росстатом по электронным каналам связи отключена',
+			style: 'position:absolute;left:6px;top:203px;width:549px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать возможность представления отчетности в ФНС посредством ПК "Спринтер"',
+			style: 'position:absolute;left:6px;top:112px;width:549px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать встроенный механизм информационного взаимодействия по каналам связи',
+			style: 'position:absolute;left:6px;top:58px;width:549px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:85px;width:549px;height:19px;',
 			height: 19,width: 549,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -838,6 +885,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:178px;width:548px;height:18px;',
 			height: 18,width: 548,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -992,16 +1040,16 @@
 			items:
 			[
 				{
-					text:'Закончить редактирование',
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
 				},
 				{
 					text:'&Удалить',
 				},
 				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
+					text:'Закончить редактирование',
 				},
 			]
 		},

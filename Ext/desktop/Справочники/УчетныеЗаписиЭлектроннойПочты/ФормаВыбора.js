@@ -198,10 +198,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:566px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие',
+					text:'Выбрать',
 				},
+				'-',
 			]
 		},
 	]

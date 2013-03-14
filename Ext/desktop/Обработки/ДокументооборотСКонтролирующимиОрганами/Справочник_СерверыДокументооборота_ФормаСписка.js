@@ -50,10 +50,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:734px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие10',
+					text:'Выбрать',
 				},
+				'-',
 			]
 		},
 	]

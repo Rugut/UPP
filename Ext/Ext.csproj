@@ -67,6 +67,7 @@
     <Content Include="desktop\BogusModule.js" />
     <Content Include="desktop\credits.txt" />
     <Content Include="desktop\css\desktop.css" />
+    <Content Include="desktop\desktop.css" />
     <Content Include="desktop\desktop.html" />
     <Content Include="desktop\GridWindow.js" />
     <Content Include="desktop\images\accordian.gif" />

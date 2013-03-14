@@ -14,12 +14,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:696px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Закрыть',
+				},
+					]
+				},
 				'-',
 				{
 					text:'Справка',
-				},
-				{
-					text:'Закрыть',
 				},
 			]
 		},

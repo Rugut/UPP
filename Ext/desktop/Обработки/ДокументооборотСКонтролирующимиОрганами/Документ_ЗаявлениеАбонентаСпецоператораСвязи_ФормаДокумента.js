@@ -186,6 +186,21 @@
 			style: 'position:absolute;left:288px;top:50px;width:544px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Руководитель',
+			style: 'position:absolute;left:124px;top:8px;width:120px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Главный бухгалтер',
+			style: 'position:absolute;left:124px;top:30px;width:120px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Другой сотрудник:',
+			style: 'position:absolute;left:124px;top:52px;width:124px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДолжность6',
 			text: 'Сотрудник:',
@@ -239,20 +254,20 @@
 			items:
 			[
 				{
-					text:'Редактировать',
+					text:'Добавить',
 				},
 				{
-					text:'Востановить',
+					text:'Скопировать',
+				},
+				{
+					text:'Редактировать',
 				},
 				{
 					text:'Удалить',
 				},
-				{
-					text:'Добавить',
-				},
 				'-',
 				{
-					text:'Скопировать',
+					text:'Востановить',
 				},
 			]
 		},
@@ -316,6 +331,16 @@
 			text: 'Криптопровайдер:',
 			style: 'position:absolute;left:12px;top:8px;width:100px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'VipNet CSP',
+			style: 'position:absolute;left:136px;top:8px;width:704px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'CryptoPro CSP',
+			style: 'position:absolute;left:136px;top:64px;width:704px;height:16px;',
+		},
 					]
 				},
 				{
@@ -367,16 +392,16 @@
 			style: 'position:absolute;left:0px;top:508px;width:860px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'ОК',
 				},
+				'-',
 				{
-					text:'Основные действия формы сохранить',
+					text:'Записать',
 				},
+				'-',
 				{
-					text:'Основные действия формы закрыть',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -386,66 +411,20 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Сертификат пользователя',
-				},
-				{
-					text:'Действие',
+					text:'Заявление  на подключение',
 				},
 				{
 					text:'Соглашение об оказании услуг',
 				},
 				{
-					text:'Пакет документов',
-				},
-				{
-					text:'Заявление  на подключение',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Обновить статус заявления',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				{
 					text:'Лицензия на использование ПО',
 				},
-				'-',
-				'-',
 				{
-					text:'Отправить...',
-				},
-				{
-					text:'Действие3',
+					text:'Сертификат пользователя',
 				},
 				'-',
 				{
-					text:'Действие5',
+					text:'Пакет документов',
 				},
 			]
 		},
@@ -453,6 +432,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:844px;height:40px;',
 			height: 40,width: 844,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

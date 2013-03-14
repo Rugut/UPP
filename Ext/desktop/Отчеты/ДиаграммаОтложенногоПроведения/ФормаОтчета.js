@@ -14,19 +14,8 @@
 			style: 'position:absolute;left:0px;top:0px;width:947px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Открыть справку',
-				},
-				{
-					text:'Сформировать',
-				},
 				{
 					text:'Действие1',
-				},
-				{
-					text:'Статистика',
 				},
 			]
 		},

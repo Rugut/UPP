@@ -102,12 +102,18 @@
 			items:
 			[
 				{
-					text:'Структура подчиненности документа',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
 				'-',
+					]
+				},
 			]
 		},
 		{
@@ -115,20 +121,20 @@
 			style: 'position:absolute;left:0px;top:340px;width:404px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Записать',
-				},
 				{
 					text:'Печать',
 				},
 				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
 				'-',
 				{
-					text:'OK',
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

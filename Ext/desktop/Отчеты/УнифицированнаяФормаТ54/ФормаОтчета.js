@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:525px;top:134px;width:306px;height:398px;',
 			height: 398,width: 306,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -381,10 +382,10 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 			]
 		},
@@ -404,34 +405,14 @@
 			items:
 			[
 				{
-					text:'Сохранить вариант',
+					text:'Показать сформированный отчет в отдельном окне',
 				},
-				{
-					text:'Список вариантов отчетов',
-				},
+				'-',
 				{
 					text:'Сохранить сформированный отчет для сравнения',
 				},
-				'-',
-				{
-					text:'Панель пользователя',
-				},
-				'-',
-				{
-					text:'Показать сформированный отчет в отдельном окне',
-				},
 				{
 					text:'Сравнить сформированный отчет с сохраненным',
-				},
-				{
-					text:'Описание и Пользователи',
-				},
-				'-',
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Сохранить вариант как...',
 				},
 			]
 		},
@@ -443,6 +424,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:838px;height:57px;',
 			height: 57,width: 838,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -455,13 +437,13 @@
 			items:
 			[
 				{
-					text:'Описание и Пользователи',
+					text:'Настройка структуры',
 				},
 				{
 					text:'Панель пользователя',
 				},
 				{
-					text:'Настройка структуры',
+					text:'Описание и Пользователи',
 				},
 			]
 		},
@@ -479,6 +461,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:9px;top:63px;width:821px;height:31px;',
 			height: 31,width: 821,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -502,13 +485,13 @@
 			items:
 			[
 				{
+					text:'',
+				},
+				{
 					text:'Настройки',
 				},
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Панель вариантов',
+					text:'Справка',
 				},
 			]
 		},

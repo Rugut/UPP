@@ -39,30 +39,7 @@
 			items:
 			[
 				{
-					text:'Настройка',
-				},
-				'-',
-				'-',
-				{
-					text:'Версии спецификации',
-				},
-				{
-					text:'Создать версию',
-				},
-				{
-					text:'Заполнить по спецификации',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Заполнить по фактическим затратам',
-				},
-				{
 					text:'Установить основной спецификацией на дату...',
-				},
-				{
-					text:'Файлы',
 				},
 			]
 		},
@@ -72,16 +49,16 @@
 			items:
 			[
 				{
-					text:'Записать',
-				},
-				{
 					text:'OK',
 				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -129,6 +106,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:102px;width:636px;height:285px;',
 			height: 285,width: 636,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -163,17 +141,8 @@
 			items:
 			[
 				{
-					text:'Подбор',
-				},
-				{
-					text:'Основное сырье',
-				},
-				'-',
-				{
 					text:'Заполнить по спецификации',
 				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -351,11 +320,6 @@
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
 				{
 					text:'Заполнить по спецификации',
 				},
@@ -401,7 +365,6 @@
 				{
 					text:'Заполнить из шаблона',
 				},
-				'-',
 				{
 					text:'Заполнить по спецификации',
 				},
@@ -441,7 +404,6 @@
 				{
 					text:'Заполнить по спецификации',
 				},
-				'-',
 			]
 		},
 					]
@@ -494,6 +456,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:89px;',
 			height: 89,width: 636,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -589,10 +552,10 @@
 			style: 'position:absolute;left:0px;top:16px;width:636px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Подбор',
 				},
-				'-',
 			]
 		},
 		{
@@ -682,14 +645,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
 			items:
 			[
-				{
-					text:'Заполнить по спецификации',
-				},
+				'-',
+				'-',
 				{
 					text:'Подбор',
 				},
-				'-',
-				'-',
 			]
 		},
 		{

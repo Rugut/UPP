@@ -15,60 +15,34 @@
 			items:
 			[
 				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				{
-					text:'Выгрузить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				'-',
-				{
-					text:'Проверить в Интернете',
-				},
-				'-',
-				'-',
-				{
-					text:'Проверить выгрузку',
-				},
-				{
-					text:'Подготовить к отправке',
-				},
-				'-',
-				{
 					text:'Заполнить',
 				},
-				{
-					text:'Отправить',
-				},
-				{
-					text:'Показать отправки',
-				},
 				'-',
-				{
-					text:'Расширить поле бланка',
-				},
-				{
-					text:'Обновить',
-				},
 				'-',
 				'-',
 				'-',
 				{
 					text:'Настройка...',
 				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
 				{
 					text:'Проверка',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -77,18 +51,6 @@
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				{
-					text:'OK',
-				},
-				'-',
 			]
 		},
 		{
@@ -253,6 +215,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:47px;',
 			height: 47,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -290,6 +253,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:434px;width:654px;height:24px;',
 			height: 24,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -322,6 +286,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:37px;',
 			height: 37,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -332,6 +297,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:2px;top:0px;width:652px;height:35px;',
 			height: 35,width: 652,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

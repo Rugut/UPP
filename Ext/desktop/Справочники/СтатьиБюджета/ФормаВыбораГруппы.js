@@ -26,10 +26,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:324px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'Выбрать',
 				},
+				'-',
 			]
 		},
 	]

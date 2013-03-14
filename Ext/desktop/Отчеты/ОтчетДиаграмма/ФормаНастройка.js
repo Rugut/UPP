@@ -55,9 +55,40 @@
 			style: 'position:absolute;left:6px;top:78px;width:210px;height:15px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 1',
+			style: 'position:absolute;left:12px;top:127px;width:220px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 2',
+			style: 'position:absolute;left:12px;top:147px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 3',
+			style: 'position:absolute;left:12px;top:167px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 4',
+			style: 'position:absolute;left:12px;top:187px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 5',
+			style: 'position:absolute;left:12px;top:207px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 6',
+			style: 'position:absolute;left:12px;top:227px;width:220px;height:15px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:19px;',
 			height: 19,width: 460,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -74,6 +105,36 @@
 				},
 			]
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 7',
+			style: 'position:absolute;left:237px;top:127px;width:220px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 8',
+			style: 'position:absolute;left:237px;top:147px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 9',
+			style: 'position:absolute;left:237px;top:167px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 10',
+			style: 'position:absolute;left:237px;top:187px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 11',
+			style: 'position:absolute;left:237px;top:207px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 12',
+			style: 'position:absolute;left:237px;top:229px;width:220px;height:15px;',
+		},
 					]
 				},
 				{
@@ -84,6 +145,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:46px;width:460px;height:127px;',
 			height: 127,width: 460,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -346,10 +408,10 @@
 			items:
 			[
 				{
-					text:'Удалить',
+					text:'&Добавить',
 				},
 				{
-					text:'Добавить',
+					text:'Удалить',
 				},
 			]
 		},
@@ -375,7 +437,7 @@
 			items:
 			[
 				{
-					text:'Добавить',
+					text:'&Добавить',
 				},
 				{
 					text:'Удалить',
@@ -394,7 +456,7 @@
 			items:
 			[
 				{
-					text:'Транспонировать',
+					text:'',
 				},
 			]
 		},
@@ -487,16 +549,16 @@
 			style: 'position:absolute;left:0px;top:289px;width:490px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Справка',
+					text:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
-					text:'ОК',
+					text:'Справка',
 				},
 			]
 		},

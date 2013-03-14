@@ -14,27 +14,33 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
 			items:
 			[
-				'-',
+				{
+					text:'Найти в списке',
+				},
 				'-',
 				{
-					text:'Действие3',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
 				},
 				{
 					text:'',
 				},
 				'-',
-				'-',
 				{
-					text:'',
+					text:'Показать цикл обмена, связанный с документом',
 				},
+					]
+				},
+				'-',
 				{
 					text:'Ответить',
 				},
+				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'Показать цикл обмена, связанный с документом',
+					text:'Справка',
 				},
 			]
 		},
@@ -64,6 +70,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:116px;width:624px;height:289px;',
 			height: 289,width: 624,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -84,6 +91,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:88px;width:624px;height:22px;',
 			height: 22,width: 624,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

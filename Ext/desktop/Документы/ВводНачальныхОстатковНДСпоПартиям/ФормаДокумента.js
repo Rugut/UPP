@@ -107,17 +107,23 @@
 			items:
 			[
 				'-',
-				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
-					text:'Структура подчиненности документа',
+					text:'',
 				},
 				'-',
-				{
-					text:'Заполнить',
+					]
 				},
+				{
+					text:'',
+				},
+				'-',
 			]
 		},
 		{
@@ -130,15 +136,15 @@
 				},
 				'-',
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
-				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'OK',
 				},
 			]
 		},
@@ -146,6 +152,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:213px;width:764px;height:187px;',
 			height: 187,width: 764,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -201,7 +208,6 @@
 			style: 'position:absolute;left:0px;top:16px;width:764px;height:24px;',
 			items:
 			[
-				'-',
 			]
 		},
 					]
@@ -213,7 +219,6 @@
 			style: 'position:absolute;left:8px;top:79px;width:764px;height:24px;',
 			items:
 			[
-				'-',
 			]
 		},
 		{

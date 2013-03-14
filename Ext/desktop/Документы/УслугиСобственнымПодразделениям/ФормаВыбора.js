@@ -62,20 +62,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:680px;height:25px;',
 			items:
 			[
+				{
+					text:'Выбрать',
+				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
 				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
 					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Структура подчиненности документа',
 				},
 				{
 					text:'Дт/кт',

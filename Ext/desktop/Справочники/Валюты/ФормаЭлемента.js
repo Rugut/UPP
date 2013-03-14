@@ -182,16 +182,16 @@
 			style: 'position:absolute;left:0px;top:372px;width:432px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'ОК',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'ОК',
+					text:'Закрыть',
 				},
 			]
 		},

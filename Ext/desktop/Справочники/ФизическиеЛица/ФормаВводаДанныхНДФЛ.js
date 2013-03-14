@@ -14,6 +14,9 @@
 			style: 'position:absolute;left:0px;top:348px;width:692px;height:25px;',
 			items:
 			[
+				{
+					text:'OK',
+				},
 				'-',
 				{
 					text:'Записать',
@@ -21,9 +24,6 @@
 				'-',
 				{
 					text:'Закрыть',
-				},
-				{
-					text:'OK',
 				},
 			]
 		},
@@ -71,16 +71,16 @@
 			items:
 			[
 				{
-					text:'Действие1',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'Изменить',
 				},
 				{
-					text:'Действие',
+					text:'Удалить',
 				},
 			]
 		},
@@ -90,16 +90,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 				{
-					text:'Действие1',
+					text:'Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 			]
 		},
@@ -185,16 +185,16 @@
 			items:
 			[
 				{
-					text:'Действие',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'Изменить',
 				},
 				{
-					text:'Действие2',
+					text:'Удалить',
 				},
 			]
 		},
@@ -223,6 +223,21 @@
 			style: 'position:absolute;left:332px;top:51px;width:114px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Резидент',
+			style: 'position:absolute;left:29px;top:76px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Нерезидент',
+			style: 'position:absolute;left:29px;top:100px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Высококвалифицированный иностранный специалист',
+			style: 'position:absolute;left:29px;top:124px;width:302px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОкончаниеДействияСтатусаНДФЛ',
 			text: '',
@@ -241,15 +256,26 @@
 			style: 'position:absolute;left:6px;top:6px;width:662px;height:31px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Участник программы по переселению соотечественников',
+			style: 'position:absolute;left:29px;top:148px;width:319px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:29px;top:172px;width:553px;height:28px;',
 			height: 28,width: 553,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Член экипажа судна, плавающего под Государственным флагом РФ',
+			style: 'position:absolute;left:0px;top:0px;width:374px;height:19px;',
+		},
 					]
 				},
 			]

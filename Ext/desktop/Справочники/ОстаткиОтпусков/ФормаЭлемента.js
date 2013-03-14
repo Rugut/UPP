@@ -21,10 +21,10 @@
 			style: 'position:absolute;left:0px;top:299px;width:288px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
@@ -38,6 +38,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:58px;width:272px;height:233px;',
 			height: 233,width: 272,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -121,14 +122,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:208px;height:24px;',
 			items:
 			[
-				'-',
+				{
+					text:'&Добавить',
+				},
 				'-',
 				{
 					text:'Удалить',
 				},
-				{
-					text:'Добавить',
-				},
+				'-',
 				{
 					text:'Рассчитать',
 				},

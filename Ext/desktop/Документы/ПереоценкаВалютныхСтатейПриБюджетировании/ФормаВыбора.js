@@ -58,14 +58,20 @@
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
 				{
 					text:'Выбрать',
 				},
 				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
 			]
 		},
 	]

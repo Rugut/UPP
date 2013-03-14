@@ -38,10 +38,10 @@
 			style: 'position:absolute;left:8px;top:83px;width:636px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Подбор',
 				},
-				'-',
 			]
 		},
 		{
@@ -101,20 +101,26 @@
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'',
-				},
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
 				{
-					text:'',
+					text:'Движения документа по регистрам',
 				},
 				{
 					text:'Структура подчиненности документа',
 				},
-				{
-					text:'Движения документа по регистрам',
+				'-',
+					]
 				},
 				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 			]
 		},
 		{
@@ -127,16 +133,16 @@
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
-				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{

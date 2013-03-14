@@ -86,81 +86,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
 			items:
 			[
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие1',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие3',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие',
-				},
 			]
 		},
 		{
@@ -168,16 +93,16 @@
 			style: 'position:absolute;left:0px;top:447px;width:708px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
 				{
-					text:'OK',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -212,6 +137,16 @@
 			style: 'position:absolute;left:454px;top:57px;width:246px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Процентом от заработка',
+			style: 'position:absolute;left:24px;top:174px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Фиксированной суммой',
+			style: 'position:absolute;left:24px;top:220px;width:151px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Удерживать по:',
@@ -224,9 +159,25 @@
 			style: 'position:absolute;left:522px;top:80px;width:79px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Через кассу, перечислением на банковский счет',
+			style: 'position:absolute;left:16px;top:342px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Почтовым переводом',
+			style: 'position:absolute;left:16px;top:365px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Банковским переводом',
+			style: 'position:absolute;left:16px;top:388px;width:295px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:338px;top:342px;width:362px;height:65px;',
 			height: 65,width: 362,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -269,15 +220,35 @@
 			text: 'Почтовый сбор',
 			style: 'position:absolute;left:0px;top:0px;width:135px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Рассчитывать по тарифу:',
+			style: 'position:absolute;left:12px;top:23px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Рассчитывать процентом:',
+			style: 'position:absolute;left:12px;top:46px;width:160px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Кратно величине прожиточного минимума:',
+			style: 'position:absolute;left:24px;top:243px;width:235px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПрожиточныйМинимум',
 			style: 'position:absolute;left:265px;top:243px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Процентом от заработка с учетом больничных листов',
+			style: 'position:absolute;left:24px;top:197px;width:303px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -290,6 +261,16 @@
 			hideLabel: true,
 			name: 'ИсполнительныйЛист',
 			style: 'position:absolute;left:100px;top:86px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Изменить условия с:',
+			style: 'position:absolute;left:370px;top:80px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прекратить удержания с:',
+			style: 'position:absolute;left:370px;top:102px;width:148px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

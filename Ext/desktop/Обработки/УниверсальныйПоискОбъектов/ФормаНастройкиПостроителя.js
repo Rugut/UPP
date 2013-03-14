@@ -15,10 +15,10 @@
 			items:
 			[
 				{
-					text:'Отмена',
+					text:'ОК',
 				},
 				{
-					text:'ОК',
+					text:'Отмена',
 				},
 				'-',
 				{
@@ -42,6 +42,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:256px;width:560px;height:192px;',
 			height: 192,width: 560,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -97,10 +98,10 @@
 			items:
 			[
 				{
-					text:'Выключить все',
+					text:'Включить все',
 				},
 				{
-					text:'Включить все',
+					text:'Выключить все',
 				},
 			]
 		},

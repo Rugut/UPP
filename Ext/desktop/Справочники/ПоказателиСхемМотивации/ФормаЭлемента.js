@@ -51,40 +51,46 @@
 			items:
 			[
 				{
-					text:'Действие3',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
+					text:'Найти в списке',
 				},
 				'-',
 				{
-					text:'Действие',
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
 				},
 				'-',
 				{
-					text:'Действие1',
+					text:'Закрыть',
+				},
+					]
 				},
 				'-',
-				'-',
 				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
+					text:'Найти в списке',
 				},
 				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 		{
@@ -93,16 +99,16 @@
 			items:
 			[
 				{
+					text:'OK',
+				},
+				'-',
+				{
 					text:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
 				},
-				{
-					text:'OK',
-				},
-				'-',
 			]
 		},
 		{
@@ -155,6 +161,16 @@
 			name: 'НадписьРасшифровкаПоказательЭффективности',
 			text: '',
 			style: 'position:absolute;left:34px;top:30px;width:355px;height:21px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'фактический показатель',
+			style: 'position:absolute;left:12px;top:77px;width:231px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'плановый показатель, соответствует фактическому показателю:',
+			style: 'position:absolute;left:12px;top:99px;width:352px;height:19px;',
 		},
 		{
 			xtype: 'label',

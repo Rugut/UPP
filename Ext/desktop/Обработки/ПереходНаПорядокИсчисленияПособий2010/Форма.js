@@ -63,6 +63,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:611px;top:116px;width:181px;height:56px;',
 			height: 56,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -101,6 +102,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:611px;top:218px;width:181px;height:56px;',
 			height: 56,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -139,6 +141,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:611px;top:284px;width:181px;height:40px;',
 			height: 40,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -180,6 +183,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:329px;width:784px;height:85px;',
 			height: 85,width: 784,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -218,6 +222,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:472px;width:784px;height:85px;',
 			height: 85,width: 784,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -256,6 +261,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:426px;width:784px;height:40px;',
 			height: 40,width: 784,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -266,6 +272,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:603px;top:0px;width:181px;height:40px;',
 			height: 40,width: 181,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

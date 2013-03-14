@@ -14,51 +14,35 @@
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'Показать отправки',
-				},
-				'-',
-				'-',
-				{
-					text:'Отправить',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'Настройка...',
-				},
-				{
-					text:'Очистить',
-				},
-				{
-					text:'Выгрузить',
-				},
-				'-',
 				{
 					text:'Заполнить',
 				},
+				'-',
+				'-',
+				'-',
+				'-',
 				{
-					text:'Проверить выгрузку',
+					text:'Настройка...',
 				},
-				{
-					text:'Расшифровать',
-				},
-				{
-					text:'Обновить',
-				},
+				'-',
 				{
 					text:'Поиск',
 				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
 				{
 					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Расшифровать',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -67,18 +51,6 @@
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			items:
 			[
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -98,6 +70,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:640px;height:24px;',
 			height: 24,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -154,6 +127,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:640px;height:24px;',
 			height: 24,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -186,6 +160,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			height: 24,width: 640,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -228,6 +203,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:47px;',
 			height: 47,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -270,6 +246,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:432px;width:654px;height:26px;',
 			height: 26,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -302,6 +279,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:41px;',
 			height: 41,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -312,6 +290,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:35px;',
 			height: 35,width: 654,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -31,7 +31,7 @@
 			items:
 			[
 				{
-					text:'ОК',
+					text:'',
 				},
 				'-',
 				{
@@ -74,6 +74,16 @@
 			hideLabel: true,
 			name: 'ДокументАДВ62ДляЗагрузки',
 			style: 'position:absolute;left:289px;top:302px;width:237px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Загрузить в существующий комплект',
+			style: 'position:absolute;left:61px;top:302px;width:216px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Создать новый комплект сведений',
+			style: 'position:absolute;left:61px;top:326px;width:216px;height:19px;',
 		},
 		{
 			xtype: 'label',

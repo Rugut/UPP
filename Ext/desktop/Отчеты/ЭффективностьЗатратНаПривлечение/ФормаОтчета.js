@@ -15,7 +15,30 @@
 			items:
 			[
 				{
-					text:'Действие',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'На принтер',
+				},
+				'-',
+				{
+					text:'Новый отчет',
+				},
+				{
+					text:'Быстрые отборы',
+				},
+				'-',
+				{
+					text:'Восстановить настройки',
 				},
 				{
 					text:'Сохранить настройки',
@@ -24,61 +47,44 @@
 				{
 					text:'Справка',
 				},
-				'-',
-				'-',
 				{
-					text:'Сформировать',
+					text:'Закрыть',
 				},
-				{
-					text:'Печать',
-				},
-				{
-					text:'На принтер',
+					]
 				},
 				'-',
-				'-',
-				'-',
+				{
+					text:'',
+				},
 				'-',
 				{
-					text:'Быстрые отборы',
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
 				},
 				{
-					text:'Новый отчет',
+					text:'',
 				},
+				'-',
 				{
 					text:'Загрузить настройки отчета',
 				},
 				{
-					text:'Открыть в новом окне',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Настройки...',
-				},
-				{
 					text:'Сохранить настройки отчета',
 				},
-				{
-					text:'Настройки...',
-				},
-				'-',
 				'-',
 				{
-					text:'Отбор',
-				},
-				{
-					text:'Восстановить настройки',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Заголовок',
+					text:'Справка',
 				},
 				'-',
 			]
@@ -87,6 +93,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:345px;top:33px;width:397px;height:107px;',
 			height: 107,width: 397,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -164,6 +171,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:485px;top:2px;width:260px;height:19px;',
 			height: 19,width: 260,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -229,6 +237,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:331px;height:109px;',
 			height: 109,width: 331,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

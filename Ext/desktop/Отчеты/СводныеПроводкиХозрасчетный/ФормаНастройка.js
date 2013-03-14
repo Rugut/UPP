@@ -21,16 +21,17 @@
 				{
 					text:'Закрыть',
 				},
+				'-',
 				{
 					text:'Справка',
 				},
-				'-',
 			]
 		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:212px;',
 			height: 212,width: 384,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -94,6 +95,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'По субсчетам',
 			style: 'position:absolute;left:0px;top:80px;width:98px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По дебетовым счетам',
+			style: 'position:absolute;left:0px;top:125px;width:180px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По кредитовым счетам',
+			style: 'position:absolute;left:0px;top:144px;width:180px;height:15px;',
 		},
 					]
 				},

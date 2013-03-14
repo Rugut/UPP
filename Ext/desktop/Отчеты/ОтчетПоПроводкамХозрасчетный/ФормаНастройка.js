@@ -14,16 +14,16 @@
 			style: 'position:absolute;left:0px;top:299px;width:460px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
 				{
 					text:'ОК',
 				},
-				{
-					text:'Справка',
-				},
+				'-',
 				{
 					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -104,15 +104,15 @@
 			style: 'position:absolute;left:6px;top:90px;width:126px;height:25px;',
 			items:
 			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
 				'-',
 				{
-					text:'Действие',
-				},
-				{
 					text:'Очистить',
-				},
-				{
-					text:'Действие1',
 				},
 			]
 		},
@@ -154,16 +154,16 @@
 			items:
 			[
 				{
-					text:'Выключить все',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие1',
+					text:'Удалить',
 				},
 				{
 					text:'Включить все',
 				},
 				{
-					text:'Действие',
+					text:'Выключить все',
 				},
 			]
 		},

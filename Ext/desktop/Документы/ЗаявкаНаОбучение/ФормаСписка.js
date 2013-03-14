@@ -54,54 +54,96 @@
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
 			items:
 			[
-				'-',
 				{
-					text:'Структура подчиненности документа',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
 				},
 				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие8',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
 				},
 				{
-					text:'Действие1',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+					]
 				},
 				'-',
 				{
-					text:'Действие4',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие9',
+					text:'',
 				},
 				{
-					text:'Действие5',
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
 				},
 				'-',
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие10',
+					text:'',
 				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
 					text:'Движения документа по регистрам',
 				},
+				{
+					text:'',
+				},
 				'-',
+					]
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
 			]
 		},
 	]

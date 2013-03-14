@@ -38,92 +38,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:784px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Открыть свойства',
-				},
-				'-',
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				'-',
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Плановые начисления и удержания',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				'-',
 				{
 					text:'Данные для расчета среднего заработка',
 				},
 				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие4',
+					text:'Плановые начисления и удержания',
 				},
 			]
 		},
@@ -132,16 +51,16 @@
 			style: 'position:absolute;left:251px;top:555px;width:533px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
 				'-',
 				{
-					text:'Закрыть',
-				},
-				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -227,6 +146,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:252px;top:43px;width:420px;height:44px;',
 			height: 44,width: 420,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -287,6 +207,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:0px;width:754px;height:360px;',
 			height: 360,width: 754,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -347,32 +268,32 @@
 			items:
 			[
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие5',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие4',
+					text:'Изменить',
 				},
 				{
-					text:'Действие6',
+					text:'Удалить',
 				},
 				{
-					text:'Действие',
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -470,31 +391,31 @@
 			items:
 			[
 				{
-					text:'Действие',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие6',
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 				'-',
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
 			]
 		},
 					]
@@ -673,13 +594,11 @@
 			items:
 			[
 				{
-					text:'Действие5',
+					text:'&Добавить',
 				},
+				'-',
 				{
-					text:'Действие8',
-				},
-				{
-					text:'Скопировать',
+					text:'',
 				},
 				{
 					text:'Изменить',
@@ -688,17 +607,19 @@
 					text:'Удалить',
 				},
 				{
-					text:'Действие6',
+					text:'',
 				},
 				{
-					text:'Действие7',
+					text:'',
 				},
 				{
-					text:'Добавить',
+					text:'',
 				},
-				'-',
 				{
-					text:'Действие4',
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -707,33 +628,9 @@
 			style: 'position:absolute;left:6px;top:57px;width:389px;height:24px;',
 			items:
 			[
-				'-',
 				{
-					text:'Действие13',
+					text:'&Добавить',
 				},
-				{
-					text:'Действие14',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие6',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
 				{
 					text:'',
 				},
@@ -741,22 +638,52 @@
 					text:'Изменить',
 				},
 				{
-					text:'Действие10',
-				},
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Действие9',
+					text:'Удалить',
 				},
 				{
 					text:'',
 				},
 				{
-					text:'Действие8',
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
 				},
 			]
 		},
@@ -875,33 +802,33 @@
 			style: 'position:absolute;left:6px;top:0px;width:754px;height:24px;',
 			items:
 			[
+				{
+					text:'&Добавить',
+				},
 				'-',
 				{
-					text:'Действие5',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Действие8',
+					text:'',
 				},
 				{
 					text:'Изменить',
 				},
 				{
-					text:'Действие4',
-				},
-				{
 					text:'Удалить',
 				},
 				{
-					text:'Действие6',
+					text:'',
 				},
 				{
-					text:'Добавить',
+					text:'',
 				},
 				{
-					text:'Действие7',
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -911,55 +838,61 @@
 			items:
 			[
 				{
-					text:'Действие4',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие10',
-				},
-				{
-					text:'Действие12',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Действие5',
-				},
-				{
-					text:'Действие13',
-				},
-				'-',
-				{
-					text:'Действие14',
+					text:'&Добавить',
 				},
 				{
 					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Действие8',
 				},
 				{
 					text:'Изменить',
 				},
 				{
-					text:'Действие6',
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
 				},
 			]
 		},
@@ -969,6 +902,16 @@
 					title:'Заявление',
 					items:
 					[
+		{
+			xtype: 'radio',
+			boxLabel: 'Перечислением на счет в банке:',
+			style: 'position:absolute;left:14px;top:153px;width:185px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Почтовым переводом по адресу:',
+			style: 'position:absolute;left:14px;top:203px;width:185px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьФамилия',
@@ -1177,6 +1120,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:227px;width:618px;height:48px;',
 			height: 48,width: 618,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1188,6 +1132,31 @@
 			name: 'Надпись20',
 			text: 'Льготы при выплате пособия',
 			style: 'position:absolute;left:0px;top:6px;width:476px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Постоянное проживание',
+			style: 'position:absolute;left:8px;top:29px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Работа',
+			style: 'position:absolute;left:153px;top:29px;width:58px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'с правом на отселение',
+			style: 'position:absolute;left:261px;top:29px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'отселения',
+			style: 'position:absolute;left:403px;top:29px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'с льготным статусом',
+			style: 'position:absolute;left:481px;top:29px;width:126px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -1456,32 +1425,32 @@
 			items:
 			[
 				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие5',
+					text:'&Добавить',
 				},
 				'-',
 				{
-					text:'Действие8',
+					text:'',
 				},
 				{
-					text:'Действие2',
+					text:'Изменить',
 				},
 				{
-					text:'Действие4',
+					text:'Удалить',
 				},
 				{
-					text:'Действие1',
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -1564,6 +1533,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:564px;top:494px;width:83px;height:33px;',
 			height: 33,width: 83,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -1584,6 +1554,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:647px;top:494px;width:129px;height:33px;',
 			height: 33,width: 129,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

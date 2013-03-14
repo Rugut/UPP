@@ -86,34 +86,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			items:
 			[
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'КУД и Р...',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Клиент-Банк: Создать контрагента',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -122,19 +94,19 @@
 			items:
 			[
 				{
-					text:'ОК',
-				},
-				{
-					text:'Закрыть',
-				},
-				{
 					text:'Печать',
 				},
 				'-',
-				'-',
+				{
+					text:'ОК',
+				},
 				'-',
 				{
 					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},
@@ -148,6 +120,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:641px;height:196px;',
 			height: 196,width: 641,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -466,34 +439,8 @@
 			items:
 			[
 				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Подбор',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
 					text:'Заполнить',
 				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Скопировать',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -624,6 +571,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:336px;top:56px;width:313px;height:19px;',
 			height: 19,width: 313,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -695,6 +643,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:577px;top:32px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:429px;top:128px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:541px;top:128px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'label',

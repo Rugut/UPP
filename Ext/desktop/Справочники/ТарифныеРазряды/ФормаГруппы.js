@@ -51,7 +51,13 @@
 			items:
 			[
 				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
 					text:'Редактировать код',
+				},
+					]
 				},
 			]
 		},
@@ -60,17 +66,17 @@
 			style: 'position:absolute;left:0px;top:84px;width:433px;height:25px;',
 			items:
 			[
-				'-',
 				{
 					text:'OK',
 				},
-				{
-					text:'Закрыть',
-				},
+				'-',
 				{
 					text:'Записать',
 				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 	]

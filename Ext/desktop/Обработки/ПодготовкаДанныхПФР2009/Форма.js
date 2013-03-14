@@ -34,6 +34,16 @@
 			style: 'position:absolute;left:393px;top:8px;width:72px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:807px;top:8px;width:155px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Назначение пенсии',
+			style: 'position:absolute;left:807px;top:30px;width:155px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Тип сведений:',
@@ -56,27 +66,21 @@
 			style: 'position:absolute;left:8px;top:81px;width:275px;height:24px;',
 			items:
 			[
+				'-',
 				{
 					text:'Удалить',
 				},
+				{
+					text:'Принято ПФР',
+				},
 				'-',
 				{
-					text:'АДВ-11',
+					text:'Обновить',
 				},
 				'-',
 				{
 					text:'Перенести',
 				},
-				{
-					text:'Обновить',
-				},
-				{
-					text:'Принято ПФР',
-				},
-				{
-					text:'СЗВ-4',
-				},
-				'-',
 			]
 		},
 		{
@@ -99,6 +103,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:300px;top:81px;width:662px;height:154px;',
 			height: 154,width: 662,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -169,6 +174,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:69px;width:662px;height:85px;',
 			height: 85,width: 662,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -213,22 +219,22 @@
 			items:
 			[
 				{
-					text:'Действие1',
-				},
-				{
-					text:'Заполнить расчетами с ПФР',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-				{
 					text:'&Добавить строку',
 				},
 				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Заполнить расчетами с ПФР',
+				},
 			]
 		},
 					]
@@ -258,6 +264,31 @@
 			hideLabel: true,
 			name: 'ТерриториальныеУсловия',
 			style: 'position:absolute;left:167px;top:120px;width:66px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-4-1',
+			style: 'position:absolute;left:7px;top:74px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-4-2',
+			style: 'position:absolute;left:7px;top:98px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отсутствует',
+			style: 'position:absolute;left:485px;top:20px;width:117px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:485px;top:38px;width:117px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющие',
+			style: 'position:absolute;left:485px;top:56px;width:117px;height:15px;',
 		},
 		{
 			xtype: 'label',
@@ -342,6 +373,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:266px;width:954px;height:243px;',
 			height: 243,width: 954,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -374,22 +406,22 @@
 			items:
 			[
 				{
-					text:'Действие3',
+					text:'&Добавить',
 				},
 				{
-					text:'Перенести',
+					text:'Удалить',
 				},
 				{
-					text:'Действие',
+					text:'',
 				},
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие4',
+					text:'Конструктор настроек...',
 				},
 				{
-					text:'Действие1',
+					text:'',
 				},
 			]
 		},
@@ -397,6 +429,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:290px;top:131px;width:664px;height:112px;',
 			height: 112,width: 664,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -409,54 +442,60 @@
 			items:
 			[
 				{
-					text:'Действие12',
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'&Добавить',
 				},
 				{
-					text:'Действие5',
+					text:'',
 				},
 				{
-					text:'Действие9',
+					text:'Изменить',
 				},
 				{
-					text:'Действие16',
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
 				},
 				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
 				'-',
 				{
-					text:'Действие11',
+					text:'&Добавить',
 				},
 				{
-					text:'Действие2',
+					text:'',
 				},
 				{
-					text:'Действие4',
+					text:'Изменить',
 				},
 				{
-					text:'Действие',
+					text:'Удалить',
 				},
 				{
-					text:'Действие10',
+					text:'',
 				},
 				{
-					text:'Действие3',
+					text:'',
 				},
 				{
-					text:'Действие17',
+					text:'',
 				},
 				{
-					text:'Действие13',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие14',
-				},
-				{
-					text:'Действие15',
+					text:'Обновить',
 				},
 			]
 		},
@@ -578,6 +617,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:290px;top:0px;width:664px;height:108px;',
 			height: 108,width: 664,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -654,6 +694,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:21px;width:467px;height:19px;',
 			height: 19,width: 467,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -694,6 +735,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:304px;top:0px;width:163px;height:19px;',
 			height: 19,width: 163,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -727,6 +769,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:476px;top:0px;width:188px;height:64px;',
 			height: 64,width: 188,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -837,6 +880,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:21px;width:664px;height:19px;',
 			height: 19,width: 664,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -871,6 +915,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:425px;top:0px;width:239px;height:19px;',
 			height: 19,width: 239,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -14,17 +14,17 @@
 			style: 'position:absolute;left:0px;top:139px;width:416px;height:25px;',
 			items:
 			[
+				{
+					text:'Зарегистрировать',
+				},
 				'-',
 				{
 					text:'Зарегистрировать и открыть объект',
 				},
-				{
-					text:'Зарегистрировать',
-				},
+				'-',
 				{
 					text:'Закрыть',
 				},
-				'-',
 			]
 		},
 		{
@@ -73,6 +73,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:32px;width:400px;height:24px;',
 			height: 24,width: 400,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

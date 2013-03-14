@@ -14,77 +14,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:645px;height:25px;',
 			items:
 			[
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Действие5',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие3',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие4',
-				},
-				{
-					text:'Действие',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Действие2',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Редактировать номер',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие7',
-				},
-				'-',
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -94,29 +23,23 @@
 			[
 				'-',
 				{
-					text:'Записать документ',
+					text:'Показать файл',
 				},
 				'-',
-				{
-					text:'Программой CheckUFA',
-				},
-				'-',
-				{
-					text:'OK',
-				},
 				{
 					text:'Записать файл на диск',
 				},
 				'-',
 				{
-					text:'Закрыть',
+					text:'OK',
 				},
 				'-',
 				{
-					text:'Показать файл',
+					text:'Записать документ',
 				},
+				'-',
 				{
-					text:'Программой CheckXML',
+					text:'Закрыть',
 				},
 			]
 		},
@@ -136,6 +59,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:629px;height:48px;',
 			height: 48,width: 629,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -210,6 +134,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:122px;width:629px;height:269px;',
 			height: 269,width: 629,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -221,41 +146,8 @@
 			style: 'position:absolute;left:0px;top:16px;width:629px;height:24px;',
 			items:
 			[
-				'-',
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Действие7',
-				},
-				{
-					text:'Действие8',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие6',
-				},
-				{
-					text:'Действие2',
-				},
 				{
 					text:'Сотрудниками без страховых номеров',
-				},
-				{
-					text:'Действие5',
-				},
-				'-',
-				'-',
-				{
-					text:'Действие9',
-				},
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие4',
 				},
 			]
 		},
@@ -323,6 +215,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:629px;height:41px;',
 			height: 41,width: 629,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -333,6 +226,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:629px;height:35px;',
 			height: 35,width: 629,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

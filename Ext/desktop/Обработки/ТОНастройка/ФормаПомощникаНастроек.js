@@ -13,6 +13,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:637px;height:352px;',
 			height: 352,width: 637,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -56,6 +57,61 @@
 			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Дисплей покупателя',
+			style: 'position:absolute;left:203px;top:154px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'ККМ в режиме Offline',
+			style: 'position:absolute;left:430px;top:80px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'ККМ в режиме Online',
+			style: 'position:absolute;left:430px;top:117px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сканер штрихкода',
+			style: 'position:absolute;left:203px;top:43px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Терминал сбора данных',
+			style: 'position:absolute;left:203px;top:117px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Фискальный регистратор',
+			style: 'position:absolute;left:203px;top:80px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Электронные весы',
+			style: 'position:absolute;left:203px;top:228px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Весы с печатью этикеток',
+			style: 'position:absolute;left:430px;top:43px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Считыватель RFID меток',
+			style: 'position:absolute;left:430px;top:186px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Эквайринговая система',
+			style: 'position:absolute;left:430px;top:149px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Считыватель магнитных карт',
+			style: 'position:absolute;left:203px;top:191px;width:177px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПоддерживаемоеТО',
 			text: 'Со списком поддерживаемого ТО можно ознакомиться на сайте:',
@@ -78,6 +134,16 @@
 			name: 'Надпись126',
 			text: 'Выбор обработки обслуживания драйвера',
 			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать загруженную ранее обработку обслуживания',
+			style: 'position:absolute;left:166px;top:65px;width:332px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Добавить новую обработку обслуживания',
+			style: 'position:absolute;left:166px;top:41px;width:307px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -107,6 +173,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'Обновить обработку обслуживания',
 			style: 'position:absolute;left:183px;top:89px;width:202px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Из каталога',
+			style: 'position:absolute;left:390px;top:89px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'С сайта',
+			style: 'position:absolute;left:503px;top:89px;width:108px;height:19px;',
 		},
 					]
 				},
@@ -163,6 +239,16 @@
 			style: 'position:absolute;left:203px;top:326px;width:428px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Из каталога:',
+			style: 'position:absolute;left:166px;top:41px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'С сайта',
+			style: 'position:absolute;left:166px;top:65px;width:85px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'ПолучитьСписок',
 			text: 'Получить список',
@@ -179,6 +265,16 @@
 			name: 'Надпись128',
 			text: 'Выбор устройства',
 			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать ранее созданное устройство',
+			style: 'position:absolute;left:166px;top:65px;width:245px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Добавить новое устройство',
+			style: 'position:absolute;left:166px;top:41px;width:228px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -272,15 +368,15 @@
 			items:
 			[
 				{
+					text:'Назад',
+				},
+				{
 					text:'Далее',
 				},
+				'-',
 				{
 					text:'Отменить',
 				},
-				{
-					text:'Назад',
-				},
-				'-',
 			]
 		},
 	]

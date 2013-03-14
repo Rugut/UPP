@@ -15,12 +15,12 @@
 			items:
 			[
 				{
-					text:'Отмена',
-				},
-				{
 					text:'ОК',
 				},
 				'-',
+				{
+					text:'Отмена',
+				},
 			]
 		},
 		{
@@ -38,6 +38,16 @@
 			hideLabel: true,
 			name: 'КонтрагентДляОтбора',
 			style: 'position:absolute;left:183px;top:91px;width:313px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Формировать отчет в соответствии с правилами ведения журнала учета полученных и выставленных счетов-фактур',
+			style: 'position:absolute;left:8px;top:43px;width:615px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать дополнительные настройки',
+			style: 'position:absolute;left:8px;top:67px;width:405px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

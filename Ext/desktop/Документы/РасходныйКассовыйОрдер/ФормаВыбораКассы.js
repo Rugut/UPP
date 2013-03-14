@@ -21,12 +21,12 @@
 			style: 'position:absolute;left:0px;top:83px;width:400px;height:25px;',
 			items:
 			[
+				{
+					text:'',
+				},
 				'-',
 				{
-					text:'Действие',
-				},
-				{
-					text:'ОК',
+					text:'Закрыть',
 				},
 			]
 		},

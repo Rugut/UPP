@@ -15,71 +15,11 @@
 			items:
 			[
 				{
-					text:'Отправить',
-				},
-				{
-					text:'Показать отправки',
-				},
-				{
-					text:'Поиск',
-				},
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				'-',
-				{
-					text:'Проверить в Интернете',
-				},
-				{
-					text:'Расшифровка',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Выгрузить',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Проверить выгрузку',
-				},
-				{
-					text:'Настройки отчета...',
-				},
-				{
-					text:'Заполнить все отчеты',
-				},
-				{
-					text:'Очистить бухгалтерский баланс',
-				},
-				{
-					text:'Расширить поле бланка',
-				},
-				{
 					text:'Очистить все отчеты',
 				},
-				{
-					text:'Подготовить к отправке',
-				},
 				'-',
 				{
-					text:'Обновить',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Заполнить бухгалтерский баланс',
-				},
-				'-',
-				'-',
-				{
-					text:'Сохранять',
+					text:'Очистить бухгалтерский баланс',
 				},
 			]
 		},
@@ -88,18 +28,6 @@
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'OK',
-				},
-				{
-					text:'Записать',
-				},
-				'-',
-				'-',
 			]
 		},
 		{
@@ -112,6 +40,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:74px;width:700px;height:44px;',
 			height: 44,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -155,6 +84,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:429px;width:700px;height:22px;',
 			height: 22,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -187,6 +117,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:700px;height:37px;',
 			height: 37,width: 700,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -197,6 +128,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:2px;top:0px;width:698px;height:35px;',
 			height: 35,width: 698,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -225,6 +157,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -275,6 +208,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -325,6 +259,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -369,6 +304,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -467,6 +403,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -523,6 +460,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:260px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -567,6 +505,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -611,6 +550,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -655,6 +595,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -699,6 +640,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -743,6 +685,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -787,6 +730,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -831,6 +775,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -875,6 +820,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -919,6 +865,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:238px;width:686px;height:24px;',
 			height: 24,width: 686,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -971,13 +918,13 @@
 			items:
 			[
 				{
-					text:'Удалить файл',
+					text:'',
 				},
 				{
-					text:'Добавить файл',
+					text:'',
 				},
 				{
-					text:'Сохранить файл на диск',
+					text:'',
 				},
 			]
 		},
@@ -993,13 +940,13 @@
 			items:
 			[
 				{
-					text:'Сохранить файл на диск',
+					text:'',
 				},
 				{
-					text:'Добавить файл',
+					text:'',
 				},
 				{
-					text:'Удалить файл',
+					text:'',
 				},
 			]
 		},
@@ -1015,13 +962,13 @@
 			items:
 			[
 				{
-					text:'Добавить файл',
+					text:'',
 				},
 				{
-					text:'Сохранить файл на диск',
+					text:'',
 				},
 				{
-					text:'Удалить файл',
+					text:'',
 				},
 			]
 		},

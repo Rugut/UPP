@@ -39,6 +39,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:54px;width:632px;height:573px;',
 			height: 573,width: 632,
+			tabBar:{hidden:true},
 			items:
 			[
 				{
@@ -211,6 +212,7 @@
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:348px;width:632px;height:95px;',
 			height: 95,width: 632,
+			tabBar:{hidden:true},
 			items:
 			[
 				{

@@ -91,18 +91,24 @@
 			style: 'position:absolute;left:0px;top:0px;width:346px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
 				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Структура подчиненности документа',
+					]
 				},
 				{
 					text:'',
 				},
 				{
-					text:'Движения документа по регистрам',
+					text:'',
 				},
 			]
 		},
@@ -111,21 +117,21 @@
 			style: 'position:absolute;left:0px;top:314px;width:346px;height:25px;',
 			items:
 			[
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Записать',
-				},
 				{
 					text:'Печать',
 				},
+				'-',
 				{
 					text:'OK',
 				},
 				'-',
+				{
+					text:'Записать',
+				},
 				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 		{
