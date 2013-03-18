@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -77,6 +80,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Данные по количеству',
 			style: 'position:absolute;left:12px;top:189px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:102px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

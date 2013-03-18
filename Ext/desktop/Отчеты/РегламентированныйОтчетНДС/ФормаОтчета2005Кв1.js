@@ -50,6 +50,9 @@
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -168,6 +171,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:241px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел2_1',
@@ -262,6 +269,10 @@
 			name: 'НадписьСтатикСтраницФизЛица',
 			text: '999 из 999',
 			style: 'position:absolute;left:288px;top:265px;width:80px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:241px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -393,9 +404,17 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:426px;top:24px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

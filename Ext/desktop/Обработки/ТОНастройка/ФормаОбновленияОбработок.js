@@ -33,6 +33,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Обновить',
 				},
 				'-',

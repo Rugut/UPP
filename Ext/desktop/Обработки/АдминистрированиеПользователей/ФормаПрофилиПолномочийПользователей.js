@@ -187,6 +187,10 @@
 			style: 'position:absolute;left:246px;top:60px;width:114px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:363px;top:60px;width:192px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:246px;top:105px;width:420px;height:24px;',
 			items:
@@ -201,6 +205,9 @@
 			style: 'position:absolute;left:0px;top:418px;width:674px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

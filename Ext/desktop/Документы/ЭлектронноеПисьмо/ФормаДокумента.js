@@ -189,6 +189,10 @@
 			style: 'position:absolute;left:7px;top:33px;width:85px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:33px;width:552px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:176px;width:647px;height:261px;',
 			height: 261,width: 647,
@@ -327,6 +331,10 @@
 			hideLabel: true,
 			name: 'ДатаТранспорта',
 			style: 'position:absolute;left:488px;top:107px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:101px;top:59px;width:277px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

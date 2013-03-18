@@ -66,5 +66,9 @@
 			text: 'Тип диаграммы:',
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:98px;top:33px;width:360px;height:19px;',
+		},
 	]
 });

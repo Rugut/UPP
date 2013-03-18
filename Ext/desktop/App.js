@@ -5,21 +5,22 @@ Ext.define('MyDesktop.App', {
     extend: 'Ext.ux.desktop.App',
 
     requires: [
-        'Ext.window.MessageBox',
+        //'Ext.window.MessageBox',
 
-        'Ext.ux.desktop.ShortcutModel',
+        //'Ext.ux.desktop.ShortcutModel',
 
         //'MyDesktop.SystemStatus',
         //'MyDesktop.VideoWindow',
-        'MyDesktop.GridWindow',
+        //'MyDesktop.GridWindow',
         //'MyDesktop.Tovar',
         //'MyDesktop.Nomenclatura',
         //'MyDesktop.TabWindow',
         'MyDesktop.ЗагрузкаTab',
         //'MyDesktop.AccordionWindow',
         //'MyDesktop.Notepad',
-        'MyDesktop.BogusMenuModule',
+        //'MyDesktop.BogusMenuModule',
         'MyDesktop.BogusModule',
+        
         'Меню.СправочникиФормыЭлемента',
         'Меню.СправочникиФормыСписка',
         'Меню.ДокументыФормыДокумента',
@@ -99,6 +100,7 @@ Ext.define('MyDesktop.App', {
             //new MyDesktop.BogusModule(),
             //new MyDesktop.BogusMenuModule1(),
             //new MyDesktop.BogusMenuModule2(),
+            
             new Меню.СправочникиФормыЭлемента(),
             new Меню.СправочникиФормыСписка(),
             new Меню.ДокументыФормыДокумента(),

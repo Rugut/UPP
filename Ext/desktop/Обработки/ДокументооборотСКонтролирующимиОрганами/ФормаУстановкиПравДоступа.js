@@ -30,6 +30,9 @@
 			style: 'position:absolute;left:0px;top:419px;width:456px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{

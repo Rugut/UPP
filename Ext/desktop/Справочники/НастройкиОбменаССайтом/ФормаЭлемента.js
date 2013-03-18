@@ -43,6 +43,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -415,6 +418,10 @@
 			hideLabel: true,
 			name: 'Подразделение',
 			style: 'position:absolute;left:185px;top:99px;width:299px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:185px;top:6px;width:178px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

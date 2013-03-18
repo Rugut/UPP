@@ -468,6 +468,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Показать сформированный отчет в отдельном окне',
 				},
 				'-',
@@ -547,6 +550,9 @@
 			style: 'position:absolute;left:658px;top:101px;width:173px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Командная панель панель вариантов',
 				},

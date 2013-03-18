@@ -405,6 +405,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Показать сформированный отчет в отдельном окне',
 				},
 				'-',
@@ -484,6 +487,9 @@
 			style: 'position:absolute;left:678px;top:101px;width:153px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'',
 				},

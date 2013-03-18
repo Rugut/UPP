@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				{
@@ -57,6 +60,14 @@
 			name: 'ТекстОтложитьНа',
 			text: 'Отложить на:',
 			style: 'position:absolute;left:8px;top:136px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:80px;top:136px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:204px;top:84px;width:122px;height:19px;',
 		},
 	]
 });

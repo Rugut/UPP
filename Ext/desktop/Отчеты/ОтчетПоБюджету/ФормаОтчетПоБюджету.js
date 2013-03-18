@@ -96,6 +96,10 @@
 			style: 'position:absolute;left:0px;top:27px;width:60px;height:18px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:62px;top:25px;width:180px;height:20px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиПроект',
@@ -105,6 +109,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Проект:',
 			style: 'position:absolute;left:0px;top:2px;width:60px;height:18px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:62px;top:0px;width:180px;height:20px;',
 		},
 					]
 				},

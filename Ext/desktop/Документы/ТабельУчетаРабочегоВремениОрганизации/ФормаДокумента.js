@@ -21,6 +21,9 @@
 			style: 'position:absolute;left:0px;top:525px;width:726px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -399,6 +402,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Изменить состав колонок',
 				},
 			]
@@ -512,6 +518,9 @@
 			style: 'position:absolute;left:676px;top:0px;width:50px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'',
 				},

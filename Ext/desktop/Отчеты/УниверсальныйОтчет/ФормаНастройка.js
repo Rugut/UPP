@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Сформировать',
 				},
 				'-',
@@ -75,6 +78,10 @@
 					text:'Сортировать по убыванию',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:363px;top:6px;width:313px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -310,6 +317,10 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:6px;width:588px;height:19px;',
+		},
 					]
 				},
 				{
@@ -455,6 +466,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:128px;top:27px;width:548px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВариантОформления',
 			text: 'Вариант оформления:',
@@ -548,6 +563,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Сформировать',
 				},
 				'-',
@@ -565,6 +583,9 @@
 			style: 'position:absolute;left:0px;top:475px;width:700px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Сформировать',
 				},
@@ -741,10 +762,18 @@
 			style: 'position:absolute;left:8px;top:478px;width:150px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:365px;top:8px;width:327px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьИмяРегистра1',
 			text: 'Раздел учета:',
 			style: 'position:absolute;left:287px;top:8px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:365px;top:8px;width:327px;height:19px;',
 		},
 		{
 			xtype: 'label',

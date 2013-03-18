@@ -232,6 +232,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:50px;top:33px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиОбъектПоиска',
@@ -248,6 +252,9 @@
 			style: 'position:absolute;left:658px;top:0px;width:38px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Справка',
 				},

@@ -96,6 +96,10 @@
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:64px;top:57px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись7',
 			text: 'Вид МПЗ:',

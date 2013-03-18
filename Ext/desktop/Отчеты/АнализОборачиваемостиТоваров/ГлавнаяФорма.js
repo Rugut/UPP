@@ -72,6 +72,10 @@
 			style: 'position:absolute;left:272px;top:0px;width:280px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Номенклатура:',
 			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
@@ -83,6 +87,10 @@
 			style: 'position:absolute;left:272px;top:24px;width:280px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:24px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Склад:',
 			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
@@ -92,6 +100,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиКомиссионер',
 			style: 'position:absolute;left:272px;top:48px;width:280px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:48px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -149,6 +161,10 @@
 			name: 'НадписьСтатусТоваров',
 			text: 'Статус товаров:',
 			style: 'position:absolute;left:314px;top:57px;width:83px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:400px;top:57px;width:160px;height:19px;',
 		},
 	]
 });

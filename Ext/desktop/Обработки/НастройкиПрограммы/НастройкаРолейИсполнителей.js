@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -22,6 +25,10 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:8px;width:180px;height:251px;',
 		},
 		{
 			xtype: 'grid',

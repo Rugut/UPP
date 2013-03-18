@@ -175,6 +175,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Проверить в CheckXML',
 				},
 				'-',

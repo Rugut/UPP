@@ -228,6 +228,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печать',
 				},
 				'-',
@@ -267,6 +270,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:96px;height:18px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:151px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатурнаяГруппа',
@@ -276,6 +283,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Номенклатурная группа:',
 			style: 'position:absolute;left:0px;top:24px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:151px;top:24px;width:160px;height:19px;',
 		},
 					]
 				},

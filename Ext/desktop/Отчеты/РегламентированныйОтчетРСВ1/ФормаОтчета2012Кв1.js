@@ -51,6 +51,9 @@
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -77,6 +80,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -110,6 +117,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -197,6 +208,10 @@
 			name: 'ПолеВводаКомментарийРаздел31',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:4px;width:220px;height:20px;',
+		},
 					]
 				},
 			]
@@ -249,6 +264,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел32',
@@ -281,6 +300,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -320,6 +343,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -364,6 +391,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаКомментарийРаздел35',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:4px;width:220px;height:20px;',
 		},
 					]
 				},
@@ -410,6 +441,10 @@
 			name: 'ПолеВводаКомментарийРаздел36',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:4px;width:220px;height:20px;',
+		},
 					]
 				},
 			]
@@ -442,6 +477,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаКомментарийРаздел37',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:4px;width:220px;height:20px;',
 		},
 					]
 				},
@@ -476,6 +515,10 @@
 			name: 'ПолеВводаКомментарийРаздел38',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:4px;width:220px;height:20px;',
+		},
 					]
 				},
 			]
@@ -508,6 +551,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаКомментарийРаздел4',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:4px;width:220px;height:20px;',
 		},
 					]
 				},
@@ -542,6 +589,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -601,6 +652,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:169px;top:23px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:433px;top:23px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

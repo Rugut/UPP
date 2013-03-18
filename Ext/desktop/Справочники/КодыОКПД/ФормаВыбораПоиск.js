@@ -44,6 +44,9 @@
 			style: 'position:absolute;left:0px;top:448px;width:788px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -100,6 +103,9 @@
 			style: 'position:absolute;left:175px;top:26px;width:127px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{

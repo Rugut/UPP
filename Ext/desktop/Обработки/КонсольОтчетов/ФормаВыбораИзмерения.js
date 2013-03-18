@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -22,6 +25,10 @@
 					text:'Отмена',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:9px;width:384px;height:250px;',
 		},
 	]
 });

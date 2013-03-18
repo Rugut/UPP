@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Перенести',
 				},
 				'-',
@@ -44,10 +47,18 @@
 			style: 'position:absolute;left:258px;top:128px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:128px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСрокОтргузки',
 			text: 'Дата исполнения:',
 			style: 'position:absolute;left:16px;top:128px;width:132px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:8px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -56,10 +67,18 @@
 			style: 'position:absolute;left:16px;top:8px;width:132px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:104px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеОтгрузки',
 			text: 'Состояние исполнения:',
 			style: 'position:absolute;left:16px;top:104px;width:132px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:364px;top:8px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -74,16 +93,28 @@
 			style: 'position:absolute;left:16px;top:32px;width:132px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:32px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеНЗП',
 			text: 'Наличие затрат в НЗП:',
 			style: 'position:absolute;left:16px;top:56px;width:132px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:56px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Наличие размещения в заказе на производство:',
 			style: 'position:absolute;left:16px;top:76px;width:132px;height:27px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:80px;width:210px;height:19px;',
 		},
 					]
 				},
@@ -253,6 +284,10 @@
 					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:408px;top:6px;width:179px;height:19px;',
 		},
 		{
 			xtype: 'label',

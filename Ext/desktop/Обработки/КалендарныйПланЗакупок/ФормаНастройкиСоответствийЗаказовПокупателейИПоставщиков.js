@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить',
 				},
 				'-',
@@ -52,6 +55,10 @@
 			name: 'НадписьУровеньРазворотаДерева',
 			text: 'Уровень разворота дерева:',
 			style: 'position:absolute;left:446px;top:12px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:592px;top:12px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',

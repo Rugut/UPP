@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -145,6 +148,9 @@
 			style: 'position:absolute;left:81px;top:27px;width:147px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Отображать занятость',
 				},

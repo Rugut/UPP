@@ -32,6 +32,10 @@
 					title:'Булево',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:0px;width:350px;height:19px;',
+		},
 					]
 				},
 				{
@@ -42,6 +46,10 @@
 			xtype: 'radio',
 			boxLabel: 'Переключатель',
 			style: 'position:absolute;left:8px;top:0px;width:342px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:24px;width:342px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -327,6 +335,9 @@
 			style: 'position:absolute;left:0px;top:536px;width:366px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Назад',
 				},

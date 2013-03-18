@@ -129,6 +129,14 @@
 			name: 'ПолеНастройкиПоПроект',
 			style: 'position:absolute;left:399px;top:45px;width:154px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:72px;top:45px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:72px;top:21px;width:160px;height:19px;',
+		},
 					]
 				},
 			]

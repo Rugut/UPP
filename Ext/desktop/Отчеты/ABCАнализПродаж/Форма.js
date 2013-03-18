@@ -103,6 +103,14 @@
 			style: 'position:absolute;left:170px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:444px;top:57px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Параметр анализа:',
@@ -135,6 +143,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'АВС-класс:',
 			style: 'position:absolute;left:0px;top:0px;width:88px;height:18px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:90px;top:0px;width:220px;height:19px;',
 		},
 					]
 				},

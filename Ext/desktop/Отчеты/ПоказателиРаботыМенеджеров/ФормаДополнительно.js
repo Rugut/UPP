@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -99,6 +102,10 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:296px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:96px;top:50px;width:160px;height:19px;',
 		},
 	]
 });

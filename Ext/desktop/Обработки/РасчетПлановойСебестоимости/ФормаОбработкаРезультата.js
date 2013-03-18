@@ -14,11 +14,18 @@
 			style: 'position:absolute;left:0px;top:93px;width:362px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:89px;top:6px;width:265px;height:19px;',
 		},
 		{
 			xtype: 'label',

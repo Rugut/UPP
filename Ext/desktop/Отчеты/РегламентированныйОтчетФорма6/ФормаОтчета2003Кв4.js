@@ -38,6 +38,9 @@
 			style: 'position:absolute;left:0px;top:460px;width:720px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -58,6 +61,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:86px;top:0px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
@@ -68,6 +75,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:183px;top:24px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

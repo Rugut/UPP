@@ -101,6 +101,10 @@
 			style: 'position:absolute;left:264px;top:0px;width:232px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Номенклатура:',
 			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
@@ -110,6 +114,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиТипЦен',
 			style: 'position:absolute;left:264px;top:24px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:24px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

@@ -96,6 +96,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:144px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:146px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСтатьяЗатрат',
@@ -107,6 +111,10 @@
 			style: 'position:absolute;left:0px;top:24px;width:144px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:146px;top:24px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатурнаяГруппа',
@@ -116,6 +124,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Номенклатурная группа:',
 			style: 'position:absolute;left:0px;top:48px;width:144px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:146px;top:48px;width:160px;height:19px;',
 		},
 					]
 				},

@@ -51,6 +51,9 @@
 			style: 'position:absolute;left:0px;top:466px;width:721px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -135,6 +138,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:232px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел2',
@@ -167,6 +174,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:232px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -206,6 +217,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:232px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -271,9 +286,17 @@
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:171px;top:24px;width:247px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:428px;top:24px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

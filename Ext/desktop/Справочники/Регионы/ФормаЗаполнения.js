@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Заполнить / Обновить список',
 				},
 				'-',
@@ -54,6 +57,10 @@
 					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:32px;width:220px;height:385px;',
 		},
 		{
 			xtype: 'toolbar',

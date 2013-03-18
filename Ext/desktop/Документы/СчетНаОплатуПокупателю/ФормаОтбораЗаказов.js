@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Далее>>',
 				},
 				'-',
@@ -40,10 +43,18 @@
 			style: 'position:absolute;left:258px;top:64px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:64px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСрокОтргузки',
 			text: 'Дата отгрузки:',
 			style: 'position:absolute;left:16px;top:64px;width:132px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:8px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -52,10 +63,18 @@
 			style: 'position:absolute;left:16px;top:8px;width:132px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:40px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеОтгрузки',
 			text: 'Состояние отгрузки:',
 			style: 'position:absolute;left:16px;top:40px;width:132px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:364px;top:8px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -64,10 +83,18 @@
 			style: 'position:absolute;left:318px;top:64px;width:42px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:96px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеПросроченоДнейОплаты',
 			style: 'position:absolute;left:318px;top:120px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:120px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -140,6 +167,10 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:413px;top:17px;width:233px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -345,6 +376,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'<<Назад',
 				},
 				'-',
@@ -356,6 +390,10 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:419px;top:36px;width:233px;height:19px;',
 		},
 		{
 			xtype: 'label',

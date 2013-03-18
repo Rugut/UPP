@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить',
 				},
 				'-',
@@ -40,6 +43,10 @@
 					title:'Настройка',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:30px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись1',

@@ -503,6 +503,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'',
 				},
 			]

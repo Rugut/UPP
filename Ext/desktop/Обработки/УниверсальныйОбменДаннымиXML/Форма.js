@@ -292,10 +292,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:167px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:172px;top:0px;width:202px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПлатформа',
 			text: 'Платформа:',
 			style: 'position:absolute;left:381px;top:0px;width:66px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:454px;top:0px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -615,6 +623,10 @@
 			name: 'НадписьИзмененияРегистрацииДляУзловОбменаПослеВыгрузки',
 			text: 'Изменения регистрации для узлов обмена после выгрузки:',
 			style: 'position:absolute;left:6px;top:215px;width:339px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:352px;top:215px;width:258px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить',
 				},
 				'-',
@@ -35,6 +38,18 @@
 			hideLabel: true,
 			name: 'ПутьКФайлу',
 			style: 'position:absolute;left:182px;top:57px;width:269px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:182px;top:81px;width:181px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:182px;top:105px;width:181px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:182px;top:129px;width:181px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -59,6 +74,10 @@
 			name: 'НадписьПутьКФайлу',
 			text: 'Файл Экспорта/Импорта:',
 			style: 'position:absolute;left:8px;top:57px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:182px;top:33px;width:269px;height:19px;',
 		},
 		{
 			xtype: 'label',

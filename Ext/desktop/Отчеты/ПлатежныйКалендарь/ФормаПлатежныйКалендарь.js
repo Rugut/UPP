@@ -136,6 +136,14 @@
 			boxLabel: 'Банковский счет, касса',
 			style: 'position:absolute;left:0px;top:24px;width:146px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:151px;top:24px;width:160px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:151px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 			]

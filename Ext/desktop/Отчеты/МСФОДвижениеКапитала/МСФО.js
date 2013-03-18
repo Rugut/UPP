@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:457px;width:736px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -60,6 +63,10 @@
 					title:'Отчет об изменениях в капитале',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:264px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -93,6 +100,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:232px;top:0px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

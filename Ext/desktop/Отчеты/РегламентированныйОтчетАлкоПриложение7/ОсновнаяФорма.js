@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -62,6 +65,10 @@
 			name: 'НадписьПериодичность',
 			text: 'Периодичность:',
 			style: 'position:absolute;left:14px;top:81px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:100px;top:81px;width:162px;height:19px;',
 		},
 		{
 			xtype: 'label',

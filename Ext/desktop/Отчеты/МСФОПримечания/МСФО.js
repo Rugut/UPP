@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:409px;width:780px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -60,6 +63,10 @@
 					title:'1. Дочерние компании',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:251px;width:160px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -91,6 +98,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:252px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиПримечанияСД',
@@ -120,6 +131,10 @@
 					title:'3. ДС от операционной деятельности',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:253px;width:160px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -153,6 +168,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:80px;top:0px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

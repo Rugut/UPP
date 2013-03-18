@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'',
 				},
 				'-',
@@ -187,6 +190,9 @@
 			style: 'position:absolute;left:483px;top:19px;width:147px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -194,6 +200,9 @@
 			style: 'position:absolute;left:519px;top:19px;width:111px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'',
 				},

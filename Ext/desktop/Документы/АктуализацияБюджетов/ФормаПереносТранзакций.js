@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 			]

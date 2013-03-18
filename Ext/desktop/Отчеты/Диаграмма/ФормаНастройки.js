@@ -15,15 +15,26 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:128px;top:30px;width:280px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Тип диаграммы:',
 			style: 'position:absolute;left:14px;top:30px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:128px;top:54px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -61,6 +72,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВидПодписи',
 			text: 'Вид подписи:',
@@ -71,6 +86,10 @@
 			name: 'РаздвижениеСекторов',
 			text: 'Раздвижение секторов:',
 			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:24px;width:335px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -84,6 +103,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВидПодписи1',
 			text: 'Вид подписи:',
@@ -94,6 +117,10 @@
 			name: 'РаздвижениеСекторов1',
 			text: 'Раздвижение секторов:',
 			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:24px;width:335px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -122,6 +149,10 @@
 			hideLabel: true,
 			name: 'БазовоеЗначение',
 			style: 'position:absolute;left:136px;top:24px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -163,6 +194,10 @@
 			style: 'position:absolute;left:136px;top:24px;width:60px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Режим пробелов:',
@@ -202,6 +237,10 @@
 			style: 'position:absolute;left:136px;top:48px;width:58px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись10',
 			text: 'Ориентация:',
@@ -216,6 +255,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Свет',
 			style: 'position:absolute;left:6px;top:92px;width:48px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:136px;top:24px;width:335px;height:19px;',
 		},
 		{
 			xtype: 'label',

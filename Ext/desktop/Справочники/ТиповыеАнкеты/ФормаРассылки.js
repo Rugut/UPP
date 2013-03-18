@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -196,6 +199,10 @@
 			name: 'Надпись10',
 			text: 'E-mail ответов:',
 			style: 'position:absolute;left:0px;top:24px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:89px;top:0px;width:368px;height:19px;',
 		},
 					]
 				},

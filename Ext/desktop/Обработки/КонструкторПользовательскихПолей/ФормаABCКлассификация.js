@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'',
 				},
 				'-',
@@ -28,6 +31,10 @@
 			name: 'НадписьПоле',
 			text: 'Анализируемый объект:',
 			style: 'position:absolute;left:8px;top:60px;width:142px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:156px;top:34px;width:347px;height:19px;',
 		},
 		{
 			xtype: 'label',

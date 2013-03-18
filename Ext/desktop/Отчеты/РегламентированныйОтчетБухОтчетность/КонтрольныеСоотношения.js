@@ -38,6 +38,9 @@
 			style: 'position:absolute;left:0px;top:426px;width:580px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'Закрыть',

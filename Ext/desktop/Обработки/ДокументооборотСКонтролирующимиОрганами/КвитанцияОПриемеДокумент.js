@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 			]
@@ -66,6 +69,10 @@
 			hideLabel: true,
 			name: 'ДатаПрин',
 			style: 'position:absolute;left:193px;top:105px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:148px;width:480px;height:280px;',
 		},
 		{
 			xtype: 'label',

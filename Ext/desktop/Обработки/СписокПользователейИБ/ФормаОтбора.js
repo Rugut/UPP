@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -30,16 +33,27 @@
 			style: 'position:absolute;left:8px;top:267px;width:178px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:186px;top:267px;width:336px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Аутентификация 1С:Предприятия:',
 			style: 'position:absolute;left:8px;top:243px;width:178px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:186px;top:243px;width:336px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:216px;top:21px;width:49px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'',
 				},
@@ -54,6 +68,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'',
 				},
 				{
@@ -66,6 +83,9 @@
 			style: 'position:absolute;left:473px;top:21px;width:49px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'',
 				},
@@ -109,6 +129,10 @@
 					width:'0',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:23px;width:80px;height:19px;',
 		},
 	]
 });

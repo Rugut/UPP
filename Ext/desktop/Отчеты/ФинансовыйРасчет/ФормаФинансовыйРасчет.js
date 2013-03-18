@@ -87,6 +87,10 @@
 			style: 'position:absolute;left:8px;top:82px;width:56px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:470px;top:58px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПоказатель',
 			text: 'Показатель для вывода:',
@@ -121,6 +125,10 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:280px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:470px;top:82px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'label',

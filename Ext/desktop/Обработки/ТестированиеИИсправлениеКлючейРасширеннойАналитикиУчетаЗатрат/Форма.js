@@ -20,6 +20,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить',
 				},
 				{
@@ -35,6 +38,10 @@
 			xtype: 'radio',
 			boxLabel: 'Тестирование и исправление',
 			style: 'position:absolute;left:8px;top:148px;width:265px;height:15px;',
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:29px;width:384px;height:93px;',
 		},
 		{
 			xtype: 'label',

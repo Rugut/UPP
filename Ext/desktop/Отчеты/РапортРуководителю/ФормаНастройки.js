@@ -91,6 +91,10 @@
 			style: 'position:absolute;left:243px;top:99px;width:61px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:306px;top:99px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаКаталог',
@@ -122,6 +126,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Учитывать выходные',
 			style: 'position:absolute;left:297px;top:50px;width:129px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:306px;top:26px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -213,6 +221,9 @@
 			style: 'position:absolute;left:0px;top:395px;width:448px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

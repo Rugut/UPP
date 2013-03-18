@@ -27,6 +27,9 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'ОК',
@@ -63,6 +66,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:177px;top:0px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

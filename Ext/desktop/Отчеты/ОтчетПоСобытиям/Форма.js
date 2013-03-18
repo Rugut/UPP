@@ -130,6 +130,14 @@
 			name: 'ПолеНастройкиКонтактноеЛицо',
 			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:0px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:24px;width:180px;height:19px;',
+		},
 					]
 				},
 			]

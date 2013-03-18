@@ -112,6 +112,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -193,6 +196,10 @@
 			xtype: 'radio',
 			boxLabel: 'Фиксированной суммой',
 			style: 'position:absolute;left:24px;top:247px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:100px;top:105px;width:246px;height:19px;',
 		},
 		{
 			xtype: 'label',

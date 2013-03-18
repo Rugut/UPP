@@ -14,6 +14,9 @@
 			style: 'position:absolute;left:0px;top:548px;width:683px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -216,6 +219,10 @@
 					title:'Загрузка в справочник',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:95px;top:0px;width:246px;height:19px;',
+		},
 					]
 				},
 				{
@@ -258,6 +265,10 @@
 					title:'Загрузка в регистр сведений',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:95px;top:0px;width:246px;height:19px;',
+		},
 					]
 				},
 			]
@@ -267,6 +278,10 @@
 			name: 'НадписьРежимЗагрузки',
 			text: 'Режим загрузки:',
 			style: 'position:absolute;left:8px;top:8px;width:87px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:8px;width:247px;height:19px;',
 		},
 	]
 });

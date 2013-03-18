@@ -256,6 +256,10 @@
 			style: 'position:absolute;left:90px;top:105px;width:373px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:90px;top:13px;width:113px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'Валюта',

@@ -172,6 +172,10 @@
 			text: 'содержит:',
 			style: 'position:absolute;left:166px;top:0px;width:57px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 				{

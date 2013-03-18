@@ -27,6 +27,10 @@
 			]
 		},
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:61px;width:475px;height:271px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:491px;height:25px;',
 			items:

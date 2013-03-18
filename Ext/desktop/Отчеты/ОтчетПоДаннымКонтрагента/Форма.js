@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Сформировать',
 				},
 				'-',
@@ -64,6 +67,10 @@
 					title:'Настройка формы',
 					items:
 					[
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:46px;width:780px;height:324px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Выводить конт.инф. контактных лиц',

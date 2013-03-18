@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -33,6 +36,10 @@
 					title:'Накопления',
 					items:
 					[
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
@@ -56,6 +63,10 @@
 					items:
 					[
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
 			items:
@@ -77,6 +88,10 @@
 					title:'Бухгалтерии',
 					items:
 					[
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',

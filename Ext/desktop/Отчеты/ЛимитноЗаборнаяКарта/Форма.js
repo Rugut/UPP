@@ -108,6 +108,10 @@
 			style: 'position:absolute;left:0px;top:1px;width:100px;height:18px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатура',
@@ -119,6 +123,10 @@
 			style: 'position:absolute;left:0px;top:25px;width:100px;height:18px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:24px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиПодразделение',
@@ -128,6 +136,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Подразделение:',
 			style: 'position:absolute;left:0px;top:49px;width:100px;height:18px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:48px;width:160px;height:19px;',
 		},
 					]
 				},

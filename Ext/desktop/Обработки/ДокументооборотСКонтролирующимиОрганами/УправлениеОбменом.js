@@ -56,6 +56,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Сегодня',
 				},
 				{

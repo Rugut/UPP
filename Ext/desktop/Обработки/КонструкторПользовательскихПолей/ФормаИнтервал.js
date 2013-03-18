@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -24,16 +27,28 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:119px;top:84px;width:203px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьНижняяГраница',
 			text: 'Нижняя граница:',
 			style: 'position:absolute;left:8px;top:84px;width:107px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:119px;top:36px;width:203px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВерхняяГраница',
 			text: 'Верхняя граница:',
 			style: 'position:absolute;left:8px;top:36px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:119px;top:60px;width:203px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -141,6 +144,10 @@
 			name: 'Надпись1',
 			text: 'Криптопровайдер:',
 			style: 'position:absolute;left:8px;top:140px;width:98px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:111px;top:138px;width:271px;height:19px;',
 		},
 					]
 				},

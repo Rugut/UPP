@@ -38,6 +38,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Отправить',
 				},
 				'-',

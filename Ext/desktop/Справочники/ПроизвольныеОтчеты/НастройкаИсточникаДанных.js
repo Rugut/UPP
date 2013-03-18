@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -48,6 +51,10 @@
 			name: 'НадписьНаборДанных',
 			text: 'Набор данных:',
 			style: 'position:absolute;left:8px;top:8px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:95px;top:8px;width:256px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -141,6 +148,10 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:95px;top:32px;width:256px;height:19px;',
 		},
 	]
 });

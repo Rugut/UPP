@@ -40,6 +40,9 @@
 			style: 'position:absolute;left:0px;top:425px;width:716px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'ОК',
@@ -84,10 +87,18 @@
 			style: 'position:absolute;left:297px;top:23px;width:89px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:120px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:262px;top:0px;width:32px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:399px;top:23px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

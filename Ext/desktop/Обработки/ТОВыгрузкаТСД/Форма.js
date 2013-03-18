@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выгрузить',
 				},
 				{
@@ -132,6 +135,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:145px;height:20px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:6px;width:168px;height:20px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСклад',
@@ -141,6 +148,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Тип цен:',
 			style: 'position:absolute;left:6px;top:31px;width:145px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:31px;width:168px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
@@ -154,6 +165,10 @@
 			style: 'position:absolute;left:6px;top:56px;width:145px;height:20px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:56px;width:168px;height:20px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатура',
@@ -163,6 +178,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Номенклатурная группа:',
 			style: 'position:absolute;left:6px;top:81px;width:145px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:81px;width:168px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
@@ -179,6 +198,10 @@
 			name: 'Надпись1',
 			text: 'Терминал сбора данных:',
 			style: 'position:absolute;left:8px;top:28px;width:128px;height:15px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:166px;top:28px;width:167px;height:19px;',
 		},
 	]
 });

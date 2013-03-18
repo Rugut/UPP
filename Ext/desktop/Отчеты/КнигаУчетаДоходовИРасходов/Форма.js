@@ -114,10 +114,18 @@
 			style: 'position:absolute;left:132px;top:57px;width:290px;height:19px;text-align:right;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРежимПечатиНДС',
 			text: 'Режим печати НДС:',
 			style: 'position:absolute;left:320px;top:81px;width:102px;height:19px;text-align:right;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

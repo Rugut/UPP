@@ -100,6 +100,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -348,6 +351,10 @@
 			style: 'position:absolute;left:6px;top:24px;width:131px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:140px;top:24px;width:182px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:47px;width:472px;height:19px;',
 			height: 19,width: 472,
@@ -445,6 +452,10 @@
 			text: '',
 			style: 'position:absolute;left:421px;top:0px;width:25px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:328px;top:24px;width:150px;height:19px;',
+		},
 					]
 				},
 			]
@@ -466,6 +477,10 @@
 			name: 'НадписьТипДобавленияДанныхИзФоновогоОбмена',
 			text: 'Фоновый обмен:',
 			style: 'position:absolute;left:6px;top:93px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:94px;top:93px;width:254px;height:19px;',
 		},
 		{
 			xtype: 'label',

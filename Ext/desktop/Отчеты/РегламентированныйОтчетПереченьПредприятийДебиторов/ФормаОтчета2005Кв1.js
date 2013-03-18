@@ -44,6 +44,9 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'ОК',
@@ -82,10 +85,18 @@
 			style: 'position:absolute;left:227px;top:0px;width:32px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:87px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:87px;top:27px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:175px;top:27px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

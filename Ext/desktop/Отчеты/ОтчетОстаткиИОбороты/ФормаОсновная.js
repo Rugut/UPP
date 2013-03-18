@@ -104,6 +104,10 @@
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:364px;top:33px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьИмяРегистра',
 			text: 'Раздел учета:',
@@ -144,6 +148,10 @@
 			style: 'position:absolute;left:452px;top:0px;width:124px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройки5',
@@ -165,6 +173,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПо5',
 			style: 'position:absolute;left:452px;top:98px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:98px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -190,6 +202,10 @@
 			style: 'position:absolute;left:452px;top:72px;width:124px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:72px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройки3',
@@ -213,6 +229,10 @@
 			style: 'position:absolute;left:453px;top:48px;width:123px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:48px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройки2',
@@ -234,6 +254,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПо2',
 			style: 'position:absolute;left:452px;top:24px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:24px;width:160px;height:19px;',
 		},
 					]
 				},

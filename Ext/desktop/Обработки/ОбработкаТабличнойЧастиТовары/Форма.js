@@ -142,6 +142,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:4px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаВыполнить',
 			text: 'Выполнить',
@@ -182,6 +186,9 @@
 			style: 'position:absolute;left:0px;top:380px;width:728px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

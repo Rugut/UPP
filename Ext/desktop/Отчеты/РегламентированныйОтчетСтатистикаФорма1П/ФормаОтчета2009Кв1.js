@@ -41,6 +41,9 @@
 			style: 'position:absolute;left:0px;top:404px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -220,6 +223,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:168px;top:0px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

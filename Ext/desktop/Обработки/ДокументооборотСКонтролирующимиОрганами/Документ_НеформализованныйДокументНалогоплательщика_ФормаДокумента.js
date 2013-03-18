@@ -90,6 +90,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -183,6 +186,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Загрузить текст',
 				},
 				{
@@ -201,6 +207,9 @@
 			style: 'position:absolute;left:526px;top:0px;width:49px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Загрузить',
 				},

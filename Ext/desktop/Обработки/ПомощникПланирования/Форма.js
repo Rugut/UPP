@@ -61,6 +61,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Далее>>',
 				},
 				'-',
@@ -154,6 +157,10 @@
 			style: 'position:absolute;left:280px;top:430px;width:80px;height:19px;text-align:center;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:362px;top:430px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаРежимСложенияОбъединения',
@@ -242,6 +249,10 @@
 			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо',
 			text: 'округлить до:',
 			style: 'position:absolute;left:280px;top:430px;width:80px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:362px;top:430px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',

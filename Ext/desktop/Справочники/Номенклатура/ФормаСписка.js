@@ -235,6 +235,10 @@
 			text: 'Валюта цены:',
 			style: 'position:absolute;left:150px;top:125px;width:73px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:225px;top:125px;width:195px;height:19px;',
+		},
 					]
 				},
 			]
@@ -273,6 +277,10 @@
 					text:'Переместить вниз',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
 		},
 	]
 });

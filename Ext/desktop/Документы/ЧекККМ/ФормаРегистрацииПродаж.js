@@ -32,6 +32,9 @@
 			style: 'position:absolute;left:0px;top:425px;width:782px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{

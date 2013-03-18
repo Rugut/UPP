@@ -571,6 +571,10 @@
 			style: 'position:absolute;left:96px;top:54px;width:537px;height:44px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:96px;top:30px;width:537px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВидАкцепта',
 			text: 'Вид акцепта:',
@@ -658,6 +662,9 @@
 			style: 'position:absolute;left:0px;top:452px;width:657px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Печать',
 				},

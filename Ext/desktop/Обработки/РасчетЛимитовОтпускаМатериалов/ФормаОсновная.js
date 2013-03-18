@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'<Назад',
 				},
 				'-',
@@ -340,6 +343,14 @@
 			name: 'НадписьРезультатРасчетаОкруглитьДо',
 			text: 'округлить до:',
 			style: 'position:absolute;left:318px;top:238px;width:80px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:398px;top:238px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:483px;top:238px;width:262px;height:19px;',
 		},
 					]
 				},

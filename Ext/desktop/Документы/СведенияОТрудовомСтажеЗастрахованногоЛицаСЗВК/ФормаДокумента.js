@@ -64,6 +64,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Проверить в CheckXML',
 				},
 				'-',
@@ -182,6 +185,14 @@
 			name: 'Надпись7',
 			text: 'Тип сведений:',
 			style: 'position:absolute;left:315px;top:24px;width:78px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:399px;top:24px;width:168px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:74px;width:479px;height:19px;',
 		},
 		{
 			xtype: 'label',

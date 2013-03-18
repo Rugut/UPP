@@ -69,6 +69,10 @@
 			style: 'position:absolute;left:216px;top:1px;width:441px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:109px;top:1px;width:102px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Номенклатура',
 			style: 'position:absolute;left:0px;top:1px;width:103px;height:19px;',
@@ -77,6 +81,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Ценовая группа',
 			style: 'position:absolute;left:0px;top:24px;width:104px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:109px;top:24px;width:102px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
@@ -93,6 +101,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиТипЦен',
 			style: 'position:absolute;left:223px;top:105px;width:441px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:116px;top:105px;width:102px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

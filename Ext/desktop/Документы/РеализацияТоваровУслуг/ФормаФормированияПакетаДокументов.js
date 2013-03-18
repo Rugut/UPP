@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Восстановить значения по умолчанию',
 				},
 				'-',
@@ -31,6 +34,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Печатать',
 			style: 'position:absolute;left:14px;top:24px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:221px;top:24px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -78,6 +85,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Печатать',
 			style: 'position:absolute;left:14px;top:345px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:221px;top:345px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -154,6 +165,10 @@
 			style: 'position:absolute;left:221px;top:445px;width:140px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:221px;top:223px;width:140px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьМакетСФ',
 			text: 'Печатная форма:',
@@ -164,6 +179,10 @@
 			name: 'НадписьМакетРасходныйОрдерНаТовары',
 			text: 'Печатная форма:',
 			style: 'position:absolute;left:126px;top:123px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:221px;top:123px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

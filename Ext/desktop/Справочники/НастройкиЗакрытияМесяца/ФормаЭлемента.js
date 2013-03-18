@@ -51,6 +51,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -385,6 +388,10 @@
 			name: 'НадписьВариант',
 			text: 'Вариант:',
 			style: 'position:absolute;left:545px;top:3px;width:49px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:598px;top:4px;width:236px;height:19px;',
 		},
 					]
 				},

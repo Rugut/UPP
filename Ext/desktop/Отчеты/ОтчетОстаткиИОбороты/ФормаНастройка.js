@@ -111,6 +111,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:78px;top:0px;width:382px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьИмяРегистра1',
 			text: 'Раздел учета:',
@@ -282,6 +286,9 @@
 			style: 'position:absolute;left:0px;top:300px;width:488px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

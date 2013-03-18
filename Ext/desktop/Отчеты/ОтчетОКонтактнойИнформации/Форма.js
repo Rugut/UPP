@@ -123,6 +123,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:226px;top:33px;width:370px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Объект отчета (контактной информации):',

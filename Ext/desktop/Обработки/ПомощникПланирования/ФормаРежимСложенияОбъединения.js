@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -22,6 +25,10 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:13px;top:29px;width:230px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

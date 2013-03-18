@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -33,6 +36,10 @@
 					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:84px;top:57px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись7',

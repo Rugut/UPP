@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -27,6 +30,10 @@
 			xtype: 'radio',
 			boxLabel: 'Переключатель',
 			style: 'position:absolute;left:8px;top:8px;width:376px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:32px;width:376px;height:19px;',
 		},
 		{
 			xtype: 'label',

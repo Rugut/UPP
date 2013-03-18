@@ -699,6 +699,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печать',
 				},
 				'-',
@@ -720,6 +723,9 @@
 			style: 'position:absolute;left:0px;top:465px;width:821px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Зарегистрировать и закрыть',
 				},

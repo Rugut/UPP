@@ -123,6 +123,14 @@
 			name: 'ПолеНастройкиПодразделение',
 			style: 'position:absolute;left:218px;top:4px;width:486px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:109px;top:28px;width:107px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:109px;top:4px;width:107px;height:19px;',
+		},
 					]
 				},
 			]

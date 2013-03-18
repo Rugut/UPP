@@ -29,6 +29,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -216,6 +219,10 @@
 					width:'80',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:392px;top:24px;width:185px;height:273px;',
 		},
 					]
 				},

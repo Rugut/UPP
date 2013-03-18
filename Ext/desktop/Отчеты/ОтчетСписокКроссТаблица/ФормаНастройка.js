@@ -99,6 +99,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:78px;top:0px;width:382px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьИмяРегистра',
 			text: 'Раздел учета:',
@@ -267,6 +271,10 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:97px;top:6px;width:369px;height:19px;',
+		},
 					]
 				},
 				{
@@ -386,6 +394,9 @@
 			style: 'position:absolute;left:0px;top:334px;width:490px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

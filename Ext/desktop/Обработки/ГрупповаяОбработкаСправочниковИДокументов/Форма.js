@@ -25,6 +25,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Отобрать',
 				},
 				'-',
@@ -48,6 +51,10 @@
 			name: 'Надпись1',
 			text: 'Тип объекта:',
 			style: 'position:absolute;left:8px;top:11px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:78px;top:11px;width:163px;height:19px;',
 		},
 		{
 			xtype: 'grid',
@@ -159,6 +166,10 @@
 					width:'100',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:286px;width:280px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

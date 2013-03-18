@@ -122,6 +122,30 @@
 			style: 'position:absolute;left:6px;top:181px;width:139px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:6px;width:143px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:56px;width:143px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:81px;width:143px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:131px;width:143px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:156px;width:143px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:181px;width:143px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Характеристика номенклатуры',
 			style: 'position:absolute;left:6px;top:31px;width:139px;height:19px;',
@@ -133,6 +157,10 @@
 			style: 'position:absolute;left:295px;top:31px;width:238px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:31px;width:143px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Заказ покупателя',
 			style: 'position:absolute;left:6px;top:106px;width:139px;height:19px;',
@@ -142,6 +170,10 @@
 			hideLabel: true,
 			name: 'ЗначениеЗаказПокупателя',
 			style: 'position:absolute;left:295px;top:106px;width:238px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:106px;width:143px;height:19px;',
 		},
 					]
 				},

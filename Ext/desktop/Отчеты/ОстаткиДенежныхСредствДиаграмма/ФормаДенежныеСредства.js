@@ -90,6 +90,10 @@
 			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:377px;top:33px;width:219px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Тип диаграммы:',
@@ -118,6 +122,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:156px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:0px;width:128px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиВалютаДенежныхСредств',
@@ -129,6 +137,10 @@
 			style: 'position:absolute;left:0px;top:24px;width:156px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:24px;width:128px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиБанковскийСчетКасса',
@@ -138,6 +150,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Банковский счет, касса:',
 			style: 'position:absolute;left:0px;top:48px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:48px;width:128px;height:19px;',
 		},
 					]
 				},

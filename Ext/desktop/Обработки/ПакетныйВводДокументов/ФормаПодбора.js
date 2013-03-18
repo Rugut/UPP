@@ -87,6 +87,18 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:493px;top:8px;width:123px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:252px;width:290px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:301px;top:252px;width:315px;height:19px;',
+		},
 					]
 				},
 				{
@@ -146,6 +158,9 @@
 			style: 'position:absolute;left:0px;top:311px;width:636px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Сформировать',
 				},

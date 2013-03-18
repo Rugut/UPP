@@ -10,6 +10,10 @@
 	items:
 	[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:70px;top:8px;width:281px;height:19px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаОбновить',
 			text: 'Обновить',
@@ -328,6 +332,10 @@
 			text: 'Валюта цены:',
 			style: 'position:absolute;left:107px;top:74px;width:70px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:178px;top:74px;width:116px;height:19px;',
+		},
 					]
 				},
 			]
@@ -407,6 +415,10 @@
 			name: 'НадписьПоиск',
 			text: 'Искать по:',
 			style: 'position:absolute;left:8px;top:57px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:70px;top:57px;width:117px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -520,6 +532,9 @@
 			style: 'position:absolute;left:8px;top:79px;width:84px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Изображение',
 				},

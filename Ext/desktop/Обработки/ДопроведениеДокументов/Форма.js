@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить допроведение',
 				},
 				'-',
@@ -85,6 +88,10 @@
 					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:169px;width:411px;height:89px;',
 		},
 		{
 			xtype: 'label',

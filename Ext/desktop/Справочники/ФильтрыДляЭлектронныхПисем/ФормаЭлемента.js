@@ -120,6 +120,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -137,6 +140,10 @@
 			name: 'Надпись4',
 			text: 'Соединение условий по:',
 			style: 'position:absolute;left:8px;top:371px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:141px;top:371px;width:139px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

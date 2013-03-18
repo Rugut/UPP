@@ -634,6 +634,10 @@
 			style: 'position:absolute;left:118px;top:27px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:330px;top:27px;width:90px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'КоличествоРабочихДней',

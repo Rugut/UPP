@@ -1110,10 +1110,22 @@
 			style: 'position:absolute;left:0px;top:81px;width:114px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:124px;top:27px;width:177px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПоказательПериода',
 			text: 'Налоговый период:',
 			style: 'position:absolute;left:0px;top:27px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:124px;top:81px;width:505px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:124px;top:0px;width:505px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -1251,6 +1263,14 @@
 			style: 'position:absolute;left:124px;top:54px;width:177px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:124px;top:81px;width:505px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:124px;top:0px;width:505px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПоказательПериодаТаможня',
@@ -1327,6 +1347,10 @@
 			style: 'position:absolute;left:6px;top:28px;width:114px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:131px;top:28px;width:505px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВидПеречисленияВБюджет',
 			text: 'Вид перечисления:',
@@ -1365,6 +1389,9 @@
 			style: 'position:absolute;left:0px;top:460px;width:658px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Печать',
 				},

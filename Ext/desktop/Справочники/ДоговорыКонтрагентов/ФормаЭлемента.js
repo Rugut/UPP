@@ -84,6 +84,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -179,6 +182,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'По документам расчетов с контрагентами',
 			style: 'position:absolute;left:14px;top:47px;width:271px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:151px;top:25px;width:170px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -671,6 +678,10 @@
 			hideLabel: true,
 			name: 'Владелец',
 			style: 'position:absolute;left:106px;top:57px;width:397px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:106px;top:129px;width:397px;height:19px;',
 		},
 		{
 			xtype: 'label',

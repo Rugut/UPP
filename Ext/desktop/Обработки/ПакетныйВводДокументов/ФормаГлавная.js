@@ -72,6 +72,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:79px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:113px;top:6px;width:294px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Тип цен:',
@@ -212,6 +216,10 @@
 			style: 'position:absolute;left:417px;top:134px;width:145px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:113px;top:62px;width:294px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДатаРасчетаОстатков',
 			text: 'Дата расчета остатков:',
@@ -315,6 +323,9 @@
 			style: 'position:absolute;left:0px;top:449px;width:698px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Выполнить',
 				},

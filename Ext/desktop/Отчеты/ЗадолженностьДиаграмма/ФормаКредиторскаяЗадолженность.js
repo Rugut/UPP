@@ -88,6 +88,10 @@
 			style: 'position:absolute;left:8px;top:33px;width:52px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:416px;top:33px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Тип диаграммы:',
@@ -116,6 +120,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:18px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиВидВзаиморасчетов',
@@ -125,6 +133,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Вид взаиморасчетов:',
 			style: 'position:absolute;left:0px;top:23px;width:128px;height:18px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:23px;width:160px;height:19px;',
 		},
 					]
 				},

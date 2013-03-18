@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Зарегистрировать',
 				},
 				'-',
@@ -26,6 +29,10 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:150px;top:8px;width:258px;height:19px;',
 		},
 		{
 			xtype: 'label',

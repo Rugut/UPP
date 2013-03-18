@@ -34,6 +34,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Программой CheckXML',
 				},
 				{

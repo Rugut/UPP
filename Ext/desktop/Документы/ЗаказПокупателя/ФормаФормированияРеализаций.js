@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Сформировать документы',
 				},
 			]
@@ -33,6 +36,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Печатать документы',
 			style: 'position:absolute;left:18px;top:103px;width:129px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:112px;top:125px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -175,6 +182,10 @@
 			name: 'НадписьМакетРасходныйОрдерНаТовары',
 			text: 'печатная форма:',
 			style: 'position:absolute;left:387px;top:125px;width:91px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:487px;top:125px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'label',

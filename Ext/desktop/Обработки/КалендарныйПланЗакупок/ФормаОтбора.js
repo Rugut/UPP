@@ -191,6 +191,42 @@
 			style: 'position:absolute;left:6px;top:231px;width:192px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:6px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:56px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:81px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:106px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:131px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:156px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:181px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:206px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:231px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Характеристика номенклатуры:',
 			style: 'position:absolute;left:6px;top:31px;width:184px;height:19px;',
@@ -200,6 +236,10 @@
 			hideLabel: true,
 			name: 'ЗначениеХарактеристикаНоменклатуры',
 			style: 'position:absolute;left:382px;top:31px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:200px;top:31px;width:180px;height:19px;',
 		},
 					]
 				},

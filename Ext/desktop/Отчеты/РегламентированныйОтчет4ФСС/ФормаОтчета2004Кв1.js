@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -74,6 +77,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -126,6 +133,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел1_2',
@@ -176,6 +187,10 @@
 			name: 'ПолеВводаКомментарийРаздел2_1',
 			style: 'position:absolute;left:351px;top:7px;width:289px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:7px;width:220px;height:19px;',
+		},
 					]
 				},
 			]
@@ -215,6 +230,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:7px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -297,6 +316,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел3_1',
@@ -341,6 +364,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -395,6 +422,18 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:526px;top:23px;width:238px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:171px;top:23px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

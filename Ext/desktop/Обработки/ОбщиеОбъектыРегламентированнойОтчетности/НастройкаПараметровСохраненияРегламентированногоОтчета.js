@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Сохранить',
 				},
 				'-',
@@ -38,6 +41,10 @@
 			xtype: 'radio',
 			boxLabel: 'Сохранить в каталог:',
 			style: 'position:absolute;left:11px;top:33px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:148px;top:6px;width:60px;height:20px;',
 		},
 	]
 });

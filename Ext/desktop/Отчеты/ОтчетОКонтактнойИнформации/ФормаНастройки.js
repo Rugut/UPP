@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -33,6 +36,10 @@
 					title:'Общие',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:6px;width:378px;height:19px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
@@ -57,6 +64,10 @@
 					width:'220',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:346px;top:92px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',

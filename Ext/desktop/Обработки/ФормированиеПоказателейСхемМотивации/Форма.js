@@ -32,6 +32,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Сформировать показатели',
 				},
 				'-',
@@ -91,6 +94,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиМенеджер',
 			style: 'position:absolute;left:190px;top:74px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:91px;top:74px;width:92px;height:19px;',
 		},
 	]
 });

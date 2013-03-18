@@ -88,6 +88,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -140,6 +143,10 @@
 			name: 'НадписьВидДокумента',
 			text: 'Вид документа:',
 			style: 'position:absolute;left:327px;top:57px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:447px;top:57px;width:173px;height:19px;',
 		},
 		{
 			xtype: 'label',

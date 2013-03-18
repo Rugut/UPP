@@ -125,6 +125,10 @@
 			name: 'ПолеНастройкиПо1',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 			]
@@ -163,9 +167,17 @@
 			name: 'ПолеНастройкиПо2',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:366px;top:33px;width:212px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -206,6 +218,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПо3',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
 		},
 					]
 				},

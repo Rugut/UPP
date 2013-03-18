@@ -25,6 +25,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить',
 				},
 				'-',
@@ -422,6 +425,10 @@
 			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:123px;top:51px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГраницаОтбораДебиторскаяЗадолженность',
@@ -467,6 +474,10 @@
 			xtype: 'checkbox',
 			boxLabel: '%. Отбор сумм',
 			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:517px;top:51px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -615,6 +626,10 @@
 			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо',
 			text: 'округлить до:',
 			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:365px;top:315px;width:80px;height:19px;',
 		},
 					]
 				},
@@ -1014,6 +1029,10 @@
 			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:123px;top:51px;width:142px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ГраницаОтбораКредиторскаяЗадолженность',
@@ -1041,6 +1060,10 @@
 			xtype: 'checkbox',
 			boxLabel: '%. Отбор сумм',
 			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:517px;top:51px;width:142px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -1242,6 +1265,10 @@
 			name: 'НадписьРезультатРасчетаСуммыОкруглитьДо1',
 			text: 'округлить до:',
 			style: 'position:absolute;left:285px;top:315px;width:80px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:365px;top:315px;width:80px;height:19px;',
 		},
 					]
 				},

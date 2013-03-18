@@ -56,6 +56,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печатать сразу бланк формы с двухмерным штрихкодом PDF417',
 				},
 				{
@@ -100,9 +103,17 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:423px;top:24px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

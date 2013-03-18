@@ -40,6 +40,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Удалить',
 				},
 				'-',

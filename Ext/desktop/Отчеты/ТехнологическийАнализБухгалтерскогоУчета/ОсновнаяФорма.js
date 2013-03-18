@@ -69,6 +69,9 @@
 			style: 'position:absolute;left:0px;top:377px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'Закрыть',

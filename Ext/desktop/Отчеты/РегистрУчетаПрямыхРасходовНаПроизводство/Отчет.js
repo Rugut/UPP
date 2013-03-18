@@ -101,5 +101,9 @@
 			text: 'Вид отчета:',
 			style: 'position:absolute;left:8px;top:56px;width:60px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:70px;top:56px;width:526px;height:20px;',
+		},
 	]
 });

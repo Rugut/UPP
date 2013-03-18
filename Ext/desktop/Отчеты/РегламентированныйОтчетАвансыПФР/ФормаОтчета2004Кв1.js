@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:435px;width:780px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -80,6 +83,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:7px;top:5px;width:232px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -114,6 +121,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел2_1',
@@ -146,6 +157,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -180,6 +195,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел2_3',
@@ -212,6 +231,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -262,6 +285,10 @@
 			style: 'position:absolute;left:116px;top:24px;width:96px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:116px;top:0px;width:96px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЧисленностьМ1',
@@ -278,6 +305,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаЧисленностьМ3',
 			style: 'position:absolute;left:657px;top:24px;width:48px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:312px;top:0px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

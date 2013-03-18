@@ -88,6 +88,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:48px;top:105px;width:76px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПолеПрописи4наРусском',
 			text: 'Род:',
@@ -128,6 +132,10 @@
 			hideLabel: true,
 			name: 'ПолеПрописи3наРусском',
 			style: 'position:absolute;left:364px;top:105px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:48px;top:153px;width:76px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -178,10 +186,17 @@
 			style: 'position:absolute;left:20px;top:177px;width:342px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:364px;top:177px;width:60px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:372px;width:432px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

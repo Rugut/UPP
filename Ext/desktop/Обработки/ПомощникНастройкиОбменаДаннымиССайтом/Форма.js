@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Назад',
 				},
 				'-',
@@ -331,6 +334,10 @@
 			name: 'НадписьСпособИдентификацииКонтрагентов',
 			text: 'Способ идентификации контрагентов:',
 			style: 'position:absolute;left:6px;top:50px;width:199px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:212px;top:50px;width:178px;height:19px;',
 		},
 		{
 			xtype: 'label',

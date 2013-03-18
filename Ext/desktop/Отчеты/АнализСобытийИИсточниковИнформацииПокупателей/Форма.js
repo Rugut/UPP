@@ -139,6 +139,14 @@
 			name: 'ПолеНастройкиИсточникИнформацииПриОбращении',
 			style: 'position:absolute;left:384px;top:24px;width:280px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:222px;top:0px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:222px;top:24px;width:160px;height:19px;',
+		},
 					]
 				},
 			]

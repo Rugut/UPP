@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 			]
@@ -72,6 +75,10 @@
 			style: 'position:absolute;left:266px;top:6px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:6px;width:320px;height:280px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:125px;width:344px;height:161px;',
 			height: 161,width: 344,
@@ -111,6 +118,10 @@
 			name: 'Надпись1',
 			text: 'Вид отчета:',
 			style: 'position:absolute;left:6px;top:54px;width:76px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:84px;top:54px;width:266px;height:19px;',
 		},
 					]
 				},

@@ -727,6 +727,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'< Назад',
 				},
 				{

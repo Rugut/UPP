@@ -108,6 +108,10 @@
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:377px;top:33px;width:219px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Тип диаграммы:',
@@ -136,6 +140,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:104px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:106px;top:0px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатура',
@@ -147,6 +155,10 @@
 			style: 'position:absolute;left:0px;top:24px;width:104px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:106px;top:24px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиПодразделение',
@@ -156,6 +168,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Подразделение:',
 			style: 'position:absolute;left:0px;top:48px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:106px;top:48px;width:180px;height:19px;',
 		},
 					]
 				},

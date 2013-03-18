@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Зарегистрировать',
 				},
 				'-',
@@ -385,6 +388,9 @@
 			style: 'position:absolute;left:0px;top:345px;width:548px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Зарегистрировать',
 				},

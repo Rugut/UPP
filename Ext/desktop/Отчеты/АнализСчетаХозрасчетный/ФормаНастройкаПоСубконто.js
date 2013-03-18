@@ -34,10 +34,17 @@
 			style: 'position:absolute;left:98px;top:8px;width:24px;height:24px;',
 		},
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:37px;width:220px;height:220px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:265px;width:236px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

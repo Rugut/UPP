@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -68,6 +71,10 @@
 			style: 'position:absolute;left:168px;top:6px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:148px;top:97px;width:350px;height:19px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:164px;width:492px;height:140px;',
 			height: 140,width: 492,
@@ -109,6 +116,10 @@
 					text:'',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:148px;top:74px;width:350px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -212,6 +223,10 @@
 			hideLabel: true,
 			name: 'ОтборЗначениеКласс',
 			style: 'position:absolute;left:234px;top:6px;width:264px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:6px;width:127px;height:19px;',
 		},
 					]
 				},

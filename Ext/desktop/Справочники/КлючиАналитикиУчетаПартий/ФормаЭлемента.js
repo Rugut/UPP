@@ -33,6 +33,9 @@
 			style: 'position:absolute;left:0px;top:253px;width:439px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'Закрыть',

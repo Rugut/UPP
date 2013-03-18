@@ -325,6 +325,10 @@
 			style: 'position:absolute;left:6px;top:296px;width:73px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:296px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ВалютаЦены',
@@ -495,6 +499,10 @@
 			name: 'Надпись5',
 			text: 'содержит:',
 			style: 'position:absolute;left:151px;top:56px;width:54px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:56px;width:140px;height:19px;',
 		},
 	]
 });

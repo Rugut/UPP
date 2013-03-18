@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -100,6 +103,14 @@
 			[
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:178px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -151,6 +162,10 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -195,6 +210,10 @@
 					text:'Организации',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 					]
 				},
@@ -241,6 +260,10 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -274,6 +297,10 @@
 			[
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -306,6 +333,10 @@
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 					]
 				},
@@ -356,6 +387,10 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:291px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -395,6 +430,10 @@
 					width:'22',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',

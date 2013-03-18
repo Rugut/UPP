@@ -14,6 +14,9 @@
 			style: 'position:absolute;left:0px;top:425px;width:600px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'Далее',
@@ -1508,6 +1511,9 @@
 			style: 'position:absolute;left:324px;top:425px;width:151px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Назад',
 				},

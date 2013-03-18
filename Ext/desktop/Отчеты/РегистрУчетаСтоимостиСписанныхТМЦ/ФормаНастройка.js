@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 			]
@@ -72,6 +75,10 @@
 			style: 'position:absolute;left:266px;top:6px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:6px;width:320px;height:280px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:126px;width:344px;height:160px;',
 			height: 160,width: 344,
@@ -105,6 +112,10 @@
 					text:'',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:84px;top:54px;width:266px;height:19px;',
 		},
 		{
 			xtype: 'label',

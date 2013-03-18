@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -116,6 +119,10 @@
 					text:'&Переместить вниз',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:396px;top:30px;width:200px;height:304px;',
 		},
 		{
 			xtype: 'grid',

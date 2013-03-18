@@ -58,6 +58,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -313,6 +316,10 @@
 			name: 'НадписьПрименимость',
 			text: 'Для каких расходов применять:',
 			style: 'position:absolute;left:8px;top:133px;width:164px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:177px;top:133px;width:435px;height:19px;',
 		},
 		{
 			xtype: 'label',

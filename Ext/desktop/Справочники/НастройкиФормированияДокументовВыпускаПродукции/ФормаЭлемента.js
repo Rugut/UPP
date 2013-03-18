@@ -63,6 +63,9 @@
 			style: 'position:absolute;left:0px;top:314px;width:658px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -183,6 +186,10 @@
 			name: 'НадписьВидРегулярногоДокумента',
 			text: 'Вид:',
 			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:86px;top:6px;width:220px;height:19px;',
 		},
 					]
 				},

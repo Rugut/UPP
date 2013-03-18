@@ -46,6 +46,9 @@
 			style: 'position:absolute;left:0px;top:425px;width:800px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -104,6 +107,10 @@
 			name: 'Надпись43',
 			text: 'Представляется:',
 			style: 'position:absolute;left:0px;top:2px;width:98px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:101px;top:2px;width:669px;height:19px;',
 		},
 					]
 				},
@@ -236,6 +243,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:392px;top:23px;width:252px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:199px;top:23px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

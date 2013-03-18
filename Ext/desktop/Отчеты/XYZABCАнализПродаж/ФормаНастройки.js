@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -85,6 +88,14 @@
 			xtype: 'checkbox',
 			boxLabel: 'Раскрашивать группировки',
 			style: 'position:absolute;left:218px;top:53px;width:163px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:148px;top:100px;width:350px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:148px;top:76px;width:350px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -249,6 +260,10 @@
 			style: 'position:absolute;left:254px;top:6px;width:244px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:6px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'АВС-класс',
 			style: 'position:absolute;left:6px;top:29px;width:79px;height:19px;',
@@ -258,6 +273,10 @@
 			hideLabel: true,
 			name: 'ОтборЗначениеКлассABC',
 			style: 'position:absolute;left:254px;top:29px;width:244px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:29px;width:160px;height:19px;',
 		},
 					]
 				},

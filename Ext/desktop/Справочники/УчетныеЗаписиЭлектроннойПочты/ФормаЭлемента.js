@@ -58,6 +58,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -516,6 +519,10 @@
 			style: 'position:absolute;left:157px;top:75px;width:401px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:157px;top:175px;width:401px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Формат текста письма:',
@@ -543,6 +550,10 @@
 			name: 'КнопкаУдалитьПомеченныеНаУдаление',
 			text: 'Удалить помеченные на удаление письма',
 			style: 'position:absolute;left:6px;top:224px;width:246px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:157px;top:128px;width:401px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить',
 				},
 				'-',
@@ -81,6 +84,10 @@
 					text:'Обновить',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:178px;width:322px;height:187px;',
 		},
 		{
 			xtype: 'checkbox',

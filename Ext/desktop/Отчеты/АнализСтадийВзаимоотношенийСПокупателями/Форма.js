@@ -121,6 +121,10 @@
 			style: 'position:absolute;left:522px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:234px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиСтадияПокупателя',
@@ -144,6 +148,10 @@
 			style: 'position:absolute;left:522px;top:24px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:234px;top:24px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиКлассПостоянногоПокупателя',
@@ -165,6 +173,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПоКлассПостоянногоПокупателя',
 			style: 'position:absolute;left:522px;top:48px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:234px;top:48px;width:160px;height:19px;',
 		},
 					]
 				},

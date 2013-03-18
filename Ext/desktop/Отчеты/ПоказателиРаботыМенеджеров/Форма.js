@@ -123,6 +123,10 @@
 			name: 'ПолеНастройкиМенеджер',
 			style: 'position:absolute;left:243px;top:0px;width:363px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:81px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 			]

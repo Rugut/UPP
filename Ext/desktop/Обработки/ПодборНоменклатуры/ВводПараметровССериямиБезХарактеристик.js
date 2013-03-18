@@ -76,6 +76,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Получить вес',
 				},
 				'-',
@@ -93,6 +96,10 @@
 			name: 'НадписьВесы',
 			text: 'Весы:',
 			style: 'position:absolute;left:8px;top:130px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:78px;top:130px;width:168px;height:19px;',
 		},
 		{
 			xtype: 'label',

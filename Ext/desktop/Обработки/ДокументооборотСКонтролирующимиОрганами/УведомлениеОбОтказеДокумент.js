@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 			]
@@ -98,6 +101,10 @@
 			hideLabel: true,
 			name: 'НаимВидДок',
 			style: 'position:absolute;left:191px;top:5px;width:298px;height:19px;',
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:124px;width:483px;height:356px;',
 		},
 					]
 				},

@@ -80,6 +80,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'История...',
 				},
 				'-',
@@ -91,6 +94,10 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:8px;width:66px;height:19px;',
 		},
 	]
 });

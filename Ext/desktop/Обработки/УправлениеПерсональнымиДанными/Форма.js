@@ -171,6 +171,10 @@
 			style: 'position:absolute;left:280px;top:27px;width:179px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:138px;top:27px;width:138px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:85px;height:24px;',
 			items:
@@ -204,10 +208,17 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:113px;top:541px;width:138px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:469px;top:22px;width:221px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Справка',
 				},

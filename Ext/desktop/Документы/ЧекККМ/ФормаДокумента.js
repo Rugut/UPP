@@ -22,6 +22,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печать',
 				},
 				'-',
@@ -321,6 +324,10 @@
 			name: 'НадписьВесы',
 			text: 'Весы:',
 			style: 'position:absolute;left:6px;top:6px;width:31px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:42px;top:6px;width:223px;height:19px;',
 		},
 		{
 			xtype: 'label',

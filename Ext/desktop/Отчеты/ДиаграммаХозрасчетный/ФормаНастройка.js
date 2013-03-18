@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -142,6 +145,10 @@
 			text: 'Период:',
 			style: 'position:absolute;left:6px;top:82px;width:78px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:82px;width:120px;height:19px;',
+		},
 					]
 				},
 				{
@@ -195,6 +202,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:104px;top:205px;width:176px;height:20px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'МаксЗначСерий',
@@ -217,6 +228,10 @@
 			name: 'Надпись6',
 			text: 'Вид подписей:',
 			style: 'position:absolute;left:6px;top:32px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:112px;top:32px;width:264px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -244,6 +259,10 @@
 			name: 'Надпись8',
 			text: 'Раздвижение:',
 			style: 'position:absolute;left:6px;top:56px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:112px;top:56px;width:264px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -275,6 +294,10 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:112px;top:6px;width:264px;height:19px;',
 		},
 					]
 				},

@@ -10,6 +10,10 @@
 	items:
 	[
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:442px;top:54px;width:190px;height:259px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:30px;width:428px;height:24px;',
 			items:

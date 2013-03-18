@@ -50,6 +50,9 @@
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -246,6 +249,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02',
@@ -276,6 +283,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил1',
@@ -293,6 +304,10 @@
 					title:'Прил.2 к Листу 02',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:266px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -323,6 +338,10 @@
 					title:'Прил.4 к Листу 02',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -381,6 +400,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил6',
@@ -398,6 +421,10 @@
 					title:'Прил.7 к Листу 02',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -474,6 +501,10 @@
 					title:'Решения о распределении доходов',
 					items:
 					[
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:6px;width:626px;height:215px;',
+		},
 		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьДопРешения',
@@ -575,6 +606,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиЛист04_РазделА',
@@ -623,6 +658,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиЛист04_РазделБ',
@@ -640,6 +679,10 @@
 					title:'Лист 05',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -659,6 +702,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиЛист06',
@@ -677,6 +724,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиЛист07',
@@ -694,6 +745,10 @@
 					title:'Лист 08',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:265px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -829,9 +884,17 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:170px;top:24px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:430px;top:24px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

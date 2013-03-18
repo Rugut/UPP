@@ -42,6 +42,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Конструктор',
 				},
 				{
@@ -167,6 +170,10 @@
 			style: 'position:absolute;left:6px;top:132px;width:137px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:148px;top:132px;width:145px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Отчет расшифровки:',
@@ -192,6 +199,9 @@
 			style: 'position:absolute;left:0px;top:285px;width:400px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:391px;width:732px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -60,6 +63,10 @@
 					title:'Отчет о движении денежных средств',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:7px;top:208px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -120,6 +127,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:239px;top:0px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

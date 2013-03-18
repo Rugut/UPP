@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -124,6 +127,14 @@
 			text: '>>',
 			style: 'position:absolute;left:447px;top:294px;width:28px;height:17px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:178px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -187,6 +198,10 @@
 			text: '>>',
 			style: 'position:absolute;left:447px;top:193px;width:28px;height:17px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -243,6 +258,10 @@
 			name: 'КнопкаДобавитьПрочиеКонтактныеЛицаВсе',
 			text: '>>',
 			style: 'position:absolute;left:447px;top:193px;width:28px;height:17px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 					]
 				},
@@ -301,6 +320,10 @@
 			text: '>>',
 			style: 'position:absolute;left:447px;top:193px;width:28px;height:17px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -346,6 +369,10 @@
 			text: '>>',
 			style: 'position:absolute;left:447px;top:193px;width:28px;height:17px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+		},
 					]
 				},
 				{
@@ -390,6 +417,10 @@
 			name: 'КнопкаДобавитьПользователиВсе',
 			text: '>>',
 			style: 'position:absolute;left:447px;top:193px;width:28px;height:17px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 					]
 				},
@@ -451,6 +482,10 @@
 					width:'411',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -515,6 +550,10 @@
 					width:'22',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',

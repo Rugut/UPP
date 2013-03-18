@@ -27,6 +27,9 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'ОК',
@@ -82,6 +85,10 @@
 			name: 'Надпись',
 			text: 'Организация:',
 			style: 'position:absolute;left:369px;top:33px;width:75px;height:19px;text-align:right;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:180px;top:33px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'label',

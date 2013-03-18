@@ -133,6 +133,10 @@
 			style: 'position:absolute;left:459px;top:0px;width:159px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:134px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиДоговорКонтрагента',
@@ -154,6 +158,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПоДоговорКонтрагента',
 			style: 'position:absolute;left:459px;top:24px;width:159px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:134px;top:24px;width:160px;height:19px;',
 		},
 					]
 				},

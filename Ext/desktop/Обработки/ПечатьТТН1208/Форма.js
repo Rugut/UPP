@@ -170,6 +170,10 @@
 			style: 'position:absolute;left:220px;top:297px;width:130px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:352px;top:297px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Удостоверение №:',
@@ -205,6 +209,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печать',
 				},
 				'-',
@@ -225,6 +232,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печать',
 				},
 				'-',
@@ -244,6 +254,9 @@
 			style: 'position:absolute;left:0px;top:499px;width:988px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Печать',
 				},

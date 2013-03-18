@@ -204,6 +204,10 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:97px;top:6px;width:369px;height:19px;',
+		},
 					]
 				},
 				{
@@ -317,6 +321,9 @@
 			style: 'position:absolute;left:0px;top:334px;width:490px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

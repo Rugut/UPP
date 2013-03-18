@@ -50,6 +50,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печать',
 				},
 				'-',

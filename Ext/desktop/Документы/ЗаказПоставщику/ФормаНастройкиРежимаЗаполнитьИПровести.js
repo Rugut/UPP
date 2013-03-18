@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Заполнить и провести',
 				},
 				'-',
@@ -22,6 +25,10 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:30px;width:288px;height:85px;',
 		},
 		{
 			xtype: 'toolbar',

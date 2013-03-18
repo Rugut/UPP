@@ -87,6 +87,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -110,6 +113,10 @@
 			hideLabel: true,
 			name: 'Периодичность',
 			style: 'position:absolute;left:106px;top:186px;width:116px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:232px;top:186px;width:230px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -193,6 +200,10 @@
 			name: 'НадписьВидДокумента2',
 			text: '(номер корректировки)',
 			style: 'position:absolute;left:281px;top:0px;width:123px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:98px;top:0px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -94,6 +94,10 @@
 			style: 'position:absolute;left:0px;top:68px;width:83px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:84px;top:68px;width:232px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:210px;width:627px;height:197px;',
 			height: 197,width: 627,
@@ -154,6 +158,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:84px;top:0px;width:232px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Детальное отображение результатов',
 			style: 'position:absolute;left:321px;top:68px;width:212px;height:19px;',
@@ -201,6 +209,9 @@
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

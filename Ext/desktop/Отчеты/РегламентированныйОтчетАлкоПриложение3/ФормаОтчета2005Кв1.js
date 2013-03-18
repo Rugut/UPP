@@ -41,6 +41,9 @@
 			style: 'position:absolute;left:0px;top:409px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -144,6 +147,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отключить выбор значений',
 			style: 'position:absolute;left:256px;top:0px;width:161px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:23px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

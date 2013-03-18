@@ -201,5 +201,9 @@
 			text: 'содержит:',
 			style: 'position:absolute;left:174px;top:33px;width:57px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
+		},
 	]
 });

@@ -55,6 +55,10 @@
 			style: 'position:absolute;left:6px;top:78px;width:210px;height:15px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:96px;top:54px;width:370px;height:19px;',
+		},
+		{
 			xtype: 'radio',
 			boxLabel: 'Показатель 1',
 			style: 'position:absolute;left:12px;top:127px;width:220px;height:16px;',
@@ -95,6 +99,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:90px;top:0px;width:370px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьИмяРегистра',
@@ -159,10 +167,18 @@
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:0px;width:330px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРаздвижениеСерий',
 			text: 'Раздвижение серий:',
 			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:24px;width:330px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -182,6 +198,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:0px;width:330px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Окантовка',
 			style: 'position:absolute;left:0px;top:48px;width:80px;height:15px;',
@@ -191,6 +211,10 @@
 			name: 'НадписьРаздвижениеСерий1',
 			text: 'Раздвижение серий:',
 			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:24px;width:330px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -208,6 +232,10 @@
 			name: 'Надпись1',
 			text: 'Режим пробелов:',
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:0px;width:330px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -246,6 +274,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Окантовка',
 			style: 'position:absolute;left:0px;top:48px;width:80px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:0px;width:330px;height:20px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -334,6 +366,10 @@
 			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:24px;width:330px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Окантовка',
 			style: 'position:absolute;left:0px;top:72px;width:80px;height:15px;',
@@ -343,6 +379,10 @@
 			name: 'Надпись9',
 			text: 'Режим пробелов:',
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:0px;width:330px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -461,6 +501,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:176px;top:225px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Ограничение количества серий:',
@@ -549,6 +593,9 @@
 			style: 'position:absolute;left:0px;top:289px;width:490px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

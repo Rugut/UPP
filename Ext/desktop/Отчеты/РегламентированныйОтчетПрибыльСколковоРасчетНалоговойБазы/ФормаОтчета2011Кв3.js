@@ -44,6 +44,9 @@
 			style: 'position:absolute;left:0px;top:404px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -76,6 +79,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
@@ -91,6 +98,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:364px;top:27px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:165px;top:26px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

@@ -44,6 +44,9 @@
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 	]

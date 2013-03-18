@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 			]
@@ -70,6 +73,10 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:294px;top:14px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:6px;top:6px;width:320px;height:256px;',
 		},
 					]
 				},

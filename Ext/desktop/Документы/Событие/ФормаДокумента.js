@@ -58,6 +58,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печать',
 				},
 				'-',
@@ -262,6 +265,10 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:414px;top:54px;width:180px;height:19px;',
 		},
 					]
 				},

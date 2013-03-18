@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Назад',
 				},
 				'-',
@@ -88,6 +91,10 @@
 			xtype: 'radio',
 			boxLabel: 'Нет возможности подключиться к информационной базе - приемнику',
 			style: 'position:absolute;left:6px;top:222px;width:436px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:246px;top:86px;width:260px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -182,6 +189,10 @@
 			text: 'НЕ требуется продолжение настройки обменов на стороне инф. базы - приемника',
 			style: 'position:absolute;left:25px;top:65px;width:425px;height:15px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:509px;top:86px;width:41px;height:19px;',
+		},
 					]
 				},
 				{
@@ -193,6 +204,10 @@
 			name: 'НадписьТипИнформационнойБазыДляОбмена',
 			text: 'Укажите тип информационной базы-приемника:',
 			style: 'position:absolute;left:6px;top:47px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:28px;top:70px;width:413px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -887,6 +902,10 @@
 					title:'Обмен через COM',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:154px;top:24px;width:385px;height:19px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:49px;width:533px;height:19px;',

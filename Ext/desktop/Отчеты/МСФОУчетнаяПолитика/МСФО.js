@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:403px;width:740px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -78,6 +81,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:236px;top:0px;width:80px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

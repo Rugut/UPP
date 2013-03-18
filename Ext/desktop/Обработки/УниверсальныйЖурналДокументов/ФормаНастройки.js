@@ -25,6 +25,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -67,6 +70,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Изменить',
 				},
 				{
@@ -79,6 +85,9 @@
 			style: 'position:absolute;left:614px;top:196px;width:59px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Отметить для всех документов по имени текущего реквизита',
 				},

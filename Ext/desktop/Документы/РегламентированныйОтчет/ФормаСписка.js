@@ -100,6 +100,14 @@
 			style: 'position:absolute;left:17px;top:36px;width:87px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:107px;top:61px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:107px;top:86px;width:119px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Форма:',
 			style: 'position:absolute;left:17px;top:61px;width:86px;height:19px;',
@@ -108,6 +116,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'ИФНС:',
 			style: 'position:absolute;left:372px;top:61px;width:55px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:428px;top:61px;width:61px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

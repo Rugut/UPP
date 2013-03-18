@@ -627,6 +627,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:6px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:30px;width:220px;height:433px;',
 			height: 433,width: 220,
@@ -723,6 +727,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'',
 				},
 				'-',
@@ -747,6 +754,9 @@
 			style: 'position:absolute;left:755px;top:0px;width:82px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'',
 				},

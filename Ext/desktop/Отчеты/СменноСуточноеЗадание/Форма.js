@@ -113,6 +113,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:0px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиЗаказ',
@@ -135,6 +139,14 @@
 			style: 'position:absolute;left:0px;top:48px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:48px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:24px;width:180px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиНоменклатура',
@@ -144,6 +156,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Номенклатура:',
 			style: 'position:absolute;left:0px;top:72px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:102px;top:72px;width:180px;height:19px;',
 		},
 					]
 				},

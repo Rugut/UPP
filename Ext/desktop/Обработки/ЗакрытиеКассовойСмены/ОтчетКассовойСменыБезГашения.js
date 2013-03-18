@@ -21,6 +21,9 @@
 			style: 'position:absolute;left:0px;top:68px;width:314px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'Снять X-отчет ',

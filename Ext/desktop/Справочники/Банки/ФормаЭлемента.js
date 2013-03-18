@@ -3,8 +3,8 @@
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:362px;height:219px;',
 	iconCls: 'bogus',
-	minimizable: true,
-	maximizable: true,
+	//minimizable: true,
+	//maximizable: true,
 	title: 'Банк',
 	
 	items:
@@ -13,7 +13,6 @@
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'БИК:',
-			layout:'absolute',
 			style: 'position:absolute;left:232px;top:85px;width:40px;height:19px;text-align:center;',
 		},
 		{
@@ -103,20 +102,22 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:194px;width:362px;height:25px;padding-left:0px;',
+			style: 'position:absolute;left:0px;top:194px;width:362px;height:25px;',
 			items:
 			[
 				{
-				    text: 'OK',
-				    
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
 				},
 				'-',
 				{
-				    text: 'Записать',
+					text:'Записать',
 				},
 				'-',
 				{
-				    text: 'Закрыть',
+					text:'Закрыть',
 				},
 			]
 		},

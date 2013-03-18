@@ -44,6 +44,9 @@
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'ОК',
@@ -102,6 +105,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:0px;width:116px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,

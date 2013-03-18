@@ -27,6 +27,9 @@
 			style: 'position:absolute;left:0px;top:395px;width:716px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'ОК',
@@ -92,6 +95,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаЗначениеКорректировкиФормаОтчета',
@@ -135,6 +142,10 @@
 			name: 'Надпись',
 			text: 'Организация:',
 			style: 'position:absolute;left:387px;top:6px;width:75px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:188px;top:6px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

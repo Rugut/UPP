@@ -86,6 +86,10 @@
 			style: 'position:absolute;left:420px;top:56px;width:86px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:508px;top:56px;width:124px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСчет',
 			text: 'Счет:',

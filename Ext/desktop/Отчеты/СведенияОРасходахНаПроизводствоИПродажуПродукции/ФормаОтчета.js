@@ -56,6 +56,10 @@
 			text: 'Организация:',
 			style: 'position:absolute;left:212px;top:0px;width:74px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:212px;top:20px;width:220px;height:19px;',
+		},
 					]
 				},
 			]
@@ -87,6 +91,9 @@
 			style: 'position:absolute;left:561px;top:47px;width:256px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Настройка',
 				},
@@ -452,6 +459,9 @@
 			style: 'position:absolute;left:6px;top:2px;width:297px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Восстановить',
 				},

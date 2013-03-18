@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -42,10 +45,18 @@
 			style: 'position:absolute;left:8px;top:48px;width:146px;height:19px;',
 		},
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:71px;width:290px;height:114px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Все виды времени:',
 			style: 'position:absolute;left:8px;top:193px;width:102px;height:19px;',
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:215px;width:290px;height:219px;',
 		},
 	]
 });

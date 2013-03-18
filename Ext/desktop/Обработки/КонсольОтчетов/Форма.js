@@ -66,6 +66,10 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:32px;top:0px;width:251px;height:20px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Вид:',
@@ -80,6 +84,10 @@
 					title:'Сводная диаграмма',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:32px;top:0px;width:251px;height:20px;',
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись8',
@@ -419,6 +427,18 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:209px;top:29px;width:175px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:209px;top:50px;width:175px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:209px;top:8px;width:175px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Размещение группировок',
@@ -452,6 +472,10 @@
 			name: 'Надпись7',
 			text: 'Размещение итогов',
 			style: 'position:absolute;left:7px;top:71px;width:107px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:209px;top:71px;width:175px;height:19px;',
 		},
 					]
 				},

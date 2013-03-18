@@ -28,6 +28,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'',
 				},
 				'-',
@@ -91,6 +94,10 @@
 					width:'141',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:66px;top:33px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',

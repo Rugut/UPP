@@ -46,6 +46,9 @@
 			style: 'position:absolute;left:0px;top:465px;width:750px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -530,6 +533,10 @@
 			style: 'position:absolute;left:86px;top:25px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:171px;top:25px;width:246px;height:19px;',
@@ -538,6 +545,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Ввоз товаров из Республики Беларусь',
 			style: 'position:absolute;left:421px;top:25px;width:225px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:274px;top:0px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

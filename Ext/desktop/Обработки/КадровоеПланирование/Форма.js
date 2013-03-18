@@ -272,6 +272,9 @@
 			style: 'position:absolute;left:558px;top:224px;width:206px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -308,6 +311,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Новый документ',
 				},
 			]
@@ -321,6 +327,9 @@
 			style: 'position:absolute;left:854px;top:0px;width:146px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'',
 				},

@@ -17,6 +17,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:44px;top:56px;width:428px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Укажите данные, которые нужно выгрузить:',
@@ -27,6 +31,9 @@
 			style: 'position:absolute;left:0px;top:488px;width:611px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Выгрузить данные',
 				},
@@ -198,6 +205,10 @@
 					text:'Очистить',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:101px;top:0px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

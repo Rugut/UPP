@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Закрыть',
 				},
 				'-',
@@ -174,10 +177,18 @@
 			style: 'position:absolute;left:568px;top:6px;width:94px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:664px;top:6px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьФорматФайла1',
 			text: 'Формат файла:',
 			style: 'position:absolute;left:568px;top:34px;width:91px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:664px;top:30px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -448,10 +459,18 @@
 			style: 'position:absolute;left:568px;top:6px;width:94px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:664px;top:6px;width:94px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьФорматФайла',
 			text: 'Формат файла:',
 			style: 'position:absolute;left:568px;top:30px;width:91px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:664px;top:30px;width:94px;height:19px;',
 		},
 					]
 				},

@@ -44,5 +44,9 @@
 			text: 'Выводить детализацию по:',
 			style: 'position:absolute;left:456px;top:33px;width:147px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:612px;top:33px;width:92px;height:19px;',
+		},
 	]
 });

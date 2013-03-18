@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Перенести',
 				},
 				'-',
@@ -44,10 +47,18 @@
 			style: 'position:absolute;left:250px;top:64px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:64px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСрокОтргузки',
 			text: 'Дата поступления:',
 			style: 'position:absolute;left:16px;top:64px;width:124px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:8px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -56,10 +67,18 @@
 			style: 'position:absolute;left:16px;top:8px;width:124px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:40px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеОтгрузки',
 			text: 'Поступление товара:',
 			style: 'position:absolute;left:16px;top:40px;width:124px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:356px;top:8px;width:209px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -68,10 +87,18 @@
 			style: 'position:absolute;left:310px;top:64px;width:42px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:96px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеПросроченоДнейОплаты',
 			style: 'position:absolute;left:310px;top:120px;width:42px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:120px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -287,6 +314,10 @@
 					width:'116',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:408px;top:6px;width:179px;height:19px;',
 		},
 		{
 			xtype: 'label',

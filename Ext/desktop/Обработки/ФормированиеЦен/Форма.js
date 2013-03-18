@@ -80,10 +80,18 @@
 			style: 'position:absolute;left:6px;top:283px;width:307px;height:15px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:6px;top:6px;width:220px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаВеличиныИзменения',
 			style: 'position:absolute;left:464px;top:6px;width:48px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:514px;top:6px;width:62px;height:19px;',
 		},
 		{
 			xtype: 'button',
@@ -96,6 +104,10 @@
 			hideLabel: true,
 			name: 'ПолеВводаВариантаЗачения',
 			style: 'position:absolute;left:228px;top:6px;width:200px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:430px;top:6px;width:32px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -114,6 +126,9 @@
 			style: 'position:absolute;left:0px;top:306px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'ОК',
 				},

@@ -53,6 +53,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -251,6 +254,10 @@
 			hideLabel: true,
 			name: 'ПередставлениеНаименования',
 			style: 'position:absolute;left:95px;top:116px;width:349px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:95px;top:116px;width:363px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -582,6 +589,10 @@
 			name: 'НадписьНаименованиеСотрудника1',
 			text: 'Наименование:',
 			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:84px;top:0px;width:250px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -1959,6 +1970,9 @@
 			style: 'position:absolute;left:650px;top:0px;width:50px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Переключить видимость справки формы',
 				},

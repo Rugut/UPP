@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:425px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -142,6 +145,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:392px;top:23px;width:252px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:199px;top:23px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

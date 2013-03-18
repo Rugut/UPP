@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Назад',
 				},
 				'-',
@@ -57,6 +60,10 @@
 			name: 'НадписьДатаНачала',
 			text: 'Начать с:',
 			style: 'position:absolute;left:16px;top:262px;width:58px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:16px;top:83px;width:265px;height:121px;',
 		},
 		{
 			xtype: 'radio',
@@ -453,6 +460,9 @@
 			style: 'position:absolute;left:0px;top:387px;width:561px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Отмена',
 				},

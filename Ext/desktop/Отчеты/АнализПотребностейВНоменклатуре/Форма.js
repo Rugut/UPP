@@ -109,6 +109,10 @@
 			style: 'position:absolute;left:454px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:166px;top:0px;width:160px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиДатаПотребности',
@@ -130,6 +134,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПоДатаПотребности',
 			style: 'position:absolute;left:454px;top:25px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:166px;top:25px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'button',

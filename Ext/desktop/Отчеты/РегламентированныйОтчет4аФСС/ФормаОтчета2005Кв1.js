@@ -48,6 +48,9 @@
 			style: 'position:absolute;left:0px;top:425px;width:670px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -74,6 +77,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -107,6 +114,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -152,6 +163,10 @@
 			name: 'ПолеВводаКомментарийРаздел21',
 			style: 'position:absolute;left:351px;top:5px;width:289px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+		},
 					]
 				},
 			]
@@ -190,9 +205,17 @@
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Отключить авторасчет вычисляемых ячеек',
 			style: 'position:absolute;left:169px;top:24px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:422px;top:24px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

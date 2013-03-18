@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -89,6 +92,10 @@
 			hideLabel: true,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:54px;width:382px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:84px;top:78px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'label',

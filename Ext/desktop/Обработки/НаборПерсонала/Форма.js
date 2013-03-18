@@ -168,6 +168,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Все письма...',
 				},
 			]
@@ -234,6 +237,9 @@
 			style: 'position:absolute;left:588px;top:25px;width:101px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Все кандидаты...',
 				},
@@ -325,6 +331,9 @@
 			style: 'position:absolute;left:878px;top:0px;width:47px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Переключить видимость справки формы',
 				},

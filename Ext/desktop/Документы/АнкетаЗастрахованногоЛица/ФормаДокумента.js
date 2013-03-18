@@ -21,6 +21,9 @@
 			style: 'position:absolute;left:0px;top:445px;width:645px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'Показать файл',

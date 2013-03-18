@@ -14,6 +14,9 @@
 			style: 'position:absolute;left:0px;top:91px;width:348px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{

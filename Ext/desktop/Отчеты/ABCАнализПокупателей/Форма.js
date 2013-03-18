@@ -121,6 +121,10 @@
 			style: 'position:absolute;left:478px;top:0px;width:156px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:139px;top:0px;width:172px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеНастройкиABCКлассПокупателя',
@@ -142,6 +146,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПоABCКлассПокупателя',
 			style: 'position:absolute;left:478px;top:25px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:139px;top:25px;width:172px;height:19px;',
 		},
 					]
 				},

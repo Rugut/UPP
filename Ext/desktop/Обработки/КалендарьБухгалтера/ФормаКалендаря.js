@@ -36,6 +36,9 @@
 			style: 'position:absolute;left:0px;top:546px;width:669px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 			]
 		},
 		{
@@ -49,6 +52,10 @@
 			hideLabel: true,
 			name: 'ДляОрганизации',
 			style: 'position:absolute;left:110px;top:33px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:532px;top:91px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -68,6 +71,10 @@
 			name: 'НадписьПериод',
 			text: 'Период:',
 			style: 'position:absolute;left:8px;top:105px;width:51px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:104px;top:81px;width:164px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

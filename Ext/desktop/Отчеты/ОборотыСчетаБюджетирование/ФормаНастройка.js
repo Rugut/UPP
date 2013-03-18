@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -72,6 +75,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'Данные по валютам',
 			style: 'position:absolute;left:12px;top:126px;width:128px;height:15px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:68px;top:78px;width:213px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

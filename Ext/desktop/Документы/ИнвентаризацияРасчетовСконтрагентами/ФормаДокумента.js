@@ -103,6 +103,9 @@
 			style: 'position:absolute;left:0px;top:424px;width:728px;height:25px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				'-',
 				{
 					text:'OK',

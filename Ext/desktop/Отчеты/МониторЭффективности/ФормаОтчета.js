@@ -141,6 +141,10 @@
 			style: 'position:absolute;left:5px;top:27px;width:129px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:131px;top:4px;width:125px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДнейДоТекущейДаты',
 			text: 'Дней до текущей даты:',
@@ -561,6 +565,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Показать сформированный отчет в отдельном окне',
 				},
 				'-',
@@ -640,6 +647,9 @@
 			style: 'position:absolute;left:658px;top:101px;width:173px;height:24px;',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
 				{
 					text:'Командная панель панель вариантов',
 				},

@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'ОК',
 				},
 				'-',
@@ -89,6 +92,10 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:86px;top:0px;width:374px;height:19px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидаДиаграммы',

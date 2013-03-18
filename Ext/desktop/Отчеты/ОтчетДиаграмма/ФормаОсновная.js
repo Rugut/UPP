@@ -107,10 +107,18 @@
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:378px;top:33px;width:200px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись8',
 			text: 'Тип диаграммы:',
 			style: 'position:absolute;left:288px;top:33px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:378px;top:57px;width:200px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -152,6 +160,10 @@
 			name: 'ПолеНастройкиПо1',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 			]
@@ -189,6 +201,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПо5',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
 		},
 					]
 				},
@@ -228,6 +244,10 @@
 			name: 'ПолеНастройкиПо4',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 			]
@@ -266,6 +286,10 @@
 			name: 'ПолеНастройкиПо3',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+		},
 					]
 				},
 			]
@@ -303,6 +327,10 @@
 			hideLabel: true,
 			name: 'ПолеНастройкиПо2',
 			style: 'position:absolute;left:450px;top:0px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
 		},
 					]
 				},

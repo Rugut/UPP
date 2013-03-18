@@ -15,6 +15,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Перенести',
 				},
 				'-',
@@ -44,10 +47,18 @@
 			style: 'position:absolute;left:250px;top:68px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:68px;width:92px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСрокОтргузки',
 			text: 'Дата отгрузки:',
 			style: 'position:absolute;left:16px;top:68px;width:124px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:12px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -56,10 +67,18 @@
 			style: 'position:absolute;left:16px;top:12px;width:124px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:44px;width:210px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеОтгрузки',
 			text: 'Состояние отгрузки:',
 			style: 'position:absolute;left:16px;top:44px;width:124px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:356px;top:12px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
@@ -235,6 +254,10 @@
 					width:'120',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:408px;top:6px;width:179px;height:19px;',
 		},
 		{
 			xtype: 'label',

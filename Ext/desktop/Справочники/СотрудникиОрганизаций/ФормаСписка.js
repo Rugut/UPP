@@ -87,6 +87,10 @@
 			]
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:74px;top:0px;width:216px;height:19px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:28px;width:175px;height:24px;',
 			items:
@@ -276,6 +280,10 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:0px;top:0px;width:262px;height:19px;',
 		},
 					]
 				},

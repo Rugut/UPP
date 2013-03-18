@@ -47,6 +47,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -86,6 +89,10 @@
 			name: 'НадписьШиринаЛенты',
 			text: 'Ширина ленты:',
 			style: 'position:absolute;left:25px;top:105px;width:77px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:107px;top:105px;width:111px;height:19px;',
 		},
 		{
 			xtype: 'label',

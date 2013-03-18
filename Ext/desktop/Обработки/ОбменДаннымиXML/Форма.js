@@ -273,6 +273,14 @@
 					items:
 					[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:172px;top:0px;width:202px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:454px;top:0px;width:150px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:604px;height:19px;',
 			height: 19,width: 604,
@@ -384,6 +392,10 @@
 			name: 'НадписьТипДобавленияДанныхИзФоновогоОбмена',
 			text: 'Фоновый обмен:',
 			style: 'position:absolute;left:6px;top:199px;width:146px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:199px;width:187px;height:19px;',
 		},
 		{
 			xtype: 'label',

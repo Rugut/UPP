@@ -44,6 +44,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Печатать сразу бланк формы с двухмерным штрихкодом PDF417',
 				},
 				{
@@ -86,6 +89,14 @@
 			hideLabel: true,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:170px;top:23px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',

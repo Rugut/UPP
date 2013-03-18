@@ -52,6 +52,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'Выполнить',
 				},
 				'-',
@@ -117,6 +120,10 @@
 			style: 'position:absolute;left:243px;top:33px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:509px;top:57px;width:183px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьУровеньРазворотаДерева',
 			text: 'Уровень разворота дерева:',
@@ -157,6 +164,10 @@
 					text:'Список заказов',
 				},
 			]
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:143px;top:57px;width:201px;height:19px;',
 		},
 		{
 			xtype: 'label',

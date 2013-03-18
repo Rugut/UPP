@@ -25,6 +25,9 @@
 			items:
 			[
 				{
+					xtype: 'tbfill'
+				},
+				{
 					text:'OK',
 				},
 				'-',
@@ -42,6 +45,10 @@
 			name: 'НадписьОсновнойИнтерфейс',
 			text: 'Основной интерфейс:',
 			style: 'position:absolute;left:290px;top:33px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:405px;top:33px;width:183px;height:19px;',
 		},
 		{
 			xtype: 'label',

@@ -139,6 +139,14 @@
 			style: 'position:absolute;left:330px;top:30px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:691px;top:6px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:586px;top:30px;width:190px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			name: 'ПолеВводаОкруглятьВБольшуюСторону',
@@ -160,6 +168,10 @@
 			name: 'НадписьТипЦенНоменклатуры',
 			text: 'Тип цен номенклатуры:',
 			style: 'position:absolute;left:6px;top:78px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:691px;top:78px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',

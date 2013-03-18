@@ -91,6 +91,14 @@
 			style: 'position:absolute;left:539px;top:33px;width:113px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:467px;top:58px;width:185px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:157px;top:58px;width:167px;height:19px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьАнализируемыйПараметр',
 			text: 'Анализируемый параметр:',
@@ -125,6 +133,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:144px;height:18px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:0px;width:167px;height:19px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:644px;height:19px;',
 			height: 19,width: 644,
@@ -145,6 +157,10 @@
 			xtype: 'checkbox',
 			boxLabel: 'ABC-класс',
 			style: 'position:absolute;left:0px;top:0px;width:144px;height:18px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:149px;top:0px;width:167px;height:19px;',
 		},
 					]
 				},

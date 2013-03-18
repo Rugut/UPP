@@ -106,6 +106,14 @@
 			boxLabel: 'Проект',
 			style: 'position:absolute;left:0px;top:24px;width:88px;height:19px;',
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:90px;top:24px;width:180px;height:20px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:90px;top:0px;width:180px;height:19px;',
+		},
 					]
 				},
 			]
