@@ -1,0 +1,59 @@
+﻿Процедура HTMLДокументonclick(Элемент, pEvtObj)
+	
+	Если (Лев(pEvtObj.srcElement.id, 9) = "openclose") Тогда
+		ИдЭлемента = "subitems" + Сред(pEvtObj.srcElement.id, 10, 3);
+		ЭлементHTML = Элемент.Документ.getElementById(ИдЭлемента);
+		
+		КоличествоСтрокВСвернутомСостоянии = 2;
+		ЭлементHTML_Таблица = Элемент.Документ.getElementById(ИдЭлемента+"_ti");
+		
+		Если ЭлементHTML.className = "none" Тогда
+			ЭлементHTML.className = "block";
+			pEvtObj.srcElement.src = КартинкаЗакрыть;
+			pEvtObj.srcElement.alt = "Свернуть...";
+			
+			Если ЭлементHTML_Таблица <> Неопределено Тогда
+			
+				Для НомерСтроки = 1 По ЭлементHTML_Таблица.rows.length - КоличествоСтрокВСвернутомСостоянии Цикл
+				
+					ЭлементHTML_Таблица.rows(НомерСтроки).style.setAttribute("display", "");
+				
+				КонецЦикла; 
+			
+			КонецЕсли; 
+			
+		Иначе
+			ЭлементHTML.className = "none";
+			pEvtObj.srcElement.src = КартинкаОткрыть;
+			pEvtObj.srcElement.alt = "Подробнее...";
+			
+			Если ЭлементHTML_Таблица <> Неопределено Тогда
+			
+				Для НомерСтроки = 1 По ЭлементHTML_Таблица.rows.length - КоличествоСтрокВСвернутомСостоянии Цикл
+				
+					ЭлементHTML_Таблица.rows(НомерСтроки).style.setAttribute("display", "none");
+				
+				КонецЦикла; 
+			
+			КонецЕсли; 
+			
+		КонецЕсли;
+	ИначеЕсли (Лев(pEvtObj.srcElement.id, 7) = "comment") Тогда
+		// отработать расшифровку по идентификатору ссылки
+		РаскрытьКомментарийРасшифровки(СтрЗаменить(pEvtObj.srcElement.id,"comment",""));	
+	КонецЕсли;
+	pEvtObj.returnValue = Ложь;
+	
+КонецПроцедуры
+
+Процедура HTMLДокументonmouseover(Элемент, pEvtObj)
+	
+	РаботаСДиалогами.ПолеHTMLДокументаOnMouseOver(Элемент, pEvtObj, Истина);
+	
+КонецПроцедуры
+
+Процедура HTMLДокументonmouseout(Элемент, pEvtObj)
+	
+	РаботаСДиалогами.ПолеHTMLДокументаOnMouseOut(Элемент, pEvtObj, Истина);
+	
+КонецПроцедуры
