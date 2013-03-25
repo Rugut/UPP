@@ -30,9 +30,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3EB636
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ext", "Ext\Ext.csproj", "{F7548E63-F45B-416C-A7BD-698CE4E772C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1С", "1С\1С.csproj", "{55AFDF73-2461-4FE8-BB4B-8E4A92AEB3F8}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
+		SccNumberOfProjects = 9
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://rugut.visualstudio.com/defaultcollection
 		SccLocalPath0 = .
@@ -57,6 +59,9 @@ Global
 		SccProjectUniqueName7 = Ext\\Ext.csproj
 		SccProjectName7 = Ext
 		SccLocalPath7 = Ext
+		SccProjectUniqueName8 = 1С\\1С.csproj
+		SccProjectName8 = 1С
+		SccLocalPath8 = 1С
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +96,10 @@ Global
 		{F7548E63-F45B-416C-A7BD-698CE4E772C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7548E63-F45B-416C-A7BD-698CE4E772C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7548E63-F45B-416C-A7BD-698CE4E772C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AFDF73-2461-4FE8-BB4B-8E4A92AEB3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AFDF73-2461-4FE8-BB4B-8E4A92AEB3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AFDF73-2461-4FE8-BB4B-8E4A92AEB3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AFDF73-2461-4FE8-BB4B-8E4A92AEB3F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

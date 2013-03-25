@@ -3,8 +3,8 @@
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:362px;height:219px;',
 	iconCls: 'bogus',
-	//minimizable: true,
-	//maximizable: true,
+	minimizable: true,
+	maximizable: true,
 	title: 'Банк',
 	
 	items:

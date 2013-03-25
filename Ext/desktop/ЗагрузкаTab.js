@@ -13,6 +13,8 @@ Ext.define('MyDesktop.ЗагрузкаTab', {
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
         'Ext.grid.Panel',
+        'Ext.form.field.Time',
+        'Ext.form.field.Number'
         //'Ext.ux.form.ItemSelector'
     ],
 
