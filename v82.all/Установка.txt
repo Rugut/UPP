@@ -1,0 +1,55 @@
+Установка - Инструкция по установке сборки
+ 
+--Очистка кэша (рекомендуется).
+/*Среди прочего освобождает память, выделенную под net-среду.*/
+DBCC freesystemcache('all')
+go
+ 
+--Настройка сервера
+go
+/*Включение опции работы CLR.*/
+exec sp_configure 'clr enabled',1 
+/*Активация изменений настроек.*/
+RECONFIGURE  
+go
+ 
+--Настройка базы, в которую устанавливается сборка
+go
+/*Для установки unsafe сборки требуется доверенная база.*/
+alter database [<ИмяБазы>] set trustworthy on 
+go
+/*Для установки unsafe сборки требуется, чтобы владельцем базы был sa.*/
+ALTER AUTHORIZATION ON DATABASE::[<ИмяБазы>] TO sa
+go
+/*Подключение сборки System.Management для доступа к WMI только для "SQL2005" и "SQL2008".*/
+CREATE ASSEMBLY [System.Management] From 'C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Management.dll'
+with permission_set = unsafe;
+ 
+/*Подключение сборки System.Management для доступа к WMI только для "SQL2012" и "SQL2014".*/
+CREATE ASSEMBLY [System.Management] From 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Management.dll'
+with permission_set = unsafe;
+go
+/*Создание sql-сборки из файла.*/
+Create assembly [v82.all] from '<ПутьКСборке>\v82All.dll' 
+with permission_set = unsafe; 
+go
+/*Создание процедуры управляющей составом процедур и функций.*/
+create proc [V82Install] @Режим int = 0
+WITH EXECUTE AS OWNER AS EXTERNAL NAME [V82.All].[Установка].[V82Install]
+go
+/*Разворачивание процедур и функций, реализованных в сборке.*/
+exec V82Install
+go
+/*Перед использованием прочесть справку, читать до просветления.*/
+exec V82Help
+go
+/*Если бумагу не жалко, то можно напечать все, что выдает себя за документацию.*/
+exec V82Help 'all'
+go
+/*Перед использованием нужно создать служебные процедуры с настройками.*/
+/*sp_Config.V82.Sql*/
+v82help 'sp_Config.V82.Sql'
+/*sp_Config.V82.Com */
+v82help 'sp_Config.V82.Com'
+ 
+ 

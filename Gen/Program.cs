@@ -48,7 +48,7 @@ namespace Gen
                     Console.WriteLine("Ошибка формирования: "+Сообщение);
                 }
                 break;
-                //Console.ReadLine();                
+                Console.ReadLine();                
             }
 
 
