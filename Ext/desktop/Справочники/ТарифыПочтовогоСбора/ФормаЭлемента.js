@@ -103,24 +103,60 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'60',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'60',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
 				{
 					text:'Процент',
 					width:'120',
+					dataIndex:'Процент',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТарифыПочтовогоСбора/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+					{
+						name:'Процент',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

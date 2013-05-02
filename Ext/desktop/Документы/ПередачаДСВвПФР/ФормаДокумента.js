@@ -228,36 +228,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'111',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Фамилия',
 					width:'80',
+					dataIndex:'Фамилия',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'80',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Отчество',
 					width:'80',
+					dataIndex:'Отчество',
+					flex:1,
 				},
 				{
 					text:'Адрес для информирования',
 					width:'160',
+					dataIndex:'АдресДляИнформирования',
+					flex:1,
 				},
 				{
 					text:'Страховой номер',
 					width:'100',
+					dataIndex:'СтраховойНомерПФР',
+					flex:1,
 				},
 				{
 					text:'Дата заполнения',
 					width:'104',
+					dataIndex:'ДатаЗаполнения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаДСВвПФР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Фамилия',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'Отчество',
+					},
+					{
+						name:'АдресДляИнформирования',
+					},
+					{
+						name:'СтраховойНомерПФР',
+					},
+					{
+						name:'ДатаЗаполнения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

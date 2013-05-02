@@ -46,12 +46,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'_',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'146',
+					dataIndex:'Документ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'_',
+					},
+					{
+						name:'Документ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -138,17 +159,43 @@
 				{
 					text:'Вид документа',
 					width:'148',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Проводить 
 при загрузке',
 					width:'80',
+					dataIndex:'Проводить',
+					flex:1,
 				},
 				{
 					text:'Статья ДДС для новых документов',
 					width:'210',
+					dataIndex:'СтатьяДДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Документ',
+					},
+					{
+						name:'Проводить',
+					},
+					{
+						name:'СтатьяДДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

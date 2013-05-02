@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'134',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'77',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Месяц',
 					width:'84',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'110',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'110',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

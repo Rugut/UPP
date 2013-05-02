@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'63',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код вида продукции',
 					width:'70',
+					dataIndex:'КодВидаПродукции',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВидыАлкогольнойПродукции/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'КодВидаПродукции',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -107,28 +107,69 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'Номер строки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'220',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Ед. хранения',
 					width:'52',
+					dataIndex:'ЕдиницаХранения',
+					flex:1,
 				},
 				{
 					text:'Лимит',
 					width:'103',
+					dataIndex:'Лимит',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЛимитовВозвратнойТары/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номер строки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ЕдиницаХранения',
+					},
+					{
+						name:'Лимит',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

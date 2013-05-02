@@ -107,84 +107,195 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'68',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'45',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'128',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'40',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'80',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'100',
+					dataIndex:'Всего',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'200',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'200',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор',
 					width:'200',
+					dataIndex:'Договор',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'200',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Источник',
 					width:'200',
+					dataIndex:'Источник',
+					flex:1,
 				},
 				{
 					text:'Вариант распределения',
 					width:'130',
+					dataIndex:'ВариантРаспределения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводства/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'Всего',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Договор',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Источник',
+					},
+					{
+						name:'ВариантРаспределения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

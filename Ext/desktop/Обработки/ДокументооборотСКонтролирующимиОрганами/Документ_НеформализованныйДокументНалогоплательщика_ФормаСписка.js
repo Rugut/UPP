@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'132',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'124',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'120',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Тип файла',
 					width:'120',
+					dataIndex:'ТипФайла',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'ТипФайла',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

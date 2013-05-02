@@ -18,16 +18,42 @@
 				{
 					text:'№',
 					width:'45',
+					dataIndex:'НомерВерсии',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'119',
+					dataIndex:'ДатаВерсии',
+					flex:1,
 				},
 				{
 					text:'Автор изменений',
 					width:'189',
+					dataIndex:'АвторВерсии',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсторияИзмененийОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерВерсии',
+					},
+					{
+						name:'ДатаВерсии',
+					},
+					{
+						name:'АвторВерсии',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

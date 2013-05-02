@@ -48,8 +48,24 @@
 				{
 					text:'Вид объекта доступа',
 					width:'164',
+					dataIndex:'ВидОбъектаДоступа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидОбъектаДоступа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

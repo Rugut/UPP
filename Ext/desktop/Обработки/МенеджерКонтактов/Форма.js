@@ -135,40 +135,96 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Важность',
+					flex:1,
 				},
 				{
 					text:'Дата документа',
 					width:'52',
+					dataIndex:'ДатаДокумента',
+					flex:1,
 				},
 				{
 					text:'Дата события',
 					width:'93',
+					dataIndex:'ДатаСобытия',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'76',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'101',
+					dataIndex:'ВидДокумента',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'96',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'138',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Информация',
 					width:'140',
+					dataIndex:'Информация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Состояние',
+					},
+					{
+						name:'Важность',
+					},
+					{
+						name:'ДатаДокумента',
+					},
+					{
+						name:'ДатаСобытия',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидДокумента',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Информация',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -220,20 +276,51 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'КартинкаДокумента',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ВидДокументаЗаказа',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'136',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'133',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КартинкаДокумента',
+					},
+					{
+						name:'ВидДокументаЗаказа',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'Контрагент',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -316,88 +403,204 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'НеРассмотрено',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'19',
+					dataIndex:'СостояниеПотомкаПисьма',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'ЕстьВложения',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'СтатусПисьма',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Объекты',
+					flex:1,
 				},
 				{
 					text:'От кого',
 					width:'120',
+					dataIndex:'ОтправительИмя',
+					flex:1,
 				},
 				{
 					text:'Кому',
 					width:'120',
+					dataIndex:'КомуПредставление',
+					flex:1,
 				},
 				{
 					text:'Тема',
 					width:'220',
+					dataIndex:'Тема',
+					flex:1,
 				},
 				{
 					text:'Дата отправления',
 					width:'120',
+					dataIndex:'ДатаОтправления',
+					flex:1,
 				},
 				{
 					text:'Дата транспорта',
 					width:'120',
+					dataIndex:'ДатаТранспорта',
+					flex:1,
 				},
 				{
 					text:'Не рассмотрено с ...',
 					width:'64',
+					dataIndex:'ГраницаКонтроляОтветаНаПисьмо',
+					flex:1,
 				},
 				{
 					text:'Дата создания',
 					width:'105',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'84',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Предмет',
 					width:'87',
+					dataIndex:'Предмет',
+					flex:1,
 				},
 				{
 					text:'Группа учетной записи',
 					width:'104',
+					dataIndex:'ГруппаУчетнойЗаписи',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'100',
+					dataIndex:'Основание',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'88',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Учетная запись',
 					width:'107',
+					dataIndex:'УчетнаяЗапись',
+					flex:1,
 				},
 				{
 					text:'Копии',
 					width:'100',
+					dataIndex:'КопииПредставление',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Текст письма',
 					width:'100',
+					dataIndex:'ТекстПисьма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НеРассмотрено',
+					},
+					{
+						name:'СостояниеПотомкаПисьма',
+					},
+					{
+						name:'ЕстьВложения',
+					},
+					{
+						name:'СтатусПисьма',
+					},
+					{
+						name:'Объекты',
+					},
+					{
+						name:'ОтправительИмя',
+					},
+					{
+						name:'КомуПредставление',
+					},
+					{
+						name:'Тема',
+					},
+					{
+						name:'ДатаОтправления',
+					},
+					{
+						name:'ДатаТранспорта',
+					},
+					{
+						name:'ГраницаКонтроляОтветаНаПисьмо',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Предмет',
+					},
+					{
+						name:'ГруппаУчетнойЗаписи',
+					},
+					{
+						name:'Основание',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'УчетнаяЗапись',
+					},
+					{
+						name:'КопииПредставление',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'ТекстПисьма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -650,12 +853,33 @@
 				{
 					text:'Группа',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Учетная запись',
 					width:'90',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -666,8 +890,24 @@
 				{
 					text:'Предметы писем',
 					width:'180',
+					dataIndex:'Предмет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Предмет',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -684,12 +924,33 @@
 				{
 					text:'Группа',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Учетная запись',
 					width:'60',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 					]
 				},

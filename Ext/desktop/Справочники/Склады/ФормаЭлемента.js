@@ -202,16 +202,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'186',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'259',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -247,16 +273,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'416',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 					]
 				},

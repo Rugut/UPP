@@ -18,12 +18,33 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МаршрутыСогласования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -41,8 +62,24 @@
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МаршрутыСогласования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 	]
 });

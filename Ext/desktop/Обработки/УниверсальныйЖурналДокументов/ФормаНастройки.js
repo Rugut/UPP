@@ -45,12 +45,33 @@
 				{
 					text:'Представление',
 					width:'146',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'151',
+					dataIndex:'Имя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'Имя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -61,8 +82,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -102,8 +139,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 	]
 });

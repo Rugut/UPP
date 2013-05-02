@@ -18,12 +18,33 @@
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Имя раздела',
 					width:'100',
+					dataIndex:'ИмяРаздела',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'ИмяРаздела',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -184,8 +205,24 @@
 				{
 					text:'Шаблоны телефонных номеров',
 					width:'197',
+					dataIndex:'ШаблоныТелефонныхНомеров',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ШаблоныТелефонныхНомеров',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -352,16 +389,42 @@
 				{
 					text:'Организация',
 					width:'256',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Дата начала действия',
 					width:'123',
+					dataIndex:'ДатаНачалаДействия',
+					flex:1,
 				},
 				{
 					text:'Настройка допроведения',
 					width:'137',
+					dataIndex:'НастройкаДопроведенияДокументов',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'ДатаНачалаДействия',
+					},
+					{
+						name:'НастройкаДопроведенияДокументов',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

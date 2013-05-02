@@ -18,12 +18,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Пользователь',
 					width:'141',
+					dataIndex:'Пользователь',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Пользователь',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

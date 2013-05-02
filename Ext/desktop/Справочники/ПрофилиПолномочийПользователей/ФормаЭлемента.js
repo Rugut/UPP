@@ -71,8 +71,24 @@
 				{
 					text:'Имя роли',
 					width:'100',
+					dataIndex:'ИмяРоли',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяРоли',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -83,12 +99,33 @@
 				{
 					text:'Право',
 					width:'270',
+					dataIndex:'Право',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'56',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Право',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -31,48 +31,114 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'Номер строки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'144',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'103',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Цена базовая',
 					width:'84',
+					dataIndex:'ЦенаБазовая',
+					flex:1,
 				},
 				{
 					text:'Валюта базовая',
 					width:'97',
+					dataIndex:'ВалютаБазовая',
+					flex:1,
 				},
 				{
 					text:'Способ расчета',
 					width:'137',
+					dataIndex:'СпособРасчетаЦены',
+					flex:1,
 				},
 				{
 					text:'% скидки (наценки)',
 					width:'46',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'75',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'77',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Единица измерения',
 					width:'55',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номер строки',
+					},
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ЦенаБазовая',
+					},
+					{
+						name:'ВалютаБазовая',
+					},
+					{
+						name:'СпособРасчетаЦены',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'checkbox',

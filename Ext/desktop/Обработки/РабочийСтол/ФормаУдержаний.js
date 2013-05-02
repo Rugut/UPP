@@ -40,20 +40,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'35',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'245',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Способ расчета',
 					width:'100',
+					dataIndex:'СпособРасчета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'СпособРасчета',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -79,16 +110,42 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'35',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'293',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},

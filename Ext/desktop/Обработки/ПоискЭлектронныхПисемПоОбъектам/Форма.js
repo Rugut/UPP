@@ -180,56 +180,132 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'НеРассмотрено',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'СостояниеПотомкаПисьма',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'СтатусПисьма',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'ЕстьВложения',
+					flex:1,
 				},
 				{
 					text:'Создано',
 					width:'80',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Отправлено/получено',
 					width:'80',
+					dataIndex:'ДатаОтправленияПолучения',
+					flex:1,
 				},
 				{
 					text:'От кого',
 					width:'120',
+					dataIndex:'ОтправительИмя',
+					flex:1,
 				},
 				{
 					text:'Кому',
 					width:'120',
+					dataIndex:'КомуПредставление',
+					flex:1,
 				},
 				{
 					text:'Тема',
 					width:'220',
+					dataIndex:'Тема',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'21',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Учетная запись',
 					width:'27',
+					dataIndex:'УчетнаяЗапись',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'80',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'86',
+					dataIndex:'Основание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискЭлектронныхПисемПоОбъектам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НеРассмотрено',
+					},
+					{
+						name:'СостояниеПотомкаПисьма',
+					},
+					{
+						name:'СтатусПисьма',
+					},
+					{
+						name:'ЕстьВложения',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ДатаОтправленияПолучения',
+					},
+					{
+						name:'ОтправительИмя',
+					},
+					{
+						name:'КомуПредставление',
+					},
+					{
+						name:'Тема',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'УчетнаяЗапись',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',

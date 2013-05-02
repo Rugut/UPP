@@ -69,36 +69,87 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Выгрузить',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Зарплатный счет',
 					width:'160',
+					dataIndex:'РасчетныйСчет',
+					flex:1,
 				},
 				{
 					text:'№ дог.',
 					width:'60',
+					dataIndex:'НомерДоговора',
+					flex:1,
 				},
 				{
 					text:'Вид вклада',
 					width:'80',
+					dataIndex:'ВидВклада',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'100',
+					dataIndex:'Документ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Выгрузить',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'РасчетныйСчет',
+					},
+					{
+						name:'НомерДоговора',
+					},
+					{
+						name:'ВидВклада',
+					},
+					{
+						name:'Документ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -381,40 +432,96 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Выгрузить',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'100',
+					dataIndex:'ВидДокумента',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Счет',
 					width:'100',
+					dataIndex:'СчетОрганизации',
+					flex:1,
 				},
 				{
 					text:'№ счета',
 					width:'160',
+					dataIndex:'РасчетныйСчет',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'100',
+					dataIndex:'Документ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Выгрузить',
+					},
+					{
+						name:'ВидДокумента',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'СчетОрганизации',
+					},
+					{
+						name:'РасчетныйСчет',
+					},
+					{
+						name:'Документ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -527,20 +634,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Загрузить',
+					flex:1,
 				},
 				{
 					text:'Файл',
 					width:'320',
+					dataIndex:'Файл',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Дата операции',
 					width:'120',
+					dataIndex:'ДатаОперации',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Загрузить',
+					},
+					{
+						name:'Файл',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ДатаОперации',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -551,44 +689,105 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Загрузить',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'220',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Операция',
 					width:'120',
+					dataIndex:'Операция',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Лицевой счет',
 					width:'120',
+					dataIndex:'ЛицевойСчет',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Результат',
 					width:'120',
+					dataIndex:'Результат',
+					flex:1,
 				},
 				{
 					text:'Фамилия',
 					width:'100',
+					dataIndex:'Фамилия1',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Отчество',
 					width:'100',
+					dataIndex:'Отчетство',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Загрузить',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'Операция',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ЛицевойСчет',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Результат',
+					},
+					{
+						name:'Фамилия1',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'Отчетство',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -605,20 +804,51 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'100',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'140',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Содержание',
 					width:'452',
+					dataIndex:'Содержание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Содержание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

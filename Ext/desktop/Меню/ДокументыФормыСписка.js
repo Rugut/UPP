@@ -1,40 +1,40 @@
-﻿Ext.define('Меню.ДокументыФормыСписка',
+﻿
+Ext.define('Меню.ДокументыФормыСписка',
     {
+        requires: ['Метаданные.Документы'],
         extend: 'MyDesktop.BogusModule',
-
-        init: function () {
+        init: function ()
+        {
             this.launcher =
             {
                 text: 'Документы списки',
                 iconCls: 'bogus',
-                handler: function ()
-                {
+                handler: function () {
                     return false;
                 },
-                menu:
-                {
+                menu: {
                     items: []
                 }
             };
             var Документы = Ext.create("Метаданные.Документы");
-            for (var НомерДокумента = 0, Документ; Документ = Документы[НомерДокумента]; НомерДокумента++)
+            for (var Номер = 0, Элемент; Элемент = Документы[Номер]; Номер++)
             {
-                if (Документ.ОсновнаяФормаСписка == '00000000-0000-0000-0000-000000000000')
+                if (Элемент.ОсновнаяФормаСписка == '00000000-0000-0000-0000-000000000000')
                 {
-                    continue;
+                        continue;
                 }
                 this.launcher.menu.items.push
                 (
                     {
-                        text: Документ.Имя,
+                        text: Элемент.Имя,
                         iconCls: 'bogus',
                         handler: this.createWindow,
                         scope: this,
                         windowId: ++windowIndex,
-                        FormId: 'Документы.' + Документ.Имя + '.ФормаСписка',
+                        FormId: 'Документы.' + Элемент.Имя + '.ФормаСписка',
                     }
                 );
-                if (НомерДокумента > 20)
+                if (Номер > 50)
                 {
                     break;
                 }

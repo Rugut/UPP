@@ -63,24 +63,60 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Отметка',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'220',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Проведено по кассе документом',
 					width:'220',
+					dataIndex:'РКО',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыплатаЗарплатыРасходнымиОрдерами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Отметка',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'РКО',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

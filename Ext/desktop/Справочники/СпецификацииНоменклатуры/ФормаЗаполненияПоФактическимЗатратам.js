@@ -59,24 +59,60 @@
 				{
 					text:'Материал',
 					width:'119',
+					dataIndex:'Материал',
+					flex:1,
 				},
 				{
 					text:'Характеристика материала',
 					width:'132',
+					dataIndex:'ХарактеристикаМатериала',
+					flex:1,
 				},
 				{
 					text:'Статья затрат',
 					width:'121',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'73',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Материал',
+					},
+					{
+						name:'ХарактеристикаМатериала',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

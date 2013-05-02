@@ -74,16 +74,42 @@
 				{
 					text:'Видимость',
 					width:'61',
+					dataIndex:'Видимость',
+					flex:1,
 				},
 				{
 					text:'Страница',
 					width:'247',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Видимость системная',
 					width:'60',
+					dataIndex:'ВидимостьСистемная',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Видимость',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'ВидимостьСистемная',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -120,28 +146,69 @@
 				{
 					text:'Видимость',
 					width:'71',
+					dataIndex:'Доступность',
+					flex:1,
 				},
 				{
 					text:'Обязательность',
 					width:'88',
+					dataIndex:'Обязательность',
+					flex:1,
 				},
 				{
 					text:'Уникальность',
 					width:'78',
+					dataIndex:'Уникальность',
+					flex:1,
 				},
 				{
 					text:'Реквизит',
 					width:'237',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Видимость системная',
 					width:'72',
+					dataIndex:'ДоступностьСистемная',
+					flex:1,
 				},
 				{
 					text:'Обязательность системная',
 					width:'87',
+					dataIndex:'ОбязательностьСистемная',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Доступность',
+					},
+					{
+						name:'Обязательность',
+					},
+					{
+						name:'Уникальность',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'ДоступностьСистемная',
+					},
+					{
+						name:'ОбязательностьСистемная',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -185,16 +252,42 @@
 				{
 					text:'Видимость',
 					width:'71',
+					dataIndex:'Доступность',
+					flex:1,
 				},
 				{
 					text:'Обязательность',
 					width:'88',
+					dataIndex:'Обязательность',
+					flex:1,
 				},
 				{
 					text:'Тип цен номенклатуры',
 					width:'237',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Доступность',
+					},
+					{
+						name:'Обязательность',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 					]
 				},

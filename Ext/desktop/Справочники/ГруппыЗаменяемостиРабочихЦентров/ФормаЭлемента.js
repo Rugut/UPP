@@ -87,16 +87,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Рабочий центр',
 					width:'200',
+					dataIndex:'РабочийЦентр',
+					flex:1,
 				},
 				{
 					text:'Приоритет применение рабочего центра',
 					width:'100',
+					dataIndex:'Приоритет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'РабочийЦентр',
+					},
+					{
+						name:'Приоритет',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -118,12 +144,33 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Рабочий центр',
 					width:'200',
+					dataIndex:'РабочийЦентр',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'РабочийЦентр',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

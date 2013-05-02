@@ -57,12 +57,33 @@
 				{
 					text:'Имя источника',
 					width:'120',
+					dataIndex:'ИмяИсточника',
+					flex:1,
 				},
 				{
 					text:'Набор данных',
 					width:'129',
+					dataIndex:'НаборДанных',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяИсточника',
+					},
+					{
+						name:'НаборДанных',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

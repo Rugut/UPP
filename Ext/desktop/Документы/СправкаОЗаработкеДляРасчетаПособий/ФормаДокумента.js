@@ -128,20 +128,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Расчетный год',
 					width:'100',
+					dataIndex:'РасчетныйГод',
+					flex:1,
 				},
 				{
 					text:'Заработок',
 					width:'100',
+					dataIndex:'Заработок',
+					flex:1,
 				},
 				{
 					text:'Дней болезни, ухода за детьми и др.',
 					width:'200',
+					dataIndex:'ДнейБолезниУходаЗаДетьми',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаОЗаработкеДляРасчетаПособий/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'РасчетныйГод',
+					},
+					{
+						name:'Заработок',
+					},
+					{
+						name:'ДнейБолезниУходаЗаДетьми',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

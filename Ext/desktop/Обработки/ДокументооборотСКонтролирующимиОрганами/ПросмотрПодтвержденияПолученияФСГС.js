@@ -42,16 +42,42 @@
 				{
 					text:'Имя файла',
 					width:'100',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Идентификатор',
 					width:'100',
+					dataIndex:'Идентификатор',
+					flex:1,
 				},
 				{
 					text:'Транспортное сообщение',
 					width:'141',
+					dataIndex:'ТранспортноеСообщение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Идентификатор',
+					},
+					{
+						name:'ТранспортноеСообщение',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -77,16 +103,42 @@
 				{
 					text:'Имя файла',
 					width:'100',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Идентификатор',
 					width:'100',
+					dataIndex:'Идентификатор',
+					flex:1,
 				},
 				{
 					text:'Транспортное сообщение',
 					width:'141',
+					dataIndex:'ТранспортноеСообщение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Идентификатор',
+					},
+					{
+						name:'ТранспортноеСообщение',
+					},
+				]
+			},
 		},
 					]
 				},

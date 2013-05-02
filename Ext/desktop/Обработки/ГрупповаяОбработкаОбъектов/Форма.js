@@ -106,16 +106,42 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Объект',
 					width:'400',
+					dataIndex:'Объект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Объект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -154,20 +180,51 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'200',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'200',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 					]
 				},

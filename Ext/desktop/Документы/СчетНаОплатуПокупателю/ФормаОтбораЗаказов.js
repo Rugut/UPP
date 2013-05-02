@@ -129,28 +129,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -259,116 +300,267 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'НеЗаполнять',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Переносить',
+					flex:1,
 				},
 				{
 					text:'БУ',
 					width:'20',
+					dataIndex:'ОтражатьВБухгалтерскомУчете',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'20',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'23',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'110',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'90',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'80',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'110',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор',
 					width:'100',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Контактное лицо',
 					width:'100',
+					dataIndex:'КонтактноеЛицоКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'СуммаДокумента',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'30',
+					dataIndex:'ВалютаДокумента',
+					flex:1,
 				},
 				{
 					text:'Ост. отгр.',
 					width:'80',
+					dataIndex:'ЗаказыОстаток',
+					flex:1,
 				},
 				{
 					text:'Кол.',
 					width:'30',
+					dataIndex:'ЗаказыКоличество',
+					flex:1,
 				},
 				{
 					text:'Тара',
 					width:'30',
+					dataIndex:'ТараКоличество',
+					flex:1,
 				},
 				{
 					text:'Ост. опл.',
 					width:'80',
+					dataIndex:'РасчетыОстаток',
+					flex:1,
 				},
 				{
 					text:'Рез.',
 					width:'35',
+					dataIndex:'РезервыКоличество',
+					flex:1,
 				},
 				{
 					text:'Разм.',
 					width:'35',
+					dataIndex:'РазмещенияКоличество',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'80',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
 				{
 					text:'Тип скидки',
 					width:'80',
+					dataIndex:'ТипСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Дата отгрузки',
 					width:'80',
+					dataIndex:'ДатаОтгрузки',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Склад/группа',
 					width:'100',
+					dataIndex:'СкладГруппа',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Проведен',
 					width:'70',
+					dataIndex:'Проведен',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НеЗаполнять',
+					},
+					{
+						name:'Переносить',
+					},
+					{
+						name:'ОтражатьВБухгалтерскомУчете',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'КонтактноеЛицоКонтрагента',
+					},
+					{
+						name:'СуммаДокумента',
+					},
+					{
+						name:'ВалютаДокумента',
+					},
+					{
+						name:'ЗаказыОстаток',
+					},
+					{
+						name:'ЗаказыКоличество',
+					},
+					{
+						name:'ТараКоличество',
+					},
+					{
+						name:'РасчетыОстаток',
+					},
+					{
+						name:'РезервыКоличество',
+					},
+					{
+						name:'РазмещенияКоличество',
+					},
+					{
+						name:'ТипЦен',
+					},
+					{
+						name:'ТипСкидкиНаценки',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'ДатаОтгрузки',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'СкладГруппа',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Проведен',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -433,52 +625,123 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Заказ покупателя',
 					width:'100',
+					dataIndex:'ЗаказПокупателя',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'47',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'80',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'103',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'94',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Единица измерения',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Добавить в документ',
 					width:'86',
+					dataIndex:'ДобавитьВДокумент',
+					flex:1,
 				},
 				{
 					text:'Запланировано',
 					width:'71',
+					dataIndex:'Запланировано',
+					flex:1,
 				},
 				{
 					text:'Осталось отгрузить',
 					width:'73',
+					dataIndex:'ОсталосьОтгрузить',
+					flex:1,
 				},
 				{
 					text:'Заполнено',
 					width:'71',
+					dataIndex:'Заполнено',
+					flex:1,
 				},
 				{
 					text:'Флаг заполнено',
 					width:'100',
+					dataIndex:'ФлагЗаполнено',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'ЗаказПокупателя',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ДобавитьВДокумент',
+					},
+					{
+						name:'Запланировано',
+					},
+					{
+						name:'ОсталосьОтгрузить',
+					},
+					{
+						name:'Заполнено',
+					},
+					{
+						name:'ФлагЗаполнено',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -508,48 +771,114 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Заказ покупателя',
 					width:'100',
+					dataIndex:'ЗаказПокупателя',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'47',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'77',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Единица измерения',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Добавить в документ',
 					width:'100',
+					dataIndex:'ДобавитьВДокумент',
+					flex:1,
 				},
 				{
 					text:'Запланировано',
 					width:'71',
+					dataIndex:'Запланировано',
+					flex:1,
 				},
 				{
 					text:'Осталось отгрузить',
 					width:'73',
+					dataIndex:'ОсталосьОтгрузить',
+					flex:1,
 				},
 				{
 					text:'Заполнено',
 					width:'71',
+					dataIndex:'Заполнено',
+					flex:1,
 				},
 				{
 					text:'Флаг заполнено',
 					width:'100',
+					dataIndex:'ФлагЗаполнено',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'ЗаказПокупателя',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ДобавитьВДокумент',
+					},
+					{
+						name:'Запланировано',
+					},
+					{
+						name:'ОсталосьОтгрузить',
+					},
+					{
+						name:'Заполнено',
+					},
+					{
+						name:'ФлагЗаполнено',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -579,44 +908,105 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Заказ покупателя',
 					width:'100',
+					dataIndex:'ЗаказПокупателя',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'47',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'77',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Единица измерения',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Добавить в документ',
 					width:'100',
+					dataIndex:'ДобавитьВДокумент',
+					flex:1,
 				},
 				{
 					text:'Запланировано',
 					width:'71',
+					dataIndex:'Запланировано1',
+					flex:1,
 				},
 				{
 					text:'Осталось отгрузить',
 					width:'73',
+					dataIndex:'ОсталосьОтгрузить',
+					flex:1,
 				},
 				{
 					text:'Заполнено',
 					width:'71',
+					dataIndex:'Заполнено',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'ЗаказПокупателя',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ДобавитьВДокумент',
+					},
+					{
+						name:'Запланировано1',
+					},
+					{
+						name:'ОсталосьОтгрузить',
+					},
+					{
+						name:'Заполнено',
+					},
+				]
+			},
 		},
 					]
 				},

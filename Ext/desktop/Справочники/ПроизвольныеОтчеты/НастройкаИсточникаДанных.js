@@ -39,12 +39,33 @@
 				{
 					text:'Параметр источника',
 					width:'179',
+					dataIndex:'Параметр',
+					flex:1,
 				},
 				{
 					text:'Параметр схемы',
 					width:'136',
+					dataIndex:'ПутьКДанным',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Параметр',
+					},
+					{
+						name:'ПутьКДанным',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

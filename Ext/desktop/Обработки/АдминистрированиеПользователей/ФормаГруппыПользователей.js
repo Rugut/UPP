@@ -18,8 +18,24 @@
 				{
 					text:'Наименование',
 					width:'185',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -196,20 +212,51 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Пользователь',
 					width:'126',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Полное имя',
 					width:'127',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Профиль',
 					width:'128',
+					dataIndex:'ПрофильПолномочийПользователя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ПрофильПолномочийПользователя',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -235,8 +282,24 @@
 				{
 					text:'Состав группы',
 					width:'146',
+					dataIndex:'Пользователь',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пользователь',
+					},
+				]
+			},
 		},
 					]
 				},

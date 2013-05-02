@@ -49,40 +49,96 @@
 				{
 					text:'N',
 					width:'50',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Установка скидок номенклатуры',
 					width:'306',
+					dataIndex:'УстановкаСкидокНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'124',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Вид скидки',
 					width:'87',
+					dataIndex:'ВидСкидки',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'93',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'94',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Условие',
 					width:'192',
+					dataIndex:'Условие',
+					flex:1,
 				},
 				{
 					text:'Значение условия',
 					width:'100',
+					dataIndex:'ЗначениеУсловия',
+					flex:1,
 				},
 				{
 					text:'Тип скидки',
 					width:'138',
+					dataIndex:'ТипСкидкиНаценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтменаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'УстановкаСкидокНоменклатуры',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'ВидСкидки',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'Условие',
+					},
+					{
+						name:'ЗначениеУсловия',
+					},
+					{
+						name:'ТипСкидкиНаценки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

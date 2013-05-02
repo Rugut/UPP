@@ -115,16 +115,42 @@
 				{
 					text:'С',
 					width:'80',
+					dataIndex:'СтажС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'80',
+					dataIndex:'СтажПо',
+					flex:1,
 				},
 				{
 					text:'Размер',
 					width:'120',
+					dataIndex:'Величина',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КоэффициентыСтажа/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'СтажС',
+					},
+					{
+						name:'СтажПо',
+					},
+					{
+						name:'Величина',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -104,36 +104,87 @@
 				{
 					text:'Раздел учета',
 					width:'260',
+					dataIndex:'РазделУчета',
+					flex:1,
 				},
 				{
 					text:'Упр. учет',
 					width:'78',
+					dataIndex:'УУ',
+					flex:1,
 				},
 				{
 					text:'Бух. учет',
 					width:'72',
+					dataIndex:'БУ',
+					flex:1,
 				},
 				{
 					text:'Налог. учет',
 					width:'68',
+					dataIndex:'НУ',
+					flex:1,
 				},
 				{
 					text:'Раздел учета имя',
 					width:'28',
+					dataIndex:'РазделУчетаИмя',
+					flex:1,
 				},
 				{
 					text:'Рассчитан УУ',
 					width:'30',
+					dataIndex:'РассчитанУУ',
+					flex:1,
 				},
 				{
 					text:'Рассчитан БУ',
 					width:'26',
+					dataIndex:'РассчитанБУ',
+					flex:1,
 				},
 				{
 					text:'Рассчитан НУ',
 					width:'29',
+					dataIndex:'РассчитанНУ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'РазделУчета',
+					},
+					{
+						name:'УУ',
+					},
+					{
+						name:'БУ',
+					},
+					{
+						name:'НУ',
+					},
+					{
+						name:'РазделУчетаИмя',
+					},
+					{
+						name:'РассчитанУУ',
+					},
+					{
+						name:'РассчитанБУ',
+					},
+					{
+						name:'РассчитанНУ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -165,20 +216,51 @@
 				{
 					text:'',
 					width:'53',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Ввод остатков по регистру',
 					width:'150',
+					dataIndex:'РегистрЗатрат',
+					flex:1,
 				},
 				{
 					text:'На основании данных регистра',
 					width:'180',
+					dataIndex:'РазделУчетаПредставление',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'28',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'РегистрЗатрат',
+					},
+					{
+						name:'РазделУчетаПредставление',
+					},
+					{
+						name:'Ссылка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -320,16 +402,42 @@
 				{
 					text:'Наименование',
 					width:'363',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Упр',
 					width:'44',
+					dataIndex:'УправленческийУчет',
+					flex:1,
 				},
 				{
 					text:'Регл',
 					width:'44',
+					dataIndex:'РегламентированныйУчет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'УправленческийУчет',
+					},
+					{
+						name:'РегламентированныйУчет',
+					},
+				]
+			},
 		},
 					]
 				},

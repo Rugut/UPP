@@ -170,12 +170,33 @@
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Подразделение организации',
 					width:'120',
+					dataIndex:'ПодразделениеОрганизации',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'ПодразделениеОрганизации',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -198,16 +219,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Принадлежность',
 					width:'25',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'120',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -218,16 +265,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'120',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'120',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

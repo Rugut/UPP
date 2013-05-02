@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'200',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Способ расчета остатка отпуска',
 					width:'100',
+					dataIndex:'СпособРасчетаОстаткаОтпуска',
+					flex:1,
 				},
 				{
 					text:'Количество дней отпуска в год',
 					width:'40',
+					dataIndex:'КоличествоДнейОтпускаВГод',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВидыЕжегодныхОтпусков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'СпособРасчетаОстаткаОтпуска',
+					},
+					{
+						name:'КоличествоДнейОтпускаВГод',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,20 +18,51 @@
 				{
 					text:' ',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Содержание ответа',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Оценка ответа',
 					width:'88',
+					dataIndex:'ОценкаОтвета',
+					flex:1,
 				},
 				{
 					text:'Развернутый ответ',
 					width:'104',
+					dataIndex:'ТребуетРазвернутыйОтвет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВариантыОтветовОпросов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ОценкаОтвета',
+					},
+					{
+						name:'ТребуетРазвернутыйОтвет',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Физлицо',
 					width:'120',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Серия',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'132',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид страхования',
 					width:'100',
+					dataIndex:'ВидСтрахования',
+					flex:1,
 				},
 				{
 					text:'Дата окончания полиса',
 					width:'80',
+					dataIndex:'ДатаОкончанияПолиса',
+					flex:1,
 				},
 				{
 					text:'Программа страхования',
 					width:'120',
+					dataIndex:'ПрограммаСтрахования',
+					flex:1,
 				},
 				{
 					text:'Родственник',
 					width:'120',
+					dataIndex:'Родственник',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МедицинскиеСтраховыеПолисы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидСтрахования',
+					},
+					{
+						name:'ДатаОкончанияПолиса',
+					},
+					{
+						name:'ПрограммаСтрахования',
+					},
+					{
+						name:'Родственник',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

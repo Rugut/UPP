@@ -45,12 +45,33 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Имя показателя',
 					width:'220',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

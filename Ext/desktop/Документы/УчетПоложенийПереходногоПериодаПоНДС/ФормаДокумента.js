@@ -123,40 +123,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Объект строительства',
 					width:'120',
+					dataIndex:'ОбъектСтроительства',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'100',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'100',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Счет учета НДС',
 					width:'100',
+					dataIndex:'СчетУчетаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'40',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'НДС включен в стоимость',
 					width:'100',
+					dataIndex:'НДСВключенВСтоимость',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетПоложенийПереходногоПериодаПоНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОбъектСтроительства',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'СчетУчетаНДС',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'НДСВключенВСтоимость',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

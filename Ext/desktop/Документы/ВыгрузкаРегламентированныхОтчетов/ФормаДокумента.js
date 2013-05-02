@@ -125,32 +125,78 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Отчет',
 					width:'142',
+					dataIndex:'Отчет',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'41',
+					dataIndex:'Вид',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'94',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Текст',
 					width:'45',
+					dataIndex:'НомерСтрокиТекстаВыгрузки',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'100',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Отчет',
+					},
+					{
+						name:'Вид',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'НомерСтрокиТекстаВыгрузки',
+					},
+					{
+						name:'Ссылка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

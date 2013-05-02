@@ -18,16 +18,42 @@
 				{
 					text:'Код',
 					width:'74',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'267',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Порядок',
 					width:'63',
+					dataIndex:'Порядок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЦеновыеГруппы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Порядок',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

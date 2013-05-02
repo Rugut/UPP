@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'118',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'146',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'191',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

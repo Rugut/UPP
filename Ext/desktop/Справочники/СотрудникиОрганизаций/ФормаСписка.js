@@ -39,52 +39,123 @@
 				{
 					text:'Сотрудники',
 					width:'100',
+					dataIndex:'Группа',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'142',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код (Таб. №)',
 					width:'71',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'126',
+					dataIndex:'ОбособленноеПодразделение',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'123',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'120',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Вид договора',
 					width:'140',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Принят',
 					width:'60',
+					dataIndex:'ДатаПриема',
+					flex:1,
 				},
 				{
 					text:'Уволен',
 					width:'60',
+					dataIndex:'ДатаУвольнения',
+					flex:1,
 				},
 				{
 					text:'Аванс',
 					width:'60',
+					dataIndex:'Аванс',
+					flex:1,
 				},
 				{
 					text:'Номер лицевого счета',
 					width:'120',
+					dataIndex:'НомерЛицевогоСчета',
+					flex:1,
 				},
 				{
 					text:'Банк',
 					width:'100',
+					dataIndex:'Банк',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Группа',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'ОбособленноеПодразделение',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'ДатаПриема',
+					},
+					{
+						name:'ДатаУвольнения',
+					},
+					{
+						name:'Аванс',
+					},
+					{
+						name:'НомерЛицевогоСчета',
+					},
+					{
+						name:'Банк',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -171,8 +242,24 @@
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -218,16 +305,42 @@
 				{
 					text:'Организация',
 					width:'137',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'195',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'65',
+					dataIndex:'Код',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Код',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -270,12 +383,33 @@
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид договора',
 					width:'100',
+					dataIndex:'ВидДоговора',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидДоговора',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -325,32 +459,78 @@
 				{
 					text:'Серия',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Выдан',
 					width:'80',
+					dataIndex:'ДатаВыдачиПолиса',
+					flex:1,
 				},
 				{
 					text:'До',
 					width:'80',
+					dataIndex:'ДатаОкончанияПолиса',
+					flex:1,
 				},
 				{
 					text:'Вид страхования',
 					width:'100',
+					dataIndex:'ВидСтрахования',
+					flex:1,
 				},
 				{
 					text:'Программа страхования',
 					width:'130',
+					dataIndex:'ПрограммаСтрахования',
+					flex:1,
 				},
 				{
 					text:'Родственник',
 					width:'120',
+					dataIndex:'Родственник',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ДатаВыдачиПолиса',
+					},
+					{
+						name:'ДатаОкончанияПолиса',
+					},
+					{
+						name:'ВидСтрахования',
+					},
+					{
+						name:'ПрограммаСтрахования',
+					},
+					{
+						name:'Родственник',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -385,24 +565,60 @@
 				{
 					text:'Вид ежегодного отпуска',
 					width:'100',
+					dataIndex:'ВидЕжегодногоОтпуска',
+					flex:1,
 				},
 				{
 					text:'Год работы',
 					width:'100',
+					dataIndex:'ГодРаботы',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'80',
+					dataIndex:'ДатаНачалаРабочегоГода',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'80',
+					dataIndex:'ДатаОкончанияРабочегоГода',
+					flex:1,
 				},
 				{
 					text:'Количество дней',
 					width:'70',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидЕжегодногоОтпуска',
+					},
+					{
+						name:'ГодРаботы',
+					},
+					{
+						name:'ДатаНачалаРабочегоГода',
+					},
+					{
+						name:'ДатаОкончанияРабочегоГода',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 					]
 				},

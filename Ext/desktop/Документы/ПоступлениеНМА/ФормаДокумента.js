@@ -111,40 +111,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерCтроки',
+					flex:1,
 				},
 				{
 					text:'Нематериальный актив',
 					width:'220',
+					dataIndex:'НематериальныйАктив',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'60',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'80',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'80',
+					dataIndex:'Всего',
+					flex:1,
 				},
 				{
 					text:'Счет учета (БУ)',
 					width:'80',
+					dataIndex:'СчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Счет НДС',
 					width:'90',
+					dataIndex:'СчетУчетаНДС',
+					flex:1,
 				},
 				{
 					text:'Счет учета (НУ)',
 					width:'94',
+					dataIndex:'СчетУчетаНУ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеНМА/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерCтроки',
+					},
+					{
+						name:'НематериальныйАктив',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'Всего',
+					},
+					{
+						name:'СчетУчетаБУ',
+					},
+					{
+						name:'СчетУчетаНДС',
+					},
+					{
+						name:'СчетУчетаНУ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

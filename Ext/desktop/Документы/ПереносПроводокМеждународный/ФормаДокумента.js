@@ -107,80 +107,186 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Счет Дт',
 					width:'100',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'Валюта Дт',
 					width:'70',
+					dataIndex:'ВалютаДт',
+					flex:1,
 				},
 				{
 					text:'Вал. сумма Дт',
 					width:'100',
+					dataIndex:'ВалютнаяСуммаДт',
+					flex:1,
 				},
 				{
 					text:'Количество Дт',
 					width:'100',
+					dataIndex:'КоличествоДт',
+					flex:1,
 				},
 				{
 					text:'Субконто Дт',
 					width:'100',
+					dataIndex:'СубконтоДт1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоДт2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоДт3',
+					flex:1,
 				},
 				{
 					text:'Счет Кт',
 					width:'100',
+					dataIndex:'СчетКт',
+					flex:1,
 				},
 				{
 					text:'Субконто Кт',
 					width:'100',
+					dataIndex:'СубконтоКт1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоКт2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоКт3',
+					flex:1,
 				},
 				{
 					text:'Валюта Кт',
 					width:'70',
+					dataIndex:'ВалютаКт',
+					flex:1,
 				},
 				{
 					text:'Вал. сумма Кт',
 					width:'100',
+					dataIndex:'ВалютнаяСуммаКт',
+					flex:1,
 				},
 				{
 					text:'Количество Кт',
 					width:'100',
+					dataIndex:'КоличествоКт',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Содержание',
 					width:'199',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'Первичный документ',
 					width:'57',
+					dataIndex:'ПервичныйДокумент',
+					flex:1,
 				},
 				{
 					text:'НЖ',
 					width:'8',
+					dataIndex:'НомерЖурнала',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПроводокМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'ВалютаДт',
+					},
+					{
+						name:'ВалютнаяСуммаДт',
+					},
+					{
+						name:'КоличествоДт',
+					},
+					{
+						name:'СубконтоДт1',
+					},
+					{
+						name:'СубконтоДт2',
+					},
+					{
+						name:'СубконтоДт3',
+					},
+					{
+						name:'СчетКт',
+					},
+					{
+						name:'СубконтоКт1',
+					},
+					{
+						name:'СубконтоКт2',
+					},
+					{
+						name:'СубконтоКт3',
+					},
+					{
+						name:'ВалютаКт',
+					},
+					{
+						name:'ВалютнаяСуммаКт',
+					},
+					{
+						name:'КоличествоКт',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'ПервичныйДокумент',
+					},
+					{
+						name:'НомерЖурнала',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

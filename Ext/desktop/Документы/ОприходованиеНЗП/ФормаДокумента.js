@@ -108,84 +108,195 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерCтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'100',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'200',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К.мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'67',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'67',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'68',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Сумма (регл.)',
 					width:'100',
+					dataIndex:'СуммаРегл',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'100',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
 				{
 					text:'Статья затрат',
 					width:'100',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Счет затрат (БУ)',
 					width:'90',
+					dataIndex:'СчетЗатрат',
+					flex:1,
 				},
 				{
 					text:'Счет затрат (НУ)',
 					width:'90',
+					dataIndex:'СчетЗатратНУ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОприходованиеНЗП/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерCтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СуммаРегл',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'СчетЗатрат',
+					},
+					{
+						name:'СчетЗатратНУ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

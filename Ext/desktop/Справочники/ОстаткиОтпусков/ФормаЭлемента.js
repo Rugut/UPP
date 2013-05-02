@@ -105,20 +105,51 @@
 				{
 					text:'Год работы',
 					width:'100',
+					dataIndex:'ГодРаботы',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'80',
+					dataIndex:'ДатаНачалаРабочегоГода',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'80',
+					dataIndex:'ДатаОкончанияРабочегоГода',
+					flex:1,
 				},
 				{
 					text:'Количество дней',
 					width:'70',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ГодРаботы',
+					},
+					{
+						name:'ДатаНачалаРабочегоГода',
+					},
+					{
+						name:'ДатаОкончанияРабочегоГода',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

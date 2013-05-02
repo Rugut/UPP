@@ -104,40 +104,96 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Поставщик',
 					width:'120',
+					dataIndex:'Поставщик',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'120',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Счет учета НДС',
 					width:'96',
+					dataIndex:'СчетУчетаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'96',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Документ оплаты',
 					width:'120',
+					dataIndex:'ДокументОплаты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Поставщик',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'СчетУчетаНДС',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'ДокументОплаты',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

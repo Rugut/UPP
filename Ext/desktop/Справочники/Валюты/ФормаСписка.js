@@ -18,32 +18,78 @@
 				{
 					text:' ',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Полное наименование',
 					width:'220',
+					dataIndex:'НаименованиеПолное',
+					flex:1,
 				},
 				{
 					text:'Курс',
 					width:'80',
+					dataIndex:'Курс',
+					flex:1,
 				},
 				{
 					text:'Кратность',
 					width:'80',
+					dataIndex:'Кратность',
+					flex:1,
 				},
 				{
 					text:'Параметры прописи на русском',
 					width:'220',
+					dataIndex:'ПараметрыПрописиНаРусском',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Валюты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'НаименованиеПолное',
+					},
+					{
+						name:'Курс',
+					},
+					{
+						name:'Кратность',
+					},
+					{
+						name:'ПараметрыПрописиНаРусском',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

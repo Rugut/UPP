@@ -103,16 +103,42 @@
 				{
 					text:'Имя',
 					width:'533',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Размер (в байтах)',
 					width:'108',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'147',
+					dataIndex:'ТипСодержимого',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'ТипСодержимого',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

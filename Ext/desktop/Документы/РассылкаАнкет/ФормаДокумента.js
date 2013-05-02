@@ -302,16 +302,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Получатель',
 					width:'100',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'Электронный адрес',
 					width:'100',
+					dataIndex:'Получатель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РассылкаАнкет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Объект',
+					},
+					{
+						name:'Получатель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -351,12 +377,33 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'100',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РассылкаАнкет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ИмяФайла',
+					},
+				]
+			},
 		},
 					]
 				},

@@ -35,12 +35,33 @@
 				{
 					text:'Имя',
 					width:'149',
+					dataIndex:'ИмяПараметра',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'152',
+					dataIndex:'ЗначениеПараметра',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяПараметра',
+					},
+					{
+						name:'ЗначениеПараметра',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

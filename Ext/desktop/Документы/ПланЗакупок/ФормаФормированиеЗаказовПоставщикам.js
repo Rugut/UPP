@@ -45,32 +45,78 @@
 				{
 					text:' Поставщик. Номенклатура.',
 					width:'154',
+					dataIndex:'ПоставщикНоменклатура',
+					flex:1,
 				},
 				{
 					text:' Характеристика',
 					width:'100',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:' Цена',
 					width:'100',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:' Требуемое кол.',
 					width:'100',
+					dataIndex:'ТребуемоеКоличество',
+					flex:1,
 				},
 				{
 					text:' Заказанное кол.',
 					width:'100',
+					dataIndex:'ЗаказанноеКоличество',
+					flex:1,
 				},
 				{
 					text:' Заказать кол.',
 					width:'100',
+					dataIndex:'ЗаказатьКоличество',
+					flex:1,
 				},
 				{
 					text:' Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланЗакупок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПоставщикНоменклатура',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'ТребуемоеКоличество',
+					},
+					{
+						name:'ЗаказанноеКоличество',
+					},
+					{
+						name:'ЗаказатьКоличество',
+					},
+					{
+						name:'Заказ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -104,12 +150,33 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ДокументПроведен',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'220',
+					dataIndex:'Документ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланЗакупок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ДокументПроведен',
+					},
+					{
+						name:'Документ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

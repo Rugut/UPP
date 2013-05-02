@@ -39,44 +39,105 @@
 				{
 					text:'Ссылка',
 					width:'100',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Организация - ссылка',
 					width:'100',
+					dataIndex:'ОрганизацияСсылка',
+					flex:1,
 				},
 				{
 					text:'Физлицо - ссылка',
 					width:'100',
+					dataIndex:'ФизлицоСсылка',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'100',
+					dataIndex:'СсылкаПредставление',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'100',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'100',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Физлицо',
 					width:'100',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'ОрганизацияСсылка',
+					},
+					{
+						name:'ФизлицоСсылка',
+					},
+					{
+						name:'СсылкаПредставление',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 	]
 });

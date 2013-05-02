@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'83',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'280',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Норма ам. отчислений (%)',
 					width:'98',
+					dataIndex:'НормаАмортизационныхОтчислений',
+					flex:1,
 				},
 				{
 					text:'% от стоимости / 1000 км',
 					width:'100',
+					dataIndex:'ПроцентОтСтоимостиМашины',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'НормаАмортизационныхОтчислений',
+					},
+					{
+						name:'ПроцентОтСтоимостиМашины',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -57,8 +93,24 @@
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 	]
 });

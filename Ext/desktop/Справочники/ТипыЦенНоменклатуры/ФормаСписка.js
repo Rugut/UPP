@@ -18,48 +18,114 @@
 				{
 					text:' ',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'180',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Валюта цен',
 					width:'80',
+					dataIndex:'ВалютаЦены',
+					flex:1,
 				},
 				{
 					text:'Расчет цен',
 					width:'80',
+					dataIndex:'Рассчитывается',
+					flex:1,
 				},
 				{
 					text:'Базовый тип цен',
 					width:'200',
+					dataIndex:'БазовыйТипЦен',
+					flex:1,
 				},
 				{
 					text:'Наценка в %',
 					width:'80',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'80',
+					dataIndex:'ЦенаВключаетНДС',
+					flex:1,
 				},
 				{
 					text:'Округлять до',
 					width:'80',
+					dataIndex:'ПорядокОкругления',
+					flex:1,
 				},
 				{
 					text:'Метод округления',
 					width:'150',
+					dataIndex:'ОкруглятьВБольшуюСторону',
+					flex:1,
 				},
 				{
 					text:'Способ расчета цены',
 					width:'150',
+					dataIndex:'СпособРасчетаЦены',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВалютаЦены',
+					},
+					{
+						name:'Рассчитывается',
+					},
+					{
+						name:'БазовыйТипЦен',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+					{
+						name:'ЦенаВключаетНДС',
+					},
+					{
+						name:'ПорядокОкругления',
+					},
+					{
+						name:'ОкруглятьВБольшуюСторону',
+					},
+					{
+						name:'СпособРасчетаЦены',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

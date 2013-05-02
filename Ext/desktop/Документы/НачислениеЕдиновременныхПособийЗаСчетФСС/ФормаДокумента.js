@@ -61,28 +61,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'180',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Вид пособия',
 					width:'120',
+					dataIndex:'ВидПособия',
+					flex:1,
 				},
 				{
 					text:'Дата события',
 					width:'80',
+					dataIndex:'ДатаСобытия',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'60',
+					dataIndex:'Результат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЕдиновременныхПособийЗаСчетФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'ВидПособия',
+					},
+					{
+						name:'ДатаСобытия',
+					},
+					{
+						name:'Результат',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

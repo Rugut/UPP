@@ -108,24 +108,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'100',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'120',
+					dataIndex:'Вид',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'204',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'103',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'Вид',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -254,16 +290,42 @@
 				{
 					text:'Степень родства',
 					width:'100',
+					dataIndex:'СтепеньРодства',
+					flex:1,
 				},
 				{
 					text:'Родственник',
 					width:'100',
+					dataIndex:'Родственник',
+					flex:1,
 				},
 				{
 					text:'Дата рождения',
 					width:'100',
+					dataIndex:'ДатаРождения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'СтепеньРодства',
+					},
+					{
+						name:'Родственник',
+					},
+					{
+						name:'ДатаРождения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -274,28 +336,69 @@
 				{
 					text:'Вид образования',
 					width:'100',
+					dataIndex:'ВидОбразования',
+					flex:1,
 				},
 				{
 					text:'Учебное заведение',
 					width:'120',
+					dataIndex:'УчебноеЗаведение',
+					flex:1,
 				},
 				{
 					text:'Специальность',
 					width:'120',
+					dataIndex:'Специальность',
+					flex:1,
 				},
 				{
 					text:'Диплом, серия, номер',
 					width:'120',
+					dataIndex:'Диплом',
+					flex:1,
 				},
 				{
 					text:'Год окончания',
 					width:'60',
+					dataIndex:'ГодОкончания',
+					flex:1,
 				},
 				{
 					text:'Квалификация',
 					width:'120',
+					dataIndex:'Квалификация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидОбразования',
+					},
+					{
+						name:'УчебноеЗаведение',
+					},
+					{
+						name:'Специальность',
+					},
+					{
+						name:'Диплом',
+					},
+					{
+						name:'ГодОкончания',
+					},
+					{
+						name:'Квалификация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -306,12 +409,33 @@
 				{
 					text:'Язык',
 					width:'73',
+					dataIndex:'Язык',
+					flex:1,
 				},
 				{
 					text:'Степень знания языка',
 					width:'125',
+					dataIndex:'СтепеньЗнанияЯзыка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Язык',
+					},
+					{
+						name:'СтепеньЗнанияЯзыка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -358,8 +482,24 @@
 				{
 					text:'Профессия',
 					width:'220',
+					dataIndex:'Профессия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Профессия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textarea',
@@ -405,28 +545,69 @@
 				{
 					text:'Ученая степень',
 					width:'100',
+					dataIndex:'УченаяСтепень',
+					flex:1,
 				},
 				{
 					text:'Дата присуждения ученой степени',
 					width:'100',
+					dataIndex:'ДатаПрисужденияУченойСтепени',
+					flex:1,
 				},
 				{
 					text:'Отрасль науки',
 					width:'100',
+					dataIndex:'ОтрасльНауки',
+					flex:1,
 				},
 				{
 					text:'Диссертационный совет',
 					width:'100',
+					dataIndex:'ДиссертационныйСовет',
+					flex:1,
 				},
 				{
 					text:'Диплом серия, номер',
 					width:'100',
+					dataIndex:'ДипломСерияНомер',
+					flex:1,
 				},
 				{
 					text:'Наименование организации, выдавшей диплом',
 					width:'100',
+					dataIndex:'ДипломВыданОрганизация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'УченаяСтепень',
+					},
+					{
+						name:'ДатаПрисужденияУченойСтепени',
+					},
+					{
+						name:'ОтрасльНауки',
+					},
+					{
+						name:'ДиссертационныйСовет',
+					},
+					{
+						name:'ДипломСерияНомер',
+					},
+					{
+						name:'ДипломВыданОрганизация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -437,28 +618,69 @@
 				{
 					text:'Ученое звание',
 					width:'100',
+					dataIndex:'УченоеЗвание',
+					flex:1,
 				},
 				{
 					text:'Дата присвоения ученого звания',
 					width:'100',
+					dataIndex:'ДатаПрисвоенияУченогоЗвания',
+					flex:1,
 				},
 				{
 					text:'Аттестат серия',
 					width:'100',
+					dataIndex:'АттестатСерия',
+					flex:1,
 				},
 				{
 					text:'Аттестат номер',
 					width:'100',
+					dataIndex:'АттестатНомер',
+					flex:1,
 				},
 				{
 					text:'Наименование организации, выдавшей диплом',
 					width:'100',
+					dataIndex:'АттестатВыданОрганизация',
+					flex:1,
 				},
 				{
 					text:'Научная специальность',
 					width:'100',
+					dataIndex:'НаучнаяСпециальность',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'УченоеЗвание',
+					},
+					{
+						name:'ДатаПрисвоенияУченогоЗвания',
+					},
+					{
+						name:'АттестатСерия',
+					},
+					{
+						name:'АттестатНомер',
+					},
+					{
+						name:'АттестатВыданОрганизация',
+					},
+					{
+						name:'НаучнаяСпециальность',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -525,20 +747,51 @@
 				{
 					text:'Награда',
 					width:'100',
+					dataIndex:'Награда',
+					flex:1,
 				},
 				{
 					text:'Номер приказа',
 					width:'100',
+					dataIndex:'НомерПриказа',
+					flex:1,
 				},
 				{
 					text:'Дата приказа',
 					width:'100',
+					dataIndex:'ДатаПриказа',
+					flex:1,
 				},
 				{
 					text:'Приказ',
 					width:'100',
+					dataIndex:'ЧейПриказ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Награда',
+					},
+					{
+						name:'НомерПриказа',
+					},
+					{
+						name:'ДатаПриказа',
+					},
+					{
+						name:'ЧейПриказ',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -561,12 +814,33 @@
 				{
 					text:'Свойство',
 					width:'100',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -584,12 +858,33 @@
 				{
 					text:'Принадлежность',
 					width:'21',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'257',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -625,24 +920,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Содержание',
 					width:'120',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'Вид заметки',
 					width:'120',
+					dataIndex:'ВидЗаметки',
+					flex:1,
 				},
 				{
 					text:'Автор',
 					width:'120',
+					dataIndex:'Автор',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'ВидЗаметки',
+					},
+					{
+						name:'Автор',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

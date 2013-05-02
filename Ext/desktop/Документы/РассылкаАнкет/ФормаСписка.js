@@ -18,36 +18,87 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Анкета',
 					width:'100',
+					dataIndex:'Анкета',
+					flex:1,
 				},
 				{
 					text:'Первичная рассылка',
 					width:'100',
+					dataIndex:'ПервичнаяРассылка',
+					flex:1,
 				},
 				{
 					text:'Текст письма',
 					width:'100',
+					dataIndex:'ТекстПисьма',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РассылкаАнкет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Анкета',
+					},
+					{
+						name:'ПервичнаяРассылка',
+					},
+					{
+						name:'ТекстПисьма',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

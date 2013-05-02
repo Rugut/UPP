@@ -65,40 +65,96 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'Загрузка',
+					flex:1,
 				},
 				{
 					text:'Коды: ОКАТО / БИК',
 					width:'93',
+					dataIndex:'КодРегиона',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'207',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Тип банка',
 					width:'100',
+					dataIndex:'ТипБанка',
+					flex:1,
 				},
 				{
 					text:'Корр. счет',
 					width:'100',
+					dataIndex:'КоррСчет',
+					flex:1,
 				},
 				{
 					text:'Индекс',
 					width:'100',
+					dataIndex:'Индекс',
+					flex:1,
 				},
 				{
 					text:'Город',
 					width:'100',
+					dataIndex:'Город',
+					flex:1,
 				},
 				{
 					text:'Адрес',
 					width:'100',
+					dataIndex:'Адрес',
+					flex:1,
 				},
 				{
 					text:'Телефон',
 					width:'100',
+					dataIndex:'Телефон',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаБанков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Загрузка',
+					},
+					{
+						name:'КодРегиона',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ТипБанка',
+					},
+					{
+						name:'КоррСчет',
+					},
+					{
+						name:'Индекс',
+					},
+					{
+						name:'Город',
+					},
+					{
+						name:'Адрес',
+					},
+					{
+						name:'Телефон',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -155,28 +211,69 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'Загрузка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'31',
+					dataIndex:'КодРегиона',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'180',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Классификатор',
 					width:'120',
+					dataIndex:'ЗнКлассификатора',
+					flex:1,
 				},
 				{
 					text:'База',
 					width:'120',
+					dataIndex:'ЗнБазы',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'ИзмененРеквизит',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаБанков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Загрузка',
+					},
+					{
+						name:'КодРегиона',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ЗнКлассификатора',
+					},
+					{
+						name:'ЗнБазы',
+					},
+					{
+						name:'ИзмененРеквизит',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

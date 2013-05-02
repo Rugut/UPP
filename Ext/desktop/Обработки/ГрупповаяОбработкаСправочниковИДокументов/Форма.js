@@ -65,12 +65,33 @@
 				{
 					text:'Представление таблицы',
 					width:'100',
+					dataIndex:'ПредставлениеТаблицы',
+					flex:1,
 				},
 				{
 					text:'Имя таблицы',
 					width:'194',
+					dataIndex:'ИмяТаблицы',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеТаблицы',
+					},
+					{
+						name:'ИмяТаблицы',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -81,28 +102,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'63',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'98',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'98',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'98',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -164,8 +226,24 @@
 				{
 					text:'Вид',
 					width:'100',
+					dataIndex:'Ш_ВидПредставление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Ш_ВидПредставление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',

@@ -160,56 +160,132 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид движения',
 					width:'100',
+					dataIndex:'ВидДвижения',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Склад',
 					width:'100',
+					dataIndex:'Склад',
+					flex:1,
 				},
 				{
 					text:'Документ оприходования',
 					width:'100',
+					dataIndex:'ДокументОприходования',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'100',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'100',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Счет учета',
 					width:'100',
+					dataIndex:'СчетУчета',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Стоимость',
 					width:'100',
+					dataIndex:'Стоимость',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПартийМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидДвижения',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Склад',
+					},
+					{
+						name:'ДокументОприходования',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'СчетУчета',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Стоимость',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'250',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'250',
+					dataIndex:'Модель',
+					flex:1,
 				},
 				{
 					text:'Обработка обслуживания',
 					width:'250',
+					dataIndex:'ОбработкаОбслуживания',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТорговоеОборудование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Модель',
+					},
+					{
+						name:'ОбработкаОбслуживания',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

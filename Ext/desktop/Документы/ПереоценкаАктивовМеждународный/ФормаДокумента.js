@@ -111,20 +111,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'ОС',
 					width:'100',
+					dataIndex:'ОС',
+					flex:1,
 				},
 				{
 					text:'Справедливая стоимость',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Ликвидационная стоимость',
 					width:'101',
+					dataIndex:'ЛиквидационнаяСтоимость',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереоценкаАктивовМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОС',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'ЛиквидационнаяСтоимость',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -148,16 +179,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'НМА',
 					width:'100',
+					dataIndex:'НМА',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереоценкаАктивовМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НМА',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -181,24 +238,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор',
 					width:'120',
+					dataIndex:'Договор',
+					flex:1,
 				},
 				{
 					text:'Счет учета',
 					width:'80',
+					dataIndex:'СчетУчета',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереоценкаАктивовМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Договор',
+					},
+					{
+						name:'СчетУчета',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},

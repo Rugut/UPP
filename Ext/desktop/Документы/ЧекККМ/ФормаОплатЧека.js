@@ -114,16 +114,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид оплаты',
 					width:'100',
+					dataIndex:'ВидОплаты',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидОплаты',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

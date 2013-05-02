@@ -199,20 +199,51 @@
 				{
 					text:'Сотрудник',
 					width:'144',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Расчетный документ',
 					width:'196',
+					dataIndex:'РасчетныйДокумент',
+					flex:1,
 				},
 				{
 					text:'Действие',
 					width:'87',
+					dataIndex:'Действие',
+					flex:1,
 				},
 				{
 					text:'Выполнено',
 					width:'66',
+					dataIndex:'Выполнено',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'РасчетныйДокумент',
+					},
+					{
+						name:'Действие',
+					},
+					{
+						name:'Выполнено',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -238,20 +269,51 @@
 				{
 					text:'Сотрудник',
 					width:'142',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Расчетный документ',
 					width:'198',
+					dataIndex:'РасчетныйДокумент',
+					flex:1,
 				},
 				{
 					text:'Действие',
 					width:'85',
+					dataIndex:'Действие',
+					flex:1,
 				},
 				{
 					text:'Выполнено',
 					width:'71',
+					dataIndex:'Выполнено',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'РасчетныйДокумент',
+					},
+					{
+						name:'Действие',
+					},
+					{
+						name:'Выполнено',
+					},
+				]
+			},
 		},
 					]
 				},

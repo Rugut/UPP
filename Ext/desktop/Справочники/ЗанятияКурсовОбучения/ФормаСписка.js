@@ -18,16 +18,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'253',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Длительность час.',
 					width:'105',
+					dataIndex:'ДлительностьЗанятия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗанятияКурсовОбучения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ДлительностьЗанятия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

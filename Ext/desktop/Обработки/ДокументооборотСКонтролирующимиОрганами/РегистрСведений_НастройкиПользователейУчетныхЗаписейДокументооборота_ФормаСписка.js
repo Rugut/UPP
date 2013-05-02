@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Учетная запись',
 					width:'224',
+					dataIndex:'УчетнаяЗапись',
+					flex:1,
 				},
 				{
 					text:'Пользователь',
 					width:'224',
+					dataIndex:'Пользователь',
+					flex:1,
 				},
 				{
 					text:'Интервал автообмена (мин.)',
 					width:'172',
+					dataIndex:'ИнтервалАвтообмена',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'УчетнаяЗапись',
+					},
+					{
+						name:'Пользователь',
+					},
+					{
+						name:'ИнтервалАвтообмена',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

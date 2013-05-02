@@ -92,12 +92,33 @@
 				{
 					text:'Объект',
 					width:'250',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'Владелец',
 					width:'116',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПочтовойРассылки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Объект',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -130,12 +151,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Учетная запись',
 					width:'331',
+					dataIndex:'УчетнаяЗапись',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПочтовойРассылки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'УчетнаяЗапись',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

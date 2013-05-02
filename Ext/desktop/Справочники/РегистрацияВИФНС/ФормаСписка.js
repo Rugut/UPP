@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'48',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'КПП',
 					width:'84',
+					dataIndex:'КПП',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'350',
+					dataIndex:'Владелец',
+					flex:1,
 				},
 				{
 					text:'Наименование ИФНС',
 					width:'160',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Полное наименование ИФНС',
 					width:'176',
+					dataIndex:'НаименованиеИФНС',
+					flex:1,
 				},
 				{
 					text:'Представитель',
 					width:'160',
+					dataIndex:'Представитель',
+					flex:1,
 				},
 				{
 					text:'Документ представителя',
 					width:'160',
+					dataIndex:'ДокументПредставителя',
+					flex:1,
 				},
 				{
 					text:'Уполномоченное лицо представителя',
 					width:'160',
+					dataIndex:'УполномоченноеЛицоПредставителя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияВИФНС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'КПП',
+					},
+					{
+						name:'Владелец',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'НаименованиеИФНС',
+					},
+					{
+						name:'Представитель',
+					},
+					{
+						name:'ДокументПредставителя',
+					},
+					{
+						name:'УполномоченноеЛицоПредставителя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

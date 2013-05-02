@@ -18,44 +18,105 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Узел',
 					width:'120',
+					dataIndex:'УзелИнформационнойБазы',
+					flex:1,
 				},
 				{
 					text:'Загрузка',
 					width:'110',
+					dataIndex:'ЗагрузкаДанных',
+					flex:1,
 				},
 				{
 					text:'Отложенные движения документов',
 					width:'110',
+					dataIndex:'РезультатОтложенныхДвиженийДокументов',
+					flex:1,
 				},
 				{
 					text:'Наличие фоновой загрузки',
 					width:'110',
+					dataIndex:'НаличиеДанныхФоновойЗагрузки',
+					flex:1,
 				},
 				{
 					text:'Выгрузка',
 					width:'100',
+					dataIndex:'ВыгрузкаДанных',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'144',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'On line обмен',
 					width:'70',
+					dataIndex:'OnLineОбмен',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'УзелИнформационнойБазы',
+					},
+					{
+						name:'ЗагрузкаДанных',
+					},
+					{
+						name:'РезультатОтложенныхДвиженийДокументов',
+					},
+					{
+						name:'НаличиеДанныхФоновойЗагрузки',
+					},
+					{
+						name:'ВыгрузкаДанных',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'OnLineОбмен',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

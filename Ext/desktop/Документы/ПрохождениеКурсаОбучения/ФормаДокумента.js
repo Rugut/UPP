@@ -92,24 +92,60 @@
 				{
 					text:'№',
 					width:'32',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'75',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Дата выдачи документа',
 					width:'136',
+					dataIndex:'ДатаПолученияДокумента',
+					flex:1,
 				},
 				{
 					text:'Реквизиты',
 					width:'80',
+					dataIndex:'РеквизитыДокумента',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрохождениеКурсаОбучения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ДатаПолученияДокумента',
+					},
+					{
+						name:'РеквизитыДокумента',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -77,28 +77,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Источник',
 					width:'120',
+					dataIndex:'ИсточникПерсонала',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'60',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Курс',
 					width:'80',
+					dataIndex:'КурсДокумента',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетЗатратНаИсточникиПерсонала/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ИсточникПерсонала',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'КурсДокумента',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -182,24 +182,60 @@
 				{
 					text:'Месяц',
 					width:'42',
+					dataIndex:'Месяц',
+					flex:1,
 				},
 				{
 					text:'Код дохода',
 					width:'80',
+					dataIndex:'КодДохода',
+					flex:1,
 				},
 				{
 					text:'Сумма дохода',
 					width:'80',
+					dataIndex:'СуммаДохода',
+					flex:1,
 				},
 				{
 					text:'Код вычета',
 					width:'80',
+					dataIndex:'КодВычета',
+					flex:1,
 				},
 				{
 					text:'Сумма вычета',
 					width:'80',
+					dataIndex:'СуммаВычета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Месяц',
+					},
+					{
+						name:'КодДохода',
+					},
+					{
+						name:'СуммаДохода',
+					},
+					{
+						name:'КодВычета',
+					},
+					{
+						name:'СуммаВычета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -210,12 +246,33 @@
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'КодВычета',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'СуммаВычета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КодВычета',
+					},
+					{
+						name:'СуммаВычета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -435,8 +492,24 @@
 				{
 					text:'По ставке:',
 					width:'64',
+					dataIndex:'Ставка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Ставка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

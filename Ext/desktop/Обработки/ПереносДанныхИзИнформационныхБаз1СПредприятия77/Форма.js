@@ -73,8 +73,24 @@
 				{
 					text:'Информационные Базы:',
 					width:'459',
+					dataIndex:'Имя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносДанныхИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Имя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',

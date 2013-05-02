@@ -54,7 +54,18 @@
 			height: 252,width: 200,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -96,28 +107,69 @@
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'120',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'120',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Количество ставок',
 					width:'50',
+					dataIndex:'КоличествоСтавок',
+					flex:1,
 				},
 				{
 					text:'Занято ставок',
 					width:'50',
+					dataIndex:'ЗанятоСтавок',
+					flex:1,
 				},
 				{
 					text:'Вакантно',
 					width:'50',
+					dataIndex:'Вакантно',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Период',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'КоличествоСтавок',
+					},
+					{
+						name:'ЗанятоСтавок',
+					},
+					{
+						name:'Вакантно',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -160,32 +212,78 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'189',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'166',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'140',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Заявитель',
 					width:'137',
+					dataIndex:'Заявитель',
+					flex:1,
 				},
 				{
 					text:'Ответственный за вакансию',
 					width:'151',
+					dataIndex:'ОтветственныйЗаВакансию',
+					flex:1,
 				},
 				{
 					text:'Закрыть до',
 					width:'94',
+					dataIndex:'ПлановаяДатаЗакрытия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'Заявитель',
+					},
+					{
+						name:'ОтветственныйЗаВакансию',
+					},
+					{
+						name:'ПлановаяДатаЗакрытия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -286,24 +384,60 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'77',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата изменений',
 					width:'105',
+					dataIndex:'ДатаИзменений',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ДатаИзменений',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

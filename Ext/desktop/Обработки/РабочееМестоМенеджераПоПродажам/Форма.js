@@ -41,52 +41,123 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'35',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул ',
 					width:'105',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'405',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Полное наименование',
 					width:'365',
+					dataIndex:'НаименованиеПолное',
+					flex:1,
 				},
 				{
 					text:'Ед.хран.ост.',
 					width:'68',
+					dataIndex:'ЕдиницаХраненияОстатков',
+					flex:1,
 				},
 				{
 					text:'Баз.ед.измер.',
 					width:'80',
+					dataIndex:'БазоваяЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Ставка НДС',
 					width:'72',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'132',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
 				{
 					text:'Ответственный за покупки',
 					width:'152',
+					dataIndex:'ОтветственныйМенеджерЗаПокупки',
+					flex:1,
 				},
 				{
 					text:'Основной поставщик',
 					width:'157',
+					dataIndex:'ОсновнойПоставщик',
+					flex:1,
 				},
 				{
 					text:'Страна происхождения',
 					width:'144',
+					dataIndex:'СтранаПроисхождения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'НаименованиеПолное',
+					},
+					{
+						name:'ЕдиницаХраненияОстатков',
+					},
+					{
+						name:'БазоваяЕдиницаИзмерения',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+					{
+						name:'ОтветственныйМенеджерЗаПокупки',
+					},
+					{
+						name:'ОсновнойПоставщик',
+					},
+					{
+						name:'СтранаПроисхождения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -113,8 +184,24 @@
 				{
 					text:'Группа номенклатуры',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -233,16 +320,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'89',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'115',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -253,16 +366,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'136',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -279,28 +418,69 @@
 				{
 					text:'Характеристика/Склад',
 					width:'125',
+					dataIndex:'ХарактеристикаСклад',
+					flex:1,
 				},
 				{
 					text:'Общий',
 					width:'53',
+					dataIndex:'Общий',
+					flex:1,
 				},
 				{
 					text:'Свободный',
 					width:'63',
+					dataIndex:'Свободный',
+					flex:1,
 				},
 				{
 					text:'Своб.ожид.',
 					width:'64',
+					dataIndex:'СвободныйОжидаемый',
+					flex:1,
 				},
 				{
 					text:'В резерве',
 					width:'62',
+					dataIndex:'ВРезерве',
+					flex:1,
 				},
 				{
 					text:'Ячейка склада',
 					width:'86',
+					dataIndex:'МестоХранения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ХарактеристикаСклад',
+					},
+					{
+						name:'Общий',
+					},
+					{
+						name:'Свободный',
+					},
+					{
+						name:'СвободныйОжидаемый',
+					},
+					{
+						name:'ВРезерве',
+					},
+					{
+						name:'МестоХранения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -343,32 +523,78 @@
 				{
 					text:'Типы цен',
 					width:'133',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'82',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'БазовыйТипЦен',
 					width:'100',
+					dataIndex:'БазовыйТипЦен',
+					flex:1,
 				},
 				{
 					text:'Рассчитывается',
 					width:'100',
+					dataIndex:'Рассчитывается',
+					flex:1,
 				},
 				{
 					text:'ОкруглятьВБольшуюСторону',
 					width:'100',
+					dataIndex:'ОкруглятьВБольшуюСторону',
+					flex:1,
 				},
 				{
 					text:'ПроцентСкидкиНаценки',
 					width:'100',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'Префикс',
 					width:'100',
+					dataIndex:'Префикс',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'БазовыйТипЦен',
+					},
+					{
+						name:'Рассчитывается',
+					},
+					{
+						name:'ОкруглятьВБольшуюСторону',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+					{
+						name:'Префикс',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -408,32 +634,78 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Заказ покупателя',
 					width:'166',
+					dataIndex:'ЗаказПокупателя',
+					flex:1,
 				},
 				{
 					text:'Дата отгрузки',
 					width:'84',
+					dataIndex:'ДатаОтгрузки',
+					flex:1,
 				},
 				{
 					text:'В заказе',
 					width:'61',
+					dataIndex:'ОстатокПоЗаказу',
+					flex:1,
 				},
 				{
 					text:'В резерве',
 					width:'61',
+					dataIndex:'ОстатокРезерваПоЗаказу',
+					flex:1,
 				},
 				{
 					text:'Проведен',
 					width:'51',
+					dataIndex:'Проведен',
+					flex:1,
 				},
 				{
 					text:'Пометка удаления',
 					width:'55',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ЗаказПокупателя',
+					},
+					{
+						name:'ДатаОтгрузки',
+					},
+					{
+						name:'ОстатокПоЗаказу',
+					},
+					{
+						name:'ОстатокРезерваПоЗаказу',
+					},
+					{
+						name:'Проведен',
+					},
+					{
+						name:'ПометкаУдаления',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -444,24 +716,60 @@
 				{
 					text:'Заказ покупателя',
 					width:'105',
+					dataIndex:'ЗаказПокупателя',
+					flex:1,
 				},
 				{
 					text:'Дата отгрузки',
 					width:'83',
+					dataIndex:'ДатаОтгрузки',
+					flex:1,
 				},
 				{
 					text:'Заказ поставщику',
 					width:'105',
+					dataIndex:'ЗаказПоставщику',
+					flex:1,
 				},
 				{
 					text:'Дата поступления',
 					width:'102',
+					dataIndex:'ДатаПоступления',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'57',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ЗаказПокупателя',
+					},
+					{
+						name:'ДатаОтгрузки',
+					},
+					{
+						name:'ЗаказПоставщику',
+					},
+					{
+						name:'ДатаПоступления',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 					]
 				},

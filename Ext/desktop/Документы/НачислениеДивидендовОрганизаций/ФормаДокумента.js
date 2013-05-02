@@ -116,32 +116,78 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Акционер',
 					width:'220',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Количество акций',
 					width:'100',
+					dataIndex:'КоличествоАкций',
+					flex:1,
 				},
 				{
 					text:'Начислено',
 					width:'90',
+					dataIndex:'Результат',
+					flex:1,
 				},
 				{
 					text:'Вычет по НДФЛ',
 					width:'90',
+					dataIndex:'ВычетПоНДФЛ',
+					flex:1,
 				},
 				{
 					text:'НДФЛ',
 					width:'80',
+					dataIndex:'НДФЛ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеДивидендовОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'КоличествоАкций',
+					},
+					{
+						name:'Результат',
+					},
+					{
+						name:'ВычетПоНДФЛ',
+					},
+					{
+						name:'НДФЛ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

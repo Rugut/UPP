@@ -100,20 +100,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Компетенция',
 					width:'220',
+					dataIndex:'Компетенция',
+					flex:1,
 				},
 				{
 					text:'Оценка',
 					width:'78',
+					dataIndex:'Оценка',
+					flex:1,
 				},
 				{
 					text:'Дата оценки',
 					width:'82',
+					dataIndex:'ДатаОценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АттестацияРаботника/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Компетенция',
+					},
+					{
+						name:'Оценка',
+					},
+					{
+						name:'ДатаОценки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

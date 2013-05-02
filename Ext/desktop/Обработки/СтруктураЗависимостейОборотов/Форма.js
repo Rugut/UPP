@@ -36,7 +36,18 @@
 			height: 320,width: 503,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтруктураЗависимостейОборотов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

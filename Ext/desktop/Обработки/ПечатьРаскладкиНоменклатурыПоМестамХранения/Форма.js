@@ -48,12 +48,33 @@
 				{
 					text:'Поле',
 					width:'197',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'139',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -76,8 +97,24 @@
 				{
 					text:'Поле',
 					width:'224',
+					dataIndex:'Поле',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -88,12 +125,33 @@
 				{
 					text:'Поле',
 					width:'224',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Направление сортировки',
 					width:'141',
+					dataIndex:'НаправлениеСортировки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Имя',
+					},
+					{
+						name:'НаправлениеСортировки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -139,28 +197,69 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ВыводитьНаПечать',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'112',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Представление поля',
 					width:'112',
+					dataIndex:'Псевдоним',
+					flex:1,
 				},
 				{
 					text:'Положение',
 					width:'65',
+					dataIndex:'Положение',
+					flex:1,
 				},
 				{
 					text:'Ширина',
 					width:'53',
+					dataIndex:'Ширина',
+					flex:1,
 				},
 				{
 					text:'Выравнивание',
 					width:'94',
+					dataIndex:'Выравнивание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВыводитьНаПечать',
+					},
+					{
+						name:'Поле',
+					},
+					{
+						name:'Псевдоним',
+					},
+					{
+						name:'Положение',
+					},
+					{
+						name:'Ширина',
+					},
+					{
+						name:'Выравнивание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -217,12 +316,33 @@
 				{
 					text:'Приоритет',
 					width:'61',
+					dataIndex:'Приоритет',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'235',
+					dataIndex:'Псевдоним',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Приоритет',
+					},
+					{
+						name:'Псевдоним',
+					},
+				]
+			},
 		},
 	]
 });

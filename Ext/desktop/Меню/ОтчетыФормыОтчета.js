@@ -1,7 +1,10 @@
-﻿Ext.define('Меню.ОтчетыФормыОтчета',
+﻿
+Ext.define('Меню.ОтчетыФормыОтчета',
     {
+        requires: ['Метаданные.Отчеты'],
         extend: 'MyDesktop.BogusModule',
-        init: function () {
+        init: function ()
+        {
             this.launcher =
             {
                 text: 'Отчеты',
@@ -13,24 +16,26 @@
                     items: []
                 }
             };
-            //alert(src.FormId);
             var Отчеты = Ext.create("Метаданные.Отчеты");
-            for (var НомерОтчета = 0, Отчет; Отчет = Отчеты[НомерОтчета]; НомерОтчета++) {
-                if (Отчет.ОсновнаяФормаОбъекта == '00000000-0000-0000-0000-000000000000') {
-                    continue;
+            for (var Номер = 0, Элемент; Элемент = Отчеты[Номер]; Номер++)
+            {
+                if (Элемент.ОсновнаяФормаОбъекта == '00000000-0000-0000-0000-000000000000')
+                {
+                        continue;
                 }
                 this.launcher.menu.items.push
                 (
                     {
-                        text: Отчет.Имя,
+                        text: Элемент.Имя,
                         iconCls: 'bogus',
                         handler: this.createWindow,
                         scope: this,
                         windowId: ++windowIndex,
-                        FormId: 'Отчеты.' + Отчет.Имя + '.Форма',
+                        FormId: 'Отчеты.' + Элемент.Имя + '.Форма',
                     }
                 );
-                if (НомерОтчета > 20) {
+                if (Номер > 50)
+                {
                     break;
                 }
             }

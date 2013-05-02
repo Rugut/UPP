@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'По реализации 0%',
 					width:'60',
+					dataIndex:'ПоРеализации0',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Начало периода',
 					width:'80',
+					dataIndex:'НачалоПериода',
+					flex:1,
 				},
 				{
 					text:'Конец периода',
 					width:'80',
+					dataIndex:'КонецПериода',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ПоРеализации0',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'НачалоПериода',
+					},
+					{
+						name:'КонецПериода',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

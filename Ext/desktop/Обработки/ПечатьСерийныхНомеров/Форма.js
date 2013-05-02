@@ -52,28 +52,69 @@
 				{
 					text:'Номенклатура',
 					width:'161',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'105',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'105',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:'Серия',
 					width:'139',
+					dataIndex:'Серия',
+					flex:1,
 				},
 				{
 					text:'Серийный номер',
 					width:'145',
+					dataIndex:'СерийныйНомер',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'113',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьСерийныхНомеров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'Серия',
+					},
+					{
+						name:'СерийныйНомер',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

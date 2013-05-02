@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Описание',
 					width:'185',
+					dataIndex:'ЭлектронноеПредставление',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'198',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Тип файла отчетности',
 					width:'126',
+					dataIndex:'ТипФайлаОтчетности',
+					flex:1,
 				},
 				{
 					text:'Размер (в байтах)',
 					width:'118',
+					dataIndex:'Размер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ЭлектронноеПредставление',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'ТипФайлаОтчетности',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

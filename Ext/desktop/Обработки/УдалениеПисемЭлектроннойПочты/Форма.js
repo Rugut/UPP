@@ -60,44 +60,105 @@
 				{
 					text:'N',
 					width:'34',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'НеРассмотрено',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'СтатусПисьма',
+					flex:1,
 				},
 				{
 					text:'Электронное письмо',
 					width:'142',
+					dataIndex:'ЭлектронноеПисьмо',
+					flex:1,
 				},
 				{
 					text:'Отправитель',
 					width:'89',
+					dataIndex:'Отправитель',
+					flex:1,
 				},
 				{
 					text:'Получатели',
 					width:'96',
+					dataIndex:'Получатели',
+					flex:1,
 				},
 				{
 					text:'Дата создания',
 					width:'98',
+					dataIndex:'ДатаСоздания',
+					flex:1,
 				},
 				{
 					text:'Дата отправления',
 					width:'100',
+					dataIndex:'ДатаОтправления',
+					flex:1,
 				},
 				{
 					text:'Дата транспорта',
 					width:'139',
+					dataIndex:'ДатаТранспорта',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалениеПисемЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Использование',
+					},
+					{
+						name:'НеРассмотрено',
+					},
+					{
+						name:'СтатусПисьма',
+					},
+					{
+						name:'ЭлектронноеПисьмо',
+					},
+					{
+						name:'Отправитель',
+					},
+					{
+						name:'Получатели',
+					},
+					{
+						name:'ДатаСоздания',
+					},
+					{
+						name:'ДатаОтправления',
+					},
+					{
+						name:'ДатаТранспорта',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -108,16 +169,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Данные',
 					width:'374',
+					dataIndex:'Данные',
+					flex:1,
 				},
 				{
 					text:'Метаданные',
 					width:'266',
+					dataIndex:'Метаданные',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалениеПисемЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Данные',
+					},
+					{
+						name:'Метаданные',
+					},
+				]
+			},
 		},
 	]
 });

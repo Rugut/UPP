@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'156',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Месяц',
 					width:'84',
+					dataIndex:'ПериодРегистрации',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Сотрудники',
 					width:'101',
+					dataIndex:'КраткийСоставДокумента',
+					flex:1,
 				},
 				{
 					text:'Подразделение организации',
 					width:'100',
+					dataIndex:'ПодразделениеОрганизации',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'220',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СдельныйНаряд/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ПериодРегистрации',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'КраткийСоставДокумента',
+					},
+					{
+						name:'ПодразделениеОрганизации',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

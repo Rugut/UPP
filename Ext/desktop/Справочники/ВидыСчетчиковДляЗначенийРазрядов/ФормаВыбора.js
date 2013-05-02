@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'63',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'253',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Размер счетчика',
 					width:'92',
+					dataIndex:'РазмерСчетчика',
+					flex:1,
 				},
 				{
 					text:'Начальное значение',
 					width:'110',
+					dataIndex:'НачальноеЗначение',
+					flex:1,
 				},
 				{
 					text:'Конечное значение',
 					width:'110',
+					dataIndex:'КонечноеЗначение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВидыСчетчиковДляЗначенийРазрядов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'РазмерСчетчика',
+					},
+					{
+						name:'НачальноеЗначение',
+					},
+					{
+						name:'КонечноеЗначение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

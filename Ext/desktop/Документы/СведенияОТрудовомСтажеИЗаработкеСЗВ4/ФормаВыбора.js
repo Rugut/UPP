@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Отчетный период',
 					width:'99',
+					dataIndex:'ОтчетныйПериод',
+					flex:1,
 				},
 				{
 					text:'Тип сведений',
 					width:'80',
+					dataIndex:'ТипСведений',
+					flex:1,
 				},
 				{
 					text:'Тип форм документов',
 					width:'80',
+					dataIndex:'ТипФормДокументов',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОТрудовомСтажеИЗаработкеСЗВ4/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ОтчетныйПериод',
+					},
+					{
+						name:'ТипСведений',
+					},
+					{
+						name:'ТипФормДокументов',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

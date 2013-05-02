@@ -39,16 +39,42 @@
 				{
 					text:'Имя настройки',
 					width:'256',
+					dataIndex:'ИмяНастройки',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'148',
+					dataIndex:'ТипСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение настройки',
 					width:'236',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяНастройки',
+					},
+					{
+						name:'ТипСравнения',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -83,12 +109,33 @@
 				{
 					text:'Ссылка',
 					width:'320',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Правильный',
 					width:'100',
+					dataIndex:'Правильный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'Правильный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -157,16 +204,42 @@
 				{
 					text:'Не правильный',
 					width:'179',
+					dataIndex:'НеПравильный',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ВключатьВПоиск',
+					flex:1,
 				},
 				{
 					text:'Правильный',
 					width:'226',
+					dataIndex:'Правильный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НеПравильный',
+					},
+					{
+						name:'ВключатьВПоиск',
+					},
+					{
+						name:'Правильный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -174,7 +247,18 @@
 			height: 134,width: 663,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 					]
 				},
@@ -188,7 +272,18 @@
 			height: 259,width: 663,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

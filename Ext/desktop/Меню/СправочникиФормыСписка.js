@@ -1,41 +1,40 @@
-﻿Ext.define('Меню.СправочникиФормыСписка',
+﻿
+Ext.define('Меню.СправочникиФормыСписка',
     {
+        requires: ['Метаданные.Справочники'],
         extend: 'MyDesktop.BogusModule',
-
         init: function ()
         {
             this.launcher =
             {
                 text: 'Справочники списки',
                 iconCls: 'bogus',
-                handler: function ()
-                {
+                handler: function () {
                     return false;
                 },
-                menu:
-                {
+                menu: {
                     items: []
                 }
             };
             var Справочники = Ext.create("Метаданные.Справочники");
-            for (var НомерСправочника = 0, Справочник; Справочник = Справочники[НомерСправочника]; НомерСправочника++)
+            for (var Номер = 0, Элемент; Элемент = Справочники[Номер]; Номер++)
             {
-                if (Справочник.ОсновнаяФормаСписка == '00000000-0000-0000-0000-000000000000')
+                if (Элемент.ОсновнаяФормаСписка == '00000000-0000-0000-0000-000000000000')
                 {
-                    continue;
+                        continue;
                 }
                 this.launcher.menu.items.push
                 (
                     {
-                        text: Справочник.Имя,
+                        text: Элемент.Имя,
                         iconCls: 'bogus',
                         handler: this.createWindow,
                         scope: this,
                         windowId: ++windowIndex,
-                        FormId: 'Справочники.' + Справочник.Имя + '.ФормаСписка',  
+                        FormId: 'Справочники.' + Элемент.Имя + '.ФормаВыбора',
                     }
                 );
-                if (НомерСправочника > 20)
+                if (Номер > 50)
                 {
                     break;
                 }

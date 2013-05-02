@@ -64,44 +64,105 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'СчетФактураСформирован',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'120',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Документ основание',
 					width:'120',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'96',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'120',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНалоговогоАгента/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СчетФактураСформирован',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'ДокументОснование',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'СчетФактура',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

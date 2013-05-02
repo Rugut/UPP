@@ -41,48 +41,114 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'100',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'100',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'ЦФО',
 					width:'100',
+					dataIndex:'ЦФО',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'100',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Влияющая операция',
 					width:'109',
+					dataIndex:'ВлияющаяОперация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ЦФО',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'ВлияющаяОперация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',

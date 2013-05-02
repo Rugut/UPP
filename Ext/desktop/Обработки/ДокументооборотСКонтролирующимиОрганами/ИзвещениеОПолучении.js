@@ -43,8 +43,24 @@
 				{
 					text:'Имя файла',
 					width:'100',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяФайла',
+					},
+				]
+			},
 		},
 	]
 });

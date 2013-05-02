@@ -110,32 +110,78 @@
 				{
 					text:'Код ККМ',
 					width:'56',
+					dataIndex:'КодТовараККМ',
+					flex:1,
 				},
 				{
 					text:'Код товара',
 					width:'120',
+					dataIndex:'КодТовара',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'250',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'250',
+					dataIndex:'Серия',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОЗагрузкаККМOffline/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КодТовараККМ',
+					},
+					{
+						name:'КодТовара',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Серия',
+					},
+					{
+						name:'Цена',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

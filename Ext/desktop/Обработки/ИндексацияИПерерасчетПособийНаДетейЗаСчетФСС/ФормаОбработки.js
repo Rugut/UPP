@@ -46,12 +46,33 @@
 				{
 					text:'Индексировать с ...',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Процент',
 					width:'100',
+					dataIndex:'Процент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Период',
+					},
+					{
+						name:'Процент',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -62,12 +83,33 @@
 				{
 					text:'Вид пособия',
 					width:'312',
+					dataIndex:'ВидПособия',
+					flex:1,
 				},
 				{
 					text:'Размер',
 					width:'75',
+					dataIndex:'Размер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидПособия',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -154,36 +196,87 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Колонка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'6',
+					dataIndex:'Отметка',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'179',
+					dataIndex:'Группа',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Пособие',
 					width:'100',
+					dataIndex:'ВидПособия',
+					flex:1,
 				},
 				{
 					text:'Дата события, период выплаты',
 					width:'160',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Начислено',
 					width:'80',
+					dataIndex:'СуммаНачисленная',
+					flex:1,
 				},
 				{
 					text:'Сумма к доначислению',
 					width:'120',
+					dataIndex:'СуммаКДоначислению',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Колонка',
+					},
+					{
+						name:'Отметка',
+					},
+					{
+						name:'Группа',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ВидПособия',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'СуммаНачисленная',
+					},
+					{
+						name:'СуммаКДоначислению',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -247,16 +340,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Документ-исправление',
 					width:'220',
+					dataIndex:'ДокументИсправление',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'220',
+					dataIndex:'Организация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ДокументИсправление',
+					},
+					{
+						name:'Организация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

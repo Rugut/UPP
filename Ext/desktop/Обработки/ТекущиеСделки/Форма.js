@@ -104,44 +104,105 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'73',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'82',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'114',
+					dataIndex:'ВидДокумента',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'99',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'95',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Сумма (остаток)',
 					width:'103',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Сумма сделки',
 					width:'110',
+					dataIndex:'ОбщаяСуммаСделки',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'49',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Договор',
 					width:'102',
+					dataIndex:'Договор',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТекущиеСделки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидДокумента',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'ОбщаяСуммаСделки',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Договор',
+					},
+				]
+			},
 		},
 	]
 });

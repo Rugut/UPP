@@ -18,36 +18,87 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'120',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Склад',
 					width:'120',
+					dataIndex:'СкладКомпании',
+					flex:1,
 				},
 				{
 					text:'Касса ККМ',
 					width:'120',
+					dataIndex:'КассаККМ',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'СуммаДокумента',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'СкладКомпании',
+					},
+					{
+						name:'КассаККМ',
+					},
+					{
+						name:'СуммаДокумента',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

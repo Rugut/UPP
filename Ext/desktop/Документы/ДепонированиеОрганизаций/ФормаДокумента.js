@@ -163,16 +163,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Ведомость',
 					width:'220',
+					dataIndex:'Ведомость',
+					flex:1,
 				},
 				{
 					text:'Сумма к депонированию',
 					width:'140',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДепонированиеОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Ведомость',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -189,16 +215,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'220',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДепонированиеОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},

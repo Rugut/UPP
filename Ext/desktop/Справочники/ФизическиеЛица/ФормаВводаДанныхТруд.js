@@ -18,24 +18,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Предшествующее место работы',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Начало работы',
 					width:'100',
+					dataIndex:'НачалоРаботы',
+					flex:1,
 				},
 				{
 					text:'Окончание работы',
 					width:'100',
+					dataIndex:'ОкончаниеРаботы',
+					flex:1,
 				},
 				{
 					text:'Должность по предшествующему месту работы',
 					width:'100',
+					dataIndex:'Должность',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'НачалоРаботы',
+					},
+					{
+						name:'ОкончаниеРаботы',
+					},
+					{
+						name:'Должность',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -91,24 +127,60 @@
 				{
 					text:'Вид стажа',
 					width:'100',
+					dataIndex:'ВидСтажа',
+					flex:1,
 				},
 				{
 					text:'Дата отсчета',
 					width:'100',
+					dataIndex:'ДатаОтсчета',
+					flex:1,
 				},
 				{
 					text:'Лет',
 					width:'50',
+					dataIndex:'РазмерЛет',
+					flex:1,
 				},
 				{
 					text:'Месяцев',
 					width:'50',
+					dataIndex:'РазмерМесяцев',
+					flex:1,
 				},
 				{
 					text:'Дней',
 					width:'50',
+					dataIndex:'РазмерДней',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидСтажа',
+					},
+					{
+						name:'ДатаОтсчета',
+					},
+					{
+						name:'РазмерЛет',
+					},
+					{
+						name:'РазмерМесяцев',
+					},
+					{
+						name:'РазмерДней',
+					},
+				]
+			},
 		},
 	]
 });

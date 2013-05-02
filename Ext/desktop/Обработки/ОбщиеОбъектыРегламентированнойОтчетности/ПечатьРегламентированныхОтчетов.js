@@ -44,16 +44,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'159',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Табличный документ',
 					width:'100',
+					dataIndex:'ТабличныйДокумент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ТабличныйДокумент',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

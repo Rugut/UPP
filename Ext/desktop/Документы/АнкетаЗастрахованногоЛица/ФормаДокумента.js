@@ -163,52 +163,123 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'220',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Пол',
 					width:'120',
+					dataIndex:'Пол',
+					flex:1,
 				},
 				{
 					text:'Дата рождения',
 					width:'100',
+					dataIndex:'ДатаРождения',
+					flex:1,
 				},
 				{
 					text:'Фамилия',
 					width:'160',
+					dataIndex:'Фамилия',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'80',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Отчество',
 					width:'80',
+					dataIndex:'Отчество',
+					flex:1,
 				},
 				{
 					text:'Место рождения',
 					width:'160',
+					dataIndex:'МестоРождения',
+					flex:1,
 				},
 				{
 					text:'Адрес регистрации',
 					width:'80',
+					dataIndex:'АдресРегистрации',
+					flex:1,
 				},
 				{
 					text:'Адрес фактический',
 					width:'80',
+					dataIndex:'АдресФактический',
+					flex:1,
 				},
 				{
 					text:'Гражданство',
 					width:'80',
+					dataIndex:'Гражданство',
+					flex:1,
 				},
 				{
 					text:'Телефоны',
 					width:'80',
+					dataIndex:'Телефоны',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнкетаЗастрахованногоЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Пол',
+					},
+					{
+						name:'ДатаРождения',
+					},
+					{
+						name:'Фамилия',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'Отчество',
+					},
+					{
+						name:'МестоРождения',
+					},
+					{
+						name:'АдресРегистрации',
+					},
+					{
+						name:'АдресФактический',
+					},
+					{
+						name:'Гражданство',
+					},
+					{
+						name:'Телефоны',
+					},
+				]
+			},
 		},
 					]
 				},

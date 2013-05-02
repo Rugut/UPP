@@ -80,8 +80,24 @@
 				{
 					text:'Документ',
 					width:'100',
+					dataIndex:'Документ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоНаличиюСчетовФактур/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Документ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

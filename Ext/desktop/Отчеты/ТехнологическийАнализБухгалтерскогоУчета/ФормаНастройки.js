@@ -49,12 +49,33 @@
 				{
 					text:'Название анализа/операции',
 					width:'280',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Выполнять',
 					width:'68',
+					dataIndex:'Настройка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'Настройка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',
@@ -93,24 +114,60 @@
 				{
 					text:'Дт',
 					width:'100',
+					dataIndex:'Дт',
+					flex:1,
 				},
 				{
 					text:'Кт',
 					width:'100',
+					dataIndex:'Кт',
+					flex:1,
 				},
 				{
 					text:'ДтИсключение',
 					width:'100',
+					dataIndex:'ДтИскл',
+					flex:1,
 				},
 				{
 					text:'КтИсключение',
 					width:'100',
+					dataIndex:'КтИскл',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Инструкция',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Дт',
+					},
+					{
+						name:'Кт',
+					},
+					{
+						name:'ДтИскл',
+					},
+					{
+						name:'КтИскл',
+					},
+					{
+						name:'Инструкция',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -127,36 +184,87 @@
 				{
 					text:'Наименование счета',
 					width:'100',
+					dataIndex:'ИмяСчетаНУ',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'100',
+					dataIndex:'КодСчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Валютный',
 					width:'100',
+					dataIndex:'Валютный',
+					flex:1,
 				},
 				{
 					text:'Количественный',
 					width:'100',
+					dataIndex:'Количественный',
+					flex:1,
 				},
 				{
 					text:'Вид счета',
 					width:'100',
+					dataIndex:'ТипСчета',
+					flex:1,
 				},
 				{
 					text:'Субконто1',
 					width:'100',
+					dataIndex:'Субконто1',
+					flex:1,
 				},
 				{
 					text:'Субконто2',
 					width:'100',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'Субконто3',
 					width:'100',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяСчетаНУ',
+					},
+					{
+						name:'КодСчетаБУ',
+					},
+					{
+						name:'Валютный',
+					},
+					{
+						name:'Количественный',
+					},
+					{
+						name:'ТипСчета',
+					},
+					{
+						name:'Субконто1',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+				]
+			},
 		},
 					]
 				},

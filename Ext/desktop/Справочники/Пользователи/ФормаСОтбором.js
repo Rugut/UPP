@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'33',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'131',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Полное имя',
 					width:'155',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Профиль',
 					width:'123',
+					dataIndex:'ПрофильПолномочийПользователя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Пользователи/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ПрофильПолномочийПользователя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

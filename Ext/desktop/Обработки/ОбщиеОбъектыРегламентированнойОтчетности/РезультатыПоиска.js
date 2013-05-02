@@ -32,28 +32,69 @@
 				{
 					text:'Наименование раздела',
 					width:'255',
+					dataIndex:'НаименованиеЛиста',
+					flex:1,
 				},
 				{
 					text:'№ листа',
 					width:'87',
+					dataIndex:'Страница',
+					flex:1,
 				},
 				{
 					text:'Найдено в строке',
 					width:'374',
+					dataIndex:'НайденоВСтроке',
+					flex:1,
 				},
 				{
 					text:'Ячейка',
 					width:'185',
+					dataIndex:'ИмяЯчейки',
+					flex:1,
 				},
 				{
 					text:'Раздел',
 					width:'63',
+					dataIndex:'Раздел',
+					flex:1,
 				},
 				{
 					text:'СтрокаПП',
 					width:'58',
+					dataIndex:'СтрокаПП',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НаименованиеЛиста',
+					},
+					{
+						name:'Страница',
+					},
+					{
+						name:'НайденоВСтроке',
+					},
+					{
+						name:'ИмяЯчейки',
+					},
+					{
+						name:'Раздел',
+					},
+					{
+						name:'СтрокаПП',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

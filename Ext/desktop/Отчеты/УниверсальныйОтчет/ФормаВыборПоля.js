@@ -35,28 +35,69 @@
 				{
 					text:'Доступные поля',
 					width:'100',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Путь к данным',
 					width:'100',
+					dataIndex:'ПутьКДанным',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'Детальная запись',
 					width:'100',
+					dataIndex:'ДетальнаяЗапись',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'ПутьКДанным',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ДетальнаяЗапись',
+					},
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 	]
 });

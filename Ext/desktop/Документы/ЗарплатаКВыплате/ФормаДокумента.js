@@ -100,24 +100,60 @@
 				{
 					text:'Картинка',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Признак автоматического расчета',
 					width:'21',
+					dataIndex:'Авторасчет',
+					flex:1,
 				},
 				{
 					text:'№',
 					width:'31',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'323',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'104',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗарплатаКВыплате/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Авторасчет',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

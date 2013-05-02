@@ -111,16 +111,42 @@
 				{
 					text:'Счет',
 					width:'80',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'По субсчетам',
 					width:'80',
+					dataIndex:'Субсчета',
+					flex:1,
 				},
 				{
 					text:'По субконто',
 					width:'120',
+					dataIndex:'ПредставлениеРазворотПоСубконто',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьБюджетирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Счет',
+					},
+					{
+						name:'Субсчета',
+					},
+					{
+						name:'ПредставлениеРазворотПоСубконто',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -144,16 +170,42 @@
 				{
 					text:'Счет',
 					width:'80',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'По субсчетам',
 					width:'80',
+					dataIndex:'Субсчета',
+					flex:1,
 				},
 				{
 					text:'По субконто',
 					width:'120',
+					dataIndex:'ПредставлениеРазворотПоСубконто',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьБюджетирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Счет',
+					},
+					{
+						name:'Субсчета',
+					},
+					{
+						name:'ПредставлениеРазворотПоСубконто',
+					},
+				]
+			},
 		},
 					]
 				},

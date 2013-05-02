@@ -18,16 +18,42 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Текст основания',
 					width:'486',
+					dataIndex:'ТекстОснования',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОснованияУвольненияИзОрганизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ТекстОснования',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

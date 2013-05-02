@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'33',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'289',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид результата анализа',
 					width:'91',
+					dataIndex:'ВидРезультатаАнализа',
+					flex:1,
 				},
 				{
 					text:'Минимальное значение',
 					width:'84',
+					dataIndex:'МинЗначение',
+					flex:1,
 				},
 				{
 					text:'Максимальное значение',
 					width:'88',
+					dataIndex:'МаксЗначение',
+					flex:1,
 				},
 				{
 					text:'Единица измерения',
 					width:'175',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидРезультатаАнализа',
+					},
+					{
+						name:'МинЗначение',
+					},
+					{
+						name:'МаксЗначение',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -54,8 +100,24 @@
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

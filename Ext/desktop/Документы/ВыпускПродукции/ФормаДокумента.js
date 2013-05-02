@@ -177,84 +177,195 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерCтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Продукция',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия продукции',
 					width:'200',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К.мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'67',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'67',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Счет учета (БУ)',
 					width:'80',
+					dataIndex:'СчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Счет учета (НУ)',
 					width:'80',
+					dataIndex:'СчетУчетаНУ',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'223',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'100',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Заказы',
 					width:'225',
+					dataIndex:'Заказы',
+					flex:1,
 				},
 				{
 					text:'Затраты',
 					width:'113',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Резерв',
 					width:'112',
+					dataIndex:'ЗаказРезерв',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'100',
+					dataIndex:'Качество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыпускПродукции/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерCтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'СчетУчетаБУ',
+					},
+					{
+						name:'СчетУчетаНУ',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'Заказы',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'ЗаказРезерв',
+					},
+					{
+						name:'Качество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

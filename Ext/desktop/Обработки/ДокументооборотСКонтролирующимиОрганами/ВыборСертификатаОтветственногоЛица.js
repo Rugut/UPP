@@ -36,12 +36,33 @@
 				{
 					text:'Владелец',
 					width:'215',
+					dataIndex:'ОтветственноеЛицо',
+					flex:1,
 				},
 				{
 					text:'Сертификат',
 					width:'546',
+					dataIndex:'Сертификат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ОтветственноеЛицо',
+					},
+					{
+						name:'Сертификат',
+					},
+				]
+			},
 		},
 	]
 });

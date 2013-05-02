@@ -42,12 +42,33 @@
 				{
 					text:'',
 					width:'30',
+					dataIndex:'КартинкаЭлемента',
+					flex:1,
 				},
 				{
 					text:'Объект',
 					width:'100',
+					dataIndex:'Объект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаСпискаОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КартинкаЭлемента',
+					},
+					{
+						name:'Объект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

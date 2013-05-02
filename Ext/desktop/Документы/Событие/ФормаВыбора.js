@@ -18,76 +18,177 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Тип события',
 					width:'100',
+					dataIndex:'ТипСобытия',
+					flex:1,
 				},
 				{
 					text:'Вид события',
 					width:'100',
+					dataIndex:'ВидСобытия',
+					flex:1,
 				},
 				{
 					text:'Группа события',
 					width:'120',
+					dataIndex:'ГруппаСобытия',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'180',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Напомнить о событии',
 					width:'54',
+					dataIndex:'НапомнитьОСобытии',
+					flex:1,
 				},
 				{
 					text:'Время напоминания',
 					width:'132',
+					dataIndex:'ВремяНапоминания',
+					flex:1,
 				},
 				{
 					text:'Важность',
 					width:'80',
+					dataIndex:'Важность',
+					flex:1,
 				},
 				{
 					text:'Состояние события',
 					width:'100',
+					dataIndex:'СостояниеСобытия',
+					flex:1,
 				},
 				{
 					text:'Территория',
 					width:'120',
+					dataIndex:'Территория',
+					flex:1,
 				},
 				{
 					text:'Помещение',
 					width:'120',
+					dataIndex:'Помещение',
+					flex:1,
 				},
 				{
 					text:'Начало события',
 					width:'80',
+					dataIndex:'НачалоСобытия',
+					flex:1,
 				},
 				{
 					text:'Вид объекта',
 					width:'120',
+					dataIndex:'ВидОбъекта',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'120',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'220',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Событие/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ТипСобытия',
+					},
+					{
+						name:'ВидСобытия',
+					},
+					{
+						name:'ГруппаСобытия',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'НапомнитьОСобытии',
+					},
+					{
+						name:'ВремяНапоминания',
+					},
+					{
+						name:'Важность',
+					},
+					{
+						name:'СостояниеСобытия',
+					},
+					{
+						name:'Территория',
+					},
+					{
+						name:'Помещение',
+					},
+					{
+						name:'НачалоСобытия',
+					},
+					{
+						name:'ВидОбъекта',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

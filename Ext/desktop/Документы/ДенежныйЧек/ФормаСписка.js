@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Опл',
 					width:'27',
+					dataIndex:'Оплачено',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'136',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Счет организации',
 					width:'120',
+					dataIndex:'СчетОрганизации',
+					flex:1,
 				},
 				{
 					text:'Касса',
 					width:'120',
+					dataIndex:'Касса',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'60',
+					dataIndex:'ВалютаДокумента',
+					flex:1,
 				},
 				{
 					text:'Сумма документа',
 					width:'80',
+					dataIndex:'СуммаДокумента',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДенежныйЧек/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Оплачено',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'СчетОрганизации',
+					},
+					{
+						name:'Касса',
+					},
+					{
+						name:'ВалютаДокумента',
+					},
+					{
+						name:'СуммаДокумента',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

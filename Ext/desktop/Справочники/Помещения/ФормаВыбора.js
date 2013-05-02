@@ -82,16 +82,42 @@
 				{
 					text:'Территория',
 					width:'120',
+					dataIndex:'Территория',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Свободно С',
 					width:'100',
+					dataIndex:'СвободноС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Помещения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Территория',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'СвободноС',
+					},
+				]
+			},
 		},
 	]
 });

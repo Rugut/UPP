@@ -246,48 +246,114 @@
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'100',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'180',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'180',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'110',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'44',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'37',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Товар / тара',
 					width:'81',
+					dataIndex:'ТоварТара',
+					flex:1,
 				},
 				{
 					text:'Остаток',
 					width:'81',
+					dataIndex:'Остаток',
+					flex:1,
 				},
 				{
 					text:'Не распределено',
 					width:'93',
+					dataIndex:'Нераспределено',
+					flex:1,
 				},
 				{
 					text:'Заказ покупателя',
 					width:'242',
+					dataIndex:'Заказ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'ТоварТара',
+					},
+					{
+						name:'Остаток',
+					},
+					{
+						name:'Нераспределено',
+					},
+					{
+						name:'Заказ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

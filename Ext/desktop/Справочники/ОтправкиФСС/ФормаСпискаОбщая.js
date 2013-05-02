@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата отправки',
 					width:'115',
+					dataIndex:'ДатаОтправки',
+					flex:1,
 				},
 				{
 					text:'Статус отправки',
 					width:'95',
+					dataIndex:'СтатусОтправки',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'126',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Отчет',
 					width:'100',
+					dataIndex:'ОтчетСсылка',
+					flex:1,
 				},
 				{
 					text:'Идентификатор',
 					width:'99',
+					dataIndex:'ИдентификаторОтправкиНаСервере',
+					flex:1,
 				},
 				{
 					text:'Дата получения результата',
 					width:'148',
+					dataIndex:'ДатаПолученияРезультата',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтправкиФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ДатаОтправки',
+					},
+					{
+						name:'СтатусОтправки',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ОтчетСсылка',
+					},
+					{
+						name:'ИдентификаторОтправкиНаСервере',
+					},
+					{
+						name:'ДатаПолученияРезультата',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

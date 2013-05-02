@@ -18,68 +18,159 @@
 				{
 					text:' ',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'ОУ',
 					width:'21',
+					dataIndex:'ОтраженоВОперУчете',
+					flex:1,
 				},
 				{
 					text:'БУ',
 					width:'21',
+					dataIndex:'ОтражатьВБухгалтерскомУчете',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'19',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
 				{
 					text:'Опл',
 					width:'27',
+					dataIndex:'Оплачено',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'130',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Сумма документа',
 					width:'119',
+					dataIndex:'СуммаДокумента',
+					flex:1,
 				},
 				{
 					text:'Счет организации',
 					width:'200',
+					dataIndex:'СчетОрганизации',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'200',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'200',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'171',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'200',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'200',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АккредитивПереданный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ОтраженоВОперУчете',
+					},
+					{
+						name:'ОтражатьВБухгалтерскомУчете',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+					{
+						name:'Оплачено',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'СуммаДокумента',
+					},
+					{
+						name:'СчетОрганизации',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -49,16 +49,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Параметр номенклатуры',
 					width:'100',
+					dataIndex:'ПараметрНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Поле ТСД',
 					width:'60',
+					dataIndex:'ПолеТСД',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТСДФорматыДанных/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПараметрНоменклатуры',
+					},
+					{
+						name:'ПолеТСД',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

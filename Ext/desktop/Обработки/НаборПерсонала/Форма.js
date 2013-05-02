@@ -103,40 +103,96 @@
 				{
 					text:'Тема',
 					width:'173',
+					dataIndex:'Тема',
+					flex:1,
 				},
 				{
 					text:'Отправитель',
 					width:'100',
+					dataIndex:'Отправитель',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'27',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Не рассмотрено',
 					width:'100',
+					dataIndex:'НеРассмотрено',
+					flex:1,
 				},
 				{
 					text:'Рассмотреть после',
 					width:'100',
+					dataIndex:'РассмотретьПосле',
+					flex:1,
 				},
 				{
 					text:'Статус письма',
 					width:'100',
+					dataIndex:'СтатусПисьма',
+					flex:1,
 				},
 				{
 					text:'Значение группировки',
 					width:'100',
+					dataIndex:'ЗначениеГруппировки',
+					flex:1,
 				},
 				{
 					text:'Отправитель адрес электронной почты',
 					width:'100',
+					dataIndex:'ОтправительАдресЭлектроннойПочты',
+					flex:1,
 				},
 				{
 					text:'Дата получения',
 					width:'100',
+					dataIndex:'ДатаПолучения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Тема',
+					},
+					{
+						name:'Отправитель',
+					},
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'НеРассмотрено',
+					},
+					{
+						name:'РассмотретьПосле',
+					},
+					{
+						name:'СтатусПисьма',
+					},
+					{
+						name:'ЗначениеГруппировки',
+					},
+					{
+						name:'ОтправительАдресЭлектроннойПочты',
+					},
+					{
+						name:'ДатаПолучения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -205,24 +261,60 @@
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'100',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Значение группировки',
 					width:'100',
+					dataIndex:'ЗначениеГруппировки',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование1',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'ЗначениеГруппировки',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Наименование1',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -254,20 +346,51 @@
 				{
 					text:'Есть вложения',
 					width:'21',
+					dataIndex:'ЕстьВложения',
+					flex:1,
 				},
 				{
 					text:'От кого',
 					width:'100',
+					dataIndex:'ОтправительПредставление',
+					flex:1,
 				},
 				{
 					text:'Кому',
 					width:'100',
+					dataIndex:'КомуПредставление',
+					flex:1,
 				},
 				{
 					text:'Дата отправления',
 					width:'140',
+					dataIndex:'ДатаОтправления',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ЕстьВложения',
+					},
+					{
+						name:'ОтправительПредставление',
+					},
+					{
+						name:'КомуПредставление',
+					},
+					{
+						name:'ДатаОтправления',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

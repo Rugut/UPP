@@ -121,16 +121,42 @@
 				{
 					text:'Счет',
 					width:'120',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'По субсчетам',
 					width:'78',
+					dataIndex:'Субсчета',
+					flex:1,
 				},
 				{
 					text:'По субконто',
 					width:'249',
+					dataIndex:'ПредставлениеРазворотПоСубконто',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГлавнаяКнигаХозрасчетный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Счет',
+					},
+					{
+						name:'Субсчета',
+					},
+					{
+						name:'ПредставлениеРазворотПоСубконто',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

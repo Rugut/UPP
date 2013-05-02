@@ -77,64 +77,150 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'250',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'250',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'64',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'65',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Сумма старая',
 					width:'80',
+					dataIndex:'СуммаСтарая',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереоценкаТоваровОтданныхНаКомиссию/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СуммаСтарая',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

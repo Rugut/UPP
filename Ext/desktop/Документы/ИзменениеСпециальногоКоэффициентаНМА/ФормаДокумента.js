@@ -141,20 +141,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'55',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Нематериальный актив',
 					width:'183',
+					dataIndex:'НематериальныйАктив',
+					flex:1,
 				},
 				{
 					text:'Понижающий коэффициент',
 					width:'172',
+					dataIndex:'СпециальныйКоэффициент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаНМА/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'НематериальныйАктив',
+					},
+					{
+						name:'СпециальныйКоэффициент',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

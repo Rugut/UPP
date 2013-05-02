@@ -118,20 +118,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'62',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Нематериальный актив',
 					width:'217',
+					dataIndex:'НематериальныйАктив',
+					flex:1,
 				},
 				{
 					text:'Объем работ',
 					width:'90',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыработкаНМА/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'НематериальныйАктив',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

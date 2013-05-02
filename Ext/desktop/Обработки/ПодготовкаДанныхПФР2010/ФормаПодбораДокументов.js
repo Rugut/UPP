@@ -18,12 +18,33 @@
 				{
 					text:'Отчетный период',
 					width:'100',
+					dataIndex:'ОтчетныйПериод',
+					flex:1,
 				},
 				{
 					text:'Комплект документов',
 					width:'135',
+					dataIndex:'Пачка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ОтчетныйПериод',
+					},
+					{
+						name:'Пачка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

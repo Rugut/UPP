@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Отчет',
 					width:'222',
+					dataIndex:'НаименованиеОтчета',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'98',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'88',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'88',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'ИФНС',
 					width:'56',
+					dataIndex:'КодИМНС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НаименованиеОтчета',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'КодИМНС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

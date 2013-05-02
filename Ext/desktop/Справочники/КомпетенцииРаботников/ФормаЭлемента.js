@@ -154,20 +154,51 @@
 				{
 					text:'Оценка',
 					width:'140',
+					dataIndex:'Оценка',
+					flex:1,
 				},
 				{
 					text:'Приоритет',
 					width:'60',
+					dataIndex:'ПриоритетОценки',
+					flex:1,
 				},
 				{
 					text:'Ожидаемая доля оценки,  %',
 					width:'80',
+					dataIndex:'ВесОценки',
+					flex:1,
 				},
 				{
 					text:'Описание оценки',
 					width:'250',
+					dataIndex:'ОписаниеОценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомпетенцииРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Оценка',
+					},
+					{
+						name:'ПриоритетОценки',
+					},
+					{
+						name:'ВесОценки',
+					},
+					{
+						name:'ОписаниеОценки',
+					},
+				]
+			},
 		},
 					]
 				},

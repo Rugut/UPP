@@ -32,32 +32,78 @@
 				{
 					text:'Представление',
 					width:'320',
+					dataIndex:'ПредставлениеФормы',
+					flex:1,
 				},
 				{
 					text:'Периодичность',
 					width:'85',
+					dataIndex:'Периодичность',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'265',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'120',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'90',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'90',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Текущий документ',
 					width:'142',
+					dataIndex:'ТекДок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчетСтатистикаФормаП1/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеФормы',
+					},
+					{
+						name:'Периодичность',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'ТекДок',
+					},
+				]
+			},
 		},
 	]
 });

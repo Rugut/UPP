@@ -100,44 +100,105 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет',
 					width:'80',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'Субконто 1',
 					width:'120',
+					dataIndex:'Субконто1',
+					flex:1,
 				},
 				{
 					text:'Субконто 2',
 					width:'120',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'Субконто 3',
 					width:'120',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'80',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Сумма упр.',
 					width:'120',
+					dataIndex:'СуммаУпр',
+					flex:1,
 				},
 				{
 					text:'Валютная сумма',
 					width:'120',
+					dataIndex:'ВалютнаяСумма',
+					flex:1,
 				},
 				{
 					text:'Сумма сценария',
 					width:'120',
+					dataIndex:'СуммаСценария',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'80',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаОстатковПоПрогнознымБалансам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Счет',
+					},
+					{
+						name:'Субконто1',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'СуммаУпр',
+					},
+					{
+						name:'ВалютнаяСумма',
+					},
+					{
+						name:'СуммаСценария',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

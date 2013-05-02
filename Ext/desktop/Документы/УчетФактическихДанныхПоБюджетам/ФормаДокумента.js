@@ -93,44 +93,105 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'80',
+					dataIndex:'ПериодПланирования',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'120',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'120',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'120',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'ЦФО',
 					width:'120',
+					dataIndex:'ЦФО',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'120',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетФактическихДанныхПоБюджетам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПериодПланирования',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЦФО',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Номенклатура',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

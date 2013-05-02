@@ -46,8 +46,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

@@ -82,16 +82,42 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоверенностиНалогоплательщика/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+					{
+						name:'',
+					},
+					{
+						name:'',
+					},
+				]
+			},
 		},
 	]
 });

@@ -29,32 +29,78 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'СостояиеДокумента',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'84',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'106',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Услуга',
 					width:'106',
+					dataIndex:'Услуга',
+					flex:1,
 				},
 				{
 					text:'Вид обслуживания',
 					width:'102',
+					dataIndex:'ВидОбслуживания',
+					flex:1,
 				},
 				{
 					text:'Дата обслуживания',
 					width:'110',
+					dataIndex:'ДатаОбслуживания',
+					flex:1,
 				},
 				{
 					text:'Причина',
 					width:'181',
+					dataIndex:'Причина',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаказовНаОбслуживаниеОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'СостояиеДокумента',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Услуга',
+					},
+					{
+						name:'ВидОбслуживания',
+					},
+					{
+						name:'ДатаОбслуживания',
+					},
+					{
+						name:'Причина',
+					},
+				]
+			},
 		},
 	]
 });

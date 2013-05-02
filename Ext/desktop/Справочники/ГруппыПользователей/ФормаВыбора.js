@@ -18,12 +18,33 @@
 				{
 					text:'Наименование',
 					width:'282',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'95',
+					dataIndex:'Код',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Код',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

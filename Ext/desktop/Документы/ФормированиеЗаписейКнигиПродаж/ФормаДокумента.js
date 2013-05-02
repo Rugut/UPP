@@ -125,64 +125,150 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'120',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Покупатель',
 					width:'120',
+					dataIndex:'Покупатель',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Договор комиссии',
 					width:'120',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Документ оплаты',
 					width:'120',
+					dataIndex:'ДокументОплаты',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Событие',
 					width:'120',
+					dataIndex:'Событие',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'120',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Запись доп. листа',
 					width:'80',
+					dataIndex:'ЗаписьДополнительногоЛиста',
+					flex:1,
 				},
 				{
 					text:'Сторнирующая запись доп. листа',
 					width:'80',
+					dataIndex:'СторнирующаяЗаписьДопЛиста',
+					flex:1,
 				},
 				{
 					text:'Корректируемый период',
 					width:'80',
+					dataIndex:'КорректируемыйПериод',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'Покупатель',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'ДокументОплаты',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'Событие',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'ЗаписьДополнительногоЛиста',
+					},
+					{
+						name:'СторнирующаяЗаписьДопЛиста',
+					},
+					{
+						name:'КорректируемыйПериод',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -207,52 +293,123 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'120',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Покупатель',
 					width:'120',
+					dataIndex:'Покупатель',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'120',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Событие',
 					width:'120',
+					dataIndex:'Событие',
+					flex:1,
 				},
 				{
 					text:'Запись доп. листа',
 					width:'80',
+					dataIndex:'ЗаписьДополнительногоЛиста',
+					flex:1,
 				},
 				{
 					text:'Сторнирующая запись доп. листа',
 					width:'80',
+					dataIndex:'СторнирующаяЗаписьДопЛиста',
+					flex:1,
 				},
 				{
 					text:'Корректируемый период',
 					width:'80',
+					dataIndex:'КорректируемыйПериод',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'Покупатель',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'Событие',
+					},
+					{
+						name:'ЗаписьДополнительногоЛиста',
+					},
+					{
+						name:'СторнирующаяЗаписьДопЛиста',
+					},
+					{
+						name:'КорректируемыйПериод',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -277,48 +434,114 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'100',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Покупатель',
 					width:'100',
+					dataIndex:'Покупатель',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'120',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Документ оплаты',
 					width:'120',
+					dataIndex:'ДокументОплаты',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Событие',
 					width:'120',
+					dataIndex:'Событие',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'Покупатель',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'ДокументОплаты',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'Событие',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -343,48 +566,114 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Поставщик',
 					width:'120',
+					dataIndex:'Поставщик',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'120',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'96',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Запись доп. листа',
 					width:'80',
+					dataIndex:'ЗаписьДополнительногоЛиста',
+					flex:1,
 				},
 				{
 					text:'Корректируемый период',
 					width:'80',
+					dataIndex:'КорректируемыйПериод',
+					flex:1,
 				},
 				{
 					text:'Сторнирующая запись доп. листа',
 					width:'80',
+					dataIndex:'СторнирующаяЗаписьДопЛиста',
+					flex:1,
 				},
 				{
 					text:'Исправленный счет-фактура',
 					width:'100',
+					dataIndex:'ИсправленныйСчетФактура',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Поставщик',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'ЗаписьДополнительногоЛиста',
+					},
+					{
+						name:'КорректируемыйПериод',
+					},
+					{
+						name:'СторнирующаяЗаписьДопЛиста',
+					},
+					{
+						name:'ИсправленныйСчетФактура',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -411,40 +700,96 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'100',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Поставщик',
 					width:'100',
+					dataIndex:'Покупатель',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'100',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Счет учета НДС',
 					width:'100',
+					dataIndex:'СчетУчетаНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Исправленный счет-фактура',
 					width:'100',
+					dataIndex:'ИсправленныйСчетФактура',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'Покупатель',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'СчетУчетаНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'ИсправленныйСчетФактура',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -469,48 +814,114 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид начисления',
 					width:'120',
+					dataIndex:'ВидНачисления',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'120',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Покупатель',
 					width:'120',
+					dataIndex:'Покупатель',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Документ оплаты',
 					width:'120',
+					dataIndex:'ДокументОплаты',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Событие',
 					width:'120',
+					dataIndex:'Событие',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидНачисления',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'Покупатель',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'ДокументОплаты',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'Событие',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

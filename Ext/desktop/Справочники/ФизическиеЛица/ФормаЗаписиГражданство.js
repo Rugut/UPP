@@ -88,20 +88,51 @@
 				{
 					text:'Заключен трудовой договор на длительный срок',
 					width:'156',
+					dataIndex:'ПринятПоДолгосрочномуДоговору',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'С ...',
 					width:'70',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'70',
+					dataIndex:'ПериодЗавершения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПринятПоДолгосрочномуДоговору',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ПериодЗавершения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

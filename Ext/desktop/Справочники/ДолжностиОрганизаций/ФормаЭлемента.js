@@ -260,12 +260,33 @@
 				{
 					text:'Принадлежность',
 					width:'23',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'100',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -276,12 +297,33 @@
 				{
 					text:'Свойство',
 					width:'100',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -318,12 +360,33 @@
 				{
 					text:'Вид ежегодного отпуска',
 					width:'321',
+					dataIndex:'ВидЕжегодногоОтпуска',
+					flex:1,
 				},
 				{
 					text:'Количество дней отпуска в год',
 					width:'213',
+					dataIndex:'КоличествоДнейОтпускаВГод',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидЕжегодногоОтпуска',
+					},
+					{
+						name:'КоличествоДнейОтпускаВГод',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

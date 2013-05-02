@@ -39,20 +39,51 @@
 				{
 					text:'Организация',
 					width:'180',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Роль исполнителя задач',
 					width:'140',
+					dataIndex:'Роль',
+					flex:1,
 				},
 				{
 					text:'Задачи ...',
 					width:'100',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Исполнитель',
 					width:'100',
+					dataIndex:'Исполнитель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'Роль',
+					},
+					{
+						name:'Использование',
+					},
+					{
+						name:'Исполнитель',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

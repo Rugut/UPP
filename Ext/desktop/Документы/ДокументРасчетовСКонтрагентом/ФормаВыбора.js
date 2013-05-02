@@ -56,12 +56,33 @@
 				{
 					text:'Документ расчетов',
 					width:'444',
+					dataIndex:'РасчетныйДокумент',
+					flex:1,
 				},
 				{
 					text:'Остаток (сумма)',
 					width:'123',
+					dataIndex:'Остаток',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументРасчетовСКонтрагентом/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'РасчетныйДокумент',
+					},
+					{
+						name:'Остаток',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

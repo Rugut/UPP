@@ -57,24 +57,60 @@
 				{
 					text:'Отчет',
 					width:'171',
+					dataIndex:'Отчет',
+					flex:1,
 				},
 				{
 					text:'Это группа',
 					width:'100',
+					dataIndex:'ЭтоГруппа',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'ВнешнийОтчетВерсия',
+					flex:1,
 				},
 				{
 					text:'Источник отчета',
 					width:'100',
+					dataIndex:'ИсточникОтчета',
+					flex:1,
 				},
 				{
 					text:'URL',
 					width:'100',
+					dataIndex:'URL',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОнлайнСервисыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Отчет',
+					},
+					{
+						name:'ЭтоГруппа',
+					},
+					{
+						name:'ВнешнийОтчетВерсия',
+					},
+					{
+						name:'ИсточникОтчета',
+					},
+					{
+						name:'URL',
+					},
+				]
+			},
 		},
 					]
 				},

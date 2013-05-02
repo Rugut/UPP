@@ -174,44 +174,105 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'68',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'157',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Месяц регистрации',
 					width:'90',
+					dataIndex:'МесяцРегистрации',
+					flex:1,
 				},
 				{
 					text:'% ЕНВД-деятельности ',
 					width:'64',
+					dataIndex:'ПодпадаетПодЕНВД',
+					flex:1,
 				},
 				{
 					text:'Счет Дт',
 					width:'80',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'Субконто',
 					width:'120',
+					dataIndex:'Субконто1',
+					flex:1,
 				},
 				{
 					text:'Субконто2',
 					width:'100',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'Субконто3',
 					width:'100',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
 				{
 					text:'Способ распределения затрат',
 					width:'100',
+					dataIndex:'СпособРаспределенияЗатрат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПроцентаДеятельностиЕНВД/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'МесяцРегистрации',
+					},
+					{
+						name:'ПодпадаетПодЕНВД',
+					},
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'Субконто1',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+					{
+						name:'СпособРаспределенияЗатрат',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

@@ -127,24 +127,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Объект строительства',
 					width:'120',
+					dataIndex:'ОбъектСтроительства',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'120',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'65',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеНДСпоСМРхозспособом/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОбъектСтроительства',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

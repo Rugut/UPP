@@ -101,28 +101,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -188,72 +229,168 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Переносить',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'23',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'110',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'86',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид заказа',
 					width:'100',
+					dataIndex:'ВидЗаказа',
+					flex:1,
 				},
 				{
 					text:'Заказчик',
 					width:'110',
+					dataIndex:'Заказчик',
+					flex:1,
 				},
 				{
 					text:'Контактное лицо',
 					width:'100',
+					dataIndex:'КонтактноеЛицо',
+					flex:1,
 				},
 				{
 					text:'Ост. отгр.',
 					width:'80',
+					dataIndex:'ЗаказыОстаток',
+					flex:1,
 				},
 				{
 					text:'Кол.',
 					width:'35',
+					dataIndex:'ЗаказыКоличество',
+					flex:1,
 				},
 				{
 					text:'Рез.',
 					width:'35',
+					dataIndex:'РезервыКоличество',
+					flex:1,
 				},
 				{
 					text:'Разм.',
 					width:'35',
+					dataIndex:'РазмещенияКоличество',
+					flex:1,
 				},
 				{
 					text:'Дата отгрузки',
 					width:'80',
+					dataIndex:'ДатаОтгрузки',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Проведен',
 					width:'70',
+					dataIndex:'Проведен',
+					flex:1,
 				},
 				{
 					text:'Причина закрытия',
 					width:'120',
+					dataIndex:'ПричинаЗакрытияЗаказа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Переносить',
+					},
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидЗаказа',
+					},
+					{
+						name:'Заказчик',
+					},
+					{
+						name:'КонтактноеЛицо',
+					},
+					{
+						name:'ЗаказыОстаток',
+					},
+					{
+						name:'ЗаказыКоличество',
+					},
+					{
+						name:'РезервыКоличество',
+					},
+					{
+						name:'РазмещенияКоличество',
+					},
+					{
+						name:'ДатаОтгрузки',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Проведен',
+					},
+					{
+						name:'ПричинаЗакрытияЗаказа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',

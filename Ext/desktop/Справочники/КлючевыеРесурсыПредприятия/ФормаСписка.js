@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Базовая единица',
 					width:'96',
+					dataIndex:'БазоваяЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'База задания потребности',
 					width:'142',
+					dataIndex:'БазаЗаданияПотребности',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'БазоваяЕдиницаИзмерения',
+					},
+					{
+						name:'БазаЗаданияПотребности',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -46,8 +82,24 @@
 				{
 					text:'Наименование',
 					width:'160',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'277',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Тип настройки',
 					width:'120',
+					dataIndex:'ТипНастройки',
+					flex:1,
 				},
 				{
 					text:'Узел информационной базы',
 					width:'140',
+					dataIndex:'УзелИнформационнойБазы',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ТипНастройки',
+					},
+					{
+						name:'УзелИнформационнойБазы',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

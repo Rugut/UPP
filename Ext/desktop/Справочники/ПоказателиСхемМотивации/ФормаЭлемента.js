@@ -219,20 +219,51 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'57',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'68',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
 				{
 					text:'Размер',
 					width:'126',
+					dataIndex:'Размер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

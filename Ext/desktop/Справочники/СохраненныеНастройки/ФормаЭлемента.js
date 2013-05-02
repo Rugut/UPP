@@ -49,16 +49,42 @@
 				{
 					text:'N',
 					width:'21',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Пользователь',
 					width:'222',
+					dataIndex:'Пользователь',
+					flex:1,
 				},
 				{
 					text:'Право изменения',
 					width:'63',
+					dataIndex:'ПравоИзменения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Пользователь',
+					},
+					{
+						name:'ПравоИзменения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

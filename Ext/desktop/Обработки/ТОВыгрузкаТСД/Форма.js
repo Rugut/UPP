@@ -34,60 +34,141 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Выгружать',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'220',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Штрихкод',
 					width:'120',
+					dataIndex:'Штрихкод',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'250',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'250',
+					dataIndex:'Серия',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'100',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Склад',
 					width:'100',
+					dataIndex:'Склад',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'65',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'100',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОВыгрузкаТСД/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Выгружать',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Штрихкод',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Серия',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'Склад',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ТипЦен',
+					},
+					{
+						name:'Цена',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

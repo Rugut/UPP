@@ -74,28 +74,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -143,28 +184,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -255,12 +337,33 @@
 				{
 					text:'Контрагент/Документ',
 					width:'352',
+					dataIndex:'Строка',
+					flex:1,
 				},
 				{
 					text:'Обрабатывать',
 					width:'100',
+					dataIndex:'Обрабатывать',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Строка',
+					},
+					{
+						name:'Обрабатывать',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -277,12 +380,33 @@
 				{
 					text:'',
 					width:'29',
+					dataIndex:'Использовать',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'387',
+					dataIndex:'Свойство',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использовать',
+					},
+					{
+						name:'Свойство',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -293,28 +417,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

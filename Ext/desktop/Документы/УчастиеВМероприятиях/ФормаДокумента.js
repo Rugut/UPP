@@ -106,24 +106,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'75',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Участвует в ...',
 					width:'81',
+					dataIndex:'ЧастьМероприятия',
+					flex:1,
 				},
 				{
 					text:'Как ...',
 					width:'101',
+					dataIndex:'ХарактерУчастия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчастиеВМероприятиях/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ЧастьМероприятия',
+					},
+					{
+						name:'ХарактерУчастия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

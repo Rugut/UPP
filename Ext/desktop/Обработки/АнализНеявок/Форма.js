@@ -18,36 +18,87 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Отметка',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'80',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'87',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Неявка',
 					width:'95',
+					dataIndex:'Неявка',
+					flex:1,
 				},
 				{
 					text:'Кадровый документ',
 					width:'105',
+					dataIndex:'КадровыйДокумент',
+					flex:1,
 				},
 				{
 					text:'Расчетный документ',
 					width:'100',
+					dataIndex:'РасчетныйДокумент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализНеявок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Отметка',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'Неявка',
+					},
+					{
+						name:'КадровыйДокумент',
+					},
+					{
+						name:'РасчетныйДокумент',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

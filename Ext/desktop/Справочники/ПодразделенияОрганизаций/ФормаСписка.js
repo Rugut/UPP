@@ -18,24 +18,60 @@
 				{
 					text:'Наименование',
 					width:'240',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'84',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Код по ОКАТО',
 					width:'80',
+					dataIndex:'КодПоОКАТО',
+					flex:1,
 				},
 				{
 					text:'КПП',
 					width:'80',
+					dataIndex:'КПП',
+					flex:1,
 				},
 				{
 					text:'Порядок',
 					width:'49',
+					dataIndex:'Порядок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'КодПоОКАТО',
+					},
+					{
+						name:'КПП',
+					},
+					{
+						name:'Порядок',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

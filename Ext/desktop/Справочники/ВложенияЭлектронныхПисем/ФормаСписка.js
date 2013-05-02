@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Электронное письмо',
 					width:'120',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'220',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'ИДФайла почтового письма',
 					width:'120',
+					dataIndex:'ИДФайлаПочтовогоПисьма',
+					flex:1,
 				},
 				{
 					text:'Предмет',
 					width:'120',
+					dataIndex:'Предмет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВложенияЭлектронныхПисем/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Объект',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'ИДФайлаПочтовогоПисьма',
+					},
+					{
+						name:'Предмет',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

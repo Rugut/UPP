@@ -87,28 +87,69 @@
 				{
 					text:'Имя',
 					width:'100',
+					dataIndex:'ИмяДатаГраницы',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'133',
+					dataIndex:'ПредставлениеДатыГраницы',
+					flex:1,
 				},
 				{
 					text:'Начальная граница',
 					width:'96',
+					dataIndex:'НачальнаяГраницаОтсчета',
+					flex:1,
 				},
 				{
 					text:'Дата начальной границы',
 					width:'134',
+					dataIndex:'ДатаНачальнойГраницыОтсчета',
+					flex:1,
 				},
 				{
 					text:'Период смещения',
 					width:'102',
+					dataIndex:'ПериодСмещения',
+					flex:1,
 				},
 				{
 					text:'Сдвиг (в периодах)',
 					width:'115',
+					dataIndex:'Сдвиг',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяДатаГраницы',
+					},
+					{
+						name:'ПредставлениеДатыГраницы',
+					},
+					{
+						name:'НачальнаяГраницаОтсчета',
+					},
+					{
+						name:'ДатаНачальнойГраницыОтсчета',
+					},
+					{
+						name:'ПериодСмещения',
+					},
+					{
+						name:'Сдвиг',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -119,16 +160,42 @@
 				{
 					text:'№',
 					width:'24',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Использование',
 					width:'29',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'211',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Использование',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -152,12 +219,33 @@
 				{
 					text:'Поле источника',
 					width:'180',
+					dataIndex:'ИмяПоляИсточника',
+					flex:1,
 				},
 				{
 					text:'Измерение',
 					width:'120',
+					dataIndex:'ИзмерениеБюджетирования',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяПоляИсточника',
+					},
+					{
+						name:'ИзмерениеБюджетирования',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -197,28 +285,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'120',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'80',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'160',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'80',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'80',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'itemselector',
@@ -302,12 +431,33 @@
 				{
 					text:'Имя параметра',
 					width:'235',
+					dataIndex:'ИмяПараметра',
+					flex:1,
 				},
 				{
 					text:'Значение параметра',
 					width:'280',
+					dataIndex:'ЗначениеПараметра',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяПараметра',
+					},
+					{
+						name:'ЗначениеПараметра',
+					},
+				]
+			},
 		},
 					]
 				},

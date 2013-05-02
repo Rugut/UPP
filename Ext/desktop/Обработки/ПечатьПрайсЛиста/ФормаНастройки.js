@@ -106,12 +106,33 @@
 				{
 					text:'Группировки строк',
 					width:'196',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'87',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -135,28 +156,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -180,8 +242,24 @@
 				{
 					text:'Поле',
 					width:'237',
+					dataIndex:'Поле',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -205,12 +283,33 @@
 				{
 					text:'Поле',
 					width:'393',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Направление сортировки',
 					width:'173',
+					dataIndex:'НаправлениеСортировки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Имя',
+					},
+					{
+						name:'НаправлениеСортировки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -234,20 +333,51 @@
 				{
 					text:'Поле',
 					width:'198',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Представление поля',
 					width:'111',
+					dataIndex:'Псевдоним',
+					flex:1,
 				},
 				{
 					text:'Печать',
 					width:'41',
+					dataIndex:'ВыводитьНаПечать',
+					flex:1,
 				},
 				{
 					text:'Положение',
 					width:'211',
+					dataIndex:'Положение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Псевдоним',
+					},
+					{
+						name:'ВыводитьНаПечать',
+					},
+					{
+						name:'Положение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

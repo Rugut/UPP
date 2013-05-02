@@ -18,64 +18,150 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'80',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Периодичность',
 					width:'80',
+					dataIndex:'Периодичность',
+					flex:1,
 				},
 				{
 					text:'Количество периодов анализа',
 					width:'60',
+					dataIndex:'КоличествоПериодовАнализа',
+					flex:1,
 				},
 				{
 					text:'Разовый покупатель нач',
 					width:'80',
+					dataIndex:'РазовыйПокупательНач',
+					flex:1,
 				},
 				{
 					text:'Разовый покупатель кон',
 					width:'80',
+					dataIndex:'РазовыйПокупательКон',
+					flex:1,
 				},
 				{
 					text:'X класс нач',
 					width:'80',
+					dataIndex:'XКлассНач',
+					flex:1,
 				},
 				{
 					text:'X класс кон',
 					width:'80',
+					dataIndex:'XКлассКон',
+					flex:1,
 				},
 				{
 					text:'Y класс нач',
 					width:'80',
+					dataIndex:'YКлассНач',
+					flex:1,
 				},
 				{
 					text:'Y класс кон',
 					width:'80',
+					dataIndex:'YКлассКон',
+					flex:1,
 				},
 				{
 					text:'Z класс нач',
 					width:'80',
+					dataIndex:'ZКлассНач',
+					flex:1,
 				},
 				{
 					text:'Z класс кон',
 					width:'80',
+					dataIndex:'ZКлассКон',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'160',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификацияПокупателейПоСтадиямВзаимоотношений/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'Периодичность',
+					},
+					{
+						name:'КоличествоПериодовАнализа',
+					},
+					{
+						name:'РазовыйПокупательНач',
+					},
+					{
+						name:'РазовыйПокупательКон',
+					},
+					{
+						name:'XКлассНач',
+					},
+					{
+						name:'XКлассКон',
+					},
+					{
+						name:'YКлассНач',
+					},
+					{
+						name:'YКлассКон',
+					},
+					{
+						name:'ZКлассНач',
+					},
+					{
+						name:'ZКлассКон',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

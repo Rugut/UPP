@@ -137,12 +137,33 @@
 				{
 					text:'Код строки',
 					width:'100',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Строка расчета',
 					width:'312',
+					dataIndex:'СтрокаРасчета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтрокиФинансовогоРасчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'СтрокаРасчета',
+					},
+				]
+			},
 		},
 	]
 });

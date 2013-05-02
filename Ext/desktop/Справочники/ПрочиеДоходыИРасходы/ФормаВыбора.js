@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'64',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'250',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид прочих дох. и расх.',
 					width:'250',
+					dataIndex:'ВидПрочихДоходовИРасходов',
+					flex:1,
 				},
 				{
 					text:'Принятие к налоговому учету',
 					width:'60',
+					dataIndex:'ПринятиеКналоговомуУчету',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрочиеДоходыИРасходы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидПрочихДоходовИРасходов',
+					},
+					{
+						name:'ПринятиеКналоговомуУчету',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -46,8 +82,24 @@
 				{
 					text:'Наименование',
 					width:'160',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрочиеДоходыИРасходы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

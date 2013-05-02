@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'25',
+					dataIndex:'Иконка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'100',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'100',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'141',
+					dataIndex:'ВидДокумента',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Иконка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидДокумента',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

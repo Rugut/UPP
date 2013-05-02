@@ -18,12 +18,33 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'183',
+					dataIndex:'Работник',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПерерасчетЗарплатыОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Работник',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -70,24 +70,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'75',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'70',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Примечание',
 					width:'100',
+					dataIndex:'Примечание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПравоНаДополнительныеДниОтпуска/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Примечание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

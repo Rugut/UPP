@@ -18,20 +18,51 @@
 				{
 					text:' ',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Владелец',
 					width:'120',
+					dataIndex:'Владелец',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'320',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'ОКП',
 					width:'128',
+					dataIndex:'ОКП',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Владелец',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ОКП',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

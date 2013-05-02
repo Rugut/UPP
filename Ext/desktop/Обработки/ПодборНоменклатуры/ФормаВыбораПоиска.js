@@ -35,24 +35,60 @@
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Полное наименование',
 					width:'220',
+					dataIndex:'НаименованиеПолное',
+					flex:1,
 				},
 				{
 					text:'Группа номенклатуры',
 					width:'120',
+					dataIndex:'Родитель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'НаименованиеПолное',
+					},
+					{
+						name:'Родитель',
+					},
+				]
+			},
 		},
 	]
 });

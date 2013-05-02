@@ -1,6 +1,6 @@
+п»ї
 
-
-Ext.define('MyDesktop.ЗагрузкаTab', {
+Ext.define('MyDesktop.Р—Р°РіСЂСѓР·РєР°Tab', {
     //extend: 'Ext.ux.desktop.Module',
 
     requires: [

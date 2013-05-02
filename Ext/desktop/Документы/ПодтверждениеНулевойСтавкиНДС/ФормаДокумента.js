@@ -141,40 +141,96 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'100',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Покупатель',
 					width:'100',
+					dataIndex:'Покупатель',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'100',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Событие',
 					width:'100',
+					dataIndex:'Событие',
+					flex:1,
 				},
 				{
 					text:'Продажи с НДС 0%',
 					width:'100',
+					dataIndex:'ПродажиСНДС0',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'54',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'100',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'Курсовая разница',
 					width:'120',
+					dataIndex:'КурсоваяРазница',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодтверждениеНулевойСтавкиНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'Покупатель',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'Событие',
+					},
+					{
+						name:'ПродажиСНДС0',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'КурсоваяРазница',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

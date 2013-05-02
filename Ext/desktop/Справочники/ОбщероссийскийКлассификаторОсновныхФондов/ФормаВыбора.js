@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Амортизационная группа',
 					width:'100',
+					dataIndex:'АмортизационнаяГруппа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'АмортизационнаяГруппа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -53,8 +84,24 @@
 				{
 					text:'Наименование',
 					width:'175',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщероссийскийКлассификаторОсновныхФондов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 	]
 });

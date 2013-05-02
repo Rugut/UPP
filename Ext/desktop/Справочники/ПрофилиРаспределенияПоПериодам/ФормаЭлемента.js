@@ -73,16 +73,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номер подпериода',
 					width:'120',
+					dataIndex:'НомерПодпериода',
+					flex:1,
 				},
 				{
 					text:'Доля подпериода',
 					width:'120',
+					dataIndex:'ДоляПодпериода',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиРаспределенияПоПериодам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НомерПодпериода',
+					},
+					{
+						name:'ДоляПодпериода',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

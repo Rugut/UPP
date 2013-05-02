@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Физическое лицо',
 					width:'120',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'120',
+					dataIndex:'ПодразделениеОрганизации',
+					flex:1,
 				},
 				{
 					text:'Сумма за работу',
 					width:'80',
+					dataIndex:'СуммаЗаРаботу',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорНаВыполнениеРаботСФизЛицом/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'ПодразделениеОрганизации',
+					},
+					{
+						name:'СуммаЗаРаботу',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

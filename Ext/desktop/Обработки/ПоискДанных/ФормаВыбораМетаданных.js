@@ -35,16 +35,42 @@
 				{
 					text:'Колонка1',
 					width:'21',
+					dataIndex:'Колонка1',
+					flex:1,
 				},
 				{
 					text:'Тип метаданного',
 					width:'21',
+					dataIndex:'КолонкаКартинки',
+					flex:1,
 				},
 				{
 					text:'Колонка2',
 					width:'403',
+					dataIndex:'Колонка2',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискДанных/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Колонка1',
+					},
+					{
+						name:'КолонкаКартинки',
+					},
+					{
+						name:'Колонка2',
+					},
+				]
+			},
 		},
 	]
 });

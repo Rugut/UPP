@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Общевойсковое звание',
 					width:'220',
+					dataIndex:'ОбщевойсковоеЗвание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗваниеГражданскогоВоинскогоУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ОбщевойсковоеЗвание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

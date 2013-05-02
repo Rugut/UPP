@@ -35,12 +35,33 @@
 				{
 					text:'Имя',
 					width:'221',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'194',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Имя',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 	]
 });

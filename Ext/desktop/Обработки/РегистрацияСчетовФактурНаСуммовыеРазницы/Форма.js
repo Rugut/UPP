@@ -99,40 +99,96 @@
 				{
 					text:'N',
 					width:'29',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'СФсформирован',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'100',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'86',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Ставка НДС',
 					width:'80',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'80',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Документ основание',
 					width:'120',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'101',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНаСуммовыеРазницы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СФсформирован',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'ДокументОснование',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'СчетФактура',
+					},
+				]
+			},
 		},
 	]
 });

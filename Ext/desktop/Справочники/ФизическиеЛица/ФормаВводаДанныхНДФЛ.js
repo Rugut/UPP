@@ -49,24 +49,60 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Применять вычеты в организации',
 					width:'320',
+					dataIndex:'ПрименятьВычетыТекст',
+					flex:1,
 				},
 				{
 					text:'Применение',
 					width:'30',
+					dataIndex:'ВычетыПрименение',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ПрименятьВычетыТекст',
+					},
+					{
+						name:'ВычетыПрименение',
+					},
+					{
+						name:'Организация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -115,28 +151,69 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'70',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'103',
+					dataIndex:'ВычетыЛичныеТекст',
+					flex:1,
 				},
 				{
 					text:'Применение',
 					width:'80',
+					dataIndex:'ВычетыЛичныеПрименение',
+					flex:1,
 				},
 				{
 					text:'Вычет личный',
 					width:'50',
+					dataIndex:'КодВычетаЛичный',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'100',
+					dataIndex:'Основание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ВычетыЛичныеТекст',
+					},
+					{
+						name:'ВычетыЛичныеПрименение',
+					},
+					{
+						name:'КодВычетаЛичный',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -147,40 +224,96 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Период (с ... по)',
 					width:'140',
+					dataIndex:'КолонкаПериод',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'70',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'70',
+					dataIndex:'ПериодЗавершения',
+					flex:1,
 				},
 				{
 					text:'Код и количество детей',
 					width:'83',
+					dataIndex:'ВычетыНаДетейТекст',
+					flex:1,
 				},
 				{
 					text:'Применение',
 					width:'70',
+					dataIndex:'ВычетыНаДетейПрименение',
+					flex:1,
 				},
 				{
 					text:'Вычет на детей',
 					width:'60',
+					dataIndex:'КодВычетаНаДетей',
+					flex:1,
 				},
 				{
 					text:'Количество детей',
 					width:'24',
+					dataIndex:'КоличествоДетей',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'100',
+					dataIndex:'Основание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'КолонкаПериод',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ПериодЗавершения',
+					},
+					{
+						name:'ВычетыНаДетейТекст',
+					},
+					{
+						name:'ВычетыНаДетейПрименение',
+					},
+					{
+						name:'КодВычетаНаДетей',
+					},
+					{
+						name:'КоличествоДетей',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -298,12 +431,33 @@
 				{
 					text:'Месяц',
 					width:'160',
+					dataIndex:'МесяцНалоговогоПериода',
+					flex:1,
 				},
 				{
 					text:'Сумма дохода',
 					width:'120',
+					dataIndex:'Размер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'МесяцНалоговогоПериода',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

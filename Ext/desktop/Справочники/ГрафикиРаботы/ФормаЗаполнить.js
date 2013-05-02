@@ -266,12 +266,33 @@
 				{
 					text:'День недели',
 					width:'97',
+					dataIndex:'ДеньНедели',
+					flex:1,
 				},
 				{
 					text:'Часов за день',
 					width:'80',
+					dataIndex:'ЧасовЗаДень',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ДеньНедели',
+					},
+					{
+						name:'ЧасовЗаДень',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -294,80 +315,186 @@
 				{
 					text:'День недели',
 					width:'88',
+					dataIndex:'ДеньНедели',
+					flex:1,
 				},
 				{
 					text:'Начало',
 					width:'60',
+					dataIndex:'Начало',
+					flex:1,
 				},
 				{
 					text:'Окончание',
 					width:'57',
+					dataIndex:'Окончание',
+					flex:1,
 				},
 				{
 					text:'Перерыв',
 					width:'44',
+					dataIndex:'Перерыв1',
+					flex:1,
 				},
 				{
 					text:'с',
 					width:'47',
+					dataIndex:'НачалоПерерыва1',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'47',
+					dataIndex:'ОкончаниеПерерыва1',
+					flex:1,
 				},
 				{
 					text:'Перерыв',
 					width:'101',
+					dataIndex:'Перерыв2',
+					flex:1,
 				},
 				{
 					text:'с',
 					width:'49',
+					dataIndex:'НачалоПерерыва2',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'49',
+					dataIndex:'ОкончаниеПерерыва2',
+					flex:1,
 				},
 				{
 					text:'Перерыв',
 					width:'57',
+					dataIndex:'Перерыв3',
+					flex:1,
 				},
 				{
 					text:'с',
 					width:'49',
+					dataIndex:'НачалоПерерыва3',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'49',
+					dataIndex:'ОкончаниеПерерыва3',
+					flex:1,
 				},
 				{
 					text:'Перерыв',
 					width:'59',
+					dataIndex:'Перерыв4',
+					flex:1,
 				},
 				{
 					text:'с',
 					width:'49',
+					dataIndex:'НачалоПерерыва4',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'49',
+					dataIndex:'ОкончаниеПерерыва4',
+					flex:1,
 				},
 				{
 					text:'Перерыв',
 					width:'58',
+					dataIndex:'Перерыв5',
+					flex:1,
 				},
 				{
 					text:'с',
 					width:'49',
+					dataIndex:'НачалоПерерыва5',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'49',
+					dataIndex:'ОкончаниеПерерыва5',
+					flex:1,
 				},
 				{
 					text:'Часов за день',
 					width:'43',
+					dataIndex:'ИтогоЗаДень',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ДеньНедели',
+					},
+					{
+						name:'Начало',
+					},
+					{
+						name:'Окончание',
+					},
+					{
+						name:'Перерыв1',
+					},
+					{
+						name:'НачалоПерерыва1',
+					},
+					{
+						name:'ОкончаниеПерерыва1',
+					},
+					{
+						name:'Перерыв2',
+					},
+					{
+						name:'НачалоПерерыва2',
+					},
+					{
+						name:'ОкончаниеПерерыва2',
+					},
+					{
+						name:'Перерыв3',
+					},
+					{
+						name:'НачалоПерерыва3',
+					},
+					{
+						name:'ОкончаниеПерерыва3',
+					},
+					{
+						name:'Перерыв4',
+					},
+					{
+						name:'НачалоПерерыва4',
+					},
+					{
+						name:'ОкончаниеПерерыва4',
+					},
+					{
+						name:'Перерыв5',
+					},
+					{
+						name:'НачалоПерерыва5',
+					},
+					{
+						name:'ОкончаниеПерерыва5',
+					},
+					{
+						name:'ИтогоЗаДень',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -390,16 +517,42 @@
 				{
 					text:'Номер дня',
 					width:'71',
+					dataIndex:'НомерДня',
+					flex:1,
 				},
 				{
 					text:'Смена',
 					width:'151',
+					dataIndex:'Смена',
+					flex:1,
 				},
 				{
 					text:'Часов в смене',
 					width:'100',
+					dataIndex:'ЧасовВСмене',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерДня',
+					},
+					{
+						name:'Смена',
+					},
+					{
+						name:'ЧасовВСмене',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

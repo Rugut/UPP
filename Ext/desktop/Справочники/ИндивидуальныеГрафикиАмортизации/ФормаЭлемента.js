@@ -61,16 +61,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Месяц',
 					width:'120',
+					dataIndex:'Месяц',
+					flex:1,
 				},
 				{
 					text:'Коэффициент',
 					width:'120',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндивидуальныеГрафикиАмортизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Месяц',
+					},
+					{
+						name:'Коэффициент',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

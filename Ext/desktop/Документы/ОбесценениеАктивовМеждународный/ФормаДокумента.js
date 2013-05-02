@@ -61,36 +61,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет учета',
 					width:'160',
+					dataIndex:'СчетУчета',
+					flex:1,
 				},
 				{
 					text:'Статья прочих расходов',
 					width:'160',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Счет снижения стоимости',
 					width:'100',
+					dataIndex:'СчетРезерва',
+					flex:1,
 				},
 				{
 					text:'Актив',
 					width:'160',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'160',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'160',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбесценениеАктивовМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СчетУчета',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'СчетРезерва',
+					},
+					{
+						name:'Объект',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

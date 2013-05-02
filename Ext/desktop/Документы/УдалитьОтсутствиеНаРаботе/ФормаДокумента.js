@@ -97,36 +97,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Работник',
 					width:'168',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'87',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Причина отсутствия',
 					width:'80',
+					dataIndex:'ПричинаОтсутствия',
+					flex:1,
 				},
 				{
 					text:'С ...',
 					width:'64',
+					dataIndex:'ДатаС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'64',
+					dataIndex:'ДатаПо',
+					flex:1,
 				},
 				{
 					text:'Напомнить',
 					width:'128',
+					dataIndex:'НапомнитьПоЗавершении',
+					flex:1,
 				},
 				{
 					text:'Освобождать ставку',
 					width:'128',
+					dataIndex:'ОсвобождатьСтавку',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьОтсутствиеНаРаботе/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'ПричинаОтсутствия',
+					},
+					{
+						name:'ДатаС',
+					},
+					{
+						name:'ДатаПо',
+					},
+					{
+						name:'НапомнитьПоЗавершении',
+					},
+					{
+						name:'ОсвобождатьСтавку',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -125,16 +125,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Инв. №',
 					width:'72',
+					dataIndex:'ИнвентарныйНомер',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'188',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСостоянияОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ИнвентарныйНомер',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

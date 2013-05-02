@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'39',
+					dataIndex:'НомерУпаковки',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Коэффициент',
 					width:'79',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Владелец',
 					width:'350',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НомерУпаковки',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

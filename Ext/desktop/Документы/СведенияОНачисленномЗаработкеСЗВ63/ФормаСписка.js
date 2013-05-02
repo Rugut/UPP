@@ -18,44 +18,105 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'121',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Отчетный период',
 					width:'99',
+					dataIndex:'ОтчетныйПериод',
+					flex:1,
 				},
 				{
 					text:'Тип сведений',
 					width:'100',
+					dataIndex:'ТипСведенийСЗВ',
+					flex:1,
 				},
 				{
 					text:'Принято в ПФР',
 					width:'89',
+					dataIndex:'ПринятоВПФР',
+					flex:1,
 				},
 				{
 					text:'Сотрудники',
 					width:'100',
+					dataIndex:'КраткийСоставДокумента',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ОтчетныйПериод',
+					},
+					{
+						name:'ТипСведенийСЗВ',
+					},
+					{
+						name:'ПринятоВПФР',
+					},
+					{
+						name:'КраткийСоставДокумента',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

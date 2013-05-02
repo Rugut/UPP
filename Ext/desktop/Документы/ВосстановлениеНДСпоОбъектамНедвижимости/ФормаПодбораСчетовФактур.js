@@ -35,44 +35,105 @@
 				{
 					text:'',
 					width:'40',
+					dataIndex:'Выбрана',
+					flex:1,
 				},
 				{
 					text:'Счет фактура',
 					width:'100',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'100',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Код операции (для декларации)',
 					width:'100',
+					dataIndex:'КодОперацииДляДекларации',
+					flex:1,
 				},
 				{
 					text:'Поставщик',
 					width:'100',
+					dataIndex:'Поставщик',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'100',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Документ оплаты',
 					width:'100',
+					dataIndex:'ДокументОплаты',
+					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
 					width:'100',
+					dataIndex:'СуммаБезНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'100',
+					dataIndex:'НДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Выбрана',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'КодОперацииДляДекларации',
+					},
+					{
+						name:'Поставщик',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'ДокументОплаты',
+					},
+					{
+						name:'СуммаБезНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'НДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

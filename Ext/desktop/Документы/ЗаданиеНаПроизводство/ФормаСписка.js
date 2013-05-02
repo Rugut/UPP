@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид задания',
 					width:'120',
+					dataIndex:'ВидЗадания',
+					flex:1,
 				},
 				{
 					text:'Дата задания',
 					width:'80',
+					dataIndex:'ДатаЗадания',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Смена',
 					width:'100',
+					dataIndex:'Смена',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаданиеНаПроизводство/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидЗадания',
+					},
+					{
+						name:'ДатаЗадания',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Смена',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

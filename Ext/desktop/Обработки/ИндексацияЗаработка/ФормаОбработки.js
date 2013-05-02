@@ -169,28 +169,69 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата повышения',
 					width:'100',
+					dataIndex:'ДатаПовышения',
+					flex:1,
 				},
 				{
 					text:'Должностные оклады',
 					width:'100',
+					dataIndex:'ДолжностныеОклады',
+					flex:1,
 				},
 				{
 					text:'Штатное расписание',
 					width:'100',
+					dataIndex:'ШтатноеРасписание',
+					flex:1,
 				},
 				{
 					text:'Тарифные разряды',
 					width:'100',
+					dataIndex:'ТарифныеРазряды',
+					flex:1,
 				},
 				{
 					text:'Доп тарифные разряды',
 					width:'100',
+					dataIndex:'ДопТарифныеРазряды',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДатаПовышения',
+					},
+					{
+						name:'ДолжностныеОклады',
+					},
+					{
+						name:'ШтатноеРасписание',
+					},
+					{
+						name:'ТарифныеРазряды',
+					},
+					{
+						name:'ДопТарифныеРазряды',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -256,28 +297,69 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата повышения',
 					width:'100',
+					dataIndex:'ДатаПовышения',
+					flex:1,
 				},
 				{
 					text:'Должностные оклады',
 					width:'100',
+					dataIndex:'ДолжностныеОклады',
+					flex:1,
 				},
 				{
 					text:'Штатное расписание',
 					width:'100',
+					dataIndex:'ШтатноеРасписание',
+					flex:1,
 				},
 				{
 					text:'Тарифные разряды',
 					width:'100',
+					dataIndex:'ТарифныеРазряды',
+					flex:1,
 				},
 				{
 					text:'Доп тарифные разряды',
 					width:'100',
+					dataIndex:'ДопТарифныеРазряды',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДатаПовышения',
+					},
+					{
+						name:'ДолжностныеОклады',
+					},
+					{
+						name:'ШтатноеРасписание',
+					},
+					{
+						name:'ТарифныеРазряды',
+					},
+					{
+						name:'ДопТарифныеРазряды',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -457,36 +539,87 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'180',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Вид расчета',
 					width:'180',
+					dataIndex:'ВидРасчета',
+					flex:1,
 				},
 				{
 					text:'Старый оклад',
 					width:'100',
+					dataIndex:'СтарыйОклад',
+					flex:1,
 				},
 				{
 					text:'Новый оклад',
 					width:'100',
+					dataIndex:'НовыйОклад',
+					flex:1,
 				},
 				{
 					text:'Подразделение организация',
 					width:'100',
+					dataIndex:'ПодразделениеОрганизация',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'100',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Номер показателя оклада',
 					width:'100',
+					dataIndex:'НомерПоказателяОклада',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ВидРасчета',
+					},
+					{
+						name:'СтарыйОклад',
+					},
+					{
+						name:'НовыйОклад',
+					},
+					{
+						name:'ПодразделениеОрганизация',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'НомерПоказателяОклада',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -540,32 +673,78 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Подразделение организация',
 					width:'100',
+					dataIndex:'ПодразделениеОрганизация',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'100',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Месячная ставка1',
 					width:'100',
+					dataIndex:'МесячнаяСтавка1',
+					flex:1,
 				},
 				{
 					text:'Новая месячная ставка1',
 					width:'100',
+					dataIndex:'НоваяМесячнаяСтавка1',
+					flex:1,
 				},
 				{
 					text:'Месячная ставка2',
 					width:'100',
+					dataIndex:'МесячнаяСтавка2',
+					flex:1,
 				},
 				{
 					text:'Новая месячная ставка2',
 					width:'100',
+					dataIndex:'НоваяМесячнаяСтавка2',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПодразделениеОрганизация',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'МесячнаяСтавка1',
+					},
+					{
+						name:'НоваяМесячнаяСтавка1',
+					},
+					{
+						name:'МесячнаяСтавка2',
+					},
+					{
+						name:'НоваяМесячнаяСтавка2',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -615,24 +794,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Тарифный разряд',
 					width:'100',
+					dataIndex:'ТарифныйРазряд',
+					flex:1,
 				},
 				{
 					text:'Старый оклад',
 					width:'100',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Новый оклад',
 					width:'100',
+					dataIndex:'НовыйРазмер',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'100',
+					dataIndex:'Валюта',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТарифныйРазряд',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'НовыйРазмер',
+					},
+					{
+						name:'Валюта',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -679,7 +894,18 @@
 			height: 230,width: 639,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

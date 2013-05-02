@@ -130,16 +130,42 @@
 				{
 					text:'Порядок',
 					width:'49',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'347',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Вид подразделения',
 					width:'105',
+					dataIndex:'ВидПодразделения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПорядкаЗакрытияПодразделений/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'ВидПодразделения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

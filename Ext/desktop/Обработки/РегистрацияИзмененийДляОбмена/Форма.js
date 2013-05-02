@@ -58,20 +58,51 @@
 				{
 					text:'Имя',
 					width:'342',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Авто регистрация',
 					width:'100',
+					dataIndex:'РежимАвтоРегистрации',
+					flex:1,
 				},
 				{
 					text:'Удален',
 					width:'100',
+					dataIndex:'Удален',
+					flex:1,
 				},
 				{
 					text:'Количество зарегистрированных',
 					width:'100',
+					dataIndex:'КоличествоЗарегистрированных',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияИзмененийДляОбмена/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Имя',
+					},
+					{
+						name:'РежимАвтоРегистрации',
+					},
+					{
+						name:'Удален',
+					},
+					{
+						name:'КоличествоЗарегистрированных',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

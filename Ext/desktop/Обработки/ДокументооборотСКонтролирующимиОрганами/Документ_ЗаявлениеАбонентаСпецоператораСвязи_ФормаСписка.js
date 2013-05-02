@@ -31,36 +31,87 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'78',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'89',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'185',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Статус',
 					width:'97',
+					dataIndex:'Статус',
+					flex:1,
 				},
 				{
 					text:'Дата отправки',
 					width:'115',
+					dataIndex:'ДатаОтправкиЗаявления',
+					flex:1,
 				},
 				{
 					text:'Дата получения',
 					width:'100',
+					dataIndex:'ДатаПолученияОтвета',
+					flex:1,
 				},
 				{
 					text:'Дополнительная информация',
 					width:'187',
+					dataIndex:'СтатусКомментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Статус',
+					},
+					{
+						name:'ДатаОтправкиЗаявления',
+					},
+					{
+						name:'ДатаПолученияОтвета',
+					},
+					{
+						name:'СтатусКомментарий',
+					},
+				]
+			},
 		},
 	]
 });

@@ -244,24 +244,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Денежный документ',
 					width:'180',
+					dataIndex:'ДенежныйДокумент',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Стоимость',
 					width:'120',
+					dataIndex:'Стоимость',
+					flex:1,
 				},
 				{
 					text:'Сумма возврата',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыдачаДенежныхДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДенежныйДокумент',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Стоимость',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},

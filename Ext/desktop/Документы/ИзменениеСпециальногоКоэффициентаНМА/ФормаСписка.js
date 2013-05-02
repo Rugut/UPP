@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'20',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'123',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'89',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Проведен',
 					width:'0',
+					dataIndex:'Проведен',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'201',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаНМА/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Проведен',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'33',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'284',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Автоматич.',
 					width:'65',
+					dataIndex:'ЗапускатьАвтоматически',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'237',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиДопроведенияДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ЗапускатьАвтоматически',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -68,28 +68,69 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'25',
+					dataIndex:'Флаг',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'31',
+					dataIndex:'Статус',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'101',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'100',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'100',
+					dataIndex:'Дата',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеДокументовПоНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Флаг',
+					},
+					{
+						name:'Статус',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Дата',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

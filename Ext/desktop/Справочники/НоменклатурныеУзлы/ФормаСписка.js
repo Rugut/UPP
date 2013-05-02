@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'72',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'120',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Дата утверждения',
 					width:'100',
+					dataIndex:'ДатаУтверждения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеУзлы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'ДатаУтверждения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

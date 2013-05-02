@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Важность',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'100',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Физическое лицо',
 					width:'100',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Важность',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Организация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -130,16 +130,42 @@
 				{
 					text:'N',
 					width:'39',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'258',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Доля распределения',
 					width:'72',
+					dataIndex:'ДоляРаспределения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДолейРаспределенияПоПроектам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'ДоляРаспределения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

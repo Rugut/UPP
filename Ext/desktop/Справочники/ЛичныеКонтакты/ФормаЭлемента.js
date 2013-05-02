@@ -94,24 +94,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'100',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'173',
+					dataIndex:'Вид',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'244',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'133',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЛичныеКонтакты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'Вид',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -254,16 +290,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'146',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'246',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЛичныеКонтакты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -287,16 +349,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'360',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЛичныеКонтакты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

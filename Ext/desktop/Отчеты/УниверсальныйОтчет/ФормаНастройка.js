@@ -49,8 +49,24 @@
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'КолонкаПредставление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КолонкаПредставление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -217,12 +233,33 @@
 				{
 					text:'Группировки строк',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'40',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -233,12 +270,33 @@
 				{
 					text:'Группировки колонок',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'40',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -310,12 +368,33 @@
 				{
 					text:'Граница интервала',
 					width:'120',
+					dataIndex:'ВГраница',
+					flex:1,
 				},
 				{
 					text:'Название',
 					width:'120',
+					dataIndex:'Название',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВГраница',
+					},
+					{
+						name:'Название',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -336,28 +415,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -388,16 +508,42 @@
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Размещение',
 					width:'100',
+					dataIndex:'КолонкаРазмещение',
+					flex:1,
 				},
 				{
 					text:'Положение',
 					width:'100',
+					dataIndex:'КолонкаПоложение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'КолонкаРазмещение',
+					},
+					{
+						name:'КолонкаПоложение',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -421,12 +567,33 @@
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Направление сортировки',
 					width:'60',
+					dataIndex:'НаправлениеСортировки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Имя',
+					},
+					{
+						name:'НаправлениеСортировки',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -443,20 +610,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Область',
 					width:'100',
+					dataIndex:'Области',
+					flex:1,
 				},
 				{
 					text:'Отбор',
 					width:'100',
+					dataIndex:'Отбор',
+					flex:1,
 				},
 				{
 					text:'Оформление',
 					width:'100',
+					dataIndex:'Оформление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Области',
+					},
+					{
+						name:'Отбор',
+					},
+					{
+						name:'Оформление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -488,8 +686,24 @@
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'КолонкаПредставление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КолонкаПредставление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -527,28 +741,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -608,12 +863,33 @@
 				{
 					text:'Группировки строк',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'40',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -624,12 +900,33 @@
 				{
 					text:'Группировки колонок',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'40',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -654,8 +951,24 @@
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'КолонкаПредставление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КолонкаПредставление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -693,28 +1006,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -732,12 +1086,33 @@
 				{
 					text:'Группировки строк',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'40',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -586,16 +586,42 @@
 				{
 					text:'Оценочное обязательство, резерв',
 					width:'169',
+					dataIndex:'Резерв',
+					flex:1,
 				},
 				{
 					text:'Размер отчислений, %',
 					width:'120',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Расчетная база',
 					width:'140',
+					dataIndex:'РасчетнаяБаза',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Резерв',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'РасчетнаяБаза',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -710,32 +736,78 @@
 				{
 					text:'Действует с:',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'ПФР (всего)',
 					width:'64',
+					dataIndex:'ПФР',
+					flex:1,
 				},
 				{
 					text:'ПФР (накопительная часть)',
 					width:'115',
+					dataIndex:'ПФРНакопительная',
+					flex:1,
 				},
 				{
 					text:'ФСС',
 					width:'61',
+					dataIndex:'ФСС',
+					flex:1,
 				},
 				{
 					text:'ФФОМС',
 					width:'80',
+					dataIndex:'ФФОМС',
+					flex:1,
 				},
 				{
 					text:'ТФОМС',
 					width:'80',
+					dataIndex:'ТФОМС',
+					flex:1,
 				},
 				{
 					text:'Вид тарифа',
 					width:'100',
+					dataIndex:'ВидТарифа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Период',
+					},
+					{
+						name:'ПФР',
+					},
+					{
+						name:'ПФРНакопительная',
+					},
+					{
+						name:'ФСС',
+					},
+					{
+						name:'ФФОМС',
+					},
+					{
+						name:'ТФОМС',
+					},
+					{
+						name:'ВидТарифа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -784,16 +856,42 @@
 				{
 					text:'Организация (обособленное подразделение)',
 					width:'250',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Действует с:',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Ставка',
 					width:'100',
+					dataIndex:'Ставка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Ставка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1007,16 +1105,42 @@
 				{
 					text:'Вид пособия',
 					width:'250',
+					dataIndex:'ВидПособия',
+					flex:1,
 				},
 				{
 					text:'Размер',
 					width:'90',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Применяется с',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидПособия',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'Период',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -118,28 +118,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Инв. №',
 					width:'80',
+					dataIndex:'ИнвНомер',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'220',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
 				{
 					text:'Параметр выработки',
 					width:'120',
+					dataIndex:'ПараметрВыработкиОС',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'64',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'54',
+					dataIndex:'Единица',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыработкаОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ИнвНомер',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+					{
+						name:'ПараметрВыработкиОС',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

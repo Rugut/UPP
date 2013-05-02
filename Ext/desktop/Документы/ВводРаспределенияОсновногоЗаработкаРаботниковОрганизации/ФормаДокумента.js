@@ -111,48 +111,114 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'68',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Бух. учет',
 					width:'120',
+					dataIndex:'СпособОтраженияВБухучете',
+					flex:1,
 				},
 				{
 					text:'% доли распределения',
 					width:'88',
+					dataIndex:'ДоляСпособаОтражения',
+					flex:1,
 				},
 				{
 					text:'ЕНВД',
 					width:'42',
+					dataIndex:'ПодпадаетПодЕНВД',
+					flex:1,
 				},
 				{
 					text:'Счет ДТ',
 					width:'110',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'Субконто',
 					width:'120',
+					dataIndex:'Субконто1',
+					flex:1,
 				},
 				{
 					text:'Субконто2',
 					width:'100',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'Субконто3',
 					width:'100',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
 				{
 					text:'Способ распределения затрат',
 					width:'100',
+					dataIndex:'СпособРаспределенияЗатрат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'СпособОтраженияВБухучете',
+					},
+					{
+						name:'ДоляСпособаОтражения',
+					},
+					{
+						name:'ПодпадаетПодЕНВД',
+					},
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'Субконто1',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+					{
+						name:'СпособРаспределенияЗатрат',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -239,16 +305,42 @@
 				{
 					text:'Таб. №',
 					width:'48',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'223',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Физлицо',
 					width:'100',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Физлицо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

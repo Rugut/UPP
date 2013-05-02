@@ -66,20 +66,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Работник',
 					width:'100',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'ПодразделениеОрганизации',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'100',
+					dataIndex:'Должность',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводИнформацииОСотрудниках/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ПодразделениеОрганизации',
+					},
+					{
+						name:'Должность',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -108,32 +108,78 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Учитывается',
+					flex:1,
 				},
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет БУ',
 					width:'79',
+					dataIndex:'СчетБУ',
+					flex:1,
 				},
 				{
 					text:'Счет корр БУ',
 					width:'93',
+					dataIndex:'СчетКоррБУ',
+					flex:1,
 				},
 				{
 					text:'Вид затрат НУ',
 					width:'114',
+					dataIndex:'ВидЗатратНУ',
+					flex:1,
 				},
 				{
 					text:'Счет НУ',
 					width:'85',
+					dataIndex:'СчетНУ',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'91',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиНУ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Учитывается',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СчетБУ',
+					},
+					{
+						name:'СчетКоррБУ',
+					},
+					{
+						name:'ВидЗатратНУ',
+					},
+					{
+						name:'СчетНУ',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

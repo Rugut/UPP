@@ -18,8 +18,24 @@
 				{
 					text:'Описание поля',
 					width:'220',
+					dataIndex:'ОписаниеПоля',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ОписаниеПоля',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

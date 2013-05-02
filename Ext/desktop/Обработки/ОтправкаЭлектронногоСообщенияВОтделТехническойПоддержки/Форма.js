@@ -25,12 +25,33 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Путь к файлу',
 					width:'476',
+					dataIndex:'ПутьКФайлу',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПутьКФайлу',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

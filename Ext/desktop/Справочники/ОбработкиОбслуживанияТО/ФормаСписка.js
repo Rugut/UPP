@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Вид торгового оборудования',
 					width:'200',
+					dataIndex:'Вид',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'200',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'150',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Версия API',
 					width:'100',
+					dataIndex:'ВерсияAPI',
+					flex:1,
 				},
 				{
 					text:'Версия',
 					width:'96',
+					dataIndex:'Версия',
+					flex:1,
 				},
 				{
 					text:'Описание обработки обслуживания',
 					width:'400',
+					dataIndex:'Описание',
+					flex:1,
 				},
 				{
 					text:'Идентификатор',
 					width:'250',
+					dataIndex:'Идентификатор',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбработкиОбслуживанияТО/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Вид',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'ВерсияAPI',
+					},
+					{
+						name:'Версия',
+					},
+					{
+						name:'Описание',
+					},
+					{
+						name:'Идентификатор',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

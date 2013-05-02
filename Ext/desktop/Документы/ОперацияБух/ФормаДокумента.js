@@ -172,80 +172,186 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет Дт',
 					width:'80',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'Субконто Дт',
 					width:'100',
+					dataIndex:'СубконтоДт1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоДт2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоДт3',
+					flex:1,
 				},
 				{
 					text:'Количество Дт',
 					width:'80',
+					dataIndex:'КоличествоДт',
+					flex:1,
 				},
 				{
 					text:'Валюта Дт',
 					width:'80',
+					dataIndex:'ВалютаДт',
+					flex:1,
 				},
 				{
 					text:'Вал. сумма Дт',
 					width:'80',
+					dataIndex:'ВалютнаяСуммаДт',
+					flex:1,
 				},
 				{
 					text:'Счет Кт',
 					width:'80',
+					dataIndex:'СчетКт',
+					flex:1,
 				},
 				{
 					text:'Субконто Кт',
 					width:'100',
+					dataIndex:'СубконтоКт1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоКт2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'СубконтоКт3',
+					flex:1,
 				},
 				{
 					text:'Количество Кт',
 					width:'80',
+					dataIndex:'КоличествоКт',
+					flex:1,
 				},
 				{
 					text:'Валюта Кт',
 					width:'80',
+					dataIndex:'ВалютаКт',
+					flex:1,
 				},
 				{
 					text:'Вал. сумма Кт',
 					width:'80',
+					dataIndex:'ВалютнаяСуммаКт',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Содержание',
 					width:'80',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'№ журнала',
 					width:'80',
+					dataIndex:'НомерЖурнала',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'СубконтоДт1',
+					},
+					{
+						name:'СубконтоДт2',
+					},
+					{
+						name:'СубконтоДт3',
+					},
+					{
+						name:'КоличествоДт',
+					},
+					{
+						name:'ВалютаДт',
+					},
+					{
+						name:'ВалютнаяСуммаДт',
+					},
+					{
+						name:'СчетКт',
+					},
+					{
+						name:'СубконтоКт1',
+					},
+					{
+						name:'СубконтоКт2',
+					},
+					{
+						name:'СубконтоКт3',
+					},
+					{
+						name:'КоличествоКт',
+					},
+					{
+						name:'ВалютаКт',
+					},
+					{
+						name:'ВалютнаяСуммаКт',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'НомерЖурнала',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -278,72 +384,168 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет Дт',
 					width:'88',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'Количество Дт',
 					width:'88',
+					dataIndex:'КоличествоДт',
+					flex:1,
 				},
 				{
 					text:'Вид учета Дт',
 					width:'88',
+					dataIndex:'ВидУчетаДт',
+					flex:1,
 				},
 				{
 					text:'Субконто Дт',
 					width:'136',
+					dataIndex:'СубконтоДт1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'136',
+					dataIndex:'СубконтоДт2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'136',
+					dataIndex:'СубконтоДт3',
+					flex:1,
 				},
 				{
 					text:'Счет Кт',
 					width:'95',
+					dataIndex:'СчетКт',
+					flex:1,
 				},
 				{
 					text:'Количество Кт',
 					width:'95',
+					dataIndex:'КоличествоКт',
+					flex:1,
 				},
 				{
 					text:'Вид учета Кт',
 					width:'95',
+					dataIndex:'ВидУчетаКт',
+					flex:1,
 				},
 				{
 					text:'Субконто Кт',
 					width:'142',
+					dataIndex:'СубконтоКт1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'142',
+					dataIndex:'СубконтоКт2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'142',
+					dataIndex:'СубконтоКт3',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'124',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Содержание',
 					width:'124',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'№ журнала',
 					width:'124',
+					dataIndex:'НомерЖурнала',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'КоличествоДт',
+					},
+					{
+						name:'ВидУчетаДт',
+					},
+					{
+						name:'СубконтоДт1',
+					},
+					{
+						name:'СубконтоДт2',
+					},
+					{
+						name:'СубконтоДт3',
+					},
+					{
+						name:'СчетКт',
+					},
+					{
+						name:'КоличествоКт',
+					},
+					{
+						name:'ВидУчетаКт',
+					},
+					{
+						name:'СубконтоКт1',
+					},
+					{
+						name:'СубконтоКт2',
+					},
+					{
+						name:'СубконтоКт3',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'НомерЖурнала',
+					},
+				]
+			},
 		},
 					]
 				},

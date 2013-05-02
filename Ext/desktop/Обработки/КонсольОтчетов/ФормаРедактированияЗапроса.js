@@ -105,16 +105,42 @@
 				{
 					text:'Имя параметра',
 					width:'122',
+					dataIndex:'ИмяПараметра',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'52',
+					dataIndex:'ЭтоВыражение',
+					flex:1,
 				},
 				{
 					text:'Значение параметра',
 					width:'189',
+					dataIndex:'ЗначениеПараметра',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяПараметра',
+					},
+					{
+						name:'ЭтоВыражение',
+					},
+					{
+						name:'ЗначениеПараметра',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -131,16 +157,42 @@
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Формат',
 					width:'100',
+					dataIndex:'Формат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Формат',
+					},
+				]
+			},
 		},
 					]
 				},

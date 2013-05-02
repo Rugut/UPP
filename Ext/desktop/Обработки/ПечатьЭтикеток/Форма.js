@@ -67,52 +67,123 @@
 				{
 					text:'Тип штрихкода',
 					width:'93',
+					dataIndex:'ТипШтрихкода',
+					flex:1,
 				},
 				{
 					text:'Штрихкод',
 					width:'146',
+					dataIndex:'Штрихкод',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'249',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'53',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'151',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:'Серия',
 					width:'131',
+					dataIndex:'Серия',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'133',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'93',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'49',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'61',
+					dataIndex:'ЦеныЕдиница',
+					flex:1,
 				},
 				{
 					text:'ПроцентСкидкиНаценки',
 					width:'100',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьЭтикеток/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ТипШтрихкода',
+					},
+					{
+						name:'Штрихкод',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'Серия',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ЦеныЕдиница',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

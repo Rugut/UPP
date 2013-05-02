@@ -143,12 +143,33 @@
 				{
 					text:'N',
 					width:'38',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Пользователь группы',
 					width:'148',
+					dataIndex:'Пользователь',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Пользователь',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -159,12 +180,33 @@
 				{
 					text:'Вид объекта доступа',
 					width:'164',
+					dataIndex:'ВидОбъектаДоступа',
+					flex:1,
 				},
 				{
 					text:'Чтение',
 					width:'48',
+					dataIndex:'ДоступноОбъектов',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидОбъектаДоступа',
+					},
+					{
+						name:'ДоступноОбъектов',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

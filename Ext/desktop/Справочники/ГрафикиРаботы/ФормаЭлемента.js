@@ -65,416 +65,942 @@
 				{
 					text:'Месяц',
 					width:'94',
+					dataIndex:'Месяц',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'44',
+					dataIndex:'Итого',
+					flex:1,
 				},
 				{
 					text:'дней',
 					width:'44',
+					dataIndex:'ДнейЗаМесяц',
+					flex:1,
 				},
 				{
 					text:'часов',
 					width:'44',
+					dataIndex:'ЧасовЗаМесяц',
+					flex:1,
 				},
 				{
 					text:'Вечерних',
 					width:'44',
+					dataIndex:'ВечернихЧасовЗаМесяц',
+					flex:1,
 				},
 				{
 					text:'Ночных',
 					width:'44',
+					dataIndex:'НочныхЧасовЗаМесяц',
+					flex:1,
 				},
 				{
 					text:'Часов за день',
 					width:'98',
+					dataIndex:'ЧасовЗаДень',
+					flex:1,
 				},
 				{
 					text:'Из них вечерних',
 					width:'98',
+					dataIndex:'ИзНихВечерних',
+					flex:1,
 				},
 				{
 					text:'Из них ночных',
 					width:'98',
+					dataIndex:'ИзНихНочных',
+					flex:1,
 				},
 				{
 					text:'1',
 					width:'30',
+					dataIndex:'День1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ1',
+					flex:1,
 				},
 				{
 					text:'2',
 					width:'30',
+					dataIndex:'День2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ2',
+					flex:1,
 				},
 				{
 					text:'3',
 					width:'30',
+					dataIndex:'День3',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ3',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ3',
+					flex:1,
 				},
 				{
 					text:'4',
 					width:'30',
+					dataIndex:'День4',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ4',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ4',
+					flex:1,
 				},
 				{
 					text:'5',
 					width:'30',
+					dataIndex:'День5',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ5',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ5',
+					flex:1,
 				},
 				{
 					text:'6',
 					width:'30',
+					dataIndex:'День6',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ6',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ6',
+					flex:1,
 				},
 				{
 					text:'7',
 					width:'30',
+					dataIndex:'День7',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ7',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ7',
+					flex:1,
 				},
 				{
 					text:'8',
 					width:'30',
+					dataIndex:'День8',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ8',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ8',
+					flex:1,
 				},
 				{
 					text:'9',
 					width:'30',
+					dataIndex:'День9',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ9',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ9',
+					flex:1,
 				},
 				{
 					text:'10',
 					width:'30',
+					dataIndex:'День10',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ10',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ10',
+					flex:1,
 				},
 				{
 					text:'11',
 					width:'30',
+					dataIndex:'День11',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ11',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ11',
+					flex:1,
 				},
 				{
 					text:'12',
 					width:'30',
+					dataIndex:'День12',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ12',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ12',
+					flex:1,
 				},
 				{
 					text:'13',
 					width:'30',
+					dataIndex:'День13',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ13',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ13',
+					flex:1,
 				},
 				{
 					text:'14',
 					width:'30',
+					dataIndex:'День14',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ14',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ14',
+					flex:1,
 				},
 				{
 					text:'15',
 					width:'30',
+					dataIndex:'День15',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ15',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ15',
+					flex:1,
 				},
 				{
 					text:'16',
 					width:'30',
+					dataIndex:'День16',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ16',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ16',
+					flex:1,
 				},
 				{
 					text:'17',
 					width:'30',
+					dataIndex:'День17',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ17',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ17',
+					flex:1,
 				},
 				{
 					text:'18',
 					width:'30',
+					dataIndex:'День18',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ18',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ18',
+					flex:1,
 				},
 				{
 					text:'19',
 					width:'30',
+					dataIndex:'День19',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ19',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ19',
+					flex:1,
 				},
 				{
 					text:'20',
 					width:'30',
+					dataIndex:'День20',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ20',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ20',
+					flex:1,
 				},
 				{
 					text:'21',
 					width:'30',
+					dataIndex:'День21',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ21',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ21',
+					flex:1,
 				},
 				{
 					text:'22',
 					width:'30',
+					dataIndex:'День22',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ22',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ22',
+					flex:1,
 				},
 				{
 					text:'23',
 					width:'30',
+					dataIndex:'День23',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ23',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ23',
+					flex:1,
 				},
 				{
 					text:'24',
 					width:'30',
+					dataIndex:'День24',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ24',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ24',
+					flex:1,
 				},
 				{
 					text:'25',
 					width:'30',
+					dataIndex:'День25',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ25',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ25',
+					flex:1,
 				},
 				{
 					text:'26',
 					width:'30',
+					dataIndex:'День26',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ26',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ26',
+					flex:1,
 				},
 				{
 					text:'27',
 					width:'30',
+					dataIndex:'День27',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ27',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ27',
+					flex:1,
 				},
 				{
 					text:'28',
 					width:'30',
+					dataIndex:'День28',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ28',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ28',
+					flex:1,
 				},
 				{
 					text:'29',
 					width:'30',
+					dataIndex:'День29',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ29',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ29',
+					flex:1,
 				},
 				{
 					text:'30',
 					width:'30',
+					dataIndex:'День30',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ30',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ30',
+					flex:1,
 				},
 				{
 					text:'31',
 					width:'30',
+					dataIndex:'День31',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'ВЧ31',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НЧ31',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'30',
+					dataIndex:'НомерМесяца',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Месяц',
+					},
+					{
+						name:'Итого',
+					},
+					{
+						name:'ДнейЗаМесяц',
+					},
+					{
+						name:'ЧасовЗаМесяц',
+					},
+					{
+						name:'ВечернихЧасовЗаМесяц',
+					},
+					{
+						name:'НочныхЧасовЗаМесяц',
+					},
+					{
+						name:'ЧасовЗаДень',
+					},
+					{
+						name:'ИзНихВечерних',
+					},
+					{
+						name:'ИзНихНочных',
+					},
+					{
+						name:'День1',
+					},
+					{
+						name:'ВЧ1',
+					},
+					{
+						name:'НЧ1',
+					},
+					{
+						name:'День2',
+					},
+					{
+						name:'ВЧ2',
+					},
+					{
+						name:'НЧ2',
+					},
+					{
+						name:'День3',
+					},
+					{
+						name:'ВЧ3',
+					},
+					{
+						name:'НЧ3',
+					},
+					{
+						name:'День4',
+					},
+					{
+						name:'ВЧ4',
+					},
+					{
+						name:'НЧ4',
+					},
+					{
+						name:'День5',
+					},
+					{
+						name:'ВЧ5',
+					},
+					{
+						name:'НЧ5',
+					},
+					{
+						name:'День6',
+					},
+					{
+						name:'ВЧ6',
+					},
+					{
+						name:'НЧ6',
+					},
+					{
+						name:'День7',
+					},
+					{
+						name:'ВЧ7',
+					},
+					{
+						name:'НЧ7',
+					},
+					{
+						name:'День8',
+					},
+					{
+						name:'ВЧ8',
+					},
+					{
+						name:'НЧ8',
+					},
+					{
+						name:'День9',
+					},
+					{
+						name:'ВЧ9',
+					},
+					{
+						name:'НЧ9',
+					},
+					{
+						name:'День10',
+					},
+					{
+						name:'ВЧ10',
+					},
+					{
+						name:'НЧ10',
+					},
+					{
+						name:'День11',
+					},
+					{
+						name:'ВЧ11',
+					},
+					{
+						name:'НЧ11',
+					},
+					{
+						name:'День12',
+					},
+					{
+						name:'ВЧ12',
+					},
+					{
+						name:'НЧ12',
+					},
+					{
+						name:'День13',
+					},
+					{
+						name:'ВЧ13',
+					},
+					{
+						name:'НЧ13',
+					},
+					{
+						name:'День14',
+					},
+					{
+						name:'ВЧ14',
+					},
+					{
+						name:'НЧ14',
+					},
+					{
+						name:'День15',
+					},
+					{
+						name:'ВЧ15',
+					},
+					{
+						name:'НЧ15',
+					},
+					{
+						name:'День16',
+					},
+					{
+						name:'ВЧ16',
+					},
+					{
+						name:'НЧ16',
+					},
+					{
+						name:'День17',
+					},
+					{
+						name:'ВЧ17',
+					},
+					{
+						name:'НЧ17',
+					},
+					{
+						name:'День18',
+					},
+					{
+						name:'ВЧ18',
+					},
+					{
+						name:'НЧ18',
+					},
+					{
+						name:'День19',
+					},
+					{
+						name:'ВЧ19',
+					},
+					{
+						name:'НЧ19',
+					},
+					{
+						name:'День20',
+					},
+					{
+						name:'ВЧ20',
+					},
+					{
+						name:'НЧ20',
+					},
+					{
+						name:'День21',
+					},
+					{
+						name:'ВЧ21',
+					},
+					{
+						name:'НЧ21',
+					},
+					{
+						name:'День22',
+					},
+					{
+						name:'ВЧ22',
+					},
+					{
+						name:'НЧ22',
+					},
+					{
+						name:'День23',
+					},
+					{
+						name:'ВЧ23',
+					},
+					{
+						name:'НЧ23',
+					},
+					{
+						name:'День24',
+					},
+					{
+						name:'ВЧ24',
+					},
+					{
+						name:'НЧ24',
+					},
+					{
+						name:'День25',
+					},
+					{
+						name:'ВЧ25',
+					},
+					{
+						name:'НЧ25',
+					},
+					{
+						name:'День26',
+					},
+					{
+						name:'ВЧ26',
+					},
+					{
+						name:'НЧ26',
+					},
+					{
+						name:'День27',
+					},
+					{
+						name:'ВЧ27',
+					},
+					{
+						name:'НЧ27',
+					},
+					{
+						name:'День28',
+					},
+					{
+						name:'ВЧ28',
+					},
+					{
+						name:'НЧ28',
+					},
+					{
+						name:'День29',
+					},
+					{
+						name:'ВЧ29',
+					},
+					{
+						name:'НЧ29',
+					},
+					{
+						name:'День30',
+					},
+					{
+						name:'ВЧ30',
+					},
+					{
+						name:'НЧ30',
+					},
+					{
+						name:'День31',
+					},
+					{
+						name:'ВЧ31',
+					},
+					{
+						name:'НЧ31',
+					},
+					{
+						name:'НомерМесяца',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

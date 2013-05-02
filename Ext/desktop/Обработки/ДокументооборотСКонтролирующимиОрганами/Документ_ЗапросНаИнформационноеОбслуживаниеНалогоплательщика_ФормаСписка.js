@@ -18,36 +18,87 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'90',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'124',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Начало периода',
 					width:'96',
+					dataIndex:'ДатаНачалаПериода',
+					flex:1,
 				},
 				{
 					text:'Конец периода',
 					width:'96',
+					dataIndex:'ДатаОкончанияПериода',
+					flex:1,
 				},
 				{
 					text:'Вид услуги',
 					width:'104',
+					dataIndex:'ВидУслуги',
+					flex:1,
 				},
 				{
 					text:'Формат ответа',
 					width:'100',
+					dataIndex:'ФорматОтвета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ДатаНачалаПериода',
+					},
+					{
+						name:'ДатаОкончанияПериода',
+					},
+					{
+						name:'ВидУслуги',
+					},
+					{
+						name:'ФорматОтвета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

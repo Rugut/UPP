@@ -56,16 +56,42 @@
 				{
 					text:'Имя параметра',
 					width:'150',
+					dataIndex:'ИмяПараметра',
+					flex:1,
 				},
 				{
 					text:'В',
 					width:'21',
+					dataIndex:'ЭтоВыражение',
+					flex:1,
 				},
 				{
 					text:'Значение параметра',
 					width:'192',
+					dataIndex:'ЗначениеПараметра',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияИзмененийДляОбмена/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяПараметра',
+					},
+					{
+						name:'ЭтоВыражение',
+					},
+					{
+						name:'ЗначениеПараметра',
+					},
+				]
+			},
 		},
 	]
 });

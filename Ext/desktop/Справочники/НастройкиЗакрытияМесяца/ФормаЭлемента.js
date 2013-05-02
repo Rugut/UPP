@@ -141,28 +141,69 @@
 				{
 					text:'N',
 					width:'27',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Регламентная операция',
 					width:'173',
+					dataIndex:'РегламентнаяОперация',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'УУ',
 					width:'37',
+					dataIndex:'ОтражатьВУправленческомУчете',
+					flex:1,
 				},
 				{
 					text:'БУ',
 					width:'31',
+					dataIndex:'ОтражатьВБухгалтерскомУчете',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'31',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'РегламентнаяОперация',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'ОтражатьВУправленческомУчете',
+					},
+					{
+						name:'ОтражатьВБухгалтерскомУчете',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -245,12 +286,33 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Пользователь',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -267,8 +329,24 @@
 				{
 					text:'Группа пользователей',
 					width:'206',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -319,12 +397,33 @@
 				{
 					text:'Регламентная операция',
 					width:'173',
+					dataIndex:'РегламентнаяОперация',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'РегламентнаяОперация',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -341,32 +440,78 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Характер затрат',
 					width:'125',
+					dataIndex:'ХарактерЗатрат',
+					flex:1,
 				},
 				{
 					text:'Вид подразделения',
 					width:'139',
+					dataIndex:'ВидПодразделения',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'140',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Статья затрат',
 					width:'126',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'100',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
 				{
 					text:'Способ распределения',
 					width:'136',
+					dataIndex:'СпособРаспределения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ХарактерЗатрат',
+					},
+					{
+						name:'ВидПодразделения',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+					{
+						name:'СпособРаспределения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

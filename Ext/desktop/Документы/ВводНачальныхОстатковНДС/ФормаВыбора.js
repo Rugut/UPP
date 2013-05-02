@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'26',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'20',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
 				{
 					text:'Расчеты',
 					width:'60',
+					dataIndex:'ОтразитьРасчетыСКонтрагентами',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'200',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+					{
+						name:'ОтразитьРасчетыСКонтрагентами',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

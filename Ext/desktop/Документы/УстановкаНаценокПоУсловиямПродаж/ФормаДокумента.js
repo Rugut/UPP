@@ -74,20 +74,51 @@
 				{
 					text:'№',
 					width:'20',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная или ценовая группа',
 					width:'209',
+					dataIndex:'НоменклатурнаяЦеноваяГруппа',
+					flex:1,
 				},
 				{
 					text:'Условие продаж',
 					width:'247',
+					dataIndex:'УсловиеПродаж',
+					flex:1,
 				},
 				{
 					text:'% наценки',
 					width:'100',
+					dataIndex:'ПроцентНаценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаНаценокПоУсловиямПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НоменклатурнаяЦеноваяГруппа',
+					},
+					{
+						name:'УсловиеПродаж',
+					},
+					{
+						name:'ПроцентНаценки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

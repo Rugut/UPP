@@ -41,28 +41,69 @@
 				{
 					text:'Имя объекта',
 					width:'135',
+					dataIndex:'ИмяОбъекта',
+					flex:1,
 				},
 				{
 					text:'Области поиска',
 					width:'183',
+					dataIndex:'ОписаниеТаблицыПоиска',
+					flex:1,
 				},
 				{
 					text:'Поля поиска',
 					width:'215',
+					dataIndex:'ПоляПоиска',
+					flex:1,
 				},
 				{
 					text:'Дополнительные ограничения',
 					width:'201',
+					dataIndex:'ДополнительныеОграничения',
+					flex:1,
 				},
 				{
 					text:'Таблица поиска',
 					width:'40',
+					dataIndex:'ТаблицаПоиска',
+					flex:1,
 				},
 				{
 					text:'Поле связки',
 					width:'115',
+					dataIndex:'ПолеСвязки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяОбъекта',
+					},
+					{
+						name:'ОписаниеТаблицыПоиска',
+					},
+					{
+						name:'ПоляПоиска',
+					},
+					{
+						name:'ДополнительныеОграничения',
+					},
+					{
+						name:'ТаблицаПоиска',
+					},
+					{
+						name:'ПолеСвязки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -114,7 +155,18 @@
 			height: 152,width: 627,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

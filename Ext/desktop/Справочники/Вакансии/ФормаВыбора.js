@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'120',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'120',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Закрыть до',
 					width:'80',
+					dataIndex:'ПлановаяДатаЗакрытия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Вакансии/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'ПлановаяДатаЗакрытия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',

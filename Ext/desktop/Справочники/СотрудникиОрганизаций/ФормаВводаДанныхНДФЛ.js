@@ -59,24 +59,60 @@
 				{
 					text:'Дата',
 					width:'91',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'99',
+					dataIndex:'ВычетыЛичныеТекст',
+					flex:1,
 				},
 				{
 					text:'Применение',
 					width:'77',
+					dataIndex:'ВычетыЛичныеПрименение',
+					flex:1,
 				},
 				{
 					text:'Вычет личный',
 					width:'48',
+					dataIndex:'КодВычетаЛичный',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'100',
+					dataIndex:'Основание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Период',
+					},
+					{
+						name:'ВычетыЛичныеТекст',
+					},
+					{
+						name:'ВычетыЛичныеПрименение',
+					},
+					{
+						name:'КодВычетаЛичный',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -87,36 +123,87 @@
 				{
 					text:'Период (с ... по)',
 					width:'160',
+					dataIndex:'КолонкаПериод',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'84',
+					dataIndex:'ПериодЗавершения',
+					flex:1,
 				},
 				{
 					text:'Код и количество детей',
 					width:'83',
+					dataIndex:'ВычетыНаДетейТекст',
+					flex:1,
 				},
 				{
 					text:'Применение',
 					width:'90',
+					dataIndex:'ВычетыНаДетейПрименение',
+					flex:1,
 				},
 				{
 					text:'Вычет на детей',
 					width:'56',
+					dataIndex:'КодВычетаНаДетей',
+					flex:1,
 				},
 				{
 					text:'Количество детей',
 					width:'45',
+					dataIndex:'КоличествоДетей',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'100',
+					dataIndex:'Основание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КолонкаПериод',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ПериодЗавершения',
+					},
+					{
+						name:'ВычетыНаДетейТекст',
+					},
+					{
+						name:'ВычетыНаДетейПрименение',
+					},
+					{
+						name:'КодВычетаНаДетей',
+					},
+					{
+						name:'КоличествоДетей',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -246,12 +333,33 @@
 				{
 					text:'Месяц',
 					width:'148',
+					dataIndex:'МесяцНалоговогоПериода',
+					flex:1,
 				},
 				{
 					text:'Сумма дохода',
 					width:'119',
+					dataIndex:'Размер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'МесяцНалоговогоПериода',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

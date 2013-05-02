@@ -45,12 +45,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'339',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -160,12 +181,33 @@
 				{
 					text:'Поле',
 					width:'266',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'170',
+					dataIndex:'Тип',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Поле',
+					},
+					{
+						name:'Тип',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -183,12 +225,33 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Группировка',
 					width:'100',
+					dataIndex:'Группировка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Группировка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -218,28 +281,69 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'157',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'112',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'81',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'81',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'81',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -293,12 +397,33 @@
 				{
 					text:'Поле',
 					width:'290',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Направление сортировки',
 					width:'138',
+					dataIndex:'НаправлениеСортировки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Имя',
+					},
+					{
+						name:'НаправлениеСортировки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -85,16 +85,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'220',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Вести сложный учет НДС',
 					width:'140',
+					dataIndex:'ВестиСложныйУчетНДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыборНоменклатурыДляНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ВестиСложныйУчетНДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

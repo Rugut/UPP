@@ -175,52 +175,123 @@
 				{
 					text:'Картинка',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Признак автоматического расчета',
 					width:'21',
+					dataIndex:'Авторасчет',
+					flex:1,
 				},
 				{
 					text:'№',
 					width:'42',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'80',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'220',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Размер',
 					width:'80',
+					dataIndex:'Показатель1',
+					flex:1,
 				},
 				{
 					text:'Размер 2',
 					width:'80',
+					dataIndex:'Показатель2',
+					flex:1,
 				},
 				{
 					text:'Размер 3',
 					width:'80',
+					dataIndex:'Показатель3',
+					flex:1,
 				},
 				{
 					text:'Размер 4',
 					width:'80',
+					dataIndex:'Показатель4',
+					flex:1,
 				},
 				{
 					text:'Размер 5',
 					width:'80',
+					dataIndex:'Показатель5',
+					flex:1,
 				},
 				{
 					text:'Размер 6',
 					width:'80',
+					dataIndex:'Показатель6',
+					flex:1,
 				},
 				{
 					text:'Результат',
 					width:'110',
+					dataIndex:'Результат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПремииРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Авторасчет',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Показатель1',
+					},
+					{
+						name:'Показатель2',
+					},
+					{
+						name:'Показатель3',
+					},
+					{
+						name:'Показатель4',
+					},
+					{
+						name:'Показатель5',
+					},
+					{
+						name:'Показатель6',
+					},
+					{
+						name:'Результат',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Вид счета-фактуры',
 					width:'120',
+					dataIndex:'ВидСчетаФактуры',
+					flex:1,
 				},
 				{
 					text:'Документ - основание',
 					width:'120',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
 				{
 					text:'Номер вход. документа',
 					width:'120',
+					dataIndex:'НомерВходящегоДокумента',
+					flex:1,
 				},
 				{
 					text:'Дата вход. документа',
 					width:'100',
+					dataIndex:'ДатаВходящегоДокумента',
+					flex:1,
 				},
 				{
 					text:'Исправление',
 					width:'80',
+					dataIndex:'Исправление',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураПолученный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ВидСчетаФактуры',
+					},
+					{
+						name:'ДокументОснование',
+					},
+					{
+						name:'НомерВходящегоДокумента',
+					},
+					{
+						name:'ДатаВходящегоДокумента',
+					},
+					{
+						name:'Исправление',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

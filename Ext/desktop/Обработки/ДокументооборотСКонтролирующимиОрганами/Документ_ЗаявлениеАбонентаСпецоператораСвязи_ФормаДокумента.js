@@ -233,20 +233,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Тип органа',
 					width:'102',
+					dataIndex:'ТипПолучателя',
+					flex:1,
 				},
 				{
 					text:'Код органа',
 					width:'98',
+					dataIndex:'КодПолучателя',
+					flex:1,
 				},
 				{
 					text:'КПП (только для ФНС)',
 					width:'144',
+					dataIndex:'КПП',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТипПолучателя',
+					},
+					{
+						name:'КодПолучателя',
+					},
+					{
+						name:'КПП',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

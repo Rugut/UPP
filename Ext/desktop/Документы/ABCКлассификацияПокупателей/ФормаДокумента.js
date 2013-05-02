@@ -132,32 +132,78 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'ABC -класс',
 					width:'80',
+					dataIndex:'ABCКлассификация',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'220',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Параметр (значение)',
 					width:'120',
+					dataIndex:'ЗначениеПараметра',
+					flex:1,
 				},
 				{
 					text:'Параметр (%)',
 					width:'80',
+					dataIndex:'ПроцентПараметра',
+					flex:1,
 				},
 				{
 					text:'Менеджер контрагента',
 					width:'120',
+					dataIndex:'МенеджерКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Старый ABC-класс',
 					width:'100',
+					dataIndex:'ABCКлассификацияСтарая',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCКлассификацияПокупателей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ABCКлассификация',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ЗначениеПараметра',
+					},
+					{
+						name:'ПроцентПараметра',
+					},
+					{
+						name:'МенеджерКонтрагента',
+					},
+					{
+						name:'ABCКлассификацияСтарая',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',

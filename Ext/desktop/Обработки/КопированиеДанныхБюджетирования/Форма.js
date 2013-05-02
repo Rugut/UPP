@@ -328,28 +328,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -409,24 +450,60 @@
 				{
 					text:'N',
 					width:'37',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'216',
+					dataIndex:'ДокументОперация',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'183',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'94',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'168',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДокументОперация',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -467,20 +544,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'266',
+					dataIndex:'ДокументРасчет',
+					flex:1,
 				},
 				{
 					text:'Дата расчета',
 					width:'115',
+					dataIndex:'ДатаРасчета',
+					flex:1,
 				},
 				{
 					text:'Источник данных',
 					width:'291',
+					dataIndex:'ИсточникДанных',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДокументРасчет',
+					},
+					{
+						name:'ДатаРасчета',
+					},
+					{
+						name:'ИсточникДанных',
+					},
+				]
+			},
 		},
 					]
 				},

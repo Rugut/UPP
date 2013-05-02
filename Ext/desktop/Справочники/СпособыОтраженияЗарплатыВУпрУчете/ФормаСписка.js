@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Статья затрат',
 					width:'120',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'140',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
 				{
 					text:'Объект строительства',
 					width:'100',
+					dataIndex:'ОбъектСтроительства',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыОтраженияЗарплатыВУпрУчете/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+					{
+						name:'ОбъектСтроительства',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

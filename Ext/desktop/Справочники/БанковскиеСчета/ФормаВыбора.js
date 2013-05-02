@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид счета',
 					width:'120',
+					dataIndex:'ВидСчета',
+					flex:1,
 				},
 				{
 					text:'Номер счета',
 					width:'160',
+					dataIndex:'НомерСчета',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'64',
+					dataIndex:'ВалютаДенежныхСредств',
+					flex:1,
 				},
 				{
 					text:'Банк',
 					width:'220',
+					dataIndex:'Банк',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/БанковскиеСчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидСчета',
+					},
+					{
+						name:'НомерСчета',
+					},
+					{
+						name:'ВалютаДенежныхСредств',
+					},
+					{
+						name:'Банк',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

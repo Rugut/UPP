@@ -286,24 +286,60 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ВидДокумента',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ЕстьВложения',
+					flex:1,
 				},
 				{
 					text:'Дата контакта',
 					width:'132',
+					dataIndex:'ДатаКонтакта',
+					flex:1,
 				},
 				{
 					text:'Тема',
 					width:'166',
+					dataIndex:'Тема',
+					flex:1,
 				},
 				{
 					text:'Отправитель',
 					width:'100',
+					dataIndex:'ОтправительИмя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидДокумента',
+					},
+					{
+						name:'ЕстьВложения',
+					},
+					{
+						name:'ДатаКонтакта',
+					},
+					{
+						name:'Тема',
+					},
+					{
+						name:'ОтправительИмя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -344,16 +380,42 @@
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Что сделано',
 					width:'115',
+					dataIndex:'Описание',
+					flex:1,
 				},
 				{
 					text:'Результат',
 					width:'100',
+					dataIndex:'Состояние',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Период',
+					},
+					{
+						name:'Описание',
+					},
+					{
+						name:'Состояние',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

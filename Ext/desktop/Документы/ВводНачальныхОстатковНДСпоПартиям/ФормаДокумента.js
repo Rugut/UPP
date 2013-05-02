@@ -66,40 +66,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'100',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Счет учета',
 					width:'80',
+					dataIndex:'СчетУчета',
+					flex:1,
 				},
 				{
 					text:'Партия',
 					width:'120',
+					dataIndex:'Партия',
+					flex:1,
 				},
 				{
 					text:'Склад',
 					width:'120',
+					dataIndex:'Склад',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'120',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Заказ покупателя',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДСпоПартиям/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'СчетУчета',
+					},
+					{
+						name:'Партия',
+					},
+					{
+						name:'Склад',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Заказ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -171,40 +227,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'120',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Счет учета НДС',
 					width:'80',
+					dataIndex:'СчетУчетаНДС',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'120',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Стоимость с НДС',
 					width:'120',
+					dataIndex:'Стоимость',
+					flex:1,
 				},
 				{
 					text:'НДС',
 					width:'120',
+					dataIndex:'НДС',
+					flex:1,
 				},
 				{
 					text:'НДС включен в стоимость',
 					width:'60',
+					dataIndex:'НДСВключенВСтоимость',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДСпоПартиям/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СчетФактура',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'СчетУчетаНДС',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Стоимость',
+					},
+					{
+						name:'НДС',
+					},
+					{
+						name:'НДСВключенВСтоимость',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

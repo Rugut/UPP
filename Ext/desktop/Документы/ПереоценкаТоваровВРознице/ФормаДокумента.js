@@ -61,44 +61,105 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'250',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'250',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'65',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'52',
+					dataIndex:'ЕдиницаХранения',
+					flex:1,
 				},
 				{
 					text:'Старая розн. цена',
 					width:'100',
+					dataIndex:'ЦенаВРозницеСтарая',
+					flex:1,
 				},
 				{
 					text:'Розн. цена (руб.)',
 					width:'90',
+					dataIndex:'ЦенаВРознице',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереоценкаТоваровВРознице/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаХранения',
+					},
+					{
+						name:'ЦенаВРозницеСтарая',
+					},
+					{
+						name:'ЦенаВРознице',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

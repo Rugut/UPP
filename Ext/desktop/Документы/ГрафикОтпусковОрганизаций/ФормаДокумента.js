@@ -103,28 +103,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'68',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Начало',
 					width:'80',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Окончание',
 					width:'80',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Примечание',
 					width:'200',
+					dataIndex:'Примечание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикОтпусковОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'Примечание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

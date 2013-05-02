@@ -110,16 +110,42 @@
 				{
 					text:'№',
 					width:'20',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная или ценовая группа',
 					width:'209',
+					dataIndex:'НоменклатурнаяЦеноваяГруппа',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'247',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НоменклатурнаяЦеноваяГруппа',
+					},
+					{
+						name:'ТипЦен',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

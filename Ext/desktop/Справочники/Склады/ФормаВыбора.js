@@ -18,36 +18,87 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид склада',
 					width:'80',
+					dataIndex:'ВидСклада',
+					flex:1,
 				},
 				{
 					text:'№ секции',
 					width:'54',
+					dataIndex:'НомерСекции',
+					flex:1,
 				},
 				{
 					text:'Тип цен розничной торговли',
 					width:'120',
+					dataIndex:'ТипЦенРозничнойТорговли',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'120',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'160',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидСклада',
+					},
+					{
+						name:'НомерСекции',
+					},
+					{
+						name:'ТипЦенРозничнойТорговли',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -58,8 +109,24 @@
 				{
 					text:'Наименование',
 					width:'160',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

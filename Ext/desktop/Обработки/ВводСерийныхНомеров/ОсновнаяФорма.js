@@ -113,16 +113,42 @@
 				{
 					text:'N',
 					width:'51',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Серийный номер',
 					width:'358',
+					dataIndex:'СерийныйНомер',
+					flex:1,
 				},
 				{
 					text:'Ключ связи',
 					width:'100',
+					dataIndex:'КлючСвязи',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СерийныйНомер',
+					},
+					{
+						name:'КлючСвязи',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -141,28 +167,69 @@
 				{
 					text:'N',
 					width:'50',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Источник',
 					width:'82',
+					dataIndex:'Источник',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'78',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'Тип разряда',
 					width:'68',
+					dataIndex:'ТипРазряда',
+					flex:1,
 				},
 				{
 					text:'Размер разряда',
 					width:'50',
+					dataIndex:'РазмерРазряда',
+					flex:1,
 				},
 				{
 					text:'Начальное значение разряда',
 					width:'95',
+					dataIndex:'НачальноеЗначениеРазряда',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Источник',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ТипРазряда',
+					},
+					{
+						name:'РазмерРазряда',
+					},
+					{
+						name:'НачальноеЗначениеРазряда',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -242,16 +309,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Серийный номер',
 					width:'184',
+					dataIndex:'СерийныйНомер',
+					flex:1,
 				},
 				{
 					text:'Ключ связи',
 					width:'81',
+					dataIndex:'КлючСвязи',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СерийныйНомер',
+					},
+					{
+						name:'КлючСвязи',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

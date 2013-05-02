@@ -135,12 +135,33 @@
 				{
 					text:'Вид ежегодного отпуска',
 					width:'180',
+					dataIndex:'ВидЕжегодногоОтпуска',
+					flex:1,
 				},
 				{
 					text:'Количество дней',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидЕжегодногоОтпуска',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -167,24 +188,60 @@
 				{
 					text:'Вид ежегодного отпуска',
 					width:'100',
+					dataIndex:'ВидЕжегодногоОтпуска',
+					flex:1,
 				},
 				{
 					text:'Год работы',
 					width:'100',
+					dataIndex:'ГодРаботы',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'80',
+					dataIndex:'ДатаНачалаРабочегоГода',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'80',
+					dataIndex:'ДатаОкончанияРабочегоГода',
+					flex:1,
 				},
 				{
 					text:'Количество дней',
 					width:'70',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидЕжегодногоОтпуска',
+					},
+					{
+						name:'ГодРаботы',
+					},
+					{
+						name:'ДатаНачалаРабочегоГода',
+					},
+					{
+						name:'ДатаОкончанияРабочегоГода',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

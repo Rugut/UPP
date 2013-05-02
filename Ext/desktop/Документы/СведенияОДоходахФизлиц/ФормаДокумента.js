@@ -117,32 +117,78 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Физическое лицо',
 					width:'220',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'№ справки',
 					width:'60',
+					dataIndex:'НомерСправки',
+					flex:1,
 				},
 				{
 					text:'Ставка',
 					width:'40',
+					dataIndex:'Ставка',
+					flex:1,
 				},
 				{
 					text:'Код по ОКАТО',
 					width:'80',
+					dataIndex:'КодПоОКАТО',
+					flex:1,
 				},
 				{
 					text:'КПП',
 					width:'80',
+					dataIndex:'КПП',
+					flex:1,
 				},
 				{
 					text:'Передано на взыскание',
 					width:'80',
+					dataIndex:'ПереданоНаВзыскание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОДоходахФизлиц/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'НомерСправки',
+					},
+					{
+						name:'Ставка',
+					},
+					{
+						name:'КодПоОКАТО',
+					},
+					{
+						name:'КПП',
+					},
+					{
+						name:'ПереданоНаВзыскание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

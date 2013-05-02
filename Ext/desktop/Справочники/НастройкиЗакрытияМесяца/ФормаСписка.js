@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'284',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Дата начала действия настройки',
 					width:'204',
+					dataIndex:'ДатаНачалаДействияНастройки',
+					flex:1,
 				},
 				{
 					text:'УУ',
 					width:'49',
+					dataIndex:'ОтражатьВУправленческомУчете',
+					flex:1,
 				},
 				{
 					text:'БУ',
 					width:'36',
+					dataIndex:'ОтражатьВБухгалтерскомУчете',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'31',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ДатаНачалаДействияНастройки',
+					},
+					{
+						name:'ОтражатьВУправленческомУчете',
+					},
+					{
+						name:'ОтражатьВБухгалтерскомУчете',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -50,8 +91,24 @@
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

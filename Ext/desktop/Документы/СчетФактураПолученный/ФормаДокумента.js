@@ -253,20 +253,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сумма с НДС',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'80',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'120',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураПолученный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -297,12 +328,33 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Документ - основание для выписки счета-фактуры',
 					width:'313',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураПолученный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДокументОснование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'checkbox',

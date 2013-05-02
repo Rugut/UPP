@@ -849,16 +849,42 @@
 				{
 					text:'Область полномочий',
 					width:'260',
+					dataIndex:'ОбластьПолномочий',
+					flex:1,
 				},
 				{
 					text:'ОКАТО',
 					width:'100',
+					dataIndex:'ОКАТО',
+					flex:1,
 				},
 				{
 					text:'КПП',
 					width:'100',
+					dataIndex:'КПП',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоверенностиНалогоплательщика/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ОбластьПолномочий',
+					},
+					{
+						name:'ОКАТО',
+					},
+					{
+						name:'КПП',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

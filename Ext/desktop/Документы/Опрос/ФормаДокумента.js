@@ -174,20 +174,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Раздел',
 					width:'80',
+					dataIndex:'Раздел',
+					flex:1,
 				},
 				{
 					text:'Вопрос',
 					width:'160',
+					dataIndex:'Вопрос',
+					flex:1,
 				},
 				{
 					text:'Ответ',
 					width:'120',
+					dataIndex:'ТиповойОтвет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Раздел',
+					},
+					{
+						name:'Вопрос',
+					},
+					{
+						name:'ТиповойОтвет',
+					},
+				]
+			},
 		},
 					]
 				},

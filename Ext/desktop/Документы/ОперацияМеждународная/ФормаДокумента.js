@@ -158,76 +158,177 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Счет Дт',
 					width:'56',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'СубконтоДт1',
 					width:'95',
+					dataIndex:'СубконтоДт1',
+					flex:1,
 				},
 				{
 					text:'СубконтоДт2',
 					width:'95',
+					dataIndex:'СубконтоДт2',
+					flex:1,
 				},
 				{
 					text:'СубконтоДт3',
 					width:'95',
+					dataIndex:'СубконтоДт3',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'41',
+					dataIndex:'ВалютаДт',
+					flex:1,
 				},
 				{
 					text:'Вал. сумма',
 					width:'93',
+					dataIndex:'ВалютнаяСуммаДт',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'98',
+					dataIndex:'КоличествоДт',
+					flex:1,
 				},
 				{
 					text:'Счет Кт',
 					width:'78',
+					dataIndex:'СчетКт',
+					flex:1,
 				},
 				{
 					text:'СубконтоКт1',
 					width:'98',
+					dataIndex:'СубконтоКт1',
+					flex:1,
 				},
 				{
 					text:'СубконтоКт2',
 					width:'98',
+					dataIndex:'СубконтоКт2',
+					flex:1,
 				},
 				{
 					text:'СубконтоКт3',
 					width:'98',
+					dataIndex:'СубконтоКт3',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'45',
+					dataIndex:'ВалютаКт',
+					flex:1,
 				},
 				{
 					text:'Вал. сумма',
 					width:'81',
+					dataIndex:'ВалютнаяСуммаКт',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'85',
+					dataIndex:'КоличествоКт',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'63',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Содержание',
 					width:'163',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'№ж',
 					width:'24',
+					dataIndex:'НомерЖурнала',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияМеждународная/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'СубконтоДт1',
+					},
+					{
+						name:'СубконтоДт2',
+					},
+					{
+						name:'СубконтоДт3',
+					},
+					{
+						name:'ВалютаДт',
+					},
+					{
+						name:'ВалютнаяСуммаДт',
+					},
+					{
+						name:'КоличествоДт',
+					},
+					{
+						name:'СчетКт',
+					},
+					{
+						name:'СубконтоКт1',
+					},
+					{
+						name:'СубконтоКт2',
+					},
+					{
+						name:'СубконтоКт3',
+					},
+					{
+						name:'ВалютаКт',
+					},
+					{
+						name:'ВалютнаяСуммаКт',
+					},
+					{
+						name:'КоличествоКт',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'НомерЖурнала',
+					},
+				]
+			},
 		},
 	]
 });

@@ -367,28 +367,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'120',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'80',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'240',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -456,36 +497,87 @@
 				{
 					text:'N',
 					width:'39',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Периодичность',
 					width:'100',
+					dataIndex:'Периодичность',
+					flex:1,
 				},
 				{
 					text:'Лимит отпуска',
 					width:'100',
+					dataIndex:'ЛимитОтпуска',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Контролировать лимит',
 					width:'68',
+					dataIndex:'КонтролироватьЛимит',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Периодичность',
+					},
+					{
+						name:'ЛимитОтпуска',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'КонтролироватьЛимит',
+					},
+				]
+			},
 		},
 					]
 				},

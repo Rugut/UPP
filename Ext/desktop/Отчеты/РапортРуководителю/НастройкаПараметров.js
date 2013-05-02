@@ -34,12 +34,33 @@
 				{
 					text:'Параметр',
 					width:'120',
+					dataIndex:'ПредставлениеПараметра',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'220',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РапортРуководителю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеПараметра',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 	]
 });

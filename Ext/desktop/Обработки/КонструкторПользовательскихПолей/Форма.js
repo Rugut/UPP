@@ -31,8 +31,24 @@
 				{
 					text:'Пользовательские поля',
 					width:'100',
+					dataIndex:'Заголовок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторПользовательскихПолей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Заголовок',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

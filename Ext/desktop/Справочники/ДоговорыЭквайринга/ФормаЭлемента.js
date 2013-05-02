@@ -73,16 +73,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид оплаты',
 					width:'275',
+					dataIndex:'ВидОплаты',
+					flex:1,
 				},
 				{
 					text:'% торговой уступки',
 					width:'105',
+					dataIndex:'ПроцентТорговойУступки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыЭквайринга/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидОплаты',
+					},
+					{
+						name:'ПроцентТорговойУступки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

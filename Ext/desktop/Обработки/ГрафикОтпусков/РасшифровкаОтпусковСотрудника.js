@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Текст',
 					width:'179',
+					dataIndex:'Текст',
+					flex:1,
 				},
 				{
 					text:'Описание',
 					width:'150',
+					dataIndex:'Описание',
+					flex:1,
 				},
 				{
 					text:'Строка оформления',
 					width:'100',
+					dataIndex:'СтрокаОформления',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'100',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'100',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'100',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикОтпусков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Текст',
+					},
+					{
+						name:'Описание',
+					},
+					{
+						name:'СтрокаОформления',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

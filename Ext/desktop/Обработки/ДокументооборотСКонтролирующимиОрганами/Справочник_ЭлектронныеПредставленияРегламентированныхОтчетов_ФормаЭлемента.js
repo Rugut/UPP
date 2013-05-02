@@ -280,20 +280,51 @@
 				{
 					text:'N',
 					width:'44',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'444',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'90',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'86',
+					dataIndex:'Данные',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номер',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'Данные',
+					},
+				]
+			},
 		},
 					]
 				},

@@ -85,20 +85,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Ведомость',
 					width:'290',
+					dataIndex:'Ведомость',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'122',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Статья движения денежных средств',
 					width:'202',
+					dataIndex:'СтатьяДвиженияДенежныхСредств',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДенежныйЧек/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Ведомость',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтатьяДвиженияДенежныхСредств',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

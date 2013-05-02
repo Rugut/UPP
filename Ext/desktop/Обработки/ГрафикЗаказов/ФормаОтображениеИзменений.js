@@ -37,40 +37,96 @@
 				{
 					text:'Изменять',
 					width:'59',
+					dataIndex:'Изменять',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'21',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'368',
+					dataIndex:'ПредставлениеЗаказа',
+					flex:1,
 				},
 				{
 					text:'Дата запуска',
 					width:'65',
+					dataIndex:'ДатыЗапуска',
+					flex:1,
 				},
 				{
 					text:'Исходная',
 					width:'80',
+					dataIndex:'ДатаЗапускаИсходная',
+					flex:1,
 				},
 				{
 					text:'Новая',
 					width:'65',
+					dataIndex:'ДатаЗапуска',
+					flex:1,
 				},
 				{
 					text:'Дата исполнения',
 					width:'84',
+					dataIndex:'ДатыИсполнения',
+					flex:1,
 				},
 				{
 					text:'Исходная',
 					width:'73',
+					dataIndex:'ДатаИсполненияИсходная',
+					flex:1,
 				},
 				{
 					text:'Новая',
 					width:'76',
+					dataIndex:'ДатаИсполнения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Изменять',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'ПредставлениеЗаказа',
+					},
+					{
+						name:'ДатыЗапуска',
+					},
+					{
+						name:'ДатаЗапускаИсходная',
+					},
+					{
+						name:'ДатаЗапуска',
+					},
+					{
+						name:'ДатыИсполнения',
+					},
+					{
+						name:'ДатаИсполненияИсходная',
+					},
+					{
+						name:'ДатаИсполнения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

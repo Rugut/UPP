@@ -18,64 +18,150 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'80',
+					dataIndex:'ПериодПланирования',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'120',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'120',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'60',
+					dataIndex:'ВалютаДокумента',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'ЦФО',
 					width:'120',
+					dataIndex:'ЦФО',
+					flex:1,
 				},
 				{
 					text:'ЦФО - приемник',
 					width:'163',
+					dataIndex:'ЦФОПриемник',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'137',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'120',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнутреннееПеремещениеСредствПриБюджетировании/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ПериодПланирования',
+					},
+					{
+						name:'Сценарий',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'ВалютаДокумента',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'ЦФО',
+					},
+					{
+						name:'ЦФОПриемник',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

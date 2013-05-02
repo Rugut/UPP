@@ -140,8 +140,24 @@
 				{
 					text:'Физлицо',
 					width:'100',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Встречи/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Физлицо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

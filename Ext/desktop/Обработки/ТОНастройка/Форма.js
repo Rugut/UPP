@@ -68,12 +68,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'571',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -113,16 +134,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'346',
+					dataIndex:'Модель',
+					flex:1,
 				},
 				{
 					text:'Касса ККМ',
 					width:'225',
+					dataIndex:'КассаККМ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+					{
+						name:'КассаККМ',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -162,12 +209,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'571',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -207,16 +275,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'346',
+					dataIndex:'Модель',
+					flex:1,
 				},
 				{
 					text:'Касса ККМ',
 					width:'225',
+					dataIndex:'КассаККМ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+					{
+						name:'КассаККМ',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -256,12 +350,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'571',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -301,12 +416,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'571',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -346,12 +482,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'571',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -391,16 +548,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'346',
+					dataIndex:'Модель',
+					flex:1,
 				},
 				{
 					text:'Касса ККМ',
 					width:'225',
+					dataIndex:'КассаККМ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+					{
+						name:'КассаККМ',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -440,16 +623,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'346',
+					dataIndex:'Модель',
+					flex:1,
 				},
 				{
 					text:'Касса ККМ',
 					width:'225',
+					dataIndex:'КассаККМ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+					{
+						name:'КассаККМ',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -489,12 +698,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'571',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -534,12 +764,33 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Подключено',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'571',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Подключено',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 					]
 				},

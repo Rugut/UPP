@@ -47,12 +47,33 @@
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Имя раздела',
 					width:'100',
+					dataIndex:'ИмяРаздела',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'ИмяРаздела',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',

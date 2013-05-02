@@ -549,16 +549,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'100',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Сумма оплаты',
 					width:'100',
+					dataIndex:'СуммаОплаты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуНМА/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'СуммаОплаты',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -193,32 +193,78 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Явка',
 					width:'40',
+					dataIndex:'Явка',
+					flex:1,
 				},
 				{
 					text:'Время явки',
 					width:'60',
+					dataIndex:'ВремяЯвки',
+					flex:1,
 				},
 				{
 					text:'Отработанное время',
 					width:'80',
+					dataIndex:'ОтработанноеВремя',
+					flex:1,
 				},
 				{
 					text:'Замещающий сотрудник',
 					width:'120',
+					dataIndex:'ЗамещающийСотрудник',
+					flex:1,
 				},
 				{
 					text:'Примечание',
 					width:'120',
+					dataIndex:'Примечание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОСоставеСмены/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Явка',
+					},
+					{
+						name:'ВремяЯвки',
+					},
+					{
+						name:'ОтработанноеВремя',
+					},
+					{
+						name:'ЗамещающийСотрудник',
+					},
+					{
+						name:'Примечание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Учетная запись',
 					width:'145',
+					dataIndex:'УчетнаяЗапись',
+					flex:1,
 				},
 				{
 					text:'Ресурс',
 					width:'191',
+					dataIndex:'ИмяРесурса',
+					flex:1,
 				},
 				{
 					text:'Дата обновления файла на сервере',
 					width:'206',
+					dataIndex:'ДатаФайла',
+					flex:1,
 				},
 				{
 					text:'Размер (в байтах)',
 					width:'115',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Расшифрован',
 					width:'21',
+					dataIndex:'Расшифрован',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'УчетнаяЗапись',
+					},
+					{
+						name:'ИмяРесурса',
+					},
+					{
+						name:'ДатаФайла',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'Расшифрован',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

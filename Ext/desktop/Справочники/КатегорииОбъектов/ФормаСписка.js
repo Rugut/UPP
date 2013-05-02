@@ -18,20 +18,51 @@
 				{
 					text:' ',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'64',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование категории',
 					width:'214',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Назначение категории',
 					width:'120',
+					dataIndex:'НазначениеКатегории',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КатегорииОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'НазначениеКатегории',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -49,8 +80,24 @@
 				{
 					text:'Назначение категории',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КатегорииОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 	]
 });

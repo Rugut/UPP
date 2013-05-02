@@ -199,36 +199,87 @@
 				{
 					text:'N',
 					width:'22',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'72',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'111',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'213',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'123',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'130',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'%',
 					width:'51',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'Огр.',
 					width:'51',
+					dataIndex:'ОграничениеСкидкиНаценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+					{
+						name:'ОграничениеСкидкиНаценки',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -245,24 +296,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Ценовая группа',
 					width:'211',
+					dataIndex:'ЦеноваяГруппа',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'180',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'%',
 					width:'38',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'Огр.',
 					width:'119',
+					dataIndex:'ОграничениеСкидкиНаценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ЦеноваяГруппа',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+					{
+						name:'ОграничениеСкидкиНаценки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -290,44 +377,105 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'235',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'235',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'128',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Кол-во',
 					width:'96',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'96',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Спец. предложение',
 					width:'235',
+					dataIndex:'СпецПредложение',
+					flex:1,
 				},
 				{
 					text:'Характеристика спец. предложения',
 					width:'235',
+					dataIndex:'ХарактеристикаСпецПредложения',
+					flex:1,
 				},
 				{
 					text:'Кол-во',
 					width:'87',
+					dataIndex:'КоличествоСпецПредложения',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'89',
+					dataIndex:'ЕдиницаИзмеренияСпецПредложения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'СпецПредложение',
+					},
+					{
+						name:'ХарактеристикаСпецПредложения',
+					},
+					{
+						name:'КоличествоСпецПредложения',
+					},
+					{
+						name:'ЕдиницаИзмеренияСпецПредложения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -363,16 +511,42 @@
 				{
 					text:'N',
 					width:'22',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'169',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Получатель',
 					width:'208',
+					dataIndex:'Получатель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Получатель',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -413,20 +587,51 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Выбран',
+					flex:1,
 				},
 				{
 					text:'День недели',
 					width:'210',
+					dataIndex:'ДеньНедели',
+					flex:1,
 				},
 				{
 					text:'Начало',
 					width:'68',
+					dataIndex:'ВремяНачала',
+					flex:1,
 				},
 				{
 					text:'Окончание',
 					width:'68',
+					dataIndex:'ВремяОкончания',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Выбран',
+					},
+					{
+						name:'ДеньНедели',
+					},
+					{
+						name:'ВремяНачала',
+					},
+					{
+						name:'ВремяОкончания',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

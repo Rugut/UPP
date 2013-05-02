@@ -54,16 +54,42 @@
 				{
 					text:'№',
 					width:'32',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Имя поля из файла',
 					width:'280',
+					dataIndex:'ИмяРеквизита',
+					flex:1,
 				},
 				{
 					text:'Имя или вид реквизита в информационной базе',
 					width:'280',
+					dataIndex:'НазначениеРеквизита1С',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ИмяРеквизита',
+					},
+					{
+						name:'НазначениеРеквизита1С',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -103,24 +129,60 @@
 				{
 					text:'№',
 					width:'32',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Имя реквизита в информационной базе',
 					width:'280',
+					dataIndex:'Значение1С',
+					flex:1,
 				},
 				{
 					text:'Условие',
 					width:'100',
+					dataIndex:'Условие',
+					flex:1,
 				},
 				{
 					text:'Имя поля из файла',
 					width:'280',
+					dataIndex:'ЗначениеФайла',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Использование',
+					},
+					{
+						name:'Значение1С',
+					},
+					{
+						name:'Условие',
+					},
+					{
+						name:'ЗначениеФайла',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -163,32 +225,78 @@
 				{
 					text:'№',
 					width:'32',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Представление объекта файла',
 					width:'180',
+					dataIndex:'ПредставлениеОбъектаФайла',
+					flex:1,
 				},
 				{
 					text:'Наименование объекта в ИБ',
 					width:'160',
+					dataIndex:'ПредставлениеОбъекта1С',
+					flex:1,
 				},
 				{
 					text:'Объект в ИБ',
 					width:'120',
+					dataIndex:'Объект1С',
+					flex:1,
 				},
 				{
 					text:'Юр/Физ лицо',
 					width:'80',
+					dataIndex:'ЮрФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'160',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Использование',
+					},
+					{
+						name:'ПредставлениеОбъектаФайла',
+					},
+					{
+						name:'ПредставлениеОбъекта1С',
+					},
+					{
+						name:'Объект1С',
+					},
+					{
+						name:'ЮрФизЛицо',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

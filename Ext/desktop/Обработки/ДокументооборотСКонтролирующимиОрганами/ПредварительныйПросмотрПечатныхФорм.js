@@ -40,16 +40,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Объект',
 					width:'159',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'Табличный документ',
 					width:'100',
+					dataIndex:'ТабличныйДокумент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Объект',
+					},
+					{
+						name:'ТабличныйДокумент',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

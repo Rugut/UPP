@@ -61,12 +61,33 @@
 				{
 					text:'Параметр',
 					width:'175',
+					dataIndex:'ПараметрПредставление',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'150',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПараметрПредставление',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -179,16 +200,42 @@
 				{
 					text:'Представление',
 					width:'160',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Расшифровка',
 					width:'170',
+					dataIndex:'ПредставлениеРасшифровки',
+					flex:1,
 				},
 				{
 					text:'Настройка',
 					width:'170',
+					dataIndex:'НаименованиеНастройкиОтчета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'ПредставлениеРасшифровки',
+					},
+					{
+						name:'НаименованиеНастройкиОтчета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

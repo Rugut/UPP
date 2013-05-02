@@ -103,40 +103,96 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид движения',
 					width:'100',
+					dataIndex:'ПриходРасход',
+					flex:1,
 				},
 				{
 					text:'Статья движения денежных средств',
 					width:'128',
+					dataIndex:'СтатьяДвиженияДенежныхСредств',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'86',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'86',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'100',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'159',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'118',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Сделка',
 					width:'143',
+					dataIndex:'Сделка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПриходРасход',
+					},
+					{
+						name:'СтатьяДвиженияДенежныхСредств',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'Сделка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

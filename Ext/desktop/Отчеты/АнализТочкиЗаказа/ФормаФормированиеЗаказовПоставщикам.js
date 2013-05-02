@@ -45,24 +45,60 @@
 				{
 					text:' Склад. Поставщик. Номенклатура.',
 					width:'154',
+					dataIndex:'СкладПоставщикНоменклатура',
+					flex:1,
 				},
 				{
 					text:' Характеристика',
 					width:'100',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:' Рекомендуемое кол.',
 					width:'120',
+					dataIndex:'РекомендуемоеКоличество',
+					flex:1,
 				},
 				{
 					text:' Заказанное кол.',
 					width:'100',
+					dataIndex:'ЗаказанноеКоличество',
+					flex:1,
 				},
 				{
 					text:' Заказать кол.',
 					width:'100',
+					dataIndex:'ЗаказатьКоличество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализТочкиЗаказа/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'СкладПоставщикНоменклатура',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'РекомендуемоеКоличество',
+					},
+					{
+						name:'ЗаказанноеКоличество',
+					},
+					{
+						name:'ЗаказатьКоличество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -96,12 +132,33 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ДокументПроведен',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'220',
+					dataIndex:'Документ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализТочкиЗаказа/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ДокументПроведен',
+					},
+					{
+						name:'Документ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

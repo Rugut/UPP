@@ -145,24 +145,60 @@
 				{
 					text:'N',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата отгрузки',
 					width:'80',
+					dataIndex:'ДатаОтгрузки',
+					flex:1,
 				},
 				{
 					text:'Вид транспорта',
 					width:'200',
+					dataIndex:'ВидТранспорта',
+					flex:1,
 				},
 				{
 					text:'№ приемо-сдат. документов',
 					width:'184',
+					dataIndex:'НомерДокумента',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'77',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДатаОтгрузки',
+					},
+					{
+						name:'ВидТранспорта',
+					},
+					{
+						name:'НомерДокумента',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

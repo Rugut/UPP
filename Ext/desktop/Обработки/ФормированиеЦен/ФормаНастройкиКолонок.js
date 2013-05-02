@@ -36,12 +36,33 @@
 				{
 					text:'Колонка',
 					width:'225',
+					dataIndex:'КолонкаСтрока',
+					flex:1,
 				},
 				{
 					text:'Положение',
 					width:'168',
+					dataIndex:'ПоложениеКолонки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КолонкаСтрока',
+					},
+					{
+						name:'ПоложениеКолонки',
+					},
+				]
+			},
 		},
 	]
 });

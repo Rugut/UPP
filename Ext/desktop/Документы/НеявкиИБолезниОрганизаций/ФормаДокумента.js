@@ -128,32 +128,78 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'68',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'C ...',
 					width:'80',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'120',
+					dataIndex:'ПричинаОтсутствия',
+					flex:1,
 				},
 				{
 					text:'Освобождать/занимать ставку',
 					width:'60',
+					dataIndex:'ОсвобождатьСтавку',
+					flex:1,
 				},
 				{
 					text:'Сторно',
 					width:'100',
+					dataIndex:'Сторно',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НеявкиИБолезниОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ПричинаОтсутствия',
+					},
+					{
+						name:'ОсвобождатьСтавку',
+					},
+					{
+						name:'Сторно',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

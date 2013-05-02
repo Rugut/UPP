@@ -54,20 +54,51 @@
 				{
 					text:'№',
 					width:'32',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'180',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'Имя поля выгрузки',
 					width:'220',
+					dataIndex:'СинонимПоля',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Использование',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'СинонимПоля',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -110,16 +141,42 @@
 				{
 					text:'№',
 					width:'32',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Объект выгрузки',
 					width:'220',
+					dataIndex:'ОбъектВыгрузки',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'220',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОбъектВыгрузки',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

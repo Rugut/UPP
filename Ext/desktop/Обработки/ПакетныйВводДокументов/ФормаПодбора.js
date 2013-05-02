@@ -28,12 +28,33 @@
 				{
 					text:'Отбор',
 					width:'131',
+					dataIndex:'ПредставлениеФильтра',
+					flex:1,
 				},
 				{
 					text:'Значение отбора',
 					width:'156',
+					dataIndex:'ПредставлениеЗначения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеФильтра',
+					},
+					{
+						name:'ПредставлениеЗначения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -41,7 +62,18 @@
 			height: 216,width: 315,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -114,28 +146,69 @@
 				{
 					text:'Пометка',
 					width:'26',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'100',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'229',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'263',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:'Остаток',
 					width:'100',
+					dataIndex:'Остаток',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'Остаток',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',

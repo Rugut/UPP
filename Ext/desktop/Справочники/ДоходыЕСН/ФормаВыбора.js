@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'ФБ, взносы в ПФР',
 					width:'107',
+					dataIndex:'ВходитВБазуФедеральныйБюджет',
+					flex:1,
 				},
 				{
 					text:'ФОМС',
 					width:'40',
+					dataIndex:'ВходитВБазуФОМС',
+					flex:1,
 				},
 				{
 					text:'ФСС',
 					width:'40',
+					dataIndex:'ВходитВБазуФСС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоходыЕСН/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВходитВБазуФедеральныйБюджет',
+					},
+					{
+						name:'ВходитВБазуФОМС',
+					},
+					{
+						name:'ВходитВБазуФСС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

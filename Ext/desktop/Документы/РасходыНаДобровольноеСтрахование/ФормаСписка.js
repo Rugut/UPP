@@ -18,36 +18,87 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'БУ',
 					width:'20',
+					dataIndex:'ОтражатьВБухгалтерскомУчете',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'20',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'За период',
 					width:'91',
+					dataIndex:'ПериодРегистрации',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'113',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'350',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходыНаДобровольноеСтрахование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ОтражатьВБухгалтерскомУчете',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ПериодРегистрации',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -61,24 +61,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'75',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Работник',
 					width:'202',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Начало работы',
 					width:'80',
+					dataIndex:'ДатаВозврата',
+					flex:1,
 				},
 				{
 					text:'Занимать ставку',
 					width:'100',
+					dataIndex:'ЗаниматьСтавку',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьВозвратНаРаботу/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ДатаВозврата',
+					},
+					{
+						name:'ЗаниматьСтавку',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

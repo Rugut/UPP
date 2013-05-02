@@ -35,20 +35,51 @@
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'108',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Не размещено',
 					width:'100',
+					dataIndex:'НеРазмещено',
+					flex:1,
 				},
 				{
 					text:'Разместить как комплектующие',
 					width:'100',
+					dataIndex:'Размещаем',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РезервированиеТоваров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'НеРазмещено',
+					},
+					{
+						name:'Размещаем',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

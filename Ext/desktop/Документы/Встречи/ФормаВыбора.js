@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Период встречи',
 					width:'150',
+					dataIndex:'ПериодВстречи',
+					flex:1,
 				},
 				{
 					text:'Кандидат',
 					width:'120',
+					dataIndex:'ЗаявкаКандидата',
+					flex:1,
 				},
 				{
 					text:'Помещение',
 					width:'120',
+					dataIndex:'Помещение',
+					flex:1,
 				},
 				{
 					text:'Краткий состав документа',
 					width:'150',
+					dataIndex:'КраткийСоставДокумента',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Встречи/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ПериодВстречи',
+					},
+					{
+						name:'ЗаявкаКандидата',
+					},
+					{
+						name:'Помещение',
+					},
+					{
+						name:'КраткийСоставДокумента',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

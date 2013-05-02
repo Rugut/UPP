@@ -18,44 +18,105 @@
 				{
 					text:'',
 					width:'33',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'ДатаДоговора',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'НомерДоговора',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'ОбособленноеПодразделение',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'120',
+					dataIndex:'ПодразделениеОрганизации',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'120',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'84',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'84',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Испытательный срок',
 					width:'113',
+					dataIndex:'ИспытательныйСрок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ДатаДоговора',
+					},
+					{
+						name:'НомерДоговора',
+					},
+					{
+						name:'ОбособленноеПодразделение',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ПодразделениеОрганизации',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'ИспытательныйСрок',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -114,20 +114,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Инв. №',
 					width:'67',
+					dataIndex:'ИнвентарныйНомер',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'193',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
 				{
 					text:'Кол. услуги',
 					width:'80',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказНаОбслуживаниеОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ИнвентарныйНомер',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -35,72 +35,168 @@
 				{
 					text:'Вид норматива',
 					width:'42',
+					dataIndex:'ВидСтроки',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'175',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'129',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Вид номенклатуры',
 					width:'100',
+					dataIndex:'ВидНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'66',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'47',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Статья затрат',
 					width:'100',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Вид воспроизводства',
 					width:'100',
+					dataIndex:'ВидВоспроизводства',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'125',
+					dataIndex:'ОсновнаяСпецификация',
+					flex:1,
 				},
 				{
 					text:'Формула',
 					width:'68',
+					dataIndex:'Формула',
+					flex:1,
 				},
 				{
 					text:'Указание норматива',
 					width:'111',
+					dataIndex:'УказаниеНорматива',
+					flex:1,
 				},
 				{
 					text:'Списание комплектующей',
 					width:'138',
+					dataIndex:'СписаниеКомплектующей',
+					flex:1,
 				},
 				{
 					text:'Свойства',
 					width:'80',
+					dataIndex:'СвойствоДляСписания',
+					flex:1,
 				},
 				{
 					text:'Номер строки спецификации',
 					width:'64',
+					dataIndex:'НомерСтрокиСпецификации',
+					flex:1,
 				},
 				{
 					text:'Исх. спецификация',
 					width:'84',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Вид норматива',
 					width:'71',
+					dataIndex:'ВидНорматива',
+					flex:1,
 				},
 				{
 					text:'Есть спецификации',
 					width:'76',
+					dataIndex:'ЕстьСпецификации',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ВидНоменклатуры',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'ВидВоспроизводства',
+					},
+					{
+						name:'ОсновнаяСпецификация',
+					},
+					{
+						name:'Формула',
+					},
+					{
+						name:'УказаниеНорматива',
+					},
+					{
+						name:'СписаниеКомплектующей',
+					},
+					{
+						name:'СвойствоДляСписания',
+					},
+					{
+						name:'НомерСтрокиСпецификации',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'ВидНорматива',
+					},
+					{
+						name:'ЕстьСпецификации',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -142,40 +238,96 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'72',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Версия',
 					width:'40',
+					dataIndex:'КодВерсии',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'157',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Активная',
 					width:'20',
+					dataIndex:'Активная',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'70',
+					dataIndex:'ВидСпецификации',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'76',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Дата утверждения',
 					width:'84',
+					dataIndex:'ДатаУтверждения',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'КодВерсии',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Активная',
+					},
+					{
+						name:'ВидСпецификации',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'ДатаУтверждения',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -186,12 +338,33 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -330,40 +503,96 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'72',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Версия',
 					width:'40',
+					dataIndex:'КодВерсии',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'172',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Активная',
 					width:'20',
+					dataIndex:'Активная',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'70',
+					dataIndex:'ВидСпецификации',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'96',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Дата утверждения',
 					width:'130',
+					dataIndex:'ДатаУтверждения',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'КодВерсии',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Активная',
+					},
+					{
+						name:'ВидСпецификации',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'ДатаУтверждения',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -389,24 +618,60 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'70',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Полное наименование',
 					width:'100',
+					dataIndex:'НаименованиеПолное',
+					flex:1,
 				},
 				{
 					text:'Артикул ',
 					width:'90',
+					dataIndex:'Артикул',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'НаименованиеПолное',
+					},
+					{
+						name:'Артикул',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -424,8 +689,24 @@
 				{
 					text:'Наименование',
 					width:'217',
+					dataIndex:'Картинка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -449,24 +730,60 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'72',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Полное наименование',
 					width:'100',
+					dataIndex:'НаименованиеПолное',
+					flex:1,
 				},
 				{
 					text:'Артикул ',
 					width:'90',
+					dataIndex:'Артикул',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'НаименованиеПолное',
+					},
+					{
+						name:'Артикул',
+					},
+				]
+			},
 		},
 					]
 				},

@@ -126,20 +126,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Статус',
 					width:'120',
+					dataIndex:'Статус',
+					flex:1,
 				},
 				{
 					text:'Размер пособия',
 					width:'150',
+					dataIndex:'РазмерПособия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеВФССОВозмещенииРасходовНаПогребение/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Статус',
+					},
+					{
+						name:'РазмерПособия',
+					},
+				]
+			},
 		},
 					]
 				},

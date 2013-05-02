@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'146',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'108',
+					dataIndex:'ТипПоказателя',
+					flex:1,
 				},
 				{
 					text:'Порядок ввода',
 					width:'143',
+					dataIndex:'Постоянство',
+					flex:1,
 				},
 				{
 					text:'Вид показателя',
 					width:'100',
+					dataIndex:'ВидПоказателя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ТипПоказателя',
+					},
+					{
+						name:'Постоянство',
+					},
+					{
+						name:'ВидПоказателя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

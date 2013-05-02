@@ -18,20 +18,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Транспортное сообщение',
 					width:'225',
+					dataIndex:'ТранспортноеСообщение',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'222',
+					dataIndex:'ИмяФайла1',
+					flex:1,
 				},
 				{
 					text:'Размер (в байтах)',
 					width:'149',
+					dataIndex:'Размер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ТранспортноеСообщение',
+					},
+					{
+						name:'ИмяФайла1',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

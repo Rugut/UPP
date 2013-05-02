@@ -35,32 +35,78 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Тип сообщения',
 					width:'111',
+					dataIndex:'ТипСообщения',
+					flex:1,
 				},
 				{
 					text:'Срок',
 					width:'80',
+					dataIndex:'ПоследняяДатаДействия',
+					flex:1,
 				},
 				{
 					text:'За период',
 					width:'100',
+					dataIndex:'ЗаПериод',
+					flex:1,
 				},
 				{
 					text:'Отчет/налог',
 					width:'100',
+					dataIndex:'НазваниеОтчетаИлиНалога',
+					flex:1,
 				},
 				{
 					text:'Периодичность',
 					width:'100',
+					dataIndex:'Периодичность',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарьБухгалтера/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ТипСообщения',
+					},
+					{
+						name:'ПоследняяДатаДействия',
+					},
+					{
+						name:'ЗаПериод',
+					},
+					{
+						name:'НазваниеОтчетаИлиНалога',
+					},
+					{
+						name:'Периодичность',
+					},
+					{
+						name:'Организация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',

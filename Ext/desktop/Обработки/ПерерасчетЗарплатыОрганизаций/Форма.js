@@ -43,16 +43,42 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'291',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Месяц',
 					width:'71',
+					dataIndex:'ПериодРегистрации',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПерерасчетЗарплатыОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'ПериодРегистрации',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

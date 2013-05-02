@@ -99,56 +99,132 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'СФсформирован',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'100',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор',
 					width:'100',
+					dataIndex:'Договор',
+					flex:1,
 				},
 				{
 					text:'Сумма аванса',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Ставка НДС',
 					width:'100',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'100',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Документ основание',
 					width:'100',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
 				{
 					text:'Счет на оплату',
 					width:'120',
+					dataIndex:'СчетНаОплату',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'100',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Валюта документа',
 					width:'100',
+					dataIndex:'ВалютаДокумента',
+					flex:1,
 				},
 				{
 					text:'Валютная сумма',
 					width:'100',
+					dataIndex:'ВалютнаяСумма',
+					flex:1,
 				},
 				{
 					text:'Счет-фактура',
 					width:'120',
+					dataIndex:'СчетФактура',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНаАванс/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СФсформирован',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Договор',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'ДокументОснование',
+					},
+					{
+						name:'СчетНаОплату',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ВалютаДокумента',
+					},
+					{
+						name:'ВалютнаяСумма',
+					},
+					{
+						name:'СчетФактура',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

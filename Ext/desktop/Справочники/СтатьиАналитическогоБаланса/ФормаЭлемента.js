@@ -42,24 +42,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет',
 					width:'80',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'Наименование счета',
 					width:'120',
+					dataIndex:'НаименованиеСчета',
+					flex:1,
 				},
 				{
 					text:'Вид остатка',
 					width:'120',
+					dataIndex:'ВидОстатка',
+					flex:1,
 				},
 				{
 					text:'Знак',
 					width:'32',
+					dataIndex:'Знак',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиАналитическогоБаланса/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Счет',
+					},
+					{
+						name:'НаименованиеСчета',
+					},
+					{
+						name:'ВидОстатка',
+					},
+					{
+						name:'Знак',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

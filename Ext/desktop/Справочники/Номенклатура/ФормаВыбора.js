@@ -195,36 +195,87 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул ',
 					width:'60',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид номенклатуры',
 					width:'110',
+					dataIndex:'ВидНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Базовая',
 					width:'54',
+					dataIndex:'БазоваяЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'54',
+					dataIndex:'ЕдиницаХраненияОстатков',
+					flex:1,
 				},
 				{
 					text:'Ставка НДС',
 					width:'80',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидНоменклатуры',
+					},
+					{
+						name:'БазоваяЕдиницаИзмерения',
+					},
+					{
+						name:'ЕдиницаХраненияОстатков',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -235,8 +286,24 @@
 				{
 					text:'Наименование',
 					width:'80',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -273,28 +340,69 @@
 				{
 					text:'Характеристика/Склад',
 					width:'151',
+					dataIndex:'ХарактеристикаСклад',
+					flex:1,
 				},
 				{
 					text:'Ячейка склада',
 					width:'87',
+					dataIndex:'МестоХранения',
+					flex:1,
 				},
 				{
 					text:'Общий',
 					width:'60',
+					dataIndex:'Общий',
+					flex:1,
 				},
 				{
 					text:'Свободный',
 					width:'71',
+					dataIndex:'Свободный',
+					flex:1,
 				},
 				{
 					text:'Своб.ожид.',
 					width:'68',
+					dataIndex:'СвободныйОжидаемый',
+					flex:1,
 				},
 				{
 					text:'В резерве',
 					width:'75',
+					dataIndex:'ВРезерве',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ХарактеристикаСклад',
+					},
+					{
+						name:'МестоХранения',
+					},
+					{
+						name:'Общий',
+					},
+					{
+						name:'Свободный',
+					},
+					{
+						name:'СвободныйОжидаемый',
+					},
+					{
+						name:'ВРезерве',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -305,32 +413,78 @@
 				{
 					text:'Типы цен',
 					width:'133',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'82',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'БазовыйТипЦен',
 					width:'100',
+					dataIndex:'БазовыйТипЦен',
+					flex:1,
 				},
 				{
 					text:'Рассчитывается',
 					width:'100',
+					dataIndex:'Рассчитывается',
+					flex:1,
 				},
 				{
 					text:'ОкруглятьВБольшуюСторону',
 					width:'100',
+					dataIndex:'ОкруглятьВБольшуюСторону',
+					flex:1,
 				},
 				{
 					text:'ПроцентСкидкиНаценки',
 					width:'100',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'Префикс',
 					width:'100',
+					dataIndex:'Префикс',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'БазовыйТипЦен',
+					},
+					{
+						name:'Рассчитывается',
+					},
+					{
+						name:'ОкруглятьВБольшуюСторону',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+					{
+						name:'Префикс',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -406,24 +560,60 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'86',
+					dataIndex:'АртикулНоменклатурыКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'242',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Наименование номенклатуры контрагента',
 					width:'139',
+					dataIndex:'НаименованиеНоменклатурыКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Код номенклатуры контрагента',
 					width:'157',
+					dataIndex:'КодНоменклатурыКонтрагента',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'АртикулНоменклатурыКонтрагента',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'НаименованиеНоменклатурыКонтрагента',
+					},
+					{
+						name:'КодНоменклатурыКонтрагента',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',

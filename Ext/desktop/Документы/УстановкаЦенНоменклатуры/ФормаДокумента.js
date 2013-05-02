@@ -41,24 +41,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'ИндексСтрокиТаблицыЦен',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'62',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'130',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'245',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЦенНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИндексСтрокиТаблицыЦен',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

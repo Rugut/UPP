@@ -363,12 +363,33 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Работник',
 					width:'222',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Событие/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -379,16 +400,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'142',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Лицо',
 					width:'158',
+					dataIndex:'Лицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Событие/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Лицо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

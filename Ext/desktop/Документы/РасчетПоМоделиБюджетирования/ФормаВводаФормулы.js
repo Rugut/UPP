@@ -137,20 +137,51 @@
 				{
 					text:'Код строки',
 					width:'73',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Показатель расчета',
 					width:'191',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'109',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'Представление источника',
 					width:'268',
+					dataIndex:'ПредставлениеИсточника',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ПредставлениеИсточника',
+					},
+				]
+			},
 		},
 	]
 });

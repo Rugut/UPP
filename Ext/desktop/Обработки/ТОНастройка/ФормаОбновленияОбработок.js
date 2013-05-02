@@ -53,40 +53,96 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Обновить',
+					flex:1,
 				},
 				{
 					text:'Имя файла обработки обслуживания',
 					width:'224',
+					dataIndex:'ИмяОбработкиОбслуживания',
+					flex:1,
 				},
 				{
 					text:'Текущее наименование',
 					width:'373',
+					dataIndex:'ТекущееНаименование',
+					flex:1,
 				},
 				{
 					text:'Новое наименование',
 					width:'373',
+					dataIndex:'НовоеНаименование',
+					flex:1,
 				},
 				{
 					text:'Текущая версия',
 					width:'108',
+					dataIndex:'ТекущаяВерсия',
+					flex:1,
 				},
 				{
 					text:'Новая версия',
 					width:'108',
+					dataIndex:'НоваяВерсия',
+					flex:1,
 				},
 				{
 					text:'Текущая версия API',
 					width:'122',
+					dataIndex:'ТекущаяВерсияAPI',
+					flex:1,
 				},
 				{
 					text:'Новая версия API',
 					width:'111',
+					dataIndex:'НоваяВерсияAPI',
+					flex:1,
 				},
 				{
 					text:'Подсказка',
 					width:'315',
+					dataIndex:'Подсказка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Обновить',
+					},
+					{
+						name:'ИмяОбработкиОбслуживания',
+					},
+					{
+						name:'ТекущееНаименование',
+					},
+					{
+						name:'НовоеНаименование',
+					},
+					{
+						name:'ТекущаяВерсия',
+					},
+					{
+						name:'НоваяВерсия',
+					},
+					{
+						name:'ТекущаяВерсияAPI',
+					},
+					{
+						name:'НоваяВерсияAPI',
+					},
+					{
+						name:'Подсказка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

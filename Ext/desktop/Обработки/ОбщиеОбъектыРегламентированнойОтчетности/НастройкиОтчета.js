@@ -80,20 +80,51 @@
 				{
 					text:'Страницы',
 					width:'241',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Показывать',
 					width:'68',
+					dataIndex:'ПоказатьСтраницу',
+					flex:1,
 				},
 				{
 					text:'Печатать',
 					width:'68',
+					dataIndex:'ВыводНаПечать',
+					flex:1,
 				},
 				{
 					text:'Выгружать',
 					width:'68',
+					dataIndex:'ВыгрузитьСтраницу',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'ПоказатьСтраницу',
+					},
+					{
+						name:'ВыводНаПечать',
+					},
+					{
+						name:'ВыгрузитьСтраницу',
+					},
+				]
+			},
 		},
 					]
 				},

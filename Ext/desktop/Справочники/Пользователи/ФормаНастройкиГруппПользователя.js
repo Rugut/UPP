@@ -41,8 +41,24 @@
 				{
 					text:'Группа пользователей',
 					width:'172',
+					dataIndex:'ГруппаПользователей',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Пользователи/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ГруппаПользователей',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

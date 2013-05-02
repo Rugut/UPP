@@ -179,20 +179,51 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Выбран',
+					flex:1,
 				},
 				{
 					text:'День недели',
 					width:'202',
+					dataIndex:'ДеньНедели',
+					flex:1,
 				},
 				{
 					text:'Начало',
 					width:'68',
+					dataIndex:'ВремяНачала',
+					flex:1,
 				},
 				{
 					text:'Окончание',
 					width:'68',
+					dataIndex:'ВремяОкончания',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыСкидокНаценок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Выбран',
+					},
+					{
+						name:'ДеньНедели',
+					},
+					{
+						name:'ВремяНачала',
+					},
+					{
+						name:'ВремяОкончания',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

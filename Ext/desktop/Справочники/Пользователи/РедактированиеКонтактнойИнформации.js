@@ -35,24 +35,60 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'90',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'147',
+					dataIndex:'Вид',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'195',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'218',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Пользователи/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'Вид',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

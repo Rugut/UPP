@@ -39,12 +39,33 @@
 				{
 					text:'Объект',
 					width:'276',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'E-mail',
 					width:'103',
+					dataIndex:'АдресЭлектроннойПочты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Объект',
+					},
+					{
+						name:'АдресЭлектроннойПочты',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

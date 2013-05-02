@@ -18,40 +18,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Помещение',
 					width:'100',
+					dataIndex:'Помещение',
+					flex:1,
 				},
 				{
 					text:'Занятость',
 					width:'60',
+					dataIndex:'Занятость',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'90',
+					dataIndex:'ДатаРезервирования',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'90',
+					dataIndex:'ПродолжительностьДней',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РезервированиеПомещений/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Помещение',
+					},
+					{
+						name:'Занятость',
+					},
+					{
+						name:'ДатаРезервирования',
+					},
+					{
+						name:'ПродолжительностьДней',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

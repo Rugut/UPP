@@ -128,16 +128,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Справка другого страхователя',
 					width:'132',
+					dataIndex:'Справка',
+					flex:1,
 				},
 				{
 					text:'Страхователь',
 					width:'102',
+					dataIndex:'Страхователь',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗапросВФССОПроверкеРаботодателя/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Справка',
+					},
+					{
+						name:'Страхователь',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

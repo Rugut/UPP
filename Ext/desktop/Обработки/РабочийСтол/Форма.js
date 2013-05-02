@@ -2307,16 +2307,42 @@
 				{
 					text:'Представление ссылки',
 					width:'100',
+					dataIndex:'ПредставлениеСсылки',
+					flex:1,
 				},
 				{
 					text:'Гипер ссылка',
 					width:'100',
+					dataIndex:'ГиперСсылка',
+					flex:1,
 				},
 				{
 					text:'Порядок',
 					width:'100',
+					dataIndex:'Порядок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеСсылки',
+					},
+					{
+						name:'ГиперСсылка',
+					},
+					{
+						name:'Порядок',
+					},
+				]
+			},
 		},
 					]
 				},

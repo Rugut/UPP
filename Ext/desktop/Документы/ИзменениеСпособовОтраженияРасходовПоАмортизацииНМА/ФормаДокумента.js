@@ -141,16 +141,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'61',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Нематериальный актив',
 					width:'267',
+					dataIndex:'НематериальныйАктив',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'НематериальныйАктив',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

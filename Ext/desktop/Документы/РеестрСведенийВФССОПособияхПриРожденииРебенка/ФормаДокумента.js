@@ -134,36 +134,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'108',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Ребенок (ФИО)',
 					width:'108',
+					dataIndex:'Ребенок',
+					flex:1,
 				},
 				{
 					text:'Фамилия',
 					width:'36',
+					dataIndex:'ФамилияРебенка',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'36',
+					dataIndex:'ИмяРебенка',
+					flex:1,
 				},
 				{
 					text:'Отчество ребенка',
 					width:'36',
+					dataIndex:'ОтчествоРебенка',
+					flex:1,
 				},
 				{
 					text:'Статус',
 					width:'73',
+					dataIndex:'Статус',
+					flex:1,
 				},
 				{
 					text:'Д. рождения',
 					width:'73',
+					dataIndex:'ДатаРождения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОПособияхПриРожденииРебенка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Ребенок',
+					},
+					{
+						name:'ФамилияРебенка',
+					},
+					{
+						name:'ИмяРебенка',
+					},
+					{
+						name:'ОтчествоРебенка',
+					},
+					{
+						name:'Статус',
+					},
+					{
+						name:'ДатаРождения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',

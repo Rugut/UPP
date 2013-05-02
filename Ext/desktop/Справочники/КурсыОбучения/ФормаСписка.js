@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'33',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Объем',
 					width:'55',
+					dataIndex:'ДлительностьКурса',
+					flex:1,
 				},
 				{
 					text:'Затраты',
 					width:'58',
+					dataIndex:'ЗатратыНаОдногоОбучающегося',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'55',
+					dataIndex:'Валюта',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КурсыОбучения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ДлительностьКурса',
+					},
+					{
+						name:'ЗатратыНаОдногоОбучающегося',
+					},
+					{
+						name:'Валюта',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -46,8 +82,24 @@
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КурсыОбучения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

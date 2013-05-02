@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'185',
+					dataIndex:'НеформализованныйДокумент',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'198',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'100',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'Размер (в байтах)',
 					width:'124',
+					dataIndex:'Размер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НеформализованныйДокумент',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

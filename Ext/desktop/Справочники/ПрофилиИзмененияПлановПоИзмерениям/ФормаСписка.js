@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'161',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Измерение',
 					width:'100',
+					dataIndex:'ИзмерениеБюджетирования',
+					flex:1,
 				},
 				{
 					text:'Источник данных',
 					width:'205',
+					dataIndex:'ИсточникДанных',
+					flex:1,
 				},
 				{
 					text:'Показатель источника',
 					width:'124',
+					dataIndex:'ПоказательИсточника',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоИзмерениям/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ИзмерениеБюджетирования',
+					},
+					{
+						name:'ИсточникДанных',
+					},
+					{
+						name:'ПоказательИсточника',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -50,8 +91,24 @@
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоИзмерениям/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -49,40 +49,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид резерва',
 					width:'120',
+					dataIndex:'ВидРезерва',
+					flex:1,
 				},
 				{
 					text:'Счет отнесения расходов',
 					width:'100',
+					dataIndex:'СчетОтнесенияРасходов',
+					flex:1,
 				},
 				{
 					text:'Субконто 1...3',
 					width:'100',
+					dataIndex:'Субконто1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'100',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'90',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Валютная сумма',
 					width:'90',
+					dataIndex:'ВалютнаяСумма',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'109',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеРезервовМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидРезерва',
+					},
+					{
+						name:'СчетОтнесенияРасходов',
+					},
+					{
+						name:'Субконто1',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ВалютнаяСумма',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

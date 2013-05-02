@@ -18,44 +18,105 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'120',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Результат сертификации',
 					width:'120',
+					dataIndex:'РезультатСертификации',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'120',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Номер сертификата',
 					width:'120',
+					dataIndex:'НомерСертификата',
+					flex:1,
 				},
 				{
 					text:'Дата сертификата',
 					width:'80',
+					dataIndex:'ДатаСертификата',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'117',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СертификацияНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'РезультатСертификации',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'НомерСертификата',
+					},
+					{
+						name:'ДатаСертификата',
+					},
+					{
+						name:'Подразделение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -193,24 +193,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Тип данных',
 					width:'100',
+					dataIndex:'ТипДанных',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'100',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'100',
+					dataIndex:'ДатаНач',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'100',
+					dataIndex:'ДатаКон',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланФактныйАнализПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТипДанных',
+					},
+					{
+						name:'Сценарий',
+					},
+					{
+						name:'ДатаНач',
+					},
+					{
+						name:'ДатаКон',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

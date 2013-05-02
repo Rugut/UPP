@@ -81,32 +81,78 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'Номер строки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'65',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаДолгаПоВозвратнойТаре/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номер строки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},

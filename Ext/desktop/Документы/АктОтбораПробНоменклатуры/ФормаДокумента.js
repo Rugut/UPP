@@ -144,24 +144,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сертифицирующее подразделение',
 					width:'187',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Вид анализа',
 					width:'95',
+					dataIndex:'ВидАнализа',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'97',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед. хранения',
 					width:'100',
+					dataIndex:'ЕдиницаХранения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОтбораПробНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'ВидАнализа',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаХранения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

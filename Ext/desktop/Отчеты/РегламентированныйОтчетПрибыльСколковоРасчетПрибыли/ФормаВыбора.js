@@ -18,12 +18,33 @@
 				{
 					text:'Код',
 					width:'130',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Название',
 					width:'457',
+					dataIndex:'Название',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчетПрибыльСколковоРасчетПрибыли/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Название',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

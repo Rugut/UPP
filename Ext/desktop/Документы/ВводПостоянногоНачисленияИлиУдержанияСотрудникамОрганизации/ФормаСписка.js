@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Сотрудники',
 					width:'100',
+					dataIndex:'КраткийСоставДокумента',
+					flex:1,
 				},
 				{
 					text:'Действие',
 					width:'150',
+					dataIndex:'Действие',
+					flex:1,
 				},
 				{
 					text:'Вид расчета',
 					width:'135',
+					dataIndex:'ВидРасчета',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'84',
+					dataIndex:'ДатаДействия',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'84',
+					dataIndex:'ДатаДействияКонец',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПостоянногоНачисленияИлиУдержанияСотрудникамОрганизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'КраткийСоставДокумента',
+					},
+					{
+						name:'Действие',
+					},
+					{
+						name:'ВидРасчета',
+					},
+					{
+						name:'ДатаДействия',
+					},
+					{
+						name:'ДатаДействияКонец',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -64,60 +64,141 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'ПериодПланирования',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'100',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'100',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'100',
+					dataIndex:'ВалютаДокумента',
+					flex:1,
 				},
 				{
 					text:'ЦФО',
 					width:'100',
+					dataIndex:'ЦФО',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'100',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'100',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПериодПланирования',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'ВалютаДокумента',
+					},
+					{
+						name:'ЦФО',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -159,7 +240,18 @@
 			height: 124,width: 750,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 					]
 				},
@@ -316,24 +408,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Бюджетная операция',
 					width:'265',
+					dataIndex:'ДокументОперация',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'183',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'124',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'143',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДокументОперация',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

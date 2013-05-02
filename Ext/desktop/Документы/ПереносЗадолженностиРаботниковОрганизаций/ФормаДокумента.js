@@ -153,20 +153,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'180',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Месяц возникновения',
 					width:'120',
+					dataIndex:'ПериодВозникновения',
+					flex:1,
 				},
 				{
 					text:'Перенести в размере',
 					width:'120',
+					dataIndex:'Результат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносЗадолженностиРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'ПериодВозникновения',
+					},
+					{
+						name:'Результат',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

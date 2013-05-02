@@ -91,24 +91,60 @@
 				{
 					text:'Валюта',
 					width:'120',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Код валюты',
 					width:'80',
+					dataIndex:'КодВалюты',
+					flex:1,
 				},
 				{
 					text:'Дата курса',
 					width:'80',
+					dataIndex:'ДатаКурса',
+					flex:1,
 				},
 				{
 					text:'Курс',
 					width:'80',
+					dataIndex:'Курс',
+					flex:1,
 				},
 				{
 					text:'Кратность',
 					width:'80',
+					dataIndex:'Кратность',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КурсыВалютРБК/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Валюта',
+					},
+					{
+						name:'КодВалюты',
+					},
+					{
+						name:'ДатаКурса',
+					},
+					{
+						name:'Курс',
+					},
+					{
+						name:'Кратность',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',

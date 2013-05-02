@@ -106,72 +106,168 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'120',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'120',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Рабочий центр',
 					width:'100',
+					dataIndex:'РабочийЦентр',
+					flex:1,
 				},
 				{
 					text:'Смена',
 					width:'100',
+					dataIndex:'Смена',
+					flex:1,
 				},
 				{
 					text:'Тех. операция',
 					width:'200',
+					dataIndex:'ТехОперация',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'68',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'45',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'200',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Конечная продукция',
 					width:'200',
+					dataIndex:'КонечнаяПродукция',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'200',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'200',
+					dataIndex:'Проект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаданиеНаПроизводство/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'РабочийЦентр',
+					},
+					{
+						name:'Смена',
+					},
+					{
+						name:'ТехОперация',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'КонечнаяПродукция',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Проект',
+					},
+				]
+			},
 		},
 					]
 				},

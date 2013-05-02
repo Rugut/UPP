@@ -35,16 +35,42 @@
 				{
 					text:'Серии',
 					width:'60',
+					dataIndex:'ИспользованиеСерии',
+					flex:1,
 				},
 				{
 					text:'Точки',
 					width:'60',
+					dataIndex:'ИспользованиеТочки',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'220',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСобытийИИсточниковИнформацииПокупателей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИспользованиеСерии',
+					},
+					{
+						name:'ИспользованиеТочки',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -55,12 +81,33 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'220',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСобытийИИсточниковИнформацииПокупателей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 	]
 });

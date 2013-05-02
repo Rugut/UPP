@@ -94,16 +94,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Расчет по модели бюджетирования',
 					width:'220',
+					dataIndex:'РасчетПоМоделиБюджетирования',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'171',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентныйПересчетПоМоделямБюджетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'РасчетПоМоделиБюджетирования',
+					},
+					{
+						name:'Сценарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

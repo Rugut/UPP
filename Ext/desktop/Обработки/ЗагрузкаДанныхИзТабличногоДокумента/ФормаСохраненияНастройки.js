@@ -53,8 +53,24 @@
 				{
 					text:'Колонка1',
 					width:'100',
+					dataIndex:'Колонка1',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхИзТабличногоДокумента/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Колонка1',
+					},
+				]
+			},
 		},
 	]
 });

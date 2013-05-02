@@ -42,16 +42,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'241',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Знак',
 					width:'35',
+					dataIndex:'Знак',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиОтчетаОПрибыляхИУбытках/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'Знак',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

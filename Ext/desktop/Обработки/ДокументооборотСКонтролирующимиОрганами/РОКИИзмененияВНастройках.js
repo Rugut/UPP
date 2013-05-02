@@ -35,24 +35,60 @@
 				{
 					text:'Изменение',
 					width:'328',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Подробнее',
 					width:'152',
+					dataIndex:'Подробнее',
+					flex:1,
 				},
 				{
 					text:'Старое значение',
 					width:'100',
+					dataIndex:'СтароеЗначение',
+					flex:1,
 				},
 				{
 					text:'Новое значение',
 					width:'100',
+					dataIndex:'НовоеЗначение',
+					flex:1,
 				},
 				{
 					text:'Изменение',
 					width:'426',
+					dataIndex:'Настройка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'Подробнее',
+					},
+					{
+						name:'СтароеЗначение',
+					},
+					{
+						name:'НовоеЗначение',
+					},
+					{
+						name:'Настройка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

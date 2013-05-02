@@ -73,20 +73,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Нижняя граница',
 					width:'100',
+					dataIndex:'НижняяГраница',
+					flex:1,
 				},
 				{
 					text:'Представление интервала',
 					width:'199',
+					dataIndex:'ПредставлениеИнтервала',
+					flex:1,
 				},
 				{
 					text:'Значение порога',
 					width:'100',
+					dataIndex:'ЗначениеПорога',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПороговНакопительныхСкидок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НижняяГраница',
+					},
+					{
+						name:'ПредставлениеИнтервала',
+					},
+					{
+						name:'ЗначениеПорога',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

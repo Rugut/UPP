@@ -54,24 +54,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'220',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Заказать',
 					width:'120',
+					dataIndex:'КоличествоЗаказать',
+					flex:1,
 				},
 				{
 					text:'Потребность',
 					width:'120',
+					dataIndex:'КоличествоПлана',
+					flex:1,
 				},
 				{
 					text:'Заказано',
 					width:'120',
+					dataIndex:'КоличествоЗаказа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'КоличествоЗаказать',
+					},
+					{
+						name:'КоличествоПлана',
+					},
+					{
+						name:'КоличествоЗаказа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -114,20 +150,51 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'191',
+					dataIndex:'ПредставлениеФильтра',
+					flex:1,
 				},
 				{
 					text:'Вид сравнения',
 					width:'150',
+					dataIndex:'ВидСравненияФильтра',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'180',
+					dataIndex:'ЗначениеФильтра',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'ПредставлениеФильтра',
+					},
+					{
+						name:'ВидСравненияФильтра',
+					},
+					{
+						name:'ЗначениеФильтра',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -199,7 +266,18 @@
 			height: 368,width: 619,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -38,12 +38,33 @@
 				{
 					text:'',
 					width:'18',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Имя реквизита',
 					width:'283',
+					dataIndex:'ИмяРеквизита',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'ИмяРеквизита',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

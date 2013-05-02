@@ -94,24 +94,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'100',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'173',
+					dataIndex:'Вид',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'244',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'133',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'Вид',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -210,24 +246,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'84',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Контактное лицо контрагента',
 					width:'120',
+					dataIndex:'КонтактноеЛицоКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Дата увольнения',
 					width:'84',
+					dataIndex:'ДатаУвольнения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'КонтактноеЛицоКонтрагента',
+					},
+					{
+						name:'ДатаУвольнения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -251,36 +323,87 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'32',
+					dataIndex:'СостояниеСобытия',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'31',
+					dataIndex:'Важность',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид события',
 					width:'80',
+					dataIndex:'ВидСобытия',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Описание',
 					width:'180',
+					dataIndex:'ОписаниеСобытия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'СостояниеСобытия',
+					},
+					{
+						name:'Важность',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидСобытия',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'ОписаниеСобытия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -498,16 +621,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'146',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'246',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -531,16 +680,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'360',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

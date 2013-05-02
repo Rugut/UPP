@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'63',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'150',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Процент',
 					width:'56',
+					dataIndex:'Процент',
+					flex:1,
 				},
 				{
 					text:'Минимальный тариф',
 					width:'126',
+					dataIndex:'МинимальныйТариф',
+					flex:1,
 				},
 				{
 					text:'Максимальный тариф',
 					width:'126',
+					dataIndex:'МаксимальныйТариф',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТарифыБанковНаДенежныеПереводы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Процент',
+					},
+					{
+						name:'МинимальныйТариф',
+					},
+					{
+						name:'МаксимальныйТариф',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

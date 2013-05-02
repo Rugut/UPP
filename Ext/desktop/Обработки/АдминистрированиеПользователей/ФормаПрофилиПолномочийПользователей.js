@@ -132,8 +132,24 @@
 				{
 					text:'Имя роли',
 					width:'142',
+					dataIndex:'ПредставлениеРоли',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеРоли',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -144,8 +160,24 @@
 				{
 					text:'Наименование',
 					width:'135',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -156,12 +188,33 @@
 				{
 					text:'Право',
 					width:'357',
+					dataIndex:'Право',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'58',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Право',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

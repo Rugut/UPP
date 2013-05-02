@@ -71,12 +71,33 @@
 				{
 					text:'Использование показателя',
 					width:'25',
+					dataIndex:'ИспользованиеПоказателя',
+					flex:1,
 				},
 				{
 					text:'Представление показателя',
 					width:'175',
+					dataIndex:'ПредставлениеПоказателя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИспользованиеПоказателя',
+					},
+					{
+						name:'ПредставлениеПоказателя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',

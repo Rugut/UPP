@@ -45,20 +45,51 @@
 				{
 					text:' Склад. Номенклатура.',
 					width:'154',
+					dataIndex:'СкладНоменклатура',
+					flex:1,
 				},
 				{
 					text:' Характеристика',
 					width:'100',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:' Требуемое кол.',
 					width:'100',
+					dataIndex:'ТребуемоеКоличество',
+					flex:1,
 				},
 				{
 					text:' Заказать кол.',
 					width:'100',
+					dataIndex:'ЗаказатьКоличество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланированиеЗакупок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'СкладНоменклатура',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'ТребуемоеКоличество',
+					},
+					{
+						name:'ЗаказатьКоличество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -92,12 +123,33 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Проведен',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'220',
+					dataIndex:'Документ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланированиеЗакупок/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Проведен',
+					},
+					{
+						name:'Документ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

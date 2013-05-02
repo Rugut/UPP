@@ -193,20 +193,51 @@
 				{
 					text:'№',
 					width:'32',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'220',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Ведомость',
 					width:'220',
+					dataIndex:'Ведомость',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеДепонентовВДоходыОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Ведомость',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 					]
 				},

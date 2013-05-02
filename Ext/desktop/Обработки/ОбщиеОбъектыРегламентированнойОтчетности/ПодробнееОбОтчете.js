@@ -46,20 +46,51 @@
 				{
 					text:'Утверждена',
 					width:'272',
+					dataIndex:'ОписаниеОтчета',
+					flex:1,
 				},
 				{
 					text:'Начало действия',
 					width:'100',
+					dataIndex:'ДатаНачалоДействия',
+					flex:1,
 				},
 				{
 					text:'Конец действия',
 					width:'100',
+					dataIndex:'ДатаКонецДействия',
+					flex:1,
 				},
 				{
 					text:'Внутренее имя',
 					width:'100',
+					dataIndex:'ФормаОтчета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ОписаниеОтчета',
+					},
+					{
+						name:'ДатаНачалоДействия',
+					},
+					{
+						name:'ДатаКонецДействия',
+					},
+					{
+						name:'ФормаОтчета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

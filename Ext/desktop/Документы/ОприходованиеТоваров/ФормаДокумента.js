@@ -208,108 +208,249 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'220',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'120',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия',
 					width:'120',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Статус партии',
 					width:'120',
+					dataIndex:'СтатусПартии',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'60',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'64',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'% наценки',
 					width:'60',
+					dataIndex:'ПроцентРозничнойНаценки',
+					flex:1,
 				},
 				{
 					text:'Розн. цена (руб.)',
 					width:'80',
+					dataIndex:'ЦенаВРознице',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Сумма (регл.)',
 					width:'80',
+					dataIndex:'СуммаРегл',
+					flex:1,
 				},
 				{
 					text:'Сумма НУ',
 					width:'74',
+					dataIndex:'СуммаНУ',
+					flex:1,
 				},
 				{
 					text:'Сумма ВР',
 					width:'74',
+					dataIndex:'СуммаВР',
+					flex:1,
 				},
 				{
 					text:'Сумма ПР',
 					width:'72',
+					dataIndex:'СуммаПР',
+					flex:1,
 				},
 				{
 					text:'Номер ГТД',
 					width:'120',
+					dataIndex:'НомерГТД',
+					flex:1,
 				},
 				{
 					text:'Страна происхождения',
 					width:'120',
+					dataIndex:'СтранаПроисхождения',
+					flex:1,
 				},
 				{
 					text:'Счет учета (БУ)',
 					width:'80',
+					dataIndex:'СчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Счет учета (НУ)',
 					width:'80',
+					dataIndex:'СчетУчетаНУ',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'120',
+					dataIndex:'Качество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОприходованиеТоваров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'СтатусПартии',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'ПроцентРозничнойНаценки',
+					},
+					{
+						name:'ЦенаВРознице',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СуммаРегл',
+					},
+					{
+						name:'СуммаНУ',
+					},
+					{
+						name:'СуммаВР',
+					},
+					{
+						name:'СуммаПР',
+					},
+					{
+						name:'НомерГТД',
+					},
+					{
+						name:'СтранаПроисхождения',
+					},
+					{
+						name:'СчетУчетаБУ',
+					},
+					{
+						name:'СчетУчетаНУ',
+					},
+					{
+						name:'Качество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

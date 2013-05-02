@@ -72,20 +72,51 @@
 				{
 					text:'',
 					width:'25',
+					dataIndex:'Выбор',
+					flex:1,
 				},
 				{
 					text:'№',
 					width:'35',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Составной ответ',
 					width:'204',
+					dataIndex:'ВариантОтвета',
+					flex:1,
 				},
 				{
 					text:'Развернутый ответ',
 					width:'200',
+					dataIndex:'Ответ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Выбор',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВариантОтвета',
+					},
+					{
+						name:'Ответ',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -300,7 +331,18 @@
 			height: 238,width: 350,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 					]
 				},

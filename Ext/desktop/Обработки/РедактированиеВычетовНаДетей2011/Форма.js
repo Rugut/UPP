@@ -41,8 +41,24 @@
 				{
 					text:'Сотрудник',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -53,36 +69,87 @@
 				{
 					text:'Период (с ... по)',
 					width:'140',
+					dataIndex:'КолонкаПериод',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'70',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'70',
+					dataIndex:'ПериодЗавершения',
+					flex:1,
 				},
 				{
 					text:'Код и количество детей',
 					width:'83',
+					dataIndex:'ВычетыНаДетейТекст',
+					flex:1,
 				},
 				{
 					text:'Применение',
 					width:'70',
+					dataIndex:'ВычетыНаДетейПрименение',
+					flex:1,
 				},
 				{
 					text:'Вычет на детей',
 					width:'60',
+					dataIndex:'КодВычетаНаДетей',
+					flex:1,
 				},
 				{
 					text:'Количество детей',
 					width:'24',
+					dataIndex:'КоличествоДетей',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'100',
+					dataIndex:'Основание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КолонкаПериод',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ПериодЗавершения',
+					},
+					{
+						name:'ВычетыНаДетейТекст',
+					},
+					{
+						name:'ВычетыНаДетейПрименение',
+					},
+					{
+						name:'КодВычетаНаДетей',
+					},
+					{
+						name:'КоличествоДетей',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -105,36 +172,87 @@
 				{
 					text:'Период (с ... по)',
 					width:'140',
+					dataIndex:'КолонкаПериод',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'70',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'по',
 					width:'70',
+					dataIndex:'ПериодЗавершения',
+					flex:1,
 				},
 				{
 					text:'Код и количество детей',
 					width:'83',
+					dataIndex:'ВычетыНаДетейТекст',
+					flex:1,
 				},
 				{
 					text:'Применение',
 					width:'70',
+					dataIndex:'ВычетыНаДетейПрименение',
+					flex:1,
 				},
 				{
 					text:'Вычет на детей',
 					width:'60',
+					dataIndex:'КодВычетаНаДетей',
+					flex:1,
 				},
 				{
 					text:'Количество детей',
 					width:'24',
+					dataIndex:'КоличествоДетей',
+					flex:1,
 				},
 				{
 					text:'Основание',
 					width:'100',
+					dataIndex:'Основание',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КолонкаПериод',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ПериодЗавершения',
+					},
+					{
+						name:'ВычетыНаДетейТекст',
+					},
+					{
+						name:'ВычетыНаДетейПрименение',
+					},
+					{
+						name:'КодВычетаНаДетей',
+					},
+					{
+						name:'КоличествоДетей',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

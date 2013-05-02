@@ -93,92 +93,213 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'250',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'60',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'65',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'78',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'82',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'40',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'80',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'80',
+					dataIndex:'Всего',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'154',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'250',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Себестоимость',
 					width:'80',
+					dataIndex:'ПлановаяСебестоимость',
+					flex:1,
 				},
 				{
 					text:'Всего себестоимость',
 					width:'80',
+					dataIndex:'СуммаПлановойСебестоимости',
+					flex:1,
 				},
 				{
 					text:'Отклонение',
 					width:'80',
+					dataIndex:'СуммаОтклоненияОтСуммыПлановойСебестоимости',
+					flex:1,
 				},
 				{
 					text:'% отклонения',
 					width:'80',
+					dataIndex:'ПроцентОтклоненияОтСуммыПлановойСебестоимости',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПоставщику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'Всего',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'ПлановаяСебестоимость',
+					},
+					{
+						name:'СуммаПлановойСебестоимости',
+					},
+					{
+						name:'СуммаОтклоненияОтСуммыПлановойСебестоимости',
+					},
+					{
+						name:'ПроцентОтклоненияОтСуммыПлановойСебестоимости',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -223,36 +344,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'65',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'250',
+					dataIndex:'Заказ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПоставщику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Заказ',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -275,60 +447,141 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'220',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'120',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаИзмеренияМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'75',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'80',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'40',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'65',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'60',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'80',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'80',
+					dataIndex:'Всего',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПоставщику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ЕдиницаИзмеренияМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'Всего',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -358,56 +611,132 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'220',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'120',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'70',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'80',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'40',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'100',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПоставщику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -446,40 +775,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Содержание услуги, доп. сведения',
 					width:'100',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'80',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'60',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'80',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'80',
+					dataIndex:'Всего',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПоставщику/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'Всего',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

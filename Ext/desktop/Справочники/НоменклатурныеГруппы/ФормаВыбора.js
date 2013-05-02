@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'35',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'72',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Ед. остатков',
 					width:'80',
+					dataIndex:'ЕдиницаХраненияОстатков',
+					flex:1,
 				},
 				{
 					text:'Базовая ед.',
 					width:'80',
+					dataIndex:'БазоваяЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Ставка НДС',
 					width:'80',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ЕдиницаХраненияОстатков',
+					},
+					{
+						name:'БазоваяЕдиницаИзмерения',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -61,8 +102,24 @@
 				{
 					text:'Наименование',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 	]
 });

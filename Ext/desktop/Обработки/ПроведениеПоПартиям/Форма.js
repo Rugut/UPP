@@ -76,28 +76,69 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'173',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Головная организация',
 					width:'100',
+					dataIndex:'ГоловнаяОрганизация',
+					flex:1,
 				},
 				{
 					text:'Дата начала проведения',
 					width:'92',
+					dataIndex:'КолонкаЗаголовок',
+					flex:1,
 				},
 				{
 					text:'Упр. учет',
 					width:'80',
+					dataIndex:'УУ',
+					flex:1,
 				},
 				{
 					text:'Бух. и нал. учет',
 					width:'80',
+					dataIndex:'БУ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроведениеПоПартиям/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ГоловнаяОрганизация',
+					},
+					{
+						name:'КолонкаЗаголовок',
+					},
+					{
+						name:'УУ',
+					},
+					{
+						name:'БУ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

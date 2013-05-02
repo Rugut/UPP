@@ -76,20 +76,51 @@
 				{
 					text:'Реестр',
 					width:'101',
+					dataIndex:'Справка',
+					flex:1,
 				},
 				{
 					text:'Общая сумма дохода',
 					width:'100',
+					dataIndex:'ОбщаяСуммаДохода',
+					flex:1,
 				},
 				{
 					text:'Налога исчислено',
 					width:'100',
+					dataIndex:'НалогаИсчислено',
+					flex:1,
 				},
 				{
 					text:'Налога удержано',
 					width:'100',
+					dataIndex:'НалогаУдержано',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Справка',
+					},
+					{
+						name:'ОбщаяСуммаДохода',
+					},
+					{
+						name:'НалогаИсчислено',
+					},
+					{
+						name:'НалогаУдержано',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -273,20 +304,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Налогоплательщик',
 					width:'105',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'№ справки',
 					width:'65',
+					dataIndex:'НомерСправки',
+					flex:1,
 				},
 				{
 					text:'Ставка',
 					width:'44',
+					dataIndex:'Ставка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'НомерСправки',
+					},
+					{
+						name:'Ставка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -337,24 +399,60 @@
 				{
 					text:'Месяц',
 					width:'41',
+					dataIndex:'Месяц',
+					flex:1,
 				},
 				{
 					text:'Код дохода',
 					width:'62',
+					dataIndex:'КодДохода',
+					flex:1,
 				},
 				{
 					text:'Сумма дохода',
 					width:'100',
+					dataIndex:'СуммаДохода',
+					flex:1,
 				},
 				{
 					text:'Код вычета',
 					width:'63',
+					dataIndex:'КодВычета',
+					flex:1,
 				},
 				{
 					text:'Сумма вычета',
 					width:'100',
+					dataIndex:'СуммаВычета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Месяц',
+					},
+					{
+						name:'КодДохода',
+					},
+					{
+						name:'СуммаДохода',
+					},
+					{
+						name:'КодВычета',
+					},
+					{
+						name:'СуммаВычета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -365,12 +463,33 @@
 				{
 					text:'Код вычета',
 					width:'100',
+					dataIndex:'КодВычета',
+					flex:1,
 				},
 				{
 					text:'Сумма вычета',
 					width:'100',
+					dataIndex:'СуммаВычета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КодВычета',
+					},
+					{
+						name:'СуммаВычета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -668,8 +787,24 @@
 				{
 					text:'По ставке:',
 					width:'64',
+					dataIndex:'Ставка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Ставка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',

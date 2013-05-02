@@ -61,24 +61,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Верхняя граница',
 					width:'100',
+					dataIndex:'ВерхняяГраница',
+					flex:1,
 				},
 				{
 					text:'Представление интервала',
 					width:'199',
+					dataIndex:'ПредставлениеИнтервала',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'81',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'62',
+					dataIndex:'Валюта',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДиапазоновБазовыхЦен/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВерхняяГраница',
+					},
+					{
+						name:'ПредставлениеИнтервала',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Валюта',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

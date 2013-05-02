@@ -18,44 +18,105 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'120',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Документ-основание',
 					width:'120',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
 				{
 					text:'Вид счета-фактуры',
 					width:'120',
+					dataIndex:'ВидСчетаФактуры',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'120',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Исправление',
 					width:'80',
+					dataIndex:'Исправление',
+					flex:1,
 				},
 				{
 					text:'Выставлен',
 					width:'80',
+					dataIndex:'Выставлен',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ДокументОснование',
+					},
+					{
+						name:'ВидСчетаФактуры',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'Исправление',
+					},
+					{
+						name:'Выставлен',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

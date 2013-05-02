@@ -199,28 +199,69 @@
 				{
 					text:'Раздел',
 					width:'80',
+					dataIndex:'Раздел',
+					flex:1,
 				},
 				{
 					text:'№',
 					width:'27',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вопрос',
 					width:'227',
+					dataIndex:'Вопрос',
+					flex:1,
 				},
 				{
 					text:'Обязательный',
 					width:'80',
+					dataIndex:'Обязательный',
+					flex:1,
 				},
 				{
 					text:'Вес вопроса',
 					width:'100',
+					dataIndex:'ВесВопроса',
+					flex:1,
 				},
 				{
 					text:'Секунд ответа',
 					width:'100',
+					dataIndex:'СекундОтвета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Раздел',
+					},
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Вопрос',
+					},
+					{
+						name:'Обязательный',
+					},
+					{
+						name:'ВесВопроса',
+					},
+					{
+						name:'СекундОтвета',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -238,16 +279,42 @@
 				{
 					text:'Код',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Раздел',
 					width:'234',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

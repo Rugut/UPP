@@ -39,12 +39,33 @@
 				{
 					text:'Объект нумерации',
 					width:'350',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'Редактирования номера',
 					width:'133',
+					dataIndex:'СтратегияРедактирования',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаСтратегииРедактированияНомеровОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Объект',
+					},
+					{
+						name:'СтратегияРедактирования',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

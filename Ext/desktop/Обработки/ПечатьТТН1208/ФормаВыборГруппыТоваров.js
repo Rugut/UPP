@@ -42,8 +42,24 @@
 				{
 					text:'',
 					width:'209',
+					dataIndex:'Группа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьТТН1208/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Группа',
+					},
+				]
+			},
 		},
 	]
 });

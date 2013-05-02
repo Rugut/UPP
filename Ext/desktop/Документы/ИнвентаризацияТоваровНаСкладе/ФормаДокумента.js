@@ -68,84 +68,195 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'202',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'120',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'127',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'74',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'112',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'52',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Отклонение',
 					width:'65',
+					dataIndex:'Отклонение',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'69',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'57',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'57',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Учет. количество ',
 					width:'54',
+					dataIndex:'КоличествоУчет',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'93',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Цена в рознице',
 					width:'95',
+					dataIndex:'ЦенаВРознице',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Учет. сумма',
 					width:'94',
+					dataIndex:'СуммаУчет',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'85',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Сумма (регл.)',
 					width:'125',
+					dataIndex:'СуммаРегл',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияТоваровНаСкладе/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Отклонение',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'КоличествоУчет',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'ЦенаВРознице',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СуммаУчет',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'СуммаРегл',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

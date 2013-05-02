@@ -34,16 +34,42 @@
 				{
 					text:'Представление',
 					width:'276',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ИндексКартинки',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'72',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+					{
+						name:'ИндексКартинки',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 	]
 });

@@ -480,40 +480,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'70',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'По классификатору',
 					width:'120',
+					dataIndex:'ЕдиницаПоКлассификатору',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'44',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Вес',
 					width:'57',
+					dataIndex:'Вес',
+					flex:1,
 				},
 				{
 					text:'Объем',
 					width:'63',
+					dataIndex:'Объем',
+					flex:1,
 				},
 				{
 					text:'Порог округления',
 					width:'70',
+					dataIndex:'ПорогОкругления',
+					flex:1,
 				},
 				{
 					text:'Предупреждать',
 					width:'70',
+					dataIndex:'ПредупреждатьОНецелыхМестах',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'ЕдиницаПоКлассификатору',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Вес',
+					},
+					{
+						name:'Объем',
+					},
+					{
+						name:'ПорогОкругления',
+					},
+					{
+						name:'ПредупреждатьОНецелыхМестах',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -646,12 +702,33 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -675,16 +752,42 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'35',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -708,20 +811,51 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'116',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'213',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'234',
+					dataIndex:'Проект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Проект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -752,16 +886,42 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'119',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'220',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -778,16 +938,42 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'220',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -823,20 +1009,51 @@
 				{
 					text:'Комплектующая номенклатуры',
 					width:'220',
+					dataIndex:'Комплектующая',
+					flex:1,
 				},
 				{
 					text:'Характеристика комплектующей',
 					width:'220',
+					dataIndex:'ХарактеристикаКомплектующей',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'64',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Комплектующая',
+					},
+					{
+						name:'ХарактеристикаКомплектующей',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -965,36 +1182,87 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Тип штрихкода',
 					width:'100',
+					dataIndex:'ТипШтрихкода',
+					flex:1,
 				},
 				{
 					text:'Штрихкод',
 					width:'100',
+					dataIndex:'Штрихкод',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'56',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'144',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия',
 					width:'122',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'95',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Владелец',
 					width:'123',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ТипШтрихкода',
+					},
+					{
+						name:'Штрихкод',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1134,28 +1402,69 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'70',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'202',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'100',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'114',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'112',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'Номенклатура',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -1172,20 +1481,51 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Склад',
 					width:'257',
+					dataIndex:'Склад',
+					flex:1,
 				},
 				{
 					text:'Приоритет',
 					width:'61',
+					dataIndex:'Приоритет',
+					flex:1,
 				},
 				{
 					text:'Место хранения',
 					width:'241',
+					dataIndex:'МестоХранения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Склад',
+					},
+					{
+						name:'Приоритет',
+					},
+					{
+						name:'МестоХранения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1229,40 +1569,96 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Версия',
 					width:'40',
+					dataIndex:'КодВерсии',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'181',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Активная',
 					width:'21',
+					dataIndex:'Активная',
+					flex:1,
 				},
 				{
 					text:'Состояние',
 					width:'80',
+					dataIndex:'Состояние',
+					flex:1,
 				},
 				{
 					text:'Дата утверждения',
 					width:'100',
+					dataIndex:'ДатаУтверждения',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'КодВерсии',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Активная',
+					},
+					{
+						name:'Состояние',
+					},
+					{
+						name:'ДатаУтверждения',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -1290,32 +1686,78 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'120',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'57',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Статья затрат',
 					width:'100',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'60',
+					dataIndex:'Валюта',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Валюта',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -1326,40 +1768,96 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Регистратор',
 					width:'100',
+					dataIndex:'Регистратор',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'127',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'120',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'70',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Процент скидки или наценки',
 					width:'56',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Регистратор',
+					},
+					{
+						name:'ТипЦен',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1383,24 +1881,60 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Записать',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'198',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'78',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'72',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Записать',
+					},
+					{
+						name:'ТипЦен',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -1438,32 +1972,78 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'172',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'69',
+					dataIndex:'КодНоменклатурыКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'97',
+					dataIndex:'АртикулНоменклатурыКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'194',
+					dataIndex:'НаименованиеНоменклатурыКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Штрихкод',
 					width:'108',
+					dataIndex:'ШтрихКодНоменклатурыКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Ед. изм.',
 					width:'54',
+					dataIndex:'ЕдиницаНоменклатурыКонтрагента',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'КодНоменклатурыКонтрагента',
+					},
+					{
+						name:'АртикулНоменклатурыКонтрагента',
+					},
+					{
+						name:'НаименованиеНоменклатурыКонтрагента',
+					},
+					{
+						name:'ШтрихКодНоменклатурыКонтрагента',
+					},
+					{
+						name:'ЕдиницаНоменклатурыКонтрагента',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1487,32 +2067,78 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Записать',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'143',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'61',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Способ расчета',
 					width:'124',
+					dataIndex:'СпособРасчетаЦены',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'47',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'54',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'% скидки (наценки)',
 					width:'72',
+					dataIndex:'ПроцентСкидкиНаценки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Записать',
+					},
+					{
+						name:'ТипЦен',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'СпособРасчетаЦены',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ПроцентСкидкиНаценки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

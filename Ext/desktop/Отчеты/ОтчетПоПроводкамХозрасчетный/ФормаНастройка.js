@@ -91,16 +91,42 @@
 				{
 					text:'Дебет',
 					width:'45',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'Кредит',
 					width:'47',
+					dataIndex:'СчетКт',
+					flex:1,
 				},
 				{
 					text:'Субконто',
 					width:'240',
+					dataIndex:'Субконто',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамХозрасчетный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'СчетКт',
+					},
+					{
+						name:'Субконто',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -128,28 +154,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамХозрасчетный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

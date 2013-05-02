@@ -36,64 +36,150 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Имя владельца',
 					width:'120',
+					dataIndex:'ИмяВладельца',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'ИНН',
 					width:'114',
+					dataIndex:'ИНН',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'100',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Начало действия',
 					width:'116',
+					dataIndex:'ДействителенС',
+					flex:1,
 				},
 				{
 					text:'Конец действия',
 					width:'116',
+					dataIndex:'ДействителенПо',
+					flex:1,
 				},
 				{
 					text:'E-mail',
 					width:'100',
+					dataIndex:'EMail',
+					flex:1,
 				},
 				{
 					text:'Отпечаток',
 					width:'240',
+					dataIndex:'Отпечаток',
+					flex:1,
 				},
 				{
 					text:'Пригоден для шифрования',
 					width:'21',
+					dataIndex:'ПригоденДляШифрования',
+					flex:1,
 				},
 				{
 					text:'Пригоден для подписания',
 					width:'21',
+					dataIndex:'ПригоденДляПодписания',
+					flex:1,
 				},
 				{
 					text:'Поставщик',
 					width:'120',
+					dataIndex:'Поставщик',
+					flex:1,
 				},
 				{
 					text:'Серийный номер',
 					width:'120',
+					dataIndex:'СерийныйНомер',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Владелец',
 					width:'120',
+					dataIndex:'Владелец',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'ИмяВладельца',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ИНН',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'ДействителенС',
+					},
+					{
+						name:'ДействителенПо',
+					},
+					{
+						name:'EMail',
+					},
+					{
+						name:'Отпечаток',
+					},
+					{
+						name:'ПригоденДляШифрования',
+					},
+					{
+						name:'ПригоденДляПодписания',
+					},
+					{
+						name:'Поставщик',
+					},
+					{
+						name:'СерийныйНомер',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Владелец',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

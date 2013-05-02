@@ -127,16 +127,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Элемент',
 					width:'220',
+					dataIndex:'ЭлементУправленческойАналитики',
+					flex:1,
 				},
 				{
 					text:'Процент',
 					width:'80',
+					dataIndex:'ПроцентДляРаспределения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоИзмерениям/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ЭлементУправленческойАналитики',
+					},
+					{
+						name:'ПроцентДляРаспределения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

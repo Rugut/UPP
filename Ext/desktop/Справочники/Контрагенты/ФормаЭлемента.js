@@ -294,16 +294,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид деятельности',
 					width:'120',
+					dataIndex:'ВидДеятельности',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидДеятельности',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -389,12 +415,33 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Менеджер покупателя',
 					width:'458',
+					dataIndex:'МенеджерПокупателя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'МенеджерПокупателя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -511,24 +558,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'100',
+					dataIndex:'Тип',
+					flex:1,
 				},
 				{
 					text:'Вид',
 					width:'145',
+					dataIndex:'Вид',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'172',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'89',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'Вид',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -621,20 +704,51 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Контактное лицо контрагента',
 					width:'180',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'120',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'Роль ',
 					width:'120',
+					dataIndex:'РольКонтактногоЛица',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'РольКонтактногоЛица',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -690,40 +804,96 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'65',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'156',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Ведение взаиморасчетов',
 					width:'140',
+					dataIndex:'ВедениеВзаиморасчетов',
+					flex:1,
 				},
 				{
 					text:'Вид договора',
 					width:'110',
+					dataIndex:'ВидДоговора',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'99',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Валюта взаиморасчетов',
 					width:'128',
+					dataIndex:'ВалютаВзаиморасчетов',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВедениеВзаиморасчетов',
+					},
+					{
+						name:'ВидДоговора',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'ВалютаВзаиморасчетов',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -875,20 +1045,51 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'67',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'264',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Банк',
 					width:'230',
+					dataIndex:'Банк',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Банк',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1021,40 +1222,96 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'29',
+					dataIndex:'СостояниеСобытия',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Важность',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'44',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'48',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Вид события',
 					width:'110',
+					dataIndex:'ВидСобытия',
+					flex:1,
 				},
 				{
 					text:'Контактное лицо',
 					width:'122',
+					dataIndex:'КонтактноеЛицо',
+					flex:1,
 				},
 				{
 					text:'Описание события',
 					width:'118',
+					dataIndex:'ОписаниеСобытия',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'107',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'СостояниеСобытия',
+					},
+					{
+						name:'Важность',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ВидСобытия',
+					},
+					{
+						name:'КонтактноеЛицо',
+					},
+					{
+						name:'ОписаниеСобытия',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1078,16 +1335,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'186',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'302',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1111,16 +1394,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'465',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

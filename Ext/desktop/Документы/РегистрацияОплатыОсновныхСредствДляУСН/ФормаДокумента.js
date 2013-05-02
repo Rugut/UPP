@@ -116,20 +116,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'150',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Сумма оплаты',
 					width:'80',
+					dataIndex:'СуммаОплаты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'СуммаОплаты',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -146,20 +177,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Нематериальный актив',
 					width:'150',
+					dataIndex:'НематериальныйАктив',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Сумма оплаты',
 					width:'80',
+					dataIndex:'СуммаОплаты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НематериальныйАктив',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'СуммаОплаты',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -183,20 +245,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Документ модернизации',
 					width:'100',
+					dataIndex:'ДокументМодернизации',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'100',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Сумма оплаты',
 					width:'100',
+					dataIndex:'СуммаОплаты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДокументМодернизации',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'СуммаОплаты',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

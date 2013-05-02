@@ -69,12 +69,33 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'ИспользованиеПоказателя',
+					flex:1,
 				},
 				{
 					text:'Показатель',
 					width:'220',
+					dataIndex:'ПредставлениеПоказателя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИспользованиеПоказателя',
+					},
+					{
+						name:'ПредставлениеПоказателя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -122,16 +143,42 @@
 				{
 					text:'Группировки строк',
 					width:'120',
+					dataIndex:'ПредставлениеГруппировки',
+					flex:1,
 				},
 				{
 					text:'Тип',
 					width:'80',
+					dataIndex:'ТипИтога',
+					flex:1,
 				},
 				{
 					text:'Дополнительные поля',
 					width:'120',
+					dataIndex:'ДополнительныеПоля',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеГруппировки',
+					},
+					{
+						name:'ТипИтога',
+					},
+					{
+						name:'ДополнительныеПоля',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -186,20 +233,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'120',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Вид сравнения',
 					width:'80',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'120',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Поле',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 					]
 				},

@@ -1,4 +1,4 @@
-var windowIndex = 0;
+п»їvar windowIndex = 0;
 
 Ext.define('MyDesktop.BogusModule',
 {
@@ -15,30 +15,26 @@ Ext.define('MyDesktop.BogusModule',
             windowId: windowIndex
         }
     },
-    createWindow: function (src) {
-        Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
-            enabled: true,  //Загрузчик активен
-            disableCaching: true,   //Не кеширует файоы
-            paths: {
-                Base: "js/Base", //Путь в пространству данных Base
-                Метаданные: "Метаданные",
-                Справочники: "Справочники"
-            }
-        });
+    createWindow: function (src)
+    {
+        Ext.require([src.FormId]);
+        Ext.onReady(function() {
+            var win = Ext.create(src.FormId, {});
+            win.show();
+            return win;
+        }
+        );
+        //Ext.Loader.setConfig({ //РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ Р·Р°РіСЂСѓР·С‡РёРєР° СЃРєСЂРёРїС‚РѕРІ
+        //    enabled: true,  //Р—Р°РіСЂСѓР·С‡РёРє Р°РєС‚РёРІРµРЅ
+        //    disableCaching: true,   //РќРµ РєРµС€РёСЂСѓРµС‚ С„Р°Р№РѕС‹
+        //    paths: {
+        //        Base: "js/Base", //РџСѓС‚СЊ РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ РґР°РЅРЅС‹С… Base
+        //        РњРµС‚Р°РґР°РЅРЅС‹Рµ: "РњРµС‚Р°РґР°РЅРЅС‹Рµ",
+        //        РЎРїСЂР°РІРѕС‡РЅРёРєРё: "РЎРїСЂР°РІРѕС‡РЅРёРєРё"
+        //    }
+        //});
         //alert(src.FormId);
-        var win = Ext.create(src.FormId, {
-            // grid: this
-            //Создаем тестовое окно, определенное в файле Test, файл должен автоматически загрузится     this.tbar = new App.Common.CommonGridTBar({grid:this});
-            //items:[{
-            //    xtype:'form',
-            //    items:[{
-            //        xtype:'textfield',
-            //        fieldLabel:'fdsfds'
-            //    }]
-            //}]
-        });
-        win.show();
-        return win;
+
     }
 });
 

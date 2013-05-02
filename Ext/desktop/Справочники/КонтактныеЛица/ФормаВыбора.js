@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'ФИО',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Дата рождения',
 					width:'84',
+					dataIndex:'ДатаРождения',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'120',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Количество дней до напоминания',
 					width:'14',
+					dataIndex:'КоличествоДнейДоНапоминания',
+					flex:1,
 				},
 				{
 					text:'Напоминать о дне рождения',
 					width:'20',
+					dataIndex:'НапоминатьОДнеРождения',
+					flex:1,
 				},
 				{
 					text:'Описание',
 					width:'120',
+					dataIndex:'Описание',
+					flex:1,
 				},
 				{
 					text:'Отчество',
 					width:'120',
+					dataIndex:'Отчество',
+					flex:1,
 				},
 				{
 					text:'Пол',
 					width:'80',
+					dataIndex:'Пол',
+					flex:1,
 				},
 				{
 					text:'Фамилия',
 					width:'120',
+					dataIndex:'Фамилия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ДатаРождения',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'КоличествоДнейДоНапоминания',
+					},
+					{
+						name:'НапоминатьОДнеРождения',
+					},
+					{
+						name:'Описание',
+					},
+					{
+						name:'Отчество',
+					},
+					{
+						name:'Пол',
+					},
+					{
+						name:'Фамилия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

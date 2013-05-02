@@ -18,12 +18,33 @@
 				{
 					text:'Код',
 					width:'100',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'350',
+					dataIndex:'Имя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КодыОКПД/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Имя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

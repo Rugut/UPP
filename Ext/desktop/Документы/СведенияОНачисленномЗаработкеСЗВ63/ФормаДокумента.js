@@ -288,12 +288,33 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'220',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',
@@ -316,16 +337,42 @@
 				{
 					text:'Месяц',
 					width:'42',
+					dataIndex:'Месяц',
+					flex:1,
 				},
 				{
 					text:'Заработок всего',
 					width:'100',
+					dataIndex:'Заработок',
+					flex:1,
 				},
 				{
 					text:'В т.ч. облагается взносами',
 					width:'149',
+					dataIndex:'ОблагаетсяВзносами',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Месяц',
+					},
+					{
+						name:'Заработок',
+					},
+					{
+						name:'ОблагаетсяВзносами',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

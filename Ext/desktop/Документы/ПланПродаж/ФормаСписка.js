@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'120',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
 				{
 					text:'Дата планирования',
 					width:'80',
+					dataIndex:'ДатаПланирования',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'СуммаДокумента',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'60',
+					dataIndex:'ВалютаДокумента',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'120',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'120',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'120',
+					dataIndex:'Проект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПродаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Сценарий',
+					},
+					{
+						name:'ДатаПланирования',
+					},
+					{
+						name:'СуммаДокумента',
+					},
+					{
+						name:'ВалютаДокумента',
+					},
+					{
+						name:'ТипЦен',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Проект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

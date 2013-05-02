@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'80',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата конца',
 					width:'80',
+					dataIndex:'ДатаКонца',
+					flex:1,
 				},
 				{
 					text:'ЦФО',
 					width:'120',
+					dataIndex:'ЦФО',
+					flex:1,
 				},
 				{
 					text:'Статьи оборотов',
 					width:'120',
+					dataIndex:'СтатьиОборотов',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетФактическихДанныхПоБюджетам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаКонца',
+					},
+					{
+						name:'ЦФО',
+					},
+					{
+						name:'СтатьиОборотов',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

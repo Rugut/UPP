@@ -65,52 +65,123 @@
 				{
 					text:'№',
 					width:'20',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'175',
+					dataIndex:'Оборудование',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия',
 					width:'101',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаИзмеренияМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'100',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'59',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Счет учета (БУ)',
 					width:'120',
+					dataIndex:'СчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Счет учета (НУ)',
 					width:'111',
+					dataIndex:'СчетУчетаНУ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаОборудованияВМонтаж/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Оборудование',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'ЕдиницаИзмеренияМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'СчетУчетаБУ',
+					},
+					{
+						name:'СчетУчетаНУ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

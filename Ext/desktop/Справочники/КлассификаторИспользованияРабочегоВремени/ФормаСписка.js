@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Буквенный код',
 					width:'80',
+					dataIndex:'БуквенныйКод',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Полное наименование',
 					width:'220',
+					dataIndex:'ПолноеНаименование',
+					flex:1,
 				},
 				{
 					text:'Рабочее время',
 					width:'83',
+					dataIndex:'РабочееВремя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификаторИспользованияРабочегоВремени/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'БуквенныйКод',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ПолноеНаименование',
+					},
+					{
+						name:'РабочееВремя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -148,16 +148,42 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Компетенция',
 					width:'181',
+					dataIndex:'Компетенция',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'0',
+					dataIndex:'Должность',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Должности/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Компетенция',
+					},
+					{
+						name:'Должность',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

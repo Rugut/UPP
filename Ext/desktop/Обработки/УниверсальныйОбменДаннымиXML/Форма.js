@@ -75,12 +75,33 @@
 				{
 					text:'Правила выгрузки данных',
 					width:'204',
+					dataIndex:'ПВД',
+					flex:1,
 				},
 				{
 					text:'Узел обмена',
 					width:'126',
+					dataIndex:'СсылкаНаУзелОбмена',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПВД',
+					},
+					{
+						name:'СсылкаНаУзелОбмена',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -109,28 +130,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -193,12 +255,33 @@
 				{
 					text:'Наименование',
 					width:'286',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'301',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -676,8 +759,24 @@
 				{
 					text:'Метаданные',
 					width:'285',
+					dataIndex:'Метаданные',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Метаданные',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

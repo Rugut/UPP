@@ -35,8 +35,24 @@
 				{
 					text:'Реквизиты',
 					width:'145',
+					dataIndex:'Реквизиит',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Реквизиит',
+					},
+				]
+			},
 		},
 	]
 });

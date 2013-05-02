@@ -60,7 +60,18 @@
 			height: 418,width: 700,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчетБухОтчетность/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 	]
 });

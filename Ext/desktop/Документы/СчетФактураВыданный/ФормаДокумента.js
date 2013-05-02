@@ -368,12 +368,33 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Документ - основание для выписки счета-фактуры',
 					width:'120',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДокументОснование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -384,12 +405,33 @@
 				{
 					text:'Дата платежно-расчетного документа',
 					width:'80',
+					dataIndex:'ДатаПлатежноРасчетногоДокумента',
+					flex:1,
 				},
 				{
 					text:'Номер платежно расчетного документа',
 					width:'120',
+					dataIndex:'НомерПлатежноРасчетногоДокумента',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ДатаПлатежноРасчетногоДокумента',
+					},
+					{
+						name:'НомерПлатежноРасчетногоДокумента',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -431,28 +473,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура (обобщенное наименование)',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Содержание услуги, доп. сведения',
 					width:'120',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'Сумма с НДС',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'80',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'120',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -578,28 +661,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура (обобщенное наименование)',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Содержание услуги, доп. сведения',
 					width:'120',
+					dataIndex:'Содержание',
+					flex:1,
 				},
 				{
 					text:'Сумма с НДС',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'80',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'120',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Содержание',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -650,12 +774,33 @@
 				{
 					text:'№',
 					width:'25',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Документ - основание для выписки счета-фактуры',
 					width:'327',
+					dataIndex:'ДокументОснование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДокументОснование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

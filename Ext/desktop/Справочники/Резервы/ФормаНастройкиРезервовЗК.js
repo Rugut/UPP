@@ -58,12 +58,33 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид расчета',
 					width:'168',
+					dataIndex:'ВидРасчета',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Резервы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидРасчета',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -100,20 +121,51 @@
 				{
 					text:'Период',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'240',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Размер (%)',
 					width:'60',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Резерв',
 					width:'120',
+					dataIndex:'Резерв',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Резервы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Период',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'Резерв',
+					},
+				]
+			},
 		},
 					]
 				},

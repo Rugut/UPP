@@ -32,28 +32,69 @@
 				{
 					text:'Представление',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Начало действия',
 					width:'120',
+					dataIndex:'ДействителенС',
+					flex:1,
 				},
 				{
 					text:'Конец действия',
 					width:'120',
+					dataIndex:'ДействителенПо',
+					flex:1,
 				},
 				{
 					text:'Отпечаток',
 					width:'240',
+					dataIndex:'Отпечаток',
+					flex:1,
 				},
 				{
 					text:'Поставщик',
 					width:'120',
+					dataIndex:'Поставщик',
+					flex:1,
 				},
 				{
 					text:'Серийный номер',
 					width:'120',
+					dataIndex:'СерийныйНомер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчет4ФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ДействителенС',
+					},
+					{
+						name:'ДействителенПо',
+					},
+					{
+						name:'Отпечаток',
+					},
+					{
+						name:'Поставщик',
+					},
+					{
+						name:'СерийныйНомер',
+					},
+				]
+			},
 		},
 	]
 });

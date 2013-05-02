@@ -35,16 +35,42 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'63',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -151,32 +177,78 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'100',
+					dataIndex:'Вид документа',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'77',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'84',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Месяц',
 					width:'84',
+					dataIndex:'Месяц',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'93',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'161',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Вид документа',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Месяц',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -253,16 +325,42 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'100',
+					dataIndex:'Вид документа',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'140',
+					dataIndex:'Дата',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Вид документа',
+					},
+					{
+						name:'Дата',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -327,28 +425,69 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'100',
+					dataIndex:'Вид документа',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'140',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'109',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Сотрудники',
 					width:'127',
+					dataIndex:'Работники',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'150',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Вид документа',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Работники',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -433,28 +572,69 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'100',
+					dataIndex:'Вид документа',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'84',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'Колонка1',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'93',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'161',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Вид документа',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Колонка1',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

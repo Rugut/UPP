@@ -38,52 +38,123 @@
 				{
 					text:'N',
 					width:'21',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Переносить транзакцию',
 					width:'28',
+					dataIndex:'ПереноситьТранзакцию',
+					flex:1,
 				},
 				{
 					text:'Установка периода',
 					width:'115',
+					dataIndex:'УстановкаПериода',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'118',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Статья оборотов',
 					width:'147',
+					dataIndex:'СтатьяОборотов',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'100',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'ЦФО',
 					width:'100',
+					dataIndex:'ЦФО',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'100',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'89',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Сумма в валюте',
 					width:'89',
+					dataIndex:'СуммаВал',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктуализацияБюджетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПереноситьТранзакцию',
+					},
+					{
+						name:'УстановкаПериода',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'СтатьяОборотов',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ЦФО',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'СуммаВал',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

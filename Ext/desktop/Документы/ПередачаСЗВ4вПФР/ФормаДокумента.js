@@ -90,28 +90,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Тип строки',
 					width:'240',
+					dataIndex:'ТипСтроки',
+					flex:1,
 				},
 				{
 					text:'Год',
 					width:'60',
+					dataIndex:'Год',
+					flex:1,
 				},
 				{
 					text:'Страховая часть',
 					width:'100',
+					dataIndex:'СтраховаяЧасть',
+					flex:1,
 				},
 				{
 					text:'Накопительная часть',
 					width:'119',
+					dataIndex:'НакопительнаяЧасть',
+					flex:1,
 				},
 				{
 					text:'Дополнительный тариф',
 					width:'128',
+					dataIndex:'ДополнительныйТариф',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТипСтроки',
+					},
+					{
+						name:'Год',
+					},
+					{
+						name:'СтраховаяЧасть',
+					},
+					{
+						name:'НакопительнаяЧасть',
+					},
+					{
+						name:'ДополнительныйТариф',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -163,28 +204,69 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'120',
+					dataIndex:'ДокументПачка',
+					flex:1,
 				},
 				{
 					text:'№ пачки',
 					width:'49',
+					dataIndex:'НомерПачки',
+					flex:1,
 				},
 				{
 					text:'Форма',
 					width:'64',
+					dataIndex:'ТипФормДокументов',
+					flex:1,
 				},
 				{
 					text:'Категория ЗЛ',
 					width:'79',
+					dataIndex:'КатегорияЗастрахованныхЛиц',
+					flex:1,
 				},
 				{
 					text:'Тип сведений',
 					width:'76',
+					dataIndex:'ТипСведенийСЗВ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ДокументПачка',
+					},
+					{
+						name:'НомерПачки',
+					},
+					{
+						name:'ТипФормДокументов',
+					},
+					{
+						name:'КатегорияЗастрахованныхЛиц',
+					},
+					{
+						name:'ТипСведенийСЗВ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -195,12 +277,33 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Застрахованное лицо',
 					width:'120',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -352,32 +455,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'№ пачки',
 					width:'49',
+					dataIndex:'НомерПачки',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'120',
+					dataIndex:'ДокументПачка',
+					flex:1,
 				},
 				{
 					text:'Тип форм документов',
 					width:'60',
+					dataIndex:'ТипФормДокументов',
+					flex:1,
 				},
 				{
 					text:'Территориальные условия',
 					width:'60',
+					dataIndex:'ТерриториальныеУсловия',
+					flex:1,
 				},
 				{
 					text:'Вид корректировки',
 					width:'60',
+					dataIndex:'ВидКорректировки',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'105',
+					dataIndex:'КомментарийПачки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'НомерПачки',
+					},
+					{
+						name:'ДокументПачка',
+					},
+					{
+						name:'ТипФормДокументов',
+					},
+					{
+						name:'ТерриториальныеУсловия',
+					},
+					{
+						name:'ВидКорректировки',
+					},
+					{
+						name:'КомментарийПачки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -388,12 +537,33 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Физическое лицо',
 					width:'120',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -467,28 +637,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Тип строки',
 					width:'220',
+					dataIndex:'ТипСтроки',
+					flex:1,
 				},
 				{
 					text:'Год',
 					width:'74',
+					dataIndex:'Год',
+					flex:1,
 				},
 				{
 					text:'Страховая часть',
 					width:'100',
+					dataIndex:'СтраховаяЧасть',
+					flex:1,
 				},
 				{
 					text:'Накопительная часть',
 					width:'100',
+					dataIndex:'НакопительнаяЧасть',
+					flex:1,
 				},
 				{
 					text:'Дополнительный тариф',
 					width:'100',
+					dataIndex:'ДополнительныйТариф',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТипСтроки',
+					},
+					{
+						name:'Год',
+					},
+					{
+						name:'СтраховаяЧасть',
+					},
+					{
+						name:'НакопительнаяЧасть',
+					},
+					{
+						name:'ДополнительныйТариф',
+					},
+				]
+			},
 		},
 					]
 				},

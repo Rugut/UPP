@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'68',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'180',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'120',
+					dataIndex:'ВидДокумента',
+					flex:1,
 				},
 				{
 					text:'Стоимость единицы',
 					width:'120',
+					dataIndex:'Стоимость',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДенежныеДокументы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ВидДокумента',
+					},
+					{
+						name:'Стоимость',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

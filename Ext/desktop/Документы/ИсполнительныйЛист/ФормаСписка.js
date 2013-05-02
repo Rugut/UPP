@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'121',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Получатель',
 					width:'120',
+					dataIndex:'Получатель',
+					flex:1,
 				},
 				{
 					text:'Размер',
 					width:'80',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'80',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'80',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Предел',
 					width:'80',
+					dataIndex:'Предел',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсполнительныйЛист/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'Получатель',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'Предел',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

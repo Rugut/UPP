@@ -106,24 +106,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Вложения',
+					flex:1,
 				},
 				{
 					text:'Адрес отправителя',
 					width:'179',
+					dataIndex:'АдресОтправителя',
+					flex:1,
 				},
 				{
 					text:'Отправитель',
 					width:'180',
+					dataIndex:'Отправитель',
+					flex:1,
 				},
 				{
 					text:'Тема',
 					width:'220',
+					dataIndex:'Тема',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеПочты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Вложения',
+					},
+					{
+						name:'АдресОтправителя',
+					},
+					{
+						name:'Отправитель',
+					},
+					{
+						name:'Тема',
+					},
+				]
+			},
 		},
 	]
 });

@@ -18,8 +18,24 @@
 				{
 					text:'Представление',
 					width:'220',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализПотребностейВНоменклатуре/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',

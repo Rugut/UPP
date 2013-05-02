@@ -151,20 +151,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'366',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
 				{
 					text:'Инв. №',
 					width:'100',
+					dataIndex:'ИнвНомер',
+					flex:1,
 				},
 				{
 					text:'Инв. № (Орг)',
 					width:'112',
+					dataIndex:'ИнвентарныйНомер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+					{
+						name:'ИнвНомер',
+					},
+					{
+						name:'ИнвентарныйНомер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1141,20 +1172,51 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'100',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'100',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Сумма оплаты',
 					width:'100',
+					dataIndex:'СуммаОплаты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'СуммаОплаты',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -1165,16 +1227,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'100',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
 				{
 					text:'Инвентарный номер',
 					width:'100',
+					dataIndex:'ИнвентарныйНомер',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+					{
+						name:'ИнвентарныйНомер',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

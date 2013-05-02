@@ -61,20 +61,51 @@
 				{
 					text:'N',
 					width:'21',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'НЕ',
 					width:'18',
+					dataIndex:'ОтрицаниеУсловия',
+					flex:1,
 				},
 				{
 					text:'Условие',
 					width:'162',
+					dataIndex:'Условие',
+					flex:1,
 				},
 				{
 					text:'Значение условия',
 					width:'142',
+					dataIndex:'ЗначениеУсловия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ОтрицаниеУсловия',
+					},
+					{
+						name:'Условие',
+					},
+					{
+						name:'ЗначениеУсловия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -92,20 +123,51 @@
 				{
 					text:'N',
 					width:'21',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Действие фильтра',
 					width:'120',
+					dataIndex:'ДействиеФильтра',
+					flex:1,
 				},
 				{
 					text:'Группа писем',
 					width:'120',
+					dataIndex:'ГруппаПисем',
+					flex:1,
 				},
 				{
 					text:'Оформление',
 					width:'120',
+					dataIndex:'Оформление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДействиеФильтра',
+					},
+					{
+						name:'ГруппаПисем',
+					},
+					{
+						name:'Оформление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -60,16 +60,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Пометка',
+					flex:1,
 				},
 				{
 					text:'Профиль',
 					width:'203',
+					dataIndex:'Профиль',
+					flex:1,
 				},
 				{
 					text:'Роли и пользователи',
 					width:'123',
+					dataIndex:'РолиИПользователи',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Пометка',
+					},
+					{
+						name:'Профиль',
+					},
+					{
+						name:'РолиИПользователи',
+					},
+				]
+			},
 		},
 	]
 });

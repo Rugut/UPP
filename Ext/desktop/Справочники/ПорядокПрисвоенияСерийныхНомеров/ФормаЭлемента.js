@@ -49,24 +49,60 @@
 				{
 					text:'Номер разряда',
 					width:'86',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Источник',
 					width:'211',
+					dataIndex:'Источник',
+					flex:1,
 				},
 				{
 					text:'Значение / свойство',
 					width:'114',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'Тип разряда',
 					width:'75',
+					dataIndex:'ТипРазряда',
+					flex:1,
 				},
 				{
 					text:'Размер разряда',
 					width:'91',
+					dataIndex:'РазмерРазряда',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПорядокПрисвоенияСерийныхНомеров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Источник',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ТипРазряда',
+					},
+					{
+						name:'РазмерРазряда',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -102,28 +102,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'100',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Дата нач.',
 					width:'80',
+					dataIndex:'ДатаНач',
+					flex:1,
 				},
 				{
 					text:'Дата кон.',
 					width:'80',
+					dataIndex:'ДатаКон',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сценарий',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'ДатаНач',
+					},
+					{
+						name:'ДатаКон',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -147,28 +188,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'100',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Дата нач.',
 					width:'80',
+					dataIndex:'ДатаНач',
+					flex:1,
 				},
 				{
 					text:'Дата кон.',
 					width:'80',
+					dataIndex:'ДатаКон',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сценарий',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'ДатаНач',
+					},
+					{
+						name:'ДатаКон',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -192,28 +274,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'100',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Дата нач.',
 					width:'80',
+					dataIndex:'ДатаНач',
+					flex:1,
 				},
 				{
 					text:'Дата кон.',
 					width:'80',
+					dataIndex:'ДатаКон',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сценарий',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'ДатаНач',
+					},
+					{
+						name:'ДатаКон',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -237,16 +360,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'220',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Дата потребности',
 					width:'100',
+					dataIndex:'ДатаПотребности',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'ДатаПотребности',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -275,16 +424,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'220',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Дата потребности',
 					width:'100',
+					dataIndex:'ДатаПотребности',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'ДатаПотребности',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -313,16 +488,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'220',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Дата потребности',
 					width:'100',
+					dataIndex:'ДатаПотребности',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'ДатаПотребности',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -351,24 +552,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Дата нач.',
 					width:'80',
+					dataIndex:'ДатаНач',
+					flex:1,
 				},
 				{
 					text:'Дата кон.',
 					width:'80',
+					dataIndex:'ДатаКон',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'ДатаНач',
+					},
+					{
+						name:'ДатаКон',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -392,56 +629,132 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата потребности',
 					width:'100',
+					dataIndex:'ДатаПотребности',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'60',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'68',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Товар/тара',
 					width:'70',
+					dataIndex:'ТоварТара',
+					flex:1,
 				},
 				{
 					text:'Конечная продукция',
 					width:'200',
+					dataIndex:'КонечнаяПродукция',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'200',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'200',
+					dataIndex:'Проект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПотребностей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДатаПотребности',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'ТоварТара',
+					},
+					{
+						name:'КонечнаяПродукция',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Проект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

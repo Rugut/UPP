@@ -74,20 +74,51 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'НМА',
 					width:'220',
+					dataIndex:'НМА',
+					flex:1,
 				},
 				{
 					text:'Метод начисления ',
 					width:'120',
+					dataIndex:'МетодНачисленияАмортизации',
+					flex:1,
 				},
 				{
 					text:'Количество выпущенной продукции',
 					width:'188',
+					dataIndex:'КоличествоВыпущеннойПродукции',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АмортизацияНМАМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НМА',
+					},
+					{
+						name:'МетодНачисленияАмортизации',
+					},
+					{
+						name:'КоличествоВыпущеннойПродукции',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

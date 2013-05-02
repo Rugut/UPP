@@ -18,48 +18,114 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'180',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'179',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'84',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'84',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Месяц начисления',
 					width:'84',
+					dataIndex:'ПериодРегистрации',
+					flex:1,
 				},
 				{
 					text:'Вид простоя',
 					width:'120',
+					dataIndex:'ВидПростоя',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'180',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияПростоевРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'ПериодРегистрации',
+					},
+					{
+						name:'ВидПростоя',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

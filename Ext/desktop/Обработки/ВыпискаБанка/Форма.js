@@ -75,28 +75,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'ФлагОплачено',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'280',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Сумма прихода',
 					width:'120',
+					dataIndex:'СуммаПриход',
+					flex:1,
 				},
 				{
 					text:'Сумма расхода',
 					width:'120',
+					dataIndex:'СуммаРасход',
+					flex:1,
 				},
 				{
 					text:'ЧастичнаяОплата',
 					width:'100',
+					dataIndex:'ЧастичнаяОплата',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыпискаБанка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ФлагОплачено',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'СуммаПриход',
+					},
+					{
+						name:'СуммаРасход',
+					},
+					{
+						name:'ЧастичнаяОплата',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

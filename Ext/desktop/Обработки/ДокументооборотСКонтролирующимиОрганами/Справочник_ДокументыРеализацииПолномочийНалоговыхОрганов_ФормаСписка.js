@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата документа',
 					width:'94',
+					dataIndex:'ДатаДокумента',
+					flex:1,
 				},
 				{
 					text:'Номер документа',
 					width:'104',
+					dataIndex:'НомерДокумента',
+					flex:1,
 				},
 				{
 					text:'Вид документа',
 					width:'237',
+					dataIndex:'ВидДокумента',
+					flex:1,
 				},
 				{
 					text:'Налоговый орган',
 					width:'134',
+					dataIndex:'НалоговыйОрган',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'168',
+					dataIndex:'Организация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ДатаДокумента',
+					},
+					{
+						name:'НомерДокумента',
+					},
+					{
+						name:'ВидДокумента',
+					},
+					{
+						name:'НалоговыйОрган',
+					},
+					{
+						name:'Организация',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

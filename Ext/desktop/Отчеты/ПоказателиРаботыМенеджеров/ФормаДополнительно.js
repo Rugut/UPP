@@ -59,12 +59,33 @@
 				{
 					text:'Использование показателя',
 					width:'21',
+					dataIndex:'ИспользованиеПоказателя',
+					flex:1,
 				},
 				{
 					text:'Показатель',
 					width:'469',
+					dataIndex:'ПредставлениеПоказателя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиРаботыМенеджеров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИспользованиеПоказателя',
+					},
+					{
+						name:'ПредставлениеПоказателя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

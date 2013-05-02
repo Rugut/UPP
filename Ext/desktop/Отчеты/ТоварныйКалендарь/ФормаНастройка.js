@@ -45,16 +45,42 @@
 				{
 					text:'Группировка',
 					width:'158',
+					dataIndex:'ПредставлениеГруппировки',
+					flex:1,
 				},
 				{
 					text:'Тип итога',
 					width:'59',
+					dataIndex:'ТипИтога',
+					flex:1,
 				},
 				{
 					text:'Дополнительные поля',
 					width:'147',
+					dataIndex:'ДополнительныеПоля',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТоварныйКалендарь/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеГруппировки',
+					},
+					{
+						name:'ТипИтога',
+					},
+					{
+						name:'ДополнительныеПоля',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -133,20 +159,51 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'103',
+					dataIndex:'Поле',
+					flex:1,
 				},
 				{
 					text:'Вид сравнения',
 					width:'76',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'163',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТоварныйКалендарь/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Поле',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 					]
 				},

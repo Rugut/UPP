@@ -68,28 +68,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'120',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'80',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'240',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -118,36 +159,87 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'150',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'150',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'100',
+					dataIndex:'СпецификацияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Вид номенклатуры',
 					width:'110',
+					dataIndex:'ВидНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'130',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СпецификацияНоменклатуры',
+					},
+					{
+						name:'ВидНоменклатуры',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -830,40 +922,96 @@
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура / статья затрат',
 					width:'205',
+					dataIndex:'НоменклатураСтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Характеристика / характер затрат',
 					width:'173',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'57',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Вид затрат',
 					width:'100',
+					dataIndex:'ВидЗатрат',
+					flex:1,
 				},
 				{
 					text:'Затрата',
 					width:'100',
+					dataIndex:'Затрата',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'112',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'60',
+					dataIndex:'Валюта',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'НоменклатураСтатьяЗатрат',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'ВидЗатрат',
+					},
+					{
+						name:'Затрата',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Валюта',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

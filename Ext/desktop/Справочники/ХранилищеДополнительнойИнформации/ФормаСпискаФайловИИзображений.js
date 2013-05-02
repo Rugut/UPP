@@ -28,16 +28,42 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Описание изображения',
 					width:'357',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Объект',
 					width:'164',
+					dataIndex:'Объект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХранилищеДополнительнойИнформации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Объект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -164,20 +190,51 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'198',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'245',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Объект',
 					width:'203',
+					dataIndex:'Объект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХранилищеДополнительнойИнформации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Объект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

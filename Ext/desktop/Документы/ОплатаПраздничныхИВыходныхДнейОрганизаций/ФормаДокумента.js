@@ -125,40 +125,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'81',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'173',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'133',
+					dataIndex:'ПодразделениеОрганизации',
+					flex:1,
 				},
 				{
 					text:'Начисление',
 					width:'106',
+					dataIndex:'ВидРасчета',
+					flex:1,
 				},
 				{
 					text:'Дата выхода',
 					width:'74',
+					dataIndex:'ДатаВыхода',
+					flex:1,
 				},
 				{
 					text:'Отработано часов',
 					width:'97',
+					dataIndex:'ОтработаноЧасов',
+					flex:1,
 				},
 				{
 					text:'Часовая тарифная ставка',
 					width:'72',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Результат',
 					width:'89',
+					dataIndex:'Результат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаПраздничныхИВыходныхДнейОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ПодразделениеОрганизации',
+					},
+					{
+						name:'ВидРасчета',
+					},
+					{
+						name:'ДатаВыхода',
+					},
+					{
+						name:'ОтработаноЧасов',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'Результат',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

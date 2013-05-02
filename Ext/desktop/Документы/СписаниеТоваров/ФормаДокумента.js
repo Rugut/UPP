@@ -202,92 +202,213 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'250',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'250',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
 					width:'250',
+					dataIndex:'СерияНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Ед. мест',
 					width:'50',
+					dataIndex:'ЕдиницаМест',
+					flex:1,
 				},
 				{
 					text:'К. мест',
 					width:'45',
+					dataIndex:'КоэффициентМест',
+					flex:1,
 				},
 				{
 					text:'Мест',
 					width:'59',
+					dataIndex:'КоличествоМест',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'65',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'Единица',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'80',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Документ резерва',
 					width:'250',
+					dataIndex:'ДокументРезерва',
+					flex:1,
 				},
 				{
 					text:'Номер ГТД',
 					width:'200',
+					dataIndex:'НомерГТД',
+					flex:1,
 				},
 				{
 					text:'Страна происхождения',
 					width:'100',
+					dataIndex:'СтранаПроисхождения',
+					flex:1,
 				},
 				{
 					text:'Собственные, счет учета (БУ)',
 					width:'100',
+					dataIndex:'СчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Принятые, счет учета (БУ)',
 					width:'100',
+					dataIndex:'ПринятыеСчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Счет учета (НУ)',
 					width:'100',
+					dataIndex:'СчетУчетаНУ',
+					flex:1,
 				},
 				{
 					text:'Расходы в НУ',
 					width:'100',
+					dataIndex:'ОтражениеВУСН',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'100',
+					dataIndex:'Качество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеТоваров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'СерияНоменклатуры',
+					},
+					{
+						name:'ЕдиницаМест',
+					},
+					{
+						name:'КоэффициентМест',
+					},
+					{
+						name:'КоличествоМест',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Единица',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'ДокументРезерва',
+					},
+					{
+						name:'НомерГТД',
+					},
+					{
+						name:'СтранаПроисхождения',
+					},
+					{
+						name:'СчетУчетаБУ',
+					},
+					{
+						name:'ПринятыеСчетУчетаБУ',
+					},
+					{
+						name:'СчетУчетаНУ',
+					},
+					{
+						name:'ОтражениеВУСН',
+					},
+					{
+						name:'Качество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -324,40 +445,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'60',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'220',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'60',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед. хранения',
 					width:'52',
+					dataIndex:'ЕдиницаХранения',
+					flex:1,
 				},
 				{
 					text:'Документ резерва',
 					width:'120',
+					dataIndex:'ДокументРезерва',
+					flex:1,
 				},
 				{
 					text:'Счет учета (БУ)',
 					width:'100',
+					dataIndex:'СчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Счет учета (НУ)',
 					width:'100',
+					dataIndex:'СчетУчетаНУ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеТоваров/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаХранения',
+					},
+					{
+						name:'ДокументРезерва',
+					},
+					{
+						name:'СчетУчетаБУ',
+					},
+					{
+						name:'СчетУчетаНУ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -48,12 +48,33 @@
 				{
 					text:'Представление таблицы',
 					width:'106',
+					dataIndex:'ПредставлениеТаблицы',
+					flex:1,
 				},
 				{
 					text:'Имя таблицы',
 					width:'87',
+					dataIndex:'ИмяТаблицы',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеТаблицы',
+					},
+					{
+						name:'ИмяТаблицы',
+					},
+				]
+			},
 		},
 	]
 });

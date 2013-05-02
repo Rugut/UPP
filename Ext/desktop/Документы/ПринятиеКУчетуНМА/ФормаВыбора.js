@@ -18,52 +18,123 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'БУ',
 					width:'20',
+					dataIndex:'ОтражатьВБухгалтерскомУчете',
+					flex:1,
 				},
 				{
 					text:'НУ',
 					width:'20',
+					dataIndex:'ОтражатьВНалоговомУчете',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'120',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Нематериальный актив',
 					width:'120',
+					dataIndex:'НематериальныйАктив',
+					flex:1,
 				},
 				{
 					text:'Счет учета',
 					width:'80',
+					dataIndex:'СчетУчетаБУ',
+					flex:1,
 				},
 				{
 					text:'Субконто 1',
 					width:'120',
+					dataIndex:'СубконтоБУ1',
+					flex:1,
 				},
 				{
 					text:'Субконто 2',
 					width:'120',
+					dataIndex:'СубконтоБУ2',
+					flex:1,
 				},
 				{
 					text:'Субконто 3',
 					width:'120',
+					dataIndex:'СубконтоБУ3',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуНМА/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ОтражатьВБухгалтерскомУчете',
+					},
+					{
+						name:'ОтражатьВНалоговомУчете',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'НематериальныйАктив',
+					},
+					{
+						name:'СчетУчетаБУ',
+					},
+					{
+						name:'СубконтоБУ1',
+					},
+					{
+						name:'СубконтоБУ2',
+					},
+					{
+						name:'СубконтоБУ3',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

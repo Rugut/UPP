@@ -62,64 +62,150 @@
 				{
 					text:'Фирма',
 					width:'220',
+					dataIndex:'Фирма',
+					flex:1,
 				},
 				{
 					text:'Баланс',
 					width:'60',
+					dataIndex:'Баланс',
+					flex:1,
 				},
 				{
 					text:'Пр.и уб.',
 					width:'60',
+					dataIndex:'ПрибылиИУбытки',
+					flex:1,
 				},
 				{
 					text:'ДДС',
 					width:'60',
+					dataIndex:'ДДС',
+					flex:1,
 				},
 				{
 					text:'Дв.кап.',
 					width:'60',
+					dataIndex:'ДвижениеКапитала',
+					flex:1,
 				},
 				{
 					text:'Уч.пол.',
 					width:'60',
+					dataIndex:'УчетнаяПолитика',
+					flex:1,
 				},
 				{
 					text:'Прим.',
 					width:'60',
+					dataIndex:'Примечания',
+					flex:1,
 				},
 				{
 					text:'Вкл.',
 					width:'60',
+					dataIndex:'Включать',
+					flex:1,
 				},
 				{
 					text:'Способ конс.',
 					width:'120',
+					dataIndex:'СпособКонсолидации',
+					flex:1,
 				},
 				{
 					text:'БалансСсылка',
 					width:'21',
+					dataIndex:'БалансСсылка',
+					flex:1,
 				},
 				{
 					text:'ПрибылиИУбыткиСсылка',
 					width:'21',
+					dataIndex:'ПрибылиИУбыткиСсылка',
+					flex:1,
 				},
 				{
 					text:'ДДССсылка',
 					width:'21',
+					dataIndex:'ДДССсылка',
+					flex:1,
 				},
 				{
 					text:'ДвижениеКапиталаСсылка',
 					width:'21',
+					dataIndex:'ДвижениеКапиталаСсылка',
+					flex:1,
 				},
 				{
 					text:'УчетнаяПолитикаСсылка',
 					width:'21',
+					dataIndex:'УчетнаяПолитикаСсылка',
+					flex:1,
 				},
 				{
 					text:'ПримечанияСсылка',
 					width:'21',
+					dataIndex:'ПримечанияСсылка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Фирма',
+					},
+					{
+						name:'Баланс',
+					},
+					{
+						name:'ПрибылиИУбытки',
+					},
+					{
+						name:'ДДС',
+					},
+					{
+						name:'ДвижениеКапитала',
+					},
+					{
+						name:'УчетнаяПолитика',
+					},
+					{
+						name:'Примечания',
+					},
+					{
+						name:'Включать',
+					},
+					{
+						name:'СпособКонсолидации',
+					},
+					{
+						name:'БалансСсылка',
+					},
+					{
+						name:'ПрибылиИУбыткиСсылка',
+					},
+					{
+						name:'ДДССсылка',
+					},
+					{
+						name:'ДвижениеКапиталаСсылка',
+					},
+					{
+						name:'УчетнаяПолитикаСсылка',
+					},
+					{
+						name:'ПримечанияСсылка',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',
@@ -136,76 +222,177 @@
 				{
 					text:'Фирма',
 					width:'220',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Головная',
 					width:'60',
+					dataIndex:'Головная',
+					flex:1,
 				},
 				{
 					text:'Товары (на начало)',
 					width:'104',
+					dataIndex:'ТоварыПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'Товары (оборот)',
 					width:'104',
+					dataIndex:'ТоварыПрибыльВТеченииГода',
+					flex:1,
 				},
 				{
 					text:'Материалы (на начало)',
 					width:'100',
+					dataIndex:'СырьеИМатериалыПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'Материалы (оборот)',
 					width:'100',
+					dataIndex:'СырьеИМатериалыПрибыльВТеченииГода',
+					flex:1,
 				},
 				{
 					text:'НЗП (на начало)',
 					width:'100',
+					dataIndex:'НезавершенноеПроизводствоПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'НЗП (оборот)',
 					width:'100',
+					dataIndex:'НезавершенноеПроизводствоПрибыльВТеченииГода',
+					flex:1,
 				},
 				{
 					text:'Полуфабрикаты (на начало)',
 					width:'100',
+					dataIndex:'КомплектующиеИПолуфабрикатыПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'Полуфабрикаты (оборот)',
 					width:'100',
+					dataIndex:'КомплектующиеИПолуфабрикатыПрибыльВТеченииГода',
+					flex:1,
 				},
 				{
 					text:'ГП (на начало)',
 					width:'100',
+					dataIndex:'ГотоваяПродукцияПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'ГП (оборот)',
 					width:'100',
+					dataIndex:'ГотоваяПродукцияПрибыльВТеченииГода',
+					flex:1,
 				},
 				{
 					text:'Товары отгр. (на начало)',
 					width:'100',
+					dataIndex:'ТоварыОтгруженныеПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'Товары отгр. (оборот)',
 					width:'100',
+					dataIndex:'ТоварыОтгруженныеПрибыльВТеченииГода',
+					flex:1,
 				},
 				{
 					text:'ОС (на начало)',
 					width:'100',
+					dataIndex:'ОСПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'ОС (оборот)',
 					width:'100',
+					dataIndex:'ОСПрибыльВТеченииГода',
+					flex:1,
 				},
 				{
 					text:'НМА (на начало)',
 					width:'100',
+					dataIndex:'НМАПрибыльНаНачало',
+					flex:1,
 				},
 				{
 					text:'НМА (оборот)',
 					width:'100',
+					dataIndex:'НМАПрибыльВТеченииГода',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'Головная',
+					},
+					{
+						name:'ТоварыПрибыльНаНачало',
+					},
+					{
+						name:'ТоварыПрибыльВТеченииГода',
+					},
+					{
+						name:'СырьеИМатериалыПрибыльНаНачало',
+					},
+					{
+						name:'СырьеИМатериалыПрибыльВТеченииГода',
+					},
+					{
+						name:'НезавершенноеПроизводствоПрибыльНаНачало',
+					},
+					{
+						name:'НезавершенноеПроизводствоПрибыльВТеченииГода',
+					},
+					{
+						name:'КомплектующиеИПолуфабрикатыПрибыльНаНачало',
+					},
+					{
+						name:'КомплектующиеИПолуфабрикатыПрибыльВТеченииГода',
+					},
+					{
+						name:'ГотоваяПродукцияПрибыльНаНачало',
+					},
+					{
+						name:'ГотоваяПродукцияПрибыльВТеченииГода',
+					},
+					{
+						name:'ТоварыОтгруженныеПрибыльНаНачало',
+					},
+					{
+						name:'ТоварыОтгруженныеПрибыльВТеченииГода',
+					},
+					{
+						name:'ОСПрибыльНаНачало',
+					},
+					{
+						name:'ОСПрибыльВТеченииГода',
+					},
+					{
+						name:'НМАПрибыльНаНачало',
+					},
+					{
+						name:'НМАПрибыльВТеченииГода',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -225,7 +412,18 @@
 			height: 160,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -251,7 +449,18 @@
 			height: 138,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -277,7 +486,18 @@
 			height: 160,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -303,7 +523,18 @@
 			height: 138,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -341,7 +572,18 @@
 			height: 160,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -361,7 +603,18 @@
 			height: 138,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -387,7 +640,18 @@
 			height: 160,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -407,7 +671,18 @@
 			height: 138,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -433,7 +708,18 @@
 			height: 160,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -459,7 +745,18 @@
 			height: 127,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -485,7 +782,18 @@
 			height: 160,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -511,7 +819,18 @@
 			height: 138,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -537,7 +856,18 @@
 			height: 160,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -563,7 +893,18 @@
 			height: 137,width: 762,
 			columns:
 			[
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -694,12 +1035,33 @@
 				{
 					text:'Отчет',
 					width:'524',
+					dataIndex:'Отчет',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'21',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Отчет',
+					},
+					{
+						name:'Ссылка',
+					},
+				]
+			},
 		},
 					]
 				},

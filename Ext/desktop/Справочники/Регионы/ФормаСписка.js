@@ -18,28 +18,69 @@
 				{
 					text:'Код',
 					width:'110',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Код региона',
 					width:'72',
+					dataIndex:'КодРегиона',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'302',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'178',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Код адресного элемента',
 					width:'200',
+					dataIndex:'КодАдресногоЭлемента',
+					flex:1,
 				},
 				{
 					text:'Ж/Д станция назначения',
 					width:'309',
+					dataIndex:'ЖДСтанцияНазначения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Регионы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Код',
+					},
+					{
+						name:'КодРегиона',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'КодАдресногоЭлемента',
+					},
+					{
+						name:'ЖДСтанцияНазначения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

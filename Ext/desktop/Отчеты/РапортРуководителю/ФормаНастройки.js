@@ -54,12 +54,33 @@
 				{
 					text:'Показатель',
 					width:'257',
+					dataIndex:'ПредставлениеПоказателя',
+					flex:1,
 				},
 				{
 					text:'Показатель',
 					width:'100',
+					dataIndex:'Показатель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РапортРуководителю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПредставлениеПоказателя',
+					},
+					{
+						name:'Показатель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -170,8 +191,24 @@
 				{
 					text:'Время',
 					width:'100',
+					dataIndex:'Время',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РапортРуководителю/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Время',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

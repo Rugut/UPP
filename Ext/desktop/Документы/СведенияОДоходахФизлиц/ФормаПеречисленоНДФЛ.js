@@ -18,32 +18,78 @@
 				{
 					text:'№',
 					width:'25',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Физ лицо',
 					width:'103',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Ставка',
 					width:'50',
+					dataIndex:'Ставка',
+					flex:1,
 				},
 				{
 					text:'КБК',
 					width:'74',
+					dataIndex:'КБК',
+					flex:1,
 				},
 				{
 					text:'Код по ОКАТО',
 					width:'84',
+					dataIndex:'КодПоОКАТО',
+					flex:1,
 				},
 				{
 					text:'Перечислено',
 					width:'100',
+					dataIndex:'Перечислено',
+					flex:1,
 				},
 				{
 					text:'Удержано (справочно)',
 					width:'88',
+					dataIndex:'Удержано',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОДоходахФизлиц/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Ставка',
+					},
+					{
+						name:'КБК',
+					},
+					{
+						name:'КодПоОКАТО',
+					},
+					{
+						name:'Перечислено',
+					},
+					{
+						name:'Удержано',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -54,24 +100,60 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Ставка',
 					width:'100',
+					dataIndex:'Ставка',
+					flex:1,
 				},
 				{
 					text:'КБК',
 					width:'100',
+					dataIndex:'КБК',
+					flex:1,
 				},
 				{
 					text:'Код по ОКАТО',
 					width:'122',
+					dataIndex:'КодПоОКАТО',
+					flex:1,
 				},
 				{
 					text:'Перечислено',
 					width:'106',
+					dataIndex:'Перечислено',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОДоходахФизлиц/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Ставка',
+					},
+					{
+						name:'КБК',
+					},
+					{
+						name:'КодПоОКАТО',
+					},
+					{
+						name:'Перечислено',
+					},
+				]
+			},
 		},
 	]
 });

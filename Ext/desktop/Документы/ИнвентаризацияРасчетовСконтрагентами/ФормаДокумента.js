@@ -149,32 +149,78 @@
 				{
 					text:'Контрагент',
 					width:'158',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Счет расчетов',
 					width:'79',
+					dataIndex:'СчетРасчетов',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'109',
+					dataIndex:'Всего',
+					flex:1,
 				},
 				{
 					text:'Подтверждено',
 					width:'104',
+					dataIndex:'Подтверждено',
+					flex:1,
 				},
 				{
 					text:'Не подтверждено',
 					width:'100',
+					dataIndex:'НеПодтверждено',
+					flex:1,
 				},
 				{
 					text:'В т.ч. истек срок давности',
 					width:'141',
+					dataIndex:'ИстекСрокДавности',
+					flex:1,
 				},
 				{
 					text:'Вид задолженности',
 					width:'107',
+					dataIndex:'ВидЗадолженности',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'СчетРасчетов',
+					},
+					{
+						name:'Всего',
+					},
+					{
+						name:'Подтверждено',
+					},
+					{
+						name:'НеПодтверждено',
+					},
+					{
+						name:'ИстекСрокДавности',
+					},
+					{
+						name:'ВидЗадолженности',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -239,32 +285,78 @@
 				{
 					text:'Контрагент',
 					width:'148',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Счет расчетов',
 					width:'78',
+					dataIndex:'СчетРасчетов',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'110',
+					dataIndex:'Всего',
+					flex:1,
 				},
 				{
 					text:'Подтверждено',
 					width:'100',
+					dataIndex:'Подтверждено',
+					flex:1,
 				},
 				{
 					text:'Не подтверждено',
 					width:'100',
+					dataIndex:'НеПодтверждено',
+					flex:1,
 				},
 				{
 					text:'В т.ч. истек срок давности',
 					width:'141',
+					dataIndex:'ИстекСрокДавности',
+					flex:1,
 				},
 				{
 					text:'Вид задолженности',
 					width:'106',
+					dataIndex:'ВидЗадолженности',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'СчетРасчетов',
+					},
+					{
+						name:'Всего',
+					},
+					{
+						name:'Подтверждено',
+					},
+					{
+						name:'НеПодтверждено',
+					},
+					{
+						name:'ИстекСрокДавности',
+					},
+					{
+						name:'ВидЗадолженности',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -287,12 +379,33 @@
 				{
 					text:'Счет',
 					width:'124',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'360',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Счет',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -354,16 +467,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Члены комиссии',
 					width:'265',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Председатель',
 					width:'92',
+					dataIndex:'Председатель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Председатель',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

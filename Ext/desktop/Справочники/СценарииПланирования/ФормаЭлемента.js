@@ -190,20 +190,51 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Курс',
 					width:'80',
+					dataIndex:'Курс',
+					flex:1,
 				},
 				{
 					text:'Кратность',
 					width:'80',
+					dataIndex:'Кратность',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Курс',
+					},
+					{
+						name:'Кратность',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

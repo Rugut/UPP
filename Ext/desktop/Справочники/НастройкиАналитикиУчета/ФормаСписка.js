@@ -18,16 +18,42 @@
 				{
 					text:'Наименование',
 					width:'120',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Упр. учет',
 					width:'60',
+					dataIndex:'УправленческийУчет',
+					flex:1,
 				},
 				{
 					text:'Регл. учет',
 					width:'60',
+					dataIndex:'РегламентированныйУчет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиАналитикиУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'УправленческийУчет',
+					},
+					{
+						name:'РегламентированныйУчет',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

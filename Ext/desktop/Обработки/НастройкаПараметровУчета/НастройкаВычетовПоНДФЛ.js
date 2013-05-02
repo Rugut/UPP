@@ -37,20 +37,51 @@
 				{
 					text:'Код дохода',
 					width:'100',
+					dataIndex:'КодДохода',
+					flex:1,
 				},
 				{
 					text:'Годовой вычет',
 					width:'100',
+					dataIndex:'ГодовойВычет',
+					flex:1,
 				},
 				{
 					text:'Норматив затрат',
 					width:'100',
+					dataIndex:'НормативЗатрат',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КодДохода',
+					},
+					{
+						name:'ГодовойВычет',
+					},
+					{
+						name:'НормативЗатрат',
+					},
+					{
+						name:'Период',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -71,20 +102,51 @@
 				{
 					text:'Код вычета',
 					width:'100',
+					dataIndex:'КодВычета',
+					flex:1,
 				},
 				{
 					text:'Размер',
 					width:'100',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Ограничение по доходам',
 					width:'100',
+					dataIndex:'ОграничениеПоДоходам',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'100',
+					dataIndex:'Период',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КодВычета',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'ОграничениеПоДоходам',
+					},
+					{
+						name:'Период',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

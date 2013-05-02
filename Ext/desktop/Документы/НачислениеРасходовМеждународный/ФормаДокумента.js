@@ -78,36 +78,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет расходов',
 					width:'80',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'Субконто 1...3',
 					width:'160',
+					dataIndex:'Субконто1',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'160',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'160',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'100',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Содержание операции',
 					width:'220',
+					dataIndex:'СодержаниеОперации',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеРасходовМеждународный/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Счет',
+					},
+					{
+						name:'Субконто1',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'СодержаниеОперации',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

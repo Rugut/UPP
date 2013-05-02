@@ -29,8 +29,24 @@
 				{
 					text:'Физическое лицо',
 					width:'146',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ФизЛицо',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -47,8 +63,24 @@
 				{
 					text:'Физическое лицо',
 					width:'184',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ФизЛицо',
+					},
+				]
+			},
 		},
 					]
 				},

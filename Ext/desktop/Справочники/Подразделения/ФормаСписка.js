@@ -28,20 +28,51 @@
 				{
 					text:'Наименование',
 					width:'181',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'76',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Подразделения юридических лиц',
 					width:'207',
+					dataIndex:'ПодразделенияОрганизаций',
+					flex:1,
 				},
 				{
 					text:'Порядок',
 					width:'100',
+					dataIndex:'Порядок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'ПодразделенияОрганизаций',
+					},
+					{
+						name:'Порядок',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -102,28 +133,69 @@
 				{
 					text:'Организация',
 					width:'137',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'195',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'65',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Подразделения',
 					width:'135',
+					dataIndex:'Подразделения',
+					flex:1,
 				},
 				{
 					text:'Несколько подразделений',
 					width:'100',
+					dataIndex:'НесколькоПодразделений',
+					flex:1,
 				},
 				{
 					text:'Порядок',
 					width:'49',
+					dataIndex:'Порядок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Подразделения',
+					},
+					{
+						name:'НесколькоПодразделений',
+					},
+					{
+						name:'Порядок',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

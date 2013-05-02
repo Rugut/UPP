@@ -53,16 +53,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Номер периода',
 					width:'120',
+					dataIndex:'НомерПериода',
+					flex:1,
 				},
 				{
 					text:'Коэффициент',
 					width:'80',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоПериодам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НомерПериода',
+					},
+					{
+						name:'Коэффициент',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,16 +18,42 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата отправки',
 					width:'124',
+					dataIndex:'ДатаОтправки',
+					flex:1,
 				},
 				{
 					text:'Статус отправки',
 					width:'100',
+					dataIndex:'СтатусОтправки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтправкиФСС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ДатаОтправки',
+					},
+					{
+						name:'СтатусОтправки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

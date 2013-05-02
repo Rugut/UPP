@@ -18,28 +18,69 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Операция условия',
 					width:'70',
+					dataIndex:'ОперацияУсловия',
+					flex:1,
 				},
 				{
 					text:'Порядок',
 					width:'49',
+					dataIndex:'Порядок',
+					flex:1,
 				},
 				{
 					text:'Использование',
 					width:'70',
+					dataIndex:'Использование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ОперацияУсловия',
+					},
+					{
+						name:'Порядок',
+					},
+					{
+						name:'Использование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

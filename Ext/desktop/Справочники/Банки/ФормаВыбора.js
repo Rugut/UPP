@@ -18,32 +18,78 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'БИК',
 					width:'80',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Корр. счет',
 					width:'160',
+					dataIndex:'КоррСчет',
+					flex:1,
 				},
 				{
 					text:'Город',
 					width:'160',
+					dataIndex:'Город',
+					flex:1,
 				},
 				{
 					text:'Адрес',
 					width:'120',
+					dataIndex:'Адрес',
+					flex:1,
 				},
 				{
 					text:'Телефоны',
 					width:'120',
+					dataIndex:'Телефоны',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Банки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'КоррСчет',
+					},
+					{
+						name:'Город',
+					},
+					{
+						name:'Адрес',
+					},
+					{
+						name:'Телефоны',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -54,8 +100,24 @@
 				{
 					text:'Наименование',
 					width:'160',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Банки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

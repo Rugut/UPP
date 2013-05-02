@@ -18,24 +18,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Объект',
 					width:'120',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'Вид данных',
 					width:'120',
+					dataIndex:'ВидДанных',
+					flex:1,
 				},
 				{
 					text:'Имя файла',
 					width:'220',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Описание',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХранилищеДополнительнойИнформации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Объект',
+					},
+					{
+						name:'ВидДанных',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

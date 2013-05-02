@@ -66,16 +66,42 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Инв. №',
 					width:'77',
+					dataIndex:'ИнвентарныйНомер',
+					flex:1,
 				},
 				{
 					text:'Основное средство',
 					width:'369',
+					dataIndex:'ОсновноеСредство',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомплектацияОС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ИнвентарныйНомер',
+					},
+					{
+						name:'ОсновноеСредство',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

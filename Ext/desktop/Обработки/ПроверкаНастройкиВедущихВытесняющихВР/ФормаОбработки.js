@@ -62,12 +62,33 @@
 				{
 					text:'Вид расчет',
 					width:'164',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Вид расчета удалить',
 					width:'150',
+					dataIndex:'ВидРасчетаУдалить',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'ВидРасчетаУдалить',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -137,8 +158,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -177,8 +214,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -189,8 +242,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'radio',

@@ -182,36 +182,87 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'100',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'100',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Сделка',
 					width:'100',
+					dataIndex:'Сделка',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'100',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'100',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Дебет',
 					width:'100',
+					dataIndex:'Дебет',
+					flex:1,
 				},
 				{
 					text:'Кредит',
 					width:'100',
+					dataIndex:'Кредит',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'Сделка',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Дебет',
+					},
+					{
+						name:'Кредит',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -246,36 +297,87 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'72',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Договор контрагента',
 					width:'92',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Сделка',
 					width:'21',
+					dataIndex:'Сделка',
+					flex:1,
 				},
 				{
 					text:'Документ',
 					width:'101',
+					dataIndex:'Документ',
+					flex:1,
 				},
 				{
 					text:'Представление',
 					width:'252',
+					dataIndex:'Представление',
+					flex:1,
 				},
 				{
 					text:'Дебет',
 					width:'62',
+					dataIndex:'Дебет',
+					flex:1,
 				},
 				{
 					text:'Кредит',
 					width:'100',
+					dataIndex:'Кредит',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'Сделка',
+					},
+					{
+						name:'Документ',
+					},
+					{
+						name:'Представление',
+					},
+					{
+						name:'Дебет',
+					},
+					{
+						name:'Кредит',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -324,16 +426,42 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'УчаствуетВРасчетах',
+					flex:1,
 				},
 				{
 					text:'Счет',
 					width:'76',
+					dataIndex:'Счет',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'297',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'УчаствуетВРасчетах',
+					},
+					{
+						name:'Счет',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

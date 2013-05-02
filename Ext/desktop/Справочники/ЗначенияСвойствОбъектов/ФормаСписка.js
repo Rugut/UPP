@@ -18,24 +18,60 @@
 				{
 					text:' ',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'40',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'220',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Владелец',
 					width:'100',
+					dataIndex:'Владелец',
+					flex:1,
 				},
 				{
 					text:'Родитель',
 					width:'166',
+					dataIndex:'Родитель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияСвойствОбъектов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Владелец',
+					},
+					{
+						name:'Родитель',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

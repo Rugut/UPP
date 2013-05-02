@@ -120,40 +120,96 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сценарий',
 					width:'167',
+					dataIndex:'Сценарий',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'137',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'123',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Дата нач',
 					width:'80',
+					dataIndex:'ДатаНач',
+					flex:1,
 				},
 				{
 					text:'Дата кон',
 					width:'80',
+					dataIndex:'ДатаКон',
+					flex:1,
 				},
 				{
 					text:'Дата запуска',
 					width:'80',
+					dataIndex:'ДатаЗапуска',
+					flex:1,
 				},
 				{
 					text:'Дата выпуска',
 					width:'80',
+					dataIndex:'ДатаВыпуска',
+					flex:1,
 				},
 				{
 					text:'Вариант распределения',
 					width:'200',
+					dataIndex:'ВариантРаспределенияВыпусков',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Сценарий',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'ДатаНач',
+					},
+					{
+						name:'ДатаКон',
+					},
+					{
+						name:'ДатаЗапуска',
+					},
+					{
+						name:'ДатаВыпуска',
+					},
+					{
+						name:'ВариантРаспределенияВыпусков',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -177,28 +233,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'220',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Дата запуска',
 					width:'80',
+					dataIndex:'ДатаЗапуска',
+					flex:1,
 				},
 				{
 					text:'Дата выпуска',
 					width:'80',
+					dataIndex:'ДатаВыпуска',
+					flex:1,
 				},
 				{
 					text:'Вариант распределения',
 					width:'200',
+					dataIndex:'ВариантРаспределенияВыпусков',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'ДатаЗапуска',
+					},
+					{
+						name:'ДатаВыпуска',
+					},
+					{
+						name:'ВариантРаспределенияВыпусков',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -237,60 +334,141 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'100',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Артикул',
 					width:'120',
+					dataIndex:'Артикул',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'68',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'45',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Дата запуска',
 					width:'80',
+					dataIndex:'ДатаЗапуска',
+					flex:1,
 				},
 				{
 					text:'Дата выпуска',
 					width:'80',
+					dataIndex:'ДатаВыпуска',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'200',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'200',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Вариант распределения',
 					width:'200',
+					dataIndex:'ВариантРаспределенияВыпусков',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Артикул',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'ДатаЗапуска',
+					},
+					{
+						name:'ДатаВыпуска',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'ВариантРаспределенияВыпусков',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -329,68 +507,159 @@
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Вид воспроизводства',
 					width:'100',
+					dataIndex:'ВидВоспроизводства',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'100',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Дата запуска',
 					width:'100',
+					dataIndex:'ДатаЗапуска',
+					flex:1,
 				},
 				{
 					text:'Дата выпуска',
 					width:'100',
+					dataIndex:'ДатаВыпуска',
+					flex:1,
 				},
 				{
 					text:'Вариант распределения выпусков',
 					width:'100',
+					dataIndex:'ВариантРаспределенияВыпусков',
+					flex:1,
 				},
 				{
 					text:'В рамках плана',
 					width:'100',
+					dataIndex:'ВРамкахПлана',
+					flex:1,
 				},
 				{
 					text:'По данным планов',
 					width:'100',
+					dataIndex:'ПоДаннымПланов',
+					flex:1,
 				},
 				{
 					text:'Конечная продукция',
 					width:'100',
+					dataIndex:'КонечнаяПродукция',
+					flex:1,
 				},
 				{
 					text:'Количество по спецификации',
 					width:'89',
+					dataIndex:'КоличествоПоСпецификации',
+					flex:1,
 				},
 				{
 					text:'Ключ строки',
 					width:'111',
+					dataIndex:'КлючСтроки',
+					flex:1,
 				},
 				{
 					text:'Номер операции',
 					width:'100',
+					dataIndex:'НомерОперацииМаршрута',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ВидВоспроизводства',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'ДатаЗапуска',
+					},
+					{
+						name:'ДатаВыпуска',
+					},
+					{
+						name:'ВариантРаспределенияВыпусков',
+					},
+					{
+						name:'ВРамкахПлана',
+					},
+					{
+						name:'ПоДаннымПланов',
+					},
+					{
+						name:'КонечнаяПродукция',
+					},
+					{
+						name:'КоличествоПоСпецификации',
+					},
+					{
+						name:'КлючСтроки',
+					},
+					{
+						name:'НомерОперацииМаршрута',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -422,56 +691,132 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'120',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Дата окончания',
 					width:'120',
+					dataIndex:'ДатаОкончания',
+					flex:1,
 				},
 				{
 					text:'Рабочий центр',
 					width:'100',
+					dataIndex:'РабочийЦентр',
+					flex:1,
 				},
 				{
 					text:'Смена',
 					width:'100',
+					dataIndex:'Смена',
+					flex:1,
 				},
 				{
 					text:'Тех операция',
 					width:'100',
+					dataIndex:'ТехОперация',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'100',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Конечная продукция',
 					width:'100',
+					dataIndex:'КонечнаяПродукция',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'ДатаОкончания',
+					},
+					{
+						name:'РабочийЦентр',
+					},
+					{
+						name:'Смена',
+					},
+					{
+						name:'ТехОперация',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'КонечнаяПродукция',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Проект',
+					},
+					{
+						name:'Количество',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -495,52 +840,123 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата потребности',
 					width:'120',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Смена',
 					width:'100',
+					dataIndex:'Смена',
+					flex:1,
 				},
 				{
 					text:'Рабочий центр',
 					width:'100',
+					dataIndex:'РабочийЦентр',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'100',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'100',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Конечная продукция',
 					width:'100',
+					dataIndex:'КонечнаяПродукция',
+					flex:1,
 				},
 				{
 					text:'Количество извне',
 					width:'100',
+					dataIndex:'КоличествоИзвне',
+					flex:1,
 				},
 				{
 					text:'Количество внутри',
 					width:'100',
+					dataIndex:'КоличествоВнутри',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'100',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Проект',
 					width:'100',
+					dataIndex:'Проект',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Смена',
+					},
+					{
+						name:'РабочийЦентр',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'КонечнаяПродукция',
+					},
+					{
+						name:'КоличествоИзвне',
+					},
+					{
+						name:'КоличествоВнутри',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Проект',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -588,12 +1004,33 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Склад',
 					width:'100',
+					dataIndex:'Склад',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Склад',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

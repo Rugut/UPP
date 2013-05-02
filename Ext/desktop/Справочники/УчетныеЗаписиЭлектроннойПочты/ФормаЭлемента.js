@@ -384,24 +384,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Пользователь',
 					width:'147',
+					dataIndex:'Пользователь',
+					flex:1,
 				},
 				{
 					text:'Администрирование',
 					width:'66',
+					dataIndex:'Администрирование',
+					flex:1,
 				},
 				{
 					text:'Чтение',
 					width:'66',
+					dataIndex:'Чтение',
+					flex:1,
 				},
 				{
 					text:'Редактирование/Отправка',
 					width:'66',
+					dataIndex:'Запись',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Пользователь',
+					},
+					{
+						name:'Администрирование',
+					},
+					{
+						name:'Чтение',
+					},
+					{
+						name:'Запись',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -441,8 +477,24 @@
 				{
 					text:'Наименование',
 					width:'365',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -581,20 +633,51 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'18',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'73',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'313',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Использование',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

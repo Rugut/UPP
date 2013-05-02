@@ -29,28 +29,69 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Статус',
 					width:'109',
+					dataIndex:'Статус',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'119',
+					dataIndex:'ДатаСообщения',
+					flex:1,
 				},
 				{
 					text:'Отправитель',
 					width:'112',
+					dataIndex:'Отправитель',
+					flex:1,
 				},
 				{
 					text:'Получатель',
 					width:'112',
+					dataIndex:'Получатель',
+					flex:1,
 				},
 				{
 					text:'Тема',
 					width:'144',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Статус',
+					},
+					{
+						name:'ДатаСообщения',
+					},
+					{
+						name:'Отправитель',
+					},
+					{
+						name:'Получатель',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 	]
 });

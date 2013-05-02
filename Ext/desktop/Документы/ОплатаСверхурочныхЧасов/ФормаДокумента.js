@@ -121,41 +121,97 @@
 				{
 					text:'№',
 					width:'23',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'70',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Подразделение
 организации',
 					width:'91',
+					dataIndex:'ПодразделениеОрганизации',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'71',
+					dataIndex:'ДатаВыхода',
+					flex:1,
 				},
 				{
 					text:'Часовая тарифная ставка',
 					width:'96',
+					dataIndex:'Размер',
+					flex:1,
 				},
 				{
 					text:'Часы в 1.5-ом размере',
 					width:'102',
+					dataIndex:'ЧасовПолуторных',
+					flex:1,
 				},
 				{
 					text:'Часы в 2-ом размере',
 					width:'85',
+					dataIndex:'ЧасовДвойных',
+					flex:1,
 				},
 				{
 					text:'Результат',
 					width:'78',
+					dataIndex:'Результат',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаСверхурочныхЧасов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ПодразделениеОрганизации',
+					},
+					{
+						name:'ДатаВыхода',
+					},
+					{
+						name:'Размер',
+					},
+					{
+						name:'ЧасовПолуторных',
+					},
+					{
+						name:'ЧасовДвойных',
+					},
+					{
+						name:'Результат',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

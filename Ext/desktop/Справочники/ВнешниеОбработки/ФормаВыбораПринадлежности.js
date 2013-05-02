@@ -44,8 +44,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -62,8 +78,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -80,8 +112,24 @@
 				{
 					text:'',
 					width:'0',
+					dataIndex:'',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'',
+					},
+				]
+			},
 		},
 					]
 				},

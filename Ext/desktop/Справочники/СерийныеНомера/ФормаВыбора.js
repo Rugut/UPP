@@ -18,16 +18,42 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'150',
+					dataIndex:'Владелец',
+					flex:1,
 				},
 				{
 					text:'Серийный номер',
 					width:'260',
+					dataIndex:'Код',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СерийныеНомера/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Владелец',
+					},
+					{
+						name:'Код',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

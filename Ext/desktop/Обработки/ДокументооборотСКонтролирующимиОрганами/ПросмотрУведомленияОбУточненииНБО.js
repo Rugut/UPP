@@ -58,28 +58,69 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Текст сообщения',
 					width:'100',
+					dataIndex:'ТекстСообщения',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'ЭтоОшибка',
+					flex:1,
 				},
 				{
 					text:'Местоположение ошибки',
 					width:'152',
+					dataIndex:'Местоположение',
+					flex:1,
 				},
 				{
 					text:'Ошибочное значение',
 					width:'124',
+					dataIndex:'ОшибочноеЗначение',
+					flex:1,
 				},
 				{
 					text:'Код ошибки',
 					width:'100',
+					dataIndex:'КодОшибки',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТекстСообщения',
+					},
+					{
+						name:'ЭтоОшибка',
+					},
+					{
+						name:'Местоположение',
+					},
+					{
+						name:'ОшибочноеЗначение',
+					},
+					{
+						name:'КодОшибки',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

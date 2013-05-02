@@ -31,12 +31,33 @@
 				{
 					text:'Вид ежегодного отпуска',
 					width:'140',
+					dataIndex:'ВидЕжегодногоОтпуска',
+					flex:1,
 				},
 				{
 					text:'Количество дней отпуска в год',
 					width:'170',
+					dataIndex:'КоличествоДнейОтпускаВГод',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ВидЕжегодногоОтпуска',
+					},
+					{
+						name:'КоличествоДнейОтпускаВГод',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -18,36 +18,87 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Опрашиваемое лицо',
 					width:'120',
+					dataIndex:'ОпрашиваемоеЛицо',
+					flex:1,
 				},
 				{
 					text:'Типовая анкета',
 					width:'120',
+					dataIndex:'ТиповаяАнкета',
+					flex:1,
 				},
 				{
 					text:'Обрабатывать автоматически',
 					width:'80',
+					dataIndex:'ОбрабатыватьАвтоматически',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'120',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'120',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ОпрашиваемоеЛицо',
+					},
+					{
+						name:'ТиповаяАнкета',
+					},
+					{
+						name:'ОбрабатыватьАвтоматически',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Комментарий',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

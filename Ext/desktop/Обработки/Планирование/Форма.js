@@ -85,16 +85,42 @@
 				{
 					text:' План',
 					width:'100',
+					dataIndex:'План',
+					flex:1,
 				},
 				{
 					text:' Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:' Представление',
 					width:'100',
+					dataIndex:'Представление',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'План',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Представление',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -105,52 +131,123 @@
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Источники обеспечения',
 					width:'100',
+					dataIndex:'ИсточникОбеспечения',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'68',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'200',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'200',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор',
 					width:'200',
+					dataIndex:'Договор',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'200',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Вариант распределения',
 					width:'200',
+					dataIndex:'ВариантРаспределения',
+					flex:1,
 				},
 				{
 					text:'Источник',
 					width:'200',
+					dataIndex:'Источник',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'ИсточникОбеспечения',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'Договор',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'ВариантРаспределения',
+					},
+					{
+						name:'Источник',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -179,52 +276,123 @@
 				{
 					text:'Период',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'68',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Ед.',
 					width:'50',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'К.',
 					width:'45',
+					dataIndex:'Коэффициент',
+					flex:1,
 				},
 				{
 					text:'Мин. партия',
 					width:'68',
+					dataIndex:'МинимальнаяПартия',
+					flex:1,
 				},
 				{
 					text:'Кратность',
 					width:'68',
+					dataIndex:'Кратность',
+					flex:1,
 				},
 				{
 					text:'Вид воспр.',
 					width:'100',
+					dataIndex:'ВидВоспроизводства',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'200',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'200',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Рабочий центр',
 					width:'200',
+					dataIndex:'РабочийЦентр',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Период',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Коэффициент',
+					},
+					{
+						name:'МинимальнаяПартия',
+					},
+					{
+						name:'Кратность',
+					},
+					{
+						name:'ВидВоспроизводства',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'РабочийЦентр',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -285,56 +453,132 @@
 				{
 					text:'№',
 					width:'30',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'200',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Рабочий центр',
 					width:'200',
+					dataIndex:'РабочийЦентр',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'200',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'200',
+					dataIndex:'ХарактеристикаНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'200',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'80',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Спецификация',
 					width:'200',
+					dataIndex:'Спецификация',
+					flex:1,
 				},
 				{
 					text:'Точка маршрута',
 					width:'100',
+					dataIndex:'ТочкаМаршрута',
+					flex:1,
 				},
 				{
 					text:'Источник',
 					width:'200',
+					dataIndex:'Источник',
+					flex:1,
 				},
 				{
 					text:'Вид воспроизводства',
 					width:'200',
+					dataIndex:'ВидВоспроизводства',
+					flex:1,
 				},
 				{
 					text:'Вариант распределения',
 					width:'135',
+					dataIndex:'ВариантРаспределения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'РабочийЦентр',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ХарактеристикаНоменклатуры',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Спецификация',
+					},
+					{
+						name:'ТочкаМаршрута',
+					},
+					{
+						name:'Источник',
+					},
+					{
+						name:'ВидВоспроизводства',
+					},
+					{
+						name:'ВариантРаспределения',
+					},
+				]
+			},
 		},
 					]
 				},

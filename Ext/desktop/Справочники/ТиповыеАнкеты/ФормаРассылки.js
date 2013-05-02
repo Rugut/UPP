@@ -88,12 +88,33 @@
 				{
 					text:'Получатель',
 					width:'220',
+					dataIndex:'Объект',
+					flex:1,
 				},
 				{
 					text:'e-mail',
 					width:'120',
+					dataIndex:'Получатель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Объект',
+					},
+					{
+						name:'Получатель',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -129,8 +150,24 @@
 				{
 					text:'Имя файла',
 					width:'320',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяФайла',
+					},
+				]
+			},
 		},
 					]
 				},

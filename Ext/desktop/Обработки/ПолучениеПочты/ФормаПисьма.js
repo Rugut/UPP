@@ -36,8 +36,24 @@
 				{
 					text:'Файл',
 					width:'527',
+					dataIndex:'Файл',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеПочты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Файл',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

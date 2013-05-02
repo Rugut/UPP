@@ -18,24 +18,60 @@
 				{
 					text:'Наименование',
 					width:'217',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Тип настройки',
 					width:'140',
+					dataIndex:'ТипНастройки',
+					flex:1,
 				},
 				{
 					text:'Настраиваемый объект',
 					width:'143',
+					dataIndex:'НастраиваемыйОбъект',
+					flex:1,
 				},
 				{
 					text:'Описание',
 					width:'206',
+					dataIndex:'Описание',
+					flex:1,
 				},
 				{
 					text:'Пользователи',
 					width:'364',
+					dataIndex:'Пользователи',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ТипНастройки',
+					},
+					{
+						name:'НастраиваемыйОбъект',
+					},
+					{
+						name:'Описание',
+					},
+					{
+						name:'Пользователи',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -42,32 +42,78 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'21',
+					dataIndex:'Вложения',
+					flex:1,
 				},
 				{
 					text:'Дата получения',
 					width:'100',
+					dataIndex:'ДатаПолучения',
+					flex:1,
 				},
 				{
 					text:'Копии',
 					width:'117',
+					dataIndex:'Копии',
+					flex:1,
 				},
 				{
 					text:'Отправитель',
 					width:'110',
+					dataIndex:'ОтправительПредставление',
+					flex:1,
 				},
 				{
 					text:'Получатели',
 					width:'106',
+					dataIndex:'Кому',
+					flex:1,
 				},
 				{
 					text:'Тема',
 					width:'146',
+					dataIndex:'Тема',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаПочтовыхСообщений/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Вложения',
+					},
+					{
+						name:'ДатаПолучения',
+					},
+					{
+						name:'Копии',
+					},
+					{
+						name:'ОтправительПредставление',
+					},
+					{
+						name:'Кому',
+					},
+					{
+						name:'Тема',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

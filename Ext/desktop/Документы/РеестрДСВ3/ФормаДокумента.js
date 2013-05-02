@@ -264,36 +264,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'111',
+					dataIndex:'ФизЛицо',
+					flex:1,
 				},
 				{
 					text:'Фамилия',
 					width:'80',
+					dataIndex:'Фамилия',
+					flex:1,
 				},
 				{
 					text:'Имя',
 					width:'80',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Отчество',
 					width:'80',
+					dataIndex:'Отчество',
+					flex:1,
 				},
 				{
 					text:'Страховой номер',
 					width:'100',
+					dataIndex:'СтраховойНомерПФР',
+					flex:1,
 				},
 				{
 					text:'Перечислено сотрудником',
 					width:'120',
+					dataIndex:'ВзносовРаботника',
+					flex:1,
 				},
 				{
 					text:'Перечислено работодателем',
 					width:'120',
+					dataIndex:'ВзносовРаботодателя',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрДСВ3/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ФизЛицо',
+					},
+					{
+						name:'Фамилия',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'Отчество',
+					},
+					{
+						name:'СтраховойНомерПФР',
+					},
+					{
+						name:'ВзносовРаботника',
+					},
+					{
+						name:'ВзносовРаботодателя',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

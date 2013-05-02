@@ -18,16 +18,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Физлицо',
 					width:'120',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
 				{
 					text:'Дата актуальности',
 					width:'120',
+					dataIndex:'ДатаАктуальности',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Физлицо',
+					},
+					{
+						name:'ДатаАктуальности',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -125,16 +151,42 @@
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Дата начала рабочего года',
 					width:'100',
+					dataIndex:'ДатаНачалаРабочегоГода',
+					flex:1,
 				},
 				{
 					text:'Дата окончания рабочего года',
 					width:'100',
+					dataIndex:'ДатаОкончанияРабочегоГода',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Количество',
+					},
+					{
+						name:'ДатаНачалаРабочегоГода',
+					},
+					{
+						name:'ДатаОкончанияРабочегоГода',
+					},
+				]
+			},
 		},
 	]
 });

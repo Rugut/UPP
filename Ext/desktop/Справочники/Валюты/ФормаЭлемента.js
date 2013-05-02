@@ -61,24 +61,60 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'84',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'70',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Курс',
 					width:'133',
+					dataIndex:'Курс',
+					flex:1,
 				},
 				{
 					text:'Кратность',
 					width:'70',
+					dataIndex:'Кратность',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Валюты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Курс',
+					},
+					{
+						name:'Кратность',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

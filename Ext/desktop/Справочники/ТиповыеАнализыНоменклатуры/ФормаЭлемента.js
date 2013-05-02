@@ -82,12 +82,33 @@
 				{
 					text:'N',
 					width:'43',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Показатель анализа',
 					width:'414',
+					dataIndex:'ПоказательАнализа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнализыНоменклатуры/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ПоказательАнализа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

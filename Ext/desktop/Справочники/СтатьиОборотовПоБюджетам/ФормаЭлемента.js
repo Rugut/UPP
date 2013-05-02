@@ -130,24 +130,60 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Счет дебета',
 					width:'100',
+					dataIndex:'СчетДт',
+					flex:1,
 				},
 				{
 					text:'Счет кредита',
 					width:'100',
+					dataIndex:'СчетКт',
+					flex:1,
 				},
 				{
 					text:'К-т для суммы',
 					width:'97',
+					dataIndex:'КоэффициентДляСуммы',
+					flex:1,
 				},
 				{
 					text:'К-т для количества',
 					width:'103',
+					dataIndex:'КоэффициентДляКоличества',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиОборотовПоБюджетам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СчетДт',
+					},
+					{
+						name:'СчетКт',
+					},
+					{
+						name:'КоэффициентДляСуммы',
+					},
+					{
+						name:'КоэффициентДляКоличества',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

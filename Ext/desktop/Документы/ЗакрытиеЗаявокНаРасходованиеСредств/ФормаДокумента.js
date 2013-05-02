@@ -61,36 +61,87 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Заявка',
 					width:'220',
+					dataIndex:'Заявка',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'120',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Сумма расчетов',
 					width:'100',
+					dataIndex:'ОстатокЗаявка',
+					flex:1,
 				},
 				{
 					text:'Валюта остатка',
 					width:'98',
+					dataIndex:'ВалютаЗаявка',
+					flex:1,
 				},
 				{
 					text:'Остаток резерва',
 					width:'108',
+					dataIndex:'ОстатокРезерва',
+					flex:1,
 				},
 				{
 					text:'Остаток размещение',
 					width:'108',
+					dataIndex:'ОстатокРазмещение',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'95',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеЗаявокНаРасходованиеСредств/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Заявка',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ОстатокЗаявка',
+					},
+					{
+						name:'ВалютаЗаявка',
+					},
+					{
+						name:'ОстатокРезерва',
+					},
+					{
+						name:'ОстатокРазмещение',
+					},
+					{
+						name:'Ответственный',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

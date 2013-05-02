@@ -18,8 +18,24 @@
 				{
 					text:'Статьи затрат',
 					width:'567',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -30,24 +46,60 @@
 				{
 					text:'',
 					width:'39',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'35',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'250',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Остаток',
 					width:'78',
+					dataIndex:'ОстатокУпр',
+					flex:1,
 				},
 				{
 					text:'Остаток (регл.)',
 					width:'76',
+					dataIndex:'ОстатокРегл',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'Наименование',
+					},
+					{
+						name:'ОстатокУпр',
+					},
+					{
+						name:'ОстатокРегл',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

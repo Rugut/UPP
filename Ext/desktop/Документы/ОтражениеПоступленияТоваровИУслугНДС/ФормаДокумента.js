@@ -232,76 +232,177 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Вид ценности',
 					width:'100',
+					dataIndex:'ВидЦенности',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'120',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'100',
+					dataIndex:'ЕдиницаИзмерения',
+					flex:1,
 				},
 				{
 					text:'Количество',
 					width:'100',
+					dataIndex:'Количество',
+					flex:1,
 				},
 				{
 					text:'Цена',
 					width:'100',
+					dataIndex:'Цена',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'120',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'% НДС',
 					width:'73',
+					dataIndex:'СтавкаНДС',
+					flex:1,
 				},
 				{
 					text:'Сумма НДС',
 					width:'120',
+					dataIndex:'СуммаНДС',
+					flex:1,
 				},
 				{
 					text:'Всего',
 					width:'120',
+					dataIndex:'Всего',
+					flex:1,
 				},
 				{
 					text:'Счет затрат',
 					width:'80',
+					dataIndex:'СчетЗатрат',
+					flex:1,
 				},
 				{
 					text:'Субконто 1',
 					width:'120',
+					dataIndex:'Субконто1',
+					flex:1,
 				},
 				{
 					text:'Субконто 2',
 					width:'120',
+					dataIndex:'Субконто2',
+					flex:1,
 				},
 				{
 					text:'Субконто 3',
 					width:'120',
+					dataIndex:'Субконто3',
+					flex:1,
 				},
 				{
 					text:'Счет учета НДС',
 					width:'80',
+					dataIndex:'СчетУчетаНДС',
+					flex:1,
 				},
 				{
 					text:'Страна происхождения',
 					width:'100',
+					dataIndex:'СтранаПроисхождения',
+					flex:1,
 				},
 				{
 					text:'Номер ГТД',
 					width:'100',
+					dataIndex:'НомерГТД',
+					flex:1,
 				},
 				{
 					text:'Событие',
 					width:'100',
+					dataIndex:'Событие',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеПоступленияТоваровИУслугНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВидЦенности',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'ЕдиницаИзмерения',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'Цена',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СтавкаНДС',
+					},
+					{
+						name:'СуммаНДС',
+					},
+					{
+						name:'Всего',
+					},
+					{
+						name:'СчетЗатрат',
+					},
+					{
+						name:'Субконто1',
+					},
+					{
+						name:'Субконто2',
+					},
+					{
+						name:'Субконто3',
+					},
+					{
+						name:'СчетУчетаНДС',
+					},
+					{
+						name:'СтранаПроисхождения',
+					},
+					{
+						name:'НомерГТД',
+					},
+					{
+						name:'Событие',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -318,16 +419,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Документ оплаты',
 					width:'120',
+					dataIndex:'ДокументОплаты',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеПоступленияТоваровИУслугНДС/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'ДокументОплаты',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

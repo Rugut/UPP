@@ -59,92 +59,213 @@
 				{
 					text:'',
 					width:'25',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'109',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Представление события',
 					width:'148',
+					dataIndex:'ПредставлениеСобытия',
+					flex:1,
 				},
 				{
 					text:'Пользователь',
 					width:'134',
+					dataIndex:'ИмяПользователя',
+					flex:1,
 				},
 				{
 					text:'Метаданные',
 					width:'179',
+					dataIndex:'ПредставлениеМетаданных',
+					flex:1,
 				},
 				{
 					text:'Компьютер',
 					width:'89',
+					dataIndex:'Компьютер',
+					flex:1,
 				},
 				{
 					text:'Пользователь (UID)',
 					width:'36',
+					dataIndex:'Пользователь',
+					flex:1,
 				},
 				{
 					text:'Данные',
 					width:'98',
+					dataIndex:'Данные',
+					flex:1,
 				},
 				{
 					text:'Метаданные',
 					width:'100',
+					dataIndex:'Метаданные',
+					flex:1,
 				},
 				{
 					text:'Вспомогательный IPПорт',
 					width:'100',
+					dataIndex:'ВспомогательныйIPПорт',
+					flex:1,
 				},
 				{
 					text:'Имя приложения',
 					width:'100',
+					dataIndex:'ИмяПриложения',
+					flex:1,
 				},
 				{
 					text:'Комментарий',
 					width:'100',
+					dataIndex:'Комментарий',
+					flex:1,
 				},
 				{
 					text:'Основной IPПорт',
 					width:'100',
+					dataIndex:'ОсновнойIPПорт',
+					flex:1,
 				},
 				{
 					text:'Представление данных',
 					width:'100',
+					dataIndex:'ПредставлениеДанных',
+					flex:1,
 				},
 				{
 					text:'Представление приложения',
 					width:'100',
+					dataIndex:'ПредставлениеПриложения',
+					flex:1,
 				},
 				{
 					text:'Рабочий сервер',
 					width:'100',
+					dataIndex:'РабочийСервер',
+					flex:1,
 				},
 				{
 					text:'Сеанс',
 					width:'100',
+					dataIndex:'Сеанс',
+					flex:1,
 				},
 				{
 					text:'Событие',
 					width:'100',
+					dataIndex:'Событие',
+					flex:1,
 				},
 				{
 					text:'Соединение',
 					width:'100',
+					dataIndex:'Соединение',
+					flex:1,
 				},
 				{
 					text:'Статус транзакции',
 					width:'100',
+					dataIndex:'СтатусТранзакции',
+					flex:1,
 				},
 				{
 					text:'Транзакция',
 					width:'100',
+					dataIndex:'Транзакция',
+					flex:1,
 				},
 				{
 					text:'Уровень',
 					width:'100',
+					dataIndex:'Уровень',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'ПредставлениеСобытия',
+					},
+					{
+						name:'ИмяПользователя',
+					},
+					{
+						name:'ПредставлениеМетаданных',
+					},
+					{
+						name:'Компьютер',
+					},
+					{
+						name:'Пользователь',
+					},
+					{
+						name:'Данные',
+					},
+					{
+						name:'Метаданные',
+					},
+					{
+						name:'ВспомогательныйIPПорт',
+					},
+					{
+						name:'ИмяПриложения',
+					},
+					{
+						name:'Комментарий',
+					},
+					{
+						name:'ОсновнойIPПорт',
+					},
+					{
+						name:'ПредставлениеДанных',
+					},
+					{
+						name:'ПредставлениеПриложения',
+					},
+					{
+						name:'РабочийСервер',
+					},
+					{
+						name:'Сеанс',
+					},
+					{
+						name:'Событие',
+					},
+					{
+						name:'Соединение',
+					},
+					{
+						name:'СтатусТранзакции',
+					},
+					{
+						name:'Транзакция',
+					},
+					{
+						name:'Уровень',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -155,8 +276,24 @@
 				{
 					text:'Список субъектов события',
 					width:'238',
+					dataIndex:'СубъектСобытия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'СубъектСобытия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -196,16 +333,42 @@
 				{
 					text:'',
 					width:'25',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Области данных',
 					width:'196',
+					dataIndex:'ОбластьДанных',
+					flex:1,
 				},
 				{
 					text:'Список объектов события',
 					width:'206',
+					dataIndex:'ИмяТаблицыИБ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'ОбластьДанных',
+					},
+					{
+						name:'ИмяТаблицыИБ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',

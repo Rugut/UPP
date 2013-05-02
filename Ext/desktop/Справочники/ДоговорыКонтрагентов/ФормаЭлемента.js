@@ -429,28 +429,69 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'132',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'№',
 					width:'80',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Дата начала',
 					width:'80',
+					dataIndex:'ДатаНачала',
+					flex:1,
 				},
 				{
 					text:'Периодичность',
 					width:'80',
+					dataIndex:'Периодичность',
+					flex:1,
 				},
 				{
 					text:'Сумма условий договора',
 					width:'80',
+					dataIndex:'СуммаУсловийДоговора',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ДатаНачала',
+					},
+					{
+						name:'Периодичность',
+					},
+					{
+						name:'СуммаУсловийДоговора',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -490,64 +531,150 @@
 				{
 					text:'Получатель скидки',
 					width:'100',
+					dataIndex:'ПолучательСкидки',
+					flex:1,
 				},
 				{
 					text:'Номенклатура',
 					width:'100',
+					dataIndex:'Номенклатура',
+					flex:1,
 				},
 				{
 					text:'Характеристика',
 					width:'100',
+					dataIndex:'Характеристика',
+					flex:1,
 				},
 				{
 					text:'Качество',
 					width:'100',
+					dataIndex:'Качество',
+					flex:1,
 				},
 				{
 					text:'Условие',
 					width:'253',
+					dataIndex:'Условие',
+					flex:1,
 				},
 				{
 					text:'Значение условия',
 					width:'253',
+					dataIndex:'ЗначениеУсловия',
+					flex:1,
 				},
 				{
 					text:'Процент',
 					width:'48',
+					dataIndex:'Процент',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'50',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'День недели',
 					width:'88',
+					dataIndex:'ДеньНедели',
+					flex:1,
 				},
 				{
 					text:'Время начала',
 					width:'97',
+					dataIndex:'ВремяНачала',
+					flex:1,
 				},
 				{
 					text:'Время окончания',
 					width:'97',
+					dataIndex:'ВремяОкончания',
+					flex:1,
 				},
 				{
 					text:'Начало',
 					width:'103',
+					dataIndex:'Начало',
+					flex:1,
 				},
 				{
 					text:'Окончание',
 					width:'103',
+					dataIndex:'Окончание',
+					flex:1,
 				},
 				{
 					text:'Установка скидок',
 					width:'276',
+					dataIndex:'УстановкаСкидокНоменклатуры',
+					flex:1,
 				},
 				{
 					text:'Отмена скидок',
 					width:'276',
+					dataIndex:'ОтменаСкидок',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПолучательСкидки',
+					},
+					{
+						name:'Номенклатура',
+					},
+					{
+						name:'Характеристика',
+					},
+					{
+						name:'Качество',
+					},
+					{
+						name:'Условие',
+					},
+					{
+						name:'ЗначениеУсловия',
+					},
+					{
+						name:'Процент',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'ДеньНедели',
+					},
+					{
+						name:'ВремяНачала',
+					},
+					{
+						name:'ВремяОкончания',
+					},
+					{
+						name:'Начало',
+					},
+					{
+						name:'Окончание',
+					},
+					{
+						name:'УстановкаСкидокНоменклатуры',
+					},
+					{
+						name:'ОтменаСкидок',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -594,16 +721,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'Свойство',
 					width:'186',
+					dataIndex:'Свойство',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'302',
+					dataIndex:'Значение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Свойство',
+					},
+					{
+						name:'Значение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -627,16 +780,42 @@
 				{
 					text:'',
 					width:'32',
+					dataIndex:'ПометкаУдаления',
+					flex:1,
 				},
 				{
 					text:'',
 					width:'32',
+					dataIndex:'Принадлежность',
+					flex:1,
 				},
 				{
 					text:'Категория',
 					width:'465',
+					dataIndex:'Категория',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ПометкаУдаления',
+					},
+					{
+						name:'Принадлежность',
+					},
+					{
+						name:'Категория',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

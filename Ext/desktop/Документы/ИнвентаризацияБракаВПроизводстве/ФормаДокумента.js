@@ -141,52 +141,123 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Статья затрат',
 					width:'100',
+					dataIndex:'СтатьяЗатрат',
+					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
 					width:'152',
+					dataIndex:'НоменклатурнаяГруппа',
+					flex:1,
 				},
 				{
 					text:'Заказ',
 					width:'68',
+					dataIndex:'Заказ',
+					flex:1,
 				},
 				{
 					text:'Продукция',
 					width:'142',
+					dataIndex:'Продукция',
+					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
 					width:'107',
+					dataIndex:'ХарактеристикаПродукции',
+					flex:1,
 				},
 				{
 					text:'Серия продукции',
 					width:'118',
+					dataIndex:'СерияПродукции',
+					flex:1,
 				},
 				{
 					text:'Сумма остатка',
 					width:'88',
+					dataIndex:'Сумма',
+					flex:1,
 				},
 				{
 					text:'Сумма (БУ)',
 					width:'103',
+					dataIndex:'СуммаРегл',
+					flex:1,
 				},
 				{
 					text:'Сумма (НУ)',
 					width:'100',
+					dataIndex:'СуммаНал',
+					flex:1,
 				},
 				{
 					text:'Счет затрат (БУ)',
 					width:'90',
+					dataIndex:'СчетЗатрат',
+					flex:1,
 				},
 				{
 					text:'Счет затрат (НУ)',
 					width:'90',
+					dataIndex:'СчетЗатратНУ',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияБракаВПроизводстве/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'СтатьяЗатрат',
+					},
+					{
+						name:'НоменклатурнаяГруппа',
+					},
+					{
+						name:'Заказ',
+					},
+					{
+						name:'Продукция',
+					},
+					{
+						name:'ХарактеристикаПродукции',
+					},
+					{
+						name:'СерияПродукции',
+					},
+					{
+						name:'Сумма',
+					},
+					{
+						name:'СуммаРегл',
+					},
+					{
+						name:'СуммаНал',
+					},
+					{
+						name:'СчетЗатрат',
+					},
+					{
+						name:'СчетЗатратНУ',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

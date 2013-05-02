@@ -160,8 +160,24 @@
 				{
 					text:'Наименование',
 					width:'427',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -205,12 +221,33 @@
 				{
 					text:'Наименование',
 					width:'390',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Версия',
 					width:'50',
+					dataIndex:'Версия',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Версия',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -291,12 +328,33 @@
 				{
 					text:'Наименование',
 					width:'250',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Модель',
 					width:'190',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',
@@ -325,8 +383,24 @@
 				{
 					text:'Модель',
 					width:'440',
+					dataIndex:'Модель',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Модель',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'label',

@@ -49,16 +49,42 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Время начала',
 					width:'120',
+					dataIndex:'ВремяНачала',
+					flex:1,
 				},
 				{
 					text:'Время окончания',
 					width:'120',
+					dataIndex:'ВремяОкончания',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Смены/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ВремяНачала',
+					},
+					{
+						name:'ВремяОкончания',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

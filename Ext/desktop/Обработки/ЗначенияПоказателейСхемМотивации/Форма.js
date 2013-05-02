@@ -75,32 +75,78 @@
 				{
 					text:'Показатель',
 					width:'100',
+					dataIndex:'Показатель',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'100',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Табельный №',
 					width:'80',
+					dataIndex:'ТабельныйНомер',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'80',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'45',
+					dataIndex:'Валюта',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Показатель',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ТабельныйНомер',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'Валюта',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -163,20 +209,51 @@
 				{
 					text:'Сотрудник',
 					width:'100',
+					dataIndex:'Наименование',
+					flex:1,
 				},
 				{
 					text:'Код',
 					width:'65',
+					dataIndex:'Код',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'50',
+					dataIndex:'ТекущееПодразделениеОрганизации',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'50',
+					dataIndex:'ТекущееПодразделениеКомпании',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+					{
+						name:'Код',
+					},
+					{
+						name:'ТекущееПодразделениеОрганизации',
+					},
+					{
+						name:'ТекущееПодразделениеКомпании',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -220,12 +297,33 @@
 				{
 					text:'Организация',
 					width:'350',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -242,12 +340,33 @@
 				{
 					text:'',
 					width:'24',
+					dataIndex:'Картинка',
+					flex:1,
 				},
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -264,8 +383,24 @@
 				{
 					text:'Подразделение',
 					width:'353',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -376,20 +511,51 @@
 				{
 					text:'Показатель',
 					width:'90',
+					dataIndex:'Показатель',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'90',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'45',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Действует с:',
 					width:'93',
+					dataIndex:'Период',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Показатель',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Период',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -431,8 +597,24 @@
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -449,8 +631,24 @@
 				{
 					text:'Наименование',
 					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -471,20 +669,51 @@
 				{
 					text:'Показатель',
 					width:'336',
+					dataIndex:'Показатель',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'94',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'70',
+					dataIndex:'Валюта',
+					flex:1,
 				},
 				{
 					text:'Действует с:',
 					width:'91',
+					dataIndex:'Период',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Показатель',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'Валюта',
+					},
+					{
+						name:'Период',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

@@ -42,44 +42,105 @@
 				{
 					text:'',
 					width:'28',
+					dataIndex:'ФормироватьДокумент',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'80',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'160',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'109',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Должность',
 					width:'91',
+					dataIndex:'Должность',
+					flex:1,
 				},
 				{
 					text:'График работы',
 					width:'42',
+					dataIndex:'ГрафикРаботы',
+					flex:1,
 				},
 				{
 					text:'Ставка',
 					width:'40',
+					dataIndex:'Ставка',
+					flex:1,
 				},
 				{
 					text:'Занимать',
 					width:'46',
+					dataIndex:'ЗаниматьСтавку',
+					flex:1,
 				},
 				{
 					text:'Планируемое событие',
 					width:'124',
+					dataIndex:'ПланируемоеСобытие',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказНамеченныхСобытийПоПерсоналу/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ФормироватьДокумент',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Должность',
+					},
+					{
+						name:'ГрафикРаботы',
+					},
+					{
+						name:'Ставка',
+					},
+					{
+						name:'ЗаниматьСтавку',
+					},
+					{
+						name:'ПланируемоеСобытие',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'button',

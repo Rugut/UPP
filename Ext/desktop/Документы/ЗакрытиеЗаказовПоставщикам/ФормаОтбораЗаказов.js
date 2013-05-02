@@ -133,28 +133,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеЗаказовПоставщикам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -220,100 +261,231 @@
 				{
 					text:'',
 					width:'20',
+					dataIndex:'Переносить',
+					flex:1,
 				},
 				{
 					text:'Ссылка',
 					width:'23',
+					dataIndex:'Ссылка',
+					flex:1,
 				},
 				{
 					text:'Дата',
 					width:'110',
+					dataIndex:'Дата',
+					flex:1,
 				},
 				{
 					text:'Номер',
 					width:'88',
+					dataIndex:'Номер',
+					flex:1,
 				},
 				{
 					text:'Вид операции',
 					width:'80',
+					dataIndex:'ВидОперации',
+					flex:1,
 				},
 				{
 					text:'Контрагент',
 					width:'110',
+					dataIndex:'Контрагент',
+					flex:1,
 				},
 				{
 					text:'Договор',
 					width:'100',
+					dataIndex:'ДоговорКонтрагента',
+					flex:1,
 				},
 				{
 					text:'Контактное лицо',
 					width:'100',
+					dataIndex:'КонтактноеЛицо',
+					flex:1,
 				},
 				{
 					text:'Сумма',
 					width:'80',
+					dataIndex:'СуммаДокумента',
+					flex:1,
 				},
 				{
 					text:'Валюта',
 					width:'30',
+					dataIndex:'ВалютаДокумента',
+					flex:1,
 				},
 				{
 					text:'Ост. пол.',
 					width:'80',
+					dataIndex:'ЗаказыОстаток',
+					flex:1,
 				},
 				{
 					text:'Кол.',
 					width:'35',
+					dataIndex:'ЗаказыКоличество',
+					flex:1,
 				},
 				{
 					text:'Ост. опл.',
 					width:'80',
+					dataIndex:'РасчетыОстаток',
+					flex:1,
 				},
 				{
 					text:'Разм.',
 					width:'35',
+					dataIndex:'РазмещенияКоличество',
+					flex:1,
 				},
 				{
 					text:'Тип цен',
 					width:'80',
+					dataIndex:'ТипЦен',
+					flex:1,
 				},
 				{
 					text:'Тип скидки',
 					width:'80',
+					dataIndex:'ТипСкидкиНаценки',
+					flex:1,
 				},
 				{
 					text:'Дата оплаты',
 					width:'80',
+					dataIndex:'ДатаОплаты',
+					flex:1,
 				},
 				{
 					text:'Дата поступления',
 					width:'80',
+					dataIndex:'ДатаПоступления',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Склад',
 					width:'100',
+					dataIndex:'Склад',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
 				{
 					text:'Ответственный',
 					width:'100',
+					dataIndex:'Ответственный',
+					flex:1,
 				},
 				{
 					text:'Проведен',
 					width:'74',
+					dataIndex:'Проведен',
+					flex:1,
 				},
 				{
 					text:'Причина закрытия',
 					width:'116',
+					dataIndex:'ПричинаЗакрытияЗаказа',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеЗаказовПоставщикам/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Переносить',
+					},
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'Дата',
+					},
+					{
+						name:'Номер',
+					},
+					{
+						name:'ВидОперации',
+					},
+					{
+						name:'Контрагент',
+					},
+					{
+						name:'ДоговорКонтрагента',
+					},
+					{
+						name:'КонтактноеЛицо',
+					},
+					{
+						name:'СуммаДокумента',
+					},
+					{
+						name:'ВалютаДокумента',
+					},
+					{
+						name:'ЗаказыОстаток',
+					},
+					{
+						name:'ЗаказыКоличество',
+					},
+					{
+						name:'РасчетыОстаток',
+					},
+					{
+						name:'РазмещенияКоличество',
+					},
+					{
+						name:'ТипЦен',
+					},
+					{
+						name:'ТипСкидкиНаценки',
+					},
+					{
+						name:'ДатаОплаты',
+					},
+					{
+						name:'ДатаПоступления',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'Склад',
+					},
+					{
+						name:'Подразделение',
+					},
+					{
+						name:'Ответственный',
+					},
+					{
+						name:'Проведен',
+					},
+					{
+						name:'ПричинаЗакрытияЗаказа',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'combobox',

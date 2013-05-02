@@ -28,20 +28,51 @@
 				{
 					text:'Тема',
 					width:'135',
+					dataIndex:'Тема',
+					flex:1,
 				},
 				{
 					text:'Эл. справочника',
 					width:'70',
+					dataIndex:'ОбъектЗагрузки',
+					flex:1,
 				},
 				{
 					text:'Анкета',
 					width:'144',
+					dataIndex:'Анкета',
+					flex:1,
 				},
 				{
 					text:'Опрос',
 					width:'215',
+					dataIndex:'Опрос',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Тема',
+					},
+					{
+						name:'ОбъектЗагрузки',
+					},
+					{
+						name:'Анкета',
+					},
+					{
+						name:'Опрос',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -63,8 +94,24 @@
 				{
 					text:'Вложения',
 					width:'101',
+					dataIndex:'Вложение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Вложение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'grid',
@@ -75,16 +122,42 @@
 				{
 					text:'Вопрос',
 					width:'89',
+					dataIndex:'Вопрос',
+					flex:1,
 				},
 				{
 					text:'Ответ',
 					width:'96',
+					dataIndex:'Ответ',
+					flex:1,
 				},
 				{
 					text:'Развернутый ответ',
 					width:'198',
+					dataIndex:'РазвернутыйОтвет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Вопрос',
+					},
+					{
+						name:'Ответ',
+					},
+					{
+						name:'РазвернутыйОтвет',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -155,20 +228,51 @@
 				{
 					text:'Файл',
 					width:'60',
+					dataIndex:'ИмяФайла',
+					flex:1,
 				},
 				{
 					text:'Анкета',
 					width:'61',
+					dataIndex:'Анкета',
+					flex:1,
 				},
 				{
 					text:'Эл. справочника',
 					width:'88',
+					dataIndex:'ОбъектЗагрузки',
+					flex:1,
 				},
 				{
 					text:'Опрос',
 					width:'63',
+					dataIndex:'Опрос',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Анкета',
+					},
+					{
+						name:'ОбъектЗагрузки',
+					},
+					{
+						name:'Опрос',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -214,16 +318,42 @@
 				{
 					text:'Вопрос',
 					width:'99',
+					dataIndex:'Вопрос',
+					flex:1,
 				},
 				{
 					text:'Ответ',
 					width:'148',
+					dataIndex:'Ответ',
+					flex:1,
 				},
 				{
 					text:'Развернутый ответ',
 					width:'148',
+					dataIndex:'РазвернутыйОтвет',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Вопрос',
+					},
+					{
+						name:'Ответ',
+					},
+					{
+						name:'РазвернутыйОтвет',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

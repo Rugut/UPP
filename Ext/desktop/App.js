@@ -1,4 +1,4 @@
-
+п»ї
 
 Ext.define('MyDesktop.App', {
    
@@ -15,35 +15,56 @@ Ext.define('MyDesktop.App', {
         //'MyDesktop.Tovar',
         //'MyDesktop.Nomenclatura',
         //'MyDesktop.TabWindow',
-        'MyDesktop.ЗагрузкаTab',
+        
+
+    'Ext.tab.Panel',
+    'Ext.form.field.Text',
+    'Ext.form.Label',
+    'Ext.form.field.Radio',
+    'Ext.button.Split',
+    'Ext.layout.container.Absolute',
+    'Ext.toolbar.Toolbar',
+    'Ext.toolbar.Fill',
+    'Ext.grid.Panel',
+    'Ext.form.field.Time',
+    'Ext.form.field.Number',
+        
+    'Ext.data.Model',
+    'Ext.data.Store',
+
+        //'MyDesktop.Р—Р°РіСЂСѓР·РєР°Tab',
+
+
         //'MyDesktop.AccordionWindow',
         //'MyDesktop.Notepad',
         //'MyDesktop.BogusMenuModule',
         'MyDesktop.BogusModule',
         
-        'Меню.СправочникиФормыЭлемента',
-        'Меню.СправочникиФормыСписка',
-        'Меню.ДокументыФормыДокумента',
-        'Меню.ДокументыФормыСписка',
-        'Меню.ОтчетыФормыОтчета',
-        'Меню.ОбработкиФормыОбработки',
+        'РњРµРЅСЋ.РЎРїСЂР°РІРѕС‡РЅРёРєРёР¤РѕСЂРјС‹Р­Р»РµРјРµРЅС‚Р°',
+        'РњРµРЅСЋ.РЎРїСЂР°РІРѕС‡РЅРёРєРёР¤РѕСЂРјС‹РЎРїРёСЃРєР°',
+        'РњРµРЅСЋ.Р”РѕРєСѓРјРµРЅС‚С‹Р¤РѕСЂРјС‹Р”РѕРєСѓРјРµРЅС‚Р°',
+        'РњРµРЅСЋ.Р”РѕРєСѓРјРµРЅС‚С‹Р¤РѕСЂРјС‹РЎРїРёСЃРєР°',
+        'РњРµРЅСЋ.РћС‚С‡РµС‚С‹Р¤РѕСЂРјС‹РћС‚С‡РµС‚Р°',
+        'РњРµРЅСЋ.РћР±СЂР°Р±РѕС‚РєРёР¤РѕСЂРјС‹РћР±СЂР°Р±РѕС‚РєРё',
 
 
 //        'MyDesktop.Blockalanche',
-        'MyDesktop.Settings'
+        'MyDesktop.Settings',
+        'Ext.grid.*',
+        'Ext.data.*',
     ],
 
     init: function() {
         // custom logic before getXYZ methods get called...
 
-        //Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
-        //    enabled: true,  //Загрузчик активен
-        //    disableCaching: true,   //Не кеширует файоы
+        //Ext.Loader.setConfig({ //РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ Р·Р°РіСЂСѓР·С‡РёРєР° СЃРєСЂРёРїС‚РѕРІ
+        //    enabled: true,  //Р—Р°РіСЂСѓР·С‡РёРє Р°РєС‚РёРІРµРЅ
+        //    disableCaching: true,   //РќРµ РєРµС€РёСЂСѓРµС‚ С„Р°Р№РѕС‹
         //    paths: {
-        //        Base: "js/Base" //Путь в пространству данных Base
+        //        Base: "js/Base" //РџСѓС‚СЊ РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ РґР°РЅРЅС‹С… Base
         //    }
         //    //paths: {
-        //    //    MyDesktop: "desktop" //Путь в пространству данных Base
+        //    //    MyDesktop: "desktop" //РџСѓС‚СЊ РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ РґР°РЅРЅС‹С… Base
         //    //}
         //});
         
@@ -66,7 +87,7 @@ Ext.define('MyDesktop.App', {
         //var win = Ext.create('Base.Test', {});
         //var win = Ext.create('Base.Test', {
             
-        //    //Создаем тестовое окно, определенное в файле Test, файл должен автоматически загрузится     this.tbar = new App.Common.CommonGridTBar({grid:this});
+        //    //РЎРѕР·РґР°РµРј С‚РµСЃС‚РѕРІРѕРµ РѕРєРЅРѕ, РѕРїСЂРµРґРµР»РµРЅРЅРѕРµ РІ С„Р°Р№Р»Рµ Test, С„Р°Р№Р» РґРѕР»Р¶РµРЅ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё Р·Р°РіСЂСѓР·РёС‚СЃСЏ     this.tbar = new App.Common.CommonGridTBar({grid:this});
         //    items:[{
         //            xtype:'form',
         //            items:[{
@@ -83,6 +104,7 @@ Ext.define('MyDesktop.App', {
 
         // now ready...
     },
+
 
     getModules: function ()
     {
@@ -101,17 +123,20 @@ Ext.define('MyDesktop.App', {
             //new MyDesktop.BogusMenuModule1(),
             //new MyDesktop.BogusMenuModule2(),
             
-            new Меню.СправочникиФормыЭлемента(),
-            new Меню.СправочникиФормыСписка(),
-            new Меню.ДокументыФормыДокумента(),
-            new Меню.ДокументыФормыСписка(),
-            new Меню.ОтчетыФормыОтчета(),
-            new Меню.ОбработкиФормыОбработки(),
+            new РњРµРЅСЋ.РЎРїСЂР°РІРѕС‡РЅРёРєРёР¤РѕСЂРјС‹Р­Р»РµРјРµРЅС‚Р°(),
+            new РњРµРЅСЋ.РЎРїСЂР°РІРѕС‡РЅРёРєРёР¤РѕСЂРјС‹РЎРїРёСЃРєР°(),
+            new РњРµРЅСЋ.Р”РѕРєСѓРјРµРЅС‚С‹Р¤РѕСЂРјС‹Р”РѕРєСѓРјРµРЅС‚Р°(),
+            new РњРµРЅСЋ.Р”РѕРєСѓРјРµРЅС‚С‹Р¤РѕСЂРјС‹РЎРїРёСЃРєР°(),
+            new РњРµРЅСЋ.РћС‚С‡РµС‚С‹Р¤РѕСЂРјС‹РћС‚С‡РµС‚Р°(),
+            new РњРµРЅСЋ.РћР±СЂР°Р±РѕС‚РєРёР¤РѕСЂРјС‹РћР±СЂР°Р±РѕС‚РєРё(),
         ];
     },
 
+
     getDesktopConfig: function () {
-        var me = this, ret = me.callParent();
+        var me = this,
+
+        ret = me.callParent();
 
         return Ext.apply(ret, {
             //cls: 'ux-desktop-black',
@@ -126,7 +151,7 @@ Ext.define('MyDesktop.App', {
             //    data: [
             //        //{ name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
             //        //{ name: 'Tovar Window', iconCls: 'grid-shortcut', module: 'tovar-win' },
-            //        //{ name: 'Номенклатура', iconCls: 'grid-shortcut', module: 'Nomenclatura-win' },
+            //        //{ name: 'РќРѕРјРµРЅРєР»Р°С‚СѓСЂР°', iconCls: 'grid-shortcut', module: 'Nomenclatura-win' },
                     
 
 

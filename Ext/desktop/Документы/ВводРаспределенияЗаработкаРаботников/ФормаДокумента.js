@@ -99,28 +99,69 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'68',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'120',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Упр. учет',
 					width:'120',
+					dataIndex:'СпособОтраженияВУпрУчете',
+					flex:1,
 				},
 				{
 					text:'% доли распределения',
 					width:'88',
+					dataIndex:'ДоляСпособаОтражения',
+					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'100',
+					dataIndex:'Подразделение',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияЗаработкаРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'СпособОтраженияВУпрУчете',
+					},
+					{
+						name:'ДоляСпособаОтражения',
+					},
+					{
+						name:'Подразделение',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -207,16 +248,42 @@
 				{
 					text:'Таб. №',
 					width:'48',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'223',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Физлицо',
 					width:'100',
+					dataIndex:'Физлицо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияЗаработкаРаботников/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Физлицо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

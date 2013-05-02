@@ -257,28 +257,69 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Код магазина',
 					width:'100',
+					dataIndex:'КодМагазина',
+					flex:1,
 				},
 				{
 					text:'Склад магазина',
 					width:'100',
+					dataIndex:'СкладМагазина',
+					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'100',
+					dataIndex:'Организация',
+					flex:1,
 				},
 				{
 					text:'Касса магазина',
 					width:'100',
+					dataIndex:'КассаМагазина',
+					flex:1,
 				},
 				{
 					text:'Касса ККМ магазина',
 					width:'100',
+					dataIndex:'КассаККММагазина',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'КодМагазина',
+					},
+					{
+						name:'СкладМагазина',
+					},
+					{
+						name:'Организация',
+					},
+					{
+						name:'КассаМагазина',
+					},
+					{
+						name:'КассаККММагазина',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -302,12 +343,33 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Тип цены номенклатуры',
 					width:'140',
+					dataIndex:'ТипЦеныНоменклатуры',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТипЦеныНоменклатуры',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -462,8 +524,24 @@
 				{
 					text:'Организация',
 					width:'574',
+					dataIndex:'Организация',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Организация',
+					},
+				]
+			},
 		},
 					]
 				},
@@ -480,28 +558,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -525,28 +644,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -570,28 +730,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -615,28 +816,69 @@
 				{
 					text:'',
 					width:'22',
+					dataIndex:'Использование',
+					flex:1,
 				},
 				{
 					text:'Поле',
 					width:'100',
+					dataIndex:'Имя',
+					flex:1,
 				},
 				{
 					text:'Тип сравнения',
 					width:'60',
+					dataIndex:'ВидСравнения',
+					flex:1,
 				},
 				{
 					text:'Значение',
 					width:'100',
+					dataIndex:'Значение',
+					flex:1,
 				},
 				{
 					text:'С',
 					width:'100',
+					dataIndex:'ЗначениеС',
+					flex:1,
 				},
 				{
 					text:'По',
 					width:'100',
+					dataIndex:'ЗначениеПо',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Использование',
+					},
+					{
+						name:'Имя',
+					},
+					{
+						name:'ВидСравнения',
+					},
+					{
+						name:'Значение',
+					},
+					{
+						name:'ЗначениеС',
+					},
+					{
+						name:'ЗначениеПо',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1285,36 +1527,87 @@
 				{
 					text:'Выгрузка',
 					width:'54',
+					dataIndex:'ЭтоНастройкаДляВыгрузки',
+					flex:1,
 				},
 				{
 					text:'Наименование объекта',
 					width:'185',
+					dataIndex:'НаименованиеПравилаВыгрузки',
+					flex:1,
 				},
 				{
 					text:'Настройка выгрузки',
 					width:'157',
+					dataIndex:'НастройкаВыгрузки',
+					flex:1,
 				},
 				{
 					text:'Выгружать',
 					width:'44',
+					dataIndex:'ВыгружатьДанные',
+					flex:1,
 				},
 				{
 					text:'Выгружать по ссылке',
 					width:'74',
+					dataIndex:'ВыгружатьПоСсылке',
+					flex:1,
 				},
 				{
 					text:'Код правила выгрузки',
 					width:'92',
+					dataIndex:'КодПравилаВыгрузки',
+					flex:1,
 				},
 				{
 					text:'Код правила обмена',
 					width:'100',
+					dataIndex:'КодПравилаОбмена',
+					flex:1,
 				},
 				{
 					text:'Настройка не поддерживается',
 					width:'100',
+					dataIndex:'НастройкаНеПоддерживается',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ЭтоНастройкаДляВыгрузки',
+					},
+					{
+						name:'НаименованиеПравилаВыгрузки',
+					},
+					{
+						name:'НастройкаВыгрузки',
+					},
+					{
+						name:'ВыгружатьДанные',
+					},
+					{
+						name:'ВыгружатьПоСсылке',
+					},
+					{
+						name:'КодПравилаВыгрузки',
+					},
+					{
+						name:'КодПравилаОбмена',
+					},
+					{
+						name:'НастройкаНеПоддерживается',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1361,36 +1654,87 @@
 				{
 					text:'Выгрузка',
 					width:'60',
+					dataIndex:'ЭтоНастройкаДляВыгрузки',
+					flex:1,
 				},
 				{
 					text:'Наименование объекта',
 					width:'130',
+					dataIndex:'НаименованиеПравилаОбмена',
+					flex:1,
 				},
 				{
 					text:'Настройка сопоставления',
 					width:'140',
+					dataIndex:'ИмяНастройкиДляПользователя',
+					flex:1,
 				},
 				{
 					text:'Описание',
 					width:'130',
+					dataIndex:'ОписаниеНастройкиДляПользователя',
+					flex:1,
 				},
 				{
 					text:'Имя настройки для алгоритма',
 					width:'100',
+					dataIndex:'ИмяНастройкиДляАлгоритма',
+					flex:1,
 				},
 				{
 					text:'Настройка не поддерживается',
 					width:'100',
+					dataIndex:'НастройкаНеПоддерживается',
+					flex:1,
 				},
 				{
 					text:'Вариант поиска не поддерживается',
 					width:'100',
+					dataIndex:'ВариантПоискаНеПоддерживается',
+					flex:1,
 				},
 				{
 					text:'Код правила обмена',
 					width:'100',
+					dataIndex:'КодПравилаОбмена',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ЭтоНастройкаДляВыгрузки',
+					},
+					{
+						name:'НаименованиеПравилаОбмена',
+					},
+					{
+						name:'ИмяНастройкиДляПользователя',
+					},
+					{
+						name:'ОписаниеНастройкиДляПользователя',
+					},
+					{
+						name:'ИмяНастройкиДляАлгоритма',
+					},
+					{
+						name:'НастройкаНеПоддерживается',
+					},
+					{
+						name:'ВариантПоискаНеПоддерживается',
+					},
+					{
+						name:'КодПравилаОбмена',
+					},
+				]
+			},
 		},
 					]
 				},

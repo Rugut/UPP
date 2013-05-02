@@ -215,8 +215,24 @@
 				{
 					text:'Тексты сообщений, которые не являются ошибками',
 					width:'311',
+					dataIndex:'ТекстСообщения',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'ТекстСообщения',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -253,16 +269,42 @@
 				{
 					text:'Порядок',
 					width:'66',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Настройка обмена',
 					width:'250',
+					dataIndex:'НастройкаОбмена',
+					flex:1,
 				},
 				{
 					text:'Действие',
 					width:'139',
+					dataIndex:'ВыполняемоеДействие',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'НастройкаОбмена',
+					},
+					{
+						name:'ВыполняемоеДействие',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

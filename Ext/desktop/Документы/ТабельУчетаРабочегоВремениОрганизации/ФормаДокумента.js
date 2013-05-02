@@ -111,144 +111,330 @@
 				{
 					text:'№',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'68',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'100',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Итого',
 					width:'80',
+					dataIndex:'Итого',
+					flex:1,
 				},
 				{
 					text:'1',
 					width:'30',
+					dataIndex:'День1',
+					flex:1,
 				},
 				{
 					text:'2',
 					width:'30',
+					dataIndex:'День2',
+					flex:1,
 				},
 				{
 					text:'3',
 					width:'30',
+					dataIndex:'День3',
+					flex:1,
 				},
 				{
 					text:'4',
 					width:'30',
+					dataIndex:'День4',
+					flex:1,
 				},
 				{
 					text:'5',
 					width:'30',
+					dataIndex:'День5',
+					flex:1,
 				},
 				{
 					text:'6',
 					width:'30',
+					dataIndex:'День6',
+					flex:1,
 				},
 				{
 					text:'7',
 					width:'30',
+					dataIndex:'День7',
+					flex:1,
 				},
 				{
 					text:'8',
 					width:'30',
+					dataIndex:'День8',
+					flex:1,
 				},
 				{
 					text:'9',
 					width:'30',
+					dataIndex:'День9',
+					flex:1,
 				},
 				{
 					text:'10',
 					width:'30',
+					dataIndex:'День10',
+					flex:1,
 				},
 				{
 					text:'11',
 					width:'30',
+					dataIndex:'День11',
+					flex:1,
 				},
 				{
 					text:'12',
 					width:'30',
+					dataIndex:'День12',
+					flex:1,
 				},
 				{
 					text:'13',
 					width:'30',
+					dataIndex:'День13',
+					flex:1,
 				},
 				{
 					text:'14',
 					width:'30',
+					dataIndex:'День14',
+					flex:1,
 				},
 				{
 					text:'15',
 					width:'30',
+					dataIndex:'День15',
+					flex:1,
 				},
 				{
 					text:'16',
 					width:'30',
+					dataIndex:'День16',
+					flex:1,
 				},
 				{
 					text:'17',
 					width:'30',
+					dataIndex:'День17',
+					flex:1,
 				},
 				{
 					text:'18',
 					width:'30',
+					dataIndex:'День18',
+					flex:1,
 				},
 				{
 					text:'19',
 					width:'30',
+					dataIndex:'День19',
+					flex:1,
 				},
 				{
 					text:'20',
 					width:'30',
+					dataIndex:'День20',
+					flex:1,
 				},
 				{
 					text:'21',
 					width:'30',
+					dataIndex:'День21',
+					flex:1,
 				},
 				{
 					text:'22',
 					width:'30',
+					dataIndex:'День22',
+					flex:1,
 				},
 				{
 					text:'23',
 					width:'30',
+					dataIndex:'День23',
+					flex:1,
 				},
 				{
 					text:'24',
 					width:'30',
+					dataIndex:'День24',
+					flex:1,
 				},
 				{
 					text:'25',
 					width:'30',
+					dataIndex:'День25',
+					flex:1,
 				},
 				{
 					text:'26',
 					width:'30',
+					dataIndex:'День26',
+					flex:1,
 				},
 				{
 					text:'27',
 					width:'30',
+					dataIndex:'День27',
+					flex:1,
 				},
 				{
 					text:'28',
 					width:'30',
+					dataIndex:'День28',
+					flex:1,
 				},
 				{
 					text:'29',
 					width:'30',
+					dataIndex:'День29',
+					flex:1,
 				},
 				{
 					text:'30',
 					width:'30',
+					dataIndex:'День30',
+					flex:1,
 				},
 				{
 					text:'31',
 					width:'30',
+					dataIndex:'День31',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТабельУчетаРабочегоВремениОрганизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'Итого',
+					},
+					{
+						name:'День1',
+					},
+					{
+						name:'День2',
+					},
+					{
+						name:'День3',
+					},
+					{
+						name:'День4',
+					},
+					{
+						name:'День5',
+					},
+					{
+						name:'День6',
+					},
+					{
+						name:'День7',
+					},
+					{
+						name:'День8',
+					},
+					{
+						name:'День9',
+					},
+					{
+						name:'День10',
+					},
+					{
+						name:'День11',
+					},
+					{
+						name:'День12',
+					},
+					{
+						name:'День13',
+					},
+					{
+						name:'День14',
+					},
+					{
+						name:'День15',
+					},
+					{
+						name:'День16',
+					},
+					{
+						name:'День17',
+					},
+					{
+						name:'День18',
+					},
+					{
+						name:'День19',
+					},
+					{
+						name:'День20',
+					},
+					{
+						name:'День21',
+					},
+					{
+						name:'День22',
+					},
+					{
+						name:'День23',
+					},
+					{
+						name:'День24',
+					},
+					{
+						name:'День25',
+					},
+					{
+						name:'День26',
+					},
+					{
+						name:'День27',
+					},
+					{
+						name:'День28',
+					},
+					{
+						name:'День29',
+					},
+					{
+						name:'День30',
+					},
+					{
+						name:'День31',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -299,88 +485,204 @@
 				{
 					text:'N',
 					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
 				},
 				{
 					text:'Таб. №',
 					width:'68',
+					dataIndex:'ТабельныйНомерСтрока',
+					flex:1,
 				},
 				{
 					text:'Сотрудник',
 					width:'100',
+					dataIndex:'Сотрудник',
+					flex:1,
 				},
 				{
 					text:'Вид времени',
 					width:'100',
+					dataIndex:'ВидВремени1',
+					flex:1,
 				},
 				{
 					text:'Дней',
 					width:'50',
+					dataIndex:'Дней1',
+					flex:1,
 				},
 				{
 					text:'Часов',
 					width:'50',
+					dataIndex:'Часов1',
+					flex:1,
 				},
 				{
 					text:'Вид времени',
 					width:'100',
+					dataIndex:'ВидВремени2',
+					flex:1,
 				},
 				{
 					text:'Дней',
 					width:'50',
+					dataIndex:'Дней2',
+					flex:1,
 				},
 				{
 					text:'Часов',
 					width:'50',
+					dataIndex:'Часов2',
+					flex:1,
 				},
 				{
 					text:'Вид времени',
 					width:'100',
+					dataIndex:'ВидВремени3',
+					flex:1,
 				},
 				{
 					text:'Дней',
 					width:'50',
+					dataIndex:'Дней3',
+					flex:1,
 				},
 				{
 					text:'Часов',
 					width:'50',
+					dataIndex:'Часов3',
+					flex:1,
 				},
 				{
 					text:'Вид времени',
 					width:'100',
+					dataIndex:'ВидВремени4',
+					flex:1,
 				},
 				{
 					text:'Дней',
 					width:'50',
+					dataIndex:'Дней4',
+					flex:1,
 				},
 				{
 					text:'Часов',
 					width:'50',
+					dataIndex:'Часов4',
+					flex:1,
 				},
 				{
 					text:'Вид времени',
 					width:'100',
+					dataIndex:'ВидВремени5',
+					flex:1,
 				},
 				{
 					text:'Дней',
 					width:'50',
+					dataIndex:'Дней5',
+					flex:1,
 				},
 				{
 					text:'Часов',
 					width:'50',
+					dataIndex:'Часов5',
+					flex:1,
 				},
 				{
 					text:'Вид времени',
 					width:'100',
+					dataIndex:'ВидВремени6',
+					flex:1,
 				},
 				{
 					text:'Дней',
 					width:'50',
+					dataIndex:'Дней6',
+					flex:1,
 				},
 				{
 					text:'Часов',
 					width:'50',
+					dataIndex:'Часов6',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТабельУчетаРабочегоВремениОрганизации/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'ТабельныйНомерСтрока',
+					},
+					{
+						name:'Сотрудник',
+					},
+					{
+						name:'ВидВремени1',
+					},
+					{
+						name:'Дней1',
+					},
+					{
+						name:'Часов1',
+					},
+					{
+						name:'ВидВремени2',
+					},
+					{
+						name:'Дней2',
+					},
+					{
+						name:'Часов2',
+					},
+					{
+						name:'ВидВремени3',
+					},
+					{
+						name:'Дней3',
+					},
+					{
+						name:'Часов3',
+					},
+					{
+						name:'ВидВремени4',
+					},
+					{
+						name:'Дней4',
+					},
+					{
+						name:'Часов4',
+					},
+					{
+						name:'ВидВремени5',
+					},
+					{
+						name:'Дней5',
+					},
+					{
+						name:'Часов5',
+					},
+					{
+						name:'ВидВремени6',
+					},
+					{
+						name:'Дней6',
+					},
+					{
+						name:'Часов6',
+					},
+				]
+			},
 		},
 		{
 			xtype: 'toolbar',

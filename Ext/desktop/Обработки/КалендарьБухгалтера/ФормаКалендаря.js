@@ -89,24 +89,60 @@
 				{
 					text:'',
 					width:'21',
+					dataIndex:'КартинкаОповещение',
+					flex:1,
 				},
 				{
 					text:'В срок до',
 					width:'63',
+					dataIndex:'Срок',
+					flex:1,
 				},
 				{
 					text:'Период',
 					width:'85',
+					dataIndex:'Период',
+					flex:1,
 				},
 				{
 					text:'Название отчета/налога',
 					width:'250',
+					dataIndex:'НазваниеОтчетаИлиНалога',
+					flex:1,
 				},
 				{
 					text:'Налогоплательщик',
 					width:'250',
+					dataIndex:'Кто',
+					flex:1,
 				},
-			]
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарьБухгалтера/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'КартинкаОповещение',
+					},
+					{
+						name:'Срок',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'НазваниеОтчетаИлиНалога',
+					},
+					{
+						name:'Кто',
+					},
+				]
+			},
 		},
 					]
 				},
